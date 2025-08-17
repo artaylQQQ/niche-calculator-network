@@ -1,0 +1,26 @@
+---
+const { title = 'Niche Calculator Network', description = 'Free calculators.' } = Astro.props;
+const base = Astro.site?.toString() || (import.meta.env.SITE_URL ?? 'https://example.com');
+const href = new URL(Astro.url.pathname, base).toString();
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>{title} — Niche Calculator Network</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={href} />
+
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={href} />
+    <meta name="twitter:card" content="summary" />
+
+    <slot name="head" />
+  </head>
+  <body class="min-h-screen">
+    <main class="container mx-auto p-4">
+      <slot />
+    </main>
+  </body>
+</html>

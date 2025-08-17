@@ -1,0 +1,6797 @@
+[
+  {
+    "slug": "percentage-discount-calculator",
+    "title": "Percentage Discount Calculator",
+    "locale": "en",
+    "cluster": "Percentages & Ratios",
+    "inputs": [
+      {
+        "name": "price",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "price"
+      },
+      {
+        "name": "discount",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "discount"
+      }
+    ],
+    "expression": "price*(1-discount/100)",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Calculate the discounted price.",
+    "examples": [
+      {
+        "input": {
+          "price": 100,
+          "discount": 15
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "percentage-increase-calculator",
+    "title": "Percentage Increase Calculator",
+    "locale": "en",
+    "cluster": "Percentages & Ratios",
+    "inputs": [
+      {
+        "name": "old",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "old"
+      },
+      {
+        "name": "new",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "new"
+      }
+    ],
+    "expression": "(new-old)/old*100",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Find percentage increase.",
+    "examples": [
+      {
+        "input": {
+          "old": 100,
+          "new": 15
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "loan-payment-calculator",
+    "title": "Loan Payment (PMT) Calculator",
+    "locale": "en",
+    "cluster": "Finance & Loans",
+    "inputs": [
+      {
+        "name": "principal",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "principal"
+      },
+      {
+        "name": "rate",
+        "type": "number",
+        "min": 0,
+        "step": 0.0001,
+        "hint": "rate (%)"
+      },
+      {
+        "name": "months",
+        "type": "number",
+        "min": 1,
+        "step": 1,
+        "hint": "months"
+      }
+    ],
+    "formula_js": "(inputs) => { const r = (inputs.rate/100)/12; const n = inputs.months; const pv = inputs.principal; const pmt = r===0 ? pv/n : (r*pv)/(1-Math.pow(1+r,-n)); return { result: Number(pmt.toFixed(2)), steps: [`Monthly rate r = ${(inputs.rate/100)/12}`, `Payment = r*PV / (1-(1+r)^-n)`] }; }",
+    "units": {
+      "input": "USD",
+      "output": "USD/month"
+    },
+    "intro": "Estimate your fixed monthly loan payment using the standard annuity formula.",
+    "examples": [
+      {
+        "input": {
+          "principal": 10000,
+          "rate": 6,
+          "months": 36
+        },
+        "output": "304.22"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "What formula do you use?",
+        "a": "We use PMT = r\u00d7PV / (1\u2212(1+r)^(\u2212n)) with a monthly rate."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "miles-to-kilometers-converter",
+    "title": "Miles to Kilometers Converter",
+    "locale": "en",
+    "cluster": "Conversions & Units",
+    "inputs": [
+      {
+        "name": "miles",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "miles"
+      }
+    ],
+    "expression": "miles*1.609344",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Convert miles to kilometers.",
+    "examples": [
+      {
+        "input": {
+          "miles": 10
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "bmi-calculator",
+    "title": "BMI (Body Mass Index) Calculator",
+    "locale": "en",
+    "cluster": "Health & Fitness",
+    "inputs": [
+      {
+        "name": "weight",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "weight"
+      },
+      {
+        "name": "height",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "height"
+      }
+    ],
+    "expression": "weight/(height*height)",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Estimate BMI.",
+    "examples": [
+      {
+        "input": {
+          "weight": 100,
+          "height": 15
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "custom-percentage-1",
+    "title": "Custom Percentage Scenario 1",
+    "locale": "en",
+    "cluster": "Percentages & Ratios",
+    "inputs": [
+      {
+        "name": "base",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "base"
+      },
+      {
+        "name": "rate",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "rate"
+      }
+    ],
+    "expression": "base*(1+rate/100)",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Apply a simple rate.",
+    "examples": [
+      {
+        "input": {
+          "base": 100,
+          "rate": 15
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "custom-percentage-2",
+    "title": "Custom Percentage Scenario 2",
+    "locale": "en",
+    "cluster": "Percentages & Ratios",
+    "inputs": [
+      {
+        "name": "base",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "base"
+      },
+      {
+        "name": "rate",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "rate"
+      }
+    ],
+    "expression": "base*(1+rate/100)",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Apply a simple rate.",
+    "examples": [
+      {
+        "input": {
+          "base": 100,
+          "rate": 15
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "custom-percentage-3",
+    "title": "Custom Percentage Scenario 3",
+    "locale": "en",
+    "cluster": "Percentages & Ratios",
+    "inputs": [
+      {
+        "name": "base",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "base"
+      },
+      {
+        "name": "rate",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "rate"
+      }
+    ],
+    "expression": "base*(1+rate/100)",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Apply a simple rate.",
+    "examples": [
+      {
+        "input": {
+          "base": 100,
+          "rate": 15
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "custom-percentage-4",
+    "title": "Custom Percentage Scenario 4",
+    "locale": "en",
+    "cluster": "Percentages & Ratios",
+    "inputs": [
+      {
+        "name": "base",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "base"
+      },
+      {
+        "name": "rate",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "rate"
+      }
+    ],
+    "expression": "base*(1+rate/100)",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Apply a simple rate.",
+    "examples": [
+      {
+        "input": {
+          "base": 100,
+          "rate": 15
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "custom-percentage-5",
+    "title": "Custom Percentage Scenario 5",
+    "locale": "en",
+    "cluster": "Percentages & Ratios",
+    "inputs": [
+      {
+        "name": "base",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "base"
+      },
+      {
+        "name": "rate",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "rate"
+      }
+    ],
+    "expression": "base*(1+rate/100)",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Apply a simple rate.",
+    "examples": [
+      {
+        "input": {
+          "base": 100,
+          "rate": 15
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "custom-percentage-6",
+    "title": "Custom Percentage Scenario 6",
+    "locale": "en",
+    "cluster": "Percentages & Ratios",
+    "inputs": [
+      {
+        "name": "base",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "base"
+      },
+      {
+        "name": "rate",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "rate"
+      }
+    ],
+    "expression": "base*(1+rate/100)",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Apply a simple rate.",
+    "examples": [
+      {
+        "input": {
+          "base": 100,
+          "rate": 15
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "custom-percentage-7",
+    "title": "Custom Percentage Scenario 7",
+    "locale": "en",
+    "cluster": "Percentages & Ratios",
+    "inputs": [
+      {
+        "name": "base",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "base"
+      },
+      {
+        "name": "rate",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "rate"
+      }
+    ],
+    "expression": "base*(1+rate/100)",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Apply a simple rate.",
+    "examples": [
+      {
+        "input": {
+          "base": 100,
+          "rate": 15
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "custom-percentage-8",
+    "title": "Custom Percentage Scenario 8",
+    "locale": "en",
+    "cluster": "Percentages & Ratios",
+    "inputs": [
+      {
+        "name": "base",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "base"
+      },
+      {
+        "name": "rate",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "rate"
+      }
+    ],
+    "expression": "base*(1+rate/100)",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Apply a simple rate.",
+    "examples": [
+      {
+        "input": {
+          "base": 100,
+          "rate": 15
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "custom-percentage-9",
+    "title": "Custom Percentage Scenario 9",
+    "locale": "en",
+    "cluster": "Percentages & Ratios",
+    "inputs": [
+      {
+        "name": "base",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "base"
+      },
+      {
+        "name": "rate",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "rate"
+      }
+    ],
+    "expression": "base*(1+rate/100)",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Apply a simple rate.",
+    "examples": [
+      {
+        "input": {
+          "base": 100,
+          "rate": 15
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "custom-percentage-10",
+    "title": "Custom Percentage Scenario 10",
+    "locale": "en",
+    "cluster": "Percentages & Ratios",
+    "inputs": [
+      {
+        "name": "base",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "base"
+      },
+      {
+        "name": "rate",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "rate"
+      }
+    ],
+    "expression": "base*(1+rate/100)",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Apply a simple rate.",
+    "examples": [
+      {
+        "input": {
+          "base": 100,
+          "rate": 15
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "custom-percentage-11",
+    "title": "Custom Percentage Scenario 11",
+    "locale": "en",
+    "cluster": "Percentages & Ratios",
+    "inputs": [
+      {
+        "name": "base",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "base"
+      },
+      {
+        "name": "rate",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "rate"
+      }
+    ],
+    "expression": "base*(1+rate/100)",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Apply a simple rate.",
+    "examples": [
+      {
+        "input": {
+          "base": 100,
+          "rate": 15
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "custom-percentage-12",
+    "title": "Custom Percentage Scenario 12",
+    "locale": "en",
+    "cluster": "Percentages & Ratios",
+    "inputs": [
+      {
+        "name": "base",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "base"
+      },
+      {
+        "name": "rate",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "rate"
+      }
+    ],
+    "expression": "base*(1+rate/100)",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Apply a simple rate.",
+    "examples": [
+      {
+        "input": {
+          "base": 100,
+          "rate": 15
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "custom-percentage-13",
+    "title": "Custom Percentage Scenario 13",
+    "locale": "en",
+    "cluster": "Percentages & Ratios",
+    "inputs": [
+      {
+        "name": "base",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "base"
+      },
+      {
+        "name": "rate",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "rate"
+      }
+    ],
+    "expression": "base*(1+rate/100)",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Apply a simple rate.",
+    "examples": [
+      {
+        "input": {
+          "base": 100,
+          "rate": 15
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "custom-percentage-14",
+    "title": "Custom Percentage Scenario 14",
+    "locale": "en",
+    "cluster": "Percentages & Ratios",
+    "inputs": [
+      {
+        "name": "base",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "base"
+      },
+      {
+        "name": "rate",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "rate"
+      }
+    ],
+    "expression": "base*(1+rate/100)",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Apply a simple rate.",
+    "examples": [
+      {
+        "input": {
+          "base": 100,
+          "rate": 15
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "custom-percentage-15",
+    "title": "Custom Percentage Scenario 15",
+    "locale": "en",
+    "cluster": "Percentages & Ratios",
+    "inputs": [
+      {
+        "name": "base",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "base"
+      },
+      {
+        "name": "rate",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "rate"
+      }
+    ],
+    "expression": "base*(1+rate/100)",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Apply a simple rate.",
+    "examples": [
+      {
+        "input": {
+          "base": 100,
+          "rate": 15
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "custom-percentage-16",
+    "title": "Custom Percentage Scenario 16",
+    "locale": "en",
+    "cluster": "Percentages & Ratios",
+    "inputs": [
+      {
+        "name": "base",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "base"
+      },
+      {
+        "name": "rate",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "rate"
+      }
+    ],
+    "expression": "base*(1+rate/100)",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Apply a simple rate.",
+    "examples": [
+      {
+        "input": {
+          "base": 100,
+          "rate": 15
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "custom-percentage-17",
+    "title": "Custom Percentage Scenario 17",
+    "locale": "en",
+    "cluster": "Percentages & Ratios",
+    "inputs": [
+      {
+        "name": "base",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "base"
+      },
+      {
+        "name": "rate",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "rate"
+      }
+    ],
+    "expression": "base*(1+rate/100)",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Apply a simple rate.",
+    "examples": [
+      {
+        "input": {
+          "base": 100,
+          "rate": 15
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "custom-percentage-18",
+    "title": "Custom Percentage Scenario 18",
+    "locale": "en",
+    "cluster": "Percentages & Ratios",
+    "inputs": [
+      {
+        "name": "base",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "base"
+      },
+      {
+        "name": "rate",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "rate"
+      }
+    ],
+    "expression": "base*(1+rate/100)",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Apply a simple rate.",
+    "examples": [
+      {
+        "input": {
+          "base": 100,
+          "rate": 15
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "custom-percentage-19",
+    "title": "Custom Percentage Scenario 19",
+    "locale": "en",
+    "cluster": "Percentages & Ratios",
+    "inputs": [
+      {
+        "name": "base",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "base"
+      },
+      {
+        "name": "rate",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "rate"
+      }
+    ],
+    "expression": "base*(1+rate/100)",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Apply a simple rate.",
+    "examples": [
+      {
+        "input": {
+          "base": 100,
+          "rate": 15
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "custom-percentage-20",
+    "title": "Custom Percentage Scenario 20",
+    "locale": "en",
+    "cluster": "Percentages & Ratios",
+    "inputs": [
+      {
+        "name": "base",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "base"
+      },
+      {
+        "name": "rate",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "rate"
+      }
+    ],
+    "expression": "base*(1+rate/100)",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Apply a simple rate.",
+    "examples": [
+      {
+        "input": {
+          "base": 100,
+          "rate": 15
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "custom-percentage-21",
+    "title": "Custom Percentage Scenario 21",
+    "locale": "en",
+    "cluster": "Percentages & Ratios",
+    "inputs": [
+      {
+        "name": "base",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "base"
+      },
+      {
+        "name": "rate",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "rate"
+      }
+    ],
+    "expression": "base*(1+rate/100)",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Apply a simple rate.",
+    "examples": [
+      {
+        "input": {
+          "base": 100,
+          "rate": 15
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "custom-percentage-22",
+    "title": "Custom Percentage Scenario 22",
+    "locale": "en",
+    "cluster": "Percentages & Ratios",
+    "inputs": [
+      {
+        "name": "base",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "base"
+      },
+      {
+        "name": "rate",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "rate"
+      }
+    ],
+    "expression": "base*(1+rate/100)",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Apply a simple rate.",
+    "examples": [
+      {
+        "input": {
+          "base": 100,
+          "rate": 15
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "custom-percentage-23",
+    "title": "Custom Percentage Scenario 23",
+    "locale": "en",
+    "cluster": "Percentages & Ratios",
+    "inputs": [
+      {
+        "name": "base",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "base"
+      },
+      {
+        "name": "rate",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "rate"
+      }
+    ],
+    "expression": "base*(1+rate/100)",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Apply a simple rate.",
+    "examples": [
+      {
+        "input": {
+          "base": 100,
+          "rate": 15
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "custom-percentage-24",
+    "title": "Custom Percentage Scenario 24",
+    "locale": "en",
+    "cluster": "Percentages & Ratios",
+    "inputs": [
+      {
+        "name": "base",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "base"
+      },
+      {
+        "name": "rate",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "rate"
+      }
+    ],
+    "expression": "base*(1+rate/100)",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Apply a simple rate.",
+    "examples": [
+      {
+        "input": {
+          "base": 100,
+          "rate": 15
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "custom-percentage-25",
+    "title": "Custom Percentage Scenario 25",
+    "locale": "en",
+    "cluster": "Percentages & Ratios",
+    "inputs": [
+      {
+        "name": "base",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "base"
+      },
+      {
+        "name": "rate",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "rate"
+      }
+    ],
+    "expression": "base*(1+rate/100)",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Apply a simple rate.",
+    "examples": [
+      {
+        "input": {
+          "base": 100,
+          "rate": 15
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "custom-percentage-26",
+    "title": "Custom Percentage Scenario 26",
+    "locale": "en",
+    "cluster": "Percentages & Ratios",
+    "inputs": [
+      {
+        "name": "base",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "base"
+      },
+      {
+        "name": "rate",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "rate"
+      }
+    ],
+    "expression": "base*(1+rate/100)",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Apply a simple rate.",
+    "examples": [
+      {
+        "input": {
+          "base": 100,
+          "rate": 15
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "custom-percentage-27",
+    "title": "Custom Percentage Scenario 27",
+    "locale": "en",
+    "cluster": "Percentages & Ratios",
+    "inputs": [
+      {
+        "name": "base",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "base"
+      },
+      {
+        "name": "rate",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "rate"
+      }
+    ],
+    "expression": "base*(1+rate/100)",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Apply a simple rate.",
+    "examples": [
+      {
+        "input": {
+          "base": 100,
+          "rate": 15
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "custom-percentage-28",
+    "title": "Custom Percentage Scenario 28",
+    "locale": "en",
+    "cluster": "Percentages & Ratios",
+    "inputs": [
+      {
+        "name": "base",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "base"
+      },
+      {
+        "name": "rate",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "rate"
+      }
+    ],
+    "expression": "base*(1+rate/100)",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Apply a simple rate.",
+    "examples": [
+      {
+        "input": {
+          "base": 100,
+          "rate": 15
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "custom-percentage-29",
+    "title": "Custom Percentage Scenario 29",
+    "locale": "en",
+    "cluster": "Percentages & Ratios",
+    "inputs": [
+      {
+        "name": "base",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "base"
+      },
+      {
+        "name": "rate",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "rate"
+      }
+    ],
+    "expression": "base*(1+rate/100)",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Apply a simple rate.",
+    "examples": [
+      {
+        "input": {
+          "base": 100,
+          "rate": 15
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "custom-percentage-30",
+    "title": "Custom Percentage Scenario 30",
+    "locale": "en",
+    "cluster": "Percentages & Ratios",
+    "inputs": [
+      {
+        "name": "base",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "base"
+      },
+      {
+        "name": "rate",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "rate"
+      }
+    ],
+    "expression": "base*(1+rate/100)",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Apply a simple rate.",
+    "examples": [
+      {
+        "input": {
+          "base": 100,
+          "rate": 15
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "custom-percentage-31",
+    "title": "Custom Percentage Scenario 31",
+    "locale": "en",
+    "cluster": "Percentages & Ratios",
+    "inputs": [
+      {
+        "name": "base",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "base"
+      },
+      {
+        "name": "rate",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "rate"
+      }
+    ],
+    "expression": "base*(1+rate/100)",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Apply a simple rate.",
+    "examples": [
+      {
+        "input": {
+          "base": 100,
+          "rate": 15
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "custom-percentage-32",
+    "title": "Custom Percentage Scenario 32",
+    "locale": "en",
+    "cluster": "Percentages & Ratios",
+    "inputs": [
+      {
+        "name": "base",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "base"
+      },
+      {
+        "name": "rate",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "rate"
+      }
+    ],
+    "expression": "base*(1+rate/100)",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Apply a simple rate.",
+    "examples": [
+      {
+        "input": {
+          "base": 100,
+          "rate": 15
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "custom-percentage-33",
+    "title": "Custom Percentage Scenario 33",
+    "locale": "en",
+    "cluster": "Percentages & Ratios",
+    "inputs": [
+      {
+        "name": "base",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "base"
+      },
+      {
+        "name": "rate",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "rate"
+      }
+    ],
+    "expression": "base*(1+rate/100)",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Apply a simple rate.",
+    "examples": [
+      {
+        "input": {
+          "base": 100,
+          "rate": 15
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "custom-percentage-34",
+    "title": "Custom Percentage Scenario 34",
+    "locale": "en",
+    "cluster": "Percentages & Ratios",
+    "inputs": [
+      {
+        "name": "base",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "base"
+      },
+      {
+        "name": "rate",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "rate"
+      }
+    ],
+    "expression": "base*(1+rate/100)",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Apply a simple rate.",
+    "examples": [
+      {
+        "input": {
+          "base": 100,
+          "rate": 15
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "custom-percentage-35",
+    "title": "Custom Percentage Scenario 35",
+    "locale": "en",
+    "cluster": "Percentages & Ratios",
+    "inputs": [
+      {
+        "name": "base",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "base"
+      },
+      {
+        "name": "rate",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "rate"
+      }
+    ],
+    "expression": "base*(1+rate/100)",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Apply a simple rate.",
+    "examples": [
+      {
+        "input": {
+          "base": 100,
+          "rate": 15
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "custom-percentage-36",
+    "title": "Custom Percentage Scenario 36",
+    "locale": "en",
+    "cluster": "Percentages & Ratios",
+    "inputs": [
+      {
+        "name": "base",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "base"
+      },
+      {
+        "name": "rate",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "rate"
+      }
+    ],
+    "expression": "base*(1+rate/100)",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Apply a simple rate.",
+    "examples": [
+      {
+        "input": {
+          "base": 100,
+          "rate": 15
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "custom-percentage-37",
+    "title": "Custom Percentage Scenario 37",
+    "locale": "en",
+    "cluster": "Percentages & Ratios",
+    "inputs": [
+      {
+        "name": "base",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "base"
+      },
+      {
+        "name": "rate",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "rate"
+      }
+    ],
+    "expression": "base*(1+rate/100)",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Apply a simple rate.",
+    "examples": [
+      {
+        "input": {
+          "base": 100,
+          "rate": 15
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "custom-percentage-38",
+    "title": "Custom Percentage Scenario 38",
+    "locale": "en",
+    "cluster": "Percentages & Ratios",
+    "inputs": [
+      {
+        "name": "base",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "base"
+      },
+      {
+        "name": "rate",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "rate"
+      }
+    ],
+    "expression": "base*(1+rate/100)",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Apply a simple rate.",
+    "examples": [
+      {
+        "input": {
+          "base": 100,
+          "rate": 15
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "custom-percentage-39",
+    "title": "Custom Percentage Scenario 39",
+    "locale": "en",
+    "cluster": "Percentages & Ratios",
+    "inputs": [
+      {
+        "name": "base",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "base"
+      },
+      {
+        "name": "rate",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "rate"
+      }
+    ],
+    "expression": "base*(1+rate/100)",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Apply a simple rate.",
+    "examples": [
+      {
+        "input": {
+          "base": 100,
+          "rate": 15
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "custom-percentage-40",
+    "title": "Custom Percentage Scenario 40",
+    "locale": "en",
+    "cluster": "Percentages & Ratios",
+    "inputs": [
+      {
+        "name": "base",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "base"
+      },
+      {
+        "name": "rate",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "rate"
+      }
+    ],
+    "expression": "base*(1+rate/100)",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Apply a simple rate.",
+    "examples": [
+      {
+        "input": {
+          "base": 100,
+          "rate": 15
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "custom-percentage-41",
+    "title": "Custom Percentage Scenario 41",
+    "locale": "en",
+    "cluster": "Percentages & Ratios",
+    "inputs": [
+      {
+        "name": "base",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "base"
+      },
+      {
+        "name": "rate",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "rate"
+      }
+    ],
+    "expression": "base*(1+rate/100)",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Apply a simple rate.",
+    "examples": [
+      {
+        "input": {
+          "base": 100,
+          "rate": 15
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "custom-percentage-42",
+    "title": "Custom Percentage Scenario 42",
+    "locale": "en",
+    "cluster": "Percentages & Ratios",
+    "inputs": [
+      {
+        "name": "base",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "base"
+      },
+      {
+        "name": "rate",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "rate"
+      }
+    ],
+    "expression": "base*(1+rate/100)",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Apply a simple rate.",
+    "examples": [
+      {
+        "input": {
+          "base": 100,
+          "rate": 15
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "custom-percentage-43",
+    "title": "Custom Percentage Scenario 43",
+    "locale": "en",
+    "cluster": "Percentages & Ratios",
+    "inputs": [
+      {
+        "name": "base",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "base"
+      },
+      {
+        "name": "rate",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "rate"
+      }
+    ],
+    "expression": "base*(1+rate/100)",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Apply a simple rate.",
+    "examples": [
+      {
+        "input": {
+          "base": 100,
+          "rate": 15
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "custom-percentage-44",
+    "title": "Custom Percentage Scenario 44",
+    "locale": "en",
+    "cluster": "Percentages & Ratios",
+    "inputs": [
+      {
+        "name": "base",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "base"
+      },
+      {
+        "name": "rate",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "rate"
+      }
+    ],
+    "expression": "base*(1+rate/100)",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Apply a simple rate.",
+    "examples": [
+      {
+        "input": {
+          "base": 100,
+          "rate": 15
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "custom-percentage-45",
+    "title": "Custom Percentage Scenario 45",
+    "locale": "en",
+    "cluster": "Percentages & Ratios",
+    "inputs": [
+      {
+        "name": "base",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "base"
+      },
+      {
+        "name": "rate",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "rate"
+      }
+    ],
+    "expression": "base*(1+rate/100)",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Apply a simple rate.",
+    "examples": [
+      {
+        "input": {
+          "base": 100,
+          "rate": 15
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "custom-percentage-46",
+    "title": "Custom Percentage Scenario 46",
+    "locale": "en",
+    "cluster": "Percentages & Ratios",
+    "inputs": [
+      {
+        "name": "base",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "base"
+      },
+      {
+        "name": "rate",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "rate"
+      }
+    ],
+    "expression": "base*(1+rate/100)",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Apply a simple rate.",
+    "examples": [
+      {
+        "input": {
+          "base": 100,
+          "rate": 15
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "custom-percentage-47",
+    "title": "Custom Percentage Scenario 47",
+    "locale": "en",
+    "cluster": "Percentages & Ratios",
+    "inputs": [
+      {
+        "name": "base",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "base"
+      },
+      {
+        "name": "rate",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "rate"
+      }
+    ],
+    "expression": "base*(1+rate/100)",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Apply a simple rate.",
+    "examples": [
+      {
+        "input": {
+          "base": 100,
+          "rate": 15
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "custom-percentage-48",
+    "title": "Custom Percentage Scenario 48",
+    "locale": "en",
+    "cluster": "Percentages & Ratios",
+    "inputs": [
+      {
+        "name": "base",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "base"
+      },
+      {
+        "name": "rate",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "rate"
+      }
+    ],
+    "expression": "base*(1+rate/100)",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Apply a simple rate.",
+    "examples": [
+      {
+        "input": {
+          "base": 100,
+          "rate": 15
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "custom-percentage-49",
+    "title": "Custom Percentage Scenario 49",
+    "locale": "en",
+    "cluster": "Percentages & Ratios",
+    "inputs": [
+      {
+        "name": "base",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "base"
+      },
+      {
+        "name": "rate",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "rate"
+      }
+    ],
+    "expression": "base*(1+rate/100)",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Apply a simple rate.",
+    "examples": [
+      {
+        "input": {
+          "base": 100,
+          "rate": 15
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "custom-percentage-50",
+    "title": "Custom Percentage Scenario 50",
+    "locale": "en",
+    "cluster": "Percentages & Ratios",
+    "inputs": [
+      {
+        "name": "base",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "base"
+      },
+      {
+        "name": "rate",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "rate"
+      }
+    ],
+    "expression": "base*(1+rate/100)",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Apply a simple rate.",
+    "examples": [
+      {
+        "input": {
+          "base": 100,
+          "rate": 15
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "custom-percentage-51",
+    "title": "Custom Percentage Scenario 51",
+    "locale": "en",
+    "cluster": "Percentages & Ratios",
+    "inputs": [
+      {
+        "name": "base",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "base"
+      },
+      {
+        "name": "rate",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "rate"
+      }
+    ],
+    "expression": "base*(1+rate/100)",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Apply a simple rate.",
+    "examples": [
+      {
+        "input": {
+          "base": 100,
+          "rate": 15
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "custom-percentage-52",
+    "title": "Custom Percentage Scenario 52",
+    "locale": "en",
+    "cluster": "Percentages & Ratios",
+    "inputs": [
+      {
+        "name": "base",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "base"
+      },
+      {
+        "name": "rate",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "rate"
+      }
+    ],
+    "expression": "base*(1+rate/100)",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Apply a simple rate.",
+    "examples": [
+      {
+        "input": {
+          "base": 100,
+          "rate": 15
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "custom-percentage-53",
+    "title": "Custom Percentage Scenario 53",
+    "locale": "en",
+    "cluster": "Percentages & Ratios",
+    "inputs": [
+      {
+        "name": "base",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "base"
+      },
+      {
+        "name": "rate",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "rate"
+      }
+    ],
+    "expression": "base*(1+rate/100)",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Apply a simple rate.",
+    "examples": [
+      {
+        "input": {
+          "base": 100,
+          "rate": 15
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "custom-percentage-54",
+    "title": "Custom Percentage Scenario 54",
+    "locale": "en",
+    "cluster": "Percentages & Ratios",
+    "inputs": [
+      {
+        "name": "base",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "base"
+      },
+      {
+        "name": "rate",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "rate"
+      }
+    ],
+    "expression": "base*(1+rate/100)",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Apply a simple rate.",
+    "examples": [
+      {
+        "input": {
+          "base": 100,
+          "rate": 15
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "custom-percentage-55",
+    "title": "Custom Percentage Scenario 55",
+    "locale": "en",
+    "cluster": "Percentages & Ratios",
+    "inputs": [
+      {
+        "name": "base",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "base"
+      },
+      {
+        "name": "rate",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "rate"
+      }
+    ],
+    "expression": "base*(1+rate/100)",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Apply a simple rate.",
+    "examples": [
+      {
+        "input": {
+          "base": 100,
+          "rate": 15
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "custom-percentage-56",
+    "title": "Custom Percentage Scenario 56",
+    "locale": "en",
+    "cluster": "Percentages & Ratios",
+    "inputs": [
+      {
+        "name": "base",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "base"
+      },
+      {
+        "name": "rate",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "rate"
+      }
+    ],
+    "expression": "base*(1+rate/100)",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Apply a simple rate.",
+    "examples": [
+      {
+        "input": {
+          "base": 100,
+          "rate": 15
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "custom-percentage-57",
+    "title": "Custom Percentage Scenario 57",
+    "locale": "en",
+    "cluster": "Percentages & Ratios",
+    "inputs": [
+      {
+        "name": "base",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "base"
+      },
+      {
+        "name": "rate",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "rate"
+      }
+    ],
+    "expression": "base*(1+rate/100)",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Apply a simple rate.",
+    "examples": [
+      {
+        "input": {
+          "base": 100,
+          "rate": 15
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "custom-percentage-58",
+    "title": "Custom Percentage Scenario 58",
+    "locale": "en",
+    "cluster": "Percentages & Ratios",
+    "inputs": [
+      {
+        "name": "base",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "base"
+      },
+      {
+        "name": "rate",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "rate"
+      }
+    ],
+    "expression": "base*(1+rate/100)",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Apply a simple rate.",
+    "examples": [
+      {
+        "input": {
+          "base": 100,
+          "rate": 15
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "custom-percentage-59",
+    "title": "Custom Percentage Scenario 59",
+    "locale": "en",
+    "cluster": "Percentages & Ratios",
+    "inputs": [
+      {
+        "name": "base",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "base"
+      },
+      {
+        "name": "rate",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "rate"
+      }
+    ],
+    "expression": "base*(1+rate/100)",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Apply a simple rate.",
+    "examples": [
+      {
+        "input": {
+          "base": 100,
+          "rate": 15
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "custom-percentage-60",
+    "title": "Custom Percentage Scenario 60",
+    "locale": "en",
+    "cluster": "Percentages & Ratios",
+    "inputs": [
+      {
+        "name": "base",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "base"
+      },
+      {
+        "name": "rate",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "rate"
+      }
+    ],
+    "expression": "base*(1+rate/100)",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Apply a simple rate.",
+    "examples": [
+      {
+        "input": {
+          "base": 100,
+          "rate": 15
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "custom-percentage-61",
+    "title": "Custom Percentage Scenario 61",
+    "locale": "en",
+    "cluster": "Percentages & Ratios",
+    "inputs": [
+      {
+        "name": "base",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "base"
+      },
+      {
+        "name": "rate",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "rate"
+      }
+    ],
+    "expression": "base*(1+rate/100)",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Apply a simple rate.",
+    "examples": [
+      {
+        "input": {
+          "base": 100,
+          "rate": 15
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "custom-percentage-62",
+    "title": "Custom Percentage Scenario 62",
+    "locale": "en",
+    "cluster": "Percentages & Ratios",
+    "inputs": [
+      {
+        "name": "base",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "base"
+      },
+      {
+        "name": "rate",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "rate"
+      }
+    ],
+    "expression": "base*(1+rate/100)",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Apply a simple rate.",
+    "examples": [
+      {
+        "input": {
+          "base": 100,
+          "rate": 15
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "custom-percentage-63",
+    "title": "Custom Percentage Scenario 63",
+    "locale": "en",
+    "cluster": "Percentages & Ratios",
+    "inputs": [
+      {
+        "name": "base",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "base"
+      },
+      {
+        "name": "rate",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "rate"
+      }
+    ],
+    "expression": "base*(1+rate/100)",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Apply a simple rate.",
+    "examples": [
+      {
+        "input": {
+          "base": 100,
+          "rate": 15
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "custom-percentage-64",
+    "title": "Custom Percentage Scenario 64",
+    "locale": "en",
+    "cluster": "Percentages & Ratios",
+    "inputs": [
+      {
+        "name": "base",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "base"
+      },
+      {
+        "name": "rate",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "rate"
+      }
+    ],
+    "expression": "base*(1+rate/100)",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Apply a simple rate.",
+    "examples": [
+      {
+        "input": {
+          "base": 100,
+          "rate": 15
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "custom-percentage-65",
+    "title": "Custom Percentage Scenario 65",
+    "locale": "en",
+    "cluster": "Percentages & Ratios",
+    "inputs": [
+      {
+        "name": "base",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "base"
+      },
+      {
+        "name": "rate",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "rate"
+      }
+    ],
+    "expression": "base*(1+rate/100)",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Apply a simple rate.",
+    "examples": [
+      {
+        "input": {
+          "base": 100,
+          "rate": 15
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "custom-percentage-66",
+    "title": "Custom Percentage Scenario 66",
+    "locale": "en",
+    "cluster": "Percentages & Ratios",
+    "inputs": [
+      {
+        "name": "base",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "base"
+      },
+      {
+        "name": "rate",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "rate"
+      }
+    ],
+    "expression": "base*(1+rate/100)",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Apply a simple rate.",
+    "examples": [
+      {
+        "input": {
+          "base": 100,
+          "rate": 15
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "custom-percentage-67",
+    "title": "Custom Percentage Scenario 67",
+    "locale": "en",
+    "cluster": "Percentages & Ratios",
+    "inputs": [
+      {
+        "name": "base",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "base"
+      },
+      {
+        "name": "rate",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "rate"
+      }
+    ],
+    "expression": "base*(1+rate/100)",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Apply a simple rate.",
+    "examples": [
+      {
+        "input": {
+          "base": 100,
+          "rate": 15
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "custom-percentage-68",
+    "title": "Custom Percentage Scenario 68",
+    "locale": "en",
+    "cluster": "Percentages & Ratios",
+    "inputs": [
+      {
+        "name": "base",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "base"
+      },
+      {
+        "name": "rate",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "rate"
+      }
+    ],
+    "expression": "base*(1+rate/100)",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Apply a simple rate.",
+    "examples": [
+      {
+        "input": {
+          "base": 100,
+          "rate": 15
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "custom-percentage-69",
+    "title": "Custom Percentage Scenario 69",
+    "locale": "en",
+    "cluster": "Percentages & Ratios",
+    "inputs": [
+      {
+        "name": "base",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "base"
+      },
+      {
+        "name": "rate",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "rate"
+      }
+    ],
+    "expression": "base*(1+rate/100)",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Apply a simple rate.",
+    "examples": [
+      {
+        "input": {
+          "base": 100,
+          "rate": 15
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "custom-percentage-70",
+    "title": "Custom Percentage Scenario 70",
+    "locale": "en",
+    "cluster": "Percentages & Ratios",
+    "inputs": [
+      {
+        "name": "base",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "base"
+      },
+      {
+        "name": "rate",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "rate"
+      }
+    ],
+    "expression": "base*(1+rate/100)",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Apply a simple rate.",
+    "examples": [
+      {
+        "input": {
+          "base": 100,
+          "rate": 15
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "custom-percentage-71",
+    "title": "Custom Percentage Scenario 71",
+    "locale": "en",
+    "cluster": "Percentages & Ratios",
+    "inputs": [
+      {
+        "name": "base",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "base"
+      },
+      {
+        "name": "rate",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "rate"
+      }
+    ],
+    "expression": "base*(1+rate/100)",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Apply a simple rate.",
+    "examples": [
+      {
+        "input": {
+          "base": 100,
+          "rate": 15
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "custom-percentage-72",
+    "title": "Custom Percentage Scenario 72",
+    "locale": "en",
+    "cluster": "Percentages & Ratios",
+    "inputs": [
+      {
+        "name": "base",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "base"
+      },
+      {
+        "name": "rate",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "rate"
+      }
+    ],
+    "expression": "base*(1+rate/100)",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Apply a simple rate.",
+    "examples": [
+      {
+        "input": {
+          "base": 100,
+          "rate": 15
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "custom-percentage-73",
+    "title": "Custom Percentage Scenario 73",
+    "locale": "en",
+    "cluster": "Percentages & Ratios",
+    "inputs": [
+      {
+        "name": "base",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "base"
+      },
+      {
+        "name": "rate",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "rate"
+      }
+    ],
+    "expression": "base*(1+rate/100)",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Apply a simple rate.",
+    "examples": [
+      {
+        "input": {
+          "base": 100,
+          "rate": 15
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "custom-percentage-74",
+    "title": "Custom Percentage Scenario 74",
+    "locale": "en",
+    "cluster": "Percentages & Ratios",
+    "inputs": [
+      {
+        "name": "base",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "base"
+      },
+      {
+        "name": "rate",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "rate"
+      }
+    ],
+    "expression": "base*(1+rate/100)",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Apply a simple rate.",
+    "examples": [
+      {
+        "input": {
+          "base": 100,
+          "rate": 15
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "custom-percentage-75",
+    "title": "Custom Percentage Scenario 75",
+    "locale": "en",
+    "cluster": "Percentages & Ratios",
+    "inputs": [
+      {
+        "name": "base",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "base"
+      },
+      {
+        "name": "rate",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "rate"
+      }
+    ],
+    "expression": "base*(1+rate/100)",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Apply a simple rate.",
+    "examples": [
+      {
+        "input": {
+          "base": 100,
+          "rate": 15
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "custom-percentage-76",
+    "title": "Custom Percentage Scenario 76",
+    "locale": "en",
+    "cluster": "Percentages & Ratios",
+    "inputs": [
+      {
+        "name": "base",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "base"
+      },
+      {
+        "name": "rate",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "rate"
+      }
+    ],
+    "expression": "base*(1+rate/100)",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Apply a simple rate.",
+    "examples": [
+      {
+        "input": {
+          "base": 100,
+          "rate": 15
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "custom-percentage-77",
+    "title": "Custom Percentage Scenario 77",
+    "locale": "en",
+    "cluster": "Percentages & Ratios",
+    "inputs": [
+      {
+        "name": "base",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "base"
+      },
+      {
+        "name": "rate",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "rate"
+      }
+    ],
+    "expression": "base*(1+rate/100)",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Apply a simple rate.",
+    "examples": [
+      {
+        "input": {
+          "base": 100,
+          "rate": 15
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "custom-percentage-78",
+    "title": "Custom Percentage Scenario 78",
+    "locale": "en",
+    "cluster": "Percentages & Ratios",
+    "inputs": [
+      {
+        "name": "base",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "base"
+      },
+      {
+        "name": "rate",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "rate"
+      }
+    ],
+    "expression": "base*(1+rate/100)",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Apply a simple rate.",
+    "examples": [
+      {
+        "input": {
+          "base": 100,
+          "rate": 15
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "custom-percentage-79",
+    "title": "Custom Percentage Scenario 79",
+    "locale": "en",
+    "cluster": "Percentages & Ratios",
+    "inputs": [
+      {
+        "name": "base",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "base"
+      },
+      {
+        "name": "rate",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "rate"
+      }
+    ],
+    "expression": "base*(1+rate/100)",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Apply a simple rate.",
+    "examples": [
+      {
+        "input": {
+          "base": 100,
+          "rate": 15
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "custom-percentage-80",
+    "title": "Custom Percentage Scenario 80",
+    "locale": "en",
+    "cluster": "Percentages & Ratios",
+    "inputs": [
+      {
+        "name": "base",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "base"
+      },
+      {
+        "name": "rate",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "rate"
+      }
+    ],
+    "expression": "base*(1+rate/100)",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Apply a simple rate.",
+    "examples": [
+      {
+        "input": {
+          "base": 100,
+          "rate": 15
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "custom-percentage-81",
+    "title": "Custom Percentage Scenario 81",
+    "locale": "en",
+    "cluster": "Percentages & Ratios",
+    "inputs": [
+      {
+        "name": "base",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "base"
+      },
+      {
+        "name": "rate",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "rate"
+      }
+    ],
+    "expression": "base*(1+rate/100)",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Apply a simple rate.",
+    "examples": [
+      {
+        "input": {
+          "base": 100,
+          "rate": 15
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "custom-percentage-82",
+    "title": "Custom Percentage Scenario 82",
+    "locale": "en",
+    "cluster": "Percentages & Ratios",
+    "inputs": [
+      {
+        "name": "base",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "base"
+      },
+      {
+        "name": "rate",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "rate"
+      }
+    ],
+    "expression": "base*(1+rate/100)",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Apply a simple rate.",
+    "examples": [
+      {
+        "input": {
+          "base": 100,
+          "rate": 15
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "custom-percentage-83",
+    "title": "Custom Percentage Scenario 83",
+    "locale": "en",
+    "cluster": "Percentages & Ratios",
+    "inputs": [
+      {
+        "name": "base",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "base"
+      },
+      {
+        "name": "rate",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "rate"
+      }
+    ],
+    "expression": "base*(1+rate/100)",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Apply a simple rate.",
+    "examples": [
+      {
+        "input": {
+          "base": 100,
+          "rate": 15
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "custom-percentage-84",
+    "title": "Custom Percentage Scenario 84",
+    "locale": "en",
+    "cluster": "Percentages & Ratios",
+    "inputs": [
+      {
+        "name": "base",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "base"
+      },
+      {
+        "name": "rate",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "rate"
+      }
+    ],
+    "expression": "base*(1+rate/100)",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Apply a simple rate.",
+    "examples": [
+      {
+        "input": {
+          "base": 100,
+          "rate": 15
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "custom-percentage-85",
+    "title": "Custom Percentage Scenario 85",
+    "locale": "en",
+    "cluster": "Percentages & Ratios",
+    "inputs": [
+      {
+        "name": "base",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "base"
+      },
+      {
+        "name": "rate",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "rate"
+      }
+    ],
+    "expression": "base*(1+rate/100)",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Apply a simple rate.",
+    "examples": [
+      {
+        "input": {
+          "base": 100,
+          "rate": 15
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "custom-percentage-86",
+    "title": "Custom Percentage Scenario 86",
+    "locale": "en",
+    "cluster": "Percentages & Ratios",
+    "inputs": [
+      {
+        "name": "base",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "base"
+      },
+      {
+        "name": "rate",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "rate"
+      }
+    ],
+    "expression": "base*(1+rate/100)",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Apply a simple rate.",
+    "examples": [
+      {
+        "input": {
+          "base": 100,
+          "rate": 15
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "custom-percentage-87",
+    "title": "Custom Percentage Scenario 87",
+    "locale": "en",
+    "cluster": "Percentages & Ratios",
+    "inputs": [
+      {
+        "name": "base",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "base"
+      },
+      {
+        "name": "rate",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "rate"
+      }
+    ],
+    "expression": "base*(1+rate/100)",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Apply a simple rate.",
+    "examples": [
+      {
+        "input": {
+          "base": 100,
+          "rate": 15
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "custom-percentage-88",
+    "title": "Custom Percentage Scenario 88",
+    "locale": "en",
+    "cluster": "Percentages & Ratios",
+    "inputs": [
+      {
+        "name": "base",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "base"
+      },
+      {
+        "name": "rate",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "rate"
+      }
+    ],
+    "expression": "base*(1+rate/100)",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Apply a simple rate.",
+    "examples": [
+      {
+        "input": {
+          "base": 100,
+          "rate": 15
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "custom-percentage-89",
+    "title": "Custom Percentage Scenario 89",
+    "locale": "en",
+    "cluster": "Percentages & Ratios",
+    "inputs": [
+      {
+        "name": "base",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "base"
+      },
+      {
+        "name": "rate",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "rate"
+      }
+    ],
+    "expression": "base*(1+rate/100)",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Apply a simple rate.",
+    "examples": [
+      {
+        "input": {
+          "base": 100,
+          "rate": 15
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "custom-percentage-90",
+    "title": "Custom Percentage Scenario 90",
+    "locale": "en",
+    "cluster": "Percentages & Ratios",
+    "inputs": [
+      {
+        "name": "base",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "base"
+      },
+      {
+        "name": "rate",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "rate"
+      }
+    ],
+    "expression": "base*(1+rate/100)",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Apply a simple rate.",
+    "examples": [
+      {
+        "input": {
+          "base": 100,
+          "rate": 15
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "custom-percentage-91",
+    "title": "Custom Percentage Scenario 91",
+    "locale": "en",
+    "cluster": "Percentages & Ratios",
+    "inputs": [
+      {
+        "name": "base",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "base"
+      },
+      {
+        "name": "rate",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "rate"
+      }
+    ],
+    "expression": "base*(1+rate/100)",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Apply a simple rate.",
+    "examples": [
+      {
+        "input": {
+          "base": 100,
+          "rate": 15
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "custom-percentage-92",
+    "title": "Custom Percentage Scenario 92",
+    "locale": "en",
+    "cluster": "Percentages & Ratios",
+    "inputs": [
+      {
+        "name": "base",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "base"
+      },
+      {
+        "name": "rate",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "rate"
+      }
+    ],
+    "expression": "base*(1+rate/100)",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Apply a simple rate.",
+    "examples": [
+      {
+        "input": {
+          "base": 100,
+          "rate": 15
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "custom-percentage-93",
+    "title": "Custom Percentage Scenario 93",
+    "locale": "en",
+    "cluster": "Percentages & Ratios",
+    "inputs": [
+      {
+        "name": "base",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "base"
+      },
+      {
+        "name": "rate",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "rate"
+      }
+    ],
+    "expression": "base*(1+rate/100)",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Apply a simple rate.",
+    "examples": [
+      {
+        "input": {
+          "base": 100,
+          "rate": 15
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "custom-percentage-94",
+    "title": "Custom Percentage Scenario 94",
+    "locale": "en",
+    "cluster": "Percentages & Ratios",
+    "inputs": [
+      {
+        "name": "base",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "base"
+      },
+      {
+        "name": "rate",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "rate"
+      }
+    ],
+    "expression": "base*(1+rate/100)",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Apply a simple rate.",
+    "examples": [
+      {
+        "input": {
+          "base": 100,
+          "rate": 15
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "custom-percentage-95",
+    "title": "Custom Percentage Scenario 95",
+    "locale": "en",
+    "cluster": "Percentages & Ratios",
+    "inputs": [
+      {
+        "name": "base",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "base"
+      },
+      {
+        "name": "rate",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "rate"
+      }
+    ],
+    "expression": "base*(1+rate/100)",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Apply a simple rate.",
+    "examples": [
+      {
+        "input": {
+          "base": 100,
+          "rate": 15
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "custom-percentage-96",
+    "title": "Custom Percentage Scenario 96",
+    "locale": "en",
+    "cluster": "Percentages & Ratios",
+    "inputs": [
+      {
+        "name": "base",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "base"
+      },
+      {
+        "name": "rate",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "rate"
+      }
+    ],
+    "expression": "base*(1+rate/100)",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Apply a simple rate.",
+    "examples": [
+      {
+        "input": {
+          "base": 100,
+          "rate": 15
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "custom-percentage-97",
+    "title": "Custom Percentage Scenario 97",
+    "locale": "en",
+    "cluster": "Percentages & Ratios",
+    "inputs": [
+      {
+        "name": "base",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "base"
+      },
+      {
+        "name": "rate",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "rate"
+      }
+    ],
+    "expression": "base*(1+rate/100)",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Apply a simple rate.",
+    "examples": [
+      {
+        "input": {
+          "base": 100,
+          "rate": 15
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "custom-percentage-98",
+    "title": "Custom Percentage Scenario 98",
+    "locale": "en",
+    "cluster": "Percentages & Ratios",
+    "inputs": [
+      {
+        "name": "base",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "base"
+      },
+      {
+        "name": "rate",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "rate"
+      }
+    ],
+    "expression": "base*(1+rate/100)",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Apply a simple rate.",
+    "examples": [
+      {
+        "input": {
+          "base": 100,
+          "rate": 15
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "custom-percentage-99",
+    "title": "Custom Percentage Scenario 99",
+    "locale": "en",
+    "cluster": "Percentages & Ratios",
+    "inputs": [
+      {
+        "name": "base",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "base"
+      },
+      {
+        "name": "rate",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "rate"
+      }
+    ],
+    "expression": "base*(1+rate/100)",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Apply a simple rate.",
+    "examples": [
+      {
+        "input": {
+          "base": 100,
+          "rate": 15
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "custom-percentage-100",
+    "title": "Custom Percentage Scenario 100",
+    "locale": "en",
+    "cluster": "Percentages & Ratios",
+    "inputs": [
+      {
+        "name": "base",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "base"
+      },
+      {
+        "name": "rate",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "rate"
+      }
+    ],
+    "expression": "base*(1+rate/100)",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Apply a simple rate.",
+    "examples": [
+      {
+        "input": {
+          "base": 100,
+          "rate": 15
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "custom-percentage-101",
+    "title": "Custom Percentage Scenario 101",
+    "locale": "en",
+    "cluster": "Percentages & Ratios",
+    "inputs": [
+      {
+        "name": "base",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "base"
+      },
+      {
+        "name": "rate",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "rate"
+      }
+    ],
+    "expression": "base*(1+rate/100)",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Apply a simple rate.",
+    "examples": [
+      {
+        "input": {
+          "base": 100,
+          "rate": 15
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "custom-percentage-102",
+    "title": "Custom Percentage Scenario 102",
+    "locale": "en",
+    "cluster": "Percentages & Ratios",
+    "inputs": [
+      {
+        "name": "base",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "base"
+      },
+      {
+        "name": "rate",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "rate"
+      }
+    ],
+    "expression": "base*(1+rate/100)",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Apply a simple rate.",
+    "examples": [
+      {
+        "input": {
+          "base": 100,
+          "rate": 15
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "custom-percentage-103",
+    "title": "Custom Percentage Scenario 103",
+    "locale": "en",
+    "cluster": "Percentages & Ratios",
+    "inputs": [
+      {
+        "name": "base",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "base"
+      },
+      {
+        "name": "rate",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "rate"
+      }
+    ],
+    "expression": "base*(1+rate/100)",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Apply a simple rate.",
+    "examples": [
+      {
+        "input": {
+          "base": 100,
+          "rate": 15
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "custom-percentage-104",
+    "title": "Custom Percentage Scenario 104",
+    "locale": "en",
+    "cluster": "Percentages & Ratios",
+    "inputs": [
+      {
+        "name": "base",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "base"
+      },
+      {
+        "name": "rate",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "rate"
+      }
+    ],
+    "expression": "base*(1+rate/100)",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Apply a simple rate.",
+    "examples": [
+      {
+        "input": {
+          "base": 100,
+          "rate": 15
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "custom-percentage-105",
+    "title": "Custom Percentage Scenario 105",
+    "locale": "en",
+    "cluster": "Percentages & Ratios",
+    "inputs": [
+      {
+        "name": "base",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "base"
+      },
+      {
+        "name": "rate",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "rate"
+      }
+    ],
+    "expression": "base*(1+rate/100)",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Apply a simple rate.",
+    "examples": [
+      {
+        "input": {
+          "base": 100,
+          "rate": 15
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "custom-percentage-106",
+    "title": "Custom Percentage Scenario 106",
+    "locale": "en",
+    "cluster": "Percentages & Ratios",
+    "inputs": [
+      {
+        "name": "base",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "base"
+      },
+      {
+        "name": "rate",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "rate"
+      }
+    ],
+    "expression": "base*(1+rate/100)",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Apply a simple rate.",
+    "examples": [
+      {
+        "input": {
+          "base": 100,
+          "rate": 15
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "custom-percentage-107",
+    "title": "Custom Percentage Scenario 107",
+    "locale": "en",
+    "cluster": "Percentages & Ratios",
+    "inputs": [
+      {
+        "name": "base",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "base"
+      },
+      {
+        "name": "rate",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "rate"
+      }
+    ],
+    "expression": "base*(1+rate/100)",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Apply a simple rate.",
+    "examples": [
+      {
+        "input": {
+          "base": 100,
+          "rate": 15
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "custom-percentage-108",
+    "title": "Custom Percentage Scenario 108",
+    "locale": "en",
+    "cluster": "Percentages & Ratios",
+    "inputs": [
+      {
+        "name": "base",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "base"
+      },
+      {
+        "name": "rate",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "rate"
+      }
+    ],
+    "expression": "base*(1+rate/100)",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Apply a simple rate.",
+    "examples": [
+      {
+        "input": {
+          "base": 100,
+          "rate": 15
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "custom-percentage-109",
+    "title": "Custom Percentage Scenario 109",
+    "locale": "en",
+    "cluster": "Percentages & Ratios",
+    "inputs": [
+      {
+        "name": "base",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "base"
+      },
+      {
+        "name": "rate",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "rate"
+      }
+    ],
+    "expression": "base*(1+rate/100)",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Apply a simple rate.",
+    "examples": [
+      {
+        "input": {
+          "base": 100,
+          "rate": 15
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "custom-percentage-110",
+    "title": "Custom Percentage Scenario 110",
+    "locale": "en",
+    "cluster": "Percentages & Ratios",
+    "inputs": [
+      {
+        "name": "base",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "base"
+      },
+      {
+        "name": "rate",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "rate"
+      }
+    ],
+    "expression": "base*(1+rate/100)",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Apply a simple rate.",
+    "examples": [
+      {
+        "input": {
+          "base": 100,
+          "rate": 15
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "custom-percentage-111",
+    "title": "Custom Percentage Scenario 111",
+    "locale": "en",
+    "cluster": "Percentages & Ratios",
+    "inputs": [
+      {
+        "name": "base",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "base"
+      },
+      {
+        "name": "rate",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "rate"
+      }
+    ],
+    "expression": "base*(1+rate/100)",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Apply a simple rate.",
+    "examples": [
+      {
+        "input": {
+          "base": 100,
+          "rate": 15
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "custom-percentage-112",
+    "title": "Custom Percentage Scenario 112",
+    "locale": "en",
+    "cluster": "Percentages & Ratios",
+    "inputs": [
+      {
+        "name": "base",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "base"
+      },
+      {
+        "name": "rate",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "rate"
+      }
+    ],
+    "expression": "base*(1+rate/100)",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Apply a simple rate.",
+    "examples": [
+      {
+        "input": {
+          "base": 100,
+          "rate": 15
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "custom-percentage-113",
+    "title": "Custom Percentage Scenario 113",
+    "locale": "en",
+    "cluster": "Percentages & Ratios",
+    "inputs": [
+      {
+        "name": "base",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "base"
+      },
+      {
+        "name": "rate",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "rate"
+      }
+    ],
+    "expression": "base*(1+rate/100)",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Apply a simple rate.",
+    "examples": [
+      {
+        "input": {
+          "base": 100,
+          "rate": 15
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "custom-percentage-114",
+    "title": "Custom Percentage Scenario 114",
+    "locale": "en",
+    "cluster": "Percentages & Ratios",
+    "inputs": [
+      {
+        "name": "base",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "base"
+      },
+      {
+        "name": "rate",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "rate"
+      }
+    ],
+    "expression": "base*(1+rate/100)",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Apply a simple rate.",
+    "examples": [
+      {
+        "input": {
+          "base": 100,
+          "rate": 15
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "custom-percentage-115",
+    "title": "Custom Percentage Scenario 115",
+    "locale": "en",
+    "cluster": "Percentages & Ratios",
+    "inputs": [
+      {
+        "name": "base",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "base"
+      },
+      {
+        "name": "rate",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "rate"
+      }
+    ],
+    "expression": "base*(1+rate/100)",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Apply a simple rate.",
+    "examples": [
+      {
+        "input": {
+          "base": 100,
+          "rate": 15
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "custom-percentage-116",
+    "title": "Custom Percentage Scenario 116",
+    "locale": "en",
+    "cluster": "Percentages & Ratios",
+    "inputs": [
+      {
+        "name": "base",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "base"
+      },
+      {
+        "name": "rate",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "rate"
+      }
+    ],
+    "expression": "base*(1+rate/100)",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Apply a simple rate.",
+    "examples": [
+      {
+        "input": {
+          "base": 100,
+          "rate": 15
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "custom-percentage-117",
+    "title": "Custom Percentage Scenario 117",
+    "locale": "en",
+    "cluster": "Percentages & Ratios",
+    "inputs": [
+      {
+        "name": "base",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "base"
+      },
+      {
+        "name": "rate",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "rate"
+      }
+    ],
+    "expression": "base*(1+rate/100)",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Apply a simple rate.",
+    "examples": [
+      {
+        "input": {
+          "base": 100,
+          "rate": 15
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "custom-percentage-118",
+    "title": "Custom Percentage Scenario 118",
+    "locale": "en",
+    "cluster": "Percentages & Ratios",
+    "inputs": [
+      {
+        "name": "base",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "base"
+      },
+      {
+        "name": "rate",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "rate"
+      }
+    ],
+    "expression": "base*(1+rate/100)",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Apply a simple rate.",
+    "examples": [
+      {
+        "input": {
+          "base": 100,
+          "rate": 15
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "custom-percentage-119",
+    "title": "Custom Percentage Scenario 119",
+    "locale": "en",
+    "cluster": "Percentages & Ratios",
+    "inputs": [
+      {
+        "name": "base",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "base"
+      },
+      {
+        "name": "rate",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "rate"
+      }
+    ],
+    "expression": "base*(1+rate/100)",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Apply a simple rate.",
+    "examples": [
+      {
+        "input": {
+          "base": 100,
+          "rate": 15
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "custom-percentage-120",
+    "title": "Custom Percentage Scenario 120",
+    "locale": "en",
+    "cluster": "Percentages & Ratios",
+    "inputs": [
+      {
+        "name": "base",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "base"
+      },
+      {
+        "name": "rate",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "rate"
+      }
+    ],
+    "expression": "base*(1+rate/100)",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Apply a simple rate.",
+    "examples": [
+      {
+        "input": {
+          "base": 100,
+          "rate": 15
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "custom-percentage-121",
+    "title": "Custom Percentage Scenario 121",
+    "locale": "en",
+    "cluster": "Percentages & Ratios",
+    "inputs": [
+      {
+        "name": "base",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "base"
+      },
+      {
+        "name": "rate",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "rate"
+      }
+    ],
+    "expression": "base*(1+rate/100)",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Apply a simple rate.",
+    "examples": [
+      {
+        "input": {
+          "base": 100,
+          "rate": 15
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "custom-percentage-122",
+    "title": "Custom Percentage Scenario 122",
+    "locale": "en",
+    "cluster": "Percentages & Ratios",
+    "inputs": [
+      {
+        "name": "base",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "base"
+      },
+      {
+        "name": "rate",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "rate"
+      }
+    ],
+    "expression": "base*(1+rate/100)",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Apply a simple rate.",
+    "examples": [
+      {
+        "input": {
+          "base": 100,
+          "rate": 15
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "custom-percentage-123",
+    "title": "Custom Percentage Scenario 123",
+    "locale": "en",
+    "cluster": "Percentages & Ratios",
+    "inputs": [
+      {
+        "name": "base",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "base"
+      },
+      {
+        "name": "rate",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "rate"
+      }
+    ],
+    "expression": "base*(1+rate/100)",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Apply a simple rate.",
+    "examples": [
+      {
+        "input": {
+          "base": 100,
+          "rate": 15
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "custom-percentage-124",
+    "title": "Custom Percentage Scenario 124",
+    "locale": "en",
+    "cluster": "Percentages & Ratios",
+    "inputs": [
+      {
+        "name": "base",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "base"
+      },
+      {
+        "name": "rate",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "rate"
+      }
+    ],
+    "expression": "base*(1+rate/100)",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Apply a simple rate.",
+    "examples": [
+      {
+        "input": {
+          "base": 100,
+          "rate": 15
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "custom-percentage-125",
+    "title": "Custom Percentage Scenario 125",
+    "locale": "en",
+    "cluster": "Percentages & Ratios",
+    "inputs": [
+      {
+        "name": "base",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "base"
+      },
+      {
+        "name": "rate",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "rate"
+      }
+    ],
+    "expression": "base*(1+rate/100)",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Apply a simple rate.",
+    "examples": [
+      {
+        "input": {
+          "base": 100,
+          "rate": 15
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "custom-percentage-126",
+    "title": "Custom Percentage Scenario 126",
+    "locale": "en",
+    "cluster": "Percentages & Ratios",
+    "inputs": [
+      {
+        "name": "base",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "base"
+      },
+      {
+        "name": "rate",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "rate"
+      }
+    ],
+    "expression": "base*(1+rate/100)",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Apply a simple rate.",
+    "examples": [
+      {
+        "input": {
+          "base": 100,
+          "rate": 15
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "custom-percentage-127",
+    "title": "Custom Percentage Scenario 127",
+    "locale": "en",
+    "cluster": "Percentages & Ratios",
+    "inputs": [
+      {
+        "name": "base",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "base"
+      },
+      {
+        "name": "rate",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "rate"
+      }
+    ],
+    "expression": "base*(1+rate/100)",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Apply a simple rate.",
+    "examples": [
+      {
+        "input": {
+          "base": 100,
+          "rate": 15
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "custom-percentage-128",
+    "title": "Custom Percentage Scenario 128",
+    "locale": "en",
+    "cluster": "Percentages & Ratios",
+    "inputs": [
+      {
+        "name": "base",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "base"
+      },
+      {
+        "name": "rate",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "rate"
+      }
+    ],
+    "expression": "base*(1+rate/100)",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Apply a simple rate.",
+    "examples": [
+      {
+        "input": {
+          "base": 100,
+          "rate": 15
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "custom-percentage-129",
+    "title": "Custom Percentage Scenario 129",
+    "locale": "en",
+    "cluster": "Percentages & Ratios",
+    "inputs": [
+      {
+        "name": "base",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "base"
+      },
+      {
+        "name": "rate",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "rate"
+      }
+    ],
+    "expression": "base*(1+rate/100)",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Apply a simple rate.",
+    "examples": [
+      {
+        "input": {
+          "base": 100,
+          "rate": 15
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "custom-percentage-130",
+    "title": "Custom Percentage Scenario 130",
+    "locale": "en",
+    "cluster": "Percentages & Ratios",
+    "inputs": [
+      {
+        "name": "base",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "base"
+      },
+      {
+        "name": "rate",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "rate"
+      }
+    ],
+    "expression": "base*(1+rate/100)",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Apply a simple rate.",
+    "examples": [
+      {
+        "input": {
+          "base": 100,
+          "rate": 15
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "custom-percentage-131",
+    "title": "Custom Percentage Scenario 131",
+    "locale": "en",
+    "cluster": "Percentages & Ratios",
+    "inputs": [
+      {
+        "name": "base",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "base"
+      },
+      {
+        "name": "rate",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "rate"
+      }
+    ],
+    "expression": "base*(1+rate/100)",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Apply a simple rate.",
+    "examples": [
+      {
+        "input": {
+          "base": 100,
+          "rate": 15
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "custom-percentage-132",
+    "title": "Custom Percentage Scenario 132",
+    "locale": "en",
+    "cluster": "Percentages & Ratios",
+    "inputs": [
+      {
+        "name": "base",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "base"
+      },
+      {
+        "name": "rate",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "rate"
+      }
+    ],
+    "expression": "base*(1+rate/100)",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Apply a simple rate.",
+    "examples": [
+      {
+        "input": {
+          "base": 100,
+          "rate": 15
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "custom-percentage-133",
+    "title": "Custom Percentage Scenario 133",
+    "locale": "en",
+    "cluster": "Percentages & Ratios",
+    "inputs": [
+      {
+        "name": "base",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "base"
+      },
+      {
+        "name": "rate",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "rate"
+      }
+    ],
+    "expression": "base*(1+rate/100)",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Apply a simple rate.",
+    "examples": [
+      {
+        "input": {
+          "base": 100,
+          "rate": 15
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "custom-percentage-134",
+    "title": "Custom Percentage Scenario 134",
+    "locale": "en",
+    "cluster": "Percentages & Ratios",
+    "inputs": [
+      {
+        "name": "base",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "base"
+      },
+      {
+        "name": "rate",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "rate"
+      }
+    ],
+    "expression": "base*(1+rate/100)",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Apply a simple rate.",
+    "examples": [
+      {
+        "input": {
+          "base": 100,
+          "rate": 15
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "custom-percentage-135",
+    "title": "Custom Percentage Scenario 135",
+    "locale": "en",
+    "cluster": "Percentages & Ratios",
+    "inputs": [
+      {
+        "name": "base",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "base"
+      },
+      {
+        "name": "rate",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "rate"
+      }
+    ],
+    "expression": "base*(1+rate/100)",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Apply a simple rate.",
+    "examples": [
+      {
+        "input": {
+          "base": 100,
+          "rate": 15
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "custom-percentage-136",
+    "title": "Custom Percentage Scenario 136",
+    "locale": "en",
+    "cluster": "Percentages & Ratios",
+    "inputs": [
+      {
+        "name": "base",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "base"
+      },
+      {
+        "name": "rate",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "rate"
+      }
+    ],
+    "expression": "base*(1+rate/100)",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Apply a simple rate.",
+    "examples": [
+      {
+        "input": {
+          "base": 100,
+          "rate": 15
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "custom-percentage-137",
+    "title": "Custom Percentage Scenario 137",
+    "locale": "en",
+    "cluster": "Percentages & Ratios",
+    "inputs": [
+      {
+        "name": "base",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "base"
+      },
+      {
+        "name": "rate",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "rate"
+      }
+    ],
+    "expression": "base*(1+rate/100)",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Apply a simple rate.",
+    "examples": [
+      {
+        "input": {
+          "base": 100,
+          "rate": 15
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "custom-percentage-138",
+    "title": "Custom Percentage Scenario 138",
+    "locale": "en",
+    "cluster": "Percentages & Ratios",
+    "inputs": [
+      {
+        "name": "base",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "base"
+      },
+      {
+        "name": "rate",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "rate"
+      }
+    ],
+    "expression": "base*(1+rate/100)",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Apply a simple rate.",
+    "examples": [
+      {
+        "input": {
+          "base": 100,
+          "rate": 15
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "custom-percentage-139",
+    "title": "Custom Percentage Scenario 139",
+    "locale": "en",
+    "cluster": "Percentages & Ratios",
+    "inputs": [
+      {
+        "name": "base",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "base"
+      },
+      {
+        "name": "rate",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "rate"
+      }
+    ],
+    "expression": "base*(1+rate/100)",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Apply a simple rate.",
+    "examples": [
+      {
+        "input": {
+          "base": 100,
+          "rate": 15
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "custom-percentage-140",
+    "title": "Custom Percentage Scenario 140",
+    "locale": "en",
+    "cluster": "Percentages & Ratios",
+    "inputs": [
+      {
+        "name": "base",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "base"
+      },
+      {
+        "name": "rate",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "rate"
+      }
+    ],
+    "expression": "base*(1+rate/100)",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Apply a simple rate.",
+    "examples": [
+      {
+        "input": {
+          "base": 100,
+          "rate": 15
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "custom-percentage-141",
+    "title": "Custom Percentage Scenario 141",
+    "locale": "en",
+    "cluster": "Percentages & Ratios",
+    "inputs": [
+      {
+        "name": "base",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "base"
+      },
+      {
+        "name": "rate",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "rate"
+      }
+    ],
+    "expression": "base*(1+rate/100)",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Apply a simple rate.",
+    "examples": [
+      {
+        "input": {
+          "base": 100,
+          "rate": 15
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "custom-percentage-142",
+    "title": "Custom Percentage Scenario 142",
+    "locale": "en",
+    "cluster": "Percentages & Ratios",
+    "inputs": [
+      {
+        "name": "base",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "base"
+      },
+      {
+        "name": "rate",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "rate"
+      }
+    ],
+    "expression": "base*(1+rate/100)",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Apply a simple rate.",
+    "examples": [
+      {
+        "input": {
+          "base": 100,
+          "rate": 15
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "custom-percentage-143",
+    "title": "Custom Percentage Scenario 143",
+    "locale": "en",
+    "cluster": "Percentages & Ratios",
+    "inputs": [
+      {
+        "name": "base",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "base"
+      },
+      {
+        "name": "rate",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "rate"
+      }
+    ],
+    "expression": "base*(1+rate/100)",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Apply a simple rate.",
+    "examples": [
+      {
+        "input": {
+          "base": 100,
+          "rate": 15
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "custom-percentage-144",
+    "title": "Custom Percentage Scenario 144",
+    "locale": "en",
+    "cluster": "Percentages & Ratios",
+    "inputs": [
+      {
+        "name": "base",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "base"
+      },
+      {
+        "name": "rate",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "rate"
+      }
+    ],
+    "expression": "base*(1+rate/100)",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Apply a simple rate.",
+    "examples": [
+      {
+        "input": {
+          "base": 100,
+          "rate": 15
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "custom-percentage-145",
+    "title": "Custom Percentage Scenario 145",
+    "locale": "en",
+    "cluster": "Percentages & Ratios",
+    "inputs": [
+      {
+        "name": "base",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "base"
+      },
+      {
+        "name": "rate",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "rate"
+      }
+    ],
+    "expression": "base*(1+rate/100)",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Apply a simple rate.",
+    "examples": [
+      {
+        "input": {
+          "base": 100,
+          "rate": 15
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  },
+  {
+    "slug": "custom-percentage-146",
+    "title": "Custom Percentage Scenario 146",
+    "locale": "en",
+    "cluster": "Percentages & Ratios",
+    "inputs": [
+      {
+        "name": "base",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "base"
+      },
+      {
+        "name": "rate",
+        "type": "number",
+        "min": 0,
+        "step": 0.01,
+        "hint": "rate"
+      }
+    ],
+    "expression": "base*(1+rate/100)",
+    "units": {
+      "input": "",
+      "output": ""
+    },
+    "intro": "Apply a simple rate.",
+    "examples": [
+      {
+        "input": {
+          "base": 100,
+          "rate": 15
+        },
+        "output": "example"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do you calculate it?",
+        "a": "By applying the shown expression."
+      }
+    ],
+    "disclaimer": "Educational information, not professional advice.",
+    "schema_org": "FAQPage|SoftwareApplication"
+  }
+]
