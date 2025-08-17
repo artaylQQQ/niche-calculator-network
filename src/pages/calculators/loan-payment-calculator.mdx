@@ -1,11 +1,10 @@
 ---
 layout: ../../layouts/BaseLayout.astro
-title: "Loan Payment Calculator"
-description: "Loan Payment Calculator — online calculator."
-slug: "loan-payment-calculator"
-date: "2025-08-16"
-updated: "2025-08-16"
-cluster: "General"
+title: Loan Payment Calculator
+description: Estimate fixed monthly payments for a loan using the standard amortization formula.
+date: 2025-08-17
+updated: 2025-08-17
+cluster: Finance & Loans
 ---
 
 import Calculator from '../../components/Calculator.astro';
@@ -14,21 +13,30 @@ export const schema = {
   "slug": "loan-payment-calculator",
   "title": "Loan Payment Calculator",
   "locale": "en",
-  "inputs": [],
+  "inputs": [
+    {"name":"principal","type":"number","min":0,"step":0.01,"hint":"Loan amount"},
+    {"name":"annualRate","type":"number","min":0,"step":0.01,"hint":"Annual interest rate (%)"},
+    {"name":"years","type":"number","min":0,"step":1,"hint":"Term (years)"}
+  ],
+  "expression": "principal * ((annualRate/1200) * (1 + (annualRate/1200))^(years*12)) / ((1 + (annualRate/1200))^(years*12) - 1)",
   "formula_js": "",
   "units": {"input":"","output":""},
-  "intro": "",
-  "examples": [],
-  "faqs": [],
+  "intro": "Compute your estimated monthly payment for a fixed-rate loan.",
+  "examples": [{"input":{"principal":10000,"annualRate":6,"years":3},"output":"304.22 (approx.)"}],
+  "faqs": [{"q":"What is the formula?","a":"We use the standard amortization formula with monthly rate r = annualRate/12/100 and n = years*12."}],
   "disclaimer": "Educational information, not professional advice.",
   "schema_org": "FAQPage|SoftwareApplication",
-  "related": []
+  "related": ["percentage-discount-calculator"]
 };
 
 # Loan Payment Calculator
 
+Estimate your monthly payment.
+
 <Calculator schema={schema} />
 
+## FAQ
+- **What is the formula?** — We use the standard amortization formula with monthly rate r = annualRate/12/100 and n = years*12.
+
 ## Related calculators
-- [loan payment calculator](/calculators/loan-payment-calculator/)
-- [percentage discount calculator](/calculators/percentage-discount-calculator/)
+- [Percentage Discount Calculator](/calculators/percentage-discount-calculator/)
