@@ -1,8 +1,6 @@
 ---
-// src/components/Calculator.astro — V011 runtime fix (patch 4)
-// 1) Sin `${...}` dentro del <script>.
-// 2) Pasa `expression`, `formula_js`, `locale`, `units.output` por data-*.
-// 3) JS plano, sin TypeScript y sin dependencias externas.
+// src/components/Calculator.astro — V011 runtime fix (patch 5)
+// Cambios: RegExp corregida (guion al final, sin "NaInfty").
 const { schema } = Astro.props;
 const locale = (schema?.locale ?? "en-US");
 const inputs = Array.isArray(schema?.inputs) ? schema.inputs : [];
@@ -107,8 +105,8 @@ const disclaimer = schema?.disclaimer || "Educational information, not professio
       var re = new RegExp("\\\\b" + k + "\\\\b", "g");
       s = s.replace(re, String(scope[k]));
     }
-    // Allowed chars check
-    if (!/^[0-9+\\-*/%^().,\\sNaInfty\\-eE]+$/.test(s)) {
+    // Allowed chars check (digits, operators, parentheses, dot, comma, space, E/e, minus)
+    if (!/^[0-9+/*%^().,\\sEe-]+$/.test(s)) {
       throw new Error("Invalid characters in expression.");
     }
     // caret -> exponent
@@ -155,7 +153,7 @@ const disclaimer = schema?.disclaimer || "Educational information, not professio
       }
       if (bad) { resultEl.textContent = ""; return; }
       var res = compute(vals);
-      resultEl.textContent = "Result: " + fmt.format(res) + (unitSuffix ? " " + unitSuffix : "");
+      resultEl.textContent = "Result: " + new Intl.NumberFormat(locale, { maximumFractionDigits: 8 }).format(res) + (unitSuffix ? " " + unitSuffix : "");
     }catch(e){
       console.error(e);
       resultEl.textContent = "Unable to compute. Please check your inputs.";
