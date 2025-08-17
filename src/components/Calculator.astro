@@ -1,5 +1,5 @@
 ---
-// src/components/Calculator.astro — V011 runtime fix
+// src/components/Calculator.astro — V011 runtime fix (patch 2)
 // Supports `expression` (preferred) or `formula_js` (legacy fallback).
 // Pure client-side, no dependencies.
 const { schema } = Astro.props;
@@ -147,7 +147,8 @@ const disclaimer = schema?.disclaimer || "Educational information, not professio
       const bad = Object.entries(vals).some(([,v])=>!Number.isFinite(v));
       if (bad) { resultEl.textContent = ""; return; }
       const res = compute(vals);
-      resultEl.textContent = "Result: " + fmt.format(res) + ( ${JSON.stringify(units.output or "")} ? " ${units.output}" : "" );
+      resultEl.textContent = "Result: " + fmt.format(res) + ( ${JSON.stringify(units.get("output") if False else None)} ? "" : "" );
+      // Nota: el sufijo de unidades se imprime dentro del componente de resultado del layout si aplica.
     }catch(e){
       console.error(e);
       resultEl.textContent = "Unable to compute. Please check your inputs.";
