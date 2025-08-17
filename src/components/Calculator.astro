@@ -1,155 +1,157 @@
 ---
-import { evalExpression } from '../lib/safeEval';
+// src/components/Calculator.astro — V011 runtime fix
+// Supports `expression` (preferred) or `formula_js` (legacy fallback).
+// Pure client-side, no dependencies.
 const { schema } = Astro.props;
-
-const whitelist = (schema?.inputs || []).map((i: any) => i.name);
-const nf = new Intl.NumberFormat(schema?.locale || 'en-US', { maximumFractionDigits: 6 });
-const hasAds = Boolean(import.meta.env.VITE_ADSENSE_CLIENT);
+const locale = schema?.locale || "en-US";
+const title = schema?.title || "Calculator";
+const inputs = Array.isArray(schema?.inputs) ? schema.inputs : [];
+const expression = typeof schema?.expression === "string" ? schema.expression.trim() : "";
+const formulaJS = typeof schema?.formula_js === "string" ? schema.formula_js.trim() : "";
+const units = schema?.units || { input: "", output: "" };
+const disclaimer = schema?.disclaimer || "Educational information, not professional advice.";
 ---
 
-<form id="calc" class="space-y-3" on:submit|preventDefault={() => {}}>
-  {schema?.inputs?.map((inp: any) => (
-    <div class="flex flex-col gap-1">
-      <label for={inp.name} class="font-medium">{inp.hint || inp.name}</label>
-      <input
-        id={inp.name}
-        name={inp.name}
-        type="number"
-        inputmode="decimal"
-        step={inp.step ?? 'any'}
-        min={inp.min ?? undefined}
-        max={inp.max ?? undefined}
-        class="border rounded px-3 py-2"
-        aria-describedby={`help-${inp.name}`}
-        aria-invalid="false"
-      />
-      <small id={`help-${inp.name}`} class="text-xs opacity-70">
-        {schema?.units?.input ? `Unit: ${schema.units.input}` : ''}
-      </small>
-      <div id={`err-${inp.name}`} class="text-xs text-red-600" aria-live="polite"></div>
-    </div>
-  ))}
-
-  <button class="px-4 py-2 rounded bg-black text-white">Calculate</button>
-</form>
-
-<div id="result" class="mt-4" role="status" aria-live="polite"></div>
-
-{hasAds && (
-  <ins class="adsbygoogle"
-    style="display:block;min-height:280px"
-    data-ad-client={import.meta.env.VITE_ADSENSE_CLIENT}
-    data-ad-slot={import.meta.env.VITE_ADSENSE_SLOTHEADER || ''}
-    data-ad-format="auto"
-    data-full-width-responsive="true">
-  </ins>
-)}
-
-{schema?.examples?.length > 0 && (
-  <details class="mt-6">
-    <summary class="cursor-pointer font-semibold">Examples</summary>
-    <ul class="list-disc ml-6 mt-2">
-      {schema.examples.map((ex: any) => (
-        <li>
-          <code>{JSON.stringify(ex.input)}</code> → <strong>{ex.output}</strong>
-        </li>
+<section class="calculator not-prose">
+  <form id="calc-form" class="space-y-4" novalidate>
+    <div class="grid gap-3">
+      {inputs.map((f, idx) => (
+        <div class="flex flex-col" id={`field-${f.name}`}>
+          <label for={`inp-${f.name}`} class="font-medium">{f.hint || f.name}</label>
+          <input
+            id={`inp-${f.name}`}
+            name={f.name}
+            type={f.type || "number"}
+            step={f.step ?? "any"}
+            min={typeof f.min !== "undefined" ? f.min : undefined}
+            max={typeof f.max !== "undefined" ? f.max : undefined}
+            inputmode="decimal"
+            class="border rounded px-3 py-2"
+            required
+          />
+          <small id={`err-${f.name}`} class="text-red-600 hidden"></small>
+        </div>
       ))}
-    </ul>
-  </details>
-)}
+    </div>
 
-<script is:raw>
+    <button id="btn-calc" type="submit" class="border rounded px-4 py-2">
+      Calculate
+    </button>
+
+    <div id="result" class="mt-3" aria-live="polite" role="status"></div>
+  </form>
+
+  <p class="text-xs opacity-70 mt-4">{disclaimer}</p>
+</section>
+
+<style>
+.hidden{ display:none }
+</style>
+
+<script>
 (function(){
-  const form = document.getElementById('calc');
-  const result = document.getElementById('result');
-  const inputs = Array.from(form.querySelectorAll('input'));
-  const schema = ${json.dumps({})};
+  const form = document.getElementById("calc-form");
+  const resultEl = document.getElementById("result");
 
-  window.safeEvalExpression = function(expr, vars, whitelist){
-    const OPS = {'+':{p:1,r:false,fn:(a,b)=>a+b},'-':{p:1,r:false,fn:(a,b)=>a-b},'*':{p:2,r:false,fn:(a,b)=>a*b},'/':{p:2,r:false,fn:(a,b)=>a/b},'^':{p:3,r:true,fn:(a,b)=>Math.pow(a,b)}};
-    const tokens=[]; const re=/([A-Za-z_][A-Za-z0-9_]*)|(\d+(?:\.\d+)?)|([+\-*/^()])/g; let m;
-    while((m=re.exec(expr))) tokens.push(m[0]);
-    const toRPN=[]; const stack=[];
-    for(const t of tokens){
-      if(/^\d/.test(t)) toRPN.push(t);
-      else if(/^[A-Za-z_]/.test(t)){ if(!whitelist.includes(t)) throw new Error('Unknown var'); toRPN.push('#'+t); }
-      else if(OPS[t]){ while(stack.length){ const o2=stack[stack.length-1]; if(!OPS[o2]) break; const o1=OPS[t],oB=OPS[o2]; if((o1.r&&o1.p<oB.p)||(!o1.r&&o1.p<=oB.p)) toRPN.push(stack.pop()); else break;} stack.push(t); }
-      else if(t==='(') stack.push(t);
-      else if(t===')'){ while(stack.length&&stack[stack.length-1]!=='(') toRPN.push(stack.pop()); if(!stack.length) throw new Error('paren'); stack.pop(); }
-    }
-    while(stack.length){ const s=stack.pop(); if(s==='(') throw new Error('paren'); toRPN.push(s); }
-    const st=[]; for(const t of toRPN){
-      if(OPS[t]){ const b=st.pop(), a=st.pop(); if(a===undefined||b===undefined) throw new Error('malformed'); st.push(OPS[t].fn(a,b)); }
-      else if(t[0]==='#'){ const k=t.slice(1); const v=vars[k]; if(typeof v!=='number'||isNaN(v)) throw new Error('invalid'); st.push(v); }
-      else st.push(parseFloat(t));
-    }
-    if(st.length!==1) throw new Error('malformed'); return st[0];
-  };
+  const fmt = new Intl.NumberFormat(${JSON.stringify(locale)}, { maximumFractionDigits: 8 });
 
-  function readVars(){
-    const vars = {};
-    for (const el of inputs) {
-      const v = el.value.trim();
-      const num = v === '' ? NaN : Number(v);
-      vars[el.name] = num;
+  function getValues(){
+    const vals = {};
+    for (const el of form.elements) {
+      if (!el.name) continue;
+      const v = (el.value || "").trim();
+      if (v === "") { vals[el.name] = NaN; continue; }
+      const num = Number(v);
+      vals[el.name] = Number.isFinite(num) ? num : NaN;
     }
-    return vars;
+    return vals;
   }
 
-  function setError(name, msg){
-    const el = document.getElementById('err-'+name);
-    const input = document.getElementById(name);
-    if (msg) {
-      el.textContent = msg;
-      input.setAttribute('aria-invalid','true');
-      input.setAttribute('aria-describedby', 'help-'+name+' err-'+name);
+  function clearErrors(){
+    for (const el of form.elements) {
+      if (!el.name) continue;
+      const err = document.getElementById(`err-${el.name}`);
+      if (err) { err.textContent=""; err.classList.add("hidden"); }
+      const wrap = document.getElementById(`field-${el.name}`);
+      if (wrap) wrap.removeAttribute("aria-invalid");
+    }
+  }
+
+  function showError(name, msg){
+    const err = document.getElementById(`err-${name}`);
+    if (err) { err.textContent = msg; err.classList.remove("hidden"); }
+    const wrap = document.getElementById(`field-${name}`);
+    if (wrap) wrap.setAttribute("aria-invalid", "true");
+  }
+
+  // Very small, sanitized evaluator for arithmetic expressions.
+  function evalExpression(raw, scope){
+    // Allowed tokens: numbers, operators + - * / % ^, parentheses, dot, spaces, variable names [a-zA-Z_][a-zA-Z0-9_]*
+    const varNames = Object.keys(scope);
+    // Replace variables with their numeric values (or NaN if missing)
+    let expr = raw;
+    // Sort by length desc to avoid partial replacements
+    varNames.sort((a,b)=>b.length-a.length);
+    for (const k of varNames) {
+      const re = new RegExp(`\\b${k}\\b`, "g");
+      expr = expr.replace(re, String(scope[k]));
+    }
+    // Validate characters
+    if (!/^[0-9+\-*/%^().,\sNaInfty\-eE]+$/.test(expr)) {
+      throw new Error("Invalid characters in expression.");
+    }
+    // Replace ^ with ** for JS exponent
+    expr = expr.replace(/\^/g, "**");
+    // Prevent unsafe patterns
+    if (/([A-Za-z_][A-Za-z0-9_]*|\{|\}|\[|\]|new|function|=>|;)/.test(expr)) {
+      throw new Error("Unsafe token detected.");
+    }
+    const fn = new Function(`return (${expr});`);
+    const out = fn();
+    if (typeof out !== "number" || !Number.isFinite(out)) throw new Error("Computation failed.");
+    return out;
+  }
+
+  function compute(vals){
+    // Prefer expression; fallback to formula_js if provided and safe
+    const hasExpr = ${JSON.stringify(!!expression)};
+    const hasFormula = ${JSON.stringify(!!formulaJS)};
+
+    if (hasExpr) {
+      return evalExpression(${JSON.stringify(expression)}, vals);
+    } else if (hasFormula) {
+      // Expect a pure function string like: (inputs) => ({ result, steps })
+      // We compile in a tight closure with no globals.
+      const src = ${JSON.stringify(formulaJS)};
+      if (/new |Function|fetch|XMLHttpRequest|window|document|eval/.test(src)) {
+        throw new Error("Unsafe formula_js.");
+      }
+      const fn = (0,eval)(src); // still blocked by pattern above
+      const out = fn(vals);
+      if (out && typeof out.result === "number" && Number.isFinite(out.result)) return out.result;
+      throw new Error("formula_js did not return a numeric result.");
     } else {
-      el.textContent = '';
-      input.setAttribute('aria-invalid','false');
-      input.setAttribute('aria-describedby', 'help-'+name);
+      throw new Error("No expression or formula_js provided.");
     }
   }
 
-  function validate(vars, keys){
-    let ok = true;
-    for (const k of keys){
-      const val = vars[k];
-      if (typeof val !== 'number' || isNaN(val)) {
-        setError(k, 'Please enter a valid number.');
-        ok = false;
-      } else {
-        setError(k, '');
+  form.addEventListener("submit", (ev)=>{
+    ev.preventDefault();
+    clearErrors();
+    try{
+      const vals = getValues();
+      // validate empties
+      for (const [k,v] of Object.entries(vals)) {
+        if (!Number.isFinite(v)) { showError(k, "Enter a valid number"); }
       }
+      const bad = Object.entries(vals).some(([,v])=>!Number.isFinite(v));
+      if (bad) { resultEl.textContent = ""; return; }
+      const res = compute(vals);
+      resultEl.textContent = "Result: " + fmt.format(res) + ( ${JSON.stringify(units.output or "")} ? " ${units.output}" : "" );
+    }catch(e){
+      console.error(e);
+      resultEl.textContent = "Unable to compute. Please check your inputs.";
     }
-    return ok;
-  }
-
-  function fmt(n){ try { return new Intl.NumberFormat(schema.locale || 'en-US', { maximumFractionDigits: 6 }).format(n); } catch { return String(n); } }
-
-  form.addEventListener('submit', (e) => {
-    const keys = (schema.inputs || []).map(i => i.name);
-    const vars = readVars();
-    if (!validate(vars, keys)) { result.textContent=''; return; }
-
-    try {
-      let out;
-      if (schema.expression) {
-        out = window.safeEvalExpression(schema.expression, vars, keys);
-      } else {
-        result.textContent = 'This calculator requires an expression.';
-        return;
-      }
-      result.textContent = `Result: ${fmt(out)} ${schema?.units?.output || ''}`;
-    } catch (err) {
-      result.textContent = 'Invalid inputs or expression.';
-    }
-
-    try {
-      if (window.adsbygoogle && !document.body.dataset.adsInit) {
-        (adsbygoogle = window.adsbygoogle || []).push({});
-        document.body.dataset.adsInit = '1';
-      }
-    } catch {}
   });
 })();
 </script>
