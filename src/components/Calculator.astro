@@ -1,8 +1,8 @@
 ---
-// src/components/Calculator.astro — V011 runtime fix (patch 3)
-// Sin `${...}` dentro del <script>. Usa data-* para pasar valores del servidor al cliente.
-// Soporta `expression` (preferido) y `formula_js` (fallback).
-// No dependencias externas.
+// src/components/Calculator.astro — V011 runtime fix (patch 4)
+// 1) Sin `${...}` dentro del <script>.
+// 2) Pasa `expression`, `formula_js`, `locale`, `units.output` por data-*.
+// 3) JS plano, sin TypeScript y sin dependencias externas.
 const { schema } = Astro.props;
 const locale = (schema?.locale ?? "en-US");
 const inputs = Array.isArray(schema?.inputs) ? schema.inputs : [];
@@ -12,9 +12,12 @@ const units = schema?.units || { input: "", output: "" };
 const disclaimer = schema?.disclaimer || "Educational information, not professional advice.";
 ---
 
-<section id="calc-root" class="calculator not-prose"
+<section id="calc-root"
+  class="calculator not-prose"
   data-locale={locale}
-  data-unit-output={units.output || ""}>
+  data-unit-output={units.output || ""}
+  data-expression={expression}
+  data-formula={formulaJS}>
   <form id="calc-form" class="space-y-4" novalidate>
     <div class="grid gap-3">
       {inputs.map((f) => (
@@ -52,81 +55,86 @@ const disclaimer = schema?.disclaimer || "Educational information, not professio
 
 <script>
 (function(){
-  const root = document.getElementById("calc-root");
-  const form = document.getElementById("calc-form");
-  const resultEl = document.getElementById("result");
+  var root = document.getElementById("calc-root");
+  var form = document.getElementById("calc-form");
+  var resultEl = document.getElementById("result");
 
-  const locale = (root && root.dataset && root.dataset.locale) ? root.dataset.locale : "en-US";
-  const unitSuffix = (root && root.dataset && root.dataset.unitOutput) ? root.dataset.unitOutput : "";
+  // Read config from data-attributes
+  var locale = (root && root.dataset && root.dataset.locale) ? root.dataset.locale : "en-US";
+  var unitSuffix = (root && root.dataset && root.dataset.unitOutput) ? root.dataset.unitOutput : "";
+  var exprString = (root && root.dataset && root.dataset.expression) ? root.dataset.expression : "";
+  var formulaString = (root && root.dataset && root.dataset.formula) ? root.dataset.formula : "";
 
-  const fmt = new Intl.NumberFormat(locale, { maximumFractionDigits: 8 });
+  var fmt = new Intl.NumberFormat(locale, { maximumFractionDigits: 8 });
 
   function getValues(){
-    const vals = {};
-    for (const el of form.elements) {
+    var vals = {};
+    for (var i=0; i<form.elements.length; i++){
+      var el = form.elements[i];
       if (!el.name) continue;
-      const v = (el.value || "").trim();
+      var v = (el.value || "").trim();
       if (v === "") { vals[el.name] = NaN; continue; }
-      const num = Number(v);
+      var num = Number(v);
       vals[el.name] = Number.isFinite(num) ? num : NaN;
     }
     return vals;
   }
 
   function clearErrors(){
-    for (const el of form.elements) {
+    for (var i=0; i<form.elements.length; i++){
+      var el = form.elements[i];
       if (!el.name) continue;
-      const err = document.getElementById(`err-${el.name}`);
+      var err = document.getElementById("err-" + el.name);
       if (err) { err.textContent=""; err.classList.add("hidden"); }
-      const wrap = document.getElementById(`field-${el.name}`);
+      var wrap = document.getElementById("field-" + el.name);
       if (wrap) wrap.removeAttribute("aria-invalid");
     }
   }
 
   function showError(name, msg){
-    const err = document.getElementById(`err-${name}`);
+    var err = document.getElementById("err-" + name);
     if (err) { err.textContent = msg; err.classList.remove("hidden"); }
-    const wrap = document.getElementById(`field-${name}`);
+    var wrap = document.getElementById("field-" + name);
     if (wrap) wrap.setAttribute("aria-invalid", "true");
   }
 
-  // Sanitized arithmetic evaluator for `expression` strings.
+  // Sanitized evaluator for arithmetic expressions.
   function evalExpression(raw, scope){
-    // Replace variables with numeric values (or NaN)
-    const varNames = Object.keys(scope).sort((a,b)=>b.length-a.length);
-    let expr = raw;
-    for (const k of varNames) {
-      const re = new RegExp(`\\b${k}\\b`, "g");
-      expr = expr.replace(re, String(scope[k]));
+    var names = Object.keys(scope).sort(function(a,b){ return b.length - a.length; });
+    var s = raw;
+    for (var i=0; i<names.length; i++){
+      var k = names[i];
+      var re = new RegExp("\\\\b" + k + "\\\\b", "g");
+      s = s.replace(re, String(scope[k]));
     }
-    // Only allow digits, operators, parentheses, dot, spaces, exponent 'e/E', minus
-    if (!/^[0-9+\-*/%^().,\sNaInfty\-eE]+$/.test(expr)) {
+    // Allowed chars check
+    if (!/^[0-9+\\-*/%^().,\\sNaInfty\\-eE]+$/.test(s)) {
       throw new Error("Invalid characters in expression.");
     }
-    expr = expr.replace(/\^/g, "**"); // JS exponent
-    if (/([A-Za-z_][A-Za-z0-9_]*|\{|\}|\[|\]|new|function|=>|;)/.test(expr)) {
+    // caret -> exponent
+    s = s.replace(/\\^/g, "**");
+    // Disallow identifiers/braces and dangerous tokens
+    if (/([A-Za-z_][A-Za-z0-9_]*|\\{|\\}|\\[|\\]|new|function|=>|;)/.test(s)) {
       throw new Error("Unsafe token detected.");
     }
-    const fn = new Function(`return (${expr});`);
-    const out = fn();
+    // eslint-disable-next-line no-new-func
+    var fn = new Function("return (" + s + ");");
+    var out = fn();
     if (typeof out !== "number" || !Number.isFinite(out)) throw new Error("Computation failed.");
     return out;
   }
 
   function compute(vals){
-    const hasExpr = ${Boolean(expression)};
-    const hasFormula = ${Boolean(formulaJS)};
-
-    if (hasExpr) {
-      return evalExpression(${json(expression) if False else "''"}, vals);
-    } else if (hasFormula) {
-      const src = ${json(formulaJS) if False else "''"};
-      // Block dangerous constructs
-      if (/new |Function|fetch|XMLHttpRequest|window|document|eval/.test(src)) {
+    if (exprString && exprString.trim().length){
+      return evalExpression(exprString, vals);
+    } else if (formulaString && formulaString.trim().length){
+      // Expect (inputs) => ({ result, steps })
+      if (/new |Function|fetch|XMLHttpRequest|window|document|eval/.test(formulaString)) {
         throw new Error("Unsafe formula_js.");
       }
-      const fn = (0,eval)(src);
-      const out = fn(vals);
+      // eslint-disable-next-line no-eval
+      var fn = (0,eval)(formulaString);
+      var out = fn(vals);
       if (out && typeof out.result === "number" && Number.isFinite(out.result)) return out.result;
       throw new Error("formula_js did not return a numeric result.");
     } else {
@@ -134,17 +142,19 @@ const disclaimer = schema?.disclaimer || "Educational information, not professio
     }
   }
 
-  form.addEventListener("submit", (ev)=>{
+  form.addEventListener("submit", function(ev){
     ev.preventDefault();
     clearErrors();
     try{
-      const vals = getValues();
-      for (const [k,v] of Object.entries(vals)) {
-        if (!Number.isFinite(v)) { showError(k, "Enter a valid number"); }
+      var vals = getValues();
+      var bad = false;
+      for (var k in vals){
+        if (!Object.prototype.hasOwnProperty.call(vals,k)) continue;
+        var v = vals[k];
+        if (!Number.isFinite(v)) { showError(k, "Enter a valid number"); bad = true; }
       }
-      const bad = Object.values(vals).some(v => !Number.isFinite(v));
       if (bad) { resultEl.textContent = ""; return; }
-      const res = compute(vals);
+      var res = compute(vals);
       resultEl.textContent = "Result: " + fmt.format(res) + (unitSuffix ? " " + unitSuffix : "");
     }catch(e){
       console.error(e);
