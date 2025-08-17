@@ -1,9 +1,0 @@
-{
-  "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  "name": "__TITLE__",
-  "applicationCategory": "Calculator",
-  "operatingSystem": "Any",
-  "url": "__URL__",
-  "description": "__DESCRIPTION__"
-}
