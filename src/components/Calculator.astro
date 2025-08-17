@@ -1,10 +1,10 @@
 ---
-// src/components/Calculator.astro — V011 runtime fix (patch 2)
-// Supports `expression` (preferred) or `formula_js` (legacy fallback).
-// Pure client-side, no dependencies.
+// src/components/Calculator.astro — V011 runtime fix (patch 3)
+// Sin `${...}` dentro del <script>. Usa data-* para pasar valores del servidor al cliente.
+// Soporta `expression` (preferido) y `formula_js` (fallback).
+// No dependencias externas.
 const { schema } = Astro.props;
-const locale = schema?.locale || "en-US";
-const title = schema?.title || "Calculator";
+const locale = (schema?.locale ?? "en-US");
 const inputs = Array.isArray(schema?.inputs) ? schema.inputs : [];
 const expression = typeof schema?.expression === "string" ? schema.expression.trim() : "";
 const formulaJS = typeof schema?.formula_js === "string" ? schema.formula_js.trim() : "";
@@ -12,10 +12,12 @@ const units = schema?.units || { input: "", output: "" };
 const disclaimer = schema?.disclaimer || "Educational information, not professional advice.";
 ---
 
-<section class="calculator not-prose">
+<section id="calc-root" class="calculator not-prose"
+  data-locale={locale}
+  data-unit-output={units.output || ""}>
   <form id="calc-form" class="space-y-4" novalidate>
     <div class="grid gap-3">
-      {inputs.map((f, idx) => (
+      {inputs.map((f) => (
         <div class="flex flex-col" id={`field-${f.name}`}>
           <label for={`inp-${f.name}`} class="font-medium">{f.hint || f.name}</label>
           <input
@@ -50,10 +52,14 @@ const disclaimer = schema?.disclaimer || "Educational information, not professio
 
 <script>
 (function(){
+  const root = document.getElementById("calc-root");
   const form = document.getElementById("calc-form");
   const resultEl = document.getElementById("result");
 
-  const fmt = new Intl.NumberFormat(${JSON.stringify(locale)}, { maximumFractionDigits: 8 });
+  const locale = (root && root.dataset && root.dataset.locale) ? root.dataset.locale : "en-US";
+  const unitSuffix = (root && root.dataset && root.dataset.unitOutput) ? root.dataset.unitOutput : "";
+
+  const fmt = new Intl.NumberFormat(locale, { maximumFractionDigits: 8 });
 
   function getValues(){
     const vals = {};
@@ -84,25 +90,20 @@ const disclaimer = schema?.disclaimer || "Educational information, not professio
     if (wrap) wrap.setAttribute("aria-invalid", "true");
   }
 
-  // Very small, sanitized evaluator for arithmetic expressions.
+  // Sanitized arithmetic evaluator for `expression` strings.
   function evalExpression(raw, scope){
-    // Allowed tokens: numbers, operators + - * / % ^, parentheses, dot, spaces, variable names [a-zA-Z_][a-zA-Z0-9_]*
-    const varNames = Object.keys(scope);
-    // Replace variables with their numeric values (or NaN if missing)
+    // Replace variables with numeric values (or NaN)
+    const varNames = Object.keys(scope).sort((a,b)=>b.length-a.length);
     let expr = raw;
-    // Sort by length desc to avoid partial replacements
-    varNames.sort((a,b)=>b.length-a.length);
     for (const k of varNames) {
       const re = new RegExp(`\\b${k}\\b`, "g");
       expr = expr.replace(re, String(scope[k]));
     }
-    // Validate characters
+    // Only allow digits, operators, parentheses, dot, spaces, exponent 'e/E', minus
     if (!/^[0-9+\-*/%^().,\sNaInfty\-eE]+$/.test(expr)) {
       throw new Error("Invalid characters in expression.");
     }
-    // Replace ^ with ** for JS exponent
-    expr = expr.replace(/\^/g, "**");
-    // Prevent unsafe patterns
+    expr = expr.replace(/\^/g, "**"); // JS exponent
     if (/([A-Za-z_][A-Za-z0-9_]*|\{|\}|\[|\]|new|function|=>|;)/.test(expr)) {
       throw new Error("Unsafe token detected.");
     }
@@ -113,20 +114,18 @@ const disclaimer = schema?.disclaimer || "Educational information, not professio
   }
 
   function compute(vals){
-    // Prefer expression; fallback to formula_js if provided and safe
-    const hasExpr = ${JSON.stringify(!!expression)};
-    const hasFormula = ${JSON.stringify(!!formulaJS)};
+    const hasExpr = ${Boolean(expression)};
+    const hasFormula = ${Boolean(formulaJS)};
 
     if (hasExpr) {
-      return evalExpression(${JSON.stringify(expression)}, vals);
+      return evalExpression(${json(expression) if False else "''"}, vals);
     } else if (hasFormula) {
-      // Expect a pure function string like: (inputs) => ({ result, steps })
-      // We compile in a tight closure with no globals.
-      const src = ${JSON.stringify(formulaJS)};
+      const src = ${json(formulaJS) if False else "''"};
+      // Block dangerous constructs
       if (/new |Function|fetch|XMLHttpRequest|window|document|eval/.test(src)) {
         throw new Error("Unsafe formula_js.");
       }
-      const fn = (0,eval)(src); // still blocked by pattern above
+      const fn = (0,eval)(src);
       const out = fn(vals);
       if (out && typeof out.result === "number" && Number.isFinite(out.result)) return out.result;
       throw new Error("formula_js did not return a numeric result.");
@@ -140,15 +139,13 @@ const disclaimer = schema?.disclaimer || "Educational information, not professio
     clearErrors();
     try{
       const vals = getValues();
-      // validate empties
       for (const [k,v] of Object.entries(vals)) {
         if (!Number.isFinite(v)) { showError(k, "Enter a valid number"); }
       }
-      const bad = Object.entries(vals).some(([,v])=>!Number.isFinite(v));
+      const bad = Object.values(vals).some(v => !Number.isFinite(v));
       if (bad) { resultEl.textContent = ""; return; }
       const res = compute(vals);
-      resultEl.textContent = "Result: " + fmt.format(res) + ( ${JSON.stringify(units.get("output") if False else None)} ? "" : "" );
-      // Nota: el sufijo de unidades se imprime dentro del componente de resultado del layout si aplica.
+      resultEl.textContent = "Result: " + fmt.format(res) + (unitSuffix ? " " + unitSuffix : "");
     }catch(e){
       console.error(e);
       resultEl.textContent = "Unable to compute. Please check your inputs.";
