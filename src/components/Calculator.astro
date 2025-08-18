@@ -1,5 +1,5 @@
 ---
-/** Calculator.astro — V017.6
+/** Calculator.astro — V017.7.gemini
   - Simplificado: usa atributos data-* para pasar slug y expression.
   - Sin JSON.parse necesario (aunque se mantiene opcional).
 **/
@@ -35,7 +35,8 @@ const expression = schema?.expression ?? schema?.formula ?? schema?.formula_expr
     <button type="button" data-action="calc" class="btn">Calculate</button>
   </form>
 
-  <!-- Opcional: dejamos el schema serializado para depurar, pero ya no es requerido -->
+  <div class="result" data-role="result"></div>
+
   <script type="application/json" data-schema>{JSON.stringify(schema)}</script>
 </section>
 
@@ -108,15 +109,13 @@ const expression = schema?.expression ?? schema?.formula ?? schema?.formula_expr
   function initCalc(root){
     if (!root || root.__calcInit) return;
     root.__calcInit = true;
-
     var form = root.querySelector('[data-role="form"]');
     var resultEl = root.querySelector('[data-role="result"]');
     var btn = root.querySelector('[data-action="calc"]');
     if (!form || !resultEl || !btn) return;
-
     var slug = root.getAttribute('data-slug') || 'calculator';
     var expr = root.getAttribute('data-exp') || '';
-
+    
     function readInputs(){
       var out={};
       var fields = form.querySelectorAll('input[name]');
@@ -144,7 +143,8 @@ const expression = schema?.expression ?? schema?.formula ?? schema?.formula_expr
             value = r===0 ? P/n : (P*r)/(1-Math.pow(1+r,-n)); break;
           }
           case 'percentage-discount-calculator':
-            value = num(vars.price)*(1-num(vars.discount)/100); break;
+            value = num(vars.price)*(1-num(vars.discount)/100);
+            break;
           case 'percentage-increase-calculator':
             value = num(vars.original)*(1+num(vars.increase)/100); break;
           case 'bmi-calculator': {
@@ -156,7 +156,8 @@ const expression = schema?.expression ?? schema?.formula ?? schema?.formula_expr
             value = P2*Math.pow(1+r2/n2, n2*t); break;
           }
           case 'triangle-area-calculator':
-            value = (num(vars.base)*num(vars.height))/2; break;
+            value = (num(vars.base)*num(vars.height))/2;
+            break;
           case 'roi-calculator':
             value = ((num(vars.gain)-num(vars.cost))/num(vars.cost))*100; break;
           case 'sales-tax-calculator':
