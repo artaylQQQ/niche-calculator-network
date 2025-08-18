@@ -1,17 +1,17 @@
 ---
-/** Calculator.astro — V017.5 (estable)
-  - 100% client-side sin eval/new Function.
-  - Usa schema.expression si existe (string infija).
-  - Si no hay expression, detecta slug desde data-slug o URL y aplica fallbacks.
+/** Calculator.astro — V017.6
+  - Simplificado: usa atributos data-* para pasar slug y expression.
+  - Sin JSON.parse necesario (aunque se mantiene opcional).
 **/
 const { schema } = Astro.props;
 const title = schema?.title ?? 'Calculator';
 const slug = schema?.slug ?? 'calculator';
 const inputs = Array.isArray(schema?.inputs) ? schema.inputs : [];
 const intro = schema?.intro ?? '';
+const expression = schema?.expression ?? schema?.formula ?? schema?.formula_expression ?? '';
 ---
 
-<section class="calc" data-calculator data-slug={slug} aria-labelledby={`h-${slug}`}>
+<section class="calc" data-calculator data-slug={slug} data-exp={expression} aria-labelledby={`h-${slug}`}>
   <h1 id={`h-${slug}`}>{title}</h1>
   {intro && <p class="muted">{intro}</p>}
 
@@ -24,8 +24,8 @@ const intro = schema?.intro ?? '';
           name={i.name}
           type="number"
           step={i.step ?? 'any'}
-          min={i.min}
-          max={i.max}
+          {...(i.min !== undefined ? { min: i.min } : {})}
+          {...(i.max !== undefined ? { max: i.max } : {})}
           inputmode="decimal"
           aria-describedby={`hint-${slug}-${i.name}`}
         />
@@ -35,8 +35,7 @@ const intro = schema?.intro ?? '';
     <button type="button" data-action="calc" class="btn">Calculate</button>
   </form>
 
-  <div class="result" role="status" aria-live="polite" data-role="result"></div>
-
+  <!-- Opcional: dejamos el schema serializado para depurar, pero ya no es requerido -->
   <script type="application/json" data-schema>{JSON.stringify(schema)}</script>
 </section>
 
@@ -55,7 +54,7 @@ const intro = schema?.intro ?? '';
 
 <script is:inline>
 (function () {
-  // Parser seguro (shunting-yard) para + - * / % ^ y paréntesis
+  // Parser seguro (shunting-yard)
   function evalExpr(expr, vars){
     var out=[], ops=[], prec={'^':4,'*':3,'/':3,'%':3,'+':2,'-':2}, right={'^':true}, i=0;
     function isSpace(c){return /\s/.test(c);} function isDigit(c){return c>='0'&&c<='9';} function isLetter(c){return /[A-Za-z_]/.test(c);}
@@ -106,51 +105,39 @@ const intro = schema?.intro ?? '';
   }
   function num(v){ var n=Number(v); return isFinite(n)?n:NaN; }
 
-  function effectiveSlug(root, schema){
-    var fromAttr = root.getAttribute('data-slug');
-    if (fromAttr) return fromAttr;
-    try {
-      var parts = window.location.pathname.split('/').filter(Boolean);
-      return parts[parts.length-1] || (schema && schema.slug) || 'calculator';
-    } catch (_) {
-      return (schema && schema.slug) || 'calculator';
-    }
-  }
-
   function initCalc(root){
     if (!root || root.__calcInit) return;
     root.__calcInit = true;
 
-    var schemaEl = root.querySelector('script[data-schema]');
     var form = root.querySelector('[data-role="form"]');
     var resultEl = root.querySelector('[data-role="result"]');
     var btn = root.querySelector('[data-action="calc"]');
-    if (!schemaEl || !form || !resultEl || !btn) return;
+    if (!form || !resultEl || !btn) return;
 
-    var schema={};
-    try { schema = JSON.parse(schemaEl.textContent || '{}'); } catch(e){ schema = {}; }
-    var slug = effectiveSlug(root, schema);
+    var slug = root.getAttribute('data-slug') || 'calculator';
+    var expr = root.getAttribute('data-exp') || '';
 
     function readInputs(){
       var out={};
-      (schema.inputs||[]).forEach(function(i){
-        var el=form.querySelector('[name="'+i.name+'"]');
-        out[i.name]=(el && el.value!=='') ? Number(el.value) : NaN;
+      var fields = form.querySelectorAll('input[name]');
+      fields.forEach(function(el){
+        var v = el.value;
+        out[el.name] = (v!=='' ? Number(v) : NaN);
       });
       return out;
     }
 
     function compute(){
-      var vars=readInputs();
+      var vars = readInputs();
       for(var k in vars){ if(!isFinite(vars[k])){ resultEl.textContent='Please fill all fields.'; return; } }
 
-      var value;
-      var expr = (schema && (schema.expression || schema.formula || schema.formula_expression)) || '';
-      if (expr && typeof expr === 'string'){
-        try { value = evalExpr(expr, vars); }
-        catch (e) { resultEl.textContent = 'Invalid expression.'; return; }
-      } else {
-        // Fallback por slug (conocidos)
+      var value, usedExpr=false;
+      if (expr){
+        try { value = evalExpr(expr, vars); usedExpr=true; }
+        catch(e){ usedExpr=false; }
+      }
+
+      if (!usedExpr){
         switch(slug){
           case 'loan-payment-calculator': {
             var P=num(vars.principal), r=num(vars.rate)/100/12, n=num(vars.months);
