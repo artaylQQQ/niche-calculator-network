@@ -1,8 +1,9 @@
 ---
-/** Calculator.astro — V017.1
-  - Ejecuta el cálculo 100% en el cliente, sin eval/Function.
-  - Se auto-encapsula usando document.currentScript.closest('[data-calculator]').
-  - Soporta `schema.expression` seguro (+ fallback por slug en casos comunes).
+/** Calculator.astro — V017.2 (fix)
+  - Cálculo 100% client-side, sin eval/new Function.
+  - Usa <script is:inline> (no "type=module"), por lo que document.currentScript funciona.
+  - Parser seguro de expresiones (+,-,*,/,%,^, paréntesis).
+  - Fallback por slug para casos comunes si no hay `schema.expression`.
 **/
 const { schema } = Astro.props;
 const title = schema?.title ?? 'Calculator';
@@ -29,17 +30,15 @@ const intro = schema?.intro ?? '';
           inputmode="decimal"
           aria-describedby={`hint-${slug}-${i.name}`}
         />
-        <div id={`hint-${slug}-${i.name}`} class="hint">
-          {i.units ? i.units : ''}
-        </div>
+        <div id={`hint-${slug}-${i.name}`} class="hint">{i.units ? i.units : ''}</div>
       </div>
     ))}
     <button type="button" data-action="calc" class="btn">Calculate</button>
   </form>
 
-  <div class="result" role="status" aria-live="polite" data-role="result"> </div>
+  <div class="result" role="status" aria-live="polite" data-role="result"></div>
 
-  {/* Guardamos el schema para el script del cliente */}
+  <!-- Schema para el script del cliente -->
   <script type="application/json" data-schema>{JSON.stringify(schema)}</script>
 </section>
 
@@ -56,95 +55,83 @@ const intro = schema?.intro ?? '';
   .result { margin-top: 16px; font-size: 18px; font-weight: 600; }
 </style>
 
-<script is:inline type="module">
-(() => {
-  // Encuentra el root de este componente
-  const root = document.currentScript?.closest('[data-calculator]');
+<script is:inline>
+(function () {
+  // Encuentra el root de este componente usando currentScript (válido al no ser módulo)
+  var root = (function (s) {
+    try { return s.closest('[data-calculator]'); } catch (e) { return null; }
+  })(document.currentScript);
   if (!root) return;
 
-  const schemaEl = root.querySelector('script[data-schema]');
-  const form = root.querySelector('[data-role="form"]');
-  const resultEl = root.querySelector('[data-role="result"]');
-  const btn = root.querySelector('[data-action="calc"]');
-
+  var schemaEl = root.querySelector('script[data-schema]');
+  var form = root.querySelector('[data-role="form"]');
+  var resultEl = root.querySelector('[data-role="result"]');
+  var btn = root.querySelector('[data-action="calc"]');
   if (!schemaEl || !form || !resultEl || !btn) return;
 
-  /** Utilidades **/
-  function num(val) {
-    const n = typeof val === 'string' ? Number(val) : val;
-    return Number.isFinite(n) ? n : NaN;
-  }
+  // Utilidades
+  function num(val) { var n = Number(val); return isFinite(n) ? n : NaN; }
   function fmt(n) {
-    if (!Number.isFinite(n)) return '—';
-    try {
-      return new Intl.NumberFormat('en-US', { maximumFractionDigits: 6 }).format(n);
-    } catch {
-      return String(n);
-    }
+    return isFinite(n)
+      ? new Intl.NumberFormat('en-US', { maximumFractionDigits: 6 }).format(n)
+      : '—';
   }
 
-  // Tokenizador + Shunting-yard para una expresión segura (+,-,*,/,%,^, paréntesis)
+  // Parser seguro (shunting-yard) para + - * / % ^  y paréntesis
   function evalExpr(expr, vars) {
-    const out = [];
-    const ops = [];
-    const prec = { '^': 4, '*': 3, '/': 3, '%': 3, '+': 2, '-': 2 };
-    const right = { '^': true };
+    var out = [], ops = [];
+    var prec = { '^':4, '*':3, '/':3, '%':3, '+':2, '-':2 };
+    var right = { '^': true };
+    var i = 0;
 
-    let i = 0;
-    const isSpace = (c) => /\s/.test(c);
-    const isDigit = (c) => c >= '0' && c <= '9';
-    const isLetter = (c) => /[A-Za-z_]/.test(c);
+    function isSpace(c){ return /\s/.test(c); }
+    function isDigit(c){ return c >= '0' && c <= '9'; }
+    function isLetter(c){ return /[A-Za-z_]/.test(c); }
 
-    /** Tokeniza **/
-    const tokens = [];
+    var tokens = [];
     while (i < expr.length) {
-      const c = expr[i];
+      var c = expr[i];
       if (isSpace(c)) { i++; continue; }
       if (isDigit(c) || c === '.') {
-        let s = i;
-        while (i < expr.length && /[0-9.eE+\-]/.test(expr[i])) i++;
-        tokens.push({ t: 'num', v: parseFloat(expr.slice(s, i)) });
-        continue;
+        var s = i; while (i < expr.length && /[0-9.eE+\-]/.test(expr[i])) i++;
+        tokens.push({ t:'num', v: parseFloat(expr.slice(s,i)) }); continue;
       }
       if (isLetter(c)) {
-        let s = i;
-        while (i < expr.length && /[A-Za-z0-9_]/.test(expr[i])) i++;
-        const name = expr.slice(s, i);
-        if (!(name in vars)) throw new Error('Unknown var ' + name);
-        tokens.push({ t: 'num', v: num(vars[name]) });
-        continue;
+        var s2 = i; while (i < expr.length && /[A-Za-z0-9_]/.test(expr[i])) i++;
+        var name = expr.slice(s2,i);
+        if (!(name in vars)) throw new Error('Unknown var '+name);
+        tokens.push({ t:'num', v: num(vars[name]) }); continue;
       }
-      if ('+-*/%^()'.includes(c)) { tokens.push({ t: 'op', v: c }); i++; continue; }
+      if ('+-*/%^()'.indexOf(c) !== -1) { tokens.push({ t:'op', v:c }); i++; continue; }
       throw new Error('Bad char in expression');
     }
 
-    /** Shunting-yard a RPN **/
-    for (const tok of tokens) {
+    for (var ti=0; ti<tokens.length; ti++) {
+      var tok = tokens[ti];
       if (tok.t === 'num') { out.push(tok); continue; }
-      const op = tok.v;
+      var op = tok.v;
       if (op === '(') { ops.push(op); continue; }
       if (op === ')') {
-        while (ops.length && ops[ops.length - 1] !== '(') out.push({ t: 'op', v: ops.pop() });
+        while (ops.length && ops[ops.length-1] !== '(') out.push({ t:'op', v: ops.pop() });
         ops.pop(); continue;
       }
       while (ops.length) {
-        const top = ops[ops.length - 1];
+        var top = ops[ops.length-1];
         if (top === '(') break;
         if ((right[op] && prec[op] < prec[top]) || (!right[op] && prec[op] <= prec[top])) {
-          out.push({ t: 'op', v: ops.pop() });
+          out.push({ t:'op', v: ops.pop() });
         } else break;
       }
       ops.push(op);
     }
-    while (ops.length) out.push({ t: 'op', v: ops.pop() });
+    while (ops.length) out.push({ t:'op', v: ops.pop() });
 
-    /** Evalúa RPN **/
-    const st = [];
-    for (const tok of out) {
-      if (tok.t === 'num') { st.push(tok.v); continue; }
-      const b = st.pop(); const a = st.pop();
-      let r;
-      switch (tok.v) {
+    var st = [];
+    for (var oi=0; oi<out.length; oi++) {
+      var t = out[oi];
+      if (t.t === 'num') { st.push(t.v); continue; }
+      var b = st.pop(), a = st.pop(), r;
+      switch (t.v) {
         case '+': r = a + b; break;
         case '-': r = a - b; break;
         case '*': r = a * b; break;
@@ -158,49 +145,46 @@ const intro = schema?.intro ?? '';
     return st.pop();
   }
 
-  /** Lógica principal **/
-  const schema = JSON.parse(schemaEl.textContent || '{}');
+  var schema = {};
+  try { schema = JSON.parse(schemaEl.textContent || '{}'); } catch (e) {}
 
   function readInputs() {
-    const out = {};
-    (schema.inputs || []).forEach((i) => {
-      const el = form.querySelector(`[name="${i.name}"]`);
-      out[i.name] = el && el.value !== '' ? Number(el.value) : NaN;
+    var out = {};
+    (schema.inputs || []).forEach(function(i){
+      var el = form.querySelector('[name="'+i.name+'"]');
+      out[i.name] = (el && el.value !== '') ? Number(el.value) : NaN;
     });
     return out;
   }
 
   function compute() {
-    const vars = readInputs();
-    if (Object.values(vars).some((v) => !Number.isFinite(v))) {
-      resultEl.textContent = 'Please fill all fields.';
-      return;
+    var vars = readInputs();
+    for (var k in vars) {
+      if (!isFinite(vars[k])) { resultEl.textContent = 'Please fill all fields.'; return; }
     }
 
-    let value;
-
+    var value;
     if (schema.expression && typeof schema.expression === 'string') {
       value = evalExpr(schema.expression, vars);
     } else {
-      // Fallback por slug (casos más comunes)
       switch (schema.slug) {
         case 'loan-payment-calculator': {
-          const P = num(vars.principal), r = num(vars.rate) / 100 / 12, n = num(vars.months);
-          value = r === 0 ? P / n : (P * r) / (1 - Math.pow(1 + r, -n));
+          var P = num(vars.principal), r = num(vars.rate)/100/12, n = num(vars.months);
+          value = r === 0 ? P/n : (P*r) / (1 - Math.pow(1+r, -n));
           break;
         }
         case 'percentage-discount-calculator':
-          value = num(vars.price) * (1 - num(vars.discount) / 100); break;
+          value = num(vars.price) * (1 - num(vars.discount)/100); break;
         case 'percentage-increase-calculator':
-          value = num(vars.original) * (1 + num(vars.increase) / 100); break;
+          value = num(vars.original) * (1 + num(vars.increase)/100); break;
         case 'bmi-calculator': {
-          const h = num(vars.height) / 100;
-          value = num(vars.weight) / (h * h);
+          var h = num(vars.height)/100;
+          value = num(vars.weight) / (h*h);
           break;
         }
         case 'compound-interest-calculator': {
-          const P = num(vars.principal), r = num(vars.rate) / 100, n = num(vars.times), t = num(vars.years);
-          value = P * Math.pow(1 + r / n, n * t);
+          var P2 = num(vars.principal), r2 = num(vars.rate)/100, t = num(vars.years), n2 = num(vars.times);
+          value = P2 * Math.pow(1 + r2/n2, n2*t);
           break;
         }
         case 'triangle-area-calculator':
@@ -208,7 +192,7 @@ const intro = schema?.intro ?? '';
         case 'roi-calculator':
           value = ((num(vars.gain) - num(vars.cost)) / num(vars.cost)) * 100; break;
         case 'sales-tax-calculator':
-          value = num(vars.price) * (1 + num(vars.tax) / 100); break;
+          value = num(vars.price) * (1 + num(vars.tax)/100); break;
         default:
           resultEl.textContent = 'Calculation not available.'; return;
       }
