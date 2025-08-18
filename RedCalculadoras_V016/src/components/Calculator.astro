@@ -1,0 +1,82 @@
+---
+const { schema } = Astro.props;
+const inputs = Array.isArray(schema?.inputs) ? schema.inputs : [];
+const expression = (schema?.expression || "").toString().replace(/\^/g, "**");
+---
+
+<div class="box" aria-labelledby="calc-h">
+  <h2 id="calc-h" style="margin-top:0">{schema?.title || "Calculator"}</h2>
+
+  <form id="calc-form" onsubmit="return false;" novalidate>
+    {inputs.map((inp, idx) => (
+      <div>
+        <label for={`f-${idx}`}>{inp.hint || inp.name}</label>
+        <input
+          id={`f-${idx}`}
+          name={inp.name}
+          type="number"
+          min={inp.min ?? undefined}
+          max={inp.max ?? undefined}
+          step={inp.step ?? "any"}
+          inputmode="decimal"
+          aria-describedby={`d-${idx}`}
+        />
+        <div id={`d-${idx}`} class="muted">{inp.hint || ""}</div>
+      </div>
+    ))}
+    <div style="margin-top:12px">
+      <button class="btn" id="calc-btn" type="button">Calculate</button>
+    </div>
+  </form>
+
+  <div id="calc-out" class="box" role="status" aria-live="polite">Result: —</div>
+</div>
+
+<script is:inline>
+(() => {
+  const expr = {JSON.stringify("("+""+")")};// placeholder for syntax
+  const expression = {JSON.stringify(expression)};
+
+  function num(v){ const n = Number(v); return Number.isFinite(n)?n:NaN; }
+
+  function buildContext(){
+    const ctx = {};
+    document.querySelectorAll('#calc-form input[id^="f-"]').forEach((el)=>{
+      const name = el.getAttribute('name');
+      ctx[name] = num(el.value);
+    });
+    return ctx;
+  }
+
+  function validateContext(ctx){ return Object.values(ctx).every(v => Number.isFinite(v)); }
+
+  function evalSafe(exprText, ctx){
+    const vars = Object.keys(ctx);
+    const identRE = /[A-Za-z_][A-Za-z0-9_]*/g;
+    let ok = true;
+    exprText.replace(identRE, (m)=>{ if(!vars.includes(m)) ok = false; return m; });
+    if(!ok) throw new Error('Invalid token in expression');
+    const fn = new Function(...vars, `'use strict'; return ( ${exprText} );`);
+    return fn(...vars.map(k=>ctx[k]));
+  }
+
+  function fmt(val){
+    if(!Number.isFinite(val)) return '—';
+    try { return new Intl.NumberFormat('en-US', { maximumFractionDigits: 6 }).format(val); }
+    catch{ return String(val); }
+  }
+
+  function compute(){
+    const ctx = buildContext();
+    const out = document.getElementById('calc-out');
+    if(!validateContext(ctx)){ out.textContent = 'Result: —'; return; }
+    try{
+      const val = evalSafe(expression, ctx);
+      out.textContent = 'Result: ' + fmt(val);
+    }catch(e){ console.error(e); out.textContent = 'Result: —'; }
+  }
+
+  document.getElementById('calc-btn')?.addEventListener('click', compute);
+  document.querySelectorAll('#calc-form input[id^="f-"]').forEach((el)=> el.addEventListener('input', compute));
+})();
+</script>

@@ -1,0 +1,22 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const pages = await Astro.glob('./calculators/*.mdx');
+const items = pages.map(p => ({
+  url: p.url,
+  title: p.frontmatter?.title ?? 'Calculator',
+  cluster: p.frontmatter?.cluster ?? 'General',
+  desc: p.frontmatter?.description ?? ''
+})).sort((a,b) => a.title.localeCompare(b.title));
+---
+<BaseLayout title="All Calculators" description="Browse our free online calculators.">
+  <h1 style="margin-top:0">All Calculators</h1>
+  <div class="grid">
+    {items.map(i => (
+      <a class="card" href={i.url}>
+        <div class="pill">{i.cluster}</div>
+        <h3 style="margin:8px 0">{i.title}</h3>
+        <div class="muted">{i.desc}</div>
+      </a>
+    ))}
+  </div>
+</BaseLayout>
