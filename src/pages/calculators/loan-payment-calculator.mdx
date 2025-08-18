@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/BaseLayout.astro
 title: Loan Payment Calculator
-description: Compute your estimated monthly payment for a fixed-rate loan.
+description: Compute monthly payment for a fixed-rate loan.
 date: 2025-08-18
 updated: 2025-08-18
 cluster: Finance & Loans
@@ -9,12 +9,11 @@ cluster: Finance & Loans
 
 import Calculator from '../../components/Calculator.astro';
 
-
-export const schema = {"slug": "loan-payment-calculator","title": "Loan Payment Calculator","locale": "en","inputs": [{"name": "principal","type": "number","min": 0,"step": 0.01,"hint": "Loan amount"},{"name": "annualRate","type": "number","min": 0,"step": 0.01,"hint": "Annual interest rate (%)"},{"name": "years","type": "number","min": 0,"step": 1,"hint": "Term (years)"}],"expression": "principal * ((annualRate/1200) * (1 + (annualRate/1200))^(years*12)) / ((1 + (annualRate/1200))^(years*12) - 1)","formula_js": "","units": {"input": "","output": ""},"intro": "Compute your estimated monthly payment for a fixed-rate loan.","examples": [],"faqs": [],"disclaimer": "Educational information, not professional advice.","schema_org": "FAQPage|SoftwareApplication","cluster": "Finance & Loans","related": ["percentage-discount-calculator","percentage-increase-calculator","percentage-change-calculator","sales-tax-calculator","tip-calculator","markup-margin-calculator"]}
+export const schema = {"slug": "loan-payment-calculator","title": "Loan Payment Calculator","locale": "en","inputs": [{"name": "principal","type": "number","min": 0,"step": 0.01,"hint": "Loan amount"},{"name": "annualRate","type": "number","min": 0,"step": 0.01,"hint": "Annual interest rate (%)"},{"name": "years","type": "number","min": 0,"step": 1,"hint": "Term (years)"}],"expression": "principal * ((annualRate/1200) * (1 + (annualRate/1200))^(years*12)) / ((1 + (annualRate/1200))^(years*12) - 1)","formula_js": "","units": {"input": "","output": ""},"intro": "Compute monthly payment for a fixed-rate loan.","examples": [],"faqs": [],"disclaimer": "Educational information, not professional advice.","schema_org": "FAQPage|SoftwareApplication","cluster": "Finance & Loans"}
 
 # Loan Payment Calculator
 
-Compute your estimated monthly payment for a fixed-rate loan.
+Compute monthly payment for a fixed-rate loan.
 
 <Calculator schema={schema} />
 
@@ -23,9 +22,9 @@ Compute your estimated monthly payment for a fixed-rate loan.
 - _No FAQs yet._
 
 ## Related calculators
+- [Loan Payment Calculator](/calculators/loan-payment-calculator/)
+- [Compound Interest Calculator](/calculators/compound-interest-calculator/)
 - [Percentage Discount Calculator](/calculators/percentage-discount-calculator/)
 - [Percentage Increase Calculator](/calculators/percentage-increase-calculator/)
-- [Percentage Change Calculator](/calculators/percentage-change-calculator/)
 - [Sales Tax Calculator](/calculators/sales-tax-calculator/)
 - [Tip Calculator](/calculators/tip-calculator/)
-- [Markup Margin Calculator](/calculators/markup-margin-calculator/)

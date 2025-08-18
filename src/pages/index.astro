@@ -1,35 +1,23 @@
 ---
-// Home listing with cards grid
 import BaseLayout from '../layouts/BaseLayout.astro';
-const pages = await Astro.glob('./calculators/*.mdx');
-const items = pages
-  .map((p) => ({
-    url: p.url,
-    title: p.frontmatter?.title ?? 'Calculator',
-    description: p.frontmatter?.description ?? 'Online calculator.',
-    cluster: p.frontmatter?.cluster ?? 'General'
-  }))
-  .sort((a,b) => a.title.localeCompare(b.title))
-  .slice(0, 60); // cap listing
----
-<BaseLayout title="Online Calculators" description="Fast, accurate calculators for finance, conversions, percentages and more.">
-  <section class="hero">
-    <h1>Online Calculators</h1>
-    <p>Fast, accurate calculators for finance, conversions, percentages and more.</p>
-  </section>
 
-  <section id="calculators" aria-label="Calculators">
-    <div class="grid">
-      {items.map((it) => (
-        <a class="card" href={it.url}>
-          <h3>{it.title}</h3>
-          <p>{it.description}</p>
-          <div class="meta">
-            <span class="badge">{it.cluster}</span>
-            <span class="badge">Calculator</span>
-          </div>
-        </a>
-      ))}
-    </div>
-  </section>
+const pages = await Astro.glob('./calculators/*.mdx');
+const items = pages.map(p => ({
+  url: p.url,
+  title: p.frontmatter?.title ?? 'Calculator',
+  cluster: p.frontmatter?.cluster ?? 'General',
+  desc: p.frontmatter?.description ?? ''
+})).sort((a,b) => a.title.localeCompare(b.title));
+---
+<BaseLayout title="All Calculators" description="Browse our free online calculators.">
+  <h1 style="margin-top:0">All Calculators</h1>
+  <div class="grid">
+    {items.map(i => (
+      <a class="card" href={i.url}>
+        <div class="pill">{i.cluster}</div>
+        <h3 style="margin:8px 0">{i.title}</h3>
+        <div class="muted">{i.desc}</div>
+      </a>
+    ))}
+  </div>
 </BaseLayout>
