@@ -1,0 +1,18 @@
+MEJORA VISUAL — CÓMO SUBIR (sin editar código)
+
+1) GitHub → tu repo → Code → Add file → Upload files.
+2) Descomprime este ZIP y arrastra:
+   - public/styles.css
+   - src/layouts/BaseLayout.astro
+   - src/pages/index.astro
+3) Commit: "feat(ui): v014 minimal theme + cards grid".
+4) Vercel redeploy automático → refresca tu sitio.
+
+Qué cambia:
+- Nuevo estilo moderno (light/dark automático, cards, grid, botones, formularios).
+- Home con tarjetas de calculadoras (hasta 60), ordenadas alfabéticamente.
+- Meta OG/Twitter y canónica sólida en BaseLayout.
+
+No rompe nada:
+- Tus calculadoras actuales siguen funcionando.
+- No se añadió ninguna dependencia ni framework CSS.
