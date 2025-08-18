@@ -1,0 +1,61 @@
+---
+const { title = 'Niche Calculator Network', description = 'Free online calculators', canonical } = Astro.props;
+const site = Astro.site?.toString() || (import.meta.env.SITE_URL ?? 'https://example.com');
+const href = canonical ?? new URL(Astro.url.pathname, site).toString();
+const adsClient = import.meta.env.VITE_ADSENSE_CLIENT;
+const cfToken = import.meta.env.VITE_CF_ANALYTICS_TOKEN;
+---
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title} — Niche Calculator Network</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={href} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={href} />
+    <meta name="twitter:card" content="summary" />
+    {adsClient && (
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={adsClient}" crossorigin="anonymous"></script>
+    )}
+    {cfToken && (
+      <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon={`{"token":"${cfToken}"}`}></script>
+    )}
+    <style>
+      :root{--max:980px}
+      body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;margin:0;background:#0b1220;color:#e6edf3}
+      a{color:#9ecbff;text-decoration:none}
+      header,main,footer{max-width:var(--max);margin:0 auto;padding:16px}
+      header{display:flex;align-items:center;gap:12px}
+      nav a{margin-right:12px}
+      .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px}
+      .card{background:#0f172a;border:1px solid #1e293b;border-radius:12px;padding:14px}
+      .pill{display:inline-block;background:#12223a;border:1px solid #20324f;padding:2px 8px;border-radius:999px;font-size:12px;color:#9ecbff}
+      .box{background:#0f172a;border:1px solid #1e293b;border-radius:12px;padding:14px;margin-top:12px}
+      .btn{background:#1d4ed8;color:#fff;border:none;border-radius:8px;padding:10px 12px;cursor:pointer}
+      label{display:block;margin:8px 0 4px}
+      input[type="number"]{width:100%;padding:10px;border-radius:8px;border:1px solid #334155;background:#0b1220;color:#e6edf3}
+      .ads{display:block;min-height:280px;margin:12px 0;border:1px dashed #334155;border-radius:8px;text-align:center;line-height:280px;color:#64748b}
+      .muted{color:#9aa4b2;font-size:14px}
+    </style>
+  </head>
+  <body>
+    <header>
+      <a href="/">🧮</a>
+      <div>
+        <div><strong>Niche Calculator Network</strong></div>
+        <nav>
+          <a href="/">Home</a>
+          <a href="/sitemap-index.xml">Sitemap</a>
+          <a href="/privacy">Privacy</a>
+          <a href="/disclaimer">Disclaimer</a>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <slot />
+    </main>
+    <footer class="muted">© {new Date().getFullYear()} Niche Calculator Network — Free tools.</footer>
+  </body>
+</html>
