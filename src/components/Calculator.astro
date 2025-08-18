@@ -1,9 +1,9 @@
 ---
-/** Calculator.astro — V017.4 (fix sin inyecciones en <script>)
-  - 100% client-side, sin eval/new Function.
-  - NO usa document.currentScript ni inyección de variables.
-  - Inicializa buscando todos los [data-calculator] del DOM.
-  - Parser seguro (+,-,*,/,%,^, paréntesis) y fallbacks por slug comunes.
+/** Calculator.astro — V017.5
+  - 100% client-side sin eval/new Function.
+  - Usa schema.expression si existe (string tipo "price * (1 - discount/100)").
+  - Si no hay expression, obtiene el slug desde data-slug o URL y aplica fallbacks.
+  - No usa document.currentScript ni variables inyectadas en <script>.
 **/
 const { schema } = Astro.props;
 const title = schema?.title ?? 'Calculator';
@@ -38,7 +38,6 @@ const intro = schema?.intro ?? '';
 
   <div class="result" role="status" aria-live="polite" data-role="result"></div>
 
-  <!-- Guardamos el schema para el script del cliente -->
   <script type="application/json" data-schema>{JSON.stringify(schema)}</script>
 </section>
 
@@ -57,10 +56,9 @@ const intro = schema?.intro ?? '';
 
 <script is:inline>
 (function () {
-  // Ejecuta cuando el DOM esté listo
   function ready(fn){ if(document.readyState!=='loading') fn(); else document.addEventListener('DOMContentLoaded', fn); }
 
-  // Parser seguro (shunting-yard) para + - * / % ^  y paréntesis
+  // Parser seguro para + - * / % ^ y paréntesis (shunting-yard + RPN)
   function evalExpr(expr, vars){
     var out=[], ops=[], prec={'^':4,'*':3,'/':3,'%':3,'+':2,'-':2}, right={'^':true}, i=0;
     function isSpace(c){return /\s/.test(c);} function isDigit(c){return c>='0'&&c<='9';} function isLetter(c){return /[A-Za-z_]/.test(c);}
@@ -80,7 +78,7 @@ const intro = schema?.intro ?? '';
       if(op==='('){ops.push(op); continue;}
       if(op===')'){while(ops.length && ops[ops.length-1]!=='(') out.push({t:'op',v:ops.pop()}); ops.pop(); continue;}
       while(ops.length){
-        var top=ops[ops.length-1]; if(top==='( )'.charAt(0)) break;
+        var top=ops[ops.length-1]; if(top==='(') break;
         if((right[op] && prec[op] < prec[top]) || (!right[op] && prec[op] <= prec[top])) out.push({t:'op',v:ops.pop()}); else break;
       }
       ops.push(op);
@@ -109,10 +107,19 @@ const intro = schema?.intro ?? '';
       ? new Intl.NumberFormat('en-US', { maximumFractionDigits: 6 }).format(n)
       : '—';
   }
-
   function num(v){ var n=Number(v); return isFinite(n)?n:NaN; }
 
-  // Inicializa una calculadora (solo una vez)
+  function effectiveSlug(root, schema){
+    var fromAttr = root.getAttribute('data-slug');
+    if (fromAttr) return fromAttr;
+    try {
+      var parts = window.location.pathname.split('/').filter(Boolean);
+      return parts[parts.length-1] || (schema && schema.slug) || 'calculator';
+    } catch (_) {
+      return (schema && schema.slug) || 'calculator';
+    }
+  }
+
   function initCalc(root){
     if (!root || root.__calcInit) return;
     root.__calcInit = true;
@@ -125,6 +132,7 @@ const intro = schema?.intro ?? '';
 
     var schema={};
     try { schema = JSON.parse(schemaEl.textContent || '{}'); } catch(e){ schema = {}; }
+    var slug = effectiveSlug(root, schema);
 
     function readInputs(){
       var out={};
@@ -140,15 +148,13 @@ const intro = schema?.intro ?? '';
       for(var k in vars){ if(!isFinite(vars[k])){ resultEl.textContent='Please fill all fields.'; return; } }
 
       var value;
-      if (schema.expression && typeof schema.expression === 'string'){
-        try {
-          value = evalExpr(schema.expression, vars);
-        } catch (e) {
-          resultEl.textContent = 'Invalid expression.'; return;
-        }
+      var expr = (schema && (schema.expression || schema.formula || schema.formula_expression)) || '';
+      if (expr && typeof expr === 'string'){
+        try { value = evalExpr(expr, vars); }
+        catch (e) { resultEl.textContent = 'Invalid expression.'; return; }
       } else {
-        // Fallback por slug (casos comunes)
-        switch(schema.slug){
+        // Fallback por slug (conocidos)
+        switch(slug){
           case 'loan-payment-calculator': {
             var P=num(vars.principal), r=num(vars.rate)/100/12, n=num(vars.months);
             value = r===0 ? P/n : (P*r)/(1-Math.pow(1+r,-n)); break;
@@ -175,16 +181,21 @@ const intro = schema?.intro ?? '';
             resultEl.textContent = 'Calculation not available.'; return;
         }
       }
+
       resultEl.textContent = 'Result: ' + fmt(value);
     }
 
     btn.addEventListener('click', compute);
   }
 
-  ready(function(){
+  function boot(){
     var nodes = document.querySelectorAll('[data-calculator]');
     if (!nodes || !nodes.length) return;
     nodes.forEach(initCalc);
-  });
+  }
+
+  // Arranque
+  if (document.readyState !== 'loading') boot();
+  else document.addEventListener('DOMContentLoaded', boot);
 })();
 </script>
