@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/BaseLayout.astro
 title: Percentage Discount Calculator
-description: Calculate the final price after applying a percentage discount to an original price.
+description: Enter the original price and the discount percentage to get the final price instantly.
 date: 2025-08-17
 updated: 2025-08-17
 cluster: Percentages & Ratios
@@ -14,28 +14,57 @@ export const schema = {
   "title": "Percentage Discount Calculator",
   "locale": "en",
   "inputs": [
-    {"name":"price","type":"number","min":0,"step":0.01,"hint":"Original price"},
-    {"name":"discount","type":"number","min":0,"max":100,"step":0.1,"hint":"Discount (%)"}
+    {
+      "name": "price",
+      "type": "number",
+      "min": 0,
+      "step": 0.01,
+      "hint": "Original price"
+    },
+    {
+      "name": "discount",
+      "type": "number",
+      "min": 0,
+      "max": 100,
+      "step": 0.1,
+      "hint": "Discount (%)"
+    }
   ],
   "expression": "price * (1 - discount/100)",
   "formula_js": "",
-  "units": {"input":"","output":""},
+  "units": {
+    "input": "",
+    "output": ""
+  },
   "intro": "Enter the original price and the discount percentage to get the final price instantly.",
-  "examples": [{"input":{"price":100,"discount":15},"output":"85"}],
-  "faqs": [{"q":"How is the discount calculated?","a":"We multiply the price by (1 - discount/100)."}],
+  "examples": [],
+  "faqs": [],
   "disclaimer": "Educational information, not professional advice.",
   "schema_org": "FAQPage|SoftwareApplication",
-  "related": ["loan-payment-calculator"]
+  "cluster": "Percentages & Ratios",
+  "related": [
+    "loan-payment-calculator",
+    "bmi-calculator",
+    "compound-interest-calculator",
+    "percentage-increase-calculator",
+    "sales-tax-calculator",
+    "tip-calculator"
+  ]
 };
 
 # Percentage Discount Calculator
 
-Quickly compute the discounted price.
+Enter the original price and the discount percentage to get the final price instantly.
 
-<Calculator schema={schema} />
+<Calculator schema={'slug': 'percentage-discount-calculator', 'title': 'Percentage Discount Calculator', 'locale': 'en', 'inputs': [{'name': 'price', 'type': 'number', 'min': 0, 'step': 0.01, 'hint': 'Original price'}, {'name': 'discount', 'type': 'number', 'min': 0, 'max': 100, 'step': 0.1, 'hint': 'Discount (%)'}], 'expression': 'price * (1 - discount/100)', 'formula_js': '', 'units': {'input': '', 'output': ''}, 'intro': 'Enter the original price and the discount percentage to get the final price instantly.', 'examples': [], 'faqs': [], 'disclaimer': 'Educational information, not professional advice.', 'schema_org': 'FAQPage|SoftwareApplication', 'cluster': 'Percentages & Ratios', 'related': ['loan-payment-calculator', 'bmi-calculator', 'compound-interest-calculator', 'percentage-increase-calculator', 'sales-tax-calculator', 'tip-calculator']} />
 
 ## FAQ
-- **How is the discount calculated?** — We multiply the price by (1 - discount/100).
+_No FAQs yet._
 
 ## Related calculators
-- [Loan Payment Calculator](/calculators/loan-payment-calculator/)
+- Loan Payment Calculator (/calculators/loan-payment-calculator/)
+- Bmi Calculator (/calculators/bmi-calculator/)
+- Compound Interest Calculator (/calculators/compound-interest-calculator/)
+- Percentage Increase Calculator (/calculators/percentage-increase-calculator/)
+- Sales Tax Calculator (/calculators/sales-tax-calculator/)
+- Tip Calculator (/calculators/tip-calculator/)

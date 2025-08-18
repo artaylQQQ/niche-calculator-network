@@ -1,7 +1,4 @@
-// scripts/generate_calcs.js — V011 (safe, no self-link in related)
-// Generates 20–100 MDX calculators per day into src/pages/calculators/
-// Reads data/calculators.json and meta/publish_log.json (creates if missing).
-
+// scripts/generate_calcs.js — V012 (hardening + formato seguro)
 const fs = require("fs");
 const path = require("path");
 
@@ -19,21 +16,45 @@ ensureDir(OUT_DIR); ensureDir(path.dirname(LOG));
 function readJSON(p) { return JSON.parse(fs.readFileSync(p, "utf-8")); }
 function writeJSON(p, obj) { fs.writeFileSync(p, JSON.stringify(obj, null, 2) + "\n", "utf-8"); }
 function todayISO() { return new Date().toISOString().slice(0,10); }
+
 function toSlug(s) {
-  return String(s).toLowerCase().trim().replace(/[^a-z0-9\s\-]/g,"").replace(/\s+/g,"-").replace(/\-+/g,"-");
+  return String(s || "")
+    .toLowerCase()
+    .normalize("NFKD").replace(/[^\x00-\x7F]/g, "") // ascii
+    .replace(/[^a-z0-9\s\-]/g,"")
+    .replace(/\s+/g,"-")
+    .replace(/\-+/g,"-")
+    .replace(/^\-+|\-+$/g,"");
 }
+
 function norm(s){ return String(s||"").trim().toLowerCase(); }
+function safeTitle(s) { const t = String(s || "").trim(); return t.length ? t : "Calculator"; }
+
+const SAFE_EXPR_RE = /^[0-9+\-*/%^().\sEe]+$/;
+
+function validateExpression(expr, inputNames) {
+  if (!expr) return true;
+  let s = String(expr);
+  const names = Array.from(new Set((inputNames || []).map(n => String(n || "")))).sort((a,b)=>b.length-a.length);
+  for (const k of names) {
+    if (!k) continue;
+    const re = new RegExp(`\\b${k}\\b`, "g");
+    s = s.replace(re, "1");
+  }
+  if (!SAFE_EXPR_RE.test(s)) return false;
+  if (/([A-Za-z_][A-Za-z0-9_]*|{|}|\[|\]|new|function|=>|;)/.test(s)) return false;
+  return true;
+}
 
 function pickRelated(all, me, n = 6) {
   const meSlug = norm(me.slug);
-  const sameCluster = all.filter(x => x.cluster === me.cluster && norm(x.slug) != meSlug);
-  const pool = sameCluster.length ? sameCluster : all.filter(x => norm(x.slug) != meSlug);
-
+  const sameCluster = all.filter(x => x.cluster === me.cluster && norm(x.slug) !== meSlug);
+  const pool = sameCluster.length ? sameCluster : all.filter(x => norm(x.slug) !== meSlug);
   const seen = new Set();
   const out = [];
   for (const item of pool) {
     const s = norm(item.slug);
-    if (s === meSlug || seen.has(s)) continue; // avoid self-link & duplicates
+    if (s === meSlug || seen.has(s)) continue;
     seen.add(s);
     out.push(item.slug);
     if (out.length >= n) break;
@@ -42,7 +63,7 @@ function pickRelated(all, me, n = 6) {
 }
 
 function mdxLinkTitle(slug) {
-  return slug.replace(/-/g, " ").replace(/\b\w/g, c => c.toUpperCase());
+  return String(slug || "").replace(/-/g, " ").replace(/\b\w/g, c => c.toUpperCase());
 }
 
 function buildMDX(calc, related) {
@@ -52,7 +73,7 @@ function buildMDX(calc, related) {
 
   return `---
 layout: ../../layouts/BaseLayout.astro
-title: ${calc.title}
+title: ${safeTitle(calc.title)}
 description: ${description}
 date: ${date}
 updated: ${date}
@@ -61,46 +82,27 @@ cluster: ${calc.cluster || "General"}
 
 import Calculator from '../../components/Calculator.astro';
 
-export const schema = ${JSON.stringify({
-    slug: "",
-    title: "",
-    locale: "en",
-    inputs: [],
-    expression: "",
-    formula_js: "",
-    units: { input: "", output: "" },
-    intro: "",
-    examples: [],
-    faqs: [],
-    disclaimer: "Educational information, not professional advice.",
-    schema_org: "FAQPage|SoftwareApplication",
-    related: []
-  }, null, 2)};
-
-// Schema filled at runtime below for clarity:
-export const schemaPatch = {
-  slug: ${JSON.stringify(calc.slug)},
-  title: ${JSON.stringify(calc.title)},
-  locale: ${JSON.stringify(calc.locale || "en")},
-  inputs: ${JSON.stringify(calc.inputs || [])},
-  expression: ${JSON.stringify(calc.expression || "")},
-  formula_js: "",
-  units: ${JSON.stringify(calc.units || { input: "", output: "" })},
-  intro: ${JSON.stringify(calc.intro || "")},
-  examples: ${JSON.stringify(calc.examples || [])},
-  faqs: ${JSON.stringify(calc.faqs || [])},
-  disclaimer: ${JSON.stringify(calc.disclaimer || "Educational information, not professional advice.")},
-  schema_org: ${JSON.stringify(calc.schema_org || "FAQPage|SoftwareApplication")},
-  related: ${JSON.stringify(relatedList)}
+export const schema = {
+  "slug": ${JSON.stringify(calc.slug)},
+  "title": ${JSON.stringify(safeTitle(calc.title))},
+  "locale": ${JSON.stringify(calc.locale || "en")},
+  "inputs": ${JSON.stringify(calc.inputs || [])},
+  "expression": ${JSON.stringify(calc.expression || "")},
+  "formula_js": "",
+  "units": ${JSON.stringify(calc.units || { input: "", output: "" })},
+  "intro": ${JSON.stringify(calc.intro || "")},
+  "examples": ${JSON.stringify(calc.examples || [])},
+  "faqs": ${JSON.stringify(calc.faqs || [])},
+  "disclaimer": ${JSON.stringify(calc.disclaimer || "Educational information, not professional advice.")},
+  "schema_org": ${JSON.stringify(calc.schema_org || "FAQPage|SoftwareApplication")},
+  "related": ${JSON.stringify(relatedList)}
 };
 
-export const schemaFinal = Object.assign({}, schema, schemaPatch);
-
-# ${calc.title}
+# ${safeTitle(calc.title)}
 
 ${calc.intro || ""}
 
-<Calculator schema={schemaFinal} />
+<Calculator schema={schema} />
 
 ## FAQ
 ${(calc.faqs || []).map(f => `- **${f.q}** — ${f.a}`).join("\n")}
@@ -114,11 +116,32 @@ function main() {
   if (!fs.existsSync(DATA)) {
     console.error("Missing data/calculators.json"); process.exit(1);
   }
-  const all = readJSON(DATA).map(x => ({
-    ...x,
-    slug: toSlug(x.slug || x.title || ""),
-    cluster: x.cluster || "General"
-  })).filter(x => x.slug);
+  const all0 = readJSON(DATA);
+  if (!Array.isArray(all0)) { console.error("calculators.json must be an array"); process.exit(1); }
+
+  const all = [];
+  const seen = new Set();
+  for (const raw of all0) {
+    const title = safeTitle(raw.title);
+    const slug = toSlug(raw.slug || title);
+    if (!slug) continue;
+    if (seen.has(slug)) continue;
+    seen.add(slug);
+
+    const inputs = Array.isArray(raw.inputs) ? raw.inputs : [];
+    const expr = typeof raw.expression === "string" ? raw.expression.trim() : "";
+
+    if (!validateExpression(expr, inputs.map(i => i.name))) {
+      raw.expression = "";
+    }
+
+    all.push({
+      ...raw,
+      title,
+      slug,
+      cluster: raw.cluster || "General"
+    });
+  }
 
   if (!all.length) { console.log("No calculators in data/calculators.json"); return; }
 
@@ -135,7 +158,7 @@ function main() {
     const related = pickRelated(all, calc, 6);
     const mdx = buildMDX(calc, related);
     const file = path.join(OUT_DIR, `${calc.slug}.mdx`);
-    require("fs").writeFileSync(file, mdx, "utf-8");
+    fs.writeFileSync(file, mdx, "utf-8");
     written.push(calc.slug);
   }
 

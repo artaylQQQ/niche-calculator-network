@@ -1,6 +1,8 @@
 ---
-// src/components/Calculator.astro — V011 runtime fix (patch 5)
-// Cambios: RegExp corregida (guion al final, sin "NaInfty").
+// src/components/Calculator.astro — V012 (runtime fix, secure evaluator)
+// - Sin `${...}` dentro del <script>. Todo viaja por data-*
+// - Regex segura (sin rangos inválidos)
+// - Muestra resultado en cliente, con validación accesible
 const { schema } = Astro.props;
 const locale = (schema?.locale ?? "en-US");
 const inputs = Array.isArray(schema?.inputs) ? schema.inputs : [];
@@ -57,7 +59,6 @@ const disclaimer = schema?.disclaimer || "Educational information, not professio
   var form = document.getElementById("calc-form");
   var resultEl = document.getElementById("result");
 
-  // Read config from data-attributes
   var locale = (root && root.dataset && root.dataset.locale) ? root.dataset.locale : "en-US";
   var unitSuffix = (root && root.dataset && root.dataset.unitOutput) ? root.dataset.unitOutput : "";
   var exprString = (root && root.dataset && root.dataset.expression) ? root.dataset.expression : "";
@@ -96,8 +97,9 @@ const disclaimer = schema?.disclaimer || "Educational information, not professio
     if (wrap) wrap.setAttribute("aria-invalid", "true");
   }
 
-  // Sanitized evaluator for arithmetic expressions.
+  // Evaluador aritmético simple y saneado
   function evalExpression(raw, scope){
+    // Sustituir variables por sus valores
     var names = Object.keys(scope).sort(function(a,b){ return b.length - a.length; });
     var s = raw;
     for (var i=0; i<names.length; i++){
@@ -105,14 +107,14 @@ const disclaimer = schema?.disclaimer || "Educational information, not professio
       var re = new RegExp("\\\\b" + k + "\\\\b", "g");
       s = s.replace(re, String(scope[k]));
     }
-    // Allowed chars check (digits, operators, parentheses, dot, comma, space, E/e, minus)
-    if (!/^[0-9+/*%^().,\\sEe-]+$/.test(s)) {
+    // Permitir sólo dígitos, operadores + - * / % ^, paréntesis, punto, espacios y e/E
+    if (!/^[0-9+\-*/%^().\sEe]+$/.test(s)) {
       throw new Error("Invalid characters in expression.");
     }
-    // caret -> exponent
-    s = s.replace(/\\^/g, "**");
-    // Disallow identifiers/braces and dangerous tokens
-    if (/([A-Za-z_][A-Za-z0-9_]*|\\{|\\}|\\[|\\]|new|function|=>|;)/.test(s)) {
+    // Reemplazar ^ por ** (exponente JS)
+    s = s.replace(/\^/g, "**");
+    // Bloquear identificadores y tokens peligrosos
+    if (/([A-Za-z_][A-Za-z0-9_]*|{|}|\[|\]|new|function|=>|;)/.test(s)) {
       throw new Error("Unsafe token detected.");
     }
     // eslint-disable-next-line no-new-func
@@ -126,7 +128,7 @@ const disclaimer = schema?.disclaimer || "Educational information, not professio
     if (exprString && exprString.trim().length){
       return evalExpression(exprString, vals);
     } else if (formulaString && formulaString.trim().length){
-      // Expect (inputs) => ({ result, steps })
+      // Espera: (inputs) => ({ result, steps })
       if (/new |Function|fetch|XMLHttpRequest|window|document|eval/.test(formulaString)) {
         throw new Error("Unsafe formula_js.");
       }
@@ -153,7 +155,7 @@ const disclaimer = schema?.disclaimer || "Educational information, not professio
       }
       if (bad) { resultEl.textContent = ""; return; }
       var res = compute(vals);
-      resultEl.textContent = "Result: " + new Intl.NumberFormat(locale, { maximumFractionDigits: 8 }).format(res) + (unitSuffix ? " " + unitSuffix : "");
+      resultEl.textContent = "Result: " + fmt.format(res) + (unitSuffix ? " " + unitSuffix : "");
     }catch(e){
       console.error(e);
       resultEl.textContent = "Unable to compute. Please check your inputs.";

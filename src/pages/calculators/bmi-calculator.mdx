@@ -1,0 +1,69 @@
+---
+layout: ../../layouts/BaseLayout.astro
+title: BMI Calculator
+description: Calculate your Body Mass Index (BMI) using metric units.
+date: 2025-08-17
+updated: 2025-08-17
+cluster: Health & Fitness
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "bmi-calculator",
+  "title": "BMI Calculator",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "weight",
+      "type": "number",
+      "min": 0,
+      "step": 0.1,
+      "hint": "Weight (kg)"
+    },
+    {
+      "name": "height",
+      "type": "number",
+      "min": 0,
+      "step": 0.01,
+      "hint": "Height (m)"
+    }
+  ],
+  "expression": "weight / (height * height)",
+  "formula_js": "",
+  "units": {
+    "input": "",
+    "output": ""
+  },
+  "intro": "Calculate your Body Mass Index (BMI) using metric units.",
+  "examples": [],
+  "faqs": [],
+  "disclaimer": "Educational information, not professional advice.",
+  "schema_org": "FAQPage|SoftwareApplication",
+  "cluster": "Health & Fitness",
+  "related": [
+    "percentage-discount-calculator",
+    "loan-payment-calculator",
+    "compound-interest-calculator",
+    "percentage-increase-calculator",
+    "sales-tax-calculator",
+    "tip-calculator"
+  ]
+};
+
+# BMI Calculator
+
+Calculate your Body Mass Index (BMI) using metric units.
+
+<Calculator schema={'slug': 'bmi-calculator', 'title': 'BMI Calculator', 'locale': 'en', 'inputs': [{'name': 'weight', 'type': 'number', 'min': 0, 'step': 0.1, 'hint': 'Weight (kg)'}, {'name': 'height', 'type': 'number', 'min': 0, 'step': 0.01, 'hint': 'Height (m)'}], 'expression': 'weight / (height * height)', 'formula_js': '', 'units': {'input': '', 'output': ''}, 'intro': 'Calculate your Body Mass Index (BMI) using metric units.', 'examples': [], 'faqs': [], 'disclaimer': 'Educational information, not professional advice.', 'schema_org': 'FAQPage|SoftwareApplication', 'cluster': 'Health & Fitness', 'related': ['percentage-discount-calculator', 'loan-payment-calculator', 'compound-interest-calculator', 'percentage-increase-calculator', 'sales-tax-calculator', 'tip-calculator']} />
+
+## FAQ
+_No FAQs yet._
+
+## Related calculators
+- Percentage Discount Calculator (/calculators/percentage-discount-calculator/)
+- Loan Payment Calculator (/calculators/loan-payment-calculator/)
+- Compound Interest Calculator (/calculators/compound-interest-calculator/)
+- Percentage Increase Calculator (/calculators/percentage-increase-calculator/)
+- Sales Tax Calculator (/calculators/sales-tax-calculator/)
+- Tip Calculator (/calculators/tip-calculator/)

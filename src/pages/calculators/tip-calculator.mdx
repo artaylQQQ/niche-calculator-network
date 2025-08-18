@@ -1,0 +1,70 @@
+---
+layout: ../../layouts/BaseLayout.astro
+title: Tip Calculator
+description: Calculate the total including a tip.
+date: 2025-08-17
+updated: 2025-08-17
+cluster: Finance & Loans
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "tip-calculator",
+  "title": "Tip Calculator",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "bill",
+      "type": "number",
+      "min": 0,
+      "step": 0.01,
+      "hint": "Bill amount"
+    },
+    {
+      "name": "tipPct",
+      "type": "number",
+      "min": 0,
+      "max": 100,
+      "step": 0.1,
+      "hint": "Tip (%)"
+    }
+  ],
+  "expression": "bill * (1 + tipPct/100)",
+  "formula_js": "",
+  "units": {
+    "input": "",
+    "output": ""
+  },
+  "intro": "Calculate the total including a tip.",
+  "examples": [],
+  "faqs": [],
+  "disclaimer": "Educational information, not professional advice.",
+  "schema_org": "FAQPage|SoftwareApplication",
+  "cluster": "Finance & Loans",
+  "related": [
+    "percentage-discount-calculator",
+    "loan-payment-calculator",
+    "bmi-calculator",
+    "compound-interest-calculator",
+    "percentage-increase-calculator",
+    "sales-tax-calculator"
+  ]
+};
+
+# Tip Calculator
+
+Calculate the total including a tip.
+
+<Calculator schema={'slug': 'tip-calculator', 'title': 'Tip Calculator', 'locale': 'en', 'inputs': [{'name': 'bill', 'type': 'number', 'min': 0, 'step': 0.01, 'hint': 'Bill amount'}, {'name': 'tipPct', 'type': 'number', 'min': 0, 'max': 100, 'step': 0.1, 'hint': 'Tip (%)'}], 'expression': 'bill * (1 + tipPct/100)', 'formula_js': '', 'units': {'input': '', 'output': ''}, 'intro': 'Calculate the total including a tip.', 'examples': [], 'faqs': [], 'disclaimer': 'Educational information, not professional advice.', 'schema_org': 'FAQPage|SoftwareApplication', 'cluster': 'Finance & Loans', 'related': ['percentage-discount-calculator', 'loan-payment-calculator', 'bmi-calculator', 'compound-interest-calculator', 'percentage-increase-calculator', 'sales-tax-calculator']} />
+
+## FAQ
+_No FAQs yet._
+
+## Related calculators
+- Percentage Discount Calculator (/calculators/percentage-discount-calculator/)
+- Loan Payment Calculator (/calculators/loan-payment-calculator/)
+- Bmi Calculator (/calculators/bmi-calculator/)
+- Compound Interest Calculator (/calculators/compound-interest-calculator/)
+- Percentage Increase Calculator (/calculators/percentage-increase-calculator/)
+- Sales Tax Calculator (/calculators/sales-tax-calculator/)
