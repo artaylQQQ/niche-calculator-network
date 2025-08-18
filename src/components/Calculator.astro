@@ -1,8 +1,10 @@
 ---
-// src/components/Calculator.astro — V012 (runtime fix, secure evaluator)
-// - Sin `${...}` dentro del <script>. Todo viaja por data-*
-// - Regex segura (sin rangos inválidos)
-// - Muestra resultado en cliente, con validación accesible
+/**
+ * src/components/Calculator.astro — V012 seguro
+ * - Sin `${...}` en <script> (todo viaja por data-*)
+ * - Regex segura: sólo números, + - * / % ^ (como potencia), paréntesis, punto, espacios y e/E
+ * - Validación accesible y resultado con aria-live
+ */
 const { schema } = Astro.props;
 const locale = (schema?.locale ?? "en-US");
 const inputs = Array.isArray(schema?.inputs) ? schema.inputs : [];
@@ -99,7 +101,7 @@ const disclaimer = schema?.disclaimer || "Educational information, not professio
 
   // Evaluador aritmético simple y saneado
   function evalExpression(raw, scope){
-    // Sustituir variables por sus valores
+    // Sustituir variables por sus valores (tokens aislados)
     var names = Object.keys(scope).sort(function(a,b){ return b.length - a.length; });
     var s = raw;
     for (var i=0; i<names.length; i++){
@@ -107,13 +109,13 @@ const disclaimer = schema?.disclaimer || "Educational information, not professio
       var re = new RegExp("\\\\b" + k + "\\\\b", "g");
       s = s.replace(re, String(scope[k]));
     }
-    // Permitir sólo dígitos, operadores + - * / % ^, paréntesis, punto, espacios y e/E
+    // Permitir sólo dígitos, operadores, paréntesis, punto, espacios y e/E
     if (!/^[0-9+\-*/%^().\sEe]+$/.test(s)) {
       throw new Error("Invalid characters in expression.");
     }
-    // Reemplazar ^ por ** (exponente JS)
+    // ^ → ** para potencia
     s = s.replace(/\^/g, "**");
-    // Bloquear identificadores y tokens peligrosos
+    // Bloquear identificadores/tokens peligrosos
     if (/([A-Za-z_][A-Za-z0-9_]*|{|}|\[|\]|new|function|=>|;)/.test(s)) {
       throw new Error("Unsafe token detected.");
     }

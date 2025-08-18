@@ -14,34 +14,13 @@ export const schema = {
   "title": "Loan Payment Calculator",
   "locale": "en",
   "inputs": [
-    {
-      "name": "principal",
-      "type": "number",
-      "min": 0,
-      "step": 0.01,
-      "hint": "Loan amount"
-    },
-    {
-      "name": "annualRate",
-      "type": "number",
-      "min": 0,
-      "step": 0.01,
-      "hint": "Annual interest rate (%)"
-    },
-    {
-      "name": "years",
-      "type": "number",
-      "min": 0,
-      "step": 1,
-      "hint": "Term (years)"
-    }
+    {"name":"principal","type":"number","min":0,"step":0.01,"hint":"Loan amount"},
+    {"name":"annualRate","type":"number","min":0,"step":0.01,"hint":"Annual interest rate (%)"},
+    {"name":"years","type":"number","min":0,"step":1,"hint":"Term (years)"}
   ],
   "expression": "principal * ((annualRate/1200) * (1 + (annualRate/1200))^(years*12)) / ((1 + (annualRate/1200))^(years*12) - 1)",
   "formula_js": "",
-  "units": {
-    "input": "",
-    "output": ""
-  },
+  "units": {"input":"","output":""},
   "intro": "Compute your estimated monthly payment for a fixed-rate loan.",
   "examples": [],
   "faqs": [],
@@ -50,27 +29,29 @@ export const schema = {
   "cluster": "Finance & Loans",
   "related": [
     "percentage-discount-calculator",
-    "bmi-calculator",
     "compound-interest-calculator",
     "percentage-increase-calculator",
     "sales-tax-calculator",
-    "tip-calculator"
+    "tip-calculator",
+    "bmi-calculator"
   ]
-};
+}
 
 # Loan Payment Calculator
 
 Compute your estimated monthly payment for a fixed-rate loan.
 
-<Calculator schema={'slug': 'loan-payment-calculator', 'title': 'Loan Payment Calculator', 'locale': 'en', 'inputs': [{'name': 'principal', 'type': 'number', 'min': 0, 'step': 0.01, 'hint': 'Loan amount'}, {'name': 'annualRate', 'type': 'number', 'min': 0, 'step': 0.01, 'hint': 'Annual interest rate (%)'}, {'name': 'years', 'type': 'number', 'min': 0, 'step': 1, 'hint': 'Term (years)'}], 'expression': 'principal * ((annualRate/1200) * (1 + (annualRate/1200))^(years*12)) / ((1 + (annualRate/1200))^(years*12) - 1)', 'formula_js': '', 'units': {'input': '', 'output': ''}, 'intro': 'Compute your estimated monthly payment for a fixed-rate loan.', 'examples': [], 'faqs': [], 'disclaimer': 'Educational information, not professional advice.', 'schema_org': 'FAQPage|SoftwareApplication', 'cluster': 'Finance & Loans', 'related': ['percentage-discount-calculator', 'bmi-calculator', 'compound-interest-calculator', 'percentage-increase-calculator', 'sales-tax-calculator', 'tip-calculator']} />
+<Calculator schema={schema} />
 
 ## FAQ
-_No FAQs yet._
+<p><em>No FAQs yet.</em></p>
 
 ## Related calculators
-- Percentage Discount Calculator (/calculators/percentage-discount-calculator/)
-- Bmi Calculator (/calculators/bmi-calculator/)
-- Compound Interest Calculator (/calculators/compound-interest-calculator/)
-- Percentage Increase Calculator (/calculators/percentage-increase-calculator/)
-- Sales Tax Calculator (/calculators/sales-tax-calculator/)
-- Tip Calculator (/calculators/tip-calculator/)
+<ul>
+  <li><a href="/calculators/percentage-discount-calculator/">Percentage Discount Calculator</a></li>
+  <li><a href="/calculators/compound-interest-calculator/">Compound Interest Calculator</a></li>
+  <li><a href="/calculators/percentage-increase-calculator/">Percentage Increase Calculator</a></li>
+  <li><a href="/calculators/sales-tax-calculator/">Sales Tax Calculator</a></li>
+  <li><a href="/calculators/tip-calculator/">Tip Calculator</a></li>
+  <li><a href="/calculators/bmi-calculator/">BMI Calculator</a></li>
+</ul>

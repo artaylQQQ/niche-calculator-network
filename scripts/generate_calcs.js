@@ -1,4 +1,4 @@
-// scripts/generate_calcs.js — V012 (hardening + formato seguro)
+// scripts/generate_calcs.js — V015 (listas HTML para FAQ/related; evita parse MDX)
 const fs = require("fs");
 const path = require("path");
 
@@ -17,10 +17,16 @@ function readJSON(p) { return JSON.parse(fs.readFileSync(p, "utf-8")); }
 function writeJSON(p, obj) { fs.writeFileSync(p, JSON.stringify(obj, null, 2) + "\n", "utf-8"); }
 function todayISO() { return new Date().toISOString().slice(0,10); }
 
+function esc(s){
+  return String(s||"")
+    .replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;")
+    .replace(/{/g,"&#123;").replace(/}/g,"&#125;");
+}
+
 function toSlug(s) {
   return String(s || "")
     .toLowerCase()
-    .normalize("NFKD").replace(/[^\x00-\x7F]/g, "") // ascii
+    .normalize("NFKD").replace(/[^\x00-\x7F]/g, "")
     .replace(/[^a-z0-9\s\-]/g,"")
     .replace(/\s+/g,"-")
     .replace(/\-+/g,"-")
@@ -66,15 +72,30 @@ function mdxLinkTitle(slug) {
   return String(slug || "").replace(/-/g, " ").replace(/\b\w/g, c => c.toUpperCase());
 }
 
+function buildFAQ(faqs){
+  if (!Array.isArray(faqs) || !faqs.length) return "<p><em>No FAQs yet.</em></p>";
+  const items = faqs.map(f => `<li><strong>${esc(f.q)}</strong> — ${esc(f.a)}</li>`).join("\n");
+  return `<ul>\n${items}\n</ul>`;
+}
+
+function buildRelated(related){
+  if (!Array.isArray(related) || !related.length) return "<p><em>No related calculators yet.</em></p>";
+  const items = related.map(slug => `<li><a href="/calculators/${slug}/">${mdxLinkTitle(slug)}</a></li>`).join("\n");
+  return `<ul>\n${items}\n</ul>`;
+}
+
 function buildMDX(calc, related) {
   const date = todayISO();
   const description = calc.description || `${calc.title} — online calculator.`;
   const relatedList = related.filter(r => norm(r) !== norm(calc.slug));
 
+  const faqHTML = buildFAQ(calc.faqs || []);
+  const relHTML = buildRelated(relatedList);
+
   return `---
 layout: ../../layouts/BaseLayout.astro
 title: ${safeTitle(calc.title)}
-description: ${description}
+description: ${esc(description)}
 date: ${date}
 updated: ${date}
 cluster: ${calc.cluster || "General"}
@@ -96,19 +117,19 @@ export const schema = {
   "disclaimer": ${JSON.stringify(calc.disclaimer || "Educational information, not professional advice.")},
   "schema_org": ${JSON.stringify(calc.schema_org || "FAQPage|SoftwareApplication")},
   "related": ${JSON.stringify(relatedList)}
-};
+}
 
 # ${safeTitle(calc.title)}
 
-${calc.intro || ""}
+${esc(calc.intro || "")}
 
 <Calculator schema={schema} />
 
 ## FAQ
-${(calc.faqs || []).map(f => `- **${f.q}** — ${f.a}`).join("\n")}
+${faqHTML}
 
 ## Related calculators
-${relatedList.length ? relatedList.map(r => `- [${mdxLinkTitle(r)}](/calculators/${r}/)`).join("\n") : "_No related calculators yet._"}
+${relHTML}
 `;
 }
 
@@ -142,8 +163,6 @@ function main() {
       cluster: raw.cluster || "General"
     });
   }
-
-  if (!all.length) { console.log("No calculators in data/calculators.json"); return; }
 
   const published = fs.existsSync(LOG) ? readJSON(LOG) : { dates: {}, slugs: [] };
   const already = new Set(published.slugs || []);
