@@ -1,0 +1,57 @@
+---
+layout: ../../layouts/BaseLayout.astro
+title: Loan Payment Calculator
+description: Compute your estimated monthly payment for a fixed-rate loan.
+date: 2025-08-18
+updated: 2025-08-18
+cluster: Finance & Loans
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "loan-payment-calculator",
+  "title": "Loan Payment Calculator",
+  "locale": "en",
+  "inputs": [
+    {"name":"principal","type":"number","min":0,"step":0.01,"hint":"Loan amount"},
+    {"name":"annualRate","type":"number","min":0,"step":0.01,"hint":"Annual interest rate (%)"},
+    {"name":"years","type":"number","min":0,"step":1,"hint":"Term (years)"}
+  ],
+  "expression": "principal * ((annualRate/1200) * (1 + (annualRate/1200))^(years*12)) / ((1 + (annualRate/1200))^(years*12) - 1)",
+  "formula_js": "",
+  "units": {"input":"","output":""},
+  "intro": "Compute your estimated monthly payment for a fixed-rate loan.",
+  "examples": [{"input":{"principal":10000,"annualRate":6,"years":3},"output":"304.22 (approx.)"}],
+  "faqs": [{"q":"What is the formula?","a":"We use the standard amortization formula with monthly rate r and periods n=years*12."}],
+  "disclaimer": "Educational information, not professional advice.",
+  "schema_org": "FAQPage|SoftwareApplication",
+  "cluster": "Finance & Loans",
+  "related": [
+    "percentage-discount-calculator",
+    "compound-interest-calculator",
+    "percentage-increase-calculator",
+    "sales-tax-calculator",
+    "tip-calculator",
+    "bmi-calculator"
+  ]
+}
+
+# Loan Payment Calculator
+
+Compute your estimated monthly payment for a fixed-rate loan.
+
+<Calculator schema={schema} />
+
+## FAQ
+
+- **What is the formula?** — We use the standard amortization formula with monthly rate r and n = years × 12.
+
+## Related calculators
+
+- [Percentage Discount Calculator](/calculators/percentage-discount-calculator/)
+- [Compound Interest Calculator](/calculators/compound-interest-calculator/)
+- [Percentage Increase Calculator](/calculators/percentage-increase-calculator/)
+- [Sales Tax Calculator](/calculators/sales-tax-calculator/)
+- [Tip Calculator](/calculators/tip-calculator/)
+- [BMI Calculator](/calculators/bmi-calculator/)

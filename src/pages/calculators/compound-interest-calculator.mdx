@@ -2,8 +2,8 @@
 layout: ../../layouts/BaseLayout.astro
 title: Compound Interest Calculator
 description: Estimate your future balance with compound interest.
-date: 2025-08-17
-updated: 2025-08-17
+date: 2025-08-18
+updated: 2025-08-18
 cluster: Finance & Loans
 ---
 
@@ -14,70 +14,45 @@ export const schema = {
   "title": "Compound Interest Calculator",
   "locale": "en",
   "inputs": [
-    {
-      "name": "principal",
-      "type": "number",
-      "min": 0,
-      "step": 0.01,
-      "hint": "Initial amount"
-    },
-    {
-      "name": "annualRate",
-      "type": "number",
-      "min": 0,
-      "step": 0.01,
-      "hint": "Annual interest rate (%)"
-    },
-    {
-      "name": "years",
-      "type": "number",
-      "min": 0,
-      "step": 1,
-      "hint": "Years"
-    },
-    {
-      "name": "times",
-      "type": "number",
-      "min": 1,
-      "step": 1,
-      "hint": "Compounds per year"
-    }
+    {"name":"principal","type":"number","min":0,"step":0.01,"hint":"Initial amount"},
+    {"name":"annualRate","type":"number","min":0,"step":0.01,"hint":"Annual interest rate (%)"},
+    {"name":"years","type":"number","min":0,"step":1,"hint":"Years"},
+    {"name":"times","type":"number","min":1,"step":1,"hint":"Compounds per year"}
   ],
   "expression": "principal * (1 + (annualRate/100)/times)^(times*years)",
   "formula_js": "",
-  "units": {
-    "input": "",
-    "output": ""
-  },
+  "units": {"input":"","output":""},
   "intro": "Estimate your future balance with compound interest.",
-  "examples": [],
-  "faqs": [],
+  "examples": [{"input":{"principal":1000,"annualRate":5,"years":10,"times":12},"output":"1647.01 (approx.)"}],
+  "faqs": [{"q":"How is compound interest computed?","a":"We apply A = P * (1 + r/n)^(n*t)."}],
   "disclaimer": "Educational information, not professional advice.",
   "schema_org": "FAQPage|SoftwareApplication",
   "cluster": "Finance & Loans",
   "related": [
-    "percentage-discount-calculator",
     "loan-payment-calculator",
-    "bmi-calculator",
+    "percentage-discount-calculator",
     "percentage-increase-calculator",
     "sales-tax-calculator",
-    "tip-calculator"
+    "tip-calculator",
+    "bmi-calculator"
   ]
-};
+}
 
 # Compound Interest Calculator
 
 Estimate your future balance with compound interest.
 
-<Calculator schema={'slug': 'compound-interest-calculator', 'title': 'Compound Interest Calculator', 'locale': 'en', 'inputs': [{'name': 'principal', 'type': 'number', 'min': 0, 'step': 0.01, 'hint': 'Initial amount'}, {'name': 'annualRate', 'type': 'number', 'min': 0, 'step': 0.01, 'hint': 'Annual interest rate (%)'}, {'name': 'years', 'type': 'number', 'min': 0, 'step': 1, 'hint': 'Years'}, {'name': 'times', 'type': 'number', 'min': 1, 'step': 1, 'hint': 'Compounds per year'}], 'expression': 'principal * (1 + (annualRate/100)/times)^(times*years)', 'formula_js': '', 'units': {'input': '', 'output': ''}, 'intro': 'Estimate your future balance with compound interest.', 'examples': [], 'faqs': [], 'disclaimer': 'Educational information, not professional advice.', 'schema_org': 'FAQPage|SoftwareApplication', 'cluster': 'Finance & Loans', 'related': ['percentage-discount-calculator', 'loan-payment-calculator', 'bmi-calculator', 'percentage-increase-calculator', 'sales-tax-calculator', 'tip-calculator']} />
+<Calculator schema={schema} />
 
 ## FAQ
-_No FAQs yet._
+
+- **How is compound interest computed?** — We apply A = P · (1 + r/n)^(n · t).
 
 ## Related calculators
-- Percentage Discount Calculator (/calculators/percentage-discount-calculator/)
-- Loan Payment Calculator (/calculators/loan-payment-calculator/)
-- Bmi Calculator (/calculators/bmi-calculator/)
-- Percentage Increase Calculator (/calculators/percentage-increase-calculator/)
-- Sales Tax Calculator (/calculators/sales-tax-calculator/)
-- Tip Calculator (/calculators/tip-calculator/)
+
+- [Loan Payment Calculator](/calculators/loan-payment-calculator/)
+- [Percentage Discount Calculator](/calculators/percentage-discount-calculator/)
+- [Percentage Increase Calculator](/calculators/percentage-increase-calculator/)
+- [Sales Tax Calculator](/calculators/sales-tax-calculator/)
+- [Tip Calculator](/calculators/tip-calculator/)
+- [BMI Calculator](/calculators/bmi-calculator/)
