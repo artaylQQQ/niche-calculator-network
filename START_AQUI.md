@@ -1,9 +1,9 @@
-# START_AQUI — Guía única (V016)
+# START_AQUI — Guía única (V017)
 
 **Propósito:** lanzar una **Red de Calculadoras** (sitio en **inglés**) con **publicación programática** (20–100 páginas/día) y **sin soporte**.
 
 ## Paso 1 — Sube el proyecto (GitHub)
-1. Descarga **RedCalculadoras_V016.zip** y descomprime.
+1. Descarga **RedCalculadoras_V017.zip** y descomprime.
 2. Crea repo público (sin README/.gitignore/licencia).
 3. **Upload files** → sube **el contenido** (no el ZIP).
 4. Verifica: `package.json`, `astro.config.mjs`, `src/`, `public/`, `scripts/`, `.github/`, `data/`, `meta/`.
