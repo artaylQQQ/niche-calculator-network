@@ -1,180 +1,190 @@
 ---
-/** Calculator.astro — V017.3 (fix definitivo)
- - Cálculo 100% client-side, sin eval/new Function.
- - NO usa currentScript. Usa un ID estático por página.
- - Parser seguro (+,-,*,/,%,^, paréntesis) y fallbacks por slug.
+/** Calculator.astro — V017.4 (fix sin inyecciones en <script>)
+  - 100% client-side, sin eval/new Function.
+  - NO usa document.currentScript ni inyección de variables.
+  - Inicializa buscando todos los [data-calculator] del DOM.
+  - Parser seguro (+,-,*,/,%,^, paréntesis) y fallbacks por slug comunes.
 **/
 const { schema } = Astro.props;
 const title = schema?.title ?? 'Calculator';
 const slug = schema?.slug ?? 'calculator';
 const inputs = Array.isArray(schema?.inputs) ? schema.inputs : [];
 const intro = schema?.intro ?? '';
-const rootId = `calc-${slug}`;
 ---
 
-<section id={rootId} class="calc" data-calculator aria-labelledby={`h-${slug}`}>
-  <h1 id={`h-${slug}`}>{title}</h1>
-  {intro && <p class="muted">{intro}</p>}
+<section class="calc" data-calculator data-slug={slug} aria-labelledby={`h-${slug}`}>
+  <h1 id={`h-${slug}`}>{title}</h1>
+  {intro && <p class="muted">{intro}</p>}
 
-  <form data-role="form" onsubmit="return false">
-    {inputs.map((i) => (
-      <div class="field">
-        <label for={`in-${slug}-${i.name}`}>{i.hint ?? i.name}</label>
-        <input
-          id={`in-${slug}-${i.name}`}
-          name={i.name}
-          type="number"
-          step={i.step ?? 'any'}
-          {...(i.min !== undefined ? { min: i.min } : {})}
-          {...(i.max !== undefined ? { max: i.max } : {})}
-          inputmode="decimal"
-          aria-describedby={`hint-${slug}-${i.name}`}
-        />
-        <div id={`hint-${slug}-${i.name}`} class="hint">{i.units ? i.units : ''}</div>
-      </div>
-    ))}
-    <button type="button" data-action="calc" class="btn">Calculate</button>
-  </form>
+  <form data-role="form" onsubmit="return false">
+    {inputs.map((i) => (
+      <div class="field">
+        <label for={`in-${slug}-${i.name}`}>{i.hint ?? i.name}</label>
+        <input
+          id={`in-${slug}-${i.name}`}
+          name={i.name}
+          type="number"
+          step={i.step ?? 'any'}
+          {...(i.min !== undefined ? { min: i.min } : {})}
+          {...(i.max !== undefined ? { max: i.max } : {})}
+          inputmode="decimal"
+          aria-describedby={`hint-${slug}-${i.name}`}
+        />
+        <div id={`hint-${slug}-${i.name}`} class="hint">{i.units ? i.units : ''}</div>
+      </div>
+    ))}
+    <button type="button" data-action="calc" class="btn">Calculate</button>
+  </form>
 
-  <div class="result" role="status" aria-live="polite" data-role="result"></div>
+  <div class="result" role="status" aria-live="polite" data-role="result"></div>
 
-    <script type="application/json" data-schema>{JSON.stringify(schema)}</script>
+  <!-- Guardamos el schema para el script del cliente -->
+  <script type="application/json" data-schema>{JSON.stringify(schema)}</script>
 </section>
 
 <style>
-  :root { --max: 980px; }
-  .calc { max-width: var(--max); margin: 0 auto; padding: 16px; }
-  h1 { margin: 0 0 8px; font-size: 28px; }
-  .muted { color: #667085; margin: 0 0 16px; }
-  .field { margin: 12px 0; }
-  .field label { display:block; margin: 0 0 6px; font-weight: 600; }
-  .field input[type=number] { width: 100%; padding: 10px; border: 1px solid #cbd5e1; border-radius: 8px; }
-  .hint { font-size: 12px; color: #94a3b8; margin-top: 4px; }
-  .btn { display:inline-block; padding:10px 14px; border-radius:8px; border:1px solid #1d4ed8; background:#1d4ed8; color:#fff; font-weight:600; cursor:pointer; }
-  .result { margin-top: 16px; font-size: 18px; font-weight: 600; }
+  :root { --max: 980px; }
+  .calc { max-width: var(--max); margin: 0 auto; padding: 16px; }
+  h1 { margin: 0 0 8px; font-size: 28px; }
+  .muted { color: #667085; margin: 0 0 16px; }
+  .field { margin: 12px 0; }
+  .field label { display:block; margin: 0 0 6px; font-weight: 600; }
+  .field input[type=number] { width: 100%; padding: 10px; border: 1px solid #cbd5e1; border-radius: 8px; }
+  .hint { font-size: 12px; color: #94a3b8; margin-top: 4px; }
+  .btn { display:inline-block; padding:10px 14px; border-radius:8px; border:1px solid #1d4ed8; background:#1d4ed8; color:#fff; font-weight:600; cursor:pointer; }
+  .result { margin-top: 16px; font-size: 18px; font-weight: 600; }
 </style>
 
-<script is:inline define:vars={{ ROOT_ID: rootId }}>
+<script is:inline>
 (function () {
-  // La variable `ROOT_ID` es inyectada aquí por Astro gracias a `define:vars`.
-  
-  // Defer: esperamos a que el DOM esté listo para asegurar que el nodo existe.
-  function ready(fn){ if(document.readyState!=='loading') fn(); else document.addEventListener('DOMContentLoaded', fn); }
+  // Ejecuta cuando el DOM esté listo
+  function ready(fn){ if(document.readyState!=='loading') fn(); else document.addEventListener('DOMContentLoaded', fn); }
 
-  ready(function(){
-    var root = document.getElementById(ROOT_ID);
-    if (!root) return;
+  // Parser seguro (shunting-yard) para + - * / % ^  y paréntesis
+  function evalExpr(expr, vars){
+    var out=[], ops=[], prec={'^':4,'*':3,'/':3,'%':3,'+':2,'-':2}, right={'^':true}, i=0;
+    function isSpace(c){return /\s/.test(c);} function isDigit(c){return c>='0'&&c<='9';} function isLetter(c){return /[A-Za-z_]/.test(c);}
+    var tokens=[];
+    while(i<expr.length){
+      var c=expr[i];
+      if(isSpace(c)){i++;continue;}
+      if(isDigit(c)||c==='.'){var s=i; while(i<expr.length && /[0-9.eE+\-]/.test(expr[i])) i++; tokens.push({t:'num',v:parseFloat(expr.slice(s,i))}); continue;}
+      if(isLetter(c)){var s2=i; while(i<expr.length && /[A-Za-z0-9_]/.test(expr[i])) i++; var name=expr.slice(s2,i); if(!(name in vars)) throw new Error('Unknown var '+name); tokens.push({t:'num',v:Number(vars[name])}); continue;}
+      if('+-*/%^()'.indexOf(c)!==-1){tokens.push({t:'op',v:c}); i++; continue;}
+      throw new Error('Bad char in expression');
+    }
+    for(var ti=0; ti<tokens.length; ti++){
+      var tok=tokens[ti];
+      if(tok.t==='num'){out.push(tok); continue;}
+      var op=tok.v;
+      if(op==='('){ops.push(op); continue;}
+      if(op===')'){while(ops.length && ops[ops.length-1]!=='(') out.push({t:'op',v:ops.pop()}); ops.pop(); continue;}
+      while(ops.length){
+        var top=ops[ops.length-1]; if(top==='( )'.charAt(0)) break;
+        if((right[op] && prec[op] < prec[top]) || (!right[op] && prec[op] <= prec[top])) out.push({t:'op',v:ops.pop()}); else break;
+      }
+      ops.push(op);
+    }
+    while(ops.length) out.push({t:'op',v:ops.pop()});
+    var st=[];
+    for(var oi=0; oi<out.length; oi++){
+      var t=out[oi]; if(t.t==='num'){st.push(t.v); continue;}
+      var b=st.pop(), a=st.pop(), r;
+      switch(t.v){
+        case '+': r=a+b; break;
+        case '-': r=a-b; break;
+        case '*': r=a*b; break;
+        case '/': r=b===0?NaN:a/b; break;
+        case '%': r=b===0?NaN:a%b; break;
+        case '^': r=Math.pow(a,b); break;
+        default: throw new Error('op');
+      }
+      st.push(r);
+    }
+    return st.pop();
+  }
 
-    var schemaEl = root.querySelector('script[data-schema]');
-    var form = root.querySelector('[data-role="form"]');
-    var resultEl = root.querySelector('[data-role="result"]');
-    var btn = root.querySelector('[data-action="calc"]');
-    if (!schemaEl || !form || !resultEl || !btn) return;
+  function fmt(n){
+    return isFinite(n)
+      ? new Intl.NumberFormat('en-US', { maximumFractionDigits: 6 }).format(n)
+      : '—';
+  }
 
-    function num(val){ var n = Number(val); return isFinite(n) ? n : NaN; }
-    function fmt(n){
-      return isFinite(n)
-        ? new Intl.NumberFormat('en-US', { maximumFractionDigits: 6 }).format(n)
-        : '—';
-    }
+  function num(v){ var n=Number(v); return isFinite(n)?n:NaN; }
 
-    // Parser seguro (shunting-yard) para + - * / % ^  y paréntesis
-    function evalExpr(expr, vars){
-      var out=[], ops=[], prec={'^':4,'*':3,'/':3,'%':3,'+':2,'-':2}, right={'^':true}, i=0;
-      function isSpace(c){return /\s/.test(c);} function isDigit(c){return c>='0'&&c<='9';} function isLetter(c){return /[A-Za-z_]/.test(c);}
-      var tokens=[];
-      while(i<expr.length){
-        var c=expr[i];
-        if(isSpace(c)){i++;continue;}
-        if(isDigit(c)||c==='.'){var s=i; while(i<expr.length && /[0-9.eE+\-]/.test(expr[i])) i++; tokens.push({t:'num',v:parseFloat(expr.slice(s,i))}); continue;}
-        if(isLetter(c)){var s2=i; while(i<expr.length && /[A-Za-z0-9_]/.test(expr[i])) i++; var name=expr.slice(s2,i); if(!(name in vars)) throw new Error('Unknown var '+name); tokens.push({t:'num',v:num(vars[name])}); continue;}
-        if('+-*/%^()'.indexOf(c)!==-1){tokens.push({t:'op',v:c}); i++; continue;}
-        throw new Error('Bad char in expression');
-      }
-      for(var ti=0; ti<tokens.length; ti++){
-        var tok=tokens[ti];
-        if(tok.t==='num'){out.push(tok); continue;}
-        var op=tok.v;
-        if(op==='('){ops.push(op); continue;}
-        if(op===')'){while(ops.length && ops[ops.length-1]!=='(') out.push({t:'op',v:ops.pop()}); ops.pop(); continue;}
-        while(ops.length){
-          var top=ops[ops.length-1]; if(top==='(') break;
-          if((right[op] && prec[op] < prec[top]) || (!right[op] && prec[op] <= prec[top])) out.push({t:'op',v:ops.pop()}); else break;
-        }
-        ops.push(op);
-      }
-      while(ops.length) out.push({t:'op',v:ops.pop()});
-      var st=[];
-      for(var oi=0; oi<out.length; oi++){
-        var t=out[oi]; if(t.t==='num'){st.push(t.v); continue;}
-        var b=st.pop(), a=st.pop(), r;
-        switch(t.v){
-          case '+': r=a+b; break;
-          case '-': r=a-b; break;
-          case '*': r=a*b; break;
-          case '/': r=b===0?NaN:a/b; break;
-          case '%': r=b===0?NaN:a%b; break;
-          case '^': r=Math.pow(a,b); break;
-          default: throw new Error('op');
-        }
-        st.push(r);
-      }
-      return st.pop();
-    }
+  // Inicializa una calculadora (solo una vez)
+  function initCalc(root){
+    if (!root || root.__calcInit) return;
+    root.__calcInit = true;
 
-    var schema={};
-    try { schema = JSON.parse(schemaEl.textContent || '{}'); } catch(e){}
+    var schemaEl = root.querySelector('script[data-schema]');
+    var form = root.querySelector('[data-role="form"]');
+    var resultEl = root.querySelector('[data-role="result"]');
+    var btn = root.querySelector('[data-action="calc"]');
+    if (!schemaEl || !form || !resultEl || !btn) return;
 
-    function readInputs(){
-      var out={};
-      (schema.inputs||[]).forEach(function(i){
-        var el=form.querySelector('[name="'+i.name+'"]');
-        out[i.name]=(el && el.value!=='') ? Number(el.value) : NaN;
-      });
-      return out;
-    }
+    var schema={};
+    try { schema = JSON.parse(schemaEl.textContent || '{}'); } catch(e){ schema = {}; }
 
-    function compute(){
-      var vars=readInputs();
-      for(var k in vars){ if(!isFinite(vars[k])){ resultEl.textContent='Please fill all fields.'; return; } }
+    function readInputs(){
+      var out={};
+      (schema.inputs||[]).forEach(function(i){
+        var el=form.querySelector('[name="'+i.name+'"]');
+        out[i.name]=(el && el.value!=='') ? Number(el.value) : NaN;
+      });
+      return out;
+    }
 
-      var value;
-      if (schema.expression && typeof schema.expression === 'string'){
-        value = evalExpr(schema.expression, vars);
-      } else {
-        // Fallback por slug (casos más comunes)
-        switch(schema.slug){
-          case 'loan-payment-calculator': {
-            var P=num(vars.principal), r=num(vars.rate)/100/12, n=num(vars.months);
-            value = r===0 ? P/n : (P*r)/(1-Math.pow(1+r,-n)); break;
-          }
-          case 'percentage-discount-calculator':
-            value = num(vars.price)*(1-num(vars.discount)/100); break;
-          case 'percentage-increase-calculator':
-            value = num(vars.original)*(1+num(vars.increase)/100); break;
-          case 'bmi-calculator': {
-            var h=num(vars.height)/100;
-            value = num(vars.weight)/(h*h); break;
-          }
-          case 'compound-interest-calculator': {
-            var P2=num(vars.principal), r2=num(vars.rate)/100, t=num(vars.years), n2=num(vars.times);
-            value = P2*Math.pow(1+r2/n2, n2*t); break;
-          }
-          case 'triangle-area-calculator':
-            value = (num(vars.base)*num(vars.height))/2; break;
-          case 'roi-calculator':
-            value = ((num(vars.gain)-num(vars.cost))/num(vars.cost))*100; break;
-          case 'sales-tax-calculator':
-            value = num(vars.price)*(1+num(vars.tax)/100); break;
-          default:
-            resultEl.textContent = 'Calculation not available.'; return;
-        }
-      }
+    function compute(){
+      var vars=readInputs();
+      for(var k in vars){ if(!isFinite(vars[k])){ resultEl.textContent='Please fill all fields.'; return; } }
 
-      resultEl.textContent = 'Result: ' + fmt(value);
-    }
+      var value;
+      if (schema.expression && typeof schema.expression === 'string'){
+        try {
+          value = evalExpr(schema.expression, vars);
+        } catch (e) {
+          resultEl.textContent = 'Invalid expression.'; return;
+        }
+      } else {
+        // Fallback por slug (casos comunes)
+        switch(schema.slug){
+          case 'loan-payment-calculator': {
+            var P=num(vars.principal), r=num(vars.rate)/100/12, n=num(vars.months);
+            value = r===0 ? P/n : (P*r)/(1-Math.pow(1+r,-n)); break;
+          }
+          case 'percentage-discount-calculator':
+            value = num(vars.price)*(1-num(vars.discount)/100); break;
+          case 'percentage-increase-calculator':
+            value = num(vars.original)*(1+num(vars.increase)/100); break;
+          case 'bmi-calculator': {
+            var h=num(vars.height)/100;
+            value = num(vars.weight)/(h*h); break;
+          }
+          case 'compound-interest-calculator': {
+            var P2=num(vars.principal), r2=num(vars.rate)/100, t=num(vars.years), n2=num(vars.times);
+            value = P2*Math.pow(1+r2/n2, n2*t); break;
+          }
+          case 'triangle-area-calculator':
+            value = (num(vars.base)*num(vars.height))/2; break;
+          case 'roi-calculator':
+            value = ((num(vars.gain)-num(vars.cost))/num(vars.cost))*100; break;
+          case 'sales-tax-calculator':
+            value = num(vars.price)*(1+num(vars.tax)/100); break;
+          default:
+            resultEl.textContent = 'Calculation not available.'; return;
+        }
+      }
+      resultEl.textContent = 'Result: ' + fmt(value);
+    }
 
-    btn.addEventListener('click', compute);
-  });
+    btn.addEventListener('click', compute);
+  }
+
+  ready(function(){
+    var nodes = document.querySelectorAll('[data-calculator]');
+    if (!nodes || !nodes.length) return;
+    nodes.forEach(initCalc);
+  });
 })();
 </script>
