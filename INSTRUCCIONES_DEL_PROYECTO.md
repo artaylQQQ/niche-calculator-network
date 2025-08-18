@@ -1,17 +1,15 @@
-# INSTRUCCIONES_DEL_PROYECTO (V015)
+# INSTRUCCIONES_DEL_PROYECTO (V016)
 
-- Red de calculadoras en **inglés** (cálculo client-side, sin soporte).
-- Publicación programática **20–100 páginas/día** (cron 01:30 UTC).
-- Hosting: Vercel (Astro + MDX). Analítica: Cloudflare. Ads: AdSense.
-- SEO: sitemap, robots, JSON-LD en cada página (desde `schema`).
-- Calidad: `.editorconfig`, Prettier; MDX “seguro” (sin HTML/JSX ambiguo).
+- Web en **inglés**, documentación en **español**.
+- Cálculo client-side, sin soporte, SEO programático.
+- Publicación programática: **20–100** páginas/día (cron **30 1 * * ***).
 
-## Rutas y convenciones
-- Calculadoras: `src/pages/calculators/*.mdx` (una por archivo). **Sin** duplicados en `content/`.
+## Estructura
+- Calculadoras: `src/pages/calculators/*.mdx` (una por archivo).
 - Interlinking automático: **6** relacionados.
-- Cron YAML: `30 1 * * *` (01:30 UTC).
-- `SITE_URL` obligatorio para canónicas correctas.
+- Datos seed: `data/calculators.json` (30).
 
-## Flujo programático
-- `data/calculators.json` → `scripts/generate_calcs.js` → MDX en `src/pages/calculators/` → build → deploy → ping sitemaps.
-- Log de publicación: `meta/publish_log.json` (evita duplicados).
+## Flujo
+1) Generación (`scripts/generate_calcs.js`) → MDX en `src/pages/calculators/`.
+2) Build & Deploy (Vercel).
+3) Sitemaps ping (Google/Bing).
