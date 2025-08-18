@@ -1,9 +1,9 @@
 ---
 layout: ../../layouts/BaseLayout.astro
 title: BMI Calculator
-description: Calculate your Body Mass Index (BMI) using metric units.
-date: 2025-08-17
-updated: 2025-08-17
+description: Calculate Body Mass Index (BMI) from height and weight.
+date: 2025-08-18
+updated: 2025-08-18
 cluster: Health & Fitness
 ---
 
@@ -14,56 +14,47 @@ export const schema = {
   "title": "BMI Calculator",
   "locale": "en",
   "inputs": [
-    {
-      "name": "weight",
-      "type": "number",
-      "min": 0,
-      "step": 0.1,
-      "hint": "Weight (kg)"
-    },
-    {
-      "name": "height",
-      "type": "number",
-      "min": 0,
-      "step": 0.01,
-      "hint": "Height (m)"
-    }
+    {"name":"weight","type":"number","min":0,"step":0.1,"hint":"Weight (kg)"},
+    {"name":"height","type":"number","min":0,"step":0.001,"hint":"Height (m)"}
   ],
-  "expression": "weight / (height * height)",
+  "expression": "weight / (height^2)",
   "formula_js": "",
-  "units": {
-    "input": "",
-    "output": ""
-  },
-  "intro": "Calculate your Body Mass Index (BMI) using metric units.",
-  "examples": [],
-  "faqs": [],
+  "units": {"input":"","output":""},
+  "intro": "Compute your Body Mass Index (BMI) using metric units. BMI = weight / height².",
+  "examples": [{"input":{"weight":70,"height":1.75},"output":"22.86 (approx.)"}],
+  "faqs": [
+    {"q":"What is BMI?","a":"Body Mass Index (BMI) estimates body fat using weight divided by height squared."},
+    {"q":"Is BMI a medical diagnosis?","a":"No. BMI is an educational metric, not a medical diagnosis."}
+  ],
   "disclaimer": "Educational information, not professional advice.",
   "schema_org": "FAQPage|SoftwareApplication",
   "cluster": "Health & Fitness",
   "related": [
-    "percentage-discount-calculator",
-    "loan-payment-calculator",
-    "compound-interest-calculator",
-    "percentage-increase-calculator",
-    "sales-tax-calculator",
-    "tip-calculator"
+    "bmr-calculator",
+    "calorie-burn-calculator",
+    "ideal-weight-calculator",
+    "waist-to-hip-ratio-calculator",
+    "body-fat-percentage-calculator",
+    "water-intake-calculator"
   ]
-};
+}
 
 # BMI Calculator
 
-Calculate your Body Mass Index (BMI) using metric units.
+Calculate Body Mass Index (BMI) from height and weight.
 
-<Calculator schema={'slug': 'bmi-calculator', 'title': 'BMI Calculator', 'locale': 'en', 'inputs': [{'name': 'weight', 'type': 'number', 'min': 0, 'step': 0.1, 'hint': 'Weight (kg)'}, {'name': 'height', 'type': 'number', 'min': 0, 'step': 0.01, 'hint': 'Height (m)'}], 'expression': 'weight / (height * height)', 'formula_js': '', 'units': {'input': '', 'output': ''}, 'intro': 'Calculate your Body Mass Index (BMI) using metric units.', 'examples': [], 'faqs': [], 'disclaimer': 'Educational information, not professional advice.', 'schema_org': 'FAQPage|SoftwareApplication', 'cluster': 'Health & Fitness', 'related': ['percentage-discount-calculator', 'loan-payment-calculator', 'compound-interest-calculator', 'percentage-increase-calculator', 'sales-tax-calculator', 'tip-calculator']} />
+<Calculator schema={schema} />
 
 ## FAQ
-_No FAQs yet._
+
+- **What is BMI?** — Body Mass Index (BMI) estimates body fat using weight divided by height squared.
+- **Is BMI a medical diagnosis?** — No. BMI is an educational metric, not medical advice.
 
 ## Related calculators
-- Percentage Discount Calculator (/calculators/percentage-discount-calculator/)
-- Loan Payment Calculator (/calculators/loan-payment-calculator/)
-- Compound Interest Calculator (/calculators/compound-interest-calculator/)
-- Percentage Increase Calculator (/calculators/percentage-increase-calculator/)
-- Sales Tax Calculator (/calculators/sales-tax-calculator/)
-- Tip Calculator (/calculators/tip-calculator/)
+
+- [BMR Calculator](/calculators/bmr-calculator/)
+- [Calorie Burn Calculator](/calculators/calorie-burn-calculator/)
+- [Ideal Weight Calculator](/calculators/ideal-weight-calculator/)
+- [Waist-to-Hip Ratio Calculator](/calculators/waist-to-hip-ratio-calculator/)
+- [Body Fat Percentage Calculator](/calculators/body-fat-percentage-calculator/)
+- [Water Intake Calculator](/calculators/water-intake-calculator/)
