@@ -1,18 +1,18 @@
 ---
-/** Calculator.astro — V017.2 (fix)
+/** Calculator.astro — V017.3 (fix definitivo)
   - Cálculo 100% client-side, sin eval/new Function.
-  - Usa <script is:inline> (no "type=module"), por lo que document.currentScript funciona.
-  - Parser seguro de expresiones (+,-,*,/,%,^, paréntesis).
-  - Fallback por slug para casos comunes si no hay `schema.expression`.
+  - NO usa currentScript. Usa un ID estático por página.
+  - Parser seguro (+,-,*,/,%,^, paréntesis) y fallbacks por slug.
 **/
 const { schema } = Astro.props;
 const title = schema?.title ?? 'Calculator';
 const slug = schema?.slug ?? 'calculator';
 const inputs = Array.isArray(schema?.inputs) ? schema.inputs : [];
 const intro = schema?.intro ?? '';
+const rootId = `calc-${slug}`;
 ---
 
-<section class="calc" data-calculator aria-labelledby={`h-${slug}`}>
+<section id={rootId} class="calc" data-calculator aria-labelledby={`h-${slug}`}>
   <h1 id={`h-${slug}`}>{title}</h1>
   {intro && <p class="muted">{intro}</p>}
 
@@ -38,7 +38,7 @@ const intro = schema?.intro ?? '';
 
   <div class="result" role="status" aria-live="polite" data-role="result"></div>
 
-  <!-- Schema para el script del cliente -->
+  <!-- El schema queda incrustado para el script del cliente -->
   <script type="application/json" data-schema>{JSON.stringify(schema)}</script>
 </section>
 
@@ -57,150 +57,125 @@ const intro = schema?.intro ?? '';
 
 <script is:inline>
 (function () {
-  // Encuentra el root de este componente usando currentScript (válido al no ser módulo)
-  var root = (function (s) {
-    try { return s.closest('[data-calculator]'); } catch (e) { return null; }
-  })(document.currentScript);
-  if (!root) return;
+  // El ID estático de este componente (inyectado desde el server)
+  var ROOT_ID = {{ JSON.stringify(rootId) }};
+  // Defer: esperamos a que el DOM esté listo para asegurar que el nodo existe.
+  function ready(fn){ if(document.readyState!=='loading') fn(); else document.addEventListener('DOMContentLoaded', fn); }
 
-  var schemaEl = root.querySelector('script[data-schema]');
-  var form = root.querySelector('[data-role="form"]');
-  var resultEl = root.querySelector('[data-role="result"]');
-  var btn = root.querySelector('[data-action="calc"]');
-  if (!schemaEl || !form || !resultEl || !btn) return;
+  ready(function(){
+    var root = document.getElementById(ROOT_ID);
+    if (!root) return;
 
-  // Utilidades
-  function num(val) { var n = Number(val); return isFinite(n) ? n : NaN; }
-  function fmt(n) {
-    return isFinite(n)
-      ? new Intl.NumberFormat('en-US', { maximumFractionDigits: 6 }).format(n)
-      : '—';
-  }
+    var schemaEl = root.querySelector('script[data-schema]');
+    var form = root.querySelector('[data-role="form"]');
+    var resultEl = root.querySelector('[data-role="result"]');
+    var btn = root.querySelector('[data-action="calc"]');
+    if (!schemaEl || !form || !resultEl || !btn) return;
 
-  // Parser seguro (shunting-yard) para + - * / % ^  y paréntesis
-  function evalExpr(expr, vars) {
-    var out = [], ops = [];
-    var prec = { '^':4, '*':3, '/':3, '%':3, '+':2, '-':2 };
-    var right = { '^': true };
-    var i = 0;
-
-    function isSpace(c){ return /\s/.test(c); }
-    function isDigit(c){ return c >= '0' && c <= '9'; }
-    function isLetter(c){ return /[A-Za-z_]/.test(c); }
-
-    var tokens = [];
-    while (i < expr.length) {
-      var c = expr[i];
-      if (isSpace(c)) { i++; continue; }
-      if (isDigit(c) || c === '.') {
-        var s = i; while (i < expr.length && /[0-9.eE+\-]/.test(expr[i])) i++;
-        tokens.push({ t:'num', v: parseFloat(expr.slice(s,i)) }); continue;
-      }
-      if (isLetter(c)) {
-        var s2 = i; while (i < expr.length && /[A-Za-z0-9_]/.test(expr[i])) i++;
-        var name = expr.slice(s2,i);
-        if (!(name in vars)) throw new Error('Unknown var '+name);
-        tokens.push({ t:'num', v: num(vars[name]) }); continue;
-      }
-      if ('+-*/%^()'.indexOf(c) !== -1) { tokens.push({ t:'op', v:c }); i++; continue; }
-      throw new Error('Bad char in expression');
+    function num(val){ var n = Number(val); return isFinite(n) ? n : NaN; }
+    function fmt(n){
+      return isFinite(n)
+        ? new Intl.NumberFormat('en-US', { maximumFractionDigits: 6 }).format(n)
+        : '—';
     }
 
-    for (var ti=0; ti<tokens.length; ti++) {
-      var tok = tokens[ti];
-      if (tok.t === 'num') { out.push(tok); continue; }
-      var op = tok.v;
-      if (op === '(') { ops.push(op); continue; }
-      if (op === ')') {
-        while (ops.length && ops[ops.length-1] !== '(') out.push({ t:'op', v: ops.pop() });
-        ops.pop(); continue;
+    // Parser seguro (shunting-yard) para + - * / % ^  y paréntesis
+    function evalExpr(expr, vars){
+      var out=[], ops=[], prec={'^':4,'*':3,'/':3,'%':3,'+':2,'-':2}, right={'^':true}, i=0;
+      function isSpace(c){return /\s/.test(c);} function isDigit(c){return c>='0'&&c<='9';} function isLetter(c){return /[A-Za-z_]/.test(c);}
+      var tokens=[];
+      while(i<expr.length){
+        var c=expr[i];
+        if(isSpace(c)){i++;continue;}
+        if(isDigit(c)||c==='.'){var s=i; while(i<expr.length && /[0-9.eE+\-]/.test(expr[i])) i++; tokens.push({t:'num',v:parseFloat(expr.slice(s,i))}); continue;}
+        if(isLetter(c)){var s2=i; while(i<expr.length && /[A-Za-z0-9_]/.test(expr[i])) i++; var name=expr.slice(s2,i); if(!(name in vars)) throw new Error('Unknown var '+name); tokens.push({t:'num',v:num(vars[name])}); continue;}
+        if('+-*/%^()'.indexOf(c)!==-1){tokens.push({t:'op',v:c}); i++; continue;}
+        throw new Error('Bad char in expression');
       }
-      while (ops.length) {
-        var top = ops[ops.length-1];
-        if (top === '(') break;
-        if ((right[op] && prec[op] < prec[top]) || (!right[op] && prec[op] <= prec[top])) {
-          out.push({ t:'op', v: ops.pop() });
-        } else break;
-      }
-      ops.push(op);
-    }
-    while (ops.length) out.push({ t:'op', v: ops.pop() });
-
-    var st = [];
-    for (var oi=0; oi<out.length; oi++) {
-      var t = out[oi];
-      if (t.t === 'num') { st.push(t.v); continue; }
-      var b = st.pop(), a = st.pop(), r;
-      switch (t.v) {
-        case '+': r = a + b; break;
-        case '-': r = a - b; break;
-        case '*': r = a * b; break;
-        case '/': r = b === 0 ? NaN : a / b; break;
-        case '%': r = b === 0 ? NaN : a % b; break;
-        case '^': r = Math.pow(a, b); break;
-        default: throw new Error('op');
-      }
-      st.push(r);
-    }
-    return st.pop();
-  }
-
-  var schema = {};
-  try { schema = JSON.parse(schemaEl.textContent || '{}'); } catch (e) {}
-
-  function readInputs() {
-    var out = {};
-    (schema.inputs || []).forEach(function(i){
-      var el = form.querySelector('[name="'+i.name+'"]');
-      out[i.name] = (el && el.value !== '') ? Number(el.value) : NaN;
-    });
-    return out;
-  }
-
-  function compute() {
-    var vars = readInputs();
-    for (var k in vars) {
-      if (!isFinite(vars[k])) { resultEl.textContent = 'Please fill all fields.'; return; }
-    }
-
-    var value;
-    if (schema.expression && typeof schema.expression === 'string') {
-      value = evalExpr(schema.expression, vars);
-    } else {
-      switch (schema.slug) {
-        case 'loan-payment-calculator': {
-          var P = num(vars.principal), r = num(vars.rate)/100/12, n = num(vars.months);
-          value = r === 0 ? P/n : (P*r) / (1 - Math.pow(1+r, -n));
-          break;
+      for(var ti=0; ti<tokens.length; ti++){
+        var tok=tokens[ti];
+        if(tok.t==='num'){out.push(tok); continue;}
+        var op=tok.v;
+        if(op==='('){ops.push(op); continue;}
+        if(op===')'){while(ops.length && ops[ops.length-1]!=='(') out.push({t:'op',v:ops.pop()}); ops.pop(); continue;}
+        while(ops.length){
+          var top=ops[ops.length-1]; if(top==='(') break;
+          if((right[op] && prec[op] < prec[top]) || (!right[op] && prec[op] <= prec[top])) out.push({t:'op',v:ops.pop()}); else break;
         }
-        case 'percentage-discount-calculator':
-          value = num(vars.price) * (1 - num(vars.discount)/100); break;
-        case 'percentage-increase-calculator':
-          value = num(vars.original) * (1 + num(vars.increase)/100); break;
-        case 'bmi-calculator': {
-          var h = num(vars.height)/100;
-          value = num(vars.weight) / (h*h);
-          break;
-        }
-        case 'compound-interest-calculator': {
-          var P2 = num(vars.principal), r2 = num(vars.rate)/100, t = num(vars.years), n2 = num(vars.times);
-          value = P2 * Math.pow(1 + r2/n2, n2*t);
-          break;
-        }
-        case 'triangle-area-calculator':
-          value = (num(vars.base) * num(vars.height)) / 2; break;
-        case 'roi-calculator':
-          value = ((num(vars.gain) - num(vars.cost)) / num(vars.cost)) * 100; break;
-        case 'sales-tax-calculator':
-          value = num(vars.price) * (1 + num(vars.tax)/100); break;
-        default:
-          resultEl.textContent = 'Calculation not available.'; return;
+        ops.push(op);
       }
+      while(ops.length) out.push({t:'op',v:ops.pop()});
+      var st=[];
+      for(var oi=0; oi<out.length; oi++){
+        var t=out[oi]; if(t.t==='num'){st.push(t.v); continue;}
+        var b=st.pop(), a=st.pop(), r;
+        switch(t.v){
+          case '+': r=a+b; break;
+          case '-': r=a-b; break;
+          case '*': r=a*b; break;
+          case '/': r=b===0?NaN:a/b; break;
+          case '%': r=b===0?NaN:a%b; break;
+          case '^': r=Math.pow(a,b); break;
+          default: throw new Error('op');
+        }
+        st.push(r);
+      }
+      return st.pop();
     }
 
-    resultEl.textContent = 'Result: ' + fmt(value);
-  }
+    var schema={};
+    try { schema = JSON.parse(schemaEl.textContent || '{}'); } catch(e){}
 
-  btn.addEventListener('click', compute);
+    function readInputs(){
+      var out={};
+      (schema.inputs||[]).forEach(function(i){
+        var el=form.querySelector('[name="'+i.name+'"]');
+        out[i.name]=(el && el.value!=='') ? Number(el.value) : NaN;
+      });
+      return out;
+    }
+
+    function compute(){
+      var vars=readInputs();
+      for(var k in vars){ if(!isFinite(vars[k])){ resultEl.textContent='Please fill all fields.'; return; } }
+
+      var value;
+      if (schema.expression && typeof schema.expression === 'string'){
+        value = evalExpr(schema.expression, vars);
+      } else {
+        // Fallback por slug (casos más comunes)
+        switch(schema.slug){
+          case 'loan-payment-calculator': {
+            var P=num(vars.principal), r=num(vars.rate)/100/12, n=num(vars.months);
+            value = r===0 ? P/n : (P*r)/(1-Math.pow(1+r,-n)); break;
+          }
+          case 'percentage-discount-calculator':
+            value = num(vars.price)*(1-num(vars.discount)/100); break;
+          case 'percentage-increase-calculator':
+            value = num(vars.original)*(1+num(vars.increase)/100); break;
+          case 'bmi-calculator': {
+            var h=num(vars.height)/100;
+            value = num(vars.weight)/(h*h); break;
+          }
+          case 'compound-interest-calculator': {
+            var P2=num(vars.principal), r2=num(vars.rate)/100, t=num(vars.years), n2=num(vars.times);
+            value = P2*Math.pow(1+r2/n2, n2*t); break;
+          }
+          case 'triangle-area-calculator':
+            value = (num(vars.base)*num(vars.height))/2; break;
+          case 'roi-calculator':
+            value = ((num(vars.gain)-num(vars.cost))/num(vars.cost))*100; break;
+          case 'sales-tax-calculator':
+            value = num(vars.price)*(1+num(vars.tax)/100); break;
+          default:
+            resultEl.textContent = 'Calculation not available.'; return;
+        }
+      }
+
+      resultEl.textContent = 'Result: ' + fmt(value);
+    }
+
+    btn.addEventListener('click', compute);
+  });
 })();
 </script>
