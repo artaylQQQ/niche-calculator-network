@@ -1,0 +1,31 @@
+---
+layout: ../../layouts/BaseLayout.astro
+title: Kilograms to Pounds Converter
+description: Convert kilograms to pounds.
+date: 2025-08-18
+updated: 2025-08-18
+cluster: Conversions & Units
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+
+export const schema = {"slug": "kg-to-lb-calculator","title": "Kilograms to Pounds Converter","locale": "en","inputs": [{"name": "kg","type": "number","min": 0,"step": 0.001,"hint": "Kilograms"}],"expression": "kg * 2.20462","formula_js": "","units": {"input": "","output": "lb"},"intro": "Convert kilograms to pounds.","examples": [],"faqs": [],"disclaimer": "Educational information, not professional advice.","schema_org": "FAQPage|SoftwareApplication","cluster": "Conversions & Units","related": ["percentage-discount-calculator","percentage-increase-calculator","percentage-change-calculator","sales-tax-calculator","tip-calculator","markup-margin-calculator"]}
+
+# Kilograms to Pounds Converter
+
+Convert kilograms to pounds.
+
+<Calculator schema={schema} />
+
+## FAQ
+
+- _No FAQs yet._
+
+## Related calculators
+- [Percentage Discount Calculator](/calculators/percentage-discount-calculator/)
+- [Percentage Increase Calculator](/calculators/percentage-increase-calculator/)
+- [Percentage Change Calculator](/calculators/percentage-change-calculator/)
+- [Sales Tax Calculator](/calculators/sales-tax-calculator/)
+- [Tip Calculator](/calculators/tip-calculator/)
+- [Markup Margin Calculator](/calculators/markup-margin-calculator/)

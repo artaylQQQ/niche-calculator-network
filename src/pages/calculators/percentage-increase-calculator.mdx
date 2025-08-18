@@ -1,69 +1,31 @@
 ---
 layout: ../../layouts/BaseLayout.astro
 title: Percentage Increase Calculator
-description: Find the percentage increase from an original value to a new value.
-date: 2025-08-17
-updated: 2025-08-17
+description: Compute the percentage increase given an original value and an absolute increase.
+date: 2025-08-18
+updated: 2025-08-18
 cluster: Percentages & Ratios
 ---
 
 import Calculator from '../../components/Calculator.astro';
 
-export const schema = {
-  "slug": "percentage-increase-calculator",
-  "title": "Percentage Increase Calculator",
-  "locale": "en",
-  "inputs": [
-    {
-      "name": "original",
-      "type": "number",
-      "min": 0,
-      "step": 0.01,
-      "hint": "Original value"
-    },
-    {
-      "name": "newValue",
-      "type": "number",
-      "min": 0,
-      "step": 0.01,
-      "hint": "New value"
-    }
-  ],
-  "expression": "(newValue - original) / original * 100",
-  "formula_js": "",
-  "units": {
-    "input": "",
-    "output": ""
-  },
-  "intro": "Find the percentage increase from an original value to a new value.",
-  "examples": [],
-  "faqs": [],
-  "disclaimer": "Educational information, not professional advice.",
-  "schema_org": "FAQPage|SoftwareApplication",
-  "cluster": "Percentages & Ratios",
-  "related": [
-    "percentage-discount-calculator",
-    "loan-payment-calculator",
-    "bmi-calculator",
-    "compound-interest-calculator",
-    "sales-tax-calculator",
-    "tip-calculator"
-  ]
-};
+
+export const schema = {"slug": "percentage-increase-calculator","title": "Percentage Increase Calculator","locale": "en","inputs": [{"name": "original","type": "number","min": 0,"step": 0.01,"hint": "Original value"},{"name": "increase","type": "number","min": 0,"step": 0.01,"hint": "Increase amount"}],"expression": "(original + increase) / original * 100","formula_js": "","units": {"input": "","output": "%"},"intro": "Compute the percentage increase given an original value and an absolute increase.","examples": [],"faqs": [],"disclaimer": "Educational information, not professional advice.","schema_org": "FAQPage|SoftwareApplication","cluster": "Percentages & Ratios","related": ["percentage-discount-calculator","percentage-change-calculator","sales-tax-calculator","tip-calculator","markup-margin-calculator","final-price-calculator"]}
 
 # Percentage Increase Calculator
 
-Find the percentage increase from an original value to a new value.
+Compute the percentage increase given an original value and an absolute increase.
 
-<Calculator schema={'slug': 'percentage-increase-calculator', 'title': 'Percentage Increase Calculator', 'locale': 'en', 'inputs': [{'name': 'original', 'type': 'number', 'min': 0, 'step': 0.01, 'hint': 'Original value'}, {'name': 'newValue', 'type': 'number', 'min': 0, 'step': 0.01, 'hint': 'New value'}], 'expression': '(newValue - original) / original * 100', 'formula_js': '', 'units': {'input': '', 'output': ''}, 'intro': 'Find the percentage increase from an original value to a new value.', 'examples': [], 'faqs': [], 'disclaimer': 'Educational information, not professional advice.', 'schema_org': 'FAQPage|SoftwareApplication', 'cluster': 'Percentages & Ratios', 'related': ['percentage-discount-calculator', 'loan-payment-calculator', 'bmi-calculator', 'compound-interest-calculator', 'sales-tax-calculator', 'tip-calculator']} />
+<Calculator schema={schema} />
 
 ## FAQ
-_No FAQs yet._
+
+- _No FAQs yet._
 
 ## Related calculators
-- Percentage Discount Calculator (/calculators/percentage-discount-calculator/)
-- Loan Payment Calculator (/calculators/loan-payment-calculator/)
-- Bmi Calculator (/calculators/bmi-calculator/)
-- Compound Interest Calculator (/calculators/compound-interest-calculator/)
-- Sales Tax Calculator (/calculators/sales-tax-calculator/)
-- Tip Calculator (/calculators/tip-calculator/)
+- [Percentage Discount Calculator](/calculators/percentage-discount-calculator/)
+- [Percentage Change Calculator](/calculators/percentage-change-calculator/)
+- [Sales Tax Calculator](/calculators/sales-tax-calculator/)
+- [Tip Calculator](/calculators/tip-calculator/)
+- [Markup Margin Calculator](/calculators/markup-margin-calculator/)
+- [Final Price Calculator](/calculators/final-price-calculator/)

@@ -1,70 +1,31 @@
 ---
 layout: ../../layouts/BaseLayout.astro
 title: Percentage Discount Calculator
-description: Enter the original price and the discount percentage to get the final price instantly.
-date: 2025-08-17
-updated: 2025-08-17
+description: Calculate the final price after applying a percentage discount to an original price.
+date: 2025-08-18
+updated: 2025-08-18
 cluster: Percentages & Ratios
 ---
 
 import Calculator from '../../components/Calculator.astro';
 
-export const schema = {
-  "slug": "percentage-discount-calculator",
-  "title": "Percentage Discount Calculator",
-  "locale": "en",
-  "inputs": [
-    {
-      "name": "price",
-      "type": "number",
-      "min": 0,
-      "step": 0.01,
-      "hint": "Original price"
-    },
-    {
-      "name": "discount",
-      "type": "number",
-      "min": 0,
-      "max": 100,
-      "step": 0.1,
-      "hint": "Discount (%)"
-    }
-  ],
-  "expression": "price * (1 - discount/100)",
-  "formula_js": "",
-  "units": {
-    "input": "",
-    "output": ""
-  },
-  "intro": "Enter the original price and the discount percentage to get the final price instantly.",
-  "examples": [],
-  "faqs": [],
-  "disclaimer": "Educational information, not professional advice.",
-  "schema_org": "FAQPage|SoftwareApplication",
-  "cluster": "Percentages & Ratios",
-  "related": [
-    "loan-payment-calculator",
-    "bmi-calculator",
-    "compound-interest-calculator",
-    "percentage-increase-calculator",
-    "sales-tax-calculator",
-    "tip-calculator"
-  ]
-};
+
+export const schema = {"slug": "percentage-discount-calculator","title": "Percentage Discount Calculator","locale": "en","inputs": [{"name": "price","type": "number","min": 0,"step": 0.01,"hint": "Original price"},{"name": "discount","type": "number","min": 0,"max": 100,"step": 0.1,"hint": "Discount (%)"}],"expression": "price * (1 - discount/100)","formula_js": "","units": {"input": "","output": ""},"intro": "Calculate the final price after applying a percentage discount to an original price.","examples": [],"faqs": [],"disclaimer": "Educational information, not professional advice.","schema_org": "FAQPage|SoftwareApplication","cluster": "Percentages & Ratios","related": ["percentage-increase-calculator","percentage-change-calculator","sales-tax-calculator","tip-calculator","markup-margin-calculator","final-price-calculator"]}
 
 # Percentage Discount Calculator
 
-Enter the original price and the discount percentage to get the final price instantly.
+Calculate the final price after applying a percentage discount to an original price.
 
-<Calculator schema={'slug': 'percentage-discount-calculator', 'title': 'Percentage Discount Calculator', 'locale': 'en', 'inputs': [{'name': 'price', 'type': 'number', 'min': 0, 'step': 0.01, 'hint': 'Original price'}, {'name': 'discount', 'type': 'number', 'min': 0, 'max': 100, 'step': 0.1, 'hint': 'Discount (%)'}], 'expression': 'price * (1 - discount/100)', 'formula_js': '', 'units': {'input': '', 'output': ''}, 'intro': 'Enter the original price and the discount percentage to get the final price instantly.', 'examples': [], 'faqs': [], 'disclaimer': 'Educational information, not professional advice.', 'schema_org': 'FAQPage|SoftwareApplication', 'cluster': 'Percentages & Ratios', 'related': ['loan-payment-calculator', 'bmi-calculator', 'compound-interest-calculator', 'percentage-increase-calculator', 'sales-tax-calculator', 'tip-calculator']} />
+<Calculator schema={schema} />
 
 ## FAQ
-_No FAQs yet._
+
+- _No FAQs yet._
 
 ## Related calculators
-- Loan Payment Calculator (/calculators/loan-payment-calculator/)
-- Bmi Calculator (/calculators/bmi-calculator/)
-- Compound Interest Calculator (/calculators/compound-interest-calculator/)
-- Percentage Increase Calculator (/calculators/percentage-increase-calculator/)
-- Sales Tax Calculator (/calculators/sales-tax-calculator/)
-- Tip Calculator (/calculators/tip-calculator/)
+- [Percentage Increase Calculator](/calculators/percentage-increase-calculator/)
+- [Percentage Change Calculator](/calculators/percentage-change-calculator/)
+- [Sales Tax Calculator](/calculators/sales-tax-calculator/)
+- [Tip Calculator](/calculators/tip-calculator/)
+- [Markup Margin Calculator](/calculators/markup-margin-calculator/)
+- [Final Price Calculator](/calculators/final-price-calculator/)

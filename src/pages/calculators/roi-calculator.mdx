@@ -1,0 +1,31 @@
+---
+layout: ../../layouts/BaseLayout.astro
+title: ROI Calculator
+description: Return on Investment: percentage return from gain and cost.
+date: 2025-08-18
+updated: 2025-08-18
+cluster: Finance & Loans
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+
+export const schema = {"slug": "roi-calculator","title": "ROI Calculator","locale": "en","inputs": [{"name": "gain","type": "number","min": 0,"step": 0.01,"hint": "Return"},{"name": "cost","type": "number","min": 0,"step": 0.01,"hint": "Cost"}],"expression": "(gain - cost) / cost * 100","formula_js": "","units": {"input": "","output": "%"},"intro": "Return on Investment: percentage return from gain and cost.","examples": [],"faqs": [],"disclaimer": "Educational information, not professional advice.","schema_org": "FAQPage|SoftwareApplication","cluster": "Finance & Loans","related": ["percentage-discount-calculator","percentage-increase-calculator","percentage-change-calculator","sales-tax-calculator","tip-calculator","markup-margin-calculator"]}
+
+# ROI Calculator
+
+Return on Investment: percentage return from gain and cost.
+
+<Calculator schema={schema} />
+
+## FAQ
+
+- _No FAQs yet._
+
+## Related calculators
+- [Percentage Discount Calculator](/calculators/percentage-discount-calculator/)
+- [Percentage Increase Calculator](/calculators/percentage-increase-calculator/)
+- [Percentage Change Calculator](/calculators/percentage-change-calculator/)
+- [Sales Tax Calculator](/calculators/sales-tax-calculator/)
+- [Tip Calculator](/calculators/tip-calculator/)
+- [Markup Margin Calculator](/calculators/markup-margin-calculator/)

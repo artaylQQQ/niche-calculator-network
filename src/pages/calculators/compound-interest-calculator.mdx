@@ -9,34 +9,8 @@ cluster: Finance & Loans
 
 import Calculator from '../../components/Calculator.astro';
 
-export const schema = {
-  "slug": "compound-interest-calculator",
-  "title": "Compound Interest Calculator",
-  "locale": "en",
-  "inputs": [
-    {"name":"principal","type":"number","min":0,"step":0.01,"hint":"Initial amount"},
-    {"name":"annualRate","type":"number","min":0,"step":0.01,"hint":"Annual interest rate (%)"},
-    {"name":"years","type":"number","min":0,"step":1,"hint":"Years"},
-    {"name":"times","type":"number","min":1,"step":1,"hint":"Compounds per year"}
-  ],
-  "expression": "principal * (1 + (annualRate/100)/times)^(times*years)",
-  "formula_js": "",
-  "units": {"input":"","output":""},
-  "intro": "Estimate your future balance with compound interest.",
-  "examples": [{"input":{"principal":1000,"annualRate":5,"years":10,"times":12},"output":"1647.01 (approx.)"}],
-  "faqs": [{"q":"How is compound interest computed?","a":"We apply A = P * (1 + r/n)^(n*t)."}],
-  "disclaimer": "Educational information, not professional advice.",
-  "schema_org": "FAQPage|SoftwareApplication",
-  "cluster": "Finance & Loans",
-  "related": [
-    "loan-payment-calculator",
-    "percentage-discount-calculator",
-    "percentage-increase-calculator",
-    "sales-tax-calculator",
-    "tip-calculator",
-    "bmi-calculator"
-  ]
-}
+
+export const schema = {"slug": "compound-interest-calculator","title": "Compound Interest Calculator","locale": "en","inputs": [{"name": "principal","type": "number","min": 0,"step": 0.01,"hint": "Initial amount"},{"name": "annualRate","type": "number","min": 0,"step": 0.01,"hint": "Annual interest rate (%)"},{"name": "years","type": "number","min": 0,"step": 1,"hint": "Years"},{"name": "times","type": "number","min": 1,"step": 1,"hint": "Compounds per year"}],"expression": "principal * (1 + (annualRate/100)/times)^(times*years)","formula_js": "","units": {"input": "","output": ""},"intro": "Estimate your future balance with compound interest.","examples": [],"faqs": [],"disclaimer": "Educational information, not professional advice.","schema_org": "FAQPage|SoftwareApplication","cluster": "Finance & Loans","related": ["percentage-discount-calculator","percentage-increase-calculator","percentage-change-calculator","sales-tax-calculator","tip-calculator","markup-margin-calculator"]}
 
 # Compound Interest Calculator
 
@@ -46,13 +20,12 @@ Estimate your future balance with compound interest.
 
 ## FAQ
 
-- **How is compound interest computed?** — We apply A = P · (1 + r/n)^(n · t).
+- _No FAQs yet._
 
 ## Related calculators
-
-- [Loan Payment Calculator](/calculators/loan-payment-calculator/)
 - [Percentage Discount Calculator](/calculators/percentage-discount-calculator/)
 - [Percentage Increase Calculator](/calculators/percentage-increase-calculator/)
+- [Percentage Change Calculator](/calculators/percentage-change-calculator/)
 - [Sales Tax Calculator](/calculators/sales-tax-calculator/)
 - [Tip Calculator](/calculators/tip-calculator/)
-- [BMI Calculator](/calculators/bmi-calculator/)
+- [Markup Margin Calculator](/calculators/markup-margin-calculator/)

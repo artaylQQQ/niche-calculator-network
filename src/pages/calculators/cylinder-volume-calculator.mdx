@@ -1,0 +1,31 @@
+---
+layout: ../../layouts/BaseLayout.astro
+title: Cylinder Volume Calculator
+description: Compute the volume of a cylinder using π ≈ 3.141592653589793.
+date: 2025-08-18
+updated: 2025-08-18
+cluster: Geometry & Math
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+
+export const schema = {"slug": "cylinder-volume-calculator","title": "Cylinder Volume Calculator","locale": "en","inputs": [{"name": "radius","type": "number","min": 0,"step": 0.001,"hint": "Radius"},{"name": "height","type": "number","min": 0,"step": 0.01,"hint": "Height"}],"expression": "3.141592653589793 * radius^2 * height","formula_js": "","units": {"input": "","output": ""},"intro": "Compute the volume of a cylinder using π ≈ 3.141592653589793.","examples": [],"faqs": [],"disclaimer": "Educational information, not professional advice.","schema_org": "FAQPage|SoftwareApplication","cluster": "Geometry & Math","related": ["percentage-discount-calculator","percentage-increase-calculator","percentage-change-calculator","sales-tax-calculator","tip-calculator","markup-margin-calculator"]}
+
+# Cylinder Volume Calculator
+
+Compute the volume of a cylinder using π ≈ 3.141592653589793.
+
+<Calculator schema={schema} />
+
+## FAQ
+
+- _No FAQs yet._
+
+## Related calculators
+- [Percentage Discount Calculator](/calculators/percentage-discount-calculator/)
+- [Percentage Increase Calculator](/calculators/percentage-increase-calculator/)
+- [Percentage Change Calculator](/calculators/percentage-change-calculator/)
+- [Sales Tax Calculator](/calculators/sales-tax-calculator/)
+- [Tip Calculator](/calculators/tip-calculator/)
+- [Markup Margin Calculator](/calculators/markup-margin-calculator/)

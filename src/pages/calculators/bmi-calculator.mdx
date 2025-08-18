@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/BaseLayout.astro
 title: BMI Calculator
-description: Calculate Body Mass Index (BMI) from height and weight.
+description: Compute your Body Mass Index (BMI) using metric units. BMI = weight / height².
 date: 2025-08-18
 updated: 2025-08-18
 cluster: Health & Fitness
@@ -9,52 +9,23 @@ cluster: Health & Fitness
 
 import Calculator from '../../components/Calculator.astro';
 
-export const schema = {
-  "slug": "bmi-calculator",
-  "title": "BMI Calculator",
-  "locale": "en",
-  "inputs": [
-    {"name":"weight","type":"number","min":0,"step":0.1,"hint":"Weight (kg)"},
-    {"name":"height","type":"number","min":0,"step":0.001,"hint":"Height (m)"}
-  ],
-  "expression": "weight / (height^2)",
-  "formula_js": "",
-  "units": {"input":"","output":""},
-  "intro": "Compute your Body Mass Index (BMI) using metric units. BMI = weight / height².",
-  "examples": [{"input":{"weight":70,"height":1.75},"output":"22.86 (approx.)"}],
-  "faqs": [
-    {"q":"What is BMI?","a":"Body Mass Index (BMI) estimates body fat using weight divided by height squared."},
-    {"q":"Is BMI a medical diagnosis?","a":"No. BMI is an educational metric, not a medical diagnosis."}
-  ],
-  "disclaimer": "Educational information, not professional advice.",
-  "schema_org": "FAQPage|SoftwareApplication",
-  "cluster": "Health & Fitness",
-  "related": [
-    "bmr-calculator",
-    "calorie-burn-calculator",
-    "ideal-weight-calculator",
-    "waist-to-hip-ratio-calculator",
-    "body-fat-percentage-calculator",
-    "water-intake-calculator"
-  ]
-}
+
+export const schema = {"slug": "bmi-calculator","title": "BMI Calculator","locale": "en","inputs": [{"name": "weight","type": "number","min": 0,"step": 0.1,"hint": "Weight (kg)"},{"name": "height","type": "number","min": 0,"step": 0.001,"hint": "Height (m)"}],"expression": "weight / (height^2)","formula_js": "","units": {"input": "","output": ""},"intro": "Compute your Body Mass Index (BMI) using metric units. BMI = weight / height².","examples": [],"faqs": [],"disclaimer": "Educational information, not professional advice.","schema_org": "FAQPage|SoftwareApplication","cluster": "Health & Fitness","related": ["percentage-discount-calculator","percentage-increase-calculator","percentage-change-calculator","sales-tax-calculator","tip-calculator","markup-margin-calculator"]}
 
 # BMI Calculator
 
-Calculate Body Mass Index (BMI) from height and weight.
+Compute your Body Mass Index (BMI) using metric units. BMI = weight / height².
 
 <Calculator schema={schema} />
 
 ## FAQ
 
-- **What is BMI?** — Body Mass Index (BMI) estimates body fat using weight divided by height squared.
-- **Is BMI a medical diagnosis?** — No. BMI is an educational metric, not medical advice.
+- _No FAQs yet._
 
 ## Related calculators
-
-- [BMR Calculator](/calculators/bmr-calculator/)
-- [Calorie Burn Calculator](/calculators/calorie-burn-calculator/)
-- [Ideal Weight Calculator](/calculators/ideal-weight-calculator/)
-- [Waist-to-Hip Ratio Calculator](/calculators/waist-to-hip-ratio-calculator/)
-- [Body Fat Percentage Calculator](/calculators/body-fat-percentage-calculator/)
-- [Water Intake Calculator](/calculators/water-intake-calculator/)
+- [Percentage Discount Calculator](/calculators/percentage-discount-calculator/)
+- [Percentage Increase Calculator](/calculators/percentage-increase-calculator/)
+- [Percentage Change Calculator](/calculators/percentage-change-calculator/)
+- [Sales Tax Calculator](/calculators/sales-tax-calculator/)
+- [Tip Calculator](/calculators/tip-calculator/)
+- [Markup Margin Calculator](/calculators/markup-margin-calculator/)
