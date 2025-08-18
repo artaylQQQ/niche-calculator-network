@@ -1,9 +1,8 @@
 ---
-/** Calculator.astro — V017.5
+/** Calculator.astro — V017.5 (estable)
   - 100% client-side sin eval/new Function.
-  - Usa schema.expression si existe (string tipo "price * (1 - discount/100)").
-  - Si no hay expression, obtiene el slug desde data-slug o URL y aplica fallbacks.
-  - No usa document.currentScript ni variables inyectadas en <script>.
+  - Usa schema.expression si existe (string infija).
+  - Si no hay expression, detecta slug desde data-slug o URL y aplica fallbacks.
 **/
 const { schema } = Astro.props;
 const title = schema?.title ?? 'Calculator';
@@ -25,8 +24,8 @@ const intro = schema?.intro ?? '';
           name={i.name}
           type="number"
           step={i.step ?? 'any'}
-          {...(i.min !== undefined ? { min: i.min } : {})}
-          {...(i.max !== undefined ? { max: i.max } : {})}
+          min={i.min}
+          max={i.max}
           inputmode="decimal"
           aria-describedby={`hint-${slug}-${i.name}`}
         />
@@ -56,9 +55,7 @@ const intro = schema?.intro ?? '';
 
 <script is:inline>
 (function () {
-  function ready(fn){ if(document.readyState!=='loading') fn(); else document.addEventListener('DOMContentLoaded', fn); }
-
-  // Parser seguro para + - * / % ^ y paréntesis (shunting-yard + RPN)
+  // Parser seguro (shunting-yard) para + - * / % ^ y paréntesis
   function evalExpr(expr, vars){
     var out=[], ops=[], prec={'^':4,'*':3,'/':3,'%':3,'+':2,'-':2}, right={'^':true}, i=0;
     function isSpace(c){return /\s/.test(c);} function isDigit(c){return c>='0'&&c<='9';} function isLetter(c){return /[A-Za-z_]/.test(c);}
@@ -194,7 +191,6 @@ const intro = schema?.intro ?? '';
     nodes.forEach(initCalc);
   }
 
-  // Arranque
   if (document.readyState !== 'loading') boot();
   else document.addEventListener('DOMContentLoaded', boot);
 })();
