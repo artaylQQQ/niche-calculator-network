@@ -101,7 +101,7 @@ const expression = schema?.expression ?? schema?.formula ?? schema?.formula_expr
 
   function fmt(n){
     return isFinite(n)
-      ? new Intl.NumberFormat('en-US', { maximumFractionDigits: 3 }).format(n)
+      ? new Intl.NumberFormat('en-US', { maximumFractionDigits: 2 }).format(n)
       : '—';
   }
   function num(v){ let n=Number(v); return isFinite(n)?n:NaN; }
@@ -126,7 +126,7 @@ const expression = schema?.expression ?? schema?.formula ?? schema?.formula_expr
       return out;
     }
 
-    window.compute = function(){
+    function compute(){
       let vars = readInputs();
       for(let k in vars){ if(!isFinite(vars[k])){ resultEl.textContent='Please fill all fields.'; return; } }
 
@@ -136,50 +136,11 @@ const expression = schema?.expression ?? schema?.formula ?? schema?.formula_expr
         catch(e){ usedExpr=false; }
       }
 
-      if (!usedExpr){
-        switch(slug){
-          case 'loan-payment-calculator': {
-            let P=num(vars.principal), r=num(vars.rate)/100/12, n=num(vars.months);
-            value = r===0 ? P/n : (P*r)/(1-Math.pow(1+r,-n)); break;
-          }
-          case 'percentage-discount-calculator':
-            value = num(vars.price)*(1-num(vars.discount)/100);
-            break;
-          case 'percentage-increase-calculator':
-            value = num(vars.original)*(1+num(vars.increase)/100); break;
-          case 'bmi-calculator': {
-            let h=num(vars.height)/100;
-            value = num(vars.weight)/(h*h); break;
-          }
-          case 'compound-interest-calculator': {
-            let P2=num(vars.principal), r2=num(vars.rate)/100, t=num(vars.years), n2=num(vars.times);
-            value = P2*Math.pow(1+r2/n2, n2*t); break;
-          }
-          case 'triangle-area-calculator':
-            value = (num(vars.base)*num(vars.height))/2;
-            break;
-          case 'roi-calculator':
-            value = ((num(vars.gain)-num(vars.cost))/num(vars.cost))*100; break;
-          case 'sales-tax-calculator':
-            value = num(vars.price)*(1+num(vars.tax)/100); break;
-          default:
-            resultEl.textContent = 'Calculation not available.'; return;
-        }
+      if (!usedExpr) { resultEl.textContent = 'Calculation not available.'; return; }
       }
 
-      /* UNIT_RESOLUTION */
       let unit = root.getAttribute('data-unit')||'';
-      if(!unit){
-        // Default currency for finance-like calculators by slug hint
-        const slug = root.getAttribute('data-slug')||'';
-        const isMoney = /loan|mortgage|payment|interest|profit|tax|salary|revenue|cost|price|roi|net/i.test(slug);
-        if(isMoney){ unit = '$'; }
-      }
-      if(unit==='$' || unit==='€' || unit==='£'){
-        resultEl.textContent = 'Result: ' + unit + fmt(value);
-      } else {
-        resultEl.textContent = 'Result: ' + fmt(value) + (unit ? (' ' + unit) : '');
-      }
+      resultEl.textContent = 'Result: ' + fmt(value) + (unit?(' '+unit):'');
     }
 
     btn.addEventListener('click', compute);
