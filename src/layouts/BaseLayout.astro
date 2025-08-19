@@ -1,6 +1,4 @@
 ---
-import "../styles/tailwind.css";
-
 const { title = 'Niche Calculator Network', description = 'Free online calculators', canonical } = Astro.props;
 const site = Astro.site?.toString() || (import.meta.env.SITE_URL ?? 'https://example.com');
 const href = canonical ?? new URL(Astro.url.pathname, site).toString();
@@ -71,45 +69,8 @@ const cfToken = import.meta.env.VITE_CF_ANALYTICS_TOKEN;
   .ad-slot{border:1px dashed #cbd5e1;border-radius:10px;padding:10px;color:#64748b;font-size:.9rem;text-align:center;background:#f8fafc}
 </style>
 
-  
 </head>
-  
-<header class="sticky top-0 z-20 bg-white/80 backdrop-blur border-b border-slate-200">
-  <div class="container mx-auto px-4 py-3 flex items-center gap-3">
-    <a href="/" class="text-xl font-bold tracking-tight text-slate-900">Calculators</a>
-    <nav class="hidden md:flex flex-wrap gap-2 ml-6" data-bigmenu>
-      <a href="/finance" class="px-4 py-2 rounded-lg text-slate-700 hover:bg-blue-50 hover:text-blue-700 text-lg">Finance</a>
-      <a href="/health" class="px-4 py-2 rounded-lg text-slate-700 hover:bg-blue-50 hover:text-blue-700 text-lg">Health</a>
-      <a href="/math" class="px-4 py-2 rounded-lg text-slate-700 hover:bg-blue-50 hover:text-blue-700 text-lg">Math</a>
-      <a href="/conversions" class="px-4 py-2 rounded-lg text-slate-700 hover:bg-blue-50 hover:text-blue-700 text-lg">Conversions</a>
-      <a href="/technology" class="px-4 py-2 rounded-lg text-slate-700 hover:bg-blue-50 hover:text-blue-700 text-lg">Technology</a>
-      <a href="/date-time" class="px-4 py-2 rounded-lg text-slate-700 hover:bg-blue-50 hover:text-blue-700 text-lg">Date & Time</a>
-      <a href="/home-diy" class="px-4 py-2 rounded-lg text-slate-700 hover:bg-blue-50 hover:text-blue-700 text-lg">Home & DIY</a>
-      <a href="/education" class="px-4 py-2 rounded-lg text-slate-700 hover:bg-blue-50 hover:text-blue-700 text-lg">Education</a>
-      <a href="/science" class="px-4 py-2 rounded-lg text-slate-700 hover:bg-blue-50 hover:text-blue-700 text-lg">Science</a>
-      <a href="/everyday" class="px-4 py-2 rounded-lg text-slate-700 hover:bg-blue-50 hover:text-blue-700 text-lg">Everyday</a>
-      <a href="/all" class="px-4 py-2 rounded-lg text-slate-700 hover:bg-blue-50 hover:text-blue-700 text-lg">All</a>
-    </nav>
-    <details class="md:hidden ml-auto">
-      <summary class="px-3 py-2 rounded-md border border-slate-200 text-slate-700">Menu</summary>
-      <div class="mt-2 grid grid-cols-2 gap-2 p-2 border border-slate-200 rounded-lg bg-white">
-        <a href="/finance" class="px-3 py-2 rounded-md bg-slate-50">Finance</a>
-        <a href="/health" class="px-3 py-2 rounded-md bg-slate-50">Health</a>
-        <a href="/math" class="px-3 py-2 rounded-md bg-slate-50">Math</a>
-        <a href="/conversions" class="px-3 py-2 rounded-md bg-slate-50">Conversions</a>
-        <a href="/technology" class="px-3 py-2 rounded-md bg-slate-50">Technology</a>
-        <a href="/date-time" class="px-3 py-2 rounded-md bg-slate-50">Date & Time</a>
-        <a href="/home-diy" class="px-3 py-2 rounded-md bg-slate-50">Home & DIY</a>
-        <a href="/education" class="px-3 py-2 rounded-md bg-slate-50">Education</a>
-        <a href="/science" class="px-3 py-2 rounded-md bg-slate-50">Science</a>
-        <a href="/everyday" class="px-3 py-2 rounded-md bg-slate-50">Everyday</a>
-        <a href="/all" class="px-3 py-2 rounded-md bg-slate-50">All</a>
-      </div>
-    </details>
-  </div>
-</header>
-
-<body class="bg-white text-slate-900">
+  <body>
 <header class="site-header">
   <div class="wrap">
     <a class="logo" href="/">Calculators</a>
