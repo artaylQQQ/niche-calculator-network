@@ -14,7 +14,7 @@ export const schema = {
   "locale": "en",
   "inputs": [
     {"name":"weight","type":"number","min":0,"step":0.1,"hint":"Weight (kg)"},
-    {"name":"height","type":"number","min":0,"step":0.1,"hint":"Height (cm)"}
+    {/* removed expr */}
   ],
   "expression": "weight / ((height/100) ^ 2)",
   "disclaimer": "Educational information, not professional advice.",

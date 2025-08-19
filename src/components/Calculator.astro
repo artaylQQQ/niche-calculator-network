@@ -178,7 +178,11 @@ const expression = schema?.expression ?? schema?.formula ?? schema?.formula_expr
       if(unit==='$' || unit==='€' || unit==='£'){
         resultEl.textContent = 'Result: ' + unit + fmt(value);
       } else {
+        if(unit==='$' || unit==='€' || unit==='£'){
+        resultEl.textContent = 'Result: ' + unit + fmt(value);
+      } else {
         resultEl.textContent = 'Result: ' + fmt(value) + (unit ? (' ' + unit) : '');
+      }
       }
     }
 

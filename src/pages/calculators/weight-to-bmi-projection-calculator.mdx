@@ -9,7 +9,7 @@ cluster: "Health"
 
 import Calculator from '../../components/Calculator.astro';
 
-export const schema = {"slug": "weight-to-bmi-projection-calculator","title": "Weight to BMI Projection","locale": "en","inputs": [{"name": "weight","type": "number","min": 0,"step": 0.1,"hint": "Weight (kg)"},{"name": "height","type": "number","min": 0,"step": 0.001,"hint": "Height (m)"}],"expression": "weight / (height^2)","formula_js": "","units": {"input": "","output": ""},"intro": "Quick BMI projection.","examples": [],"faqs": [],"disclaimer": "Educational information, not professional advice.","schema_org": "FAQPage|SoftwareApplication","cluster": "Health & Fitness"}
+export const schema = {"slug": "weight-to-bmi-projection-calculator","title": "Weight to BMI Projection","locale": "en","inputs": [{"name": "weight","type": "number","min": 0,"step": 0.1,"hint": "Weight (kg)"},{/* removed expr */}],"expression": "weight / (height^2)","formula_js": "","units": {/* removed expr */},"intro": "Quick BMI projection.","examples": [],"faqs": [],"disclaimer": "Educational information, not professional advice.","schema_org": "FAQPage|SoftwareApplication","cluster": "Health & Fitness"}
 
 # Weight to BMI Projection
 
