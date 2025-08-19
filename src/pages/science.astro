@@ -2,6 +2,7 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 const slug = "science";
 const title = "Science Calculators";
+// Load all calculator pages (.mdx) and extract frontmatter at build time
 const modules = import.meta.glob("../pages/calculators/*.mdx", { eager: true });
 const items = Object.values(modules).map((m) => ({ url: m.url, fm: m.frontmatter || {} }));
 const list = items.filter(i => (i.fm.cluster || "").toLowerCase() === "science");
