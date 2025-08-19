@@ -1,0 +1,30 @@
+---
+layout: ../../layouts/BaseLayout.astro
+title: Celsius to Fahrenheit Converter
+description: Convert Celsius to Fahrenheit.
+date: 2025-08-18
+updated: 2025-08-18
+cluster: "Conversions"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {"slug": "c-to-f-calculator","title": "Celsius to Fahrenheit Converter","locale": "en","inputs": [{"name": "c","type": "number","step": 0.1,"hint": "Celsius"}],"expression": "c * 9/5 + 32","formula_js": "","units": {/* removed expr */},"intro": "Convert Celsius to Fahrenheit.","examples": [],"faqs": [],"disclaimer": "Educational information, not professional advice.","schema_org": "FAQPage|SoftwareApplication","cluster": "Conversions & Units"}
+
+# Celsius to Fahrenheit Converter
+
+Convert Celsius to Fahrenheit.
+
+<Calculator schema={schema} />
+
+## FAQ
+
+- _No FAQs yet._
+
+## Related calculators
+- [Km To Miles Calculator](/calculators/km-to-miles-calculator/)
+- [Miles To Km Calculator](/calculators/miles-to-km-calculator/)
+- [F To C Calculator](/calculators/f-to-c-calculator/)
+- [Kg To Lb Calculator](/calculators/kg-to-lb-calculator/)
+- [Cm To Inches Calculator](/calculators/cm-to-inches-calculator/)
+- [Kg To G Calculator](/calculators/kg-to-g-calculator/)

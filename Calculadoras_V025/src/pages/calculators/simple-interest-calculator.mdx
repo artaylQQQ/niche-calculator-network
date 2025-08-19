@@ -1,0 +1,30 @@
+---
+layout: ../../layouts/BaseLayout.astro
+title: Simple Interest Calculator
+description: Compute final amount with simple interest.
+date: 2025-08-18
+updated: 2025-08-18
+cluster: "Finance"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {"slug": "simple-interest-calculator","title": "Simple Interest Calculator","locale": "en","inputs": [{"name": "principal","type": "number","min": 0,"step": 0.01,"hint": "Principal"},{/* removed expr */},{/* removed expr */}],"expression": "principal * (1 + rate/100 * years)","formula_js": "","units": {/* removed expr */},"intro": "Compute final amount with simple interest.","examples": [],"faqs": [],"disclaimer": "Educational information, not professional advice.","schema_org": "FAQPage|SoftwareApplication","cluster": "Finance & Loans"}
+
+# Simple Interest Calculator
+
+Compute final amount with simple interest.
+
+<Calculator schema={schema} />
+
+## FAQ
+
+- _No FAQs yet._
+
+## Related calculators
+- [Loan Payment Calculator](/calculators/loan-payment-calculator/)
+- [Compound Interest Calculator](/calculators/compound-interest-calculator/)
+- [Roi Calculator](/calculators/roi-calculator/)
+- [Break Even Calculator](/calculators/break-even-calculator/)
+- [Cagr Calculator](/calculators/cagr-calculator/)
+- [Roi Dollar Calculator](/calculators/roi-dollar-calculator/)

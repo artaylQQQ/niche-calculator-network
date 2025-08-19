@@ -1,0 +1,28 @@
+---
+cluster: "Everyday"
+title: "Compound Interest Calculator"
+description: "Future value with compound interest."
+updated: "2025-08-18"
+---
+
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  "slug": "compound-interest-calculator",
+  "title": "Compound Interest Calculator",
+  "locale": "en",
+  "inputs": [
+    {"name":"principal","type":"number","min":0,"step":0.01,"hint":"Principal (P)"},
+    {/* removed expr */},
+    {/* removed expr */},
+    {/* removed expr */}
+  ],
+  "expression": "principal * (1 + (rate/100)/times) ^ (times * years)",
+  "disclaimer": "Educational information, not professional advice.",
+  "schema_org": "FAQPage"
+};
+
+<BaseLayout title={schema.title} description={schema.description}>
+  <Calculator schema={schema} />
+</BaseLayout>
