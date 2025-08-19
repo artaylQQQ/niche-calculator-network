@@ -1,6 +1,4 @@
 ---
-cluster: "Technology"
-
 title: "Loan Payment Calculator"
 description: "Compute fixed monthly payment for a loan."
 updated: "2025-08-18"
@@ -25,17 +23,5 @@ export const schema = {
 };
 
 <BaseLayout title={schema.title} description={schema.description}>
-  <!-- ad-slot: top -->
-<Calculator schema={schema} />
+  <Calculator schema={schema} />
 </BaseLayout>
-
-<!-- ad-slot: bottom -->
-
-
-### Worked Example
-
-- Principal: **20000**
-- Annual rate: **7%**
-- Term: **5 years**
-
-**Expected monthly payment:** ~**396.02**
