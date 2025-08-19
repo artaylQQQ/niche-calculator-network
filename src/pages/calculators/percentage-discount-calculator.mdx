@@ -1,4 +1,6 @@
 ---
+cluster: "Science"
+
 title: "Percentage Discount Calculator"
 description: "Calculate the final price after a percentage discount."
 updated: "2025-08-18"
@@ -25,5 +27,8 @@ export const schema = {
 };
 
 <BaseLayout title={schema.title} description={schema.description}>
-  <Calculator schema={schema} />
+  <!-- ad-slot: top -->
+<Calculator schema={schema} />
 </BaseLayout>
+
+<!-- ad-slot: bottom -->
