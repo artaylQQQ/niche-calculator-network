@@ -1,24 +1,34 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+const categories = [
+  { slug: "finance", label: "Finance" },
+  { slug: "health", label: "Health" },
+  { slug: "math", label: "Math" },
+  { slug: "conversions", label: "Conversions" },
+  { slug: "technology", label: "Technology" },
+  { slug: "date-time", label: "Date & Time" },
+  { slug: "home-diy", label: "Home & DIY" },
+  { slug: "education", label: "Education" },
+  { slug: "science", label: "Science" },
+  { slug: "everyday", label: "Everyday" },
+  { slug: "all", label: "All Calculators" }
+];
 ---
-<BaseLayout title="Home">
-  <main class="flex flex-col items-center justify-center min-h-screen bg-gray-50 text-gray-900">
-    <section class="text-center py-16">
-      <h1 class="text-4xl font-bold mb-4">Welcome to Calculator Network</h1>
-      <p class="text-lg text-gray-600 mb-8">Choose a category to start</p>
-      <nav class="grid grid-cols-2 md:grid-cols-3 gap-6 w-full max-w-4xl">
-        <a href="/finance" class="bg-white shadow p-6 rounded-lg hover:bg-blue-50 text-xl font-semibold">Finance</a>
-        <a href="/health" class="bg-white shadow p-6 rounded-lg hover:bg-blue-50 text-xl font-semibold">Health</a>
-        <a href="/math" class="bg-white shadow p-6 rounded-lg hover:bg-blue-50 text-xl font-semibold">Math</a>
-        <a href="/conversions" class="bg-white shadow p-6 rounded-lg hover:bg-blue-50 text-xl font-semibold">Conversions</a>
-        <a href="/technology" class="bg-white shadow p-6 rounded-lg hover:bg-blue-50 text-xl font-semibold">Technology</a>
-        <a href="/date-time" class="bg-white shadow p-6 rounded-lg hover:bg-blue-50 text-xl font-semibold">Date & Time</a>
-        <a href="/home-diy" class="bg-white shadow p-6 rounded-lg hover:bg-blue-50 text-xl font-semibold">Home & DIY</a>
-        <a href="/education" class="bg-white shadow p-6 rounded-lg hover:bg-blue-50 text-xl font-semibold">Education</a>
-        <a href="/science" class="bg-white shadow p-6 rounded-lg hover:bg-blue-50 text-xl font-semibold">Science</a>
-        <a href="/everyday" class="bg-white shadow p-6 rounded-lg hover:bg-blue-50 text-xl font-semibold">Everyday</a>
-        <a href="/all" class="bg-white shadow p-6 rounded-lg hover:bg-blue-50 text-xl font-semibold">All Calculators</a>
-      </nav>
+<BaseLayout title="Calculators">
+  <main class="container mx-auto px-4 py-12">
+    <section class="max-w-3xl">
+      <h1 class="text-4xl font-bold tracking-tight text-slate-900">Fast & minimal calculators</h1>
+      <p class="mt-3 text-lg text-slate-600">Pick a category to get started. Clean, accurate and lightweight.</p>
+    </section>
+
+    <section class="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+      {categories.map((c) => (
+        <a href={`/${c.slug}`} class="group block rounded-xl border border-slate-200 p-6 hover:border-blue-500 hover:shadow-sm transition">
+          <div class="text-sm uppercase tracking-wide text-slate-500">Category</div>
+          <div class="mt-2 text-2xl font-semibold text-slate-900 group-hover:text-blue-600">{c.label}</div>
+          <div class="mt-2 text-slate-500">Open {c.label} calculators</div>
+        </a>
+      ))}
     </section>
   </main>
 </BaseLayout>
