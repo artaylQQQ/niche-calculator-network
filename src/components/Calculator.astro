@@ -146,9 +146,20 @@ const expression = schema?.expression ?? schema?.formula ?? schema?.formula_expr
             value = num(vars.price)*(1-num(vars.discount)/100);
             break;
           case 'percentage-increase-calculator':
+
+          case 'break-even-calculator': {
+            const fixed = num(vars.fixed), variable = num(vars.variable), price = num(vars.price);
+            if(!isFinite(fixed) || !isFinite(variable) || !isFinite(price)){
+              resultEl.textContent = 'Please fill all fields.'; return;
+            }
+            if(price <= variable){
+              resultEl.textContent = 'Price must be greater than variable cost.'; return;
+            }
+            value = fixed / (price - variable); break;
+          }
             value = num(vars.original)*(1+num(vars.increase)/100); break;
           case 'bmi-calculator': {
-            let h=num(vars.height)/100;
+            let h = num(vars.height);
             value = num(vars.weight)/(h*h); break;
           }
           case 'compound-interest-calculator': {

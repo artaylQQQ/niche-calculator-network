@@ -1,18 +1,24 @@
 ---
-title: Finance Sample Calculator
-description: Placeholder calculator for finance
+layout: ../../layouts/BaseLayout.astro
+title: "Finance Quick Calculator"
+description: "A minimal working calculator for the Finance category."
+date: 2025-08-19
+updated: 2025-08-19
 cluster: "Finance"
 ---
 
-import {/* removed expr */} from "../../utils/format.js";
+import Calculator from '../../components/Calculator.astro';
 
-# Finance Calculator
+export const schema = {
+  slug: "finance-sample",
+  title: "Finance Quick Calculator",
+  description: "Add two numbers quickly.",
+  cluster: "Finance",
+  inputs: [
+    { name: "x", hint: "X", type: "number", step: "any" },
+    { name: "y", hint: "Y", type: "number", step: "any" }
+  ],
+  expression: "x + y"
+};
 
-This is a sample calculator for the finance category.
-
-```js
-const a = 2.123456;
-const result = formatResult(a);
-```
-
-Result will appear after calculation.
+<Calculator schema={schema} />

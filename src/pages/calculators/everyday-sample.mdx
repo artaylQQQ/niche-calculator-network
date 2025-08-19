@@ -1,18 +1,24 @@
 ---
-title: Everyday Sample Calculator
-description: Placeholder calculator for everyday
+layout: ../../layouts/BaseLayout.astro
+title: "Everyday Quick Calculator"
+description: "A minimal working calculator for the Everyday category."
+date: 2025-08-19
+updated: 2025-08-19
 cluster: "Everyday"
 ---
 
-import {/* removed expr */} from "../../utils/format.js";
+import Calculator from '../../components/Calculator.astro';
 
-# Everyday Calculator
+export const schema = {
+  slug: "everyday-sample",
+  title: "Everyday Quick Calculator",
+  description: "Add two numbers quickly.",
+  cluster: "Everyday",
+  inputs: [
+    { name: "x", hint: "X", type: "number", step: "any" },
+    { name: "y", hint: "Y", type: "number", step: "any" }
+  ],
+  expression: "x + y"
+};
 
-This is a sample calculator for the everyday category.
-
-```js
-const a = 2.123456;
-const result = formatResult(a);
-```
-
-Result will appear after calculation.
+<Calculator schema={schema} />

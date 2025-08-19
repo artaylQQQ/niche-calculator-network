@@ -1,18 +1,24 @@
 ---
-title: Conversions Sample Calculator
-description: Placeholder calculator for conversions
+layout: ../../layouts/BaseLayout.astro
+title: "Conversions Quick Calculator"
+description: "A minimal working calculator for the Conversions category."
+date: 2025-08-19
+updated: 2025-08-19
 cluster: "Conversions"
 ---
 
-import {/* removed expr */} from "../../utils/format.js";
+import Calculator from '../../components/Calculator.astro';
 
-# Conversions Calculator
+export const schema = {
+  slug: "conversions-sample",
+  title: "Conversions Quick Calculator",
+  description: "Add two numbers quickly.",
+  cluster: "Conversions",
+  inputs: [
+    { name: "x", hint: "X", type: "number", step: "any" },
+    { name: "y", hint: "Y", type: "number", step: "any" }
+  ],
+  expression: "x + y"
+};
 
-This is a sample calculator for the conversions category.
-
-```js
-const a = 2.123456;
-const result = formatResult(a);
-```
-
-Result will appear after calculation.
+<Calculator schema={schema} />

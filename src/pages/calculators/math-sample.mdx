@@ -1,18 +1,24 @@
 ---
-title: Math Sample Calculator
-description: Placeholder calculator for math
+layout: ../../layouts/BaseLayout.astro
+title: "Math Quick Calculator"
+description: "A minimal working calculator for the Math category."
+date: 2025-08-19
+updated: 2025-08-19
 cluster: "Math"
 ---
 
-import {/* removed expr */} from "../../utils/format.js";
+import Calculator from '../../components/Calculator.astro';
 
-# Math Calculator
+export const schema = {
+  slug: "math-sample",
+  title: "Math Quick Calculator",
+  description: "Add two numbers quickly.",
+  cluster: "Math",
+  inputs: [
+    { name: "x", hint: "X", type: "number", step: "any" },
+    { name: "y", hint: "Y", type: "number", step: "any" }
+  ],
+  expression: "x + y"
+};
 
-This is a sample calculator for the math category.
-
-```js
-const a = 2.123456;
-const result = formatResult(a);
-```
-
-Result will appear after calculation.
+<Calculator schema={schema} />

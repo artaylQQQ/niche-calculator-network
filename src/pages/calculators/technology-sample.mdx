@@ -1,18 +1,24 @@
 ---
-title: Technology Sample Calculator
-description: Placeholder calculator for technology
+layout: ../../layouts/BaseLayout.astro
+title: "Technology Quick Calculator"
+description: "A minimal working calculator for the Technology category."
+date: 2025-08-19
+updated: 2025-08-19
 cluster: "Technology"
 ---
 
-import {/* removed expr */} from "../../utils/format.js";
+import Calculator from '../../components/Calculator.astro';
 
-# Technology Calculator
+export const schema = {
+  slug: "technology-sample",
+  title: "Technology Quick Calculator",
+  description: "Add two numbers quickly.",
+  cluster: "Technology",
+  inputs: [
+    { name: "x", hint: "X", type: "number", step: "any" },
+    { name: "y", hint: "Y", type: "number", step: "any" }
+  ],
+  expression: "x + y"
+};
 
-This is a sample calculator for the technology category.
-
-```js
-const a = 2.123456;
-const result = formatResult(a);
-```
-
-Result will appear after calculation.
+<Calculator schema={schema} />

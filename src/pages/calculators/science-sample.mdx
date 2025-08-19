@@ -1,18 +1,24 @@
 ---
-title: Science Sample Calculator
-description: Placeholder calculator for science
+layout: ../../layouts/BaseLayout.astro
+title: "Science Quick Calculator"
+description: "A minimal working calculator for the Science category."
+date: 2025-08-19
+updated: 2025-08-19
 cluster: "Science"
 ---
 
-import {/* removed expr */} from "../../utils/format.js";
+import Calculator from '../../components/Calculator.astro';
 
-# Science Calculator
+export const schema = {
+  slug: "science-sample",
+  title: "Science Quick Calculator",
+  description: "Add two numbers quickly.",
+  cluster: "Science",
+  inputs: [
+    { name: "x", hint: "X", type: "number", step: "any" },
+    { name: "y", hint: "Y", type: "number", step: "any" }
+  ],
+  expression: "x + y"
+};
 
-This is a sample calculator for the science category.
-
-```js
-const a = 2.123456;
-const result = formatResult(a);
-```
-
-Result will appear after calculation.
+<Calculator schema={schema} />

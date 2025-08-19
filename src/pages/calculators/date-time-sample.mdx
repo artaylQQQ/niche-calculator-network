@@ -1,18 +1,24 @@
 ---
-title: Date-time Sample Calculator
-description: Placeholder calculator for date-time
+layout: ../../layouts/BaseLayout.astro
+title: "Date & Time Quick Calculator"
+description: "A minimal working calculator for the Date & Time category."
+date: 2025-08-19
+updated: 2025-08-19
 cluster: "Date & Time"
 ---
 
-import {/* removed expr */} from "../../utils/format.js";
+import Calculator from '../../components/Calculator.astro';
 
-# Date-time Calculator
+export const schema = {
+  slug: "date-time-sample",
+  title: "Date & Time Quick Calculator",
+  description: "Add two numbers quickly.",
+  cluster: "Date & Time",
+  inputs: [
+    { name: "x", hint: "X", type: "number", step: "any" },
+    { name: "y", hint: "Y", type: "number", step: "any" }
+  ],
+  expression: "x + y"
+};
 
-This is a sample calculator for the date-time category.
-
-```js
-const a = 2.123456;
-const result = formatResult(a);
-```
-
-Result will appear after calculation.
+<Calculator schema={schema} />
