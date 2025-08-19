@@ -101,7 +101,7 @@ const expression = schema?.expression ?? schema?.formula ?? schema?.formula_expr
 
   function fmt(n){
     return isFinite(n)
-      ? new Intl.NumberFormat('en-US', { maximumFractionDigits: 2 }).format(n)
+      ? new Intl.NumberFormat('en-US', { maximumFractionDigits: 3 }).format(n)
       : '—';
   }
   function num(v){ let n=Number(v); return isFinite(n)?n:NaN; }
@@ -167,8 +167,19 @@ const expression = schema?.expression ?? schema?.formula ?? schema?.formula_expr
         }
       }
 
+      /* UNIT_RESOLUTION */
       let unit = root.getAttribute('data-unit')||'';
-      resultEl.textContent = 'Result: ' + fmt(value) + (unit?(' '+unit):'');
+      if(!unit){
+        // Default currency for finance-like calculators by slug hint
+        const slug = root.getAttribute('data-slug')||'';
+        const isMoney = /loan|mortgage|payment|interest|profit|tax|salary|revenue|cost|price|roi|net/i.test(slug);
+        if(isMoney){ unit = '$'; }
+      }
+      if(unit==='$' || unit==='€' || unit==='£'){
+        resultEl.textContent = 'Result: ' + unit + fmt(value);
+      } else {
+        resultEl.textContent = 'Result: ' + fmt(value) + (unit ? (' ' + unit) : '');
+      }
     }
 
     btn.addEventListener('click', compute);
