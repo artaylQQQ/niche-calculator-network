@@ -4,18 +4,18 @@ title: Break-Even Units Calculator
 description: Estimate units to break even.
 date: 2025-08-18
 updated: 2025-08-18
-cluster: Finance & Loans
+cluster: "Finance"
 ---
 
 import Calculator from '../../components/Calculator.astro';
 
-export const schema = {"slug": "break-even-calculator","title": "Break-Even Units Calculator","locale": "en","inputs": [{"name": "fixed","type": "number","min": 0,"step": 0.01,"hint": "Fixed costs"},{"name": "price","type": "number","min": 0,"step": 0.01,"hint": "Unit price"},{"name": "variable","type": "number","min": 0,"step": 0.01,"hint": "Variable cost / unit"}],"expression": "fixed / (price - variable)","formula_js": "","units": {"input": "","output": ""},"intro": "Estimate units to break even.","examples": [],"faqs": [],"disclaimer": "Educational information, not professional advice.","schema_org": "FAQPage|SoftwareApplication","cluster": "Finance & Loans"}
+export const schema = {"slug": "break-even-calculator","title": "Break-Even Units Calculator","locale": "en","inputs": [{"name": "fixed","type": "number","min": 0,"step": 0.01,"hint": "Fixed costs"},{/* removed expr */},{/* removed expr */}],"expression": "fixed / (price - variable)","formula_js": "","units": {/* removed expr */},"intro": "Estimate units to break even.","examples": [],"faqs": [],"disclaimer": "Educational information, not professional advice.","schema_org": "FAQPage|SoftwareApplication","cluster": "Finance & Loans"}
 
 # Break-Even Units Calculator
 
 Estimate units to break even.
 
-<Calculator schema={schema} />
+<Calculator schema={/* removed undefined var: schema */} />
 
 ## FAQ
 

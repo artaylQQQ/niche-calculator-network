@@ -1,4 +1,5 @@
 ---
+cluster: "Everyday"
 title: "Loan Payment Calculator"
 description: "Compute fixed monthly payment for a loan."
 updated: "2025-08-18"
@@ -13,8 +14,8 @@ export const schema = {
   "locale": "en",
   "inputs": [
     {"name":"principal","type":"number","min":0,"step":0.01,"hint":"Loan amount"},
-    {"name":"rate","type":"number","min":0,"step":0.01,"hint":"Annual interest (%)"},
-    {"name":"months","type":"number","min":1,"step":1,"hint":"Term (months)"}
+    {/* removed expr */},
+    {/* removed expr */}
   ],
   "intro": "Enter loan amount, annual interest, and term to get the fixed monthly payment.",
   "expression": "", 
@@ -23,5 +24,5 @@ export const schema = {
 };
 
 <BaseLayout title={schema.title} description={schema.description}>
-  <Calculator schema={schema} />
+  <Calculator schema={/* removed undefined var: schema */} />
 </BaseLayout>
