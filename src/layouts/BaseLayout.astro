@@ -39,73 +39,8 @@ const cfToken = import.meta.env.VITE_CF_ANALYTICS_TOKEN;
       .ads{display:block;min-height:280px;margin:12px 0;border:1px dashed #334155;border-radius:8px;text-align:center;line-height:280px;color:#64748b}
       .muted{color:#9aa4b2;font-size:14px}
     </style>
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<meta name="theme-color" content="#1d4ed8">
-<style>
-  :root{
-    --bg:#ffffff; --fg:#1e293b; --muted:#475569; --accent:#1d4ed8;
-    --card:#ffffff; --line:#e2e8f0; --radius:12px; --space:16px; --maxw:1000px;
-  }
-  *{box-sizing:border-box}
-  body{margin:0;background:var(--bg);color:var(--fg);font:400 16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,'Helvetica Neue',Arial}
-  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 var(--space)}
-  .site-header{position:sticky;top:0;z-index:20;background:#fff;border-bottom:1px solid var(--line)}
-  .site-header .wrap{display:flex;align-items:center;gap:12px;height:58px}
-  .logo{font-weight:700;text-decoration:none;color:var(--fg);letter-spacing:.2px}
-  .nav{display:flex;gap:8px;flex-wrap:wrap}
-  .nav a{color:var(--fg);text-decoration:none;padding:.4rem .6rem;border-radius:8px}
-  .nav a:hover{background:#f1f5f9}
-  .cats-mobile{margin-left:auto;display:none;gap:8px;align-items:center}
-  main{display:block}
-  .grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
-  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:var(--space);box-shadow:0 1px 2px rgba(0,0,0,.04)}
-  .pill{display:inline-block;background:#eff6ff;color:var(--accent);padding:.2rem .5rem;border-radius:999px;font-size:.8rem}
-  .btn{background:var(--accent);color:#fff;border:1px solid var(--accent);border-radius:10px;padding:.6rem 1rem;cursor:pointer;transition:transform .06s ease, box-shadow .12s}
-  .btn:hover{transform:translateY(-1px);box-shadow:0 6px 12px rgba(29,78,216,.15)}
-  input,select{border:1px solid var(--line);border-radius:10px;padding:.5rem .6rem}
-  .site-footer a{color:var(--muted);text-decoration:none}
-  .site-footer a:hover{color:var(--fg);text-decoration:underline}
-  @media (max-width: 960px){ .nav{display:none} .cats-mobile{display:flex} }
-  .ad-slot{border:1px dashed #cbd5e1;border-radius:10px;padding:10px;color:#64748b;font-size:.9rem;text-align:center;background:#f8fafc}
-</style>
-
-</head>
+  </head>
   <body>
-<header class="site-header">
-  <div class="wrap">
-    <a class="logo" href="/">Calculators</a>
-    <nav class="nav">
-      <a href="/finance">Finance</a>
-      <a href="/health">Health</a>
-      <a href="/math">Math</a>
-      <a href="/conversions">Conversions</a>
-      <a href="/technology">Technology</a>
-      <a href="/date-time">Date & Time</a>
-      <a href="/home-diy">Home & DIY</a>
-      <a href="/education">Education</a>
-      <a href="/science">Science</a>
-      <a href="/everyday">Everyday</a>
-    </nav>
-    <form class="cats-mobile" onsubmit="location.href='/' + this.elements.c.value; return false">
-      <label class="sr-only" for="c">Categories</label>
-      <select name="c" id="c">
-        <option value="">Categories…</option>
-        <option value="finance">Finance</option>
-        <option value="health">Health</option>
-        <option value="math">Math</option>
-        <option value="conversions">Conversions</option>
-        <option value="technology">Technology</option>
-        <option value="date-time">Date & Time</option>
-        <option value="home-diy">Home & DIY</option>
-        <option value="education">Education</option>
-        <option value="science">Science</option>
-        <option value="everyday">Everyday</option>
-      </select>
-      <button type="submit">Go</button>
-    </form>
-  </div>
-</header>
-
     <header>
       <a href="/">🧮</a>
       <div>
