@@ -1,6 +1,4 @@
 ---
-cluster: "Home & DIY"
-
 title: "Compound Interest Calculator"
 description: "Future value with compound interest."
 updated: "2025-08-18"
@@ -25,18 +23,5 @@ export const schema = {
 };
 
 <BaseLayout title={schema.title} description={schema.description}>
-  <!-- ad-slot: top -->
-<Calculator schema={schema} />
+  <Calculator schema={schema} />
 </BaseLayout>
-
-<!-- ad-slot: bottom -->
-
-
-### Worked Example
-
-- Principal: **1000**
-- Rate: **5%**
-- Compounds/year: **12**
-- Years: **10**
-
-**Expected final amount:** ~**1647.01**
