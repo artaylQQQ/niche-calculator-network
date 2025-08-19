@@ -1,4 +1,6 @@
 ---
+cluster: "Health"
+
 title: "ROI Calculator"
 description: "Return on investment (percentage)."
 updated: "2025-08-18"
@@ -21,5 +23,8 @@ export const schema = {
 };
 
 <BaseLayout title={schema.title} description={schema.description}>
-  <Calculator schema={schema} />
+  <!-- ad-slot: top -->
+<Calculator schema={schema} />
 </BaseLayout>
+
+<!-- ad-slot: bottom -->

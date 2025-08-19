@@ -39,8 +39,54 @@ const cfToken = import.meta.env.VITE_CF_ANALYTICS_TOKEN;
       .ads{display:block;min-height:280px;margin:12px 0;border:1px dashed #334155;border-radius:8px;text-align:center;line-height:280px;color:#64748b}
       .muted{color:#9aa4b2;font-size:14px}
     </style>
-  </head>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <meta name="theme-color" content="#1d4ed8">
+<style>
+  .card{box-shadow:0 1px 2px rgba(0,0,0,.04)}
+  .btn{transition:transform .06s ease, box-shadow .12s}
+  .btn:hover{transform:translateY(-1px);box-shadow:0 6px 12px rgba(29,78,216,.15)}
+  a{outline-offset:3px}
+  .site-footer a{color:var(--muted);text-decoration:none}
+  .site-footer a:hover{color:var(--fg);text-decoration:underline}
+</style>
+
+</head>
   <body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="/">Calculators</a>
+    <nav class="nav">
+      <a href="/finance">Finance</a>
+      <a href="/health">Health</a>
+      <a href="/math">Math</a>
+      <a href="/conversions">Conversions</a>
+      <a href="/technology">Technology</a>
+      <a href="/date-time">Date & Time</a>
+      <a href="/home-diy">Home & DIY</a>
+      <a href="/education">Education</a>
+      <a href="/science">Science</a>
+      <a href="/everyday">Everyday</a>
+    </nav>
+    <form class="cats-mobile" onsubmit="location.href='/' + this.elements.c.value; return false">
+      <label class="sr-only" for="c">Categories</label>
+      <select name="c" id="c">
+        <option value="">Categories…</option>
+        <option value="finance">Finance</option>
+        <option value="health">Health</option>
+        <option value="math">Math</option>
+        <option value="conversions">Conversions</option>
+        <option value="technology">Technology</option>
+        <option value="date-time">Date & Time</option>
+        <option value="home-diy">Home & DIY</option>
+        <option value="education">Education</option>
+        <option value="science">Science</option>
+        <option value="everyday">Everyday</option>
+      </select>
+      <button type="submit">Go</button>
+    </form>
+  </div>
+</header>
+
     <header>
       <a href="/">🧮</a>
       <div>
