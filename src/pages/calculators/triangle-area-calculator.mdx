@@ -8,7 +8,11 @@ updated: "2025-08-18"
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Calculator from "../../components/Calculator.astro";
 
-export const schema = {
+export const schema = {inputs: [
+  { name: "base", label: "Base", type: "number", placeholder: "Enter Base", step: "any" },
+  { name: "height", label: "Height (cm)", type: "number", placeholder: "Enter Height (cm)", step: "any" }
+],
+
   "slug": "triangle-area-calculator",
   "title": "Triangle Area Calculator",
   "locale": "en",

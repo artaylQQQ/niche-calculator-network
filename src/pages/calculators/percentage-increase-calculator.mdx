@@ -8,7 +8,11 @@ updated: "2025-08-18"
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Calculator from "../../components/Calculator.astro";
 
-export const schema = {
+export const schema = {inputs: [
+  { name: "increase", label: "Increase", type: "number", placeholder: "Enter Increase", step: "any" },
+  { name: "original", label: "Original", type: "number", placeholder: "Enter Original", step: "any" }
+],
+
   "slug": "percentage-increase-calculator",
   "title": "Percentage Increase Calculator",
   "locale": "en",

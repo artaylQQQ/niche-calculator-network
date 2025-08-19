@@ -8,7 +8,11 @@ updated: "2025-08-18"
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Calculator from "../../components/Calculator.astro";
 
-export const schema = {
+export const schema = {inputs: [
+  { name: "cost", label: "Cost", type: "number", placeholder: "Enter Cost", step: "any" },
+  { name: "gain", label: "Gain/Return", type: "number", placeholder: "Enter Gain/Return", step: "any" }
+],
+
   "slug": "roi-calculator",
   "title": "ROI Calculator",
   "locale": "en",

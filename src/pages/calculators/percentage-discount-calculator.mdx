@@ -8,7 +8,11 @@ updated: "2025-08-18"
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Calculator from "../../components/Calculator.astro";
 
-export const schema = {
+export const schema = {inputs: [
+  { name: "discount", label: "Discount (%)", type: "number", placeholder: "Enter Discount (%)", step: "any" },
+  { name: "price", label: "Price", type: "number", placeholder: "Enter Price", step: "any" }
+],
+
   "slug": "percentage-discount-calculator",
   "title": "Percentage Discount Calculator",
   "locale": "en",

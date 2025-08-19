@@ -8,7 +8,11 @@ updated: "2025-08-18"
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Calculator from "../../components/Calculator.astro";
 
-export const schema = {
+export const schema = {inputs: [
+  { name: "price", label: "Price", type: "number", placeholder: "Enter Price", step: "any" },
+  { name: "tax", label: "Tax (%)", type: "number", placeholder: "Enter Tax (%)", step: "any" }
+],
+
   "slug": "sales-tax-calculator",
   "title": "Sales Tax Calculator",
   "locale": "en",

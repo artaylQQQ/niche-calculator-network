@@ -9,7 +9,12 @@ cluster: "Finance"
 
 import Calculator from '../../components/Calculator.astro';
 
-export const schema = {"slug": "break-even-calculator","title": "Break-Even Units Calculator","locale": "en","inputs": [{"name": "fixed","type": "number","min": 0,"step": 0.01,"hint": "Fixed costs"},{/* removed expr */},{/* removed expr */}],"expression": "fixed / (price - variable)","formula_js": "","units": {/* removed expr */},"intro": "Estimate units to break even.","examples": [],"faqs": [],"disclaimer": "Educational information, not professional advice.","schema_org": "FAQPage|SoftwareApplication","cluster": "Finance & Loans"}
+export const schema = {inputs: [
+  { name: "fixed", label: "Fixed Costs", type: "number", placeholder: "Enter Fixed Costs", step: "any" },
+  { name: "price", label: "Price", type: "number", placeholder: "Enter Price", step: "any" },
+  { name: "variable", label: "Variable Cost per Unit", type: "number", placeholder: "Enter Variable Cost per Unit", step: "any" }
+],
+"slug": "break-even-calculator","title": "Break-Even Units Calculator","locale": "en","inputs": [{"name": "fixed","type": "number","min": 0,"step": 0.01,"hint": "Fixed costs"},{/* removed expr */},{/* removed expr */}],"expression": "fixed / (price - variable)","formula_js": "","units": {/* removed expr */},"intro": "Estimate units to break even.","examples": [],"faqs": [],"disclaimer": "Educational information, not professional advice.","schema_org": "FAQPage|SoftwareApplication","cluster": "Finance & Loans"}
 
 # Break-Even Units Calculator
 

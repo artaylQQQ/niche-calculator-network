@@ -7,6 +7,7 @@ import sitemap from '@astrojs/sitemap';
 const SITE_URL = process.env.SITE_URL || 'https://example.com';
 
 export default defineConfig({
+  integrations: [tailwind({ config: { applyBaseStyles: true } })],
   site: SITE_URL,
   integrations: [mdx(), sitemap()],
 });

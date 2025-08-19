@@ -8,7 +8,11 @@ updated: "2025-08-18"
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Calculator from "../../components/Calculator.astro";
 
-export const schema = {
+export const schema = {inputs: [
+  { name: "height", label: "Height (cm)", type: "number", placeholder: "Enter Height (cm)", step: "any" },
+  { name: "weight", label: "Weight (kg)", type: "number", placeholder: "Enter Weight (kg)", step: "any" }
+],
+
   "slug": "bmi-calculator",
   "title": "BMI Calculator",
   "locale": "en",

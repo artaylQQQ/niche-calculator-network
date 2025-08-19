@@ -8,7 +8,13 @@ updated: "2025-08-18"
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Calculator from "../../components/Calculator.astro";
 
-export const schema = {
+export const schema = {inputs: [
+  { name: "principal", label: "Principal", type: "number", placeholder: "Enter Principal", step: "any" },
+  { name: "rate", label: "Rate (%)", type: "number", placeholder: "Enter Rate (%)", step: "any" },
+  { name: "times", label: "Times per year", type: "number", placeholder: "Enter Times per year", step: "any" },
+  { name: "years", label: "Years", type: "number", placeholder: "Enter Years", step: "any" }
+],
+
   "slug": "compound-interest-calculator",
   "title": "Compound Interest Calculator",
   "locale": "en",
