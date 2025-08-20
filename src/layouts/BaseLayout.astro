@@ -94,56 +94,20 @@ const cfToken = import.meta.env.VITE_CF_ANALYTICS_TOKEN;
 </header>
 
 <body class="bg-white text-slate-900">
-<header class="site-header">
-  <div class="wrap">
-    <a class="logo" href="/">Calculators</a>
-    <nav class="nav">
-      <a href="/finance">Finance</a>
-      <a href="/health">Health</a>
-      <a href="/math">Math</a>
-      <a href="/conversions">Conversions</a>
-      <a href="/technology">Technology</a>
-      <a href="/date-time">Date & Time</a>
-      <a href="/home-diy">Home & DIY</a>
-      <a href="/education">Education</a>
-      <a href="/science">Science</a>
-      <a href="/everyday">Everyday</a>
-    </nav>
-    <form class="cats-mobile" onsubmit="location.href='/' + this.elements.c.value; return false">
-      <label class="sr-only" for="c">Categories</label>
-      <select name="c" id="c">
-        <option value="">Categories…</option>
-        <option value="finance">Finance</option>
-        <option value="health">Health</option>
-        <option value="math">Math</option>
-        <option value="conversions">Conversions</option>
-        <option value="technology">Technology</option>
-        <option value="date-time">Date & Time</option>
-        <option value="home-diy">Home & DIY</option>
-        <option value="education">Education</option>
-        <option value="science">Science</option>
-        <option value="everyday">Everyday</option>
-      </select>
-      <button type="submit">Go</button>
-    </form>
-  </div>
-</header>
-
-    <header>
-      <a href="/">🧮</a>
-      <div>
-        <div><strong>Niche Calculator Network</strong></div>
-        <nav>
-          <a href="/">Home</a>
-          <a href="/sitemap-index.xml">Sitemap</a>
-          <a href="/privacy">Privacy</a>
-          <a href="/disclaimer">Disclaimer</a>
-        </nav>
-      </div>
-    </header>
-    <main>
+    <main class="min-h-screen">
       <slot />
     </main>
-    <footer class="muted">© {new Date().getFullYear()} Niche Calculator Network — Free tools.</footer>
+    <footer class="border-t border-slate-200 py-4 text-sm text-slate-600">
+      <div class="container mx-auto px-4 flex flex-wrap justify-between items-center gap-y-2">
+        <span>© {new Date().getFullYear()} Niche Calculator Network</span>
+        <nav class="flex flex-wrap gap-4">
+          <a href="/" class="hover:text-blue-600">Home</a>
+          <a href="/all" class="hover:text-blue-600">All Calculators</a>
+          <a href="/sitemap-index.xml" class="hover:text-blue-600">Sitemap</a>
+          <a href="/privacy" class="hover:text-blue-600">Privacy</a>
+          <a href="/disclaimer" class="hover:text-blue-600">Disclaimer</a>
+        </nav>
+      </div>
+    </footer>
   </body>
 </html>
