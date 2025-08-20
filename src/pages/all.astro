@@ -1,19 +1,15 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-const modules = import.meta.glob("../pages/calculators/*.mdx", { eager: true });
-const items = Object.values(modules).map((m) => ({ url: m.url, fm: m.frontmatter || {} }));
+const pages = await Astro.glob('./calculators/*.mdx');
+const items = pages.map(p => ({ url: p.url, title: p.frontmatter?.title ?? 'Calculator' }));
 ---
-<BaseLayout title="All Calculators">
-  <main class="container mx-auto px-4 py-10">
-    <h1 class="text-3xl font-bold">All Calculators</h1>
-    <div class="grid gap-4 mt-6 sm:grid-cols-2 lg:grid-cols-3">
-      {items.map((it) => (
-        <a href={it.url} class="block rounded-xl border border-slate-200 p-4 hover:border-blue-500 hover:shadow-sm transition">
-          <div class="text-sm text-slate-500">{it.fm.cluster || 'Misc'}</div>
-          <div class="text-lg font-semibold text-slate-900">{it.fm.title || it.url}</div>
-          <div class="text-slate-600">{it.fm.description || ''}</div>
-        </a>
-      ))}
-    </div>
-  </main>
+<BaseLayout title="All calculators" description="Browse all calculators.">
+  <h1 class="text-3xl font-bold mb-4">All calculators</h1>
+  <ul class="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+    {items.map((it) => (
+      <li class="border rounded-xl p-4 hover:shadow-sm">
+        <a href={it.url} class="font-semibold hover:text-blue-600">{it.title}</a>
+      </li>
+    ))}
+  </ul>
 </BaseLayout>
