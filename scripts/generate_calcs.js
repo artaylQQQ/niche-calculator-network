@@ -1,7 +1,4 @@
-// generate_calcs.js — V026-fix
-// Reads data/calculators.json and creates MDX files in src/pages/calculators/
-// Adds 6 related links by cluster and logs published slugs to meta/publish_log.json
-
+// Safe generator: reads data/calculators.json and creates MDX files in src/pages/calculators/
 import fs from 'node:fs';
 import path from 'node:path';
 
@@ -10,92 +7,99 @@ const SRC = path.join(ROOT, 'src', 'pages', 'calculators');
 const DATA = path.join(ROOT, 'data', 'calculators.json');
 const LOGP = path.join(ROOT, 'meta', 'publish_log.json');
 
-const MAX = Math.min(100, Math.max(1, Number(process.env.MAX_PER_DAY || 50)));
+const MAX = Number(process.env.MAX_PER_DAY || process.env.MAX_PER_DAY_GITHUB || 50);
 const TODAY = new Date().toISOString().slice(0,10);
 
+// Ensure dirs
 fs.mkdirSync(SRC, { recursive: true });
 fs.mkdirSync(path.dirname(LOGP), { recursive: true });
 
-const all = JSON.parse(fs.readFileSync(DATA, 'utf8'));
-if (!Array.isArray(all)) { console.error('data/calculators.json must be an array'); process.exit(1); }
-
-// slug uniqueness
-const seen = new Set();
-for (const row of all) {
-  if (!row.slug) { console.error('Missing slug in calculators.json'); process.exit(1); }
-  if (seen.has(row.slug)) { console.error('Duplicate slug: ' + row.slug); process.exit(1); }
-  seen.add(row.slug);
+function readJSON(p, fallback) {
+  try { return JSON.parse(fs.readFileSync(p, 'utf-8')); }
+  catch { return fallback; }
 }
 
-let log = [];
-try { log = JSON.parse(fs.readFileSync(LOGP, 'utf8')); } catch(_) { log = []; }
+const all = readJSON(DATA, []);
+const log = readJSON(LOGP, []);
+
+// pick not yet published
 const published = new Set(log.map(r => r.slug));
-
-// backlog
 const backlog = all.filter(x => !published.has(x.slug));
-if (backlog.length === 0) { console.log('Nothing to publish'); process.exit(0); }
 
-// pick up to MAX
-const toPub = backlog.slice(0, MAX);
+function sanitizeExpr(expr) {
+  if (typeof expr !== 'string') return '';
+  return expr.replace(/\^/g, '**');
+}
 
-// map by cluster
-const byCluster = new Map();
-for (const c of all) {
-  const key = c.cluster || 'general';
-  if (!byCluster.has(key)) byCluster.set(key, []);
-  byCluster.get(key).push(c);
+function titleize(slug) {
+  return slug.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
 }
 
 function mdxFor(calc, related) {
-  const json = {
+  const front = `---
+layout: ../../layouts/BaseLayout.astro
+title: ${calc.title}
+description: ${calc.intro}
+date: ${TODAY}
+updated: ${TODAY}
+cluster: ${calc.cluster || 'General'}
+---
+`;
+
+  const importLine = "import Calculator from '../../components/Calculator.astro';\n";
+  const schema = {
     slug: calc.slug,
     title: calc.title,
-    locale: calc.locale || 'en',
+    locale: 'en',
     inputs: calc.inputs || [],
-    expression: calc.expression || '',
+    expression: sanitizeExpr(calc.expression || ''),
+    formula_js: '',
+    units: calc.units || {"input":"","output":""},
     intro: calc.intro || '',
     examples: calc.examples || [],
     faqs: calc.faqs || [],
     disclaimer: calc.disclaimer || 'Educational information, not professional advice.',
-    schema_org: calc.schema_org || 'FAQPage'
+    schema_org: calc.schema_org || 'FAQPage|SoftwareApplication',
+    cluster: calc.cluster || 'General',
+    related
   };
-  const front = `---
-cluster: "${(calc.cluster || 'General').replace(/"/g,'\\"')}"
-title: "${(calc.title || 'Calculator').replace(/"/g,'\\"')}"
-description: "${(calc.description || calc.intro || '').replace(/"/g,'\\"')}"
-updated: "${TODAY}"
----
+  const schemaJSON = JSON.stringify(schema, null, 2);
+  const body = `
+export const schema = ${schemaJSON}
 
-import BaseLayout from "../../layouts/BaseLayout.astro";
-import Calculator from "../../components/Calculator.astro";
+# ${calc.title}
 
-export const schema = ${JSON.stringify(json, null, 2)};
-`;
-  const relList = related.slice(0,6).map(r => `      <li><a href="/calculators/${r.slug}/">${r.title}</a></li>`).join('\n');
-  return `${front}
-<BaseLayout title={schema.title} description={schema.description}>
-  <Calculator schema={schema} />
+${calc.intro || ''}
 
-  <section class="mt-8">
-    <h2>Related calculators</h2>
-    <ul>
-${relList}
-    </ul>
-  </section>
-</BaseLayout>
-`;
+<Calculator schema={schema} />
+
+## FAQ
+
+- _No FAQs yet._
+
+## Related calculators
+` + related.map(r => `- [${titleize(r)}](/calculators/${r}/)`).join('\n') + '\n';
+
+  return front + '\n' + importLine + '\n' + body;
 }
 
-let count = 0;
-for (const calc of toPub) {
-  const relPool = (byCluster.get(calc.cluster || 'general') || []).filter(x => x.slug !== calc.slug);
-  const related = relPool.slice(0, 6);
+function pickRelated(base) {
+  const sameCluster = all.filter(c => c.slug !== base.slug && c.cluster === base.cluster);
+  const pool = (sameCluster.length >= 6 ? sameCluster : all.filter(c => c.slug !== base.slug));
+  return pool.slice(0,6).map(c => c.slug);
+}
+
+const n = Math.max(1, Math.min(100, Number(MAX) || 50));
+const slice = backlog.slice(0, n);
+
+for (const calc of slice) {
+  const related = pickRelated(calc);
   const mdx = mdxFor(calc, related);
-  const out = path.join(SRC, `${calc.slug}.mdx`);
-  fs.writeFileSync(out, mdx, 'utf8');
+  const p = path.join(SRC, `${calc.slug}.mdx`);
+  fs.writeFileSync(p, mdx, 'utf-8');
   log.push({ slug: calc.slug, date: TODAY });
-  count++;
 }
 
-fs.writeFileSync(LOGP, JSON.stringify(log, null, 2) + '\n', 'utf8');
-console.log(`Published ${count} calculators`);
+fs.writeFileSync(LOGP, JSON.stringify(log, null, 2), 'utf-8');
+
+console.log(`Published ${slice.length} calculators`);
