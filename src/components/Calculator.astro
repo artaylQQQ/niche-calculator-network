@@ -18,7 +18,7 @@ const expression = schema?.expression ?? '';
   <form data-role="form">
     {inputs.map((i) => (
       <div class="field">
-        <label for={`in-${slug}-${i.name}`}>{i.hint ?? i.label ?? i.name}</label>
+        <label for={`in-${slug}-${i.name}`}>{i.label ?? i.name}</label>
         <input
           id={`in-${slug}-${i.name}`}
           name={i.name}
@@ -29,7 +29,7 @@ const expression = schema?.expression ?? '';
           inputmode="decimal"
           required
           aria-describedby={`hint-${slug}-${i.name}`}
-        />
+        /><div class="text-xs text-slate-500" data-unit>{(i.units) ? i.units : (schema.cluster === "Finance" ? "$" : "")}</div>
         {(i.units || i.hint) && <div id={`hint-${slug}-${i.name}`} class="hint">{i.units ?? i.hint}</div>}
       </div>
     ))}
@@ -82,11 +82,26 @@ const expression = schema?.expression ?? '';
 
   function formatNumber(n){
     try{
-      return new Intl.NumberFormat('en-US', { maximumFractionDigits: 6 }).format(n);
+      return new Intl.NumberFormat('en-US', { maximumFractionDigits: 3 }).format(n);
     }catch(_){ return String(n); }
   }
 
   function handleCalc(root){
+  const result = root.querySelector("[data-result]");
+  // Validate empties & non-numeric
+  for (const i of inputs){
+    const el = root.querySelector(`#in-${schema.slug}-${i.name}`);
+    if (!el || el.value === "") {
+      result.textContent = "Please fill out all fields.";
+      return;
+    }
+    const val = Number(el.value);
+    if (!Number.isFinite(val)) {
+      result.textContent = "Please enter valid numbers.";
+      return;
+    }
+  }
+
     const resultEl = root.querySelector('[data-role="result"]');
     const schemaTag = root.querySelector('script[data-schema]');
     let schema = {};

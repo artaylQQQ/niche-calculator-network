@@ -1,28 +1,26 @@
 ---
-cluster: "Everyday"
-title: "ROI Calculator"
-description: "Return on investment (percentage)."
-updated: "2025-08-18"
+title: ROI Calculator
+description: Return on investment (percentage).
+updated: "2025-08-21"
+cluster: "Finance"
 ---
 
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Calculator from "../../components/Calculator.astro";
 
-export const schema = {inputs: [
-  { name: "cost", label: "Cost", type: "number", placeholder: "Enter Cost", step: "any" },
-  { name: "gain", label: "Gain/Return", type: "number", placeholder: "Enter Gain/Return", step: "any" }
-],
-
-  "slug": "roi-calculator",
-  "title": "ROI Calculator",
-  "locale": "en",
-  "inputs": [
-    {"name":"gain","type":"number","min":0,"step":0.01,"hint":"Gain"},
-    {/* removed expr */}
+export const schema = {
+  inputs: [
+    { name: "cost", label: "Cost", type: "number", placeholder: "Enter cost", step: 0.01, min: 0, units: "$" },
+    { name: "gain", label: "Gain/Return", type: "number", placeholder: "Enter gain or return", step: 0.01, min: 0, units: "$" }
   ],
-  "expression": "((gain - cost) / cost) * 100",
-  "disclaimer": "Educational information, not professional advice.",
-  "schema_org": "FAQPage"
+  slug: "roi-calculator",
+  title: "ROI Calculator",
+  locale: "en",
+  expression: "((gain - cost) / cost) * 100",
+  intro: "Compute the percentage return on an investment.",
+  examples: [{ description: "Example: Cost = $100, Gain = $150 → ROI = 50%." }],
+  faqs: [{ question: "How do I use it?", answer: "Enter your initial cost and final gain. The result is the ROI percentage." }],
+  disclaimer: "Educational only."
 };
 
 <BaseLayout title={schema.title} description={schema.description}>
