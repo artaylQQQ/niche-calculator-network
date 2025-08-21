@@ -1,0 +1,52 @@
+---
+layout: ../../layouts/BaseLayout.astro
+title: "ROI Calculator"
+description: "Return on investment (percentage)."
+updated: "2025-08-21"
+cluster: "Finance"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "inputs": [
+    {
+      "name": "cost",
+      "label": "Cost",
+      "type": "number",
+      "placeholder": "Enter cost",
+      "step": 0.01,
+      "min": 0,
+      "units": "$"
+    },
+    {
+      "name": "gain",
+      "label": "Gain/Return",
+      "type": "number",
+      "placeholder": "Enter gain or return",
+      "step": 0.01,
+      "min": 0,
+      "units": "$"
+    }
+  ],
+  "slug": "roi-calculator",
+  "title": "ROI Calculator",
+  "locale": "en",
+  "expression": "((gain - cost) / cost) * 100",
+  "intro": "Return on investment (percentage).",
+  "examples": [
+    {
+      "description": "Enter values and click Calculate."
+    }
+  ],
+  "faqs": [
+    {
+      "question": "How do I use the ROI Calculator?",
+      "answer": "Enter the required values and press Calculate to get the result."
+    }
+  ],
+  "disclaimer": "Educational information, not professional advice.",
+  "cluster": "Finance"
+};
+
+<Calculator schema={schema} />
