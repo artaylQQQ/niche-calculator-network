@@ -7,21 +7,20 @@ const items = Object.values(modules).map((m) => ({ url: m.url, fm: m.frontmatter
 const list = items.filter(i => (i.fm.cluster || "").toLowerCase() === "technology");
 ---
 <BaseLayout title={title}>
-  <main class="wrap" style="padding:24px 0 40px">
-    <h1>{title}</h1>
-    {/* ad-slot: top */}
+  <main class="container mx-auto px-4 py-10">
+    <h1 class="text-3xl font-bold">{title}</h1>
     {list.length ? (
-      <div class="grid" style="margin-top:16px">
+      <div class="grid gap-4 mt-6 sm:grid-cols-2 lg:grid-cols-3">
         {list.map((it) => (
-          <article class="card">
-            <div class="pill">{it.fm.cluster}</div>
-            <h3 style="margin:.6rem 0"><a href={it.url}>{it.fm.title || it.url.replace('/calculators/','').replace('.mdx','')}</a></h3>
-            <p style="margin:0;color:var(--muted)">{it.fm.description || ""}</p>
-          </article>
+          <a href={it.url} class="block rounded-xl border border-slate-200 p-4 hover:border-blue-500 hover:shadow-sm transition">
+            <div class="text-sm text-slate-500">{it.fm.cluster || ''}</div>
+            <div class="text-lg font-semibold text-slate-900">{it.fm.title || it.url.replace('/calculators/','').replace('.mdx','')}</div>
+            <div class="text-slate-600">{it.fm.description || ''}</div>
+          </a>
         ))}
       </div>
     ) : (
-      <p style="color:var(--muted)"><em>No calculators available in this category.</em></p>
+      <p class="text-slate-500"><em>No calculators available in this category.</em></p>
     )}
   </main>
 </BaseLayout>
