@@ -1,48 +1,30 @@
 ---
-layout: ../../layouts/BaseLayout.astro
+cluster: "Everyday"
 title: "Triangle Area Calculator"
 description: "Area from base and height."
-updated: "2025-08-21"
-cluster: "Everyday"
+updated: "2025-08-18"
 ---
 
-import Calculator from '../../components/Calculator.astro';
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Calculator from "../../components/Calculator.astro";
 
-export const schema = {
-  "inputs": [
-    {
-      "name": "base",
-      "label": "Base",
-      "type": "number",
-      "placeholder": "Enter Base",
-      "step": "any"
-    },
-    {
-      "name": "height",
-      "label": "Height (cm)",
-      "type": "number",
-      "placeholder": "Enter Height (cm)",
-      "step": "any"
-    }
-  ],
+export const schema = {inputs: [
+  { name: "base", label: "Base", type: "number", placeholder: "Enter Base", step: "any" },
+  { name: "height", label: "Height (cm)", type: "number", placeholder: "Enter Height (cm)", step: "any" }
+],
+
   "slug": "triangle-area-calculator",
   "title": "Triangle Area Calculator",
   "locale": "en",
-  "expression": "base",
-  "intro": "Area from base and height.",
-  "examples": [
-    {
-      "description": "Enter values and click Calculate."
-    }
+  "inputs": [
+    {"name":"base","type":"number","min":0,"step":0.01,"hint":"Base"},
+    {/* removed expr */}
   ],
-  "faqs": [
-    {
-      "question": "How do I use the Triangle Area Calculator?",
-      "answer": "Enter the required values and press Calculate to get the result."
-    }
-  ],
+  "expression": "(base * height) / 2",
   "disclaimer": "Educational information, not professional advice.",
-  "cluster": "Everyday"
+  "schema_org": "FAQPage"
 };
 
-<Calculator schema={schema} />
+<BaseLayout title={schema.title} description={schema.description}>
+  <Calculator schema={schema} />
+</BaseLayout>

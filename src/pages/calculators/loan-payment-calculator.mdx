@@ -1,41 +1,28 @@
 ---
-layout: ../../layouts/BaseLayout.astro
+cluster: "Everyday"
 title: "Loan Payment Calculator"
 description: "Compute fixed monthly payment for a loan."
-updated: "2025-08-21"
-cluster: "Everyday"
+updated: "2025-08-18"
 ---
 
-import Calculator from '../../components/Calculator.astro';
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Calculator from "../../components/Calculator.astro";
 
 export const schema = {
-  "inputs": [
-    {
-      "name": "value",
-      "label": "Value",
-      "type": "number",
-      "placeholder": "Enter value",
-      "step": 0.01
-    }
-  ],
   "slug": "loan-payment-calculator",
   "title": "Loan Payment Calculator",
   "locale": "en",
-  "expression": "value",
-  "intro": "Compute fixed monthly payment for a loan.",
-  "examples": [
-    {
-      "description": "Enter values and click Calculate."
-    }
+  "inputs": [
+    {"name":"principal","type":"number","min":0,"step":0.01,"hint":"Loan amount"},
+    {/* removed expr */},
+    {/* removed expr */}
   ],
-  "faqs": [
-    {
-      "question": "How do I use the Loan Payment Calculator?",
-      "answer": "Enter the required values and press Calculate to get the result."
-    }
-  ],
+  "intro": "Enter loan amount, annual interest, and term to get the fixed monthly payment.",
+  "expression": "", 
   "disclaimer": "Educational information, not professional advice.",
-  "cluster": "Everyday"
+  "schema_org": "FAQPage"
 };
 
-<Calculator schema={schema} />
+<BaseLayout title={schema.title} description={schema.description}>
+  <Calculator schema={schema} />
+</BaseLayout>
