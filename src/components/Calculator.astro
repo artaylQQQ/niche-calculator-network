@@ -1,123 +1,91 @@
 ---
-/** Calculator.astro — V026-fix
- * Client-only calculator with safe expression evaluation.
- * Supports + - * / % ^ (as **), parentheses, comparisons, && || and ternary ?:
- * Allowed variables are exactly the input names in schema.inputs.
- */
 const { schema } = Astro.props;
 const title = schema?.title ?? 'Calculator';
 const slug = schema?.slug ?? 'calculator';
 const inputs = Array.isArray(schema?.inputs) ? schema.inputs : [];
 const intro = schema?.intro ?? '';
 const expression = schema?.expression ?? '';
+function isFinance(){
+  const c = (schema?.cluster || '').toLowerCase();
+  return c.includes('finance');
+}
 ---
-<section class="calc" data-calculator data-slug={slug} data-exp={expression} aria-labelledby={`h-${slug}`}>
-  <h1 id={`h-${slug}`}>{title}</h1>
-  {intro && <p class="muted">{intro}</p>}
 
-  <form data-role="form">
+<section class="mx-auto max-w-2xl">
+  <h1 class="text-2xl font-semibold text-slate-900">{title}</h1>
+  {intro && <p class="mt-2 text-slate-600">{intro}</p>}
+
+  <form class="mt-6 space-y-4" id={`form-${slug}`}>
     {inputs.map((i) => (
-      <div class="field">
-        <label for={`in-${slug}-${i.name}`}>{i.hint ?? i.label ?? i.name}</label>
+      <div class="space-y-1">
+        <label for={`in-${slug}-${i.name}`} class="block text-sm font-medium text-slate-800">{i.label ?? i.name}</label>
         <input
           id={`in-${slug}-${i.name}`}
           name={i.name}
-          type="number"
-          step={i.step ?? 'any'}
-          {...(i.min !== undefined ? { min: i.min } : {})}
-          {...(i.max !== undefined ? { max: i.max } : {})}
+          type={i.type ?? 'number'}
           inputmode="decimal"
-          required
-          aria-describedby={`hint-${slug}-${i.name}`}
+          step={i.step ?? 'any'}
+          min={i.min}
+          max={i.max}
+          placeholder={i.placeholder ?? 'Enter value'}
+          class="block w-full rounded-md border border-slate-300 px-3 py-2 outline-none focus:ring-2 focus:ring-blue-500"
         />
-        {(i.units || i.hint) && <div id={`hint-${slug}-${i.name}`} class="hint">{i.units ?? i.hint}</div>}
+        {(i.units || (isFinance() && ['price','cost','costs','revenue','principal','investment','fixed','variable'].includes(i.name))) && (
+          <p class="text-xs text-slate-500">Units: {i.units || '$'}</p>
+        )}
+        {i.hint && <p class="text-xs text-slate-500">{i.hint}</p>}
       </div>
     ))}
-    <button type="button" data-action="calc" class="btn">Calculate</button>
+    <button type="button" id={`btn-${slug}`} class="rounded-md bg-blue-600 px-4 py-2 text-white hover:bg-blue-700">Calculate</button>
   </form>
 
-  <div class="result" data-role="result" aria-live="polite"></div>
-
-  <script type="application/json" data-schema>{JSON.stringify(schema)}</script>
+  <div id={`result-${slug}`} class="mt-4 rounded-md bg-slate-50 p-3 text-slate-800"></div>
 </section>
 
-<style>
-  .calc { max-width: 820px; margin: 0 auto; padding: 16px; }
-  h1 { margin: 0 0 8px; font-size: 28px; }
-  .muted { color: #667085; margin: 0 0 16px; }
-  .field { margin: 12px 0; }
-  .field label { display:block; margin: 0 0 6px; font-weight: 600; }
-  .field input[type=number] { width: 100%; padding: 10px; border: 1px solid #cbd5e1; border-radius: 8px; }
-  .hint { font-size: 12px; color: #94a3b8; margin-top: 4px; }
-  .btn { display:inline-block; padding:10px 14px; border-radius:10px; border:0; background:#1d4ed8; color:#fff; font-weight:600; cursor:pointer; }
-  .btn:hover { background:#1e40af; }
-  .result { margin-top: 16px; font-size: 18px; font-weight: 600; }
-</style>
-
-<script is:inline>
-(function () {
-  function evalSafe(expr, vars, allowedNames){
-    if (typeof expr !== 'string') throw new Error('Expression missing');
-    const allowed = /^[0-9+\-*/%^().,?:<>=!&|a-zA-Z_\s]+$/;
-    if (!allowed.test(expr)) throw new Error('Invalid characters');
-    // Replace ^ with ** (JS exponent)
-    let e = expr.replace(/\^/g, '**');
-
-    // Replace variable tokens with vars.<name>; forbid unknown names
-    e = e.replace(/\b([A-Za-z_][A-Za-z0-9_]*)\b/g, (m, name) => {
-      if (allowedNames.has(name)) return `vars.${name}`;
-      if (['Math','NaN','Infinity','true','false'].includes(name)) return name;
-      // prevent keywords like window, document, globalThis, import, fetch, Function, eval
-      if (/(window|document|globalThis|import|fetch|Function|eval)/.test(name)) throw new Error('Forbidden symbol');
-      // Treat unknown identifiers as error
-      throw new Error('Unknown symbol: ' + name);
-    });
-
-    // eslint-disable-next-line no-new-func
-    const fn = new Function('vars', `return ( ${e} );`);
-    const v = fn(vars);
-    if (typeof v !== 'number' || !isFinite(v)) throw new Error('Non-finite result');
-    return v;
+<script>
+function formatNumber(n){
+  try { return new Intl.NumberFormat('en-US', { maximumFractionDigits: 3 }).format(n); }
+  catch(e){ return String(n); }
+}
+function evalSafe(expr, vars, allowedNames){
+  const allowed=/^[0-9+\-*/%^().,?:<>=!&|a-zA-Z_\s]+$/;
+  if(!allowed.test(expr)) throw new Error('Invalid expression');
+  let e = expr.replace(/\^/g,'**');
+  e = e.replace(/\b([A-Za-z_][A-Za-z0-9_]*)\b/g,(m,name)=>{
+    if(['Math','NaN','Infinity','true','false'].includes(name)) return name;
+    if(allowedNames.has(name)) return 'vars.'+name;
+    throw new Error('Unknown symbol: ' + name);
+  });
+  const fn = new Function('vars', `with (Math) { return (${e}); }`);
+  const v = fn(vars);
+  if(typeof v!=='number' || !isFinite(v)) throw new Error('Result is not a finite number');
+  return v;
+}
+function handleCalc(slug, expression, inputs){
+  const resEl = document.getElementById('result-'+slug);
+  const vars = {};
+  for(const i of inputs){
+    const el = document.getElementById('in-'+slug+'-'+i.name);
+    if(!el){ resEl.textContent = 'Internal error: missing input '+i.name; return; }
+    const raw = el.value.trim();
+    if(raw === ''){ resEl.textContent = 'Please fill out all fields.'; return; }
+    const num = Number(raw);
+    if(!isFinite(num)){ resEl.textContent = 'Please enter valid numbers.'; return; }
+    vars[i.name] = num;
   }
-
-  function formatNumber(n){
-    try{
-      return new Intl.NumberFormat('en-US', { maximumFractionDigits: 6 }).format(n);
-    }catch(_){ return String(n); }
+  try{
+    const allowed = new Set(inputs.map(i=>i.name));
+    const value = evalSafe(expression, vars, allowed);
+    resEl.textContent = 'Result: ' + formatNumber(value);
+  }catch(err){
+    resEl.textContent = err.message || String(err);
   }
-
-  function handleCalc(root){
-    const resultEl = root.querySelector('[data-role="result"]');
-    const schemaTag = root.querySelector('script[data-schema]');
-    let schema = {};
-    try { schema = JSON.parse(schemaTag?.textContent || '{}'); } catch(_){}
-    const expr = root.getAttribute('data-exp') || schema.expression || '';
-    const inputs = Array.isArray(schema.inputs) ? schema.inputs : [];
-    const allowedNames = new Set(inputs.map(i => i.name));
-
-    const vars = {};
-    for (const i of inputs){
-      const el = root.querySelector(`#in-${schema.slug}-${i.name}`);
-      if (!el) continue;
-      const val = Number(el.value);
-      if (!isFinite(val)) { resultEl.textContent = 'Please enter valid numbers.'; return; }
-      vars[i.name] = val;
-    }
-
-    try {
-      const out = evalSafe(expr, vars, allowedNames);
-      resultEl.textContent = 'Result: ' + formatNumber(out);
-    } catch (err){
-      resultEl.textContent = (err && err.message) ? err.message : 'Invalid expression.';
-    }
-  }
-
-  document.addEventListener('click', function(e){
-    const btn = e.target.closest('[data-action="calc"]');
-    if (!btn) return;
-    const root = btn.closest('[data-calculator]');
-    if (!root) return;
-    handleCalc(root);
-  }, { passive: true });
-})();
+}
+document.addEventListener('DOMContentLoaded',()=>{
+  const slug = {slug};
+  const expression = {expression};
+  const inputs = {inputs};
+  const btn = document.getElementById('btn-'+slug);
+  if(btn){ btn.addEventListener('click', ()=>handleCalc(slug, expression, inputs)); }
+});
 </script>

@@ -1,34 +1,48 @@
 ---
 layout: ../../layouts/BaseLayout.astro
-title: Rectangle Area Calculator
-description: Area of a rectangle.
-date: 2025-08-18
-updated: 2025-08-18
+title: "Rectangle Area Calculator"
+description: "Area of a rectangle."
+updated: "2025-08-21"
 cluster: "Math"
 ---
 
 import Calculator from '../../components/Calculator.astro';
 
-export const schema = {inputs: [
-  { name: "length", label: "Length", type: "number", placeholder: "Enter Length", step: "any" },
-  { name: "width", label: "Width", type: "number", placeholder: "Enter Width", step: "any" }
-],
-"slug": "rectangle-area-calculator","title": "Rectangle Area Calculator","locale": "en","inputs": [{"name": "length","type": "number","min": 0,"step": 0.01,"hint": "Length"},{/* removed expr */}],"expression": "length * width","formula_js": "","units": {/* removed expr */},"intro": "Area of a rectangle.","examples": [],"faqs": [],"disclaimer": "Educational information, not professional advice.","schema_org": "FAQPage|SoftwareApplication","cluster": "Geometry & Math"}
-
-# Rectangle Area Calculator
-
-Area of a rectangle.
+export const schema = {
+  "inputs": [
+    {
+      "name": "length",
+      "label": "Length",
+      "type": "number",
+      "placeholder": "Enter Length",
+      "step": "any"
+    },
+    {
+      "name": "width",
+      "label": "Width",
+      "type": "number",
+      "placeholder": "Enter Width",
+      "step": "any"
+    }
+  ],
+  "slug": "rectangle-area-calculator",
+  "title": "Rectangle Area Calculator",
+  "locale": "en",
+  "expression": "length",
+  "intro": "Area of a rectangle.",
+  "examples": [
+    {
+      "description": "Enter values and click Calculate."
+    }
+  ],
+  "faqs": [
+    {
+      "question": "How do I use the Rectangle Area Calculator?",
+      "answer": "Enter the required values and press Calculate to get the result."
+    }
+  ],
+  "disclaimer": "Educational information, not professional advice.",
+  "cluster": "Math"
+};
 
 <Calculator schema={schema} />
-
-## FAQ
-
-- _No FAQs yet._
-
-## Related calculators
-- [Percentage Discount Calculator](/calculators/percentage-discount-calculator/)
-- [Loan Payment Calculator](/calculators/loan-payment-calculator/)
-- [Compound Interest Calculator](/calculators/compound-interest-calculator/)
-- [Bmi Calculator](/calculators/bmi-calculator/)
-- [Percentage Increase Calculator](/calculators/percentage-increase-calculator/)
-- [Sales Tax Calculator](/calculators/sales-tax-calculator/)

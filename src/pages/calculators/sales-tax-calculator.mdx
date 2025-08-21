@@ -1,30 +1,48 @@
 ---
-cluster: "Everyday"
+layout: ../../layouts/BaseLayout.astro
 title: "Sales Tax Calculator"
 description: "Final price after adding sales tax."
-updated: "2025-08-18"
+updated: "2025-08-21"
+cluster: "Everyday"
 ---
 
-import BaseLayout from "../../layouts/BaseLayout.astro";
-import Calculator from "../../components/Calculator.astro";
+import Calculator from '../../components/Calculator.astro';
 
-export const schema = {inputs: [
-  { name: "price", label: "Price", type: "number", placeholder: "Enter Price", step: "any" },
-  { name: "tax", label: "Tax (%)", type: "number", placeholder: "Enter Tax (%)", step: "any" }
-],
-
+export const schema = {
+  "inputs": [
+    {
+      "name": "price",
+      "label": "Price",
+      "type": "number",
+      "placeholder": "Enter Price",
+      "step": "any"
+    },
+    {
+      "name": "tax",
+      "label": "Tax (%)",
+      "type": "number",
+      "placeholder": "Enter Tax (%)",
+      "step": "any"
+    }
+  ],
   "slug": "sales-tax-calculator",
   "title": "Sales Tax Calculator",
   "locale": "en",
-  "inputs": [
-    {"name":"price","type":"number","min":0,"step":0.01,"hint":"Price"},
-    {/* removed expr */}
+  "expression": "price",
+  "intro": "Final price after adding sales tax.",
+  "examples": [
+    {
+      "description": "Enter values and click Calculate."
+    }
   ],
-  "expression": "price * (1 + tax/100)",
+  "faqs": [
+    {
+      "question": "How do I use the Sales Tax Calculator?",
+      "answer": "Enter the required values and press Calculate to get the result."
+    }
+  ],
   "disclaimer": "Educational information, not professional advice.",
-  "schema_org": "FAQPage"
+  "cluster": "Everyday"
 };
 
-<BaseLayout title={schema.title} description={schema.description}>
-  <Calculator schema={schema} />
-</BaseLayout>
+<Calculator schema={schema} />
