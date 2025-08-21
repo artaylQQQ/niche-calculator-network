@@ -1,34 +1,62 @@
 ---
-cluster: "Everyday"
+layout: ../../layouts/BaseLayout.astro
 title: "Compound Interest Calculator"
 description: "Future value with compound interest."
-updated: "2025-08-18"
+updated: "2025-08-21"
+cluster: "Everyday"
 ---
 
-import BaseLayout from "../../layouts/BaseLayout.astro";
-import Calculator from "../../components/Calculator.astro";
+import Calculator from '../../components/Calculator.astro';
 
-export const schema = {inputs: [
-  { name: "principal", label: "Principal", type: "number", placeholder: "Enter Principal", step: "any" },
-  { name: "rate", label: "Rate (%)", type: "number", placeholder: "Enter Rate (%)", step: "any" },
-  { name: "times", label: "Times per year", type: "number", placeholder: "Enter Times per year", step: "any" },
-  { name: "years", label: "Years", type: "number", placeholder: "Enter Years", step: "any" }
-],
-
+export const schema = {
+  "inputs": [
+    {
+      "name": "principal",
+      "label": "Principal",
+      "type": "number",
+      "placeholder": "Enter Principal",
+      "step": "any"
+    },
+    {
+      "name": "rate",
+      "label": "Rate (%)",
+      "type": "number",
+      "placeholder": "Enter Rate (%)",
+      "step": "any"
+    },
+    {
+      "name": "times",
+      "label": "Times per year",
+      "type": "number",
+      "placeholder": "Enter Times per year",
+      "step": "any"
+    },
+    {
+      "name": "years",
+      "label": "Years",
+      "type": "number",
+      "placeholder": "Enter Years",
+      "step": "any"
+    }
+  ],
   "slug": "compound-interest-calculator",
   "title": "Compound Interest Calculator",
   "locale": "en",
-  "inputs": [
-    {"name":"principal","type":"number","min":0,"step":0.01,"hint":"Principal (P)"},
-    {/* removed expr */},
-    {/* removed expr */},
-    {/* removed expr */}
+  "expression": "principal",
+  "intro": "Future value with compound interest.",
+  "examples": [
+    {
+      "description": "Enter values and click Calculate."
+    }
   ],
-  "expression": "principal * (1 + (rate/100)/times) ^ (times * years)",
+  "faqs": [
+    {
+      "question": "How do I use the Compound Interest Calculator?",
+      "answer": "Enter the required values and press Calculate to get the result."
+    }
+  ],
   "disclaimer": "Educational information, not professional advice.",
-  "schema_org": "FAQPage"
+  "cluster": "Everyday"
 };
 
-<BaseLayout title={schema.title} description={schema.description}>
-  <Calculator schema={schema} />
-</BaseLayout>
+<Calculator schema={schema} />
