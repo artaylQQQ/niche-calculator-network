@@ -1,0 +1,55 @@
+---
+layout: ../../layouts/BaseLayout.astro
+title: "CAGR Calculator"
+description: "Compound Annual Growth Rate."
+updated: "2025-08-21"
+cluster: "Finance"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "inputs": [
+    {
+      "name": "final",
+      "label": "Final",
+      "type": "number",
+      "placeholder": "Enter Final",
+      "step": "any"
+    },
+    {
+      "name": "initial",
+      "label": "Initial",
+      "type": "number",
+      "placeholder": "Enter Initial",
+      "step": "any"
+    },
+    {
+      "name": "years",
+      "label": "Years",
+      "type": "number",
+      "placeholder": "Enter Years",
+      "step": "any"
+    }
+  ],
+  "slug": "cagr-calculator",
+  "title": "CAGR Calculator",
+  "locale": "en",
+  "expression": "final",
+  "intro": "Compound Annual Growth Rate.",
+  "examples": [
+    {
+      "description": "Enter values and click Calculate."
+    }
+  ],
+  "faqs": [
+    {
+      "question": "How do I use the CAGR Calculator?",
+      "answer": "Enter the required values and press Calculate to get the result."
+    }
+  ],
+  "disclaimer": "Educational information, not professional advice.",
+  "cluster": "Finance"
+};
+
+<Calculator schema={schema} />
