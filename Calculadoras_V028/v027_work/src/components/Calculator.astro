@@ -1,0 +1,123 @@
+---
+/** Calculator.astro — V026-fix
+ * Client-only calculator with safe expression evaluation.
+ * Supports + - * / % ^ (as **), parentheses, comparisons, && || and ternary ?:
+ * Allowed variables are exactly the input names in schema.inputs.
+ */
+const { schema } = Astro.props;
+const title = schema?.title ?? 'Calculator';
+const slug = schema?.slug ?? 'calculator';
+const inputs = Array.isArray(schema?.inputs) ? schema.inputs : [];
+const intro = schema?.intro ?? '';
+const expression = schema?.expression ?? '';
+---
+<section class="calc" data-calculator data-slug={slug} data-exp={expression} aria-labelledby={`h-${slug}`}>
+  <h1 id={`h-${slug}`}>{title}</h1>
+  {intro && <p class="muted">{intro}</p>}
+
+  <form data-role="form">
+    {inputs.map((i) => (
+      <div class="field">
+        <label for={`in-${slug}-${i.name}`}>{i.hint ?? i.label ?? i.name}</label>
+        <input
+          id={`in-${slug}-${i.name}`}
+          name={i.name}
+          type="number"
+          step={i.step ?? 'any'}
+          {...(i.min !== undefined ? { min: i.min } : {})}
+          {...(i.max !== undefined ? { max: i.max } : {})}
+          inputmode="decimal"
+          required
+          aria-describedby={`hint-${slug}-${i.name}`}
+        />
+        {(i.units || i.hint) && <div id={`hint-${slug}-${i.name}`} class="hint">{i.units ?? i.hint}</div>}
+      </div>
+    ))}
+    <button type="button" data-action="calc" class="btn">Calculate</button>
+  </form>
+
+  <div class="result" data-role="result" aria-live="polite"></div>
+
+  <script type="application/json" data-schema>{JSON.stringify(schema)}</script>
+</section>
+
+<style>
+  .calc { max-width: 820px; margin: 0 auto; padding: 16px; }
+  h1 { margin: 0 0 8px; font-size: 28px; }
+  .muted { color: #667085; margin: 0 0 16px; }
+  .field { margin: 12px 0; }
+  .field label { display:block; margin: 0 0 6px; font-weight: 600; }
+  .field input[type=number] { width: 100%; padding: 10px; border: 1px solid #cbd5e1; border-radius: 8px; }
+  .hint { font-size: 12px; color: #94a3b8; margin-top: 4px; }
+  .btn { display:inline-block; padding:10px 14px; border-radius:10px; border:0; background:#1d4ed8; color:#fff; font-weight:600; cursor:pointer; }
+  .btn:hover { background:#1e40af; }
+  .result { margin-top: 16px; font-size: 18px; font-weight: 600; }
+</style>
+
+<script is:inline>
+(function () {
+  function evalSafe(expr, vars, allowedNames){
+    if (typeof expr !== 'string') throw new Error('Expression missing');
+    const allowed = /^[0-9+\-*/%^().,?:<>=!&|a-zA-Z_\s]+$/;
+    if (!allowed.test(expr)) throw new Error('Invalid characters');
+    // Replace ^ with ** (JS exponent)
+    let e = expr.replace(/\^/g, '**');
+
+    // Replace variable tokens with vars.<name>; forbid unknown names
+    e = e.replace(/\b([A-Za-z_][A-Za-z0-9_]*)\b/g, (m, name) => {
+      if (allowedNames.has(name)) return `vars.${name}`;
+      if (['Math','NaN','Infinity','true','false'].includes(name)) return name;
+      // prevent keywords like window, document, globalThis, import, fetch, Function, eval
+      if (/(window|document|globalThis|import|fetch|Function|eval)/.test(name)) throw new Error('Forbidden symbol');
+      // Treat unknown identifiers as error
+      throw new Error('Unknown symbol: ' + name);
+    });
+
+    // eslint-disable-next-line no-new-func
+    const fn = new Function('vars', `return ( ${e} );`);
+    const v = fn(vars);
+    if (typeof v !== 'number' || !isFinite(v)) throw new Error('Non-finite result');
+    return v;
+  }
+
+  function formatNumber(n){
+    try{
+      return new Intl.NumberFormat('en-US', { maximumFractionDigits: 6 }).format(n);
+    }catch(_){ return String(n); }
+  }
+
+  function handleCalc(root){
+    const resultEl = root.querySelector('[data-role="result"]');
+    const schemaTag = root.querySelector('script[data-schema]');
+    let schema = {};
+    try { schema = JSON.parse(schemaTag?.textContent || '{}'); } catch(_){}
+    const expr = root.getAttribute('data-exp') || schema.expression || '';
+    const inputs = Array.isArray(schema.inputs) ? schema.inputs : [];
+    const allowedNames = new Set(inputs.map(i => i.name));
+
+    const vars = {};
+    for (const i of inputs){
+      const el = root.querySelector(`#in-${schema.slug}-${i.name}`);
+      if (!el) continue;
+      const val = Number(el.value);
+      if (!isFinite(val)) { resultEl.textContent = 'Please enter valid numbers.'; return; }
+      vars[i.name] = val;
+    }
+
+    try {
+      const out = evalSafe(expr, vars, allowedNames);
+      resultEl.textContent = 'Result: ' + formatNumber(out);
+    } catch (err){
+      resultEl.textContent = (err && err.message) ? err.message : 'Invalid expression.';
+    }
+  }
+
+  document.addEventListener('click', function(e){
+    const btn = e.target.closest('[data-action="calc"]');
+    if (!btn) return;
+    const root = btn.closest('[data-calculator]');
+    if (!root) return;
+    handleCalc(root);
+  }, { passive: true });
+})();
+</script>

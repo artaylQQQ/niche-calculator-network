@@ -1,0 +1,30 @@
+---
+cluster: "Everyday"
+title: "BMI Calculator"
+description: "Body Mass Index from weight and height."
+updated: "2025-08-18"
+---
+
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {inputs: [
+  { name: "height", label: "Height (m)", type: "number", placeholder: "Enter Height (m)", step: "any" },
+  { name: "weight", label: "Weight (kg)", type: "number", placeholder: "Enter Weight (kg)", step: "any" }
+],
+
+  "slug": "bmi-calculator",
+  "title": "BMI Calculator",
+  "locale": "en",
+  "inputs": [
+    {"name":"weight","type":"number","min":0,"step":0.1,"hint":"Weight (kg)"},
+    {/* removed expr */}
+  ],
+  "expression": "weight / ((height ^ 2))",
+  "disclaimer": "Educational information, not professional advice.",
+  "schema_org": "FAQPage"
+};
+
+<BaseLayout title={schema.title} description={schema.description}>
+  <Calculator schema={schema} />
+</BaseLayout>
