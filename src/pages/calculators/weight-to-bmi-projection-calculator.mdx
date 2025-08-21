@@ -1,0 +1,34 @@
+---
+layout: ../../layouts/BaseLayout.astro
+title: Weight to BMI Projection
+description: Quick BMI projection.
+date: 2025-08-18
+updated: 2025-08-18
+cluster: "Health"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {inputs: [
+  { name: "height", label: "Height (cm)", type: "number", placeholder: "Enter Height (cm)", step: "any" },
+  { name: "weight", label: "Weight (kg)", type: "number", placeholder: "Enter Weight (kg)", step: "any" }
+],
+"slug": "weight-to-bmi-projection-calculator","title": "Weight to BMI Projection","locale": "en","inputs": [{"name": "weight","type": "number","min": 0,"step": 0.1,"hint": "Weight (kg)"},{/* removed expr */}],"expression": "weight / (height^2)","formula_js": "","units": {/* removed expr */},"intro": "Quick BMI projection.","examples": [],"faqs": [],"disclaimer": "Educational information, not professional advice.","schema_org": "FAQPage|SoftwareApplication","cluster": "Health & Fitness"}
+
+# Weight to BMI Projection
+
+Quick BMI projection.
+
+<Calculator schema={schema} />
+
+## FAQ
+
+- _No FAQs yet._
+
+## Related calculators
+- [Percentage Discount Calculator](/calculators/percentage-discount-calculator/)
+- [Loan Payment Calculator](/calculators/loan-payment-calculator/)
+- [Compound Interest Calculator](/calculators/compound-interest-calculator/)
+- [Bmi Calculator](/calculators/bmi-calculator/)
+- [Percentage Increase Calculator](/calculators/percentage-increase-calculator/)
+- [Sales Tax Calculator](/calculators/sales-tax-calculator/)

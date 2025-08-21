@@ -1,0 +1,149 @@
+---
+import "../styles/tailwind.css";
+
+const { title = 'Niche Calculator Network', description = 'Free online calculators', canonical } = Astro.props;
+const site = Astro.site?.toString() || (import.meta.env.SITE_URL ?? 'https://example.com');
+const href = canonical ?? new URL(Astro.url.pathname, site).toString();
+const adsClient = import.meta.env.VITE_ADSENSE_CLIENT;
+const cfToken = import.meta.env.VITE_CF_ANALYTICS_TOKEN;
+---
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title} — Niche Calculator Network</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={href} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={href} />
+    <meta name="twitter:card" content="summary" />
+    {adsClient && (
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={adsClient}" crossorigin="anonymous"></script>
+    )}
+    {cfToken && (
+      <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon={`{"token":"${cfToken}"}`}></script>
+    )}
+    
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#1d4ed8">
+<style>
+  :root{
+    --bg:#ffffff; --fg:#1e293b; --muted:#475569; --accent:#1d4ed8;
+    --card:#ffffff; --line:#e2e8f0; --radius:12px; --space:16px; --maxw:1000px;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--fg);font:400 16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,'Helvetica Neue',Arial}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 var(--space)}
+  .site-header{position:sticky;top:0;z-index:20;background:#fff;border-bottom:1px solid var(--line)}
+  .site-header .wrap{display:flex;align-items:center;gap:12px;height:58px}
+  .logo{font-weight:700;text-decoration:none;color:var(--fg);letter-spacing:.2px}
+  .nav{display:flex;gap:8px;flex-wrap:wrap}
+  .nav a{color:var(--fg);text-decoration:none;padding:.4rem .6rem;border-radius:8px}
+  .nav a:hover{background:#f1f5f9}
+  .cats-mobile{margin-left:auto;display:none;gap:8px;align-items:center}
+  main{display:block}
+  .grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:var(--space);box-shadow:0 1px 2px rgba(0,0,0,.04)}
+  .pill{display:inline-block;background:#eff6ff;color:var(--accent);padding:.2rem .5rem;border-radius:999px;font-size:.8rem}
+  .btn{background:var(--accent);color:#fff;border:1px solid var(--accent);border-radius:10px;padding:.6rem 1rem;cursor:pointer;transition:transform .06s ease, box-shadow .12s}
+  .btn:hover{transform:translateY(-1px);box-shadow:0 6px 12px rgba(29,78,216,.15)}
+  input,select{border:1px solid var(--line);border-radius:10px;padding:.5rem .6rem}
+  .site-footer a{color:var(--muted);text-decoration:none}
+  .site-footer a:hover{color:var(--fg);text-decoration:underline}
+  @media (max-width: 960px){ .nav{display:none} .cats-mobile{display:flex} }
+  .ad-slot{border:1px dashed #cbd5e1;border-radius:10px;padding:10px;color:#64748b;font-size:.9rem;text-align:center;background:#f8fafc}
+</style>
+
+  
+</head>
+  
+<header class="sticky top-0 z-20 bg-white/80 backdrop-blur border-b border-slate-200">
+  <div class="container mx-auto px-4 py-3 flex items-center gap-3">
+    <a href="/" class="text-xl font-bold tracking-tight text-slate-900">Calculators</a>
+    <nav class="hidden md:flex flex-wrap gap-2 ml-6" data-bigmenu>
+      <a href="/finance" class="px-4 py-2 rounded-lg text-slate-700 hover:bg-blue-50 hover:text-blue-700 text-lg">Finance</a>
+      <a href="/health" class="px-4 py-2 rounded-lg text-slate-700 hover:bg-blue-50 hover:text-blue-700 text-lg">Health</a>
+      <a href="/math" class="px-4 py-2 rounded-lg text-slate-700 hover:bg-blue-50 hover:text-blue-700 text-lg">Math</a>
+      <a href="/conversions" class="px-4 py-2 rounded-lg text-slate-700 hover:bg-blue-50 hover:text-blue-700 text-lg">Conversions</a>
+      <a href="/technology" class="px-4 py-2 rounded-lg text-slate-700 hover:bg-blue-50 hover:text-blue-700 text-lg">Technology</a>
+      <a href="/date-time" class="px-4 py-2 rounded-lg text-slate-700 hover:bg-blue-50 hover:text-blue-700 text-lg">Date & Time</a>
+      <a href="/home-diy" class="px-4 py-2 rounded-lg text-slate-700 hover:bg-blue-50 hover:text-blue-700 text-lg">Home & DIY</a>
+      <a href="/education" class="px-4 py-2 rounded-lg text-slate-700 hover:bg-blue-50 hover:text-blue-700 text-lg">Education</a>
+      <a href="/science" class="px-4 py-2 rounded-lg text-slate-700 hover:bg-blue-50 hover:text-blue-700 text-lg">Science</a>
+      <a href="/everyday" class="px-4 py-2 rounded-lg text-slate-700 hover:bg-blue-50 hover:text-blue-700 text-lg">Everyday</a>
+      <a href="/all" class="px-4 py-2 rounded-lg text-slate-700 hover:bg-blue-50 hover:text-blue-700 text-lg">All</a>
+    </nav>
+    <details class="md:hidden ml-auto">
+      <summary class="px-3 py-2 rounded-md border border-slate-200 text-slate-700">Menu</summary>
+      <div class="mt-2 grid grid-cols-2 gap-2 p-2 border border-slate-200 rounded-lg bg-white">
+        <a href="/finance" class="px-3 py-2 rounded-md bg-slate-50">Finance</a>
+        <a href="/health" class="px-3 py-2 rounded-md bg-slate-50">Health</a>
+        <a href="/math" class="px-3 py-2 rounded-md bg-slate-50">Math</a>
+        <a href="/conversions" class="px-3 py-2 rounded-md bg-slate-50">Conversions</a>
+        <a href="/technology" class="px-3 py-2 rounded-md bg-slate-50">Technology</a>
+        <a href="/date-time" class="px-3 py-2 rounded-md bg-slate-50">Date & Time</a>
+        <a href="/home-diy" class="px-3 py-2 rounded-md bg-slate-50">Home & DIY</a>
+        <a href="/education" class="px-3 py-2 rounded-md bg-slate-50">Education</a>
+        <a href="/science" class="px-3 py-2 rounded-md bg-slate-50">Science</a>
+        <a href="/everyday" class="px-3 py-2 rounded-md bg-slate-50">Everyday</a>
+        <a href="/all" class="px-3 py-2 rounded-md bg-slate-50">All</a>
+      </div>
+    </details>
+  </div>
+</header>
+
+<body class="bg-white text-slate-900">
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="/">Calculators</a>
+    <nav class="nav">
+      <a href="/finance">Finance</a>
+      <a href="/health">Health</a>
+      <a href="/math">Math</a>
+      <a href="/conversions">Conversions</a>
+      <a href="/technology">Technology</a>
+      <a href="/date-time">Date & Time</a>
+      <a href="/home-diy">Home & DIY</a>
+      <a href="/education">Education</a>
+      <a href="/science">Science</a>
+      <a href="/everyday">Everyday</a>
+    </nav>
+    <form class="cats-mobile" onsubmit="location.href='/' + this.elements.c.value; return false">
+      <label class="sr-only" for="c">Categories</label>
+      <select name="c" id="c">
+        <option value="">Categories…</option>
+        <option value="finance">Finance</option>
+        <option value="health">Health</option>
+        <option value="math">Math</option>
+        <option value="conversions">Conversions</option>
+        <option value="technology">Technology</option>
+        <option value="date-time">Date & Time</option>
+        <option value="home-diy">Home & DIY</option>
+        <option value="education">Education</option>
+        <option value="science">Science</option>
+        <option value="everyday">Everyday</option>
+      </select>
+      <button type="submit">Go</button>
+    </form>
+  </div>
+</header>
+
+    <header>
+      <a href="/">🧮</a>
+      <div>
+        <div><strong>Niche Calculator Network</strong></div>
+        <nav>
+          <a href="/">Home</a>
+          <a href="/sitemap-index.xml">Sitemap</a>
+          <a href="/privacy">Privacy</a>
+          <a href="/disclaimer">Disclaimer</a>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <slot />
+    </main>
+    <footer class="muted">© {new Date().getFullYear()} Niche Calculator Network — Free tools.</footer>
+  </body>
+</html>
