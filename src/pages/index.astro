@@ -1,34 +1,30 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-const categories = [
-  { slug: "finance", label: "Finance" },
-  { slug: "health", label: "Health" },
-  { slug: "math", label: "Math" },
-  { slug: "conversions", label: "Conversions" },
-  { slug: "technology", label: "Technology" },
-  { slug: "date-time", label: "Date & Time" },
-  { slug: "home-diy", label: "Home & DIY" },
-  { slug: "education", label: "Education" },
-  { slug: "science", label: "Science" },
-  { slug: "everyday", label: "Everyday" },
-  { slug: "all", label: "All Calculators" }
+const calculators = [
+  { href: "/calculators/bmi-calculator", title: "BMI Calculator", desc:"Calculate your Body Mass Index (BMI)." },
+  { href: "/calculators/loan-payment-calculator", title: "Loan Payment", desc:"Determine your monthly loan payment." },
+  { href: "/calculators/rule-of-three", title: "Rule of Three", desc:"Solve proportions easily." },
+  { href: "/calculators/percentage-discount-calculator", title: "Percentage Discount", desc:"Find the sale price with discount applied." },
+  { href: "/calculators/sales-tax-calculator", title: "Sales Tax", desc:"Calculate the sales tax on a purchase." },
+  { href: "/calculators/compound-interest-calculator", title: "Compound Interest", desc:"Calculate compound interest growth." }
 ];
 ---
-<BaseLayout title="Calculators">
-  <main class="container mx-auto px-4 py-12">
-    <section class="max-w-3xl">
-      <h1 class="text-4xl font-bold tracking-tight text-slate-900">Fast & minimal calculators</h1>
-      <p class="mt-3 text-lg text-slate-600">Pick a category to get started. Clean, accurate and lightweight.</p>
-    </section>
+<BaseLayout title="Smart & Fast Calculators" description="Calculate anything quickly and easily with our collection of online calculators.">
+  <section class="hero">
+    <h1>Smart & Fast Calculators</h1>
+    <p>Calculate anything quickly and easily with our collection of online calculators.</p>
+  </section>
 
-    <section class="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-      {categories.map((c) => (
-        <a href={`/${c.slug}`} class="group block rounded-xl border border-slate-200 p-6 hover:border-blue-500 hover:shadow-sm transition">
-          <div class="text-sm uppercase tracking-wide text-slate-500">Category</div>
-          <div class="mt-2 text-2xl font-semibold text-slate-900 group-hover:text-blue-600">{c.label}</div>
-          <div class="mt-2 text-slate-500">Open {c.label} calculators</div>
-        </a>
-      ))}
-    </section>
-  </main>
+  <section class="grid" aria-label="Popular calculators">
+    {calculators.map(c => (
+      <a class="card" href={c.href}>
+        <h3>{c.title}</h3>
+        <p>{c.desc}</p>
+      </a>
+    ))}
+  </section>
+
+  <div class="section">
+    <div class="ad-slot" style="min-height:90px">Ad — 728 × 90 reserved</div>
+  </div>
 </BaseLayout>
