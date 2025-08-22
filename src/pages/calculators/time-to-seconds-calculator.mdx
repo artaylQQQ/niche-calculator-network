@@ -3,7 +3,7 @@ layout: ../../layouts/BaseLayout.astro
 title: "Time to Seconds Calculator"
 description: "Convert H:M:S to seconds."
 updated: "2025-08-21"
-cluster: "Everyday"
+cluster: "Date & Time"
 ---
 
 import Calculator from '../../components/Calculator.astro';
@@ -35,7 +35,7 @@ export const schema = {
   "slug": "time-to-seconds-calculator",
   "title": "Time to Seconds Calculator",
   "locale": "en",
-  "expression": "hours",
+  "expression": "hours * 3600 + minutes * 60 + seconds",
   "intro": "Convert H:M:S to seconds.",
   "examples": [
     {
@@ -49,7 +49,7 @@ export const schema = {
     }
   ],
   "disclaimer": "Educational information, not professional advice.",
-  "cluster": "Everyday"
+  "cluster": "Date & Time"
 };
 
 <Calculator schema={schema} />
