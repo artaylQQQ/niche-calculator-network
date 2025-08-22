@@ -40,7 +40,7 @@ export const schema = {
   "title": "Loan Payment Calculator",
   "locale": "en",
   // Monthly payment formula: P * (r / (1 - (1 + r)^(-n))) with r=annualRate/100/12 and n=years*12
-  "expression": "(principal * ((annualRate / 100 / 12) * (1 + (annualRate / 100 / 12)) ^ (years * 12))) / ((1 + (annualRate / 100 / 12)) ^ (years * 12) - 1)",
+  "expression": "(annualRate == 0 ? (principal / (years * 12)) : (principal * ((annualRate / 100 / 12) * (1 + (annualRate / 100 / 12)) ^ (years * 12))) / ((1 + (annualRate / 100 / 12)) ^ (years * 12) - 1))",
   "intro": "Compute fixed monthly payment for a loan.",
   "examples": [
     {
