@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Niche Calculator Network</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3/dist/tailwind.min.css" rel="stylesheet">
+  </head>
+  <body class="bg-white text-slate-900">
+    <a href="#main" class="skip absolute left-2 top-2 p-2 bg-white border border-slate-200 shadow text-sm focus:block focus:outline-none">Skip to content</a>
+    <header class="border-b border-slate-200">
+      <div class="max-w-4xl mx-auto flex items-center justify-between p-4">
+        <a href="/" class="text-xl font-semibold">NicheCalc</a>
+        <button aria-label="Open navigation" aria-expanded="false" class="p-2 md:hidden" onclick="toggleNav(this)">☰</button>
+        <nav id="nav" class="hidden md:flex space-x-4">
+          <a class="hover:underline" href="/calculators">Calculators</a>
+          <a class="hover:underline" href="/about">About</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" class="max-w-4xl mx-auto p-6">
+      <section class="mb-8 text-center">
+        <h1 class="text-3xl font-bold mb-2">Smart & Fast Calculators</h1>
+        <p class="text-slate-600">Solve your everyday math in seconds. Explore finance, health, conversions and more.</p>
+      </section>
+      <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <a href="/calculators/bmi" class="card p-4 border rounded hover:shadow">
+          <h2 class="text-lg font-semibold mb-2">BMI Calculator</h2>
+          <p class="text-sm text-slate-600">Calculate your body mass index.</p>
+        </a>
+        <a href="/calculators/loan-payment" class="card p-4 border rounded hover:shadow">
+          <h2 class="text-lg font-semibold mb-2">Loan Payment</h2>
+          <p class="text-sm text-slate-600">Estimate monthly payments.</p>
+        </a>
+        <a href="/calculators/rule-of-three" class="card p-4 border rounded hover:shadow">
+          <h2 class="text-lg font-semibold mb-2">Rule of Three</h2>
+          <p class="text-sm text-slate-600">Solve proportions easily.</p>
+        </a>
+      </section>
+    </main>
+
+    <footer class="mt-10 p-4 text-center text-sm text-slate-500 border-t">
+      © 2025 NicheCalc. All rights reserved.
+    </footer>
+
+    <script>
+      function toggleNav(btn) {
+        const nav = document.getElementById('nav');
+        const expanded = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', String(!expanded));
+        nav.classList.toggle('hidden');
+      }
+    </script>
+  </body>
+</html>
