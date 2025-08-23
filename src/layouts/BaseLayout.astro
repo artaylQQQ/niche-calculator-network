@@ -1,7 +1,7 @@
 ---
 import "../styles/tailwind.css";
-const { title = 'Calcsimpler', description = 'Smart & Fast Calculators', canonical } = Astro.props;
-const site = Astro.site?.toString() || (import.meta.env.SITE_URL ?? 'https://calcsimpler.com');
+const { title = 'CalcSimpler', description = 'Smart & Fast Calculators', canonical } = Astro.props;
+const site = Astro.site?.toString() || (import.meta.env.SITE_URL ?? 'https://example.com');
 const href = canonical ?? new URL(Astro.url.pathname, site).toString();
 const adsClient = import.meta.env.VITE_ADSENSE_CLIENT;
 const cfToken = import.meta.env.VITE_CF_ANALYTICS_TOKEN;
@@ -10,20 +10,11 @@ const cfToken = import.meta.env.VITE_CF_ANALYTICS_TOKEN;
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{title ? `${title} — Calcsimpler.com` : 'Calcsimpler.com'}</title>
+    <title>{title ? `${title} — CalcSimpler.com` : 'CalcSimpler.com'}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={href} />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml">
     <meta name="theme-color" content="#0E2A47">
-    <!-- Open Graph & Twitter metadata -->
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content={title ? `${title} — Calcsimpler.com` : 'Calcsimpler.com'} />
-    <meta property="og:description" content={description} />
-    <meta property="og:url" content={href} />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content={title ? `${title} — Calcsimpler.com` : 'Calcsimpler.com'} />
-    <meta name="twitter:description" content={description} />
-
     <link rel="stylesheet" href="/styles/theme.css" />
     <link rel="stylesheet" href="/styles/tokens.css" />
     {adsClient && (
@@ -32,12 +23,19 @@ const cfToken = import.meta.env.VITE_CF_ANALYTICS_TOKEN;
     {cfToken && (
       <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon={`{"token":"${cfToken}"}`}></script>
     )}
-  </head>
+    <meta property="og:type" content="website" />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:url" content={href} />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+</head>
   <body>
     <a href="#main" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden">Skip to content</a>
     <header class="header" role="banner">
       <div class="header-inner">
-        <a href="/" aria-label="Calcsimpler" class="logo">Calcsimpler.com</a>
+        <a href="/" aria-label="CalcSimpler" class="logo">CalcSimpler.com</a>
         <nav class="nav" aria-label="Primary">
           <a href="/finance">Finance</a>
           <a href="/health">Health</a>
@@ -57,12 +55,13 @@ const cfToken = import.meta.env.VITE_CF_ANALYTICS_TOKEN;
     <footer class="container" style="padding:24px 0;">
       <div class="links">
         <a href="/">Home</a>
+        <a href="/categories/">Categories</a>
         <a href="/all">All Calculators</a>
         <a href="/sitemap-index.xml">Sitemap</a>
         <a href="/privacy">Privacy</a>
         <a href="/disclaimer">Disclaimer</a>
       </div>
-      <div style="text-align:center;margin-top:8px;color:var(--muted)">© {new Date().getFullYear()} Calcsimpler.com</div>
+      <div style="text-align:center;margin-top:8px;color:var(--muted)">© {new Date().getFullYear()} CalcSimpler.com</div>
     </footer>
   </body>
 </html>
