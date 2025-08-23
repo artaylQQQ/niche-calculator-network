@@ -4,7 +4,7 @@ if (!process.env.SITE_URL) { throw new Error('SITE_URL is required'); }
 import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
 
-const SITE_URL = process.env.SITE_URL || 'https://example.com';
+const SITE_URL = process.env.SITE_URL || 'https://calcsimpler.com';
 
 export default defineConfig({
   // unify all integrations into a single array. Tailwind should run alongside mdx and sitemap.
