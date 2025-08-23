@@ -4,6 +4,4 @@ const sitemap = `${site.replace(/\/$/,'')}/sitemap-index.xml`;
 [
   `https://www.google.com/ping?sitemap=${encodeURIComponent(sitemap)}`,
   `https://www.bing.com/ping?sitemap=${encodeURIComponent(sitemap)}`
-].forEach(url => {
-  https.get(url, res => console.log('Ping', url, res.statusCode));
-});
+].forEach(url => https.get(url, res => console.log('Ping', url, res.statusCode)));
