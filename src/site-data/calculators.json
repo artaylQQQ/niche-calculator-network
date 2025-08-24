@@ -1,0 +1,1292 @@
+[
+  {
+    "slug": "bmi-calculator",
+    "title": "BMI Calculator",
+    "description": "Body Mass Index from weight (kg) and height (m).",
+    "category": "health",
+    "category_title": "Health",
+    "schema": {
+      "title": "BMI Calculator",
+      "slug": "bmi-calculator",
+      "intro": "Compute your Body Mass Index using metric units.",
+      "inputs": [
+        {
+          "name": "weight",
+          "label": "Weight (kg)",
+          "step": "any"
+        },
+        {
+          "name": "height",
+          "label": "Height (m)",
+          "step": "any"
+        }
+      ],
+      "expression": "weight / (height^2)"
+    },
+    "faqs": [
+      [
+        "What is BMI?",
+        "BMI stands for Body Mass Index and estimates body fat based on height and weight."
+      ]
+    ]
+  },
+  {
+    "slug": "rule-of-three-calculator",
+    "title": "Rule of Three Calculator",
+    "description": "Solve proportions using the rule of three (If a is to b as c is to x\u2026).",
+    "category": "math",
+    "category_title": "Math",
+    "schema": {
+      "title": "Rule of Three Calculator",
+      "slug": "rule-of-three-calculator",
+      "intro": "Solve proportions of the form a:b = c:x.",
+      "inputs": [
+        {
+          "name": "a",
+          "label": "A",
+          "step": "any"
+        },
+        {
+          "name": "b",
+          "label": "B",
+          "step": "any"
+        },
+        {
+          "name": "c",
+          "label": "C",
+          "step": "any"
+        }
+      ],
+      "expression": "(b * c) / a"
+    },
+    "faqs": [
+      [
+        "How does it work?",
+        "We compute x so that a/b = c/x, hence x = (b \u00d7 c) / a."
+      ]
+    ]
+  },
+  {
+    "slug": "markup-margin-calculator",
+    "title": "Markup/Margin Calculator",
+    "description": "Compute selling price from cost and margin.",
+    "category": "finance",
+    "category_title": "Finance",
+    "schema": {
+      "title": "Markup/Margin Calculator",
+      "slug": "markup-margin-calculator",
+      "intro": "Enter cost and desired margin to get the price.",
+      "inputs": [
+        {
+          "name": "cost",
+          "label": "Cost ($)",
+          "step": "any"
+        },
+        {
+          "name": "margin",
+          "label": "Margin (%)",
+          "step": "any"
+        }
+      ],
+      "expression": "cost / (1 - (margin/100))"
+    },
+    "faqs": [
+      [
+        "Margin vs Markup?",
+        "Margin is profit divided by price; markup is profit divided by cost."
+      ]
+    ]
+  },
+  {
+    "slug": "break-even-calculator",
+    "title": "Break-Even Units Calculator",
+    "description": "Estimate units to break even.",
+    "category": "finance",
+    "category_title": "Finance",
+    "schema": {
+      "inputs": [
+        {
+          "name": "fixed",
+          "label": "Fixed Costs",
+          "type": "number",
+          "placeholder": "Enter fixed costs",
+          "step": 0.01,
+          "min": 0,
+          "units": "$"
+        },
+        {
+          "name": "price",
+          "label": "Price per unit",
+          "type": "number",
+          "placeholder": "Enter unit price",
+          "step": 0.01,
+          "min": 0,
+          "units": "$"
+        },
+        {
+          "name": "variable",
+          "label": "Variable cost per unit",
+          "type": "number",
+          "placeholder": "Enter variable cost per unit",
+          "step": 0.01,
+          "min": 0,
+          "units": "$"
+        }
+      ],
+      "slug": "break-even-calculator",
+      "title": "Break-Even Units Calculator",
+      "locale": "en",
+      "expression": "fixed / (price - variable)",
+      "intro": "Estimate units to break even.",
+      "examples": [
+        {
+          "description": "Enter values and click Calculate."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "How do I use the Break-Even Units Calculator?",
+          "answer": "Enter the required values and press Calculate to get the result."
+        }
+      ],
+      "disclaimer": "Educational information, not professional advice.",
+      "cluster": "Finance"
+    },
+    "faqs": []
+  },
+  {
+    "slug": "c-to-f-calculator",
+    "title": "Celsius to Fahrenheit Converter",
+    "description": "Convert Celsius to Fahrenheit.",
+    "category": "conversions",
+    "category_title": "Conversions",
+    "schema": {
+      "inputs": [
+        {
+          "name": "c",
+          "label": "C",
+          "type": "number",
+          "placeholder": "Enter C",
+          "step": "any"
+        }
+      ],
+      "slug": "c-to-f-calculator",
+      "title": "Celsius to Fahrenheit Converter",
+      "locale": "en",
+      "expression": "c * 9 / 5 + 32",
+      "intro": "Convert Celsius to Fahrenheit.",
+      "examples": [
+        {
+          "description": "Enter values and click Calculate."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "How do I use the Celsius to Fahrenheit Converter?",
+          "answer": "Enter the required values and press Calculate to get the result."
+        }
+      ],
+      "disclaimer": "Educational information, not professional advice.",
+      "cluster": "Conversions"
+    },
+    "faqs": []
+  },
+  {
+    "slug": "cagr-calculator",
+    "title": "CAGR Calculator",
+    "description": "Compound Annual Growth Rate.",
+    "category": "finance",
+    "category_title": "Finance",
+    "schema": {
+      "inputs": [
+        {
+          "name": "final",
+          "label": "Final",
+          "type": "number",
+          "placeholder": "Enter Final",
+          "step": "any"
+        },
+        {
+          "name": "initial",
+          "label": "Initial",
+          "type": "number",
+          "placeholder": "Enter Initial",
+          "step": "any"
+        },
+        {
+          "name": "years",
+          "label": "Years",
+          "type": "number",
+          "placeholder": "Enter Years",
+          "step": "any"
+        }
+      ],
+      "slug": "cagr-calculator",
+      "title": "CAGR Calculator",
+      "locale": "en",
+      "expression": "((final / initial) ^ (1 / years) - 1) * 100",
+      "intro": "Compound Annual Growth Rate.",
+      "examples": [
+        {
+          "description": "Enter values and click Calculate."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "How do I use the CAGR Calculator?",
+          "answer": "Enter the required values and press Calculate to get the result."
+        }
+      ],
+      "disclaimer": "Educational information, not professional advice.",
+      "cluster": "Finance"
+    },
+    "faqs": []
+  },
+  {
+    "slug": "circle-area-calculator",
+    "title": "Circle Area Calculator",
+    "description": "Area of a circle.",
+    "category": "math",
+    "category_title": "Math",
+    "schema": {
+      "inputs": [
+        {
+          "name": "radius",
+          "label": "Radius",
+          "type": "number",
+          "placeholder": "Enter Radius",
+          "step": "any"
+        }
+      ],
+      "slug": "circle-area-calculator",
+      "title": "Circle Area Calculator",
+      "locale": "en",
+      "expression": "3.141592653589793 * radius ^ 2",
+      "intro": "Area of a circle.",
+      "examples": [
+        {
+          "description": "Enter values and click Calculate."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "How do I use the Circle Area Calculator?",
+          "answer": "Enter the required values and press Calculate to get the result."
+        }
+      ],
+      "disclaimer": "Educational information, not professional advice.",
+      "cluster": "Math"
+    },
+    "faqs": []
+  },
+  {
+    "slug": "cm-to-inches-calculator",
+    "title": "Centimeters to Inches Converter",
+    "description": "Convert centimeters to inches.",
+    "category": "conversions",
+    "category_title": "Conversions",
+    "schema": {
+      "inputs": [
+        {
+          "name": "cm",
+          "label": "Cm",
+          "type": "number",
+          "placeholder": "Enter Cm",
+          "step": "any"
+        }
+      ],
+      "slug": "cm-to-inches-calculator",
+      "title": "Centimeters to Inches Converter",
+      "locale": "en",
+      "expression": "cm / 2.54",
+      "intro": "Convert centimeters to inches.",
+      "examples": [
+        {
+          "description": "Enter values and click Calculate."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "How do I use the Centimeters to Inches Converter?",
+          "answer": "Enter the required values and press Calculate to get the result."
+        }
+      ],
+      "disclaimer": "Educational information, not professional advice.",
+      "cluster": "Conversions"
+    },
+    "faqs": []
+  },
+  {
+    "slug": "compound-interest-calculator",
+    "title": "Compound Interest Calculator",
+    "description": "Compute the future value using compound interest.",
+    "category": "finance",
+    "category_title": "Finance",
+    "schema": {
+      "inputs": [
+        {
+          "name": "principal",
+          "label": "Principal",
+          "type": "number",
+          "placeholder": "Enter Principal",
+          "step": "any"
+        },
+        {
+          "name": "rate",
+          "label": "Rate (%)",
+          "type": "number",
+          "placeholder": "Enter Rate (%)",
+          "step": "any"
+        },
+        {
+          "name": "times",
+          "label": "Times per year",
+          "type": "number",
+          "placeholder": "Enter Times per year",
+          "step": "any"
+        },
+        {
+          "name": "years",
+          "label": "Years",
+          "type": "number",
+          "placeholder": "Enter Years",
+          "step": "any"
+        }
+      ],
+      "slug": "compound-interest-calculator",
+      "title": "Compound Interest Calculator",
+      "locale": "en",
+      "expression": "principal * (1 + rate / 100 / times) ^ (times * years)",
+      "intro": "Compute the future value using compound interest.",
+      "examples": [
+        {
+          "description": "Enter values and click Calculate."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "How do I use the Compound Interest Calculator?",
+          "answer": "Enter the principal amount, annual interest rate, number of times interest compounds per year, and the number of years. Then press Calculate to compute the future value."
+        }
+      ],
+      "disclaimer": "Educational information, not professional advice.",
+      "cluster": "Finance"
+    },
+    "faqs": []
+  },
+  {
+    "slug": "conversions-sample",
+    "title": "Conversions Quick Calculator",
+    "description": "A minimal working calculator for the Conversions category.",
+    "category": "conversions",
+    "category_title": "Conversions",
+    "schema": {},
+    "faqs": []
+  },
+  {
+    "slug": "cylinder-volume-calculator",
+    "title": "Cylinder Volume Calculator",
+    "description": "Volume of a cylinder.",
+    "category": "math",
+    "category_title": "Math",
+    "schema": {
+      "inputs": [
+        {
+          "name": "height",
+          "label": "Height (cm)",
+          "type": "number",
+          "placeholder": "Enter Height (cm)",
+          "step": "any"
+        },
+        {
+          "name": "radius",
+          "label": "Radius",
+          "type": "number",
+          "placeholder": "Enter Radius",
+          "step": "any"
+        }
+      ],
+      "slug": "cylinder-volume-calculator",
+      "title": "Cylinder Volume Calculator",
+      "locale": "en",
+      "expression": "3.141592653589793 * radius ^ 2 * height",
+      "intro": "Volume of a cylinder.",
+      "examples": [
+        {
+          "description": "Enter values and click Calculate."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "How do I use the Cylinder Volume Calculator?",
+          "answer": "Enter the required values and press Calculate to get the result."
+        }
+      ],
+      "disclaimer": "Educational information, not professional advice.",
+      "cluster": "Math"
+    },
+    "faqs": []
+  },
+  {
+    "slug": "date-time-sample",
+    "title": "Date & Time Quick Calculator",
+    "description": "A minimal working calculator for the Date & Time category.",
+    "category": "date-time",
+    "category_title": "Date Time",
+    "schema": {},
+    "faqs": []
+  },
+  {
+    "slug": "education-sample",
+    "title": "Education Quick Calculator",
+    "description": "A minimal working calculator for the Education category.",
+    "category": "other",
+    "category_title": "Other",
+    "schema": {},
+    "faqs": []
+  },
+  {
+    "slug": "everyday-sample",
+    "title": "Everyday Quick Calculator",
+    "description": "A minimal working calculator for the Everyday category.",
+    "category": "other",
+    "category_title": "Other",
+    "schema": {},
+    "faqs": []
+  },
+  {
+    "slug": "f-to-c-calculator",
+    "title": "Fahrenheit to Celsius Converter",
+    "description": "Convert Fahrenheit to Celsius.",
+    "category": "conversions",
+    "category_title": "Conversions",
+    "schema": {
+      "inputs": [
+        {
+          "name": "f",
+          "label": "F",
+          "type": "number",
+          "placeholder": "Enter F",
+          "step": "any"
+        }
+      ],
+      "slug": "f-to-c-calculator",
+      "title": "Fahrenheit to Celsius Converter",
+      "locale": "en",
+      "expression": "(f - 32) * 5 / 9",
+      "intro": "Convert Fahrenheit to Celsius.",
+      "examples": [
+        {
+          "description": "Enter values and click Calculate."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "How do I use the Fahrenheit to Celsius Converter?",
+          "answer": "Enter the required values and press Calculate to get the result."
+        }
+      ],
+      "disclaimer": "Educational information, not professional advice.",
+      "cluster": "Conversions"
+    },
+    "faqs": []
+  },
+  {
+    "slug": "final-price-calculator",
+    "title": "Final Price Calculator",
+    "description": "Apply a generic percent change.",
+    "category": "finance",
+    "category_title": "Finance",
+    "schema": {
+      "inputs": [
+        {
+          "name": "percent",
+          "label": "Percent",
+          "type": "number",
+          "placeholder": "Enter Percent",
+          "step": "any"
+        },
+        {
+          "name": "price",
+          "label": "Price",
+          "type": "number",
+          "placeholder": "Enter Price",
+          "step": "any"
+        }
+      ],
+      "slug": "final-price-calculator",
+      "title": "Final Price Calculator",
+      "locale": "en",
+      "expression": "price * (1 + percent / 100)",
+      "intro": "Apply a generic percent change.",
+      "examples": [
+        {
+          "description": "Enter values and click Calculate."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "How do I use the Final Price Calculator?",
+          "answer": "Enter the required values and press Calculate to get the result."
+        }
+      ],
+      "disclaimer": "Educational information, not professional advice.",
+      "cluster": "Finance"
+    },
+    "faqs": []
+  },
+  {
+    "slug": "finance-sample",
+    "title": "Finance Quick Calculator",
+    "description": "A minimal working calculator for the Finance category.",
+    "category": "finance",
+    "category_title": "Finance",
+    "schema": {},
+    "faqs": []
+  },
+  {
+    "slug": "health-sample",
+    "title": "Health Quick Calculator",
+    "description": "A minimal working calculator for the Health category.",
+    "category": "health",
+    "category_title": "Health",
+    "schema": {},
+    "faqs": []
+  },
+  {
+    "slug": "home-diy-sample",
+    "title": "Home & DIY Quick Calculator",
+    "description": "A minimal working calculator for the Home & DIY category.",
+    "category": "home-diy",
+    "category_title": "Home Diy",
+    "schema": {},
+    "faqs": []
+  },
+  {
+    "slug": "hours-to-minutes-calculator",
+    "title": "Hours to Minutes Converter",
+    "description": "Convert hours to minutes.",
+    "category": "date-time",
+    "category_title": "Date Time",
+    "schema": {
+      "inputs": [
+        {
+          "name": "hours",
+          "label": "Hours",
+          "type": "number",
+          "placeholder": "Enter Hours",
+          "step": "any"
+        }
+      ],
+      "slug": "hours-to-minutes-calculator",
+      "title": "Hours to Minutes Converter",
+      "locale": "en",
+      "expression": "hours * 60",
+      "intro": "Convert hours to minutes.",
+      "examples": [
+        {
+          "description": "Enter values and click Calculate."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "How do I use the Hours to Minutes Converter?",
+          "answer": "Enter the required values and press Calculate to get the result."
+        }
+      ],
+      "disclaimer": "Educational information, not professional advice.",
+      "cluster": "Date & Time"
+    },
+    "faqs": []
+  },
+  {
+    "slug": "kg-to-g-calculator",
+    "title": "Kilograms to Grams Converter",
+    "description": "Convert kg to g.",
+    "category": "conversions",
+    "category_title": "Conversions",
+    "schema": {
+      "inputs": [
+        {
+          "name": "kg",
+          "label": "Kg",
+          "type": "number",
+          "placeholder": "Enter Kg",
+          "step": "any"
+        }
+      ],
+      "slug": "kg-to-g-calculator",
+      "title": "Kilograms to Grams Converter",
+      "locale": "en",
+      "expression": "kg * 1000",
+      "intro": "Convert kg to g.",
+      "examples": [
+        {
+          "description": "Enter values and click Calculate."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "How do I use the Kilograms to Grams Converter?",
+          "answer": "Enter the required values and press Calculate to get the result."
+        }
+      ],
+      "disclaimer": "Educational information, not professional advice.",
+      "cluster": "Conversions"
+    },
+    "faqs": []
+  },
+  {
+    "slug": "kg-to-lb-calculator",
+    "title": "Kilograms to Pounds Converter",
+    "description": "Convert kilograms to pounds.",
+    "category": "conversions",
+    "category_title": "Conversions",
+    "schema": {
+      "inputs": [
+        {
+          "name": "kg",
+          "label": "Kg",
+          "type": "number",
+          "placeholder": "Enter Kg",
+          "step": "any"
+        }
+      ],
+      "slug": "kg-to-lb-calculator",
+      "title": "Kilograms to Pounds Converter",
+      "locale": "en",
+      "expression": "kg * 2.20462",
+      "intro": "Convert kilograms to pounds.",
+      "examples": [
+        {
+          "description": "Enter values and click Calculate."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "How do I use the Kilograms to Pounds Converter?",
+          "answer": "Enter the required values and press Calculate to get the result."
+        }
+      ],
+      "disclaimer": "Educational information, not professional advice.",
+      "cluster": "Conversions"
+    },
+    "faqs": []
+  },
+  {
+    "slug": "km-to-miles-calculator",
+    "title": "Kilometers to Miles Converter",
+    "description": "Convert kilometers to miles.",
+    "category": "conversions",
+    "category_title": "Conversions",
+    "schema": {
+      "inputs": [
+        {
+          "name": "km",
+          "label": "Km",
+          "type": "number",
+          "placeholder": "Enter Km",
+          "step": "any"
+        }
+      ],
+      "slug": "km-to-miles-calculator",
+      "title": "Kilometers to Miles Converter",
+      "locale": "en",
+      "expression": "km * 0.621371",
+      "intro": "Convert kilometers to miles.",
+      "examples": [
+        {
+          "description": "Enter values and click Calculate."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "How do I use the Kilometers to Miles Converter?",
+          "answer": "Enter the required values and press Calculate to get the result."
+        }
+      ],
+      "disclaimer": "Educational information, not professional advice.",
+      "cluster": "Conversions"
+    },
+    "faqs": []
+  },
+  {
+    "slug": "loan-payment-calculator",
+    "title": "Loan Payment Calculator",
+    "description": "Compute fixed monthly payment for a loan.",
+    "category": "finance",
+    "category_title": "Finance",
+    "schema": {},
+    "faqs": []
+  },
+  {
+    "slug": "math-sample",
+    "title": "Math Quick Calculator",
+    "description": "A minimal working calculator for the Math category.",
+    "category": "math",
+    "category_title": "Math",
+    "schema": {},
+    "faqs": []
+  },
+  {
+    "slug": "miles-to-km-calculator",
+    "title": "Miles to Kilometers Converter",
+    "description": "Convert miles to kilometers.",
+    "category": "conversions",
+    "category_title": "Conversions",
+    "schema": {
+      "inputs": [
+        {
+          "name": "miles",
+          "label": "Miles",
+          "type": "number",
+          "placeholder": "Enter miles",
+          "step": "any"
+        }
+      ],
+      "slug": "miles-to-km-calculator",
+      "title": "Miles to Kilometers Converter",
+      "locale": "en",
+      "expression": "miles * 1.60934",
+      "intro": "Convert miles to kilometers.",
+      "examples": [
+        {
+          "description": "Enter values and click Calculate."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "How do I use the Miles to Kilometers Converter?",
+          "answer": "Enter the required values and press Calculate to get the result."
+        }
+      ],
+      "disclaimer": "Educational information, not professional advice.",
+      "cluster": "Conversions"
+    },
+    "faqs": []
+  },
+  {
+    "slug": "net-profit-calculator",
+    "title": "Net Profit Calculator",
+    "description": "Net profit.",
+    "category": "finance",
+    "category_title": "Finance",
+    "schema": {
+      "inputs": [
+        {
+          "name": "costs",
+          "label": "Costs",
+          "type": "number",
+          "placeholder": "Enter Costs",
+          "step": "any"
+        },
+        {
+          "name": "revenue",
+          "label": "Revenue",
+          "type": "number",
+          "placeholder": "Enter Revenue",
+          "step": "any"
+        }
+      ],
+      "slug": "net-profit-calculator",
+      "title": "Net Profit Calculator",
+      "locale": "en",
+      "expression": "revenue - costs",
+      "intro": "Net profit.",
+      "examples": [
+        {
+          "description": "Enter values and click Calculate."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "How do I use the Net Profit Calculator?",
+          "answer": "Enter the required values and press Calculate to get the result."
+        }
+      ],
+      "disclaimer": "Educational information, not professional advice.",
+      "cluster": "Finance"
+    },
+    "faqs": []
+  },
+  {
+    "slug": "percentage-discount-calculator",
+    "title": "Percentage Discount Calculator",
+    "description": "Calculate the final price after a percentage discount.",
+    "category": "finance",
+    "category_title": "Finance",
+    "schema": {
+      "inputs": [
+        {
+          "name": "discount",
+          "label": "Discount (%)",
+          "type": "number",
+          "placeholder": "Enter Discount (%)",
+          "step": "any"
+        },
+        {
+          "name": "price",
+          "label": "Price",
+          "type": "number",
+          "placeholder": "Enter Price",
+          "step": "any"
+        }
+      ],
+      "slug": "percentage-discount-calculator",
+      "title": "Percentage Discount Calculator",
+      "locale": "en",
+      "expression": "price * (1 - discount / 100)",
+      "intro": "Calculate the final price after a percentage discount.",
+      "examples": [
+        {
+          "description": "Enter values and click Calculate."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "How do I use the Percentage Discount Calculator?",
+          "answer": "Enter the required values and press Calculate to get the result."
+        }
+      ],
+      "disclaimer": "Educational information, not professional advice.",
+      "cluster": "Finance"
+    },
+    "faqs": []
+  },
+  {
+    "slug": "percentage-increase-calculator",
+    "title": "Percentage Increase Calculator",
+    "description": "Increase an amount by a percentage.",
+    "category": "finance",
+    "category_title": "Finance",
+    "schema": {
+      "inputs": [
+        {
+          "name": "increase",
+          "label": "Increase (%)",
+          "type": "number",
+          "placeholder": "Enter Increase (%)",
+          "step": "any"
+        },
+        {
+          "name": "original",
+          "label": "Original",
+          "type": "number",
+          "placeholder": "Enter Original",
+          "step": "any"
+        }
+      ],
+      "slug": "percentage-increase-calculator",
+      "title": "Percentage Increase Calculator",
+      "locale": "en",
+      "expression": "original * (1 + increase / 100)",
+      "intro": "Increase an amount by a percentage.",
+      "examples": [
+        {
+          "description": "Enter values and click Calculate."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "How do I use the Percentage Increase Calculator?",
+          "answer": "Enter the required values and press Calculate to get the result."
+        }
+      ],
+      "disclaimer": "Educational information, not professional advice.",
+      "cluster": "Finance"
+    },
+    "faqs": []
+  },
+  {
+    "slug": "rectangle-area-calculator",
+    "title": "Rectangle Area Calculator",
+    "description": "Area of a rectangle.",
+    "category": "math",
+    "category_title": "Math",
+    "schema": {
+      "inputs": [
+        {
+          "name": "length",
+          "label": "Length",
+          "type": "number",
+          "placeholder": "Enter Length",
+          "step": "any"
+        },
+        {
+          "name": "width",
+          "label": "Width",
+          "type": "number",
+          "placeholder": "Enter Width",
+          "step": "any"
+        }
+      ],
+      "slug": "rectangle-area-calculator",
+      "title": "Rectangle Area Calculator",
+      "locale": "en",
+      "expression": "length * width",
+      "intro": "Area of a rectangle.",
+      "examples": [
+        {
+          "description": "Enter values and click Calculate."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "How do I use the Rectangle Area Calculator?",
+          "answer": "Enter the required values and press Calculate to get the result."
+        }
+      ],
+      "disclaimer": "Educational information, not professional advice.",
+      "cluster": "Math"
+    },
+    "faqs": []
+  },
+  {
+    "slug": "roi-calculator",
+    "title": "ROI Calculator",
+    "description": "Return on investment (percentage).",
+    "category": "finance",
+    "category_title": "Finance",
+    "schema": {
+      "inputs": [
+        {
+          "name": "cost",
+          "label": "Cost",
+          "type": "number",
+          "placeholder": "Enter cost",
+          "step": 0.01,
+          "min": 0,
+          "units": "$"
+        },
+        {
+          "name": "gain",
+          "label": "Gain/Return",
+          "type": "number",
+          "placeholder": "Enter gain or return",
+          "step": 0.01,
+          "min": 0,
+          "units": "$"
+        }
+      ],
+      "slug": "roi-calculator",
+      "title": "ROI Calculator",
+      "locale": "en",
+      "expression": "((gain - cost) / cost) * 100",
+      "intro": "Return on investment (percentage).",
+      "examples": [
+        {
+          "description": "Enter values and click Calculate."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "How do I use the ROI Calculator?",
+          "answer": "Enter the required values and press Calculate to get the result."
+        }
+      ],
+      "disclaimer": "Educational information, not professional advice.",
+      "cluster": "Finance"
+    },
+    "faqs": []
+  },
+  {
+    "slug": "roi-dollar-calculator",
+    "title": "ROI Dollar Amount Calculator",
+    "description": "ROI in dollars.",
+    "category": "finance",
+    "category_title": "Finance",
+    "schema": {
+      "inputs": [
+        {
+          "name": "investment",
+          "label": "Investment",
+          "type": "number",
+          "placeholder": "Enter Investment",
+          "step": "any"
+        },
+        {
+          "name": "roiPercent",
+          "label": "ROI (%)",
+          "type": "number",
+          "placeholder": "Enter ROI (%)",
+          "step": "any"
+        }
+      ],
+      "slug": "roi-dollar-calculator",
+      "title": "ROI Dollar Amount Calculator",
+      "locale": "en",
+      "expression": "investment * roiPercent / 100",
+      "intro": "ROI in dollars.",
+      "examples": [
+        {
+          "description": "Enter values and click Calculate."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "How do I use the ROI Dollar Amount Calculator?",
+          "answer": "Enter the required values and press Calculate to get the result."
+        }
+      ],
+      "disclaimer": "Educational information, not professional advice.",
+      "cluster": "Finance"
+    },
+    "faqs": []
+  },
+  {
+    "slug": "sales-tax-calculator",
+    "title": "Sales Tax Calculator",
+    "description": "Final price after adding sales tax.",
+    "category": "finance",
+    "category_title": "Finance",
+    "schema": {
+      "inputs": [
+        {
+          "name": "price",
+          "label": "Price",
+          "type": "number",
+          "placeholder": "Enter Price",
+          "step": "any"
+        },
+        {
+          "name": "tax",
+          "label": "Tax (%)",
+          "type": "number",
+          "placeholder": "Enter Tax (%)",
+          "step": "any"
+        }
+      ],
+      "slug": "sales-tax-calculator",
+      "title": "Sales Tax Calculator",
+      "locale": "en",
+      "expression": "price * (1 + tax / 100)",
+      "intro": "Final price after adding sales tax.",
+      "examples": [
+        {
+          "description": "Enter values and click Calculate."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "How do I use the Sales Tax Calculator?",
+          "answer": "Enter the required values and press Calculate to get the result."
+        }
+      ],
+      "disclaimer": "Educational information, not professional advice.",
+      "cluster": "Finance"
+    },
+    "faqs": []
+  },
+  {
+    "slug": "science-sample",
+    "title": "Science Quick Calculator",
+    "description": "A minimal working calculator for the Science category.",
+    "category": "other",
+    "category_title": "Other",
+    "schema": {},
+    "faqs": []
+  },
+  {
+    "slug": "simple-interest-calculator",
+    "title": "Simple Interest Calculator",
+    "description": "Compute interest earned with simple interest.",
+    "category": "finance",
+    "category_title": "Finance",
+    "schema": {
+      "inputs": [
+        {
+          "name": "principal",
+          "label": "Principal",
+          "type": "number",
+          "placeholder": "Enter principal",
+          "step": 0.01,
+          "min": 0,
+          "units": "$"
+        },
+        {
+          "name": "rate",
+          "label": "Rate (%)",
+          "type": "number",
+          "placeholder": "Enter annual rate",
+          "step": 0.01,
+          "min": 0
+        },
+        {
+          "name": "years",
+          "label": "Years",
+          "type": "number",
+          "placeholder": "Enter years",
+          "step": 1,
+          "min": 0
+        }
+      ],
+      "slug": "simple-interest-calculator",
+      "title": "Simple Interest Calculator",
+      "locale": "en",
+      "expression": "(principal * rate * years) / 100",
+      "intro": "Compute interest earned with simple interest.",
+      "examples": [
+        {
+          "description": "Enter values and click Calculate."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "How do I use the Simple Interest Calculator?",
+          "answer": "Enter the required values and press Calculate to get the result."
+        }
+      ],
+      "disclaimer": "Educational information, not professional advice.",
+      "cluster": "Finance"
+    },
+    "faqs": []
+  },
+  {
+    "slug": "technology-sample",
+    "title": "Technology Quick Calculator",
+    "description": "A minimal working calculator for the Technology category.",
+    "category": "technology",
+    "category_title": "Technology",
+    "schema": {},
+    "faqs": []
+  },
+  {
+    "slug": "time-to-seconds-calculator",
+    "title": "Time to Seconds Calculator",
+    "description": "Convert H:M:S to seconds.",
+    "category": "date-time",
+    "category_title": "Date Time",
+    "schema": {
+      "inputs": [
+        {
+          "name": "hours",
+          "label": "Hours",
+          "type": "number",
+          "placeholder": "Enter Hours",
+          "step": "any"
+        },
+        {
+          "name": "minutes",
+          "label": "Minutes",
+          "type": "number",
+          "placeholder": "Enter Minutes",
+          "step": "any"
+        },
+        {
+          "name": "seconds",
+          "label": "Seconds",
+          "type": "number",
+          "placeholder": "Enter Seconds",
+          "step": "any"
+        }
+      ],
+      "slug": "time-to-seconds-calculator",
+      "title": "Time to Seconds Calculator",
+      "locale": "en",
+      "expression": "hours * 3600 + minutes * 60 + seconds",
+      "intro": "Convert H:M:S to seconds.",
+      "examples": [
+        {
+          "description": "Enter values and click Calculate."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "How do I use the Time to Seconds Calculator?",
+          "answer": "Enter the required values and press Calculate to get the result."
+        }
+      ],
+      "disclaimer": "Educational information, not professional advice.",
+      "cluster": "Date & Time"
+    },
+    "faqs": []
+  },
+  {
+    "slug": "triangle-area-calculator",
+    "title": "Triangle Area Calculator",
+    "description": "Area from base and height.",
+    "category": "math",
+    "category_title": "Math",
+    "schema": {
+      "inputs": [
+        {
+          "name": "base",
+          "label": "Base",
+          "type": "number",
+          "placeholder": "Enter Base",
+          "step": "any"
+        },
+        {
+          "name": "height",
+          "label": "Height (cm)",
+          "type": "number",
+          "placeholder": "Enter Height (cm)",
+          "step": "any"
+        }
+      ],
+      "slug": "triangle-area-calculator",
+      "title": "Triangle Area Calculator",
+      "locale": "en",
+      "expression": "(base * height) / 2",
+      "intro": "Area from base and height.",
+      "examples": [
+        {
+          "description": "Enter values and click Calculate."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "How do I use the Triangle Area Calculator?",
+          "answer": "Enter the required values and press Calculate to get the result."
+        }
+      ],
+      "disclaimer": "Educational information, not professional advice.",
+      "cluster": "Math"
+    },
+    "faqs": []
+  },
+  {
+    "slug": "weight-to-bmi-projection-calculator",
+    "title": "Weight to BMI Projection",
+    "description": "Quick BMI projection.",
+    "category": "health",
+    "category_title": "Health",
+    "schema": {
+      "inputs": [
+        {
+          "name": "height",
+          "label": "Height (cm)",
+          "type": "number",
+          "placeholder": "Enter Height (cm)",
+          "step": "any"
+        },
+        {
+          "name": "weight",
+          "label": "Weight (kg)",
+          "type": "number",
+          "placeholder": "Enter Weight (kg)",
+          "step": "any"
+        }
+      ],
+      "slug": "weight-to-bmi-projection-calculator",
+      "title": "Weight to BMI Projection",
+      "locale": "en",
+      "expression": "weight / ((height / 100) ^ 2)",
+      "intro": "Quick BMI projection.",
+      "examples": [
+        {
+          "description": "Enter values and click Calculate."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "How do I use the Weight to BMI Projection?",
+          "answer": "Enter the required values and press Calculate to get the result."
+        }
+      ],
+      "disclaimer": "Educational information, not professional advice.",
+      "cluster": "Health"
+    },
+    "faqs": []
+  }
+]

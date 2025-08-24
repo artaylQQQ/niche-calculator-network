@@ -1,0 +1,49 @@
+---
+title: "Rectangle Area Calculator"
+description: "Area of a rectangle."
+faqs: []
+---
+
+<!-- Migrated from V035. Original file: rectangle-area-calculator.mdx -->
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "inputs": [
+    {
+      "name": "length",
+      "label": "Length",
+      "type": "number",
+      "placeholder": "Enter Length",
+      "step": "any"
+    },
+    {
+      "name": "width",
+      "label": "Width",
+      "type": "number",
+      "placeholder": "Enter Width",
+      "step": "any"
+    }
+  ],
+  "slug": "rectangle-area-calculator",
+  "title": "Rectangle Area Calculator",
+  "locale": "en",
+  "expression": "length * width",
+  "intro": "Area of a rectangle.",
+  "examples": [
+    {
+      "description": "Enter values and click Calculate."
+    }
+  ],
+  "faqs": [
+    {
+      "question": "How do I use the Rectangle Area Calculator?",
+      "answer": "Enter the required values and press Calculate to get the result."
+    }
+  ],
+  "disclaimer": "Educational information, not professional advice.",
+  "cluster": "Math"
+};
+
+<Calculator schema={schema} />
+

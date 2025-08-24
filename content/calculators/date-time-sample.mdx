@@ -1,0 +1,24 @@
+---
+title: "Date & Time Quick Calculator"
+description: "A minimal working calculator for the Date & Time category."
+faqs: []
+---
+
+<!-- Migrated from V035. Original file: date-time-sample.mdx -->
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  slug: "date-time-sample",
+  title: "Date & Time Quick Calculator",
+  description: "Add two numbers quickly.",
+  cluster: "Date & Time",
+  inputs: [
+    { name: "x", hint: "X", type: "number", step: "any" },
+    { name: "y", hint: "Y", type: "number", step: "any" }
+  ],
+  expression: "x + y"
+};
+
+<Calculator schema={schema} />
+

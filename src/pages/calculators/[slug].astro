@@ -1,0 +1,25 @@
+
+---
+import Layout from '../../layouts/CalculatorLayout.astro';
+import Calc from '../../components/Calculator.astro';
+const modules = import.meta.glob('../../../content/calculators/*.mdx');
+const { slug } = Astro.params;
+let mod = null;
+for (const [p, loader] of Object.entries(modules)) {
+  if (p.endsWith(`/${slug}.mdx`)) { mod = await loader(); break; }
+}
+if (!mod) { throw new Error('Calculator not found: ' + slug); }
+const front = mod.frontmatter || {};
+const schema = front.schema || (mod.schema ?? {});
+const faqs = front.faqs || [];
+const jsonld = {
+  "@context":"https://schema.org","@type":"Calculator",
+  "name": front.title, "description": front.description || front.intro,
+  "url": `https://www.calcsimpler.com${Astro.url.pathname}`,
+  "applicationCategory":"Utility",
+  "publisher":{"@type":"Organization","name":"CalcSimpler","url":"https://www.calcsimpler.com"}
+};
+---
+<Layout {title} {description} {faqs} {jsonld}>
+  {Object.keys(schema).length ? <Calc schema={schema} /> : (mod.default ? <mod.default /> : null)}
+</Layout>

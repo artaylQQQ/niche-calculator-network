@@ -1,0 +1,60 @@
+---
+title: "Simple Interest Calculator"
+description: "Compute interest earned with simple interest."
+faqs: []
+---
+
+<!-- Migrated from V035. Original file: simple-interest-calculator.mdx -->
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "inputs": [
+    {
+      "name": "principal",
+      "label": "Principal",
+      "type": "number",
+      "placeholder": "Enter principal",
+      "step": 0.01,
+      "min": 0,
+      "units": "$"
+    },
+    {
+      "name": "rate",
+      "label": "Rate (%)",
+      "type": "number",
+      "placeholder": "Enter annual rate",
+      "step": 0.01,
+      "min": 0
+    },
+    {
+      "name": "years",
+      "label": "Years",
+      "type": "number",
+      "placeholder": "Enter years",
+      "step": 1,
+      "min": 0
+    }
+  ],
+  "slug": "simple-interest-calculator",
+  "title": "Simple Interest Calculator",
+  "locale": "en",
+  "expression": "(principal * rate * years) / 100",
+  "intro": "Compute interest earned with simple interest.",
+  "examples": [
+    {
+      "description": "Enter values and click Calculate."
+    }
+  ],
+  "faqs": [
+    {
+      "question": "How do I use the Simple Interest Calculator?",
+      "answer": "Enter the required values and press Calculate to get the result."
+    }
+  ],
+  "disclaimer": "Educational information, not professional advice.",
+  "cluster": "Finance"
+};
+
+<Calculator schema={schema} />
+
