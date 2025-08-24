@@ -4,7 +4,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-/** Mapa de categorías (slug URL -> etiquetas/cluster en el JSON) */
+/** Mapa de categorías (URL slug → etiquetas/cluster en el JSON). */
 const CATEGORIES = [
   { slug: 'finance',     map: ['Finance','Finance & Loans','Taxes','Business','Business & Commerce'] },
   { slug: 'health',      map: ['Health','Health & Fitness'] },
@@ -16,7 +16,7 @@ const CATEGORIES = [
   { slug: 'business',    map: ['Business','Business & Commerce','Pricing'] }
 ];
 
-/** Lee calculators.json dentro de getStaticPaths y lo pasa por props */
+/** Carga calculators.json dentro de getStaticPaths y lo pasa por props. */
 export async function getStaticPaths() {
   const __filename = fileURLToPath(import.meta.url);
   const __dirname  = path.dirname(__filename);
@@ -38,7 +38,7 @@ export async function getStaticPaths() {
 
 const { cat, calcs = [] } = Astro.props;
 
-/** Filtra por cluster (case-insensitive) y limita a 200 */
+/** Filtra por cluster (sin distinción de mayúsculas) y limita a 200 calculadoras. */
 const list = Array.isArray(calcs)
   ? calcs.filter((it) =>
       (it?.cluster ?? '') &&
