@@ -1,53 +1,8 @@
 ---
-title: "Markup/Margin Calculator"
-description: "Compute selling price from cost and margin."
-faqs: []
+title: Markup/Margin Calculator
+description: Compute selling price from cost and margin.
+schema: {"title": "Markup/Margin Calculator", "slug": "markup-margin-calculator", "intro": "Enter cost and desired margin to get the price.", "inputs": [{"name": "cost", "label": "Cost ($)", "step": "any"}, {"name": "margin", "label": "Margin (%)", "step": "any"}], "expression": "cost / (1 - (margin/100))"}
+faqs: [["Margin vs Markup?", "Margin is profit divided by price; markup is profit divided by cost."]]
 ---
 
-<!-- Migrated from V035. Original file: markup-margin-calculator.mdx -->
-
-import Calculator from '../../components/Calculator.astro';
-
-export const schema = {
-  "inputs": [
-    {
-      "name": "cost",
-      "label": "Cost",
-      "type": "number",
-      "placeholder": "Enter cost",
-      "step": 0.01,
-      "min": 0,
-      "units": "$"
-    },
-    {
-      "name": "margin",
-      "label": "Margin (%)",
-      "type": "number",
-      "placeholder": "Enter margin %",
-      "step": 0.01,
-      "min": 0,
-      "max": 99.999
-    }
-  ],
-  "slug": "markup-margin-calculator",
-  "title": "Markup/Margin Calculator",
-  "locale": "en",
-  "expression": "cost / (1 - (margin / 100))",
-  "intro": "Compute selling price from cost and margin.",
-  "examples": [
-    {
-      "description": "Enter values and click Calculate."
-    }
-  ],
-  "faqs": [
-    {
-      "question": "How do I use the Markup/Margin Calculator?",
-      "answer": "Enter the required values and press Calculate to get the result."
-    }
-  ],
-  "disclaimer": "Educational information, not professional advice.",
-  "cluster": "Finance"
-};
-
-<Calculator schema={schema} />
-
+{/* Auto-generated content section (optional) */}

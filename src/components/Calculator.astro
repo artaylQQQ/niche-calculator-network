@@ -1,0 +1,46 @@
+
+---
+const { schema } = Astro.props;
+const id = (schema?.slug ?? schema?.title ?? 'calc').toLowerCase().replace(/\s+/g,'-');
+---
+<section class="card" aria-labelledby={`h-${id}`}>
+  <h1 id={`h-${id}`}>{schema.title ?? 'Calculator'}</h1>
+  {schema.intro && <p class="muted">{schema.intro}</p>}
+  <form id={`f-${id}`} class="form" onsubmit="return false">
+    <div class="form-row">
+      {schema.inputs?.map((i) => (
+        <div class="field">
+          <label for={`${id}-${i.name}`}>{i.label ?? i.name}</label>
+          <input class="input" id={`${id}-${i.name}`} name={i.name} type="number" step={i.step ?? "any"} placeholder={i.placeholder ?? ""} required />
+        </div>
+      ))}
+    </div>
+    <div style="margin-top:16px">
+      <button class="btn" type="button" onclick={`compute_${id}()`}>Calculate</button>
+    </div>
+    <output id={`out-${id}`} style="display:block;margin-top:16px;font-weight:600"></output>
+  </form>
+</section>
+<script>
+  const expr_{id} = {JSON.stringify(schema.expression ?? "")};
+  const names_{id} = {JSON.stringify((schema.inputs || []).map(i=>i.name))};
+  function compute_{id}(){
+    try{
+      const out = document.getElementById("out-{id}");
+      const vars = {};
+      names_{id}.forEach(n => {
+        const el = document.getElementById("{id}-" + n);
+        vars[n] = Number(el.value || 0);
+      });
+      const js = expr_{id}.replace(/\^/g,'**');
+      const keys = Object.keys(vars);
+      const fn = new Function(...keys, `return (${js});`);
+      const val = fn(...keys.map(k=>Number(vars[k] ?? 0)));
+      if (!isFinite(val)) throw new Error("Invalid result");
+      out.textContent = String(val);
+    }catch(e){
+      console.error(e);
+      alert("Please check your inputs.");
+    }
+  }
+</script>
