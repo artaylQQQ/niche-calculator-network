@@ -3,7 +3,7 @@ layout: ../../layouts/BaseLayout.astro
 title: "Triangle Area Calculator"
 description: "Area from base and height."
 updated: "2025-08-21"
-cluster: "Everyday"
+cluster: "Math"
 ---
 
 import Calculator from '../../components/Calculator.astro';
@@ -28,7 +28,7 @@ export const schema = {
   "slug": "triangle-area-calculator",
   "title": "Triangle Area Calculator",
   "locale": "en",
-  "expression": "base",
+  "expression": "(base * height) / 2",
   "intro": "Area from base and height.",
   "examples": [
     {
@@ -42,7 +42,7 @@ export const schema = {
     }
   ],
   "disclaimer": "Educational information, not professional advice.",
-  "cluster": "Everyday"
+  "cluster": "Math"
 };
 
 <Calculator schema={schema} />

@@ -1,9 +1,9 @@
 ---
 layout: ../../layouts/BaseLayout.astro
 title: "Compound Interest Calculator"
-description: "Future value with compound interest."
-updated: "2025-08-21"
-cluster: "Everyday"
+description: "Compute the future value using compound interest."
+updated: "2025-08-22"
+cluster: "Finance"
 ---
 
 import Calculator from '../../components/Calculator.astro';
@@ -42,8 +42,8 @@ export const schema = {
   "slug": "compound-interest-calculator",
   "title": "Compound Interest Calculator",
   "locale": "en",
-  "expression": "principal",
-  "intro": "Future value with compound interest.",
+  "expression": "principal * (1 + rate / 100 / times) ^ (times * years)",
+  "intro": "Compute the future value using compound interest.",
   "examples": [
     {
       "description": "Enter values and click Calculate."
@@ -52,11 +52,11 @@ export const schema = {
   "faqs": [
     {
       "question": "How do I use the Compound Interest Calculator?",
-      "answer": "Enter the required values and press Calculate to get the result."
+      "answer": "Enter the principal amount, annual interest rate, number of times interest compounds per year, and the number of years. Then press Calculate to compute the future value."
     }
   ],
   "disclaimer": "Educational information, not professional advice.",
-  "cluster": "Everyday"
+  "cluster": "Finance"
 };
 
 <Calculator schema={schema} />

@@ -3,7 +3,7 @@ layout: ../../layouts/BaseLayout.astro
 title: "Hours to Minutes Converter"
 description: "Convert hours to minutes."
 updated: "2025-08-21"
-cluster: "Everyday"
+cluster: "Date & Time"
 ---
 
 import Calculator from '../../components/Calculator.astro';
@@ -21,7 +21,7 @@ export const schema = {
   "slug": "hours-to-minutes-calculator",
   "title": "Hours to Minutes Converter",
   "locale": "en",
-  "expression": "hours",
+  "expression": "hours * 60",
   "intro": "Convert hours to minutes.",
   "examples": [
     {
@@ -35,7 +35,7 @@ export const schema = {
     }
   ],
   "disclaimer": "Educational information, not professional advice.",
-  "cluster": "Everyday"
+  "cluster": "Date & Time"
 };
 
 <Calculator schema={schema} />

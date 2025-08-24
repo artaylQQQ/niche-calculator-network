@@ -19,16 +19,16 @@ export const schema = {
     },
     {
       "name": "roiPercent",
-      "label": "Roipercent",
+      "label": "ROI (%)",
       "type": "number",
-      "placeholder": "Enter Roipercent",
+      "placeholder": "Enter ROI (%)",
       "step": "any"
     }
   ],
   "slug": "roi-dollar-calculator",
   "title": "ROI Dollar Amount Calculator",
   "locale": "en",
-  "expression": "investment",
+  "expression": "investment * roiPercent / 100",
   "intro": "ROI in dollars.",
   "examples": [
     {

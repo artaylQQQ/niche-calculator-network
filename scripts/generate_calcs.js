@@ -22,13 +22,35 @@ function readJSON(p, fallback) {
 const all = readJSON(DATA, []);
 const log = readJSON(LOGP, []);
 
+// Map various incoming cluster names to one of the top‑level categories used on the site.
+// Keys should be lower‑cased to simplify lookups. See README for category definitions.
+const CATEGORY_MAP = {
+  'finance & loans': 'Finance',
+  'percentages & ratios': 'Finance',
+  'finance': 'Finance',
+  'health & fitness': 'Health',
+  'health': 'Health',
+  'geometry & math': 'Math',
+  'math': 'Math',
+  'conversions & units': 'Conversions',
+  'conversions': 'Conversions',
+  'misc': 'Other',
+  'other': 'Other',
+  'everyday': 'Other',
+  'technology': 'Technology',
+  'date & time': 'Date & Time',
+  'home & diy': 'Home & DIY',
+  'education': 'Other'
+};
+
 // pick not yet published
 const published = new Set(log.map(r => r.slug));
 const backlog = all.filter(x => !published.has(x.slug));
 
 function sanitizeExpr(expr) {
+  // Preserve original exponent operator '^' used by our safe evaluator. If the input uses '**', convert it back.
   if (typeof expr !== 'string') return '';
-  return expr.replace(/\^/g, '**');
+  return expr.replace(/\*\*/g, '^');
 }
 
 function titleize(slug) {
@@ -36,13 +58,17 @@ function titleize(slug) {
 }
 
 function mdxFor(calc, related) {
+  // Normalise the calculator's cluster to one of the supported categories. If no mapping is found
+  // the original cluster is preserved or falls back to 'General'.
+  const clusterRaw = (calc.cluster || '').toLowerCase();
+  const clusterNorm = CATEGORY_MAP[clusterRaw] || calc.cluster || 'General';
   const front = `---
 layout: ../../layouts/BaseLayout.astro
 title: ${calc.title}
 description: ${calc.intro}
 date: ${TODAY}
 updated: ${TODAY}
-cluster: ${calc.cluster || 'General'}
+cluster: ${clusterNorm}
 ---
 `;
 
@@ -60,7 +86,7 @@ cluster: ${calc.cluster || 'General'}
     faqs: calc.faqs || [],
     disclaimer: calc.disclaimer || 'Educational information, not professional advice.',
     schema_org: calc.schema_org || 'FAQPage|SoftwareApplication',
-    cluster: calc.cluster || 'General',
+    cluster: clusterNorm,
     related
   };
   const schemaJSON = JSON.stringify(schema, null, 2);
