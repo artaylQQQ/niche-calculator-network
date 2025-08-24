@@ -3,7 +3,7 @@ layout: ../../layouts/BaseLayout.astro
 title: "Percentage Discount Calculator"
 description: "Calculate the final price after a percentage discount."
 updated: "2025-08-21"
-cluster: "Everyday"
+cluster: "Finance"
 ---
 
 import Calculator from '../../components/Calculator.astro';
@@ -28,7 +28,7 @@ export const schema = {
   "slug": "percentage-discount-calculator",
   "title": "Percentage Discount Calculator",
   "locale": "en",
-  "expression": "discount",
+  "expression": "price * (1 - discount / 100)",
   "intro": "Calculate the final price after a percentage discount.",
   "examples": [
     {
@@ -42,7 +42,7 @@ export const schema = {
     }
   ],
   "disclaimer": "Educational information, not professional advice.",
-  "cluster": "Everyday"
+  "cluster": "Finance"
 };
 
 <Calculator schema={schema} />

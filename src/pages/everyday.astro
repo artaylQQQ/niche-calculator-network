@@ -1,10 +1,10 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-const slug = "everyday";
-const title = "Everyday Calculators";
+const slug = "other";
+const title = "Other Calculators";
 const modules = import.meta.glob("../pages/calculators/*.mdx", { eager: true });
 const items = Object.values(modules).map((m) => ({ url: m.url, fm: m.frontmatter || {} }));
-const list = items.filter(i => (i.fm.cluster || "").toLowerCase() === "everyday");
+const list = items.filter(i => (i.fm.cluster || "").toLowerCase() === "other");
 ---
 <BaseLayout title={title}>
   <main class="container mx-auto px-4 py-10">

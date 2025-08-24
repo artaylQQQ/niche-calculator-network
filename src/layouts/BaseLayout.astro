@@ -1,6 +1,6 @@
 ---
 import "../styles/tailwind.css";
-const { title = 'EasyCalc Online', description = 'Free online calculators', canonical } = Astro.props;
+const { title = 'CalcSimpler', description = 'Smart & Fast Calculators', canonical } = Astro.props;
 const site = Astro.site?.toString() || (import.meta.env.SITE_URL ?? 'https://example.com');
 const href = canonical ?? new URL(Astro.url.pathname, site).toString();
 const adsClient = import.meta.env.VITE_ADSENSE_CLIENT;
@@ -10,7 +10,7 @@ const cfToken = import.meta.env.VITE_CF_ANALYTICS_TOKEN;
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{title ? `${title} — EasyCalc Online` : 'EasyCalc Online'}</title>
+    <title>{title ? `${title} — CalcSimpler.com` : 'CalcSimpler.com'}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={href} />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -27,12 +27,16 @@ const cfToken = import.meta.env.VITE_CF_ANALYTICS_TOKEN;
     <a href="#main" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden">Skip to content</a>
     <header class="header" role="banner">
       <div class="header-inner">
-        <a href="/" aria-label="EasyCalc Online" class="logo">EasyCalcOnline.com</a>
+        <a href="/" aria-label="CalcSimpler" class="logo">CalcSimpler.com</a>
         <nav class="nav" aria-label="Primary">
           <a href="/finance">Finance</a>
           <a href="/health">Health</a>
           <a href="/math">Math</a>
           <a href="/conversions">Conversions</a>
+          <a href="/technology">Technology</a>
+          <a href="/date-time">Date &amp; Time</a>
+          <a href="/home-diy">Home &amp; DIY</a>
+          <a href="/everyday">Other</a>
           <a href="/all">All</a>
         </nav>
       </div>
@@ -48,7 +52,7 @@ const cfToken = import.meta.env.VITE_CF_ANALYTICS_TOKEN;
         <a href="/privacy">Privacy</a>
         <a href="/disclaimer">Disclaimer</a>
       </div>
-      <div style="text-align:center;margin-top:8px;color:var(--muted)">© {new Date().getFullYear()} EasyCalc Online</div>
+      <div style="text-align:center;margin-top:8px;color:var(--muted)">© {new Date().getFullYear()} CalcSimpler.com</div>
     </footer>
   </body>
 </html>

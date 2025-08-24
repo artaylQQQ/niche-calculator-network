@@ -3,7 +3,7 @@ layout: ../../layouts/BaseLayout.astro
 title: "Final Price Calculator"
 description: "Apply a generic percent change."
 updated: "2025-08-21"
-cluster: "Everyday"
+cluster: "Finance"
 ---
 
 import Calculator from '../../components/Calculator.astro';
@@ -28,7 +28,7 @@ export const schema = {
   "slug": "final-price-calculator",
   "title": "Final Price Calculator",
   "locale": "en",
-  "expression": "percent",
+  "expression": "price * (1 + percent / 100)",
   "intro": "Apply a generic percent change.",
   "examples": [
     {
@@ -42,7 +42,7 @@ export const schema = {
     }
   ],
   "disclaimer": "Educational information, not professional advice.",
-  "cluster": "Everyday"
+  "cluster": "Finance"
 };
 
 <Calculator schema={schema} />

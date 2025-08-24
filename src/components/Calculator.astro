@@ -127,76 +127,220 @@ const expression = schema?.expression ?? schema?.formula ?? schema?.formula_expr
       return out;
     }
 
+    // Compute function handles validation, expression evaluation and fallbacks.
     window.compute = function(){
-      let vars = readInputs();
-      for(let k in vars){ if(!isFinite(vars[k])){ resultEl.textContent='Please fill all fields.'; return; } }
-
-      let value, usedExpr=false;
-      if (expr){
-        try { value = evalExpr(expr, vars); usedExpr=true; }
-        catch(e){ usedExpr=false; }
-      }
-
-      if (!usedExpr){
-        switch(slug){
-          case 'loan-payment-calculator': {
-            let P=num(vars.principal), r=num(vars.rate)/100/12, n=num(vars.months);
-            value = r===0 ? P/n : (P*r)/(1-Math.pow(1+r,-n)); break;
-          }
-          case 'percentage-discount-calculator':
-            value = num(vars.price)*(1-num(vars.discount)/100);
-            break;
-          case 'percentage-increase-calculator':
-
-          case 'break-even-calculator': {
-            const fixed = num(vars.fixed), variable = num(vars.variable), price = num(vars.price);
-            if(!isFinite(fixed) || !isFinite(variable) || !isFinite(price)){
-              resultEl.textContent = 'Please fill all fields.'; return;
-            }
-            if(price <= variable){
-              resultEl.textContent = 'Price must be greater than variable cost.'; return;
-            }
-            value = fixed / (price - variable); break;
-          }
-            value = num(vars.original)*(1+num(vars.increase)/100); break;
-          case 'bmi-calculator': {
-            let h = num(vars.height);
-            value = num(vars.weight)/(h*h); break;
-          }
-          case 'compound-interest-calculator': {
-            let P2=num(vars.principal), r2=num(vars.rate)/100, t=num(vars.years), n2=num(vars.times);
-            value = P2*Math.pow(1+r2/n2, n2*t); break;
-          }
-          case 'triangle-area-calculator':
-            value = (num(vars.base)*num(vars.height))/2;
-            break;
-          case 'roi-calculator':
-            value = ((num(vars.gain)-num(vars.cost))/num(vars.cost))*100; break;
-          case 'sales-tax-calculator':
-            value = num(vars.price)*(1+num(vars.tax)/100); break;
-          default:
-            resultEl.textContent = 'Calculation not available.'; return;
+      const vars = readInputs();
+      // validate all inputs are finite numbers
+      for (const k in vars) {
+        if (!isFinite(vars[k])) {
+          resultEl.textContent = 'Please fill all fields with valid numbers';
+          return;
         }
       }
-
-      /* UNIT_RESOLUTION */
-      let unit = root.getAttribute('data-unit')||'';
-      if(!unit){
-        // Default currency for finance-like calculators by slug hint
-        const slug = root.getAttribute('data-slug')||'';
-        const isMoney = /loan|mortgage|payment|interest|profit|tax|salary|revenue|cost|price|roi|net/i.test(slug);
-        if(isMoney){ unit = '$'; }
+      let value;
+      let usedExpr = false;
+      // If an expression is defined on the element evaluate it safely
+      if (expr) {
+        // ensure every symbol referenced in the expression is provided in vars
+        const varNames = expr.match(/[A-Za-z_][A-Za-z0-9_]*/g) || [];
+        const unknown = varNames.filter(n => !(n in vars));
+        if (unknown.length) {
+          resultEl.textContent = 'Unknown variable: ' + unknown[0];
+          return;
+        }
+        try {
+          value = evalExpr(expr, vars);
+          usedExpr = true;
+        } catch (e) {
+          usedExpr = false;
+        }
       }
-      if(unit==='$' || unit==='€' || unit==='£'){
-        resultEl.textContent = 'Result: ' + unit + fmt(value);
-      } else {
-        if(unit==='$' || unit==='€' || unit==='£'){
+      // When expression evaluation is unavailable use per‑calculator fallbacks
+      if (!usedExpr) {
+        switch (slug) {
+          case 'loan-payment-calculator': {
+            // Monthly loan payment. Accept either annualRate/years or rate/months fields.
+            const P = num(vars.principal);
+            const annualRate = ('rate' in vars ? num(vars.rate) : num(vars.annualRate));
+            const months = ('months' in vars ? num(vars.months) : num(vars.years) * 12);
+            if (!isFinite(P) || !isFinite(months) || months === 0) {
+              resultEl.textContent = 'Please fill all fields with valid numbers';
+              return;
+            }
+            const r = annualRate / 100 / 12;
+            value = (r === 0) ? (P / months) : (P * r) / (1 - Math.pow(1 + r, -months));
+            break;
+          }
+          case 'percentage-discount-calculator': {
+            value = num(vars.price) * (1 - num(vars.discount) / 100);
+            break;
+          }
+          case 'percentage-increase-calculator': {
+            value = num(vars.original) * (1 + num(vars.increase) / 100);
+            break;
+          }
+          case 'final-price-calculator': {
+            value = num(vars.price) * (1 + num(vars.percent) / 100);
+            break;
+          }
+          case 'sales-tax-calculator': {
+            value = num(vars.price) * (1 + num(vars.tax) / 100);
+            break;
+          }
+          case 'net-profit-calculator': {
+            value = num(vars.revenue) - num(vars.costs);
+            break;
+          }
+          case 'roi-dollar-calculator': {
+            value = num(vars.investment) * num(vars.roiPercent) / 100;
+            break;
+          }
+          case 'roi-calculator': {
+            value = ((num(vars.gain) - num(vars.cost)) / num(vars.cost)) * 100;
+            break;
+          }
+          case 'simple-interest-calculator': {
+            value = (num(vars.principal) * num(vars.rate) * num(vars.years)) / 100;
+            break;
+          }
+          case 'cagr-calculator': {
+            const fVal = num(vars.final);
+            const iVal = num(vars.initial);
+            const yVal = num(vars.years);
+            if (iVal === 0 || !isFinite(fVal) || !isFinite(iVal) || !isFinite(yVal) || yVal === 0) {
+              resultEl.textContent = 'Please fill all fields with valid numbers';
+              return;
+            }
+            value = (Math.pow(fVal / iVal, 1 / yVal) - 1) * 100;
+            break;
+          }
+          case 'bmi-calculator': {
+            const h = num(vars.height);
+            value = num(vars.weight) / (h * h);
+            break;
+          }
+          case 'weight-to-bmi-projection-calculator': {
+            // height is in cm – convert to meters if >3
+            const hCm = num(vars.height);
+            const wKg = num(vars.weight);
+            const hM = hCm > 3 ? hCm / 100 : hCm;
+            value = wKg / (hM * hM);
+            break;
+          }
+          case 'break-even-calculator': {
+            const fixed = num(vars.fixed);
+            const variable = num(vars.variable);
+            const price = num(vars.price);
+            if (price <= variable) {
+              resultEl.textContent = 'Price must be greater than variable cost.';
+              return;
+            }
+            value = fixed / (price - variable);
+            break;
+          }
+          case 'markup-margin-calculator': {
+            value = num(vars.cost) / (1 - num(vars.margin) / 100);
+            break;
+          }
+          case 'compound-interest-calculator': {
+            const P2 = num(vars.principal);
+            const r2 = num(vars.rate) / 100;
+            const t2 = num(vars.years);
+            const n2 = num(vars.times);
+            value = P2 * Math.pow(1 + r2 / n2, n2 * t2);
+            break;
+          }
+          case 'triangle-area-calculator': {
+            value = (num(vars.base) * num(vars.height)) / 2;
+            break;
+          }
+          case 'rectangle-area-calculator': {
+            value = num(vars.length) * num(vars.width);
+            break;
+          }
+          case 'circle-area-calculator': {
+            const r = num(vars.radius);
+            value = 3.141592653589793 * r * r;
+            break;
+          }
+          case 'cylinder-volume-calculator': {
+            const r = num(vars.radius);
+            value = 3.141592653589793 * r * r * num(vars.height);
+            break;
+          }
+          case 'c-to-f-calculator': {
+            value = num(vars.c) * 9 / 5 + 32;
+            break;
+          }
+          case 'f-to-c-calculator': {
+            value = (num(vars.f) - 32) * 5 / 9;
+            break;
+          }
+          case 'km-to-miles-calculator': {
+            value = num(vars.km) * 0.621371;
+            break;
+          }
+          case 'miles-to-km-calculator': {
+            value = num(vars.miles) * 1.60934;
+            break;
+          }
+          case 'cm-to-inches-calculator': {
+            value = num(vars.cm) / 2.54;
+            break;
+          }
+          case 'kg-to-g-calculator': {
+            value = num(vars.kg) * 1000;
+            break;
+          }
+          case 'kg-to-lb-calculator': {
+            value = num(vars.kg) * 2.20462;
+            break;
+          }
+          case 'hours-to-minutes-calculator': {
+            value = num(vars.hours) * 60;
+            break;
+          }
+          case 'time-to-seconds-calculator': {
+            value = num(vars.hours) * 3600 + num(vars.minutes) * 60 + num(vars.seconds);
+            break;
+          }
+          case 'rule-of-three-calculator': {
+            value = num(vars.b) * num(vars.c) / num(vars.a);
+            break;
+          }
+          default: {
+            resultEl.textContent = 'Calculation not available.';
+            return;
+          }
+        }
+      }
+      // Determine output unit: if a unit is defined in data-unit attribute use it; otherwise pick currency for finance slugs
+      let unit = root.getAttribute('data-unit') || '';
+      if (!unit) {
+        const slugName = root.getAttribute('data-slug') || '';
+        const isMoney = /loan|mortgage|payment|interest|profit|tax|salary|revenue|cost|price|roi|net/i.test(slugName);
+        if (isMoney) unit = '$';
+      }
+      // Render result with proper formatting
+      if (unit === '$' || unit === '€' || unit === '£') {
         resultEl.textContent = 'Result: ' + unit + fmt(value);
       } else {
         resultEl.textContent = 'Result: ' + fmt(value) + (unit ? (' ' + unit) : '');
       }
+    };
+
+    // Disable calculate button until all fields have valid numbers
+    function updateButton() {
+      const vars = readInputs();
+      let valid = true;
+      for (const k in vars) {
+        if (!isFinite(vars[k])) { valid = false; break; }
       }
+      btn.disabled = !valid;
     }
+    form.addEventListener('input', updateButton);
+    // initialize button state
+    updateButton();
 
     btn.addEventListener('click', compute);
   }

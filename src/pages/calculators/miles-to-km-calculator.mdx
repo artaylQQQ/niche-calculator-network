@@ -11,17 +11,17 @@ import Calculator from '../../components/Calculator.astro';
 export const schema = {
   "inputs": [
     {
-      "name": "mi",
-      "label": "Mi",
+      "name": "miles",
+      "label": "Miles",
       "type": "number",
-      "placeholder": "Enter Mi",
+      "placeholder": "Enter miles",
       "step": "any"
     }
   ],
   "slug": "miles-to-km-calculator",
   "title": "Miles to Kilometers Converter",
   "locale": "en",
-  "expression": "mi",
+  "expression": "miles * 1.60934",
   "intro": "Convert miles to kilometers.",
   "examples": [
     {

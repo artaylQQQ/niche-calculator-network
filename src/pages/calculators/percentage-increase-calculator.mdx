@@ -3,7 +3,7 @@ layout: ../../layouts/BaseLayout.astro
 title: "Percentage Increase Calculator"
 description: "Increase an amount by a percentage."
 updated: "2025-08-21"
-cluster: "Everyday"
+cluster: "Finance"
 ---
 
 import Calculator from '../../components/Calculator.astro';
@@ -12,9 +12,9 @@ export const schema = {
   "inputs": [
     {
       "name": "increase",
-      "label": "Increase",
+      "label": "Increase (%)",
       "type": "number",
-      "placeholder": "Enter Increase",
+      "placeholder": "Enter Increase (%)",
       "step": "any"
     },
     {
@@ -28,7 +28,7 @@ export const schema = {
   "slug": "percentage-increase-calculator",
   "title": "Percentage Increase Calculator",
   "locale": "en",
-  "expression": "increase",
+  "expression": "original * (1 + increase / 100)",
   "intro": "Increase an amount by a percentage.",
   "examples": [
     {
@@ -42,7 +42,7 @@ export const schema = {
     }
   ],
   "disclaimer": "Educational information, not professional advice.",
-  "cluster": "Everyday"
+  "cluster": "Finance"
 };
 
 <Calculator schema={schema} />
