@@ -12,7 +12,6 @@
     "preview": "astro preview",
     "generate": "node scripts/generate_calcs.js",
     "format": "prettier --write .",
-    "postbuild": "node scripts/ping_sitemaps.js",
     "generate:all": "MAX_PER_DAY=100 node scripts/generate_calcs_v2.js"
   },
   "devDependencies": {
