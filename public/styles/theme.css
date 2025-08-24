@@ -1,25 +1,9 @@
-/*
-  Updated colour palette for a cleaner, modern look.  The background
-  colour is now a very light grey instead of beige, the primary
-  colour has been shifted to a brighter blue and the text colours
-  have been slightly darkened for better contrast.  Radius and
-  spacing have also been increased slightly to give elements more
-  breathing room.  These values cascade throughout the site via CSS
-  custom properties.
-*/
 :root{
-  --bg:#F9FAFC;
-  --surface:#FFFFFF;
-  --ink:#1F2937;
-  --muted:#6B7280;
-  --primary:#1D4ED8;
-  --primary-ink:#FFFFFF;
-  --card:#FFFFFF;
-  --border:#E5E7EB;
-  --shadow:0 2px 4px rgba(0,0,0,.04), 0 8px 20px rgba(0,0,0,.03);
-  --radius:16px;
-  --space:16px;
-  --maxw:1120px;
+  --bg:#FBF7EF; --surface:#FFFFFF; --ink:#0F172A; --muted:#475569;
+  --primary:#0E2A47; --primary-ink:#FFFFFF;
+  --card:#FFFFFF; --border:#E5E7EB;
+  --shadow:0 1px 2px rgba(15,23,42,.06), 0 8px 24px rgba(15,23,42,.04);
+  --radius:14px; --space:14px; --maxw:1120px;
 }
 html,body{background:var(--bg);color:var(--ink);
   font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif}
