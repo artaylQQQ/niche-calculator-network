@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import calcs from '../../../data/calculators.json';
+const calcs = (await import('../../../data/calculators.json')).default;
 
 const CATEGORIES = [
   { slug: 'finance', map: ['Finance','Finance & Loans','Taxes','Business','Business & Commerce'] },

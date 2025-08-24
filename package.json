@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "engines": {
-    "node": ">=20"
+    "node": ">=18"
   },
   "scripts": {
     "dev": "astro dev",
@@ -12,8 +12,8 @@
     "preview": "astro preview",
     "generate": "node scripts/generate_calcs.js",
     "format": "prettier --write .",
-    "generate:all": "MAX_PER_DAY=100 node scripts/generate_calcs_v2.js",
-    "postbuild": "node scripts/ping_sitemaps.js"
+    "postbuild": "node scripts/ping_sitemaps.js",
+    "generate:all": "MAX_PER_DAY=100 node scripts/generate_calcs_v2.js"
   },
   "devDependencies": {
     "astro": "^4.12.2",
@@ -25,6 +25,8 @@
     "@astrojs/tailwind": "^5.1.0",
     "tailwindcss": "^3.4.10",
     "postcss": "^8.4.38",
-    "autoprefixer": "^10.4.19"
+    "autoprefixer": "^10.4.19",
+    "astro": "^4.8.0",
+    "@astrojs/mdx": "^3.1.0"
   }
 }
