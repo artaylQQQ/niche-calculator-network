@@ -1,6 +1,6 @@
 {
   "name": "niche-calculator-network",
-  "version": "0.34.1",
+  "version": "1.0.8",
   "private": true,
   "type": "module",
   "engines": {
@@ -11,9 +11,7 @@
     "build": "astro build",
     "preview": "astro preview",
     "generate": "node scripts/generate_calcs.js",
-    "format": "prettier --write .",
-    "generate:all": "MAX_PER_DAY=100 node scripts/generate_calcs_v2.js",
-    "postbuild": "node scripts/ping_sitemaps.js"
+    "format": "prettier --write ."
   },
   "devDependencies": {
     "astro": "^4.12.2",

@@ -48,9 +48,8 @@ const published = new Set(log.map(r => r.slug));
 const backlog = all.filter(x => !published.has(x.slug));
 
 function sanitizeExpr(expr) {
-  // Preserve original exponent operator '^' used by our safe evaluator. If the input uses '**', convert it back.
   if (typeof expr !== 'string') return '';
-  return expr.replace(/\*\*/g, '^');
+  return expr.replace(/\^/g, '**');
 }
 
 function titleize(slug) {
