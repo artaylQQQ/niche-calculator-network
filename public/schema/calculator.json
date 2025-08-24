@@ -1,0 +1,23 @@
+{
+  "@context": "https://schema.org",
+  "@type": ["FAQPage", "SoftwareApplication"],
+  "name": "Example Calculator",
+  "description": "A template for online calculators. Replace with your own title and description.",
+  "applicationCategory": "Calculator",
+  "operatingSystem": "All",
+  "offers": {
+    "@type": "Offer",
+    "price": 0,
+    "priceCurrency": "USD"
+  },
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What does this calculator do?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It performs calculations based on the inputs you provide."
+      }
+    }
+  ]
+}

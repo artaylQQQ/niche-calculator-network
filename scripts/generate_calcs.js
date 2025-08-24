@@ -63,7 +63,7 @@ function mdxFor(calc, related) {
   const clusterRaw = (calc.cluster || '').toLowerCase();
   const clusterNorm = CATEGORY_MAP[clusterRaw] || calc.cluster || 'General';
   const front = `---
-layout: ../../layouts/BaseLayout.astro
+layout: ../../layouts/CalculatorLayout.astro
 title: ${calc.title}
 description: ${calc.intro}
 date: ${TODAY}

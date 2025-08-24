@@ -19,13 +19,17 @@ for (const it of items) {
   if (!it || !it.slug || !it.title || !it.expression || !Array.isArray(it.inputs)) continue;
   if (publishedSlugs.has(it.slug)) continue;
   const mdx = `---
+layout: ../../layouts/CalculatorLayout.astro
 title: ${JSON.stringify(it.title)}
 description: ${JSON.stringify(it.intro || it.title)}
 cluster: ${JSON.stringify(it.cluster || '')}
 ---
 import Calculator from '../../components/Calculator.astro';
+
 # ${it.title}
+
 ${it.intro || ''}
+
 <Calculator schema={${JSON.stringify(it)}} />
 `;
   fs.writeFileSync(path.join(outDir, `${it.slug}.mdx`), mdx);

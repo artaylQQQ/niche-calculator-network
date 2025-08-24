@@ -39,6 +39,36 @@ const expression = schema?.expression ?? schema?.formula ?? schema?.formula_expr
   <div class="result" data-role="result" aria-live="polite"></div>
 
   <script type="application/json" data-schema>{JSON.stringify(schema)}</script>
+
+  <!--
+    Structured data for rich results.  This script serialises the
+    calculator definition into a Schema.org representation.  We
+    generate a `FAQPage` object when FAQ entries are provided and
+    additionally declare the calculator as a `SoftwareApplication`.
+    Search engines use this information to better understand and
+    feature your pages in search results.
+  -->
+  {(() => {
+    const faqs = Array.isArray(schema?.faqs) ? schema.faqs.filter((f) => f.question && f.answer) : [];
+    const ld = {
+      '@context': 'https://schema.org',
+      '@type': faqs.length ? ['FAQPage', 'SoftwareApplication'] : 'SoftwareApplication',
+      name: schema?.title || 'Calculator',
+      description: schema?.intro || '',
+      applicationCategory: 'Calculator',
+      operatingSystem: 'All',
+      offers: { '@type': 'Offer', price: 0, priceCurrency: 'USD' },
+      mainEntity: faqs.map((f) => ({
+        '@type': 'Question',
+        name: f.question,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: f.answer
+        }
+      }))
+    };
+    return <script type="application/ld+json">{JSON.stringify(ld)}</script>;
+  })()}
 </section>
 
 
