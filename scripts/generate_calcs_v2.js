@@ -1,4 +1,4 @@
-// Minimal generator with validation & daily cap
+// scripts/generate_calcs_v2.js — minimal validated generator (stub)
 import fs from 'node:fs';
 import path from 'node:path';
 
@@ -8,31 +8,39 @@ const outDir = path.join(root, 'src', 'pages', 'calculators');
 const logPath = path.join(root, 'meta', 'publish_log.json');
 const maxPerDay = parseInt(process.env.MAX_PER_DAY || '50', 10);
 
-const items = JSON.parse(fs.readFileSync(dataPath, 'utf8'));
-fs.mkdirSync(outDir, { recursive: true });
-const log = fs.existsSync(logPath) ? JSON.parse(fs.readFileSync(logPath, 'utf8')) : [];
-const publishedSlugs = new Set(log.map(e => e.slug));
-let published = 0;
+const raw = fs.readFileSync(dataPath, 'utf8');
+const items = JSON.parse(raw);
 
-for (const it of items) {
-  if (published >= maxPerDay) break;
-  if (!it || !it.slug || !it.title || !it.expression || !Array.isArray(it.inputs)) continue;
-  if (publishedSlugs.has(it.slug)) continue;
+function valid(item){
+  const req = ['slug','title','inputs','expression'];
+  return req.every(k => item && k in item);
+}
+fs.mkdirSync(outDir, { recursive: true });
+
+let published = 0;
+const log = fs.existsSync(logPath) ? JSON.parse(fs.readFileSync(logPath)) : [];
+const publishedSlugs = new Set(log.map(e => e.slug));
+
+for(const item of items){
+  if(published >= maxPerDay) break;
+  if(!valid(item) || publishedSlugs.has(item.slug)) continue;
   const mdx = `---
-title: ${JSON.stringify(it.title)}
-description: ${JSON.stringify(it.intro || it.title)}
-cluster: ${JSON.stringify(it.cluster || '')}
+layout: ../../layouts/BaseLayout.astro
+title: ${JSON.stringify(item.title)}
+description: ${JSON.stringify(item.intro || item.title)}
 ---
 import Calculator from '../../components/Calculator.astro';
-# ${it.title}
-${it.intro || ''}
-<Calculator schema={${JSON.stringify(it)}} />
+
+# ${item.title}
+
+${item.intro || ''}
+
+<Calculator schema={${JSON.stringify(item)}} />
+
 `;
-  fs.writeFileSync(path.join(outDir, `${it.slug}.mdx`), mdx);
-  log.push({ slug: it.slug, date: new Date().toISOString().slice(0,10) });
+  fs.writeFileSync(path.join(outDir, `${item.slug}.mdx`), mdx);
+  log.push({ slug: item.slug, date: new Date().toISOString().slice(0,10) });
   published++;
 }
-
-fs.mkdirSync(path.dirname(logPath), { recursive: true });
 fs.writeFileSync(logPath, JSON.stringify(log, null, 2));
 console.log('Generated', published, 'calculators');

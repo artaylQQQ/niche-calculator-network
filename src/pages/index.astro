@@ -1,40 +1,31 @@
 ---
-const CATEGORIES = [
-  { slug: 'finance',     title: 'Finance',       desc: 'Loans, interest, ROI, taxes',          icon: 'finance' },
-  { slug: 'health',      title: 'Health',        desc: 'BMI and body metrics',                 icon: 'health' },
-  { slug: 'conversions', title: 'Conversions',   desc: 'Units, currency, temperature',         icon: 'conversions' },
-  { slug: 'geometry',    title: 'Geometry',      desc: 'Areas, perimeters, volumes',           icon: 'geometry' },
-  { slug: 'algebra',     title: 'Algebra',       desc: 'Proportions, rule of three',           icon: 'algebra' },
-  { slug: 'time-date',   title: 'Time & Date',   desc: 'Durations and schedules',              icon: 'time-date' },
-  { slug: 'statistics',  title: 'Statistics',    desc: 'Averages and probabilities',           icon: 'statistics' },
-  { slug: 'business',    title: 'Business',      desc: 'Pricing, margin, markup',              icon: 'business' }
+import BaseLayout from "../layouts/BaseLayout.astro";
+// Highlight a few of our most popular calculators on the home page.
+const calculators = [
+  { href: "/calculators/bmi-calculator", title: "BMI Calculator", desc: "Calculate your Body Mass Index (BMI)." },
+  { href: "/calculators/loan-payment-calculator", title: "Loan Payment", desc: "Determine your monthly loan payment." },
+  { href: "/calculators/rule-of-three-calculator", title: "Rule of Three", desc: "Solve proportions easily." },
+  { href: "/calculators/percentage-discount-calculator", title: "Percentage Discount", desc: "Find the sale price with discount applied." },
+  { href: "/calculators/sales-tax-calculator", title: "Sales Tax", desc: "Calculate the sales tax on a purchase." },
+  { href: "/calculators/compound-interest-calculator", title: "Compound Interest", desc: "Calculate compound interest growth." }
 ];
-import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 <BaseLayout title="Smart & Fast Calculators" description="Calculate anything quickly and easily with our collection of online calculators.">
-  <section class="hero" aria-labelledby="hero-heading">
-    <h1 id="hero-heading">Smart & Fast<br/>Calculators</h1>
+  <section class="hero">
+    <h1>Smart & Fast Calculators</h1>
     <p>Calculate anything quickly and easily with our collection of online calculators.</p>
   </section>
 
-  <section aria-labelledby="categories-heading" class="section">
-    <h2 id="categories-heading" class="sr-only">Categories</h2>
-    <ul class="grid">
-      {CATEGORIES.map(cat => (
-        <li>
-          <a class="card" href={`/categories/${cat.slug}/`} aria-label={`${cat.title} calculators`}>
-            <img src={`/icons/${cat.icon}.svg`} width="28" height="28" alt="" aria-hidden="true" loading="lazy" />
-            <div>
-              <h3>{cat.title}</h3>
-              <p>{cat.desc}</p>
-            </div>
-          </a>
-        </li>
-      ))}
-    </ul>
+  <section class="grid" aria-label="Popular calculators">
+    {calculators.map(c => (
+      <a class="card" href={c.href}>
+        <h3>{c.title}</h3>
+        <p>{c.desc}</p>
+      </a>
+    ))}
   </section>
 
   <div class="section">
-    <div class="ad-slot" role="region" aria-label="Advertisement" style="min-height:90px">Ad — 728 × 90 reserved</div>
+    <div class="ad-slot" style="min-height:90px">Ad — 728 × 90 reserved</div>
   </div>
 </BaseLayout>

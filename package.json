@@ -1,6 +1,6 @@
 {
   "name": "niche-calculator-network",
-  "version": "0.34.1",
+  "version": "0.33.0",
   "private": true,
   "type": "module",
   "engines": {
@@ -12,7 +12,9 @@
     "preview": "astro preview",
     "generate": "node scripts/generate_calcs.js",
     "format": "prettier --write .",
-    "generate:all": "MAX_PER_DAY=100 node scripts/generate_calcs_v2.js",
+    "generate:all": "MAX_PER_DAY=100 node scripts/generate_calcs.js",
+    "test": "vitest run",
+    "perf": "lighthouse-ci autorun",
     "postbuild": "node scripts/ping_sitemaps.js"
   },
   "devDependencies": {

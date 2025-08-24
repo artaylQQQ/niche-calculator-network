@@ -1,4 +1,4 @@
-# Niche Calculator Network — Plantilla (V029)
+# Calcsimpler — Plantilla (v033)
 
 Documentación en español. El sitio público está en inglés.
 
