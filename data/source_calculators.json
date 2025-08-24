@@ -1,0 +1,227 @@
+[
+  {
+    "slug": "percentage-increase-calculator",
+    "title": "Percentage Increase Calculator",
+    "expression": "(new - old) / old * 100",
+    "inputs": [
+      {
+        "name": "old",
+        "label": "Old value",
+        "type": "number",
+        "min": 0,
+        "step": "any"
+      },
+      {
+        "name": "new",
+        "label": "New value",
+        "type": "number",
+        "min": 0,
+        "step": "any"
+      }
+    ],
+    "category": "Finance",
+    "examples": [
+      "Old value 80, new value 100 \u2192 25% increase."
+    ],
+    "faqs": [
+      {
+        "question": "How is percentage increase calculated?",
+        "answer": "It is (new - old) / old \u00d7 100."
+      }
+    ]
+  },
+  {
+    "slug": "cagr-calculator",
+    "title": "CAGR Calculator",
+    "expression": "( (end / start) ** (1 / years) - 1 ) * 100",
+    "inputs": [
+      {
+        "name": "start",
+        "label": "Starting value",
+        "type": "number",
+        "min": 0
+      },
+      {
+        "name": "end",
+        "label": "Ending value",
+        "type": "number",
+        "min": 0
+      },
+      {
+        "name": "years",
+        "label": "Years",
+        "type": "number",
+        "min": 0,
+        "step": "any"
+      }
+    ],
+    "category": "Finance"
+  },
+  {
+    "slug": "bmi-calculator",
+    "title": "BMI Calculator",
+    "expression": "weight / (height * height)",
+    "inputs": [
+      {
+        "name": "weight",
+        "label": "Weight (kg)",
+        "type": "number",
+        "min": 0,
+        "step": "any"
+      },
+      {
+        "name": "height",
+        "label": "Height (m)",
+        "type": "number",
+        "min": 0,
+        "step": "any"
+      }
+    ],
+    "category": "Health"
+  },
+  {
+    "slug": "circle-area-calculator",
+    "title": "Circle Area Calculator",
+    "expression": "3.141592653589793 * radius * radius",
+    "inputs": [
+      {
+        "name": "radius",
+        "label": "Radius",
+        "type": "number",
+        "min": 0,
+        "step": "any"
+      }
+    ],
+    "category": "Math"
+  },
+  {
+    "slug": "fahrenheit-to-celsius-converter",
+    "title": "Fahrenheit to Celsius Converter",
+    "expression": "(f - 32) * 5 / 9",
+    "inputs": [
+      {
+        "name": "f",
+        "label": "Fahrenheit",
+        "type": "number",
+        "step": "any"
+      }
+    ],
+    "category": "Conversions"
+  },
+  {
+    "slug": "kilometers-to-miles-converter",
+    "title": "Kilometers to Miles Converter",
+    "expression": "km * 0.621371",
+    "inputs": [
+      {
+        "name": "km",
+        "label": "Kilometers",
+        "type": "number",
+        "step": "any"
+      }
+    ],
+    "category": "Conversions"
+  },
+  {
+    "slug": "loan-payment-calculator",
+    "title": "Loan Payment Calculator",
+    "expression": "(rate/1200 * principal) / (1 - (1 + rate/1200) ** (-months))",
+    "inputs": [
+      {
+        "name": "principal",
+        "label": "Loan amount",
+        "type": "number",
+        "min": 0,
+        "step": "any"
+      },
+      {
+        "name": "rate",
+        "label": "Annual interest %",
+        "type": "number",
+        "min": 0,
+        "step": "any"
+      },
+      {
+        "name": "months",
+        "label": "Months",
+        "type": "number",
+        "min": 1,
+        "step": 1
+      }
+    ],
+    "category": "Finance"
+  },
+  {
+    "slug": "rectangle-area-calculator",
+    "title": "Rectangle Area Calculator",
+    "expression": "width * height",
+    "inputs": [
+      {
+        "name": "width",
+        "label": "Width",
+        "type": "number",
+        "min": 0,
+        "step": "any"
+      },
+      {
+        "name": "height",
+        "label": "Height",
+        "type": "number",
+        "min": 0,
+        "step": "any"
+      }
+    ],
+    "category": "Math"
+  },
+  {
+    "slug": "time-to-seconds-calculator",
+    "title": "Time to Seconds Calculator",
+    "expression": "hours*3600 + minutes*60 + seconds",
+    "inputs": [
+      {
+        "name": "hours",
+        "label": "Hours",
+        "type": "number",
+        "min": 0,
+        "step": 1
+      },
+      {
+        "name": "minutes",
+        "label": "Minutes",
+        "type": "number",
+        "min": 0,
+        "step": 1
+      },
+      {
+        "name": "seconds",
+        "label": "Seconds",
+        "type": "number",
+        "min": 0,
+        "step": 1
+      }
+    ],
+    "category": "Date & Time"
+  },
+  {
+    "slug": "paint-coverage-calculator",
+    "title": "Paint Coverage Calculator",
+    "expression": "(area / coverage)",
+    "inputs": [
+      {
+        "name": "area",
+        "label": "Area (m\u00b2)",
+        "type": "number",
+        "min": 0,
+        "step": "any"
+      },
+      {
+        "name": "coverage",
+        "label": "Coverage per liter (m\u00b2)",
+        "type": "number",
+        "min": 0,
+        "step": "any"
+      }
+    ],
+    "category": "Home & DIY"
+  }
+]

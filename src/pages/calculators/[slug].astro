@@ -1,26 +1,12 @@
-
 ---
-import Layout from '../../layouts/CalculatorLayout.astro';
-import Calc from '../../components/Calculator.astro';
-const modules = import.meta.glob('../../../content/calculators/*.mdx');
-const { slug } = Astro.params;
-let mod = null;
-for (const [p, loader] of Object.entries(modules)) {
-  if (p.endsWith(`/${slug}.mdx`)) { mod = await loader(); break; }
+import Calculator from '../../components/Calculator.astro';
+import CalculatorLayout from '../../layouts/CalculatorLayout.astro';
+export async function getStaticPaths() {
+  // This dynamic route is provided for future expansion if you move MDX to /content.
+  return { params: [] };
 }
-if (!mod) { throw new Error('Calculator not found: ' + slug); }
-const front = mod.frontmatter || {};
-const schema = front.schema || {};
-const faqs = front.faqs || [];
-const jsonld = {
-  "@context":"https://schema.org","@type":"Calculator",
-  "name": front.title, "description": front.description || front.intro,
-  "url": `https://www.calcsimpler.com${Astro.url.pathname}`,
-  "applicationCategory":"Utility",
-  "publisher":{"@type":"Organization","name":"CalcSimpler","url":"https://www.calcsimpler.com"}
-};
+const { schema, frontmatter } = Astro.props;
 ---
-<Layout title={`${front.title} — CalcSimpler`} description={front.description || front.intro} {faqs} {jsonld}>
-  <Calc schema={schema} />
-  {mod.default ? <mod.default /> : null}
-</Layout>
+<CalculatorLayout title={frontmatter?.title} description={frontmatter?.description}>
+  <Calculator schema={schema} />
+</CalculatorLayout>
