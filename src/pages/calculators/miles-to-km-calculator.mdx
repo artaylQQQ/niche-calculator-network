@@ -1,0 +1,41 @@
+---
+layout: ../../layouts/BaseLayout.astro
+title: "Miles to Kilometers Converter"
+description: "Convert miles to kilometers."
+updated: "2025-08-21"
+cluster: "Conversions"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "inputs": [
+    {
+      "name": "mi",
+      "label": "Mi",
+      "type": "number",
+      "placeholder": "Enter Mi",
+      "step": "any"
+    }
+  ],
+  "slug": "miles-to-km-calculator",
+  "title": "Miles to Kilometers Converter",
+  "locale": "en",
+  "expression": "mi",
+  "intro": "Convert miles to kilometers.",
+  "examples": [
+    {
+      "description": "Enter values and click Calculate."
+    }
+  ],
+  "faqs": [
+    {
+      "question": "How do I use the Miles to Kilometers Converter?",
+      "answer": "Enter the required values and press Calculate to get the result."
+    }
+  ],
+  "disclaimer": "Educational information, not professional advice.",
+  "cluster": "Conversions"
+};
+
+<Calculator schema={schema} />

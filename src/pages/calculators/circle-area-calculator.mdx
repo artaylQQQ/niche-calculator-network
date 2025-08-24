@@ -1,0 +1,41 @@
+---
+layout: ../../layouts/BaseLayout.astro
+title: "Circle Area Calculator"
+description: "Area of a circle."
+updated: "2025-08-21"
+cluster: "Math"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "inputs": [
+    {
+      "name": "radius",
+      "label": "Radius",
+      "type": "number",
+      "placeholder": "Enter Radius",
+      "step": "any"
+    }
+  ],
+  "slug": "circle-area-calculator",
+  "title": "Circle Area Calculator",
+  "locale": "en",
+  "expression": "radius",
+  "intro": "Area of a circle.",
+  "examples": [
+    {
+      "description": "Enter values and click Calculate."
+    }
+  ],
+  "faqs": [
+    {
+      "question": "How do I use the Circle Area Calculator?",
+      "answer": "Enter the required values and press Calculate to get the result."
+    }
+  ],
+  "disclaimer": "Educational information, not professional advice.",
+  "cluster": "Math"
+};
+
+<Calculator schema={schema} />

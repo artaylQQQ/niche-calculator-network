@@ -1,0 +1,30 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+const calculators = [
+  { href: "/calculators/bmi-calculator", title: "BMI Calculator", desc:"Calculate your Body Mass Index (BMI)." },
+  { href: "/calculators/loan-payment-calculator", title: "Loan Payment", desc:"Determine your monthly loan payment." },
+  { href: "/calculators/rule-of-three", title: "Rule of Three", desc:"Solve proportions easily." },
+  { href: "/calculators/percentage-discount-calculator", title: "Percentage Discount", desc:"Find the sale price with discount applied." },
+  { href: "/calculators/sales-tax-calculator", title: "Sales Tax", desc:"Calculate the sales tax on a purchase." },
+  { href: "/calculators/compound-interest-calculator", title: "Compound Interest", desc:"Calculate compound interest growth." }
+];
+---
+<BaseLayout title="Smart & Fast Calculators" description="Calculate anything quickly and easily with our collection of online calculators.">
+  <section class="hero">
+    <h1>Smart & Fast Calculators</h1>
+    <p>Calculate anything quickly and easily with our collection of online calculators.</p>
+  </section>
+
+  <section class="grid" aria-label="Popular calculators">
+    {calculators.map(c => (
+      <a class="card" href={c.href}>
+        <h3>{c.title}</h3>
+        <p>{c.desc}</p>
+      </a>
+    ))}
+  </section>
+
+  <div class="section">
+    <div class="ad-slot" style="min-height:90px">Ad — 728 × 90 reserved</div>
+  </div>
+</BaseLayout>

@@ -1,0 +1,48 @@
+---
+layout: ../../layouts/BaseLayout.astro
+title: "Percentage Discount Calculator"
+description: "Calculate the final price after a percentage discount."
+updated: "2025-08-21"
+cluster: "Everyday"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "inputs": [
+    {
+      "name": "discount",
+      "label": "Discount (%)",
+      "type": "number",
+      "placeholder": "Enter Discount (%)",
+      "step": "any"
+    },
+    {
+      "name": "price",
+      "label": "Price",
+      "type": "number",
+      "placeholder": "Enter Price",
+      "step": "any"
+    }
+  ],
+  "slug": "percentage-discount-calculator",
+  "title": "Percentage Discount Calculator",
+  "locale": "en",
+  "expression": "discount",
+  "intro": "Calculate the final price after a percentage discount.",
+  "examples": [
+    {
+      "description": "Enter values and click Calculate."
+    }
+  ],
+  "faqs": [
+    {
+      "question": "How do I use the Percentage Discount Calculator?",
+      "answer": "Enter the required values and press Calculate to get the result."
+    }
+  ],
+  "disclaimer": "Educational information, not professional advice.",
+  "cluster": "Everyday"
+};
+
+<Calculator schema={schema} />
