@@ -4,13 +4,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-// Carga robusta del JSON en build (sin import assertions)
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-const dataPath = path.resolve(__dirname, '../../../data/calculators.json');
-const calcs = JSON.parse(fs.readFileSync(dataPath, 'utf-8'));
-
-// Mapeo de categorías (slug URL -> etiquetas/cluster del JSON)
+/** Mapa de categorías (slug URL -> etiquetas/cluster en el JSON) */
 const CATEGORIES = [
   { slug: 'finance',     map: ['Finance','Finance & Loans','Taxes','Business','Business & Commerce'] },
   { slug: 'health',      map: ['Health','Health & Fitness'] },
@@ -22,18 +16,33 @@ const CATEGORIES = [
   { slug: 'business',    map: ['Business','Business & Commerce','Pricing'] }
 ];
 
-// Genera rutas estáticas para las 8 categorías
+/** Lee calculators.json dentro de getStaticPaths y lo pasa por props */
 export async function getStaticPaths() {
-  return CATEGORIES.map(c => ({ params: { slug: c.slug }, props: { cat: c } }));
+  const __filename = fileURLToPath(import.meta.url);
+  const __dirname  = path.dirname(__filename);
+  const dataPath   = path.resolve(__dirname, '../../../data/calculators.json');
+
+  let calcs = [];
+  try {
+    calcs = JSON.parse(fs.readFileSync(dataPath, 'utf-8'));
+  } catch (e) {
+    console.warn('Could not read calculators.json at build time:', e?.message);
+    calcs = [];
+  }
+
+  return CATEGORIES.map((c) => ({
+    params: { slug: c.slug },
+    props:  { cat: c, calcs }
+  }));
 }
 
-const { cat } = Astro.props;
+const { cat, calcs = [] } = Astro.props;
 
-// Filtra calculadoras por cluster (case-insensitive "includes")
+/** Filtra por cluster (case-insensitive) y limita a 200 */
 const list = Array.isArray(calcs)
-  ? calcs.filter(c =>
-      (c?.cluster ?? '') &&
-      cat.map.some(v => (c.cluster || '').toLowerCase().includes(v.toLowerCase()))
+  ? calcs.filter((it) =>
+      (it?.cluster ?? '') &&
+      cat.map.some((v) => (it.cluster || '').toLowerCase().includes(v.toLowerCase()))
     ).slice(0, 200)
   : [];
 ---
@@ -50,7 +59,7 @@ const list = Array.isArray(calcs)
     <section class="section" aria-labelledby="cat-list">
       <h2 id="cat-list" class="sr-only">Calculators list</h2>
       <ul class="grid">
-        {list.map(c => (
+        {list.map((c) => (
           <li>
             <a class="card" href={`/calculators/${c.slug}/`}>
               <h3>{c.title}</h3>
