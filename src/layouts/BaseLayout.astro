@@ -1,54 +1,54 @@
-
 ---
-const {
-  title = "CalcSimpler — Smart & Fast Calculators",
-  description = "Calculate anything quickly and easily with our collection of online calculators.",
-  canonical = new URL(Astro.request.url).pathname
-} = Astro.props;
-
-const ADSENSE_CLIENT = import.meta.env.PUBLIC_ADSENSE_CLIENT;
-const UMAMI_ID = import.meta.env.PUBLIC_UMAMI_ID;
-const UMAMI_SRC = import.meta.env.PUBLIC_UMAMI_SRC;
+import "../styles/tailwind.css";
+const { title = 'EasyCalc Online', description = 'Free online calculators', canonical } = Astro.props;
+const site = Astro.site?.toString() || (import.meta.env.SITE_URL ?? 'https://example.com');
+const href = canonical ?? new URL(Astro.url.pathname, site).toString();
+const adsClient = import.meta.env.VITE_ADSENSE_CLIENT;
+const cfToken = import.meta.env.VITE_CF_ANALYTICS_TOKEN;
 ---
-<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>{title}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title ? `${title} — EasyCalc Online` : 'EasyCalc Online'}</title>
     <meta name="description" content={description} />
-    <link rel="canonical" href={`https://www.calcsimpler.com${canonical}`} />
-    <meta property="og:title" content={title} />
-    <meta property="og:description" content={description} />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content={`https://www.calcsimpler.com${canonical}`} />
-    <link rel="stylesheet" href="/src/styles/global.css">
-    {UMAMI_ID && UMAMI_SRC && (<script defer src={UMAMI_SRC} data-website-id={UMAMI_ID}></script>)}
-    {ADSENSE_CLIENT && (<script async src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT}`} crossorigin="anonymous"></script>)}
+    <link rel="canonical" href={href} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <meta name="theme-color" content="#0E2A47">
+    <link rel="stylesheet" href="/styles/theme.css" />
+    {adsClient && (
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={adsClient}" crossorigin="anonymous"></script>
+    )}
+    {cfToken && (
+      <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon={`{"token":"${cfToken}"}`}></script>
+    )}
   </head>
   <body>
-    <header class="navbar">
-      <nav class="container" aria-label="Main">
-        <a href="/" class="badge" aria-label="Home">CalcSimpler.com</a>
-        <span style="margin-left:12px"></span>
-        <a href="/categories/finance">Finance</a>
-        <a style="margin-left:12px" href="/categories/health">Health</a>
-        <a style="margin-left:12px" href="/categories/math">Math</a>
-        <a style="margin-left:12px" href="/categories/conversions">Conversions</a>
-        <a style="margin-left:12px" href="/categories/technology">Technology</a>
-        <a style="margin-left:12px" href="/categories/date-time">Date &amp; Time</a>
-        <a style="margin-left:12px" href="/categories/home-diy">Home &amp; DIY</a>
-        <a style="margin-left:12px" href="/categories/other">Other</a>
-        <a style="margin-left:12px" href="/all">All</a>
-      </nav>
+    <a href="#main" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden">Skip to content</a>
+    <header class="header" role="banner">
+      <div class="header-inner">
+        <a href="/" aria-label="EasyCalc Online" class="logo">EasyCalcOnline.com</a>
+        <nav class="nav" aria-label="Primary">
+          <a href="/finance">Finance</a>
+          <a href="/health">Health</a>
+          <a href="/math">Math</a>
+          <a href="/conversions">Conversions</a>
+          <a href="/all">All</a>
+        </nav>
+      </div>
     </header>
-    <main class="container">
+    <main class="container" id="main" role="main">
       <slot />
     </main>
-    <footer>
-      <div class="container">
-        <p>© {new Date().getFullYear()} CalcSimpler.com · <a href="/sitemap-index.xml">Sitemap</a> · <a href="/privacy">Privacy</a> · <a href="/disclaimer">Disclaimer</a></p>
+    <footer class="container" style="padding:24px 0;">
+      <div class="links">
+        <a href="/">Home</a>
+        <a href="/all">All Calculators</a>
+        <a href="/sitemap-index.xml">Sitemap</a>
+        <a href="/privacy">Privacy</a>
+        <a href="/disclaimer">Disclaimer</a>
       </div>
+      <div style="text-align:center;margin-top:8px;color:var(--muted)">© {new Date().getFullYear()} EasyCalc Online</div>
     </footer>
   </body>
 </html>

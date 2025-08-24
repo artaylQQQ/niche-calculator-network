@@ -1,0 +1,41 @@
+---
+layout: ../../layouts/BaseLayout.astro
+title: "Celsius to Fahrenheit Converter"
+description: "Convert Celsius to Fahrenheit."
+updated: "2025-08-21"
+cluster: "Conversions"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "inputs": [
+    {
+      "name": "c",
+      "label": "C",
+      "type": "number",
+      "placeholder": "Enter C",
+      "step": "any"
+    }
+  ],
+  "slug": "c-to-f-calculator",
+  "title": "Celsius to Fahrenheit Converter",
+  "locale": "en",
+  "expression": "c",
+  "intro": "Convert Celsius to Fahrenheit.",
+  "examples": [
+    {
+      "description": "Enter values and click Calculate."
+    }
+  ],
+  "faqs": [
+    {
+      "question": "How do I use the Celsius to Fahrenheit Converter?",
+      "answer": "Enter the required values and press Calculate to get the result."
+    }
+  ],
+  "disclaimer": "Educational information, not professional advice.",
+  "cluster": "Conversions"
+};
+
+<Calculator schema={schema} />

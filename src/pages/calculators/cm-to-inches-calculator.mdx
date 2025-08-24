@@ -1,0 +1,41 @@
+---
+layout: ../../layouts/BaseLayout.astro
+title: "Centimeters to Inches Converter"
+description: "Convert centimeters to inches."
+updated: "2025-08-21"
+cluster: "Conversions"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "inputs": [
+    {
+      "name": "cm",
+      "label": "Cm",
+      "type": "number",
+      "placeholder": "Enter Cm",
+      "step": "any"
+    }
+  ],
+  "slug": "cm-to-inches-calculator",
+  "title": "Centimeters to Inches Converter",
+  "locale": "en",
+  "expression": "cm",
+  "intro": "Convert centimeters to inches.",
+  "examples": [
+    {
+      "description": "Enter values and click Calculate."
+    }
+  ],
+  "faqs": [
+    {
+      "question": "How do I use the Centimeters to Inches Converter?",
+      "answer": "Enter the required values and press Calculate to get the result."
+    }
+  ],
+  "disclaimer": "Educational information, not professional advice.",
+  "cluster": "Conversions"
+};
+
+<Calculator schema={schema} />
