@@ -4,20 +4,21 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-/** Mapa de categorías (URL slug → etiquetas/cluster en el JSON). */
-const CATEGORIES = [
-  { slug: 'finance',     map: ['Finance','Finance & Loans','Taxes','Business','Business & Commerce'] },
-  { slug: 'health',      map: ['Health','Health & Fitness'] },
-  { slug: 'conversions', map: ['Conversions','Unit Conversions'] },
-  { slug: 'geometry',    map: ['Geometry','Areas & Volumes'] },
-  { slug: 'algebra',     map: ['Algebra','Percentages & Ratios'] },
-  { slug: 'time-date',   map: ['Time & Date'] },
-  { slug: 'statistics',  map: ['Statistics'] },
-  { slug: 'business',    map: ['Business','Business & Commerce','Pricing'] }
-];
-
-/** Carga calculators.json dentro de getStaticPaths y lo pasa por props. */
+/** Genera rutas y datos sin variables globales */
 export async function getStaticPaths() {
+  // 1) Mapa de categorías (definido dentro de la función)
+  const CATEGORIES = [
+    { slug: 'finance',     map: ['Finance','Finance & Loans','Taxes','Business','Business & Commerce'] },
+    { slug: 'health',      map: ['Health','Health & Fitness'] },
+    { slug: 'conversions', map: ['Conversions','Unit Conversions'] },
+    { slug: 'geometry',    map: ['Geometry','Areas & Volumes'] },
+    { slug: 'algebra',     map: ['Algebra','Percentages & Ratios'] },
+    { slug: 'time-date',   map: ['Time & Date'] },
+    { slug: 'statistics',  map: ['Statistics'] },
+    { slug: 'business',    map: ['Business','Business & Commerce','Pricing'] }
+  ];
+
+  // 2) Lee calculators.json en build
   const __filename = fileURLToPath(import.meta.url);
   const __dirname  = path.dirname(__filename);
   const dataPath   = path.resolve(__dirname, '../../../data/calculators.json');
@@ -30,21 +31,24 @@ export async function getStaticPaths() {
     calcs = [];
   }
 
-  return CATEGORIES.map((c) => ({
-    params: { slug: c.slug },
-    props:  { cat: c, calcs }
-  }));
+  // 3) Para cada categoría, calcula su lista y la pasa en props
+  return CATEGORIES.map((cat) => {
+    const list = Array.isArray(calcs)
+      ? calcs.filter((it) =>
+          (it?.cluster ?? '') &&
+          cat.map.some((v) => (it.cluster || '').toLowerCase().includes(v.toLowerCase()))
+        ).slice(0, 200)
+      : [];
+
+    return {
+      params: { slug: cat.slug },
+      props:  { cat, list }
+    };
+  });
 }
 
-const { cat, calcs = [] } = Astro.props;
-
-/** Filtra por cluster (sin distinción de mayúsculas) y limita a 200 calculadoras. */
-const list = Array.isArray(calcs)
-  ? calcs.filter((it) =>
-      (it?.cluster ?? '') &&
-      cat.map.some((v) => (it.cluster || '').toLowerCase().includes(v.toLowerCase()))
-    ).slice(0, 200)
-  : [];
+// Recibe cat y list ya preparados desde getStaticPaths
+const { cat, list = [] } = Astro.props;
 ---
 
 <BaseLayout title={`${cat.slug} calculators`} description={`Browse ${cat.slug} calculators`}>
