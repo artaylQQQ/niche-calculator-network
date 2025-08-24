@@ -22,25 +22,33 @@ function readJSON(p, fallback) {
 const all = readJSON(DATA, []);
 const log = readJSON(LOGP, []);
 
-// Map various incoming cluster names to one of the top‑level categories used on the site.
-// Keys should be lower‑cased to simplify lookups. See README for category definitions.
+// Map various incoming cluster names to one of the eight top‑level categories used on the site.
+// Keys should be lower‑cased to simplify lookups. Any unrecognised cluster
+// defaults to its original name or falls back to 'Business'.
 const CATEGORY_MAP = {
   'finance & loans': 'Finance',
-  'percentages & ratios': 'Finance',
   'finance': 'Finance',
   'health & fitness': 'Health',
   'health': 'Health',
-  'geometry & math': 'Math',
-  'math': 'Math',
   'conversions & units': 'Conversions',
   'conversions': 'Conversions',
-  'misc': 'Other',
-  'other': 'Other',
-  'everyday': 'Other',
-  'technology': 'Technology',
-  'date & time': 'Date & Time',
-  'home & diy': 'Home & DIY',
-  'education': 'Other'
+  'geometry & math': 'Geometry',
+  'geometry': 'Geometry',
+  'algebra & math': 'Algebra',
+  'algebra': 'Algebra',
+  'math': 'Algebra',
+  'time & date': 'Time & Date',
+  'date & time': 'Time & Date',
+  'statistics': 'Statistics',
+  'business & commerce': 'Business',
+  'business': 'Business',
+  'pricing': 'Business',
+  'misc': 'Business',
+  'other': 'Business',
+  'everyday': 'Business',
+  'technology': 'Business',
+  'home & diy': 'Business',
+  'education': 'Business'
 };
 
 // pick not yet published
