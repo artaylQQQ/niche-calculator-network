@@ -18,7 +18,7 @@ const expression = schema?.expression ?? schema?.formula ?? schema?.formula_expr
   <form data-role="form" onsubmit="compute(); return false">
     {inputs.map((i) => (
       <div class="field">
-        <label for={`in-${slug}-${i.name}`}>{i.hint ?? i.name}</label>
+        <label for={`in-${slug}-${i.name}`}>{i.label ?? i.name}</label>
         <input
           id={`in-${slug}-${i.name}`}
           name={i.name}
@@ -27,9 +27,10 @@ const expression = schema?.expression ?? schema?.formula ?? schema?.formula_expr
           {...(i.min !== undefined ? { min: i.min } : {})}
           {...(i.max !== undefined ? { max: i.max } : {})}
           inputmode="decimal"
+          placeholder={i.placeholder ?? ''}
           aria-describedby={`hint-${slug}-${i.name}`}
         />
-        <div id={`hint-${slug}-${i.name}`} class="hint">{i.units ? i.units : ''}</div>
+        <div id={`hint-${slug}-${i.name}`} class="hint">{i.hint ? i.hint : (i.units ? i.units : '')}</div>
       </div>
     ))}
     <button type="button" data-action="calc" class="btn">Calculate</button>
