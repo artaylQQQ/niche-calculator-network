@@ -1,0 +1,41 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Fahrenheit to Celsius Converter"
+description: "Convert Fahrenheit to Celsius."
+updated: "2025-08-21"
+cluster: "Conversions"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "inputs": [
+    {
+      "name": "f",
+      "label": "F",
+      "type": "number",
+      "placeholder": "Enter F",
+      "step": "any"
+    }
+  ],
+  "slug": "f-to-c-calculator",
+  "title": "Fahrenheit to Celsius Converter",
+  "locale": "en",
+  "expression": "(f - 32) * 5 / 9",
+  "intro": "Convert Fahrenheit to Celsius.",
+  "examples": [
+    {
+      "description": "Enter values and click Calculate."
+    }
+  ],
+  "faqs": [
+    {
+      "question": "How do I use the Fahrenheit to Celsius Converter?",
+      "answer": "Enter the required values and press Calculate to get the result."
+    }
+  ],
+  "disclaimer": "Educational information, not professional advice.",
+  "cluster": "Conversions"
+};
+
+<Calculator schema={schema} />

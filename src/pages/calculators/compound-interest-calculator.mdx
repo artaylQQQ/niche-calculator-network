@@ -1,0 +1,62 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Compound Interest Calculator"
+description: "Compute the future value using compound interest."
+updated: "2025-08-22"
+cluster: "Finance"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "inputs": [
+    {
+      "name": "principal",
+      "label": "Principal",
+      "type": "number",
+      "placeholder": "Enter Principal",
+      "step": "any"
+    },
+    {
+      "name": "rate",
+      "label": "Rate (%)",
+      "type": "number",
+      "placeholder": "Enter Rate (%)",
+      "step": "any"
+    },
+    {
+      "name": "times",
+      "label": "Times per year",
+      "type": "number",
+      "placeholder": "Enter Times per year",
+      "step": "any"
+    },
+    {
+      "name": "years",
+      "label": "Years",
+      "type": "number",
+      "placeholder": "Enter Years",
+      "step": "any"
+    }
+  ],
+  "slug": "compound-interest-calculator",
+  "title": "Compound Interest Calculator",
+  "locale": "en",
+  "expression": "principal * (1 + rate / 100 / times) ^ (times * years)",
+  "intro": "Compute the future value using compound interest.",
+  "examples": [
+    {
+      "description": "Enter values and click Calculate."
+    }
+  ],
+  "faqs": [
+    {
+      "question": "How do I use the Compound Interest Calculator?",
+      "answer": "Enter the principal amount, annual interest rate, number of times interest compounds per year, and the number of years. Then press Calculate to compute the future value."
+    }
+  ],
+  "disclaimer": "Educational information, not professional advice.",
+  "cluster": "Finance"
+};
+
+<Calculator schema={schema} />
