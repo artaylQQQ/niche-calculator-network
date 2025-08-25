@@ -1,0 +1,26 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Education Quick Calculator"
+description: "A minimal working calculator for the Education category."
+date: 2025-08-19
+updated: 2025-08-19
+cluster: "Other"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  slug: "education-sample",
+  title: "Education Quick Calculator",
+  description: "Add two numbers quickly.",
+  // Normalise cluster to `Other` so that this calculator appears in the
+  // miscellaneous category.  See category mappings in generate_calcs.js
+  cluster: "Other",
+  inputs: [
+    { name: "x", hint: "X", type: "number", step: "any" },
+    { name: "y", hint: "Y", type: "number", step: "any" }
+  ],
+  expression: "x + y"
+};
+
+<Calculator schema={schema} />
