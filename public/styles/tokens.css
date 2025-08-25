@@ -1,0 +1,32 @@
+:root{
+  /* Base tokens for light mode.  These values define the default
+     backgrounds, surfaces and text colours used throughout the site. */
+  --bg:#ffffff;
+  --surface:#f7f7f8;
+  --text:#0b0b0c;
+  --muted:#6b7280;
+  --accent:#2C74B3; /* Align accent with the primary colour in theme.css */
+  --ring:#6a82fb33;
+  --radius:12px;
+  --shadow:0 6px 20px rgba(0,0,0,.06);
+}
+
+/*
+  Always use the light palette.  The original stylesheet defined a dark
+  variant triggered by the user’s OS preference (`prefers-color-scheme`).
+  For a more consistent, cleaner look we override the dark palette with
+  the same values as the light palette.  This effectively disables
+  automatic dark mode, ensuring that the background stays light even
+  when the system is in dark mode.
+*/
+@media(prefers-color-scheme:dark){
+  :root{
+    --bg:#ffffff;
+    --surface:#f7f7f8;
+    --text:#0b0b0c;
+    --muted:#6b7280;
+    --accent:#2C74B3;
+  }
+}
+
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;}

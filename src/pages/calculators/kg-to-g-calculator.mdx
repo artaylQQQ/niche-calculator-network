@@ -1,0 +1,41 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Kilograms to Grams Converter"
+description: "Convert kg to g."
+updated: "2025-08-21"
+cluster: "Conversions"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "inputs": [
+    {
+      "name": "kg",
+      "label": "Kg",
+      "type": "number",
+      "placeholder": "Enter Kg",
+      "step": "any"
+    }
+  ],
+  "slug": "kg-to-g-calculator",
+  "title": "Kilograms to Grams Converter",
+  "locale": "en",
+  "expression": "kg * 1000",
+  "intro": "Convert kg to g.",
+  "examples": [
+    {
+      "description": "Enter values and click Calculate."
+    }
+  ],
+  "faqs": [
+    {
+      "question": "How do I use the Kilograms to Grams Converter?",
+      "answer": "Enter the required values and press Calculate to get the result."
+    }
+  ],
+  "disclaimer": "Educational information, not professional advice.",
+  "cluster": "Conversions"
+};
+
+<Calculator schema={schema} />
