@@ -1,0 +1,60 @@
+---
+layout: ../../layouts/BaseLayout.astro
+title: "Loan Payment Calculator"
+description: "Compute fixed monthly payment for a loan."
+updated: "2025-08-22"
+cluster: "Finance"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "inputs": [
+    {
+      "name": "principal",
+      "label": "Loan Amount",
+      "type": "number",
+      "placeholder": "Enter loan amount",
+      "step": 0.01,
+      "min": 0,
+      "units": "$"
+    },
+    {
+      "name": "annualRate",
+      "label": "Annual Interest Rate (%)",
+      "type": "number",
+      "placeholder": "Enter annual interest rate",
+      "step": 0.01,
+      "min": 0
+    },
+    {
+      "name": "years",
+      "label": "Loan Term (years)",
+      "type": "number",
+      "placeholder": "Enter loan term in years",
+      "step": 1,
+      "min": 0
+    }
+  ],
+  "slug": "loan-payment-calculator",
+  "title": "Loan Payment Calculator",
+  "locale": "en",
+  // Monthly payment formula: P * (r / (1 - (1 + r)^(-n))) with r=annualRate/100/12 and n=years*12
+  "expression": "(annualRate == 0 ? (principal / (years * 12)) : (principal * ((annualRate / 100 / 12) * (1 + (annualRate / 100 / 12)) ^ (years * 12))) / ((1 + (annualRate / 100 / 12)) ^ (years * 12) - 1))",
+  "intro": "Compute fixed monthly payment for a loan.",
+  "examples": [
+    {
+      "description": "For example, if you borrow $10,000 at 5% annual interest for 3 years, your monthly payment is about $299.71."
+    }
+  ],
+  "faqs": [
+    {
+      "question": "What does this calculator compute?",
+      "answer": "It calculates the monthly payment required to pay off a loan of a given amount, term and annual interest rate."
+    }
+  ],
+  "disclaimer": "Educational information, not professional advice.",
+  "cluster": "Finance"
+};
+
+<Calculator schema={schema} />
