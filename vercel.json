@@ -1,0 +1,9 @@
+{
+  "redirects": [
+    {
+      "source": "https://niche-calculator-network.vercel.app/:path*",
+      "destination": "https://calcsimpler.com/:path*",
+      "permanent": true
+    }
+  ]
+}
