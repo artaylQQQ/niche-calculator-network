@@ -14,7 +14,7 @@ const list = items.filter(i => (i.fm.cluster || "").toLowerCase() === "technolog
         {list.map((it) => (
           <a href={it.url} class="block rounded-xl border border-slate-200 p-4 hover:border-blue-500 hover:shadow-sm transition">
             <div class="text-sm text-slate-500">{it.fm.cluster || ''}</div>
-            <div class="text-lg font-semibold text-slate-900">{it.fm.title || it.url}</div>
+            <div class="text-lg font-semibold text-slate-900">{it.fm.title || it.url.replace('/calculators/','').replace('.mdx','')}</div>
             <div class="text-slate-600">{it.fm.description || ''}</div>
           </a>
         ))}
