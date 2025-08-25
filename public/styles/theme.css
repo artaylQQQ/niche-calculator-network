@@ -24,27 +24,6 @@
   --space:14px;
   --maxw:1120px;
 }
-/*
-  When the user prefers a dark colour scheme we override the global
-  variables with a complementary dark palette.  Colours are chosen
-  to provide sufficient contrast on dark backgrounds while maintaining
-  the same hue relationships as the light theme.  Cards and headers
-  remain distinct from the background and the primary accent colour
-  stays constant across both modes.
-*/
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg:#0D1A26;
-    --surface:#152233;
-    --ink:#F1F5F9;
-    --muted:#94A3B8;
-    --primary:#2C74B3;
-    --primary-ink:#FFFFFF;
-    --card:#152233;
-    --border:#334155;
-    --shadow:0 1px 2px rgba(0,0,0,.4), 0 8px 24px rgba(0,0,0,.2);
-  }
-}
 
 /*
   Support dark mode.  When the user prefers a dark colour scheme we
