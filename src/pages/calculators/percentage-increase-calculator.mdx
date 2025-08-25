@@ -1,0 +1,48 @@
+---
+layout: ../../layouts/BaseLayout.astro
+title: "Percentage Increase Calculator"
+description: "Increase an amount by a percentage."
+updated: "2025-08-21"
+cluster: "Finance"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "inputs": [
+    {
+      "name": "increase",
+      "label": "Increase (%)",
+      "type": "number",
+      "placeholder": "Enter Increase (%)",
+      "step": "any"
+    },
+    {
+      "name": "original",
+      "label": "Original",
+      "type": "number",
+      "placeholder": "Enter Original",
+      "step": "any"
+    }
+  ],
+  "slug": "percentage-increase-calculator",
+  "title": "Percentage Increase Calculator",
+  "locale": "en",
+  "expression": "original * (1 + increase / 100)",
+  "intro": "Increase an amount by a percentage.",
+  "examples": [
+    {
+      "description": "Enter values and click Calculate."
+    }
+  ],
+  "faqs": [
+    {
+      "question": "How do I use the Percentage Increase Calculator?",
+      "answer": "Enter the required values and press Calculate to get the result."
+    }
+  ],
+  "disclaimer": "Educational information, not professional advice.",
+  "cluster": "Finance"
+};
+
+<Calculator schema={schema} />
