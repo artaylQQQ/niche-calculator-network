@@ -3,10 +3,10 @@ import tailwind from '@astrojs/tailwind';
 import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
 
-// Usa el valor de SITE_URL si existe, o un valor por defecto.
-const SITE_URL = process.env.SITE_URL || 'https://example.com';
+const SITE_URL = process.env.SITE_URL || 'https://calcsimpler.com';
 
 export default defineConfig({
+  // unify all integrations into a single array. Tailwind should run alongside mdx and sitemap.
   site: SITE_URL,
   integrations: [
     tailwind({ config: { applyBaseStyles: true } }),
