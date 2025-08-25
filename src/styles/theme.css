@@ -1,7 +1,0 @@
-
-:root{
-  --bg:#f8fafc; --surface:#ffffff; --text:#0f172a; --muted:#475569;
-  --border:#e2e8f0; --accent:#2563eb; --accent-600:#2563eb; --accent-700:#1d4ed8;
-  --ring: rgba(37,99,235,.35); --radius:16px; --shadow:0 8px 24px rgba(2,6,23,.06);
-  --shadow-sm:0 2px 8px rgba(2,6,23,.06); --maxw:1120px; --gap:24px;
-}
