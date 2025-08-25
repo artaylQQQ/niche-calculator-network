@@ -1,0 +1,41 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Kilograms to Pounds Converter"
+description: "Convert kilograms to pounds."
+updated: "2025-08-21"
+cluster: "Conversions"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "inputs": [
+    {
+      "name": "kg",
+      "label": "Kg",
+      "type": "number",
+      "placeholder": "Enter Kg",
+      "step": "any"
+    }
+  ],
+  "slug": "kg-to-lb-calculator",
+  "title": "Kilograms to Pounds Converter",
+  "locale": "en",
+  "expression": "kg * 2.20462",
+  "intro": "Convert kilograms to pounds.",
+  "examples": [
+    {
+      "description": "Enter values and click Calculate."
+    }
+  ],
+  "faqs": [
+    {
+      "question": "How do I use the Kilograms to Pounds Converter?",
+      "answer": "Enter the required values and press Calculate to get the result."
+    }
+  ],
+  "disclaimer": "Educational information, not professional advice.",
+  "cluster": "Conversions"
+};
+
+<Calculator schema={schema} />

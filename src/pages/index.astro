@@ -1,0 +1,60 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+/*
+ * The home page lists eight high‑level calculator categories.  To avoid
+ * confusion between the navigation and the card grid, we normalise the list
+ * here.  Each item defines a `slug` (used in the URL), a human‑friendly
+ * `title`, a short `desc` and an `icon` file stored under `/public/icons/`.
+ * For some topics we reuse the closest existing icon (e.g. `geometry.svg` for
+ * Math, `algebra.svg` for Technology, `business.svg` for Home & DIY and
+ * `statistics.svg` for Other).
+ */
+const CATEGORIES = [
+  { slug: 'finance',     title: 'Finance',     desc: 'Loans, interest, ROI, taxes',          icon: 'finance' },
+  { slug: 'health',      title: 'Health',      desc: 'BMI and body metrics',                 icon: 'health' },
+  { slug: 'conversions', title: 'Conversions', desc: 'Unit and currency conversions',         icon: 'conversions' },
+  { slug: 'math',        title: 'Math',        desc: 'Geometry, algebra and statistics',      icon: 'geometry' },
+  { slug: 'technology',  title: 'Technology',  desc: 'Computing and tech topics',            icon: 'algebra' },
+  { slug: 'date-time',   title: 'Date & Time', desc: 'Schedules and durations',              icon: 'time-date' },
+  { slug: 'home-diy',    title: 'Home & DIY',  desc: 'Household projects and DIY',           icon: 'business' },
+  { slug: 'other',       title: 'Other',       desc: 'Everyday & misc calculators',          icon: 'statistics' }
+];
+---
+<BaseLayout title="Smart & Fast Calculators" description="Calculate anything quickly and easily with our collection of online calculators.">
+  <section class="container mx-auto max-w-5xl px-4 pt-10">
+    <h1 class="text-4xl sm:text-5xl font-extrabold leading-tight" style="color: var(--ink)">
+      Smart &amp; Fast<br />Calculators
+    </h1>
+    <p class="mt-3" style="color: var(--muted)">
+      Calculate anything quickly and easily with our collection of online calculators.
+    </p>
+  </section>
+
+  <section class="container mx-auto max-w-5xl px-4 py-8">
+    <h2 class="sr-only">Categories</h2>
+    <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      {CATEGORIES.map((cat) => (
+        <li>
+          <a href={`/categories/${cat.slug}/`}
+             class="group block rounded-xl border border-slate-200/80 dark:border-slate-700 bg-white dark:bg-slate-800 p-4 shadow-sm hover:shadow-md transition-shadow"
+             aria-label={`${cat.title} calculators`}>
+            <div class="flex items-start gap-3">
+              <img src={`/icons/${cat.icon}.svg`} width="28" height="28" alt="" aria-hidden="true" loading="lazy" />
+              <div>
+                <h3 class="text-lg font-semibold text-slate-900 dark:text-slate-50 group-hover:underline">{cat.title}</h3>
+                <p class="text-sm text-slate-600 dark:text-slate-300">{cat.desc}</p>
+              </div>
+            </div>
+          </a>
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  <div class="container mx-auto max-w-5xl px-4 pb-10">
+    <div class="min-h-[90px] rounded-xl border border-dashed border-slate-300 dark:border-slate-600 grid place-items-center text-slate-500">
+      Ad — 728 × 90 reserved
+    </div>
+  </div>
+</BaseLayout>
