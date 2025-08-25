@@ -1,0 +1,14 @@
+
+---
+import Base from './BaseLayout.astro';
+const { title, description, faqs = [], jsonld = {} } = Astro.props;
+---
+<Base {title} {description} canonical={Astro.url.pathname}>
+  <slot />
+  <script type="application/ld+json">{JSON.stringify(jsonld)}</script>
+  {faqs.length > 0 && (
+    <script type="application/ld+json">
+      {JSON.stringify({"@context":"https://schema.org","@type":"FAQPage","mainEntity":faqs.map(([q,a])=>({"@type":"Question","name":q,"acceptedAnswer":{"@type":"Answer","text":a}}))})}
+    </script>
+  )}
+</Base>
