@@ -1,8 +1,51 @@
 ---
-title: BMI Calculator
-description: Body Mass Index from weight (kg) and height (m).
-schema: {"title": "BMI Calculator", "slug": "bmi-calculator", "intro": "Compute your Body Mass Index using metric units.", "inputs": [{"name": "weight", "label": "Weight (kg)", "step": "any"}, {"name": "height", "label": "Height (m)", "step": "any"}], "expression": "weight / (height^2)"}
-faqs: [["What is BMI?", "BMI stands for Body Mass Index and estimates body fat based on height and weight."]]
+title: "BMI Calculator"
+description: "Body Mass Index from weight (kg) and height (m)."
+faqs: []
 ---
 
-{/* Auto-generated content section (optional) */}
+<!-- Migrated from V035. Original file: bmi-calculator.mdx -->
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "inputs": [
+    {
+      "name": "weight",
+      "label": "Weight (kg)",
+      "type": "number",
+      "placeholder": "Enter weight in kilograms",
+      "step": 0.1,
+      "min": 0
+    },
+    {
+      "name": "height",
+      "label": "Height (m)",
+      "type": "number",
+      "placeholder": "Enter height in meters",
+      "step": 0.01,
+      "min": 0
+    }
+  ],
+  "slug": "bmi-calculator",
+  "title": "BMI Calculator",
+  "locale": "en",
+  "expression": "weight / (height ^ 2)",
+  "intro": "Body Mass Index from weight (kg) and height (m).",
+  "examples": [
+    {
+      "description": "Enter values and click Calculate."
+    }
+  ],
+  "faqs": [
+    {
+      "question": "How do I use the BMI Calculator?",
+      "answer": "Enter the required values and press Calculate to get the result."
+    }
+  ],
+  "disclaimer": "Educational information, not professional advice.",
+  "cluster": "Health"
+};
+
+<Calculator schema={schema} />
+

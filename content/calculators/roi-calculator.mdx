@@ -1,10 +1,10 @@
 ---
-title: "Markup/Margin Calculator"
-description: "Compute selling price from cost and margin."
+title: "ROI Calculator"
+description: "Return on investment (percentage)."
 faqs: []
 ---
 
-<!-- Migrated from V035. Original file: markup-margin-calculator.mdx -->
+<!-- Migrated from V035. Original file: roi-calculator.mdx -->
 
 import Calculator from '../../components/Calculator.astro';
 
@@ -20,20 +20,20 @@ export const schema = {
       "units": "$"
     },
     {
-      "name": "margin",
-      "label": "Margin (%)",
+      "name": "gain",
+      "label": "Gain/Return",
       "type": "number",
-      "placeholder": "Enter margin %",
+      "placeholder": "Enter gain or return",
       "step": 0.01,
       "min": 0,
-      "max": 99.999
+      "units": "$"
     }
   ],
-  "slug": "markup-margin-calculator",
-  "title": "Markup/Margin Calculator",
+  "slug": "roi-calculator",
+  "title": "ROI Calculator",
   "locale": "en",
-  "expression": "cost / (1 - (margin / 100))",
-  "intro": "Compute selling price from cost and margin.",
+  "expression": "((gain - cost) / cost) * 100",
+  "intro": "Return on investment (percentage).",
   "examples": [
     {
       "description": "Enter values and click Calculate."
@@ -41,7 +41,7 @@ export const schema = {
   ],
   "faqs": [
     {
-      "question": "How do I use the Markup/Margin Calculator?",
+      "question": "How do I use the ROI Calculator?",
       "answer": "Enter the required values and press Calculate to get the result."
     }
   ],

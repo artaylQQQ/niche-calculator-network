@@ -1,8 +1,55 @@
 ---
-title: Rule of Three Calculator
-description: Solve proportions using the rule of three (If a is to b as c is to x…).
-schema: {"title": "Rule of Three Calculator", "slug": "rule-of-three-calculator", "intro": "Solve proportions of the form a:b = c:x.", "inputs": [{"name": "a", "label": "A", "step": "any"}, {"name": "b", "label": "B", "step": "any"}, {"name": "c", "label": "C", "step": "any"}], "expression": "(b * c) / a"}
-faqs: [["How does it work?", "We compute x so that a/b = c/x, hence x = (b \u00d7 c) / a."]]
+title: "Rule of Three Calculator"
+description: "Solve proportions using the rule of three."
+faqs: []
 ---
 
-{/* Auto-generated content section (optional) */}
+<!-- Migrated from V035. Original file: rule-of-three-calculator.mdx -->
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "inputs": [
+    {
+      "name": "a",
+      "label": "A",
+      "type": "number",
+      "placeholder": "First value",
+      "step": 0.01
+    },
+    {
+      "name": "b",
+      "label": "B",
+      "type": "number",
+      "placeholder": "Second value",
+      "step": 0.01
+    },
+    {
+      "name": "c",
+      "label": "C",
+      "type": "number",
+      "placeholder": "Third value",
+      "step": 0.01
+    }
+  ],
+  "slug": "rule-of-three-calculator",
+  "title": "Rule of Three Calculator",
+  "locale": "en",
+  "expression": "b * c / a",
+  "intro": "Solve proportions using the rule of three (If a is to b as c is to x…).",
+  "examples": [
+    {
+      "description": "If 2 is to 4 as 3 is to x, then x = 4 * 3 / 2 = 6."
+    }
+  ],
+  "faqs": [
+    {
+      "question": "What is the rule of three?",
+      "answer": "The rule of three solves proportions. If a is to b as c is to x, then x = b × c / a."
+    }
+  ],
+  "disclaimer": "Educational information, not professional advice.",
+  "cluster": "Math"
+};
+
+<Calculator schema={schema} />

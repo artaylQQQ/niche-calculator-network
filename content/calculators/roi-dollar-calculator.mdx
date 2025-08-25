@@ -1,0 +1,49 @@
+---
+title: "ROI Dollar Amount Calculator"
+description: "ROI in dollars."
+faqs: []
+---
+
+<!-- Migrated from V035. Original file: roi-dollar-calculator.mdx -->
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "inputs": [
+    {
+      "name": "investment",
+      "label": "Investment",
+      "type": "number",
+      "placeholder": "Enter Investment",
+      "step": "any"
+    },
+    {
+      "name": "roiPercent",
+      "label": "ROI (%)",
+      "type": "number",
+      "placeholder": "Enter ROI (%)",
+      "step": "any"
+    }
+  ],
+  "slug": "roi-dollar-calculator",
+  "title": "ROI Dollar Amount Calculator",
+  "locale": "en",
+  "expression": "investment * roiPercent / 100",
+  "intro": "ROI in dollars.",
+  "examples": [
+    {
+      "description": "Enter values and click Calculate."
+    }
+  ],
+  "faqs": [
+    {
+      "question": "How do I use the ROI Dollar Amount Calculator?",
+      "answer": "Enter the required values and press Calculate to get the result."
+    }
+  ],
+  "disclaimer": "Educational information, not professional advice.",
+  "cluster": "Finance"
+};
+
+<Calculator schema={schema} />
+

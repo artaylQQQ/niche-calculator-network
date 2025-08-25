@@ -10,7 +10,7 @@ for (const [p, loader] of Object.entries(modules)) {
 }
 if (!mod) { throw new Error('Calculator not found: ' + slug); }
 const front = mod.frontmatter || {};
-const schema = front.schema || {};
+const schema = front.schema || (mod.schema ?? {});
 const faqs = front.faqs || [];
 const jsonld = {
   "@context":"https://schema.org","@type":"Calculator",
@@ -20,7 +20,6 @@ const jsonld = {
   "publisher":{"@type":"Organization","name":"CalcSimpler","url":"https://www.calcsimpler.com"}
 };
 ---
-<Layout title={`${front.title} — CalcSimpler`} description={front.description || front.intro} {faqs} {jsonld}>
-  <Calc schema={schema} />
-  {mod.default ? <mod.default /> : null}
+<Layout {title} {description} {faqs} {jsonld}>
+  {Object.keys(schema).length ? <Calc schema={schema} /> : (mod.default ? <mod.default /> : null)}
 </Layout>

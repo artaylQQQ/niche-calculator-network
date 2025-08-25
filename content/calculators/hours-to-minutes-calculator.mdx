@@ -1,0 +1,42 @@
+---
+title: "Hours to Minutes Converter"
+description: "Convert hours to minutes."
+faqs: []
+---
+
+<!-- Migrated from V035. Original file: hours-to-minutes-calculator.mdx -->
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "inputs": [
+    {
+      "name": "hours",
+      "label": "Hours",
+      "type": "number",
+      "placeholder": "Enter Hours",
+      "step": "any"
+    }
+  ],
+  "slug": "hours-to-minutes-calculator",
+  "title": "Hours to Minutes Converter",
+  "locale": "en",
+  "expression": "hours * 60",
+  "intro": "Convert hours to minutes.",
+  "examples": [
+    {
+      "description": "Enter values and click Calculate."
+    }
+  ],
+  "faqs": [
+    {
+      "question": "How do I use the Hours to Minutes Converter?",
+      "answer": "Enter the required values and press Calculate to get the result."
+    }
+  ],
+  "disclaimer": "Educational information, not professional advice.",
+  "cluster": "Date & Time"
+};
+
+<Calculator schema={schema} />
+
