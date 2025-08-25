@@ -12,20 +12,25 @@
 }
 
 /*
-  Always use the light palette.  The original stylesheet defined a dark
-  variant triggered by the user’s OS preference (`prefers-color-scheme`).
-  For a more consistent, cleaner look we override the dark palette with
-  the same values as the light palette.  This effectively disables
-  automatic dark mode, ensuring that the background stays light even
-  when the system is in dark mode.
+  Define a dark palette for users who prefer dark mode via the
+  `prefers‑color‑scheme` media query.  The dark colours mirror the
+  semantic roles used in light mode (background, surface, text and
+  muted text) but with darker hues for a comfortable low‑light
+  experience.  The accent colour remains the same across both
+  palettes to maintain brand consistency.
 */
-@media(prefers-color-scheme:dark){
-  :root{
-    --bg:#ffffff;
-    --surface:#f7f7f8;
-    --text:#0b0b0c;
-    --muted:#6b7280;
-    --accent:#2C74B3;
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Dark background for page body */
+    --bg: #0D1A26;
+    /* Darker surface for cards and containers */
+    --surface: #152233;
+    /* Primary text becomes light for readability */
+    --text: #F1F5F9;
+    /* Muted text uses a mid‑tone grey */
+    --muted: #94A3B8;
+    /* Accent colour remains the same */
+    --accent: #2C74B3;
   }
 }
 
