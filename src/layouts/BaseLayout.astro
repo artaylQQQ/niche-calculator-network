@@ -1,5 +1,11 @@
 ---
 import "../styles/tailwind.css";
+// Import theme and token styles directly.  By bundling these CSS files
+// through Astro we avoid relying on external network requests for
+// `/styles/theme.css` and `/styles/tokens.css`.  This prevents dark
+// backgrounds or missing styling if the static assets fail to load.
+import "../styles/theme.css";
+import "../styles/tokens.css";
 const { title = 'CalcSimpler', description = 'Smart & Fast Calculators', canonical } = Astro.props;
 const site = Astro.site?.toString() || (import.meta.env.SITE_URL ?? 'https://example.com');
 const href = canonical ?? new URL(Astro.url.pathname, site).toString();
@@ -23,8 +29,7 @@ const cfToken = import.meta.env.VITE_CF_ANALYTICS_TOKEN;
       have seen previously.
     -->
     <meta name="theme-color" content="#FBF7EF">
-    <link rel="stylesheet" href="/styles/theme.css">
-    <link rel="stylesheet" href="/styles/tokens.css" />
+    <!-- Stylesheets are bundled via the imports at the top of this file -->
     {adsClient && (
       <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={adsClient}" crossorigin="anonymous"></script>
     )}
