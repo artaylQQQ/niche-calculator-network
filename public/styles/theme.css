@@ -1,9 +1,28 @@
 :root{
-  --bg:#FBF7EF; --surface:#FFFFFF; --ink:#0F172A; --muted:#475569;
-  --primary:#0E2A47; --primary-ink:#FFFFFF;
-  --card:#FFFFFF; --border:#E5E7EB;
+  /*
+    Global colour tokens.  The default palette in the original template
+    used a very dark primary colour (#0E2A47) for the header and other
+    accents.  This resulted in a high‑contrast, almost navy look which
+    clashed with the otherwise light UI.  To achieve a brighter and
+    friendlier appearance we select a medium blue for the primary hue
+    and leave all other colours unchanged.  The background remains
+    off‑white for warmth and readability.
+
+    Primary: #2C74B3 – a mid‑tone blue inspired by the web‑safe palette.
+    Primary ink: white text for sufficient contrast on the header.
+  */
+  --bg:#FBF7EF;
+  --surface:#FFFFFF;
+  --ink:#0F172A;
+  --muted:#475569;
+  --primary:#2C74B3;
+  --primary-ink:#FFFFFF;
+  --card:#FFFFFF;
+  --border:#E5E7EB;
   --shadow:0 1px 2px rgba(15,23,42,.06), 0 8px 24px rgba(15,23,42,.04);
-  --radius:14px; --space:14px; --maxw:1120px;
+  --radius:14px;
+  --space:14px;
+  --maxw:1120px;
 }
 html,body{background:var(--bg);color:var(--ink);
   font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif}

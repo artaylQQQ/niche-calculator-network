@@ -3,17 +3,22 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 const modules = import.meta.glob("../pages/calculators/*.mdx", { eager: true });
 const items = Object.values(modules).map((m) => ({ url: m.url, fm: m.frontmatter || {} }));
 ---
-<BaseLayout title="All Calculators">
-  <main class="container mx-auto px-4 py-10">
-    <h1 class="text-3xl font-bold">All Calculators</h1>
-    <div class="grid gap-4 mt-6 sm:grid-cols-2 lg:grid-cols-3">
+<BaseLayout title="All Calculators" description="Browse every calculator available on the site.">
+  <section class="hero">
+    <h1>All Calculators</h1>
+    <p>Explore every calculator available on the site.</p>
+  </section>
+  <section class="section" aria-labelledby="list-all">
+    <h2 id="list-all" class="sr-only">All calculators list</h2>
+    <ul class="grid">
       {items.map((it) => (
-        <a href={it.url} class="block rounded-xl border border-slate-200 p-4 hover:border-blue-500 hover:shadow-sm transition">
-          <div class="text-sm text-slate-500">{it.fm.cluster || 'Misc'}</div>
-          <div class="text-lg font-semibold text-slate-900">{it.fm.title || it.url}</div>
-          <div class="text-slate-600">{it.fm.description || ''}</div>
-        </a>
+        <li>
+          <a class="card" href={it.url}>
+            <h3>{it.fm.title || it.url.replace('/calculators/','').replace('.mdx','')}</h3>
+            <p>{it.fm.intro || it.fm.description || ''}</p>
+          </a>
+        </li>
       ))}
-    </div>
-  </main>
+    </ul>
+  </section>
 </BaseLayout>
