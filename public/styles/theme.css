@@ -85,6 +85,10 @@ html,body{background:var(--bg);color:var(--ink);
   list-style: none;
   margin: 0;
   padding: 0;
+  /* Ensure the grid stretches to fill its container.  Without an explicit
+     width the grid may collapse to the minimum content size, causing
+     items to overlap and only the left border radius to be visible. */
+  width: 100%;
   display: grid;
   gap: 16px;
   grid-template-columns: repeat(1, minmax(0, 1fr));

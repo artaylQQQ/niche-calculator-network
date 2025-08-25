@@ -8,24 +8,25 @@ const list = items.filter(i => (i.fm.cluster || "").toLowerCase() === "math");
 ---
 <BaseLayout title={title} description={`Browse ${slug} calculators`}>
   <section class="hero container mx-auto max-w-5xl px-4">
-    <h1>{title}</h1>
-    <p>Explore calculators in this category.</p>
+    <h1 style="color: var(--ink)">{title}</h1>
+    <p style="color: var(--muted)">Explore calculators in this category.</p>
   </section>
   {list.length === 0 ? (
     <p class="section"><em>No calculators available in this category.</em></p>
   ) : (
     <section class="section container mx-auto max-w-5xl px-4" aria-labelledby={`list-${slug}`}> 
       <h2 id={`list-${slug}`} class="sr-only">Calculators list</h2>
-      <ul class="grid">
+      <!-- Use a div container instead of ul/li to prevent collapsed cards -->
+      <div class="grid">
         {list.map((it) => (
-          <li>
+          <div>
             <a class="card" href={it.url}>
               <h3>{it.fm.title || it.url.replace('/calculators/','').replace('.mdx','')}</h3>
               <p>{it.fm.intro || it.fm.description || ''}</p>
             </a>
-          </li>
+          </div>
         ))}
-      </ul>
+      </div>
     </section>
   )}
 </BaseLayout>
