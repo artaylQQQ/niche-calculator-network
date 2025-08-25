@@ -1,7 +1,9 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-// Science calculators have been merged into the miscellaneous category.  Use
-// the `other` slug to display them.
+// This page lists calculators that do not fit into another major category.
+// The slug is `other` and it reads all available MDX files, filtering
+// calculators whose `cluster` (category) is lower‑cased to `other`.  If no
+// calculators are available a placeholder message is shown.
 const slug = "other";
 const title = "Other Calculators";
 const modules = import.meta.glob("../pages/calculators/*.mdx", { eager: true });

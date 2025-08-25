@@ -44,7 +44,10 @@ const cfToken = import.meta.env.VITE_CF_ANALYTICS_TOKEN;
           <a href="/technology">Technology</a>
           <a href="/date-time">Date &amp; Time</a>
           <a href="/home-diy">Home &amp; DIY</a>
-          <a href="/everyday">Other</a>
+          {/* Route for miscellaneous calculators.  Historically this page was
+              called `everyday`, but has been renamed to `other` to match the
+              unified category list. */}
+          <a href="/other">Other</a>
           <a href="/all">All</a>
         </nav>
       </div>

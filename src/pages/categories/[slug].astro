@@ -6,16 +6,20 @@ import { fileURLToPath } from 'node:url';
 
 /** Genera rutas y datos sin variables globales */
 export async function getStaticPaths() {
-  // 1) Mapa de categorías (definido dentro de la función)
+  // 1) Define the eight supported category slugs and a list of aliases.  The
+  // generator and pages normalise arbitrary cluster names using these
+  // mappings.  Any calculator whose cluster matches (case insensitive)
+  // one of the listed aliases will be grouped into the corresponding
+  // category page.
   const CATEGORIES = [
-    { slug: 'finance',     map: ['Finance','Finance & Loans','Taxes','Business','Business & Commerce'] },
-    { slug: 'health',      map: ['Health','Health & Fitness'] },
-    { slug: 'conversions', map: ['Conversions','Unit Conversions'] },
-    { slug: 'geometry',    map: ['Geometry','Areas & Volumes'] },
-    { slug: 'algebra',     map: ['Algebra','Percentages & Ratios'] },
-    { slug: 'time-date',   map: ['Time & Date'] },
-    { slug: 'statistics',  map: ['Statistics'] },
-    { slug: 'business',    map: ['Business','Business & Commerce','Pricing'] }
+    { slug: 'finance',     map: ['finance','finance & loans','taxes','business','business & commerce','percentages & ratios'] },
+    { slug: 'health',      map: ['health','health & fitness','bmi'] },
+    { slug: 'conversions', map: ['conversions','unit conversions','unit and currency conversions'] },
+    { slug: 'math',        map: ['math','geometry','geometry & math','areas & volumes','algebra','percentages & ratios','statistics','averages and probabilities'] },
+    { slug: 'technology',  map: ['technology','tech','computing','technology & computing'] },
+    { slug: 'date-time',   map: ['date & time','time & date','time-date','durations and schedules'] },
+    { slug: 'home-diy',    map: ['home & diy','home and diy','diy','household'] },
+    { slug: 'other',       map: ['other','misc','miscellaneous','everyday','everyday & misc','general'] }
   ];
 
   // 2) Lee calculators.json en build

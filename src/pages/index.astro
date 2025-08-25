@@ -1,15 +1,24 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 
+/*
+ * The home page lists eight high‑level calculator categories.  To avoid
+ * confusion between the navigation and the card grid, we normalise the list
+ * here.  Each item defines a `slug` (used in the URL), a human‑friendly
+ * `title`, a short `desc` and an `icon` file stored under `/public/icons/`.
+ * For some topics we reuse the closest existing icon (e.g. `geometry.svg` for
+ * Math, `algebra.svg` for Technology, `business.svg` for Home & DIY and
+ * `statistics.svg` for Other).
+ */
 const CATEGORIES = [
-  { slug: 'finance',     title: 'Finance',       desc: 'Loans, interest, ROI, taxes',          icon: 'finance' },
-  { slug: 'health',      title: 'Health',        desc: 'BMI and body metrics',                 icon: 'health' },
-  { slug: 'conversions', title: 'Conversions',   desc: 'Units, currency, temperature',         icon: 'conversions' },
-  { slug: 'geometry',    title: 'Geometry',      desc: 'Areas, perimeters, volumes',           icon: 'geometry' },
-  { slug: 'algebra',     title: 'Algebra',       desc: 'Proportions, rule of three',           icon: 'algebra' },
-  { slug: 'time-date',   title: 'Time & Date',   desc: 'Durations and schedules',              icon: 'time-date' },
-  { slug: 'statistics',  title: 'Statistics',    desc: 'Averages and probabilities',           icon: 'statistics' },
-  { slug: 'business',    title: 'Business',      desc: 'Pricing, margin, markup',              icon: 'business' }
+  { slug: 'finance',     title: 'Finance',     desc: 'Loans, interest, ROI, taxes',          icon: 'finance' },
+  { slug: 'health',      title: 'Health',      desc: 'BMI and body metrics',                 icon: 'health' },
+  { slug: 'conversions', title: 'Conversions', desc: 'Unit and currency conversions',         icon: 'conversions' },
+  { slug: 'math',        title: 'Math',        desc: 'Geometry, algebra and statistics',      icon: 'geometry' },
+  { slug: 'technology',  title: 'Technology',  desc: 'Computing and tech topics',            icon: 'algebra' },
+  { slug: 'date-time',   title: 'Date & Time', desc: 'Schedules and durations',              icon: 'time-date' },
+  { slug: 'home-diy',    title: 'Home & DIY',  desc: 'Household projects and DIY',           icon: 'business' },
+  { slug: 'other',       title: 'Other',       desc: 'Everyday & misc calculators',          icon: 'statistics' }
 ];
 ---
 <BaseLayout title="Smart & Fast Calculators" description="Calculate anything quickly and easily with our collection of online calculators.">
