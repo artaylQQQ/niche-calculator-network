@@ -16,8 +16,8 @@ const list = items.filter(i => (i.fm.cluster || "").toLowerCase() === "technolog
   ) : (
     <section class="section container mx-auto max-w-5xl px-4" aria-labelledby={`list-${slug}`}> 
       <h2 id={`list-${slug}`} class="sr-only">Calculators list</h2>
-      <!-- Use a div container instead of ul/li to prevent collapsed cards -->
-      <div class="grid">
+      <!-- Use a responsive Tailwind grid for consistent card sizes across breakpoints -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {list.map((it) => (
           <div>
             <a class="card" href={it.url}>

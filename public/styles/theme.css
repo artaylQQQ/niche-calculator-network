@@ -77,34 +77,64 @@ html,body{background:var(--bg);color:var(--ink);
 .hero{text-align:center;padding:24px 0 12px}
 .hero h1{font-size:clamp(32px,5vw,48px);line-height:1.05;letter-spacing:-.02em}
 .hero p{margin-top:8px;color:var(--muted);max-width:56ch;margin-inline:auto}
-.grid{
-  /* Lay out list items in a responsive grid and remove default list
-     markers.  Without resetting list-style the browser may render a
-     curly brace or bullet next to each item when the element is a
-     <ul>, which appears messy on category pages. */
+/* A custom grid class used on the dynamic category pages (e.g.
+   /categories/[slug]).  It defines 1–3 columns at increasing
+   breakpoints and removes list markers.  We avoid the generic `.grid`
+   class name to prevent conflicts with Tailwind’s own `grid` utility. */
+.cards-grid {
   list-style: none;
   margin: 0;
   padding: 0;
-  /* Ensure the grid stretches to fill its container.  Without an explicit
-     width the grid may collapse to the minimum content size, causing
-     items to overlap and only the left border radius to be visible. */
   width: 100%;
   display: grid;
   gap: 16px;
   grid-template-columns: repeat(1, minmax(0, 1fr));
 }
-@media(min-width:640px){.grid{grid-template-columns:repeat(2,1fr)}}
-@media(min-width:1024px){.grid{grid-template-columns:repeat(3,1fr)}}
+@media (min-width: 640px) {
+  .cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 1024px) {
+  .cards-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
 
 /* Reset list styling on grid lists so category pages do not show
    unwanted bullets or padding.  Each `li` is rendered as a card. */
 ul.grid{list-style:none;padding:0;margin:0}
 ul.grid li{list-style:none}
-.card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:16px;box-shadow:var(--shadow);
-  transition:transform .12s ease, box-shadow .12s ease}
+.card{
+  /* Make cards fill the available width of their grid cell and stack
+     text vertically.  Using display:block ensures that anchor tags
+     expand to the full width of their parent container, preventing
+     content from being clipped when long titles wrap. */
+  display: block;
+  width: 100%;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+  box-shadow: var(--shadow);
+  transition: transform .12s ease, box-shadow .12s ease;
+}
 .card:hover{transform:translateY(-1px);box-shadow:0 2px 4px rgba(15,23,42,.08),0 10px 28px rgba(15,23,42,.06)}
-.card h3{margin:2px 0 6px;font-size:18px}
-.card p{color:var(--muted);font-size:14px}
+.card h3{
+  margin: 2px 0 6px;
+  font-size: 18px;
+  /* Allow long calculator names to wrap onto multiple lines without
+     overflowing the card. */
+  word-wrap: break-word;
+  white-space: normal;
+}
+.card p{
+  color: var(--muted);
+  font-size: 14px;
+  /* Ensure descriptions wrap naturally within the card. */
+  word-wrap: break-word;
+  white-space: normal;
+}
 .ad-slot{border:1px dashed var(--border);background:#F8FAFC;border-radius:var(--radius);
   display:flex;align-items:center;justify-content:center;color:#64748B;font-size:14px}
 .section{margin-block:24px}
