@@ -1,0 +1,14 @@
+{
+  "@context": "https://schema.org",
+  "@type": ["WebApplication", "SoftwareApplication"],
+  "name": "{title}",
+  "description": "{description}",
+  "applicationCategory": "Calculator",
+  "operatingSystem": "All",
+  "url": "{url}",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
+}

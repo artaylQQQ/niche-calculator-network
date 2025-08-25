@@ -11,11 +11,14 @@ const intro = schema?.intro ?? '';
 const expression = schema?.expression ?? schema?.formula ?? schema?.formula_expression ?? '';
 ---
 
-<section class="calc" data-calculator data-slug={slug} data-exp={expression} aria-labelledby={`h-${slug}`}>
+<section class="calc" data-calculator data-slug={slug} data-exp={expression} data-unit={schema?.units?.output ?? ''} aria-labelledby={`h-${slug}`}> 
   <h1 id={`h-${slug}`}>{title}</h1>
   {intro && <p class="muted">{intro}</p>}
 
-  <form data-role="form" onsubmit="compute(); return false">
+  <!-- Use a native form without onsubmit; calculation is handled via a
+       dedicated click handler on the Calculate button. novalidate avoids
+       default browser validation pop‑ups. -->
+  <form data-role="form" novalidate>
     {inputs.map((i) => (
       <div class="field">
         <label for={`in-${slug}-${i.name}`}>{i.label ?? i.name}</label>
@@ -29,6 +32,8 @@ const expression = schema?.expression ?? schema?.formula ?? schema?.formula_expr
           inputmode="decimal"
           placeholder={i.placeholder ?? ''}
           aria-describedby={`hint-${slug}-${i.name}`}
+          required
+          aria-invalid="false"
         />
         <div id={`hint-${slug}-${i.name}`} class="hint">{i.hint ? i.hint : (i.units ? i.units : '')}</div>
       </div>
@@ -36,7 +41,7 @@ const expression = schema?.expression ?? schema?.formula ?? schema?.formula_expr
     <button type="button" data-action="calc" class="btn">Calculate</button>
   </form>
 
-  <div class="result" data-role="result" aria-live="polite"></div>
+  <div class="result" data-role="result" aria-live="polite" role="status"></div>
 
   <script type="application/json" data-schema>{JSON.stringify(schema)}</script>
 </section>
@@ -129,7 +134,7 @@ const expression = schema?.expression ?? schema?.formula ?? schema?.formula_expr
     }
 
     // Compute function handles validation, expression evaluation and fallbacks.
-    window.compute = function(){
+    function compute(){
       const vars = readInputs();
       // validate all inputs are finite numbers
       for (const k in vars) {

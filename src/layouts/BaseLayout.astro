@@ -37,15 +37,20 @@ const cfToken = import.meta.env.VITE_CF_ANALYTICS_TOKEN;
       <div class="header-inner">
         <a href="/" aria-label="CalcSimpler" class="logo">CalcSimpler.com</a>
         <nav class="nav" aria-label="Primary">
-          <a href="/finance">Finance</a>
-          <a href="/health">Health</a>
-          <a href="/math">Math</a>
-          <a href="/conversions">Conversions</a>
-          <a href="/technology">Technology</a>
-          <a href="/date-time">Date &amp; Time</a>
-          <a href="/home-diy">Home &amp; DIY</a>
-          <a href="/everyday">Other</a>
+          <!-- Updated navigation to reflect the eight core categories used on CalcSimpler.
+               Each link points to a dynamic category page under /categories/.  The
+               final links provide quick access to the full list of calculators and
+               the categories index page. -->
+          <a href="/categories/finance/">Finance</a>
+          <a href="/categories/health/">Health</a>
+          <a href="/categories/conversions/">Conversions</a>
+          <a href="/categories/geometry/">Geometry</a>
+          <a href="/categories/algebra/">Algebra</a>
+          <a href="/categories/time-date/">Time&nbsp;&amp;&nbsp;Date</a>
+          <a href="/categories/statistics/">Statistics</a>
+          <a href="/categories/business/">Business</a>
           <a href="/all">All</a>
+          <a href="/categories/">Categories</a>
         </nav>
       </div>
     </header>
