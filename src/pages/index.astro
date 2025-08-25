@@ -1,0 +1,48 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const CATEGORIES = [
+  { slug: 'finance',     title: 'Finance',       desc: 'Loans, interest, ROI, taxes',          icon: 'finance' },
+  { slug: 'health',      title: 'Health',        desc: 'BMI and body metrics',                 icon: 'health' },
+  { slug: 'conversions', title: 'Conversions',   desc: 'Units, currency, temperature',         icon: 'conversions' },
+  { slug: 'geometry',    title: 'Geometry',      desc: 'Areas, perimeters, volumes',           icon: 'geometry' },
+  { slug: 'algebra',     title: 'Algebra',       desc: 'Proportions, rule of three',           icon: 'algebra' },
+  { slug: 'time-date',   title: 'Time & Date',   desc: 'Durations and schedules',              icon: 'time-date' },
+  { slug: 'statistics',  title: 'Statistics',    desc: 'Averages and probabilities',           icon: 'statistics' },
+  { slug: 'business',    title: 'Business',      desc: 'Pricing, margin, markup',              icon: 'business' }
+];
+---
+<BaseLayout title="Smart & Fast Calculators" description="Calculate anything quickly and easily with our collection of online calculators.">
+  <!-- Hero section: reuse the same classes defined in our theme.css.  Using
+       the `.hero` class ensures the heading and paragraph are aligned and
+       coloured consistently across the site.  Removing Tailwind’s
+       dark/light utility classes prevents the page from switching to a
+       dark theme unexpectedly. -->
+  <section class="hero">
+    <h1>Smart &amp; Fast<br/>Calculators</h1>
+    <p>Calculate anything quickly and easily with our collection of online calculators.</p>
+  </section>
+
+  <!-- Categories grid.  We use the `.section` and `.grid` classes defined
+       in `public/styles/theme.css` for consistent spacing and responsive
+       columns.  Each category card is styled via the `.card` class. -->
+  <section class="section" aria-labelledby="home-categories">
+    <h2 id="home-categories" class="sr-only">Categories</h2>
+    <ul class="grid">
+      {CATEGORIES.map((cat) => (
+        <li>
+          <a href={`/categories/${cat.slug}/`} class="card" aria-label={`${cat.title} calculators`}>
+            <h3>{cat.title}</h3>
+            <p>{cat.desc}</p>
+          </a>
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  <!-- Reserve a slot for advertisements.  The `.ad-slot` class draws a dashed
+       outline and centres the placeholder text. -->
+  <div class="container">
+    <div class="ad-slot">Ad — 728 × 90 reserved</div>
+  </div>
+</BaseLayout>

@@ -1,0 +1,48 @@
+---
+layout: ../../layouts/BaseLayout.astro
+title: "Weight to BMI Projection"
+description: "Quick BMI projection."
+updated: "2025-08-21"
+cluster: "Health"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "inputs": [
+    {
+      "name": "height",
+      "label": "Height (cm)",
+      "type": "number",
+      "placeholder": "Enter Height (cm)",
+      "step": "any"
+    },
+    {
+      "name": "weight",
+      "label": "Weight (kg)",
+      "type": "number",
+      "placeholder": "Enter Weight (kg)",
+      "step": "any"
+    }
+  ],
+  "slug": "weight-to-bmi-projection-calculator",
+  "title": "Weight to BMI Projection",
+  "locale": "en",
+  "expression": "weight / ((height / 100) ^ 2)",
+  "intro": "Quick BMI projection.",
+  "examples": [
+    {
+      "description": "Enter values and click Calculate."
+    }
+  ],
+  "faqs": [
+    {
+      "question": "How do I use the Weight to BMI Projection?",
+      "answer": "Enter the required values and press Calculate to get the result."
+    }
+  ],
+  "disclaimer": "Educational information, not professional advice.",
+  "cluster": "Health"
+};
+
+<Calculator schema={schema} />

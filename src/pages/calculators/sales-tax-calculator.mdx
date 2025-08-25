@@ -1,0 +1,48 @@
+---
+layout: ../../layouts/BaseLayout.astro
+title: "Sales Tax Calculator"
+description: "Final price after adding sales tax."
+updated: "2025-08-21"
+cluster: "Finance"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "inputs": [
+    {
+      "name": "price",
+      "label": "Price",
+      "type": "number",
+      "placeholder": "Enter Price",
+      "step": "any"
+    },
+    {
+      "name": "tax",
+      "label": "Tax (%)",
+      "type": "number",
+      "placeholder": "Enter Tax (%)",
+      "step": "any"
+    }
+  ],
+  "slug": "sales-tax-calculator",
+  "title": "Sales Tax Calculator",
+  "locale": "en",
+  "expression": "price * (1 + tax / 100)",
+  "intro": "Final price after adding sales tax.",
+  "examples": [
+    {
+      "description": "Enter values and click Calculate."
+    }
+  ],
+  "faqs": [
+    {
+      "question": "How do I use the Sales Tax Calculator?",
+      "answer": "Enter the required values and press Calculate to get the result."
+    }
+  ],
+  "disclaimer": "Educational information, not professional advice.",
+  "cluster": "Finance"
+};
+
+<Calculator schema={schema} />
