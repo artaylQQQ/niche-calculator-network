@@ -1,131 +1,117 @@
-// Safe generator: reads data/calculators.json and creates MDX files in src/pages/calculators/
+// scripts/generate_calcs.js — V036
+// Reads data/source_calculators.json (or data/calculators.json legacy) and
+// generates MDX files under src/pages/calculators/, plus writes JSON-LD under public/schema/.
 import fs from 'node:fs';
 import path from 'node:path';
 
 const ROOT = process.cwd();
-const SRC = path.join(ROOT, 'src', 'pages', 'calculators');
-const DATA = path.join(ROOT, 'data', 'calculators.json');
+const DATA1 = path.join(ROOT, 'data', 'source_calculators.json');
+const DATA_LEGACY = path.join(ROOT, 'data', 'calculators.json');
+const OUT_MDX = path.join(ROOT, 'src', 'pages', 'calculators');
+const OUT_SCHEMA = path.join(ROOT, 'public', 'schema');
 const LOGP = path.join(ROOT, 'meta', 'publish_log.json');
 
-const MAX = Number(process.env.MAX_PER_DAY || process.env.MAX_PER_DAY_GITHUB || 50);
-const TODAY = new Date().toISOString().slice(0,10);
+const MAX = Math.max(20, Math.min(100, Number(process.env.MAX_PER_DAY || 40)));
+const today = new Date().toISOString().slice(0,10);
 
-// Ensure dirs
-fs.mkdirSync(SRC, { recursive: true });
-fs.mkdirSync(path.dirname(LOGP), { recursive: true });
-
-function readJSON(p, fallback) {
-  try { return JSON.parse(fs.readFileSync(p, 'utf-8')); }
-  catch { return fallback; }
+function readJSON(p, fallback){
+  try { return JSON.parse(fs.readFileSync(p, 'utf-8')); } catch{ return fallback; }
 }
 
-const all = readJSON(DATA, []);
-const log = readJSON(LOGP, []);
-
-// Map various incoming cluster names to one of the top‑level categories used on the site.
-// Keys should be lower‑cased to simplify lookups. See README for category definitions.
-const CATEGORY_MAP = {
-  'finance & loans': 'Finance',
-  'percentages & ratios': 'Finance',
-  'finance': 'Finance',
-  'health & fitness': 'Health',
-  'health': 'Health',
-  'geometry & math': 'Math',
-  'math': 'Math',
-  'conversions & units': 'Conversions',
-  'conversions': 'Conversions',
-  'misc': 'Other',
-  'other': 'Other',
-  'everyday': 'Other',
-  'technology': 'Technology',
-  'date & time': 'Date & Time',
-  'home & diy': 'Home & DIY',
-  'education': 'Other'
-};
-
-// pick not yet published
-const published = new Set(log.map(r => r.slug));
-const backlog = all.filter(x => !published.has(x.slug));
-
-function sanitizeExpr(expr) {
-  // Preserve original exponent operator '^' used by our safe evaluator. If the input uses '**', convert it back.
-  if (typeof expr !== 'string') return '';
-  return expr.replace(/\*\*/g, '^');
+const source = readJSON(DATA1, null) || readJSON(DATA_LEGACY, []);
+if (!source || !Array.isArray(source)) {
+  console.warn('No source calculators found in data/');
+  process.exit(0);
 }
 
-function titleize(slug) {
-  return slug.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+let log = readJSON(LOGP, []);
+const publishedSlugs = new Set(log.map(x => x.slug));
+
+const pending = source.filter(it => !publishedSlugs.has(it.slug));
+if (!pending.length) {
+  console.log('No pending calculators.');
+  process.exit(0);
 }
 
-function mdxFor(calc, related) {
-  // Normalise the calculator's cluster to one of the supported categories. If no mapping is found
-  // the original cluster is preserved or falls back to 'General'.
-  const clusterRaw = (calc.cluster || '').toLowerCase();
-  const clusterNorm = CATEGORY_MAP[clusterRaw] || calc.cluster || 'General';
-  const front = `---
-layout: ../../layouts/BaseLayout.astro
-title: ${calc.title}
-description: ${calc.intro}
-date: ${TODAY}
-updated: ${TODAY}
-cluster: ${clusterNorm}
----
-`;
+fs.mkdirSync(OUT_MDX, { recursive: true });
+fs.mkdirSync(OUT_SCHEMA, { recursive: true });
 
-  const importLine = "import Calculator from '../../components/Calculator.astro';\n";
+let count = 0;
+for (const it of pending) {
+  if (count >= MAX) break;
+  // Basic required fields
+  if (!it.slug || !it.title || !it.expression || !Array.isArray(it.inputs)) continue;
+
+  // Enrich content in English
+  const description = it.description || `Online ${it.title} — fast, accurate and easy to use.`;
+  const intro = it.intro || `Use this ${it.title.toLowerCase()} to get quick, reliable results. Enter your values and click Calculate.`;
+  const examples = it.examples?.length ? it.examples : [
+    `Try with sample values to see how the ${it.title.toLowerCase()} works.`
+  ];
+  const faqs = it.faqs?.length ? it.faqs : [
+    { question: `What is the ${it.title}?`, answer: `It's a simple tool that computes ${it.title.toLowerCase()} instantly.` },
+    { question: 'Is this calculator free?', answer: 'Yes, it is free and requires no sign up.' }
+  ];
+  const metaDescription = it.metaDescription || description;
+
   const schema = {
-    slug: calc.slug,
-    title: calc.title,
-    locale: 'en',
-    inputs: calc.inputs || [],
-    expression: sanitizeExpr(calc.expression || ''),
-    formula_js: '',
-    units: calc.units || {"input":"","output":""},
-    intro: calc.intro || '',
-    examples: calc.examples || [],
-    faqs: calc.faqs || [],
-    disclaimer: calc.disclaimer || 'Educational information, not professional advice.',
-    schema_org: calc.schema_org || 'FAQPage|SoftwareApplication',
-    cluster: clusterNorm,
-    related
+    slug: it.slug,
+    title: it.title,
+    description,
+    intro,
+    expression: it.expression,
+    unit: it.unit || '',
+    category: it.category || it.cluster || 'Other',
+    cluster: it.cluster || it.category || 'Other',
+    inputs: it.inputs,
+    examples,
+    faqs,
+    metaDescription,
+    updated: today
   };
-  const schemaJSON = JSON.stringify(schema, null, 2);
-  const body = `
-export const schema = ${schemaJSON}
 
-# ${calc.title}
+  // Write MDX
+  const mdx = `---
+layout: ../../layouts/CalculatorLayout.astro
+title: "${schema.title}"
+description: "${metaDescription}"
+updated: "${today}"
+cluster: "${schema.cluster}"
+---
 
-${calc.intro || ''}
+import Calculator from '../../components/Calculator.astro';
+export const schema = ${JSON.stringify(schema, null, 2)};
 
 <Calculator schema={schema} />
+`;
+  fs.writeFileSync(path.join(OUT_MDX, `${schema.slug}.mdx`), mdx, 'utf-8');
 
-## FAQ
+  // Write JSON-LD (FAQ & Calculator metadata) to public/schema/{slug}.json
+  const jsonld = [
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": schema.title,
+      "applicationCategory": "Calculator",
+      "description": metaDescription
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": faqs.map(q => ({
+        "@type": "Question",
+        "name": q.question,
+        "acceptedAnswer": { "@type": "Answer", "text": q.answer }
+      }))
+    }
+  ];
+  fs.writeFileSync(path.join(OUT_SCHEMA, `${schema.slug}.json`), JSON.stringify(jsonld, null, 2), 'utf-8');
 
-- _No FAQs yet._
-
-## Related calculators
-` + related.map(r => `- [${titleize(r)}](/calculators/${r}/)`).join('\n') + '\n';
-
-  return front + '\n' + importLine + '\n' + body;
+  log.push({ slug: schema.slug, date: today });
+  count++;
 }
 
-function pickRelated(base) {
-  const sameCluster = all.filter(c => c.slug !== base.slug && c.cluster === base.cluster);
-  const pool = (sameCluster.length >= 6 ? sameCluster : all.filter(c => c.slug !== base.slug));
-  return pool.slice(0,6).map(c => c.slug);
-}
+fs.mkdirSync(path.dirname(LOGP), { recursive: true });
+fs.writeFileSync(LOGP, JSON.stringify(log, null, 2));
 
-const n = Math.max(1, Math.min(100, Number(MAX) || 50));
-const slice = backlog.slice(0, n);
-
-for (const calc of slice) {
-  const related = pickRelated(calc);
-  const mdx = mdxFor(calc, related);
-  const p = path.join(SRC, `${calc.slug}.mdx`);
-  fs.writeFileSync(p, mdx, 'utf-8');
-  log.push({ slug: calc.slug, date: TODAY });
-}
-
-fs.writeFileSync(LOGP, JSON.stringify(log, null, 2), 'utf-8');
-
-console.log(`Published ${slice.length} calculators`);
+console.log(`Generated ${count} calculators on ${today}`);

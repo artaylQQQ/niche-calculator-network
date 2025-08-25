@@ -1,0 +1,23 @@
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Calculator Name",
+    "applicationCategory": "Calculator",
+    "description": "Short meta description of the calculator."
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do I use this calculator?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Enter your values and click Calculate."
+        }
+      }
+    ]
+  }
+]

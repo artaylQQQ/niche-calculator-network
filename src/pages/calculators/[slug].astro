@@ -1,0 +1,12 @@
+---
+import Calculator from '../../components/Calculator.astro';
+import CalculatorLayout from '../../layouts/CalculatorLayout.astro';
+export async function getStaticPaths() {
+  // This dynamic route is provided for future expansion if you move MDX to /content.
+  return { params: [] };
+}
+const { schema, frontmatter } = Astro.props;
+---
+<CalculatorLayout title={frontmatter?.title} description={frontmatter?.description}>
+  <Calculator schema={schema} />
+</CalculatorLayout>
