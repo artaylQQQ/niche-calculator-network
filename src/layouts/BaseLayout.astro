@@ -29,6 +29,10 @@ const cfToken = import.meta.env.VITE_CF_ANALYTICS_TOKEN;
   <meta property="og:title" content={title} />
   <meta property="og:description" content={description} />
   <meta property="og:url" content={href} />
+    <!-- Provide a default Open Graph image.  This uses the site
+         favicon as a simple logo.  Replace the path with a custom
+         preview image if desired. -->
+    <meta property="og:image" content={`${site}/favicon.svg`} />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content={title} />
   <meta name="twitter:description" content={description} />
@@ -62,7 +66,7 @@ const cfToken = import.meta.env.VITE_CF_ANALYTICS_TOKEN;
         <a href="/">Home</a>
         <a href="/categories/">Categories</a>
         <a href="/all">All Calculators</a>
-        <a href="/sitemap-index.xml">Sitemap</a>
+        <a href="/sitemap.xml">Sitemap</a>
         <a href="/privacy">Privacy</a>
         <a href="/disclaimer">Disclaimer</a>
       </div>

@@ -2,24 +2,28 @@ import fs from 'node:fs';
 import path from 'node:path';
 
 /**
- * Daily calculator generator
+ * Advanced calculator generator
  *
- * This script reads definitions from `data/calculators.json` and emits one
- * Astro MDX file per calculator into `src/pages/calculators/`.  A log file in
- * `meta/publish_log.json` records which calculators have already been
- * published so they are not generated again.  The number of calculators
- * generated on each run can be limited via the `MAX_PER_DAY` environment
- * variable (defaults to 50).  Each generated page uses the
- * `CalculatorLayout.astro` layout which adds structured data to the page.
+ * This script reads calculator definitions from `data/calculators.json` and
+ * produces one MDX file per calculator under `src/pages/calculators/`.  A
+ * log file at `meta/publish_log.json` records which calculators have
+ * already been published so they are not generated again.  On each run
+ * the number of new calculators can be controlled via the
+ * `MAX_PER_DAY` environment variable.  Values outside the range 20–100
+ * are clamped to the nearest bound to prevent creating too few or too
+ * many pages in a single batch.  Each generated MDX page uses the
+ * CalculatorLayout, exports a detailed schema for runtime use and
+ * includes sections for examples, FAQs and related calculators.
  */
 
-const ROOT = process.cwd();
-const CALC_DATA = path.join(ROOT, 'data', 'calculators.json');
+const ROOT      = process.cwd();
+const DATA_PATH = path.join(ROOT, 'data', 'calculators.json');
 const OUT_DIR   = path.join(ROOT, 'src', 'pages', 'calculators');
 const LOG_PATH  = path.join(ROOT, 'meta', 'publish_log.json');
 
 // Normalise arbitrary cluster names to one of the eight supported top‑level
-// categories.  All keys must be lower‑case.
+// categories.  This ensures that calculators appear under the correct
+// category page regardless of the input data.  Keys must be lower‑case.
 const CATEGORY_MAP: Record<string, string> = {
   // finance
   'finance & loans':       'Finance',
@@ -70,30 +74,30 @@ const CATEGORY_MAP: Record<string, string> = {
   'science':               'Other'
 };
 
-// Read helpers
+// Safely parse a JSON file, returning a fallback value on error.  This
+// avoids throwing and makes the script tolerant of empty or missing files.
 function readJSON<T>(p: string, fallback: T): T {
   try {
     return JSON.parse(fs.readFileSync(p, 'utf-8')) as T;
-  } catch (err) {
+  } catch (_err) {
     return fallback;
   }
 }
 
-function writeJSON(p: string, data: any): void {
+function writeJSON(p: string, data: unknown): void {
   fs.mkdirSync(path.dirname(p), { recursive: true });
   fs.writeFileSync(p, JSON.stringify(data, null, 2), 'utf-8');
 }
 
-// Sanitize the expression string.  Our safe evaluator uses `^` as the
-// exponent operator; if incoming expressions use `**` we convert them.
-function sanitizeExpr(expr: unknown): string {
-  if (typeof expr !== 'string') return '';
-  return expr.replace(/\*\*/g, '^');
+// Replace instances of the JavaScript exponent operator with the caret
+// operator expected by the safe evaluator used in the Calculator component.
+function sanitizeExpr(expr: string): string {
+  return typeof expr === 'string' ? expr.replace(/\*\*/g, '^') : '';
 }
 
-// Pick up to `count` related calculators from the same cluster if available
-// otherwise from the full list.  Related calculators are chosen based on
-// their order in the data file and exclude the base calculator.
+// Select up to `count` related calculators from the same cluster (where
+// possible).  Related calculators are chosen based on their order in the
+// input data and exclude the base calculator itself.
 function pickRelated(base: any, all: any[], count = 6): string[] {
   const same = all.filter((c) => c.slug !== base.slug && c.cluster === base.cluster);
   const pool = same.length >= count ? same : all.filter((c) => c.slug !== base.slug);
@@ -104,46 +108,53 @@ function titleize(slug: string): string {
   return slug.replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());
 }
 
-// Main entry point
-(() => {
-  const items: any[] = readJSON(CALC_DATA, []);
-  const log: { slug: string; date: string }[] = readJSON(LOG_PATH, []);
+// Main execution wrapped in an async function to allow top level await in
+// future enhancements (e.g. fetching remote data).  Immediately invoked.
+(function run(): void {
+  // Load all calculator definitions and the publish log.
+  const items: any[] = readJSON(DATA_PATH, []);
+  const log: { slug: string; date: string; }[] = readJSON(LOG_PATH, []);
   const published = new Set(log.map((r) => r.slug));
   const backlog = items.filter((c) => !published.has(c.slug));
   if (!backlog.length) {
     console.log('No new calculators to generate');
     return;
   }
-  const maxPerDay = Math.max(1, Math.min(100, parseInt(process.env.MAX_PER_DAY || process.env.MAX_PER_DAY_GITHUB || '50', 10)));
+  // Determine the number of calculators to generate based on MAX_PER_DAY.
+  const rawMax = parseInt(process.env.MAX_PER_DAY || process.env.MAX_PER_DAY_GITHUB || '50', 10);
+  const limit = Math.max(20, Math.min(100, isNaN(rawMax) ? 50 : rawMax));
   const today = new Date().toISOString().slice(0, 10);
 
   fs.mkdirSync(OUT_DIR, { recursive: true });
-  const toPublish = backlog.slice(0, maxPerDay);
+  const toPublish = backlog.slice(0, limit);
 
   for (const calc of toPublish) {
-    // Normalise cluster
+    // Normalise the cluster using CATEGORY_MAP.  Fall back to the original
+    // cluster or 'Other' if nothing matches.
     const rawCluster = (calc.cluster || '').toString().toLowerCase();
     const normCluster = CATEGORY_MAP[rawCluster] || calc.cluster || 'Other';
-    // Prepare schema for frontmatter and runtime
+    // Determine related calculators ahead of time.
     const related = pickRelated(calc, items);
+    // Build a runtime schema used by the Calculator component.  Provide
+    // sensible defaults for optional fields.
     const schema = {
       slug: calc.slug,
       title: calc.title,
       locale: 'en',
-      inputs: calc.inputs || [],
+      inputs: Array.isArray(calc.inputs) ? calc.inputs : [],
       expression: sanitizeExpr(calc.expression || ''),
       intro: calc.intro || calc.description || '',
-      examples: Array.isArray(calc.examples) && calc.examples.length ? calc.examples : [
-        { description: 'Enter the values and press Calculate.' }
-      ],
+      examples: Array.isArray(calc.examples) && calc.examples.length
+        ? calc.examples
+        : [ { description: 'Enter the values and press Calculate.' } ],
       faqs: Array.isArray(calc.faqs) ? calc.faqs : [],
       disclaimer: calc.disclaimer || 'Educational information, not professional advice.',
       cluster: normCluster,
       related,
-      schema_org: 'FAQPage|SoftwareApplication'
     };
-    // Build frontmatter
-    const frontmatter = [];
+    // Compose frontmatter for the MDX file.  Use CalculatorLayout and
+    // include both date and updated fields for SEO freshness signals.
+    const frontmatter: string[] = [];
     frontmatter.push('---');
     frontmatter.push(`layout: ../../layouts/CalculatorLayout.astro`);
     frontmatter.push(`title: ${JSON.stringify(calc.title)}`);
@@ -152,15 +163,25 @@ function titleize(slug: string): string {
     frontmatter.push(`updated: ${today}`);
     frontmatter.push(`cluster: ${JSON.stringify(normCluster)}`);
     frontmatter.push('---\n');
-    // Compose MDX body
+    // Compose the MDX body.  We export the schema for runtime use, add a
+    // heading, the introduction, the calculator component, then FAQs and
+    // related calculators when available.
     let body = '';
     body += "import Calculator from '../../components/Calculator.astro';\n\n";
     body += `export const schema = ${JSON.stringify(schema, null, 2)}\n\n`;
     body += `# ${calc.title}\n\n`;
-    body += `${schema.intro}\n\n`;
+    if (schema.intro) body += `${schema.intro}\n\n`;
     body += '<Calculator schema={schema} />\n\n';
+    // Examples section.  We render examples if more than the default.
+    if (schema.examples && schema.examples.length) {
+      body += '## Examples\n\n';
+      schema.examples.forEach((ex: any) => {
+        body += `- ${ex.description}\n`;
+      });
+      body += '\n';
+    }
     // FAQ section
-    if (schema.faqs.length) {
+    if (schema.faqs && schema.faqs.length) {
       body += '## FAQ\n\n';
       schema.faqs.forEach((f: any) => {
         body += `### ${f.question}\n\n${f.answer}\n\n`;
@@ -177,7 +198,7 @@ function titleize(slug: string): string {
     const mdxContent = frontmatter.join('\n') + body;
     const outPath = path.join(OUT_DIR, `${calc.slug}.mdx`);
     fs.writeFileSync(outPath, mdxContent, 'utf-8');
-    // Append to log
+    // Record publication in log
     log.push({ slug: calc.slug, date: today });
   }
   writeJSON(LOG_PATH, log);

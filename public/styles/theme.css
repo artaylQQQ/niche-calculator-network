@@ -11,10 +11,15 @@
     Primary: #2C74B3 – a mid‑tone blue inspired by the web‑safe palette.
     Primary ink: white text for sufficient contrast on the header.
   */
-  --bg:#FBF7EF;
+  /*
+    Use a very light background for the body and surfaces.  This keeps
+    content feeling airy and modern without a dull yellow tint.
+    Muted text colours are softened for improved contrast.
+  */
+  --bg:#F9FAFB;
   --surface:#FFFFFF;
   --ink:#0F172A;
-  --muted:#475569;
+  --muted:#64748B;
   --primary:#2C74B3;
   --primary-ink:#FFFFFF;
   --card:#FFFFFF;
@@ -34,15 +39,21 @@
 */
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg:#0D1A26;
-    --surface:#152233;
+    /*
+      Adopt a dark palette that remains comfortable on the eyes.  We
+      retain the same blue accent colour while brightening the ink and
+      softening the muted tones.  Shadows are strengthened slightly to
+      preserve depth on dark surfaces.
+    */
+    --bg:#0F172A;
+    --surface:#1E293B;
     --ink:#F1F5F9;
     --muted:#94A3B8;
     --primary:#2C74B3;
     --primary-ink:#FFFFFF;
-    --card:#152233;
+    --card:#1E293B;
     --border:#334155;
-    --shadow:0 1px 2px rgba(0,0,0,.4), 0 8px 24px rgba(0,0,0,.2);
+    --shadow:0 1px 2px rgba(0,0,0,.6), 0 8px 24px rgba(0,0,0,.3);
   }
 }
 

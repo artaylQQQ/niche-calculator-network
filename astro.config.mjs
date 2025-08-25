@@ -12,6 +12,15 @@ export default defineConfig({
   integrations: [
     tailwind({ config: { applyBaseStyles: true } }),
     mdx(),
-    sitemap(),
+    // Configure the sitemap to output a single file and supply sensible
+    // defaults for change frequency and priority.  Without these
+    // options Astro may split the sitemap into multiple segments when
+    // publishing many pages.  Search engines appreciate a simple
+    // sitemap at `/sitemap.xml`.
+    sitemap({
+      sitemapFilename: 'sitemap.xml',
+      changefreq: 'weekly',
+      priority: 0.7,
+    }),
   ],
 });
