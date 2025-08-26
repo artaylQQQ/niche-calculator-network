@@ -1,4 +1,4 @@
-name: Nightly calculator publish (V037.2 - stable no-lockfile)
+name: Nightly calculator publish (V037.2 - no-cache no-lockfile)
 
 on:
   schedule:
@@ -16,15 +16,16 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          persist-credentials: true  # para poder hacer git push
+          persist-credentials: true  # permite git push con el GITHUB_TOKEN
 
+      # SIN CACHÉ (evita el error del lockfile)
       - name: Setup Node.js (no cache)
         uses: actions/setup-node@v4
         with:
           node-version: '18'
-          # ⚠️ No usar "cache: 'npm'" si no hay lockfile
 
-      - name: Install dependencies (no lockfile)
+      # SIN package-lock.json: instalamos con npm install
+      - name: Install dependencies
         run: npm install --no-audit --no-fund
 
       - name: Remove sample calculators and push
