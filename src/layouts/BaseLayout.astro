@@ -1,66 +1,26 @@
----
-interface Props {
-  title?: string;
-  description?: string;
-}
+import { defineConfig } from 'astro/config';
+import tailwind from '@astrojs/tailwind';
+if (!process.env.SITE_URL) { throw new Error('SITE_URL is required'); }
+import mdx from '@astrojs/mdx';
+import sitemap from '@astrojs/sitemap';
 
-const {
-  title = "CalcSimpler",
-  description = "Fast, accurate online calculators you can use right now.",
-} = Astro.props as Props;
+const SITE_URL = process.env.SITE_URL || 'https://calcsimpler.com';
 
-// Nota: evitamos imports desde /public y evitamos usar Astro.url aquí
-// para máxima compatibilidad en layouts.
----
-
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{title}</title>
-
-    {description && <meta name="description" content={description} />}
-
-    <!-- Open Graph / Twitter (básico y seguro) -->
-    <meta property="og:title" content={title} />
-    {description && <meta property="og:description" content={description} />}
-    <meta property="og:type" content="website" />
-    <meta name="twitter:card" content="summary_large_image" />
-
-    <link rel="icon" href="/favicon.svg" />
-    <!-- Tailwind ya está integrado por @astrojs/tailwind; no importamos CSS desde /public -->
-  </head>
-  <body class="bg-white text-slate-800">
-    <header class="max-w-6xl mx-auto flex items-center justify-between px-4 py-6">
-      <a href="/" class="text-xl font-bold tracking-tight">
-        CalcSimpler
-      </a>
-      <nav class="flex items-center gap-4 text-sm">
-        <a class="hover:underline" href="/categories/">Categories</a>
-        <a class="hover:underline" href="/all">All Calculators</a>
-        <a class="hover:underline" href="/privacy">Privacy</a>
-        <a class="hover:underline" href="/disclaimer">Disclaimer</a>
-      </nav>
-    </header>
-
-    <main class="max-w-6xl mx-auto px-4">
-      <slot />
-    </main>
-
-    <footer class="max-w-6xl mx-auto px-4 py-8 mt-12 border-t border-slate-200 text-sm">
-      <div class="flex flex-wrap gap-x-4 gap-y-2">
-        <a class="hover:underline" href="/">Home</a>
-        <a class="hover:underline" href="/categories/">Categories</a>
-        <a class="hover:underline" href="/all">All Calculators</a>
-        <!-- ✅ Enlace corregido: usar el índice estándar generado por @astrojs/sitemap -->
-        <a class="hover:underline" href="/sitemap-index.xml">Sitemap</a>
-        <a class="hover:underline" href="/privacy">Privacy</a>
-        <a class="hover:underline" href="/disclaimer">Disclaimer</a>
-      </div>
-      <p class="text-slate-500 mt-3">
-        &copy; {new Date().getFullYear()} CalcSimpler. All rights reserved.
-      </p>
-    </footer>
-  </body>
-</html>
+export default defineConfig({
+  // unify all integrations into a single array. Tailwind should run alongside mdx and sitemap.
+  site: SITE_URL,
+  integrations: [
+    tailwind({ config: { applyBaseStyles: true } }),
+    mdx(),
+    // Configure the sitemap to output a single file and supply sensible
+    // defaults for change frequency and priority.  Without these
+    // options Astro may split the sitemap into multiple segments when
+    // publishing many pages.  Search engines appreciate a simple
+    // sitemap at `/sitemap.xml`.
+    sitemap({
+      sitemapFilename: 'sitemap.xml',
+      changefreq: 'weekly',
+      priority: 0.7,
+    }),
+  ],
+});
