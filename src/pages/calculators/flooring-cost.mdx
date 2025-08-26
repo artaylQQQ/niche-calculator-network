@@ -1,0 +1,63 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Flooring Cost Calculator"
+description: "Estimate total floor cost."
+date: 2025-08-26
+updated: 2025-08-26
+cluster: "Home & DIY"
+---
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "flooring-cost",
+  "title": "Flooring Cost Calculator",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "area",
+      "hint": "Area (m²)"
+    },
+    {
+      "name": "cost",
+      "hint": "Cost per m² ($)"
+    }
+  ],
+  "expression": "area*cost",
+  "intro": "Estimate total floor cost.",
+  "examples": [
+    {
+      "description": "Enter the values and press Calculate."
+    }
+  ],
+  "faqs": [],
+  "disclaimer": "Educational information, not professional advice.",
+  "cluster": "Home & DIY",
+  "related": [
+    "percentage-discount-calculator",
+    "loan-payment-calculator",
+    "compound-interest-calculator",
+    "bmi-calculator",
+    "percentage-increase-calculator",
+    "sales-tax-calculator"
+  ]
+}
+
+# Flooring Cost Calculator
+
+Estimate total floor cost.
+
+<Calculator schema={schema} />
+
+## Examples
+
+- Enter the values and press Calculate.
+
+## Related calculators
+
+- [Percentage Discount Calculator](/calculators/percentage-discount-calculator/)
+- [Loan Payment Calculator](/calculators/loan-payment-calculator/)
+- [Compound Interest Calculator](/calculators/compound-interest-calculator/)
+- [Bmi Calculator](/calculators/bmi-calculator/)
+- [Percentage Increase Calculator](/calculators/percentage-increase-calculator/)
+- [Sales Tax Calculator](/calculators/sales-tax-calculator/)
+

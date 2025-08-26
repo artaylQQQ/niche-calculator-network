@@ -1,0 +1,63 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Tip Calculator"
+description: "Calculate tip amount."
+date: 2025-08-26
+updated: 2025-08-26
+cluster: "Other"
+---
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "tip-calculator",
+  "title": "Tip Calculator",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "bill",
+      "hint": "Bill ($)"
+    },
+    {
+      "name": "tip",
+      "hint": "Tip (%)"
+    }
+  ],
+  "expression": "bill*tip/100",
+  "intro": "Calculate tip amount.",
+  "examples": [
+    {
+      "description": "Enter the values and press Calculate."
+    }
+  ],
+  "faqs": [],
+  "disclaimer": "Educational information, not professional advice.",
+  "cluster": "Other",
+  "related": [
+    "percentage-discount-calculator",
+    "loan-payment-calculator",
+    "compound-interest-calculator",
+    "bmi-calculator",
+    "percentage-increase-calculator",
+    "sales-tax-calculator"
+  ]
+}
+
+# Tip Calculator
+
+Calculate tip amount.
+
+<Calculator schema={schema} />
+
+## Examples
+
+- Enter the values and press Calculate.
+
+## Related calculators
+
+- [Percentage Discount Calculator](/calculators/percentage-discount-calculator/)
+- [Loan Payment Calculator](/calculators/loan-payment-calculator/)
+- [Compound Interest Calculator](/calculators/compound-interest-calculator/)
+- [Bmi Calculator](/calculators/bmi-calculator/)
+- [Percentage Increase Calculator](/calculators/percentage-increase-calculator/)
+- [Sales Tax Calculator](/calculators/sales-tax-calculator/)
+

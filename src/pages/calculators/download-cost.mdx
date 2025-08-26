@@ -1,0 +1,63 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Download Cost Calculator"
+description: "Estimate download cost from data size and price per GB."
+date: 2025-08-26
+updated: 2025-08-26
+cluster: "Technology"
+---
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "download-cost",
+  "title": "Download Cost Calculator",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "size_gb",
+      "hint": "Size (GB)"
+    },
+    {
+      "name": "price_per_gb",
+      "hint": "Price per GB ($)"
+    }
+  ],
+  "expression": "size_gb*price_per_gb",
+  "intro": "Estimate download cost from data size and price per GB.",
+  "examples": [
+    {
+      "description": "10 GB at $0.10/GB → $1"
+    }
+  ],
+  "faqs": [],
+  "disclaimer": "Educational information, not professional advice.",
+  "cluster": "Technology",
+  "related": [
+    "percentage-discount-calculator",
+    "loan-payment-calculator",
+    "compound-interest-calculator",
+    "bmi-calculator",
+    "percentage-increase-calculator",
+    "sales-tax-calculator"
+  ]
+}
+
+# Download Cost Calculator
+
+Estimate download cost from data size and price per GB.
+
+<Calculator schema={schema} />
+
+## Examples
+
+- 10 GB at $0.10/GB → $1
+
+## Related calculators
+
+- [Percentage Discount Calculator](/calculators/percentage-discount-calculator/)
+- [Loan Payment Calculator](/calculators/loan-payment-calculator/)
+- [Compound Interest Calculator](/calculators/compound-interest-calculator/)
+- [Bmi Calculator](/calculators/bmi-calculator/)
+- [Percentage Increase Calculator](/calculators/percentage-increase-calculator/)
+- [Sales Tax Calculator](/calculators/sales-tax-calculator/)
+

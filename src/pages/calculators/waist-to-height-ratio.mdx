@@ -1,0 +1,63 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Waist-to-Height Ratio Calculator"
+description: "Compute waist-to-height ratio (WHtR)."
+date: 2025-08-26
+updated: 2025-08-26
+cluster: "Health"
+---
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "waist-to-height-ratio",
+  "title": "Waist-to-Height Ratio Calculator",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "waist",
+      "hint": "Waist (cm)"
+    },
+    {
+      "name": "height",
+      "hint": "Height (cm)"
+    }
+  ],
+  "expression": "waist/height",
+  "intro": "Compute waist-to-height ratio (WHtR).",
+  "examples": [
+    {
+      "description": "80 cm waist, 170 cm height → 0.47"
+    }
+  ],
+  "faqs": [],
+  "disclaimer": "Educational information, not professional advice.",
+  "cluster": "Health",
+  "related": [
+    "percentage-discount-calculator",
+    "loan-payment-calculator",
+    "compound-interest-calculator",
+    "bmi-calculator",
+    "percentage-increase-calculator",
+    "sales-tax-calculator"
+  ]
+}
+
+# Waist-to-Height Ratio Calculator
+
+Compute waist-to-height ratio (WHtR).
+
+<Calculator schema={schema} />
+
+## Examples
+
+- 80 cm waist, 170 cm height → 0.47
+
+## Related calculators
+
+- [Percentage Discount Calculator](/calculators/percentage-discount-calculator/)
+- [Loan Payment Calculator](/calculators/loan-payment-calculator/)
+- [Compound Interest Calculator](/calculators/compound-interest-calculator/)
+- [Bmi Calculator](/calculators/bmi-calculator/)
+- [Percentage Increase Calculator](/calculators/percentage-increase-calculator/)
+- [Sales Tax Calculator](/calculators/sales-tax-calculator/)
+

@@ -1,0 +1,78 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Calories Burned (MET) Calculator"
+description: "Estimate calories burned using MET, weight, and duration."
+date: 2025-08-26
+updated: 2025-08-26
+cluster: "Health"
+---
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "calories-burned-met",
+  "title": "Calories Burned (MET) Calculator",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "met",
+      "hint": "MET value"
+    },
+    {
+      "name": "weight",
+      "hint": "Weight (kg)"
+    },
+    {
+      "name": "duration",
+      "hint": "Duration (minutes)"
+    }
+  ],
+  "expression": "met*weight*3.5/200*duration",
+  "intro": "Estimate calories burned using MET, weight, and duration.",
+  "examples": [
+    {
+      "description": "Jogging at MET 7, 70 kg, 30 minutes → about 257 kcal"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "What is a MET?",
+      "answer": "A MET is a unit that estimates energy cost of physical activities."
+    }
+  ],
+  "disclaimer": "Educational information, not professional advice.",
+  "cluster": "Health",
+  "related": [
+    "percentage-discount-calculator",
+    "loan-payment-calculator",
+    "compound-interest-calculator",
+    "bmi-calculator",
+    "percentage-increase-calculator",
+    "sales-tax-calculator"
+  ]
+}
+
+# Calories Burned (MET) Calculator
+
+Estimate calories burned using MET, weight, and duration.
+
+<Calculator schema={schema} />
+
+## Examples
+
+- Jogging at MET 7, 70 kg, 30 minutes → about 257 kcal
+
+## FAQ
+
+### What is a MET?
+
+A MET is a unit that estimates energy cost of physical activities.
+
+## Related calculators
+
+- [Percentage Discount Calculator](/calculators/percentage-discount-calculator/)
+- [Loan Payment Calculator](/calculators/loan-payment-calculator/)
+- [Compound Interest Calculator](/calculators/compound-interest-calculator/)
+- [Bmi Calculator](/calculators/bmi-calculator/)
+- [Percentage Increase Calculator](/calculators/percentage-increase-calculator/)
+- [Sales Tax Calculator](/calculators/sales-tax-calculator/)
+

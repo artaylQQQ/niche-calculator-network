@@ -1,0 +1,63 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Data Transfer Time Calculator"
+description: "Estimate time to transfer data over a connection speed."
+date: 2025-08-26
+updated: 2025-08-26
+cluster: "Technology"
+---
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "data-transfer-time",
+  "title": "Data Transfer Time Calculator",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "size_mb",
+      "hint": "File size (MB)"
+    },
+    {
+      "name": "speed_mbps",
+      "hint": "Speed (Mbps)"
+    }
+  ],
+  "expression": "(size_mb*8)/speed_mbps/60",
+  "intro": "Estimate time to transfer data over a connection speed.",
+  "examples": [
+    {
+      "description": "700 MB at 20 Mbps → ~4.67 minutes"
+    }
+  ],
+  "faqs": [],
+  "disclaimer": "Educational information, not professional advice.",
+  "cluster": "Technology",
+  "related": [
+    "percentage-discount-calculator",
+    "loan-payment-calculator",
+    "compound-interest-calculator",
+    "bmi-calculator",
+    "percentage-increase-calculator",
+    "sales-tax-calculator"
+  ]
+}
+
+# Data Transfer Time Calculator
+
+Estimate time to transfer data over a connection speed.
+
+<Calculator schema={schema} />
+
+## Examples
+
+- 700 MB at 20 Mbps → ~4.67 minutes
+
+## Related calculators
+
+- [Percentage Discount Calculator](/calculators/percentage-discount-calculator/)
+- [Loan Payment Calculator](/calculators/loan-payment-calculator/)
+- [Compound Interest Calculator](/calculators/compound-interest-calculator/)
+- [Bmi Calculator](/calculators/bmi-calculator/)
+- [Percentage Increase Calculator](/calculators/percentage-increase-calculator/)
+- [Sales Tax Calculator](/calculators/sales-tax-calculator/)
+

@@ -110,5 +110,73 @@
   {
     "slug": "weight-to-bmi-projection-calculator",
     "date": "2025-08-18"
+  },
+  {
+    "slug": "calories-burned-met",
+    "date": "2025-08-26"
+  },
+  {
+    "slug": "daily-water-intake",
+    "date": "2025-08-26"
+  },
+  {
+    "slug": "waist-to-height-ratio",
+    "date": "2025-08-26"
+  },
+  {
+    "slug": "data-transfer-time",
+    "date": "2025-08-26"
+  },
+  {
+    "slug": "kb-to-mb",
+    "date": "2025-08-26"
+  },
+  {
+    "slug": "download-cost",
+    "date": "2025-08-26"
+  },
+  {
+    "slug": "dpi-calculator",
+    "date": "2025-08-26"
+  },
+  {
+    "slug": "minutes-to-seconds",
+    "date": "2025-08-26"
+  },
+  {
+    "slug": "days-to-hours",
+    "date": "2025-08-26"
+  },
+  {
+    "slug": "weeks-to-days",
+    "date": "2025-08-26"
+  },
+  {
+    "slug": "years-to-days",
+    "date": "2025-08-26"
+  },
+  {
+    "slug": "paint-needed",
+    "date": "2025-08-26"
+  },
+  {
+    "slug": "flooring-cost",
+    "date": "2025-08-26"
+  },
+  {
+    "slug": "concrete-slab-volume",
+    "date": "2025-08-26"
+  },
+  {
+    "slug": "wallpaper-roll-coverage",
+    "date": "2025-08-26"
+  },
+  {
+    "slug": "tip-calculator",
+    "date": "2025-08-26"
+  },
+  {
+    "slug": "fuel-trip-cost",
+    "date": "2025-08-26"
   }
 ]

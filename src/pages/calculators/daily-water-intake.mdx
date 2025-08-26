@@ -1,0 +1,59 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Daily Water Intake Calculator"
+description: "Rough estimate of daily water intake from body weight."
+date: 2025-08-26
+updated: 2025-08-26
+cluster: "Health"
+---
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "daily-water-intake",
+  "title": "Daily Water Intake Calculator",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "weight",
+      "hint": "Weight (kg)"
+    }
+  ],
+  "expression": "weight*0.033",
+  "intro": "Rough estimate of daily water intake from body weight.",
+  "examples": [
+    {
+      "description": "75 kg → ~2.48 liters/day"
+    }
+  ],
+  "faqs": [],
+  "disclaimer": "Educational information, not professional advice.",
+  "cluster": "Health",
+  "related": [
+    "percentage-discount-calculator",
+    "loan-payment-calculator",
+    "compound-interest-calculator",
+    "bmi-calculator",
+    "percentage-increase-calculator",
+    "sales-tax-calculator"
+  ]
+}
+
+# Daily Water Intake Calculator
+
+Rough estimate of daily water intake from body weight.
+
+<Calculator schema={schema} />
+
+## Examples
+
+- 75 kg → ~2.48 liters/day
+
+## Related calculators
+
+- [Percentage Discount Calculator](/calculators/percentage-discount-calculator/)
+- [Loan Payment Calculator](/calculators/loan-payment-calculator/)
+- [Compound Interest Calculator](/calculators/compound-interest-calculator/)
+- [Bmi Calculator](/calculators/bmi-calculator/)
+- [Percentage Increase Calculator](/calculators/percentage-increase-calculator/)
+- [Sales Tax Calculator](/calculators/sales-tax-calculator/)
+

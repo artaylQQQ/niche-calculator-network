@@ -1,0 +1,59 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "KB to MB Converter"
+description: "Convert kilobytes to megabytes."
+date: 2025-08-26
+updated: 2025-08-26
+cluster: "Technology"
+---
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "kb-to-mb",
+  "title": "KB to MB Converter",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "kb",
+      "hint": "Kilobytes"
+    }
+  ],
+  "expression": "kb/1024",
+  "intro": "Convert kilobytes to megabytes.",
+  "examples": [
+    {
+      "description": "2048 KB → 2 MB"
+    }
+  ],
+  "faqs": [],
+  "disclaimer": "Educational information, not professional advice.",
+  "cluster": "Technology",
+  "related": [
+    "percentage-discount-calculator",
+    "loan-payment-calculator",
+    "compound-interest-calculator",
+    "bmi-calculator",
+    "percentage-increase-calculator",
+    "sales-tax-calculator"
+  ]
+}
+
+# KB to MB Converter
+
+Convert kilobytes to megabytes.
+
+<Calculator schema={schema} />
+
+## Examples
+
+- 2048 KB → 2 MB
+
+## Related calculators
+
+- [Percentage Discount Calculator](/calculators/percentage-discount-calculator/)
+- [Loan Payment Calculator](/calculators/loan-payment-calculator/)
+- [Compound Interest Calculator](/calculators/compound-interest-calculator/)
+- [Bmi Calculator](/calculators/bmi-calculator/)
+- [Percentage Increase Calculator](/calculators/percentage-increase-calculator/)
+- [Sales Tax Calculator](/calculators/sales-tax-calculator/)
+
