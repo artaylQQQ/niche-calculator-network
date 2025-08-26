@@ -11,6 +11,7 @@ export default defineConfig({
     tailwind({ config: { applyBaseStyles: true } }),
     mdx(),
     sitemap({
+      // Quitamos sitemapFilename (no soportado en tu versión)
       changefreq: 'weekly',
       priority: 0.7,
     }),
