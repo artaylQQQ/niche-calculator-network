@@ -1,4 +1,4 @@
-name: Nightly calculator publish (V037.2 - resilient no-cache)
+name: Nightly calculator publish (V037.2 - stable)
 
 on:
   schedule:
@@ -8,6 +8,8 @@ on:
 jobs:
   publish:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write  # permite git push con GITHUB_TOKEN
     env:
       SITE_URL: https://calcsimpler.com
       MAX_PER_DAY: 40
@@ -15,15 +17,13 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-        with:
-          persist-credentials: true
 
       - name: Setup Node.js (no cache)
         uses: actions/setup-node@v4
         with:
           node-version: '18'
 
-      - name: Show env & tree (preflight)
+      - name: Preflight (env & tree)
         run: |
           node -v
           npm -v
@@ -48,12 +48,11 @@ jobs:
           if [ ! -f data/calculators_extra.json ]; then
             echo "[]"> data/calculators_extra.json
           fi
-          git status --porcelain
 
-      - name: Install dependencies (no lockfile needed)
+      - name: Install dependencies (no lockfile)
         run: npm install --no-audit --no-fund
 
-      - name: Remove sample calculators (no-op if none)
+      - name: Remove sample calculators and push
         run: |
           set -e
           removed=false
@@ -70,27 +69,31 @@ jobs:
             git config user.email 'github-actions[bot]@users.noreply.github.com'
             git add -A
             git commit -m "chore: remove sample calculators" || true
-            git push origin HEAD:${{ github.ref }} || true
+            git push || true
           else
             echo "No sample calculators found."
           fi
 
-      - name: Merge extra calculators into data/calculators.json
+      - name: Merge extra calculators into data/calculators.json and push
         run: |
           node -e "const fs=require('fs');const p='data/calculators.json';const add='data/calculators_extra.json';let base=[];try{base=JSON.parse(fs.readFileSync(p,'utf8'))}catch(e){};let extra=[];try{extra=JSON.parse(fs.readFileSync(add,'utf8'))}catch(e){};const sl=new Set(base.map(x=>x.slug));for(const it of extra){if(!sl.has(it.slug)) base.push(it)};fs.mkdirSync('data',{recursive:true});fs.writeFileSync(p,JSON.stringify(base,null,2));"
           git config user.name 'github-actions[bot]'
           git config user.email 'github-actions[bot]@users.noreply.github.com'
           git add data/calculators.json || true
           git commit -m "chore: merge extra calculators for category minimums" || true
-          git push origin HEAD:${{ github.ref }} || true
+          git push || true
 
-      - name: Sanity check generator existence
+      - name: Verify generator
         run: |
           if [ ! -f scripts/generate_calcs.js ]; then
             echo "::error::scripts/generate_calcs.js no existe. Sube el archivo del paquete V037.2."
             exit 1
           fi
-          cat package.json | grep -q "\"generate\"" || (echo "::error::No existe script npm 'generate' en package.json"; cat package.json; exit 1)
+          if ! cat package.json | grep -q "\"generate\""; then
+            echo "::error::No existe script npm 'generate' en package.json"
+            cat package.json
+            exit 1
+          fi
 
       - name: Generate new calculators
         run: npm run generate
@@ -104,20 +107,13 @@ jobs:
             echo 'No new calculators to commit.'
           else
             git commit -m "chore: publish new calculators"
-            git push origin HEAD:${{ github.ref }} || true
+            git push || true
           fi
 
       - name: Build site (capture log)
         run: |
           set -o pipefail
           npm run build 2>&1 | tee build.log
-
-      # Opcional: duplicar sitemap-index.xml como sitemap.xml para compatibilidad
-      - name: Copy sitemap-index.xml to sitemap.xml (optional)
-        run: |
-          if [ -f dist/sitemap-index.xml ]; then
-            cp dist/sitemap-index.xml dist/sitemap.xml
-          fi
 
       - name: Upload build log (always)
         if: always()
@@ -127,10 +123,10 @@ jobs:
           path: build.log
           if-no-files-found: ignore
 
-      - name: Check for broken links (do not fail the job)
+      - name: Check for broken links (non-blocking)
         run: |
           npx linkinator dist --recurse --silent > link-check.txt 2>&1 || true
-          echo "Link check finished (report saved)."
+          echo "Link check finished."
 
       - name: Upload link check report
         if: always()
@@ -140,9 +136,7 @@ jobs:
           path: link-check.txt
           if-no-files-found: ignore
 
-      - name: Ping search engines with updated sitemap (index + xml)
+      - name: Ping search engines with sitemap-index.xml only
         run: |
           curl --silent --show-error --location "https://www.google.com/ping?sitemap=${{ env.SITE_URL }}/sitemap-index.xml" || true
           curl --silent --show-error --location "https://www.bing.com/ping?sitemap=${{ env.SITE_URL }}/sitemap-index.xml" || true
-          curl --silent --show-error --location "https://www.google.com/ping?sitemap=${{ env.SITE_URL }}/sitemap.xml" || true
-          curl --silent --show-error --location "https://www.bing.com/ping?sitemap=${{ env.SITE_URL }}/sitemap.xml" || true
