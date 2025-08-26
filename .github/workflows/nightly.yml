@@ -11,6 +11,7 @@ jobs:
     env:
       SITE_URL: https://calcsimpler.com
       MAX_PER_DAY: 40
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -21,8 +22,25 @@ jobs:
           node-version: '18'
           cache: 'npm'
 
+      # ✅ Si no hay package-lock.json, lo crea en CI y lo deja commiteado.
+      - name: Ensure lockfile (create if missing)
+        run: |
+          if [ ! -f package-lock.json ]; then
+            npm install --package-lock-only --no-audit --no-fund
+            git config user.name 'github-actions[bot]'
+            git config user.email 'github-actions[bot]@users.noreply.github.com'
+            git add package-lock.json || true
+            git commit -m "chore(ci): add package-lock.json" || true
+          fi
+
+      # ✅ Instala con npm ci si hay lockfile; si por algún motivo no está, usa npm install.
       - name: Install dependencies
-        run: npm ci
+        run: |
+          if [ -f package-lock.json ]; then
+            npm ci
+          else
+            npm install --no-audit --no-fund
+          fi
 
       - name: Remove sample calculators
         run: |
