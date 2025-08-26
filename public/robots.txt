@@ -1,7 +1,4 @@
 User-agent: *
 Allow: /
 
-# Point to the single sitemap instead of the default index.  The
-# sitemap plugin generates a `sitemap.xml` file containing links to
-# all published pages, which is easier for search engines to parse.
-Sitemap: https://calcsimpler.com/sitemap.xml
+Sitemap: https://calcsimpler.com/sitemap-index.xml
