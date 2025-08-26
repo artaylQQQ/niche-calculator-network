@@ -1,0 +1,66 @@
+name: Nightly calculator publish (V037.2)
+
+on:
+  schedule:
+    - cron: '30 2 * * *'  # 02:30 UTC diario
+  workflow_dispatch:
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    env:
+      SITE_URL: https://calcsimpler.com
+      MAX_PER_DAY: 40
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Remove sample calculators
+        run: |
+          find src/pages/calculators -maxdepth 1 -type f -iname "*sample*.mdx" -delete || true
+          git rm -f src/pages/calculators/*sample*.mdx 2>/dev/null || true
+          git rm -f src/pages/calculators/health-quick-calculator.mdx 2>/dev/null || true
+          git commit -m "chore: remove sample calculators" || true
+
+      - name: Merge extra calculators into data/calculators.json
+        run: |
+          node -e "const fs=require('fs');const p='data/calculators.json';const add='data/calculators_extra.json';let base=[];try{base=JSON.parse(fs.readFileSync(p,'utf8'))}catch(e){};let extra=[];try{extra=JSON.parse(fs.readFileSync(add,'utf8'))}catch(e){};const sl=new Set(base.map(x=>x.slug));for(const it of extra){if(!sl.has(it.slug)) base.push(it)};fs.writeFileSync(p,JSON.stringify(base,null,2));"
+          git add data/calculators.json || true
+          git commit -m "chore: merge extra calculators for category minimums" || true
+
+      - name: Generate new calculators
+        run: npm run generate
+
+      - name: Commit and push new calculators
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email 'github-actions[bot]@users.noreply.github.com'
+          git add src/pages/calculators meta/publish_log.json || true
+          if git diff --cached --quiet; then
+            echo 'No new calculators to commit.'
+          else
+            git commit -m "chore: publish new calculators"
+            git push origin HEAD:${{ github.ref }}
+          fi
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build site
+        run: npm run build
+
+      - name: Check for broken links
+        run: npx linkinator dist --recurse --silent
+
+      - name: Ping search engines with updated sitemap
+        run: |
+          curl --silent --show-error --location "https://www.google.com/ping?sitemap=${{ env.SITE_URL }}/sitemap.xml" || true
+          curl --silent --show-error --location "https://www.bing.com/ping?sitemap=${{ env.SITE_URL }}/sitemap.xml" || true
