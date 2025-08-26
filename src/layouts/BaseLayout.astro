@@ -1,38 +1,64 @@
 ---
-import "../public/styles/theme.css";
-const { title = "CalcSimpler", description = "" } = Astro.props;
-const site = Astro.site || "https://calcsimpler.com";
-const href = Astro.url || site;
+import "../styles/tailwind.css";
+const { title = 'CalcSimpler', description = 'Smart & Fast Calculators', canonical } = Astro.props;
+const site = Astro.site?.toString() || (import.meta.env.SITE_URL ?? 'https://example.com');
+const href = canonical ?? new URL(Astro.url.pathname, site).toString();
+const adsClient = import.meta.env.VITE_ADSENSE_CLIENT;
+const cfToken = import.meta.env.VITE_CF_ANALYTICS_TOKEN;
 ---
-
-<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{title}</title>
-    {description && <meta name="description" content={description} />}
-    <meta property="og:title" content={title} />
-    <meta property="og:description" content={description} />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title ? `${title} — CalcSimpler.com` : 'CalcSimpler.com'}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={href} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <!-- Set the theme colour to match the primary brand colour.  This
+         provides a consistent browser UI in both light and dark modes. -->
+    <meta name="theme-color" content="#2C74B3">
+    <link rel="stylesheet" href="/styles/theme.css">
+    <link rel="stylesheet" href="/styles/tokens.css" />
+    {adsClient && (
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={adsClient}" crossorigin="anonymous"></script>
+    )}
+    {cfToken && (
+      <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon={`{"token":"${cfToken}"}`}></script>
+    )}
     <meta property="og:type" content="website" />
-    <meta property="og:url" content={href} />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:url" content={href} />
+    <!-- Provide a default Open Graph image.  This uses the site
+         favicon as a simple logo.  Replace the path with a custom
+         preview image if desired. -->
     <meta property="og:image" content={`${site}/favicon.svg`} />
-    <meta name="twitter:card" content="summary_large_image" />
-    <link rel="icon" href="/favicon.svg" />
-  </head>
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+</head>
   <body>
-    <header class="container flex items-center justify-between py-6">
-      <a href="/" class="text-xl font-bold text-slate-800 dark:text-slate-50">
-        CalcSimpler
-      </a>
-      <nav class="space-x-4 text-sm">
-        <a href="/categories/">Categories</a>
-        <a href="/all">All Calculators</a>
-        <a href="/privacy">Privacy</a>
-        <a href="/disclaimer">Disclaimer</a>
-      </nav>
+    <a href="#main" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden">Skip to content</a>
+    <header class="header" role="banner">
+      <div class="header-inner">
+        <a href="/" aria-label="CalcSimpler" class="logo">CalcSimpler.com</a>
+        <nav class="nav" aria-label="Primary">
+          <a href="/finance">Finance</a>
+          <a href="/health">Health</a>
+          <a href="/math">Math</a>
+          <a href="/conversions">Conversions</a>
+          <a href="/technology">Technology</a>
+          <a href="/date-time">Date &amp; Time</a>
+          <a href="/home-diy">Home &amp; DIY</a>
+          {/* Route for miscellaneous calculators.  Historically this page was
+              called `everyday`, but has been renamed to `other` to match the
+              unified category list. */}
+          <a href="/other">Other</a>
+          <a href="/all">All</a>
+        </nav>
+      </div>
     </header>
-    <main class="container">
+    <main class="container" id="main" role="main">
       <slot />
     </main>
     <footer class="container" style="padding:24px 0;">
@@ -40,14 +66,11 @@ const href = Astro.url || site;
         <a href="/">Home</a>
         <a href="/categories/">Categories</a>
         <a href="/all">All Calculators</a>
-        <!-- ✅ Corregido: sitemap apunta al archivo correcto -->
-        <a href="/sitemap-index.xml">Sitemap</a>
+        <a href="/sitemap.xml">Sitemap</a>
         <a href="/privacy">Privacy</a>
         <a href="/disclaimer">Disclaimer</a>
       </div>
-      <p class="muted" style="margin-top:8px;">
-        &copy; {new Date().getFullYear()} CalcSimpler. All rights reserved.
-      </p>
+      <div style="text-align:center;margin-top:8px;color:var(--muted)">© {new Date().getFullYear()} CalcSimpler.com</div>
     </footer>
   </body>
 </html>
