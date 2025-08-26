@@ -1,4 +1,4 @@
-name: Nightly calculator publish (V037.2 - resilient)
+name: Nightly calculator publish (V037.2 - resilient no-cache)
 
 on:
   schedule:
@@ -44,9 +44,7 @@ jobs:
           mkdir -p src/pages/calculators
           mkdir -p data
           mkdir -p meta
-          # publish_log para el generador
           [ -f meta/publish_log.json ] || echo "[]" > meta/publish_log.json
-          # archivo extra opcional (no falla si no está)
           if [ ! -f data/calculators_extra.json ]; then
             echo "[]"> data/calculators_extra.json
           fi
@@ -114,6 +112,13 @@ jobs:
           set -o pipefail
           npm run build 2>&1 | tee build.log
 
+      # Opcional: duplicar sitemap-index.xml como sitemap.xml para compatibilidad
+      - name: Copy sitemap-index.xml to sitemap.xml (optional)
+        run: |
+          if [ -f dist/sitemap-index.xml ]; then
+            cp dist/sitemap-index.xml dist/sitemap.xml
+          fi
+
       - name: Upload build log (always)
         if: always()
         uses: actions/upload-artifact@v4
@@ -135,7 +140,9 @@ jobs:
           path: link-check.txt
           if-no-files-found: ignore
 
-      - name: Ping search engines with updated sitemap
+      - name: Ping search engines with updated sitemap (index + xml)
         run: |
+          curl --silent --show-error --location "https://www.google.com/ping?sitemap=${{ env.SITE_URL }}/sitemap-index.xml" || true
+          curl --silent --show-error --location "https://www.bing.com/ping?sitemap=${{ env.SITE_URL }}/sitemap-index.xml" || true
           curl --silent --show-error --location "https://www.google.com/ping?sitemap=${{ env.SITE_URL }}/sitemap.xml" || true
           curl --silent --show-error --location "https://www.bing.com/ping?sitemap=${{ env.SITE_URL }}/sitemap.xml" || true
