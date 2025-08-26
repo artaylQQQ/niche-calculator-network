@@ -1,4 +1,4 @@
-name: Nightly calculator publish (V037.2)
+name: Nightly calculator publish (V037.2 - stable no-lockfile)
 
 on:
   schedule:
@@ -15,50 +15,53 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          persist-credentials: true  # para poder hacer git push
 
-      - name: Setup Node.js
+      - name: Setup Node.js (no cache)
         uses: actions/setup-node@v4
         with:
           node-version: '18'
-          cache: 'npm'
+          # ⚠️ No usar "cache: 'npm'" si no hay lockfile
 
-      # ✅ Si no hay package-lock.json, lo crea en CI y lo deja commiteado.
-      - name: Ensure lockfile (create if missing)
+      - name: Install dependencies (no lockfile)
+        run: npm install --no-audit --no-fund
+
+      - name: Remove sample calculators and push
         run: |
-          if [ ! -f package-lock.json ]; then
-            npm install --package-lock-only --no-audit --no-fund
+          set -e
+          removed=false
+          if ls src/pages/calculators/*sample*.mdx >/dev/null 2>&1; then
+            rm -f src/pages/calculators/*sample*.mdx
+            removed=true
+          fi
+          if [ -f src/pages/calculators/health-quick-calculator.mdx ]; then
+            rm -f src/pages/calculators/health-quick-calculator.mdx
+            removed=true
+          fi
+          if $removed; then
             git config user.name 'github-actions[bot]'
             git config user.email 'github-actions[bot]@users.noreply.github.com'
-            git add package-lock.json || true
-            git commit -m "chore(ci): add package-lock.json" || true
-          fi
-
-      # ✅ Instala con npm ci si hay lockfile; si por algún motivo no está, usa npm install.
-      - name: Install dependencies
-        run: |
-          if [ -f package-lock.json ]; then
-            npm ci
+            git add -A
+            git commit -m "chore: remove sample calculators"
+            git push origin HEAD:${{ github.ref }} || true
           else
-            npm install --no-audit --no-fund
+            echo "No sample calculators found."
           fi
 
-      - name: Remove sample calculators
+      - name: Merge extra calculators into data/calculators.json and push
         run: |
-          find src/pages/calculators -maxdepth 1 -type f -iname "*sample*.mdx" -delete || true
-          git rm -f src/pages/calculators/*sample*.mdx 2>/dev/null || true
-          git rm -f src/pages/calculators/health-quick-calculator.mdx 2>/dev/null || true
-          git commit -m "chore: remove sample calculators" || true
-
-      - name: Merge extra calculators into data/calculators.json
-        run: |
-          node -e "const fs=require('fs');const p='data/calculators.json';const add='data/calculators_extra.json';let base=[];try{base=JSON.parse(fs.readFileSync(p,'utf8'))}catch(e){};let extra=[];try{extra=JSON.parse(fs.readFileSync(add,'utf8'))}catch(e){};const sl=new Set(base.map(x=>x.slug));for(const it of extra){if(!sl.has(it.slug)) base.push(it)};fs.writeFileSync(p,JSON.stringify(base,null,2));"
+          node -e "const fs=require('fs');const p='data/calculators.json';const add='data/calculators_extra.json';let base=[];try{base=JSON.parse(fs.readFileSync(p,'utf8'))}catch(e){};let extra=[];try{extra=JSON.parse(fs.readFileSync(add,'utf8'))}catch(e){};const sl=new Set(base.map(x=>x.slug));for(const it of extra){if(!sl.has(it.slug)) base.push(it)};fs.mkdirSync('data',{recursive:true});fs.writeFileSync(p,JSON.stringify(base,null,2));"
+          git config user.name 'github-actions[bot]'
+          git config user.email 'github-actions[bot]@users.noreply.github.com'
           git add data/calculators.json || true
           git commit -m "chore: merge extra calculators for category minimums" || true
+          git push origin HEAD:${{ github.ref }} || true
 
       - name: Generate new calculators
         run: npm run generate
 
-      - name: Commit and push new calculators
+      - name: Commit and push generated calculators
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email 'github-actions[bot]@users.noreply.github.com'
@@ -69,8 +72,6 @@ jobs:
             git commit -m "chore: publish new calculators"
             git push origin HEAD:${{ github.ref }}
           fi
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Build site
         run: npm run build
