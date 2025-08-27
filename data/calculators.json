@@ -81,7 +81,7 @@
     ]
   },
   {
-    "slug": "bmi",
+    "slug": "bmi-calculator",
     "title": "BMI Calculator",
     "cluster": "health",
     "description": "Estimate Body Mass Index from weight (kg) and height (cm).",
