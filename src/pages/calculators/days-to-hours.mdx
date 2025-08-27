@@ -1,42 +1,59 @@
 ---
 layout: ../../layouts/CalculatorLayout.astro
-title: "Days to Hours"
-description: "Convert days to total hours."
-updated: "2025-08-26"
+title: "Days to Hours Calculator"
+description: "Convert days to hours."
+date: 2025-08-26
+updated: 2025-08-26
 cluster: "Date & Time"
 ---
-
 import Calculator from '../../components/Calculator.astro';
 
 export const schema = {
+  "slug": "days-to-hours",
+  "title": "Days to Hours Calculator",
+  "locale": "en",
   "inputs": [
     {
       "name": "days",
-      "label": "Days",
-      "type": "number",
-      "min": 0,
-      "step": "any",
-      "placeholder": "3.5"
+      "hint": "Days"
     }
   ],
-  "slug": "days-to-hours",
-  "title": "Days to Hours",
-  "locale": "en",
-  "expression": "days * 24",
-  "intro": "Convert days to total hours.",
+  "expression": "days*24",
+  "intro": "Convert days to hours.",
   "examples": [
     {
-      "description": "3.5 days \u21d2 84 hours"
+      "description": "Enter the values and press Calculate."
     }
   ],
-  "faqs": [
-    {
-      "question": "Leap days?",
-      "answer": "This is a simple conversion (24h per day)."
-    }
-  ],
-  "disclaimer": "Educational purposes only. Not professional advice.",
-  "cluster": "Date & Time"
+  "faqs": [],
+  "disclaimer": "Educational information, not professional advice.",
+  "cluster": "Date & Time",
+  "related": [
+    "percentage-discount-calculator",
+    "loan-payment-calculator",
+    "compound-interest-calculator",
+    "bmi-calculator",
+    "percentage-increase-calculator",
+    "sales-tax-calculator"
+  ]
 }
 
+# Days to Hours Calculator
+
+Convert days to hours.
+
 <Calculator schema={schema} />
+
+## Examples
+
+- Enter the values and press Calculate.
+
+## Related calculators
+
+- [Percentage Discount Calculator](/calculators/percentage-discount-calculator/)
+- [Loan Payment Calculator](/calculators/loan-payment-calculator/)
+- [Compound Interest Calculator](/calculators/compound-interest-calculator/)
+- [Bmi Calculator](/calculators/bmi-calculator/)
+- [Percentage Increase Calculator](/calculators/percentage-increase-calculator/)
+- [Sales Tax Calculator](/calculators/sales-tax-calculator/)
+
