@@ -1,0 +1,61 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Grade Average"
+description: "Compute the average from three test scores."
+updated: "2025-08-26"
+cluster: "Other"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "inputs": [
+    {
+      "name": "a",
+      "label": "Score A",
+      "type": "number",
+      "min": 0,
+      "max": 100,
+      "step": "any",
+      "placeholder": "80"
+    },
+    {
+      "name": "b",
+      "label": "Score B",
+      "type": "number",
+      "min": 0,
+      "max": 100,
+      "step": "any",
+      "placeholder": "90"
+    },
+    {
+      "name": "c",
+      "label": "Score C",
+      "type": "number",
+      "min": 0,
+      "max": 100,
+      "step": "any",
+      "placeholder": "70"
+    }
+  ],
+  "slug": "grade-average",
+  "title": "Grade Average",
+  "locale": "en",
+  "expression": "(a + b + c) / 3",
+  "intro": "Compute the average from three test scores.",
+  "examples": [
+    {
+      "description": "80, 90, 70 \u21d2 80"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Weighted average?",
+      "answer": "This tool uses a simple mean (unweighted)."
+    }
+  ],
+  "disclaimer": "Educational purposes only. Not professional advice.",
+  "cluster": "Other"
+}
+
+<Calculator schema={schema} />

@@ -1,0 +1,58 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Simple Interest Calculator"
+description: "Compute simple interest based on principal, rate and time."
+updated: "2025-08-26"
+cluster: "Finance"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "inputs": [
+    {
+      "name": "principal",
+      "label": "Principal",
+      "type": "number",
+      "min": 0,
+      "step": "any",
+      "placeholder": "1000"
+    },
+    {
+      "name": "rate",
+      "label": "Rate (%) per year",
+      "type": "number",
+      "min": 0,
+      "step": "any",
+      "placeholder": "5"
+    },
+    {
+      "name": "years",
+      "label": "Years",
+      "type": "number",
+      "min": 0,
+      "step": "any",
+      "placeholder": "3"
+    }
+  ],
+  "slug": "simple-interest",
+  "title": "Simple Interest Calculator",
+  "locale": "en",
+  "expression": "principal * (rate/100) * years",
+  "intro": "Compute simple interest based on principal, rate and time.",
+  "examples": [
+    {
+      "description": "$1,000 at 5% for 3 years \u21d2 $150 interest"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Is compounding included?",
+      "answer": "No. Use a compound interest calculator for compounding."
+    }
+  ],
+  "disclaimer": "Educational purposes only. Not professional advice.",
+  "cluster": "Finance"
+}
+
+<Calculator schema={schema} />

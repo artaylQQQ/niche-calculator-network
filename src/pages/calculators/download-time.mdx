@@ -1,0 +1,50 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Download Time"
+description: "Estimate seconds to download a file by size and speed."
+updated: "2025-08-26"
+cluster: "Technology"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "inputs": [
+    {
+      "name": "sizeMB",
+      "label": "File size (MB)",
+      "type": "number",
+      "min": 0,
+      "step": "any",
+      "placeholder": "700"
+    },
+    {
+      "name": "speedMbps",
+      "label": "Speed (Mbps)",
+      "type": "number",
+      "min": 0.1,
+      "step": "any",
+      "placeholder": "50"
+    }
+  ],
+  "slug": "download-time",
+  "title": "Download Time",
+  "locale": "en",
+  "expression": "(sizeMB * 8) / speedMbps",
+  "intro": "Estimate seconds to download a file by size and speed.",
+  "examples": [
+    {
+      "description": "700 MB at 50 Mbps \u21d2 \u2248 112 sec"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Overheads considered?",
+      "answer": "No, this is the ideal time without protocol overheads."
+    }
+  ],
+  "disclaimer": "Educational purposes only. Not professional advice.",
+  "cluster": "Technology"
+}
+
+<Calculator schema={schema} />

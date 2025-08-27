@@ -1,0 +1,58 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Garden Soil Volume"
+description: "Compute soil volume for a rectangular bed (m³)."
+updated: "2025-08-26"
+cluster: "Home & DIY"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "inputs": [
+    {
+      "name": "length",
+      "label": "Length (m)",
+      "type": "number",
+      "min": 0,
+      "step": "any",
+      "placeholder": "4"
+    },
+    {
+      "name": "width",
+      "label": "Width (m)",
+      "type": "number",
+      "min": 0,
+      "step": "any",
+      "placeholder": "2"
+    },
+    {
+      "name": "depth",
+      "label": "Depth (m)",
+      "type": "number",
+      "min": 0,
+      "step": "any",
+      "placeholder": "0.3"
+    }
+  ],
+  "slug": "garden-soil-volume",
+  "title": "Garden Soil Volume",
+  "locale": "en",
+  "expression": "length * width * depth",
+  "intro": "Compute soil volume for a rectangular bed (m\u00b3).",
+  "examples": [
+    {
+      "description": "4\u00d72\u00d70.3 m \u21d2 2.4 m\u00b3"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Irregular shapes?",
+      "answer": "Approximate by splitting into rectangles and summing volumes."
+    }
+  ],
+  "disclaimer": "Educational purposes only. Not professional advice.",
+  "cluster": "Home & DIY"
+}
+
+<Calculator schema={schema} />

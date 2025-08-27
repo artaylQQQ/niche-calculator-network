@@ -1,0 +1,41 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Celsius to Fahrenheit"
+description: "Convert Celsius degrees into Fahrenheit."
+updated: "2025-08-26"
+cluster: "Conversions"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "inputs": [
+    {
+      "name": "c",
+      "label": "Degrees Celsius",
+      "type": "number",
+      "step": "any",
+      "placeholder": "25"
+    }
+  ],
+  "slug": "celsius-to-fahrenheit",
+  "title": "Celsius to Fahrenheit",
+  "locale": "en",
+  "expression": "(c * 9/5) + 32",
+  "intro": "Convert Celsius degrees into Fahrenheit.",
+  "examples": [
+    {
+      "description": "25\u00b0C \u21d2 77\u00b0F"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Does it support negatives?",
+      "answer": "Yes, negative temperatures are supported."
+    }
+  ],
+  "disclaimer": "Educational purposes only. Not professional advice.",
+  "cluster": "Conversions"
+}
+
+<Calculator schema={schema} />

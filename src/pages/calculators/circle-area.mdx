@@ -1,0 +1,42 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Circle Area"
+description: "Compute area of a circle from its radius."
+updated: "2025-08-26"
+cluster: "Math"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "inputs": [
+    {
+      "name": "r",
+      "label": "Radius",
+      "type": "number",
+      "min": 0,
+      "step": "any",
+      "placeholder": "5"
+    }
+  ],
+  "slug": "circle-area",
+  "title": "Circle Area",
+  "locale": "en",
+  "expression": "Math.PI * r * r",
+  "intro": "Compute area of a circle from its radius.",
+  "examples": [
+    {
+      "description": "r = 5 \u21d2 area \u2248 78.5398"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Units?",
+      "answer": "Area units are squared units of the input (e.g., cm\u00b2)."
+    }
+  ],
+  "disclaimer": "Educational purposes only. Not professional advice.",
+  "cluster": "Math"
+}
+
+<Calculator schema={schema} />

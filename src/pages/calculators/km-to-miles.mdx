@@ -1,0 +1,42 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Kilometers to Miles"
+description: "Convert kilometers into miles."
+updated: "2025-08-26"
+cluster: "Conversions"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "inputs": [
+    {
+      "name": "km",
+      "label": "Kilometers",
+      "type": "number",
+      "min": 0,
+      "step": "any",
+      "placeholder": "10"
+    }
+  ],
+  "slug": "km-to-miles",
+  "title": "Kilometers to Miles",
+  "locale": "en",
+  "expression": "km * 0.621371",
+  "intro": "Convert kilometers into miles.",
+  "examples": [
+    {
+      "description": "10 km \u21d2 6.21371 miles"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Is the factor exact?",
+      "answer": "We use the standard 1 km = 0.621371 miles."
+    }
+  ],
+  "disclaimer": "Educational purposes only. Not professional advice.",
+  "cluster": "Conversions"
+}
+
+<Calculator schema={schema} />

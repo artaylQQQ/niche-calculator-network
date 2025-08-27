@@ -1,0 +1,51 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Percentage Discount Calculator"
+description: "Calculate the final price after a percentage discount."
+updated: "2025-08-26"
+cluster: "Finance"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "inputs": [
+    {
+      "name": "price",
+      "label": "Original Price",
+      "type": "number",
+      "min": 0,
+      "step": "any",
+      "placeholder": "100"
+    },
+    {
+      "name": "discount",
+      "label": "Discount (%)",
+      "type": "number",
+      "min": 0,
+      "max": 100,
+      "step": "any",
+      "placeholder": "15"
+    }
+  ],
+  "slug": "percentage-discount",
+  "title": "Percentage Discount Calculator",
+  "locale": "en",
+  "expression": "price * (1 - discount/100)",
+  "intro": "Calculate the final price after a percentage discount.",
+  "examples": [
+    {
+      "description": "Price 100 with 20% discount \u21d2 80"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Does it support decimals?",
+      "answer": "Yes, you can use decimal prices and percentage values."
+    }
+  ],
+  "disclaimer": "Educational purposes only. Not professional advice.",
+  "cluster": "Finance"
+}
+
+<Calculator schema={schema} />

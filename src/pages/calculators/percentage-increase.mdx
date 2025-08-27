@@ -1,0 +1,50 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Percentage Increase"
+description: "Get the percentage increase from an old value to a new value."
+updated: "2025-08-26"
+cluster: "Math"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "inputs": [
+    {
+      "name": "oldValue",
+      "label": "Old value",
+      "type": "number",
+      "min": 0,
+      "step": "any",
+      "placeholder": "50"
+    },
+    {
+      "name": "newValue",
+      "label": "New value",
+      "type": "number",
+      "min": 0,
+      "step": "any",
+      "placeholder": "70"
+    }
+  ],
+  "slug": "percentage-increase",
+  "title": "Percentage Increase",
+  "locale": "en",
+  "expression": "((newValue - oldValue) / oldValue) * 100",
+  "intro": "Get the percentage increase from an old value to a new value.",
+  "examples": [
+    {
+      "description": "From 50 to 70 \u21d2 40% increase"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "What if old value is 0?",
+      "answer": "Percentage change is undefined when the old value is 0."
+    }
+  ],
+  "disclaimer": "Educational purposes only. Not professional advice.",
+  "cluster": "Math"
+}
+
+<Calculator schema={schema} />

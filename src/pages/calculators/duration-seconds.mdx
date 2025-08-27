@@ -1,0 +1,58 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Duration to Seconds"
+description: "Convert hours, minutes, and seconds into total seconds."
+updated: "2025-08-26"
+cluster: "Date & Time"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "inputs": [
+    {
+      "name": "hours",
+      "label": "Hours",
+      "type": "number",
+      "min": 0,
+      "step": "1",
+      "placeholder": "1"
+    },
+    {
+      "name": "minutes",
+      "label": "Minutes",
+      "type": "number",
+      "min": 0,
+      "step": "1",
+      "placeholder": "30"
+    },
+    {
+      "name": "seconds",
+      "label": "Seconds",
+      "type": "number",
+      "min": 0,
+      "step": "1",
+      "placeholder": "15"
+    }
+  ],
+  "slug": "duration-seconds",
+  "title": "Duration to Seconds",
+  "locale": "en",
+  "expression": "(hours*3600) + (minutes*60) + seconds",
+  "intro": "Convert hours, minutes, and seconds into total seconds.",
+  "examples": [
+    {
+      "description": "1h 30m 15s \u21d2 5415 seconds"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Supports decimals?",
+      "answer": "Use whole numbers for simplicity in this tool."
+    }
+  ],
+  "disclaimer": "Educational purposes only. Not professional advice.",
+  "cluster": "Date & Time"
+}
+
+<Calculator schema={schema} />

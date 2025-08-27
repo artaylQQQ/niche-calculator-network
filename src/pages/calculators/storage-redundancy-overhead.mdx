@@ -1,0 +1,50 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Storage Redundancy Overhead"
+description: "Compute overhead percentage when storing data with redundancy."
+updated: "2025-08-26"
+cluster: "Technology"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "inputs": [
+    {
+      "name": "dataTB",
+      "label": "Data (TB)",
+      "type": "number",
+      "min": 0,
+      "step": "any",
+      "placeholder": "10"
+    },
+    {
+      "name": "redundantTB",
+      "label": "Redundant data (TB)",
+      "type": "number",
+      "min": 0,
+      "step": "any",
+      "placeholder": "5"
+    }
+  ],
+  "slug": "storage-redundancy-overhead",
+  "title": "Storage Redundancy Overhead",
+  "locale": "en",
+  "expression": "(redundantTB / dataTB) * 100",
+  "intro": "Compute overhead percentage when storing data with redundancy.",
+  "examples": [
+    {
+      "description": "10TB data + 5TB redundancy \u21d2 50% overhead"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "What if data is 0?",
+      "answer": "Overhead is undefined when data is 0."
+    }
+  ],
+  "disclaimer": "Educational purposes only. Not professional advice.",
+  "cluster": "Technology"
+}
+
+<Calculator schema={schema} />

@@ -1,0 +1,50 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Daily Calorie Burn (Rough)"
+description: "Rough estimate of daily calories burned from steps and exercise minutes."
+updated: "2025-08-26"
+cluster: "Health"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "inputs": [
+    {
+      "name": "steps",
+      "label": "Steps per day",
+      "type": "number",
+      "min": 0,
+      "step": "1",
+      "placeholder": "8000"
+    },
+    {
+      "name": "exercise",
+      "label": "Exercise minutes",
+      "type": "number",
+      "min": 0,
+      "step": "1",
+      "placeholder": "30"
+    }
+  ],
+  "slug": "daily-calorie-burn",
+  "title": "Daily Calorie Burn (Rough)",
+  "locale": "en",
+  "expression": "(steps * 0.04) + (exercise * 7)",
+  "intro": "Rough estimate of daily calories burned from steps and exercise minutes.",
+  "examples": [
+    {
+      "description": "8000 steps and 30 min \u21d2 \u2248 470 kcal (rough)"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Is this accurate?",
+      "answer": "It is a rough estimate; for precision use a medical-grade calculator."
+    }
+  ],
+  "disclaimer": "Educational purposes only. Not professional advice.",
+  "cluster": "Health"
+}
+
+<Calculator schema={schema} />
