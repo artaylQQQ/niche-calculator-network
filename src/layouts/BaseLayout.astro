@@ -1,7 +1,6 @@
 ---
-import "../styles/tailwind.css";
 const { title = 'CalcSimpler', description = 'Smart & Fast Calculators', canonical } = Astro.props;
-const site = Astro.site?.toString() || (import.meta.env.SITE_URL ?? 'https://example.com');
+const site = Astro.site?.toString() || (import.meta.env.SITE_URL ?? 'https://calcsimpler.com');
 const href = canonical ?? new URL(Astro.url.pathname, site).toString();
 const adsClient = import.meta.env.VITE_ADSENSE_CLIENT;
 const cfToken = import.meta.env.VITE_CF_ANALYTICS_TOKEN;
@@ -13,47 +12,40 @@ const cfToken = import.meta.env.VITE_CF_ANALYTICS_TOKEN;
     <title>{title ? `${title} — CalcSimpler.com` : 'CalcSimpler.com'}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={href} />
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-    <!-- Set the theme colour to match the primary brand colour.  This
-         provides a consistent browser UI in both light and dark modes. -->
-    <meta name="theme-color" content="#2C74B3">
-    <link rel="stylesheet" href="/styles/theme.css">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <meta name="theme-color" content="#2C74B3" />
     <link rel="stylesheet" href="/styles/tokens.css" />
+    <link rel="stylesheet" href="/styles/theme.css" />
     {adsClient && (
-      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={adsClient}" crossorigin="anonymous"></script>
+      <script async src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${adsClient}`} crossorigin="anonymous"></script>
     )}
     {cfToken && (
       <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon={`{"token":"${cfToken}"}`}></script>
     )}
     <meta property="og:type" content="website" />
-  <meta property="og:title" content={title} />
-  <meta property="og:description" content={description} />
-  <meta property="og:url" content={href} />
-    <!-- Provide a default Open Graph image.  This uses the site
-         favicon as a simple logo.  Replace the path with a custom
-         preview image if desired. -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={href} />
     <meta property="og:image" content={`${site}/favicon.svg`} />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content={title} />
-  <meta name="twitter:description" content={description} />
-</head>
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+  </head>
   <body>
-    <a href="#main" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden">Skip to content</a>
+    <a href="#main" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;">Skip to content</a>
     <header class="header" role="banner">
-      <div class="header-inner">
-        <a href="/" aria-label="CalcSimpler" class="logo">CalcSimpler.com</a>
-        <nav class="nav" aria-label="Primary">
-          <a href="/finance">Finance</a>
-          <a href="/health">Health</a>
-          <a href="/math">Math</a>
-          <a href="/conversions">Conversions</a>
-          <a href="/technology">Technology</a>
-          <a href="/date-time">Date &amp; Time</a>
-          <a href="/home-diy">Home &amp; DIY</a>
-          {/* Route for miscellaneous calculators.  Historically this page was
-              called `everyday`, but has been renamed to `other` to match the
-              unified category list. */}
-          <a href="/other">Other</a>
+      <div class="header-inner container" style="display:flex;align-items:center;justify-content:space-between;">
+        <a href="/" aria-label="CalcSimpler Home" class="logo" style="font-weight:700;text-decoration:none;color:var(--ink)">CalcSimpler.com</a>
+        <button class="menu-toggle" onclick="document.querySelector('.nav').classList.toggle('open')" aria-label="Toggle menu" style="display:none;background:var(--primary);color:var(--primary-ink);border:none;padding:8px 12px;border-radius:6px">☰ Menu</button>
+        <nav class="nav" aria-label="Primary" style="display:flex;gap:8px;flex-wrap:wrap;">
+          <a href="/categories/finance">Finance</a>
+          <a href="/categories/health">Health</a>
+          <a href="/categories/math">Math</a>
+          <a href="/categories/conversions">Conversions</a>
+          <a href="/categories/technology">Technology</a>
+          <a href="/categories/date-time">Date &amp; Time</a>
+          <a href="/categories/home-diy">Home &amp; DIY</a>
+          <a href="/categories/other">Other</a>
           <a href="/all">All</a>
         </nav>
       </div>
@@ -61,8 +53,8 @@ const cfToken = import.meta.env.VITE_CF_ANALYTICS_TOKEN;
     <main class="container" id="main" role="main">
       <slot />
     </main>
-    <footer class="container" style="padding:24px 0;">
-      <div class="links">
+    <footer class="container" style="padding: 24px 0;">
+      <div class="links" style="display:flex;flex-wrap:wrap;gap:10px;">
         <a href="/">Home</a>
         <a href="/categories/">Categories</a>
         <a href="/all">All Calculators</a>
@@ -70,7 +62,17 @@ const cfToken = import.meta.env.VITE_CF_ANALYTICS_TOKEN;
         <a href="/privacy">Privacy</a>
         <a href="/disclaimer">Disclaimer</a>
       </div>
-      <div style="text-align:center;margin-top:8px;color:var(--muted)">© {new Date().getFullYear()} CalcSimpler.com</div>
+      <div style="text-align:center; margin-top: 8px; color: var(--muted);">
+        © {new Date().getFullYear()} CalcSimpler.com
+      </div>
     </footer>
+    <style>
+      @media (max-width: 768px) {
+        .menu-toggle { display: inline-block !important; }
+        .nav { display: none !important; flex-direction: column; background: var(--primary); padding: 10px; position: sticky; top: 56px; right: 10px; border-radius: 8px; }
+        .nav.open { display: flex !important; }
+        .nav a { display: block; margin: 2px 0; color: var(--primary-ink); }
+      }
+    </style>
   </body>
 </html>
