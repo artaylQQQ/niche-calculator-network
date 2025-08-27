@@ -1,55 +1,25 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-
-/*
- * Provide the same normalised list of categories as the home page.  Each
- * definition includes a URL slug, title, short description and the name of
- * an SVG icon stored under `/public/icons/`.  Where no dedicated icon
- * exists we reuse a related graphic (see comments in index.astro for
- * details).
- */
-const CATEGORIES = [
-  { slug: 'finance',     title: 'Finance',     desc: 'Loans, interest, ROI, taxes',          icon: 'finance' },
-  { slug: 'health',      title: 'Health',      desc: 'BMI and body metrics',                 icon: 'health' },
-  { slug: 'conversions', title: 'Conversions', desc: 'Unit and currency conversions',         icon: 'conversions' },
-  { slug: 'math',        title: 'Math',        desc: 'Geometry, algebra and statistics',      icon: 'geometry' },
-  { slug: 'technology',  title: 'Technology',  desc: 'Computing and tech topics',            icon: 'algebra' },
-  { slug: 'date-time',   title: 'Date & Time', desc: 'Schedules and durations',              icon: 'time-date' },
-  { slug: 'home-diy',    title: 'Home & DIY',  desc: 'Household projects and DIY',           icon: 'business' },
-  { slug: 'other',       title: 'Other',       desc: 'Everyday & misc calculators',          icon: 'statistics' }
+const cats = [
+  { slug:'finance', title:'Finance Calculators', desc:'Loans, interest, ROI, taxes' },
+  { slug:'health', title:'Health Calculators', desc:'BMI, calories, heart rate' },
+  { slug:'math', title:'Math Calculators', desc:'Percentages, geometry, algebra' },
+  { slug:'conversions', title:'Conversions Calculators', desc:'Units, currency, temperature' },
+  { slug:'technology', title:'Technology Calculators', desc:'Storage, bandwidth, time' },
+  { slug:'date-time', title:'Date & Time Calculators', desc:'Durations, schedules, timezones' },
+  { slug:'home-diy', title:'Home & DIY Calculators', desc:'Materials, paint, gardening' },
+  { slug:'other', title:'Other Calculators', desc:'Everyday quick tools' }
 ];
 ---
-<BaseLayout title="Categories" description="Browse all calculator categories.">
-  <section class="container mx-auto max-w-5xl px-4 pt-10">
-    <h1 class="text-3xl sm:text-4xl font-bold" style="color: var(--ink)">Categories</h1>
-    <p class="mt-2" style="color: var(--muted)">Browse all our calculators by topic.</p>
-  </section>
-
-  <section class="container mx-auto max-w-5xl px-4 py-8">
-    <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-      {CATEGORIES.map((cat) => (
-        <li>
-          <a href={`/categories/${cat.slug}/`}
-             class="group block rounded-xl border border-slate-200/80 dark:border-slate-700 bg-white dark:bg-slate-800 p-4 shadow-sm hover:shadow-md transition-shadow">
-            <div class="flex items-start gap-3">
-              {/**
-               * Provide meaningful alt text for icons to improve accessibility.
-               */}
-              <img
-                src={`/icons/${cat.icon}.svg`}
-                width="28"
-                height="28"
-                alt={`${cat.title} icon`}
-                loading="lazy"
-              />
-              <div>
-                <h3 class="text-lg font-semibold text-slate-900 dark:text-slate-50 group-hover:underline">{cat.title}</h3>
-                <p class="text-sm text-slate-600 dark:text-slate-300">{cat.desc}</p>
-              </div>
-            </div>
-          </a>
-        </li>
-      ))}
-    </ul>
-  </section>
+<BaseLayout title="Categories" description="Browse all calculator categories">
+  <ul style="list-style:none;padding:0;display:grid;grid-template-columns:repeat(2,1fr);gap:12px">
+    {cats.map(c => (
+      <li style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:12px">
+        <a href={`/categories/${c.slug}`} style="text-decoration:none;color:inherit">
+          <h3 style="margin:0 0 6px 0">{c.title}</h3>
+          <p style="margin:0;color:var(--muted)}">{c.desc}</p>
+        </a>
+      </li>
+    ))}
+  </ul>
 </BaseLayout>
