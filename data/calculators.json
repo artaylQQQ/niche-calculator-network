@@ -1,1231 +1,581 @@
 [
   {
-    "slug": "percentage-discount-calculator",
+    "slug": "percentage-discount",
     "title": "Percentage Discount Calculator",
-    "locale": "en",
+    "cluster": "finance",
+    "description": "Calculate the final price after a percentage discount.",
     "inputs": [
       {
         "name": "price",
+        "label": "Original Price",
         "type": "number",
         "min": 0,
-        "step": 0.01,
-        "hint": "Original price"
+        "step": "any",
+        "placeholder": "100"
       },
       {
         "name": "discount",
+        "label": "Discount (%)",
         "type": "number",
         "min": 0,
         "max": 100,
-        "step": 0.1,
-        "hint": "Discount (%)"
+        "step": "any",
+        "placeholder": "15"
       }
     ],
     "expression": "price * (1 - discount/100)",
-    "formula_js": "",
-    "units": {
-      "input": "",
-      "output": ""
-    },
-    "intro": "Calculate the final price after a percentage discount.",
-    "examples": [],
-    "faqs": [],
-    "disclaimer": "Educational information, not professional advice.",
-    "schema_org": "FAQPage|SoftwareApplication",
-    "cluster": "Percentages & Ratios"
-  },
-  {
-    "slug": "loan-payment-calculator",
-    "title": "Loan Payment Calculator",
-    "locale": "en",
-    "inputs": [
-      {
-        "name": "principal",
-        "type": "number",
-        "min": 0,
-        "step": 0.01,
-        "hint": "Loan amount"
-      },
-      {
-        "name": "annualRate",
-        "type": "number",
-        "min": 0,
-        "step": 0.01,
-        "hint": "Annual interest rate (%)"
-      },
-      {
-        "name": "years",
-        "type": "number",
-        "min": 0,
-        "step": 1,
-        "hint": "Term (years)"
-      }
-    ],
-    "expression": "principal * ((annualRate/1200) * (1 + (annualRate/1200))^(years*12)) / ((1 + (annualRate/1200))^(years*12) - 1)",
-    "formula_js": "",
-    "units": {
-      "input": "",
-      "output": ""
-    },
-    "intro": "Compute monthly payment for a fixed-rate loan.",
-    "examples": [],
-    "faqs": [],
-    "disclaimer": "Educational information, not professional advice.",
-    "schema_org": "FAQPage|SoftwareApplication",
-    "cluster": "Finance & Loans"
-  },
-  {
-    "slug": "compound-interest-calculator",
-    "title": "Compound Interest Calculator",
-    "locale": "en",
-    "inputs": [
-      {
-        "name": "principal",
-        "type": "number",
-        "min": 0,
-        "step": 0.01,
-        "hint": "Initial amount"
-      },
-      {
-        "name": "annualRate",
-        "type": "number",
-        "min": 0,
-        "step": 0.01,
-        "hint": "Annual interest rate (%)"
-      },
-      {
-        "name": "years",
-        "type": "number",
-        "min": 0,
-        "step": 1,
-        "hint": "Years"
-      },
-      {
-        "name": "times",
-        "type": "number",
-        "min": 1,
-        "step": 1,
-        "hint": "Compounds per year"
-      }
-    ],
-    "expression": "principal * (1 + (annualRate/100)/times)^(times*years)",
-    "formula_js": "",
-    "units": {
-      "input": "",
-      "output": ""
-    },
-    "intro": "Estimate future balance with compounding.",
-    "examples": [],
-    "faqs": [],
-    "disclaimer": "Educational information, not professional advice.",
-    "schema_org": "FAQPage|SoftwareApplication",
-    "cluster": "Finance & Loans"
-  },
-  {
-    "slug": "bmi-calculator",
-    "title": "BMI Calculator",
-    "locale": "en",
-    "inputs": [
-      {
-        "name": "weight",
-        "type": "number",
-        "min": 0,
-        "step": 0.1,
-        "hint": "Weight (kg)"
-      },
-      {
-        "name": "height",
-        "type": "number",
-        "min": 0,
-        "step": 0.001,
-        "hint": "Height (m)"
-      }
-    ],
-    "expression": "weight / (height^2)",
-    "formula_js": "",
-    "units": {
-      "input": "",
-      "output": ""
-    },
-    "intro": "Compute Body Mass Index (BMI).",
-    "examples": [],
-    "faqs": [],
-    "disclaimer": "Educational information, not professional advice.",
-    "schema_org": "FAQPage|SoftwareApplication",
-    "cluster": "Health & Fitness"
-  },
-  {
-    "slug": "percentage-increase-calculator",
-    "title": "Percentage Increase Calculator",
-    "locale": "en",
-    "inputs": [
-      {
-        "name": "original",
-        "type": "number",
-        "min": 0,
-        "step": 0.01,
-        "hint": "Original value"
-      },
-      {
-        "name": "increase",
-        "type": "number",
-        "min": 0,
-        "step": 0.01,
-        "hint": "Increase amount"
-      }
-    ],
-    "expression": "increase / original * 100",
-    "formula_js": "",
-    "units": {
-      "input": "",
-      "output": "%"
-    },
-    "intro": "Compute percentage increase from an absolute change.",
-    "examples": [],
-    "faqs": [],
-    "disclaimer": "Educational information, not professional advice.",
-    "schema_org": "FAQPage|SoftwareApplication",
-    "cluster": "Percentages & Ratios"
-  },
-  {
-    "slug": "sales-tax-calculator",
-    "title": "Sales Tax Calculator",
-    "locale": "en",
-    "inputs": [
-      {
-        "name": "price",
-        "type": "number",
-        "min": 0,
-        "step": 0.01,
-        "hint": "Price before tax"
-      },
-      {
-        "name": "tax",
-        "type": "number",
-        "min": 0,
-        "step": 0.01,
-        "hint": "Tax rate (%)"
-      }
-    ],
-    "expression": "price * (1 + tax/100)",
-    "formula_js": "",
-    "units": {
-      "input": "",
-      "output": ""
-    },
-    "intro": "Calculate the price including sales tax.",
-    "examples": [],
-    "faqs": [],
-    "disclaimer": "Educational information, not professional advice.",
-    "schema_org": "FAQPage|SoftwareApplication",
-    "cluster": "Percentages & Ratios"
-  },
-  {
-    "slug": "roi-calculator",
-    "title": "ROI Calculator",
-    "locale": "en",
-    "inputs": [
-      {
-        "name": "gain",
-        "type": "number",
-        "min": 0,
-        "step": 0.01,
-        "hint": "Return"
-      },
-      {
-        "name": "cost",
-        "type": "number",
-        "min": 0,
-        "step": 0.01,
-        "hint": "Cost"
-      }
-    ],
-    "expression": "(gain - cost) / cost * 100",
-    "formula_js": "",
-    "units": {
-      "input": "",
-      "output": ""
-    },
-    "intro": "Return on Investment percentage.",
-    "examples": [],
-    "faqs": [],
-    "disclaimer": "Educational information, not professional advice.",
-    "schema_org": "FAQPage|SoftwareApplication",
-    "cluster": "Finance & Loans"
-  },
-  {
-    "slug": "triangle-area-calculator",
-    "title": "Triangle Area Calculator",
-    "locale": "en",
-    "inputs": [
-      {
-        "name": "base",
-        "type": "number",
-        "min": 0,
-        "step": 0.01,
-        "hint": "Base"
-      },
-      {
-        "name": "height",
-        "type": "number",
-        "min": 0,
-        "step": 0.01,
-        "hint": "Height"
-      }
-    ],
-    "expression": "base * height / 2",
-    "formula_js": "",
-    "units": {
-      "input": "",
-      "output": ""
-    },
-    "intro": "Compute the area of a triangle.",
-    "examples": [],
-    "faqs": [],
-    "disclaimer": "Educational information, not professional advice.",
-    "schema_org": "FAQPage|SoftwareApplication",
-    "cluster": "Geometry & Math"
-  },
-  {
-    "slug": "simple-interest-calculator",
-    "title": "Simple Interest Calculator",
-    "locale": "en",
-    "inputs": [
-      {
-        "name": "principal",
-        "type": "number",
-        "min": 0,
-        "step": 0.01,
-        "hint": "Principal"
-      },
-      {
-        "name": "rate",
-        "type": "number",
-        "min": 0,
-        "step": 0.01,
-        "hint": "Annual rate (%)"
-      },
-      {
-        "name": "years",
-        "type": "number",
-        "min": 0,
-        "step": 0.1,
-        "hint": "Years"
-      }
-    ],
-    "expression": "principal * (1 + rate/100 * years)",
-    "formula_js": "",
-    "units": {
-      "input": "",
-      "output": ""
-    },
-    "intro": "Compute final amount with simple interest.",
-    "examples": [],
-    "faqs": [],
-    "disclaimer": "Educational information, not professional advice.",
-    "schema_org": "FAQPage|SoftwareApplication",
-    "cluster": "Finance & Loans"
-  },
-  {
-    "slug": "final-price-calculator",
-    "title": "Final Price Calculator",
-    "locale": "en",
-    "inputs": [
-      {
-        "name": "price",
-        "type": "number",
-        "min": 0,
-        "step": 0.01,
-        "hint": "Base price"
-      },
-      {
-        "name": "percent",
-        "type": "number",
-        "min": -100,
-        "max": 500,
-        "step": 0.1,
-        "hint": "Change (%)"
-      }
-    ],
-    "expression": "price * (1 + percent/100)",
-    "formula_js": "",
-    "units": {
-      "input": "",
-      "output": ""
-    },
-    "intro": "Apply a generic percent change.",
-    "examples": [],
-    "faqs": [],
-    "disclaimer": "Educational information, not professional advice.",
-    "schema_org": "FAQPage|SoftwareApplication",
-    "cluster": "Percentages & Ratios"
-  },
-  {
-    "slug": "markup-margin-calculator",
-    "title": "Markup & Margin Calculator",
-    "locale": "en",
-    "inputs": [
-      {
-        "name": "cost",
-        "type": "number",
-        "min": 0,
-        "step": 0.01,
-        "hint": "Cost"
-      },
-      {
-        "name": "margin",
-        "type": "number",
-        "min": 0,
-        "max": 100,
-        "step": 0.1,
-        "hint": "Margin (%)"
-      }
-    ],
-    "expression": "cost / (1 - margin/100)",
-    "formula_js": "",
-    "units": {
-      "input": "",
-      "output": ""
-    },
-    "intro": "Compute selling price from cost and desired margin.",
-    "examples": [],
-    "faqs": [],
-    "disclaimer": "Educational information, not professional advice.",
-    "schema_org": "FAQPage|SoftwareApplication",
-    "cluster": "Percentages & Ratios"
-  },
-  {
-    "slug": "km-to-miles-calculator",
-    "title": "Kilometers to Miles Converter",
-    "locale": "en",
-    "inputs": [
-      {
-        "name": "km",
-        "type": "number",
-        "min": 0,
-        "step": 0.001,
-        "hint": "Kilometers"
-      }
-    ],
-    "expression": "km * 0.621371",
-    "formula_js": "",
-    "units": {
-      "input": "",
-      "output": ""
-    },
-    "intro": "Convert kilometers to miles.",
-    "examples": [],
-    "faqs": [],
-    "disclaimer": "Educational information, not professional advice.",
-    "schema_org": "FAQPage|SoftwareApplication",
-    "cluster": "Conversions & Units"
-  },
-  {
-    "slug": "miles-to-km-calculator",
-    "title": "Miles to Kilometers Converter",
-    "locale": "en",
-    "inputs": [
-      {
-        "name": "mi",
-        "type": "number",
-        "min": 0,
-        "step": 0.001,
-        "hint": "Miles"
-      }
-    ],
-    "expression": "mi * 1.60934",
-    "formula_js": "",
-    "units": {
-      "input": "",
-      "output": ""
-    },
-    "intro": "Convert miles to kilometers.",
-    "examples": [],
-    "faqs": [],
-    "disclaimer": "Educational information, not professional advice.",
-    "schema_org": "FAQPage|SoftwareApplication",
-    "cluster": "Conversions & Units"
-  },
-  {
-    "slug": "c-to-f-calculator",
-    "title": "Celsius to Fahrenheit Converter",
-    "locale": "en",
-    "inputs": [
-      {
-        "name": "c",
-        "type": "number",
-        "step": 0.1,
-        "hint": "Celsius"
-      }
-    ],
-    "expression": "c * 9/5 + 32",
-    "formula_js": "",
-    "units": {
-      "input": "",
-      "output": ""
-    },
-    "intro": "Convert Celsius to Fahrenheit.",
-    "examples": [],
-    "faqs": [],
-    "disclaimer": "Educational information, not professional advice.",
-    "schema_org": "FAQPage|SoftwareApplication",
-    "cluster": "Conversions & Units"
-  },
-  {
-    "slug": "f-to-c-calculator",
-    "title": "Fahrenheit to Celsius Converter",
-    "locale": "en",
-    "inputs": [
-      {
-        "name": "f",
-        "type": "number",
-        "step": 0.1,
-        "hint": "Fahrenheit"
-      }
-    ],
-    "expression": "(f - 32) * 5/9",
-    "formula_js": "",
-    "units": {
-      "input": "",
-      "output": ""
-    },
-    "intro": "Convert Fahrenheit to Celsius.",
-    "examples": [],
-    "faqs": [],
-    "disclaimer": "Educational information, not professional advice.",
-    "schema_org": "FAQPage|SoftwareApplication",
-    "cluster": "Conversions & Units"
-  },
-  {
-    "slug": "kg-to-lb-calculator",
-    "title": "Kilograms to Pounds Converter",
-    "locale": "en",
-    "inputs": [
-      {
-        "name": "kg",
-        "type": "number",
-        "min": 0,
-        "step": 0.001,
-        "hint": "Kilograms"
-      }
-    ],
-    "expression": "kg * 2.20462",
-    "formula_js": "",
-    "units": {
-      "input": "",
-      "output": ""
-    },
-    "intro": "Convert kilograms to pounds.",
-    "examples": [],
-    "faqs": [],
-    "disclaimer": "Educational information, not professional advice.",
-    "schema_org": "FAQPage|SoftwareApplication",
-    "cluster": "Conversions & Units"
-  },
-  {
-    "slug": "cm-to-inches-calculator",
-    "title": "Centimeters to Inches Converter",
-    "locale": "en",
-    "inputs": [
-      {
-        "name": "cm",
-        "type": "number",
-        "min": 0,
-        "step": 0.01,
-        "hint": "Centimeters"
-      }
-    ],
-    "expression": "cm * 0.393701",
-    "formula_js": "",
-    "units": {
-      "input": "",
-      "output": ""
-    },
-    "intro": "Convert centimeters to inches.",
-    "examples": [],
-    "faqs": [],
-    "disclaimer": "Educational information, not professional advice.",
-    "schema_org": "FAQPage|SoftwareApplication",
-    "cluster": "Conversions & Units"
-  },
-  {
-    "slug": "break-even-calculator",
-    "title": "Break-Even Units Calculator",
-    "locale": "en",
-    "inputs": [
-      {
-        "name": "fixed",
-        "type": "number",
-        "min": 0,
-        "step": 0.01,
-        "hint": "Fixed costs"
-      },
-      {
-        "name": "price",
-        "type": "number",
-        "min": 0,
-        "step": 0.01,
-        "hint": "Unit price"
-      },
-      {
-        "name": "variable",
-        "type": "number",
-        "min": 0,
-        "step": 0.01,
-        "hint": "Variable cost / unit"
-      }
-    ],
-    "expression": "fixed / (price - variable)",
-    "formula_js": "",
-    "units": {
-      "input": "",
-      "output": ""
-    },
-    "intro": "Estimate units to break even.",
-    "examples": [],
-    "faqs": [],
-    "disclaimer": "Educational information, not professional advice.",
-    "schema_org": "FAQPage|SoftwareApplication",
-    "cluster": "Finance & Loans"
-  },
-  {
-    "slug": "cagr-calculator",
-    "title": "CAGR Calculator",
-    "locale": "en",
-    "inputs": [
-      {
-        "name": "initial",
-        "type": "number",
-        "min": 0,
-        "step": 0.01,
-        "hint": "Initial value"
-      },
-      {
-        "name": "final",
-        "type": "number",
-        "min": 0,
-        "step": 0.01,
-        "hint": "Final value"
-      },
-      {
-        "name": "years",
-        "type": "number",
-        "min": 0,
-        "step": 0.1,
-        "hint": "Years"
-      }
-    ],
-    "expression": "((final / initial)^(1/years) - 1) * 100",
-    "formula_js": "",
-    "units": {
-      "input": "",
-      "output": ""
-    },
-    "intro": "Compound Annual Growth Rate.",
-    "examples": [],
-    "faqs": [],
-    "disclaimer": "Educational information, not professional advice.",
-    "schema_org": "FAQPage|SoftwareApplication",
-    "cluster": "Finance & Loans"
-  },
-  {
-    "slug": "kg-to-g-calculator",
-    "title": "Kilograms to Grams Converter",
-    "locale": "en",
-    "inputs": [
-      {
-        "name": "kg",
-        "type": "number",
-        "min": 0,
-        "step": 0.001,
-        "hint": "Kilograms"
-      }
-    ],
-    "expression": "kg * 1000",
-    "formula_js": "",
-    "units": {
-      "input": "",
-      "output": ""
-    },
-    "intro": "Convert kg to g.",
-    "examples": [],
-    "faqs": [],
-    "disclaimer": "Educational information, not professional advice.",
-    "schema_org": "FAQPage|SoftwareApplication",
-    "cluster": "Conversions & Units"
-  },
-  {
-    "slug": "hours-to-minutes-calculator",
-    "title": "Hours to Minutes Converter",
-    "locale": "en",
-    "inputs": [
-      {
-        "name": "hours",
-        "type": "number",
-        "min": 0,
-        "step": 0.1,
-        "hint": "Hours"
-      }
-    ],
-    "expression": "hours * 60",
-    "formula_js": "",
-    "units": {
-      "input": "",
-      "output": ""
-    },
-    "intro": "Convert hours to minutes.",
-    "examples": [],
-    "faqs": [],
-    "disclaimer": "Educational information, not professional advice.",
-    "schema_org": "FAQPage|SoftwareApplication",
-    "cluster": "Misc"
-  },
-  {
-    "slug": "time-to-seconds-calculator",
-    "title": "Time to Seconds Calculator",
-    "locale": "en",
-    "inputs": [
-      {
-        "name": "hours",
-        "type": "number",
-        "min": 0,
-        "step": 1,
-        "hint": "Hours"
-      },
-      {
-        "name": "minutes",
-        "type": "number",
-        "min": 0,
-        "step": 1,
-        "hint": "Minutes"
-      },
-      {
-        "name": "seconds",
-        "type": "number",
-        "min": 0,
-        "step": 1,
-        "hint": "Seconds"
-      }
-    ],
-    "expression": "hours*3600 + minutes*60 + seconds",
-    "formula_js": "",
-    "units": {
-      "input": "",
-      "output": ""
-    },
-    "intro": "Convert H:M:S to seconds.",
-    "examples": [],
-    "faqs": [],
-    "disclaimer": "Educational information, not professional advice.",
-    "schema_org": "FAQPage|SoftwareApplication",
-    "cluster": "Misc"
-  },
-  {
-    "slug": "rectangle-area-calculator",
-    "title": "Rectangle Area Calculator",
-    "locale": "en",
-    "inputs": [
-      {
-        "name": "length",
-        "type": "number",
-        "min": 0,
-        "step": 0.01,
-        "hint": "Length"
-      },
-      {
-        "name": "width",
-        "type": "number",
-        "min": 0,
-        "step": 0.01,
-        "hint": "Width"
-      }
-    ],
-    "expression": "length * width",
-    "formula_js": "",
-    "units": {
-      "input": "",
-      "output": ""
-    },
-    "intro": "Area of a rectangle.",
-    "examples": [],
-    "faqs": [],
-    "disclaimer": "Educational information, not professional advice.",
-    "schema_org": "FAQPage|SoftwareApplication",
-    "cluster": "Geometry & Math"
-  },
-  {
-    "slug": "circle-area-calculator",
-    "title": "Circle Area Calculator",
-    "locale": "en",
-    "inputs": [
-      {
-        "name": "radius",
-        "type": "number",
-        "min": 0,
-        "step": 0.001,
-        "hint": "Radius"
-      }
-    ],
-    "expression": "3.141592653589793 * radius^2",
-    "formula_js": "",
-    "units": {
-      "input": "",
-      "output": ""
-    },
-    "intro": "Area of a circle.",
-    "examples": [],
-    "faqs": [],
-    "disclaimer": "Educational information, not professional advice.",
-    "schema_org": "FAQPage|SoftwareApplication",
-    "cluster": "Geometry & Math"
-  },
-  {
-    "slug": "cylinder-volume-calculator",
-    "title": "Cylinder Volume Calculator",
-    "locale": "en",
-    "inputs": [
-      {
-        "name": "radius",
-        "type": "number",
-        "min": 0,
-        "step": 0.001,
-        "hint": "Radius"
-      },
-      {
-        "name": "height",
-        "type": "number",
-        "min": 0,
-        "step": 0.01,
-        "hint": "Height"
-      }
-    ],
-    "expression": "3.141592653589793 * radius^2 * height",
-    "formula_js": "",
-    "units": {
-      "input": "",
-      "output": ""
-    },
-    "intro": "Volume of a cylinder.",
-    "examples": [],
-    "faqs": [],
-    "disclaimer": "Educational information, not professional advice.",
-    "schema_org": "FAQPage|SoftwareApplication",
-    "cluster": "Geometry & Math"
-  },
-  {
-    "slug": "roi-dollar-calculator",
-    "title": "ROI Dollar Amount Calculator",
-    "locale": "en",
-    "inputs": [
-      {
-        "name": "investment",
-        "type": "number",
-        "min": 0,
-        "step": 0.01,
-        "hint": "Initial investment"
-      },
-      {
-        "name": "roiPercent",
-        "type": "number",
-        "min": 0,
-        "step": 0.1,
-        "hint": "ROI (%)"
-      }
-    ],
-    "expression": "investment * roiPercent / 100",
-    "formula_js": "",
-    "units": {
-      "input": "",
-      "output": ""
-    },
-    "intro": "ROI in dollars.",
-    "examples": [],
-    "faqs": [],
-    "disclaimer": "Educational information, not professional advice.",
-    "schema_org": "FAQPage|SoftwareApplication",
-    "cluster": "Finance & Loans"
-  },
-  {
-    "slug": "net-profit-calculator",
-    "title": "Net Profit Calculator",
-    "locale": "en",
-    "inputs": [
-      {
-        "name": "revenue",
-        "type": "number",
-        "min": 0,
-        "step": 0.01,
-        "hint": "Revenue"
-      },
-      {
-        "name": "costs",
-        "type": "number",
-        "min": 0,
-        "step": 0.01,
-        "hint": "Costs"
-      }
-    ],
-    "expression": "revenue - costs",
-    "formula_js": "",
-    "units": {
-      "input": "",
-      "output": ""
-    },
-    "intro": "Net profit.",
-    "examples": [],
-    "faqs": [],
-    "disclaimer": "Educational information, not professional advice.",
-    "schema_org": "FAQPage|SoftwareApplication",
-    "cluster": "Finance & Loans"
-  },
-  {
-    "slug": "weight-to-bmi-projection-calculator",
-    "title": "Weight to BMI Projection",
-    "locale": "en",
-    "inputs": [
-      {
-        "name": "weight",
-        "type": "number",
-        "min": 0,
-        "step": 0.1,
-        "hint": "Weight (kg)"
-      },
-      {
-        "name": "height",
-        "type": "number",
-        "min": 0,
-        "step": 0.001,
-        "hint": "Height (m)"
-      }
-    ],
-    "expression": "weight / (height^2)",
-    "formula_js": "",
-    "units": {
-      "input": "",
-      "output": ""
-    },
-    "intro": "Quick BMI projection.",
-    "examples": [],
-    "faqs": [],
-    "disclaimer": "Educational information, not professional advice.",
-    "schema_org": "FAQPage|SoftwareApplication",
-    "cluster": "Health & Fitness"
-  },
-  {
-    "slug": "calories-burned-met",
-    "title": "Calories Burned (MET) Calculator",
-    "cluster": "Health",
-    "intro": "Estimate calories burned using MET, weight, and duration.",
-    "inputs": [
-      {
-        "name": "met",
-        "hint": "MET value"
-      },
-      {
-        "name": "weight",
-        "hint": "Weight (kg)"
-      },
-      {
-        "name": "duration",
-        "hint": "Duration (minutes)"
-      }
-    ],
-    "expression": "met*weight*3.5/200*duration",
     "examples": [
       {
-        "description": "Jogging at MET 7, 70 kg, 30 minutes → about 257 kcal"
+        "description": "Price 100 with 20% discount \u21d2 80"
       }
     ],
     "faqs": [
       {
-        "question": "What is a MET?",
-        "answer": "A MET is a unit that estimates energy cost of physical activities."
+        "question": "Does it support decimals?",
+        "answer": "Yes, you can use decimal prices and percentage values."
       }
     ]
   },
   {
-    "slug": "daily-water-intake",
-    "title": "Daily Water Intake Calculator",
-    "cluster": "Health",
-    "intro": "Rough estimate of daily water intake from body weight.",
+    "slug": "simple-interest",
+    "title": "Simple Interest Calculator",
+    "cluster": "finance",
+    "description": "Compute simple interest based on principal, rate and time.",
+    "inputs": [
+      {
+        "name": "principal",
+        "label": "Principal",
+        "type": "number",
+        "min": 0,
+        "step": "any",
+        "placeholder": "1000"
+      },
+      {
+        "name": "rate",
+        "label": "Rate (%) per year",
+        "type": "number",
+        "min": 0,
+        "step": "any",
+        "placeholder": "5"
+      },
+      {
+        "name": "years",
+        "label": "Years",
+        "type": "number",
+        "min": 0,
+        "step": "any",
+        "placeholder": "3"
+      }
+    ],
+    "expression": "principal * (rate/100) * years",
+    "examples": [
+      {
+        "description": "$1,000 at 5% for 3 years \u21d2 $150 interest"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Is compounding included?",
+        "answer": "No. Use a compound interest calculator for compounding."
+      }
+    ]
+  },
+  {
+    "slug": "bmi",
+    "title": "BMI Calculator",
+    "cluster": "health",
+    "description": "Estimate Body Mass Index from weight (kg) and height (cm).",
     "inputs": [
       {
         "name": "weight",
-        "hint": "Weight (kg)"
-      }
-    ],
-    "expression": "weight*0.033",
-    "examples": [
-      {
-        "description": "75 kg → ~2.48 liters/day"
-      }
-    ]
-  },
-  {
-    "slug": "waist-to-height-ratio",
-    "title": "Waist-to-Height Ratio Calculator",
-    "cluster": "Health",
-    "intro": "Compute waist-to-height ratio (WHtR).",
-    "inputs": [
-      {
-        "name": "waist",
-        "hint": "Waist (cm)"
+        "label": "Weight (kg)",
+        "type": "number",
+        "min": 0,
+        "step": "any",
+        "placeholder": "70"
       },
       {
         "name": "height",
-        "hint": "Height (cm)"
+        "label": "Height (cm)",
+        "type": "number",
+        "min": 0,
+        "step": "any",
+        "placeholder": "175"
       }
     ],
-    "expression": "waist/height",
+    "expression": "weight / ((height/100) ** 2)",
     "examples": [
       {
-        "description": "80 cm waist, 170 cm height → 0.47"
+        "description": "70 kg and 175 cm \u21d2 BMI \u2248 22.86"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What is BMI?",
+        "answer": "A simple index of weight-for-height commonly used to classify underweight, overweight and obesity."
       }
     ]
   },
   {
-    "slug": "data-transfer-time",
-    "title": "Data Transfer Time Calculator",
-    "cluster": "Technology",
-    "intro": "Estimate time to transfer data over a connection speed.",
+    "slug": "daily-calorie-burn",
+    "title": "Daily Calorie Burn (Rough)",
+    "cluster": "health",
+    "description": "Rough estimate of daily calories burned from steps and exercise minutes.",
     "inputs": [
       {
-        "name": "size_mb",
-        "hint": "File size (MB)"
+        "name": "steps",
+        "label": "Steps per day",
+        "type": "number",
+        "min": 0,
+        "step": "1",
+        "placeholder": "8000"
       },
       {
-        "name": "speed_mbps",
-        "hint": "Speed (Mbps)"
+        "name": "exercise",
+        "label": "Exercise minutes",
+        "type": "number",
+        "min": 0,
+        "step": "1",
+        "placeholder": "30"
       }
     ],
-    "expression": "(size_mb*8)/speed_mbps/60",
+    "expression": "(steps * 0.04) + (exercise * 7)",
     "examples": [
       {
-        "description": "700 MB at 20 Mbps → ~4.67 minutes"
+        "description": "8000 steps and 30 min \u21d2 \u2248 470 kcal (rough)"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Is this accurate?",
+        "answer": "It is a rough estimate; for precision use a medical-grade calculator."
       }
     ]
   },
   {
-    "slug": "kb-to-mb",
-    "title": "KB to MB Converter",
-    "cluster": "Technology",
-    "intro": "Convert kilobytes to megabytes.",
+    "slug": "celsius-to-fahrenheit",
+    "title": "Celsius to Fahrenheit",
+    "cluster": "conversions",
+    "description": "Convert Celsius degrees into Fahrenheit.",
     "inputs": [
       {
-        "name": "kb",
-        "hint": "Kilobytes"
+        "name": "c",
+        "label": "Degrees Celsius",
+        "type": "number",
+        "step": "any",
+        "placeholder": "25"
       }
     ],
-    "expression": "kb/1024",
+    "expression": "(c * 9/5) + 32",
     "examples": [
       {
-        "description": "2048 KB → 2 MB"
+        "description": "25\u00b0C \u21d2 77\u00b0F"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Does it support negatives?",
+        "answer": "Yes, negative temperatures are supported."
       }
     ]
   },
   {
-    "slug": "download-cost",
-    "title": "Download Cost Calculator",
-    "cluster": "Technology",
-    "intro": "Estimate download cost from data size and price per GB.",
+    "slug": "km-to-miles",
+    "title": "Kilometers to Miles",
+    "cluster": "conversions",
+    "description": "Convert kilometers into miles.",
     "inputs": [
       {
-        "name": "size_gb",
-        "hint": "Size (GB)"
+        "name": "km",
+        "label": "Kilometers",
+        "type": "number",
+        "min": 0,
+        "step": "any",
+        "placeholder": "10"
+      }
+    ],
+    "expression": "km * 0.621371",
+    "examples": [
+      {
+        "description": "10 km \u21d2 6.21371 miles"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Is the factor exact?",
+        "answer": "We use the standard 1 km = 0.621371 miles."
+      }
+    ]
+  },
+  {
+    "slug": "percentage-increase",
+    "title": "Percentage Increase",
+    "cluster": "math",
+    "description": "Get the percentage increase from an old value to a new value.",
+    "inputs": [
+      {
+        "name": "oldValue",
+        "label": "Old value",
+        "type": "number",
+        "min": 0,
+        "step": "any",
+        "placeholder": "50"
       },
       {
-        "name": "price_per_gb",
-        "hint": "Price per GB ($)"
+        "name": "newValue",
+        "label": "New value",
+        "type": "number",
+        "min": 0,
+        "step": "any",
+        "placeholder": "70"
       }
     ],
-    "expression": "size_gb*price_per_gb",
+    "expression": "((newValue - oldValue) / oldValue) * 100",
     "examples": [
       {
-        "description": "10 GB at $0.10/GB → $1"
+        "description": "From 50 to 70 \u21d2 40% increase"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What if old value is 0?",
+        "answer": "Percentage change is undefined when the old value is 0."
       }
     ]
   },
   {
-    "slug": "dpi-calculator",
-    "title": "DPI Calculator",
-    "cluster": "Technology",
-    "intro": "Dots per inch from pixels and inches.",
+    "slug": "circle-area",
+    "title": "Circle Area",
+    "cluster": "math",
+    "description": "Compute area of a circle from its radius.",
     "inputs": [
       {
-        "name": "pixels",
-        "hint": "Pixels"
+        "name": "r",
+        "label": "Radius",
+        "type": "number",
+        "min": 0,
+        "step": "any",
+        "placeholder": "5"
+      }
+    ],
+    "expression": "Math.PI * r * r",
+    "examples": [
+      {
+        "description": "r = 5 \u21d2 area \u2248 78.5398"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Units?",
+        "answer": "Area units are squared units of the input (e.g., cm\u00b2)."
+      }
+    ]
+  },
+  {
+    "slug": "download-time",
+    "title": "Download Time",
+    "cluster": "technology",
+    "description": "Estimate seconds to download a file by size and speed.",
+    "inputs": [
+      {
+        "name": "sizeMB",
+        "label": "File size (MB)",
+        "type": "number",
+        "min": 0,
+        "step": "any",
+        "placeholder": "700"
       },
       {
-        "name": "inches",
-        "hint": "Inches"
+        "name": "speedMbps",
+        "label": "Speed (Mbps)",
+        "type": "number",
+        "min": 0.1,
+        "step": "any",
+        "placeholder": "50"
       }
     ],
-    "expression": "pixels/inches",
+    "expression": "(sizeMB * 8) / speedMbps",
     "examples": [
       {
-        "description": "3000 px across 10 inches → 300 DPI"
+        "description": "700 MB at 50 Mbps \u21d2 \u2248 112 sec"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Overheads considered?",
+        "answer": "No, this is the ideal time without protocol overheads."
       }
     ]
   },
   {
-    "slug": "minutes-to-seconds",
-    "title": "Minutes to Seconds Calculator",
-    "cluster": "Date & Time",
-    "intro": "Convert minutes to seconds.",
+    "slug": "storage-redundancy-overhead",
+    "title": "Storage Redundancy Overhead",
+    "cluster": "technology",
+    "description": "Compute overhead percentage when storing data with redundancy.",
     "inputs": [
+      {
+        "name": "dataTB",
+        "label": "Data (TB)",
+        "type": "number",
+        "min": 0,
+        "step": "any",
+        "placeholder": "10"
+      },
+      {
+        "name": "redundantTB",
+        "label": "Redundant data (TB)",
+        "type": "number",
+        "min": 0,
+        "step": "any",
+        "placeholder": "5"
+      }
+    ],
+    "expression": "(redundantTB / dataTB) * 100",
+    "examples": [
+      {
+        "description": "10TB data + 5TB redundancy \u21d2 50% overhead"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What if data is 0?",
+        "answer": "Overhead is undefined when data is 0."
+      }
+    ]
+  },
+  {
+    "slug": "duration-seconds",
+    "title": "Duration to Seconds",
+    "cluster": "date & time",
+    "description": "Convert hours, minutes, and seconds into total seconds.",
+    "inputs": [
+      {
+        "name": "hours",
+        "label": "Hours",
+        "type": "number",
+        "min": 0,
+        "step": "1",
+        "placeholder": "1"
+      },
       {
         "name": "minutes",
-        "hint": "Minutes"
+        "label": "Minutes",
+        "type": "number",
+        "min": 0,
+        "step": "1",
+        "placeholder": "30"
+      },
+      {
+        "name": "seconds",
+        "label": "Seconds",
+        "type": "number",
+        "min": 0,
+        "step": "1",
+        "placeholder": "15"
       }
     ],
-    "expression": "minutes*60"
+    "expression": "(hours*3600) + (minutes*60) + seconds",
+    "examples": [
+      {
+        "description": "1h 30m 15s \u21d2 5415 seconds"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Supports decimals?",
+        "answer": "Use whole numbers for simplicity in this tool."
+      }
+    ]
   },
   {
     "slug": "days-to-hours",
-    "title": "Days to Hours Calculator",
-    "cluster": "Date & Time",
-    "intro": "Convert days to hours.",
+    "title": "Days to Hours",
+    "cluster": "date & time",
+    "description": "Convert days to total hours.",
     "inputs": [
       {
         "name": "days",
-        "hint": "Days"
+        "label": "Days",
+        "type": "number",
+        "min": 0,
+        "step": "any",
+        "placeholder": "3.5"
       }
     ],
-    "expression": "days*24"
-  },
-  {
-    "slug": "weeks-to-days",
-    "title": "Weeks to Days Calculator",
-    "cluster": "Date & Time",
-    "intro": "Convert weeks to days.",
-    "inputs": [
+    "expression": "days * 24",
+    "examples": [
       {
-        "name": "weeks",
-        "hint": "Weeks"
+        "description": "3.5 days \u21d2 84 hours"
       }
     ],
-    "expression": "weeks*7"
-  },
-  {
-    "slug": "years-to-days",
-    "title": "Years to Days Calculator",
-    "cluster": "Date & Time",
-    "intro": "Approximate years to days (365).",
-    "inputs": [
+    "faqs": [
       {
-        "name": "years",
-        "hint": "Years"
+        "question": "Leap days?",
+        "answer": "This is a simple conversion (24h per day)."
       }
-    ],
-    "expression": "years*365"
+    ]
   },
   {
-    "slug": "paint-needed",
-    "title": "Paint Needed Calculator",
-    "cluster": "Home & DIY",
-    "intro": "Estimate liters of paint required.",
+    "slug": "paint-coverage",
+    "title": "Paint Coverage",
+    "cluster": "home & diy",
+    "description": "Estimate litres of paint needed given area and coverage.",
     "inputs": [
       {
         "name": "area",
-        "hint": "Wall area (m²)"
+        "label": "Area (m\u00b2)",
+        "type": "number",
+        "min": 0,
+        "step": "any",
+        "placeholder": "100"
       },
       {
         "name": "coverage",
-        "hint": "Coverage (m²/L)"
+        "label": "Coverage (m\u00b2/L)",
+        "type": "number",
+        "min": 0.1,
+        "step": "any",
+        "placeholder": "12"
       }
     ],
-    "expression": "area/coverage"
-  },
-  {
-    "slug": "flooring-cost",
-    "title": "Flooring Cost Calculator",
-    "cluster": "Home & DIY",
-    "intro": "Estimate total floor cost.",
-    "inputs": [
+    "expression": "area / coverage",
+    "examples": [
       {
-        "name": "area",
-        "hint": "Area (m²)"
-      },
-      {
-        "name": "cost",
-        "hint": "Cost per m² ($)"
+        "description": "100 m\u00b2 at 12 m\u00b2/L \u21d2 \u2248 8.33 L"
       }
     ],
-    "expression": "area*cost"
+    "faqs": [
+      {
+        "question": "Number of coats?",
+        "answer": "Multiply result by the number of coats you plan to apply."
+      }
+    ]
   },
   {
-    "slug": "concrete-slab-volume",
-    "title": "Concrete Slab Volume",
-    "cluster": "Home & DIY",
-    "intro": "Volume for a slab in cubic meters.",
+    "slug": "garden-soil-volume",
+    "title": "Garden Soil Volume",
+    "cluster": "home & diy",
+    "description": "Compute soil volume for a rectangular bed (m\u00b3).",
     "inputs": [
       {
         "name": "length",
-        "hint": "Length (m)"
+        "label": "Length (m)",
+        "type": "number",
+        "min": 0,
+        "step": "any",
+        "placeholder": "4"
       },
       {
         "name": "width",
-        "hint": "Width (m)"
+        "label": "Width (m)",
+        "type": "number",
+        "min": 0,
+        "step": "any",
+        "placeholder": "2"
       },
       {
-        "name": "thickness",
-        "hint": "Thickness (m)"
+        "name": "depth",
+        "label": "Depth (m)",
+        "type": "number",
+        "min": 0,
+        "step": "any",
+        "placeholder": "0.3"
       }
     ],
-    "expression": "length*width*thickness"
-  },
-  {
-    "slug": "wallpaper-roll-coverage",
-    "title": "Wallpaper Roll Coverage",
-    "cluster": "Home & DIY",
-    "intro": "Number of rolls needed.",
-    "inputs": [
+    "expression": "length * width * depth",
+    "examples": [
       {
-        "name": "wall_area",
-        "hint": "Wall area (m²)"
-      },
-      {
-        "name": "roll_coverage",
-        "hint": "Coverage per roll (m²)"
+        "description": "4\u00d72\u00d70.3 m \u21d2 2.4 m\u00b3"
       }
     ],
-    "expression": "wall_area/roll_coverage"
+    "faqs": [
+      {
+        "question": "Irregular shapes?",
+        "answer": "Approximate by splitting into rectangles and summing volumes."
+      }
+    ]
   },
   {
     "slug": "tip-calculator",
     "title": "Tip Calculator",
-    "cluster": "Other",
-    "intro": "Calculate tip amount.",
+    "cluster": "other",
+    "description": "Calculate total bill including tip percentage.",
     "inputs": [
       {
         "name": "bill",
-        "hint": "Bill ($)"
+        "label": "Bill ($)",
+        "type": "number",
+        "min": 0,
+        "step": "any",
+        "placeholder": "50"
       },
       {
         "name": "tip",
-        "hint": "Tip (%)"
+        "label": "Tip (%)",
+        "type": "number",
+        "min": 0,
+        "step": "any",
+        "placeholder": "15"
       }
     ],
-    "expression": "bill*tip/100"
+    "expression": "bill * (1 + tip/100)",
+    "examples": [
+      {
+        "description": "$50 with 15% tip \u21d2 $57.5"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Split bills?",
+        "answer": "Divide the result by the number of people to split the bill."
+      }
+    ]
   },
   {
-    "slug": "fuel-trip-cost",
-    "title": "Fuel Trip Cost",
-    "cluster": "Other",
-    "intro": "Estimate fuel trip cost.",
+    "slug": "grade-average",
+    "title": "Grade Average",
+    "cluster": "other",
+    "description": "Compute the average from three test scores.",
     "inputs": [
       {
-        "name": "distance",
-        "hint": "Distance (km)"
+        "name": "a",
+        "label": "Score A",
+        "type": "number",
+        "min": 0,
+        "max": 100,
+        "step": "any",
+        "placeholder": "80"
       },
       {
-        "name": "consumption",
-        "hint": "Consumption (L/100km)"
+        "name": "b",
+        "label": "Score B",
+        "type": "number",
+        "min": 0,
+        "max": 100,
+        "step": "any",
+        "placeholder": "90"
       },
       {
-        "name": "price",
-        "hint": "Price per L ($)"
+        "name": "c",
+        "label": "Score C",
+        "type": "number",
+        "min": 0,
+        "max": 100,
+        "step": "any",
+        "placeholder": "70"
       }
     ],
-    "expression": "(distance*consumption/100)*price"
+    "expression": "(a + b + c) / 3",
+    "examples": [
+      {
+        "description": "80, 90, 70 \u21d2 80"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Weighted average?",
+        "answer": "This tool uses a simple mean (unweighted)."
+      }
+    ]
   }
 ]
