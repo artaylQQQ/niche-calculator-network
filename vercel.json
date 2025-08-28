@@ -1,14 +1,24 @@
 {
   "redirects": [
     { "source": "/calculators/c-to-f-calculator", "destination": "/calculators/celsius-to-fahrenheit", "permanent": true },
+    { "source": "/calculators/c-to-f-calculator/", "destination": "/calculators/celsius-to-fahrenheit", "permanent": true },
+
     { "source": "/calculators/circle-area-calculator", "destination": "/calculators/circle-area", "permanent": true },
+    { "source": "/calculators/circle-area-calculator/", "destination": "/calculators/circle-area", "permanent": true },
+
     { "source": "/calculators/km-to-miles-calculator", "destination": "/calculators/km-to-miles", "permanent": true },
+    { "source": "/calculators/km-to-miles-calculator/", "destination": "/calculators/km-to-miles", "permanent": true },
 
     { "source": "/calculators/percentage-discount-calculator", "destination": "/calculators/percentage-discount", "permanent": true },
+    { "source": "/calculators/percentage-discount-calculator/", "destination": "/calculators/percentage-discount", "permanent": true },
+
     { "source": "/calculators/simple-interest-calculator", "destination": "/calculators/simple-interest", "permanent": true },
+    { "source": "/calculators/simple-interest-calculator/", "destination": "/calculators/simple-interest", "permanent": true },
 
     { "source": "/calculators/time-to-seconds-calculator", "destination": "/calculators/duration-seconds", "permanent": true },
+    { "source": "/calculators/time-to-seconds-calculator/", "destination": "/calculators/duration-seconds", "permanent": true },
 
-    { "source": "/calculators/paint-coverage", "destination": "/calculators/paint-needed", "permanent": true }
+    { "source": "/calculators/paint-coverage", "destination": "/calculators/paint-needed", "permanent": true },
+    { "source": "/calculators/paint-coverage/", "destination": "/calculators/paint-needed", "permanent": true }
   ]
 }
