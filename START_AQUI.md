@@ -1,4 +1,4 @@
-# START_AQUI — Guía única (V017)
+# START_AQUI — Guía única (V017)  
 
 **Propósito:** lanzar una **Red de Calculadoras** (sitio en **inglés**) con **publicación programática** (20–100 páginas/día) y **sin soporte**.
 
