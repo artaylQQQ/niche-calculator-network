@@ -2,13 +2,39 @@
 /** Calculator.astro — V017.7.gemini
   - Simplificado: usa atributos data-* para pasar slug y expression.
   - Sin JSON.parse necesario (aunque se mantiene opcional).
-**/
+*/
 const { schema } = Astro.props;
 const title = schema?.title ?? 'Calculator';
 const slug = schema?.slug ?? 'calculator';
 const inputs = Array.isArray(schema?.inputs) ? schema.inputs : [];
 const intro = schema?.intro ?? '';
 const expression = schema?.expression ?? schema?.formula ?? schema?.formula_expression ?? '';
+
+// Build Schema.org data for the calculator including FAQs when available.
+const site = Astro.site?.toString() || (import.meta.env.SITE_URL ?? 'https://example.com');
+const url  = new URL(Astro.url.pathname, site).toString();
+const faqEntities = Array.isArray(schema?.faqs)
+  ? schema.faqs.map((q) => ({
+      '@type': 'Question',
+      name: q.question,
+      acceptedAnswer: { '@type': 'Answer', text: q.answer }
+    }))
+  : [];
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'SoftwareApplication',
+      name: title,
+      operatingSystem: 'Any',
+      applicationCategory: 'Calculator',
+      url,
+      description: intro,
+      offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' }
+    },
+    ...(faqEntities.length ? [{ '@type': 'FAQPage', mainEntity: faqEntities }] : [])
+  ]
+};
 ---
 
 <section class="calc" data-calculator data-slug={slug} data-exp={expression} aria-labelledby={`h-${slug}`}>
@@ -38,9 +64,22 @@ const expression = schema?.expression ?? schema?.formula ?? schema?.formula_expr
 
   <div class="result" data-role="result" aria-live="polite"></div>
 
-  <script type="application/json" data-schema>{JSON.stringify(schema)}</script>
+  <script type="application/json" data-schema set:html={JSON.stringify(schema)}></script>
 </section>
 
+{Array.isArray(schema?.faqs) && schema.faqs.length > 0 && (
+  <section class="faq">
+    <h2>FAQ</h2>
+    {schema.faqs.map((f) => (
+      <details>
+        <summary>{f.question}</summary>
+        <p>{f.answer}</p>
+      </details>
+    ))}
+  </section>
+)}
+
+<script type="application/ld+json" set:html={JSON.stringify(jsonLd)}></script>
 
 <style>
   .calc { max-width: 720px; margin: 0 auto; padding: 8px; color: var(--ink); }
@@ -68,6 +107,10 @@ const expression = schema?.expression ?? schema?.formula ?? schema?.formula_expr
   }
   .btn:hover{ filter:brightness(1.05); }
   .result { margin-top: 16px; font-size: 18px; font-weight: 600; color: var(--ink); }
+  .faq { margin-top: 24px; }
+  .faq details { margin: 8px 0; }
+  .faq summary { cursor: pointer; font-weight: 600; }
+  .faq p { margin: 4px 0 0 16px; }
 </style>
 
 
