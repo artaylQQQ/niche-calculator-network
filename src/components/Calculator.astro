@@ -38,6 +38,18 @@ const expression = schema?.expression ?? schema?.formula ?? schema?.formula_expr
 
   <div class="result" data-role="result" aria-live="polite"></div>
 
+  {Array.isArray(schema?.faqs) && schema.faqs.length > 0 && (
+    <section class="faqs">
+      <h2>FAQ</h2>
+      {schema.faqs.map((f) => (
+        <details>
+          <summary>{f.question}</summary>
+          <p>{f.answer}</p>
+        </details>
+      ))}
+    </section>
+  )}
+
   <script type="application/json" data-schema>{JSON.stringify(schema)}</script>
 </section>
 
@@ -68,6 +80,10 @@ const expression = schema?.expression ?? schema?.formula ?? schema?.formula_expr
   }
   .btn:hover{ filter:brightness(1.05); }
   .result { margin-top: 16px; font-size: 18px; font-weight: 600; color: var(--ink); }
+  .faqs { margin-top: 24px; }
+  .faqs details { margin: 8px 0; }
+  .faqs summary { cursor: pointer; font-weight: 600; }
+  .faqs p { margin: 4px 0 0 16px; }
 </style>
 
 
