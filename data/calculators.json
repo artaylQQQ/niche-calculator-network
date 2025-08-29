@@ -26,7 +26,7 @@
     "expression": "price * (1 - discount/100)",
     "examples": [
       {
-        "description": "Price 100 with 20% discount \u21d2 80"
+        "description": "Price 100 with 20% discount ⇒ 80"
       }
     ],
     "faqs": [
@@ -70,7 +70,7 @@
     "expression": "principal * (rate/100) * years",
     "examples": [
       {
-        "description": "$1,000 at 5% for 3 years \u21d2 $150 interest"
+        "description": "$1,000 at 5% for 3 years ⇒ $150 interest"
       }
     ],
     "faqs": [
@@ -106,7 +106,7 @@
     "expression": "weight / ((height/100) ** 2)",
     "examples": [
       {
-        "description": "70 kg and 175 cm \u21d2 BMI \u2248 22.86"
+        "description": "70 kg and 175 cm ⇒ BMI ≈ 22.86"
       }
     ],
     "faqs": [
@@ -142,7 +142,7 @@
     "expression": "(steps * 0.04) + (exercise * 7)",
     "examples": [
       {
-        "description": "8000 steps and 30 min \u21d2 \u2248 470 kcal (rough)"
+        "description": "8000 steps and 30 min ⇒ ≈ 470 kcal (rough)"
       }
     ],
     "faqs": [
@@ -169,7 +169,7 @@
     "expression": "(c * 9/5) + 32",
     "examples": [
       {
-        "description": "25\u00b0C \u21d2 77\u00b0F"
+        "description": "25°C ⇒ 77°F"
       }
     ],
     "faqs": [
@@ -197,7 +197,7 @@
     "expression": "km * 0.621371",
     "examples": [
       {
-        "description": "10 km \u21d2 6.21371 miles"
+        "description": "10 km ⇒ 6.21371 miles"
       }
     ],
     "faqs": [
@@ -233,7 +233,7 @@
     "expression": "((newValue - oldValue) / oldValue) * 100",
     "examples": [
       {
-        "description": "From 50 to 70 \u21d2 40% increase"
+        "description": "From 50 to 70 ⇒ 40% increase"
       }
     ],
     "faqs": [
@@ -261,13 +261,13 @@
     "expression": "Math.PI * r * r",
     "examples": [
       {
-        "description": "r = 5 \u21d2 area \u2248 78.5398"
+        "description": "r = 5 ⇒ area ≈ 78.5398"
       }
     ],
     "faqs": [
       {
         "question": "Units?",
-        "answer": "Area units are squared units of the input (e.g., cm\u00b2)."
+        "answer": "Area units are squared units of the input (e.g., cm²)."
       }
     ]
   },
@@ -297,7 +297,7 @@
     "expression": "(sizeMB * 8) / speedMbps",
     "examples": [
       {
-        "description": "700 MB at 50 Mbps \u21d2 \u2248 112 sec"
+        "description": "700 MB at 50 Mbps ⇒ ≈ 112 sec"
       }
     ],
     "faqs": [
@@ -333,7 +333,7 @@
     "expression": "(redundantTB / dataTB) * 100",
     "examples": [
       {
-        "description": "10TB data + 5TB redundancy \u21d2 50% overhead"
+        "description": "10TB data + 5TB redundancy ⇒ 50% overhead"
       }
     ],
     "faqs": [
@@ -377,7 +377,7 @@
     "expression": "(hours*3600) + (minutes*60) + seconds",
     "examples": [
       {
-        "description": "1h 30m 15s \u21d2 5415 seconds"
+        "description": "1h 30m 15s ⇒ 5415 seconds"
       }
     ],
     "faqs": [
@@ -405,7 +405,7 @@
     "expression": "days * 24",
     "examples": [
       {
-        "description": "3.5 days \u21d2 84 hours"
+        "description": "3.5 days ⇒ 84 hours"
       }
     ],
     "faqs": [
@@ -423,7 +423,7 @@
     "inputs": [
       {
         "name": "area",
-        "label": "Area (m\u00b2)",
+        "label": "Area (m²)",
         "type": "number",
         "min": 0,
         "step": "any",
@@ -431,7 +431,7 @@
       },
       {
         "name": "coverage",
-        "label": "Coverage (m\u00b2/L)",
+        "label": "Coverage (m²/L)",
         "type": "number",
         "min": 0.1,
         "step": "any",
@@ -441,7 +441,7 @@
     "expression": "area / coverage",
     "examples": [
       {
-        "description": "100 m\u00b2 at 12 m\u00b2/L \u21d2 \u2248 8.33 L"
+        "description": "100 m² at 12 m²/L ⇒ ≈ 8.33 L"
       }
     ],
     "faqs": [
@@ -455,7 +455,7 @@
     "slug": "garden-soil-volume",
     "title": "Garden Soil Volume",
     "cluster": "home & diy",
-    "description": "Compute soil volume for a rectangular bed (m\u00b3).",
+    "description": "Compute soil volume for a rectangular bed (m³).",
     "inputs": [
       {
         "name": "length",
@@ -485,7 +485,7 @@
     "expression": "length * width * depth",
     "examples": [
       {
-        "description": "4\u00d72\u00d70.3 m \u21d2 2.4 m\u00b3"
+        "description": "4×2×0.3 m ⇒ 2.4 m³"
       }
     ],
     "faqs": [
@@ -521,7 +521,7 @@
     "expression": "bill * (1 + tip/100)",
     "examples": [
       {
-        "description": "$50 with 15% tip \u21d2 $57.5"
+        "description": "$50 with 15% tip ⇒ $57.5"
       }
     ],
     "faqs": [
@@ -568,7 +568,7 @@
     "expression": "(a + b + c) / 3",
     "examples": [
       {
-        "description": "80, 90, 70 \u21d2 80"
+        "description": "80, 90, 70 ⇒ 80"
       }
     ],
     "faqs": [
@@ -577,5 +577,293 @@
         "answer": "This tool uses a simple mean (unweighted)."
       }
     ]
+  },
+  {
+    "slug": "calories-burned-met",
+    "title": "Calories Burned (MET) Calculator",
+    "cluster": "Health",
+    "intro": "Estimate calories burned using MET, weight, and duration.",
+    "inputs": [
+      {
+        "name": "met",
+        "hint": "MET value"
+      },
+      {
+        "name": "weight",
+        "hint": "Weight (kg)"
+      },
+      {
+        "name": "duration",
+        "hint": "Duration (minutes)"
+      }
+    ],
+    "expression": "met*weight*3.5/200*duration",
+    "examples": [
+      {
+        "description": "Jogging at MET 7, 70 kg, 30 minutes → about 257 kcal"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What is a MET?",
+        "answer": "A MET is a unit that estimates energy cost of physical activities."
+      }
+    ]
+  },
+  {
+    "slug": "daily-water-intake",
+    "title": "Daily Water Intake Calculator",
+    "cluster": "Health",
+    "intro": "Rough estimate of daily water intake from body weight.",
+    "inputs": [
+      {
+        "name": "weight",
+        "hint": "Weight (kg)"
+      }
+    ],
+    "expression": "weight*0.033",
+    "examples": [
+      {
+        "description": "75 kg → ~2.48 liters/day"
+      }
+    ]
+  },
+  {
+    "slug": "waist-to-height-ratio",
+    "title": "Waist-to-Height Ratio Calculator",
+    "cluster": "Health",
+    "intro": "Compute waist-to-height ratio (WHtR).",
+    "inputs": [
+      {
+        "name": "waist",
+        "hint": "Waist (cm)"
+      },
+      {
+        "name": "height",
+        "hint": "Height (cm)"
+      }
+    ],
+    "expression": "waist/height",
+    "examples": [
+      {
+        "description": "80 cm waist, 170 cm height → 0.47"
+      }
+    ]
+  },
+  {
+    "slug": "data-transfer-time",
+    "title": "Data Transfer Time Calculator",
+    "cluster": "Technology",
+    "intro": "Estimate time to transfer data over a connection speed.",
+    "inputs": [
+      {
+        "name": "size_mb",
+        "hint": "File size (MB)"
+      },
+      {
+        "name": "speed_mbps",
+        "hint": "Speed (Mbps)"
+      }
+    ],
+    "expression": "(size_mb*8)/speed_mbps/60",
+    "examples": [
+      {
+        "description": "700 MB at 20 Mbps → ~4.67 minutes"
+      }
+    ]
+  },
+  {
+    "slug": "kb-to-mb",
+    "title": "KB to MB Converter",
+    "cluster": "Technology",
+    "intro": "Convert kilobytes to megabytes.",
+    "inputs": [
+      {
+        "name": "kb",
+        "hint": "Kilobytes"
+      }
+    ],
+    "expression": "kb/1024",
+    "examples": [
+      {
+        "description": "2048 KB → 2 MB"
+      }
+    ]
+  },
+  {
+    "slug": "download-cost",
+    "title": "Download Cost Calculator",
+    "cluster": "Technology",
+    "intro": "Estimate download cost from data size and price per GB.",
+    "inputs": [
+      {
+        "name": "size_gb",
+        "hint": "Size (GB)"
+      },
+      {
+        "name": "price_per_gb",
+        "hint": "Price per GB ($)"
+      }
+    ],
+    "expression": "size_gb*price_per_gb",
+    "examples": [
+      {
+        "description": "10 GB at $0.10/GB → $1"
+      }
+    ]
+  },
+  {
+    "slug": "dpi-calculator",
+    "title": "DPI Calculator",
+    "cluster": "Technology",
+    "intro": "Dots per inch from pixels and inches.",
+    "inputs": [
+      {
+        "name": "pixels",
+        "hint": "Pixels"
+      },
+      {
+        "name": "inches",
+        "hint": "Inches"
+      }
+    ],
+    "expression": "pixels/inches",
+    "examples": [
+      {
+        "description": "3000 px across 10 inches → 300 DPI"
+      }
+    ]
+  },
+  {
+    "slug": "minutes-to-seconds",
+    "title": "Minutes to Seconds Calculator",
+    "cluster": "Date & Time",
+    "intro": "Convert minutes to seconds.",
+    "inputs": [
+      {
+        "name": "minutes",
+        "hint": "Minutes"
+      }
+    ],
+    "expression": "minutes*60"
+  },
+  {
+    "slug": "weeks-to-days",
+    "title": "Weeks to Days Calculator",
+    "cluster": "Date & Time",
+    "intro": "Convert weeks to days.",
+    "inputs": [
+      {
+        "name": "weeks",
+        "hint": "Weeks"
+      }
+    ],
+    "expression": "weeks*7"
+  },
+  {
+    "slug": "years-to-days",
+    "title": "Years to Days Calculator",
+    "cluster": "Date & Time",
+    "intro": "Approximate years to days (365).",
+    "inputs": [
+      {
+        "name": "years",
+        "hint": "Years"
+      }
+    ],
+    "expression": "years*365"
+  },
+  {
+    "slug": "paint-needed",
+    "title": "Paint Needed Calculator",
+    "cluster": "Home & DIY",
+    "intro": "Estimate liters of paint required.",
+    "inputs": [
+      {
+        "name": "area",
+        "hint": "Wall area (m²)"
+      },
+      {
+        "name": "coverage",
+        "hint": "Coverage (m²/L)"
+      }
+    ],
+    "expression": "area/coverage"
+  },
+  {
+    "slug": "flooring-cost",
+    "title": "Flooring Cost Calculator",
+    "cluster": "Home & DIY",
+    "intro": "Estimate total floor cost.",
+    "inputs": [
+      {
+        "name": "area",
+        "hint": "Area (m²)"
+      },
+      {
+        "name": "cost",
+        "hint": "Cost per m² ($)"
+      }
+    ],
+    "expression": "area*cost"
+  },
+  {
+    "slug": "concrete-slab-volume",
+    "title": "Concrete Slab Volume",
+    "cluster": "Home & DIY",
+    "intro": "Volume for a slab in cubic meters.",
+    "inputs": [
+      {
+        "name": "length",
+        "hint": "Length (m)"
+      },
+      {
+        "name": "width",
+        "hint": "Width (m)"
+      },
+      {
+        "name": "thickness",
+        "hint": "Thickness (m)"
+      }
+    ],
+    "expression": "length*width*thickness"
+  },
+  {
+    "slug": "wallpaper-roll-coverage",
+    "title": "Wallpaper Roll Coverage",
+    "cluster": "Home & DIY",
+    "intro": "Number of rolls needed.",
+    "inputs": [
+      {
+        "name": "wall_area",
+        "hint": "Wall area (m²)"
+      },
+      {
+        "name": "roll_coverage",
+        "hint": "Coverage per roll (m²)"
+      }
+    ],
+    "expression": "wall_area/roll_coverage"
+  },
+  {
+    "slug": "fuel-trip-cost",
+    "title": "Fuel Trip Cost",
+    "cluster": "Other",
+    "intro": "Estimate fuel trip cost.",
+    "inputs": [
+      {
+        "name": "distance",
+        "hint": "Distance (km)"
+      },
+      {
+        "name": "consumption",
+        "hint": "Consumption (L/100km)"
+      },
+      {
+        "name": "price",
+        "hint": "Price per L ($)"
+      }
+    ],
+    "expression": "(distance*consumption/100)*price"
   }
 ]
