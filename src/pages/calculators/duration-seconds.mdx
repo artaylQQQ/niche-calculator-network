@@ -2,13 +2,16 @@
 layout: ../../layouts/CalculatorLayout.astro
 title: "Duration to Seconds"
 description: "Convert hours, minutes, and seconds into total seconds."
-updated: "2025-08-26"
+date: 2025-08-29
+updated: 2025-08-29
 cluster: "Date & Time"
 ---
-
 import Calculator from '../../components/Calculator.astro';
 
 export const schema = {
+  "slug": "duration-seconds",
+  "title": "Duration to Seconds",
+  "locale": "en",
   "inputs": [
     {
       "name": "hours",
@@ -35,14 +38,11 @@ export const schema = {
       "placeholder": "15"
     }
   ],
-  "slug": "duration-seconds",
-  "title": "Duration to Seconds",
-  "locale": "en",
   "expression": "(hours*3600) + (minutes*60) + seconds",
   "intro": "Convert hours, minutes, and seconds into total seconds.",
   "examples": [
     {
-      "description": "1h 30m 15s \u21d2 5415 seconds"
+      "description": "1h 30m 15s ⇒ 5415 seconds"
     }
   ],
   "faqs": [
@@ -51,8 +51,40 @@ export const schema = {
       "answer": "Use whole numbers for simplicity in this tool."
     }
   ],
-  "disclaimer": "Educational purposes only. Not professional advice.",
-  "cluster": "Date & Time"
+  "disclaimer": "Educational information, not professional advice.",
+  "cluster": "Date & Time",
+  "related": [
+    "percentage-discount",
+    "simple-interest",
+    "bmi-calculator",
+    "daily-calorie-burn",
+    "celsius-to-fahrenheit",
+    "km-to-miles"
+  ]
 }
 
+# Duration to Seconds
+
+Convert hours, minutes, and seconds into total seconds.
+
 <Calculator schema={schema} />
+
+## Examples
+
+- 1h 30m 15s ⇒ 5415 seconds
+
+## FAQ
+
+### Supports decimals?
+
+Use whole numbers for simplicity in this tool.
+
+## Related calculators
+
+- [Percentage Discount](/calculators/percentage-discount/)
+- [Simple Interest](/calculators/simple-interest/)
+- [Bmi Calculator](/calculators/bmi-calculator/)
+- [Daily Calorie Burn](/calculators/daily-calorie-burn/)
+- [Celsius To Fahrenheit](/calculators/celsius-to-fahrenheit/)
+- [Km To Miles](/calculators/km-to-miles/)
+

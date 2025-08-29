@@ -2,13 +2,16 @@
 layout: ../../layouts/CalculatorLayout.astro
 title: "Simple Interest Calculator"
 description: "Compute simple interest based on principal, rate and time."
-updated: "2025-08-26"
+date: 2025-08-29
+updated: 2025-08-29
 cluster: "Finance"
 ---
-
 import Calculator from '../../components/Calculator.astro';
 
 export const schema = {
+  "slug": "simple-interest",
+  "title": "Simple Interest Calculator",
+  "locale": "en",
   "inputs": [
     {
       "name": "principal",
@@ -35,14 +38,11 @@ export const schema = {
       "placeholder": "3"
     }
   ],
-  "slug": "simple-interest",
-  "title": "Simple Interest Calculator",
-  "locale": "en",
   "expression": "principal * (rate/100) * years",
   "intro": "Compute simple interest based on principal, rate and time.",
   "examples": [
     {
-      "description": "$1,000 at 5% for 3 years \u21d2 $150 interest"
+      "description": "$1,000 at 5% for 3 years ⇒ $150 interest"
     }
   ],
   "faqs": [
@@ -51,8 +51,40 @@ export const schema = {
       "answer": "No. Use a compound interest calculator for compounding."
     }
   ],
-  "disclaimer": "Educational purposes only. Not professional advice.",
-  "cluster": "Finance"
+  "disclaimer": "Educational information, not professional advice.",
+  "cluster": "Finance",
+  "related": [
+    "percentage-discount",
+    "bmi-calculator",
+    "daily-calorie-burn",
+    "celsius-to-fahrenheit",
+    "km-to-miles",
+    "percentage-increase"
+  ]
 }
 
+# Simple Interest Calculator
+
+Compute simple interest based on principal, rate and time.
+
 <Calculator schema={schema} />
+
+## Examples
+
+- $1,000 at 5% for 3 years ⇒ $150 interest
+
+## FAQ
+
+### Is compounding included?
+
+No. Use a compound interest calculator for compounding.
+
+## Related calculators
+
+- [Percentage Discount](/calculators/percentage-discount/)
+- [Bmi Calculator](/calculators/bmi-calculator/)
+- [Daily Calorie Burn](/calculators/daily-calorie-burn/)
+- [Celsius To Fahrenheit](/calculators/celsius-to-fahrenheit/)
+- [Km To Miles](/calculators/km-to-miles/)
+- [Percentage Increase](/calculators/percentage-increase/)
+

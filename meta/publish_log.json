@@ -178,5 +178,57 @@
   {
     "slug": "fuel-trip-cost",
     "date": "2025-08-26"
+  },
+  {
+    "slug": "percentage-discount",
+    "date": "2025-08-29"
+  },
+  {
+    "slug": "simple-interest",
+    "date": "2025-08-29"
+  },
+  {
+    "slug": "daily-calorie-burn",
+    "date": "2025-08-29"
+  },
+  {
+    "slug": "celsius-to-fahrenheit",
+    "date": "2025-08-29"
+  },
+  {
+    "slug": "km-to-miles",
+    "date": "2025-08-29"
+  },
+  {
+    "slug": "percentage-increase",
+    "date": "2025-08-29"
+  },
+  {
+    "slug": "circle-area",
+    "date": "2025-08-29"
+  },
+  {
+    "slug": "download-time",
+    "date": "2025-08-29"
+  },
+  {
+    "slug": "storage-redundancy-overhead",
+    "date": "2025-08-29"
+  },
+  {
+    "slug": "duration-seconds",
+    "date": "2025-08-29"
+  },
+  {
+    "slug": "paint-coverage",
+    "date": "2025-08-29"
+  },
+  {
+    "slug": "garden-soil-volume",
+    "date": "2025-08-29"
+  },
+  {
+    "slug": "grade-average",
+    "date": "2025-08-29"
   }
 ]

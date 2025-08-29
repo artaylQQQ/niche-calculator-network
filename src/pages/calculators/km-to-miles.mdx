@@ -2,13 +2,16 @@
 layout: ../../layouts/CalculatorLayout.astro
 title: "Kilometers to Miles"
 description: "Convert kilometers into miles."
-updated: "2025-08-26"
+date: 2025-08-29
+updated: 2025-08-29
 cluster: "Conversions"
 ---
-
 import Calculator from '../../components/Calculator.astro';
 
 export const schema = {
+  "slug": "km-to-miles",
+  "title": "Kilometers to Miles",
+  "locale": "en",
   "inputs": [
     {
       "name": "km",
@@ -19,14 +22,11 @@ export const schema = {
       "placeholder": "10"
     }
   ],
-  "slug": "km-to-miles",
-  "title": "Kilometers to Miles",
-  "locale": "en",
   "expression": "km * 0.621371",
   "intro": "Convert kilometers into miles.",
   "examples": [
     {
-      "description": "10 km \u21d2 6.21371 miles"
+      "description": "10 km ⇒ 6.21371 miles"
     }
   ],
   "faqs": [
@@ -35,8 +35,40 @@ export const schema = {
       "answer": "We use the standard 1 km = 0.621371 miles."
     }
   ],
-  "disclaimer": "Educational purposes only. Not professional advice.",
-  "cluster": "Conversions"
+  "disclaimer": "Educational information, not professional advice.",
+  "cluster": "Conversions",
+  "related": [
+    "percentage-discount",
+    "simple-interest",
+    "bmi-calculator",
+    "daily-calorie-burn",
+    "celsius-to-fahrenheit",
+    "percentage-increase"
+  ]
 }
 
+# Kilometers to Miles
+
+Convert kilometers into miles.
+
 <Calculator schema={schema} />
+
+## Examples
+
+- 10 km ⇒ 6.21371 miles
+
+## FAQ
+
+### Is the factor exact?
+
+We use the standard 1 km = 0.621371 miles.
+
+## Related calculators
+
+- [Percentage Discount](/calculators/percentage-discount/)
+- [Simple Interest](/calculators/simple-interest/)
+- [Bmi Calculator](/calculators/bmi-calculator/)
+- [Daily Calorie Burn](/calculators/daily-calorie-burn/)
+- [Celsius To Fahrenheit](/calculators/celsius-to-fahrenheit/)
+- [Percentage Increase](/calculators/percentage-increase/)
+

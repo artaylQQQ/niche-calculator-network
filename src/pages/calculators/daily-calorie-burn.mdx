@@ -2,13 +2,16 @@
 layout: ../../layouts/CalculatorLayout.astro
 title: "Daily Calorie Burn (Rough)"
 description: "Rough estimate of daily calories burned from steps and exercise minutes."
-updated: "2025-08-26"
+date: 2025-08-29
+updated: 2025-08-29
 cluster: "Health"
 ---
-
 import Calculator from '../../components/Calculator.astro';
 
 export const schema = {
+  "slug": "daily-calorie-burn",
+  "title": "Daily Calorie Burn (Rough)",
+  "locale": "en",
   "inputs": [
     {
       "name": "steps",
@@ -27,14 +30,11 @@ export const schema = {
       "placeholder": "30"
     }
   ],
-  "slug": "daily-calorie-burn",
-  "title": "Daily Calorie Burn (Rough)",
-  "locale": "en",
   "expression": "(steps * 0.04) + (exercise * 7)",
   "intro": "Rough estimate of daily calories burned from steps and exercise minutes.",
   "examples": [
     {
-      "description": "8000 steps and 30 min \u21d2 \u2248 470 kcal (rough)"
+      "description": "8000 steps and 30 min ⇒ ≈ 470 kcal (rough)"
     }
   ],
   "faqs": [
@@ -43,8 +43,40 @@ export const schema = {
       "answer": "It is a rough estimate; for precision use a medical-grade calculator."
     }
   ],
-  "disclaimer": "Educational purposes only. Not professional advice.",
-  "cluster": "Health"
+  "disclaimer": "Educational information, not professional advice.",
+  "cluster": "Health",
+  "related": [
+    "percentage-discount",
+    "simple-interest",
+    "bmi-calculator",
+    "celsius-to-fahrenheit",
+    "km-to-miles",
+    "percentage-increase"
+  ]
 }
 
+# Daily Calorie Burn (Rough)
+
+Rough estimate of daily calories burned from steps and exercise minutes.
+
 <Calculator schema={schema} />
+
+## Examples
+
+- 8000 steps and 30 min ⇒ ≈ 470 kcal (rough)
+
+## FAQ
+
+### Is this accurate?
+
+It is a rough estimate; for precision use a medical-grade calculator.
+
+## Related calculators
+
+- [Percentage Discount](/calculators/percentage-discount/)
+- [Simple Interest](/calculators/simple-interest/)
+- [Bmi Calculator](/calculators/bmi-calculator/)
+- [Celsius To Fahrenheit](/calculators/celsius-to-fahrenheit/)
+- [Km To Miles](/calculators/km-to-miles/)
+- [Percentage Increase](/calculators/percentage-increase/)
+

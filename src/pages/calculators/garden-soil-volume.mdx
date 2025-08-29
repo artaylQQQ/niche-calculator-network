@@ -2,13 +2,16 @@
 layout: ../../layouts/CalculatorLayout.astro
 title: "Garden Soil Volume"
 description: "Compute soil volume for a rectangular bed (m³)."
-updated: "2025-08-26"
+date: 2025-08-29
+updated: 2025-08-29
 cluster: "Home & DIY"
 ---
-
 import Calculator from '../../components/Calculator.astro';
 
 export const schema = {
+  "slug": "garden-soil-volume",
+  "title": "Garden Soil Volume",
+  "locale": "en",
   "inputs": [
     {
       "name": "length",
@@ -35,14 +38,11 @@ export const schema = {
       "placeholder": "0.3"
     }
   ],
-  "slug": "garden-soil-volume",
-  "title": "Garden Soil Volume",
-  "locale": "en",
   "expression": "length * width * depth",
-  "intro": "Compute soil volume for a rectangular bed (m\u00b3).",
+  "intro": "Compute soil volume for a rectangular bed (m³).",
   "examples": [
     {
-      "description": "4\u00d72\u00d70.3 m \u21d2 2.4 m\u00b3"
+      "description": "4×2×0.3 m ⇒ 2.4 m³"
     }
   ],
   "faqs": [
@@ -51,8 +51,40 @@ export const schema = {
       "answer": "Approximate by splitting into rectangles and summing volumes."
     }
   ],
-  "disclaimer": "Educational purposes only. Not professional advice.",
-  "cluster": "Home & DIY"
+  "disclaimer": "Educational information, not professional advice.",
+  "cluster": "Home & DIY",
+  "related": [
+    "percentage-discount",
+    "simple-interest",
+    "bmi-calculator",
+    "daily-calorie-burn",
+    "celsius-to-fahrenheit",
+    "km-to-miles"
+  ]
 }
 
+# Garden Soil Volume
+
+Compute soil volume for a rectangular bed (m³).
+
 <Calculator schema={schema} />
+
+## Examples
+
+- 4×2×0.3 m ⇒ 2.4 m³
+
+## FAQ
+
+### Irregular shapes?
+
+Approximate by splitting into rectangles and summing volumes.
+
+## Related calculators
+
+- [Percentage Discount](/calculators/percentage-discount/)
+- [Simple Interest](/calculators/simple-interest/)
+- [Bmi Calculator](/calculators/bmi-calculator/)
+- [Daily Calorie Burn](/calculators/daily-calorie-burn/)
+- [Celsius To Fahrenheit](/calculators/celsius-to-fahrenheit/)
+- [Km To Miles](/calculators/km-to-miles/)
+
