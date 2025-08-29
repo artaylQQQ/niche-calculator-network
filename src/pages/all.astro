@@ -1,83 +1,14 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
+import calculators from "../data/calculators";
+import { dedupeCalculators } from "../lib/dedupe";
 
-// Load all calculator pages (MDX) at build time
-const modules = import.meta.glob("../pages/calculators/*.mdx", { eager: true });
-
-/** Normalize a title to detect duplicates across very similar pages.
- *  We remove generic suffixes like "calculator"/"converter",
- *  punctuation, and collapse whitespace to generate a stable key.
- */
-function normalKey(input) {
-  if (!input || typeof input !== 'string') return '';
-  return input
-    .toLowerCase()
-    .replace(/\(.*?\)/g, '')               // drop parenthesis content
-    .replace(/converter|calculator/g, '')  // generic terms
-    .replace(/\bthe\b|\ba\b|\ban\b/g, '')  // common articles
-    .replace(/[^a-z0-9\s]/g, ' ')          // punctuation -> space
-    .replace(/\s+/g, ' ')                  // collapse spaces
-    .trim();
-}
-
-/** Try to parse ISO date, return epoch for sorting; fallback 0. */
-function toEpoch(d) {
-  const t = Date.parse(d || '');
-  return Number.isFinite(t) ? t : 0;
-}
-
-// Build a list and de-duplicate by normalized title
-const raw = Object.values(modules).map((m) => ({
-  url: m.url,
-  fm: m.frontmatter || {}
-}));
-
-// Group candidates under the same normalized key
-const groups = new Map();
-for (const it of raw) {
-  const title = it.fm.title || it.url.replace('/calculators/','').replace('.mdx','').replace(/-/g,' ');
-  const key = normalKey(title);
-  if (!groups.has(key)) groups.set(key, []);
-  groups.get(key).push(it);
-}
-
-// Keep one representative per group using: newer updated date, then shorter URL
-const items = Array.from(groups.values()).map((arr) => {
-  arr.sort((a, b) => {
-    const da = toEpoch(a.fm.updated);
-    const db = toEpoch(b.fm.updated);
-    if (db !== da) return db - da; // newer first
-    return a.url.length - b.url.length; // then shorter slug
-  });
-  return arr[0];
-});
-
-// Sort final list A→Z by display title
-items.sort((a, b) => {
-  const ta = (a.fm.title || '').toLowerCase();
-  const tb = (b.fm.title || '').toLowerCase();
-  return ta.localeCompare(tb);
-});
+const dedupedList = dedupeCalculators(calculators);
+const list = dedupedList;
 ---
 
-<BaseLayout title="All Calculators" description="Browse every calculator available on the site.">
-  <section class="hero container mx-auto max-w-5xl px-4">
-    <h1 style="color: var(--ink)">All Calculators</h1>
-    <p style="color: var(--muted)">Explore every calculator available on the site.</p>
-  </section>
-
-  <section class="section container mx-auto max-w-5xl px-4" aria-labelledby="list-all">
-    <h2 id="list-all" class="sr-only">All calculators list</h2>
-    <!-- Same grid/card classes as category pages to keep a consistent design -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-      {items.map((it) => (
-        <div>
-          <a class="card" href={it.url}>
-            <h3>{it.fm.title || it.url.replace('/calculators/','').replace('.mdx','')}</h3>
-            <p>{it.fm.intro || it.fm.description || ''}</p>
-          </a>
-        </div>
-      ))}
-    </div>
-  </section>
-</BaseLayout>
+<h1>All Calculators</h1>
+<ul>
+  {list.map(calc => (
+    <li><a href={"/calculators/" + calc.slug}>{calc.name}</a></li>
+  ))}
+</ul>
