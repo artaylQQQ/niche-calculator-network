@@ -1,82 +1,57 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import fs from 'node:fs';
-import path from 'node:path';
-import { fileURLToPath } from 'node:url';
+// src/pages/calculators/[slug].astro
+// Versión estable y simple: genera rutas desde MDX y renderiza el contenido
+// respetando el layout propio de cada MDX (si existe).
 
-/** Genera rutas y datos sin variables globales */
-export async function getStaticPaths() {
-  // 1) Define the eight supported category slugs and a list of aliases.  The
-  // generator and pages normalise arbitrary cluster names using these
-  // mappings.  Any calculator whose cluster matches (case insensitive)
-  // one of the listed aliases will be grouped into the corresponding
-  // category page.
-  const CATEGORIES = [
-    { slug: 'finance',     map: ['finance','finance & loans','taxes','business','business & commerce','percentages & ratios'] },
-    { slug: 'health',      map: ['health','health & fitness','bmi'] },
-    { slug: 'conversions', map: ['conversions','unit conversions','unit and currency conversions'] },
-    { slug: 'math',        map: ['math','geometry','geometry & math','areas & volumes','algebra','percentages & ratios','statistics','averages and probabilities'] },
-    { slug: 'technology',  map: ['technology','tech','computing','technology & computing'] },
-    { slug: 'date-time',   map: ['date & time','time & date','time-date','durations and schedules'] },
-    { slug: 'home-diy',    map: ['home & diy','home and diy','diy','household'] },
-    { slug: 'other',       map: ['other','misc','miscellaneous','everyday','everyday & misc','general'] }
-  ];
+type MdxModule = {
+  frontmatter?: Record<string, any>;
+  default: any; // AstroComponentFactory
+};
 
-  // 2) Lee calculators.json en build
-  const __filename = fileURLToPath(import.meta.url);
-  const __dirname  = path.dirname(__filename);
-  const dataPath   = path.resolve(__dirname, '../../../data/calculators.json');
+// 1) Cargamos todos los MDX de /src/content/calculators
+//    (EAGER = true para tener el frontmatter en build time).
+const mdxModules = import.meta.glob('../../content/calculators/*.mdx', {
+  eager: true
+}) as Record<string, MdxModule>;
 
-  let calcs = [];
-  try {
-    calcs = JSON.parse(fs.readFileSync(dataPath, 'utf-8'));
-  } catch (e) {
-    console.warn('Could not read calculators.json at build time:', e?.message);
-    calcs = [];
-  }
-
-  // 3) Para cada categoría, calcula su lista y la pasa en props
-  return CATEGORIES.map((cat) => {
-    const list = Array.isArray(calcs)
-      ? calcs.filter((it) =>
-          (it?.cluster ?? '') &&
-          cat.map.some((v) => (it.cluster || '').toLowerCase().includes(v.toLowerCase()))
-        ).slice(0, 200)
-      : [];
-
-    return {
-      params: { slug: cat.slug },
-      props:  { cat, list }
-    };
-  });
+// 2) Utilidad para obtener el slug desde el nombre del archivo
+function fileSlug(filePath: string): string {
+  const last = filePath.split('/').pop() || '';
+  return last.replace(/\.mdx$/i, '');
 }
 
-// Recibe cat y list ya preparados desde getStaticPaths
-const { cat, list = [] } = Astro.props;
+// 3) Construimos un mapa { slug -> módulo } con deduplicación
+const bySlug = new Map<string, MdxModule>();
+for (const [path, mod] of Object.entries(mdxModules)) {
+  const fmSlug = (mod.frontmatter?.slug ?? '').toString().trim();
+  const computed = fmSlug || fileSlug(path);
+  if (!computed) continue;
+
+  // Evita duplicados: el primer hallado gana
+  if (!bySlug.has(computed)) {
+    bySlug.set(computed, mod);
+  }
+}
+
+// 4) Exportamos las rutas estáticas — SIEMPRE un array
+export function getStaticPaths() {
+  return Array.from(bySlug.keys()).map((slug) => ({
+    params: { slug }
+  }));
+}
+
+// 5) Página: resuelve el slug solicitado
+const slug = Astro.params.slug!;
+const mod = bySlug.get(slug);
+
+// Si no existe, redirigimos al 404 (no rompe el build)
+if (!mod) {
+  return Astro.redirect('/404');
+}
+
+// Renderizamos el MDX. Si el MDX tiene `layout:` en el frontmatter,
+// Astro respetará ese layout (por eso NO envolvemos con un layout aquí).
+const { default: Content } = mod;
 ---
 
-<BaseLayout title={`${cat.slug} calculators`} description={`Browse ${cat.slug} calculators`}>
-  <section class="hero container mx-auto max-w-5xl px-4 pt-10">
-    <h1 style="text-transform:capitalize;color: var(--ink)">{cat.slug} Calculators</h1>
-    <p style="color: var(--muted)">Explore calculators in this category.</p>
-  </section>
-
-  {list.length === 0 ? (
-    <p class="section container mx-auto max-w-5xl px-4">No calculators yet in this category.</p>
-  ) : (
-    <section class="section container mx-auto max-w-5xl px-4 py-8" aria-labelledby="cat-list">
-      <h2 id="cat-list" class="sr-only">Calculators list</h2>
-      <!-- Use a div container instead of ul/li to avoid any list markers or pseudo‑elements causing bracket artifacts -->
-      <div class="cards-grid">
-        {list.map((c) => (
-          <div>
-            <a class="card" href={`/calculators/${c.slug}/`}>
-              <h3>{c.title}</h3>
-              <p>{c.intro ?? ''}</p>
-            </a>
-          </div>
-        ))}
-      </div>
-    </section>
-  )}
-</BaseLayout>
+<Content />
