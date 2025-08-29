@@ -1,14 +1,35 @@
 ---
-import calculators from "../data/calculators";
 import { dedupeCalculators } from "../lib/dedupe";
 
-const dedupedList = dedupeCalculators(calculators);
-const list = dedupedList;
+// Load all MDX calculators under /src/pages/calculators
+const modules = import.meta.glob("./calculators/**/*.mdx", { eager: true });
+
+type Item = { url: string; fm: any; slug: string };
+const items: Item[] = Object.values(modules).map((m: any) => {
+  const url = m?.url ?? "";
+  const fm = m?.frontmatter ?? {};
+  const slug = url.replace(/\/$/, "").replace(/^\/calculators\//, "");
+  return { url, fm, slug };
+}).filter((i) => i.url);
+
+const list = dedupeCalculators(items);
 ---
 
 <h1>All Calculators</h1>
-<ul>
-  {list.map(calc => (
-    <li><a href={"/calculators/" + calc.slug}>{calc.name}</a></li>
-  ))}
-</ul>
+{list.length === 0 ? (
+  <p>No calculators available yet.</p>
+) : (
+  <section aria-labelledby="all-list">
+    <h2 id="all-list" class="sr-only">All calculators list</h2>
+    <div class="cards-grid">
+      {list.map((c) => (
+        <div>
+          <a class="card" href={c.url}>
+            <h3>{c.fm?.title ?? 'Calculator'}</h3>
+            <p>{c.fm?.description ?? c.fm?.intro ?? ''}</p>
+          </a>
+        </div>
+      ))}
+    </div>
+  </section>
+)}

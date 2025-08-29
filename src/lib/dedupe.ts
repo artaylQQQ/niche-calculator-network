@@ -1,16 +1,18 @@
-/** 
- * Elimina calculadoras duplicadas cuyo slug termina en "-calculator" 
- * cuando existe otra calculadora con el mismo slug sin dicho sufijo.
+/**
+ * Remove duplicate calculators whose slug ends with "-calculator"
+ * when there is also a version without that suffix.
+ * Accepts items with a `slug` string property.
  */
 export function dedupeCalculators<T extends { slug: string }>(items: T[]): T[] {
-  const slugSet = new Set(items.map(item => item.slug));
-  return items.filter(item => {
-    if (item.slug.endsWith('-calculator')) {
-      const baseSlug = item.slug.slice(0, item.slug.length - 11);
-      if (slugSet.has(baseSlug)) {
-        return false;
-      }
+  const slugSet = new Set(items.map((i) => i.slug));
+  const out: T[] = [];
+  for (const it of items) {
+    const s = it.slug;
+    if (s.endsWith("-calculator")) {
+      const base = s.slice(0, -11);
+      if (slugSet.has(base)) continue; // drop legacy duplicate
     }
-    return true;
-  });
+    out.push(it);
+  }
+  return out;
 }

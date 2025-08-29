@@ -1,14 +1,40 @@
 ---
-import calculators from "../data/calculators";
 import { dedupeCalculators } from "../lib/dedupe";
 
-const dedupedList = dedupeCalculators(calculators);
-const list = dedupedList.filter(calc => calc.category === "conversions");
+// Load all MDX calculators under /src/pages/calculators
+const modules = import.meta.glob("./calculators/**/*.mdx", { eager: true });
+
+type Item = { url: string; fm: any; slug: string };
+const items: Item[] = Object.values(modules).map((m: any) => {
+  const url = m?.url ?? "";
+  const fm = m?.frontmatter ?? {};
+  const slug = url.replace(/\/$/, "").replace(/^\/calculators\//, "");
+  return { url, fm, slug };
+}).filter((i) => i.url);
+
+const deduped = dedupeCalculators(items);
+
+const category = "conversions";
+const list = deduped.filter((i) => (i.fm?.cluster?.toLowerCase?.() ?? i.fm?.category?.toLowerCase?.() ?? "") === category);
 ---
 
-<h1>Conversions Calculators</h1>
-<ul>
-  {list.map(calc => (
-    <li><a href={"/calculators/" + calc.slug}>{calc.name}</a></li>
-  ))}
-</ul>
+<h1 style="text-transform:capitalize;">Conversions</h1>
+<p>Explore calculators in this category.</p>
+
+{list.length === 0 ? (
+  <p>No calculators yet in this category.</p>
+) : (
+  <section aria-labelledby="cat-list">
+    <h2 id="cat-list" class="sr-only">Calculators list</h2>
+    <div class="cards-grid">
+      {list.map((c) => (
+        <div>
+          <a class="card" href={c.url}>
+            <h3>{c.fm?.title ?? 'Calculator'}</h3>
+            <p>{c.fm?.description ?? c.fm?.intro ?? ''}</p>
+          </a>
+        </div>
+      ))}
+    </div>
+  </section>
+)}
