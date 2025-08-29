@@ -8,7 +8,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
  * `title`, a short `desc` and an `icon` file stored under `/public/icons/`.
  * For some topics we reuse the closest existing icon (e.g. `geometry.svg` for
  * Math, `algebra.svg` for Technology, `business.svg` for Home & DIY and
- * `statistics.svg` for Other).
+ * `statistics.svg` for Everyday & Misc).
  */
 const CATEGORIES = [
   { slug: 'finance',     title: 'Finance',     desc: 'Loans, interest, ROI, taxes',          icon: 'finance' },
@@ -18,7 +18,7 @@ const CATEGORIES = [
   { slug: 'technology',  title: 'Technology',  desc: 'Computing and tech topics',            icon: 'algebra' },
   { slug: 'date-time',   title: 'Date & Time', desc: 'Schedules and durations',              icon: 'time-date' },
   { slug: 'home-diy',    title: 'Home & DIY',  desc: 'Household projects and DIY',           icon: 'business' },
-  { slug: 'other',       title: 'Other',       desc: 'Everyday & misc calculators',          icon: 'statistics' }
+  { slug: 'other',       title: 'Everyday & Misc',       desc: 'Everyday & misc calculators',          icon: 'statistics' }
 ];
 ---
 <BaseLayout title="Smart & Fast Calculators" description="Calculate anything quickly and easily with our collection of online calculators.">
