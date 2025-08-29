@@ -1,26 +1,41 @@
 ---
-schema:
-  title: "Circle Area Calculator"
-  slug: "circle-area-calculator"
-  intro: "Compute the area of a circle from its radius. Uses A = π · r²."
-  inputs:
-    - name: "radius"
-      label: "Radius"
-      type: "number"
-      min: 0.000001
-      step: 0.01
-      placeholder: "e.g., 10"
-      unit: "cm"
-  expression: "3.141592653589793 * radius * radius"
-  formula: "3.141592653589793 * radius * radius"
-  examples:
-    - title: "Radius 10 cm"
-      inputs: { radius: 10 }
-      result: "≈ 314.16 cm²"
-  faqs:
-    - q: "Why doesn’t it use Math.PI?"
-      a: "The evaluator does not support Math.*, so we use a numeric literal."
-  meta:
-    title: "Circle Area Calculator — Compute A = π·r² Online"
-    description: "Fast circle area calculator. Enter a radius to compute A = π·r² instantly."
+layout: ../../layouts/CalculatorLayout.astro
+title: "Circle Area Calculator"
+description: "Area of a circle."
+updated: "2025-08-21"
+cluster: "Math"
 ---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "inputs": [
+    {
+      "name": "radius",
+      "label": "Radius",
+      "type": "number",
+      "placeholder": "Enter Radius",
+      "step": "any"
+    }
+  ],
+  "slug": "circle-area-calculator",
+  "title": "Circle Area Calculator",
+  "locale": "en",
+  "expression": "3.141592653589793 * radius ^ 2",
+  "intro": "Area of a circle.",
+  "examples": [
+    {
+      "description": "Enter values and click Calculate."
+    }
+  ],
+  "faqs": [
+    {
+      "question": "How do I use the Circle Area Calculator?",
+      "answer": "Enter the required values and press Calculate to get the result."
+    }
+  ],
+  "disclaimer": "Educational information, not professional advice.",
+  "cluster": "Math"
+};
+
+<Calculator schema={schema} />

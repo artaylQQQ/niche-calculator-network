@@ -2,16 +2,13 @@
 layout: ../../layouts/CalculatorLayout.astro
 title: "Storage Redundancy Overhead"
 description: "Compute overhead percentage when storing data with redundancy."
-date: 2025-08-29
-updated: 2025-08-29
+updated: "2025-08-26"
 cluster: "Technology"
 ---
+
 import Calculator from '../../components/Calculator.astro';
 
 export const schema = {
-  "slug": "storage-redundancy-overhead",
-  "title": "Storage Redundancy Overhead",
-  "locale": "en",
   "inputs": [
     {
       "name": "dataTB",
@@ -30,11 +27,14 @@ export const schema = {
       "placeholder": "5"
     }
   ],
+  "slug": "storage-redundancy-overhead",
+  "title": "Storage Redundancy Overhead",
+  "locale": "en",
   "expression": "(redundantTB / dataTB) * 100",
   "intro": "Compute overhead percentage when storing data with redundancy.",
   "examples": [
     {
-      "description": "10TB data + 5TB redundancy ⇒ 50% overhead"
+      "description": "10TB data + 5TB redundancy \u21d2 50% overhead"
     }
   ],
   "faqs": [
@@ -43,40 +43,8 @@ export const schema = {
       "answer": "Overhead is undefined when data is 0."
     }
   ],
-  "disclaimer": "Educational information, not professional advice.",
-  "cluster": "Technology",
-  "related": [
-    "percentage-discount",
-    "simple-interest",
-    "bmi-calculator",
-    "daily-calorie-burn",
-    "celsius-to-fahrenheit",
-    "km-to-miles"
-  ]
+  "disclaimer": "Educational purposes only. Not professional advice.",
+  "cluster": "Technology"
 }
 
-# Storage Redundancy Overhead
-
-Compute overhead percentage when storing data with redundancy.
-
 <Calculator schema={schema} />
-
-## Examples
-
-- 10TB data + 5TB redundancy ⇒ 50% overhead
-
-## FAQ
-
-### What if data is 0?
-
-Overhead is undefined when data is 0.
-
-## Related calculators
-
-- [Percentage Discount](/calculators/percentage-discount/)
-- [Simple Interest](/calculators/simple-interest/)
-- [Bmi Calculator](/calculators/bmi-calculator/)
-- [Daily Calorie Burn](/calculators/daily-calorie-burn/)
-- [Celsius To Fahrenheit](/calculators/celsius-to-fahrenheit/)
-- [Km To Miles](/calculators/km-to-miles/)
-

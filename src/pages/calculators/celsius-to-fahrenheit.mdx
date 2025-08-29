@@ -2,16 +2,13 @@
 layout: ../../layouts/CalculatorLayout.astro
 title: "Celsius to Fahrenheit"
 description: "Convert Celsius degrees into Fahrenheit."
-date: 2025-08-29
-updated: 2025-08-29
+updated: "2025-08-26"
 cluster: "Conversions"
 ---
+
 import Calculator from '../../components/Calculator.astro';
 
 export const schema = {
-  "slug": "celsius-to-fahrenheit",
-  "title": "Celsius to Fahrenheit",
-  "locale": "en",
   "inputs": [
     {
       "name": "c",
@@ -21,11 +18,14 @@ export const schema = {
       "placeholder": "25"
     }
   ],
+  "slug": "celsius-to-fahrenheit",
+  "title": "Celsius to Fahrenheit",
+  "locale": "en",
   "expression": "(c * 9/5) + 32",
   "intro": "Convert Celsius degrees into Fahrenheit.",
   "examples": [
     {
-      "description": "25°C ⇒ 77°F"
+      "description": "25\u00b0C \u21d2 77\u00b0F"
     }
   ],
   "faqs": [
@@ -34,40 +34,8 @@ export const schema = {
       "answer": "Yes, negative temperatures are supported."
     }
   ],
-  "disclaimer": "Educational information, not professional advice.",
-  "cluster": "Conversions",
-  "related": [
-    "percentage-discount",
-    "simple-interest",
-    "bmi-calculator",
-    "daily-calorie-burn",
-    "km-to-miles",
-    "percentage-increase"
-  ]
+  "disclaimer": "Educational purposes only. Not professional advice.",
+  "cluster": "Conversions"
 }
 
-# Celsius to Fahrenheit
-
-Convert Celsius degrees into Fahrenheit.
-
 <Calculator schema={schema} />
-
-## Examples
-
-- 25°C ⇒ 77°F
-
-## FAQ
-
-### Does it support negatives?
-
-Yes, negative temperatures are supported.
-
-## Related calculators
-
-- [Percentage Discount](/calculators/percentage-discount/)
-- [Simple Interest](/calculators/simple-interest/)
-- [Bmi Calculator](/calculators/bmi-calculator/)
-- [Daily Calorie Burn](/calculators/daily-calorie-burn/)
-- [Km To Miles](/calculators/km-to-miles/)
-- [Percentage Increase](/calculators/percentage-increase/)
-

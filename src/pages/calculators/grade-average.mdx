@@ -2,16 +2,13 @@
 layout: ../../layouts/CalculatorLayout.astro
 title: "Grade Average"
 description: "Compute the average from three test scores."
-date: 2025-08-29
-updated: 2025-08-29
+updated: "2025-08-26"
 cluster: "Other"
 ---
+
 import Calculator from '../../components/Calculator.astro';
 
 export const schema = {
-  "slug": "grade-average",
-  "title": "Grade Average",
-  "locale": "en",
   "inputs": [
     {
       "name": "a",
@@ -41,11 +38,14 @@ export const schema = {
       "placeholder": "70"
     }
   ],
+  "slug": "grade-average",
+  "title": "Grade Average",
+  "locale": "en",
   "expression": "(a + b + c) / 3",
   "intro": "Compute the average from three test scores.",
   "examples": [
     {
-      "description": "80, 90, 70 ⇒ 80"
+      "description": "80, 90, 70 \u21d2 80"
     }
   ],
   "faqs": [
@@ -54,40 +54,8 @@ export const schema = {
       "answer": "This tool uses a simple mean (unweighted)."
     }
   ],
-  "disclaimer": "Educational information, not professional advice.",
-  "cluster": "Other",
-  "related": [
-    "percentage-discount",
-    "simple-interest",
-    "bmi-calculator",
-    "daily-calorie-burn",
-    "celsius-to-fahrenheit",
-    "km-to-miles"
-  ]
+  "disclaimer": "Educational purposes only. Not professional advice.",
+  "cluster": "Other"
 }
 
-# Grade Average
-
-Compute the average from three test scores.
-
 <Calculator schema={schema} />
-
-## Examples
-
-- 80, 90, 70 ⇒ 80
-
-## FAQ
-
-### Weighted average?
-
-This tool uses a simple mean (unweighted).
-
-## Related calculators
-
-- [Percentage Discount](/calculators/percentage-discount/)
-- [Simple Interest](/calculators/simple-interest/)
-- [Bmi Calculator](/calculators/bmi-calculator/)
-- [Daily Calorie Burn](/calculators/daily-calorie-burn/)
-- [Celsius To Fahrenheit](/calculators/celsius-to-fahrenheit/)
-- [Km To Miles](/calculators/km-to-miles/)
-

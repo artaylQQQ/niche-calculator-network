@@ -2,20 +2,17 @@
 layout: ../../layouts/CalculatorLayout.astro
 title: "Paint Coverage"
 description: "Estimate litres of paint needed given area and coverage."
-date: 2025-08-29
-updated: 2025-08-29
+updated: "2025-08-26"
 cluster: "Home & DIY"
 ---
+
 import Calculator from '../../components/Calculator.astro';
 
 export const schema = {
-  "slug": "paint-coverage",
-  "title": "Paint Coverage",
-  "locale": "en",
   "inputs": [
     {
       "name": "area",
-      "label": "Area (m²)",
+      "label": "Area (m\u00b2)",
       "type": "number",
       "min": 0,
       "step": "any",
@@ -23,18 +20,21 @@ export const schema = {
     },
     {
       "name": "coverage",
-      "label": "Coverage (m²/L)",
+      "label": "Coverage (m\u00b2/L)",
       "type": "number",
       "min": 0.1,
       "step": "any",
       "placeholder": "12"
     }
   ],
+  "slug": "paint-coverage",
+  "title": "Paint Coverage",
+  "locale": "en",
   "expression": "area / coverage",
   "intro": "Estimate litres of paint needed given area and coverage.",
   "examples": [
     {
-      "description": "100 m² at 12 m²/L ⇒ ≈ 8.33 L"
+      "description": "100 m\u00b2 at 12 m\u00b2/L \u21d2 \u2248 8.33 L"
     }
   ],
   "faqs": [
@@ -43,40 +43,8 @@ export const schema = {
       "answer": "Multiply result by the number of coats you plan to apply."
     }
   ],
-  "disclaimer": "Educational information, not professional advice.",
-  "cluster": "Home & DIY",
-  "related": [
-    "percentage-discount",
-    "simple-interest",
-    "bmi-calculator",
-    "daily-calorie-burn",
-    "celsius-to-fahrenheit",
-    "km-to-miles"
-  ]
+  "disclaimer": "Educational purposes only. Not professional advice.",
+  "cluster": "Home & DIY"
 }
 
-# Paint Coverage
-
-Estimate litres of paint needed given area and coverage.
-
 <Calculator schema={schema} />
-
-## Examples
-
-- 100 m² at 12 m²/L ⇒ ≈ 8.33 L
-
-## FAQ
-
-### Number of coats?
-
-Multiply result by the number of coats you plan to apply.
-
-## Related calculators
-
-- [Percentage Discount](/calculators/percentage-discount/)
-- [Simple Interest](/calculators/simple-interest/)
-- [Bmi Calculator](/calculators/bmi-calculator/)
-- [Daily Calorie Burn](/calculators/daily-calorie-burn/)
-- [Celsius To Fahrenheit](/calculators/celsius-to-fahrenheit/)
-- [Km To Miles](/calculators/km-to-miles/)
-
