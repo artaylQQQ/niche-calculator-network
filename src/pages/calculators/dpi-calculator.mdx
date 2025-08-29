@@ -6,41 +6,44 @@ date: 2025-08-26
 updated: 2025-08-26
 cluster: "Technology"
 ---
-import Calculator from '../../components/Calculator.astro';
+
+import Calculator from "../../components/Calculator.astro";
 
 export const schema = {
-  "slug": "dpi-calculator",
-  "title": "DPI Calculator",
-  "locale": "en",
-  "inputs": [
+  slug: "dpi-calculator",
+  title: "DPI Calculator",
+  locale: "en",
+  inputs: [
     {
-      "name": "pixels",
-      "hint": "Pixels"
+      name: "pixels",
+      label: "Pixels",
+      hint: "Total pixels across",
     },
     {
-      "name": "inches",
-      "hint": "Inches"
-    }
+      name: "inches",
+      label: "Inches",
+      hint: "Width in inches",
+    },
   ],
-  "expression": "pixels/inches",
-  "intro": "Dots per inch from pixels and inches.",
-  "examples": [
+  expression: "pixels/inches",
+  intro: "Dots per inch from pixels and inches.",
+  examples: [
     {
-      "description": "3000 px across 10 inches → 300 DPI"
-    }
+      description: "3000 px across 10 inches → 300 DPI",
+    },
   ],
-  "faqs": [],
-  "disclaimer": "Educational information, not professional advice.",
-  "cluster": "Technology",
-  "related": [
-    "percentage-discount-calculator",
-    "loan-payment-calculator",
-    "compound-interest-calculator",
-    "bmi-calculator",
-    "percentage-increase-calculator",
-    "sales-tax-calculator"
-  ]
-}
+  faqs: [],
+  disclaimer: "Educational information, not professional advice.",
+  cluster: "Technology",
+  related: [
+    "download-time",
+    "download-cost",
+    "data-transfer-time",
+    "kb-to-mb",
+    "storage-redundancy-overhead",
+    "time-to-seconds-calculator",
+  ],
+};
 
 # DPI Calculator
 
@@ -54,10 +57,9 @@ Dots per inch from pixels and inches.
 
 ## Related calculators
 
-- [Percentage Discount Calculator](/calculators/percentage-discount-calculator/)
-- [Loan Payment Calculator](/calculators/loan-payment-calculator/)
-- [Compound Interest Calculator](/calculators/compound-interest-calculator/)
-- [Bmi Calculator](/calculators/bmi-calculator/)
-- [Percentage Increase Calculator](/calculators/percentage-increase-calculator/)
-- [Sales Tax Calculator](/calculators/sales-tax-calculator/)
-
+- [Download Time Calculator](/calculators/download-time/)
+- [Download Cost Calculator](/calculators/download-cost/)
+- [Data Transfer Time Calculator](/calculators/data-transfer-time/)
+- [KB To MB](/calculators/kb-to-mb/)
+- [Storage Redundancy Overhead](/calculators/storage-redundancy-overhead/)
+- [Time To Seconds Calculator](/calculators/time-to-seconds-calculator/)
