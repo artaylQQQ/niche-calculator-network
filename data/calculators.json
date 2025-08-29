@@ -258,7 +258,7 @@
         "placeholder": "5"
       }
     ],
-    "expression": "Math.PI * r * r",
+    "expression": "3.141592653589793 * (r * r)",
     "examples": [
       {
         "description": "r = 5 ⇒ area ≈ 78.5398"
