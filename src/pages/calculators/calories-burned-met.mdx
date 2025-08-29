@@ -6,50 +6,55 @@ date: 2025-08-26
 updated: 2025-08-26
 cluster: "Health"
 ---
-import Calculator from '../../components/Calculator.astro';
+
+import Calculator from "../../components/Calculator.astro";
 
 export const schema = {
-  "slug": "calories-burned-met",
-  "title": "Calories Burned (MET) Calculator",
-  "locale": "en",
-  "inputs": [
+  slug: "calories-burned-met",
+  title: "Calories Burned (MET) Calculator",
+  locale: "en",
+  inputs: [
     {
-      "name": "met",
-      "hint": "MET value"
+      name: "met",
+      label: "MET value",
+      hint: "Metabolic Equivalent of Task",
     },
     {
-      "name": "weight",
-      "hint": "Weight (kg)"
+      name: "weight",
+      label: "Weight",
+      hint: "in kilograms",
     },
     {
-      "name": "duration",
-      "hint": "Duration (minutes)"
-    }
+      name: "duration",
+      label: "Duration",
+      hint: "in minutes",
+    },
   ],
-  "expression": "met*weight*3.5/200*duration",
-  "intro": "Estimate calories burned using MET, weight, and duration.",
-  "examples": [
+  expression: "met*weight*3.5/200*duration",
+  intro: "Estimate calories burned using MET, weight, and duration.",
+  examples: [
     {
-      "description": "Jogging at MET 7, 70 kg, 30 minutes → about 257 kcal"
-    }
+      description: "Jogging at MET 7, 70 kg, 30 minutes → about 257 kcal",
+    },
   ],
-  "faqs": [
+  faqs: [
     {
-      "question": "What is a MET?",
-      "answer": "A MET is a unit that estimates energy cost of physical activities."
-    }
+      question: "What is a MET?",
+      answer:
+        "A MET is a unit that estimates energy cost of physical activities.",
+    },
   ],
-  "disclaimer": "Educational information, not professional advice.",
-  "cluster": "Health",
-  "related": [
-    "percentage-discount-calculator",
-    "loan-payment-calculator",
-    "compound-interest-calculator",
+  disclaimer: "Educational information, not professional advice.",
+  cluster: "Health",
+  related: [
     "bmi-calculator",
-    "percentage-increase-calculator",
-    "sales-tax-calculator"
-  ]
-}
+    "daily-calorie-burn",
+    "daily-water-intake",
+    "waist-to-height-ratio",
+    "weight-to-bmi-projection-calculator",
+    "kg-to-lb-calculator",
+  ],
+};
 
 # Calories Burned (MET) Calculator
 
@@ -69,10 +74,9 @@ A MET is a unit that estimates energy cost of physical activities.
 
 ## Related calculators
 
-- [Percentage Discount Calculator](/calculators/percentage-discount-calculator/)
-- [Loan Payment Calculator](/calculators/loan-payment-calculator/)
-- [Compound Interest Calculator](/calculators/compound-interest-calculator/)
-- [Bmi Calculator](/calculators/bmi-calculator/)
-- [Percentage Increase Calculator](/calculators/percentage-increase-calculator/)
-- [Sales Tax Calculator](/calculators/sales-tax-calculator/)
-
+- [BMI Calculator](/calculators/bmi-calculator/)
+- [Daily Calorie Burn](/calculators/daily-calorie-burn/)
+- [Daily Water Intake](/calculators/daily-water-intake/)
+- [Waist To Height Ratio](/calculators/waist-to-height-ratio/)
+- [Weight To BMI Projection Calculator](/calculators/weight-to-bmi-projection-calculator/)
+- [Kg To Lb Calculator](/calculators/kg-to-lb-calculator/)

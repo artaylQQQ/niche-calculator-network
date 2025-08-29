@@ -6,41 +6,44 @@ date: 2025-08-26
 updated: 2025-08-26
 cluster: "Technology"
 ---
-import Calculator from '../../components/Calculator.astro';
+
+import Calculator from "../../components/Calculator.astro";
 
 export const schema = {
-  "slug": "download-cost",
-  "title": "Download Cost Calculator",
-  "locale": "en",
-  "inputs": [
+  slug: "download-cost",
+  title: "Download Cost Calculator",
+  locale: "en",
+  inputs: [
     {
-      "name": "size_gb",
-      "hint": "Size (GB)"
+      name: "sizeGb",
+      label: "Size (GB)",
+      hint: "Total data size in gigabytes",
     },
     {
-      "name": "price_per_gb",
-      "hint": "Price per GB ($)"
-    }
+      name: "pricePerGb",
+      label: "Price per GB ($)",
+      hint: "Cost per gigabyte",
+    },
   ],
-  "expression": "size_gb*price_per_gb",
-  "intro": "Estimate download cost from data size and price per GB.",
-  "examples": [
+  expression: "sizeGb*pricePerGb",
+  intro: "Estimate download cost from data size and price per GB.",
+  examples: [
     {
-      "description": "10 GB at $0.10/GB → $1"
-    }
+      description: "10 GB at $0.10/GB → $1",
+    },
   ],
-  "faqs": [],
-  "disclaimer": "Educational information, not professional advice.",
-  "cluster": "Technology",
-  "related": [
-    "percentage-discount-calculator",
-    "loan-payment-calculator",
-    "compound-interest-calculator",
-    "bmi-calculator",
-    "percentage-increase-calculator",
-    "sales-tax-calculator"
-  ]
-}
+  faqs: [],
+  disclaimer: "Educational information, not professional advice.",
+  cluster: "Technology",
+  related: [
+    "download-time",
+    "data-transfer-time",
+    "kb-to-mb",
+    "dpi-calculator",
+    "storage-redundancy-overhead",
+    "time-to-seconds-calculator",
+  ],
+};
 
 # Download Cost Calculator
 
@@ -54,10 +57,9 @@ Estimate download cost from data size and price per GB.
 
 ## Related calculators
 
-- [Percentage Discount Calculator](/calculators/percentage-discount-calculator/)
-- [Loan Payment Calculator](/calculators/loan-payment-calculator/)
-- [Compound Interest Calculator](/calculators/compound-interest-calculator/)
-- [Bmi Calculator](/calculators/bmi-calculator/)
-- [Percentage Increase Calculator](/calculators/percentage-increase-calculator/)
-- [Sales Tax Calculator](/calculators/sales-tax-calculator/)
-
+- [Download Time Calculator](/calculators/download-time/)
+- [Data Transfer Time Calculator](/calculators/data-transfer-time/)
+- [KB To MB](/calculators/kb-to-mb/)
+- [DPI Calculator](/calculators/dpi-calculator/)
+- [Storage Redundancy Overhead](/calculators/storage-redundancy-overhead/)
+- [Time To Seconds Calculator](/calculators/time-to-seconds-calculator/)
