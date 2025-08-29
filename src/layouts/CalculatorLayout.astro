@@ -53,6 +53,19 @@ const jsonLd = {
 ---
 <BaseLayout {title} {description} {canonical}>
   <slot />
+
+  {Array.isArray(schema?.faqs) && schema.faqs.length > 0 && (
+    <section class="faq">
+      <h2>FAQ</h2>
+      {schema.faqs.map((f) => (
+        <details>
+          <summary>{f.question}</summary>
+          <p>{f.answer}</p>
+        </details>
+      ))}
+    </section>
+  )}
+
   {/**
     * The structured data block is appended to the end of the page body.  We
     * mark the script as inline to avoid generating an external file.  The
@@ -60,4 +73,11 @@ const jsonLd = {
     * literal.
     */}
   <script type="application/ld+json" is:inline>{JSON.stringify(jsonLd)}</script>
+
+  <style is:inline>
+    .faq { margin-top: 24px; }
+    .faq details { margin: 8px 0; }
+    .faq summary { cursor: pointer; font-weight: 600; }
+    .faq p { margin: 4px 0 0 16px; }
+  </style>
 </BaseLayout>
