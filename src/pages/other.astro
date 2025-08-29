@@ -5,12 +5,12 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 // calculators whose `cluster` (category) is lower‑cased to `other`.  If no
 // calculators are available a placeholder message is shown.
 const slug = "other";
-const title = "Other Calculators";
+const title = "Everyday & Misc Calculators";
 const modules = import.meta.glob("../pages/calculators/*.mdx", { eager: true });
 const items = Object.values(modules).map((m) => ({ url: m.url, fm: m.frontmatter || {} }));
 const list = items.filter(i => (i.fm.cluster || "").toLowerCase() === slug);
 ---
-<BaseLayout title={title} description={`Browse ${slug} calculators`}>
+<BaseLayout title={title} description="Browse everyday & misc calculators">
   <section class="hero container mx-auto max-w-5xl px-4">
     <h1 style="color: var(--ink)">{title}</h1>
     <p style="color: var(--muted)">Explore calculators in this category.</p>

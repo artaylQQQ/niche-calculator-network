@@ -282,7 +282,7 @@
   {
     "slug": "tip-calculator",
     "title": "Tip Calculator",
-    "cluster": "Other",
+    "cluster": "Everyday & Misc",
     "intro": "Calculate tip amount.",
     "inputs": [
       {
@@ -299,7 +299,7 @@
   {
     "slug": "fuel-trip-cost",
     "title": "Fuel Trip Cost",
-    "cluster": "Other",
+    "cluster": "Everyday & Misc",
     "intro": "Estimate fuel trip cost.",
     "inputs": [
       {

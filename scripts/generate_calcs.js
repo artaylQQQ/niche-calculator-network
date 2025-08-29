@@ -61,14 +61,14 @@ const CATEGORY_MAP = {
   "home and diy": "Home & DIY",
   diy: "Home & DIY",
   household: "Home & DIY",
-  // other/misc
-  misc: "Other",
-  miscellaneous: "Other",
-  other: "Other",
-  everyday: "Other",
-  general: "Other",
-  education: "Other",
-  science: "Other",
+  // everyday & misc
+  misc: "Everyday & Misc",
+  miscellaneous: "Everyday & Misc",
+  other: "Everyday & Misc",
+  everyday: "Everyday & Misc",
+  general: "Everyday & Misc",
+  education: "Everyday & Misc",
+  science: "Everyday & Misc",
 };
 
 // Utility to safely parse JSON with fallback.
@@ -123,7 +123,8 @@ function titleize(slug) {
   const toPublish = backlog.slice(0, limit);
   for (const calc of toPublish) {
     const rawCluster = (calc.cluster || "").toString().toLowerCase();
-    const normCluster = CATEGORY_MAP[rawCluster] || calc.cluster || "Other";
+    const normCluster =
+      CATEGORY_MAP[rawCluster] || calc.cluster || "Everyday & Misc";
     const related = pickRelated(calc, items);
     const schema = {
       slug: calc.slug,

@@ -65,14 +65,14 @@ const CATEGORY_MAP: Record<string, string> = {
   "home and diy": "Home & DIY",
   diy: "Home & DIY",
   household: "Home & DIY",
-  // other/misc
-  misc: "Other",
-  miscellaneous: "Other",
-  other: "Other",
-  everyday: "Other",
-  general: "Other",
-  education: "Other",
-  science: "Other",
+  // everyday & misc
+  misc: "Everyday & Misc",
+  miscellaneous: "Everyday & Misc",
+  other: "Everyday & Misc",
+  everyday: "Everyday & Misc",
+  general: "Everyday & Misc",
+  education: "Everyday & Misc",
+  science: "Everyday & Misc",
 };
 
 // Safely parse a JSON file, returning a fallback value on error.  This
@@ -137,9 +137,10 @@ function titleize(slug: string): string {
 
   for (const calc of toPublish) {
     // Normalise the cluster using CATEGORY_MAP.  Fall back to the original
-    // cluster or 'Other' if nothing matches.
+    // cluster or 'Everyday & Misc' if nothing matches.
     const rawCluster = (calc.cluster || "").toString().toLowerCase();
-    const normCluster = CATEGORY_MAP[rawCluster] || calc.cluster || "Other";
+    const normCluster =
+      CATEGORY_MAP[rawCluster] || calc.cluster || "Everyday & Misc";
     // Determine related calculators ahead of time.
     const related = pickRelated(calc, items);
     // Build a runtime schema used by the Calculator component.  Provide

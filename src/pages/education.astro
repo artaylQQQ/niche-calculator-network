@@ -1,10 +1,10 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-// Education calculators have been merged into the miscellaneous category.  We
-// reuse the Other page implementation here so visitors are directed to the
+// Education calculators have been merged into the everyday & misc category.
+// Reuse the shared page implementation so visitors are directed to the
 // correct list.  See `src/pages/other.astro` for details.
 const slug = "other";
-const title = "Other Calculators";
+const title = "Everyday & Misc Calculators";
 const modules = import.meta.glob("../pages/calculators/*.mdx", { eager: true });
 const items = Object.values(modules).map((m) => ({ url: m.url, fm: m.frontmatter || {} }));
 const list = items.filter(i => (i.fm.cluster || "").toLowerCase() === slug);

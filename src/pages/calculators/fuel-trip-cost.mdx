@@ -4,47 +4,48 @@ title: "Fuel Trip Cost"
 description: "Estimate fuel trip cost."
 date: 2025-08-26
 updated: 2025-08-26
-cluster: "Other"
+cluster: "Everyday & Misc"
 ---
-import Calculator from '../../components/Calculator.astro';
+
+import Calculator from "../../components/Calculator.astro";
 
 export const schema = {
-  "slug": "fuel-trip-cost",
-  "title": "Fuel Trip Cost",
-  "locale": "en",
-  "inputs": [
+  slug: "fuel-trip-cost",
+  title: "Fuel Trip Cost",
+  locale: "en",
+  inputs: [
     {
-      "name": "distance",
-      "hint": "Distance (km)"
+      name: "distance",
+      hint: "Distance (km)",
     },
     {
-      "name": "consumption",
-      "hint": "Consumption (L/100km)"
+      name: "consumption",
+      hint: "Consumption (L/100km)",
     },
     {
-      "name": "price",
-      "hint": "Price per L ($)"
-    }
+      name: "price",
+      hint: "Price per L ($)",
+    },
   ],
-  "expression": "(distance*consumption/100)*price",
-  "intro": "Estimate fuel trip cost.",
-  "examples": [
+  expression: "(distance*consumption/100)*price",
+  intro: "Estimate fuel trip cost.",
+  examples: [
     {
-      "description": "Enter the values and press Calculate."
-    }
+      description: "Enter the values and press Calculate.",
+    },
   ],
-  "faqs": [],
-  "disclaimer": "Educational information, not professional advice.",
-  "cluster": "Other",
-  "related": [
+  faqs: [],
+  disclaimer: "Educational information, not professional advice.",
+  cluster: "Everyday & Misc",
+  related: [
     "percentage-discount-calculator",
     "loan-payment-calculator",
     "compound-interest-calculator",
     "bmi-calculator",
     "percentage-increase-calculator",
-    "sales-tax-calculator"
-  ]
-}
+    "sales-tax-calculator",
+  ],
+};
 
 # Fuel Trip Cost
 
@@ -64,4 +65,3 @@ Estimate fuel trip cost.
 - [Bmi Calculator](/calculators/bmi-calculator/)
 - [Percentage Increase Calculator](/calculators/percentage-increase-calculator/)
 - [Sales Tax Calculator](/calculators/sales-tax-calculator/)
-
