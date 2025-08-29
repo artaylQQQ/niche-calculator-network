@@ -1,57 +1,129 @@
 ---
-// src/pages/calculators/[slug].astro
-// Versión estable y simple: genera rutas desde MDX y renderiza el contenido
-// respetando el layout propio de cada MDX (si existe).
+// src/pages/categories/[slug].astro
+// Categorías autosuficientes a partir de las calculadoras MDX en /src/pages/calculators/*.mdx
+// Objetivo: evitar dependencias (p.ej., "bySlug") y generar rutas estáticas sanas.
+// No cambia el diseño global: render simple + tus estilos globales se aplican igual.
 
 type MdxModule = {
   frontmatter?: Record<string, any>;
-  default: any; // AstroComponentFactory
+  default: any; // Astro component
 };
 
-// 1) Cargamos todos los MDX de /src/content/calculators
-//    (EAGER = true para tener el frontmatter en build time).
-const mdxModules = import.meta.glob('../../content/calculators/*.mdx', {
-  eager: true
-}) as Record<string, MdxModule>;
+// 1) Cargar TODAS las calculadoras como módulos MDX (en tiempo de build)
+const calcModules = import.meta.glob('../calculators/*.mdx', { eager: true }) as Record<
+  string,
+  MdxModule
+>;
 
-// 2) Utilidad para obtener el slug desde el nombre del archivo
+// 2) Utilidades
 function fileSlug(filePath: string): string {
   const last = filePath.split('/').pop() || '';
   return last.replace(/\.mdx$/i, '');
 }
 
-// 3) Construimos un mapa { slug -> módulo } con deduplicación
-const bySlug = new Map<string, MdxModule>();
-for (const [path, mod] of Object.entries(mdxModules)) {
-  const fmSlug = (mod.frontmatter?.slug ?? '').toString().trim();
-  const computed = fmSlug || fileSlug(path);
-  if (!computed) continue;
-
-  // Evita duplicados: el primer hallado gana
-  if (!bySlug.has(computed)) {
-    bySlug.set(computed, mod);
-  }
+function slugifyCat(v: string): string {
+  return v
+    .toLowerCase()
+    .replace(/&/g, 'and')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/(^-|-$)/g, '');
 }
 
-// 4) Exportamos las rutas estáticas — SIEMPRE un array
+function titleCase(s: string): string {
+  return s.replace(/[-_]+/g, ' ').replace(/\b\w/g, (m) => m.toUpperCase());
+}
+
+// 3) Normalizar data de calculadoras
+type CalcItem = {
+  slug: string;
+  title: string;
+  url: string;
+  categories: string[];      // slugs de categorías normalizados
+  categoriesDisplay: string[]; // nombres “bonitos”
+};
+
+const calculators: CalcItem[] = Object.entries(calcModules).map(([path, mod]) => {
+  const fm = mod.frontmatter || {};
+  const slug = (fm.slug ? String(fm.slug) : fileSlug(path)).trim();
+  const title = (fm.title ? String(fm.title) : titleCase(slug)).trim();
+
+  // Acepta frontmatter "category", "categories" o "tags"
+  const rawCats: string[] = Array.isArray(fm.categories)
+    ? fm.categories
+    : fm.category
+    ? [fm.category]
+    : Array.isArray(fm.tags)
+    ? fm.tags
+    : [];
+
+  const categories = (rawCats.length ? rawCats : ['Uncategorized']).map((c) => slugifyCat(String(c)));
+  const categoriesDisplay = (rawCats.length ? rawCats : ['Uncategorized']).map((c) => titleCase(String(c)));
+
+  return {
+    slug,
+    title,
+    url: `/calculators/${slug}/`,
+    categories,
+    categoriesDisplay
+  };
+});
+
+// 4) Índice de categorías -> lista de calculadoras
+const categoryIndex = new Map<
+  string,
+  { displayName: string; items: CalcItem[] }
+>();
+
+for (const calc of calculators) {
+  // Usa la primera forma “bonita” como nombre visible por categoría
+  calc.categories.forEach((catSlug, i) => {
+    const display = calc.categoriesDisplay[i] || titleCase(catSlug);
+    if (!categoryIndex.has(catSlug)) {
+      categoryIndex.set(catSlug, { displayName: display, items: [] });
+    }
+    categoryIndex.get(catSlug)!.items.push(calc);
+  });
+}
+
+// 5) Rutas estáticas saludables para todas las categorías detectadas
 export function getStaticPaths() {
-  return Array.from(bySlug.keys()).map((slug) => ({
+  return Array.from(categoryIndex.keys()).map((slug) => ({
     params: { slug }
   }));
 }
 
-// 5) Página: resuelve el slug solicitado
-const slug = Astro.params.slug!;
-const mod = bySlug.get(slug);
+// 6) Página de categoría concreta
+const catSlug = Astro.params.slug!;
+const category = categoryIndex.get(catSlug);
 
-// Si no existe, redirigimos al 404 (no rompe el build)
-if (!mod) {
-  return Astro.redirect('/404');
+// Seguridad extra: si algo raro pasa, no rompe build (pero no debería ocurrir)
+if (!category) {
+  // Puedes customizar esta salida mínima si tienes un layout global
+  const msg = `Category not found: ${catSlug}`;
+  throw new Error(msg);
 }
-
-// Renderizamos el MDX. Si el MDX tiene `layout:` en el frontmatter,
-// Astro respetará ese layout (por eso NO envolvemos con un layout aquí).
-const { default: Content } = mod;
 ---
 
-<Content />
+<!-- Salida mínima y limpia; tus estilos globales aplicarán el look que ya tengas -->
+<section class="container" style="max-width: 960px; margin: 2rem auto; padding: 1rem;">
+  <h1 style="font-size: 1.875rem; line-height: 2.25rem; margin-bottom: 1rem;">
+    {category.displayName}
+  </h1>
+
+  <p style="margin-bottom: 1rem;">
+    Calculators in this category:
+  </p>
+
+  <ul style="display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 0.75rem; list-style: none; padding: 0;">
+    {category.items
+      .sort((a, b) => a.title.localeCompare(b.title))
+      .map((it) => (
+        <li style="border: 1px solid #e5e7eb; border-radius: 12px; padding: 0.75rem;">
+          <a href={it.url} style="text-decoration: none;">
+            <div style="font-weight: 600; margin-bottom: 0.25rem;">{it.title}</div>
+            <div style="font-size: 0.875rem; color: #6b7280;">/calculators/{it.slug}</div>
+          </a>
+        </li>
+      ))}
+  </ul>
+</section>
