@@ -210,7 +210,7 @@ const jsonLd = {
         }
         try {
           value = evalExpr(expr, vars);
-          usedExpr = true;
+          usedExpr = isFinite(value);
         } catch (e) {
           usedExpr = false;
         }
