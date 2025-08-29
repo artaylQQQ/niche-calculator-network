@@ -1,129 +1,82 @@
 ---
-// src/pages/categories/[slug].astro
-// Categorías autosuficientes a partir de las calculadoras MDX en /src/pages/calculators/*.mdx
-// Objetivo: evitar dependencias (p.ej., "bySlug") y generar rutas estáticas sanas.
-// No cambia el diseño global: render simple + tus estilos globales se aplican igual.
-// ttttttttt
-type MdxModule = {
-  frontmatter?: Record<string, any>;
-  default: any; // Astro component
-};
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 
-// 1) Cargar TODAS las calculadoras como módulos MDX (en tiempo de build)
-const calcModules = import.meta.glob('../calculators/*.mdx', { eager: true }) as Record<
-  string,
-  MdxModule
->;
+/** Genera rutas y datos sin variables globales */
+export async function getStaticPaths() {
+  // 1) Define the eight supported category slugs and a list of aliases.  The
+  // generator and pages normalise arbitrary cluster names using these
+  // mappings.  Any calculator whose cluster matches (case insensitive)
+  // one of the listed aliases will be grouped into the corresponding
+  // category page.
+  const CATEGORIES = [
+    { slug: 'finance',     map: ['finance','finance & loans','taxes','business','business & commerce','percentages & ratios'] },
+    { slug: 'health',      map: ['health','health & fitness','bmi'] },
+    { slug: 'conversions', map: ['conversions','unit conversions','unit and currency conversions'] },
+    { slug: 'math',        map: ['math','geometry','geometry & math','areas & volumes','algebra','percentages & ratios','statistics','averages and probabilities'] },
+    { slug: 'technology',  map: ['technology','tech','computing','technology & computing'] },
+    { slug: 'date-time',   map: ['date & time','time & date','time-date','durations and schedules'] },
+    { slug: 'home-diy',    map: ['home & diy','home and diy','diy','household'] },
+    { slug: 'other',       map: ['other','misc','miscellaneous','everyday','everyday & misc','general'] }
+  ];
 
-// 2) Utilidades
-function fileSlug(filePath: string): string {
-  const last = filePath.split('/').pop() || '';
-  return last.replace(/\.mdx$/i, '');
-}
+  // 2) Lee calculators.json en build
+  const __filename = fileURLToPath(import.meta.url);
+  const __dirname  = path.dirname(__filename);
+  const dataPath   = path.resolve(__dirname, '../../../data/calculators.json');
 
-function slugifyCat(v: string): string {
-  return v
-    .toLowerCase()
-    .replace(/&/g, 'and')
-    .replace(/[^a-z0-9]+/g, '-')
-    .replace(/(^-|-$)/g, '');
-}
+  let calcs = [];
+  try {
+    calcs = JSON.parse(fs.readFileSync(dataPath, 'utf-8'));
+  } catch (e) {
+    console.warn('Could not read calculators.json at build time:', e?.message);
+    calcs = [];
+  }
 
-function titleCase(s: string): string {
-  return s.replace(/[-_]+/g, ' ').replace(/\b\w/g, (m) => m.toUpperCase());
-}
+  // 3) Para cada categoría, calcula su lista y la pasa en props
+  return CATEGORIES.map((cat) => {
+    const list = Array.isArray(calcs)
+      ? calcs.filter((it) =>
+          (it?.cluster ?? '') &&
+          cat.map.some((v) => (it.cluster || '').toLowerCase().includes(v.toLowerCase()))
+        ).slice(0, 200)
+      : [];
 
-// 3) Normalizar data de calculadoras
-type CalcItem = {
-  slug: string;
-  title: string;
-  url: string;
-  categories: string[];      // slugs de categorías normalizados
-  categoriesDisplay: string[]; // nombres “bonitos”
-};
-
-const calculators: CalcItem[] = Object.entries(calcModules).map(([path, mod]) => {
-  const fm = mod.frontmatter || {};
-  const slug = (fm.slug ? String(fm.slug) : fileSlug(path)).trim();
-  const title = (fm.title ? String(fm.title) : titleCase(slug)).trim();
-
-  // Acepta frontmatter "category", "categories" o "tags"
-  const rawCats: string[] = Array.isArray(fm.categories)
-    ? fm.categories
-    : fm.category
-    ? [fm.category]
-    : Array.isArray(fm.tags)
-    ? fm.tags
-    : [];
-
-  const categories = (rawCats.length ? rawCats : ['Uncategorized']).map((c) => slugifyCat(String(c)));
-  const categoriesDisplay = (rawCats.length ? rawCats : ['Uncategorized']).map((c) => titleCase(String(c)));
-
-  return {
-    slug,
-    title,
-    url: `/calculators/${slug}/`,
-    categories,
-    categoriesDisplay
-  };
-});
-
-// 4) Índice de categorías -> lista de calculadoras
-const categoryIndex = new Map<
-  string,
-  { displayName: string; items: CalcItem[] }
->();
-
-for (const calc of calculators) {
-  // Usa la primera forma “bonita” como nombre visible por categoría
-  calc.categories.forEach((catSlug, i) => {
-    const display = calc.categoriesDisplay[i] || titleCase(catSlug);
-    if (!categoryIndex.has(catSlug)) {
-      categoryIndex.set(catSlug, { displayName: display, items: [] });
-    }
-    categoryIndex.get(catSlug)!.items.push(calc);
+    return {
+      params: { slug: cat.slug },
+      props:  { cat, list }
+    };
   });
 }
 
-// 5) Rutas estáticas saludables para todas las categorías detectadas
-export function getStaticPaths() {
-  return Array.from(categoryIndex.keys()).map((slug) => ({
-    params: { slug }
-  }));
-}
-
-// 6) Página de categoría concreta
-const catSlug = Astro.params.slug!;
-const category = categoryIndex.get(catSlug);
-
-// Seguridad extra: si algo raro pasa, no rompe build (pero no debería ocurrir)
-if (!category) {
-  // Puedes customizar esta salida mínima si tienes un layout global
-  const msg = `Category not found: ${catSlug}`;
-  throw new Error(msg);
-}
+// Recibe cat y list ya preparados desde getStaticPaths
+const { cat, list = [] } = Astro.props;
 ---
 
-<!-- Salida mínima y limpia; tus estilos globales aplicarán el look que ya tengas -->
-<section class="container" style="max-width: 960px; margin: 2rem auto; padding: 1rem;">
-  <h1 style="font-size: 1.875rem; line-height: 2.25rem; margin-bottom: 1rem;">
-    {category.displayName}
-  </h1>
+<BaseLayout title={`${cat.slug} calculators`} description={`Browse ${cat.slug} calculators`}>
+  <section class="hero container mx-auto max-w-5xl px-4 pt-10">
+    <h1 style="text-transform:capitalize;color: var(--ink)">{cat.slug} Calculators</h1>
+    <p style="color: var(--muted)">Explore calculators in this category.</p>
+  </section>
 
-  <p style="margin-bottom: 1rem;">
-    Calculators in this category:
-  </p>
-
-  <ul style="display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 0.75rem; list-style: none; padding: 0;">
-    {category.items
-      .sort((a, b) => a.title.localeCompare(b.title))
-      .map((it) => (
-        <li style="border: 1px solid #e5e7eb; border-radius: 12px; padding: 0.75rem;">
-          <a href={it.url} style="text-decoration: none;">
-            <div style="font-weight: 600; margin-bottom: 0.25rem;">{it.title}</div>
-            <div style="font-size: 0.875rem; color: #6b7280;">/calculators/{it.slug}</div>
-          </a>
-        </li>
-      ))}
-  </ul>
-</section>
+  {list.length === 0 ? (
+    <p class="section container mx-auto max-w-5xl px-4">No calculators yet in this category.</p>
+  ) : (
+    <section class="section container mx-auto max-w-5xl px-4 py-8" aria-labelledby="cat-list">
+      <h2 id="cat-list" class="sr-only">Calculators list</h2>
+      <!-- Use a div container instead of ul/li to avoid any list markers or pseudo‑elements causing bracket artifacts -->
+      <div class="cards-grid">
+        {list.map((c) => (
+          <div>
+            <a class="card" href={`/calculators/${c.slug}/`}>
+              <h3>{c.title}</h3>
+              <p>{c.intro ?? ''}</p>
+            </a>
+          </div>
+        ))}
+      </div>
+    </section>
+  )}
+</BaseLayout>
