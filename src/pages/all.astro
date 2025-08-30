@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import AdBanner from "../components/AdBanner.astro";
 const modules = import.meta.glob("../pages/calculators/*.mdx", { eager: true });
 const items = Object.values(modules).map((m) => ({ url: m.url, fm: m.frontmatter || {} }));
 ---
@@ -8,6 +9,7 @@ const items = Object.values(modules).map((m) => ({ url: m.url, fm: m.frontmatter
     <h1 style="color: var(--ink)">All Calculators</h1>
     <p style="color: var(--muted)">Explore every calculator available on the site.</p>
   </section>
+  <AdBanner />
   <section class="section container mx-auto max-w-5xl px-4" aria-labelledby="list-all">
     <h2 id="list-all" class="sr-only">All calculators list</h2>
     <!-- Use a responsive Tailwind grid for consistent card sizes across breakpoints -->

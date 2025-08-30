@@ -3,6 +3,7 @@
   - Simplificado: usa atributos data-* para pasar slug y expression.
   - Sin JSON.parse necesario (aunque se mantiene opcional).
 */
+import AdBanner from './AdBanner.astro';
 const { schema } = Astro.props;
 const title = schema?.title ?? 'Calculator';
 const slug = schema?.slug ?? 'calculator';
@@ -40,6 +41,7 @@ const jsonLd = {
 <section class="calc" data-calculator data-slug={slug} data-exp={expression} aria-labelledby={`h-${slug}`}>
   <h1 id={`h-${slug}`}>{title}</h1>
   {intro && <p class="muted">{intro}</p>}
+  <AdBanner />
 
   <form data-role="form" onsubmit="compute(); return false">
     {inputs.map((i) => (
