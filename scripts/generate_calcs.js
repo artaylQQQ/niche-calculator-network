@@ -108,16 +108,28 @@ function titleize(slug) {
   const items = readJSON(DATA_PATH, []);
   const log = readJSON(LOG_PATH, []);
   const published = new Set(log.map((r) => r.slug));
-  const backlog = items.filter((c) => !published.has(c.slug));
+  const backlogAll = items.filter((c) => !published.has(c.slug));
+  const categoryFilter = (process.env.CATEGORY || "").toLowerCase();
+  const backlog = categoryFilter
+    ? backlogAll.filter((c) => {
+        const raw = (c.cluster || "").toString().toLowerCase();
+        const norm = (CATEGORY_MAP[raw] || c.cluster || "").toLowerCase();
+        return norm === categoryFilter;
+      })
+    : backlogAll;
   if (!backlog.length) {
-    console.log("No new calculators to generate");
+    console.log(
+      categoryFilter
+        ? `No new calculators to generate for category ${categoryFilter}`
+        : "No new calculators to generate",
+    );
     return;
   }
   const rawMax = parseInt(
     process.env.MAX_PER_DAY || process.env.MAX_PER_DAY_GITHUB || "50",
     10,
   );
-  const limit = Math.max(20, Math.min(100, isNaN(rawMax) ? 50 : rawMax));
+  const limit = Math.max(1, Math.min(100, isNaN(rawMax) ? 50 : rawMax));
   const today = new Date().toISOString().slice(0, 10);
   fs.mkdirSync(OUT_DIR, { recursive: true });
   const toPublish = backlog.slice(0, limit);
