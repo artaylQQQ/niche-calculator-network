@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import AdBanner from "../components/AdBanner.astro";
 const slug = "other";
 const title = "Everyday & Misc Calculators";
 const modules = import.meta.glob("../pages/calculators/*.mdx", { eager: true });
@@ -7,9 +8,10 @@ const items = Object.values(modules).map((m) => ({ url: m.url, fm: m.frontmatter
 const list = items.filter(i => (i.fm.cluster || "").toLowerCase() === slug);
 ---
 <BaseLayout title={title}>
-  <main class="container mx-auto px-4 py-10">
-    <h1 class="text-3xl font-bold">{title}</h1>
-    {list.length ? (
+    <main class="container mx-auto px-4 py-10">
+      <h1 class="text-3xl font-bold">{title}</h1>
+      <AdBanner />
+      {list.length ? (
       <div class="grid gap-4 mt-6 sm:grid-cols-2 lg:grid-cols-3">
         {list.map((it) => (
           <a href={it.url} class="block rounded-xl border border-slate-200 p-4 hover:border-blue-500 hover:shadow-sm transition">

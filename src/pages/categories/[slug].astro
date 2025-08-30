@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import AdBanner from '../../components/AdBanner.astro';
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -60,6 +61,8 @@ const { cat, list = [] } = Astro.props;
     <h1 style="text-transform:capitalize;color: var(--ink)">{cat.title} Calculators</h1>
     <p style="color: var(--muted)">Explore calculators in this category.</p>
   </section>
+
+  <AdBanner />
 
   {list.length === 0 ? (
     <p class="section container mx-auto max-w-5xl px-4">No calculators yet in this category.</p>
