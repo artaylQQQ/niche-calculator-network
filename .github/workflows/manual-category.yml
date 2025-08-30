@@ -1,0 +1,58 @@
+name: Manual category calculator publish
+
+on:
+  workflow_dispatch:
+    inputs:
+      category:
+        description: 'Category for the calculator'
+        required: true
+        type: choice
+        options:
+          - Finance
+          - Health
+          - Conversions
+          - Math
+          - Technology
+          - Date & Time
+          - Home & DIY
+          - Everyday & Misc
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    env:
+      MAX_PER_DAY: 1
+      CATEGORY: ${{ inputs.category }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Ensure required files
+        run: |
+          mkdir -p src/pages/calculators meta
+          [ -f meta/publish_log.json ] || echo '[]' > meta/publish_log.json
+
+      - name: Install dependencies
+        run: npm install --no-audit --no-fund
+
+      - name: Generate calculator
+        run: npm run generate
+
+      - name: Commit and push
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email 'github-actions[bot]@users.noreply.github.com'
+          git add src/pages/calculators meta/publish_log.json || true
+          if git diff --cached --quiet; then
+            echo 'No new calculator generated.'
+          else
+            git commit -m "chore: publish calculator for ${CATEGORY}"
+            git push || true
+          fi

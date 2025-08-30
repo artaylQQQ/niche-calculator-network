@@ -10,7 +10,7 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "generate": "node scripts/generate_calcs.js",
+    "generate": "node scripts/generate_random_calc.js",
     "format": "prettier --write .",
     "generate:all": "MAX_PER_DAY=100 node scripts/generate_calcs_v2.js"
   },
