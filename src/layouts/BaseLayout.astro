@@ -1,5 +1,6 @@
 ---
 import "../styles/tailwind.css";
+import AdBanner from "../components/AdBanner.astro";
 const { title = 'CalcSimpler', description = 'Smart & Fast Calculators', canonical } = Astro.props;
 const site = Astro.site?.toString() || (import.meta.env.SITE_URL ?? 'https://example.com');
 const href = canonical ?? new URL(Astro.url.pathname, site).toString();
@@ -59,6 +60,7 @@ const cfToken = import.meta.env.VITE_CF_ANALYTICS_TOKEN;
     </header>
     <main class="container" id="main" role="main">
       <slot />
+      <AdBanner />
     </main>
     <footer class="container" style="padding:24px 0;">
       <div class="links">
