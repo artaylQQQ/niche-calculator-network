@@ -12,6 +12,9 @@
     { "source": "/calculators/percentage-discount-calculator", "destination": "/calculators/percentage-discount", "permanent": true },
     { "source": "/calculators/percentage-discount-calculator/", "destination": "/calculators/percentage-discount", "permanent": true },
 
+    { "source": "/calculators/percentage-increase-calculator", "destination": "/calculators/percentage-increase", "permanent": true },
+    { "source": "/calculators/percentage-increase-calculator/", "destination": "/calculators/percentage-increase", "permanent": true },
+
     { "source": "/calculators/simple-interest-calculator", "destination": "/calculators/simple-interest", "permanent": true },
     { "source": "/calculators/simple-interest-calculator/", "destination": "/calculators/simple-interest", "permanent": true },
 
