@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       category:
-        description: 'Category for the calculator'
+        description: "Category for the calculator"
         required: true
         type: choice
         options:
@@ -32,7 +32,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '18'
+          node-version: "18"
 
       - name: Ensure required files
         run: |
@@ -43,7 +43,7 @@ jobs:
         run: npm install --no-audit --no-fund
 
       - name: Generate calculator
-        run: npm run generate
+        run: npm run generate:invent
 
       - name: Commit and push
         run: |
