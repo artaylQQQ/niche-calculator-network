@@ -2,14 +2,14 @@ name: Nightly calculator publish (V037.2 - stable)
 
 on:
   schedule:
-    - cron: '30 2 * * *'  # 02:30 UTC diario
+    - cron: "30 2 * * *" # 02:30 UTC diario
   workflow_dispatch:
 
 jobs:
   publish:
     runs-on: ubuntu-latest
     permissions:
-      contents: write  # permite git push con GITHUB_TOKEN
+      contents: write # permite git push con GITHUB_TOKEN
     env:
       SITE_URL: https://calcsimpler.com
       MAX_PER_DAY: 40
@@ -21,7 +21,7 @@ jobs:
       - name: Setup Node.js (no cache)
         uses: actions/setup-node@v4
         with:
-          node-version: '18'
+          node-version: "18"
 
       - name: Preflight (env & tree)
         run: |
@@ -102,7 +102,7 @@ jobs:
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email 'github-actions[bot]@users.noreply.github.com'
-          git add src/pages/calculators meta/publish_log.json || true
+          git add src/pages/calculators meta/publish_log.json data/calculators.json || true
           if git diff --cached --quiet; then
             echo 'No new calculators to commit.'
           else

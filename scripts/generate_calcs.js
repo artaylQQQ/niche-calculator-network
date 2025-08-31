@@ -1,5 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
+import { execSync } from "node:child_process";
 
 /**
  * Advanced calculator generator (plain JS)
@@ -120,9 +121,12 @@ function titleize(slug) {
   if (!backlog.length) {
     console.log(
       categoryFilter
-        ? `No new calculators to generate for category ${categoryFilter}`
-        : "No new calculators to generate",
+        ? `No new calculators to generate for category ${categoryFilter}; inventing one`
+        : "No new calculators to generate; inventing one",
     );
+    execSync(`node ${path.join(ROOT, "scripts", "invent_calculator.js")}`, {
+      stdio: "inherit",
+    });
     return;
   }
   const rawMax = parseInt(
