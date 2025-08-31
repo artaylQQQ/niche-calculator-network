@@ -85,6 +85,7 @@ html,body{background:var(--bg);color:var(--ink);
 .header a{color:var(--primary-ink);text-decoration:none}
 .header-inner{display:flex;align-items:center;justify-content:space-between;padding:14px 18px;flex-wrap:wrap;row-gap:12px}
 .nav{display:flex;gap:18px;font-weight:500;opacity:.95;flex-wrap:wrap}
+.nav a{font-weight:700;text-transform:uppercase;font-size:125%}
 @media (max-width:640px){
   .header-inner{justify-content:center}
   .nav{width:100%;justify-content:center;gap:12px}
