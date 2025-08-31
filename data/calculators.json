@@ -498,7 +498,7 @@
   {
     "slug": "tip-calculator",
     "title": "Tip Calculator",
-    "cluster": "Everyday & Misc",
+    "cluster": "Finance",
     "description": "Calculate total bill including tip percentage.",
     "inputs": [
       {
@@ -534,7 +534,7 @@
   {
     "slug": "grade-average",
     "title": "Grade Average",
-    "cluster": "Everyday & Misc",
+    "cluster": "Math",
     "description": "Compute the average from three test scores.",
     "inputs": [
       {
@@ -951,7 +951,7 @@
   {
     "slug": "fuel-trip-cost",
     "title": "Fuel Trip Cost",
-    "cluster": "Everyday & Misc",
+    "cluster": "Finance",
     "intro": "Estimate fuel trip cost. Enter the values and press Calculate.",
     "inputs": [
       {
