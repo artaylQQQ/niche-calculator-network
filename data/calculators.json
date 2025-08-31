@@ -895,5 +895,30 @@
         "answer": "It performs basic division operations."
       }
     ]
+  },
+  {
+    "slug": "math-pythagorean-no5xh",
+    "title": "Pythagorean Theorem Calculator",
+    "cluster": "math",
+    "intro": "Calculate the hypotenuse of a right triangle.",
+    "inputs": [
+      {
+        "label": "Side A",
+        "name": "a",
+        "type": "number"
+      },
+      {
+        "label": "Side B",
+        "name": "b",
+        "type": "number"
+      }
+    ],
+    "expression": "Math.sqrt(a ** 2 + b ** 2)",
+    "examples": [
+      {
+        "description": "3 and 4 ⇒ 5"
+      }
+    ],
+    "faqs": []
   }
 ]
