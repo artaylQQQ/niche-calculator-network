@@ -1,0 +1,50 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Division Calculator"
+description: "Performs division in the Math category. Enter the values and press Calculate."
+date: 2025-08-30
+updated: 2025-08-30
+cluster: "Math"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "math-division-calculator",
+  title: "Division Calculator",
+  locale: "en",
+  inputs: [
+    {
+      label: "Value A",
+      name: "a",
+      type: "number",
+      placeholder: "Enter value a",
+    },
+    {
+      label: "Value B",
+      name: "b",
+      type: "number",
+      placeholder: "Enter value b",
+    },
+  ],
+  expression: "a / b",
+  intro:
+    "Performs division in the Math category. Enter the values and press Calculate.",
+  examples: [
+    {
+      description: "8 / 4 = 2",
+    },
+  ],
+  faqs: [
+    {
+      question: "What does the Division Calculator do?",
+      answer:
+        "Performs division in the Math category. Enter the values and press Calculate.",
+    },
+  ],
+  disclaimer: "Educational information, not professional advice.",
+  cluster: "Math",
+  related: [],
+};
+
+<Calculator schema={schema} />

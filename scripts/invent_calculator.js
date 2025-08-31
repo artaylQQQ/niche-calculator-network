@@ -43,8 +43,7 @@ const TEMPLATES = {
         { label: "Annual Rate (%)", name: "r", type: "number" },
         { label: "Years", name: "n", type: "number" },
       ],
-      expression:
-        "(p * (r/1200)) / (1 - (1 + (r/1200)) ** (-n * 12))",
+      expression: "(p * (r/1200)) / (1 - (1 + (r/1200)) ** (-n * 12))",
       examples: [{ description: "10000 at 5% for 5 years ≈ 188.71" }],
       faqs: [
         {
@@ -87,7 +86,8 @@ const TEMPLATES = {
       faqs: [
         {
           question: "What is MET?",
-          answer: "Metabolic Equivalent of Task, a measure of exercise intensity.",
+          answer:
+            "Metabolic Equivalent of Task, a measure of exercise intensity.",
         },
       ],
     },
@@ -238,24 +238,50 @@ const root = process.cwd();
 const outDir = path.join(root, "src", "pages", "calculators");
 const logPath = path.join(root, "meta", "publish_log.json");
 const dataPath = path.join(root, "data", "calculators.json");
+const root = process.cwd();
+const outDir = path.join(root, "src", "pages", "calculators");
+const logPath = path.join(root, "meta", "publish_log.json");
+const dataPath = path.join(root, "data", "calculators.json");
 
 const inputCategory = process.env.CATEGORY || "Everyday & Misc";
 const cluster = CATEGORY_SLUGS[inputCategory] || inputCategory.toLowerCase();
 const templates = TEMPLATES[cluster] || TEMPLATES.other;
 const tpl = templates[Math.floor(Math.random() * templates.length)];
 
-const slug = `${cluster}-${tpl.slug}-${Math.random().toString(36).slice(2, 7)}`;
+function makeSlug(base) {
+  return base.endsWith("-calculator") || base.endsWith("-converter")
+    ? base
+    : base + "-calculator";
+}
+const baseSlug = makeSlug(tpl.slug);
+let slug = baseSlug;
+let counter = 2;
+while (fs.existsSync(path.join(outDir, slug + ".mdx"))) {
+  slug = baseSlug + "-" + counter++;
+}
 const today = new Date().toISOString().slice(0, 10);
+
+const inputs = tpl.inputs.map((i) => ({
+  ...i,
+  placeholder: i.placeholder || "Enter " + i.label.toLowerCase(),
+}));
+
+const intro =
+  tpl.intro.replace(/\s*$/, "") + " Enter the values and press Calculate.";
+const faqs =
+  tpl.faqs && tpl.faqs.length
+    ? tpl.faqs
+    : [{ question: "What does the " + tpl.title + " do?", answer: intro }];
 
 const schema = {
   slug,
   title: tpl.title,
   locale: "en",
-  inputs: tpl.inputs,
+  inputs,
   expression: tpl.expression,
-  intro: tpl.intro,
+  intro,
   examples: tpl.examples,
-  faqs: tpl.faqs,
+  faqs,
   disclaimer: "Educational information, not professional advice.",
   cluster,
   related: [],
@@ -264,7 +290,7 @@ const schema = {
 const frontmatter = `---\nlayout: ../../layouts/CalculatorLayout.astro\ntitle: ${JSON.stringify(
   tpl.title,
 )}\ndescription: ${JSON.stringify(
-  tpl.intro,
+  intro,
 )}\ndate: ${today}\nupdated: ${today}\ncluster: ${JSON.stringify(
   cluster,
 )}\n---\n`;
@@ -276,7 +302,7 @@ const body = `import Calculator from '../../components/Calculator.astro';\n\nexp
 )}\n\n<Calculator schema={schema} />\n`;
 
 fs.mkdirSync(outDir, { recursive: true });
-fs.writeFileSync(path.join(outDir, `${slug}.mdx`), frontmatter + body, "utf8");
+fs.writeFileSync(path.join(outDir, slug + ".mdx"), frontmatter + body, "utf8");
 
 const log = fs.existsSync(logPath)
   ? JSON.parse(fs.readFileSync(logPath, "utf8"))
@@ -292,14 +318,13 @@ data.push({
   slug,
   title: tpl.title,
   cluster,
-  intro: tpl.intro,
-  inputs: tpl.inputs,
+  intro,
+  inputs,
   expression: tpl.expression,
   examples: tpl.examples,
-  faqs: tpl.faqs,
+  faqs,
 });
 fs.mkdirSync(path.dirname(dataPath), { recursive: true });
 fs.writeFileSync(dataPath, JSON.stringify(data, null, 2));
 
 console.log(`Invented calculator ${slug}`);
-
