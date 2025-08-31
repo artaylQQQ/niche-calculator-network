@@ -1,0 +1,49 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Division Calculator"
+description: "Performs division in the Home & DIY category. Enter the values and press Calculate."
+date: 2025-08-31
+updated: 2025-08-31
+cluster: "Home & DIY"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "home-diy-division-calculator",
+  title: "Division Calculator",
+  locale: "en",
+  inputs: [
+    {
+      label: "Value A",
+      name: "a",
+      type: "number",
+      placeholder: "Enter value a",
+    },
+    {
+      label: "Value B",
+      name: "b",
+      type: "number",
+      placeholder: "Enter value b",
+    },
+  ],
+  expression: "a / b",
+  intro:
+    "Performs division in the Home & DIY category. Enter the values and press Calculate.",
+  examples: [
+    {
+      description: "8 / 4 = 2",
+    },
+  ],
+  faqs: [
+    {
+      question: "What does this calculator do?",
+      answer: "It performs basic division operations.",
+    },
+  ],
+  disclaimer: "Educational information, not professional advice.",
+  cluster: "Home & DIY",
+  related: [],
+};
+
+<Calculator schema={schema} />

@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/CalculatorLayout.astro
 title: "Calories Burned (MET) Calculator"
-description: "Estimate calories burned using MET, weight, and duration."
+description: "Estimate calories burned using MET, weight, and duration. Enter the values and press Calculate."
 date: 2025-08-26
 updated: 2025-08-26
 cluster: "Health"
@@ -17,21 +17,28 @@ export const schema = {
     {
       name: "met",
       label: "MET value",
+      type: "number",
+      placeholder: "Enter MET value",
       hint: "Metabolic Equivalent of Task",
     },
     {
       name: "weight",
       label: "Weight",
+      type: "number",
+      placeholder: "Enter weight in kilograms",
       hint: "in kilograms",
     },
     {
       name: "duration",
       label: "Duration",
+      type: "number",
+      placeholder: "Enter duration in minutes",
       hint: "in minutes",
     },
   ],
   expression: "met*weight*3.5/200*duration",
-  intro: "Estimate calories burned using MET, weight, and duration.",
+  intro:
+    "Estimate calories burned using MET, weight, and duration. Enter the values and press Calculate.",
   examples: [
     {
       description: "Jogging at MET 7, 70 kg, 30 minutes → about 257 kcal",

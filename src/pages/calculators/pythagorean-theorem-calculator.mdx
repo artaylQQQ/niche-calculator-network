@@ -1,0 +1,50 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Pythagorean Theorem Calculator"
+description: "Calculate the hypotenuse of a right triangle. Enter the values and press Calculate."
+date: 2025-08-31
+updated: 2025-08-31
+cluster: "math"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "pythagorean-theorem-calculator",
+  title: "Pythagorean Theorem Calculator",
+  locale: "en",
+  inputs: [
+    {
+      label: "Side A",
+      name: "a",
+      type: "number",
+      placeholder: "Enter side a",
+    },
+    {
+      label: "Side B",
+      name: "b",
+      type: "number",
+      placeholder: "Enter side b",
+    },
+  ],
+  expression: "Math.sqrt(a ** 2 + b ** 2)",
+  intro:
+    "Calculate the hypotenuse of a right triangle. Enter the values and press Calculate.",
+  examples: [
+    {
+      description: "3 and 4 ⇒ 5",
+    },
+  ],
+  faqs: [
+    {
+      question: "What does the Pythagorean Theorem Calculator do?",
+      answer:
+        "Calculate the hypotenuse of a right triangle. Enter the values and press Calculate.",
+    },
+  ],
+  disclaimer: "Educational information, not professional advice.",
+  cluster: "math",
+  related: [],
+};
+
+<Calculator schema={schema} />
