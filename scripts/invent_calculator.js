@@ -4,6 +4,7 @@ import path from "node:path";
 const root = process.cwd();
 const outDir = path.join(root, "src", "pages", "calculators");
 const logPath = path.join(root, "meta", "publish_log.json");
+const dataPath = path.join(root, "data", "calculators.json");
 const category = process.env.CATEGORY || "Everyday & Misc";
 
 // Basic random operation generator
@@ -16,7 +17,8 @@ const ops = [
 const op = ops[Math.floor(Math.random() * ops.length)];
 
 const safeCategory = category.toLowerCase().replace(/[^a-z0-9]+/g, "-");
-const slug = `${safeCategory}-${op.name.toLowerCase()}-${Date.now()}`;
+const slugBase = `${safeCategory}-${op.name.toLowerCase()}`;
+const slug = `${slugBase}-${Math.random().toString(36).slice(2, 7)}`;
 const title = `${op.name} Calculator`;
 const today = new Date().toISOString().slice(0, 10);
 
@@ -35,7 +37,12 @@ const schema = {
       description: `${op.example.a} ${op.symbol} ${op.example.b} = ${op.example.result}`,
     },
   ],
-  faqs: [],
+  faqs: [
+    {
+      question: `What does this calculator do?`,
+      answer: `It performs basic ${op.name.toLowerCase()} operations.`,
+    },
+  ],
   disclaimer: "Educational information, not professional advice.",
   cluster: category,
   related: [],
@@ -64,5 +71,21 @@ const log = fs.existsSync(logPath)
 log.push({ slug, date: today });
 fs.mkdirSync(path.dirname(logPath), { recursive: true });
 fs.writeFileSync(logPath, JSON.stringify(log, null, 2));
+
+const data = fs.existsSync(dataPath)
+  ? JSON.parse(fs.readFileSync(dataPath, "utf8"))
+  : [];
+data.push({
+  slug,
+  title,
+  cluster: category.toLowerCase(),
+  description: schema.intro,
+  inputs: schema.inputs,
+  expression: schema.expression,
+  examples: schema.examples,
+  faqs: schema.faqs,
+});
+fs.mkdirSync(path.dirname(dataPath), { recursive: true });
+fs.writeFileSync(dataPath, JSON.stringify(data, null, 2));
 
 console.log(`Invented calculator ${slug}`);
