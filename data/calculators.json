@@ -1041,5 +1041,37 @@
         "answer": "Calculate the hypotenuse of a right triangle. Enter the values and press Calculate."
       }
     ]
+  },
+  {
+    "slug": "discount-calculator",
+    "title": "Discount Calculator",
+    "cluster": "other",
+    "intro": "Determine final price after a percentage discount. Enter the values and press Calculate.",
+    "inputs": [
+      {
+        "label": "Price ($)",
+        "name": "p",
+        "type": "number",
+        "placeholder": "Enter price ($)"
+      },
+      {
+        "label": "Discount (%)",
+        "name": "d",
+        "type": "number",
+        "placeholder": "Enter discount (%)"
+      }
+    ],
+    "expression": "p - p * (d / 100)",
+    "examples": [
+      {
+        "description": "$80 with 25% off = $60"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What does the Discount Calculator do?",
+        "answer": "Determine final price after a percentage discount. Enter the values and press Calculate."
+      }
+    ]
   }
 ]
