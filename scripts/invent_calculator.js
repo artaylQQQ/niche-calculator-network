@@ -238,10 +238,6 @@ const root = process.cwd();
 const outDir = path.join(root, "src", "pages", "calculators");
 const logPath = path.join(root, "meta", "publish_log.json");
 const dataPath = path.join(root, "data", "calculators.json");
-const root = process.cwd();
-const outDir = path.join(root, "src", "pages", "calculators");
-const logPath = path.join(root, "meta", "publish_log.json");
-const dataPath = path.join(root, "data", "calculators.json");
 
 const inputCategory = process.env.CATEGORY || "Everyday & Misc";
 const cluster = CATEGORY_SLUGS[inputCategory] || inputCategory.toLowerCase();
