@@ -4,6 +4,7 @@
   - Sin JSON.parse necesario (aunque se mantiene opcional).
 */
 import AdBanner from './AdBanner.astro';
+import allCalcs from '../../data/calculators.json';
 const { schema } = Astro.props;
 const title = schema?.title ?? 'Calculator';
 const slug = schema?.slug ?? 'calculator';
@@ -11,16 +12,40 @@ const inputs = Array.isArray(schema?.inputs) ? schema.inputs : [];
 const intro = schema?.intro ?? '';
 const expression = schema?.expression ?? schema?.formula ?? schema?.formula_expression ?? '';
 
+const examples = Array.isArray(schema?.examples) && schema.examples.length
+  ? schema.examples
+  : [{ description: 'Enter the values and press Calculate.' }];
+const faqs = Array.isArray(schema?.faqs) && schema.faqs.length
+  ? schema.faqs
+  : [{
+      question: 'How do I use this calculator?',
+      answer: 'Enter the required values and press Calculate to get the result.'
+    }];
+
+function pickRelated(slug: string, cluster: string): string[] {
+  const same = allCalcs.filter(
+    (c) => c.slug !== slug && c.cluster && c.cluster.toLowerCase() === (cluster || '').toLowerCase()
+  );
+  const pool = same.length >= 6 ? same : allCalcs.filter((c) => c.slug !== slug);
+  return pool.slice(0, 6).map((c) => c.slug);
+}
+
+const related = Array.isArray(schema?.related) && schema.related.length
+  ? schema.related
+  : pickRelated(slug, schema?.cluster);
+
+function titleize(s: string): string {
+  return s.replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());
+}
+
 // Build Schema.org data for the calculator including FAQs when available.
 const site = Astro.site?.toString() || (import.meta.env.SITE_URL ?? 'https://example.com');
 const url  = new URL(Astro.url.pathname, site).toString();
-const faqEntities = Array.isArray(schema?.faqs)
-  ? schema.faqs.map((q) => ({
-      '@type': 'Question',
-      name: q.question,
-      acceptedAnswer: { '@type': 'Answer', text: q.answer }
-    }))
-  : [];
+const faqEntities = faqs.map((q) => ({
+  '@type': 'Question',
+  name: q.question,
+  acceptedAnswer: { '@type': 'Answer', text: q.answer }
+}));
 const jsonLd = {
   '@context': 'https://schema.org',
   '@graph': [
@@ -33,7 +58,7 @@ const jsonLd = {
       description: intro,
       offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' }
     },
-    ...(faqEntities.length ? [{ '@type': 'FAQPage', mainEntity: faqEntities }] : [])
+    { '@type': 'FAQPage', mainEntity: faqEntities }
   ]
 };
 ---
@@ -69,17 +94,33 @@ const jsonLd = {
   <script type="application/json" data-schema set:html={JSON.stringify(schema)}></script>
 </section>
 
-{Array.isArray(schema?.faqs) && schema.faqs.length > 0 && (
-  <section class="faq">
-    <h2>FAQ</h2>
-    {schema.faqs.map((f) => (
-      <details>
-        <summary>{f.question}</summary>
-        <p>{f.answer}</p>
-      </details>
+<section class="examples">
+  <h2>Examples</h2>
+  <ul>
+    {examples.map((ex) => (
+      <li>{ex.description}</li>
     ))}
-  </section>
-)}
+  </ul>
+</section>
+
+<section class="faq">
+  <h2>FAQ</h2>
+  {faqs.map((f) => (
+    <details>
+      <summary>{f.question}</summary>
+      <p>{f.answer}</p>
+    </details>
+  ))}
+</section>
+
+<section class="related">
+  <h2>Related calculators</h2>
+  <ul>
+    {related.map((r) => (
+      <li><a href={`/calculators/${r}/`}>{titleize(r)}</a></li>
+    ))}
+  </ul>
+</section>
 
 <script type="application/ld+json" set:html={JSON.stringify(jsonLd)}></script>
 
@@ -109,10 +150,14 @@ const jsonLd = {
   }
   .btn:hover{ filter:brightness(1.05); }
   .result { margin-top: 16px; font-size: 18px; font-weight: 600; color: var(--ink); }
+  .examples { margin-top: 24px; }
+  .examples ul { margin: 8px 0 0 20px; }
   .faq { margin-top: 24px; }
   .faq details { margin: 8px 0; }
   .faq summary { cursor: pointer; font-weight: 600; }
   .faq p { margin: 4px 0 0 16px; }
+  .related { margin-top: 24px; }
+  .related ul { margin: 8px 0 0 20px; }
 </style>
 
 
