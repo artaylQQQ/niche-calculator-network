@@ -1,0 +1,31 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Bytes to Kilobytes Converter"
+description: "Convert bytes to kilobytes (binary, 1024)."
+updated: "2025-08-31"
+cluster: "Technology"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "bytes-to-kilobytes-converter",
+  title: "Bytes to Kilobytes Converter",
+  intro: "Convert data size from bytes to kilobytes using 1 KB = 1024 bytes.",
+  locale: "en",
+  cluster: "Technology",
+  inputs: [
+    { name: "bytes", label: "Bytes", type: "number", step: "any", required: true }
+  ],
+  expression: "bytes / 1024",
+  unit: "KB",
+  examples: [
+    { description: "2048 bytes ⇒ 2 KB" }
+  ],
+  faqs: [
+    { question: "Binary or decimal KB?", answer: "This uses the binary KB (1024 bytes)." }
+  ],
+  disclaimer: "Educational purposes only. Not professional advice."
+};
+
+<Calculator schema={schema} />

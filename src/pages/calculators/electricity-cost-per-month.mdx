@@ -1,0 +1,33 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Electricity Cost per Month"
+description: "Estimate monthly electricity cost of an appliance."
+updated: "2025-08-31"
+cluster: "Home & DIY"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "electricity-cost-per-month",
+  title: "Electricity Cost per Month",
+  intro: "Estimate electricity cost from power, daily hours and cost per kWh.",
+  locale: "en",
+  cluster: "Home & DIY",
+  inputs: [
+    { name: "wattage", label: "Power (W)", type: "number", step: "any", required: true },
+    { name: "hoursPerDay", label: "Hours per day", type: "number", step: "any", required: true },
+    { name: "costPerKWh", label: "Cost per kWh ($)", type: "number", step: "any", required: true }
+  ],
+  expression: "(wattage * hoursPerDay * 30 * costPerKWh) / 1000",
+  unit: "$/month",
+  examples: [
+    { description: "100 W, 10 h/day, $0.10/kWh ⇒ $3.00/month" }
+  ],
+  faqs: [
+    { question: "Why divide by 1000?", answer: "To convert watts to kilowatts (1000 W = 1 kW)." }
+  ],
+  disclaimer: "Educational purposes only. Not professional advice."
+};
+
+<Calculator schema={schema} />

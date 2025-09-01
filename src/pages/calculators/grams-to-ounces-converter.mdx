@@ -1,0 +1,31 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Grams to Ounces Converter"
+description: "Convert grams to ounces quickly."
+updated: "2025-08-31"
+cluster: "Conversions"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "grams-to-ounces-converter",
+  title: "Grams to Ounces Converter",
+  intro: "Convert mass from grams to ounces using a constant factor. Enter grams to see ounces.",
+  locale: "en",
+  cluster: "Conversions",
+  inputs: [
+    { name: "g", label: "Grams (g)", type: "number", step: "any", required: true }
+  ],
+  expression: "g * 0.0352739619",
+  unit: "oz",
+  examples: [
+    { description: "250 g ⇒ 8.82 oz" }
+  ],
+  faqs: [
+    { question: "Which ounce is used?", answer: "This uses the international avoirdupois ounce (~28.3495 g)." }
+  ],
+  disclaimer: "Educational purposes only. Not professional advice."
+};
+
+<Calculator schema={schema} />

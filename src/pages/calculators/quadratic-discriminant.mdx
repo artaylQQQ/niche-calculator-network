@@ -1,0 +1,33 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Quadratic Discriminant"
+description: "Compute the discriminant D = b² − 4ac."
+updated: "2025-08-31"
+cluster: "Math"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "quadratic-discriminant",
+  title: "Quadratic Discriminant",
+  intro: "Calculate the discriminant of ax² + bx + c = 0.",
+  locale: "en",
+  cluster: "Math",
+  inputs: [
+    { name: "a", label: "a", type: "number", step: "any", required: true },
+    { name: "b", label: "b", type: "number", step: "any", required: true },
+    { name: "c", label: "c", type: "number", step: "any", required: true }
+  ],
+  expression: "b*b - 4*a*c",
+  unit: "D",
+  examples: [
+    { description: "a=1, b=-3, c=2 ⇒ 1" }
+  ],
+  faqs: [
+    { question: "What does D tell me?", answer: "D>0 two real roots, D=0 one real root, D<0 complex roots." }
+  ],
+  disclaimer: "Educational purposes only. Not professional advice."
+};
+
+<Calculator schema={schema} />

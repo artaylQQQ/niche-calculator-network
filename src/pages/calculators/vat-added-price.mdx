@@ -1,0 +1,32 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "VAT Added Price"
+description: "Add VAT to a net price to get gross."
+updated: "2025-08-31"
+cluster: "Finance"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "vat-added-price",
+  title: "VAT Added Price",
+  intro: "Compute gross price by adding VAT percentage to a net price.",
+  locale: "en",
+  cluster: "Finance",
+  inputs: [
+    { name: "net", label: "Net Price ($)", type: "number", step: "any", required: true },
+    { name: "vat", label: "VAT (%)", type: "number", step: "any", required: true }
+  ],
+  expression: "net * (1 + vat/100)",
+  unit: "$",
+  examples: [
+    { description: "$100 with 19% VAT ⇒ $119" }
+  ],
+  faqs: [
+    { question: "Are other fees included?", answer: "No. This only adds the specified VAT percentage." }
+  ],
+  disclaimer: "Educational purposes only. Not professional advice."
+};
+
+<Calculator schema={schema} />

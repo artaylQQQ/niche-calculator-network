@@ -1,0 +1,33 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Present Value (Single Cash Flow)"
+description: "Discount a future amount back to today's value."
+updated: "2025-08-31"
+cluster: "Finance"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "present-value-single-cash-flow",
+  title: "Present Value (Single Cash Flow)",
+  intro: "Compute the present value of a single future amount using a discount rate and years.",
+  locale: "en",
+  cluster: "Finance",
+  inputs: [
+    { name: "fv", label: "Future Value ($)", type: "number", step: "any", required: true },
+    { name: "rate", label: "Annual Discount Rate (%)", type: "number", step: "any", required: true },
+    { name: "years", label: "Years (t)", type: "number", step: "any", required: true }
+  ],
+  expression: "fv / Math.pow(1 + rate/100, years)",
+  unit: "$",
+  examples: [
+    { description: "$1,000 in 5 years at 6% ⇒ $747.26" }
+  ],
+  faqs: [
+    { question: "What rate should I use?", answer: "Use your required return or discount rate for the risk of the cash flow." }
+  ],
+  disclaimer: "Educational purposes only. Not professional advice."
+};
+
+<Calculator schema={schema} />

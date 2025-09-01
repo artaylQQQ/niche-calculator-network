@@ -1,0 +1,31 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Minutes to Hours Converter"
+description: "Convert minutes into decimal hours."
+updated: "2025-08-31"
+cluster: "Date & Time"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "minutes-to-hours-converter",
+  title: "Minutes to Hours Converter",
+  intro: "Turn minutes into decimal hours. Enter the minutes and get hours.",
+  locale: "en",
+  cluster: "Date & Time",
+  inputs: [
+    { name: "minutes", label: "Minutes (min)", type: "number", step: "any", required: true }
+  ],
+  expression: "minutes / 60",
+  unit: "hours",
+  examples: [
+    { description: "90 min ⇒ 1.5 h" }
+  ],
+  faqs: [
+    { question: "Is this precise?", answer: "Yes, it divides minutes by 60 to get decimal hours." }
+  ],
+  disclaimer: "Educational purposes only. Not professional advice."
+};
+
+<Calculator schema={schema} />

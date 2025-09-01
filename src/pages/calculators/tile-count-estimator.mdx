@@ -1,0 +1,33 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Tile Count Estimator"
+description: "Estimate the number of tiles needed including waste."
+updated: "2025-08-31"
+cluster: "Home & DIY"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "tile-count-estimator",
+  title: "Tile Count Estimator",
+  intro: "Estimate tiles required using area, tile area, and a waste percentage with rounding up.",
+  locale: "en",
+  cluster: "Home & DIY",
+  inputs: [
+    { name: "area", label: "Floor area (m²)", type: "number", step: "any", required: true },
+    { name: "tileArea", label: "Tile area (m²)", type: "number", step: "any", required: true },
+    { name: "waste", label: "Waste (%)", type: "number", step: "any", required: true }
+  ],
+  expression: "Math.ceil(area / tileArea * (1 + waste/100))",
+  unit: "tiles",
+  examples: [
+    { description: "30 m², 0.09 m²/tile, 10% waste ⇒ 367 tiles" }
+  ],
+  faqs: [
+    { question: "Do patterns affect waste?", answer: "Yes, complex layouts may need a higher waste percentage." }
+  ],
+  disclaimer: "Educational purposes only. Not professional advice."
+};
+
+<Calculator schema={schema} />

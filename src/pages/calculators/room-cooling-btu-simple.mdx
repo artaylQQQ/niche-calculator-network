@@ -1,0 +1,31 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Room Cooling BTU (Simple)"
+description: "Estimate cooling capacity from room area."
+updated: "2025-08-31"
+cluster: "Home & DIY"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "room-cooling-btu-simple",
+  title: "Room Cooling BTU (Simple)",
+  intro: "Estimate cooling capacity as a simple multiple of room area.",
+  locale: "en",
+  cluster: "Home & DIY",
+  inputs: [
+    { name: "area", label: "Area (ft²)", type: "number", step: "any", required: true }
+  ],
+  expression: "area * 60",
+  unit: "BTU/h",
+  examples: [
+    { description: "200 ft² ⇒ 12000 BTU/h" }
+  ],
+  faqs: [
+    { question: "Is this precise?", answer: "It is a rule-of-thumb; insulation and climate affect needs." }
+  ],
+  disclaimer: "Educational purposes only. Not professional advice."
+};
+
+<Calculator schema={schema} />

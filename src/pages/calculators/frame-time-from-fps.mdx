@@ -1,0 +1,31 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Frame Time from FPS"
+description: "Get milliseconds per frame from frames per second."
+updated: "2025-08-31"
+cluster: "Technology"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "frame-time-from-fps",
+  title: "Frame Time from FPS",
+  intro: "Compute frame time in milliseconds from FPS.",
+  locale: "en",
+  cluster: "Technology",
+  inputs: [
+    { name: "fps", label: "Frames per second (FPS)", type: "number", step: "any", required: true }
+  ],
+  expression: "1000 / fps",
+  unit: "ms",
+  examples: [
+    { description: "60 FPS ⇒ 16.67 ms" }
+  ],
+  faqs: [
+    { question: "Is this exact?", answer: "It’s the reciprocal of FPS, expressed in milliseconds." }
+  ],
+  disclaimer: "Educational purposes only. Not professional advice."
+};
+
+<Calculator schema={schema} />

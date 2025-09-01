@@ -1,0 +1,32 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Waist-to-Hip Ratio"
+description: "Compute waist-to-hip ratio (WHR)."
+updated: "2025-08-31"
+cluster: "Health"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "waist-to-hip-ratio",
+  title: "Waist-to-Hip Ratio",
+  intro: "Calculate the ratio of waist circumference to hip circumference.",
+  locale: "en",
+  cluster: "Health",
+  inputs: [
+    { name: "waist", label: "Waist (cm)", type: "number", step: "any", required: true },
+    { name: "hip", label: "Hip (cm)", type: "number", step: "any", required: true }
+  ],
+  expression: "waist / hip",
+  unit: "ratio",
+  examples: [
+    { description: "80 cm / 100 cm ⇒ 0.80" }
+  ],
+  faqs: [
+    { question: "Is lower better?", answer: "Generally, a lower WHR is considered lower cardiometabolic risk." }
+  ],
+  disclaimer: "Educational purposes only. Not professional advice."
+};
+
+<Calculator schema={schema} />

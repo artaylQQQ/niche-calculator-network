@@ -1,0 +1,32 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Body Surface Area (Mosteller)"
+description: "Estimate BSA from weight and height."
+updated: "2025-08-31"
+cluster: "Health"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "body-surface-area-mosteller",
+  title: "Body Surface Area (Mosteller)",
+  intro: "Estimate body surface area using the Mosteller formula with weight and height.",
+  locale: "en",
+  cluster: "Health",
+  inputs: [
+    { name: "weight", label: "Weight (kg)", type: "number", step: "any", required: true },
+    { name: "height", label: "Height (cm)", type: "number", step: "any", required: true }
+  ],
+  expression: "Math.sqrt((weight * height) / 3600)",
+  unit: "m²",
+  examples: [
+    { description: "70 kg, 175 cm ⇒ 1.84 m²" }
+  ],
+  faqs: [
+    { question: "Which formula is this?", answer: "This uses the Mosteller formula for BSA estimation." }
+  ],
+  disclaimer: "Educational purposes only. Not professional advice."
+};
+
+<Calculator schema={schema} />

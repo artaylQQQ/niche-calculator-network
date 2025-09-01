@@ -1,0 +1,31 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Target Heart Rate (70%)"
+description: "Estimate 70% of max heart rate using 220 − age."
+updated: "2025-08-31"
+cluster: "Health"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "target-heart-rate-70",
+  title: "Target Heart Rate (70%)",
+  intro: "Estimate 70% of maximum heart rate using the rule of thumb 220 − age.",
+  locale: "en",
+  cluster: "Health",
+  inputs: [
+    { name: "age", label: "Age (years)", type: "number", step: "any", required: true }
+  ],
+  expression: "0.7 * (220 - age)",
+  unit: "bpm",
+  examples: [
+    { description: "Age 35 ⇒ 129.5 bpm" }
+  ],
+  faqs: [
+    { question: "Is this individualized?", answer: "It is a general guideline and may not fit everyone." }
+  ],
+  disclaimer: "Educational purposes only. Not professional advice."
+};
+
+<Calculator schema={schema} />

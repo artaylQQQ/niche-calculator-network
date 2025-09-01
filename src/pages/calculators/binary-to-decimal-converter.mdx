@@ -1,0 +1,31 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Binary to Decimal Converter"
+description: "Convert a binary number to decimal."
+updated: "2025-08-31"
+cluster: "Technology"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "binary-to-decimal-converter",
+  title: "Binary to Decimal Converter",
+  intro: "Translate a binary number (0s and 1s) into decimal.",
+  locale: "en",
+  cluster: "Technology",
+  inputs: [
+    { name: "binary", label: "Binary Number", type: "number", step: "any", required: true }
+  ],
+  expression: "parseInt(binary.toString(), 2)",
+  unit: "",
+  examples: [
+    { description: "1011 ⇒ 11" }
+  ],
+  faqs: [
+    { question: "What about invalid digits?", answer: "Enter only 0 or 1 digits to ensure a valid conversion." }
+  ],
+  disclaimer: "Educational purposes only. Not professional advice."
+};
+
+<Calculator schema={schema} />

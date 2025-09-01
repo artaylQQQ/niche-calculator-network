@@ -1,0 +1,32 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Logarithm Base Conversion"
+description: "Convert log base using natural logarithms."
+updated: "2025-08-31"
+cluster: "Math"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "logarithm-base-conversion",
+  title: "Logarithm Base Conversion",
+  intro: "Compute log base b of a using ln: log_b(a) = ln(a) / ln(b).",
+  locale: "en",
+  cluster: "Math",
+  inputs: [
+    { name: "a", label: "Value (a)", type: "number", step: "any", required: true },
+    { name: "b", label: "Base (b)", type: "number", step: "any", required: true }
+  ],
+  expression: "Math.log(a) / Math.log(b)",
+  unit: "",
+  examples: [
+    { description: "a=100, b=10 ⇒ 2" }
+  ],
+  faqs: [
+    { question: "Any restrictions?", answer: "a and b must be positive and b ≠ 1." }
+  ],
+  disclaimer: "Educational purposes only. Not professional advice."
+};
+
+<Calculator schema={schema} />

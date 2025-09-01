@@ -1,0 +1,32 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Geometric Mean (2 Numbers)"
+description: "Compute the geometric mean of two values."
+updated: "2025-08-31"
+cluster: "Math"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "geometric-mean-2-numbers",
+  title: "Geometric Mean (2 Numbers)",
+  intro: "Calculate the geometric mean of two positive numbers.",
+  locale: "en",
+  cluster: "Math",
+  inputs: [
+    { name: "x", label: "x", type: "number", step: "any", required: true },
+    { name: "y", label: "y", type: "number", step: "any", required: true }
+  ],
+  expression: "Math.sqrt(x * y)",
+  unit: "",
+  examples: [
+    { description: "x=4, y=9 ⇒ 6" }
+  ],
+  faqs: [
+    { question: "Must inputs be positive?", answer: "Yes, the geometric mean requires non-negative values, positive for real results." }
+  ],
+  disclaimer: "Educational purposes only. Not professional advice."
+};
+
+<Calculator schema={schema} />

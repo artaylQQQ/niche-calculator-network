@@ -1,0 +1,33 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Required Final Exam Score"
+description: "Score needed on the final to reach a target grade."
+updated: "2025-08-31"
+cluster: "Other"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "required-final-exam-score",
+  title: "Required Final Exam Score",
+  intro: "Compute the score needed on a final exam to achieve a target overall grade.",
+  locale: "en",
+  cluster: "Other",
+  inputs: [
+    { name: "currentGrade", label: "Current Grade (%)", type: "number", step: "any", required: true },
+    { name: "desiredGrade", label: "Desired Final Grade (%)", type: "number", step: "any", required: true },
+    { name: "examWeight", label: "Final Exam Weight (%)", type: "number", step: "any", required: true }
+  ],
+  expression: "(desiredGrade - currentGrade * (1 - examWeight/100)) / (examWeight/100)",
+  unit: "%",
+  examples: [
+    { description: "Current 85%, Desired 90%, Exam weight 40% ⇒ 97.5%" }
+  ],
+  faqs: [
+    { question: "What if result > 100%?", answer: "It means the target is unattainable with the given inputs." }
+  ],
+  disclaimer: "Educational purposes only. Not professional advice."
+};
+
+<Calculator schema={schema} />

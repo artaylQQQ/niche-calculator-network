@@ -1,0 +1,31 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Liters to US Fluid Ounces"
+description: "Convert liters to US fluid ounces."
+updated: "2025-08-31"
+cluster: "Conversions"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "liters-to-us-fluid-ounces",
+  title: "Liters to US Fluid Ounces",
+  intro: "Convert volume from liters to US fluid ounces with a single multiplication.",
+  locale: "en",
+  cluster: "Conversions",
+  inputs: [
+    { name: "l", label: "Liters (L)", type: "number", step: "any", required: true }
+  ],
+  expression: "l * 33.8140227",
+  unit: "US fl oz",
+  examples: [
+    { description: "1 L ⇒ 33.81 US fl oz" }
+  ],
+  faqs: [
+    { question: "US or Imperial?", answer: "This uses US fluid ounces. Imperial ounces use a different factor." }
+  ],
+  disclaimer: "Educational purposes only. Not professional advice."
+};
+
+<Calculator schema={schema} />

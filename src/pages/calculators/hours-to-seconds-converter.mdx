@@ -1,0 +1,31 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Hours to Seconds Converter"
+description: "Convert hours into total seconds."
+updated: "2025-08-31"
+cluster: "Date & Time"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "hours-to-seconds-converter",
+  title: "Hours to Seconds Converter",
+  intro: "Convert a duration from hours to seconds using a single multiplication factor.",
+  locale: "en",
+  cluster: "Date & Time",
+  inputs: [
+    { name: "hours", label: "Hours (h)", type: "number", step: "any", required: true }
+  ],
+  expression: "hours * 3600",
+  unit: "seconds",
+  examples: [
+    { description: "2.5 h ⇒ 9000 s" }
+  ],
+  faqs: [
+    { question: "Why 3600?", answer: "Because 1 hour equals 60 minutes and each minute equals 60 seconds." }
+  ],
+  disclaimer: "Educational purposes only. Not professional advice."
+};
+
+<Calculator schema={schema} />

@@ -1,0 +1,33 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Future Value of Annuity (End)"
+description: "Future value of equal monthly deposits."
+updated: "2025-08-31"
+cluster: "Finance"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "future-value-of-annuity-end",
+  title: "Future Value of Annuity (End)",
+  intro: "Compute the future value of equal end-of-period monthly contributions with a fixed APR.",
+  locale: "en",
+  cluster: "Finance",
+  inputs: [
+    { name: "payment", label: "Monthly Contribution ($)", type: "number", step: "any", required: true },
+    { name: "apr", label: "APR (%)", type: "number", step: "any", required: true },
+    { name: "months", label: "Months (n)", type: "number", step: "any", required: true }
+  ],
+  expression: "payment * (Math.pow(1 + apr/100/12, months) - 1) / (apr/100/12)",
+  unit: "$",
+  examples: [
+    { description: "$200/mo, APR 5%, 36 months ⇒ $7,549.94" }
+  ],
+  faqs: [
+    { question: "End-of-month deposits?", answer: "Yes, contributions are assumed at the end of each month." }
+  ],
+  disclaimer: "Educational purposes only. Not professional advice."
+};
+
+<Calculator schema={schema} />

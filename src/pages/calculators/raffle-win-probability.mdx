@@ -1,0 +1,32 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Raffle Win Probability"
+description: "Chance of winning a single-draw raffle."
+updated: "2025-08-31"
+cluster: "Other"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "raffle-win-probability",
+  title: "Raffle Win Probability",
+  intro: "Compute the probability of winning a single-draw raffle based on tickets owned and total tickets.",
+  locale: "en",
+  cluster: "Other",
+  inputs: [
+    { name: "owned", label: "Tickets Owned", type: "number", step: "any", required: true },
+    { name: "total", label: "Total Tickets", type: "number", step: "any", required: true }
+  ],
+  expression: "owned / total * 100",
+  unit: "%",
+  examples: [
+    { description: "5 of 200 ⇒ 2.5%" }
+  ],
+  faqs: [
+    { question: "Multiple winners?", answer: "This assumes a single draw; multiple draws need a different model." }
+  ],
+  disclaimer: "Educational purposes only. Not professional advice."
+};
+
+<Calculator schema={schema} />

@@ -1,0 +1,31 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Days to Weeks Converter"
+description: "Convert days into weeks (may be fractional)."
+updated: "2025-08-31"
+cluster: "Date & Time"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "days-to-weeks-converter",
+  title: "Days to Weeks Converter",
+  intro: "Find how many weeks a number of days represents, including fractional weeks for extra days.",
+  locale: "en",
+  cluster: "Date & Time",
+  inputs: [
+    { name: "days", label: "Days (d)", type: "number", step: "any", required: true }
+  ],
+  expression: "days / 7",
+  unit: "weeks",
+  examples: [
+    { description: "10 d ⇒ 1.43 weeks" }
+  ],
+  faqs: [
+    { question: "What if it's not a whole number?", answer: "The result can be fractional, representing part of a week." }
+  ],
+  disclaimer: "Educational purposes only. Not professional advice."
+};
+
+<Calculator schema={schema} />
