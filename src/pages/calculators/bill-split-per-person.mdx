@@ -1,0 +1,33 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Bill Split per Person"
+description: "Split a bill evenly with an optional tip."
+updated: "2025-08-31"
+cluster: "Other"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "bill-split-per-person",
+  title: "Bill Split per Person",
+  intro: "Split a bill among people and include a tip percentage.",
+  locale: "en",
+  cluster: "Other",
+  inputs: [
+    { name: "billAmount", label: "Total Bill Amount ($)", type: "number", step: "any", required: true },
+    { name: "tipPercent", label: "Tip Percentage (%)", type: "number", step: "any", required: true },
+    { name: "people", label: "Number of People", type: "number", step: "any", required: true }
+  ],
+  expression: "billAmount * (1 + tipPercent/100) / people",
+  unit: "$ per person",
+  examples: [
+    { description: "$100 bill, 15% tip, 4 people ⇒ $28.75 per person" }
+  ],
+  faqs: [
+    { question: "How to ignore tip?", answer: "Set tip percentage to 0 to split without tip." }
+  ],
+  disclaimer: "Educational purposes only. Not professional advice."
+};
+
+<Calculator schema={schema} />
