@@ -1,0 +1,47 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Coffee Cost Savings Calculator"
+description: "Estimate yearly savings from skipping your daily coffees."
+updated: "2025-09-03"
+cluster: "Finance"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  inputs: [
+    {
+      name: "price",
+      label: "Price per Coffee ($)",
+      type: "number",
+      step: "any",
+      min: 0,
+      placeholder: "3",
+    },
+    {
+      name: "perweek",
+      label: "Coffees per Week",
+      type: "number",
+      step: "any",
+      min: 0,
+      placeholder: "5",
+    },
+  ],
+  slug: "coffee-cost-savings-calculator",
+  title: "Coffee Cost Savings Calculator",
+  locale: "en",
+  expression: "price * perweek * 52",
+  intro: "Estimate yearly savings from skipping your coffee habit.",
+  examples: [{ description: "$3 coffee, 5 times a week ⇒ $780 per year" }],
+  faqs: [
+    {
+      question: "What does this calculator show?",
+      answer:
+        "It multiplies the coffee price by how many you skip each week and by 52 weeks.",
+    },
+  ],
+  disclaimer: "Educational information, not professional advice.",
+  cluster: "Finance",
+};
+
+<Calculator schema={schema} />

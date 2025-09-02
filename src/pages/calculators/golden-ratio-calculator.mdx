@@ -1,0 +1,38 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Golden Ratio Calculator"
+description: "Compute the longer side of a rectangle using the golden ratio."
+updated: "2025-09-03"
+cluster: "Math"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  inputs: [
+    {
+      name: "shorter",
+      label: "Shorter Side",
+      type: "number",
+      step: "any",
+      min: 0,
+      placeholder: "1",
+    },
+  ],
+  slug: "golden-ratio-calculator",
+  title: "Golden Ratio Calculator",
+  locale: "en",
+  expression: "shorter * 1.61803398875",
+  intro: "Compute the longer side of a rectangle using the golden ratio.",
+  examples: [{ description: "1 ⇒ 1.618" }],
+  faqs: [
+    {
+      question: "What is the golden ratio?",
+      answer: "It's approximately 1.618 and often appears in art and nature.",
+    },
+  ],
+  disclaimer: "Educational information, not professional advice.",
+  cluster: "Math",
+};
+
+<Calculator schema={schema} />

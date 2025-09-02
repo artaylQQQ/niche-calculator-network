@@ -1,0 +1,38 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Smoots to Meters Converter"
+description: "Convert the length of smoots into meters."
+updated: "2025-09-03"
+cluster: "Conversions"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  inputs: [
+    {
+      name: "smoots",
+      label: "Smoots",
+      type: "number",
+      step: "any",
+      min: 0,
+      placeholder: "1",
+    },
+  ],
+  slug: "smoots-to-meters-converter",
+  title: "Smoots to Meters Converter",
+  locale: "en",
+  expression: "smoots * 1.7018",
+  intro: "Convert the length of smoots into meters.",
+  examples: [{ description: "1 smoot ⇒ 1.7018 meters" }],
+  faqs: [
+    {
+      question: "What is a smoot?",
+      answer: "A smoot is an informal unit equal to 1.7018 meters.",
+    },
+  ],
+  disclaimer: "Educational information, not professional advice.",
+  cluster: "Conversions",
+};
+
+<Calculator schema={schema} />

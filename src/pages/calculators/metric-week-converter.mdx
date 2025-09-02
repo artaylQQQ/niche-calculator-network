@@ -1,0 +1,38 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Metric Week Converter"
+description: "Convert standard days into metric weeks of 10 days."
+updated: "2025-09-03"
+cluster: "Date & Time"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  inputs: [
+    {
+      name: "days",
+      label: "Days",
+      type: "number",
+      step: "any",
+      min: 0,
+      placeholder: "10",
+    },
+  ],
+  slug: "metric-week-converter",
+  title: "Metric Week Converter",
+  locale: "en",
+  expression: "days / 10",
+  intro: "Convert standard days into metric weeks of 10 days.",
+  examples: [{ description: "20 days ⇒ 2 metric weeks" }],
+  faqs: [
+    {
+      question: "What is a metric week?",
+      answer: "A proposed week length of ten days instead of seven.",
+    },
+  ],
+  disclaimer: "Educational information, not professional advice.",
+  cluster: "Date & Time",
+};
+
+<Calculator schema={schema} />

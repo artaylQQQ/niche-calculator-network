@@ -1,0 +1,55 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Rainwater Harvest Calculator"
+description: "Estimate collected rainwater volume from roof size and rainfall."
+updated: "2025-09-03"
+cluster: "Home & DIY"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  inputs: [
+    {
+      name: "roof",
+      label: "Roof Area (m²)",
+      type: "number",
+      step: "any",
+      min: 0,
+      placeholder: "100",
+    },
+    {
+      name: "rain",
+      label: "Rainfall (mm)",
+      type: "number",
+      step: "any",
+      min: 0,
+      placeholder: "50",
+    },
+    {
+      name: "eff",
+      label: "Collection Efficiency (%)",
+      type: "number",
+      step: "any",
+      min: 0,
+      placeholder: "80",
+    },
+  ],
+  slug: "rainwater-harvest-calculator",
+  title: "Rainwater Harvest Calculator",
+  locale: "en",
+  expression: "roof * rain * eff / 100000",
+  intro: "Estimate collected rainwater volume from roof size and rainfall.",
+  examples: [{ description: "100 m² roof, 50 mm rain, 80% efficiency ⇒ 4 m³" }],
+  faqs: [
+    {
+      question: "How is the volume calculated?",
+      answer:
+        "Roof area × rainfall × efficiency, converting millimeters to meters.",
+    },
+  ],
+  disclaimer: "Educational information, not professional advice.",
+  cluster: "Home & DIY",
+};
+
+<Calculator schema={schema} />

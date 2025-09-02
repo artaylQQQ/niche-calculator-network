@@ -1,0 +1,46 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Binge-Watching Time Calculator"
+description: "See how long your next marathon session will take."
+updated: "2025-09-03"
+cluster: "Other"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  inputs: [
+    {
+      name: "episodes",
+      label: "Number of Episodes",
+      type: "number",
+      step: "any",
+      min: 0,
+      placeholder: "10",
+    },
+    {
+      name: "length",
+      label: "Minutes per Episode",
+      type: "number",
+      step: "any",
+      min: 0,
+      placeholder: "45",
+    },
+  ],
+  slug: "binge-watching-time-calculator",
+  title: "Binge-Watching Time Calculator",
+  locale: "en",
+  expression: "episodes * length",
+  intro: "See how long your next marathon session will take.",
+  examples: [{ description: "10 episodes at 45 minutes ⇒ 450 minutes" }],
+  faqs: [
+    {
+      question: "Does this include breaks?",
+      answer: "No, it assumes continuous watching.",
+    },
+  ],
+  disclaimer: "Educational information, not professional advice.",
+  cluster: "Other",
+};
+
+<Calculator schema={schema} />
