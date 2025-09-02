@@ -220,9 +220,20 @@ const jsonLd = {
   }
 
   function fmt(n){
-    return isFinite(n)
-      ? new Intl.NumberFormat('en-US', { maximumFractionDigits: 3 }).format(n)
-      : '—';
+    if (!isFinite(n)) return '—';
+    const rounded = n.toFixed(4); // round to 4 decimals
+    let [intPart, fracPart] = rounded.split('.');
+    if (fracPart) {
+      fracPart = fracPart.replace(/0+$/, ''); // strip trailing zeros
+      if (fracPart.length === 0) {
+        return Number(intPart).toLocaleString('en-US');
+      }
+      if (fracPart.length === 3) {
+        fracPart += '0';
+      }
+      return Number(intPart).toLocaleString('en-US') + '.' + fracPart;
+    }
+    return Number(intPart).toLocaleString('en-US');
   }
   function num(v){ let n=Number(v); return isFinite(n)?n:NaN; }
 
