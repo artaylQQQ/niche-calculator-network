@@ -1,0 +1,47 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Battery Life Calculator"
+description: "Estimate device runtime from battery capacity and draw."
+updated: "2025-09-03"
+cluster: "Technology"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  inputs: [
+    {
+      name: "capacity",
+      label: "Battery Capacity (mAh)",
+      type: "number",
+      step: "any",
+      min: 0,
+      placeholder: "3000",
+    },
+    {
+      name: "draw",
+      label: "Device Draw (mA)",
+      type: "number",
+      step: "any",
+      min: 0,
+      placeholder: "500",
+    },
+  ],
+  slug: "battery-life-calculator",
+  title: "Battery Life Calculator",
+  locale: "en",
+  expression: "capacity / draw",
+  intro: "Estimate device runtime from battery capacity and draw.",
+  examples: [{ description: "3000 mAh at 500 mA ⇒ 6 hours" }],
+  faqs: [
+    {
+      question: "What does the result represent?",
+      answer:
+        "The number of hours the battery can power the device continuously.",
+    },
+  ],
+  disclaimer: "Educational information, not professional advice.",
+  cluster: "Technology",
+};
+
+<Calculator schema={schema} />

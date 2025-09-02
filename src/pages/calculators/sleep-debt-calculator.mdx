@@ -1,0 +1,56 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Sleep Debt Calculator"
+description: "Estimate accumulated sleep debt over several days."
+updated: "2025-09-03"
+cluster: "Health"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  inputs: [
+    {
+      name: "recommended",
+      label: "Recommended Hours per Night",
+      type: "number",
+      step: "any",
+      min: 0,
+      placeholder: "8",
+    },
+    {
+      name: "actual",
+      label: "Actual Hours per Night",
+      type: "number",
+      step: "any",
+      min: 0,
+      placeholder: "6",
+    },
+    {
+      name: "days",
+      label: "Days",
+      type: "number",
+      step: "any",
+      min: 0,
+      placeholder: "7",
+    },
+  ],
+  slug: "sleep-debt-calculator",
+  title: "Sleep Debt Calculator",
+  locale: "en",
+  expression: "(recommended - actual) * days",
+  intro: "Estimate accumulated sleep debt over several days.",
+  examples: [
+    { description: "8 recommended, 6 actual, 7 days ⇒ 14 hours debt" },
+  ],
+  faqs: [
+    {
+      question: "How is sleep debt calculated?",
+      answer: "This multiplies the nightly deficit by the number of days.",
+    },
+  ],
+  disclaimer: "Educational information, not professional advice.",
+  cluster: "Health",
+};
+
+<Calculator schema={schema} />
