@@ -1105,5 +1105,37 @@
         "answer": "Determine final price after a percentage discount. Enter the values and press Calculate."
       }
     ]
+  },
+  {
+    "slug": "tip-calculator-2",
+    "title": "Tip Calculator",
+    "cluster": "other",
+    "intro": "Calculate the tip amount from bill and percentage. Enter the values and press Calculate.",
+    "inputs": [
+      {
+        "label": "Bill ($)",
+        "name": "b",
+        "type": "number",
+        "placeholder": "Enter bill ($)"
+      },
+      {
+        "label": "Tip (%)",
+        "name": "p",
+        "type": "number",
+        "placeholder": "Enter tip (%)"
+      }
+    ],
+    "expression": "b * (p / 100)",
+    "examples": [
+      {
+        "description": "$50 at 15% = $7.50"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What does the Tip Calculator do?",
+        "answer": "Calculate the tip amount from bill and percentage. Enter the values and press Calculate."
+      }
+    ]
   }
 ]
