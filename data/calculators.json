@@ -1164,5 +1164,413 @@
         "answer": "Calculate the tip amount from bill and percentage. Enter the values and press Calculate."
       }
     ]
+  },
+  {
+    "slug": "smoots-to-meters",
+    "title": "Smoots to Meters",
+    "cluster": "conversions",
+    "intro": "Convert smoots into meters.",
+    "inputs": [
+      { "name": "s", "label": "Smoots", "type": "number", "step": "any", "placeholder": "5" }
+    ],
+    "expression": "s * 1.7018",
+    "examples": [
+      { "description": "5 smoots ⇒ 8.509 m" }
+    ],
+    "faqs": [
+      { "question": "What is a smoot?", "answer": "A smoot is a playful unit of length equal to 1.7018 meters." }
+    ]
+  },
+  {
+    "slug": "hogsheads-to-liters",
+    "title": "Hogsheads to Liters",
+    "cluster": "conversions",
+    "intro": "Convert hogsheads into liters.",
+    "inputs": [
+      { "name": "h", "label": "Hogsheads", "type": "number", "step": "any", "placeholder": "1" }
+    ],
+    "expression": "h * 238.481",
+    "examples": [
+      { "description": "1 hogshead ⇒ 238.481 L" }
+    ],
+    "faqs": [
+      { "question": "Where is the hogshead used?", "answer": "The hogshead is an old imperial unit for liquid volume." }
+    ]
+  },
+  {
+    "slug": "furlongs-per-fortnight",
+    "title": "Furlongs per Fortnight to Meters per Second",
+    "cluster": "conversions",
+    "intro": "Turn whimsical speed units into meters per second.",
+    "inputs": [
+      { "name": "fpf", "label": "Furlongs per Fortnight", "type": "number", "step": "any", "placeholder": "1000" }
+    ],
+    "expression": "fpf * 201.168 / 1209600",
+    "examples": [
+      { "description": "1000 fpf ⇒ 0.1663 m/s" }
+    ],
+    "faqs": [
+      { "question": "Is this a real unit?", "answer": "Yes, but it's mostly used for geeky humor." }
+    ]
+  },
+  {
+    "slug": "mars-sol-to-earth-days",
+    "title": "Mars Sol to Earth Days",
+    "cluster": "date & time",
+    "intro": "Convert Martian sols into Earth days.",
+    "inputs": [
+      { "name": "sols", "label": "Sols", "type": "number", "step": "any", "placeholder": "3" }
+    ],
+    "expression": "sols * 1.027491",
+    "examples": [
+      { "description": "3 sols ⇒ 3.0825 Earth days" }
+    ],
+    "faqs": [
+      { "question": "What is a sol?", "answer": "A sol is a Martian day lasting about 24 hours 39 minutes." }
+    ]
+  },
+  {
+    "slug": "microfortnight-to-seconds",
+    "title": "Microfortnight to Seconds",
+    "cluster": "date & time",
+    "intro": "Convert microfortnights into seconds.",
+    "inputs": [
+      { "name": "mf", "label": "Microfortnights", "type": "number", "step": "any", "placeholder": "10" }
+    ],
+    "expression": "mf * 1.2096",
+    "examples": [
+      { "description": "10 µfortnights ⇒ 12.096 s" }
+    ],
+    "faqs": [
+      { "question": "Why microfortnights?", "answer": "They are a humorous unit equal to 1.2096 seconds." }
+    ]
+  },
+  {
+    "slug": "pomodoro-planner",
+    "title": "Pomodoro Session Duration",
+    "cluster": "date & time",
+    "intro": "Estimate total time for a Pomodoro session set.",
+    "inputs": [
+      { "name": "s", "label": "Sessions", "type": "number", "placeholder": "4" },
+      { "name": "f", "label": "Focus minutes", "type": "number", "placeholder": "25" },
+      { "name": "b", "label": "Break minutes", "type": "number", "placeholder": "5" }
+    ],
+    "expression": "s * f + (s - 1) * b",
+    "examples": [
+      { "description": "4 sessions ⇒ 110 minutes" }
+    ],
+    "faqs": [
+      { "question": "Why subtract one break?", "answer": "The final session usually has no break afterward." }
+    ]
+  },
+  {
+    "slug": "crypto-mining-breakeven",
+    "title": "Crypto Mining Breakeven Time",
+    "cluster": "finance",
+    "intro": "Estimate days to recoup mining hardware cost.",
+    "inputs": [
+      { "name": "cost", "label": "Hardware cost ($)", "type": "number", "placeholder": "3000" },
+      { "name": "profit", "label": "Daily profit ($)", "type": "number", "placeholder": "10" }
+    ],
+    "expression": "cost / profit",
+    "examples": [
+      { "description": "$3000 cost, $10 profit ⇒ 300 days" }
+    ],
+    "faqs": [
+      { "question": "Does this include electricity?", "answer": "Include electricity in daily profit for accuracy." }
+    ]
+  },
+  {
+    "slug": "freelancer-hourly-rate",
+    "title": "Freelancer Hourly Rate",
+    "cluster": "finance",
+    "intro": "Find required hourly rate from income goals.",
+    "inputs": [
+      { "name": "income", "label": "Desired annual income ($)", "type": "number", "placeholder": "80000" },
+      { "name": "hours", "label": "Billable hours per week", "type": "number", "placeholder": "30" },
+      { "name": "weeks", "label": "Working weeks per year", "type": "number", "placeholder": "48" }
+    ],
+    "expression": "income / (hours * weeks)",
+    "examples": [
+      { "description": "$80k income, 30h/week, 48 weeks ⇒ ~$55.56/hr" }
+    ],
+    "faqs": [
+      { "question": "Why billable hours?", "answer": "Non‑billable time isn't paid, so exclude it to price correctly." }
+    ]
+  },
+  {
+    "slug": "subscription-ltv",
+    "title": "Subscription Lifetime Value",
+    "cluster": "finance",
+    "intro": "Compute lifetime value of a subscription.",
+    "inputs": [
+      { "name": "fee", "label": "Monthly fee ($)", "type": "number", "placeholder": "20" },
+      { "name": "months", "label": "Retention (months)", "type": "number", "placeholder": "12" }
+    ],
+    "expression": "fee * months",
+    "examples": [
+      { "description": "$20 for 12 months ⇒ $240 LTV" }
+    ],
+    "faqs": [
+      { "question": "Does this include churn?", "answer": "Use average retention to account for churn." }
+    ]
+  },
+  {
+    "slug": "sleep-debt-weekly",
+    "title": "Sleep Debt Weekly",
+    "cluster": "health",
+    "intro": "Estimate weekly sleep debt from average nightly rest.",
+    "inputs": [
+      { "name": "hours", "label": "Average hours per night", "type": "number", "step": "any", "placeholder": "6" }
+    ],
+    "expression": "(8 - hours) * 7",
+    "examples": [
+      { "description": "6 h/night ⇒ 14 h debt" }
+    ],
+    "faqs": [
+      { "question": "What if result is negative?", "answer": "Negative means you exceed the 8‑hour recommendation." }
+    ]
+  },
+  {
+    "slug": "sugar-cube-equivalent",
+    "title": "Sugar Cube Equivalent",
+    "cluster": "health",
+    "intro": "Convert grams of sugar into sugar cube equivalents.",
+    "inputs": [
+      { "name": "grams", "label": "Sugar (g)", "type": "number", "step": "any", "placeholder": "16" }
+    ],
+    "expression": "grams / 4",
+    "examples": [
+      { "description": "16 g ⇒ 4 cubes" }
+    ],
+    "faqs": [
+      { "question": "How much is one sugar cube?", "answer": "About 4 grams of sugar per cube." }
+    ]
+  },
+  {
+    "slug": "caffeine-half-life",
+    "title": "Caffeine Half-Life",
+    "cluster": "health",
+    "intro": "Estimate remaining caffeine over time.",
+    "inputs": [
+      { "name": "mg", "label": "Initial caffeine (mg)", "type": "number", "placeholder": "200" },
+      { "name": "hrs", "label": "Hours elapsed", "type": "number", "placeholder": "5" }
+    ],
+    "expression": "mg * (0.5 ^ (hrs / 5))",
+    "examples": [
+      { "description": "200 mg after 5 h ⇒ 100 mg" }
+    ],
+    "faqs": [
+      { "question": "What half-life is assumed?", "answer": "This uses an average half-life of 5 hours." }
+    ]
+  },
+  {
+    "slug": "rainwater-harvest",
+    "title": "Rainwater Harvest Volume",
+    "cluster": "home & diy",
+    "intro": "Estimate rainwater collection volume.",
+    "inputs": [
+      { "name": "area", "label": "Roof area (m²)", "type": "number", "step": "any", "placeholder": "50" },
+      { "name": "rain", "label": "Rainfall (mm)", "type": "number", "step": "any", "placeholder": "20" },
+      { "name": "eff", "label": "Efficiency (%)", "type": "number", "step": "any", "placeholder": "80" }
+    ],
+    "expression": "area * rain * (eff / 100) / 1000",
+    "examples": [
+      { "description": "50 m², 20 mm, 80% ⇒ 0.8 m³" }
+    ],
+    "faqs": [
+      { "question": "Why divide by 1000?", "answer": "To convert liters to cubic meters." }
+    ]
+  },
+  {
+    "slug": "garden-soil-weight",
+    "title": "Garden Soil Weight",
+    "cluster": "home & diy",
+    "intro": "Calculate soil weight for a garden bed.",
+    "inputs": [
+      { "name": "length", "label": "Length (m)", "type": "number", "step": "any", "placeholder": "2" },
+      { "name": "width", "label": "Width (m)", "type": "number", "step": "any", "placeholder": "1" },
+      { "name": "depth", "label": "Depth (m)", "type": "number", "step": "any", "placeholder": "0.5" },
+      { "name": "density", "label": "Soil density (kg/m³)", "type": "number", "placeholder": "1200" }
+    ],
+    "expression": "length * width * depth * density",
+    "examples": [
+      { "description": "2×1×0.5 m at 1200 kg/m³ ⇒ 1200 kg" }
+    ],
+    "faqs": [
+      { "question": "Why approximate density?", "answer": "Different soils vary; 1200 kg/m³ is a common average." }
+    ]
+  },
+  {
+    "slug": "brick-count-estimator",
+    "title": "Brick Count Estimator",
+    "cluster": "home & diy",
+    "intro": "Estimate number of bricks for a wall.",
+    "inputs": [
+      { "name": "area", "label": "Wall area (m²)", "type": "number", "step": "any", "placeholder": "10" },
+      { "name": "length", "label": "Brick length (cm)", "type": "number", "placeholder": "20" },
+      { "name": "height", "label": "Brick height (cm)", "type": "number", "placeholder": "6" }
+    ],
+    "expression": "area / (length * height / 10000)",
+    "examples": [
+      { "description": "10 m² wall, 20×6 cm bricks ⇒ ~833 bricks" }
+    ],
+    "faqs": [
+      { "question": "Does this include mortar gaps?", "answer": "No, add extra bricks for mortar and waste." }
+    ]
+  },
+  {
+    "slug": "geometric-series-sum",
+    "title": "Geometric Series Sum",
+    "cluster": "math",
+    "intro": "Sum of the first n terms of a geometric series.",
+    "inputs": [
+      { "name": "a1", "label": "First term", "type": "number", "placeholder": "2" },
+      { "name": "r", "label": "Ratio", "type": "number", "step": "any", "placeholder": "0.5" },
+      { "name": "n", "label": "Number of terms", "type": "number", "placeholder": "4" }
+    ],
+    "expression": "a1 * (1 - r ^ n) / (1 - r)",
+    "examples": [
+      { "description": "a1=2, r=0.5, n=4 ⇒ 3.75" }
+    ],
+    "faqs": [
+      { "question": "What if r=1?", "answer": "The sum is simply first term times n." }
+    ]
+  },
+  {
+    "slug": "circumference-from-area",
+    "title": "Circle Circumference from Area",
+    "cluster": "math",
+    "intro": "Derive circumference when only area is known.",
+    "inputs": [
+      { "name": "area", "label": "Area", "type": "number", "step": "any", "placeholder": "50" }
+    ],
+    "expression": "2 * (area * 3.141592653589793) ^ 0.5",
+    "examples": [
+      { "description": "Area 50 ⇒ 25.07 circumference" }
+    ],
+    "faqs": [
+      { "question": "Why such a long number?", "answer": "It's a high-precision value of π." }
+    ]
+  },
+  {
+    "slug": "triangle-inradius",
+    "title": "Triangle Inradius",
+    "cluster": "math",
+    "intro": "Compute radius of the inscribed circle of a triangle.",
+    "inputs": [
+      { "name": "a", "label": "Side a", "type": "number", "step": "any", "placeholder": "3" },
+      { "name": "b", "label": "Side b", "type": "number", "step": "any", "placeholder": "4" },
+      { "name": "c", "label": "Side c", "type": "number", "step": "any", "placeholder": "5" }
+    ],
+    "expression": "(( (a + b + c) / 2 * ((a + b + c) / 2 - a) * ((a + b + c) / 2 - b) * ((a + b + c) / 2 - c) ) ^ 0.5) / ((a + b + c) / 2)",
+    "examples": [
+      { "description": "3-4-5 triangle ⇒ 1 radius" }
+    ],
+    "faqs": [
+      { "question": "What is inradius?", "answer": "It's the radius of the circle tangent to all sides of the triangle." }
+    ]
+  },
+  {
+    "slug": "battery-life-estimator",
+    "title": "Battery Life Estimator",
+    "cluster": "technology",
+    "intro": "Approximate device runtime from battery specs.",
+    "inputs": [
+      { "name": "capacity", "label": "Capacity (mAh)", "type": "number", "placeholder": "3000" },
+      { "name": "draw", "label": "Draw (mA)", "type": "number", "placeholder": "150" }
+    ],
+    "expression": "capacity / draw",
+    "examples": [
+      { "description": "3000 mAh at 150 mA ⇒ 20 h" }
+    ],
+    "faqs": [
+      { "question": "Is this precise?", "answer": "Actual battery life varies with conditions." }
+    ]
+  },
+  {
+    "slug": "cpu-power-to-current",
+    "title": "CPU Power to Current",
+    "cluster": "technology",
+    "intro": "Convert CPU power draw to current at given voltage.",
+    "inputs": [
+      { "name": "power", "label": "Power (W)", "type": "number", "placeholder": "95" },
+      { "name": "voltage", "label": "Voltage (V)", "type": "number", "placeholder": "12" }
+    ],
+    "expression": "power / voltage",
+    "examples": [
+      { "description": "95 W at 12 V ⇒ 7.92 A" }
+    ],
+    "faqs": [
+      { "question": "What is TDP?", "answer": "Thermal design power, a CPU's typical power draw." }
+    ]
+  },
+  {
+    "slug": "bandwidth-delay-product",
+    "title": "Bandwidth Delay Product",
+    "cluster": "technology",
+    "intro": "Estimate in-flight data on a network link.",
+    "inputs": [
+      { "name": "bandwidth", "label": "Bandwidth (Mbps)", "type": "number", "placeholder": "100" },
+      { "name": "latency", "label": "Latency (ms)", "type": "number", "placeholder": "50" }
+    ],
+    "expression": "bandwidth * 1000000 * latency / 1000 / 8",
+    "examples": [
+      { "description": "100 Mbps with 50 ms ⇒ 625000 bytes" }
+    ],
+    "faqs": [
+      { "question": "Why divide by 8?", "answer": "To convert bits to bytes." }
+    ]
+  },
+  {
+    "slug": "coffee-to-water-ratio",
+    "title": "Coffee to Water Ratio",
+    "cluster": "other",
+    "intro": "Calculate water needed for a coffee brew ratio.",
+    "inputs": [
+      { "name": "coffee", "label": "Coffee (g)", "type": "number", "placeholder": "30" },
+      { "name": "ratio", "label": "Ratio", "type": "number", "step": "any", "placeholder": "15" }
+    ],
+    "expression": "coffee * ratio",
+    "examples": [
+      { "description": "30 g at 1:15 ⇒ 450 g water" }
+    ],
+    "faqs": [
+      { "question": "Is ratio coffee:water?", "answer": "Yes, multiply coffee grams by ratio for water grams." }
+    ]
+  },
+  {
+    "slug": "reading-time-estimator",
+    "title": "Reading Time Estimator",
+    "cluster": "other",
+    "intro": "Estimate reading time from word count.",
+    "inputs": [
+      { "name": "words", "label": "Word count", "type": "number", "placeholder": "1200" },
+      { "name": "speed", "label": "Reading speed (wpm)", "type": "number", "placeholder": "200" }
+    ],
+    "expression": "words / speed",
+    "examples": [
+      { "description": "1200 words at 200 wpm ⇒ 6 minutes" }
+    ],
+    "faqs": [
+      { "question": "Typical speed?", "answer": "Around 200 words per minute for non‑technical texts." }
+    ]
+  },
+  {
+    "slug": "travel-budget-per-day",
+    "title": "Travel Budget per Day",
+    "cluster": "other",
+    "intro": "Spread a trip budget over travel days.",
+    "inputs": [
+      { "name": "budget", "label": "Total budget ($)", "type": "number", "placeholder": "1000" },
+      { "name": "days", "label": "Days", "type": "number", "placeholder": "5" }
+    ],
+    "expression": "budget / days",
+    "examples": [
+      { "description": "$1000 over 5 days ⇒ $200/day" }
+    ],
+    "faqs": [
+      { "question": "Include travel days?", "answer": "Yes, count every day of the trip." }
+    ]
   }
 ]
