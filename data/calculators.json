@@ -208,6 +208,33 @@
     ]
   },
   {
+    "slug": "meters-to-feet",
+    "title": "Meters to Feet Converter",
+    "cluster": "conversions",
+    "description": "Convert meters to feet instantly.",
+    "inputs": [
+      {
+        "name": "meters",
+        "label": "Meters",
+        "type": "number",
+        "step": "any",
+        "placeholder": "1"
+      }
+    ],
+    "expression": "meters * 3.28084",
+    "examples": [
+      {
+        "description": "2 m ⇒ 6.56168 ft"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "How precise is this conversion?",
+        "answer": "It uses the exact factor of 3.28084 feet per meter."
+      }
+    ]
+  },
+  {
     "slug": "percentage-increase",
     "title": "Percentage Increase",
     "cluster": "math",

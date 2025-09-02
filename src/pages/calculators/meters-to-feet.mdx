@@ -1,0 +1,38 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Meters to Feet Converter"
+description: "Convert meters to feet instantly."
+updated: "2024-05-16"
+cluster: "Conversions"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "meters-to-feet",
+  title: "Meters to Feet Converter",
+  intro: "Converts a measurement in meters to its equivalent in feet.",
+  locale: "en",
+  cluster: "Conversions",
+  inputs: [
+    {
+      name: "meters",
+      label: "Meters",
+      type: "number",
+      step: "any",
+      required: true,
+    },
+  ],
+  expression: "meters * 3.28084",
+  unit: "ft",
+  examples: [{ description: "2 m \u21d2 6.56168 ft" }],
+  faqs: [
+    {
+      question: "How precise is this conversion?",
+      answer: "It uses the exact factor of 3.28084 feet per meter.",
+    },
+  ],
+  disclaimer: "Educational purposes only. Not professional advice.",
+};
+
+<Calculator schema={schema} />
