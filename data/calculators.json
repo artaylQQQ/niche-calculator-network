@@ -1180,7 +1180,11 @@
       }
     ],
     "expression": "s * 1.7018",
-    "examples": [{ "description": "5 smoots ⇒ 8.509 m" }],
+    "examples": [
+      {
+        "description": "5 smoots ⇒ 8.509 m"
+      }
+    ],
     "faqs": [
       {
         "question": "What is a smoot?",
@@ -1203,7 +1207,11 @@
       }
     ],
     "expression": "h * 238.481",
-    "examples": [{ "description": "1 hogshead ⇒ 238.481 L" }],
+    "examples": [
+      {
+        "description": "1 hogshead ⇒ 238.481 L"
+      }
+    ],
     "faqs": [
       {
         "question": "Where is the hogshead used?",
@@ -1226,7 +1234,11 @@
       }
     ],
     "expression": "fpf * 201.168 / 1209600",
-    "examples": [{ "description": "1000 fpf ⇒ 0.1663 m/s" }],
+    "examples": [
+      {
+        "description": "1000 fpf ⇒ 0.1663 m/s"
+      }
+    ],
     "faqs": [
       {
         "question": "Is this a real unit?",
@@ -1249,7 +1261,11 @@
       }
     ],
     "expression": "sols * 1.027491",
-    "examples": [{ "description": "3 sols ⇒ 3.0825 Earth days" }],
+    "examples": [
+      {
+        "description": "3 sols ⇒ 3.0825 Earth days"
+      }
+    ],
     "faqs": [
       {
         "question": "What is a sol?",
@@ -1272,7 +1288,11 @@
       }
     ],
     "expression": "mf * 1.2096",
-    "examples": [{ "description": "10 µfortnights ⇒ 12.096 s" }],
+    "examples": [
+      {
+        "description": "10 µfortnights ⇒ 12.096 s"
+      }
+    ],
     "faqs": [
       {
         "question": "Why microfortnights?",
@@ -1306,7 +1326,11 @@
       }
     ],
     "expression": "s * f + (s - 1) * b",
-    "examples": [{ "description": "4 sessions ⇒ 110 minutes" }],
+    "examples": [
+      {
+        "description": "4 sessions ⇒ 110 minutes"
+      }
+    ],
     "faqs": [
       {
         "question": "Why subtract one break?",
@@ -1334,7 +1358,11 @@
       }
     ],
     "expression": "cost / profit",
-    "examples": [{ "description": "$3000 cost, $10 profit ⇒ 300 days" }],
+    "examples": [
+      {
+        "description": "$3000 cost, $10 profit ⇒ 300 days"
+      }
+    ],
     "faqs": [
       {
         "question": "Does this include electricity?",
@@ -1369,7 +1397,9 @@
     ],
     "expression": "income / (hours * weeks)",
     "examples": [
-      { "description": "$80k income, 30h/week, 48 weeks ⇒ ~$55.56/hr" }
+      {
+        "description": "$80k income, 30h/week, 48 weeks ⇒ ~$55.56/hr"
+      }
     ],
     "faqs": [
       {
@@ -1398,7 +1428,11 @@
       }
     ],
     "expression": "fee * months",
-    "examples": [{ "description": "$20 for 12 months ⇒ $240 LTV" }],
+    "examples": [
+      {
+        "description": "$20 for 12 months ⇒ $240 LTV"
+      }
+    ],
     "faqs": [
       {
         "question": "Does this include churn?",
@@ -1421,7 +1455,11 @@
       }
     ],
     "expression": "(8 - hours) * 7",
-    "examples": [{ "description": "6 h/night ⇒ 14 h debt" }],
+    "examples": [
+      {
+        "description": "6 h/night ⇒ 14 h debt"
+      }
+    ],
     "faqs": [
       {
         "question": "What if result is negative?",
@@ -1444,7 +1482,11 @@
       }
     ],
     "expression": "grams / 4",
-    "examples": [{ "description": "16 g ⇒ 4 cubes" }],
+    "examples": [
+      {
+        "description": "16 g ⇒ 4 cubes"
+      }
+    ],
     "faqs": [
       {
         "question": "How much is one sugar cube?",
@@ -1472,7 +1514,11 @@
       }
     ],
     "expression": "mg * (0.5 ^ (hrs / 5))",
-    "examples": [{ "description": "200 mg after 5 h ⇒ 100 mg" }],
+    "examples": [
+      {
+        "description": "200 mg after 5 h ⇒ 100 mg"
+      }
+    ],
     "faqs": [
       {
         "question": "What half-life is assumed?",
@@ -1509,7 +1555,11 @@
       }
     ],
     "expression": "area * rain * (eff / 100) / 1000",
-    "examples": [{ "description": "50 m², 20 mm, 80% ⇒ 0.8 m³" }],
+    "examples": [
+      {
+        "description": "50 m², 20 mm, 80% ⇒ 0.8 m³"
+      }
+    ],
     "faqs": [
       {
         "question": "Why divide by 1000?",
@@ -1552,7 +1602,11 @@
       }
     ],
     "expression": "length * width * depth * density",
-    "examples": [{ "description": "2×1×0.5 m at 1200 kg/m³ ⇒ 1200 kg" }],
+    "examples": [
+      {
+        "description": "2×1×0.5 m at 1200 kg/m³ ⇒ 1200 kg"
+      }
+    ],
     "faqs": [
       {
         "question": "Why approximate density?",
@@ -1587,7 +1641,11 @@
       }
     ],
     "expression": "area / (length * height / 10000)",
-    "examples": [{ "description": "10 m² wall, 20×6 cm bricks ⇒ ~833 bricks" }],
+    "examples": [
+      {
+        "description": "10 m² wall, 20×6 cm bricks ⇒ ~833 bricks"
+      }
+    ],
     "faqs": [
       {
         "question": "Does this include mortar gaps?",
@@ -1622,7 +1680,11 @@
       }
     ],
     "expression": "a1 * (1 - r ^ n) / (1 - r)",
-    "examples": [{ "description": "a1=2, r=0.5, n=4 ⇒ 3.75" }],
+    "examples": [
+      {
+        "description": "a1=2, r=0.5, n=4 ⇒ 3.75"
+      }
+    ],
     "faqs": [
       {
         "question": "What if r=1?",
@@ -1645,7 +1707,11 @@
       }
     ],
     "expression": "2 * (area * 3.141592653589793) ^ 0.5",
-    "examples": [{ "description": "Area 50 ⇒ 25.07 circumference" }],
+    "examples": [
+      {
+        "description": "Area 50 ⇒ 25.07 circumference"
+      }
+    ],
     "faqs": [
       {
         "question": "Why such a long number?",
@@ -1682,7 +1748,11 @@
       }
     ],
     "expression": "(( (a + b + c) / 2 * ((a + b + c) / 2 - a) * ((a + b + c) / 2 - b) * ((a + b + c) / 2 - c) ) ^ 0.5) / ((a + b + c) / 2)",
-    "examples": [{ "description": "3-4-5 triangle ⇒ 1 radius" }],
+    "examples": [
+      {
+        "description": "3-4-5 triangle ⇒ 1 radius"
+      }
+    ],
     "faqs": [
       {
         "question": "What is inradius?",
@@ -1710,7 +1780,11 @@
       }
     ],
     "expression": "capacity / draw",
-    "examples": [{ "description": "3000 mAh at 150 mA ⇒ 20 h" }],
+    "examples": [
+      {
+        "description": "3000 mAh at 150 mA ⇒ 20 h"
+      }
+    ],
     "faqs": [
       {
         "question": "Is this precise?",
@@ -1738,7 +1812,11 @@
       }
     ],
     "expression": "power / voltage",
-    "examples": [{ "description": "95 W at 12 V ⇒ 7.92 A" }],
+    "examples": [
+      {
+        "description": "95 W at 12 V ⇒ 7.92 A"
+      }
+    ],
     "faqs": [
       {
         "question": "What is TDP?",
@@ -1766,9 +1844,16 @@
       }
     ],
     "expression": "bandwidth * 1000000 * latency / 1000 / 8",
-    "examples": [{ "description": "100 Mbps with 50 ms ⇒ 625000 bytes" }],
+    "examples": [
+      {
+        "description": "100 Mbps with 50 ms ⇒ 625000 bytes"
+      }
+    ],
     "faqs": [
-      { "question": "Why divide by 8?", "answer": "To convert bits to bytes." }
+      {
+        "question": "Why divide by 8?",
+        "answer": "To convert bits to bytes."
+      }
     ]
   },
   {
@@ -1792,7 +1877,11 @@
       }
     ],
     "expression": "coffee * ratio",
-    "examples": [{ "description": "30 g at 1:15 ⇒ 450 g water" }],
+    "examples": [
+      {
+        "description": "30 g at 1:15 ⇒ 450 g water"
+      }
+    ],
     "faqs": [
       {
         "question": "Is ratio coffee:water?",
@@ -1820,7 +1909,11 @@
       }
     ],
     "expression": "words / speed",
-    "examples": [{ "description": "1200 words at 200 wpm ⇒ 6 minutes" }],
+    "examples": [
+      {
+        "description": "1200 words at 200 wpm ⇒ 6 minutes"
+      }
+    ],
     "faqs": [
       {
         "question": "Typical speed?",
@@ -1840,10 +1933,19 @@
         "type": "number",
         "placeholder": "1000"
       },
-      { "name": "days", "label": "Days", "type": "number", "placeholder": "5" }
+      {
+        "name": "days",
+        "label": "Days",
+        "type": "number",
+        "placeholder": "5"
+      }
     ],
     "expression": "budget / days",
-    "examples": [{ "description": "$1000 over 5 days ⇒ $200/day" }],
+    "examples": [
+      {
+        "description": "$1000 over 5 days ⇒ $200/day"
+      }
+    ],
     "faqs": [
       {
         "question": "Include travel days?",
@@ -1871,7 +1973,11 @@
       }
     ],
     "expression": "savings / monthly",
-    "examples": [{ "description": "$5000 and $1500 expenses ⇒ 3.33 months" }],
+    "examples": [
+      {
+        "description": "$5000 and $1500 expenses ⇒ 3.33 months"
+      }
+    ],
     "faqs": [
       {
         "question": "Does it include income?",
@@ -1899,7 +2005,11 @@
       }
     ],
     "expression": "annual / (rate/100)",
-    "examples": [{ "description": "$40k at 4% ⇒ $1,000,000" }],
+    "examples": [
+      {
+        "description": "$40k at 4% ⇒ $1,000,000"
+      }
+    ],
     "faqs": [
       {
         "question": "What is FIRE?",
@@ -1921,7 +2031,11 @@
       }
     ],
     "expression": "(100/(100 - loss) - 1) * 100",
-    "examples": [{ "description": "A 25% drop needs ≈33.33% gain" }],
+    "examples": [
+      {
+        "description": "A 25% drop needs ≈33.33% gain"
+      }
+    ],
     "faqs": [
       {
         "question": "Why is the required gain higher?",
@@ -1949,7 +2063,11 @@
       }
     ],
     "expression": "(protein * 4) / calories * 100",
-    "examples": [{ "description": "50 g protein in 2000 kcal ⇒ 10%" }],
+    "examples": [
+      {
+        "description": "50 g protein in 2000 kcal ⇒ 10%"
+      }
+    ],
     "faqs": [
       {
         "question": "Why multiply by 4?",
@@ -1977,7 +2095,11 @@
       }
     ],
     "expression": "(weight / ((height/100)^2)) / 25",
-    "examples": [{ "description": "70 kg and 175 cm ⇒ 0.91" }],
+    "examples": [
+      {
+        "description": "70 kg and 175 cm ⇒ 0.91"
+      }
+    ],
     "faqs": [
       {
         "question": "What does BMI Prime indicate?",
@@ -2011,7 +2133,11 @@
       }
     ],
     "expression": "(current - rest) / (max - rest) * 100",
-    "examples": [{ "description": "Rest 60, max 190, current 150 ⇒ 69%" }],
+    "examples": [
+      {
+        "description": "Rest 60, max 190, current 150 ⇒ 69%"
+      }
+    ],
     "faqs": [
       {
         "question": "What zones use this value?",
@@ -2033,7 +2159,11 @@
       }
     ],
     "expression": "usv / 0.1",
-    "examples": [{ "description": "1 µSv ⇒ 10 bananas" }],
+    "examples": [
+      {
+        "description": "1 µSv ⇒ 10 bananas"
+      }
+    ],
     "faqs": [
       {
         "question": "How much radiation is one banana?",
@@ -2055,7 +2185,11 @@
       }
     ],
     "expression": "beards * 5e-9",
-    "examples": [{ "description": "1 beard-second ⇒ 5e-9 m" }],
+    "examples": [
+      {
+        "description": "1 beard-second ⇒ 5e-9 m"
+      }
+    ],
     "faqs": [
       {
         "question": "What is a beard-second?",
@@ -2077,7 +2211,11 @@
       }
     ],
     "expression": "shep * 1400",
-    "examples": [{ "description": "1 sheppey ⇒ 1400 m" }],
+    "examples": [
+      {
+        "description": "1 sheppey ⇒ 1400 m"
+      }
+    ],
     "faqs": [
       {
         "question": "What's a sheppey?",
@@ -2091,12 +2229,31 @@
     "cluster": "math",
     "intro": "Area of a triangle from three sides using Heron's formula.",
     "inputs": [
-      { "name": "a", "label": "Side a", "type": "number", "placeholder": "3" },
-      { "name": "b", "label": "Side b", "type": "number", "placeholder": "4" },
-      { "name": "c", "label": "Side c", "type": "number", "placeholder": "5" }
+      {
+        "name": "a",
+        "label": "Side a",
+        "type": "number",
+        "placeholder": "3"
+      },
+      {
+        "name": "b",
+        "label": "Side b",
+        "type": "number",
+        "placeholder": "4"
+      },
+      {
+        "name": "c",
+        "label": "Side c",
+        "type": "number",
+        "placeholder": "5"
+      }
     ],
     "expression": "(((a + b + c)/2) * ((a + b + c)/2 - a) * ((a + b + c)/2 - b) * ((a + b + c)/2 - c))^(0.5)",
-    "examples": [{ "description": "3,4,5 ⇒ 6" }],
+    "examples": [
+      {
+        "description": "3,4,5 ⇒ 6"
+      }
+    ],
     "faqs": [
       {
         "question": "When is Heron's formula useful?",
@@ -2110,13 +2267,37 @@
     "cluster": "math",
     "intro": "Distance between two points in a plane.",
     "inputs": [
-      { "name": "x1", "label": "x₁", "type": "number", "placeholder": "0" },
-      { "name": "y1", "label": "y₁", "type": "number", "placeholder": "0" },
-      { "name": "x2", "label": "x₂", "type": "number", "placeholder": "3" },
-      { "name": "y2", "label": "y₂", "type": "number", "placeholder": "4" }
+      {
+        "name": "x1",
+        "label": "x₁",
+        "type": "number",
+        "placeholder": "0"
+      },
+      {
+        "name": "y1",
+        "label": "y₁",
+        "type": "number",
+        "placeholder": "0"
+      },
+      {
+        "name": "x2",
+        "label": "x₂",
+        "type": "number",
+        "placeholder": "3"
+      },
+      {
+        "name": "y2",
+        "label": "y₂",
+        "type": "number",
+        "placeholder": "4"
+      }
     ],
     "expression": "((x2 - x1)^2 + (y2 - y1)^2)^(0.5)",
-    "examples": [{ "description": "(0,0) to (3,4) ⇒ 5" }],
+    "examples": [
+      {
+        "description": "(0,0) to (3,4) ⇒ 5"
+      }
+    ],
     "faqs": [
       {
         "question": "What distance formula is used?",
@@ -2130,10 +2311,19 @@
     "cluster": "math",
     "intro": "Number of diagonals in an n‑sided polygon.",
     "inputs": [
-      { "name": "n", "label": "Sides", "type": "number", "placeholder": "6" }
+      {
+        "name": "n",
+        "label": "Sides",
+        "type": "number",
+        "placeholder": "6"
+      }
     ],
     "expression": "n * (n - 3) / 2",
-    "examples": [{ "description": "Hexagon ⇒ 9 diagonals" }],
+    "examples": [
+      {
+        "description": "Hexagon ⇒ 9 diagonals"
+      }
+    ],
     "faqs": [
       {
         "question": "Does it work for triangles?",
@@ -2155,7 +2345,11 @@
       }
     ],
     "expression": "ping / 1000 * 299792.458 / 2",
-    "examples": [{ "description": "50 ms ⇒ ~7494 km" }],
+    "examples": [
+      {
+        "description": "50 ms ⇒ ~7494 km"
+      }
+    ],
     "faqs": [
       {
         "question": "Why divide by two?",
@@ -2189,7 +2383,11 @@
       }
     ],
     "expression": "((width^2 + height^2)^(0.5)) / diagonal",
-    "examples": [{ "description": "1920×1080 at 24\" ⇒ ~92 PPI" }],
+    "examples": [
+      {
+        "description": "1920×1080 at 24\" ⇒ ~92 PPI"
+      }
+    ],
     "faqs": [
       {
         "question": "What does PPI mean?",
@@ -2217,7 +2415,11 @@
       }
     ],
     "expression": "tbw * 1000 / (daily * 365)",
-    "examples": [{ "description": "600 TBW with 50 GB/day ⇒ 32.9 years" }],
+    "examples": [
+      {
+        "description": "600 TBW with 50 GB/day ⇒ 32.9 years"
+      }
+    ],
     "faqs": [
       {
         "question": "What is TBW?",
@@ -2239,7 +2441,11 @@
       }
     ],
     "expression": "years / 1.8808",
-    "examples": [{ "description": "5 Earth years ⇒ 2.66 Mars years" }],
+    "examples": [
+      {
+        "description": "5 Earth years ⇒ 2.66 Mars years"
+      }
+    ],
     "faqs": [
       {
         "question": "How long is a Mars year?",
@@ -2261,7 +2467,11 @@
       }
     ],
     "expression": "jiffies / 60",
-    "examples": [{ "description": "120 jiffies ⇒ 2 seconds" }],
+    "examples": [
+      {
+        "description": "120 jiffies ⇒ 2 seconds"
+      }
+    ],
     "faqs": [
       {
         "question": "What is a jiffy?",
@@ -2283,7 +2493,11 @@
       }
     ],
     "expression": "sidereal * 23.9344696",
-    "examples": [{ "description": "1 sidereal day ⇒ 23.93 h" }],
+    "examples": [
+      {
+        "description": "1 sidereal day ⇒ 23.93 h"
+      }
+    ],
     "faqs": [
       {
         "question": "Why shorter than 24h?",
@@ -2311,7 +2525,11 @@
       }
     ],
     "expression": "volume / flow",
-    "examples": [{ "description": "200 L at 10 L/min ⇒ 20 min" }],
+    "examples": [
+      {
+        "description": "200 L at 10 L/min ⇒ 20 min"
+      }
+    ],
     "faqs": [
       {
         "question": "Assumes constant flow?",
@@ -2345,7 +2563,11 @@
       }
     ],
     "expression": "length * wpm / voltage",
-    "examples": [{ "description": "5 m at 14 W/m on 12 V ⇒ 5.83 A" }],
+    "examples": [
+      {
+        "description": "5 m at 14 W/m on 12 V ⇒ 5.83 A"
+      }
+    ],
     "faqs": [
       {
         "question": "Why divide by voltage?",
@@ -2386,7 +2608,9 @@
     ],
     "expression": "(roomL * roomW) / (tileL * tileW)",
     "examples": [
-      { "description": "4×3 m with 0.3×0.3 m tiles ⇒ 133.33 tiles" }
+      {
+        "description": "4×3 m with 0.3×0.3 m tiles ⇒ 133.33 tiles"
+      }
     ],
     "faqs": [
       {
@@ -2415,7 +2639,11 @@
       }
     ],
     "expression": "desired / original",
-    "examples": [{ "description": "4 to 6 servings ⇒ factor 1.5" }],
+    "examples": [
+      {
+        "description": "4 to 6 servings ⇒ factor 1.5"
+      }
+    ],
     "faqs": [
       {
         "question": "Does it adjust cook time?",
@@ -2437,7 +2665,11 @@
       }
     ],
     "expression": "360 / slices",
-    "examples": [{ "description": "8 slices ⇒ 45° each" }],
+    "examples": [
+      {
+        "description": "8 slices ⇒ 45° each"
+      }
+    ],
     "faqs": [
       {
         "question": "Works for any round pizza?",
@@ -2465,11 +2697,53 @@
       }
     ],
     "expression": "people * minutes",
-    "examples": [{ "description": "5 people at 3 min ⇒ 15 minutes" }],
+    "examples": [
+      {
+        "description": "5 people at 3 min ⇒ 15 minutes"
+      }
+    ],
     "faqs": [
       {
         "question": "Does it account for multiple servers?",
         "answer": "No, it's a simple single-line estimate."
+      }
+    ]
+  },
+  {
+    "slug": "simple-interest-calculator",
+    "title": "Simple Interest Calculator",
+    "cluster": "finance",
+    "intro": "Compute interest earned with the simple interest formula. Enter the values and press Calculate.",
+    "inputs": [
+      {
+        "label": "Principal",
+        "name": "p",
+        "type": "number",
+        "placeholder": "Enter principal"
+      },
+      {
+        "label": "Rate (%)",
+        "name": "r",
+        "type": "number",
+        "placeholder": "Enter rate (%)"
+      },
+      {
+        "label": "Time (years)",
+        "name": "t",
+        "type": "number",
+        "placeholder": "Enter time (years)"
+      }
+    ],
+    "expression": "(p * r * t) / 100",
+    "examples": [
+      {
+        "description": "1000 at 5% for 2 years = 100"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What is simple interest?",
+        "answer": "Interest calculated only on the principal amount."
       }
     ]
   }
