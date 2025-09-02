@@ -63,7 +63,14 @@ const jsonLd = {
 };
 ---
 
-<section class="calc" data-calculator data-slug={slug} data-exp={expression} aria-labelledby={`h-${slug}`}>
+<section
+  class="calc"
+  data-calculator
+  data-slug={slug}
+  data-exp={expression}
+  data-unit={schema?.unit}
+  aria-labelledby={`h-${slug}`}
+>
   <h1 id={`h-${slug}`}>{title}</h1>
   {intro && <p class="muted">{intro}</p>}
   <AdBanner />
