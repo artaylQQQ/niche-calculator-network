@@ -42,11 +42,16 @@ const cfToken = import.meta.env.VITE_CF_ANALYTICS_TOKEN;
     <a href="#main" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden">Skip to content</a>
     <header class="header" role="banner">
       <div class="header-inner">
-        <a href="/" aria-label="CalcSimpler" class="logo">CalcSimpler.com</a>
+        <div class="logo-area">
+          <a href="/" aria-label="CalcSimpler" class="logo">CalcSimpler.com</a>
+          <a href="/traditional-calculator/" class="traditional-btn">Traditional Calculator</a>
+        </div>
         <nav class="nav" aria-label="Primary">
-          <a href="/categories/">CATEGORIES</a>
-          <a href="/all">ALL CALCULATORS</a>
-          <a href="/traditional-calculator/">TRADITIONAL CALCULATOR</a>
+          <a href="/categories/" class={['nav-pill', Astro.url.pathname.startsWith('/categories') && 'active'].filter(Boolean).join(' ')}>Categories</a>
+          <a href="/all" class={['nav-pill', Astro.url.pathname.startsWith('/all') && 'active'].filter(Boolean).join(' ')}>
+            <span>All</span>
+            <span>Calculators</span>
+          </a>
         </nav>
       </div>
     </header>
@@ -65,5 +70,13 @@ const cfToken = import.meta.env.VITE_CF_ANALYTICS_TOKEN;
       </div>
       <div style="text-align:center;margin-top:8px;color:var(--muted)">© {new Date().getFullYear()} CalcSimpler.com</div>
     </footer>
+    <script is:inline>
+      const header = document.querySelector('.header');
+      const toggleHeader = () => {
+        header.classList.toggle('scrolled', window.scrollY > 0);
+      };
+      toggleHeader();
+      window.addEventListener('scroll', toggleHeader);
+    </script>
   </body>
 </html>
