@@ -1,0 +1,54 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Traditional Calculator" description="Perform basic arithmetic operations with this traditional calculator.">
+  <div class="max-w-sm mx-auto mt-8">
+    <div id="calc" class="bg-white dark:bg-slate-800 p-4 rounded-lg shadow">
+      <input id="display" class="w-full mb-2 p-2 border rounded text-right" readonly />
+      <div class="grid grid-cols-4 gap-2">
+        <button data-value="7" class="p-2 rounded border">7</button>
+        <button data-value="8" class="p-2 rounded border">8</button>
+        <button data-value="9" class="p-2 rounded border">9</button>
+        <button data-value="/" class="p-2 rounded border">÷</button>
+        <button data-value="4" class="p-2 rounded border">4</button>
+        <button data-value="5" class="p-2 rounded border">5</button>
+        <button data-value="6" class="p-2 rounded border">6</button>
+        <button data-value="*" class="p-2 rounded border">×</button>
+        <button data-value="1" class="p-2 rounded border">1</button>
+        <button data-value="2" class="p-2 rounded border">2</button>
+        <button data-value="3" class="p-2 rounded border">3</button>
+        <button data-value="-" class="p-2 rounded border">−</button>
+        <button data-value="0" class="p-2 rounded border">0</button>
+        <button data-value="." class="p-2 rounded border">.</button>
+        <button data-value="=" class="p-2 rounded border">=</button>
+        <button data-value="+" class="p-2 rounded border">+</button>
+        <button data-value="C" class="col-span-4 p-2 rounded border bg-red-500 text-white">C</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const display = document.getElementById('display');
+    const buttons = document.querySelectorAll('#calc button');
+    let current = '';
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const val = btn.dataset.value;
+        if (val === 'C') {
+          current = '';
+        } else if (val === '=') {
+          try {
+            current = eval(current).toString();
+          } catch {
+            current = 'Error';
+          }
+        } else {
+          current += val;
+        }
+        display.value = current;
+      });
+    });
+  </script>
+</BaseLayout>
+
