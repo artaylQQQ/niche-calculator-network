@@ -40,7 +40,7 @@ const CATEGORIES = [
       {CATEGORIES.map((cat) => (
         <li>
           <a href={`/categories/${cat.slug}/`}
-             class="group block rounded-xl border border-slate-200/80 dark:border-slate-700 bg-white dark:bg-slate-800 p-4 shadow-sm hover:shadow-md transition-shadow"
+             class="group block rounded-xl border border-[var(--border)] bg-[var(--card)] p-4 shadow-sm hover:shadow-md hover:border-[var(--accent)] transition-all"
              aria-label={`${cat.title} calculators`}>
             <div class="flex items-start gap-3">
               {/**
@@ -55,8 +55,8 @@ const CATEGORIES = [
                 loading="lazy"
               />
               <div>
-                <h3 class="text-lg font-semibold text-slate-900 dark:text-slate-50 group-hover:underline">{cat.title}</h3>
-                <p class="text-sm text-slate-600 dark:text-slate-300">{cat.desc}</p>
+                <h3 class="text-lg font-semibold text-[var(--ink)] group-hover:underline group-hover:text-[var(--accent)] transition-colors">{cat.title}</h3>
+                <p class="text-sm text-[var(--muted)]">{cat.desc}</p>
               </div>
             </div>
           </a>
