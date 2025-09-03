@@ -1,5 +1,5 @@
 // Minimal generator with validation & daily cap. Relies on the Calculator
-// component to render title, intro and FAQ sections.
+// component to render title, intro, examples, related calculators and FAQ sections.
 import fs from "node:fs";
 import path from "node:path";
 

@@ -10,10 +10,11 @@ import { execSync } from "node:child_process";
  * `meta/publish_log.json` prevents previously published calculators from
  * being regenerated.  The `MAX_PER_DAY` environment variable controls
  * how many new calculators are emitted on each run.  Values are
- * clamped between 20 and 100 to ensure a steady flow of fresh
- * content without overloading the site.  Title, intro and FAQ content
- * are rendered by the Calculator component itself.
- */
+* clamped between 20 and 100 to ensure a steady flow of fresh
+* content without overloading the site.  Title, intro, examples,
+* related calculators and FAQ content are rendered by the Calculator
+* component itself.
+*/
 
 const ROOT = process.cwd();
 const DATA_PATH = path.join(ROOT, "data", "calculators.json");
@@ -100,10 +101,6 @@ function pickRelated(base, all, count = 6) {
   return pool.slice(0, count).map((c) => c.slug);
 }
 
-function titleize(slug) {
-  return slug.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
-}
-
 // Immediately invoked main function
 (function run() {
   const items = readJSON(DATA_PATH, []);
@@ -173,22 +170,9 @@ function titleize(slug) {
     body += `export const schema = ${JSON.stringify(schema, null, 2)}\n\n`;
     // Title, intro and FAQ are rendered inside the Calculator component to
     // avoid duplicated sections in the generated pages.
-    body += "<Calculator schema={schema} />\n\n";
-    if (schema.examples && schema.examples.length) {
-      body += "## Examples\n\n";
-      schema.examples.forEach((ex) => {
-        body += `- ${ex.description}\n`;
-      });
-      body += "\n";
-    }
-    // FAQ section omitted – handled inside Calculator component.
-    if (related.length) {
-      body += "## Related calculators\n\n";
-      related.forEach((slug) => {
-        body += `- [${titleize(slug)}](/calculators/${slug}/)\n`;
-      });
-      body += "\n";
-    }
+    // The Calculator component renders title, intro, examples, FAQ and related
+    // calculators internally to prevent duplicate sections in the MDX output.
+    body += "<Calculator schema={schema} />\n";
     const mdxContent = frontmatter.join("\n") + body;
     const outPath = path.join(OUT_DIR, `${calc.slug}.mdx`);
     fs.writeFileSync(outPath, mdxContent, "utf-8");

@@ -11,11 +11,11 @@ import path from "node:path";
  * the number of new calculators can be controlled via the
  * `MAX_PER_DAY` environment variable.  Values outside the range 20–100
  * are clamped to the nearest bound to prevent creating too few or too
- * many pages in a single batch.  Each generated MDX page uses the
- * CalculatorLayout, exports a detailed schema for runtime use and
- * includes sections for examples and related calculators.  FAQs are
- * rendered within the Calculator component.
- */
+* many pages in a single batch.  Each generated MDX page uses the
+* CalculatorLayout, exports a detailed schema for runtime use and relies on
+* the Calculator component to render examples, related calculators and FAQs
+* to avoid duplicate sections.
+*/
 
 const ROOT = process.cwd();
 const DATA_PATH = path.join(ROOT, "data", "calculators.json");
@@ -108,10 +108,6 @@ function pickRelated(base: any, all: any[], count = 6): string[] {
   return pool.slice(0, count).map((c) => c.slug);
 }
 
-function titleize(slug: string): string {
-  return slug.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
-}
-
 // Main execution wrapped in an async function to allow top level await in
 // future enhancements (e.g. fetching remote data).  Immediately invoked.
 (function run(): void {
@@ -181,24 +177,10 @@ function titleize(slug: string): string {
     body += `export const schema = ${JSON.stringify(schema, null, 2)}\n\n`;
     // The Calculator component renders the title, intro and FAQ internally
     // to avoid duplicate sections in the final page.
-    body += "<Calculator schema={schema} />\n\n";
-    // Examples section.  We render examples if more than the default.
-    if (schema.examples && schema.examples.length) {
-      body += "## Examples\n\n";
-      schema.examples.forEach((ex: any) => {
-        body += `- ${ex.description}\n`;
-      });
-      body += "\n";
-    }
-    // FAQ section intentionally omitted – handled inside Calculator component.
-    // Related section
-    if (related.length) {
-      body += "## Related calculators\n\n";
-      related.forEach((slug: string) => {
-        body += `- [${titleize(slug)}](/calculators/${slug}/)\n`;
-      });
-      body += "\n";
-    }
+    // The Calculator component renders title, intro, examples, FAQ and
+    // related calculators internally.  Avoid adding sections manually to
+    // keep the MDX output lean and prevent duplicate headings.
+    body += "<Calculator schema={schema} />\n";
     const mdxContent = frontmatter.join("\n") + body;
     const outPath = path.join(OUT_DIR, `${calc.slug}.mdx`);
     fs.writeFileSync(outPath, mdxContent, "utf-8");
