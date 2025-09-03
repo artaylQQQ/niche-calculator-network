@@ -1,37 +1,25 @@
-:root{
-  /* Base tokens for light mode.  These values define the default
-     backgrounds, surfaces and text colours used throughout the site. */
-  --bg:#ffffff;
-  --surface:#f7f7f8;
-  --text:#0b0b0c;
-  --muted:#6b7280;
-  --accent:#2C74B3; /* Align accent with the primary colour in theme.css */
-  --ring:#6a82fb33;
-  --radius:12px;
-  --shadow:0 6px 20px rgba(0,0,0,.06);
+:root {
+  /* Neutral palette for the site.  Whites and warm greys provide a
+     clean base that works across the whole interface. */
+  --bg: #ffffff;
+  --surface: #f5f5f4;
+  --text: #1f2937;
+  --muted: #6b7280;
+  /* Primary accent used for buttons, hovers and important links */
+  --accent: #3b82f6;
+  --ring: #3b82f633;
+  --radius: 12px;
+  --shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
 }
 
-/*
-  Define a dark palette for users who prefer dark mode via the
-  `prefers‑color‑scheme` media query.  The dark colours mirror the
-  semantic roles used in light mode (background, surface, text and
-  muted text) but with darker hues for a comfortable low‑light
-  experience.  The accent colour remains the same across both
-  palettes to maintain brand consistency.
-*/
-@media (prefers-color-scheme: dark) {
-  :root {
-    /* Dark background for page body */
-    --bg: #0D1A26;
-    /* Darker surface for cards and containers */
-    --surface: #152233;
-    /* Primary text becomes light for readability */
-    --text: #F1F5F9;
-    /* Muted text uses a mid‑tone grey */
-    --muted: #94A3B8;
-    /* Accent colour remains the same */
-    --accent: #2C74B3;
-  }
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
-
-.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;}
