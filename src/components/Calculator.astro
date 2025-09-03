@@ -63,10 +63,10 @@ const jsonLd = {
 };
 ---
 
-<section
-  class="calc"
-  data-calculator
-  data-slug={slug}
+  <section
+    class="calc"
+    data-calculator
+    data-slug={slug}
   data-exp={expression}
   data-unit={schema?.unit}
   aria-labelledby={`h-${slug}`}
@@ -80,6 +80,7 @@ const jsonLd = {
       <div class="field">
         <label for={`in-${slug}-${i.name}`}>{i.label ?? i.name}</label>
         <input
+          class="input"
           id={`in-${slug}-${i.name}`}
           name={i.name}
           type="number"
@@ -93,7 +94,7 @@ const jsonLd = {
         <div id={`hint-${slug}-${i.name}`} class="hint">{i.hint ? i.hint : (i.units ? i.units : '')}</div>
       </div>
     ))}
-    <button type="button" data-action="calc" class="btn">Calculate</button>
+    <button type="button" data-action="calc" class="btn-primary">Calculate</button>
   </form>
 
   <div class="result" data-role="result" aria-live="polite"></div>
