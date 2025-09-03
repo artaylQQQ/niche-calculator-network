@@ -100,7 +100,9 @@ body {
     Arial,
     sans-serif;
 }
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   color: var(--primary);
 }
 a {
@@ -134,6 +136,24 @@ body {
 .top-bar {
   background: rgba(44, 116, 179, 0.15);
   backdrop-filter: blur(8px);
+}
+
+@media (prefers-color-scheme: light) {
+  .top-bar a {
+    color: #000;
+  }
+
+  .top-bar a:hover {
+    color: #000;
+  }
+
+  .top-bar .traditional-btn {
+    border-color: #000;
+  }
+
+  .top-bar .traditional-btn:focus {
+    outline-color: #000;
+  }
 }
 
 .nav-bar {
@@ -282,7 +302,9 @@ ul.grid li {
   white-space: normal;
   transition: color 0.12s ease;
 }
-.card:hover h3 { color: var(--accent); }
+.card:hover h3 {
+  color: var(--accent);
+}
 .card p {
   color: var(--muted);
   font-size: 14px;
