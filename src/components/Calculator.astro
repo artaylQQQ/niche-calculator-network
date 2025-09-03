@@ -132,7 +132,16 @@ const jsonLd = {
 <script type="application/ld+json" set:html={JSON.stringify(jsonLd)}></script>
 
 <style>
-  .calc { max-width: 720px; margin: 0 auto; padding: 8px; color: var(--ink); }
+  .calc {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 16px;
+    color: var(--ink);
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  }
   h1 { margin: 0 0 8px; font-size: 28px; }
   .muted { color: var(--muted); margin: 0 0 16px; }
   .field { margin: 14px 0; }
@@ -144,19 +153,30 @@ const jsonLd = {
     border-radius: 12px;
     background: var(--card);
     color: var(--ink);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
   }
   .btn {
     display: inline-block;
     padding: 12px 16px;
     border-radius: 12px;
     border: 0;
-    background: var(--primary);
+    background: var(--accent-red);
     color: var(--primary-ink);
     font-weight: 600;
     cursor: pointer;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
   }
   .btn:hover{ filter:brightness(1.05); }
-  .result { margin-top: 16px; font-size: 18px; font-weight: 600; color: var(--ink); }
+  .result {
+    margin-top: 16px;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--ink);
+    background: #FDE68A;
+    padding: 12px 16px;
+    border-radius: 12px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  }
   .examples,
   .faq,
   .related {
