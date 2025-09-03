@@ -41,17 +41,16 @@ const cfToken = import.meta.env.VITE_CF_ANALYTICS_TOKEN;
   <body>
     <a href="#main" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden">Skip to content</a>
     <header class="header" role="banner">
-      <div class="header-inner">
-        <div class="logo-area">
+      <div class="top-bar">
+        <div class="container">
           <a href="/" aria-label="CalcSimpler" class="logo">CalcSimpler.com</a>
           <a href="/traditional-calculator/" class="traditional-btn">Traditional Calculator</a>
         </div>
-        <nav class="nav" aria-label="Primary">
+      </div>
+      <div class="nav-bar">
+        <nav class="container nav" aria-label="Primary">
           <a href="/categories/" class={['nav-pill', Astro.url.pathname.startsWith('/categories') && 'active'].filter(Boolean).join(' ')}>Categories</a>
-          <a href="/all" class={['nav-pill', Astro.url.pathname.startsWith('/all') && 'active'].filter(Boolean).join(' ')}>
-            <span>All</span>
-            <span>Calculators</span>
-          </a>
+          <a href="/all" class={['nav-pill', Astro.url.pathname.startsWith('/all') && 'active'].filter(Boolean).join(' ')}>All Calculators</a>
         </nav>
       </div>
     </header>
