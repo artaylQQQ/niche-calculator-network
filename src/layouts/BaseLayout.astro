@@ -40,16 +40,24 @@ const cfToken = import.meta.env.VITE_CF_ANALYTICS_TOKEN;
 </head>
   <body>
     <a href="#main" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden">Skip to content</a>
-    <header class="header" role="banner">
-      <div class="header-inner">
-        <a href="/" aria-label="CalcSimpler" class="logo">CalcSimpler.com</a>
-        <nav class="nav" aria-label="Primary">
-          <a href="/categories/">CATEGORIES</a>
-          <a href="/all">ALL CALCULATORS</a>
-          <a href="/traditional-calculator/">TRADITIONAL CALCULATOR</a>
+    <header class="nav" data-nav role="banner">
+      <div class="container">
+        <a class="brand" href="/">CalcSimpler<span>.com</span></a>
+        <nav class="tabs" aria-label="Primary">
+          <a href="/categories/" class={`tab ${Astro.url.pathname.startsWith('/categories') ? 'is-active' : ''}`}>Categories</a>
+          <a href="/all" class={`tab ${Astro.url.pathname === '/all' ? 'is-active' : ''}`}>All Calculators</a>
         </nav>
+        <div class="actions">
+          <a class="btn" href="/traditional-calculator/">Traditional Calculator</a>
+        </div>
       </div>
     </header>
+    <script>
+      const nav = document.querySelector('[data-nav]');
+      const onScroll = () => nav?.toggleAttribute('data-scrolled', window.scrollY > 0);
+      onScroll();
+      window.addEventListener('scroll', onScroll);
+    </script>
     <main class="container" id="main" role="main">
       <slot />
       <AdBanner />
