@@ -1,34 +1,23 @@
 :root {
   /*
-    Global colour tokens.  The default palette in the original template
-    used a very dark primary colour (#0E2A47) for the header and other
-    accents.  This resulted in a high‑contrast, almost navy look which
-    clashed with the otherwise light UI.  To achieve a brighter and
-    friendlier appearance we select a medium blue for the primary hue
-    and leave all other colours unchanged.  The background remains
-    off‑white for warmth and readability.
-
-    Primary: #2C74B3 – a mid‑tone blue inspired by the web‑safe palette.
-    Primary ink: white text for sufficient contrast on the header.
-  */
-  /*
-    Use a very light background for the body and surfaces.  This keeps
-    content feeling airy and modern without a dull yellow tint.
-    Muted text colours are softened for improved contrast.
+    Equilibrio Moderno: a neutral foundation with vibrant accents.
+    The base relies on black, grey and white tones to keep content
+    legible, while blue and red provide primary emphasis and yellow
+    adds secondary highlights.
   */
   --bg: #ffffff;
-  --surface: #f7f7f8;
-  --ink: #0f172a;
-  --muted: #64748b;
-  --neutral-sky: #e0f2fe;
+  --surface: #f2f2f2;
+  --ink: #000000;
+  --muted: #4b5563;
+  --neutral-sky: #e5e7eb;
   --neutral-warm: #f5f5f4;
-  --primary: #2c74b3;
-  --accent: #a855f7;
-  --accent-red: #e11d48;
+  --primary: #0057b8;
+  --accent: #facc15;
+  --accent-red: #dc2626;
   --primary-ink: #ffffff;
   --card: #ffffff;
   --border: #e5e7eb;
-  --shadow: 0 1px 2px rgba(15, 23, 42, 0.06), 0 8px 24px rgba(15, 23, 42, 0.04);
+  --shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.08);
   --radius: 14px;
   --space: 14px;
   --maxw: 1120px;
@@ -49,41 +38,19 @@
       softening the muted tones.  Shadows are strengthened slightly to
       preserve depth on dark surfaces.
     */
-    --bg: #0f172a;
-    --surface: #1e293b;
-    --ink: #f1f5f9;
-    --muted: #94a3b8;
-    --neutral-sky: #1e293b;
-    --neutral-warm: #1f2937;
-    --primary: #2c74b3;
-    --accent: #a855f7;
-    --accent-red: #e11d48;
+    --bg: #0a0a0a;
+    --surface: #1a1a1a;
+    --ink: #f5f5f5;
+    --muted: #9ca3af;
+    --neutral-sky: #1a1a1a;
+    --neutral-warm: #262626;
+    --primary: #0057b8;
+    --accent: #facc15;
+    --accent-red: #dc2626;
     --primary-ink: #ffffff;
-    --card: #1e293b;
-    --border: #334155;
-    --shadow: 0 1px 2px rgba(0, 0, 0, 0.6), 0 8px 24px rgba(0, 0, 0, 0.3);
-  }
-}
-
-/*
-  Support dark mode.  When the user prefers a dark colour scheme we
-  override the root variables with darker backgrounds and lighter
-  text.  The primary colour is kept the same (a mid‑tone blue) to
-  maintain brand consistency, while secondary surfaces and borders
-  become darker.  Shadows are increased slightly to preserve depth on
-  dark backgrounds.
-*/
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #0f172a;
-    --surface: #1f2a37;
-    --ink: #f1f5f9;
-    --muted: #94a3b8;
-    --primary: #2c74b3;
-    --primary-ink: #ffffff;
-    --card: #1e293b;
-    --border: #334155;
-    --shadow: 0 1px 2px rgba(0, 0, 0, 0.6), 0 8px 24px rgba(0, 0, 0, 0.3);
+    --card: #1a1a1a;
+    --border: #374151;
+    --shadow: 0 2px 4px rgba(0, 0, 0, 0.6), 0 8px 16px rgba(0, 0, 0, 0.4);
   }
 }
 html,
@@ -110,7 +77,7 @@ a {
   text-decoration: none;
 }
 a:hover {
-  color: var(--accent);
+  color: var(--accent-red);
 }
 body {
   padding-top: 96px;
@@ -127,6 +94,7 @@ body {
   width: 100%;
   color: var(--primary-ink);
   z-index: 50;
+  box-shadow: var(--shadow);
 }
 .header a {
   color: var(--primary-ink);
@@ -134,7 +102,7 @@ body {
 }
 
 .top-bar {
-  background: rgba(44, 116, 179, 0.15);
+  background: rgba(0, 87, 184, 0.15);
   backdrop-filter: blur(8px);
 }
 
@@ -157,10 +125,11 @@ body {
 }
 
 .nav-bar {
-  background: rgba(44, 116, 179, 0.6);
+  background: rgba(0, 87, 184, 0.6);
   backdrop-filter: blur(8px);
   transition: background 0.3s ease;
   margin-top: 4px;
+  box-shadow: var(--shadow);
 }
 
 .header.scrolled .nav-bar {
@@ -186,6 +155,7 @@ body {
   border-radius: 9999px;
   background: rgba(255, 255, 255, 0.1);
   transition: background 0.2s ease;
+  box-shadow: var(--shadow);
 }
 .traditional-btn:hover,
 .traditional-btn:focus {
@@ -289,8 +259,8 @@ ul.grid li {
 .card:hover {
   transform: translateY(-1px);
   box-shadow:
-    0 2px 4px rgba(15, 23, 42, 0.08),
-    0 10px 28px rgba(15, 23, 42, 0.06);
+    0 2px 4px rgba(0, 0, 0, 0.08),
+    0 10px 28px rgba(0, 0, 0, 0.06);
   border-color: var(--accent);
 }
 .card h3 {
@@ -333,7 +303,7 @@ ul.grid li {
   background: #fff;
 }
 .input:focus {
-  outline: 2px solid #93c5fd;
+  outline: 2px solid var(--accent);
   outline-offset: 1px;
 }
 .btn-primary {
@@ -344,6 +314,7 @@ ul.grid li {
   padding: 12px 16px;
   font-weight: 600;
   cursor: pointer;
+  box-shadow: var(--shadow);
 }
 .btn-primary:hover {
   filter: brightness(1.05);
