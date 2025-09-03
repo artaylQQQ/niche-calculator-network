@@ -1,14 +1,16 @@
-:root{
-  /* Base tokens for light mode.  These values define the default
-     backgrounds, surfaces and text colours used throughout the site. */
-  --bg:#ffffff;
-  --surface:#f7f7f8;
-  --text:#0b0b0c;
-  --muted:#6b7280;
-  --accent:#2C74B3; /* Align accent with the primary colour in theme.css */
-  --ring:#6a82fb33;
-  --radius:12px;
-  --shadow:0 6px 20px rgba(0,0,0,.06);
+:root {
+  /* Base tokens for light mode with a refined neutral palette. */
+  --bg: #ffffff;
+  --surface: #f5f7fa;
+  --text: #000000;
+  --muted: #6b7280;
+  --celeste: #e0f2fe;
+  --accent: #2563eb;
+  --accent-red: #dc2626;
+  --accent-purple: #8b5cf6;
+  --ring: #2563eb33;
+  --radius: 12px;
+  --shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
 }
 
 /*
@@ -22,16 +24,29 @@
 @media (prefers-color-scheme: dark) {
   :root {
     /* Dark background for page body */
-    --bg: #0D1A26;
+    --bg: #111827;
     /* Darker surface for cards and containers */
-    --surface: #152233;
+    --surface: #1f2937;
     /* Primary text becomes light for readability */
-    --text: #F1F5F9;
+    --text: #ffffff;
     /* Muted text uses a mid‑tone grey */
-    --muted: #94A3B8;
-    /* Accent colour remains the same */
-    --accent: #2C74B3;
+    --muted: #9ca3af;
+    --celeste: #0ea5e9;
+    /* Accent colours */
+    --accent: #2563eb;
+    --accent-red: #f87171;
+    --accent-purple: #c4b5fd;
   }
 }
 
-.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

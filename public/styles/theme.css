@@ -1,30 +1,27 @@
 :root {
   /*
-    Global colour tokens.  The default palette in the original template
-    used a very dark primary colour (#0E2A47) for the header and other
-    accents.  This resulted in a high‑contrast, almost navy look which
-    clashed with the otherwise light UI.  To achieve a brighter and
-    friendlier appearance we select a medium blue for the primary hue
-    and leave all other colours unchanged.  The background remains
-    off‑white for warmth and readability.
+    Global colour tokens updated to a modern, elegant palette.  Neutral
+    tones (white, warm greys and a soft "celeste" blue) form the base,
+    while a trio of accents – blue, red and a gentle purple – provide
+    highlights throughout the interface.
 
-    Primary: #2C74B3 – a mid‑tone blue inspired by the web‑safe palette.
-    Primary ink: white text for sufficient contrast on the header.
+    The primary accent is a vibrant blue used for menus and buttons.
+    Additional accent colours are available for call‑to‑action buttons
+    and hover states.  Text on light backgrounds defaults to black,
+    while text on dark surfaces switches to white for optimal contrast.
   */
-  /*
-    Use a very light background for the body and surfaces.  This keeps
-    content feeling airy and modern without a dull yellow tint.
-    Muted text colours are softened for improved contrast.
-  */
-  --bg: #f9fafb;
-  --surface: #ffffff;
-  --ink: #0f172a;
-  --muted: #64748b;
-  --primary: #2c74b3;
+  --bg: #ffffff;
+  --surface: #f5f7fa;
+  --ink: #000000;
+  --muted: #6b7280;
+  --celeste: #e0f2fe;
+  --primary: #2563eb;
   --primary-ink: #ffffff;
+  --accent-red: #dc2626;
+  --accent-purple: #8b5cf6;
   --card: #ffffff;
   --border: #e5e7eb;
-  --shadow: 0 1px 2px rgba(15, 23, 42, 0.06), 0 8px 24px rgba(15, 23, 42, 0.04);
+  --shadow: 0 1px 2px rgba(0, 0, 0, 0.06), 0 8px 24px rgba(0, 0, 0, 0.04);
   --radius: 14px;
   --space: 14px;
   --maxw: 1120px;
@@ -45,39 +42,21 @@
       softening the muted tones.  Shadows are strengthened slightly to
       preserve depth on dark surfaces.
     */
-    --bg: #0f172a;
-    --surface: #1e293b;
-    --ink: #f1f5f9;
-    --muted: #94a3b8;
-    --primary: #2c74b3;
+    --bg: #111827;
+    --surface: #1f2937;
+    --ink: #ffffff;
+    --muted: #9ca3af;
+    --celeste: #0ea5e9;
+    --primary: #2563eb;
     --primary-ink: #ffffff;
-    --card: #1e293b;
-    --border: #334155;
+    --accent-red: #f87171;
+    --accent-purple: #c4b5fd;
+    --card: #1f2937;
+    --border: #374151;
     --shadow: 0 1px 2px rgba(0, 0, 0, 0.6), 0 8px 24px rgba(0, 0, 0, 0.3);
   }
 }
 
-/*
-  Support dark mode.  When the user prefers a dark colour scheme we
-  override the root variables with darker backgrounds and lighter
-  text.  The primary colour is kept the same (a mid‑tone blue) to
-  maintain brand consistency, while secondary surfaces and borders
-  become darker.  Shadows are increased slightly to preserve depth on
-  dark backgrounds.
-*/
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #0f172a;
-    --surface: #1f2a37;
-    --ink: #f1f5f9;
-    --muted: #94a3b8;
-    --primary: #2c74b3;
-    --primary-ink: #ffffff;
-    --card: #1e293b;
-    --border: #334155;
-    --shadow: 0 1px 2px rgba(0, 0, 0, 0.6), 0 8px 24px rgba(0, 0, 0, 0.3);
-  }
-}
 html,
 body {
   background: var(--bg);
@@ -114,12 +93,11 @@ body {
 }
 
 .top-bar {
-  background: rgba(44, 116, 179, 0.15);
-  backdrop-filter: blur(8px);
+  background: var(--primary);
 }
 
 .nav-bar {
-  background: rgba(44, 116, 179, 0.6);
+  background: var(--primary);
   backdrop-filter: blur(8px);
   transition: background 0.3s ease;
   margin-top: 4px;
@@ -144,17 +122,18 @@ body {
 .traditional-btn {
   font-size: 14px;
   padding: 4px 10px;
-  border: 1px solid var(--primary-ink);
   border-radius: 9999px;
-  background: rgba(255, 255, 255, 0.1);
-  transition: background 0.2s ease;
+  background: var(--accent-red);
+  color: #ffffff;
+  border: none;
+  transition: filter 0.2s ease;
 }
 .traditional-btn:hover,
 .traditional-btn:focus {
-  background: rgba(255, 255, 255, 0.2);
+  filter: brightness(1.1);
 }
 .traditional-btn:focus {
-  outline: 2px solid var(--primary-ink);
+  outline: 2px solid #ffffff;
   outline-offset: 2px;
 }
 .nav-pill {
@@ -252,6 +231,10 @@ ul.grid li {
   box-shadow:
     0 2px 4px rgba(15, 23, 42, 0.08),
     0 10px 28px rgba(15, 23, 42, 0.06);
+  border-color: var(--primary);
+}
+.card:hover h3 {
+  color: var(--primary);
 }
 .card h3 {
   margin: 2px 0 6px;
