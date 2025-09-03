@@ -4,81 +4,26 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 <BaseLayout title="Traditional Calculator" description="Perform basic arithmetic operations with this traditional calculator.">
   <div class="max-w-sm mx-auto mt-8">
-    <div id="calc" class="bg-white dark:bg-slate-800 p-4 rounded-lg shadow-lg">
-      <input
-        id="display"
-        class="w-full mb-2 p-3 border rounded text-right text-2xl bg-gray-100 dark:bg-slate-700 text-slate-900 dark:text-slate-100"
-        readonly
-      />
+    <div id="calc" class="calc-container p-4 rounded-lg shadow-lg">
+      <input id="display" class="input w-full mb-2 p-3 text-right text-2xl" readonly />
       <div class="grid grid-cols-4 gap-2">
-        <button
-          data-value="7"
-          class="p-2 rounded border bg-gray-100 dark:bg-slate-700 text-slate-900 dark:text-slate-100 hover:bg-gray-200 dark:hover:bg-slate-600 active:bg-gray-300 dark:active:bg-slate-500 transition-colors font-semibold"
-        >7</button>
-        <button
-          data-value="8"
-          class="p-2 rounded border bg-gray-100 dark:bg-slate-700 text-slate-900 dark:text-slate-100 hover:bg-gray-200 dark:hover:bg-slate-600 active:bg-gray-300 dark:active:bg-slate-500 transition-colors font-semibold"
-        >8</button>
-        <button
-          data-value="9"
-          class="p-2 rounded border bg-gray-100 dark:bg-slate-700 text-slate-900 dark:text-slate-100 hover:bg-gray-200 dark:hover:bg-slate-600 active:bg-gray-300 dark:active:bg-slate-500 transition-colors font-semibold"
-        >9</button>
-        <button
-          data-value="/"
-          class="p-2 rounded border bg-gray-100 dark:bg-slate-700 text-slate-900 dark:text-slate-100 hover:bg-gray-200 dark:hover:bg-slate-600 active:bg-gray-300 dark:active:bg-slate-500 transition-colors font-semibold"
-        >÷</button>
-        <button
-          data-value="4"
-          class="p-2 rounded border bg-gray-100 dark:bg-slate-700 text-slate-900 dark:text-slate-100 hover:bg-gray-200 dark:hover:bg-slate-600 active:bg-gray-300 dark:active:bg-slate-500 transition-colors font-semibold"
-        >4</button>
-        <button
-          data-value="5"
-          class="p-2 rounded border bg-gray-100 dark:bg-slate-700 text-slate-900 dark:text-slate-100 hover:bg-gray-200 dark:hover:bg-slate-600 active:bg-gray-300 dark:active:bg-slate-500 transition-colors font-semibold"
-        >5</button>
-        <button
-          data-value="6"
-          class="p-2 rounded border bg-gray-100 dark:bg-slate-700 text-slate-900 dark:text-slate-100 hover:bg-gray-200 dark:hover:bg-slate-600 active:bg-gray-300 dark:active:bg-slate-500 transition-colors font-semibold"
-        >6</button>
-        <button
-          data-value="*"
-          class="p-2 rounded border bg-gray-100 dark:bg-slate-700 text-slate-900 dark:text-slate-100 hover:bg-gray-200 dark:hover:bg-slate-600 active:bg-gray-300 dark:active:bg-slate-500 transition-colors font-semibold"
-        >×</button>
-        <button
-          data-value="1"
-          class="p-2 rounded border bg-gray-100 dark:bg-slate-700 text-slate-900 dark:text-slate-100 hover:bg-gray-200 dark:hover:bg-slate-600 active:bg-gray-300 dark:active:bg-slate-500 transition-colors font-semibold"
-        >1</button>
-        <button
-          data-value="2"
-          class="p-2 rounded border bg-gray-100 dark:bg-slate-700 text-slate-900 dark:text-slate-100 hover:bg-gray-200 dark:hover:bg-slate-600 active:bg-gray-300 dark:active:bg-slate-500 transition-colors font-semibold"
-        >2</button>
-        <button
-          data-value="3"
-          class="p-2 rounded border bg-gray-100 dark:bg-slate-700 text-slate-900 dark:text-slate-100 hover:bg-gray-200 dark:hover:bg-slate-600 active:bg-gray-300 dark:active:bg-slate-500 transition-colors font-semibold"
-        >3</button>
-        <button
-          data-value="-"
-          class="p-2 rounded border bg-gray-100 dark:bg-slate-700 text-slate-900 dark:text-slate-100 hover:bg-gray-200 dark:hover:bg-slate-600 active:bg-gray-300 dark:active:bg-slate-500 transition-colors font-semibold"
-        >−</button>
-        <button
-          data-value="0"
-          class="p-2 rounded border bg-gray-100 dark:bg-slate-700 text-slate-900 dark:text-slate-100 hover:bg-gray-200 dark:hover:bg-slate-600 active:bg-gray-300 dark:active:bg-slate-500 transition-colors font-semibold"
-        >0</button>
-        <button
-          data-value="."
-          class="p-2 rounded border bg-gray-100 dark:bg-slate-700 text-slate-900 dark:text-slate-100 hover:bg-gray-200 dark:hover:bg-slate-600 active:bg-gray-300 dark:active:bg-slate-500 transition-colors font-semibold"
-        >.</button>
-        <button
-          data-value="="
-          class="p-2 rounded border bg-gray-100 dark:bg-slate-700 text-slate-900 dark:text-slate-100 hover:bg-gray-200 dark:hover:bg-slate-600 active:bg-gray-300 dark:active:bg-slate-500 transition-colors font-semibold"
-        >=</button>
-        <button
-          data-value="+"
-          class="p-2 rounded border bg-gray-100 dark:bg-slate-700 text-slate-900 dark:text-slate-100 hover:bg-gray-200 dark:hover:bg-slate-600 active:bg-gray-300 dark:active:bg-slate-500 transition-colors font-semibold"
-        >+</button>
-        <button
-          data-value="C"
-          class="col-span-4 p-2 rounded border bg-red-500 hover:bg-red-600 text-white font-semibold"
-        >C</button>
+        <button data-value="7" class="calc-btn p-2 rounded font-semibold">7</button>
+        <button data-value="8" class="calc-btn p-2 rounded font-semibold">8</button>
+        <button data-value="9" class="calc-btn p-2 rounded font-semibold">9</button>
+        <button data-value="/" class="calc-btn p-2 rounded font-semibold">÷</button>
+        <button data-value="4" class="calc-btn p-2 rounded font-semibold">4</button>
+        <button data-value="5" class="calc-btn p-2 rounded font-semibold">5</button>
+        <button data-value="6" class="calc-btn p-2 rounded font-semibold">6</button>
+        <button data-value="*" class="calc-btn p-2 rounded font-semibold">×</button>
+        <button data-value="1" class="calc-btn p-2 rounded font-semibold">1</button>
+        <button data-value="2" class="calc-btn p-2 rounded font-semibold">2</button>
+        <button data-value="3" class="calc-btn p-2 rounded font-semibold">3</button>
+        <button data-value="-" class="calc-btn p-2 rounded font-semibold">−</button>
+        <button data-value="0" class="calc-btn p-2 rounded font-semibold">0</button>
+        <button data-value="." class="calc-btn p-2 rounded font-semibold">.</button>
+        <button data-value="=" class="calc-btn p-2 rounded font-semibold">=</button>
+        <button data-value="+" class="calc-btn p-2 rounded font-semibold">+</button>
+        <button data-value="C" class="calc-btn clear col-span-4 p-2 rounded font-semibold">C</button>
       </div>
     </div>
   </div>
@@ -105,5 +50,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       });
     });
   </script>
+  <style>
+    .calc-container { background: var(--card); border: 1px solid var(--border); }
+    .calc-btn { background: var(--surface); color: var(--ink); border: 1px solid var(--border); transition: background 0.2s ease; }
+    .calc-btn:hover { background: var(--neutral-warm); }
+    .calc-btn:active { background: var(--neutral-sky); }
+    .calc-btn.clear { background: var(--accent); color: var(--primary-ink); }
+    .calc-btn.clear:hover { filter: brightness(1.05); }
+  </style>
 </BaseLayout>
-
