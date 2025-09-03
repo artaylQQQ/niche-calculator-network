@@ -17,15 +17,15 @@ const list = items.filter(i => (i.fm.cluster || "").toLowerCase() === slug);
       {list.length ? (
       <div class="grid gap-4 mt-6 sm:grid-cols-2 lg:grid-cols-3">
         {list.map((it) => (
-          <a href={it.url} class="block rounded-xl border border-slate-200 p-4 hover:border-blue-500 hover:shadow-sm transition">
-            <div class="text-sm text-slate-500">{it.fm.cluster || ''}</div>
-            <div class="text-lg font-semibold text-slate-900">{it.fm.title || it.url.replace('/calculators/','').replace('.mdx','')}</div>
-            <div class="text-slate-600">{it.fm.description || ''}</div>
+          <a href={it.url} class="group block rounded-xl border border-[var(--border)] bg-[var(--card)] p-4 shadow-sm hover:shadow-md hover:border-[var(--accent)] transition-all">
+            <div class="text-sm text-[var(--secondary)]">{it.fm.cluster || ''}</div>
+            <div class="text-lg font-semibold text-[var(--ink)] group-hover:underline group-hover:text-[var(--accent)] transition-colors">{it.fm.title || it.url.replace('/calculators/','').replace('.mdx','')}</div>
+            <div class="text-[var(--muted)]">{it.fm.description || ''}</div>
           </a>
         ))}
       </div>
     ) : (
-      <p class="text-slate-500"><em>No calculators available in this category.</em></p>
+      <p class="text-[var(--muted)]"><em>No calculators available in this category.</em></p>
     )}
   </main>
 </BaseLayout>
