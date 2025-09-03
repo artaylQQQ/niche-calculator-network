@@ -1,29 +1,28 @@
 :root {
   /*
-    Global colour tokens.  The default palette in the original template
-    used a very dark primary colour (#0E2A47) for the header and other
-    accents.  This resulted in a high‑contrast, almost navy look which
-    clashed with the otherwise light UI.  To achieve a brighter and
-    friendlier appearance we select a medium blue for the primary hue
-    and leave all other colours unchanged.  The background remains
-    off‑white for warmth and readability.
+    Global colour tokens for an elegant, modern and sober palette
+    combining soft neutrals with vibrant accents.
+  */
+  /* Neutral colours */
+  --neutral-celeste: #e0f2fe;
+  --neutral-white: #ffffff;
+  --neutral-warm-gray: #f5f5f4;
 
-    Primary: #2C74B3 – a mid‑tone blue inspired by the web‑safe palette.
-    Primary ink: white text for sufficient contrast on the header.
-  */
-  /*
-    Use a very light background for the body and surfaces.  This keeps
-    content feeling airy and modern without a dull yellow tint.
-    Muted text colours are softened for improved contrast.
-  */
-  --bg: #f9fafb;
-  --surface: #ffffff;
+  /* Accent colours */
+  --accent-blue: #2563eb;
+  --accent-red: #e11d48;
+  --accent-purple: #7c3aed;
+
+  /* Semantic roles */
+  --bg: var(--neutral-celeste);
+  --surface: var(--neutral-white);
   --ink: #0f172a;
   --muted: #64748b;
-  --primary: #2c74b3;
+  --primary: var(--accent-blue);
+  --primary-rgb: 37,99,235;
   --primary-ink: #ffffff;
-  --card: #ffffff;
-  --border: #e5e7eb;
+  --card: var(--neutral-white);
+  --border: var(--neutral-warm-gray);
   --shadow: 0 1px 2px rgba(15, 23, 42, 0.06), 0 8px 24px rgba(15, 23, 42, 0.04);
   --radius: 14px;
   --space: 14px;
@@ -49,7 +48,8 @@
     --surface: #1e293b;
     --ink: #f1f5f9;
     --muted: #94a3b8;
-    --primary: #2c74b3;
+    --primary: var(--accent-blue);
+    --primary-rgb: 37,99,235;
     --primary-ink: #ffffff;
     --card: #1e293b;
     --border: #334155;
@@ -71,7 +71,8 @@
     --surface: #1f2a37;
     --ink: #f1f5f9;
     --muted: #94a3b8;
-    --primary: #2c74b3;
+    --primary: var(--accent-blue);
+    --primary-rgb: 37,99,235;
     --primary-ink: #ffffff;
     --card: #1e293b;
     --border: #334155;
@@ -95,6 +96,14 @@ body {
 body {
   padding-top: 96px;
 }
+
+a {
+  color: var(--primary);
+  transition: color 0.2s ease;
+}
+a:hover {
+  color: var(--accent-purple);
+}
 .container {
   max-width: var(--maxw);
   margin-inline: auto;
@@ -114,12 +123,12 @@ body {
 }
 
 .top-bar {
-  background: rgba(44, 116, 179, 0.15);
+  background: rgba(var(--primary-rgb), 0.15);
   backdrop-filter: blur(8px);
 }
 
 .nav-bar {
-  background: rgba(44, 116, 179, 0.6);
+  background: rgba(var(--primary-rgb), 0.6);
   backdrop-filter: blur(8px);
   transition: background 0.3s ease;
   margin-top: 4px;
@@ -144,14 +153,15 @@ body {
 .traditional-btn {
   font-size: 14px;
   padding: 4px 10px;
-  border: 1px solid var(--primary-ink);
+  border: 1px solid var(--primary);
   border-radius: 9999px;
-  background: rgba(255, 255, 255, 0.1);
-  transition: background 0.2s ease;
+  background: var(--primary);
+  color: var(--primary-ink);
+  transition: filter 0.2s ease;
 }
 .traditional-btn:hover,
 .traditional-btn:focus {
-  background: rgba(255, 255, 255, 0.2);
+  filter: brightness(1.05);
 }
 .traditional-btn:focus {
   outline: 2px solid var(--primary-ink);
@@ -163,19 +173,20 @@ body {
   border-radius: 9999px;
   font-weight: 600;
   text-align: center;
-  transition: background 0.2s ease;
+  transition: background 0.2s ease, color 0.2s ease;
 }
 .nav-pill:hover,
 .nav-pill:focus {
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(var(--primary-rgb), 0.15);
+  color: var(--primary-ink);
 }
 .nav-pill:focus {
   outline: 2px solid var(--primary-ink);
   outline-offset: 2px;
 }
 .nav-pill.active {
-  background: var(--primary-ink);
-  color: var(--primary);
+  background: var(--primary);
+  color: var(--primary-ink);
 }
 @media (max-width: 640px) {
   footer .links {
@@ -321,5 +332,5 @@ footer .links a {
 }
 footer .links a:hover {
   text-decoration: underline;
-  color: var(--ink);
+  color: var(--primary);
 }
