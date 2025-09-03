@@ -1,5 +1,9 @@
 # Changelog
 
+## [0.34.2] - 2025-09-03
+### Changed
+- Improved contrast and modern styling on the traditional calculator to enhance readability and usability.
+
 ## [0.34.1] - 2025-08-22
 ### Changed
 - Home con **8 categorías** e **iconos**.
