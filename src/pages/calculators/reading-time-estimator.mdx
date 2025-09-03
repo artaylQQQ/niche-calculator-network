@@ -1,0 +1,68 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Reading Time Estimator"
+description: "Estimate reading time from word count."
+date: 2025-09-03
+updated: 2025-09-03
+cluster: "Everyday & Misc"
+---
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "reading-time-estimator",
+  "title": "Reading Time Estimator",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "words",
+      "label": "Word count",
+      "type": "number",
+      "placeholder": "1200"
+    },
+    {
+      "name": "speed",
+      "label": "Reading speed (wpm)",
+      "type": "number",
+      "placeholder": "200"
+    }
+  ],
+  "expression": "words / speed",
+  "intro": "Estimate reading time from word count.",
+  "examples": [
+    {
+      "description": "1200 words at 200 wpm ⇒ 6 minutes"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Typical speed?",
+      "answer": "Around 200 words per minute for non‑technical texts."
+    }
+  ],
+  "disclaimer": "Educational information, not professional advice.",
+  "cluster": "Everyday & Misc",
+  "related": [
+    "discount-calculator",
+    "discount-calculator-2",
+    "tip-calculator-2",
+    "coffee-to-water-ratio",
+    "travel-budget-per-day",
+    "recipe-scale-factor"
+  ]
+}
+
+<Calculator schema={schema} />
+
+## Examples
+
+- 1200 words at 200 wpm ⇒ 6 minutes
+
+## Related calculators
+
+- [Discount Calculator](/calculators/discount-calculator/)
+- [Discount Calculator 2](/calculators/discount-calculator-2/)
+- [Tip Calculator 2](/calculators/tip-calculator-2/)
+- [Coffee To Water Ratio](/calculators/coffee-to-water-ratio/)
+- [Travel Budget Per Day](/calculators/travel-budget-per-day/)
+- [Recipe Scale Factor](/calculators/recipe-scale-factor/)
+

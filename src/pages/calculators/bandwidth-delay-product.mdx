@@ -1,0 +1,68 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Bandwidth Delay Product"
+description: "Estimate in-flight data on a network link."
+date: 2025-09-03
+updated: 2025-09-03
+cluster: "Technology"
+---
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "bandwidth-delay-product",
+  "title": "Bandwidth Delay Product",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "bandwidth",
+      "label": "Bandwidth (Mbps)",
+      "type": "number",
+      "placeholder": "100"
+    },
+    {
+      "name": "latency",
+      "label": "Latency (ms)",
+      "type": "number",
+      "placeholder": "50"
+    }
+  ],
+  "expression": "bandwidth * 1000000 * latency / 1000 / 8",
+  "intro": "Estimate in-flight data on a network link.",
+  "examples": [
+    {
+      "description": "100 Mbps with 50 ms ⇒ 625000 bytes"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Why divide by 8?",
+      "answer": "To convert bits to bytes."
+    }
+  ],
+  "disclaimer": "Educational information, not professional advice.",
+  "cluster": "Technology",
+  "related": [
+    "download-time",
+    "storage-redundancy-overhead",
+    "battery-life-estimator",
+    "cpu-power-to-current",
+    "ping-distance-estimator",
+    "screen-ppi-calculator"
+  ]
+}
+
+<Calculator schema={schema} />
+
+## Examples
+
+- 100 Mbps with 50 ms ⇒ 625000 bytes
+
+## Related calculators
+
+- [Download Time](/calculators/download-time/)
+- [Storage Redundancy Overhead](/calculators/storage-redundancy-overhead/)
+- [Battery Life Estimator](/calculators/battery-life-estimator/)
+- [Cpu Power To Current](/calculators/cpu-power-to-current/)
+- [Ping Distance Estimator](/calculators/ping-distance-estimator/)
+- [Screen Ppi Calculator](/calculators/screen-ppi-calculator/)
+

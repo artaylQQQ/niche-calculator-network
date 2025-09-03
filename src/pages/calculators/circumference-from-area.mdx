@@ -1,0 +1,63 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Circle Circumference from Area"
+description: "Derive circumference when only area is known."
+date: 2025-09-03
+updated: 2025-09-03
+cluster: "Math"
+---
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "circumference-from-area",
+  "title": "Circle Circumference from Area",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "area",
+      "label": "Area",
+      "type": "number",
+      "step": "any",
+      "placeholder": "50"
+    }
+  ],
+  "expression": "2 * (area * 3.141592653589793) ^ 0.5",
+  "intro": "Derive circumference when only area is known.",
+  "examples": [
+    {
+      "description": "Area 50 ⇒ 25.07 circumference"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Why such a long number?",
+      "answer": "It's a high-precision value of π."
+    }
+  ],
+  "disclaimer": "Educational information, not professional advice.",
+  "cluster": "Math",
+  "related": [
+    "percentage-increase",
+    "circle-area",
+    "pythagorean-theorem-calculator",
+    "geometric-series-sum",
+    "triangle-inradius",
+    "triangle-area-heron"
+  ]
+}
+
+<Calculator schema={schema} />
+
+## Examples
+
+- Area 50 ⇒ 25.07 circumference
+
+## Related calculators
+
+- [Percentage Increase](/calculators/percentage-increase/)
+- [Circle Area](/calculators/circle-area/)
+- [Pythagorean Theorem Calculator](/calculators/pythagorean-theorem-calculator/)
+- [Geometric Series Sum](/calculators/geometric-series-sum/)
+- [Triangle Inradius](/calculators/triangle-inradius/)
+- [Triangle Area Heron](/calculators/triangle-area-heron/)
+

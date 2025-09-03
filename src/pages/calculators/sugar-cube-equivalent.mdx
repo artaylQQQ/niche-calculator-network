@@ -1,0 +1,63 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Sugar Cube Equivalent"
+description: "Convert grams of sugar into sugar cube equivalents."
+date: 2025-09-03
+updated: 2025-09-03
+cluster: "Health"
+---
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "sugar-cube-equivalent",
+  "title": "Sugar Cube Equivalent",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "grams",
+      "label": "Sugar (g)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "16"
+    }
+  ],
+  "expression": "grams / 4",
+  "intro": "Convert grams of sugar into sugar cube equivalents.",
+  "examples": [
+    {
+      "description": "16 g ⇒ 4 cubes"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "How much is one sugar cube?",
+      "answer": "About 4 grams of sugar per cube."
+    }
+  ],
+  "disclaimer": "Educational information, not professional advice.",
+  "cluster": "Health",
+  "related": [
+    "bmi-calculator",
+    "daily-calorie-burn",
+    "sleep-debt-weekly",
+    "caffeine-half-life",
+    "protein-calorie-percentage",
+    "bmi-prime"
+  ]
+}
+
+<Calculator schema={schema} />
+
+## Examples
+
+- 16 g ⇒ 4 cubes
+
+## Related calculators
+
+- [Bmi Calculator](/calculators/bmi-calculator/)
+- [Daily Calorie Burn](/calculators/daily-calorie-burn/)
+- [Sleep Debt Weekly](/calculators/sleep-debt-weekly/)
+- [Caffeine Half Life](/calculators/caffeine-half-life/)
+- [Protein Calorie Percentage](/calculators/protein-calorie-percentage/)
+- [Bmi Prime](/calculators/bmi-prime/)
+

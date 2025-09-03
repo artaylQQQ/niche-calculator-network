@@ -1,0 +1,68 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "BMI Prime Calculator"
+description: "BMI normalized to the upper healthy limit of 25."
+date: 2025-09-03
+updated: 2025-09-03
+cluster: "Health"
+---
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "bmi-prime",
+  "title": "BMI Prime Calculator",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "weight",
+      "label": "Weight (kg)",
+      "type": "number",
+      "placeholder": "70"
+    },
+    {
+      "name": "height",
+      "label": "Height (cm)",
+      "type": "number",
+      "placeholder": "175"
+    }
+  ],
+  "expression": "(weight / ((height/100)^2)) / 25",
+  "intro": "BMI normalized to the upper healthy limit of 25.",
+  "examples": [
+    {
+      "description": "70 kg and 175 cm ⇒ 0.91"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "What does BMI Prime indicate?",
+      "answer": "Values above 1.0 are considered overweight."
+    }
+  ],
+  "disclaimer": "Educational information, not professional advice.",
+  "cluster": "Health",
+  "related": [
+    "bmi-calculator",
+    "daily-calorie-burn",
+    "sleep-debt-weekly",
+    "sugar-cube-equivalent",
+    "caffeine-half-life",
+    "protein-calorie-percentage"
+  ]
+}
+
+<Calculator schema={schema} />
+
+## Examples
+
+- 70 kg and 175 cm ⇒ 0.91
+
+## Related calculators
+
+- [Bmi Calculator](/calculators/bmi-calculator/)
+- [Daily Calorie Burn](/calculators/daily-calorie-burn/)
+- [Sleep Debt Weekly](/calculators/sleep-debt-weekly/)
+- [Sugar Cube Equivalent](/calculators/sugar-cube-equivalent/)
+- [Caffeine Half Life](/calculators/caffeine-half-life/)
+- [Protein Calorie Percentage](/calculators/protein-calorie-percentage/)
+

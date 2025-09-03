@@ -1,0 +1,68 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "FIRE Number Calculator"
+description: "Compute target savings for financial independence using annual expenses and withdrawal rate."
+date: 2025-09-03
+updated: 2025-09-03
+cluster: "Finance"
+---
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "fire-number",
+  "title": "FIRE Number Calculator",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "annual",
+      "label": "Annual expenses ($)",
+      "type": "number",
+      "placeholder": "40000"
+    },
+    {
+      "name": "rate",
+      "label": "Withdrawal rate (%)",
+      "type": "number",
+      "placeholder": "4"
+    }
+  ],
+  "expression": "annual / (rate/100)",
+  "intro": "Compute target savings for financial independence using annual expenses and withdrawal rate.",
+  "examples": [
+    {
+      "description": "$40k at 4% ⇒ $1,000,000"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "What is FIRE?",
+      "answer": "FIRE stands for Financial Independence, Retire Early."
+    }
+  ],
+  "disclaimer": "Educational information, not professional advice.",
+  "cluster": "Finance",
+  "related": [
+    "percentage-discount",
+    "simple-interest",
+    "crypto-mining-breakeven",
+    "freelancer-hourly-rate",
+    "subscription-ltv",
+    "emergency-fund-duration"
+  ]
+}
+
+<Calculator schema={schema} />
+
+## Examples
+
+- $40k at 4% ⇒ $1,000,000
+
+## Related calculators
+
+- [Percentage Discount](/calculators/percentage-discount/)
+- [Simple Interest](/calculators/simple-interest/)
+- [Crypto Mining Breakeven](/calculators/crypto-mining-breakeven/)
+- [Freelancer Hourly Rate](/calculators/freelancer-hourly-rate/)
+- [Subscription Ltv](/calculators/subscription-ltv/)
+- [Emergency Fund Duration](/calculators/emergency-fund-duration/)
+

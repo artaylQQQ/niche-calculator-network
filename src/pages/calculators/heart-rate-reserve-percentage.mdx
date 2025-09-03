@@ -1,0 +1,74 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Heart Rate Reserve Percentage"
+description: "Current training intensity as a percentage of heart rate reserve."
+date: 2025-09-03
+updated: 2025-09-03
+cluster: "Health"
+---
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "heart-rate-reserve-percentage",
+  "title": "Heart Rate Reserve Percentage",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "rest",
+      "label": "Resting HR",
+      "type": "number",
+      "placeholder": "60"
+    },
+    {
+      "name": "max",
+      "label": "Max HR",
+      "type": "number",
+      "placeholder": "190"
+    },
+    {
+      "name": "current",
+      "label": "Current HR",
+      "type": "number",
+      "placeholder": "150"
+    }
+  ],
+  "expression": "(current - rest) / (max - rest) * 100",
+  "intro": "Current training intensity as a percentage of heart rate reserve.",
+  "examples": [
+    {
+      "description": "Rest 60, max 190, current 150 ⇒ 69%"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "What zones use this value?",
+      "answer": "It's used in the Karvonen method to set training zones."
+    }
+  ],
+  "disclaimer": "Educational information, not professional advice.",
+  "cluster": "Health",
+  "related": [
+    "bmi-calculator",
+    "daily-calorie-burn",
+    "sleep-debt-weekly",
+    "sugar-cube-equivalent",
+    "caffeine-half-life",
+    "protein-calorie-percentage"
+  ]
+}
+
+<Calculator schema={schema} />
+
+## Examples
+
+- Rest 60, max 190, current 150 ⇒ 69%
+
+## Related calculators
+
+- [Bmi Calculator](/calculators/bmi-calculator/)
+- [Daily Calorie Burn](/calculators/daily-calorie-burn/)
+- [Sleep Debt Weekly](/calculators/sleep-debt-weekly/)
+- [Sugar Cube Equivalent](/calculators/sugar-cube-equivalent/)
+- [Caffeine Half Life](/calculators/caffeine-half-life/)
+- [Protein Calorie Percentage](/calculators/protein-calorie-percentage/)
+

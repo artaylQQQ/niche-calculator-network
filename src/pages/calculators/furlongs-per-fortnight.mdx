@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/CalculatorLayout.astro
-title: "Meters to Feet Converter"
-description: "Convert meters to feet instantly."
+title: "Furlongs per Fortnight to Meters per Second"
+description: "Turn whimsical speed units into meters per second."
 date: 2025-09-03
 updated: 2025-09-03
 cluster: "Conversions"
@@ -9,29 +9,29 @@ cluster: "Conversions"
 import Calculator from '../../components/Calculator.astro';
 
 export const schema = {
-  "slug": "meters-to-feet",
-  "title": "Meters to Feet Converter",
+  "slug": "furlongs-per-fortnight",
+  "title": "Furlongs per Fortnight to Meters per Second",
   "locale": "en",
   "inputs": [
     {
-      "name": "meters",
-      "label": "Meters",
+      "name": "fpf",
+      "label": "Furlongs per Fortnight",
       "type": "number",
       "step": "any",
-      "placeholder": "1"
+      "placeholder": "1000"
     }
   ],
-  "expression": "meters * 3.28084",
-  "intro": "Convert meters to feet instantly.",
+  "expression": "fpf * 201.168 / 1209600",
+  "intro": "Turn whimsical speed units into meters per second.",
   "examples": [
     {
-      "description": "2 m ⇒ 6.56168 ft"
+      "description": "1000 fpf ⇒ 0.1663 m/s"
     }
   ],
   "faqs": [
     {
-      "question": "How precise is this conversion?",
-      "answer": "It uses the exact factor of 3.28084 feet per meter."
+      "question": "Is this a real unit?",
+      "answer": "Yes, but it's mostly used for geeky humor."
     }
   ],
   "disclaimer": "Educational information, not professional advice.",
@@ -39,9 +39,9 @@ export const schema = {
   "related": [
     "celsius-to-fahrenheit",
     "km-to-miles",
+    "meters-to-feet",
     "smoots-to-meters",
     "hogsheads-to-liters",
-    "furlongs-per-fortnight",
     "banana-dose-converter"
   ]
 }
@@ -50,14 +50,14 @@ export const schema = {
 
 ## Examples
 
-- 2 m ⇒ 6.56168 ft
+- 1000 fpf ⇒ 0.1663 m/s
 
 ## Related calculators
 
 - [Celsius To Fahrenheit](/calculators/celsius-to-fahrenheit/)
 - [Km To Miles](/calculators/km-to-miles/)
+- [Meters To Feet](/calculators/meters-to-feet/)
 - [Smoots To Meters](/calculators/smoots-to-meters/)
 - [Hogsheads To Liters](/calculators/hogsheads-to-liters/)
-- [Furlongs Per Fortnight](/calculators/furlongs-per-fortnight/)
 - [Banana Dose Converter](/calculators/banana-dose-converter/)
 

@@ -1,0 +1,77 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Triangle Inradius"
+description: "Compute radius of the inscribed circle of a triangle."
+date: 2025-09-03
+updated: 2025-09-03
+cluster: "Math"
+---
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "triangle-inradius",
+  "title": "Triangle Inradius",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "a",
+      "label": "Side a",
+      "type": "number",
+      "step": "any",
+      "placeholder": "3"
+    },
+    {
+      "name": "b",
+      "label": "Side b",
+      "type": "number",
+      "step": "any",
+      "placeholder": "4"
+    },
+    {
+      "name": "c",
+      "label": "Side c",
+      "type": "number",
+      "step": "any",
+      "placeholder": "5"
+    }
+  ],
+  "expression": "(( (a + b + c) / 2 * ((a + b + c) / 2 - a) * ((a + b + c) / 2 - b) * ((a + b + c) / 2 - c) ) ^ 0.5) / ((a + b + c) / 2)",
+  "intro": "Compute radius of the inscribed circle of a triangle.",
+  "examples": [
+    {
+      "description": "3-4-5 triangle ⇒ 1 radius"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "What is inradius?",
+      "answer": "It's the radius of the circle tangent to all sides of the triangle."
+    }
+  ],
+  "disclaimer": "Educational information, not professional advice.",
+  "cluster": "Math",
+  "related": [
+    "percentage-increase",
+    "circle-area",
+    "pythagorean-theorem-calculator",
+    "geometric-series-sum",
+    "circumference-from-area",
+    "triangle-area-heron"
+  ]
+}
+
+<Calculator schema={schema} />
+
+## Examples
+
+- 3-4-5 triangle ⇒ 1 radius
+
+## Related calculators
+
+- [Percentage Increase](/calculators/percentage-increase/)
+- [Circle Area](/calculators/circle-area/)
+- [Pythagorean Theorem Calculator](/calculators/pythagorean-theorem-calculator/)
+- [Geometric Series Sum](/calculators/geometric-series-sum/)
+- [Circumference From Area](/calculators/circumference-from-area/)
+- [Triangle Area Heron](/calculators/triangle-area-heron/)
+

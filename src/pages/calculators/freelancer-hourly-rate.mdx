@@ -1,0 +1,74 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Freelancer Hourly Rate"
+description: "Find required hourly rate from income goals."
+date: 2025-09-03
+updated: 2025-09-03
+cluster: "Finance"
+---
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "freelancer-hourly-rate",
+  "title": "Freelancer Hourly Rate",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "income",
+      "label": "Desired annual income ($)",
+      "type": "number",
+      "placeholder": "80000"
+    },
+    {
+      "name": "hours",
+      "label": "Billable hours per week",
+      "type": "number",
+      "placeholder": "30"
+    },
+    {
+      "name": "weeks",
+      "label": "Working weeks per year",
+      "type": "number",
+      "placeholder": "48"
+    }
+  ],
+  "expression": "income / (hours * weeks)",
+  "intro": "Find required hourly rate from income goals.",
+  "examples": [
+    {
+      "description": "$80k income, 30h/week, 48 weeks ⇒ ~$55.56/hr"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Why billable hours?",
+      "answer": "Non‑billable time isn't paid, so exclude it to price correctly."
+    }
+  ],
+  "disclaimer": "Educational information, not professional advice.",
+  "cluster": "Finance",
+  "related": [
+    "percentage-discount",
+    "simple-interest",
+    "crypto-mining-breakeven",
+    "subscription-ltv",
+    "emergency-fund-duration",
+    "fire-number"
+  ]
+}
+
+<Calculator schema={schema} />
+
+## Examples
+
+- $80k income, 30h/week, 48 weeks ⇒ ~$55.56/hr
+
+## Related calculators
+
+- [Percentage Discount](/calculators/percentage-discount/)
+- [Simple Interest](/calculators/simple-interest/)
+- [Crypto Mining Breakeven](/calculators/crypto-mining-breakeven/)
+- [Subscription Ltv](/calculators/subscription-ltv/)
+- [Emergency Fund Duration](/calculators/emergency-fund-duration/)
+- [Fire Number](/calculators/fire-number/)
+

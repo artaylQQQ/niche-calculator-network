@@ -1,0 +1,68 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "CPU Power to Current"
+description: "Convert CPU power draw to current at given voltage."
+date: 2025-09-03
+updated: 2025-09-03
+cluster: "Technology"
+---
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "cpu-power-to-current",
+  "title": "CPU Power to Current",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "power",
+      "label": "Power (W)",
+      "type": "number",
+      "placeholder": "95"
+    },
+    {
+      "name": "voltage",
+      "label": "Voltage (V)",
+      "type": "number",
+      "placeholder": "12"
+    }
+  ],
+  "expression": "power / voltage",
+  "intro": "Convert CPU power draw to current at given voltage.",
+  "examples": [
+    {
+      "description": "95 W at 12 V ⇒ 7.92 A"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "What is TDP?",
+      "answer": "Thermal design power, a CPU's typical power draw."
+    }
+  ],
+  "disclaimer": "Educational information, not professional advice.",
+  "cluster": "Technology",
+  "related": [
+    "download-time",
+    "storage-redundancy-overhead",
+    "battery-life-estimator",
+    "bandwidth-delay-product",
+    "ping-distance-estimator",
+    "screen-ppi-calculator"
+  ]
+}
+
+<Calculator schema={schema} />
+
+## Examples
+
+- 95 W at 12 V ⇒ 7.92 A
+
+## Related calculators
+
+- [Download Time](/calculators/download-time/)
+- [Storage Redundancy Overhead](/calculators/storage-redundancy-overhead/)
+- [Battery Life Estimator](/calculators/battery-life-estimator/)
+- [Bandwidth Delay Product](/calculators/bandwidth-delay-product/)
+- [Ping Distance Estimator](/calculators/ping-distance-estimator/)
+- [Screen Ppi Calculator](/calculators/screen-ppi-calculator/)
+

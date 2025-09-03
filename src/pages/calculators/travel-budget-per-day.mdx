@@ -1,0 +1,68 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Travel Budget per Day"
+description: "Spread a trip budget over travel days."
+date: 2025-09-03
+updated: 2025-09-03
+cluster: "Everyday & Misc"
+---
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "travel-budget-per-day",
+  "title": "Travel Budget per Day",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "budget",
+      "label": "Total budget ($)",
+      "type": "number",
+      "placeholder": "1000"
+    },
+    {
+      "name": "days",
+      "label": "Days",
+      "type": "number",
+      "placeholder": "5"
+    }
+  ],
+  "expression": "budget / days",
+  "intro": "Spread a trip budget over travel days.",
+  "examples": [
+    {
+      "description": "$1000 over 5 days ⇒ $200/day"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Include travel days?",
+      "answer": "Yes, count every day of the trip."
+    }
+  ],
+  "disclaimer": "Educational information, not professional advice.",
+  "cluster": "Everyday & Misc",
+  "related": [
+    "discount-calculator",
+    "discount-calculator-2",
+    "tip-calculator-2",
+    "coffee-to-water-ratio",
+    "reading-time-estimator",
+    "recipe-scale-factor"
+  ]
+}
+
+<Calculator schema={schema} />
+
+## Examples
+
+- $1000 over 5 days ⇒ $200/day
+
+## Related calculators
+
+- [Discount Calculator](/calculators/discount-calculator/)
+- [Discount Calculator 2](/calculators/discount-calculator-2/)
+- [Tip Calculator 2](/calculators/tip-calculator-2/)
+- [Coffee To Water Ratio](/calculators/coffee-to-water-ratio/)
+- [Reading Time Estimator](/calculators/reading-time-estimator/)
+- [Recipe Scale Factor](/calculators/recipe-scale-factor/)
+

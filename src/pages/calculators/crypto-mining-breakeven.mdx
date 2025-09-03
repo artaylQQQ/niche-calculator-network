@@ -1,0 +1,68 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Crypto Mining Breakeven Time"
+description: "Estimate days to recoup mining hardware cost."
+date: 2025-09-03
+updated: 2025-09-03
+cluster: "Finance"
+---
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "crypto-mining-breakeven",
+  "title": "Crypto Mining Breakeven Time",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "cost",
+      "label": "Hardware cost ($)",
+      "type": "number",
+      "placeholder": "3000"
+    },
+    {
+      "name": "profit",
+      "label": "Daily profit ($)",
+      "type": "number",
+      "placeholder": "10"
+    }
+  ],
+  "expression": "cost / profit",
+  "intro": "Estimate days to recoup mining hardware cost.",
+  "examples": [
+    {
+      "description": "$3000 cost, $10 profit ⇒ 300 days"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Does this include electricity?",
+      "answer": "Include electricity in daily profit for accuracy."
+    }
+  ],
+  "disclaimer": "Educational information, not professional advice.",
+  "cluster": "Finance",
+  "related": [
+    "percentage-discount",
+    "simple-interest",
+    "freelancer-hourly-rate",
+    "subscription-ltv",
+    "emergency-fund-duration",
+    "fire-number"
+  ]
+}
+
+<Calculator schema={schema} />
+
+## Examples
+
+- $3000 cost, $10 profit ⇒ 300 days
+
+## Related calculators
+
+- [Percentage Discount](/calculators/percentage-discount/)
+- [Simple Interest](/calculators/simple-interest/)
+- [Freelancer Hourly Rate](/calculators/freelancer-hourly-rate/)
+- [Subscription Ltv](/calculators/subscription-ltv/)
+- [Emergency Fund Duration](/calculators/emergency-fund-duration/)
+- [Fire Number](/calculators/fire-number/)
+

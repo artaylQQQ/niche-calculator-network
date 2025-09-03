@@ -1,0 +1,69 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Coffee to Water Ratio"
+description: "Calculate water needed for a coffee brew ratio."
+date: 2025-09-03
+updated: 2025-09-03
+cluster: "Everyday & Misc"
+---
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "coffee-to-water-ratio",
+  "title": "Coffee to Water Ratio",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "coffee",
+      "label": "Coffee (g)",
+      "type": "number",
+      "placeholder": "30"
+    },
+    {
+      "name": "ratio",
+      "label": "Ratio",
+      "type": "number",
+      "step": "any",
+      "placeholder": "15"
+    }
+  ],
+  "expression": "coffee * ratio",
+  "intro": "Calculate water needed for a coffee brew ratio.",
+  "examples": [
+    {
+      "description": "30 g at 1:15 ⇒ 450 g water"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Is ratio coffee:water?",
+      "answer": "Yes, multiply coffee grams by ratio for water grams."
+    }
+  ],
+  "disclaimer": "Educational information, not professional advice.",
+  "cluster": "Everyday & Misc",
+  "related": [
+    "discount-calculator",
+    "discount-calculator-2",
+    "tip-calculator-2",
+    "reading-time-estimator",
+    "travel-budget-per-day",
+    "recipe-scale-factor"
+  ]
+}
+
+<Calculator schema={schema} />
+
+## Examples
+
+- 30 g at 1:15 ⇒ 450 g water
+
+## Related calculators
+
+- [Discount Calculator](/calculators/discount-calculator/)
+- [Discount Calculator 2](/calculators/discount-calculator-2/)
+- [Tip Calculator 2](/calculators/tip-calculator-2/)
+- [Reading Time Estimator](/calculators/reading-time-estimator/)
+- [Travel Budget Per Day](/calculators/travel-budget-per-day/)
+- [Recipe Scale Factor](/calculators/recipe-scale-factor/)
+

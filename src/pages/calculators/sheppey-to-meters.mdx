@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/CalculatorLayout.astro
-title: "Meters to Feet Converter"
-description: "Convert meters to feet instantly."
+title: "Sheppey to Meters"
+description: "Convert sheppeys into meters."
 date: 2025-09-03
 updated: 2025-09-03
 cluster: "Conversions"
@@ -9,29 +9,28 @@ cluster: "Conversions"
 import Calculator from '../../components/Calculator.astro';
 
 export const schema = {
-  "slug": "meters-to-feet",
-  "title": "Meters to Feet Converter",
+  "slug": "sheppey-to-meters",
+  "title": "Sheppey to Meters",
   "locale": "en",
   "inputs": [
     {
-      "name": "meters",
-      "label": "Meters",
+      "name": "shep",
+      "label": "Sheppeys",
       "type": "number",
-      "step": "any",
       "placeholder": "1"
     }
   ],
-  "expression": "meters * 3.28084",
-  "intro": "Convert meters to feet instantly.",
+  "expression": "shep * 1400",
+  "intro": "Convert sheppeys into meters.",
   "examples": [
     {
-      "description": "2 m ⇒ 6.56168 ft"
+      "description": "1 sheppey ⇒ 1400 m"
     }
   ],
   "faqs": [
     {
-      "question": "How precise is this conversion?",
-      "answer": "It uses the exact factor of 3.28084 feet per meter."
+      "question": "What's a sheppey?",
+      "answer": "A whimsical unit equal to about 1.4 km—the distance at which sheep remain picturesque."
     }
   ],
   "disclaimer": "Educational information, not professional advice.",
@@ -39,10 +38,10 @@ export const schema = {
   "related": [
     "celsius-to-fahrenheit",
     "km-to-miles",
+    "meters-to-feet",
     "smoots-to-meters",
     "hogsheads-to-liters",
-    "furlongs-per-fortnight",
-    "banana-dose-converter"
+    "furlongs-per-fortnight"
   ]
 }
 
@@ -50,14 +49,14 @@ export const schema = {
 
 ## Examples
 
-- 2 m ⇒ 6.56168 ft
+- 1 sheppey ⇒ 1400 m
 
 ## Related calculators
 
 - [Celsius To Fahrenheit](/calculators/celsius-to-fahrenheit/)
 - [Km To Miles](/calculators/km-to-miles/)
+- [Meters To Feet](/calculators/meters-to-feet/)
 - [Smoots To Meters](/calculators/smoots-to-meters/)
 - [Hogsheads To Liters](/calculators/hogsheads-to-liters/)
 - [Furlongs Per Fortnight](/calculators/furlongs-per-fortnight/)
-- [Banana Dose Converter](/calculators/banana-dose-converter/)
 

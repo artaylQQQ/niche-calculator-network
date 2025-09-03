@@ -1,0 +1,63 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Mars Sol to Earth Days"
+description: "Convert Martian sols into Earth days."
+date: 2025-09-03
+updated: 2025-09-03
+cluster: "Date & Time"
+---
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "mars-sol-to-earth-days",
+  "title": "Mars Sol to Earth Days",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "sols",
+      "label": "Sols",
+      "type": "number",
+      "step": "any",
+      "placeholder": "3"
+    }
+  ],
+  "expression": "sols * 1.027491",
+  "intro": "Convert Martian sols into Earth days.",
+  "examples": [
+    {
+      "description": "3 sols ⇒ 3.0825 Earth days"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "What is a sol?",
+      "answer": "A sol is a Martian day lasting about 24 hours 39 minutes."
+    }
+  ],
+  "disclaimer": "Educational information, not professional advice.",
+  "cluster": "Date & Time",
+  "related": [
+    "duration-seconds",
+    "days-to-hours",
+    "microfortnight-to-seconds",
+    "pomodoro-planner",
+    "earth-years-to-mars-years",
+    "jiffies-to-seconds"
+  ]
+}
+
+<Calculator schema={schema} />
+
+## Examples
+
+- 3 sols ⇒ 3.0825 Earth days
+
+## Related calculators
+
+- [Duration Seconds](/calculators/duration-seconds/)
+- [Days To Hours](/calculators/days-to-hours/)
+- [Microfortnight To Seconds](/calculators/microfortnight-to-seconds/)
+- [Pomodoro Planner](/calculators/pomodoro-planner/)
+- [Earth Years To Mars Years](/calculators/earth-years-to-mars-years/)
+- [Jiffies To Seconds](/calculators/jiffies-to-seconds/)
+

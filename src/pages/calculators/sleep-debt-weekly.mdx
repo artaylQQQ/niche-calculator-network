@@ -1,0 +1,63 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Sleep Debt Weekly"
+description: "Estimate weekly sleep debt from average nightly rest."
+date: 2025-09-03
+updated: 2025-09-03
+cluster: "Health"
+---
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "sleep-debt-weekly",
+  "title": "Sleep Debt Weekly",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "hours",
+      "label": "Average hours per night",
+      "type": "number",
+      "step": "any",
+      "placeholder": "6"
+    }
+  ],
+  "expression": "(8 - hours) * 7",
+  "intro": "Estimate weekly sleep debt from average nightly rest.",
+  "examples": [
+    {
+      "description": "6 h/night ⇒ 14 h debt"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "What if result is negative?",
+      "answer": "Negative means you exceed the 8‑hour recommendation."
+    }
+  ],
+  "disclaimer": "Educational information, not professional advice.",
+  "cluster": "Health",
+  "related": [
+    "bmi-calculator",
+    "daily-calorie-burn",
+    "sugar-cube-equivalent",
+    "caffeine-half-life",
+    "protein-calorie-percentage",
+    "bmi-prime"
+  ]
+}
+
+<Calculator schema={schema} />
+
+## Examples
+
+- 6 h/night ⇒ 14 h debt
+
+## Related calculators
+
+- [Bmi Calculator](/calculators/bmi-calculator/)
+- [Daily Calorie Burn](/calculators/daily-calorie-burn/)
+- [Sugar Cube Equivalent](/calculators/sugar-cube-equivalent/)
+- [Caffeine Half Life](/calculators/caffeine-half-life/)
+- [Protein Calorie Percentage](/calculators/protein-calorie-percentage/)
+- [Bmi Prime](/calculators/bmi-prime/)
+

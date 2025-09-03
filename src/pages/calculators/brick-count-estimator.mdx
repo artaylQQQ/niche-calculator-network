@@ -1,0 +1,75 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Brick Count Estimator"
+description: "Estimate number of bricks for a wall."
+date: 2025-09-03
+updated: 2025-09-03
+cluster: "Home & DIY"
+---
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "brick-count-estimator",
+  "title": "Brick Count Estimator",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "area",
+      "label": "Wall area (m²)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "10"
+    },
+    {
+      "name": "length",
+      "label": "Brick length (cm)",
+      "type": "number",
+      "placeholder": "20"
+    },
+    {
+      "name": "height",
+      "label": "Brick height (cm)",
+      "type": "number",
+      "placeholder": "6"
+    }
+  ],
+  "expression": "area / (length * height / 10000)",
+  "intro": "Estimate number of bricks for a wall.",
+  "examples": [
+    {
+      "description": "10 m² wall, 20×6 cm bricks ⇒ ~833 bricks"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Does this include mortar gaps?",
+      "answer": "No, add extra bricks for mortar and waste."
+    }
+  ],
+  "disclaimer": "Educational information, not professional advice.",
+  "cluster": "Home & DIY",
+  "related": [
+    "paint-coverage",
+    "garden-soil-volume",
+    "home-diy-division-calculator",
+    "rainwater-harvest",
+    "garden-soil-weight",
+    "rain-barrel-fill-time"
+  ]
+}
+
+<Calculator schema={schema} />
+
+## Examples
+
+- 10 m² wall, 20×6 cm bricks ⇒ ~833 bricks
+
+## Related calculators
+
+- [Paint Coverage](/calculators/paint-coverage/)
+- [Garden Soil Volume](/calculators/garden-soil-volume/)
+- [Home Diy Division Calculator](/calculators/home-diy-division-calculator/)
+- [Rainwater Harvest](/calculators/rainwater-harvest/)
+- [Garden Soil Weight](/calculators/garden-soil-weight/)
+- [Rain Barrel Fill Time](/calculators/rain-barrel-fill-time/)
+

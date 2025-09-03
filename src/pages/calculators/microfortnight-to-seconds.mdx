@@ -1,0 +1,63 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Microfortnight to Seconds"
+description: "Convert microfortnights into seconds."
+date: 2025-09-03
+updated: 2025-09-03
+cluster: "Date & Time"
+---
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "microfortnight-to-seconds",
+  "title": "Microfortnight to Seconds",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "mf",
+      "label": "Microfortnights",
+      "type": "number",
+      "step": "any",
+      "placeholder": "10"
+    }
+  ],
+  "expression": "mf * 1.2096",
+  "intro": "Convert microfortnights into seconds.",
+  "examples": [
+    {
+      "description": "10 µfortnights ⇒ 12.096 s"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Why microfortnights?",
+      "answer": "They are a humorous unit equal to 1.2096 seconds."
+    }
+  ],
+  "disclaimer": "Educational information, not professional advice.",
+  "cluster": "Date & Time",
+  "related": [
+    "duration-seconds",
+    "days-to-hours",
+    "mars-sol-to-earth-days",
+    "pomodoro-planner",
+    "earth-years-to-mars-years",
+    "jiffies-to-seconds"
+  ]
+}
+
+<Calculator schema={schema} />
+
+## Examples
+
+- 10 µfortnights ⇒ 12.096 s
+
+## Related calculators
+
+- [Duration Seconds](/calculators/duration-seconds/)
+- [Days To Hours](/calculators/days-to-hours/)
+- [Mars Sol To Earth Days](/calculators/mars-sol-to-earth-days/)
+- [Pomodoro Planner](/calculators/pomodoro-planner/)
+- [Earth Years To Mars Years](/calculators/earth-years-to-mars-years/)
+- [Jiffies To Seconds](/calculators/jiffies-to-seconds/)
+

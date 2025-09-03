@@ -1,0 +1,62 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Ping Distance Estimator"
+description: "Approximate signal distance from round-trip ping time."
+date: 2025-09-03
+updated: 2025-09-03
+cluster: "Technology"
+---
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "ping-distance-estimator",
+  "title": "Ping Distance Estimator",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "ping",
+      "label": "Ping (ms)",
+      "type": "number",
+      "placeholder": "50"
+    }
+  ],
+  "expression": "ping / 1000 * 299792.458 / 2",
+  "intro": "Approximate signal distance from round-trip ping time.",
+  "examples": [
+    {
+      "description": "50 ms ⇒ ~7494 km"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Why divide by two?",
+      "answer": "Ping measures round-trip time, so distance is half."
+    }
+  ],
+  "disclaimer": "Educational information, not professional advice.",
+  "cluster": "Technology",
+  "related": [
+    "download-time",
+    "storage-redundancy-overhead",
+    "battery-life-estimator",
+    "cpu-power-to-current",
+    "bandwidth-delay-product",
+    "screen-ppi-calculator"
+  ]
+}
+
+<Calculator schema={schema} />
+
+## Examples
+
+- 50 ms ⇒ ~7494 km
+
+## Related calculators
+
+- [Download Time](/calculators/download-time/)
+- [Storage Redundancy Overhead](/calculators/storage-redundancy-overhead/)
+- [Battery Life Estimator](/calculators/battery-life-estimator/)
+- [Cpu Power To Current](/calculators/cpu-power-to-current/)
+- [Bandwidth Delay Product](/calculators/bandwidth-delay-product/)
+- [Screen Ppi Calculator](/calculators/screen-ppi-calculator/)
+

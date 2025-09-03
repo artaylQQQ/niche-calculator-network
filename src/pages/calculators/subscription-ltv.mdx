@@ -1,0 +1,68 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Subscription Lifetime Value"
+description: "Compute lifetime value of a subscription."
+date: 2025-09-03
+updated: 2025-09-03
+cluster: "Finance"
+---
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "subscription-ltv",
+  "title": "Subscription Lifetime Value",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "fee",
+      "label": "Monthly fee ($)",
+      "type": "number",
+      "placeholder": "20"
+    },
+    {
+      "name": "months",
+      "label": "Retention (months)",
+      "type": "number",
+      "placeholder": "12"
+    }
+  ],
+  "expression": "fee * months",
+  "intro": "Compute lifetime value of a subscription.",
+  "examples": [
+    {
+      "description": "$20 for 12 months ⇒ $240 LTV"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Does this include churn?",
+      "answer": "Use average retention to account for churn."
+    }
+  ],
+  "disclaimer": "Educational information, not professional advice.",
+  "cluster": "Finance",
+  "related": [
+    "percentage-discount",
+    "simple-interest",
+    "crypto-mining-breakeven",
+    "freelancer-hourly-rate",
+    "emergency-fund-duration",
+    "fire-number"
+  ]
+}
+
+<Calculator schema={schema} />
+
+## Examples
+
+- $20 for 12 months ⇒ $240 LTV
+
+## Related calculators
+
+- [Percentage Discount](/calculators/percentage-discount/)
+- [Simple Interest](/calculators/simple-interest/)
+- [Crypto Mining Breakeven](/calculators/crypto-mining-breakeven/)
+- [Freelancer Hourly Rate](/calculators/freelancer-hourly-rate/)
+- [Emergency Fund Duration](/calculators/emergency-fund-duration/)
+- [Fire Number](/calculators/fire-number/)
+

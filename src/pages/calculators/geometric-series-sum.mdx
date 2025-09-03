@@ -1,0 +1,75 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Geometric Series Sum"
+description: "Sum of the first n terms of a geometric series."
+date: 2025-09-03
+updated: 2025-09-03
+cluster: "Math"
+---
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "geometric-series-sum",
+  "title": "Geometric Series Sum",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "a1",
+      "label": "First term",
+      "type": "number",
+      "placeholder": "2"
+    },
+    {
+      "name": "r",
+      "label": "Ratio",
+      "type": "number",
+      "step": "any",
+      "placeholder": "0.5"
+    },
+    {
+      "name": "n",
+      "label": "Number of terms",
+      "type": "number",
+      "placeholder": "4"
+    }
+  ],
+  "expression": "a1 * (1 - r ^ n) / (1 - r)",
+  "intro": "Sum of the first n terms of a geometric series.",
+  "examples": [
+    {
+      "description": "a1=2, r=0.5, n=4 ⇒ 3.75"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "What if r=1?",
+      "answer": "The sum is simply first term times n."
+    }
+  ],
+  "disclaimer": "Educational information, not professional advice.",
+  "cluster": "Math",
+  "related": [
+    "percentage-increase",
+    "circle-area",
+    "pythagorean-theorem-calculator",
+    "circumference-from-area",
+    "triangle-inradius",
+    "triangle-area-heron"
+  ]
+}
+
+<Calculator schema={schema} />
+
+## Examples
+
+- a1=2, r=0.5, n=4 ⇒ 3.75
+
+## Related calculators
+
+- [Percentage Increase](/calculators/percentage-increase/)
+- [Circle Area](/calculators/circle-area/)
+- [Pythagorean Theorem Calculator](/calculators/pythagorean-theorem-calculator/)
+- [Circumference From Area](/calculators/circumference-from-area/)
+- [Triangle Inradius](/calculators/triangle-inradius/)
+- [Triangle Area Heron](/calculators/triangle-area-heron/)
+

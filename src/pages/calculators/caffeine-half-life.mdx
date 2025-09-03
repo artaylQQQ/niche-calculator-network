@@ -1,0 +1,68 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Caffeine Half-Life"
+description: "Estimate remaining caffeine over time."
+date: 2025-09-03
+updated: 2025-09-03
+cluster: "Health"
+---
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "caffeine-half-life",
+  "title": "Caffeine Half-Life",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "mg",
+      "label": "Initial caffeine (mg)",
+      "type": "number",
+      "placeholder": "200"
+    },
+    {
+      "name": "hrs",
+      "label": "Hours elapsed",
+      "type": "number",
+      "placeholder": "5"
+    }
+  ],
+  "expression": "mg * (0.5 ^ (hrs / 5))",
+  "intro": "Estimate remaining caffeine over time.",
+  "examples": [
+    {
+      "description": "200 mg after 5 h ⇒ 100 mg"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "What half-life is assumed?",
+      "answer": "This uses an average half-life of 5 hours."
+    }
+  ],
+  "disclaimer": "Educational information, not professional advice.",
+  "cluster": "Health",
+  "related": [
+    "bmi-calculator",
+    "daily-calorie-burn",
+    "sleep-debt-weekly",
+    "sugar-cube-equivalent",
+    "protein-calorie-percentage",
+    "bmi-prime"
+  ]
+}
+
+<Calculator schema={schema} />
+
+## Examples
+
+- 200 mg after 5 h ⇒ 100 mg
+
+## Related calculators
+
+- [Bmi Calculator](/calculators/bmi-calculator/)
+- [Daily Calorie Burn](/calculators/daily-calorie-burn/)
+- [Sleep Debt Weekly](/calculators/sleep-debt-weekly/)
+- [Sugar Cube Equivalent](/calculators/sugar-cube-equivalent/)
+- [Protein Calorie Percentage](/calculators/protein-calorie-percentage/)
+- [Bmi Prime](/calculators/bmi-prime/)
+

@@ -1,0 +1,74 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Triangle Area (Heron's Formula)"
+description: "Area of a triangle from three sides using Heron's formula."
+date: 2025-09-03
+updated: 2025-09-03
+cluster: "Math"
+---
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "triangle-area-heron",
+  "title": "Triangle Area (Heron's Formula)",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "a",
+      "label": "Side a",
+      "type": "number",
+      "placeholder": "3"
+    },
+    {
+      "name": "b",
+      "label": "Side b",
+      "type": "number",
+      "placeholder": "4"
+    },
+    {
+      "name": "c",
+      "label": "Side c",
+      "type": "number",
+      "placeholder": "5"
+    }
+  ],
+  "expression": "(((a + b + c)/2) * ((a + b + c)/2 - a) * ((a + b + c)/2 - b) * ((a + b + c)/2 - c))^(0.5)",
+  "intro": "Area of a triangle from three sides using Heron's formula.",
+  "examples": [
+    {
+      "description": "3,4,5 ⇒ 6"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "When is Heron's formula useful?",
+      "answer": "When you know all sides but not the height."
+    }
+  ],
+  "disclaimer": "Educational information, not professional advice.",
+  "cluster": "Math",
+  "related": [
+    "percentage-increase",
+    "circle-area",
+    "pythagorean-theorem-calculator",
+    "geometric-series-sum",
+    "circumference-from-area",
+    "triangle-inradius"
+  ]
+}
+
+<Calculator schema={schema} />
+
+## Examples
+
+- 3,4,5 ⇒ 6
+
+## Related calculators
+
+- [Percentage Increase](/calculators/percentage-increase/)
+- [Circle Area](/calculators/circle-area/)
+- [Pythagorean Theorem Calculator](/calculators/pythagorean-theorem-calculator/)
+- [Geometric Series Sum](/calculators/geometric-series-sum/)
+- [Circumference From Area](/calculators/circumference-from-area/)
+- [Triangle Inradius](/calculators/triangle-inradius/)
+

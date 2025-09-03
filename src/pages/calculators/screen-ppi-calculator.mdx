@@ -1,0 +1,74 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Screen PPI Calculator"
+description: "Pixels per inch from resolution and diagonal size."
+date: 2025-09-03
+updated: 2025-09-03
+cluster: "Technology"
+---
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "screen-ppi-calculator",
+  "title": "Screen PPI Calculator",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "width",
+      "label": "Width (px)",
+      "type": "number",
+      "placeholder": "1920"
+    },
+    {
+      "name": "height",
+      "label": "Height (px)",
+      "type": "number",
+      "placeholder": "1080"
+    },
+    {
+      "name": "diagonal",
+      "label": "Diagonal (inches)",
+      "type": "number",
+      "placeholder": "24"
+    }
+  ],
+  "expression": "((width^2 + height^2)^(0.5)) / diagonal",
+  "intro": "Pixels per inch from resolution and diagonal size.",
+  "examples": [
+    {
+      "description": "1920×1080 at 24\" ⇒ ~92 PPI"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "What does PPI mean?",
+      "answer": "Pixels per inch indicates display sharpness."
+    }
+  ],
+  "disclaimer": "Educational information, not professional advice.",
+  "cluster": "Technology",
+  "related": [
+    "download-time",
+    "storage-redundancy-overhead",
+    "battery-life-estimator",
+    "cpu-power-to-current",
+    "bandwidth-delay-product",
+    "ping-distance-estimator"
+  ]
+}
+
+<Calculator schema={schema} />
+
+## Examples
+
+- 1920×1080 at 24" ⇒ ~92 PPI
+
+## Related calculators
+
+- [Download Time](/calculators/download-time/)
+- [Storage Redundancy Overhead](/calculators/storage-redundancy-overhead/)
+- [Battery Life Estimator](/calculators/battery-life-estimator/)
+- [Cpu Power To Current](/calculators/cpu-power-to-current/)
+- [Bandwidth Delay Product](/calculators/bandwidth-delay-product/)
+- [Ping Distance Estimator](/calculators/ping-distance-estimator/)
+

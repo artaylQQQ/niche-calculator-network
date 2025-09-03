@@ -1,0 +1,74 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Pomodoro Session Duration"
+description: "Estimate total time for a Pomodoro session set."
+date: 2025-09-03
+updated: 2025-09-03
+cluster: "Date & Time"
+---
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "pomodoro-planner",
+  "title": "Pomodoro Session Duration",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "s",
+      "label": "Sessions",
+      "type": "number",
+      "placeholder": "4"
+    },
+    {
+      "name": "f",
+      "label": "Focus minutes",
+      "type": "number",
+      "placeholder": "25"
+    },
+    {
+      "name": "b",
+      "label": "Break minutes",
+      "type": "number",
+      "placeholder": "5"
+    }
+  ],
+  "expression": "s * f + (s - 1) * b",
+  "intro": "Estimate total time for a Pomodoro session set.",
+  "examples": [
+    {
+      "description": "4 sessions ⇒ 110 minutes"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Why subtract one break?",
+      "answer": "The final session usually has no break afterward."
+    }
+  ],
+  "disclaimer": "Educational information, not professional advice.",
+  "cluster": "Date & Time",
+  "related": [
+    "duration-seconds",
+    "days-to-hours",
+    "mars-sol-to-earth-days",
+    "microfortnight-to-seconds",
+    "earth-years-to-mars-years",
+    "jiffies-to-seconds"
+  ]
+}
+
+<Calculator schema={schema} />
+
+## Examples
+
+- 4 sessions ⇒ 110 minutes
+
+## Related calculators
+
+- [Duration Seconds](/calculators/duration-seconds/)
+- [Days To Hours](/calculators/days-to-hours/)
+- [Mars Sol To Earth Days](/calculators/mars-sol-to-earth-days/)
+- [Microfortnight To Seconds](/calculators/microfortnight-to-seconds/)
+- [Earth Years To Mars Years](/calculators/earth-years-to-mars-years/)
+- [Jiffies To Seconds](/calculators/jiffies-to-seconds/)
+

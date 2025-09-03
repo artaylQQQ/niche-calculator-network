@@ -1,0 +1,62 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Loss Recovery Percentage"
+description: "Find the gain needed to recover from a portfolio drop."
+date: 2025-09-03
+updated: 2025-09-03
+cluster: "Finance"
+---
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "loss-recovery-percentage",
+  "title": "Loss Recovery Percentage",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "loss",
+      "label": "Loss (%)",
+      "type": "number",
+      "placeholder": "25"
+    }
+  ],
+  "expression": "(100/(100 - loss) - 1) * 100",
+  "intro": "Find the gain needed to recover from a portfolio drop.",
+  "examples": [
+    {
+      "description": "A 25% drop needs ≈33.33% gain"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Why is the required gain higher?",
+      "answer": "Because gains and losses are based on different starting amounts."
+    }
+  ],
+  "disclaimer": "Educational information, not professional advice.",
+  "cluster": "Finance",
+  "related": [
+    "percentage-discount",
+    "simple-interest",
+    "crypto-mining-breakeven",
+    "freelancer-hourly-rate",
+    "subscription-ltv",
+    "emergency-fund-duration"
+  ]
+}
+
+<Calculator schema={schema} />
+
+## Examples
+
+- A 25% drop needs ≈33.33% gain
+
+## Related calculators
+
+- [Percentage Discount](/calculators/percentage-discount/)
+- [Simple Interest](/calculators/simple-interest/)
+- [Crypto Mining Breakeven](/calculators/crypto-mining-breakeven/)
+- [Freelancer Hourly Rate](/calculators/freelancer-hourly-rate/)
+- [Subscription Ltv](/calculators/subscription-ltv/)
+- [Emergency Fund Duration](/calculators/emergency-fund-duration/)
+

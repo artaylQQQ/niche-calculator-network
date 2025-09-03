@@ -1,0 +1,68 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Emergency Fund Duration"
+description: "Estimate how many months your savings can cover expenses."
+date: 2025-09-03
+updated: 2025-09-03
+cluster: "Finance"
+---
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "emergency-fund-duration",
+  "title": "Emergency Fund Duration",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "savings",
+      "label": "Savings ($)",
+      "type": "number",
+      "placeholder": "5000"
+    },
+    {
+      "name": "monthly",
+      "label": "Monthly expenses ($)",
+      "type": "number",
+      "placeholder": "1500"
+    }
+  ],
+  "expression": "savings / monthly",
+  "intro": "Estimate how many months your savings can cover expenses.",
+  "examples": [
+    {
+      "description": "$5000 and $1500 expenses ⇒ 3.33 months"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Does it include income?",
+      "answer": "No, it only divides savings by monthly expenses."
+    }
+  ],
+  "disclaimer": "Educational information, not professional advice.",
+  "cluster": "Finance",
+  "related": [
+    "percentage-discount",
+    "simple-interest",
+    "crypto-mining-breakeven",
+    "freelancer-hourly-rate",
+    "subscription-ltv",
+    "fire-number"
+  ]
+}
+
+<Calculator schema={schema} />
+
+## Examples
+
+- $5000 and $1500 expenses ⇒ 3.33 months
+
+## Related calculators
+
+- [Percentage Discount](/calculators/percentage-discount/)
+- [Simple Interest](/calculators/simple-interest/)
+- [Crypto Mining Breakeven](/calculators/crypto-mining-breakeven/)
+- [Freelancer Hourly Rate](/calculators/freelancer-hourly-rate/)
+- [Subscription Ltv](/calculators/subscription-ltv/)
+- [Fire Number](/calculators/fire-number/)
+

@@ -1,0 +1,68 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "SSD Lifespan in Years"
+description: "Estimate years until rated endurance is reached."
+date: 2025-09-03
+updated: 2025-09-03
+cluster: "Technology"
+---
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "ssd-lifespan-years",
+  "title": "SSD Lifespan in Years",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "tbw",
+      "label": "TBW rating (TB)",
+      "type": "number",
+      "placeholder": "600"
+    },
+    {
+      "name": "daily",
+      "label": "Daily writes (GB)",
+      "type": "number",
+      "placeholder": "50"
+    }
+  ],
+  "expression": "tbw * 1000 / (daily * 365)",
+  "intro": "Estimate years until rated endurance is reached.",
+  "examples": [
+    {
+      "description": "600 TBW with 50 GB/day ⇒ 32.9 years"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "What is TBW?",
+      "answer": "Terabytes written—an endurance rating for SSDs."
+    }
+  ],
+  "disclaimer": "Educational information, not professional advice.",
+  "cluster": "Technology",
+  "related": [
+    "download-time",
+    "storage-redundancy-overhead",
+    "battery-life-estimator",
+    "cpu-power-to-current",
+    "bandwidth-delay-product",
+    "ping-distance-estimator"
+  ]
+}
+
+<Calculator schema={schema} />
+
+## Examples
+
+- 600 TBW with 50 GB/day ⇒ 32.9 years
+
+## Related calculators
+
+- [Download Time](/calculators/download-time/)
+- [Storage Redundancy Overhead](/calculators/storage-redundancy-overhead/)
+- [Battery Life Estimator](/calculators/battery-life-estimator/)
+- [Cpu Power To Current](/calculators/cpu-power-to-current/)
+- [Bandwidth Delay Product](/calculators/bandwidth-delay-product/)
+- [Ping Distance Estimator](/calculators/ping-distance-estimator/)
+

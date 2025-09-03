@@ -1,0 +1,83 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Garden Soil Weight"
+description: "Calculate soil weight for a garden bed."
+date: 2025-09-03
+updated: 2025-09-03
+cluster: "Home & DIY"
+---
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "garden-soil-weight",
+  "title": "Garden Soil Weight",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "length",
+      "label": "Length (m)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "2"
+    },
+    {
+      "name": "width",
+      "label": "Width (m)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "1"
+    },
+    {
+      "name": "depth",
+      "label": "Depth (m)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "0.5"
+    },
+    {
+      "name": "density",
+      "label": "Soil density (kg/m³)",
+      "type": "number",
+      "placeholder": "1200"
+    }
+  ],
+  "expression": "length * width * depth * density",
+  "intro": "Calculate soil weight for a garden bed.",
+  "examples": [
+    {
+      "description": "2×1×0.5 m at 1200 kg/m³ ⇒ 1200 kg"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Why approximate density?",
+      "answer": "Different soils vary; 1200 kg/m³ is a common average."
+    }
+  ],
+  "disclaimer": "Educational information, not professional advice.",
+  "cluster": "Home & DIY",
+  "related": [
+    "paint-coverage",
+    "garden-soil-volume",
+    "home-diy-division-calculator",
+    "rainwater-harvest",
+    "brick-count-estimator",
+    "rain-barrel-fill-time"
+  ]
+}
+
+<Calculator schema={schema} />
+
+## Examples
+
+- 2×1×0.5 m at 1200 kg/m³ ⇒ 1200 kg
+
+## Related calculators
+
+- [Paint Coverage](/calculators/paint-coverage/)
+- [Garden Soil Volume](/calculators/garden-soil-volume/)
+- [Home Diy Division Calculator](/calculators/home-diy-division-calculator/)
+- [Rainwater Harvest](/calculators/rainwater-harvest/)
+- [Brick Count Estimator](/calculators/brick-count-estimator/)
+- [Rain Barrel Fill Time](/calculators/rain-barrel-fill-time/)
+
