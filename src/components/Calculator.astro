@@ -132,7 +132,16 @@ const jsonLd = {
 <script type="application/ld+json" set:html={JSON.stringify(jsonLd)}></script>
 
 <style>
-  .calc { max-width: 720px; margin: 0 auto; padding: 8px; color: var(--ink); }
+  .calc {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 24px;
+    color: var(--ink);
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+  }
   h1 { margin: 0 0 8px; font-size: 28px; }
   .muted { color: var(--muted); margin: 0 0 16px; }
   .field { margin: 14px 0; }
@@ -141,29 +150,44 @@ const jsonLd = {
     width: 100%;
     padding: 10px 12px;
     border: 1px solid var(--border);
-    border-radius: 12px;
+    border-radius: var(--radius);
     background: var(--card);
     color: var(--ink);
+    box-shadow: var(--shadow);
   }
   .btn {
     display: inline-block;
     padding: 12px 16px;
-    border-radius: 12px;
+    border-radius: var(--radius);
     border: 0;
     background: var(--primary);
     color: var(--primary-ink);
     font-weight: 600;
     cursor: pointer;
+    box-shadow: var(--shadow);
   }
   .btn:hover{ filter:brightness(1.05); }
-  .result { margin-top: 16px; font-size: 18px; font-weight: 600; color: var(--ink); }
+  .result {
+    margin-top: 16px;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--ink);
+    background: var(--surface);
+    padding: 12px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+  }
   .examples,
   .faq,
   .related {
     max-width: 720px;
     margin: 24px auto 0;
-    padding: 8px;
+    padding: 16px;
     color: var(--ink);
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
   }
   .examples ul { margin: 8px 0 0 20px; }
   .faq details { margin: 8px 0; }
