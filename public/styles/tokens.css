@@ -1,9 +1,9 @@
 :root{
   /* Base tokens for light mode.  These values define the default
      backgrounds, surfaces and text colours used throughout the site. */
-  --bg:#ffffff;
+  --bg:#f7f7f7;
   --surface:#f2f2f2;
-  --text:#000000;
+  --text:#111111;
   --muted:#4b5563;
   /* Neutral palette combining soft greys */
   --neutral-sky:#e5e7eb;
@@ -15,6 +15,7 @@
   --ring:#0057B833;
   --radius:12px;
   --shadow:0 2px 4px rgba(0,0,0,.1),0 8px 16px rgba(0,0,0,.08);
+  --mustard-dark:#b8860b;
 }
 
 /*
@@ -39,6 +40,7 @@
     --primary: #0057B8;
     --accent: #FACC15;
     --accent-red: #DC2626;
+    --mustard-dark:#b8860b;
   }
 }
 
