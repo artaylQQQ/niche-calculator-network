@@ -32,8 +32,7 @@ const CATEGORIES = [
     <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
       {CATEGORIES.map((cat) => (
         <li>
-          <a href={`/categories/${cat.slug}/`}
-             class="group block rounded-xl border border-[var(--border)] bg-[var(--card)] p-4 shadow-sm hover:shadow-md hover:border-[var(--accent)] transition-all">
+          <a href={`/categories/${cat.slug}/`} class="card group">
             <div class="flex items-start gap-3">
               {/**
                * Provide meaningful alt text for icons to improve accessibility.
