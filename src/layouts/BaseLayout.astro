@@ -49,9 +49,12 @@ const cfToken = import.meta.env.VITE_CF_ANALYTICS_TOKEN;
           </svg>
         </button>
         <nav id="nav" class="hidden absolute top-full left-0 right-0 mx-4 mt-2 flex-col gap-2 bg-[var(--card)] border border-[var(--border)] rounded-md p-4 shadow-md sm:static sm:flex sm:flex-row sm:items-center sm:gap-4 sm:mx-0 sm:mt-0 sm:border-0 sm:p-0 sm:shadow-none" aria-label="Primary">
-          <a href="/traditional-calculator/" class={['nav-link', Astro.url.pathname.startsWith('/traditional-calculator') && 'active'].filter(Boolean).join(' ')}>Calculadora tradicional</a>
-          <a href="/all" class={['nav-link', Astro.url.pathname.startsWith('/all') && 'active'].filter(Boolean).join(' ')}>Todas las calculadoras</a>
+          <a href="/categories/" class="px-4 py-2 rounded-md font-semibold text-[var(--ink)] bg-[var(--surface)] hover:bg-[var(--neutral-sky)]">Categories</a>
+          <a href="/all" class="px-4 py-2 rounded-md font-semibold text-[var(--ink)] bg-[var(--surface)] hover:bg-[var(--neutral-sky)]">All Calculators</a>
         </nav>
+      </div>
+      <div class="container">
+        <a href="/traditional-calculator/" class="inline-block bg-[#E03B32] text-white font-bold py-3 px-6 rounded-lg my-4 hover:bg-[#C9302C] hover:shadow">Traditional Calculator</a>
       </div>
     </header>
     <main class="container" id="main" role="main">
