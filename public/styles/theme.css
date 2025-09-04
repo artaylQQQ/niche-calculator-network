@@ -1,19 +1,20 @@
 :root {
   /*
     Equilibrio Moderno: a neutral foundation with vibrant accents.
-    The base relies on black, grey and white tones to keep content
-    legible, while blue and red provide primary emphasis and yellow
-    adds secondary highlights.
+    The base relies on white and light grey to keep content legible,
+    while red drives primary actions, blue marks links and active
+    states, and yellow provides subtle highlights.
   */
   --bg: #ffffff;
-  --surface: #f2f2f2;
-  --ink: #000000;
-  --muted: #4b5563;
+  --surface: #f5f5f5;
+  --ink: #374151; /* Dark grey text */
+  --heading: #000000; /* Black headings */
+  --muted: #6b7280;
   --neutral-sky: #e5e7eb;
   --neutral-warm: #f5f5f4;
-  --primary: #0057b8;
-  --accent: #facc15;
-  --accent-red: #dc2626;
+  --primary: #dc2626; /* Red for primary actions */
+  --secondary: #0057b8; /* Blue for links and active states */
+  --accent: #facc15; /* Yellow accent */
   --primary-ink: #ffffff;
   --card: #ffffff;
   --border: #e5e7eb;
@@ -41,12 +42,13 @@
     --bg: #0a0a0a;
     --surface: #1a1a1a;
     --ink: #f5f5f5;
+    --heading: #ffffff;
     --muted: #9ca3af;
     --neutral-sky: #1a1a1a;
     --neutral-warm: #262626;
-    --primary: #0057b8;
+    --primary: #dc2626;
+    --secondary: #0057b8;
     --accent: #facc15;
-    --accent-red: #dc2626;
     --primary-ink: #ffffff;
     --card: #1a1a1a;
     --border: #374151;
@@ -70,14 +72,18 @@ body {
 h1,
 h2,
 h3 {
-  color: var(--primary);
+  color: var(--heading);
 }
 a {
-  color: var(--primary);
+  color: var(--secondary);
   text-decoration: none;
 }
-a:hover {
-  color: var(--accent-red);
+a:hover,
+a:focus {
+  color: var(--secondary);
+  text-decoration: underline;
+  outline: 2px solid var(--secondary);
+  outline-offset: 2px;
 }
 body {
   padding-top: 72px;
@@ -104,22 +110,28 @@ body {
   display: inline-block;
   padding: 8px 12px;
   font-weight: 600;
-  color: var(--ink);
+  color: var(--secondary);
   background: var(--card);
   border-radius: 4px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
   text-align: center;
-  transition: background 0.2s, box-shadow 0.2s, color 0.2s;
+  transition:
+    background 0.2s,
+    box-shadow 0.2s,
+    color 0.2s;
 }
 .nav-link:hover,
-.nav-link:focus {
+.nav-link:focus,
+.nav-link.active {
   color: #fff;
   font-weight: 700;
-  background: #1e3a8a;
+  background: var(--secondary);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  outline: 2px solid var(--secondary);
+  outline-offset: 2px;
 }
 .nav-link.traditional {
-  background: #dc2626;
+  background: var(--primary);
   color: #fff;
   font-weight: 700;
 }
@@ -244,6 +256,7 @@ ul.grid li {
   outline: 2px solid var(--accent);
   outline-offset: 1px;
 }
+.btn,
 .btn-primary {
   background: var(--primary);
   color: var(--primary-ink);
@@ -254,8 +267,34 @@ ul.grid li {
   cursor: pointer;
   box-shadow: var(--shadow);
 }
-.btn-primary:hover {
+.btn:hover,
+.btn:focus,
+.btn-primary:hover,
+.btn-primary:focus {
   filter: brightness(1.05);
+}
+.btn:focus,
+.btn-primary:focus {
+  outline: 2px solid var(--secondary);
+  outline-offset: 2px;
+}
+.btn-secondary {
+  background: var(--secondary);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  padding: 12px 16px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+}
+.btn-secondary:hover,
+.btn-secondary:focus {
+  filter: brightness(1.05);
+}
+.btn-secondary:focus {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
 }
 .faq summary {
   cursor: pointer;
@@ -275,4 +314,13 @@ footer .links a {
 footer .links a:hover {
   text-decoration: underline;
   color: var(--accent);
+}
+
+.badge {
+  display: inline-block;
+  background: var(--accent);
+  color: #000;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 4px;
 }
