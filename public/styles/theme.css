@@ -93,12 +93,40 @@ body {
   left: 0;
   width: 100%;
   background: var(--card);
-  border-bottom: 1px solid var(--border);
+  border-bottom: 3px solid #E0E0E0;
   z-index: 50;
   box-shadow: var(--shadow);
 }
 .header a {
   text-decoration: none;
+}
+.header-btn {
+  display: inline-block;
+  padding: 8px 12px;
+  font-weight: 600;
+  background: var(--surface);
+  color: var(--ink);
+  border-radius: 8px;
+}
+.header-btn:hover,
+.header-btn:focus {
+  background: var(--neutral-sky);
+}
+.traditional-btn {
+  display: inline-block;
+  padding: 8px 12px;
+  font-weight: 700;
+  background: #E03B32;
+  color: #FFFFFF;
+  border-radius: 8px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.traditional-btn:hover,
+.traditional-btn:focus {
+  background: #1E3A8A;
+  color: #FFFFFF;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 .nav-link {
   display: inline-block;
