@@ -200,14 +200,19 @@ const jsonLd = {
     transition: background 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
   }
   .result:not(:empty) {
-    background: #b8860b;
     color: #ffffff;
     box-shadow: var(--shadow);
     opacity: 1;
     font-weight: 700;
   }
+  .result[data-state="success"] {
+    background: #16a34a;
+  }
+  .result[data-state="error"] {
+    background: #dc2626;
+  }
   .result .icon {
-    font-size: 1.2em;
+    font-size: 1.5em;
   }
   .examples,
   .faq,
@@ -302,7 +307,7 @@ const jsonLd = {
     }
 
     function showMessage(type, msg) {
-      const icon = type === 'error' ? '⚠️' : '✔️';
+      const icon = type === 'error' ? '⚠️' : '🎉';
       resultEl.innerHTML = `<span class="icon" aria-hidden="true">${icon}</span><span>${msg}</span>`;
       resultEl.dataset.state = type;
       resultEl.setAttribute('role', type === 'error' ? 'alert' : 'status');
