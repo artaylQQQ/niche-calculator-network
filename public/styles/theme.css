@@ -105,14 +105,23 @@ body {
   padding: 8px 12px;
   font-weight: 600;
   color: var(--ink);
-  border-bottom: 2px solid transparent;
+  background: var(--card);
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  transition: background 0.2s, box-shadow 0.2s, color 0.2s;
 }
 .nav-link:hover,
 .nav-link:focus {
-  color: var(--accent);
+  color: #fff;
+  font-weight: 700;
+  background: #1e3a8a;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
-.nav-link.active {
-  border-bottom-color: var(--accent);
+.nav-link.traditional {
+  background: #dc2626;
+  color: #fff;
+  font-weight: 700;
 }
 @media (max-width: 640px) {
   footer .links {
