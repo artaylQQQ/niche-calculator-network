@@ -1,0 +1,48 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Sidereal Day to Hours"
+description: "Convert sidereal days into Earth hours."
+date: 2025-09-04
+updated: 2025-09-04
+cluster: "Date & Time"
+---
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "sidereal-day-to-hours",
+  "title": "Sidereal Day to Hours",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "sidereal",
+      "label": "Sidereal days",
+      "type": "number",
+      "placeholder": "1"
+    }
+  ],
+  "expression": "sidereal * 23.9344696",
+  "intro": "Convert sidereal days into Earth hours.",
+  "examples": [
+    {
+      "description": "1 sidereal day ⇒ 23.93 h"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Why shorter than 24h?",
+      "answer": "A sidereal day measures Earth's rotation relative to stars."
+    }
+  ],
+  "disclaimer": "Educational information, not professional advice.",
+  "cluster": "Date & Time",
+  "related": [
+    "duration-seconds",
+    "days-to-hours",
+    "mars-sol-to-earth-days",
+    "microfortnight-to-seconds",
+    "pomodoro-planner",
+    "earth-years-to-mars-years"
+  ]
+}
+
+<Calculator schema={schema} />

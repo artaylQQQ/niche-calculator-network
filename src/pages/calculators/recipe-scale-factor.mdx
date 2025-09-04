@@ -1,0 +1,54 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Recipe Scale Factor"
+description: "Multiplier to scale ingredient quantities."
+date: 2025-09-04
+updated: 2025-09-04
+cluster: "Everyday & Misc"
+---
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "recipe-scale-factor",
+  "title": "Recipe Scale Factor",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "original",
+      "label": "Original servings",
+      "type": "number",
+      "placeholder": "4"
+    },
+    {
+      "name": "desired",
+      "label": "Desired servings",
+      "type": "number",
+      "placeholder": "6"
+    }
+  ],
+  "expression": "desired / original",
+  "intro": "Multiplier to scale ingredient quantities.",
+  "examples": [
+    {
+      "description": "4 to 6 servings ⇒ factor 1.5"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Does it adjust cook time?",
+      "answer": "No, only ingredient quantities scale."
+    }
+  ],
+  "disclaimer": "Educational information, not professional advice.",
+  "cluster": "Everyday & Misc",
+  "related": [
+    "discount-calculator",
+    "discount-calculator-2",
+    "tip-calculator-2",
+    "coffee-to-water-ratio",
+    "reading-time-estimator",
+    "travel-budget-per-day"
+  ]
+}
+
+<Calculator schema={schema} />

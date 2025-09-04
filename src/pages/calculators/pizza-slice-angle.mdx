@@ -1,0 +1,48 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Pizza Slice Angle"
+description: "Degrees per slice of pizza."
+date: 2025-09-04
+updated: 2025-09-04
+cluster: "Everyday & Misc"
+---
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "pizza-slice-angle",
+  "title": "Pizza Slice Angle",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "slices",
+      "label": "Number of slices",
+      "type": "number",
+      "placeholder": "8"
+    }
+  ],
+  "expression": "360 / slices",
+  "intro": "Degrees per slice of pizza.",
+  "examples": [
+    {
+      "description": "8 slices ⇒ 45° each"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Works for any round pizza?",
+      "answer": "Yes, the angle depends only on slice count."
+    }
+  ],
+  "disclaimer": "Educational information, not professional advice.",
+  "cluster": "Everyday & Misc",
+  "related": [
+    "discount-calculator",
+    "discount-calculator-2",
+    "tip-calculator-2",
+    "coffee-to-water-ratio",
+    "reading-time-estimator",
+    "travel-budget-per-day"
+  ]
+}
+
+<Calculator schema={schema} />

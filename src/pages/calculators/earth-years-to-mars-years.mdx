@@ -1,0 +1,48 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Earth Years to Mars Years"
+description: "Convert Earth years into Martian years."
+date: 2025-09-04
+updated: 2025-09-04
+cluster: "Date & Time"
+---
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "earth-years-to-mars-years",
+  "title": "Earth Years to Mars Years",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "years",
+      "label": "Earth years",
+      "type": "number",
+      "placeholder": "5"
+    }
+  ],
+  "expression": "years / 1.8808",
+  "intro": "Convert Earth years into Martian years.",
+  "examples": [
+    {
+      "description": "5 Earth years ⇒ 2.66 Mars years"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "How long is a Mars year?",
+      "answer": "About 1.8808 Earth years."
+    }
+  ],
+  "disclaimer": "Educational information, not professional advice.",
+  "cluster": "Date & Time",
+  "related": [
+    "duration-seconds",
+    "days-to-hours",
+    "mars-sol-to-earth-days",
+    "microfortnight-to-seconds",
+    "pomodoro-planner",
+    "jiffies-to-seconds"
+  ]
+}
+
+<Calculator schema={schema} />

@@ -1,0 +1,48 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Jiffies to Seconds"
+description: "Convert jiffies (1/60 sec) into seconds."
+date: 2025-09-04
+updated: 2025-09-04
+cluster: "Date & Time"
+---
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "jiffies-to-seconds",
+  "title": "Jiffies to Seconds",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "jiffies",
+      "label": "Jiffies",
+      "type": "number",
+      "placeholder": "120"
+    }
+  ],
+  "expression": "jiffies / 60",
+  "intro": "Convert jiffies (1/60 sec) into seconds.",
+  "examples": [
+    {
+      "description": "120 jiffies ⇒ 2 seconds"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "What is a jiffy?",
+      "answer": "In electronics, it's the period of one 60 Hz cycle (~0.0167 s)."
+    }
+  ],
+  "disclaimer": "Educational information, not professional advice.",
+  "cluster": "Date & Time",
+  "related": [
+    "duration-seconds",
+    "days-to-hours",
+    "mars-sol-to-earth-days",
+    "microfortnight-to-seconds",
+    "pomodoro-planner",
+    "earth-years-to-mars-years"
+  ]
+}
+
+<Calculator schema={schema} />

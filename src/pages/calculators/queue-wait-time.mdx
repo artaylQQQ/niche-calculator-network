@@ -1,0 +1,54 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Queue Wait Time"
+description: "Estimate waiting time in line."
+date: 2025-09-04
+updated: 2025-09-04
+cluster: "Everyday & Misc"
+---
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "queue-wait-time",
+  "title": "Queue Wait Time",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "people",
+      "label": "People ahead",
+      "type": "number",
+      "placeholder": "5"
+    },
+    {
+      "name": "minutes",
+      "label": "Minutes per person",
+      "type": "number",
+      "placeholder": "3"
+    }
+  ],
+  "expression": "people * minutes",
+  "intro": "Estimate waiting time in line.",
+  "examples": [
+    {
+      "description": "5 people at 3 min ⇒ 15 minutes"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Does it account for multiple servers?",
+      "answer": "No, it's a simple single-line estimate."
+    }
+  ],
+  "disclaimer": "Educational information, not professional advice.",
+  "cluster": "Everyday & Misc",
+  "related": [
+    "discount-calculator",
+    "discount-calculator-2",
+    "tip-calculator-2",
+    "coffee-to-water-ratio",
+    "reading-time-estimator",
+    "travel-budget-per-day"
+  ]
+}
+
+<Calculator schema={schema} />

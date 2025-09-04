@@ -1,0 +1,60 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "LED Strip Current Calculator"
+description: "Required current for an LED strip."
+date: 2025-09-04
+updated: 2025-09-04
+cluster: "Home & DIY"
+---
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "led-strip-current",
+  "title": "LED Strip Current Calculator",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "length",
+      "label": "Length (m)",
+      "type": "number",
+      "placeholder": "5"
+    },
+    {
+      "name": "wpm",
+      "label": "Watts per meter",
+      "type": "number",
+      "placeholder": "14"
+    },
+    {
+      "name": "voltage",
+      "label": "Supply voltage (V)",
+      "type": "number",
+      "placeholder": "12"
+    }
+  ],
+  "expression": "length * wpm / voltage",
+  "intro": "Required current for an LED strip.",
+  "examples": [
+    {
+      "description": "5 m at 14 W/m on 12 V ⇒ 5.83 A"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Why divide by voltage?",
+      "answer": "Current equals power divided by voltage."
+    }
+  ],
+  "disclaimer": "Educational information, not professional advice.",
+  "cluster": "Home & DIY",
+  "related": [
+    "paint-coverage",
+    "garden-soil-volume",
+    "home-diy-division-calculator",
+    "rainwater-harvest",
+    "garden-soil-weight",
+    "brick-count-estimator"
+  ]
+}
+
+<Calculator schema={schema} />

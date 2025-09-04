@@ -1,0 +1,66 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Floor Tile Quantity"
+description: "Tiles needed to cover a rectangular floor."
+date: 2025-09-04
+updated: 2025-09-04
+cluster: "Home & DIY"
+---
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "floor-tile-quantity",
+  "title": "Floor Tile Quantity",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "roomL",
+      "label": "Room length (m)",
+      "type": "number",
+      "placeholder": "4"
+    },
+    {
+      "name": "roomW",
+      "label": "Room width (m)",
+      "type": "number",
+      "placeholder": "3"
+    },
+    {
+      "name": "tileL",
+      "label": "Tile length (m)",
+      "type": "number",
+      "placeholder": "0.3"
+    },
+    {
+      "name": "tileW",
+      "label": "Tile width (m)",
+      "type": "number",
+      "placeholder": "0.3"
+    }
+  ],
+  "expression": "(roomL * roomW) / (tileL * tileW)",
+  "intro": "Tiles needed to cover a rectangular floor.",
+  "examples": [
+    {
+      "description": "4×3 m with 0.3×0.3 m tiles ⇒ 133.33 tiles"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Should I add extra tiles?",
+      "answer": "Yes, buy a few extra to account for cuts and breakage."
+    }
+  ],
+  "disclaimer": "Educational information, not professional advice.",
+  "cluster": "Home & DIY",
+  "related": [
+    "paint-coverage",
+    "garden-soil-volume",
+    "home-diy-division-calculator",
+    "rainwater-harvest",
+    "garden-soil-weight",
+    "brick-count-estimator"
+  ]
+}
+
+<Calculator schema={schema} />
