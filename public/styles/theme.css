@@ -106,13 +106,31 @@ body {
   font-weight: 600;
   color: var(--ink);
   border-bottom: 2px solid transparent;
+  background: var(--card);
+  box-shadow: var(--shadow);
+  border-radius: 4px;
+  transition:
+    transform 0.12s ease,
+    box-shadow 0.12s ease,
+    background-color 0.12s ease,
+    color 0.12s ease;
 }
 .nav-link:hover,
 .nav-link:focus {
-  color: var(--accent);
+  transform: translateY(-1px);
+  background: #1e3a8a;
+  color: #ffffff;
+  font-weight: 700;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 .nav-link.active {
   border-bottom-color: var(--accent);
+}
+
+.nav-link--traditional {
+  background: var(--accent-red);
+  color: #ffffff;
+  font-weight: 700;
 }
 @media (max-width: 640px) {
   footer .links {
