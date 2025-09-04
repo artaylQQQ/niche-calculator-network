@@ -48,9 +48,26 @@ const cfToken = import.meta.env.VITE_CF_ANALYTICS_TOKEN;
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
           </svg>
         </button>
-        <nav id="nav" class="hidden absolute top-full left-0 right-0 mx-4 mt-2 flex-col gap-2 bg-[var(--card)] border border-[var(--border)] rounded-md p-4 shadow-md sm:static sm:flex sm:flex-row sm:items-center sm:gap-4 sm:mx-0 sm:mt-0 sm:border-0 sm:p-0 sm:shadow-none" aria-label="Primary">
-          <a href="/traditional-calculator/" class={['nav-link', Astro.url.pathname.startsWith('/traditional-calculator') && 'active'].filter(Boolean).join(' ')}>Calculadora tradicional</a>
-          <a href="/all" class={['nav-link', Astro.url.pathname.startsWith('/all') && 'active'].filter(Boolean).join(' ')}>Todas las calculadoras</a>
+        <nav
+          id="nav"
+          class="hidden absolute top-full left-0 right-0 mx-4 mt-2 flex-col gap-2 bg-white border border-[#E0E0E0] rounded-md p-4 shadow-md sm:static sm:flex sm:flex-row sm:items-center sm:gap-3 sm:mx-0 sm:mt-0 sm:border-0 sm:p-0 sm:shadow-none"
+          aria-label="Primary"
+        >
+          <a
+            href="/categories/"
+            class="bg-[#F7F8F9] border border-[#DDDDDD] text-[#1F1F1F] font-normal py-2 px-4 rounded-md hover:bg-[#EDEDED]"
+            >Categories</a
+          >
+          <a
+            href="/all"
+            class="bg-[#F7F8F9] border border-[#DDDDDD] text-[#1F1F1F] font-normal py-2 px-4 rounded-md hover:bg-[#EDEDED]"
+            >All Calculators</a
+          >
+          <a
+            href="/traditional-calculator/"
+            class="bg-[#E03B32] text-white font-bold py-2.5 px-5 rounded-lg hover:bg-[#C9302C] hover:shadow sm:ml-1"
+            >Traditional Calculator</a
+          >
         </nav>
       </div>
     </header>

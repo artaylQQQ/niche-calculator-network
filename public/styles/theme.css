@@ -92,27 +92,12 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  background: var(--card);
-  border-bottom: 1px solid var(--border);
+  background: #ffffff;
+  border-bottom: 1px solid #e0e0e0;
   z-index: 50;
-  box-shadow: var(--shadow);
 }
 .header a {
   text-decoration: none;
-}
-.nav-link {
-  display: inline-block;
-  padding: 8px 12px;
-  font-weight: 600;
-  color: var(--ink);
-  border-bottom: 2px solid transparent;
-}
-.nav-link:hover,
-.nav-link:focus {
-  color: var(--accent);
-}
-.nav-link.active {
-  border-bottom-color: var(--accent);
 }
 @media (max-width: 640px) {
   footer .links {
