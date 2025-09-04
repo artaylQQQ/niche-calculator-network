@@ -297,7 +297,7 @@ const jsonLd = {
       if (expr) {
         // ensure every symbol referenced in the expression is provided in vars
         const varNames = expr.match(/[A-Za-z_][A-Za-z0-9_]*/g) || [];
-        const unknown = varNames.filter(n => !(n in vars));
+        const unknown = varNames.filter(n => !(n in vars) && n.toLowerCase() !== 'e');
         if (unknown.length) {
           resultEl.textContent = 'Unknown variable: ' + unknown[0];
           return;
