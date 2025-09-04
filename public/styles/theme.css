@@ -5,15 +5,15 @@
     legible, while blue and red provide primary emphasis and yellow
     adds secondary highlights.
   */
-  --bg: #ffffff;
-  --surface: #f2f2f2;
-  --ink: #000000;
+  --bg: #f7f7f7;
+  --surface: #ffffff;
+  --ink: #1a1a1a;
   --muted: #4b5563;
   --neutral-sky: #e5e7eb;
   --neutral-warm: #f5f5f4;
-  --primary: #0057b8;
-  --accent: #facc15;
-  --accent-red: #dc2626;
+  --primary: #dc2626; /* Red for primary actions */
+  --link: #0057b8; /* Blue for links and secondary actions */
+  --accent: #b8860b; /* Dark mustard yellow */
   --primary-ink: #ffffff;
   --card: #ffffff;
   --border: #e5e7eb;
@@ -44,9 +44,9 @@
     --muted: #9ca3af;
     --neutral-sky: #1a1a1a;
     --neutral-warm: #262626;
-    --primary: #0057b8;
-    --accent: #facc15;
-    --accent-red: #dc2626;
+    --primary: #dc2626;
+    --link: #0057b8;
+    --accent: #b8860b;
     --primary-ink: #ffffff;
     --card: #1a1a1a;
     --border: #374151;
@@ -70,14 +70,22 @@ body {
 h1,
 h2,
 h3 {
-  color: var(--primary);
+  color: #000000;
+}
+h1 {
+  margin-top: 2em;
 }
 a {
-  color: var(--primary);
+  color: var(--link);
   text-decoration: none;
 }
-a:hover {
-  color: var(--accent-red);
+a:hover,
+a:focus {
+  text-decoration: underline;
+}
+a:focus {
+  outline: 2px solid var(--link);
+  outline-offset: 2px;
 }
 body {
   padding-top: 72px;
@@ -112,15 +120,20 @@ body {
   transition: background 0.2s, box-shadow 0.2s, color 0.2s;
 }
 .nav-link:hover,
-.nav-link:focus {
+.nav-link:focus,
+.nav-link.active {
   color: #fff;
   font-weight: 700;
-  background: #1e3a8a;
+  background: var(--link);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
+.nav-link:focus {
+  outline: 2px solid var(--link);
+  outline-offset: 2px;
+}
 .nav-link.traditional {
-  background: #dc2626;
-  color: #fff;
+  background: var(--primary);
+  color: var(--primary-ink);
   font-weight: 700;
 }
 @media (max-width: 640px) {
@@ -194,7 +207,8 @@ ul.grid li {
     box-shadow 0.12s ease,
     border-color 0.12s ease;
 }
-.card:hover {
+.card:hover,
+.card:focus {
   transform: translateY(-1px);
   box-shadow:
     0 2px 4px rgba(0, 0, 0, 0.08),
@@ -210,7 +224,8 @@ ul.grid li {
   white-space: normal;
   transition: color 0.12s ease;
 }
-.card:hover h3 {
+.card:hover h3,
+.card:focus h3 {
   color: var(--accent);
 }
 .card p {
@@ -241,7 +256,7 @@ ul.grid li {
   background: #fff;
 }
 .input:focus {
-  outline: 2px solid var(--accent);
+  outline: 2px solid var(--link);
   outline-offset: 1px;
 }
 .btn-primary {
@@ -254,8 +269,13 @@ ul.grid li {
   cursor: pointer;
   box-shadow: var(--shadow);
 }
-.btn-primary:hover {
+.btn-primary:hover,
+.btn-primary:focus {
   filter: brightness(1.05);
+}
+.btn-primary:focus {
+  outline: 2px solid var(--link);
+  outline-offset: 2px;
 }
 .faq summary {
   cursor: pointer;
