@@ -1,20 +1,21 @@
 :root {
   /*
     Equilibrio Moderno: a neutral foundation with vibrant accents.
-    The base relies on black, grey and white tones to keep content
-    legible, while blue and red provide primary emphasis and yellow
-    adds secondary highlights.
+    The base relies on white and soft greys to keep content legible,
+    while red drives primary actions, blue covers links and active
+    states, and a deep mustard highlights key notices.
   */
-  --bg: #ffffff;
-  --surface: #f2f2f2;
-  --ink: #000000;
-  --muted: #4b5563;
+  --bg: #f9fafb;
+  --surface: #ffffff;
+  --ink: #374151;
+  --muted: #6b7280;
   --neutral-sky: #e5e7eb;
   --neutral-warm: #f5f5f4;
-  --primary: #0057b8;
-  --accent: #facc15;
-  --accent-red: #dc2626;
+  --primary: #dc2626;
+  --secondary: #0057b8;
+  --accent: #b8860b;
   --primary-ink: #ffffff;
+  --heading: #000000;
   --card: #ffffff;
   --border: #e5e7eb;
   --shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.08);
@@ -34,7 +35,7 @@
   :root {
     /*
       Adopt a dark palette that remains comfortable on the eyes.  We
-      retain the same blue accent colour while brightening the ink and
+      retain the same red and blue accents while brightening the ink and
       softening the muted tones.  Shadows are strengthened slightly to
       preserve depth on dark surfaces.
     */
@@ -44,10 +45,11 @@
     --muted: #9ca3af;
     --neutral-sky: #1a1a1a;
     --neutral-warm: #262626;
-    --primary: #0057b8;
-    --accent: #facc15;
-    --accent-red: #dc2626;
+    --primary: #dc2626;
+    --secondary: #0057b8;
+    --accent: #b8860b;
     --primary-ink: #ffffff;
+    --heading: #ffffff;
     --card: #1a1a1a;
     --border: #374151;
     --shadow: 0 2px 4px rgba(0, 0, 0, 0.6), 0 8px 16px rgba(0, 0, 0, 0.4);
@@ -70,14 +72,20 @@ body {
 h1,
 h2,
 h3 {
-  color: var(--primary);
+  color: var(--heading);
 }
 a {
-  color: var(--primary);
+  color: var(--secondary);
   text-decoration: none;
 }
-a:hover {
-  color: var(--accent-red);
+a:hover,
+a:focus {
+  color: var(--secondary);
+  text-decoration: underline;
+}
+a:focus {
+  outline: 2px solid var(--secondary);
+  outline-offset: 2px;
 }
 body {
   padding-top: 72px;
@@ -112,16 +120,26 @@ body {
   transition: background 0.2s, box-shadow 0.2s, color 0.2s;
 }
 .nav-link:hover,
-.nav-link:focus {
+.nav-link:focus,
+.nav-link.active {
   color: #fff;
   font-weight: 700;
-  background: #1e3a8a;
+  background: var(--secondary);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
+.nav-link:focus {
+  outline: 2px solid var(--secondary);
+  outline-offset: 2px;
+}
 .nav-link.traditional {
-  background: #dc2626;
+  background: var(--primary);
   color: #fff;
   font-weight: 700;
+}
+.nav-link.traditional:hover,
+.nav-link.traditional:focus {
+  background: var(--primary);
+  filter: brightness(1.05);
 }
 @media (max-width: 640px) {
   footer .links {
@@ -194,11 +212,12 @@ ul.grid li {
     box-shadow 0.12s ease,
     border-color 0.12s ease;
 }
-.card:hover {
-  transform: translateY(-1px);
+.card:hover,
+.card:focus-within {
+  transform: translateY(-2px);
   box-shadow:
-    0 2px 4px rgba(0, 0, 0, 0.08),
-    0 10px 28px rgba(0, 0, 0, 0.06);
+    0 4px 8px rgba(0, 0, 0, 0.1),
+    0 12px 24px rgba(0, 0, 0, 0.08);
   border-color: var(--accent);
 }
 .card h3 {
@@ -210,7 +229,8 @@ ul.grid li {
   white-space: normal;
   transition: color 0.12s ease;
 }
-.card:hover h3 {
+.card:hover h3,
+.card:focus-within h3 {
   color: var(--accent);
 }
 .card p {
@@ -241,7 +261,7 @@ ul.grid li {
   background: #fff;
 }
 .input:focus {
-  outline: 2px solid var(--accent);
+  outline: 2px solid var(--secondary);
   outline-offset: 1px;
 }
 .btn-primary {
@@ -254,8 +274,13 @@ ul.grid li {
   cursor: pointer;
   box-shadow: var(--shadow);
 }
-.btn-primary:hover {
+.btn-primary:hover,
+.btn-primary:focus {
   filter: brightness(1.05);
+}
+.btn-primary:focus {
+  outline: 2px solid var(--secondary);
+  outline-offset: 2px;
 }
 .faq summary {
   cursor: pointer;
@@ -274,5 +299,5 @@ footer .links a {
 }
 footer .links a:hover {
   text-decoration: underline;
-  color: var(--accent);
+  color: var(--secondary);
 }

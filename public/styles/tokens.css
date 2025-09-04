@@ -1,17 +1,18 @@
 :root{
   /* Base tokens for light mode.  These values define the default
      backgrounds, surfaces and text colours used throughout the site. */
-  --bg:#ffffff;
-  --surface:#f2f2f2;
-  --text:#000000;
-  --muted:#4b5563;
+  --bg:#f9fafb;
+  --surface:#ffffff;
+  --text:#374151;
+  --muted:#6b7280;
   /* Neutral palette combining soft greys */
   --neutral-sky:#e5e7eb;
   --neutral-warm:#f5f5f4;
   /* Primary brand colour and complementary accents */
-  --primary:#0057B8;
-  --accent:#FACC15; /* Energetic yellow accent */
-  --accent-red:#DC2626;
+  --primary:#DC2626;
+  --secondary:#0057B8; /* Link and active blue */
+  --accent:#B8860B; /* Dark mustard accent */
+  --heading:#000000;
   --ring:#0057B833;
   --radius:12px;
   --shadow:0 2px 4px rgba(0,0,0,.1),0 8px 16px rgba(0,0,0,.08);
@@ -36,9 +37,10 @@
     /* Muted text uses a mid‑tone grey */
     --muted: #9ca3af;
     /* Preserve brand colour and accents in dark mode */
-    --primary: #0057B8;
-    --accent: #FACC15;
-    --accent-red: #DC2626;
+    --primary: #DC2626;
+    --secondary: #0057B8;
+    --accent: #B8860B;
+    --heading: #ffffff;
   }
 }
 
