@@ -22,37 +22,7 @@
   --space: 14px;
   --maxw: 1120px;
 }
-/*
-  When the user prefers a dark colour scheme we override the global
-  variables with a complementary dark palette.  Colours are chosen
-  to provide sufficient contrast on dark backgrounds while maintaining
-  the same hue relationships as the light theme.  Cards and headers
-  remain distinct from the background and the primary accent colour
-  stays constant across both modes.
-*/
-@media (prefers-color-scheme: dark) {
-  :root {
-    /*
-      Adopt a dark palette that remains comfortable on the eyes.  We
-      retain the same blue accent colour while brightening the ink and
-      softening the muted tones.  Shadows are strengthened slightly to
-      preserve depth on dark surfaces.
-    */
-    --bg: #0a0a0a;
-    --surface: #1a1a1a;
-    --ink: #f5f5f5;
-    --muted: #9ca3af;
-    --neutral-sky: #1a1a1a;
-    --neutral-warm: #262626;
-    --primary: #0057b8;
-    --accent: #facc15;
-    --accent-red: #dc2626;
-    --primary-ink: #ffffff;
-    --card: #1a1a1a;
-    --border: #374151;
-    --shadow: 0 2px 4px rgba(0, 0, 0, 0.6), 0 8px 16px rgba(0, 0, 0, 0.4);
-  }
-}
+
 html,
 body {
   background: var(--bg);
