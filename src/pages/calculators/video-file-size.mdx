@@ -1,0 +1,57 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Video File Size Calculator"
+description: "Estimate video file size from bitrate and duration."
+date: 2025-09-05
+updated: 2025-09-05
+cluster: "Technology"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "video-file-size",
+  "title": "Video File Size Calculator",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "bitrate",
+      "label": "Bitrate (Mbps)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "5"
+    },
+    {
+      "name": "duration",
+      "label": "Duration (min)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "10"
+    }
+  ],
+  "expression": "bitrate * duration * 60 / 8",
+  "intro": "Compute approximate file size in megabytes using bitrate and duration.",
+  "examples": [
+    {
+      "description": "5 Mbps for 10 min ⇒ 375 MB"
+    },
+    {
+      "description": "8 Mbps for 60 min ⇒ 3600 MB"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Why divide by 8?",
+      "answer": "There are 8 bits in a byte."
+    },
+    {
+      "question": "Is overhead included?",
+      "answer": "No, actual size may vary due to encoding overhead."
+    }
+  ],
+  "disclaimer": "Estimate only; encoding settings can change size.",
+  "cluster": "Technology",
+  "unit": "MB"
+};
+
+<Calculator schema={schema} />

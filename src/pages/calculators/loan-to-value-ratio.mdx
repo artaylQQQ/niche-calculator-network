@@ -1,0 +1,57 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Loan-to-Value Ratio Calculator"
+description: "Find the loan-to-value percentage for a property."
+date: 2025-09-05
+updated: 2025-09-05
+cluster: "Finance"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "loan-to-value-ratio",
+  "title": "Loan-to-Value Ratio Calculator",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "loan",
+      "label": "Loan amount",
+      "type": "number",
+      "step": "any",
+      "placeholder": "150000"
+    },
+    {
+      "name": "value",
+      "label": "Property value",
+      "type": "number",
+      "step": "any",
+      "placeholder": "200000"
+    }
+  ],
+  "expression": "(loan / value) * 100",
+  "intro": "Determine the loan-to-value (LTV) ratio expressed as a percentage.",
+  "examples": [
+    {
+      "description": "150000 / 200000 ⇒ 75%"
+    },
+    {
+      "description": "80000 / 100000 ⇒ 80%"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "What is LTV?",
+      "answer": "It's the loan amount divided by property value."
+    },
+    {
+      "question": "Why is LTV important?",
+      "answer": "Lenders use it to assess mortgage risk."
+    }
+  ],
+  "disclaimer": "Always consult financial professionals for lending decisions.",
+  "cluster": "Finance",
+  "unit": "%"
+};
+
+<Calculator schema={schema} />

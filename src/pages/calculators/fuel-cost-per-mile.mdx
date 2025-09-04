@@ -1,0 +1,57 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Fuel Cost Per Mile Calculator"
+description: "Calculate cost per mile from fuel price and mileage."
+date: 2025-09-05
+updated: 2025-09-05
+cluster: "Everyday & Misc"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "fuel-cost-per-mile",
+  "title": "Fuel Cost Per Mile Calculator",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "price",
+      "label": "Fuel price per gallon",
+      "type": "number",
+      "step": "any",
+      "placeholder": "3.5"
+    },
+    {
+      "name": "mpg",
+      "label": "Miles per gallon",
+      "type": "number",
+      "step": "any",
+      "placeholder": "25"
+    }
+  ],
+  "expression": "price / mpg",
+  "intro": "Estimate driving cost per mile using fuel price and miles per gallon.",
+  "examples": [
+    {
+      "description": "$3.50 and 25 mpg ⇒ $0.14/mi"
+    },
+    {
+      "description": "$4.20 and 30 mpg ⇒ $0.14/mi"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Can I use metric units?",
+      "answer": "Yes, consistent units yield cost per distance."
+    },
+    {
+      "question": "Does it include maintenance?",
+      "answer": "No, only fuel cost is considered."
+    }
+  ],
+  "disclaimer": "For budgeting estimates; actual cost may vary.",
+  "cluster": "Everyday & Misc",
+  "unit": "per mile"
+};
+
+<Calculator schema={schema} />

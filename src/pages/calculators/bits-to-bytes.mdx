@@ -1,0 +1,50 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Bits to Bytes Converter"
+description: "Convert bits to bytes."
+date: 2025-09-05
+updated: 2025-09-05
+cluster: "Conversions"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "bits-to-bytes",
+  "title": "Bits to Bytes Converter",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "bits",
+      "label": "Bits",
+      "type": "number",
+      "step": "any",
+      "placeholder": "1024"
+    }
+  ],
+  "expression": "bits / 8",
+  "intro": "Convert a quantity of bits into bytes, the fundamental unit of digital storage.",
+  "examples": [
+    {
+      "description": "8 bits ⇒ 1 byte"
+    },
+    {
+      "description": "1024 bits ⇒ 128 bytes"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "How many bits are in a byte?",
+      "answer": "Eight bits make one byte."
+    },
+    {
+      "question": "Does this handle large numbers?",
+      "answer": "Yes, enter any non‑negative numeric value."
+    }
+  ],
+  "disclaimer": "Results are based on the 8-bit byte standard.",
+  "cluster": "Conversions",
+  "unit": "bytes"
+};
+
+<Calculator schema={schema} />

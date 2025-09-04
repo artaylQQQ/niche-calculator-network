@@ -1,0 +1,50 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Daily Protein Needs Calculator"
+description: "Estimate daily protein requirement from body weight."
+date: 2025-09-05
+updated: 2025-09-05
+cluster: "Health"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "daily-protein-needs",
+  "title": "Daily Protein Needs Calculator",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "weight_kg",
+      "label": "Weight (kg)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "70"
+    }
+  ],
+  "expression": "weight_kg * 0.8",
+  "intro": "Calculate recommended grams of protein per day using 0.8 g per kg.",
+  "examples": [
+    {
+      "description": "70 kg ⇒ 56 g"
+    },
+    {
+      "description": "90 kg ⇒ 72 g"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "What guideline is used?",
+      "answer": "0.8 grams of protein per kilogram of body weight."
+    },
+    {
+      "question": "Do athletes need more?",
+      "answer": "Yes, active individuals may require higher intake."
+    }
+  ],
+  "disclaimer": "Consult a healthcare professional for personalized advice.",
+  "cluster": "Health",
+  "unit": "g"
+};
+
+<Calculator schema={schema} />

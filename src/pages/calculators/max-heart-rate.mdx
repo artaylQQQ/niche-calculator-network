@@ -1,0 +1,50 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Maximum Heart Rate Calculator"
+description: "Estimate your maximum heart rate based on age."
+date: 2025-09-05
+updated: 2025-09-05
+cluster: "Health"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "max-heart-rate",
+  "title": "Maximum Heart Rate Calculator",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "age",
+      "label": "Age",
+      "type": "number",
+      "step": "any",
+      "placeholder": "30"
+    }
+  ],
+  "expression": "220 - age",
+  "intro": "Find the estimated maximum beats per minute using the classic formula.",
+  "examples": [
+    {
+      "description": "Age 30 ⇒ 190 bpm"
+    },
+    {
+      "description": "Age 50 ⇒ 170 bpm"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "What formula is used?",
+      "answer": "220 minus age in years."
+    },
+    {
+      "question": "Is this accurate for everyone?",
+      "answer": "It's a general guideline; individual results vary."
+    }
+  ],
+  "disclaimer": "Not a medical diagnosis. Consult your doctor.",
+  "cluster": "Health",
+  "unit": "bpm"
+};
+
+<Calculator schema={schema} />

@@ -2746,5 +2746,619 @@
         "answer": "Interest calculated only on the principal amount."
       }
     ]
+  },
+  {
+    "slug": "nautical-miles-to-kilometers",
+    "title": "Nautical Miles to Kilometers Converter",
+    "cluster": "conversions",
+    "intro": "Convert distance from nautical miles to kilometers for navigation and travel.",
+    "inputs": [
+      {
+        "name": "nm",
+        "label": "Nautical miles",
+        "type": "number",
+        "step": "any",
+        "placeholder": "10"
+      }
+    ],
+    "expression": "nm * 1.852",
+    "examples": [
+      {
+        "description": "1 nmi ⇒ 1.85 km"
+      },
+      {
+        "description": "50 nmi ⇒ 92.6 km"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Is the conversion factor exact?",
+        "answer": "Yes, one nautical mile equals exactly 1.852 kilometers."
+      },
+      {
+        "question": "When is a nautical mile used?",
+        "answer": "Primarily in maritime and aviation contexts."
+      }
+    ]
+  },
+  {
+    "slug": "bits-to-bytes",
+    "title": "Bits to Bytes Converter",
+    "cluster": "conversions",
+    "intro": "Convert a quantity of bits into bytes, the fundamental unit of digital storage.",
+    "inputs": [
+      {
+        "name": "bits",
+        "label": "Bits",
+        "type": "number",
+        "step": "any",
+        "placeholder": "1024"
+      }
+    ],
+    "expression": "bits / 8",
+    "examples": [
+      {
+        "description": "8 bits ⇒ 1 byte"
+      },
+      {
+        "description": "1024 bits ⇒ 128 bytes"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "How many bits are in a byte?",
+        "answer": "Eight bits make one byte."
+      },
+      {
+        "question": "Does this handle large numbers?",
+        "answer": "Yes, enter any non‑negative numeric value."
+      }
+    ]
+  },
+  {
+    "slug": "seconds-to-weeks",
+    "title": "Seconds to Weeks Converter",
+    "cluster": "date-time",
+    "intro": "Turn a number of seconds into whole or fractional weeks.",
+    "inputs": [
+      {
+        "name": "seconds",
+        "label": "Seconds",
+        "type": "number",
+        "step": "any",
+        "placeholder": "604800"
+      }
+    ],
+    "expression": "seconds / 604800",
+    "examples": [
+      {
+        "description": "604800 seconds ⇒ 1 week"
+      },
+      {
+        "description": "1209600 seconds ⇒ 2 weeks"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "How many seconds are in a week?",
+        "answer": "Exactly 604,800."
+      },
+      {
+        "question": "Can it handle fractional weeks?",
+        "answer": "Yes, results may include decimals."
+      }
+    ]
+  },
+  {
+    "slug": "light-travel-time",
+    "title": "Light Travel Time Calculator",
+    "cluster": "date-time",
+    "intro": "Estimate how long light takes to traverse a distance in kilometers.",
+    "inputs": [
+      {
+        "name": "distance_km",
+        "label": "Distance (km)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "384400"
+      }
+    ],
+    "expression": "distance_km / 299792.458",
+    "examples": [
+      {
+        "description": "299,792.458 km ⇒ 1 s"
+      },
+      {
+        "description": "384,400 km ⇒ 1.28 s"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What speed is used?",
+        "answer": "The speed of light in vacuum, 299,792.458 km/s."
+      },
+      {
+        "question": "Does medium affect the result?",
+        "answer": "The calculator assumes a vacuum; other media slow light slightly."
+      }
+    ]
+  },
+  {
+    "slug": "loan-to-value-ratio",
+    "title": "Loan-to-Value Ratio Calculator",
+    "cluster": "finance",
+    "intro": "Determine the loan-to-value (LTV) ratio expressed as a percentage.",
+    "inputs": [
+      {
+        "name": "loan",
+        "label": "Loan amount",
+        "type": "number",
+        "step": "any",
+        "placeholder": "150000"
+      },
+      {
+        "name": "value",
+        "label": "Property value",
+        "type": "number",
+        "step": "any",
+        "placeholder": "200000"
+      }
+    ],
+    "expression": "(loan / value) * 100",
+    "examples": [
+      {
+        "description": "150000 / 200000 ⇒ 75%"
+      },
+      {
+        "description": "80000 / 100000 ⇒ 80%"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What is LTV?",
+        "answer": "It's the loan amount divided by property value."
+      },
+      {
+        "question": "Why is LTV important?",
+        "answer": "Lenders use it to assess mortgage risk."
+      }
+    ]
+  },
+  {
+    "slug": "return-on-equity",
+    "title": "Return on Equity Calculator",
+    "cluster": "finance",
+    "intro": "Measure a company's profitability relative to shareholder equity.",
+    "inputs": [
+      {
+        "name": "income",
+        "label": "Net income",
+        "type": "number",
+        "step": "any",
+        "placeholder": "50000"
+      },
+      {
+        "name": "equity",
+        "label": "Shareholder equity",
+        "type": "number",
+        "step": "any",
+        "placeholder": "250000"
+      }
+    ],
+    "expression": "(income / equity) * 100",
+    "examples": [
+      {
+        "description": "50000 / 250000 ⇒ 20%"
+      },
+      {
+        "description": "75000 / 300000 ⇒ 25%"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What does ROE indicate?",
+        "answer": "How efficiently equity generates profits."
+      },
+      {
+        "question": "Is higher always better?",
+        "answer": "Higher is generally better but compare within industry."
+      }
+    ]
+  },
+  {
+    "slug": "max-heart-rate",
+    "title": "Maximum Heart Rate Calculator",
+    "cluster": "health",
+    "intro": "Find the estimated maximum beats per minute using the classic formula.",
+    "inputs": [
+      {
+        "name": "age",
+        "label": "Age",
+        "type": "number",
+        "step": "any",
+        "placeholder": "30"
+      }
+    ],
+    "expression": "220 - age",
+    "examples": [
+      {
+        "description": "Age 30 ⇒ 190 bpm"
+      },
+      {
+        "description": "Age 50 ⇒ 170 bpm"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What formula is used?",
+        "answer": "220 minus age in years."
+      },
+      {
+        "question": "Is this accurate for everyone?",
+        "answer": "It's a general guideline; individual results vary."
+      }
+    ]
+  },
+  {
+    "slug": "daily-protein-needs",
+    "title": "Daily Protein Needs Calculator",
+    "cluster": "health",
+    "intro": "Calculate recommended grams of protein per day using 0.8 g per kg.",
+    "inputs": [
+      {
+        "name": "weight_kg",
+        "label": "Weight (kg)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "70"
+      }
+    ],
+    "expression": "weight_kg * 0.8",
+    "examples": [
+      {
+        "description": "70 kg ⇒ 56 g"
+      },
+      {
+        "description": "90 kg ⇒ 72 g"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What guideline is used?",
+        "answer": "0.8 grams of protein per kilogram of body weight."
+      },
+      {
+        "question": "Do athletes need more?",
+        "answer": "Yes, active individuals may require higher intake."
+      }
+    ]
+  },
+  {
+    "slug": "deck-board-quantity",
+    "title": "Deck Board Quantity Calculator",
+    "cluster": "home-diy",
+    "intro": "Estimate how many boards are needed based on deck and board dimensions.",
+    "inputs": [
+      {
+        "name": "deck_length",
+        "label": "Deck length (m)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "6"
+      },
+      {
+        "name": "deck_width",
+        "label": "Deck width (m)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "4"
+      },
+      {
+        "name": "board_length",
+        "label": "Board length (m)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "2"
+      },
+      {
+        "name": "board_width",
+        "label": "Board width (m)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "0.15"
+      }
+    ],
+    "expression": "(deck_length * deck_width) / (board_length * board_width)",
+    "examples": [
+      {
+        "description": "6×4 m deck with 2×0.15 m boards ⇒ 80 boards"
+      },
+      {
+        "description": "5×5 m deck with 2.5×0.1 m boards ⇒ 100 boards"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Does this include wastage?",
+        "answer": "No, consider ordering extra for cuts and mistakes."
+      },
+      {
+        "question": "Assumes boards span the deck length?",
+        "answer": "Yes, boards are assumed to run the full deck length."
+      }
+    ]
+  },
+  {
+    "slug": "post-hole-concrete",
+    "title": "Post Hole Concrete Calculator",
+    "cluster": "home-diy",
+    "intro": "Estimate concrete volume for a cylindrical post hole.",
+    "inputs": [
+      {
+        "name": "diameter",
+        "label": "Hole diameter (m)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "0.3"
+      },
+      {
+        "name": "depth",
+        "label": "Hole depth (m)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "0.6"
+      }
+    ],
+    "expression": "3.141592653589793 * (diameter/2)^2 * depth",
+    "examples": [
+      {
+        "description": "0.3 m × 0.6 m ⇒ 0.042 m³"
+      },
+      {
+        "description": "0.2 m × 0.8 m ⇒ 0.025 m³"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Does this include the post?",
+        "answer": "No, it calculates the hole volume only."
+      },
+      {
+        "question": "Should I add extra?",
+        "answer": "Many builders add about 10% for waste."
+      }
+    ]
+  },
+  {
+    "slug": "sphere-volume",
+    "title": "Sphere Volume Calculator",
+    "cluster": "math",
+    "intro": "Compute the volume enclosed by a sphere given its radius.",
+    "inputs": [
+      {
+        "name": "radius",
+        "label": "Radius",
+        "type": "number",
+        "step": "any",
+        "placeholder": "3"
+      }
+    ],
+    "expression": "(4/3) * 3.141592653589793 * radius^3",
+    "examples": [
+      {
+        "description": "r = 1 ⇒ 4.19"
+      },
+      {
+        "description": "r = 3 ⇒ 113.10"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What is the formula?",
+        "answer": "4/3 × π × r³."
+      },
+      {
+        "question": "Are units cubed?",
+        "answer": "Yes, volume units are cubic."
+      }
+    ]
+  },
+  {
+    "slug": "circle-sector-area",
+    "title": "Circle Sector Area Calculator",
+    "cluster": "math",
+    "intro": "Find the area of a sector of a circle using radius and central angle in degrees.",
+    "inputs": [
+      {
+        "name": "radius",
+        "label": "Radius",
+        "type": "number",
+        "step": "any",
+        "placeholder": "5"
+      },
+      {
+        "name": "angle",
+        "label": "Angle (°)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "90"
+      }
+    ],
+    "expression": "3.141592653589793 * radius^2 * angle / 360",
+    "examples": [
+      {
+        "description": "r = 5, angle = 90° ⇒ 19.63"
+      },
+      {
+        "description": "r = 3, angle = 45° ⇒ 3.53"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What angle unit is used?",
+        "answer": "Degrees."
+      },
+      {
+        "question": "What if the angle is 360°?",
+        "answer": "The area equals that of the full circle."
+      }
+    ]
+  },
+  {
+    "slug": "ipv4-subnet-host-count",
+    "title": "IPv4 Subnet Host Count Calculator",
+    "cluster": "technology",
+    "intro": "Determine how many usable addresses a subnet provides from its CIDR prefix length.",
+    "inputs": [
+      {
+        "name": "prefix",
+        "label": "Prefix length",
+        "type": "number",
+        "step": "any",
+        "placeholder": "24"
+      }
+    ],
+    "expression": "2^(32 - prefix) - 2",
+    "examples": [
+      {
+        "description": "/24 ⇒ 254 hosts"
+      },
+      {
+        "description": "/16 ⇒ 65534 hosts"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Why subtract 2?",
+        "answer": "Network and broadcast addresses are reserved."
+      },
+      {
+        "question": "Prefixes over 30?",
+        "answer": "They leave too few usable addresses."
+      }
+    ]
+  },
+  {
+    "slug": "video-file-size",
+    "title": "Video File Size Calculator",
+    "cluster": "technology",
+    "intro": "Compute approximate file size in megabytes using bitrate and duration.",
+    "inputs": [
+      {
+        "name": "bitrate",
+        "label": "Bitrate (Mbps)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "5"
+      },
+      {
+        "name": "duration",
+        "label": "Duration (min)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "10"
+      }
+    ],
+    "expression": "bitrate * duration * 60 / 8",
+    "examples": [
+      {
+        "description": "5 Mbps for 10 min ⇒ 375 MB"
+      },
+      {
+        "description": "8 Mbps for 60 min ⇒ 3600 MB"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Why divide by 8?",
+        "answer": "There are 8 bits in a byte."
+      },
+      {
+        "question": "Is overhead included?",
+        "answer": "No, actual size may vary due to encoding overhead."
+      }
+    ]
+  },
+  {
+    "slug": "fuel-cost-per-mile",
+    "title": "Fuel Cost Per Mile Calculator",
+    "cluster": "other",
+    "intro": "Estimate driving cost per mile using fuel price and miles per gallon.",
+    "inputs": [
+      {
+        "name": "price",
+        "label": "Fuel price per gallon",
+        "type": "number",
+        "step": "any",
+        "placeholder": "3.5"
+      },
+      {
+        "name": "mpg",
+        "label": "Miles per gallon",
+        "type": "number",
+        "step": "any",
+        "placeholder": "25"
+      }
+    ],
+    "expression": "price / mpg",
+    "examples": [
+      {
+        "description": "$3.50 and 25 mpg ⇒ $0.14/mi"
+      },
+      {
+        "description": "$4.20 and 30 mpg ⇒ $0.14/mi"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Can I use metric units?",
+        "answer": "Yes, consistent units yield cost per distance."
+      },
+      {
+        "question": "Does it include maintenance?",
+        "answer": "No, only fuel cost is considered."
+      }
+    ]
+  },
+  {
+    "slug": "shower-water-usage",
+    "title": "Shower Water Usage Calculator",
+    "cluster": "other",
+    "intro": "Find out how many liters of water a shower consumes.",
+    "inputs": [
+      {
+        "name": "flow_rate",
+        "label": "Flow rate (L/min)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "9"
+      },
+      {
+        "name": "minutes",
+        "label": "Minutes",
+        "type": "number",
+        "step": "any",
+        "placeholder": "5"
+      }
+    ],
+    "expression": "flow_rate * minutes",
+    "examples": [
+      {
+        "description": "9 L/min × 5 min ⇒ 45 L"
+      },
+      {
+        "description": "12 L/min × 10 min ⇒ 120 L"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Typical shower flow rate?",
+        "answer": "Around 9–12 liters per minute."
+      },
+      {
+        "question": "How can I reduce usage?",
+        "answer": "Shorter showers or low-flow showerheads."
+      }
+    ]
   }
 ]

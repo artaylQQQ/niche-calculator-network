@@ -1,0 +1,50 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Light Travel Time Calculator"
+description: "Compute time for light to travel a distance in space."
+date: 2025-09-05
+updated: 2025-09-05
+cluster: "Date & Time"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "light-travel-time",
+  "title": "Light Travel Time Calculator",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "distance_km",
+      "label": "Distance (km)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "384400"
+    }
+  ],
+  "expression": "distance_km / 299792.458",
+  "intro": "Estimate how long light takes to traverse a distance in kilometers.",
+  "examples": [
+    {
+      "description": "299,792.458 km ⇒ 1 s"
+    },
+    {
+      "description": "384,400 km ⇒ 1.28 s"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "What speed is used?",
+      "answer": "The speed of light in vacuum, 299,792.458 km/s."
+    },
+    {
+      "question": "Does medium affect the result?",
+      "answer": "The calculator assumes a vacuum; other media slow light slightly."
+    }
+  ],
+  "disclaimer": "Idealized calculation ignoring relativistic effects.",
+  "cluster": "Date & Time",
+  "unit": "s"
+};
+
+<Calculator schema={schema} />

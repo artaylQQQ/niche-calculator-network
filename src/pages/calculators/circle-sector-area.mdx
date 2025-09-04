@@ -1,0 +1,57 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Circle Sector Area Calculator"
+description: "Area of a circle sector from radius and angle."
+date: 2025-09-05
+updated: 2025-09-05
+cluster: "Math"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "circle-sector-area",
+  "title": "Circle Sector Area Calculator",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "radius",
+      "label": "Radius",
+      "type": "number",
+      "step": "any",
+      "placeholder": "5"
+    },
+    {
+      "name": "angle",
+      "label": "Angle (°)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "90"
+    }
+  ],
+  "expression": "3.141592653589793 * radius^2 * angle / 360",
+  "intro": "Find the area of a sector of a circle using radius and central angle in degrees.",
+  "examples": [
+    {
+      "description": "r = 5, angle = 90° ⇒ 19.63"
+    },
+    {
+      "description": "r = 3, angle = 45° ⇒ 3.53"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "What angle unit is used?",
+      "answer": "Degrees."
+    },
+    {
+      "question": "What if the angle is 360°?",
+      "answer": "The area equals that of the full circle."
+    }
+  ],
+  "disclaimer": "Results rounded to two decimals.",
+  "cluster": "Math",
+  "unit": "unit²"
+};
+
+<Calculator schema={schema} />

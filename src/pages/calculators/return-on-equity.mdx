@@ -1,0 +1,57 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Return on Equity Calculator"
+description: "Calculate return on equity from net income and shareholder equity."
+date: 2025-09-05
+updated: 2025-09-05
+cluster: "Finance"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "return-on-equity",
+  "title": "Return on Equity Calculator",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "income",
+      "label": "Net income",
+      "type": "number",
+      "step": "any",
+      "placeholder": "50000"
+    },
+    {
+      "name": "equity",
+      "label": "Shareholder equity",
+      "type": "number",
+      "step": "any",
+      "placeholder": "250000"
+    }
+  ],
+  "expression": "(income / equity) * 100",
+  "intro": "Measure a company's profitability relative to shareholder equity.",
+  "examples": [
+    {
+      "description": "50000 / 250000 ⇒ 20%"
+    },
+    {
+      "description": "75000 / 300000 ⇒ 25%"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "What does ROE indicate?",
+      "answer": "How efficiently equity generates profits."
+    },
+    {
+      "question": "Is higher always better?",
+      "answer": "Higher is generally better but compare within industry."
+    }
+  ],
+  "disclaimer": "For education only; not investment advice.",
+  "cluster": "Finance",
+  "unit": "%"
+};
+
+<Calculator schema={schema} />
