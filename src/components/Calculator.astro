@@ -207,7 +207,7 @@ const jsonLd = {
     font-weight: 700;
   }
   .result .icon {
-    font-size: 1.2em;
+    font-size: 1.6em;
   }
   .examples,
   .faq,
@@ -302,7 +302,7 @@ const jsonLd = {
     }
 
     function showMessage(type, msg) {
-      const icon = type === 'error' ? '⚠️' : '✔️';
+      const icon = type === 'error' ? '⚠️' : '✅';
       resultEl.innerHTML = `<span class="icon" aria-hidden="true">${icon}</span><span>${msg}</span>`;
       resultEl.dataset.state = type;
       resultEl.setAttribute('role', type === 'error' ? 'alert' : 'status');
