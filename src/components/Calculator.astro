@@ -160,12 +160,13 @@ const jsonLd = {
     padding: 12px 16px;
     border-radius: 12px;
     border: 0;
-    background: var(--accent-red);
+    background: var(--action);
     color: var(--primary-ink);
     font-weight: 600;
     cursor: pointer;
   }
-  .btn:hover{ filter:brightness(1.05); }
+  .btn:hover,
+  .btn:focus-visible{ filter:brightness(1.05); }
   .result {
     margin-top: 16px;
     font-size: 18px;
@@ -180,6 +181,8 @@ const jsonLd = {
   .result:not(:empty) {
     background: var(--accent);
     box-shadow: var(--shadow);
+    color: var(--primary-ink);
+    font-weight: 700;
   }
   .examples,
   .faq,

@@ -23,7 +23,7 @@ const list = items.filter(i => (i.fm.cluster || "").toLowerCase() === "conversio
         {list.map((it) => (
           <div>
             <a class="card" href={it.url}>
-              <h3>{it.fm.title || it.url.replace('/calculators/','').replace('.mdx','')}</h3>
+              <h3 class="label">{it.fm.title || it.url.replace('/calculators/','').replace('.mdx','')}</h3>
               <p>{it.fm.intro || it.fm.description || ''}</p>
             </a>
           </div>

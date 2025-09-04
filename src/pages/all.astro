@@ -17,7 +17,7 @@ const items = Object.values(modules).map((m) => ({ url: m.url, fm: m.frontmatter
       {items.map((it) => (
         <div>
           <a class="card" href={it.url}>
-            <h3>{it.fm.title || it.url.replace('/calculators/','').replace('.mdx','')}</h3>
+            <h3 class="label">{it.fm.title || it.url.replace('/calculators/','').replace('.mdx','')}</h3>
             <p>{it.fm.intro || it.fm.description || ''}</p>
           </a>
         </div>

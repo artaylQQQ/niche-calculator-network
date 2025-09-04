@@ -1,19 +1,20 @@
 :root {
   /*
-    Equilibrio Moderno: a neutral foundation with vibrant accents.
-    The base relies on black, grey and white tones to keep content
-    legible, while blue and red provide primary emphasis and yellow
-    adds secondary highlights.
+    Neutral foundation with contrasting accents. Content sits on a
+    light canvas, dark grey text ensures readability and black headlines
+    provide maximum contrast. Blue highlights links, red marks primary
+    actions and a mustard tone draws attention to labels or notices.
   */
   --bg: #ffffff;
   --surface: #f2f2f2;
-  --ink: #000000;
+  --ink: #333333;
+  --headline: #000000;
   --muted: #4b5563;
   --neutral-sky: #e5e7eb;
   --neutral-warm: #f5f5f4;
-  --primary: #0057b8;
-  --accent: #facc15;
-  --accent-red: #dc2626;
+  --link: #0057b8;
+  --action: #dc2626;
+  --accent: #b88a00;
   --primary-ink: #ffffff;
   --card: #ffffff;
   --border: #e5e7eb;
@@ -40,13 +41,14 @@
     */
     --bg: #0a0a0a;
     --surface: #1a1a1a;
-    --ink: #f5f5f5;
+    --ink: #d1d5db;
+    --headline: #ffffff;
     --muted: #9ca3af;
     --neutral-sky: #1a1a1a;
     --neutral-warm: #262626;
-    --primary: #0057b8;
-    --accent: #facc15;
-    --accent-red: #dc2626;
+    --link: #60a5fa;
+    --action: #f87171;
+    --accent: #b88a00;
     --primary-ink: #ffffff;
     --card: #1a1a1a;
     --border: #374151;
@@ -70,14 +72,16 @@ body {
 h1,
 h2,
 h3 {
-  color: var(--primary);
+  color: var(--headline);
 }
 a {
-  color: var(--primary);
+  color: var(--link);
   text-decoration: none;
 }
-a:hover {
-  color: var(--accent-red);
+a:hover,
+a:focus-visible {
+  color: var(--link);
+  text-decoration: underline;
 }
 body {
   padding-top: 72px;
@@ -112,14 +116,14 @@ body {
   transition: background 0.2s, box-shadow 0.2s, color 0.2s;
 }
 .nav-link:hover,
-.nav-link:focus {
+.nav-link:focus-visible {
   color: #fff;
   font-weight: 700;
-  background: #1e3a8a;
+  background: var(--link);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 .nav-link.traditional {
-  background: #dc2626;
+  background: var(--action);
   color: #fff;
   font-weight: 700;
 }
@@ -194,7 +198,8 @@ ul.grid li {
     box-shadow 0.12s ease,
     border-color 0.12s ease;
 }
-.card:hover {
+.card:hover,
+.card:focus-visible {
   transform: translateY(-1px);
   box-shadow:
     0 2px 4px rgba(0, 0, 0, 0.08),
@@ -208,10 +213,38 @@ ul.grid li {
      overflowing the card. */
   word-wrap: break-word;
   white-space: normal;
-  transition: color 0.12s ease;
 }
-.card:hover h3 {
+.label {
+  display: inline-block;
+  transition:
+    color 0.12s ease,
+    text-decoration 0.12s ease,
+    transform 0.12s ease,
+    box-shadow 0.12s ease;
+}
+.card:hover .label,
+.card:focus-visible .label {
   color: var(--accent);
+  text-decoration: underline;
+  transform: translateY(-1px);
+  box-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.08),
+    0 10px 28px rgba(0, 0, 0, 0.06);
+}
+.badge {
+  display: inline-block;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+.badge:hover,
+.badge:focus-visible {
+  box-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.08),
+    0 6px 10px rgba(0, 0, 0, 0.06);
+  transform: translateY(-1px);
 }
 .card p {
   color: var(--muted);
@@ -241,11 +274,11 @@ ul.grid li {
   background: #fff;
 }
 .input:focus {
-  outline: 2px solid var(--accent);
+  outline: 2px solid var(--link);
   outline-offset: 1px;
 }
 .btn-primary {
-  background: var(--primary);
+  background: var(--action);
   color: var(--primary-ink);
   border: none;
   border-radius: 12px;
@@ -253,9 +286,15 @@ ul.grid li {
   font-weight: 600;
   cursor: pointer;
   box-shadow: var(--shadow);
+  transition: filter 0.12s ease, transform 0.12s ease, box-shadow 0.12s ease;
 }
-.btn-primary:hover {
+.btn-primary:hover,
+.btn-primary:focus-visible {
   filter: brightness(1.05);
+  transform: translateY(-1px);
+  box-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.08),
+    0 6px 10px rgba(0, 0, 0, 0.06);
 }
 .faq summary {
   cursor: pointer;

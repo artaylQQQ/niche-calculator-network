@@ -74,7 +74,7 @@ const { cat, list = [] } = Astro.props;
         {list.map((c) => (
           <div>
             <a class="card" href={`/calculators/${c.slug}/`}>
-              <h3>{c.title}</h3>
+              <h3 class="label">{c.title}</h3>
               <p>{c.intro ?? ''}</p>
             </a>
           </div>
