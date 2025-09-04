@@ -22,7 +22,7 @@ const CATEGORIES = [
 ---
 <BaseLayout title="Categories" description="Browse all calculator categories.">
   <section class="container mx-auto max-w-5xl px-4 pt-10">
-    <h1 class="text-3xl sm:text-4xl font-bold" style="color: var(--ink)">Categories</h1>
+    <h1 class="text-3xl sm:text-4xl font-bold" style="color: #000">Categories</h1>
     <p class="mt-2" style="color: var(--muted)">Browse all our calculators by topic.</p>
   </section>
 
@@ -32,7 +32,7 @@ const CATEGORIES = [
     <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
       {CATEGORIES.map((cat) => (
         <li>
-          <a href={`/categories/${cat.slug}/`} class="card group">
+          <a href={`/categories/${cat.slug}/`} class="card">
             <div class="flex items-start gap-3">
               {/**
                * Provide meaningful alt text for icons to improve accessibility.
@@ -45,7 +45,7 @@ const CATEGORIES = [
                 loading="lazy"
               />
               <div>
-                <h3 class="text-lg font-semibold text-[var(--ink)] group-hover:underline group-hover:text-[var(--accent)] transition-colors">{cat.title}</h3>
+                <h3 class="text-lg font-semibold">{cat.title}</h3>
                 <p class="text-sm text-[var(--muted)]">{cat.desc}</p>
               </div>
             </div>
