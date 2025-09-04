@@ -80,7 +80,7 @@ a:hover {
   color: var(--accent-red);
 }
 body {
-  padding-top: 96px;
+  padding-top: 72px;
 }
 .container {
   max-width: var(--maxw);
@@ -92,98 +92,27 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  color: var(--primary-ink);
+  background: var(--card);
+  border-bottom: 1px solid var(--border);
   z-index: 50;
   box-shadow: var(--shadow);
 }
 .header a {
-  color: var(--primary-ink);
   text-decoration: none;
 }
-
-.top-bar {
-  background: rgba(0, 87, 184, 0.15);
-  backdrop-filter: blur(8px);
-}
-
-@media (prefers-color-scheme: light) {
-  .top-bar a {
-    color: #000;
-  }
-
-  .top-bar a:hover {
-    color: #000;
-  }
-
-  .top-bar .traditional-btn {
-    border-color: #000;
-  }
-
-  .top-bar .traditional-btn:focus {
-    outline-color: #000;
-  }
-}
-
-.nav-bar {
-  background: rgba(0, 87, 184, 0.6);
-  backdrop-filter: blur(8px);
-  transition: background 0.3s ease;
-  margin-top: 4px;
-  box-shadow: var(--shadow);
-}
-
-.header.scrolled .nav-bar {
-  background: var(--primary);
-  backdrop-filter: none;
-}
-
-.top-bar .container,
-.nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding-block: 8px;
-}
-
-.nav {
-  width: 100%;
-}
-.traditional-btn {
-  font-size: 14px;
-  padding: 4px 10px;
-  border: 1px solid var(--primary-ink);
-  border-radius: 9999px;
-  background: rgba(255, 255, 255, 0.1);
-  transition: background 0.2s ease;
-  box-shadow: var(--shadow);
-}
-.traditional-btn:hover,
-.traditional-btn:focus {
-  background: rgba(255, 255, 255, 0.2);
-}
-.traditional-btn:focus {
-  outline: 2px solid var(--primary-ink);
-  outline-offset: 2px;
-}
-.nav-pill {
-  display: block;
-  padding: 6px 14px;
-  border-radius: 9999px;
+.nav-link {
+  display: inline-block;
+  padding: 8px 12px;
   font-weight: 600;
-  text-align: center;
-  transition: background 0.2s ease;
+  color: var(--ink);
+  border-bottom: 2px solid transparent;
 }
-.nav-pill:hover,
-.nav-pill:focus {
-  background: rgba(255, 255, 255, 0.2);
+.nav-link:hover,
+.nav-link:focus {
+  color: var(--accent);
 }
-.nav-pill:focus {
-  outline: 2px solid var(--primary-ink);
-  outline-offset: 2px;
-}
-.nav-pill.active {
-  background: var(--primary-ink);
-  color: var(--primary);
+.nav-link.active {
+  border-bottom-color: var(--accent);
 }
 @media (max-width: 640px) {
   footer .links {
