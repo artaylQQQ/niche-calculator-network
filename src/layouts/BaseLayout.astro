@@ -48,9 +48,32 @@ const cfToken = import.meta.env.VITE_CF_ANALYTICS_TOKEN;
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
           </svg>
         </button>
-        <nav id="nav" class="hidden absolute top-full left-0 right-0 mx-4 mt-2 flex-col gap-2 bg-[var(--card)] border border-[var(--border)] rounded-md p-4 shadow-md sm:static sm:flex sm:flex-row sm:items-center sm:gap-4 sm:mx-0 sm:mt-0 sm:border-0 sm:p-0 sm:shadow-none" aria-label="Primary">
-          <a href="/traditional-calculator/" class={['nav-link', Astro.url.pathname.startsWith('/traditional-calculator') && 'active'].filter(Boolean).join(' ')}>Calculadora tradicional</a>
-          <a href="/all" class={['nav-link', Astro.url.pathname.startsWith('/all') && 'active'].filter(Boolean).join(' ')}>Todas las calculadoras</a>
+        <nav
+          id="nav"
+          class="hidden absolute top-full left-0 right-0 mx-4 mt-2 flex-col gap-2 bg-[var(--card)] border border-[var(--border)] rounded-md p-4 shadow-md sm:static sm:flex sm:flex-row sm:items-center sm:gap-4 sm:mx-0 sm:mt-0 sm:border-0 sm:p-0 sm:shadow-none"
+          aria-label="Primary"
+        >
+          <a
+            href="/categories/"
+            class={['nav-link', Astro.url.pathname.startsWith('/categories') && 'active'].filter(Boolean).join(' ')}
+            >Categories</a
+          >
+          <a
+            href="/all"
+            class={['nav-link', Astro.url.pathname.startsWith('/all') && 'active'].filter(Boolean).join(' ')}
+            >All Calculators</a
+          >
+          <a
+            href="/traditional-calculator/"
+            class={[
+              'nav-link',
+              'nav-special',
+              Astro.url.pathname.startsWith('/traditional-calculator') && 'active',
+            ]
+              .filter(Boolean)
+              .join(' ')}
+            >Traditional Calculator</a
+          >
         </nav>
       </div>
     </header>

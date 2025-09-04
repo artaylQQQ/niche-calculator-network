@@ -93,9 +93,9 @@ body {
   left: 0;
   width: 100%;
   background: var(--card);
-  border-bottom: 1px solid var(--border);
+  border-bottom: 3px solid #e0e0e0;
   z-index: 50;
-  box-shadow: var(--shadow);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
 }
 .header a {
   text-decoration: none;
@@ -105,14 +105,29 @@ body {
   padding: 8px 12px;
   font-weight: 600;
   color: var(--ink);
-  border-bottom: 2px solid transparent;
+  background: var(--surface);
+  border-radius: 8px;
+  transition: background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
 }
 .nav-link:hover,
 .nav-link:focus {
-  color: var(--accent);
+  background: var(--neutral-sky);
+  color: var(--ink);
 }
 .nav-link.active {
-  border-bottom-color: var(--accent);
+  box-shadow: 0 0 0 2px var(--accent) inset;
+}
+.nav-link.nav-special {
+  background: #e03b32;
+  color: #ffffff;
+  font-weight: 700;
+  margin-block: 10px;
+}
+.nav-link.nav-special:hover,
+.nav-link.nav-special:focus {
+  background: #003b73;
+  color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 @media (max-width: 640px) {
   footer .links {
