@@ -141,7 +141,7 @@ const jsonLd = {
     border-radius: var(--radius);
     box-shadow: var(--shadow);
   }
-  h1 { margin: 0 0 8px; font-size: 28px; }
+  h1 { margin: 48px 0 8px; font-size: 28px; }
   .muted { color: var(--muted); margin: 0 0 16px; }
   .field { margin: 14px 0; }
   .field label { display:block; margin: 0 0 6px; font-weight: 600; }
@@ -160,26 +160,30 @@ const jsonLd = {
     padding: 12px 16px;
     border-radius: 12px;
     border: 0;
-    background: var(--accent-red);
+    background: var(--primary);
     color: var(--primary-ink);
     font-weight: 600;
     cursor: pointer;
   }
-  .btn:hover{ filter:brightness(1.05); }
+  .btn:hover,
+  .btn:focus { filter:brightness(1.05); outline:2px solid var(--accent); }
   .result {
     margin-top: 16px;
     font-size: 18px;
-    font-weight: 600;
-    color: var(--ink);
+    font-weight: 700;
+    color: var(--bg);
     background: var(--bg);
     border-radius: var(--radius);
     box-shadow: none;
     padding: 12px;
-    transition: background 0.2s ease, box-shadow 0.2s ease;
+    opacity: 0;
+    transition: background 0.2s ease, box-shadow 0.2s ease, color 0.2s ease, opacity 0.2s ease;
   }
   .result:not(:empty) {
-    background: var(--accent);
+    background: var(--mustard-dark);
+    color: #fff;
     box-shadow: var(--shadow);
+    opacity: 1;
   }
   .examples,
   .faq,

@@ -1,19 +1,15 @@
 :root {
-  /*
-    Equilibrio Moderno: a neutral foundation with vibrant accents.
-    The base relies on black, grey and white tones to keep content
-    legible, while blue and red provide primary emphasis and yellow
-    adds secondary highlights.
-  */
-  --bg: #ffffff;
-  --surface: #f2f2f2;
-  --ink: #000000;
+  /* Neutral foundation with vibrant accents */
+  --bg: #f9f9f9;
+  --surface: #ffffff;
+  --ink: #1a1a1a;
   --muted: #4b5563;
   --neutral-sky: #e5e7eb;
   --neutral-warm: #f5f5f4;
-  --primary: #0057b8;
-  --accent: #facc15;
+  --primary: #dc2626;
+  --accent: #d4af37;
   --accent-red: #dc2626;
+  --mustard-dark: #b8860b;
   --primary-ink: #ffffff;
   --card: #ffffff;
   --border: #e5e7eb;
@@ -44,9 +40,10 @@
     --muted: #9ca3af;
     --neutral-sky: #1a1a1a;
     --neutral-warm: #262626;
-    --primary: #0057b8;
-    --accent: #facc15;
+    --primary: #dc2626;
+    --accent: #d4af37;
     --accent-red: #dc2626;
+    --mustard-dark: #b8860b;
     --primary-ink: #ffffff;
     --card: #1a1a1a;
     --border: #374151;
@@ -67,20 +64,33 @@ body {
     Arial,
     sans-serif;
 }
+a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+a:hover,
+a:focus {
+  color: var(--mustard-dark);
+  text-decoration: underline;
+}
 h1,
 h2,
 h3 {
-  color: var(--primary);
-}
-a {
-  color: var(--primary);
-  text-decoration: none;
-}
-a:hover {
-  color: var(--accent-red);
+  color: #000;
 }
 body {
   padding-top: 72px;
+}
+.logo {
+  transition: font-size 0.2s ease;
+}
+.logo:hover,
+.logo:focus {
+  font-size: 120%;
+}
+main h1 {
+  margin-top: 3rem;
 }
 .container {
   max-width: var(--maxw);
@@ -104,7 +114,7 @@ body {
   display: inline-block;
   padding: 8px 12px;
   font-weight: 600;
-  color: var(--ink);
+  color: var(--accent);
   background: var(--card);
   border-radius: 4px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
@@ -115,11 +125,16 @@ body {
 .nav-link:focus {
   color: #fff;
   font-weight: 700;
-  background: #1e3a8a;
+  background: var(--mustard-dark);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
+.nav-link.active {
+  background: var(--accent);
+  color: #fff;
+  font-weight: 700;
+}
 .nav-link.traditional {
-  background: #dc2626;
+  background: var(--primary);
   color: #fff;
   font-weight: 700;
 }
@@ -178,10 +193,6 @@ ul.grid li {
   list-style: none;
 }
 .card {
-  /* Make cards fill the available width of their grid cell and stack
-     text vertically.  Using display:block ensures that anchor tags
-     expand to the full width of their parent container, preventing
-     content from being clipped when long titles wrap. */
   display: block;
   width: 100%;
   background: var(--card);
@@ -195,23 +206,23 @@ ul.grid li {
     border-color 0.12s ease;
 }
 .card:hover {
-  transform: translateY(-1px);
-  box-shadow:
-    0 2px 4px rgba(0, 0, 0, 0.08),
-    0 10px 28px rgba(0, 0, 0, 0.06);
+  transform: translateY(2px);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
   border-color: var(--accent);
 }
 .card h3 {
   margin: 2px 0 6px;
   font-size: 18px;
-  /* Allow long calculator names to wrap onto multiple lines without
-     overflowing the card. */
   word-wrap: break-word;
   white-space: normal;
-  transition: color 0.12s ease;
+  transition: color 0.12s ease, background 0.12s ease, font-weight 0.12s ease;
 }
 .card:hover h3 {
-  color: var(--accent);
+  background: #1e3a8a;
+  color: #fff;
+  font-weight: 700;
+  padding: 2px 4px;
+  border-radius: 4px;
 }
 .card p {
   color: var(--muted);
