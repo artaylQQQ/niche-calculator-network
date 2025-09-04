@@ -40,18 +40,20 @@ const cfToken = import.meta.env.VITE_CF_ANALYTICS_TOKEN;
 </head>
   <body>
     <a href="#main" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden">Skip to content</a>
-    <header class="header" role="banner">
+    <header class="header border-b border-[#E0E0E0]" role="banner">
       <div class="container flex items-center justify-between py-4">
         <a href="/" aria-label="CalcSimpler" class="logo text-xl font-bold text-[var(--ink)]">CalcSimpler.com</a>
-        <button id="menu-btn" class="sm:hidden p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-[var(--accent)]" aria-label="Toggle navigation" aria-expanded="false">
-          <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
-        </button>
-        <nav id="nav" class="hidden absolute top-full left-0 right-0 mx-4 mt-2 flex-col gap-2 bg-[var(--card)] border border-[var(--border)] rounded-md p-4 shadow-md sm:static sm:flex sm:flex-row sm:items-center sm:gap-4 sm:mx-0 sm:mt-0 sm:border-0 sm:p-0 sm:shadow-none" aria-label="Primary">
-          <a href="/traditional-calculator/" class={['nav-link', Astro.url.pathname.startsWith('/traditional-calculator') && 'active'].filter(Boolean).join(' ')}>Calculadora tradicional</a>
-          <a href="/all" class={['nav-link', Astro.url.pathname.startsWith('/all') && 'active'].filter(Boolean).join(' ')}>Todas las calculadoras</a>
-        </nav>
+        <div class="flex gap-2">
+          <a href="/categories/" class="px-4 py-2 font-semibold text-[var(--ink)] bg-[var(--card)] rounded-lg hover:bg-gray-200">Categories</a>
+          <a href="/all" class="px-4 py-2 font-semibold text-[var(--ink)] bg-[var(--card)] rounded-lg hover:bg-gray-200">All Calculators</a>
+        </div>
+      </div>
+      <div class="container">
+        <a
+          href="/traditional-calculator/"
+          class="inline-block my-4 px-6 py-3 font-bold text-white bg-[#E03B32] rounded-lg hover:bg-[#C9302C] hover:shadow-sm"
+          >Traditional Calculator</a
+        >
       </div>
     </header>
     <main class="container" id="main" role="main">
@@ -69,14 +71,5 @@ const cfToken = import.meta.env.VITE_CF_ANALYTICS_TOKEN;
       </div>
       <div style="text-align:center;margin-top:8px;color:var(--muted)">© {new Date().getFullYear()} CalcSimpler.com</div>
     </footer>
-    <script is:inline>
-      const btn = document.getElementById('menu-btn');
-      const nav = document.getElementById('nav');
-      btn?.addEventListener('click', () => {
-        const expanded = btn.getAttribute('aria-expanded') === 'true';
-        btn.setAttribute('aria-expanded', String(!expanded));
-        nav.classList.toggle('hidden');
-      });
-    </script>
   </body>
 </html>
