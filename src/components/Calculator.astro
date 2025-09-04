@@ -89,11 +89,12 @@ const jsonLd = {
           inputmode="decimal"
           placeholder={i.placeholder ?? ''}
           aria-describedby={`hint-${slug}-${i.name}`}
+          class="input"
         />
         <div id={`hint-${slug}-${i.name}`} class="hint">{i.hint ? i.hint : (i.units ? i.units : '')}</div>
       </div>
     ))}
-    <button type="button" data-action="calc" class="btn">Calculate</button>
+    <button type="button" data-action="calc" class="btn-primary">Calculate</button>
   </form>
 
   <div class="result" data-role="result" aria-live="polite"></div>
@@ -145,49 +146,33 @@ const jsonLd = {
   .muted { color: var(--muted); margin: 0 0 16px; }
   .field { margin: 14px 0; }
   .field label { display:block; margin: 0 0 6px; font-weight: 600; }
-  .field input[type=number], .field input, .field select {
-    width: 100%;
-    padding: 10px 12px;
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    background: var(--card);
-    color: var(--ink);
-    box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.1),
-      inset -2px -2px 4px rgba(255, 255, 255, 0.6);
-  }
-  .btn {
-    display: inline-block;
-    padding: 12px 16px;
-    border-radius: 12px;
-    border: 0;
-    background: var(--accent-red);
-    color: var(--primary-ink);
-    font-weight: 700;
-    cursor: pointer;
-    transition: transform 0.2s;
-  }
-  .btn:hover,
-  .btn:focus {
-    transform: translateY(1px);
-    filter: brightness(1.05);
-  }
   .result {
     margin-top: 16px;
     font-size: 18px;
     font-weight: 700;
-    color: var(--bg);
-    background: var(--bg);
     border-radius: var(--radius);
     box-shadow: none;
     padding: 12px;
     opacity: 0;
     transition: background 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
   }
-  .result:not(:empty) {
-    background: #b8860b;
-    color: #ffffff;
-    box-shadow: var(--shadow);
+  .result.error,
+  .result.success {
     opacity: 1;
+    box-shadow: var(--shadow);
+    display: flex;
+    align-items: center;
+  }
+  .result.error {
+    background: var(--accent-red);
+    color: #ffffff;
+  }
+  .result.success {
+    background: #facc15;
+    color: #000000;
+  }
+  .result .icon {
+    margin-right: 8px;
   }
   .examples,
   .faq,
@@ -270,7 +255,7 @@ const jsonLd = {
     if (!form || !resultEl || !btn) return;
     let slug = root.getAttribute('data-slug') || 'calculator';
     let expr = root.getAttribute('data-exp') || '';
-    
+
     function readInputs(){
       let out={};
       let fields = form.querySelectorAll('input[name]');
@@ -281,13 +266,22 @@ const jsonLd = {
       return out;
     }
 
+    function showError(msg){
+      resultEl.className = 'result error';
+      resultEl.innerHTML = '<span class="icon" aria-hidden="true">⚠️</span>' + msg;
+    }
+    function showSuccess(msg){
+      resultEl.className = 'result success';
+      resultEl.innerHTML = '<span class="icon" aria-hidden="true">✅</span>' + msg;
+    }
+
     // Compute function handles validation, expression evaluation and fallbacks.
     window.compute = function(){
       const vars = readInputs();
       // validate all inputs are finite numbers
       for (const k in vars) {
         if (!isFinite(vars[k])) {
-          resultEl.textContent = 'Please fill all fields with valid numbers';
+          showError('Please fill all fields with valid numbers');
           return;
         }
       }
@@ -299,7 +293,7 @@ const jsonLd = {
         const varNames = expr.match(/[A-Za-z_][A-Za-z0-9_]*/g) || [];
         const unknown = varNames.filter(n => !(n in vars));
         if (unknown.length) {
-          resultEl.textContent = 'Unknown variable: ' + unknown[0];
+          showError('Unknown variable: ' + unknown[0]);
           return;
         }
         try {
@@ -318,7 +312,7 @@ const jsonLd = {
             const annualRate = ('rate' in vars ? num(vars.rate) : num(vars.annualRate));
             const months = ('months' in vars ? num(vars.months) : num(vars.years) * 12);
             if (!isFinite(P) || !isFinite(months) || months === 0) {
-              resultEl.textContent = 'Please fill all fields with valid numbers';
+              showError('Please fill all fields with valid numbers');
               return;
             }
             const r = annualRate / 100 / 12;
@@ -362,7 +356,7 @@ const jsonLd = {
             const iVal = num(vars.initial);
             const yVal = num(vars.years);
             if (iVal === 0 || !isFinite(fVal) || !isFinite(iVal) || !isFinite(yVal) || yVal === 0) {
-              resultEl.textContent = 'Please fill all fields with valid numbers';
+              showError('Please fill all fields with valid numbers');
               return;
             }
             value = (Math.pow(fVal / iVal, 1 / yVal) - 1) * 100;
@@ -386,7 +380,7 @@ const jsonLd = {
             const variable = num(vars.variable);
             const price = num(vars.price);
             if (price <= variable) {
-              resultEl.textContent = 'Price must be greater than variable cost.';
+              showError('Price must be greater than variable cost.');
               return;
             }
             value = fixed / (price - variable);
@@ -463,7 +457,7 @@ const jsonLd = {
             break;
           }
           default: {
-            resultEl.textContent = 'Calculation not available.';
+            showError('Calculation not available.');
             return;
           }
         }
@@ -477,9 +471,9 @@ const jsonLd = {
       }
       // Render result with proper formatting
       if (unit === '$' || unit === '€' || unit === '£') {
-        resultEl.textContent = 'Result: ' + unit + fmt(value);
+        showSuccess('Result: ' + unit + fmt(value));
       } else {
-        resultEl.textContent = 'Result: ' + fmt(value) + (unit ? (' ' + unit) : '');
+        showSuccess('Result: ' + fmt(value) + (unit ? (' ' + unit) : ''));
       }
     };
 
