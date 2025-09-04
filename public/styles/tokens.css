@@ -3,15 +3,16 @@
      backgrounds, surfaces and text colours used throughout the site. */
   --bg:#ffffff;
   --surface:#f2f2f2;
-  --text:#000000;
-  --muted:#4b5563;
+  --text:#4b5563; /* dark grey body text */
+  --heading:#000000; /* black headings */
+  --muted:#6b7280;
   /* Neutral palette combining soft greys */
   --neutral-sky:#e5e7eb;
   --neutral-warm:#f5f5f4;
-  /* Primary brand colour and complementary accents */
-  --primary:#0057B8;
-  --accent:#FACC15; /* Energetic yellow accent */
-  --accent-red:#DC2626;
+  /* Brand colours */
+  --primary:#DC2626; /* red for primary actions */
+  --link:#0057B8;    /* blue for links */
+  --accent:#B8860B;  /* dark mustard accent */
   --ring:#0057B833;
   --radius:12px;
   --shadow:0 2px 4px rgba(0,0,0,.1),0 8px 16px rgba(0,0,0,.08);
@@ -32,13 +33,14 @@
     /* Darker surface for cards and containers */
     --surface: #1a1a1a;
     /* Primary text becomes light for readability */
-    --text: #f5f5f5;
+    --text: #e5e5e5;
+    --heading: #ffffff;
     /* Muted text uses a mid‑tone grey */
     --muted: #9ca3af;
     /* Preserve brand colour and accents in dark mode */
-    --primary: #0057B8;
-    --accent: #FACC15;
-    --accent-red: #DC2626;
+    --primary: #DC2626;
+    --link: #3B82F6;
+    --accent: #B8860B;
   }
 }
 

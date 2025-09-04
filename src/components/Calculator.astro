@@ -141,7 +141,7 @@ const jsonLd = {
     border-radius: var(--radius);
     box-shadow: var(--shadow);
   }
-  h1 { margin: 0 0 8px; font-size: 28px; }
+  h1 { margin: 0 0 8px; font-size: 28px; color: var(--heading); }
   .muted { color: var(--muted); margin: 0 0 16px; }
   .field { margin: 14px 0; }
   .field label { display:block; margin: 0 0 6px; font-weight: 600; }
@@ -160,12 +160,19 @@ const jsonLd = {
     padding: 12px 16px;
     border-radius: 12px;
     border: 0;
-    background: var(--accent-red);
+    background: var(--primary);
     color: var(--primary-ink);
     font-weight: 600;
     cursor: pointer;
+    box-shadow: var(--shadow);
+    transition: filter 0.2s ease, outline 0.2s ease;
   }
-  .btn:hover{ filter:brightness(1.05); }
+  .btn:hover,
+  .btn:focus {
+    filter: brightness(1.05);
+    outline: 2px solid var(--link-hover);
+    outline-offset: 2px;
+  }
   .result {
     margin-top: 16px;
     font-size: 18px;
@@ -180,6 +187,8 @@ const jsonLd = {
   .result:not(:empty) {
     background: var(--accent);
     box-shadow: var(--shadow);
+    color: var(--primary-ink);
+    font-weight: 700;
   }
   .examples,
   .faq,

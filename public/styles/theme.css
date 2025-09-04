@@ -7,13 +7,15 @@
   */
   --bg: #ffffff;
   --surface: #f2f2f2;
-  --ink: #000000;
-  --muted: #4b5563;
+  --ink: #4b5563; /* default text in dark gray */
+  --heading: #000000; /* headings in black */
+  --muted: #6b7280;
   --neutral-sky: #e5e7eb;
   --neutral-warm: #f5f5f4;
-  --primary: #0057b8;
-  --accent: #facc15;
-  --accent-red: #dc2626;
+  --primary: #dc2626; /* primary action red */
+  --link: #0057b8; /* link and secondary blue */
+  --link-hover: #1e3a8a;
+  --accent: #b8860b; /* dark mustard accent */
   --primary-ink: #ffffff;
   --card: #ffffff;
   --border: #e5e7eb;
@@ -40,13 +42,15 @@
     */
     --bg: #0a0a0a;
     --surface: #1a1a1a;
-    --ink: #f5f5f5;
+    --ink: #e5e5e5;
+    --heading: #ffffff;
     --muted: #9ca3af;
     --neutral-sky: #1a1a1a;
     --neutral-warm: #262626;
-    --primary: #0057b8;
-    --accent: #facc15;
-    --accent-red: #dc2626;
+    --primary: #dc2626;
+    --link: #3b82f6;
+    --link-hover: #60a5fa;
+    --accent: #b8860b;
     --primary-ink: #ffffff;
     --card: #1a1a1a;
     --border: #374151;
@@ -70,14 +74,18 @@ body {
 h1,
 h2,
 h3 {
-  color: var(--primary);
+  color: var(--heading);
 }
 a {
-  color: var(--primary);
+  color: var(--link);
   text-decoration: none;
 }
-a:hover {
-  color: var(--accent-red);
+a:hover,
+a:focus {
+  color: var(--link-hover);
+  text-decoration: underline;
+  outline: 2px solid var(--link-hover);
+  outline-offset: 2px;
 }
 body {
   padding-top: 72px;
@@ -115,11 +123,13 @@ body {
 .nav-link:focus {
   color: #fff;
   font-weight: 700;
-  background: #1e3a8a;
+  background: var(--link-hover);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  outline: 2px solid var(--link-hover);
+  outline-offset: 2px;
 }
 .nav-link.traditional {
-  background: #dc2626;
+  background: var(--primary);
   color: #fff;
   font-weight: 700;
 }
@@ -192,7 +202,8 @@ ul.grid li {
   transition:
     transform 0.12s ease,
     box-shadow 0.12s ease,
-    border-color 0.12s ease;
+    border-color 0.12s ease,
+    background 0.12s ease;
 }
 .card:hover {
   transform: translateY(-1px);
@@ -200,25 +211,26 @@ ul.grid li {
     0 2px 4px rgba(0, 0, 0, 0.08),
     0 10px 28px rgba(0, 0, 0, 0.06);
   border-color: var(--accent);
+  background: var(--accent);
 }
 .card h3 {
   margin: 2px 0 6px;
   font-size: 18px;
-  /* Allow long calculator names to wrap onto multiple lines without
-     overflowing the card. */
   word-wrap: break-word;
   white-space: normal;
   transition: color 0.12s ease;
-}
-.card:hover h3 {
-  color: var(--accent);
+  color: var(--heading);
 }
 .card p {
   color: var(--muted);
   font-size: 14px;
-  /* Ensure descriptions wrap naturally within the card. */
   word-wrap: break-word;
   white-space: normal;
+}
+.card:hover h3,
+.card:hover p {
+  color: var(--primary-ink);
+  font-weight: 700;
 }
 .ad-slot {
   border: 1px dashed var(--border);
@@ -241,7 +253,7 @@ ul.grid li {
   background: #fff;
 }
 .input:focus {
-  outline: 2px solid var(--accent);
+  outline: 2px solid var(--link);
   outline-offset: 1px;
 }
 .btn-primary {
@@ -253,9 +265,13 @@ ul.grid li {
   font-weight: 600;
   cursor: pointer;
   box-shadow: var(--shadow);
+  transition: filter 0.2s ease, outline 0.2s ease;
 }
-.btn-primary:hover {
+.btn-primary:hover,
+.btn-primary:focus {
   filter: brightness(1.05);
+  outline: 2px solid var(--link-hover);
+  outline-offset: 2px;
 }
 .faq summary {
   cursor: pointer;
@@ -274,5 +290,5 @@ footer .links a {
 }
 footer .links a:hover {
   text-decoration: underline;
-  color: var(--accent);
+  color: var(--link-hover);
 }
