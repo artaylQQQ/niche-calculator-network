@@ -105,14 +105,28 @@ body {
   padding: 8px 12px;
   font-weight: 600;
   color: var(--ink);
-  border-bottom: 2px solid transparent;
+  background: #f5f5f5;
+  border-radius: 8px;
 }
 .nav-link:hover,
 .nav-link:focus {
-  color: var(--accent);
+  background: #e0e0e0;
 }
 .nav-link.active {
-  border-bottom-color: var(--accent);
+  background: #e0e0e0;
+}
+
+.traditional-btn {
+  background: #e03b32;
+  color: #ffffff;
+  font-weight: 700;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.traditional-btn:hover,
+.traditional-btn:focus {
+  background: #c9302c;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 @media (max-width: 640px) {
   footer .links {
