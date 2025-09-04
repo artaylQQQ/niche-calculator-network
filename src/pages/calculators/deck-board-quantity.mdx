@@ -1,0 +1,71 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Deck Board Quantity Calculator"
+description: "Estimate number of decking boards needed for a project."
+date: 2025-09-05
+updated: 2025-09-05
+cluster: "Home & DIY"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "deck-board-quantity",
+  "title": "Deck Board Quantity Calculator",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "deck_length",
+      "label": "Deck length (m)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "6"
+    },
+    {
+      "name": "deck_width",
+      "label": "Deck width (m)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "4"
+    },
+    {
+      "name": "board_length",
+      "label": "Board length (m)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "2"
+    },
+    {
+      "name": "board_width",
+      "label": "Board width (m)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "0.15"
+    }
+  ],
+  "expression": "(deck_length * deck_width) / (board_length * board_width)",
+  "intro": "Estimate how many boards are needed based on deck and board dimensions.",
+  "examples": [
+    {
+      "description": "6×4 m deck with 2×0.15 m boards ⇒ 80 boards"
+    },
+    {
+      "description": "5×5 m deck with 2.5×0.1 m boards ⇒ 100 boards"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Does this include wastage?",
+      "answer": "No, consider ordering extra for cuts and mistakes."
+    },
+    {
+      "question": "Assumes boards span the deck length?",
+      "answer": "Yes, boards are assumed to run the full deck length."
+    }
+  ],
+  "disclaimer": "Round up and add spare boards for best results.",
+  "cluster": "Home & DIY",
+  "unit": "boards"
+};
+
+<Calculator schema={schema} />

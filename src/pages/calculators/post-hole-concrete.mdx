@@ -1,0 +1,57 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Post Hole Concrete Calculator"
+description: "Volume of concrete needed for a cylindrical post hole."
+date: 2025-09-05
+updated: 2025-09-05
+cluster: "Home & DIY"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "post-hole-concrete",
+  "title": "Post Hole Concrete Calculator",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "diameter",
+      "label": "Hole diameter (m)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "0.3"
+    },
+    {
+      "name": "depth",
+      "label": "Hole depth (m)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "0.6"
+    }
+  ],
+  "expression": "3.141592653589793 * (diameter/2)^2 * depth",
+  "intro": "Estimate concrete volume for a cylindrical post hole.",
+  "examples": [
+    {
+      "description": "0.3 m × 0.6 m ⇒ 0.042 m³"
+    },
+    {
+      "description": "0.2 m × 0.8 m ⇒ 0.025 m³"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Does this include the post?",
+      "answer": "No, it calculates the hole volume only."
+    },
+    {
+      "question": "Should I add extra?",
+      "answer": "Many builders add about 10% for waste."
+    }
+  ],
+  "disclaimer": "Verify measurements before purchasing materials.",
+  "cluster": "Home & DIY",
+  "unit": "m³"
+};
+
+<Calculator schema={schema} />

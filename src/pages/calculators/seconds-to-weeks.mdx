@@ -1,0 +1,50 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Seconds to Weeks Converter"
+description: "Convert seconds to weeks."
+date: 2025-09-05
+updated: 2025-09-05
+cluster: "Date & Time"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "seconds-to-weeks",
+  "title": "Seconds to Weeks Converter",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "seconds",
+      "label": "Seconds",
+      "type": "number",
+      "step": "any",
+      "placeholder": "604800"
+    }
+  ],
+  "expression": "seconds / 604800",
+  "intro": "Turn a number of seconds into whole or fractional weeks.",
+  "examples": [
+    {
+      "description": "604800 seconds ⇒ 1 week"
+    },
+    {
+      "description": "1209600 seconds ⇒ 2 weeks"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "How many seconds are in a week?",
+      "answer": "Exactly 604,800."
+    },
+    {
+      "question": "Can it handle fractional weeks?",
+      "answer": "Yes, results may include decimals."
+    }
+  ],
+  "disclaimer": "Rounded to the nearest decimal where appropriate.",
+  "cluster": "Date & Time",
+  "unit": "weeks"
+};
+
+<Calculator schema={schema} />

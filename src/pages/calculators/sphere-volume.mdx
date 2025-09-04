@@ -1,0 +1,50 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Sphere Volume Calculator"
+description: "Volume of a sphere from its radius."
+date: 2025-09-05
+updated: 2025-09-05
+cluster: "Math"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "sphere-volume",
+  "title": "Sphere Volume Calculator",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "radius",
+      "label": "Radius",
+      "type": "number",
+      "step": "any",
+      "placeholder": "3"
+    }
+  ],
+  "expression": "(4/3) * 3.141592653589793 * radius^3",
+  "intro": "Compute the volume enclosed by a sphere given its radius.",
+  "examples": [
+    {
+      "description": "r = 1 ⇒ 4.19"
+    },
+    {
+      "description": "r = 3 ⇒ 113.10"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "What is the formula?",
+      "answer": "4/3 × π × r³."
+    },
+    {
+      "question": "Are units cubed?",
+      "answer": "Yes, volume units are cubic."
+    }
+  ],
+  "disclaimer": "Approximate using π ≈ 3.14159.",
+  "cluster": "Math",
+  "unit": "unit³"
+};
+
+<Calculator schema={schema} />

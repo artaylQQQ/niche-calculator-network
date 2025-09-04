@@ -1,0 +1,50 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "IPv4 Subnet Host Count Calculator"
+description: "Number of usable hosts in an IPv4 subnet."
+date: 2025-09-05
+updated: 2025-09-05
+cluster: "Technology"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "ipv4-subnet-host-count",
+  "title": "IPv4 Subnet Host Count Calculator",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "prefix",
+      "label": "Prefix length",
+      "type": "number",
+      "step": "any",
+      "placeholder": "24"
+    }
+  ],
+  "expression": "2^(32 - prefix) - 2",
+  "intro": "Determine how many usable addresses a subnet provides from its CIDR prefix length.",
+  "examples": [
+    {
+      "description": "/24 ⇒ 254 hosts"
+    },
+    {
+      "description": "/16 ⇒ 65534 hosts"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Why subtract 2?",
+      "answer": "Network and broadcast addresses are reserved."
+    },
+    {
+      "question": "Prefixes over 30?",
+      "answer": "They leave too few usable addresses."
+    }
+  ],
+  "disclaimer": "Assumes standard IPv4 addressing.",
+  "cluster": "Technology",
+  "unit": "hosts"
+};
+
+<Calculator schema={schema} />

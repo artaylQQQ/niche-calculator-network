@@ -1,0 +1,57 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Shower Water Usage Calculator"
+description: "Estimate water used during a shower."
+date: 2025-09-05
+updated: 2025-09-05
+cluster: "Everyday & Misc"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "shower-water-usage",
+  "title": "Shower Water Usage Calculator",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "flow_rate",
+      "label": "Flow rate (L/min)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "9"
+    },
+    {
+      "name": "minutes",
+      "label": "Minutes",
+      "type": "number",
+      "step": "any",
+      "placeholder": "5"
+    }
+  ],
+  "expression": "flow_rate * minutes",
+  "intro": "Find out how many liters of water a shower consumes.",
+  "examples": [
+    {
+      "description": "9 L/min × 5 min ⇒ 45 L"
+    },
+    {
+      "description": "12 L/min × 10 min ⇒ 120 L"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Typical shower flow rate?",
+      "answer": "Around 9–12 liters per minute."
+    },
+    {
+      "question": "How can I reduce usage?",
+      "answer": "Shorter showers or low-flow showerheads."
+    }
+  ],
+  "disclaimer": "Actual use varies with water pressure and showerhead.",
+  "cluster": "Everyday & Misc",
+  "unit": "L"
+};
+
+<Calculator schema={schema} />
