@@ -177,8 +177,8 @@ ul.grid li {
      content from being clipped when long titles wrap. */
   display: block;
   width: 100%;
-  background: var(--card);
-  border: 1px solid var(--border);
+  background: #b8860b;
+  border: 1px solid #b8860b;
   border-radius: var(--radius);
   padding: 16px;
   box-shadow: var(--shadow);
@@ -186,6 +186,7 @@ ul.grid li {
     transform 0.12s ease,
     box-shadow 0.12s ease,
     border-color 0.12s ease;
+  color: #ffffff;
 }
 .card:hover {
   transform: translateY(1px);
@@ -199,19 +200,25 @@ ul.grid li {
   white-space: normal;
   padding: 2px 4px;
   transition: background 0.12s ease, font-weight 0.12s ease;
+  color: #ffffff;
+  font-weight: 700;
 }
 .card:hover h3 {
-  background: #ffffff;
+  background: transparent;
   font-weight: 700;
   text-decoration: none;
-  color: var(--ink);
+  color: #ffffff;
 }
 .card p {
-  color: var(--muted);
+  color: #ffffff;
   font-size: 14px;
   /* Ensure descriptions wrap naturally within the card. */
   word-wrap: break-word;
   white-space: normal;
+  font-weight: 700;
+}
+.card img {
+  filter: brightness(0) invert(1);
 }
 .ad-slot {
   border: 1px dashed var(--border);
