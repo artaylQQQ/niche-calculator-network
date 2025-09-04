@@ -1,19 +1,19 @@
 :root {
   /*
     Equilibrio Moderno: a neutral foundation with vibrant accents.
-    The base relies on black, grey and white tones to keep content
-    legible, while blue and red provide primary emphasis and yellow
-    adds secondary highlights.
+    The base relies on grey and white tones to keep content legible,
+    while red drives primary actions, blue covers links and secondary
+    elements and a dark mustard yellow provides additional highlights.
   */
-  --bg: #ffffff;
-  --surface: #f2f2f2;
-  --ink: #000000;
+  --bg: #f9fafb;
+  --surface: #ffffff;
+  --ink: #1f2937;
   --muted: #4b5563;
   --neutral-sky: #e5e7eb;
   --neutral-warm: #f5f5f4;
-  --primary: #0057b8;
-  --accent: #facc15;
-  --accent-red: #dc2626;
+  --primary: #dc2626;
+  --secondary: #0057b8;
+  --accent: #b8860b;
   --primary-ink: #ffffff;
   --card: #ffffff;
   --border: #e5e7eb;
@@ -34,7 +34,7 @@
   :root {
     /*
       Adopt a dark palette that remains comfortable on the eyes.  We
-      retain the same blue accent colour while brightening the ink and
+      retain the same accent relationships while brightening the ink and
       softening the muted tones.  Shadows are strengthened slightly to
       preserve depth on dark surfaces.
     */
@@ -44,9 +44,9 @@
     --muted: #9ca3af;
     --neutral-sky: #1a1a1a;
     --neutral-warm: #262626;
-    --primary: #0057b8;
-    --accent: #facc15;
-    --accent-red: #dc2626;
+    --primary: #dc2626;
+    --secondary: #0057b8;
+    --accent: #b8860b;
     --primary-ink: #ffffff;
     --card: #1a1a1a;
     --border: #374151;
@@ -70,14 +70,20 @@ body {
 h1,
 h2,
 h3 {
-  color: var(--primary);
+  color: #000000;
 }
 a {
-  color: var(--primary);
+  color: var(--secondary);
   text-decoration: none;
 }
-a:hover {
-  color: var(--accent-red);
+a:hover,
+a:focus {
+  color: var(--primary);
+  text-decoration: underline;
+  outline: none;
+}
+main h1 {
+  margin-top: 2em;
 }
 body {
   padding-top: 72px;
@@ -115,11 +121,17 @@ body {
 .nav-link:focus {
   color: #fff;
   font-weight: 700;
-  background: #1e3a8a;
+  background: var(--secondary);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  outline: none;
+}
+.nav-link.active {
+  background: var(--secondary);
+  color: #fff;
+  font-weight: 700;
 }
 .nav-link.traditional {
-  background: #dc2626;
+  background: var(--primary);
   color: #fff;
   font-weight: 700;
 }
@@ -194,12 +206,14 @@ ul.grid li {
     box-shadow 0.12s ease,
     border-color 0.12s ease;
 }
-.card:hover {
+.card:hover,
+.card:focus {
   transform: translateY(-1px);
   box-shadow:
     0 2px 4px rgba(0, 0, 0, 0.08),
     0 10px 28px rgba(0, 0, 0, 0.06);
   border-color: var(--accent);
+  outline: none;
 }
 .card h3 {
   margin: 2px 0 6px;
@@ -241,7 +255,7 @@ ul.grid li {
   background: #fff;
 }
 .input:focus {
-  outline: 2px solid var(--accent);
+  outline: 2px solid var(--secondary);
   outline-offset: 1px;
 }
 .btn-primary {
@@ -254,8 +268,11 @@ ul.grid li {
   cursor: pointer;
   box-shadow: var(--shadow);
 }
-.btn-primary:hover {
+.btn-primary:hover,
+.btn-primary:focus {
   filter: brightness(1.05);
+  outline: 2px solid var(--secondary);
+  outline-offset: 2px;
 }
 .faq summary {
   cursor: pointer;
