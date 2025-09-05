@@ -42,6 +42,7 @@ export async function GET({ site }: APIContext) {
   const staticPaths = [
     "/",
     "/all",
+    "/search",
     "/finance",
     "/health",
     "/math",
