@@ -1,0 +1,37 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Trip Duration Calculator"
+description: "Estimate the length of a trip in days."
+updated: "2025-10-15"
+cluster: "Date & Time"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  slug: "trip-duration",
+  title: "Trip Duration Calculator",
+  locale: "en",
+  unit: "days",
+  inputs: [
+    { name: "start", label: "Start Day of Year", type: "number", min: 1, max: 365, step: 1, placeholder: "120" },
+    { name: "end", label: "End Day of Year", type: "number", min: 1, max: 365, step: 1, placeholder: "127" }
+  ],
+  expression: "end - start",
+  intro: "Estimate how many days your trip spans using day-of-year numbers for start and end dates.",
+  examples: [
+    { description: "Start 120, end 127 ⇒ 7 days" },
+    { description: "Start 200, end 205 ⇒ 5 days" }
+  ],
+  faqs: [
+    { question: "Must dates be in the same year?", answer: "Yes, this simple calculator assumes the same calendar year." },
+    { question: "Does it include both start and end days?", answer: "It calculates the difference; add 1 if you want inclusive days." },
+    { question: "Can I handle leap years?", answer: "Enter day numbers according to the specific year." },
+    { question: "Is there a built-in calendar?", answer: "No, you must provide day-of-year numbers." }
+  ],
+  disclaimer: "Educational information, not professional advice.",
+  cluster: "Date & Time"
+};
+
+<Calculator schema={schema} />
+

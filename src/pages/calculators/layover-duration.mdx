@@ -1,0 +1,38 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Layover Duration Calculator"
+description: "Find the time between connecting flights."
+updated: "2025-10-15"
+cluster: "Date & Time"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  slug: "layover-duration",
+  title: "Layover Duration Calculator",
+  locale: "en",
+  unit: "hours",
+  inputs: [
+    { name: "arrival", label: "Arrival Hour (0-23)", type: "number", min: 0, max: 23, step: 1, placeholder: "9" },
+    { name: "depart", label: "Departure Hour (0-23)", type: "number", min: 0, max: 23, step: 1, placeholder: "14" },
+    { name: "days", label: "Days Between Flights", type: "number", min: 0, step: 1, placeholder: "0" }
+  ],
+  expression: "(days * 24 + depart) - arrival",
+  intro: "Determine how many hours you have between connecting flights, accounting for overnight layovers.",
+  examples: [
+    { description: "Arrival 9, departure 14, days 0 ⇒ 5 hours" },
+    { description: "Arrival 22, departure 7, days 1 ⇒ 9 hours" }
+  ],
+  faqs: [
+    { question: "Why include days?", answer: "It lets you handle overnight or multi-day layovers." },
+    { question: "Do times use 24-hour format?", answer: "Yes, enter hours from 0 to 23." },
+    { question: "What if departure is earlier on the same day?", answer: "Set days to 1 for next-day departures." },
+    { question: "Does this account for time zones?", answer: "No, use it for layovers within the same airport." }
+  ],
+  disclaimer: "Educational information, not professional advice.",
+  cluster: "Date & Time"
+};
+
+<Calculator schema={schema} />
+

@@ -1,0 +1,39 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Road Trip Time"
+description: "Estimate total travel time including stops."
+updated: "2025-10-15"
+cluster: "Math"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  slug: "road-trip-time",
+  title: "Road Trip Time",
+  locale: "en",
+  unit: "hours",
+  inputs: [
+    { name: "distance", label: "Distance (km)", type: "number", step: "any", min: 0, placeholder: "600" },
+    { name: "speed", label: "Average Speed (km/h)", type: "number", step: "any", min: 0, placeholder: "100" },
+    { name: "stops", label: "Number of Stops", type: "number", step: 1, min: 0, placeholder: "2" },
+    { name: "stopTime", label: "Stop Duration (h)", type: "number", step: "any", min: 0, placeholder: "0.5" }
+  ],
+  expression: "(distance / speed) + (stops * stopTime)",
+  intro: "Plan your driving schedule by factoring in rest stops during a road trip.",
+  examples: [
+    { description: "600 km at 100 km/h with 2 stops of 0.5 h ⇒ 7 h" },
+    { description: "300 km at 75 km/h with 1 stop of 0.25 h ⇒ 4.25 h" }
+  ],
+  faqs: [
+    { question: "Does this include traffic delays?", answer: "No, adjust speed or stop time for expected traffic." },
+    { question: "Can I input miles instead?", answer: "Yes, just use consistent units." },
+    { question: "What if stops vary in length?", answer: "Use the average stop duration." },
+    { question: "Is refueling time included?", answer: "Include it in your stop duration." }
+  ],
+  disclaimer: "Educational information, not professional advice.",
+  cluster: "Math"
+};
+
+<Calculator schema={schema} />
+
