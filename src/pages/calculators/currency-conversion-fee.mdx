@@ -1,0 +1,36 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Currency Conversion Fee"
+description: "See how much you receive after a conversion fee."
+updated: "2025-09-17"
+cluster: "Finance"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  slug: "currency-conversion-fee",
+  title: "Currency Conversion Fee",
+  locale: "en",
+  unit: "converted",
+  inputs: [
+    { name: "amount", label: "Source Amount", type: "number", step: "any", placeholder: "1000" },
+    { name: "rate", label: "Exchange Rate", type: "number", step: "any", placeholder: "0.9" },
+    { name: "fee", label: "Fee (%)", type: "number", step: "any", placeholder: "2" }
+  ],
+  expression: "amount * rate * (1 - fee / 100)",
+  intro: "Determine the final amount you receive after applying an exchange rate and a conversion fee—handy for international freelancing payments.",
+  examples: [
+    { description: "$1000 at 0.9 rate with 2% fee ⇒ 882 converted currency" },
+    { description: "$250 at 1.1 rate with 1% fee ⇒ 272.25 converted currency" }
+  ],
+  faqs: [
+    { question: "Does this include bank fees?", answer: "Yes, enter the bank's percentage fee." },
+    { question: "What if there's no fee?", answer: "Set the fee percentage to 0." }
+  ],
+  disclaimer: "Educational information, not professional advice.",
+  cluster: "Finance"
+};
+
+<Calculator schema={schema} />
+

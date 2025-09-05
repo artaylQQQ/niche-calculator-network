@@ -1,0 +1,35 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Words to Speech Time"
+description: "Estimate spoken duration from word count."
+updated: "2025-09-17"
+cluster: "Conversions"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  slug: "words-to-speech-time",
+  title: "Words to Speech Time",
+  locale: "en",
+  unit: "minutes",
+  inputs: [
+    { name: "words", label: "Words", type: "number", step: "any", placeholder: "600" },
+    { name: "wpm", label: "Words per minute", type: "number", step: "any", placeholder: "150" }
+  ],
+  expression: "words / wpm",
+  intro: "Estimate how long a script takes to read aloud. Useful for voice-over and presentation freelancers.",
+  examples: [
+    { description: "600 words at 150 wpm ⇒ 4 minutes" },
+    { description: "1200 words at 130 wpm ⇒ 9.23 minutes" }
+  ],
+  faqs: [
+    { question: "What is a typical speaking rate?", answer: "Around 150 words per minute for clear speech." },
+    { question: "Can I use it for scripts?", answer: "Yes, enter the script's word count and your speaking rate." }
+  ],
+  disclaimer: "Educational information, not professional advice.",
+  cluster: "Conversions"
+};
+
+<Calculator schema={schema} />
+

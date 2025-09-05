@@ -1,0 +1,36 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Invoice Late Fee"
+description: "Calculate late fees on overdue invoices."
+updated: "2025-09-17"
+cluster: "Finance"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  slug: "invoice-late-fee",
+  title: "Invoice Late Fee",
+  locale: "en",
+  unit: "USD",
+  inputs: [
+    { name: "amount", label: "Invoice Amount", type: "number", step: "any", placeholder: "1000" },
+    { name: "rate", label: "Late Fee (%) per day", type: "number", step: "any", placeholder: "1.5" },
+    { name: "days", label: "Days Overdue", type: "number", step: "any", placeholder: "10" }
+  ],
+  expression: "amount * rate / 100 * days",
+  intro: "Estimate how much to charge for a late payment based on a daily percentage fee—useful for freelancers managing invoices.",
+  examples: [
+    { description: "$1000 at 1.5% for 10 days ⇒ $150" },
+    { description: "$500 at 0.2% for 30 days ⇒ $30" }
+  ],
+  faqs: [
+    { question: "Is the fee compounded?", answer: "No, this calculator uses simple daily interest." },
+    { question: "Can I use other currencies?", answer: "Yes, treat the result as your invoice currency." }
+  ],
+  disclaimer: "Educational information, not professional advice.",
+  cluster: "Finance"
+};
+
+<Calculator schema={schema} />
+

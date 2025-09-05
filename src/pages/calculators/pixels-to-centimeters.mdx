@@ -1,0 +1,35 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Pixels to Centimeters"
+description: "Convert pixels to centimeters using DPI."
+updated: "2025-09-17"
+cluster: "Conversions"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  slug: "pixels-to-centimeters",
+  title: "Pixels to Centimeters",
+  locale: "en",
+  unit: "cm",
+  inputs: [
+    { name: "pixels", label: "Pixels", type: "number", step: "any", placeholder: "800" },
+    { name: "dpi", label: "DPI", type: "number", step: "any", placeholder: "300" }
+  ],
+  expression: "pixels / dpi * 2.54",
+  intro: "Convert a pixel measurement to centimeters based on the device's DPI—handy for designers preparing prints or mockups.",
+  examples: [
+    { description: "800 px at 300 dpi ⇒ 6.77 cm" },
+    { description: "1920 px at 96 dpi ⇒ 50.8 cm" }
+  ],
+  faqs: [
+    { question: "Why multiply by 2.54?", answer: "Because one inch equals 2.54 centimeters." },
+    { question: "Does this work for screens and print?", answer: "Yes, as long as you know the correct DPI." }
+  ],
+  disclaimer: "Educational information, not professional advice.",
+  cluster: "Conversions"
+};
+
+<Calculator schema={schema} />
+

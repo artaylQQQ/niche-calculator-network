@@ -1,0 +1,35 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Video Bitrate"
+description: "Calculate video bitrate from file size and duration."
+updated: "2025-09-17"
+cluster: "Technology"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  slug: "video-bitrate",
+  title: "Video Bitrate",
+  locale: "en",
+  unit: "Mbps",
+  inputs: [
+    { name: "fileSize", label: "File Size (MB)", type: "number", step: "any", placeholder: "500" },
+    { name: "duration", label: "Duration (s)", type: "number", step: "any", placeholder: "60" }
+  ],
+  expression: "fileSize * 8 / duration",
+  intro: "Determine the average bitrate of a video file using its size and length—useful for editors optimizing uploads.",
+  examples: [
+    { description: "500 MB over 60 s ⇒ 66.67 Mbps" },
+    { description: "1200 MB over 300 s ⇒ 32 Mbps" }
+  ],
+  faqs: [
+    { question: "Why multiply by 8?", answer: "Converts megabytes to megabits." },
+    { question: "Does this include audio bitrate?", answer: "Yes, it reflects total stream bitrate." }
+  ],
+  disclaimer: "Educational information, not professional advice.",
+  cluster: "Technology"
+};
+
+<Calculator schema={schema} />
+

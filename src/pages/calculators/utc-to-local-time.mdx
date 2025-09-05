@@ -1,0 +1,35 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "UTC to Local Time"
+description: "Convert a UTC hour to local time using offset."
+updated: "2025-09-17"
+cluster: "Date & Time"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  slug: "utc-to-local-time",
+  title: "UTC to Local Time",
+  locale: "en",
+  unit: "hour",
+  inputs: [
+    { name: "utcHour", label: "UTC Hour", type: "number", step: "any", placeholder: "13" },
+    { name: "offset", label: "UTC Offset", type: "number", step: "any", placeholder: "-5" }
+  ],
+  expression: "(utcHour + offset + 24) % 24",
+  intro: "Translate a UTC hour to your local time using the time zone offset—great for coordinating international calls.",
+  examples: [
+    { description: "13 UTC with offset -5 ⇒ 8" },
+    { description: "10 UTC with offset +3 ⇒ 13" }
+  ],
+  faqs: [
+    { question: "What if the result is 0?", answer: "0 represents midnight." },
+    { question: "Can I use decimal offsets?", answer: "Yes, offsets like 5.5 are accepted." }
+  ],
+  disclaimer: "Educational information, not professional advice.",
+  cluster: "Date & Time"
+};
+
+<Calculator schema={schema} />
+

@@ -1,0 +1,35 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Paint Drying Time"
+description: "Estimate drying time based on humidity."
+updated: "2025-09-17"
+cluster: "Home & DIY"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  slug: "paint-drying-time",
+  title: "Paint Drying Time",
+  locale: "en",
+  unit: "hours",
+  inputs: [
+    { name: "baseTime", label: "Base Time (hrs)", type: "number", step: "any", placeholder: "2" },
+    { name: "humidity", label: "Humidity (%)", type: "number", step: "any", placeholder: "50" }
+  ],
+  expression: "baseTime * (100 / humidity)",
+  intro: "Approximate how long paint takes to dry when humidity slows evaporation—useful for planning DIY projects.",
+  examples: [
+    { description: "2 hours at 50% humidity ⇒ 4 hours" },
+    { description: "3 hours at 75% humidity ⇒ 4 hours" }
+  ],
+  faqs: [
+    { question: "Why does humidity affect drying?", answer: "Moist air slows the evaporation of solvents in paint." },
+    { question: "Does temperature matter?", answer: "Temperature also impacts drying, but this calculator focuses on humidity." }
+  ],
+  disclaimer: "Educational information, not professional advice.",
+  cluster: "Home & DIY"
+};
+
+<Calculator schema={schema} />
+

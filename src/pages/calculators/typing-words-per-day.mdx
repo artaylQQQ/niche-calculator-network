@@ -1,0 +1,35 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Typing Words per Day"
+description: "Estimate daily words based on typing speed."
+updated: "2025-09-17"
+cluster: "Other"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  slug: "typing-words-per-day",
+  title: "Typing Words per Day",
+  locale: "en",
+  unit: "words",
+  inputs: [
+    { name: "wpm", label: "Words per Minute", type: "number", step: "any", placeholder: "60" },
+    { name: "minutes", label: "Minutes Typed", type: "number", step: "any", placeholder: "120" }
+  ],
+  expression: "wpm * minutes",
+  intro: "Project how many words you can type in a day given your speed and focused typing minutes—handy for writers and transcribers.",
+  examples: [
+    { description: "60 wpm for 120 min ⇒ 7200 words" },
+    { description: "80 wpm for 45 min ⇒ 3600 words" }
+  ],
+  faqs: [
+    { question: "Does accuracy matter?", answer: "This assumes consistent speed regardless of errors." },
+    { question: "Can I add multiple sessions?", answer: "Yes, sum your typing minutes before entering." }
+  ],
+  disclaimer: "Educational information, not professional advice.",
+  cluster: "Other"
+};
+
+<Calculator schema={schema} />
+

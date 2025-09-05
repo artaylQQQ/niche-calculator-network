@@ -1,0 +1,36 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Eye Break Time"
+description: "Total break time using the 20-20-20 rule."
+updated: "2025-09-17"
+cluster: "Health"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  slug: "eye-break-time",
+  title: "Eye Break Time",
+  locale: "en",
+  unit: "minutes",
+  inputs: [
+    { name: "screenMinutes", label: "Screen Time (minutes)", type: "number", step: "any", placeholder: "240" },
+    { name: "interval", label: "Minutes Between Breaks", type: "number", step: "any", placeholder: "20" },
+    { name: "breakDuration", label: "Break Duration (seconds)", type: "number", step: "any", placeholder: "20" }
+  ],
+  expression: "screenMinutes / interval * breakDuration / 60",
+  intro: "Calculate how many minutes you spend resting your eyes based on total screen time, break interval, and break duration.",
+  examples: [
+    { description: "240 min, interval 20, break 20 sec ⇒ 4 minutes" },
+    { description: "480 min, interval 30, break 30 sec ⇒ 8 minutes" }
+  ],
+  faqs: [
+    { question: "What is the 20-20-20 rule?", answer: "Every 20 minutes, look 20 feet away for 20 seconds." },
+    { question: "Why divide by 60?", answer: "It converts break seconds into minutes." }
+  ],
+  disclaimer: "Educational information, not professional advice.",
+  cluster: "Health"
+};
+
+<Calculator schema={schema} />
+

@@ -1,0 +1,35 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Time Zone Difference"
+description: "Find the hour gap between two UTC offsets."
+updated: "2025-09-17"
+cluster: "Date & Time"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  slug: "time-zone-difference",
+  title: "Time Zone Difference",
+  locale: "en",
+  unit: "hours",
+  inputs: [
+    { name: "offsetA", label: "Offset A (hrs)", type: "number", step: "any", placeholder: "-5" },
+    { name: "offsetB", label: "Offset B (hrs)", type: "number", step: "any", placeholder: "2" }
+  ],
+  expression: "((offsetA - offsetB) ^ 2) ^ 0.5",
+  intro: "Quickly compute the time difference between two locations using their UTC offsets—ideal for scheduling across regions.",
+  examples: [
+    { description: "UTC-5 and UTC+2 ⇒ 7 hours" },
+    { description: "UTC+1 and UTC+1 ⇒ 0 hours" }
+  ],
+  faqs: [
+    { question: "How do I find a UTC offset?", answer: "Check your time zone's offset from Coordinated Universal Time." },
+    { question: "Does it handle half-hour offsets?", answer: "Yes, you can enter decimal offsets like 5.5." }
+  ],
+  disclaimer: "Educational information, not professional advice.",
+  cluster: "Date & Time"
+};
+
+<Calculator schema={schema} />
+
