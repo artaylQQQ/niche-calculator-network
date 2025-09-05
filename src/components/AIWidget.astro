@@ -1,0 +1,32 @@
+---
+---
+<section class="ai-widget mx-auto max-w-2xl my-8 p-4 bg-[var(--card)] border border-[var(--border)] rounded-md">
+  <h2 class="text-lg font-semibold mb-2">AI Calculator</h2>
+  <form id="ai-form" class="flex flex-col gap-2">
+    <input id="ai-question" type="text" placeholder="Ask a question" class="p-2 border rounded-md" />
+    <button type="submit" class="self-start px-3 py-2 rounded-md bg-[var(--accent-red)] text-white">Ask</button>
+  </form>
+  <p id="ai-answer" class="mt-2 text-sm"></p>
+</section>
+<script is:inline>
+  const form = document.getElementById('ai-form');
+  const input = document.getElementById('ai-question');
+  const answerEl = document.getElementById('ai-answer');
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const question = input.value.trim();
+    if (!question) return;
+    answerEl.textContent = '...';
+    try {
+      const res = await fetch('/api/ai', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ question })
+      });
+      const data = await res.json();
+      answerEl.textContent = data.answer || data.error || 'No answer available.';
+    } catch {
+      answerEl.textContent = 'Error contacting AI.';
+    }
+  });
+</script>
