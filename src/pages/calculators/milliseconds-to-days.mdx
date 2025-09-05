@@ -1,0 +1,35 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Milliseconds to Days Converter"
+description: "Convert duration from milliseconds to days."
+updated: "2025-09-30"
+cluster: "Date & Time"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "inputs": [
+    { "name": "ms", "label": "Milliseconds", "type": "number", "step": "any", "placeholder": "86400000" }
+  ],
+  "slug": "milliseconds-to-days",
+  "title": "Milliseconds to Days Converter",
+  "locale": "en",
+  "unit": "days",
+  "expression": "ms / 86400000",
+  "intro": "Quickly convert large time spans from milliseconds to days for timing or scheduling purposes.",
+  "examples": [
+    { "description": "86400000 ms ⇒ 1 day" },
+    { "description": "172800000 ms ⇒ 2 days" },
+    { "description": "3600000 ms ⇒ 0.04 days" }
+  ],
+  "faqs": [
+    { "question": "Why divide by 86,400,000?", "answer": "There are 86,400,000 milliseconds in a day." },
+    { "question": "Can I convert fractions of days?", "answer": "Yes, the result may include decimals." },
+    { "question": "Is this based on standard days?", "answer": "Yes, each day is assumed to be 24 hours." }
+  ],
+  "disclaimer": "For general time conversions only; does not account for leap seconds.",
+  "cluster": "Date & Time"
+}
+
+<Calculator schema={schema} />

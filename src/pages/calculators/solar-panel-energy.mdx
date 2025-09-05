@@ -1,0 +1,37 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Solar Panel Energy Estimate"
+description: "Daily energy from solar panels based on wattage and sun hours."
+updated: "2025-09-30"
+cluster: "Home & DIY"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "inputs": [
+    { "name": "wattage", "label": "Panel wattage (W)", "type": "number", "step": "any", "placeholder": "300" },
+    { "name": "sun", "label": "Sun hours per day", "type": "number", "step": "any", "placeholder": "5" },
+    { "name": "panels", "label": "Number of panels", "type": "number", "step": "1", "min": 1, "placeholder": "4" }
+  ],
+  "slug": "solar-panel-energy",
+  "title": "Solar Panel Energy Estimate",
+  "locale": "en",
+  "unit": "kWh",
+  "expression": "wattage * sun * panels / 1000",
+  "intro": "Estimate daily energy production from a set of solar panels given their wattage, number, and average sun hours.",
+  "examples": [
+    { "description": "300 W, 5 h, 4 panels ⇒ 6 kWh" },
+    { "description": "250 W, 6 h, 6 panels ⇒ 9 kWh" },
+    { "description": "400 W, 4 h, 2 panels ⇒ 3.2 kWh" }
+  ],
+  "faqs": [
+    { "question": "What are sun hours?", "answer": "Equivalent hours of full sunlight per day." },
+    { "question": "Why divide by 1000?", "answer": "To convert watt-hours to kilowatt-hours." },
+    { "question": "Does this include system losses?", "answer": "No, it's a theoretical estimate." }
+  ],
+  "disclaimer": "Actual energy output depends on system efficiency and conditions.",
+  "cluster": "Home & DIY"
+}
+
+<Calculator schema={schema} />

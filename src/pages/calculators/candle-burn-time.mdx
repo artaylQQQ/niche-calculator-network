@@ -1,0 +1,36 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Candle Burn Time"
+description: "Estimate how long a candle will burn from its weight and burn rate."
+updated: "2025-09-30"
+cluster: "Other"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "inputs": [
+    { "name": "weight", "label": "Candle weight (g)", "type": "number", "step": "any", "placeholder": "200" },
+    { "name": "rate", "label": "Burn rate (g/hr)", "type": "number", "step": "any", "placeholder": "5" }
+  ],
+  "slug": "candle-burn-time",
+  "title": "Candle Burn Time",
+  "locale": "en",
+  "unit": "hours",
+  "expression": "weight / rate",
+  "intro": "Estimate the total burn time of a candle given its weight and average burn rate.",
+  "examples": [
+    { "description": "200 g candle at 5 g/hr ⇒ 40 hrs" },
+    { "description": "150 g candle at 6 g/hr ⇒ 25 hrs" },
+    { "description": "100 g candle at 4 g/hr ⇒ 25 hrs" }
+  ],
+  "faqs": [
+    { "question": "Does wick size affect burn rate?", "answer": "Yes, larger wicks typically increase the burn rate." },
+    { "question": "Can I use ounces instead?", "answer": "Yes, as long as weight and rate units match." },
+    { "question": "Is burn rate constant?", "answer": "Actual burn rate may vary with conditions." }
+  ],
+  "disclaimer": "Approximation only; real burn times depend on environment and candle design.",
+  "cluster": "Other"
+}
+
+<Calculator schema={schema} />
