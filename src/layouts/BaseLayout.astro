@@ -63,12 +63,17 @@ const cfToken = import.meta.env.VITE_CF_ANALYTICS_TOKEN;
             class={['nav-link', Astro.url.pathname.startsWith('/categories') && 'active'].filter(Boolean).join(' ')}
             >Categories</a
           >
-          <a
-            href="/traditional-calculator/"
-            class={['nav-link', 'traditional', Astro.url.pathname.startsWith('/traditional-calculator') && 'active'].filter(Boolean).join(' ')}
-            >Traditional Calculator</a
-          >
-        </nav>
+            <a
+              href="/traditional-calculator/"
+              class={['nav-link', 'traditional', Astro.url.pathname.startsWith('/traditional-calculator') && 'active'].filter(Boolean).join(' ')}
+              >Traditional Calculator</a
+            >
+            <a
+              href="/ai-calculator"
+              class={['nav-link', Astro.url.pathname.startsWith('/ai-calculator') && 'active'].filter(Boolean).join(' ')}
+              >AI Calculator</a
+            >
+          </nav>
       </div>
     </header>
     <main class="container" id="main" role="main">
@@ -76,14 +81,15 @@ const cfToken = import.meta.env.VITE_CF_ANALYTICS_TOKEN;
       <AdBanner />
     </main>
     <footer class="container" style="padding:24px 0;">
-      <div class="links">
-        <a href="/">Home</a>
-        <a href="/categories/">Categories</a>
-        <a href="/all">All Calculators</a>
-        <a href="/sitemap.xml">Sitemap</a>
-        <a href="/privacy">Privacy</a>
-        <a href="/disclaimer">Disclaimer</a>
-      </div>
+        <div class="links">
+          <a href="/">Home</a>
+          <a href="/categories/">Categories</a>
+          <a href="/all">All Calculators</a>
+          <a href="/ai-calculator">AI Calculator</a>
+          <a href="/sitemap.xml">Sitemap</a>
+          <a href="/privacy">Privacy</a>
+          <a href="/disclaimer">Disclaimer</a>
+        </div>
       <div style="text-align:center;margin-top:8px;color:var(--muted)">© {new Date().getFullYear()} CalcSimpler.com</div>
     </footer>
     <script is:inline>
