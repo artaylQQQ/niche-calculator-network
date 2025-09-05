@@ -1,0 +1,58 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Ellipse Area Calculator"
+description: "Find the area of an ellipse from its semi-major and semi-minor axes."
+updated: "2025-09-05"
+cluster: "Math"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "ellipse-area",
+  title: "Ellipse Area Calculator",
+  intro:
+    "Find the area of an ellipse using its semi-major and semi-minor axes.",
+  locale: "en",
+  cluster: "Math",
+  inputs: [
+    {
+      name: "a",
+      label: "Semi-major axis",
+      type: "number",
+      step: "any",
+      required: true,
+    },
+    {
+      name: "b",
+      label: "Semi-minor axis",
+      type: "number",
+      step: "any",
+      required: true,
+    },
+  ],
+  expression: "Math.PI * a * b",
+  unit: "unit²",
+  examples: [
+    { description: "a=5, b=3 ⇒ 47.12" },
+    { description: "a=10, b=4 ⇒ 125.66" },
+    { description: "a=7.5, b=7.5 ⇒ 176.71" },
+  ],
+  faqs: [
+    {
+      question: "Are the inputs radii?",
+      answer: "Yes, use half the full axis lengths.",
+    },
+    {
+      question: "Can this handle circles?",
+      answer: "Yes, set a and b equal for a circle.",
+    },
+    {
+      question: "What units are used?",
+      answer: "Output uses the same units squared as the inputs.",
+    },
+  ],
+  disclaimer: "Use for geometric estimates; real shapes may vary.",
+};
+
+<Calculator schema={schema} />

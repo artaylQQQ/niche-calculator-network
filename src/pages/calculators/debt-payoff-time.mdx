@@ -1,0 +1,67 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Debt Payoff Time Calculator"
+description: "Estimate months needed to pay off a debt with fixed monthly payments."
+updated: "2025-09-05"
+cluster: "Finance"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "debt-payoff-time",
+  title: "Debt Payoff Time Calculator",
+  intro:
+    "Estimate how many months it will take to pay off a loan with fixed monthly payments and interest.",
+  locale: "en",
+  cluster: "Finance",
+  inputs: [
+    {
+      name: "balance",
+      label: "Balance",
+      type: "number",
+      step: "any",
+      required: true,
+    },
+    {
+      name: "annualRate",
+      label: "Annual Rate (%)",
+      type: "number",
+      step: "any",
+      required: true,
+    },
+    {
+      name: "payment",
+      label: "Monthly Payment",
+      type: "number",
+      step: "any",
+      required: true,
+    },
+  ],
+  expression:
+    "Math.log(payment/(payment - (annualRate/100/12)*balance)) / Math.log(1 + annualRate/100/12)",
+  unit: "months",
+  examples: [
+    { description: "$5,000 balance, 6% rate, $150 payment ⇒ 36.5 months" },
+    { description: "$10,000 balance, 12% rate, $250 payment ⇒ 52.9 months" },
+    { description: "$3,000 balance, 0% rate, $200 payment ⇒ 15 months" },
+  ],
+  faqs: [
+    {
+      question: "What if payment is too low?",
+      answer:
+        "If the payment is less than monthly interest, the calculation is invalid.",
+    },
+    {
+      question: "Are fees included?",
+      answer: "No, it assumes only principal and interest.",
+    },
+    {
+      question: "Is the interest rate fixed?",
+      answer: "Yes, the rate is assumed constant over the payoff period.",
+    },
+  ],
+  disclaimer: "For estimation only; consult a financial professional.",
+};
+
+<Calculator schema={schema} />

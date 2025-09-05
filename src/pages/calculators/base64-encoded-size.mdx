@@ -1,0 +1,51 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Base64 Encoded Size Calculator"
+description: "Determine output size when data is Base64 encoded."
+updated: "2025-09-05"
+cluster: "Technology"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "base64-encoded-size",
+  title: "Base64 Encoded Size Calculator",
+  intro:
+    "Determine how many bytes result from Base64 encoding a given byte length.",
+  locale: "en",
+  cluster: "Technology",
+  inputs: [
+    {
+      name: "bytes",
+      label: "Original size (bytes)",
+      type: "number",
+      step: 1,
+      required: true,
+    },
+  ],
+  expression: "4 * Math.ceil(bytes / 3)",
+  unit: "bytes",
+  examples: [
+    { description: "1 byte ⇒ 4 bytes" },
+    { description: "3 bytes ⇒ 4 bytes" },
+    { description: "20 bytes ⇒ 28 bytes" },
+  ],
+  faqs: [
+    {
+      question: "Why does Base64 increase size?",
+      answer: "It maps every 3 bytes to 4 characters.",
+    },
+    {
+      question: "Does the formula handle padding?",
+      answer: "Yes, the ceiling accounts for padding characters.",
+    },
+    {
+      question: "Are line breaks considered?",
+      answer: "No, it assumes a continuous encoded string.",
+    },
+  ],
+  disclaimer: "Ignores metadata such as headers or line wrapping.",
+};
+
+<Calculator schema={schema} />
