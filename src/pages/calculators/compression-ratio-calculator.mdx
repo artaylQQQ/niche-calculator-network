@@ -1,0 +1,58 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Data Compression Ratio Calculator"
+description: "Compare original and compressed file sizes to find compression ratio."
+updated: "2025-09-30"
+cluster: "Technology"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "compression-ratio-calculator",
+  title: "Data Compression Ratio Calculator",
+  locale: "en",
+  intro:
+    "Enter original and compressed file sizes to compute compression ratio.",
+  unit: "ratio",
+  cluster: "Technology",
+  inputs: [
+    {
+      name: "original",
+      label: "Original Size (MB)",
+      type: "number",
+      step: "any",
+      placeholder: "100",
+    },
+    {
+      name: "compressed",
+      label: "Compressed Size (MB)",
+      type: "number",
+      step: "any",
+      placeholder: "25",
+    },
+  ],
+  expression: "original / compressed",
+  examples: [
+    { description: "100 MB to 25 MB ⇒ 4" },
+    { description: "50 MB to 10 MB ⇒ 5" },
+    { description: "120 MB to 80 MB ⇒ 1.5" },
+  ],
+  faqs: [
+    {
+      question: "What is compression ratio?",
+      answer: "Original size divided by compressed size.",
+    },
+    {
+      question: "Is a higher ratio better?",
+      answer: "Higher ratios mean more compression, but quality may decrease.",
+    },
+    {
+      question: "Can I use different units?",
+      answer: "Yes, as long as both sizes use the same unit.",
+    },
+  ],
+  disclaimer: "Actual compression results depend on data type and algorithm.",
+};
+
+<Calculator schema={schema} />

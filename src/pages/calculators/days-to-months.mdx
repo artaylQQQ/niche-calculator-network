@@ -1,0 +1,51 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Days to Months Calculator"
+description: "Estimate months from a number of days using the average month length."
+updated: "2025-09-30"
+cluster: "Date & Time"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "days-to-months",
+  title: "Days to Months Calculator",
+  locale: "en",
+  intro: "Enter days to convert to approximate months.",
+  unit: "months",
+  cluster: "Date & Time",
+  inputs: [
+    {
+      name: "days",
+      label: "Days",
+      type: "number",
+      step: "any",
+      placeholder: "30",
+    },
+  ],
+  expression: "days / 30.436875",
+  examples: [
+    { description: "60 days ⇒ 1.97 months" },
+    { description: "30 days ⇒ 0.99 months" },
+    { description: "365 days ⇒ 11.99 months" },
+  ],
+  faqs: [
+    {
+      question: "Why 30.436875 days?",
+      answer: "It is the average number of days in a month.",
+    },
+    {
+      question: "Is this exact?",
+      answer: "No, it's an approximation because month lengths vary.",
+    },
+    {
+      question: "Does leap year affect it?",
+      answer:
+        "Leap years slightly change the average but this formula smooths it out.",
+    },
+  ],
+  disclaimer: "Approximation only; calendar months differ in length.",
+};
+
+<Calculator schema={schema} />

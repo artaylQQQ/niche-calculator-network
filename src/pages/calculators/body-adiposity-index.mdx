@@ -1,0 +1,61 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Body Adiposity Index Calculator"
+description: "Estimate body fat percentage using hip circumference and height."
+updated: "2025-09-30"
+cluster: "Health"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "body-adiposity-index",
+  title: "Body Adiposity Index Calculator",
+  locale: "en",
+  intro:
+    "Enter hip circumference in centimeters and height in meters to estimate body adiposity index.",
+  unit: "%",
+  cluster: "Health",
+  inputs: [
+    {
+      name: "hip",
+      label: "Hip Circumference (cm)",
+      type: "number",
+      step: "any",
+      placeholder: "95",
+    },
+    {
+      name: "height",
+      label: "Height (m)",
+      type: "number",
+      step: "any",
+      placeholder: "1.7",
+    },
+  ],
+  expression: "(hip / (height ^ 1.5)) - 18",
+  examples: [
+    { description: "95 cm hip & 1.7 m height ⇒ 24.9 %" },
+    { description: "100 cm hip & 1.8 m height ⇒ 23.4 %" },
+    { description: "80 cm hip & 1.6 m height ⇒ 21.6 %" },
+  ],
+  faqs: [
+    {
+      question: "How is BAI different from BMI?",
+      answer:
+        "BAI uses hip circumference and height, while BMI uses weight and height.",
+    },
+    {
+      question: "Can I use inches?",
+      answer: "Convert measurements to centimeters and meters for accuracy.",
+    },
+    {
+      question: "Is BAI a medical diagnosis?",
+      answer:
+        "No, it is an estimate and not a substitute for professional evaluation.",
+    },
+  ],
+  disclaimer:
+    "Not a medical diagnosis; consult a healthcare professional for advice.",
+};
+
+<Calculator schema={schema} />

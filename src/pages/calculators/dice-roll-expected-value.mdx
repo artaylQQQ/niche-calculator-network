@@ -1,0 +1,50 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Dice Roll Expected Value Calculator"
+description: "Find the average result of rolling a fair die with any number of sides."
+updated: "2025-09-30"
+cluster: "Other"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "dice-roll-expected-value",
+  title: "Dice Roll Expected Value Calculator",
+  locale: "en",
+  intro: "Enter the number of sides on the die to get its expected value.",
+  unit: "average",
+  cluster: "Other",
+  inputs: [
+    {
+      name: "sides",
+      label: "Number of Sides",
+      type: "number",
+      step: "1",
+      placeholder: "6",
+    },
+  ],
+  expression: "(sides + 1) / 2",
+  examples: [
+    { description: "d6 ⇒ 3.5" },
+    { description: "d20 ⇒ 10.5" },
+    { description: "d4 ⇒ 2.5" },
+  ],
+  faqs: [
+    {
+      question: "What is expected value?",
+      answer: "It's the average outcome over many rolls.",
+    },
+    {
+      question: "Does this apply to loaded dice?",
+      answer: "No, it assumes each side has equal probability.",
+    },
+    {
+      question: "How about multiple dice?",
+      answer: "Multiply the expected value by the number of dice.",
+    },
+  ],
+  disclaimer: "For gaming probability insight only.",
+};
+
+<Calculator schema={schema} />

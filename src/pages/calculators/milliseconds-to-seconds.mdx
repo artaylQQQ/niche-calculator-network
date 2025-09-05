@@ -1,0 +1,50 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Milliseconds to Seconds Converter"
+description: "Convert time in milliseconds to seconds."
+updated: "2025-09-30"
+cluster: "Date & Time"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "milliseconds-to-seconds",
+  title: "Milliseconds to Seconds Converter",
+  locale: "en",
+  intro: "Enter a duration in milliseconds to get seconds.",
+  unit: "s",
+  cluster: "Date & Time",
+  inputs: [
+    {
+      name: "ms",
+      label: "Milliseconds",
+      type: "number",
+      step: "any",
+      placeholder: "1000",
+    },
+  ],
+  expression: "ms / 1000",
+  examples: [
+    { description: "5000 ms ⇒ 5 s" },
+    { description: "1234 ms ⇒ 1.234 s" },
+    { description: "60000 ms ⇒ 60 s" },
+  ],
+  faqs: [
+    {
+      question: "What is a millisecond?",
+      answer: "A millisecond is one thousandth of a second.",
+    },
+    {
+      question: "Does this handle decimals?",
+      answer: "Yes, fractional milliseconds are supported.",
+    },
+    {
+      question: "Can the result be negative?",
+      answer: "Negative durations are allowed but uncommon.",
+    },
+  ],
+  disclaimer: "Timing conversions are approximate for educational use.",
+};
+
+<Calculator schema={schema} />
