@@ -1,0 +1,59 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Ladder Length Calculator"
+description: "Find the ladder length needed to reach a height from a set distance."
+updated: "2025-05-28"
+cluster: "Home & DIY"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  inputs: [
+    {
+      name: "height",
+      label: "Height (m)",
+      type: "number",
+      step: "any",
+      placeholder: "3",
+    },
+    {
+      name: "distance",
+      label: "Distance from wall (m)",
+      type: "number",
+      step: "any",
+      placeholder: "1",
+    },
+  ],
+  slug: "ladder-length",
+  title: "Ladder Length Calculator",
+  locale: "en",
+  unit: "m",
+  expression: "(height^2 + distance^2)^0.5",
+  intro:
+    "Determine the minimum ladder length required using the Pythagorean theorem.",
+  examples: [
+    { description: "Height 3 m, distance 1 m ⇒ 3.16 m ladder" },
+    { description: "Height 2.4 m, distance 0.6 m ⇒ 2.47 m ladder" },
+    { description: "Height 4 m, distance 1.5 m ⇒ 4.27 m ladder" },
+  ],
+  faqs: [
+    {
+      question: "Why use the Pythagorean theorem?",
+      answer: "The ladder forms the hypotenuse of a right triangle.",
+    },
+    {
+      question: "Does this include a safety angle?",
+      answer: "No, it calculates pure length without the 75° safety rule.",
+    },
+    {
+      question: "What units can I use?",
+      answer: "Any consistent length units work, such as feet or meters.",
+    },
+  ],
+  disclaimer:
+    "Always follow ladder safety guidelines and manufacturer instructions.",
+  cluster: "Home & DIY",
+};
+
+<Calculator schema={schema} />

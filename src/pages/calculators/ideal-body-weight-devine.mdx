@@ -1,0 +1,60 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Ideal Body Weight (Devine)"
+description: "Estimate ideal body weight using the Devine formula."
+updated: "2025-05-28"
+cluster: "Health"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  inputs: [
+    {
+      name: "height",
+      label: "Height (cm)",
+      type: "number",
+      step: "any",
+      placeholder: "170",
+    },
+    {
+      name: "base",
+      label: "Base constant (50 male, 45.5 female)",
+      type: "number",
+      step: "any",
+      placeholder: "50",
+    },
+  ],
+  slug: "ideal-body-weight-devine",
+  title: "Ideal Body Weight (Devine)",
+  locale: "en",
+  unit: "kg",
+  expression: "base + 0.9*(height - 152)",
+  intro:
+    "Estimate an adult's ideal body weight using the Devine formula. Choose 50 for males or 45.5 for females as the base constant.",
+  examples: [
+    { description: "Height 170 cm, base 50 ⇒ 66.2 kg" },
+    { description: "Height 160 cm, base 45.5 ⇒ 52.7 kg" },
+    { description: "Height 180 cm, base 50 ⇒ 75.2 kg" },
+  ],
+  faqs: [
+    {
+      question: "What base constant should I use?",
+      answer: "Use 50 kg for males and 45.5 kg for females.",
+    },
+    {
+      question: "Is this formula for adults only?",
+      answer: "Yes, the Devine formula applies to adults.",
+    },
+    {
+      question: "Does it consider body frame size?",
+      answer:
+        "No, it provides a general estimate without accounting for frame size.",
+    },
+  ],
+  disclaimer:
+    "Informational purposes only. Consult a healthcare professional for personalized advice.",
+  cluster: "Health",
+};
+
+<Calculator schema={schema} />

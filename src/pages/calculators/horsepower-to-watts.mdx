@@ -1,0 +1,52 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Horsepower to Watts Converter"
+description: "Convert mechanical horsepower to watts."
+updated: "2025-05-28"
+cluster: "Conversions"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  inputs: [
+    {
+      name: "hp",
+      label: "Horsepower",
+      type: "number",
+      step: "any",
+      placeholder: "1",
+    },
+  ],
+  slug: "horsepower-to-watts",
+  title: "Horsepower to Watts Converter",
+  locale: "en",
+  unit: "W",
+  expression: "hp * 745.7",
+  intro:
+    "Quickly convert mechanical horsepower into watts using the standard factor of 745.7 W per HP.",
+  examples: [
+    { description: "1 hp ⇒ 745.7 W" },
+    { description: "2.5 hp ⇒ 1864.25 W" },
+    { description: "0.75 hp ⇒ 559.28 W" },
+  ],
+  faqs: [
+    {
+      question: "What is horsepower?",
+      answer: "A unit of power commonly used for engines and motors.",
+    },
+    {
+      question: "What conversion factor is used?",
+      answer: "This calculator uses 1 mechanical horsepower = 745.7 watts.",
+    },
+    {
+      question: "Does it handle metric horsepower?",
+      answer: "No, metric horsepower differs slightly at 735.5 watts.",
+    },
+  ],
+  disclaimer:
+    "For quick estimates only. Verify critical conversions independently.",
+  cluster: "Conversions",
+};
+
+<Calculator schema={schema} />
