@@ -1,0 +1,36 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Data Center PUE Calculator"
+description: "Power Usage Effectiveness ratio."
+updated: "2025-09-30"
+cluster: "Technology"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "inputs": [
+    { "name": "total", "label": "Total facility power (kW)", "type": "number", "step": "any", "placeholder": "1500" },
+    { "name": "it", "label": "IT equipment power (kW)", "type": "number", "step": "any", "placeholder": "1000" }
+  ],
+  "slug": "data-center-pue",
+  "title": "Data Center PUE Calculator",
+  "locale": "en",
+  "unit": "ratio",
+  "expression": "total / it",
+  "intro": "Calculate Power Usage Effectiveness (PUE) of a data center by dividing total facility power by IT equipment power.",
+  "examples": [
+    { "description": "1500 kW total, 1000 kW IT ⇒ 1.5" },
+    { "description": "2200 kW total, 1600 kW IT ⇒ 1.38" },
+    { "description": "1000 kW total, 800 kW IT ⇒ 1.25" }
+  ],
+  "faqs": [
+    { "question": "What is a good PUE?", "answer": "A value closer to 1.0 indicates better efficiency." },
+    { "question": "Does PUE include cooling?", "answer": "Yes, total power includes cooling and other overhead." },
+    { "question": "Can PUE be less than 1?", "answer": "No, total power always exceeds IT power." }
+  ],
+  "disclaimer": "Use for rough efficiency comparison; actual measurements may vary.",
+  "cluster": "Technology"
+}
+
+<Calculator schema={schema} />

@@ -1,0 +1,35 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Kilopascals to PSI Converter"
+description: "Convert pressure from kilopascals to pounds per square inch."
+updated: "2025-09-30"
+cluster: "Conversions"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "inputs": [
+    { "name": "kpa", "label": "Kilopascals", "type": "number", "step": "any", "placeholder": "100" }
+  ],
+  "slug": "kpa-to-psi",
+  "title": "Kilopascals to PSI Converter",
+  "locale": "en",
+  "unit": "psi",
+  "expression": "kpa * 0.145038",
+  "intro": "Convert pressure values from kilopascals (kPa) to pounds per square inch (psi).",
+  "examples": [
+    { "description": "100 kPa ⇒ 14.50 psi" },
+    { "description": "250 kPa ⇒ 36.26 psi" },
+    { "description": "101.325 kPa ⇒ 14.70 psi" }
+  ],
+  "faqs": [
+    { "question": "What is a kilopascal?", "answer": "A metric unit of pressure equal to 1,000 pascals." },
+    { "question": "Why multiply by 0.145038?", "answer": "This is the conversion factor from kPa to psi." },
+    { "question": "Can I convert psi back to kPa?", "answer": "Yes, divide psi by 0.145038 to get kPa." }
+  ],
+  "disclaimer": "Verify critical pressure conversions with official sources.",
+  "cluster": "Conversions"
+}
+
+<Calculator schema={schema} />

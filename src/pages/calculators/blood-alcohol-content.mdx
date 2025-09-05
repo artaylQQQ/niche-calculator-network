@@ -1,0 +1,37 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Blood Alcohol Content Estimate"
+description: "Estimate BAC using drinks, body weight, and time."
+updated: "2025-09-30"
+cluster: "Health"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "inputs": [
+    { "name": "drinks", "label": "Standard drinks", "type": "number", "step": "any", "placeholder": "3" },
+    { "name": "weight", "label": "Body weight (kg)", "type": "number", "step": "any", "placeholder": "80" },
+    { "name": "hours", "label": "Hours since drinking", "type": "number", "step": "any", "placeholder": "2" }
+  ],
+  "slug": "blood-alcohol-content",
+  "title": "Blood Alcohol Content Estimate",
+  "locale": "en",
+  "unit": "%",
+  "expression": "drinks * 14 / (weight * 1000 * 0.68) * 100 - 0.015 * hours",
+  "intro": "Estimate blood alcohol concentration using the Widmark formula based on number of drinks, body weight, and time elapsed.",
+  "examples": [
+    { "description": "3 drinks, 80 kg, 2 hrs ⇒ 0.047%" },
+    { "description": "5 drinks, 70 kg, 1 hr ⇒ 0.132%" },
+    { "description": "2 drinks, 90 kg, 3 hrs ⇒ 0.001%" }
+  ],
+  "faqs": [
+    { "question": "What is a standard drink?", "answer": "One drink equals roughly 14 grams of pure alcohol." },
+    { "question": "Why multiply by 14?", "answer": "It converts drinks into grams of alcohol." },
+    { "question": "What does 0.015 represent?", "answer": "An average alcohol elimination rate per hour." }
+  ],
+  "disclaimer": "For educational use only. Do not use to determine legal intoxication.",
+  "cluster": "Health"
+}
+
+<Calculator schema={schema} />
