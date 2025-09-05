@@ -4245,5 +4245,776 @@
         "answer": "Weighing helps avoid surprises at the airport."
       }
     ]
+  },
+  {
+    "slug": "gallons-to-liters",
+    "title": "Gallons to Liters Converter",
+    "cluster": "conversions",
+    "description": "Convert US gallons to liters.",
+    "inputs": [
+      {
+        "name": "gallons",
+        "label": "Gallons",
+        "type": "number",
+        "min": 0,
+        "step": "any",
+        "placeholder": "10"
+      }
+    ],
+    "expression": "gallons * 3.78541",
+    "unit": "L",
+    "examples": [
+      { "description": "1 gal ⇒ 3.79 L" },
+      { "description": "5 gal ⇒ 18.93 L" }
+    ],
+    "faqs": [
+      {
+        "question": "Is this for US gallons?",
+        "answer": "Yes, it uses the US gallon measurement."
+      },
+      {
+        "question": "Can I input decimals?",
+        "answer": "Decimal values are supported."
+      },
+      {
+        "question": "Does it handle large volumes?",
+        "answer": "You can convert any positive gallon value."
+      },
+      {
+        "question": "What about Imperial gallons?",
+        "answer": "This tool does not convert Imperial gallons."
+      }
+    ],
+    "disclaimer": "Verify critical conversions with official sources."
+  },
+  {
+    "slug": "kwh-to-mj",
+    "title": "kWh to MJ Converter",
+    "cluster": "conversions",
+    "description": "Convert kilowatt-hours to megajoules.",
+    "inputs": [
+      {
+        "name": "kwh",
+        "label": "Kilowatt-hours",
+        "type": "number",
+        "min": 0,
+        "step": "any",
+        "placeholder": "2"
+      }
+    ],
+    "expression": "kwh * 3.6",
+    "unit": "MJ",
+    "examples": [
+      { "description": "1 kWh ⇒ 3.6 MJ" },
+      { "description": "5 kWh ⇒ 18 MJ" }
+    ],
+    "faqs": [
+      {
+        "question": "What does kWh mean?",
+        "answer": "It stands for kilowatt-hour, a measure of energy."
+      },
+      {
+        "question": "Is the conversion exact?",
+        "answer": "Yes, 1 kWh equals exactly 3.6 MJ."
+      },
+      {
+        "question": "Can I convert small values?",
+        "answer": "The converter accepts any non-negative value."
+      },
+      {
+        "question": "Does it work for large power plants?",
+        "answer": "Yes, simply enter the total kWh."
+      }
+    ],
+    "disclaimer": "For rough planning only; confirm critical values elsewhere."
+  },
+  {
+    "slug": "seconds-to-minutes",
+    "title": "Seconds to Minutes Converter",
+    "cluster": "date-time",
+    "description": "Convert seconds to minutes.",
+    "inputs": [
+      {
+        "name": "seconds",
+        "label": "Seconds",
+        "type": "number",
+        "min": 0,
+        "step": "any",
+        "placeholder": "120"
+      }
+    ],
+    "expression": "seconds / 60",
+    "unit": "min",
+    "examples": [
+      { "description": "120 s ⇒ 2 min" },
+      { "description": "90 s ⇒ 1.5 min" }
+    ],
+    "faqs": [
+      {
+        "question": "Does it support decimals?",
+        "answer": "Yes, fractional seconds are allowed."
+      },
+      {
+        "question": "Can I convert minutes back to seconds?",
+        "answer": "Use our minutes-to-seconds tool for that."
+      },
+      {
+        "question": "Is the conversion exact?",
+        "answer": "Yes, it divides by 60 precisely."
+      },
+      {
+        "question": "Any unit limits?",
+        "answer": "Input any non-negative time in seconds."
+      }
+    ],
+    "disclaimer": "For general time conversions only."
+  },
+  {
+    "slug": "weeks-to-seconds",
+    "title": "Weeks to Seconds Converter",
+    "cluster": "date-time",
+    "description": "Convert weeks to seconds.",
+    "inputs": [
+      {
+        "name": "weeks",
+        "label": "Weeks",
+        "type": "number",
+        "min": 0,
+        "step": "any",
+        "placeholder": "2"
+      }
+    ],
+    "expression": "weeks * 604800",
+    "unit": "s",
+    "examples": [
+      { "description": "1 week ⇒ 604,800 s" },
+      { "description": "2.5 weeks ⇒ 1,512,000 s" }
+    ],
+    "faqs": [
+      {
+        "question": "Why 604,800 seconds per week?",
+        "answer": "It's 7 days × 24 hours × 60 minutes × 60 seconds."
+      },
+      {
+        "question": "Does it handle fractional weeks?",
+        "answer": "Yes, decimal weeks are supported."
+      },
+      {
+        "question": "Is leap year considered?",
+        "answer": "Weeks are always 7 days in this calculator."
+      },
+      {
+        "question": "Can I convert seconds to weeks?",
+        "answer": "Use our seconds-to-weeks calculator for that."
+      }
+    ],
+    "disclaimer": "Approximate conversion; actual weeks may vary with leap seconds."
+  },
+  {
+    "slug": "dividend-yield",
+    "title": "Dividend Yield Calculator",
+    "cluster": "finance",
+    "description": "Estimate dividend yield from dividend and share price.",
+    "inputs": [
+      {
+        "name": "dividend",
+        "label": "Annual Dividend",
+        "type": "number",
+        "min": 0,
+        "step": "any",
+        "placeholder": "2"
+      },
+      {
+        "name": "price",
+        "label": "Share Price",
+        "type": "number",
+        "min": 0,
+        "step": "any",
+        "placeholder": "50"
+      }
+    ],
+    "expression": "(dividend / price) * 100",
+    "unit": "%",
+    "examples": [
+      { "description": "Dividend 2, Price 40 ⇒ 5%" },
+      { "description": "Dividend 1.5, Price 30 ⇒ 5%" }
+    ],
+    "faqs": [
+      {
+        "question": "What is dividend yield?",
+        "answer": "It's the annual dividend divided by share price, expressed as a percentage."
+      },
+      {
+        "question": "Can I use quarterly dividends?",
+        "answer": "Multiply the quarterly dividend by four before input."
+      },
+      {
+        "question": "Does price include fees?",
+        "answer": "Use the share's market price without fees."
+      },
+      {
+        "question": "Is a higher yield always better?",
+        "answer": "Not necessarily; consider company stability."
+      }
+    ],
+    "disclaimer": "Not investment advice."
+  },
+  {
+    "slug": "straight-line-depreciation",
+    "title": "Straight-Line Depreciation Calculator",
+    "cluster": "finance",
+    "description": "Annual depreciation using the straight-line method.",
+    "inputs": [
+      {
+        "name": "cost",
+        "label": "Asset Cost",
+        "type": "number",
+        "min": 0,
+        "step": "any",
+        "placeholder": "10000"
+      },
+      {
+        "name": "salvage",
+        "label": "Salvage Value",
+        "type": "number",
+        "min": 0,
+        "step": "any",
+        "placeholder": "1000"
+      },
+      {
+        "name": "life",
+        "label": "Useful Life (years)",
+        "type": "number",
+        "min": 1,
+        "step": "any",
+        "placeholder": "5"
+      }
+    ],
+    "expression": "(cost - salvage) / life",
+    "unit": "per year",
+    "examples": [
+      { "description": "Cost 10000, Salvage 1000, Life 5 ⇒ 1800 per year" },
+      { "description": "Cost 5000, Salvage 500, Life 10 ⇒ 450 per year" }
+    ],
+    "faqs": [
+      {
+        "question": "What is straight-line depreciation?",
+        "answer": "It spreads asset cost evenly over its useful life."
+      },
+      {
+        "question": "Can life be decimal?",
+        "answer": "Yes, partial years are supported."
+      },
+      {
+        "question": "What if salvage exceeds cost?",
+        "answer": "Then depreciation result will be negative."
+      },
+      {
+        "question": "Does it account for taxes?",
+        "answer": "No, tax implications are not included."
+      }
+    ],
+    "disclaimer": "Consult a financial professional for accounting advice."
+  },
+  {
+    "slug": "daily-fiber-requirement",
+    "title": "Daily Fiber Requirement Calculator",
+    "cluster": "health",
+    "description": "Estimate daily fiber needs based on calorie intake.",
+    "inputs": [
+      {
+        "name": "calories",
+        "label": "Daily Calories",
+        "type": "number",
+        "min": 0,
+        "step": "any",
+        "placeholder": "2000"
+      }
+    ],
+    "expression": "calories / 1000 * 14",
+    "unit": "g",
+    "examples": [
+      { "description": "2000 kcal ⇒ 28 g" },
+      { "description": "1500 kcal ⇒ 21 g" }
+    ],
+    "faqs": [
+      {
+        "question": "Where does 14 g per 1000 kcal come from?",
+        "answer": "It's a common dietary guideline."
+      },
+      {
+        "question": "Can this replace medical advice?",
+        "answer": "No, always consult a healthcare professional."
+      },
+      {
+        "question": "Does fiber aid digestion?",
+        "answer": "Adequate fiber supports digestive health."
+      },
+      {
+        "question": "Should I exceed the result?",
+        "answer": "Stick to recommended amounts unless advised otherwise."
+      }
+    ],
+    "disclaimer": "For educational use; consult a dietitian for personalized advice."
+  },
+  {
+    "slug": "calories-from-fat-percentage",
+    "title": "Calories from Fat Percentage Calculator",
+    "cluster": "health",
+    "description": "Determine what percentage of calories come from fat.",
+    "inputs": [
+      {
+        "name": "fat",
+        "label": "Fat (g)",
+        "type": "number",
+        "min": 0,
+        "step": "any",
+        "placeholder": "20"
+      },
+      {
+        "name": "calories",
+        "label": "Total Calories",
+        "type": "number",
+        "min": 0,
+        "step": "any",
+        "placeholder": "500"
+      }
+    ],
+    "expression": "(fat * 9 / calories) * 100",
+    "unit": "%",
+    "examples": [
+      { "description": "Fat 20 g, Calories 500 ⇒ 36%" },
+      { "description": "Fat 10 g, Calories 300 ⇒ 30%" }
+    ],
+    "faqs": [
+      {
+        "question": "Why multiply fat grams by 9?",
+        "answer": "Each gram of fat has 9 calories."
+      },
+      {
+        "question": "Is a lower percentage better?",
+        "answer": "Dietary needs vary; consult a professional."
+      },
+      {
+        "question": "Can I use this for meal planning?",
+        "answer": "Yes, it helps monitor fat intake."
+      },
+      {
+        "question": "Does it include saturated fat?",
+        "answer": "It treats all fat grams equally."
+      }
+    ],
+    "disclaimer": "For nutritional guidance only."
+  },
+  {
+    "slug": "air-conditioner-btu",
+    "title": "Air Conditioner BTU Calculator",
+    "cluster": "home-diy",
+    "description": "Estimate cooling capacity needed for a room.",
+    "inputs": [
+      {
+        "name": "area",
+        "label": "Room Area (sq ft)",
+        "type": "number",
+        "min": 0,
+        "step": "any",
+        "placeholder": "250"
+      },
+      {
+        "name": "btu",
+        "label": "BTU per sq ft",
+        "type": "number",
+        "min": 0,
+        "step": "any",
+        "placeholder": "20"
+      }
+    ],
+    "expression": "area * btu",
+    "unit": "BTU",
+    "examples": [
+      { "description": "Area 250 sq ft, BTU 20 ⇒ 5000 BTU" },
+      { "description": "Area 400 sq ft, BTU 25 ⇒ 10000 BTU" }
+    ],
+    "faqs": [
+      {
+        "question": "What is BTU?",
+        "answer": "British Thermal Unit, a measure of cooling power."
+      },
+      {
+        "question": "Is 20 BTU per sq ft standard?",
+        "answer": "20 is a common rule of thumb; adjust for climate."
+      },
+      {
+        "question": "Do high ceilings require more BTU?",
+        "answer": "Yes, increase the BTU factor."
+      },
+      {
+        "question": "Should I round up?",
+        "answer": "Choose a unit with at least the calculated BTU."
+      }
+    ],
+    "disclaimer": "Consult HVAC professionals for precise sizing."
+  },
+  {
+    "slug": "roof-shingle-bundles",
+    "title": "Roof Shingle Bundle Calculator",
+    "cluster": "home-diy",
+    "description": "Estimate bundles of shingles needed for a roof.",
+    "inputs": [
+      {
+        "name": "area",
+        "label": "Roof Area (sq ft)",
+        "type": "number",
+        "min": 0,
+        "step": "any",
+        "placeholder": "1500"
+      },
+      {
+        "name": "coverage",
+        "label": "Coverage per Bundle (sq ft)",
+        "type": "number",
+        "min": 0,
+        "step": "any",
+        "placeholder": "33"
+      }
+    ],
+    "expression": "area / coverage",
+    "unit": "bundles",
+    "examples": [
+      { "description": "Area 1500 sq ft, Coverage 33 ⇒ 45.45 bundles" },
+      { "description": "Area 2000 sq ft, Coverage 25 ⇒ 80 bundles" }
+    ],
+    "faqs": [
+      {
+        "question": "Should I add extra for waste?",
+        "answer": "Yes, consider buying 10% more."
+      },
+      {
+        "question": "Is coverage per bundle standardized?",
+        "answer": "It varies; check product specs."
+      },
+      {
+        "question": "Does slope affect area?",
+        "answer": "Measure the actual surface area of the roof."
+      },
+      {
+        "question": "Can I input metric units?",
+        "answer": "Convert to square feet before using."
+      }
+    ],
+    "disclaimer": "Estimates only; consult roofing guidelines."
+  },
+  {
+    "slug": "slope-between-two-points",
+    "title": "Slope Between Two Points Calculator",
+    "cluster": "math",
+    "description": "Find the slope of a line through two points.",
+    "inputs": [
+      {
+        "name": "x1",
+        "label": "x₁",
+        "type": "number",
+        "step": "any",
+        "placeholder": "1"
+      },
+      {
+        "name": "y1",
+        "label": "y₁",
+        "type": "number",
+        "step": "any",
+        "placeholder": "2"
+      },
+      {
+        "name": "x2",
+        "label": "x₂",
+        "type": "number",
+        "step": "any",
+        "placeholder": "4"
+      },
+      {
+        "name": "y2",
+        "label": "y₂",
+        "type": "number",
+        "step": "any",
+        "placeholder": "6"
+      }
+    ],
+    "expression": "(y2 - y1) / (x2 - x1)",
+    "unit": "slope",
+    "examples": [
+      { "description": "(1,2) to (4,6) ⇒ 4/3" },
+      { "description": "(0,0) to (5,5) ⇒ 1" }
+    ],
+    "faqs": [
+      {
+        "question": "What if x₂ equals x₁?",
+        "answer": "The slope is undefined because division by zero occurs."
+      },
+      {
+        "question": "Are negative slopes allowed?",
+        "answer": "Yes, negative results indicate a downward slope."
+      },
+      {
+        "question": "Do inputs need to be integers?",
+        "answer": "No, decimals are accepted."
+      },
+      {
+        "question": "Is this for 2D only?",
+        "answer": "Yes, it handles two-dimensional coordinates."
+      }
+    ],
+    "disclaimer": "Mathematical tool for educational use."
+  },
+  {
+    "slug": "nth-root",
+    "title": "Nth Root Calculator",
+    "cluster": "math",
+    "description": "Compute the nth root of a number.",
+    "inputs": [
+      {
+        "name": "value",
+        "label": "Value",
+        "type": "number",
+        "step": "any",
+        "placeholder": "27"
+      },
+      {
+        "name": "n",
+        "label": "Root (n)",
+        "type": "number",
+        "min": 1,
+        "step": "any",
+        "placeholder": "3"
+      }
+    ],
+    "expression": "Math.pow(value, 1/n)",
+    "unit": "value",
+    "examples": [
+      { "description": "Value 27, n 3 ⇒ 3" },
+      { "description": "Value 16, n 4 ⇒ 2" }
+    ],
+    "faqs": [
+      {
+        "question": "Can n be fractional?",
+        "answer": "No, enter a positive number greater than zero."
+      },
+      {
+        "question": "What if value is negative?",
+        "answer": "Negative values are not supported in this calculator."
+      },
+      {
+        "question": "Is the square root just n=2?",
+        "answer": "Yes, set n to 2 for square roots."
+      },
+      {
+        "question": "Are results rounded?",
+        "answer": "Results use JavaScript's floating-point precision."
+      }
+    ],
+    "disclaimer": "Educational tool; verify results independently."
+  },
+  {
+    "slug": "hashrate-efficiency",
+    "title": "Hashrate Efficiency Calculator",
+    "cluster": "technology",
+    "description": "Compute mining hashrate per watt of power.",
+    "inputs": [
+      {
+        "name": "hashrate",
+        "label": "Hashrate (MH/s)",
+        "type": "number",
+        "min": 0,
+        "step": "any",
+        "placeholder": "500"
+      },
+      {
+        "name": "power",
+        "label": "Power (W)",
+        "type": "number",
+        "min": 0,
+        "step": "any",
+        "placeholder": "100"
+      }
+    ],
+    "expression": "hashrate / power",
+    "unit": "MH/s per W",
+    "examples": [
+      { "description": "500 MH/s at 100 W ⇒ 5 MH/s per W" },
+      { "description": "120 MH/s at 60 W ⇒ 2 MH/s per W" }
+    ],
+    "faqs": [
+      {
+        "question": "What is hashrate?",
+        "answer": "It measures how many hashes a miner computes per second."
+      },
+      {
+        "question": "Why consider efficiency?",
+        "answer": "Higher efficiency means lower electricity costs."
+      },
+      {
+        "question": "Can I use GH/s values?",
+        "answer": "Convert to MH/s before input."
+      },
+      {
+        "question": "Does it include pool fees?",
+        "answer": "No, it only compares raw hashrate and power."
+      }
+    ],
+    "disclaimer": "Mining results vary; check hardware specifications."
+  },
+  {
+    "slug": "power-supply-efficiency",
+    "title": "Power Supply Efficiency Calculator",
+    "cluster": "technology",
+    "description": "Determine PSU efficiency from output and input power.",
+    "inputs": [
+      {
+        "name": "output",
+        "label": "Output Power (W)",
+        "type": "number",
+        "min": 0,
+        "step": "any",
+        "placeholder": "400"
+      },
+      {
+        "name": "input",
+        "label": "Input Power (W)",
+        "type": "number",
+        "min": 0,
+        "step": "any",
+        "placeholder": "500"
+      }
+    ],
+    "expression": "(output / input) * 100",
+    "unit": "%",
+    "examples": [
+      { "description": "Output 400 W, Input 500 W ⇒ 80%" },
+      { "description": "Output 300 W, Input 360 W ⇒ 83.33%" }
+    ],
+    "faqs": [
+      {
+        "question": "Why is efficiency important?",
+        "answer": "Higher efficiency reduces wasted energy."
+      },
+      {
+        "question": "Can efficiency exceed 100%?",
+        "answer": "No, it's always below 100%."
+      },
+      {
+        "question": "Do ratings vary with load?",
+        "answer": "Yes, efficiency changes depending on load."
+      },
+      {
+        "question": "Is this for AC to DC supplies?",
+        "answer": "Yes, it's commonly used for PSU comparisons."
+      }
+    ],
+    "disclaimer": "Approximate values; check manufacturer specifications."
+  },
+  {
+    "slug": "paper-roll-length",
+    "title": "Paper Roll Length Calculator",
+    "cluster": "other",
+    "description": "Estimate the length of paper on a roll.",
+    "inputs": [
+      {
+        "name": "outer",
+        "label": "Outer Diameter (cm)",
+        "type": "number",
+        "min": 0,
+        "step": "any",
+        "placeholder": "10"
+      },
+      {
+        "name": "core",
+        "label": "Core Diameter (cm)",
+        "type": "number",
+        "min": 0,
+        "step": "any",
+        "placeholder": "4"
+      },
+      {
+        "name": "thickness",
+        "label": "Paper Thickness (mm)",
+        "type": "number",
+        "min": 0,
+        "step": "any",
+        "placeholder": "0.1"
+      }
+    ],
+    "expression": "( ( (outer/2)^2 - (core/2)^2 ) * Math.PI * 1000 ) / thickness",
+    "unit": "m",
+    "examples": [
+      { "description": "Outer 10 cm, Core 4 cm, Thickness 0.1 mm ⇒ 2356 m" },
+      { "description": "Outer 8 cm, Core 3 cm, Thickness 0.12 mm ⇒ 1222 m" }
+    ],
+    "faqs": [
+      {
+        "question": "Why convert to millimeters?",
+        "answer": "The formula requires consistent units."
+      },
+      {
+        "question": "Does it assume tightly wound paper?",
+        "answer": "Yes, gaps between layers aren't considered."
+      },
+      {
+        "question": "Can I use inches?",
+        "answer": "Convert dimensions to centimeters and millimeters first."
+      },
+      {
+        "question": "Is thickness constant?",
+        "answer": "The calculator assumes uniform thickness."
+      }
+    ],
+    "disclaimer": "Approximate result; actual length may vary."
+  },
+  {
+    "slug": "convection-oven-time",
+    "title": "Convection Oven Time Converter",
+    "cluster": "other",
+    "description": "Adjust conventional recipe times for convection ovens.",
+    "inputs": [
+      {
+        "name": "time",
+        "label": "Conventional Time (min)",
+        "type": "number",
+        "min": 0,
+        "step": "any",
+        "placeholder": "60"
+      },
+      {
+        "name": "factor",
+        "label": "Convection Factor",
+        "type": "number",
+        "min": 0,
+        "step": "any",
+        "placeholder": "0.75"
+      }
+    ],
+    "expression": "time * factor",
+    "unit": "min",
+    "examples": [
+      { "description": "Time 60 min, Factor 0.75 ⇒ 45 min" },
+      { "description": "Time 40 min, Factor 0.7 ⇒ 28 min" }
+    ],
+    "faqs": [
+      {
+        "question": "Why is the factor usually 0.75?",
+        "answer": "Convection ovens cook about 25% faster."
+      },
+      {
+        "question": "Can I change the factor?",
+        "answer": "Yes, adjust it based on your oven's guidelines."
+      },
+      {
+        "question": "Does temperature change too?",
+        "answer": "Usually reduce temperature by 25°F."
+      },
+      {
+        "question": "Is this for baking and roasting?",
+        "answer": "Yes, for recipes originally written for conventional ovens."
+      }
+    ],
+    "disclaimer": "Check food doneness; times are estimates."
   }
 ]

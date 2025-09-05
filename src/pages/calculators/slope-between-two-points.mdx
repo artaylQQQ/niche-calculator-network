@@ -1,0 +1,50 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Slope Between Two Points Calculator"
+description: "Find the slope of a line through two points."
+updated: "2024-06-10"
+cluster: "math"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  inputs: [
+    { name: "x1", label: "x₁", type: "number", step: "any", placeholder: "1" },
+    { name: "y1", label: "y₁", type: "number", step: "any", placeholder: "2" },
+    { name: "x2", label: "x₂", type: "number", step: "any", placeholder: "4" },
+    { name: "y2", label: "y₂", type: "number", step: "any", placeholder: "6" },
+  ],
+  slug: "slope-between-two-points",
+  title: "Slope Between Two Points Calculator",
+  locale: "en",
+  expression: "(y2 - y1) / (x2 - x1)",
+  intro: "Calculate the slope of a line segment using two coordinate points.",
+  examples: [
+    { description: "(1,2) to (4,6) ⇒ 4/3" },
+    { description: "(0,0) to (5,5) ⇒ 1" },
+  ],
+  faqs: [
+    {
+      question: "What if x₂ equals x₁?",
+      answer: "The slope is undefined because division by zero occurs.",
+    },
+    {
+      question: "Are negative slopes allowed?",
+      answer: "Yes, negative results indicate a downward slope.",
+    },
+    {
+      question: "Do inputs need to be integers?",
+      answer: "No, decimals are accepted.",
+    },
+    {
+      question: "Is this for 2D only?",
+      answer: "Yes, it handles two-dimensional coordinates.",
+    },
+  ],
+  disclaimer: "Mathematical tool for educational use.",
+  cluster: "math",
+  unit: "slope",
+};
+
+<Calculator schema={schema} />

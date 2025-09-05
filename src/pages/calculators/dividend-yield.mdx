@@ -1,0 +1,64 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Dividend Yield Calculator"
+description: "Estimate dividend yield from dividend and share price."
+updated: "2024-06-10"
+cluster: "finance"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  inputs: [
+    {
+      name: "dividend",
+      label: "Annual Dividend",
+      type: "number",
+      min: 0,
+      step: "any",
+      placeholder: "2",
+    },
+    {
+      name: "price",
+      label: "Share Price",
+      type: "number",
+      min: 0,
+      step: "any",
+      placeholder: "50",
+    },
+  ],
+  slug: "dividend-yield",
+  title: "Dividend Yield Calculator",
+  locale: "en",
+  expression: "(dividend / price) * 100",
+  intro:
+    "Find the annual dividend yield of a stock using its dividend and current price.",
+  examples: [
+    { description: "Dividend 2, Price 40 ⇒ 5%" },
+    { description: "Dividend 1.5, Price 30 ⇒ 5%" },
+  ],
+  faqs: [
+    {
+      question: "What is dividend yield?",
+      answer:
+        "It's the annual dividend divided by share price, expressed as a percentage.",
+    },
+    {
+      question: "Can I use quarterly dividends?",
+      answer: "Multiply the quarterly dividend by four before input.",
+    },
+    {
+      question: "Does price include fees?",
+      answer: "Use the share's market price without fees.",
+    },
+    {
+      question: "Is a higher yield always better?",
+      answer: "Not necessarily; consider company stability.",
+    },
+  ],
+  disclaimer: "Not investment advice.",
+  cluster: "finance",
+  unit: "%",
+};
+
+<Calculator schema={schema} />

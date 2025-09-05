@@ -1,0 +1,62 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Convection Oven Time Converter"
+description: "Adjust conventional recipe times for convection ovens."
+updated: "2024-06-10"
+cluster: "other"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  inputs: [
+    {
+      name: "time",
+      label: "Conventional Time (min)",
+      type: "number",
+      min: 0,
+      step: "any",
+      placeholder: "60",
+    },
+    {
+      name: "factor",
+      label: "Convection Factor",
+      type: "number",
+      min: 0,
+      step: "any",
+      placeholder: "0.75",
+    },
+  ],
+  slug: "convection-oven-time",
+  title: "Convection Oven Time Converter",
+  locale: "en",
+  expression: "time * factor",
+  intro: "Reduce standard oven cooking times for use with a convection oven.",
+  examples: [
+    { description: "Time 60 min, Factor 0.75 ⇒ 45 min" },
+    { description: "Time 40 min, Factor 0.7 ⇒ 28 min" },
+  ],
+  faqs: [
+    {
+      question: "Why is the factor usually 0.75?",
+      answer: "Convection ovens cook about 25% faster.",
+    },
+    {
+      question: "Can I change the factor?",
+      answer: "Yes, adjust it based on your oven's guidelines.",
+    },
+    {
+      question: "Does temperature change too?",
+      answer: "Usually reduce temperature by 25°F.",
+    },
+    {
+      question: "Is this for baking and roasting?",
+      answer: "Yes, for recipes originally written for conventional ovens.",
+    },
+  ],
+  disclaimer: "Check food doneness; times are estimates.",
+  cluster: "other",
+  unit: "min",
+};
+
+<Calculator schema={schema} />
