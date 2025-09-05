@@ -1,0 +1,33 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Circle Circumference Calculator"
+description: "Compute the circumference of a circle from its radius."
+updated: "2025-03-30"
+cluster: "Math"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "circle-circumference",
+  title: "Circle Circumference Calculator",
+  locale: "en",
+  intro: "Enter the radius to get the circle's circumference using the formula 2πr.",
+  unit: "units",
+  cluster: "Math",
+  inputs: [
+    { name: "radius", label: "Radius", type: "number", step: "any", placeholder: "5" }
+  ],
+  expression: "2 * pi * radius",
+  examples: [
+    { description: "radius 5 ⇒ 31.42 units" },
+    { description: "radius 10 ⇒ 62.83 units" }
+  ],
+  faqs: [
+    { question: "Can I use diameter instead?", answer: "Divide diameter by 2 to get radius first." },
+    { question: "What value of π is used?", answer: "The calculator uses π ≈ 3.14159." }
+  ],
+  disclaimer: "For educational use."
+};
+
+<Calculator schema={schema} />

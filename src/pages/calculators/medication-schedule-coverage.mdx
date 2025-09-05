@@ -1,0 +1,34 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Medication Schedule Coverage"
+description: "See how many days your medication will last based on doses and interval."
+updated: "2025-03-30"
+cluster: "Date & Time"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "medication-schedule-coverage",
+  title: "Medication Schedule Coverage",
+  locale: "en",
+  intro: "Enter the number of doses and hours between them to calculate the total days your medication covers.",
+  unit: "days",
+  cluster: "Date & Time",
+  inputs: [
+    { name: "doses", label: "Total doses", type: "number", step: 1, placeholder: "30" },
+    { name: "interval_hours", label: "Interval (hours)", type: "number", step: "any", placeholder: "8" }
+  ],
+  expression: "(doses - 1) * interval_hours / 24",
+  examples: [
+    { description: "30 doses every 8 h ⇒ 9.67 days" },
+    { description: "60 doses every 12 h ⇒ 29.5 days" }
+  ],
+  faqs: [
+    { question: "Why subtract one dose?", answer: "Coverage is the time between the first and last dose." },
+    { question: "Does it handle partial intervals?", answer: "Yes, fractional hours are allowed." }
+  ],
+  disclaimer: "For informational purposes only. Follow your prescription instructions."
+};
+
+<Calculator schema={schema} />

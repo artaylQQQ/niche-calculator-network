@@ -1,0 +1,34 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Wheelchair Ramp Length"
+description: "Determine the ramp length needed for a given rise and slope ratio."
+updated: "2025-03-30"
+cluster: "Home & DIY"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "wheelchair-ramp-length",
+  title: "Wheelchair Ramp Length",
+  locale: "en",
+  intro: "Enter the vertical rise in inches and desired slope ratio (commonly 12) to compute ramp length in feet.",
+  unit: "ft",
+  cluster: "Home & DIY",
+  inputs: [
+    { name: "rise", label: "Rise (inches)", type: "number", step: "any", placeholder: "24" },
+    { name: "ratio", label: "Slope ratio", type: "number", step: "any", placeholder: "12" }
+  ],
+  expression: "rise * ratio / 12",
+  examples: [
+    { description: "24 in rise, ratio 12 ⇒ 24 ft" },
+    { description: "18 in rise, ratio 12 ⇒ 18 ft" }
+  ],
+  faqs: [
+    { question: "What slope ratio is recommended?", answer: "A 1:12 ratio is common for accessibility." },
+    { question: "Does length include landings?", answer: "No, this covers ramp run only." }
+  ],
+  disclaimer: "Verify local building codes for exact requirements."
+};
+
+<Calculator schema={schema} />

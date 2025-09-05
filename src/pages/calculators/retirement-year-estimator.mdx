@@ -1,0 +1,34 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Retirement Year Estimator"
+description: "Find the calendar year you can retire based on birth year and target retirement age."
+updated: "2025-03-30"
+cluster: "Date & Time"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "retirement-year-estimator",
+  title: "Retirement Year Estimator",
+  locale: "en",
+  intro: "Enter your birth year and desired retirement age to estimate the calendar year you'll retire.",
+  unit: "year",
+  cluster: "Date & Time",
+  inputs: [
+    { name: "birth_year", label: "Birth year", type: "number", step: 1, placeholder: "1960" },
+    { name: "retirement_age", label: "Retirement age", type: "number", step: 1, placeholder: "65" }
+  ],
+  expression: "birth_year + retirement_age",
+  examples: [
+    { description: "Born 1955 retiring at 67 ⇒ 2022" },
+    { description: "Born 1960 retiring at 65 ⇒ 2025" }
+  ],
+  faqs: [
+    { question: "Does this account for retirement rules?", answer: "No, it simply adds age to birth year." },
+    { question: "Can I use fractional ages?", answer: "Yes, the calculator accepts decimals." }
+  ],
+  disclaimer: "For planning purposes only."
+};
+
+<Calculator schema={schema} />

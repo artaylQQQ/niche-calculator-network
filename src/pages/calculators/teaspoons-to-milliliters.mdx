@@ -1,0 +1,33 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Teaspoons to Milliliters Converter"
+description: "Convert kitchen teaspoons to milliliters for accurate medication or recipe measurements."
+updated: "2025-03-30"
+cluster: "Conversions"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "teaspoons-to-milliliters",
+  title: "Teaspoons to Milliliters Converter",
+  locale: "en",
+  intro: "Quickly convert teaspoons to milliliters, helpful when dosing liquid medicine or following recipes.",
+  unit: "mL",
+  cluster: "Conversions",
+  inputs: [
+    { name: "tsp", label: "Teaspoons", type: "number", step: "any", placeholder: "2" }
+  ],
+  expression: "tsp * 4.92892",
+  examples: [
+    { description: "2 tsp ⇒ 9.86 mL" },
+    { description: "5 tsp ⇒ 24.64 mL" }
+  ],
+  faqs: [
+    { question: "How many milliliters are in a teaspoon?", answer: "One US teaspoon equals approximately 4.92892 milliliters." },
+    { question: "Is this suitable for medication dosing?", answer: "Yes, but always double-check with your healthcare provider." }
+  ],
+  disclaimer: "For informational purposes only."
+};
+
+<Calculator schema={schema} />

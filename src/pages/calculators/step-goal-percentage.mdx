@@ -1,0 +1,34 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Step Goal Percentage"
+description: "Track progress toward your daily step goal."
+updated: "2025-03-30"
+cluster: "Other"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "step-goal-percentage",
+  title: "Step Goal Percentage",
+  locale: "en",
+  intro: "Enter steps taken today and your daily goal to see what percentage you've achieved.",
+  unit: "%",
+  cluster: "Other",
+  inputs: [
+    { name: "steps", label: "Steps today", type: "number", step: 1, placeholder: "4000" },
+    { name: "goal", label: "Daily goal", type: "number", step: 1, placeholder: "8000" }
+  ],
+  expression: "steps / goal * 100",
+  examples: [
+    { description: "4000 of 8000 ⇒ 50%" },
+    { description: "9000 of 10000 ⇒ 90%" }
+  ],
+  faqs: [
+    { question: "Can I exceed 100%?", answer: "Yes, the percentage can be over 100 if you surpass your goal." },
+    { question: "Does this track over multiple days?", answer: "No, it calculates a single day's progress." }
+  ],
+  disclaimer: "For personal tracking only."
+};
+
+<Calculator schema={schema} />

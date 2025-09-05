@@ -1,0 +1,33 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Weeks to Months Converter"
+description: "Convert weeks to approximate months using the average month length."
+updated: "2025-03-30"
+cluster: "Date & Time"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "weeks-to-months-converter",
+  title: "Weeks to Months Converter",
+  locale: "en",
+  intro: "Convert a number of weeks into approximate calendar months based on the average month length of 30.4375 days.",
+  unit: "months",
+  cluster: "Date & Time",
+  inputs: [
+    { name: "weeks", label: "Weeks", type: "number", step: "any", placeholder: "4" }
+  ],
+  expression: "weeks * 7 / 30.4375",
+  examples: [
+    { description: "4 weeks ⇒ 0.92 months" },
+    { description: "12 weeks ⇒ 2.76 months" }
+  ],
+  faqs: [
+    { question: "Why use 30.4375 days?", answer: "It is the average length of a month over a year." },
+    { question: "Is this exact?", answer: "No, months vary in length; this is an approximation." }
+  ],
+  disclaimer: "Approximate conversion only."
+};
+
+<Calculator schema={schema} />

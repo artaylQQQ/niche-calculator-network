@@ -1,0 +1,34 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Photo Storage Calculator"
+description: "Estimate storage space needed for digital photos."
+updated: "2025-03-30"
+cluster: "Technology"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "photo-storage-calculator",
+  title: "Photo Storage Calculator",
+  locale: "en",
+  intro: "Enter number of photos and average file size in megabytes to estimate total storage in gigabytes.",
+  unit: "GB",
+  cluster: "Technology",
+  inputs: [
+    { name: "count", label: "Photo count", type: "number", step: 1, placeholder: "500" },
+    { name: "size_mb", label: "Size per photo (MB)", type: "number", step: "any", placeholder: "3" }
+  ],
+  expression: "count * size_mb / 1024",
+  examples: [
+    { description: "500 photos at 3 MB ⇒ 1.46 GB" },
+    { description: "1000 photos at 5 MB ⇒ 4.88 GB" }
+  ],
+  faqs: [
+    { question: "Why divide by 1024?", answer: "There are 1024 megabytes in a gigabyte." },
+    { question: "Does compression affect this?", answer: "Yes, smaller file sizes reduce storage needs." }
+  ],
+  disclaimer: "Approximate estimate only."
+};
+
+<Calculator schema={schema} />

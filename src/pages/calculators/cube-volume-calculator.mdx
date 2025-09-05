@@ -1,0 +1,33 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Cube Volume Calculator"
+description: "Find the volume of a cube from its side length."
+updated: "2025-03-30"
+cluster: "Math"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "cube-volume-calculator",
+  title: "Cube Volume Calculator",
+  locale: "en",
+  intro: "Calculate the volume of a cube by entering the length of one side. Result is in cubic units.",
+  unit: "units³",
+  cluster: "Math",
+  inputs: [
+    { name: "side", label: "Side length", type: "number", step: "any", placeholder: "3" }
+  ],
+  expression: "side ^ 3",
+  examples: [
+    { description: "3 ⇒ 27 units³" },
+    { description: "5 ⇒ 125 units³" }
+  ],
+  faqs: [
+    { question: "Can I use centimeters or inches?", answer: "Yes, the result matches the unit you input." },
+    { question: "What if sides differ?", answer: "Then it's a rectangular prism, not a cube." }
+  ],
+  disclaimer: "For educational use."
+};
+
+<Calculator schema={schema} />

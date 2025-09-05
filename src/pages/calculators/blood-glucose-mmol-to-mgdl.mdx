@@ -1,0 +1,33 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Blood Glucose mmol/L to mg/dL"
+description: "Convert blood glucose from mmol/L to mg/dL to track diabetes measurements."
+updated: "2025-03-30"
+cluster: "Conversions"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "blood-glucose-mmol-to-mgdl",
+  title: "Blood Glucose mmol/L to mg/dL",
+  locale: "en",
+  intro: "Convert blood glucose readings from millimoles per liter to milligrams per deciliter using the standard factor of 18.",
+  unit: "mg/dL",
+  cluster: "Conversions",
+  inputs: [
+    { name: "mmol", label: "mmol/L", type: "number", step: "any", placeholder: "5" }
+  ],
+  expression: "mmol * 18",
+  examples: [
+    { description: "5 mmol/L ⇒ 90 mg/dL" },
+    { description: "7 mmol/L ⇒ 126 mg/dL" }
+  ],
+  faqs: [
+    { question: "Why multiply by 18?", answer: "The factor 18 converts mmol/L to mg/dL for glucose." },
+    { question: "Can this be used for other substances?", answer: "No, this factor is specific to glucose." }
+  ],
+  disclaimer: "For informational purposes only. Consult a healthcare professional for medical advice."
+};
+
+<Calculator schema={schema} />

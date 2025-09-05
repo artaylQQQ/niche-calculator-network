@@ -1,0 +1,34 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Room Lighting Lumens"
+description: "Calculate recommended lumens for a room based on area and desired brightness."
+updated: "2025-03-30"
+cluster: "Home & DIY"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "room-lighting-lumens",
+  title: "Room Lighting Lumens",
+  locale: "en",
+  intro: "Determine the total lumens needed for a room by multiplying its area by the desired lumens per square foot.",
+  unit: "lumens",
+  cluster: "Home & DIY",
+  inputs: [
+    { name: "area", label: "Area (sq ft)", type: "number", step: "any", placeholder: "100" },
+    { name: "lumens_sqft", label: "Lumens per sq ft", type: "number", step: "any", placeholder: "20" }
+  ],
+  expression: "area * lumens_sqft",
+  examples: [
+    { description: "100 sq ft at 20 lumens/sq ft ⇒ 2000 lumens" },
+    { description: "150 sq ft at 30 lumens/sq ft ⇒ 4500 lumens" }
+  ],
+  faqs: [
+    { question: "What is a typical brightness?", answer: "Living rooms often use 10–20 lumens per square foot." },
+    { question: "Does bulb efficiency matter?", answer: "The calculator gives total lumens; choose bulbs accordingly." }
+  ],
+  disclaimer: "Lighting recommendations vary; adjust for your needs."
+};
+
+<Calculator schema={schema} />

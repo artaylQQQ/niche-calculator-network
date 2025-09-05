@@ -1,0 +1,34 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Required Minimum Distribution"
+description: "Estimate your required minimum distribution from retirement accounts."
+updated: "2025-03-30"
+cluster: "Finance"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "required-minimum-distribution",
+  title: "Required Minimum Distribution",
+  locale: "en",
+  intro: "Calculate the annual withdrawal required from a retirement account using the IRS life expectancy factor.",
+  unit: "USD",
+  cluster: "Finance",
+  inputs: [
+    { name: "balance", label: "Account balance (USD)", type: "number", step: "any", placeholder: "200000" },
+    { name: "factor", label: "Life expectancy factor", type: "number", step: "any", placeholder: "20" }
+  ],
+  expression: "balance / factor",
+  examples: [
+    { description: "$200000 with factor 20 ⇒ 10000 USD" },
+    { description: "$150000 with factor 25 ⇒ 6000 USD" }
+  ],
+  faqs: [
+    { question: "Where do I find the factor?", answer: "Use the IRS life expectancy tables for your age." },
+    { question: "Does this include taxes?", answer: "No, taxes are not included in this estimate." }
+  ],
+  disclaimer: "Financial information only. Consult a tax professional."
+};
+
+<Calculator schema={schema} />

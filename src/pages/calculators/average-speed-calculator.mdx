@@ -1,0 +1,34 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Average Speed Calculator"
+description: "Compute average speed from distance traveled and time taken."
+updated: "2025-03-30"
+cluster: "Math"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "average-speed-calculator",
+  title: "Average Speed Calculator",
+  locale: "en",
+  intro: "Enter distance traveled and time taken to find average speed in miles per hour.",
+  unit: "mph",
+  cluster: "Math",
+  inputs: [
+    { name: "distance", label: "Distance (miles)", type: "number", step: "any", placeholder: "60" },
+    { name: "time", label: "Time (hours)", type: "number", step: "any", placeholder: "1.5" }
+  ],
+  expression: "distance / time",
+  examples: [
+    { description: "60 miles in 1.5 h ⇒ 40 mph" },
+    { description: "90 miles in 2 h ⇒ 45 mph" }
+  ],
+  faqs: [
+    { question: "Can I use kilometers?", answer: "Yes, but the result will be in kilometers per hour." },
+    { question: "What if time is zero?", answer: "Time must be greater than zero." }
+  ],
+  disclaimer: "For educational use."
+};
+
+<Calculator schema={schema} />
