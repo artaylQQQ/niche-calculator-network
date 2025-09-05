@@ -1,0 +1,68 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Lean Body Mass Calculator"
+description: "Estimate lean body mass using the Boer formula."
+updated: "2025-09-05"
+cluster: "Health"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "lean-body-mass",
+  title: "Lean Body Mass Calculator",
+  intro:
+    "Estimate lean body mass from weight and height using the Boer formula. Enter gender as 1 for male or 0 for female.",
+  locale: "en",
+  cluster: "Health",
+  inputs: [
+    {
+      name: "weight",
+      label: "Weight (kg)",
+      type: "number",
+      step: "any",
+      required: true,
+    },
+    {
+      name: "height",
+      label: "Height (cm)",
+      type: "number",
+      step: "any",
+      required: true,
+    },
+    {
+      name: "gender",
+      label: "Gender (1=male, 0=female)",
+      type: "number",
+      step: 1,
+      required: true,
+    },
+  ],
+  expression:
+    "gender ? (0.407 * weight + 0.267 * height - 19.2) : (0.252 * weight + 0.473 * height - 48.3)",
+  unit: "kg",
+  examples: [
+    { description: "Male: 80 kg, 180 cm ⇒ 59.6 kg LBM" },
+    { description: "Female: 65 kg, 165 cm ⇒ 45.1 kg LBM" },
+    { description: "Male: 90 kg, 175 cm ⇒ 63.7 kg LBM" },
+  ],
+  faqs: [
+    {
+      question: "How do I specify gender?",
+      answer: "Enter 1 for male or 0 for female.",
+    },
+    {
+      question: "Does age affect the result?",
+      answer: "No, the Boer formula uses only height and weight.",
+    },
+    {
+      question: "Is this accurate for athletes?",
+      answer:
+        "It's an estimate; athletes may deviate from formula assumptions.",
+    },
+  ],
+  disclaimer:
+    "Informational use only; consult a healthcare provider for personalized advice.",
+};
+
+<Calculator schema={schema} />

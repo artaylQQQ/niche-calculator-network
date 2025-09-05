@@ -1,0 +1,54 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Leap Year Checker"
+description: "Determine if a given year is a leap year."
+updated: "2025-09-05"
+cluster: "Date & Time"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "leap-year-checker",
+  title: "Leap Year Checker",
+  intro:
+    "Determine if a given year is a leap year under the Gregorian calendar.",
+  locale: "en",
+  cluster: "Date & Time",
+  inputs: [
+    {
+      name: "year",
+      label: "Year",
+      type: "number",
+      step: 1,
+      required: true,
+    },
+  ],
+  expression:
+    "(year % 4 === 0 && (year % 100 !== 0 || year % 400 === 0)) ? 1 : 0",
+  unit: "1=yes",
+  examples: [
+    { description: "2024 ⇒ 1" },
+    { description: "1900 ⇒ 0" },
+    { description: "2000 ⇒ 1" },
+  ],
+  faqs: [
+    {
+      question: "Why isn't 1900 a leap year?",
+      answer:
+        "Years divisible by 100 are not leap years unless divisible by 400.",
+    },
+    {
+      question: "What does a result of 1 mean?",
+      answer: "1 indicates the year is a leap year; 0 means it is not.",
+    },
+    {
+      question: "Does it work for any year?",
+      answer:
+        "Yes, it uses the proleptic Gregorian calendar for any integer year.",
+    },
+  ],
+  disclaimer: "For calendar reference only.",
+};
+
+<Calculator schema={schema} />

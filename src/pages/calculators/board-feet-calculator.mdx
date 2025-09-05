@@ -1,0 +1,65 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Board Feet Calculator"
+description: "Compute board feet of lumber from thickness, width, and length."
+updated: "2025-09-05"
+cluster: "Home & DIY"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "board-feet-calculator",
+  title: "Board Feet Calculator",
+  intro:
+    "Compute board feet of lumber from thickness (inches), width (inches), and length (feet).",
+  locale: "en",
+  cluster: "Home & DIY",
+  inputs: [
+    {
+      name: "thickness",
+      label: "Thickness (in)",
+      type: "number",
+      step: "any",
+      required: true,
+    },
+    {
+      name: "width",
+      label: "Width (in)",
+      type: "number",
+      step: "any",
+      required: true,
+    },
+    {
+      name: "length",
+      label: "Length (ft)",
+      type: "number",
+      step: "any",
+      required: true,
+    },
+  ],
+  expression: "(thickness * width * length) / 12",
+  unit: "bd ft",
+  examples: [
+    { description: "2 in × 6 in × 8 ft ⇒ 8 bd ft" },
+    { description: "1 in × 8 in × 10 ft ⇒ 6.67 bd ft" },
+    { description: "1.5 in × 4 in × 12 ft ⇒ 6 bd ft" },
+  ],
+  faqs: [
+    {
+      question: "What is a board foot?",
+      answer: "A board foot equals 1 in × 12 in × 12 in of lumber volume.",
+    },
+    {
+      question: "Can I use metric measurements?",
+      answer: "Convert to inches and feet before using the calculator.",
+    },
+    {
+      question: "Why divide by 12?",
+      answer: "The factor converts cubic inches to board feet.",
+    },
+  ],
+  disclaimer: "Round up and add extra for waste when purchasing lumber.",
+};
+
+<Calculator schema={schema} />

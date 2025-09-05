@@ -1,0 +1,48 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Earthquake Energy Release Calculator"
+description: "Convert earthquake magnitude to energy in joules."
+updated: "2025-09-05"
+cluster: "Other"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "earthquake-energy",
+  title: "Earthquake Energy Release Calculator",
+  intro:
+    "Estimate energy released by an earthquake based on its magnitude on the Richter scale.",
+  locale: "en",
+  cluster: "Other",
+  inputs: [
+    {
+      name: "magnitude",
+      label: "Magnitude",
+      type: "number",
+      step: "any",
+      required: true,
+    },
+  ],
+  expression: "Math.pow(10, 1.5 * magnitude + 4.8)",
+  unit: "J",
+  examples: [
+    { description: "Magnitude 5 ⇒ 2.0e+12 J" },
+    { description: "Magnitude 6 ⇒ 6.3e+13 J" },
+    { description: "Magnitude 7 ⇒ 2.0e+15 J" },
+  ],
+  faqs: [
+    { question: "What formula is used?", answer: "Energy = 10^(1.5×M + 4.8)." },
+    {
+      question: "Is the result in joules?",
+      answer: "Yes, energy is output in joules.",
+    },
+    {
+      question: "Does it apply to moment magnitude?",
+      answer: "It approximates energy for moment magnitude values.",
+    },
+  ],
+  disclaimer: "Actual earthquake energy can vary; for educational use only.",
+};
+
+<Calculator schema={schema} />
