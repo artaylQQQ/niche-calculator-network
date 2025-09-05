@@ -1,0 +1,37 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Quadratic Positive Root"
+description: "Largest real root of ax² + bx + c = 0."
+updated: "2025-09-30"
+cluster: "Math"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "inputs": [
+    { "name": "a", "label": "a", "type": "number", "step": "any", "placeholder": "1" },
+    { "name": "b", "label": "b", "type": "number", "step": "any", "placeholder": "-3" },
+    { "name": "c", "label": "c", "type": "number", "step": "any", "placeholder": "2" }
+  ],
+  "slug": "quadratic-positive-root",
+  "title": "Quadratic Positive Root",
+  "locale": "en",
+  "unit": "number",
+  "expression": "(-b + Math.sqrt(b^2 - 4*a*c)) / (2*a)",
+  "intro": "Compute the larger real root of a quadratic equation ax² + bx + c = 0 using the quadratic formula.",
+  "examples": [
+    { "description": "a=1, b=-3, c=2 ⇒ 2" },
+    { "description": "a=2, b=-7, c=3 ⇒ 3" },
+    { "description": "a=1, b=-5, c=6 ⇒ 3" }
+  ],
+  "faqs": [
+    { "question": "What if the discriminant is negative?", "answer": "The result becomes NaN because there are no real roots." },
+    { "question": "Why use the plus sign?", "answer": "It provides the larger of the two roots." },
+    { "question": "Can a be zero?", "answer": "No, then the equation is not quadratic." }
+  ],
+  "disclaimer": "Ensure coefficients are correct; complex roots are not handled.",
+  "cluster": "Math"
+}
+
+<Calculator schema={schema} />

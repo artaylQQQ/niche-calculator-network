@@ -1,0 +1,38 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Annuity Net Present Value"
+description: "Present value of equal cash flows minus initial investment."
+updated: "2025-09-30"
+cluster: "Finance"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "inputs": [
+    { "name": "cash", "label": "Cash flow per period", "type": "number", "step": "any", "placeholder": "1000" },
+    { "name": "rate", "label": "Discount rate (%)", "type": "number", "step": "any", "placeholder": "5" },
+    { "name": "periods", "label": "Number of periods", "type": "number", "step": "1", "min": 1, "placeholder": "5" },
+    { "name": "initial", "label": "Initial investment", "type": "number", "step": "any", "placeholder": "4000" }
+  ],
+  "slug": "annuity-net-present-value",
+  "title": "Annuity Net Present Value",
+  "locale": "en",
+  "unit": "USD",
+  "expression": "cash * (1 - (1 + rate/100)^(-periods)) / (rate/100) - initial",
+  "intro": "Determine the net present value of an annuity given periodic cash flows, a discount rate, and an initial investment.",
+  "examples": [
+    { "description": "cash=1000, rate=5, periods=5, initial=4000 ⇒ 3,329.48" },
+    { "description": "cash=500, rate=7, periods=10, initial=2000 ⇒ 2,019.97" },
+    { "description": "cash=2000, rate=4, periods=3, initial=5000 ⇒ 695.14" }
+  ],
+  "faqs": [
+    { "question": "What is NPV?", "answer": "Net present value measures today's value of future cash flows minus the initial cost." },
+    { "question": "Why divide by rate/100?", "answer": "Rates are entered as percentages; dividing converts them to decimals." },
+    { "question": "Can periods be fractional?", "answer": "No, periods represent whole cash flow intervals." }
+  ],
+  "disclaimer": "Financial estimates only; consult a professional for investment decisions.",
+  "cluster": "Finance"
+}
+
+<Calculator schema={schema} />
