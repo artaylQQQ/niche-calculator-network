@@ -1,5 +1,6 @@
 ---
 import BaseLayout from './BaseLayout.astro';
+import AiWidget from '../components/AiWidget.astro';
 
 /**
  * Simplified calculator layout that wraps individual calculator pages with
@@ -8,7 +9,8 @@ import BaseLayout from './BaseLayout.astro';
  */
 const { title, description, canonical } = Astro.props;
 ---
-<BaseLayout {title} {description} {canonical}>
-  <slot />
-</BaseLayout>
+  <BaseLayout {title} {description} {canonical}>
+    <slot />
+    <AiWidget />
+  </BaseLayout>
 

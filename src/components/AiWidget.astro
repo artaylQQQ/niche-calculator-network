@@ -1,0 +1,33 @@
+---
+const { promptLabel = 'Ask a question' } = Astro.props;
+---
+<div class="ai-widget mt-6">
+  <form id="ai-form" class="flex gap-2">
+    <label for="ai-question" class="sr-only">{promptLabel}</label>
+    <input id="ai-question" type="text" required class="flex-1 p-2 border rounded" placeholder={promptLabel} />
+    <button type="submit" class="px-4 py-2 bg-blue-600 text-white rounded">Ask AI</button>
+  </form>
+  <p id="ai-answer" class="mt-2 text-sm"></p>
+</div>
+<script is:inline>
+  const form = document.getElementById('ai-form');
+  const input = document.getElementById('ai-question');
+  const answer = document.getElementById('ai-answer');
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const q = input.value.trim();
+    if (!q) return;
+    answer.textContent = 'Thinking...';
+    try {
+      const res = await fetch('/api/ai', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ question: q })
+      });
+      const data = await res.json();
+      answer.textContent = data.answer ?? 'No answer available.';
+    } catch (err) {
+      answer.textContent = 'Error fetching answer.';
+    }
+  });
+</script>
