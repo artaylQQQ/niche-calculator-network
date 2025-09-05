@@ -5,7 +5,10 @@ const slug = "finance";
 const title = "Finance Calculators";
 const modules = import.meta.glob("../pages/calculators/*.mdx", { eager: true });
 const items = Object.values(modules).map((m) => ({ url: m.url, fm: m.frontmatter || {} }));
-const list = items.filter(i => (i.fm.cluster || "").toLowerCase() === "finance");
+const getTitle = (it) => it.fm.title || it.url.replace('/calculators/','').replace('.mdx','');
+const list = items
+  .filter((i) => (i.fm.cluster || "").toLowerCase() === "finance")
+  .sort((a, b) => getTitle(a).localeCompare(getTitle(b)));
 ---
 <BaseLayout title={title} description={`Browse ${slug} calculators`}>
   {/*

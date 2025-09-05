@@ -8,7 +8,10 @@ const slug = "other";
 const title = "Everyday & Misc Calculators";
 const modules = import.meta.glob("../pages/calculators/*.mdx", { eager: true });
 const items = Object.values(modules).map((m) => ({ url: m.url, fm: m.frontmatter || {} }));
-const list = items.filter(i => (i.fm.cluster || "").toLowerCase() === slug);
+const getTitle = (it) => it.fm.title || it.url.replace('/calculators/','').replace('.mdx','');
+const list = items
+  .filter((i) => (i.fm.cluster || "").toLowerCase() === slug)
+  .sort((a, b) => getTitle(a).localeCompare(getTitle(b)));
 ---
 <BaseLayout title={title}>
     <main class="container mx-auto px-4 py-10">
