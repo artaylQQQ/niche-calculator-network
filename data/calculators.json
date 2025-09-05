@@ -3392,5 +3392,858 @@
         "answer": "Determine final price after a percentage discount. Enter the values and press Calculate."
       }
     ]
+  },
+  {
+    "slug": "ounces-to-milliliters",
+    "title": "Ounces to Milliliters",
+    "cluster": "conversions",
+    "description": "Convert U.S. fluid ounces to milliliters for travel bottles.",
+    "inputs": [
+      {
+        "name": "oz",
+        "label": "Fluid Ounces",
+        "type": "number",
+        "step": "any",
+        "min": 0,
+        "placeholder": "3"
+      }
+    ],
+    "expression": "oz * 29.5735",
+    "examples": [
+      {
+        "description": "3 oz ⇒ 88.72 mL"
+      },
+      {
+        "description": "12 oz ⇒ 354.88 mL"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Which ounce definition is used?",
+        "answer": "This calculator uses U.S. fluid ounces."
+      },
+      {
+        "question": "Why is this useful for travelers?",
+        "answer": "It helps ensure your liquids comply with carry-on limits."
+      },
+      {
+        "question": "Can I enter decimal values?",
+        "answer": "Yes, decimals are supported."
+      },
+      {
+        "question": "Does it work for U.K. ounces?",
+        "answer": "No, U.K. imperial ounces differ slightly."
+      }
+    ]
+  },
+  {
+    "slug": "mpg-to-liters-per-100km",
+    "title": "MPG to L/100km",
+    "cluster": "conversions",
+    "description": "Convert miles per gallon to liters per 100 kilometers.",
+    "inputs": [
+      {
+        "name": "mpg",
+        "label": "Miles per Gallon",
+        "type": "number",
+        "step": "any",
+        "min": 0,
+        "placeholder": "30"
+      }
+    ],
+    "expression": "235.215 / mpg",
+    "examples": [
+      {
+        "description": "30 mpg ⇒ 7.84 L/100km"
+      },
+      {
+        "description": "50 mpg ⇒ 4.70 L/100km"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What constant is used?",
+        "answer": "It uses 235.215 as the conversion factor."
+      },
+      {
+        "question": "Why would travelers need this?",
+        "answer": "Many countries quote fuel economy in L/100km."
+      },
+      {
+        "question": "Can I enter fractional MPG?",
+        "answer": "Yes, decimals are supported."
+      },
+      {
+        "question": "Does it work for US or UK gallons?",
+        "answer": "It assumes US gallons."
+      }
+    ]
+  },
+  {
+    "slug": "layover-duration",
+    "title": "Layover Duration Calculator",
+    "cluster": "date & time",
+    "description": "Find the time between connecting flights.",
+    "inputs": [
+      {
+        "name": "arrival",
+        "label": "Arrival Hour (0-23)",
+        "type": "number",
+        "min": 0,
+        "max": 23,
+        "step": 1,
+        "placeholder": "9"
+      },
+      {
+        "name": "depart",
+        "label": "Departure Hour (0-23)",
+        "type": "number",
+        "min": 0,
+        "max": 23,
+        "step": 1,
+        "placeholder": "14"
+      },
+      {
+        "name": "days",
+        "label": "Days Between Flights",
+        "type": "number",
+        "min": 0,
+        "step": 1,
+        "placeholder": "0"
+      }
+    ],
+    "expression": "(days * 24 + depart) - arrival",
+    "examples": [
+      {
+        "description": "Arrival 9, departure 14, days 0 ⇒ 5 hours"
+      },
+      {
+        "description": "Arrival 22, departure 7, days 1 ⇒ 9 hours"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Why include days?",
+        "answer": "It lets you handle overnight or multi-day layovers."
+      },
+      {
+        "question": "Do times use 24-hour format?",
+        "answer": "Yes, enter hours from 0 to 23."
+      },
+      {
+        "question": "What if departure is earlier on the same day?",
+        "answer": "Set days to 1 for next-day departures."
+      },
+      {
+        "question": "Does this account for time zones?",
+        "answer": "No, use it for layovers within the same airport."
+      }
+    ]
+  },
+  {
+    "slug": "trip-duration",
+    "title": "Trip Duration Calculator",
+    "cluster": "date & time",
+    "description": "Estimate the length of a trip in days.",
+    "inputs": [
+      {
+        "name": "start",
+        "label": "Start Day of Year",
+        "type": "number",
+        "min": 1,
+        "max": 365,
+        "step": 1,
+        "placeholder": "120"
+      },
+      {
+        "name": "end",
+        "label": "End Day of Year",
+        "type": "number",
+        "min": 1,
+        "max": 365,
+        "step": 1,
+        "placeholder": "127"
+      }
+    ],
+    "expression": "end - start",
+    "examples": [
+      {
+        "description": "Start 120, end 127 ⇒ 7 days"
+      },
+      {
+        "description": "Start 200, end 205 ⇒ 5 days"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Must dates be in the same year?",
+        "answer": "Yes, this simple calculator assumes the same calendar year."
+      },
+      {
+        "question": "Does it include both start and end days?",
+        "answer": "It calculates the difference; add 1 if you want inclusive days."
+      },
+      {
+        "question": "Can I handle leap years?",
+        "answer": "Enter day numbers according to the specific year."
+      },
+      {
+        "question": "Is there a built-in calendar?",
+        "answer": "No, you must provide day-of-year numbers."
+      }
+    ]
+  },
+  {
+    "slug": "foreign-tip-converter",
+    "title": "Foreign Tip Converter",
+    "cluster": "finance",
+    "description": "Convert a tip into your home currency.",
+    "inputs": [
+      {
+        "name": "bill",
+        "label": "Bill Amount (foreign)",
+        "type": "number",
+        "step": "any",
+        "min": 0,
+        "placeholder": "50"
+      },
+      {
+        "name": "tip",
+        "label": "Tip (%)",
+        "type": "number",
+        "step": "any",
+        "min": 0,
+        "placeholder": "15"
+      },
+      {
+        "name": "rate",
+        "label": "Exchange Rate (home per foreign)",
+        "type": "number",
+        "step": "any",
+        "min": 0,
+        "placeholder": "1.1"
+      }
+    ],
+    "expression": "bill * (tip / 100) * rate",
+    "examples": [
+      {
+        "description": "€50 bill, 15% tip, rate 1.1 ⇒ 8.25 home currency"
+      },
+      {
+        "description": "¥2000 bill, 10% tip, rate 0.007 ⇒ 14 home currency"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Does this include the bill itself?",
+        "answer": "No, it only converts the tip amount."
+      },
+      {
+        "question": "Where do I find the exchange rate?",
+        "answer": "Use rates from your bank or a currency app."
+      },
+      {
+        "question": "Can I use it for service charges?",
+        "answer": "Yes, enter the service charge percentage as the tip."
+      },
+      {
+        "question": "What if I pay in cash?",
+        "answer": "The calculation still shows the equivalent value in your home currency."
+      }
+    ]
+  },
+  {
+    "slug": "hotel-stay-cost",
+    "title": "Hotel Stay Cost",
+    "cluster": "finance",
+    "description": "Estimate total hotel cost including taxes.",
+    "inputs": [
+      {
+        "name": "rate",
+        "label": "Nightly Rate",
+        "type": "number",
+        "step": "any",
+        "min": 0,
+        "placeholder": "120"
+      },
+      {
+        "name": "nights",
+        "label": "Number of Nights",
+        "type": "number",
+        "step": 1,
+        "min": 1,
+        "placeholder": "3"
+      },
+      {
+        "name": "tax",
+        "label": "Tax (%)",
+        "type": "number",
+        "step": "any",
+        "min": 0,
+        "placeholder": "10"
+      }
+    ],
+    "expression": "rate * nights * (1 + tax / 100)",
+    "examples": [
+      {
+        "description": "$120, 3 nights, 10% tax ⇒ $396"
+      },
+      {
+        "description": "$80, 5 nights, 8% tax ⇒ $432"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Does this include resort fees?",
+        "answer": "No, add any extra fees separately."
+      },
+      {
+        "question": "Can I change currency?",
+        "answer": "Yes, enter values in your preferred currency."
+      },
+      {
+        "question": "What if tax is already included?",
+        "answer": "Set tax to 0 to skip additional tax."
+      },
+      {
+        "question": "Does it handle discounts?",
+        "answer": "Apply discounts to the nightly rate before calculating."
+      }
+    ]
+  },
+  {
+    "slug": "flight-water-intake",
+    "title": "Flight Water Intake",
+    "cluster": "health",
+    "description": "Estimate how much water to drink during a flight.",
+    "inputs": [
+      {
+        "name": "hours",
+        "label": "Flight Duration (hours)",
+        "type": "number",
+        "step": "any",
+        "min": 0,
+        "placeholder": "5"
+      },
+      {
+        "name": "rate",
+        "label": "Water per Hour (L)",
+        "type": "number",
+        "step": "any",
+        "min": 0,
+        "placeholder": "0.25"
+      }
+    ],
+    "expression": "hours * rate",
+    "examples": [
+      {
+        "description": "5 h, 0.25 L/h ⇒ 1.25 L"
+      },
+      {
+        "description": "8 h, 0.2 L/h ⇒ 1.6 L"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Is this medical advice?",
+        "answer": "No, consult a professional for personalized guidance."
+      },
+      {
+        "question": "Why is hydration important in-flight?",
+        "answer": "Cabin air is dry and can lead to dehydration."
+      },
+      {
+        "question": "Can I use ounces instead?",
+        "answer": "Enter equivalent liters if using other units."
+      },
+      {
+        "question": "Does it account for alcohol or caffeine?",
+        "answer": "No, adjust your rate based on personal needs."
+      }
+    ]
+  },
+  {
+    "slug": "jet-lag-recovery",
+    "title": "Jet Lag Recovery Time",
+    "cluster": "health",
+    "description": "Estimate days needed to recover from time zone changes.",
+    "inputs": [
+      {
+        "name": "zones",
+        "label": "Time Zones Crossed",
+        "type": "number",
+        "step": "any",
+        "min": 0,
+        "placeholder": "6"
+      }
+    ],
+    "expression": "zones / 2",
+    "examples": [
+      {
+        "description": "6 zones ⇒ 3 days"
+      },
+      {
+        "description": "3 zones ⇒ 1.5 days"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Is this medically precise?",
+        "answer": "No, it's a rough rule of thumb."
+      },
+      {
+        "question": "Does direction of travel matter?",
+        "answer": "Different directions can affect recovery, but this gives a general estimate."
+      },
+      {
+        "question": "How can I reduce jet lag?",
+        "answer": "Gradually adjust your schedule and stay hydrated."
+      },
+      {
+        "question": "Can everyone recover at this rate?",
+        "answer": "Individual recovery varies based on health and age."
+      }
+    ]
+  },
+  {
+    "slug": "suitcase-volume-to-liters",
+    "title": "Suitcase Volume to Liters",
+    "cluster": "home & diy",
+    "description": "Calculate suitcase capacity from dimensions.",
+    "inputs": [
+      {
+        "name": "length",
+        "label": "Length (cm)",
+        "type": "number",
+        "step": "any",
+        "min": 0,
+        "placeholder": "55"
+      },
+      {
+        "name": "width",
+        "label": "Width (cm)",
+        "type": "number",
+        "step": "any",
+        "min": 0,
+        "placeholder": "40"
+      },
+      {
+        "name": "height",
+        "label": "Height (cm)",
+        "type": "number",
+        "step": "any",
+        "min": 0,
+        "placeholder": "20"
+      }
+    ],
+    "expression": "(length * width * height) / 1000",
+    "examples": [
+      {
+        "description": "55×40×20 cm ⇒ 44 L"
+      },
+      {
+        "description": "70×50×30 cm ⇒ 105 L"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Why divide by 1000?",
+        "answer": "To convert cubic centimeters to liters."
+      },
+      {
+        "question": "Does this account for interior padding?",
+        "answer": "No, it uses external measurements."
+      },
+      {
+        "question": "Can I use inches?",
+        "answer": "Convert to centimeters before using the calculator."
+      },
+      {
+        "question": "Is this exact capacity?",
+        "answer": "Actual usable space may be less due to suitcase shape."
+      }
+    ]
+  },
+  {
+    "slug": "travel-clothesline-length",
+    "title": "Travel Clothesline Length",
+    "cluster": "home & diy",
+    "description": "Estimate clothesline length needed for hand-washed laundry.",
+    "inputs": [
+      {
+        "name": "garments",
+        "label": "Number of Garments",
+        "type": "number",
+        "step": 1,
+        "min": 0,
+        "placeholder": "8"
+      },
+      {
+        "name": "spacing",
+        "label": "Spacing per Garment (m)",
+        "type": "number",
+        "step": "any",
+        "min": 0,
+        "placeholder": "0.15"
+      }
+    ],
+    "expression": "garments * spacing",
+    "examples": [
+      {
+        "description": "8 garments, 0.15 m spacing ⇒ 1.2 m"
+      },
+      {
+        "description": "5 garments, 0.2 m spacing ⇒ 1 m"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Does spacing include clothespins?",
+        "answer": "Yes, leave extra room if needed."
+      },
+      {
+        "question": "Can I use feet instead of meters?",
+        "answer": "Convert to meters before calculating."
+      },
+      {
+        "question": "What if garments are large?",
+        "answer": "Increase the spacing to accommodate larger items."
+      },
+      {
+        "question": "Is extra line for tying included?",
+        "answer": "No, add additional length for knots."
+      }
+    ]
+  },
+  {
+    "slug": "hiking-elevation-gradient",
+    "title": "Hiking Elevation Gradient",
+    "cluster": "math",
+    "description": "Compute slope percentage of a hike.",
+    "inputs": [
+      {
+        "name": "rise",
+        "label": "Elevation Gain (m)",
+        "type": "number",
+        "step": "any",
+        "min": 0,
+        "placeholder": "300"
+      },
+      {
+        "name": "run",
+        "label": "Horizontal Distance (m)",
+        "type": "number",
+        "step": "any",
+        "min": 0,
+        "placeholder": "2000"
+      }
+    ],
+    "expression": "(rise / run) * 100",
+    "examples": [
+      {
+        "description": "300 m rise over 2000 m run ⇒ 15%"
+      },
+      {
+        "description": "100 m rise over 1000 m run ⇒ 10%"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What is gradient?",
+        "answer": "Gradient is the elevation gain divided by horizontal distance."
+      },
+      {
+        "question": "Does this account for altitude?",
+        "answer": "No, it only uses rise and run."
+      },
+      {
+        "question": "Can I use feet instead of meters?",
+        "answer": "Yes, use the same units for both inputs."
+      },
+      {
+        "question": "Is a higher percentage steeper?",
+        "answer": "Yes, larger values indicate steeper slopes."
+      }
+    ]
+  },
+  {
+    "slug": "road-trip-time",
+    "title": "Road Trip Time",
+    "cluster": "math",
+    "description": "Estimate total travel time including stops.",
+    "inputs": [
+      {
+        "name": "distance",
+        "label": "Distance (km)",
+        "type": "number",
+        "step": "any",
+        "min": 0,
+        "placeholder": "600"
+      },
+      {
+        "name": "speed",
+        "label": "Average Speed (km/h)",
+        "type": "number",
+        "step": "any",
+        "min": 0,
+        "placeholder": "100"
+      },
+      {
+        "name": "stops",
+        "label": "Number of Stops",
+        "type": "number",
+        "step": 1,
+        "min": 0,
+        "placeholder": "2"
+      },
+      {
+        "name": "stopTime",
+        "label": "Stop Duration (h)",
+        "type": "number",
+        "step": "any",
+        "min": 0,
+        "placeholder": "0.5"
+      }
+    ],
+    "expression": "(distance / speed) + (stops * stopTime)",
+    "examples": [
+      {
+        "description": "600 km at 100 km/h with 2 stops of 0.5 h ⇒ 7 h"
+      },
+      {
+        "description": "300 km at 75 km/h with 1 stop of 0.25 h ⇒ 4.25 h"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Does this include traffic delays?",
+        "answer": "No, adjust speed or stop time for expected traffic."
+      },
+      {
+        "question": "Can I input miles instead?",
+        "answer": "Yes, just use consistent units."
+      },
+      {
+        "question": "What if stops vary in length?",
+        "answer": "Use the average stop duration."
+      },
+      {
+        "question": "Is refueling time included?",
+        "answer": "Include it in your stop duration."
+      }
+    ]
+  },
+  {
+    "slug": "power-bank-recharges",
+    "title": "Power Bank Recharges",
+    "cluster": "technology",
+    "description": "Estimate how many times a power bank can charge your device.",
+    "inputs": [
+      {
+        "name": "bank",
+        "label": "Power Bank Capacity (mAh)",
+        "type": "number",
+        "step": "any",
+        "min": 0,
+        "placeholder": "10000"
+      },
+      {
+        "name": "device",
+        "label": "Device Battery (mAh)",
+        "type": "number",
+        "step": "any",
+        "min": 0,
+        "placeholder": "3000"
+      },
+      {
+        "name": "eff",
+        "label": "Efficiency (%)",
+        "type": "number",
+        "step": "any",
+        "min": 0,
+        "max": 100,
+        "placeholder": "85"
+      }
+    ],
+    "expression": "(bank * (eff / 100)) / device",
+    "examples": [
+      {
+        "description": "10000 mAh bank, 3000 mAh device, 85% ⇒ 2.83 charges"
+      },
+      {
+        "description": "20000 mAh bank, 4000 mAh device, 90% ⇒ 4.5 charges"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Why include efficiency?",
+        "answer": "Energy is lost during transfer, so not all capacity is usable."
+      },
+      {
+        "question": "Can I use Wh instead of mAh?",
+        "answer": "Use consistent units for both capacities."
+      },
+      {
+        "question": "Does it account for cable losses?",
+        "answer": "Efficiency covers typical losses, but results are estimates."
+      },
+      {
+        "question": "Is it safe to fully discharge a power bank?",
+        "answer": "Check manufacturer guidelines for best practices."
+      }
+    ]
+  },
+  {
+    "slug": "roaming-data-cost",
+    "title": "Roaming Data Cost",
+    "cluster": "technology",
+    "description": "Estimate the cost of mobile data while roaming.",
+    "inputs": [
+      {
+        "name": "data",
+        "label": "Data Used (MB)",
+        "type": "number",
+        "step": "any",
+        "min": 0,
+        "placeholder": "500"
+      },
+      {
+        "name": "price",
+        "label": "Cost per MB",
+        "type": "number",
+        "step": "any",
+        "min": 0,
+        "placeholder": "0.02"
+      }
+    ],
+    "expression": "data * price",
+    "examples": [
+      {
+        "description": "500 MB at 0.02 ⇒ 10"
+      },
+      {
+        "description": "200 MB at 0.05 ⇒ 10"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Where do I get the cost per MB?",
+        "answer": "Check with your mobile carrier for roaming rates."
+      },
+      {
+        "question": "Does this include taxes?",
+        "answer": "No, additional fees may apply."
+      },
+      {
+        "question": "Can I enter GB values?",
+        "answer": "Yes, convert GB to MB before using the calculator."
+      },
+      {
+        "question": "What if I have a roaming package?",
+        "answer": "Use the effective per-MB cost of your package."
+      }
+    ]
+  },
+  {
+    "slug": "flight-carbon-footprint",
+    "title": "Flight Carbon Footprint",
+    "cluster": "other",
+    "description": "Estimate CO₂ emissions from a flight.",
+    "inputs": [
+      {
+        "name": "distance",
+        "label": "Flight Distance (km)",
+        "type": "number",
+        "step": "any",
+        "min": 0,
+        "placeholder": "1000"
+      },
+      {
+        "name": "factor",
+        "label": "Emission Factor (kg/km)",
+        "type": "number",
+        "step": "any",
+        "min": 0,
+        "placeholder": "0.115"
+      }
+    ],
+    "expression": "distance * factor",
+    "examples": [
+      {
+        "description": "1000 km at 0.115 ⇒ 115 kg CO₂"
+      },
+      {
+        "description": "5000 km at 0.115 ⇒ 575 kg CO₂"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What emission factor is used?",
+        "answer": "0.115 kg CO₂ per passenger-km is a common estimate."
+      },
+      {
+        "question": "Does this include radiative forcing?",
+        "answer": "No, it's a basic estimate without additional multipliers."
+      },
+      {
+        "question": "How accurate is this?",
+        "answer": "Actual emissions vary by aircraft and load."
+      },
+      {
+        "question": "Can I offset these emissions?",
+        "answer": "Look for reputable carbon offset programs."
+      }
+    ]
+  },
+  {
+    "slug": "souvenir-weight-allowance",
+    "title": "Souvenir Weight Allowance",
+    "cluster": "other",
+    "description": "See how much weight you can still add to your luggage.",
+    "inputs": [
+      {
+        "name": "limit",
+        "label": "Luggage Weight Limit (kg)",
+        "type": "number",
+        "step": "any",
+        "min": 0,
+        "placeholder": "23"
+      },
+      {
+        "name": "current",
+        "label": "Current Luggage Weight (kg)",
+        "type": "number",
+        "step": "any",
+        "min": 0,
+        "placeholder": "17"
+      }
+    ],
+    "expression": "limit - current",
+    "examples": [
+      {
+        "description": "Limit 23 kg, current 17 kg ⇒ 6 kg left"
+      },
+      {
+        "description": "Limit 20 kg, current 19.5 kg ⇒ 0.5 kg left"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What if the result is negative?",
+        "answer": "It means you're over the weight limit."
+      },
+      {
+        "question": "Do airlines allow rounding?",
+        "answer": "Policies vary; always check with your airline."
+      },
+      {
+        "question": "Does this include carry-on?",
+        "answer": "This calculator is for a single checked bag."
+      },
+      {
+        "question": "Should I weigh souvenirs individually?",
+        "answer": "Weighing helps avoid surprises at the airport."
+      }
+    ]
   }
 ]

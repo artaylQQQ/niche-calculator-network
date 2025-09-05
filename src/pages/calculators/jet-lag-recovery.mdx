@@ -1,0 +1,36 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Jet Lag Recovery Time"
+description: "Estimate days needed to recover from time zone changes."
+updated: "2025-10-15"
+cluster: "Health"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  slug: "jet-lag-recovery",
+  title: "Jet Lag Recovery Time",
+  locale: "en",
+  unit: "days",
+  inputs: [
+    { name: "zones", label: "Time Zones Crossed", type: "number", step: "any", min: 0, placeholder: "6" }
+  ],
+  expression: "zones / 2",
+  intro: "Estimate how many days it may take to recover from crossing multiple time zones.",
+  examples: [
+    { description: "6 zones ⇒ 3 days" },
+    { description: "3 zones ⇒ 1.5 days" }
+  ],
+  faqs: [
+    { question: "Is this medically precise?", answer: "No, it's a rough rule of thumb." },
+    { question: "Does direction of travel matter?", answer: "Different directions can affect recovery, but this gives a general estimate." },
+    { question: "How can I reduce jet lag?", answer: "Gradually adjust your schedule and stay hydrated." },
+    { question: "Can everyone recover at this rate?", answer: "Individual recovery varies based on health and age." }
+  ],
+  disclaimer: "Educational information, not medical advice.",
+  cluster: "Health"
+};
+
+<Calculator schema={schema} />
+
