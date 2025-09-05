@@ -1,0 +1,36 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Mean Arterial Pressure"
+description: "Estimate average arterial pressure using systolic and diastolic readings."
+updated: "2025-09-27"
+cluster: "Health"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "inputs": [
+    { "name": "systolic", "label": "Systolic (mmHg)", "type": "number", "step": "any", "placeholder": "120" },
+    { "name": "diastolic", "label": "Diastolic (mmHg)", "type": "number", "step": "any", "placeholder": "80" }
+  ],
+  "slug": "mean-arterial-pressure",
+  "title": "Mean Arterial Pressure",
+  "locale": "en",
+  "unit": "mmHg",
+  "expression": "diastolic + (systolic - diastolic)/3",
+  "intro": "Calculate mean arterial pressure (MAP), an indicator of overall blood flow and pressure in the arteries.",
+  "examples": [
+    { "description": "120/80 ⇒ 93.33 mmHg" },
+    { "description": "110/70 ⇒ 83.33 mmHg" },
+    { "description": "140/90 ⇒ 106.67 mmHg" }
+  ],
+  "faqs": [
+    { "question": "Why use MAP?", "answer": "MAP helps gauge blood flow and perfusion to organs." },
+    { "question": "Are readings in mmHg?", "answer": "Yes, both inputs and result are in millimeters of mercury." },
+    { "question": "Does it replace professional advice?", "answer": "No, consult healthcare providers for medical guidance." }
+  ],
+  "disclaimer": "Educational purposes only. Not medical advice.",
+  "cluster": "Health"
+}
+
+<Calculator schema={schema} />

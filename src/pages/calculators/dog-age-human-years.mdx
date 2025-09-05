@@ -1,0 +1,35 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Dog Age in Human Years"
+description: "Convert a dog's age to an equivalent human age."
+updated: "2025-09-27"
+cluster: "Other"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "inputs": [
+    { "name": "dogYears", "label": "Dog Years", "type": "number", "step": "any", "placeholder": "3" }
+  ],
+  "slug": "dog-age-human-years",
+  "title": "Dog Age in Human Years",
+  "locale": "en",
+  "unit": "human years",
+  "expression": "dogYears * 7",
+  "intro": "Estimate your dog's age in human years using the common 7-to-1 ratio.",
+  "examples": [
+    { "description": "1 dog year ⇒ 7 human years" },
+    { "description": "5 dog years ⇒ 35 human years" },
+    { "description": "10 dog years ⇒ 70 human years" }
+  ],
+  "faqs": [
+    { "question": "Is the 7-year rule accurate?", "answer": "It's a simple approximation and varies by breed." },
+    { "question": "Can I use decimal ages?", "answer": "Yes, enter any age in years." },
+    { "question": "Does size affect the result?", "answer": "This method doesn't account for size or breed differences." }
+  ],
+  "disclaimer": "Educational purposes only. Not professional advice.",
+  "cluster": "Other"
+}
+
+<Calculator schema={schema} />

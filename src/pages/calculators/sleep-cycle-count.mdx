@@ -1,0 +1,35 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Sleep Cycle Count"
+description: "Estimate the number of 90-minute sleep cycles in a sleep period."
+updated: "2025-09-27"
+cluster: "Health"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "inputs": [
+    { "name": "hours", "label": "Total Sleep Hours", "type": "number", "step": "any", "placeholder": "7.5" }
+  ],
+  "slug": "sleep-cycle-count",
+  "title": "Sleep Cycle Count",
+  "locale": "en",
+  "unit": "cycles",
+  "expression": "hours / 1.5",
+  "intro": "Calculate how many complete 90-minute sleep cycles fit into your planned sleep time.",
+  "examples": [
+    { "description": "7.5 h ⇒ 5 cycles" },
+    { "description": "6 h ⇒ 4 cycles" },
+    { "description": "9 h ⇒ 6 cycles" }
+  ],
+  "faqs": [
+    { "question": "Why 1.5 hours per cycle?", "answer": "Each full sleep cycle averages around 90 minutes." },
+    { "question": "Can I use decimals?", "answer": "Yes, enter any sleep duration in hours." },
+    { "question": "Does it account for falling asleep time?", "answer": "No, it only divides total sleep duration by 1.5." }
+  ],
+  "disclaimer": "Educational purposes only. Not medical advice.",
+  "cluster": "Health"
+}
+
+<Calculator schema={schema} />

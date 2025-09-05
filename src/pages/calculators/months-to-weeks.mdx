@@ -1,0 +1,41 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Months to Weeks"
+description: "Approximate weeks contained in a number of months."
+updated: "2025-09-27"
+cluster: "Date & Time"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "inputs": [
+    {
+      "name": "months",
+      "label": "Months",
+      "type": "number",
+      "step": "any",
+      "placeholder": "2"
+    }
+  ],
+  "slug": "months-to-weeks",
+  "title": "Months to Weeks",
+  "locale": "en",
+  "unit": "weeks",
+  "expression": "months * 4.34524",
+  "intro": "Convert months into an approximate number of weeks using the average of 4.34524 weeks per month.",
+  "examples": [
+    { "description": "1 month ⇒ 4.35 weeks" },
+    { "description": "6 months ⇒ 26.07 weeks" },
+    { "description": "0.5 month ⇒ 2.17 weeks" }
+  ],
+  "faqs": [
+    { "question": "What conversion factor is used?", "answer": "Each month is approximated as 4.34524 weeks." },
+    { "question": "Is this exact for all months?", "answer": "No, it's an average since months vary in length." },
+    { "question": "Can I convert fractional months?", "answer": "Yes, decimals are supported." }
+  ],
+  "disclaimer": "Educational purposes only. Not professional advice.",
+  "cluster": "Date & Time"
+}
+
+<Calculator schema={schema} />

@@ -1,0 +1,35 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Triangular Number"
+description: "Sum of the first n natural numbers."
+updated: "2025-09-27"
+cluster: "Math"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "inputs": [
+    { "name": "n", "label": "n", "type": "number", "step": "1", "min": 0, "placeholder": "5" }
+  ],
+  "slug": "triangular-number",
+  "title": "Triangular Number",
+  "locale": "en",
+  "unit": "number",
+  "expression": "n * (n + 1) / 2",
+  "intro": "Compute the nth triangular number, equal to the sum of all integers from 1 through n.",
+  "examples": [
+    { "description": "n=3 ⇒ 6" },
+    { "description": "n=5 ⇒ 15" },
+    { "description": "n=10 ⇒ 55" }
+  ],
+  "faqs": [
+    { "question": "What is a triangular number?", "answer": "It's the total of the natural numbers from 1 to n." },
+    { "question": "Can n be zero?", "answer": "Yes, n=0 gives a triangular number of 0." },
+    { "question": "Does it handle large n?", "answer": "Yes, but results grow quickly." }
+  ],
+  "disclaimer": "Educational purposes only. Not professional advice.",
+  "cluster": "Math"
+}
+
+<Calculator schema={schema} />
