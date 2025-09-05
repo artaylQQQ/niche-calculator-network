@@ -59,6 +59,11 @@ const cfToken = import.meta.env.VITE_CF_ANALYTICS_TOKEN;
             >All Calculators</a
           >
           <a
+            href="/search"
+            class={['nav-link', Astro.url.pathname.startsWith('/search') && 'active'].filter(Boolean).join(' ')}
+            >Search</a
+          >
+          <a
             href="/categories/"
             class={['nav-link', Astro.url.pathname.startsWith('/categories') && 'active'].filter(Boolean).join(' ')}
             >Categories</a
@@ -80,6 +85,7 @@ const cfToken = import.meta.env.VITE_CF_ANALYTICS_TOKEN;
         <a href="/">Home</a>
         <a href="/categories/">Categories</a>
         <a href="/all">All Calculators</a>
+        <a href="/search">Search</a>
         <a href="/sitemap.xml">Sitemap</a>
         <a href="/privacy">Privacy</a>
         <a href="/disclaimer">Disclaimer</a>
