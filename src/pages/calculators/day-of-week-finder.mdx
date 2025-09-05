@@ -1,0 +1,49 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Day of the Week Finder"
+description: "Determine the weekday for any date."
+updated: "2025-02-14"
+cluster: "Date & Time"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  inputs: [
+    { name: "year", label: "Year", type: "number", step: "1", placeholder: "2024" },
+    { name: "month", label: "Month", type: "number", step: "1", placeholder: "1" },
+    { name: "day", label: "Day", type: "number", step: "1", placeholder: "1" },
+  ],
+  slug: "day-of-week-finder",
+  title: "Day of the Week Finder",
+  locale: "en",
+  expression: "new Date(year, month-1, day).getDay()",
+  unit: "weekday index",
+  intro: "Compute the day of the week using 0 for Sunday through 6 for Saturday.",
+  examples: [
+    { description: "2023-09-01 ⇒ 5" },
+    { description: "2000-01-01 ⇒ 6" },
+  ],
+  faqs: [
+    {
+      question: "What numbering system is used?",
+      answer: "0=Sunday, 1=Monday, ..., 6=Saturday.",
+    },
+    {
+      question: "Does it account for leap years?",
+      answer: "Yes, JavaScript's Date object handles leap years.",
+    },
+    {
+      question: "Can it handle dates before 1970?",
+      answer: "Yes, enter any Gregorian calendar date.",
+    },
+    {
+      question: "Why is the result a number instead of a name?",
+      answer: "Use the index to map to weekday names.",
+    },
+  ],
+  disclaimer: "Uses the Gregorian calendar; time zones may affect boundaries near midnight.",
+  cluster: "Date & Time",
+};
+
+<Calculator schema={schema} />

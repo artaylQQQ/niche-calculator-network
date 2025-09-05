@@ -1,0 +1,47 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Polygon Interior Angle Sum"
+description: "Total degrees of a polygon's interior angles."
+updated: "2025-02-14"
+cluster: "math"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  inputs: [
+    { name: "sides", label: "Number of Sides", type: "number", step: "1", placeholder: "5" },
+  ],
+  slug: "polygon-interior-angle-sum",
+  title: "Polygon Interior Angle Sum",
+  locale: "en",
+  expression: "(sides - 2) * 180",
+  unit: "°",
+  intro: "Compute the sum of interior angles for any polygon with three or more sides.",
+  examples: [
+    { description: "3 sides ⇒ 180°" },
+    { description: "6 sides ⇒ 720°" },
+  ],
+  faqs: [
+    {
+      question: "What is the minimum number of sides?",
+      answer: "At least 3 sides are required for a polygon.",
+    },
+    {
+      question: "Does it work for concave polygons?",
+      answer: "Yes, the formula applies to any simple polygon.",
+    },
+    {
+      question: "Is this for regular polygons only?",
+      answer: "No, regular and irregular polygons share the same angle sum.",
+    },
+    {
+      question: "Why multiply by 180?",
+      answer: "Each triangle has 180°, and a polygon can be divided into (n−2) triangles.",
+    },
+  ],
+  disclaimer: "Pure geometric formula; ensure the figure is a simple polygon.",
+  cluster: "math",
+};
+
+<Calculator schema={schema} />
