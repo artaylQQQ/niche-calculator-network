@@ -1,0 +1,38 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Days to Seconds Converter"
+description: "Convert days to seconds."
+date: 2025-10-14
+updated: 2025-10-14
+cluster: "Date & Time"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  slug: "days-to-seconds",
+  title: "Days to Seconds Converter",
+  locale: "en",
+  cluster: "Date & Time",
+  intro: "Convert a duration in days to total seconds. Enter the value and press Calculate.",
+  inputs: [
+    { name: "days", label: "Days", type: "number", step: "any", placeholder: "1" }
+  ],
+  expression: "days * 86400",
+  unit: "seconds",
+  examples: [
+    { description: "1 day ⇒ 86400 seconds" },
+    { description: "2.5 days ⇒ 216000 seconds" },
+    { description: "0.1 day ⇒ 8640 seconds" }
+  ],
+  faqs: [
+    { question: "How many seconds are in one day?", answer: "There are 86,400 seconds in a standard day." },
+    { question: "Can I enter fractional days?", answer: "Yes, decimals are accepted." },
+    { question: "Does this account for leap seconds?", answer: "No, it uses the standard 86,400 seconds per day." }
+  ],
+  disclaimer: "Leap seconds and variations in day length are not considered.",
+  related: []
+};
+
+<Calculator schema={schema} />
+

@@ -1,0 +1,40 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Lawn Watering Time Calculator"
+description: "Estimate minutes needed to water a lawn."
+date: 2025-10-14
+updated: 2025-10-14
+cluster: "Home & DIY"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  slug: "lawn-watering-time",
+  title: "Lawn Watering Time Calculator",
+  locale: "en",
+  cluster: "Home & DIY",
+  intro: "Estimate how many minutes are required to water a lawn to a desired depth. Enter area, desired water depth, and sprinkler flow rate, then press Calculate.",
+  inputs: [
+    { name: "area", label: "Area (m²)", type: "number", step: "any", placeholder: "100" },
+    { name: "depth", label: "Depth (cm)", type: "number", step: "any", placeholder: "2" },
+    { name: "rate", label: "Flow Rate (L/min)", type: "number", step: "any", placeholder: "15" }
+  ],
+  expression: "area * depth * 10 / rate",
+  unit: "minutes",
+  examples: [
+    { description: "100 m², 2 cm, 15 L/min ⇒ 133.33 minutes" },
+    { description: "50 m², 1 cm, 10 L/min ⇒ 50 minutes" },
+    { description: "200 m², 2.5 cm, 20 L/min ⇒ 250 minutes" }
+  ],
+  faqs: [
+    { question: "Why multiply by 10?", answer: "1 m² × 1 cm equals 10 liters of water." },
+    { question: "Can I use gallons?", answer: "Convert gallons to liters before using this calculator." },
+    { question: "Does sprinkler efficiency affect results?", answer: "Yes, this assumes perfect distribution without losses." }
+  ],
+  disclaimer: "Actual watering needs depend on soil and weather conditions.",
+  related: []
+};
+
+<Calculator schema={schema} />
+
