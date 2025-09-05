@@ -1,0 +1,35 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Fraction to Decimal"
+description: "Convert a fraction to decimal form."
+updated: "2025-09-17"
+cluster: "Math"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  slug: "fraction-to-decimal",
+  title: "Fraction to Decimal",
+  locale: "en",
+  unit: "",
+  inputs: [
+    { name: "numerator", label: "Numerator", type: "number", step: "any", placeholder: "1" },
+    { name: "denominator", label: "Denominator", type: "number", step: "any", placeholder: "4" }
+  ],
+  expression: "numerator / denominator",
+  intro: "Translate any fraction into its decimal equivalent instantly—helpful for quick estimates.",
+  examples: [
+    { description: "1 / 4 ⇒ 0.25" },
+    { description: "7 / 3 ⇒ 2.33" }
+  ],
+  faqs: [
+    { question: "Can the denominator be zero?", answer: "No, division by zero is undefined." },
+    { question: "Does it handle improper fractions?", answer: "Yes, results may exceed 1." }
+  ],
+  disclaimer: "Educational information, not professional advice.",
+  cluster: "Math"
+};
+
+<Calculator schema={schema} />
+

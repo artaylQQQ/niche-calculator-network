@@ -1,0 +1,35 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Desk Cable Length"
+description: "Cable length needed from desk to outlet."
+updated: "2025-09-17"
+cluster: "Home & DIY"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  slug: "desk-cable-length",
+  title: "Desk Cable Length",
+  locale: "en",
+  unit: "m",
+  inputs: [
+    { name: "height", label: "Desk Height (cm)", type: "number", step: "any", placeholder: "75" },
+    { name: "distance", label: "Distance to Outlet (cm)", type: "number", step: "any", placeholder: "200" }
+  ],
+  expression: "(height ^ 2 + distance ^ 2) ^ 0.5 / 100",
+  intro: "Determine the minimum cable length to reach an outlet from your desk using the Pythagorean theorem—perfect for tidy home offices.",
+  examples: [
+    { description: "75 cm height & 200 cm distance ⇒ 2.13 m" },
+    { description: "100 cm height & 50 cm distance ⇒ 1.12 m" }
+  ],
+  faqs: [
+    { question: "Why divide by 100?", answer: "Inputs are in centimeters, but the result is in meters." },
+    { question: "Should I add slack?", answer: "Yes, consider extra length for routing and movement." }
+  ],
+  disclaimer: "Educational information, not professional advice.",
+  cluster: "Home & DIY"
+};
+
+<Calculator schema={schema} />
+

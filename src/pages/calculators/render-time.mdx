@@ -1,0 +1,35 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Render Time"
+description: "Estimate total render time for animations."
+updated: "2025-09-17"
+cluster: "Technology"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  slug: "render-time",
+  title: "Render Time",
+  locale: "en",
+  unit: "hours",
+  inputs: [
+    { name: "frames", label: "Frames", type: "number", step: "any", placeholder: "240" },
+    { name: "secondsPerFrame", label: "Seconds per Frame", type: "number", step: "any", placeholder: "30" }
+  ],
+  expression: "frames * secondsPerFrame / 3600",
+  intro: "Calculate how many hours a render will take based on per-frame time—ideal for planning animation workloads.",
+  examples: [
+    { description: "240 frames at 30 s ⇒ 2 hours" },
+    { description: "1000 frames at 45 s ⇒ 12.5 hours" }
+  ],
+  faqs: [
+    { question: "What is a frame?", answer: "A single image in an animation sequence." },
+    { question: "Why divide by 3600?", answer: "There are 3600 seconds in an hour." }
+  ],
+  disclaimer: "Educational information, not professional advice.",
+  cluster: "Technology"
+};
+
+<Calculator schema={schema} />
+

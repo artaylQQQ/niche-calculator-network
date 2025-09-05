@@ -1,0 +1,36 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Harmonic Mean (3 Numbers)"
+description: "Compute the harmonic mean of three values."
+updated: "2025-09-17"
+cluster: "Math"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  slug: "harmonic-mean-three-numbers",
+  title: "Harmonic Mean (3 Numbers)",
+  locale: "en",
+  unit: "",
+  inputs: [
+    { name: "a", label: "Value a", type: "number", step: "any", placeholder: "3" },
+    { name: "b", label: "Value b", type: "number", step: "any", placeholder: "4" },
+    { name: "c", label: "Value c", type: "number", step: "any", placeholder: "5" }
+  ],
+  expression: "3 / (1 / a + 1 / b + 1 / c)",
+  intro: "Find the harmonic mean of three numbers—useful for averaging rates like speed or density.",
+  examples: [
+    { description: "3, 4, 5 ⇒ 3.92" },
+    { description: "10, 15, 20 ⇒ 14.55" }
+  ],
+  faqs: [
+    { question: "When should I use the harmonic mean?", answer: "Use it for averaging ratios or rates." },
+    { question: "Can any value be zero?", answer: "No, zero would make the calculation undefined." }
+  ],
+  disclaimer: "Educational information, not professional advice.",
+  cluster: "Math"
+};
+
+<Calculator schema={schema} />
+

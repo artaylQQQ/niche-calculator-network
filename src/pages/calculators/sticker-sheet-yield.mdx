@@ -1,0 +1,37 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Sticker Sheet Yield"
+description: "Estimate stickers per sheet before printing."
+updated: "2025-09-17"
+cluster: "Other"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  slug: "sticker-sheet-yield",
+  title: "Sticker Sheet Yield",
+  locale: "en",
+  unit: "stickers",
+  inputs: [
+    { name: "sheetWidth", label: "Sheet Width (cm)", type: "number", step: "any", placeholder: "21" },
+    { name: "sheetHeight", label: "Sheet Height (cm)", type: "number", step: "any", placeholder: "29.7" },
+    { name: "stickerWidth", label: "Sticker Width (cm)", type: "number", step: "any", placeholder: "5" },
+    { name: "stickerHeight", label: "Sticker Height (cm)", type: "number", step: "any", placeholder: "5" }
+  ],
+  expression: "sheetWidth / stickerWidth * sheetHeight / stickerHeight",
+  intro: "Estimate how many stickers fit on a sheet based on dimensions. Round down for whole stickers when laying out your design.",
+  examples: [
+    { description: "21×29.7 cm sheet with 5×5 cm stickers ⇒ 24.948 stickers" },
+    { description: "30×30 cm sheet with 3×3 cm stickers ⇒ 100 stickers" }
+  ],
+  faqs: [
+    { question: "Why might the result be fractional?", answer: "You need to round down to fit whole stickers." },
+    { question: "Does spacing affect the count?", answer: "This estimate ignores spacing and margins." }
+  ],
+  disclaimer: "Educational information, not professional advice.",
+  cluster: "Other"
+};
+
+<Calculator schema={schema} />
+

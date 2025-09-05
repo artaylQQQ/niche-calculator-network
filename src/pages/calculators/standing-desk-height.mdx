@@ -1,0 +1,34 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Standing Desk Height"
+description: "Find an ergonomic standing desk height."
+updated: "2025-09-17"
+cluster: "Health"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  slug: "standing-desk-height",
+  title: "Standing Desk Height",
+  locale: "en",
+  unit: "cm",
+  inputs: [
+    { name: "height", label: "Your Height (cm)", type: "number", step: "any", placeholder: "170" }
+  ],
+  expression: "height * 0.62",
+  intro: "Estimate a comfortable standing desk height using a common ergonomic ratio so your elbows rest at 90 degrees.",
+  examples: [
+    { description: "170 cm ⇒ 105.4 cm" },
+    { description: "180 cm ⇒ 111.6 cm" }
+  ],
+  faqs: [
+    { question: "Is 0.62 a fixed rule?", answer: "It's a widely used guideline for standing workstations." },
+    { question: "Does this work for seated desks?", answer: "No, seated desks require different measurements." }
+  ],
+  disclaimer: "Educational information, not professional advice.",
+  cluster: "Health"
+};
+
+<Calculator schema={schema} />
+
