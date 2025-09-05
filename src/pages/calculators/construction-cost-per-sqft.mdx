@@ -1,0 +1,58 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Construction Cost per Square Foot"
+description: "Find unit cost from total project cost and area."
+updated: "2025-08-31"
+cluster: "Finance"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "construction-cost-per-sqft",
+  title: "Construction Cost per Square Foot",
+  intro:
+    "Determine how much each square foot of a project costs based on total budget and floor area.",
+  locale: "en",
+  cluster: "Finance",
+  inputs: [
+    {
+      name: "totalCost",
+      label: "Total Cost ($)",
+      type: "number",
+      step: "any",
+      required: true,
+    },
+    {
+      name: "areaSqFt",
+      label: "Area (ft²)",
+      type: "number",
+      step: "any",
+      required: true,
+    },
+  ],
+  expression: "totalCost / areaSqFt",
+  unit: "$ / ft²",
+  examples: [
+    { description: "$200000 and 2000 ft² ⇒ $100/ft²" },
+    { description: "$150000 and 1500 ft² ⇒ $100/ft²" },
+    { description: "$120000 and 1000 ft² ⇒ $120/ft²" },
+  ],
+  faqs: [
+    {
+      question: "Why calculate cost per square foot?",
+      answer: "It helps compare project efficiencies and budgets.",
+    },
+    {
+      question: "Can I use metric units?",
+      answer: "Yes, convert to feet first or adjust units accordingly.",
+    },
+    {
+      question: "Does this include land cost?",
+      answer: "Only if you include it in the total cost input.",
+    },
+  ],
+  disclaimer: "Estimates depend on accurate cost and area inputs.",
+};
+
+<Calculator schema={schema} />

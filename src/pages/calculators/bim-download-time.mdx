@@ -1,0 +1,58 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "BIM Download Time Calculator"
+description: "Estimate download time for large BIM models."
+updated: "2025-08-31"
+cluster: "Technology"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "bim-download-time",
+  title: "BIM Download Time Calculator",
+  intro:
+    "Predict how long it takes to download a Building Information Modeling (BIM) file based on size and connection speed.",
+  locale: "en",
+  cluster: "Technology",
+  inputs: [
+    {
+      name: "sizeMB",
+      label: "File Size (MB)",
+      type: "number",
+      step: "any",
+      required: true,
+    },
+    {
+      name: "speedMbps",
+      label: "Bandwidth (Mbps)",
+      type: "number",
+      step: "any",
+      required: true,
+    },
+  ],
+  expression: "(sizeMB / (speedMbps / 8)) / 60",
+  unit: "minutes",
+  examples: [
+    { description: "500 MB at 100 Mbps ⇒ 0.67 minutes" },
+    { description: "250 MB at 50 Mbps ⇒ 0.67 minutes" },
+    { description: "1000 MB at 20 Mbps ⇒ 6.67 minutes" },
+  ],
+  faqs: [
+    {
+      question: "Why divide by 8?",
+      answer: "Bandwidth in Mbps must be converted to MB/s.",
+    },
+    {
+      question: "Does network overhead affect time?",
+      answer: "Yes, real downloads may be slower.",
+    },
+    {
+      question: "Can I use GB files?",
+      answer: "Convert gigabytes to megabytes before input.",
+    },
+  ],
+  disclaimer: "Actual download times vary with network conditions.",
+};
+
+<Calculator schema={schema} />

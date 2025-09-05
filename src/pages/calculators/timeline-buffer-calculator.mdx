@@ -1,0 +1,59 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Timeline Buffer Calculator"
+description: "Add a contingency buffer to planned project days."
+updated: "2025-08-31"
+cluster: "Date & Time"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "timeline-buffer-calculator",
+  title: "Timeline Buffer Calculator",
+  intro:
+    "Add a percentage buffer to your planned schedule to anticipate delays in design or construction tasks.",
+  locale: "en",
+  cluster: "Date & Time",
+  inputs: [
+    {
+      name: "plannedDays",
+      label: "Planned Days",
+      type: "number",
+      step: "any",
+      required: true,
+    },
+    {
+      name: "bufferPercent",
+      label: "Buffer (%)",
+      type: "number",
+      step: "any",
+      required: true,
+    },
+  ],
+  expression: "plannedDays * (1 + bufferPercent/100)",
+  unit: "days",
+  examples: [
+    { description: "30 days with 10% buffer ⇒ 33 days" },
+    { description: "60 days with 5% buffer ⇒ 63 days" },
+    { description: "15 days with 20% buffer ⇒ 18 days" },
+  ],
+  faqs: [
+    {
+      question: "Why add a buffer?",
+      answer:
+        "Projects often encounter delays; a buffer provides a safety margin.",
+    },
+    {
+      question: "Can I use negative buffer?",
+      answer: "Yes, enter a negative percentage to shorten timelines.",
+    },
+    {
+      question: "Is buffer applied linearly?",
+      answer: "Yes, it scales the planned days by the buffer percentage.",
+    },
+  ],
+  disclaimer: "Buffer estimates do not guarantee on-time completion.",
+};
+
+<Calculator schema={schema} />

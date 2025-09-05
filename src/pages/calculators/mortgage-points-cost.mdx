@@ -1,0 +1,60 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Mortgage Points Cost Calculator"
+description: "Estimate upfront cost of mortgage points."
+updated: "2025-08-31"
+cluster: "Finance"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "mortgage-points-cost",
+  title: "Mortgage Points Cost Calculator",
+  intro:
+    "Find the dollar amount required to buy down your mortgage rate using discount points.",
+  locale: "en",
+  cluster: "Finance",
+  inputs: [
+    {
+      name: "loanAmount",
+      label: "Loan Amount ($)",
+      type: "number",
+      step: "any",
+      required: true,
+    },
+    {
+      name: "pointsPercent",
+      label: "Points (%)",
+      type: "number",
+      step: "any",
+      required: true,
+    },
+  ],
+  expression: "loanAmount * pointsPercent / 100",
+  unit: "$",
+  examples: [
+    { description: "$200000 loan with 1% points ⇒ $2000" },
+    { description: "$250000 loan with 2% points ⇒ $5000" },
+    { description: "$180000 loan with 0.5% points ⇒ $900" },
+  ],
+  faqs: [
+    {
+      question: "What are mortgage points?",
+      answer: "Fees paid upfront to reduce the loan's interest rate.",
+    },
+    {
+      question: "Are points tax-deductible?",
+      answer: "They may be; consult a tax professional.",
+    },
+    {
+      question: "Do points always save money?",
+      answer:
+        "Only if you keep the loan long enough to benefit from the lower rate.",
+    },
+  ],
+  disclaimer:
+    "This calculator doesn't replace advice from a financial advisor.",
+};
+
+<Calculator schema={schema} />

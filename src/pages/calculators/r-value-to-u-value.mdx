@@ -1,0 +1,51 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "R-Value to U-Value Converter"
+description: "Convert insulation R-values to U-values."
+updated: "2025-08-31"
+cluster: "Conversions"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "r-value-to-u-value",
+  title: "R-Value to U-Value Converter",
+  intro:
+    "Translate thermal resistance (R-value) into thermal transmittance (U-value) to compare insulation materials.",
+  locale: "en",
+  cluster: "Conversions",
+  inputs: [
+    {
+      name: "rValue",
+      label: "R-Value",
+      type: "number",
+      step: "any",
+      required: true,
+    },
+  ],
+  expression: "1 / rValue",
+  unit: "U",
+  examples: [
+    { description: "R-10 ⇒ 0.10 U" },
+    { description: "R-15 ⇒ 0.07 U" },
+    { description: "R-20 ⇒ 0.05 U" },
+  ],
+  faqs: [
+    {
+      question: "What is an R-value?",
+      answer: "It measures how well a material resists heat flow.",
+    },
+    {
+      question: "Why convert to U-value?",
+      answer: "Some codes specify maximum U-values instead of R-values.",
+    },
+    {
+      question: "Does higher R-value mean lower U-value?",
+      answer: "Yes, they are inversely related.",
+    },
+  ],
+  disclaimer: "Use results for guidance only; actual performance may vary.",
+};
+
+<Calculator schema={schema} />

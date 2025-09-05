@@ -1,0 +1,58 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Parking Space Requirement Calculator"
+description: "Estimate number of parking spaces based on floor area."
+updated: "2025-08-31"
+cluster: "Other"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "parking-space-requirement",
+  title: "Parking Space Requirement Calculator",
+  intro:
+    "Estimate how many parking spaces a development needs using gross floor area and code ratios.",
+  locale: "en",
+  cluster: "Other",
+  inputs: [
+    {
+      name: "floorArea",
+      label: "Floor Area (ft²)",
+      type: "number",
+      step: "any",
+      required: true,
+    },
+    {
+      name: "areaPerSpace",
+      label: "Area per Space (ft²)",
+      type: "number",
+      step: "any",
+      required: true,
+    },
+  ],
+  expression: "floorArea / areaPerSpace",
+  unit: "spaces",
+  examples: [
+    { description: "50000 ft² at 300 ft²/space ⇒ 167 spaces" },
+    { description: "20000 ft² at 250 ft²/space ⇒ 80 spaces" },
+    { description: "10000 ft² at 350 ft²/space ⇒ 29 spaces" },
+  ],
+  faqs: [
+    {
+      question: "Why use area per space?",
+      answer: "It accounts for parking stalls plus circulation aisles.",
+    },
+    {
+      question: "Do local codes vary?",
+      answer: "Yes, always check municipal requirements.",
+    },
+    {
+      question: "Should spaces be rounded?",
+      answer: "Round up to ensure compliance.",
+    },
+  ],
+  disclaimer: "Consult local regulations for official parking counts.",
+};
+
+<Calculator schema={schema} />

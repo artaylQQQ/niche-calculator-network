@@ -1,0 +1,59 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Workdays to Calendar Days Converter"
+description: "Convert working days into total calendar days."
+updated: "2025-08-31"
+cluster: "Date & Time"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "workdays-to-calendar-days",
+  title: "Workdays to Calendar Days Converter",
+  intro:
+    "Estimate total calendar time for a project by converting scheduled workdays into calendar days based on your weekly work schedule.",
+  locale: "en",
+  cluster: "Date & Time",
+  inputs: [
+    {
+      name: "workdays",
+      label: "Workdays",
+      type: "number",
+      step: "any",
+      required: true,
+    },
+    {
+      name: "workdaysPerWeek",
+      label: "Workdays per Week",
+      type: "number",
+      step: "any",
+      required: true,
+    },
+  ],
+  expression: "workdays / workdaysPerWeek * 7",
+  unit: "days",
+  examples: [
+    { description: "10 workdays at 5/day ⇒ 14 days" },
+    { description: "20 workdays at 6/day ⇒ 23.33 days" },
+    { description: "15 workdays at 4/day ⇒ 26.25 days" },
+  ],
+  faqs: [
+    {
+      question: "Why convert workdays to calendar days?",
+      answer: "It helps plan project timelines that include weekends.",
+    },
+    {
+      question: "Can I use partial workdays?",
+      answer: "Yes, the calculator accepts decimal values.",
+    },
+    {
+      question: "What if my schedule changes?",
+      answer: "Recalculate using the new workdays per week.",
+    },
+  ],
+  disclaimer:
+    "This tool provides estimates and does not account for holidays or unexpected delays.",
+};
+
+<Calculator schema={schema} />

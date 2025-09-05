@@ -1,0 +1,60 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Drywall Sheets Calculator"
+description: "Estimate the number of drywall sheets needed."
+updated: "2025-08-31"
+cluster: "Home & DIY"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "drywall-sheets-calculator",
+  title: "Drywall Sheets Calculator",
+  intro:
+    "Quickly estimate how many drywall sheets are required based on total wall or ceiling area and sheet size.",
+  locale: "en",
+  cluster: "Home & DIY",
+  inputs: [
+    {
+      name: "areaSqFt",
+      label: "Total Area (ft²)",
+      type: "number",
+      step: "any",
+      required: true,
+    },
+    {
+      name: "sheetSqFt",
+      label: "Sheet Area (ft²)",
+      type: "number",
+      step: "any",
+      required: true,
+    },
+  ],
+  expression: "Math.ceil(areaSqFt / sheetSqFt)",
+  unit: "sheets",
+  examples: [
+    { description: "500 ft² with 32 ft² sheets ⇒ 16 sheets" },
+    { description: "1000 ft² with 32 ft² sheets ⇒ 32 sheets" },
+    { description: "750 ft² with 48 ft² sheets ⇒ 16 sheets" },
+  ],
+  faqs: [
+    {
+      question: "Why round up sheets?",
+      answer:
+        "You can't buy partial sheets, so rounding up ensures enough material.",
+    },
+    {
+      question: "Does this include waste?",
+      answer: "No, add extra sheets for cuts and mistakes.",
+    },
+    {
+      question: "Can I mix sheet sizes?",
+      answer:
+        "Use the average area or run separate calculations for each size.",
+    },
+  ],
+  disclaimer: "Always verify quantities with your supplier before purchase.",
+};
+
+<Calculator schema={schema} />

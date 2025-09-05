@@ -1,0 +1,58 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Wall Stud Count Calculator"
+description: "Determine the number of studs for a wall based on spacing."
+updated: "2025-08-31"
+cluster: "Home & DIY"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "wall-stud-count",
+  title: "Wall Stud Count Calculator",
+  intro:
+    "Compute how many studs are needed for a wall using the wall length and stud spacing.",
+  locale: "en",
+  cluster: "Home & DIY",
+  inputs: [
+    {
+      name: "lengthFt",
+      label: "Wall Length (ft)",
+      type: "number",
+      step: "any",
+      required: true,
+    },
+    {
+      name: "spacingIn",
+      label: "Stud Spacing (in)",
+      type: "number",
+      step: "any",
+      required: true,
+    },
+  ],
+  expression: "Math.floor(lengthFt * 12 / spacingIn) + 1",
+  unit: "studs",
+  examples: [
+    { description: "10 ft wall at 16 in spacing ⇒ 8 studs" },
+    { description: "20 ft wall at 24 in spacing ⇒ 11 studs" },
+    { description: "12 ft wall at 16 in spacing ⇒ 10 studs" },
+  ],
+  faqs: [
+    {
+      question: "Why add one stud?",
+      answer: "Both ends of the wall require a stud.",
+    },
+    {
+      question: "Does this include door openings?",
+      answer: "No, adjust for openings separately.",
+    },
+    {
+      question: "Can spacing be metric?",
+      answer: "Convert spacing to inches before using this calculator.",
+    },
+  ],
+  disclaimer: "Verify stud counts with local building codes.",
+};
+
+<Calculator schema={schema} />
