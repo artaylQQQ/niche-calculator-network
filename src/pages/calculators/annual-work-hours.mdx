@@ -1,0 +1,36 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Annual Work Hours Calculator"
+description: "Estimate total work hours in a year after vacation days."
+updated: "2025-09-05"
+cluster: "Date & Time"
+---
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "annual-work-hours",
+  title: "Annual Work Hours Calculator",
+  locale: "en",
+  intro: "Plan staffing by estimating total yearly work hours accounting for vacation.",
+  unit: "hours",
+  cluster: "Date & Time",
+  inputs: [
+    { name: "hoursPerDay", label: "Hours per day", type: "number", step: "any", placeholder: "8" },
+    { name: "daysPerWeek", label: "Days per week", type: "number", step: "any", placeholder: "5" },
+    { name: "vacationDays", label: "Vacation days per year", type: "number", step: "any", placeholder: "10" }
+  ],
+  expression: "hoursPerDay * daysPerWeek * 52 - vacationDays * hoursPerDay",
+  examples: [
+    { description: "8 h/day, 5 days/week, 10 vacation ⇒ 2000 hours" },
+    { description: "7.5 h/day, 5 days/week, 15 vacation ⇒ 1912.5 hours" },
+    { description: "6 h/day, 6 days/week, 5 vacation ⇒ 1872 hours" }
+  ],
+  faqs: [
+    { question: "Why 52 weeks?", answer: "There are 52 weeks in a standard year." },
+    { question: "Does this include holidays?", answer: "Only vacation days entered are subtracted." },
+    { question: "Can I use decimals?", answer: "Yes, partial hours are supported." }
+  ],
+  disclaimer: "For planning purposes only.",
+};
+
+<Calculator schema={schema} />

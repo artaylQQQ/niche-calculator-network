@@ -1,0 +1,35 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Customer Acquisition Cost"
+description: "Find cost per new customer from marketing spend."
+updated: "2025-09-05"
+cluster: "Finance"
+---
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "customer-acquisition-cost",
+  title: "Customer Acquisition Cost",
+  locale: "en",
+  intro: "Measure how much you spend to acquire each new customer.",
+  unit: "USD/customer",
+  cluster: "Finance",
+  inputs: [
+    { name: "spend", label: "Marketing spend (USD)", type: "number", step: "any", placeholder: "5000" },
+    { name: "customers", label: "New customers", type: "number", step: "any", placeholder: "100" }
+  ],
+  expression: "spend / customers",
+  examples: [
+    { description: "5000 USD for 100 customers ⇒ 50 USD/customer" },
+    { description: "12000 USD for 300 customers ⇒ 40 USD/customer" },
+    { description: "7500 USD for 150 customers ⇒ 50 USD/customer" }
+  ],
+  faqs: [
+    { question: "What costs are included?", answer: "Include marketing and sales expenses tied to new customers." },
+    { question: "Why is CAC important?", answer: "It shows how efficiently you grow your customer base." },
+    { question: "Does this handle churn?", answer: "No, churn is excluded from acquisition cost." }
+  ],
+  disclaimer: "Use for rough planning, not audited financials.",
+};
+
+<Calculator schema={schema} />

@@ -1,0 +1,34 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Standing Desk Calorie Increase"
+description: "Estimate extra calories burned while standing at your desk."
+updated: "2025-09-05"
+cluster: "Health"
+---
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "standing-desk-calorie-increase",
+  title: "Standing Desk Calorie Increase",
+  locale: "en",
+  intro: "Approximate additional calories burned from standing instead of sitting at work.",
+  unit: "kcal",
+  cluster: "Health",
+  inputs: [
+    { name: "hours", label: "Standing hours", type: "number", step: "any", placeholder: "2" }
+  ],
+  expression: "hours * 9",
+  examples: [
+    { description: "2 hours standing ⇒ 18 kcal" },
+    { description: "4 hours standing ⇒ 36 kcal" },
+    { description: "6 hours standing ⇒ 54 kcal" }
+  ],
+  faqs: [
+    { question: "Why 9 kcal per hour?", answer: "Standing burns roughly 9 more calories per hour than sitting." },
+    { question: "Does body weight matter?", answer: "This is an average; individual burn varies." },
+    { question: "Can I track daily totals?", answer: "Yes, adjust the hours to match your standing time." }
+  ],
+  disclaimer: "Estimates only; consult health guidance for personalized advice.",
+};
+
+<Calculator schema={schema} />
