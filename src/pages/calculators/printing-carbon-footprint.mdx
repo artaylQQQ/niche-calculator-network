@@ -1,0 +1,32 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Printing Carbon Footprint"
+description: "Estimate CO₂ emissions from paper printing."
+updated: "2025-10-24"
+cluster: "Other"
+---
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "printing-carbon-footprint",
+  title: "Printing Carbon Footprint",
+  locale: "en",
+  intro: "Approximate CO₂ emissions using 0.0044 kg per printed page.",
+  unit: "kg CO₂",
+  cluster: "Other",
+  inputs: [
+    { name: "pages", label: "Pages printed", type: "number", step: "any", placeholder: "500" }
+  ],
+  expression: "pages * 0.0044",
+  examples: [
+    { description: "500 pages ⇒ 2.2 kg CO₂" },
+    { description: "100 pages ⇒ 0.44 kg CO₂" }
+  ],
+  faqs: [
+    { question: "Where does 0.0044 come from?", answer: "It's an average emission factor per page." },
+    { question: "Does double-sided printing change it?", answer: "Yes, count each printed side separately." }
+  ],
+  disclaimer: "For informational purposes only.",
+};
+
+<Calculator schema={schema} />

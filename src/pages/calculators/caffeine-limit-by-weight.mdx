@@ -1,0 +1,32 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Caffeine Limit by Weight"
+description: "Estimate a safe daily caffeine limit using 3 mg/kg guideline."
+updated: "2025-10-24"
+cluster: "Health"
+---
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "caffeine-limit-by-weight",
+  title: "Caffeine Limit by Weight",
+  locale: "en",
+  intro: "Estimate a moderate daily caffeine limit based on body weight.",
+  unit: "mg",
+  cluster: "Health",
+  inputs: [
+    { name: "weight", label: "Weight (kg)", type: "number", step: "any", placeholder: "70" }
+  ],
+  expression: "weight * 3",
+  examples: [
+    { description: "70 kg ⇒ 210 mg" },
+    { description: "90 kg ⇒ 270 mg" }
+  ],
+  faqs: [
+    { question: "Why 3 mg/kg?", answer: "It's a conservative guideline for moderate caffeine intake." },
+    { question: "Is this medical advice?", answer: "No, consult a professional for personal recommendations." }
+  ],
+  disclaimer: "For informational purposes only, not medical advice.",
+};
+
+<Calculator schema={schema} />

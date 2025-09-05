@@ -1,0 +1,34 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Hourly to Annual Salary"
+description: "Estimate yearly salary from an hourly rate."
+updated: "2025-10-24"
+cluster: "Finance"
+---
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "hourly-to-annual-salary",
+  title: "Hourly to Annual Salary",
+  locale: "en",
+  intro: "Convert an hourly wage into an annual salary for budgeting.",
+  unit: "USD/year",
+  cluster: "Finance",
+  inputs: [
+    { name: "rate", label: "Hourly rate ($)", type: "number", step: "any", placeholder: "25" },
+    { name: "hours", label: "Hours per week", type: "number", step: "any", placeholder: "40" },
+    { name: "weeks", label: "Weeks per year", type: "number", step: "any", placeholder: "52" }
+  ],
+  expression: "rate * hours * weeks",
+  examples: [
+    { description: "$25/hr, 40h/week, 52 weeks ⇒ $52,000/year" },
+    { description: "$30/hr, 35h/week, 48 weeks ⇒ $50,400/year" }
+  ],
+  faqs: [
+    { question: "Does it include overtime?", answer: "Only if you include overtime hours in the weekly input." },
+    { question: "What about unpaid leave?", answer: "Adjust the weeks per year to account for unpaid time off." }
+  ],
+  disclaimer: "For informational purposes only, not financial advice.",
+};
+
+<Calculator schema={schema} />

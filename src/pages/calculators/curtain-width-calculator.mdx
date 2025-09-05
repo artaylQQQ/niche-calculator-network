@@ -1,0 +1,33 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Curtain Width Calculator"
+description: "Calculate curtain width from window size and fullness."
+updated: "2025-10-24"
+cluster: "Home & DIY"
+---
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "curtain-width-calculator",
+  title: "Curtain Width Calculator",
+  locale: "en",
+  intro: "Determine total curtain width needed using a fullness ratio.",
+  unit: "cm",
+  cluster: "Home & DIY",
+  inputs: [
+    { name: "window", label: "Window width (cm)", type: "number", step: "any", placeholder: "150" },
+    { name: "fullness", label: "Fullness ratio", type: "number", step: "any", placeholder: "2" }
+  ],
+  expression: "window * fullness",
+  examples: [
+    { description: "150 cm window with 2× fullness ⇒ 300 cm" },
+    { description: "120 cm window with 1.5× fullness ⇒ 180 cm" }
+  ],
+  faqs: [
+    { question: "What is fullness?", answer: "A multiplier to add gathers; 2× is common." },
+    { question: "Does this include overlap?", answer: "Add extra width if panels need to overlap." }
+  ],
+  disclaimer: "For informational purposes only.",
+};
+
+<Calculator schema={schema} />

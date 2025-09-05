@@ -1,0 +1,32 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "MB to GB Converter"
+description: "Convert megabytes to gigabytes."
+updated: "2025-10-24"
+cluster: "Conversions"
+---
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "mb-to-gb-converter",
+  title: "MB to GB Converter",
+  locale: "en",
+  intro: "Convert megabytes to gigabytes for quick storage planning.",
+  unit: "GB",
+  cluster: "Conversions",
+  inputs: [
+    { name: "mb", label: "Megabytes (MB)", type: "number", step: "any", placeholder: "2048" }
+  ],
+  expression: "mb / 1024",
+  examples: [
+    { description: "2048 MB ⇒ 2 GB" },
+    { description: "5120 MB ⇒ 5 GB" }
+  ],
+  faqs: [
+    { question: "Is it using binary units?", answer: "Yes, it divides by 1024 to convert MB to GB." },
+    { question: "Can I use decimals?", answer: "Yes, enter any numeric value." }
+  ],
+  disclaimer: "For informational purposes only.",
+};
+
+<Calculator schema={schema} />

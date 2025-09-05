@@ -1,0 +1,33 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Part of Total Percentage"
+description: "Find what percent a part is of a total."
+updated: "2025-10-24"
+cluster: "Math"
+---
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "part-of-total-percentage",
+  title: "Part of Total Percentage",
+  locale: "en",
+  intro: "Calculate what percentage a value represents of a whole.",
+  unit: "%",
+  cluster: "Math",
+  inputs: [
+    { name: "part", label: "Part", type: "number", step: "any", placeholder: "30" },
+    { name: "total", label: "Total", type: "number", step: "any", placeholder: "200" }
+  ],
+  expression: "(part / total) * 100",
+  examples: [
+    { description: "30 of 200 ⇒ 15%" },
+    { description: "50 of 80 ⇒ 62.5%" }
+  ],
+  faqs: [
+    { question: "Can the result exceed 100%?", answer: "Yes, if part is greater than total." },
+    { question: "What if total is 0?", answer: "The calculation is undefined." }
+  ],
+  disclaimer: "For informational purposes only.",
+};
+
+<Calculator schema={schema} />

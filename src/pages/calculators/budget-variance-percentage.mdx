@@ -1,0 +1,33 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Budget Variance Percentage"
+description: "Compare actual spending against budgeted amounts."
+updated: "2025-10-24"
+cluster: "Finance"
+---
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "budget-variance-percentage",
+  title: "Budget Variance Percentage",
+  locale: "en",
+  intro: "Find the percentage difference between actual and budgeted costs.",
+  unit: "%",
+  cluster: "Finance",
+  inputs: [
+    { name: "actual", label: "Actual amount ($)", type: "number", step: "any", placeholder: "1200" },
+    { name: "budget", label: "Budgeted amount ($)", type: "number", step: "any", placeholder: "1000" }
+  ],
+  expression: "((actual - budget) / budget) * 100",
+  examples: [
+    { description: "$1200 vs $1000 ⇒ 20% over budget" },
+    { description: "$900 vs $1000 ⇒ -10% under budget" }
+  ],
+  faqs: [
+    { question: "What does a negative result mean?", answer: "It indicates spending was below budget." },
+    { question: "Can I compare revenue?", answer: "Yes, use the same formula for any target vs actual value." }
+  ],
+  disclaimer: "For informational purposes only, not financial advice.",
+};
+
+<Calculator schema={schema} />

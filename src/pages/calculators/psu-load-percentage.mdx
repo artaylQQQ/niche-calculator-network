@@ -1,0 +1,33 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "PSU Load Percentage"
+description: "Power supply usage as a percentage of capacity."
+updated: "2025-10-24"
+cluster: "Technology"
+---
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "psu-load-percentage",
+  title: "PSU Load Percentage",
+  locale: "en",
+  intro: "Check how much of a power supply's capacity your system draws.",
+  unit: "%",
+  cluster: "Technology",
+  inputs: [
+    { name: "load", label: "System load (W)", type: "number", step: "any", placeholder: "300" },
+    { name: "capacity", label: "PSU capacity (W)", type: "number", step: "any", placeholder: "500" }
+  ],
+  expression: "(load / capacity) * 100",
+  examples: [
+    { description: "300 W load on 500 W PSU ⇒ 60%" },
+    { description: "450 W load on 600 W PSU ⇒ 75%" }
+  ],
+  faqs: [
+    { question: "Why keep load under 80%?", answer: "It allows headroom and better efficiency." },
+    { question: "Can capacity be lower than load?", answer: "The result will exceed 100%, indicating overload." }
+  ],
+  disclaimer: "For informational purposes only.",
+};
+
+<Calculator schema={schema} />
