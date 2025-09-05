@@ -1,0 +1,48 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const data = await import('../../data/calculators.json');
+const calculators = (data.default ?? data).map((c) => ({
+  slug: c.slug,
+  title: c.title,
+  description: c.description || ''
+}));
+---
+<BaseLayout title="Search" description="Find calculators by title or description.">
+  <section class="hero container mx-auto max-w-5xl px-4">
+    <h1 style="color: var(--ink)">Search</h1>
+    <p style="color: var(--muted)">Find calculators by title or description.</p>
+    <input
+      id="search-input"
+      type="search"
+      placeholder="Search calculators..."
+      class="mt-4 w-full rounded border border-[var(--border)] p-2"
+    />
+  </section>
+  <section class="section container mx-auto max-w-5xl px-4" aria-labelledby="results-title">
+    <h2 id="results-title" class="sr-only">Search results</h2>
+    <div id="results" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-4"></div>
+  </section>
+  <script is:inline>
+    const calculators = JSON.parse(decodeURIComponent('{encodeURIComponent(JSON.stringify(calculators))}'));
+    const input = document.getElementById('search-input');
+    const results = document.getElementById('results');
+    function render(list) {
+      results.innerHTML = '';
+      for (const c of list) {
+        const div = document.createElement('div');
+        div.innerHTML = `<a class="card" href="/calculators/${c.slug}/"><h3>${c.title}</h3><p>${c.description}</p></a>`;
+        results.appendChild(div.firstElementChild);
+      }
+    }
+    function filter(term) {
+      const q = term.toLowerCase();
+      return calculators.filter((c) =>
+        c.title.toLowerCase().includes(q) || c.description.toLowerCase().includes(q)
+      );
+    }
+    input.addEventListener('input', () => {
+      render(filter(input.value));
+    });
+    render(calculators);
+  </script>
+</BaseLayout>
