@@ -1,0 +1,38 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Suitcase Volume to Liters"
+description: "Calculate suitcase capacity from dimensions."
+updated: "2025-10-15"
+cluster: "Home & DIY"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  slug: "suitcase-volume-to-liters",
+  title: "Suitcase Volume to Liters",
+  locale: "en",
+  unit: "L",
+  inputs: [
+    { name: "length", label: "Length (cm)", type: "number", step: "any", min: 0, placeholder: "55" },
+    { name: "width", label: "Width (cm)", type: "number", step: "any", min: 0, placeholder: "40" },
+    { name: "height", label: "Height (cm)", type: "number", step: "any", min: 0, placeholder: "20" }
+  ],
+  expression: "(length * width * height) / 1000",
+  intro: "Estimate how many liters your suitcase can hold using its external dimensions.",
+  examples: [
+    { description: "55×40×20 cm ⇒ 44 L" },
+    { description: "70×50×30 cm ⇒ 105 L" }
+  ],
+  faqs: [
+    { question: "Why divide by 1000?", answer: "To convert cubic centimeters to liters." },
+    { question: "Does this account for interior padding?", answer: "No, it uses external measurements." },
+    { question: "Can I use inches?", answer: "Convert to centimeters before using the calculator." },
+    { question: "Is this exact capacity?", answer: "Actual usable space may be less due to suitcase shape." }
+  ],
+  disclaimer: "Educational information, not professional advice.",
+  cluster: "Home & DIY"
+};
+
+<Calculator schema={schema} />
+
