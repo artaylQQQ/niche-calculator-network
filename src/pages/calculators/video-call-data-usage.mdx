@@ -1,0 +1,34 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Video Call Data Usage"
+description: "Estimate data consumption of a video call from bitrate and duration."
+updated: "2025-03-30"
+cluster: "Technology"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "video-call-data-usage",
+  title: "Video Call Data Usage",
+  locale: "en",
+  intro: "Enter video call bitrate in Mbps and call duration in minutes to estimate total data used in megabytes.",
+  unit: "MB",
+  cluster: "Technology",
+  inputs: [
+    { name: "bitrate", label: "Bitrate (Mbps)", type: "number", step: "any", placeholder: "2" },
+    { name: "minutes", label: "Duration (minutes)", type: "number", step: "any", placeholder: "30" }
+  ],
+  expression: "bitrate * minutes * 7.5",
+  examples: [
+    { description: "2 Mbps for 30 min ⇒ 450 MB" },
+    { description: "3 Mbps for 20 min ⇒ 450 MB" }
+  ],
+  faqs: [
+    { question: "Does this include audio?", answer: "Yes, the bitrate should reflect total stream rate." },
+    { question: "Why multiply by 7.5?", answer: "1 Mbps equals about 7.5 MB per minute." }
+  ],
+  disclaimer: "Actual usage may vary with network conditions."
+};
+
+<Calculator schema={schema} />

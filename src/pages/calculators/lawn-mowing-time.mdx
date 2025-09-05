@@ -1,0 +1,35 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Lawn Mowing Time"
+description: "Estimate how long it will take to mow a lawn based on area, mower width, and walking speed."
+updated: "2025-03-30"
+cluster: "Home & DIY"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "lawn-mowing-time",
+  title: "Lawn Mowing Time",
+  locale: "en",
+  intro: "Enter lawn area in square feet, mower cutting width in feet, and your walking speed in mph to estimate mowing time in minutes.",
+  unit: "minutes",
+  cluster: "Home & DIY",
+  inputs: [
+    { name: "area", label: "Lawn area (sq ft)", type: "number", step: "any", placeholder: "5000" },
+    { name: "width", label: "Mower width (ft)", type: "number", step: "any", placeholder: "2" },
+    { name: "speed", label: "Walking speed (mph)", type: "number", step: "any", placeholder: "3" }
+  ],
+  expression: "area / (width * speed * 88)",
+  examples: [
+    { description: "5000 sq ft, 2 ft, 3 mph ⇒ 9.47 min" },
+    { description: "15000 sq ft, 2 ft, 3 mph ⇒ 28.41 min" }
+  ],
+  faqs: [
+    { question: "Why use 88 in the formula?", answer: "88 converts mph and feet to square feet per minute." },
+    { question: "Does this include turns and overlap?", answer: "No, it's an ideal estimate; real times may be longer." }
+  ],
+  disclaimer: "For planning purposes only."
+};
+
+<Calculator schema={schema} />

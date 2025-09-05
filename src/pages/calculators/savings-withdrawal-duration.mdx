@@ -1,0 +1,34 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Savings Withdrawal Duration"
+description: "How many months your savings will last with a fixed monthly withdrawal."
+updated: "2025-03-30"
+cluster: "Finance"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "savings-withdrawal-duration",
+  title: "Savings Withdrawal Duration",
+  locale: "en",
+  intro: "Determine how long your savings can support you when withdrawing a fixed amount each month.",
+  unit: "months",
+  cluster: "Finance",
+  inputs: [
+    { name: "savings", label: "Total savings (USD)", type: "number", step: "any", placeholder: "100000" },
+    { name: "monthly", label: "Monthly withdrawal (USD)", type: "number", step: "any", placeholder: "2000" }
+  ],
+  expression: "savings / monthly",
+  examples: [
+    { description: "$100000 at $2000/mo ⇒ 50 months" },
+    { description: "$50000 at $1500/mo ⇒ 33.33 months" }
+  ],
+  faqs: [
+    { question: "Does this include interest?", answer: "No, it assumes savings do not earn additional interest." },
+    { question: "Can I enter decimals?", answer: "Yes, decimals are supported." }
+  ],
+  disclaimer: "Financial information only, not investment advice."
+};
+
+<Calculator schema={schema} />

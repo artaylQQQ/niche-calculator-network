@@ -1,0 +1,36 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Basal Metabolic Rate"
+description: "Estimate daily calories burned at rest using the Mifflin-St Jeor equation."
+updated: "2025-03-30"
+cluster: "Health"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "basal-metabolic-rate",
+  title: "Basal Metabolic Rate",
+  locale: "en",
+  intro: "Calculate your basal metabolic rate (BMR) using weight, height, age, and a gender factor (+5 for men, -161 for women).",
+  unit: "kcal/day",
+  cluster: "Health",
+  inputs: [
+    { name: "weight_kg", label: "Weight (kg)", type: "number", step: "any", placeholder: "70" },
+    { name: "height_cm", label: "Height (cm)", type: "number", step: "any", placeholder: "170" },
+    { name: "age", label: "Age (years)", type: "number", step: 1, placeholder: "65" },
+    { name: "gender_factor", label: "Gender factor", type: "number", step: 1, placeholder: "-161" }
+  ],
+  expression: "10 * weight_kg + 6.25 * height_cm - 5 * age + gender_factor",
+  examples: [
+    { description: "70kg, 170cm, 65y, factor -161 ⇒ 1277 kcal/day" },
+    { description: "80kg, 180cm, 65y, factor 5 ⇒ 1605 kcal/day" }
+  ],
+  faqs: [
+    { question: "What is a gender factor?", answer: "+5 for men and -161 for women in this equation." },
+    { question: "Is BMR the same as calories needed?", answer: "BMR is the base; daily needs are higher depending on activity." }
+  ],
+  disclaimer: "Educational only. Consult your doctor for personalized advice."
+};
+
+<Calculator schema={schema} />

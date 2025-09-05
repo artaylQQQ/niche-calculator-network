@@ -1,0 +1,33 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Healthy Waist Limit"
+description: "Estimate a healthy maximum waist circumference as half your height."
+updated: "2025-03-30"
+cluster: "Health"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "healthy-waist-limit",
+  title: "Healthy Waist Limit",
+  locale: "en",
+  intro: "A common guideline is to keep waist circumference under half your height. Enter your height to see this limit.",
+  unit: "cm",
+  cluster: "Health",
+  inputs: [
+    { name: "height_cm", label: "Height (cm)", type: "number", step: "any", placeholder: "170" }
+  ],
+  expression: "height_cm * 0.5",
+  examples: [
+    { description: "170 cm height ⇒ 85 cm waist" },
+    { description: "160 cm height ⇒ 80 cm waist" }
+  ],
+  faqs: [
+    { question: "Why half the height?", answer: "It aligns with waist-to-height ratio recommendations." },
+    { question: "Is this a strict medical rule?", answer: "No, consult a healthcare professional for personal advice." }
+  ],
+  disclaimer: "Educational purposes only."
+};
+
+<Calculator schema={schema} />

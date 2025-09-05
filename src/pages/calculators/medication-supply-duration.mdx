@@ -1,0 +1,34 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Medication Supply Duration"
+description: "Estimate how many days your medication supply will last."
+updated: "2025-03-30"
+cluster: "Other"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "medication-supply-duration",
+  title: "Medication Supply Duration",
+  locale: "en",
+  intro: "Enter the number of pills you have and how many you take per day to find out how long your supply will last.",
+  unit: "days",
+  cluster: "Other",
+  inputs: [
+    { name: "pills", label: "Pills available", type: "number", step: 1, placeholder: "60" },
+    { name: "per_day", label: "Pills per day", type: "number", step: "any", placeholder: "2" }
+  ],
+  expression: "pills / per_day",
+  examples: [
+    { description: "60 pills at 2/day ⇒ 30 days" },
+    { description: "45 pills at 3/day ⇒ 15 days" }
+  ],
+  faqs: [
+    { question: "What about partial pills?", answer: "Enter decimals for half or quarter pills." },
+    { question: "Does this consider refills?", answer: "No, it only calculates the current supply." }
+  ],
+  disclaimer: "Follow your doctor's prescription." 
+};
+
+<Calculator schema={schema} />

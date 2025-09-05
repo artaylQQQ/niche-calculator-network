@@ -1,0 +1,34 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Retirement Savings Goal"
+description: "Estimate the total savings needed for a desired annual retirement income."
+updated: "2025-03-30"
+cluster: "Finance"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "retirement-savings-goal",
+  title: "Retirement Savings Goal",
+  locale: "en",
+  intro: "Enter your desired annual income in retirement and withdrawal rate to estimate the savings required.",
+  unit: "USD",
+  cluster: "Finance",
+  inputs: [
+    { name: "income", label: "Desired annual income (USD)", type: "number", step: "any", placeholder: "40000" },
+    { name: "rate", label: "Withdrawal rate (%)", type: "number", step: "any", placeholder: "4" }
+  ],
+  expression: "income / (rate / 100)",
+  examples: [
+    { description: "$40000 income at 4% ⇒ 1000000 USD" },
+    { description: "$30000 income at 5% ⇒ 600000 USD" }
+  ],
+  faqs: [
+    { question: "What is a withdrawal rate?", answer: "It is the percentage of your savings you withdraw annually." },
+    { question: "Is 4% the recommended rate?", answer: "Many planners use 4% as a starting point, but individual needs vary." }
+  ],
+  disclaimer: "Financial information only, not investment advice."
+};
+
+<Calculator schema={schema} />

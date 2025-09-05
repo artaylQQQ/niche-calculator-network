@@ -1,0 +1,34 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Pulse Pressure Calculator"
+description: "Calculate pulse pressure from systolic and diastolic blood pressure readings."
+updated: "2025-03-30"
+cluster: "Health"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "pulse-pressure-calculator",
+  title: "Pulse Pressure Calculator",
+  locale: "en",
+  intro: "Pulse pressure is the difference between systolic and diastolic blood pressure. Enter your readings to compute it.",
+  unit: "mmHg",
+  cluster: "Health",
+  inputs: [
+    { name: "systolic", label: "Systolic (mmHg)", type: "number", step: "any", placeholder: "120" },
+    { name: "diastolic", label: "Diastolic (mmHg)", type: "number", step: "any", placeholder: "80" }
+  ],
+  expression: "systolic - diastolic",
+  examples: [
+    { description: "120 and 80 ⇒ 40 mmHg" },
+    { description: "140 and 90 ⇒ 50 mmHg" }
+  ],
+  faqs: [
+    { question: "What does a high pulse pressure indicate?", answer: "It can be a sign of stiff arteries; consult your doctor." },
+    { question: "Is pulse pressure the same as blood pressure?", answer: "No, it is derived from systolic and diastolic values." }
+  ],
+  disclaimer: "Educational only. Not medical advice."
+};
+
+<Calculator schema={schema} />

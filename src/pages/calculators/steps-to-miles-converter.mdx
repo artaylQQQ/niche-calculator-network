@@ -1,0 +1,34 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Steps to Miles Converter"
+description: "Convert walking steps and step length to miles."
+updated: "2025-03-30"
+cluster: "Conversions"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "steps-to-miles-converter",
+  title: "Steps to Miles Converter",
+  locale: "en",
+  intro: "Estimate walking distance in miles by entering the number of steps taken and your average step length in feet.",
+  unit: "mi",
+  cluster: "Conversions",
+  inputs: [
+    { name: "steps", label: "Steps", type: "number", step: "any", placeholder: "5000" },
+    { name: "step_length", label: "Step length (ft)", type: "number", step: "any", placeholder: "2.5" }
+  ],
+  expression: "steps * step_length / 5280",
+  examples: [
+    { description: "5000 steps at 2.5 ft ⇒ 2.37 mi" },
+    { description: "8000 steps at 2.5 ft ⇒ 3.79 mi" }
+  ],
+  faqs: [
+    { question: "What is a typical step length?", answer: "An average adult step length is around 2.5 feet." },
+    { question: "How accurate is this converter?", answer: "It provides an estimate; actual distance varies with stride length." }
+  ],
+  disclaimer: "For informational purposes only."
+};
+
+<Calculator schema={schema} />

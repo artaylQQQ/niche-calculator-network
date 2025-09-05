@@ -1,0 +1,35 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Knitting Yarn Length"
+description: "Estimate the total yarn length needed for a knitting project."
+updated: "2025-03-30"
+cluster: "Other"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "knitting-yarn-length",
+  title: "Knitting Yarn Length",
+  locale: "en",
+  intro: "Enter number of rows, stitches per row, and yarn used per stitch (cm) to estimate total yarn length in meters.",
+  unit: "m",
+  cluster: "Other",
+  inputs: [
+    { name: "rows", label: "Rows", type: "number", step: 1, placeholder: "100" },
+    { name: "stitches", label: "Stitches per row", type: "number", step: 1, placeholder: "50" },
+    { name: "per_stitch", label: "Yarn per stitch (cm)", type: "number", step: "any", placeholder: "1" }
+  ],
+  expression: "rows * stitches * per_stitch / 100",
+  examples: [
+    { description: "100 rows × 50 stitches × 1 cm ⇒ 50 m" },
+    { description: "200 rows × 60 stitches × 0.8 cm ⇒ 96 m" }
+  ],
+  faqs: [
+    { question: "Why divide by 100?", answer: "To convert centimeters to meters." },
+    { question: "Does tension affect length?", answer: "Yes, this is an estimate; actual usage may vary." }
+  ],
+  disclaimer: "Estimate only; always buy extra yarn."
+};
+
+<Calculator schema={schema} />
