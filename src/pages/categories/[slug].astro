@@ -75,7 +75,7 @@ const { cat, list = [] } = Astro.props;
           <div>
             <a class="card" href={`/calculators/${c.slug}/`}>
               <h3>{c.title}</h3>
-              <p>{c.intro ?? ''}</p>
+              <p>{c.intro || c.description || ''}</p>
             </a>
           </div>
         ))}
