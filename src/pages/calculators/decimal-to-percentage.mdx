@@ -1,0 +1,32 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Decimal to Percentage Converter"
+description: "Convert a decimal number into a percentage."
+updated: "2025-10-24"
+cluster: "Conversions"
+---
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "decimal-to-percentage",
+  title: "Decimal to Percentage Converter",
+  locale: "en",
+  intro: "Convert decimals to percentages for reports and presentations.",
+  unit: "%",
+  cluster: "Conversions",
+  inputs: [
+    { name: "decimal", label: "Decimal", type: "number", step: "any", placeholder: "0.85" }
+  ],
+  expression: "decimal * 100",
+  examples: [
+    { description: "0.85 ⇒ 85%" },
+    { description: "1.2 ⇒ 120%" }
+  ],
+  faqs: [
+    { question: "How is the conversion done?", answer: "Multiply the decimal by 100 to get a percentage." },
+    { question: "Does it add a percent sign?", answer: "The result is a numeric value representing percent." }
+  ],
+  disclaimer: "For informational purposes only.",
+};
+
+<Calculator schema={schema} />

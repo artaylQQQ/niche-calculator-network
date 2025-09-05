@@ -1,0 +1,33 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Standing Time Percentage"
+description: "How much of the day you spend standing."
+updated: "2025-10-24"
+cluster: "Health"
+---
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "standing-time-percentage",
+  title: "Standing Time Percentage",
+  locale: "en",
+  intro: "Track the share of your day spent standing versus sitting.",
+  unit: "%",
+  cluster: "Health",
+  inputs: [
+    { name: "standing", label: "Standing time (minutes)", type: "number", step: "any", placeholder: "120" },
+    { name: "total", label: "Total awake time (minutes)", type: "number", step: "any", placeholder: "960" }
+  ],
+  expression: "(standing / total) * 100",
+  examples: [
+    { description: "120 min standing in 960 min ⇒ 12.5%" },
+    { description: "240 min standing in 600 min ⇒ 40%" }
+  ],
+  faqs: [
+    { question: "Why track standing time?", answer: "Regular standing can reduce sedentary health risks." },
+    { question: "What is total awake time?", answer: "Hours you're not sleeping during the day." }
+  ],
+  disclaimer: "For informational purposes only, not medical advice.",
+};
+
+<Calculator schema={schema} />

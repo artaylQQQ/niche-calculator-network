@@ -1,0 +1,34 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Standard Deviation (3 Numbers)"
+description: "Sample standard deviation of three values."
+updated: "2025-10-24"
+cluster: "Math"
+---
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "standard-deviation-3-numbers",
+  title: "Standard Deviation (3 Numbers)",
+  locale: "en",
+  intro: "Compute the sample standard deviation for three data points.",
+  unit: "value",
+  cluster: "Math",
+  inputs: [
+    { name: "a", label: "Value A", type: "number", step: "any", placeholder: "10" },
+    { name: "b", label: "Value B", type: "number", step: "any", placeholder: "12" },
+    { name: "c", label: "Value C", type: "number", step: "any", placeholder: "15" }
+  ],
+  expression: "(( (a - ((a+b+c)/3))^2 + (b - ((a+b+c)/3))^2 + (c - ((a+b+c)/3))^2 ) / 2) ^ 0.5",
+  examples: [
+    { description: "10,12,15 ⇒ 2.52" },
+    { description: "5,5,5 ⇒ 0" }
+  ],
+  faqs: [
+    { question: "Why divide by 2?", answer: "For sample standard deviation with n-1 degrees of freedom." },
+    { question: "Can I use more numbers?", answer: "This version handles exactly three values." }
+  ],
+  disclaimer: "For informational purposes only.",
+};
+
+<Calculator schema={schema} />

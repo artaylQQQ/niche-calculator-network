@@ -1,0 +1,35 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "LED Savings Calculator"
+description: "Estimate monthly savings when switching from incandescent to LED."
+updated: "2025-10-24"
+cluster: "Home & DIY"
+---
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "led-savings-calculator",
+  title: "LED Savings Calculator",
+  locale: "en",
+  intro: "Estimate energy cost savings by replacing incandescent bulbs with LEDs.",
+  unit: "USD/month",
+  cluster: "Home & DIY",
+  inputs: [
+    { name: "old", label: "Incandescent wattage", type: "number", step: "any", placeholder: "60" },
+    { name: "new", label: "LED wattage", type: "number", step: "any", placeholder: "9" },
+    { name: "hours", label: "Hours per day", type: "number", step: "any", placeholder: "5" },
+    { name: "rate", label: "Electricity rate ($/kWh)", type: "number", step: "any", placeholder: "0.15" }
+  ],
+  expression: "((old - new) * hours * 30 / 1000) * rate",
+  examples: [
+    { description: "60W→9W, 5h/day, $0.15/kWh ⇒ $6.84/mo saved" },
+    { description: "75W→10W, 3h/day, $0.20/kWh ⇒ $11.70/mo saved" }
+  ],
+  faqs: [
+    { question: "Why multiply by 30?", answer: "It approximates a 30-day month." },
+    { question: "Does bulb cost matter?", answer: "This focuses only on energy savings." }
+  ],
+  disclaimer: "For informational purposes only.",
+};
+
+<Calculator schema={schema} />

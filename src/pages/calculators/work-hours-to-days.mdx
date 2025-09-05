@@ -1,0 +1,33 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Work Hours to Days Converter"
+description: "Convert total work hours into standard workdays."
+updated: "2025-10-24"
+cluster: "Date & Time"
+---
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "work-hours-to-days",
+  title: "Work Hours to Days Converter",
+  locale: "en",
+  intro: "Translate hours of effort into 8-hour workdays.",
+  unit: "workdays",
+  cluster: "Date & Time",
+  inputs: [
+    { name: "hours", label: "Total hours", type: "number", step: "any", placeholder: "40" },
+    { name: "day", label: "Hours per workday", type: "number", step: "any", placeholder: "8" }
+  ],
+  expression: "hours / day",
+  examples: [
+    { description: "40 h at 8 h/day ⇒ 5 workdays" },
+    { description: "60 h at 7.5 h/day ⇒ 8 workdays" }
+  ],
+  faqs: [
+    { question: "What is a standard workday?", answer: "Many workplaces use 8 hours, but you can adjust the input." },
+    { question: "Does it account for breaks?", answer: "Breaks should be excluded from the hours entered." }
+  ],
+  disclaimer: "For informational purposes only.",
+};
+
+<Calculator schema={schema} />

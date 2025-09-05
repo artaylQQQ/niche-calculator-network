@@ -1,0 +1,33 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Cloud Storage Cost"
+description: "Estimate monthly cost of cloud storage usage."
+updated: "2025-10-24"
+cluster: "Technology"
+---
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "cloud-storage-cost",
+  title: "Cloud Storage Cost",
+  locale: "en",
+  intro: "Find the monthly bill for storing data in the cloud.",
+  unit: "USD/month",
+  cluster: "Technology",
+  inputs: [
+    { name: "data", label: "Data stored (GB)", type: "number", step: "any", placeholder: "100" },
+    { name: "rate", label: "Price per GB ($)", type: "number", step: "any", placeholder: "0.02" }
+  ],
+  expression: "data * rate",
+  examples: [
+    { description: "100 GB at $0.02 ⇒ $2/month" },
+    { description: "250 GB at $0.015 ⇒ $3.75/month" }
+  ],
+  faqs: [
+    { question: "Does this include egress fees?", answer: "No, it only accounts for storage cost." },
+    { question: "What about free tiers?", answer: "Subtract any free allowance before entering data." }
+  ],
+  disclaimer: "For informational purposes only.",
+};
+
+<Calculator schema={schema} />

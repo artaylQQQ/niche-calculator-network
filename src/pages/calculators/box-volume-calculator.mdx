@@ -1,0 +1,34 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Box Volume Calculator"
+description: "Compute volume of a rectangular box."
+updated: "2025-10-24"
+cluster: "Home & DIY"
+---
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "box-volume-calculator",
+  title: "Box Volume Calculator",
+  locale: "en",
+  intro: "Find the capacity of a box from its length, width, and height.",
+  unit: "m³",
+  cluster: "Home & DIY",
+  inputs: [
+    { name: "length", label: "Length (m)", type: "number", step: "any", placeholder: "0.5" },
+    { name: "width", label: "Width (m)", type: "number", step: "any", placeholder: "0.4" },
+    { name: "height", label: "Height (m)", type: "number", step: "any", placeholder: "0.3" }
+  ],
+  expression: "length * width * height",
+  examples: [
+    { description: "0.5×0.4×0.3 m ⇒ 0.06 m³" },
+    { description: "1×0.5×0.5 m ⇒ 0.25 m³" }
+  ],
+  faqs: [
+    { question: "Can I use centimeters?", answer: "Convert dimensions to meters first." },
+    { question: "Is the result exact?", answer: "It assumes perfectly rectangular sides." }
+  ],
+  disclaimer: "For informational purposes only.",
+};
+
+<Calculator schema={schema} />

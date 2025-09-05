@@ -1,0 +1,33 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Printer Cost per Page"
+description: "Estimate cost per printed page from cartridge and yield."
+updated: "2025-10-24"
+cluster: "Technology"
+---
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "printer-cost-per-page",
+  title: "Printer Cost per Page",
+  locale: "en",
+  intro: "Determine how much each printed page costs based on cartridge price and yield.",
+  unit: "$\/page",
+  cluster: "Technology",
+  inputs: [
+    { name: "price", label: "Cartridge price ($)", type: "number", step: "any", placeholder: "40" },
+    { name: "yield", label: "Yield (pages)", type: "number", step: "any", placeholder: "2000" }
+  ],
+  expression: "price / yield",
+  examples: [
+    { description: "$40 cartridge, 2000 pages ⇒ $0.02/page" },
+    { description: "$25 cartridge, 500 pages ⇒ $0.05/page" }
+  ],
+  faqs: [
+    { question: "Does this include paper cost?", answer: "No, only cartridge cost is considered." },
+    { question: "What if yield is an estimate?", answer: "Results are approximate based on manufacturer yield." }
+  ],
+  disclaimer: "For informational purposes only.",
+};
+
+<Calculator schema={schema} />

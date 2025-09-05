@@ -1,0 +1,33 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Space per Employee"
+description: "Office area available per person."
+updated: "2025-10-24"
+cluster: "Other"
+---
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "space-per-employee",
+  title: "Space per Employee",
+  locale: "en",
+  intro: "Calculate floor area allocated to each employee.",
+  unit: "m²/person",
+  cluster: "Other",
+  inputs: [
+    { name: "area", label: "Total area (m²)", type: "number", step: "any", placeholder: "200" },
+    { name: "people", label: "Number of employees", type: "number", step: "any", placeholder: "10" }
+  ],
+  expression: "area / people",
+  examples: [
+    { description: "200 m² for 10 people ⇒ 20 m²/person" },
+    { description: "90 m² for 15 people ⇒ 6 m²/person" }
+  ],
+  faqs: [
+    { question: "Is there a recommended area?", answer: "Many offices aim for 10–15 m² per person." },
+    { question: "Does this include common areas?", answer: "Include any space employees can use." }
+  ],
+  disclaimer: "For informational purposes only.",
+};
+
+<Calculator schema={schema} />

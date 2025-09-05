@@ -1,0 +1,37 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Weighted Average Calculator"
+description: "Compute weighted average for up to three values."
+updated: "2025-10-24"
+cluster: "Math"
+---
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "weighted-average-calculator",
+  title: "Weighted Average Calculator",
+  locale: "en",
+  intro: "Find the weighted average of up to three data points.",
+  unit: "value",
+  cluster: "Math",
+  inputs: [
+    { name: "v1", label: "Value 1", type: "number", step: "any", placeholder: "80" },
+    { name: "w1", label: "Weight 1", type: "number", step: "any", placeholder: "1" },
+    { name: "v2", label: "Value 2", type: "number", step: "any", placeholder: "90" },
+    { name: "w2", label: "Weight 2", type: "number", step: "any", placeholder: "2" },
+    { name: "v3", label: "Value 3", type: "number", step: "any", placeholder: "75" },
+    { name: "w3", label: "Weight 3", type: "number", step: "any", placeholder: "1" }
+  ],
+  expression: "(v1*w1 + v2*w2 + v3*w3) / (w1 + w2 + w3)",
+  examples: [
+    { description: "Scores 80,90,75 with weights 1,2,1 ⇒ 83.75" },
+    { description: "Values 10,20,30 with weights 1,1,1 ⇒ 20" }
+  ],
+  faqs: [
+    { question: "Can I leave some values blank?", answer: "Enter zero for unused values and weights." },
+    { question: "Are weights required?", answer: "Yes, use 1 for equal weighting." }
+  ],
+  disclaimer: "For informational purposes only.",
+};
+
+<Calculator schema={schema} />

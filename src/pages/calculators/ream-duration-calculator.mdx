@@ -1,0 +1,32 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Ream Duration Calculator"
+description: "Estimate how long a 500-sheet ream will last."
+updated: "2025-10-24"
+cluster: "Other"
+---
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "ream-duration-calculator",
+  title: "Ream Duration Calculator",
+  locale: "en",
+  intro: "See how many days a paper ream covers based on daily printing.",
+  unit: "days",
+  cluster: "Other",
+  inputs: [
+    { name: "pages", label: "Pages printed per day", type: "number", step: "any", placeholder: "100" }
+  ],
+  expression: "500 / pages",
+  examples: [
+    { description: "100 pages/day ⇒ 5 days" },
+    { description: "25 pages/day ⇒ 20 days" }
+  ],
+  faqs: [
+    { question: "What if I use half a ream?", answer: "Adjust the 500 figure accordingly." },
+    { question: "Does it account for double-sided printing?", answer: "No, count each printed side as a page." }
+  ],
+  disclaimer: "For informational purposes only.",
+};
+
+<Calculator schema={schema} />
