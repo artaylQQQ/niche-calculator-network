@@ -1,0 +1,44 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="AI Calculator" description="Friendly AI-powered calculator for any question.">
+  <div class="max-w-xl mx-auto mt-8 text-center">
+    <p class="mb-4 text-lg text-slate-900">
+      Hi there! If you couldn't find the right calculator on Calcsimpler.com, our friendly AI calculator is here to help.
+      Ask anything below and I'll do my best to give you a clear answer.
+    </p>
+    <textarea
+      id="question"
+      class="w-full p-3 border rounded mb-4 text-slate-900"
+      rows="4"
+      placeholder="e.g., What's 15% of 80?"
+    ></textarea>
+    <button
+      id="ask"
+      class="px-4 py-2 rounded bg-blue-600 text-white hover:bg-blue-700 active:bg-blue-800 transition-colors"
+    >Ask the AI Calculator</button>
+    <div id="answer" class="mt-4 p-3 border rounded text-left text-slate-900"></div>
+  </div>
+
+  <script>
+    const questionEl = document.getElementById('question');
+    const answerEl = document.getElementById('answer');
+    document.getElementById('ask').addEventListener('click', async () => {
+      const question = questionEl.value.trim();
+      if (!question) return;
+      answerEl.textContent = 'Thinking...';
+      try {
+        const res = await fetch('/api/ai-calculator', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ question })
+        });
+        const data = await res.json();
+        answerEl.textContent = data.answer || 'Sorry, I could not compute that.';
+      } catch (err) {
+        answerEl.textContent = 'Sorry, something went wrong.';
+      }
+    });
+  </script>
+</BaseLayout>
