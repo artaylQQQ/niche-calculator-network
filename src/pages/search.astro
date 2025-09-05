@@ -1,0 +1,54 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+const modules = import.meta.glob("./calculators/*.mdx", { eager: true });
+const items = Object.values(modules).map((m) => ({
+  url: m.url,
+  title: m.frontmatter?.title || "",
+  description: m.frontmatter?.description || m.frontmatter?.intro || "",
+}));
+---
+<BaseLayout title="Search" description="Search calculators by title or description.">
+  <section class="hero container mx-auto max-w-5xl px-4">
+    <h1 style="color: var(--ink)">Search</h1>
+    <input
+      id="search-input"
+      type="text"
+      placeholder="Search calculators..."
+      class="w-full border border-[var(--border)] rounded-md p-2 mt-4"
+    />
+  </section>
+  <section class="section container mx-auto max-w-5xl px-4" aria-labelledby="search-results">
+    <h2 id="search-results" class="sr-only">Search results</h2>
+    <div id="results" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-4"></div>
+  </section>
+  <script is:inline>
+    const calculators = {JSON.stringify(items)};
+    const input = document.getElementById('search-input');
+    const results = document.getElementById('results');
+    function render(list) {
+      results.innerHTML = '';
+      if (list.length === 0) {
+        results.innerHTML = '<p>No calculators found.</p>';
+        return;
+      }
+      results.innerHTML = list.map(it => `
+        <div>
+          <a class="card" href="${it.url}">
+            <h3>${it.title}</h3>
+            <p>${it.description}</p>
+          </a>
+        </div>
+      `).join('');
+    }
+    function filter() {
+      const q = input.value.trim().toLowerCase();
+      const filtered = calculators.filter(it =>
+        it.title.toLowerCase().includes(q) ||
+        it.description.toLowerCase().includes(q)
+      );
+      render(filtered);
+    }
+    input.addEventListener('input', filter);
+    render(calculators);
+  </script>
+</BaseLayout>
