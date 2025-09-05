@@ -1,0 +1,44 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Triangular Number Calculator"
+description: "Compute the nth triangular number."
+updated: "2025-09-30"
+cluster: "Math"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "triangular-number",
+  title: "Triangular Number Calculator",
+  locale: "en",
+  intro: "Enter a positive integer n to find the nth triangular number.",
+  unit: "count",
+  cluster: "Math",
+  inputs: [
+    { name: "n", label: "n", type: "number", step: "1", placeholder: "10" },
+  ],
+  expression: "n * (n + 1) / 2",
+  examples: [
+    { description: "n = 1 ⇒ 1" },
+    { description: "n = 5 ⇒ 15" },
+    { description: "n = 10 ⇒ 55" },
+  ],
+  faqs: [
+    {
+      question: "What is a triangular number?",
+      answer: "It's the sum of the first n natural numbers.",
+    },
+    {
+      question: "Can n be negative?",
+      answer: "No, n should be a positive integer.",
+    },
+    {
+      question: "Where are triangular numbers used?",
+      answer: "They appear in combinatorics and triangular arrangements.",
+    },
+  ],
+  disclaimer: "For educational purposes only.",
+};
+
+<Calculator schema={schema} />

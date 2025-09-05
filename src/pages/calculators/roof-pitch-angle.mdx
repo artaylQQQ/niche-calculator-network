@@ -1,0 +1,58 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Roof Pitch Angle Calculator"
+description: "Convert roof rise and run to pitch angle in degrees."
+updated: "2025-09-30"
+cluster: "Home & DIY"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "roof-pitch-angle",
+  title: "Roof Pitch Angle Calculator",
+  locale: "en",
+  intro: "Enter rise and run of the roof to calculate pitch angle.",
+  unit: "°",
+  cluster: "Home & DIY",
+  inputs: [
+    {
+      name: "rise",
+      label: "Rise (in)",
+      type: "number",
+      step: "any",
+      placeholder: "6",
+    },
+    {
+      name: "run",
+      label: "Run (in)",
+      type: "number",
+      step: "any",
+      placeholder: "12",
+    },
+  ],
+  expression: "Math.atan(rise / run) * (180 / 3.141592653589793)",
+  examples: [
+    { description: "Rise 6 in & run 12 in ⇒ 26.57 °" },
+    { description: "Rise 8 in & run 12 in ⇒ 33.69 °" },
+    { description: "Rise 4 in & run 12 in ⇒ 18.43 °" },
+  ],
+  faqs: [
+    {
+      question: "What is roof pitch?",
+      answer:
+        "Roof pitch describes the steepness of a roof using rise over run.",
+    },
+    {
+      question: "Can I use centimeters?",
+      answer: "Yes, as long as both rise and run use the same unit.",
+    },
+    {
+      question: "What if run is zero?",
+      answer: "Run must be greater than zero for a valid angle.",
+    },
+  ],
+  disclaimer: "For planning purposes only; verify with a professional roofer.",
+};
+
+<Calculator schema={schema} />

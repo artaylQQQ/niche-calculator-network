@@ -1,0 +1,60 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Payback Period Calculator"
+description: "Find how many years until an investment recovers its cost."
+updated: "2025-09-30"
+cluster: "Finance"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "payback-period",
+  title: "Payback Period Calculator",
+  locale: "en",
+  intro:
+    "Enter initial cost and annual cash inflow to compute payback period in years.",
+  unit: "years",
+  cluster: "Finance",
+  inputs: [
+    {
+      name: "cost",
+      label: "Investment Cost (USD)",
+      type: "number",
+      step: "any",
+      placeholder: "10000",
+    },
+    {
+      name: "inflow",
+      label: "Annual Cash Inflow (USD)",
+      type: "number",
+      step: "any",
+      placeholder: "2000",
+    },
+  ],
+  expression: "cost / inflow",
+  examples: [
+    { description: "$10,000 cost and $2,000 inflow ⇒ 5 years" },
+    { description: "$15,000 cost and $3,000 inflow ⇒ 5 years" },
+    { description: "$5,000 cost and $2,500 inflow ⇒ 2 years" },
+  ],
+  faqs: [
+    {
+      question: "What is payback period?",
+      answer:
+        "The time required for an investment to recover its initial cost.",
+    },
+    {
+      question: "Does this include interest?",
+      answer: "No, it assumes constant annual inflows without discounting.",
+    },
+    {
+      question: "What if inflow is zero?",
+      answer: "Payback period is undefined when cash inflow is zero.",
+    },
+  ],
+  disclaimer:
+    "Simplified calculation; real projects may require discounted cash flow analysis.",
+};
+
+<Calculator schema={schema} />

@@ -1,0 +1,58 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "At Least One Success Probability Calculator"
+description: "Find the chance of at least one success over multiple independent trials."
+updated: "2025-09-30"
+cluster: "Other"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "at-least-one-success",
+  title: "At Least One Success Probability Calculator",
+  locale: "en",
+  intro:
+    "Enter single-trial success probability and number of trials to compute overall chance.",
+  unit: "%",
+  cluster: "Other",
+  inputs: [
+    {
+      name: "p",
+      label: "Success Probability (0-1)",
+      type: "number",
+      step: "any",
+      placeholder: "0.1",
+    },
+    {
+      name: "n",
+      label: "Number of Trials",
+      type: "number",
+      step: "1",
+      placeholder: "5",
+    },
+  ],
+  expression: "(1 - (1 - p) ^ n) * 100",
+  examples: [
+    { description: "p = 0.1, n = 5 ⇒ 40.95 %" },
+    { description: "p = 0.25, n = 3 ⇒ 57.81 %" },
+    { description: "p = 0.05, n = 10 ⇒ 40.13 %" },
+  ],
+  faqs: [
+    {
+      question: "What does p represent?",
+      answer: "p is the probability of success on a single trial.",
+    },
+    {
+      question: "Are trials assumed independent?",
+      answer: "Yes, the calculation assumes each trial is independent.",
+    },
+    {
+      question: "Why is the result multiplied by 100?",
+      answer: "To express the probability as a percentage.",
+    },
+  ],
+  disclaimer: "Probabilities are theoretical; real outcomes may vary.",
+};
+
+<Calculator schema={schema} />

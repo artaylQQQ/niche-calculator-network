@@ -1,0 +1,57 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Modulo Calculator"
+description: "Find the remainder of a division operation."
+updated: "2025-09-30"
+cluster: "Math"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "modulo-calculator",
+  title: "Modulo Calculator",
+  locale: "en",
+  intro: "Enter dividend and divisor to compute the remainder.",
+  unit: "remainder",
+  cluster: "Math",
+  inputs: [
+    {
+      name: "dividend",
+      label: "Dividend",
+      type: "number",
+      step: "any",
+      placeholder: "10",
+    },
+    {
+      name: "divisor",
+      label: "Divisor",
+      type: "number",
+      step: "any",
+      placeholder: "3",
+    },
+  ],
+  expression: "dividend % divisor",
+  examples: [
+    { description: "10 mod 3 ⇒ 1" },
+    { description: "25 mod 4 ⇒ 1" },
+    { description: "14 mod 5 ⇒ 4" },
+  ],
+  faqs: [
+    {
+      question: "What does modulo mean?",
+      answer: "It gives the remainder after division.",
+    },
+    {
+      question: "Can divisor be zero?",
+      answer: "No, division by zero is undefined.",
+    },
+    {
+      question: "Are negative numbers allowed?",
+      answer: "Yes, but results follow JavaScript's modulo behavior.",
+    },
+  ],
+  disclaimer: "For arithmetic practice only.",
+};
+
+<Calculator schema={schema} />

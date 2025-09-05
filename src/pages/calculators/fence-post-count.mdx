@@ -1,0 +1,58 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Fence Post Count Calculator"
+description: "Determine how many fence posts are needed for a given length and spacing."
+updated: "2025-09-30"
+cluster: "Home & DIY"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "fence-post-count",
+  title: "Fence Post Count Calculator",
+  locale: "en",
+  intro: "Enter fence length and desired spacing to estimate required posts.",
+  unit: "posts",
+  cluster: "Home & DIY",
+  inputs: [
+    {
+      name: "length",
+      label: "Fence Length (ft)",
+      type: "number",
+      step: "any",
+      placeholder: "100",
+    },
+    {
+      name: "spacing",
+      label: "Post Spacing (ft)",
+      type: "number",
+      step: "any",
+      placeholder: "8",
+    },
+  ],
+  expression: "Math.floor(length / spacing) + 1",
+  examples: [
+    { description: "100 ft length & 8 ft spacing ⇒ 13 posts" },
+    { description: "50 ft length & 6 ft spacing ⇒ 9 posts" },
+    { description: "30 ft length & 10 ft spacing ⇒ 4 posts" },
+  ],
+  faqs: [
+    {
+      question: "Does this include corner posts?",
+      answer: "Yes, the formula counts posts at both ends.",
+    },
+    {
+      question: "What if spacing doesn't divide evenly?",
+      answer: "The last section may be shorter; adjust spacing if needed.",
+    },
+    {
+      question: "Can I use meters?",
+      answer: "Yes, as long as both inputs use the same unit.",
+    },
+  ],
+  disclaimer:
+    "Estimate only; local building codes may require additional posts.",
+};
+
+<Calculator schema={schema} />

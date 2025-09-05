@@ -1,0 +1,53 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Rule of 72 Calculator"
+description: "Estimate years to double an investment using the Rule of 72."
+updated: "2025-09-30"
+cluster: "Finance"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "rule-of-72",
+  title: "Rule of 72 Calculator",
+  locale: "en",
+  intro: "Enter annual interest rate to estimate doubling time in years.",
+  unit: "years",
+  cluster: "Finance",
+  inputs: [
+    {
+      name: "rate",
+      label: "Interest Rate (%)",
+      type: "number",
+      step: "any",
+      placeholder: "6",
+    },
+  ],
+  expression: "72 / rate",
+  examples: [
+    { description: "6% ⇒ 12 years" },
+    { description: "8% ⇒ 9 years" },
+    { description: "3% ⇒ 24 years" },
+  ],
+  faqs: [
+    {
+      question: "What is the Rule of 72?",
+      answer:
+        "It's a shortcut to estimate how long it takes to double money at a given rate.",
+    },
+    {
+      question: "Is it exact?",
+      answer:
+        "No, it's an approximation that works best for typical interest rates.",
+    },
+    {
+      question: "Can it handle high rates?",
+      answer: "Accuracy decreases for very high or very low rates.",
+    },
+  ],
+  disclaimer:
+    "Financial estimates only; consult a financial advisor for decisions.",
+};
+
+<Calculator schema={schema} />
