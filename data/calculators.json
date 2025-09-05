@@ -4264,8 +4264,12 @@
     "expression": "gallons * 3.78541",
     "unit": "L",
     "examples": [
-      { "description": "1 gal ⇒ 3.79 L" },
-      { "description": "5 gal ⇒ 18.93 L" }
+      {
+        "description": "1 gal ⇒ 3.79 L"
+      },
+      {
+        "description": "5 gal ⇒ 18.93 L"
+      }
     ],
     "faqs": [
       {
@@ -4305,8 +4309,12 @@
     "expression": "kwh * 3.6",
     "unit": "MJ",
     "examples": [
-      { "description": "1 kWh ⇒ 3.6 MJ" },
-      { "description": "5 kWh ⇒ 18 MJ" }
+      {
+        "description": "1 kWh ⇒ 3.6 MJ"
+      },
+      {
+        "description": "5 kWh ⇒ 18 MJ"
+      }
     ],
     "faqs": [
       {
@@ -4346,8 +4354,12 @@
     "expression": "seconds / 60",
     "unit": "min",
     "examples": [
-      { "description": "120 s ⇒ 2 min" },
-      { "description": "90 s ⇒ 1.5 min" }
+      {
+        "description": "120 s ⇒ 2 min"
+      },
+      {
+        "description": "90 s ⇒ 1.5 min"
+      }
     ],
     "faqs": [
       {
@@ -4387,8 +4399,12 @@
     "expression": "weeks * 604800",
     "unit": "s",
     "examples": [
-      { "description": "1 week ⇒ 604,800 s" },
-      { "description": "2.5 weeks ⇒ 1,512,000 s" }
+      {
+        "description": "1 week ⇒ 604,800 s"
+      },
+      {
+        "description": "2.5 weeks ⇒ 1,512,000 s"
+      }
     ],
     "faqs": [
       {
@@ -4436,8 +4452,12 @@
     "expression": "(dividend / price) * 100",
     "unit": "%",
     "examples": [
-      { "description": "Dividend 2, Price 40 ⇒ 5%" },
-      { "description": "Dividend 1.5, Price 30 ⇒ 5%" }
+      {
+        "description": "Dividend 2, Price 40 ⇒ 5%"
+      },
+      {
+        "description": "Dividend 1.5, Price 30 ⇒ 5%"
+      }
     ],
     "faqs": [
       {
@@ -4493,8 +4513,12 @@
     "expression": "(cost - salvage) / life",
     "unit": "per year",
     "examples": [
-      { "description": "Cost 10000, Salvage 1000, Life 5 ⇒ 1800 per year" },
-      { "description": "Cost 5000, Salvage 500, Life 10 ⇒ 450 per year" }
+      {
+        "description": "Cost 10000, Salvage 1000, Life 5 ⇒ 1800 per year"
+      },
+      {
+        "description": "Cost 5000, Salvage 500, Life 10 ⇒ 450 per year"
+      }
     ],
     "faqs": [
       {
@@ -4534,8 +4558,12 @@
     "expression": "calories / 1000 * 14",
     "unit": "g",
     "examples": [
-      { "description": "2000 kcal ⇒ 28 g" },
-      { "description": "1500 kcal ⇒ 21 g" }
+      {
+        "description": "2000 kcal ⇒ 28 g"
+      },
+      {
+        "description": "1500 kcal ⇒ 21 g"
+      }
     ],
     "faqs": [
       {
@@ -4583,8 +4611,12 @@
     "expression": "(fat * 9 / calories) * 100",
     "unit": "%",
     "examples": [
-      { "description": "Fat 20 g, Calories 500 ⇒ 36%" },
-      { "description": "Fat 10 g, Calories 300 ⇒ 30%" }
+      {
+        "description": "Fat 20 g, Calories 500 ⇒ 36%"
+      },
+      {
+        "description": "Fat 10 g, Calories 300 ⇒ 30%"
+      }
     ],
     "faqs": [
       {
@@ -4632,8 +4664,12 @@
     "expression": "area * btu",
     "unit": "BTU",
     "examples": [
-      { "description": "Area 250 sq ft, BTU 20 ⇒ 5000 BTU" },
-      { "description": "Area 400 sq ft, BTU 25 ⇒ 10000 BTU" }
+      {
+        "description": "Area 250 sq ft, BTU 20 ⇒ 5000 BTU"
+      },
+      {
+        "description": "Area 400 sq ft, BTU 25 ⇒ 10000 BTU"
+      }
     ],
     "faqs": [
       {
@@ -4681,8 +4717,12 @@
     "expression": "area / coverage",
     "unit": "bundles",
     "examples": [
-      { "description": "Area 1500 sq ft, Coverage 33 ⇒ 45.45 bundles" },
-      { "description": "Area 2000 sq ft, Coverage 25 ⇒ 80 bundles" }
+      {
+        "description": "Area 1500 sq ft, Coverage 33 ⇒ 45.45 bundles"
+      },
+      {
+        "description": "Area 2000 sq ft, Coverage 25 ⇒ 80 bundles"
+      }
     ],
     "faqs": [
       {
@@ -4742,8 +4782,12 @@
     "expression": "(y2 - y1) / (x2 - x1)",
     "unit": "slope",
     "examples": [
-      { "description": "(1,2) to (4,6) ⇒ 4/3" },
-      { "description": "(0,0) to (5,5) ⇒ 1" }
+      {
+        "description": "(1,2) to (4,6) ⇒ 4/3"
+      },
+      {
+        "description": "(0,0) to (5,5) ⇒ 1"
+      }
     ],
     "faqs": [
       {
@@ -4790,8 +4834,12 @@
     "expression": "Math.pow(value, 1/n)",
     "unit": "value",
     "examples": [
-      { "description": "Value 27, n 3 ⇒ 3" },
-      { "description": "Value 16, n 4 ⇒ 2" }
+      {
+        "description": "Value 27, n 3 ⇒ 3"
+      },
+      {
+        "description": "Value 16, n 4 ⇒ 2"
+      }
     ],
     "faqs": [
       {
@@ -4839,8 +4887,12 @@
     "expression": "hashrate / power",
     "unit": "MH/s per W",
     "examples": [
-      { "description": "500 MH/s at 100 W ⇒ 5 MH/s per W" },
-      { "description": "120 MH/s at 60 W ⇒ 2 MH/s per W" }
+      {
+        "description": "500 MH/s at 100 W ⇒ 5 MH/s per W"
+      },
+      {
+        "description": "120 MH/s at 60 W ⇒ 2 MH/s per W"
+      }
     ],
     "faqs": [
       {
@@ -4888,8 +4940,12 @@
     "expression": "(output / input) * 100",
     "unit": "%",
     "examples": [
-      { "description": "Output 400 W, Input 500 W ⇒ 80%" },
-      { "description": "Output 300 W, Input 360 W ⇒ 83.33%" }
+      {
+        "description": "Output 400 W, Input 500 W ⇒ 80%"
+      },
+      {
+        "description": "Output 300 W, Input 360 W ⇒ 83.33%"
+      }
     ],
     "faqs": [
       {
@@ -4945,8 +5001,12 @@
     "expression": "( ( (outer/2)^2 - (core/2)^2 ) * Math.PI * 1000 ) / thickness",
     "unit": "m",
     "examples": [
-      { "description": "Outer 10 cm, Core 4 cm, Thickness 0.1 mm ⇒ 2356 m" },
-      { "description": "Outer 8 cm, Core 3 cm, Thickness 0.12 mm ⇒ 1222 m" }
+      {
+        "description": "Outer 10 cm, Core 4 cm, Thickness 0.1 mm ⇒ 2356 m"
+      },
+      {
+        "description": "Outer 8 cm, Core 3 cm, Thickness 0.12 mm ⇒ 1222 m"
+      }
     ],
     "faqs": [
       {
@@ -4994,8 +5054,12 @@
     "expression": "time * factor",
     "unit": "min",
     "examples": [
-      { "description": "Time 60 min, Factor 0.75 ⇒ 45 min" },
-      { "description": "Time 40 min, Factor 0.7 ⇒ 28 min" }
+      {
+        "description": "Time 60 min, Factor 0.75 ⇒ 45 min"
+      },
+      {
+        "description": "Time 40 min, Factor 0.7 ⇒ 28 min"
+      }
     ],
     "faqs": [
       {
@@ -5016,5 +5080,821 @@
       }
     ],
     "disclaimer": "Check food doneness; times are estimates."
+  },
+  {
+    "slug": "pounds-to-kilograms",
+    "title": "Pounds to Kilograms Converter",
+    "cluster": "Conversions",
+    "description": "Convert pounds (lb) to kilograms (kg).",
+    "inputs": [
+      {
+        "name": "lb",
+        "label": "Weight (lb)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "150"
+      }
+    ],
+    "expression": "lb * 0.45359237",
+    "unit": "kg",
+    "examples": [
+      {
+        "description": "150 lb ⇒ 68.04 kg"
+      },
+      {
+        "description": "10 lb ⇒ 4.54 kg"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What is the conversion factor?",
+        "answer": "One pound equals 0.45359237 kilograms."
+      },
+      {
+        "question": "Can I convert ounces?",
+        "answer": "Convert ounces to pounds first, then use this calculator."
+      },
+      {
+        "question": "Does it handle decimals?",
+        "answer": "Yes, enter any decimal pound value."
+      },
+      {
+        "question": "Is this exact?",
+        "answer": "Yes, it uses the standard pound-to-kilogram conversion."
+      }
+    ],
+    "disclaimer": "Approximate conversions; confirm critical values with calibrated scales."
+  },
+  {
+    "slug": "square-feet-to-square-meters",
+    "title": "Square Feet to Square Meters",
+    "cluster": "Conversions",
+    "description": "Convert area from square feet to square meters.",
+    "inputs": [
+      {
+        "name": "sqft",
+        "label": "Area (ft²)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "100"
+      }
+    ],
+    "expression": "sqft * 0.092903",
+    "unit": "m²",
+    "examples": [
+      {
+        "description": "100 ft² ⇒ 9.29 m²"
+      },
+      {
+        "description": "250 ft² ⇒ 23.23 m²"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Where does 0.092903 come from?",
+        "answer": "It's the exact square-foot to square-meter conversion factor."
+      },
+      {
+        "question": "Can I convert square yards?",
+        "answer": "Convert square yards to square feet first, then use this tool."
+      },
+      {
+        "question": "Does it support decimals?",
+        "answer": "Yes, you can enter fractional areas."
+      },
+      {
+        "question": "Is the result rounded?",
+        "answer": "Results display decimals for accuracy; round as needed."
+      }
+    ],
+    "disclaimer": "For large projects, allow extra material for waste and irregularities."
+  },
+  {
+    "slug": "age-in-days",
+    "title": "Age in Days Calculator",
+    "cluster": "Date & Time",
+    "description": "Convert age in years to days.",
+    "inputs": [
+      {
+        "name": "years",
+        "label": "Age (years)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "30"
+      }
+    ],
+    "expression": "years * 365.25",
+    "unit": "days",
+    "examples": [
+      {
+        "description": "1 year ⇒ 365.25 days"
+      },
+      {
+        "description": "30 years ⇒ 10,957.5 days"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Why use 365.25 days per year?",
+        "answer": "It averages leap years into the calculation."
+      },
+      {
+        "question": "Can I enter months?",
+        "answer": "Convert months to years before using the calculator."
+      },
+      {
+        "question": "Does it account for leap seconds?",
+        "answer": "No, leap seconds are negligible for this estimate."
+      },
+      {
+        "question": "Is this exact?",
+        "answer": "It's an approximation; actual day counts depend on calendar dates."
+      }
+    ],
+    "disclaimer": "Approximate calculation; for exact days use actual birth and current dates."
+  },
+  {
+    "slug": "seconds-to-days",
+    "title": "Seconds to Days Converter",
+    "cluster": "Date & Time",
+    "description": "Convert seconds into days.",
+    "inputs": [
+      {
+        "name": "sec",
+        "label": "Seconds",
+        "type": "number",
+        "step": "any",
+        "placeholder": "86400"
+      }
+    ],
+    "expression": "sec / 86400",
+    "unit": "days",
+    "examples": [
+      {
+        "description": "86,400 s ⇒ 1 day"
+      },
+      {
+        "description": "172,800 s ⇒ 2 days"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Why divide by 86,400?",
+        "answer": "There are 86,400 seconds in one day."
+      },
+      {
+        "question": "Can I convert minutes instead?",
+        "answer": "Multiply minutes by 60 first to get seconds."
+      },
+      {
+        "question": "Does it handle large numbers?",
+        "answer": "Yes, any positive number of seconds is supported."
+      },
+      {
+        "question": "Are leap seconds included?",
+        "answer": "No, leap seconds are rare and not considered here."
+      }
+    ],
+    "disclaimer": "For precise timekeeping, consider leap seconds and calendar adjustments."
+  },
+  {
+    "slug": "credit-card-monthly-interest",
+    "title": "Credit Card Monthly Interest",
+    "cluster": "Finance",
+    "description": "Estimate monthly interest charges on a credit card balance.",
+    "inputs": [
+      {
+        "name": "balance",
+        "label": "Balance (USD)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "1000"
+      },
+      {
+        "name": "apr",
+        "label": "APR (%)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "18"
+      }
+    ],
+    "expression": "(balance * (apr/100)) / 12",
+    "unit": "USD",
+    "examples": [
+      {
+        "description": "$1,000 balance at 18% APR ⇒ $15.00"
+      },
+      {
+        "description": "$5,000 balance at 22% APR ⇒ $91.67"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What is APR?",
+        "answer": "APR stands for Annual Percentage Rate, the yearly interest rate on your card."
+      },
+      {
+        "question": "Does this include fees?",
+        "answer": "No, it only calculates interest on the balance."
+      },
+      {
+        "question": "Is interest compounded daily?",
+        "answer": "This calculator assumes a simple monthly estimate."
+      },
+      {
+        "question": "How can I reduce interest?",
+        "answer": "Pay down your balance or seek a lower APR."
+      }
+    ],
+    "disclaimer": "Estimates only; actual statements may vary with compounding and fees."
+  },
+  {
+    "slug": "credit-utilization-ratio",
+    "title": "Credit Utilization Ratio",
+    "cluster": "Finance",
+    "description": "Find your credit card utilization percentage.",
+    "inputs": [
+      {
+        "name": "balance",
+        "label": "Balance (USD)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "500"
+      },
+      {
+        "name": "limit",
+        "label": "Credit Limit (USD)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "2000"
+      }
+    ],
+    "expression": "(balance / limit) * 100",
+    "unit": "%",
+    "examples": [
+      {
+        "description": "$500 balance on $2,000 limit ⇒ 25%"
+      },
+      {
+        "description": "$1,200 balance on $1,500 limit ⇒ 80%"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What is credit utilization?",
+        "answer": "It's the percentage of your credit limit you're currently using."
+      },
+      {
+        "question": "Why does it matter?",
+        "answer": "High utilization can lower your credit score."
+      },
+      {
+        "question": "Is lower better?",
+        "answer": "Yes, keeping utilization below 30% is often recommended."
+      },
+      {
+        "question": "Does this include multiple cards?",
+        "answer": "This calculator is for a single card; add balances and limits to compute overall utilization."
+      }
+    ],
+    "disclaimer": "For guidance only; consult financial advisors for credit advice."
+  },
+  {
+    "slug": "body-fat-percentage",
+    "title": "Body Fat Percentage",
+    "cluster": "Health",
+    "description": "Estimate body fat percentage from weight, height, age, and gender.",
+    "inputs": [
+      {
+        "name": "weight",
+        "label": "Weight (kg)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "70"
+      },
+      {
+        "name": "height",
+        "label": "Height (cm)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "175"
+      },
+      {
+        "name": "age",
+        "label": "Age (years)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "30"
+      },
+      {
+        "name": "gender",
+        "label": "Gender (1=male,0=female)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "1"
+      }
+    ],
+    "expression": "1.20 * (weight / ((height/100)**2)) + 0.23 * age - 5.4 - 10.8 * gender",
+    "unit": "%",
+    "examples": [
+      {
+        "description": "70 kg, 175 cm, age 30, male ⇒ 18.22%"
+      },
+      {
+        "description": "60 kg, 165 cm, age 25, female ⇒ 24.22%"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What does gender input mean?",
+        "answer": "Use 1 for male and 0 for female."
+      },
+      {
+        "question": "Is this accurate?",
+        "answer": "It's an estimate; actual body fat may vary."
+      },
+      {
+        "question": "Do I need BMI first?",
+        "answer": "No, the formula calculates BMI internally from weight and height."
+      },
+      {
+        "question": "Can I use pounds and inches?",
+        "answer": "Convert to kilograms and centimeters before using."
+      }
+    ],
+    "disclaimer": "Not a medical diagnosis; consult professionals for health advice."
+  },
+  {
+    "slug": "one-rep-max",
+    "title": "One-Rep Max Calculator",
+    "cluster": "Health",
+    "description": "Estimate your one-repetition maximum using the Epley formula.",
+    "inputs": [
+      {
+        "name": "weight",
+        "label": "Lifted Weight (kg)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "100"
+      },
+      {
+        "name": "reps",
+        "label": "Repetitions",
+        "type": "number",
+        "step": "any",
+        "placeholder": "5"
+      }
+    ],
+    "expression": "weight * (1 + reps/30)",
+    "unit": "kg",
+    "examples": [
+      {
+        "description": "100 kg for 5 reps ⇒ 116.67 kg"
+      },
+      {
+        "description": "50 kg for 10 reps ⇒ 66.67 kg"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What is a one-rep max?",
+        "answer": "It's the heaviest weight you can lift once with proper form."
+      },
+      {
+        "question": "Why use the Epley formula?",
+        "answer": "It's a widely used estimation method for strength training."
+      },
+      {
+        "question": "Does it work for low reps?",
+        "answer": "It's most accurate between 1 and 10 reps."
+      },
+      {
+        "question": "Can I use pounds?",
+        "answer": "Yes, input weight in pounds if you interpret the result in pounds."
+      }
+    ],
+    "disclaimer": "Use proper form and safety measures; consult a trainer for heavy lifts."
+  },
+  {
+    "slug": "roof-pitch-angle",
+    "title": "Roof Pitch Angle",
+    "cluster": "Home & DIY",
+    "description": "Convert roof rise and run into pitch angle in degrees.",
+    "inputs": [
+      {
+        "name": "rise",
+        "label": "Rise",
+        "type": "number",
+        "step": "any",
+        "placeholder": "4"
+      },
+      {
+        "name": "run",
+        "label": "Run",
+        "type": "number",
+        "step": "any",
+        "placeholder": "12"
+      }
+    ],
+    "expression": "Math.atan(rise / run) * (180/Math.PI)",
+    "unit": "°",
+    "examples": [
+      {
+        "description": "Rise 4, Run 12 ⇒ 18.43°"
+      },
+      {
+        "description": "Rise 6, Run 12 ⇒ 26.57°"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What units should I use?",
+        "answer": "Use consistent units for rise and run, such as inches."
+      },
+      {
+        "question": "Does it output slope?",
+        "answer": "No, it provides the angle in degrees."
+      },
+      {
+        "question": "Why use arctangent?",
+        "answer": "Because pitch angle is the arctangent of rise divided by run."
+      },
+      {
+        "question": "Is 4/12 a common pitch?",
+        "answer": "Yes, it's a typical residential roof slope."
+      }
+    ],
+    "disclaimer": "For structural design consult building codes and professionals."
+  },
+  {
+    "slug": "water-heater-recovery-time",
+    "title": "Water Heater Recovery Time",
+    "cluster": "Home & DIY",
+    "description": "Estimate how long a water heater takes to reheat a full tank.",
+    "inputs": [
+      {
+        "name": "volume",
+        "label": "Tank Volume (gal)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "40"
+      },
+      {
+        "name": "rise",
+        "label": "Temperature Rise (°F)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "70"
+      },
+      {
+        "name": "btu",
+        "label": "Heater Output (BTU/hr)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "40000"
+      }
+    ],
+    "expression": "(volume * 8.33 * rise) / btu",
+    "unit": "h",
+    "examples": [
+      {
+        "description": "40 gal, 70°F rise, 40,000 BTU ⇒ 0.58 h"
+      },
+      {
+        "description": "50 gal, 60°F rise, 30,000 BTU ⇒ 0.83 h"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What does 8.33 represent?",
+        "answer": "It converts gallons of water to pounds."
+      },
+      {
+        "question": "Does this assume 100% efficiency?",
+        "answer": "Yes, real heaters may take longer."
+      },
+      {
+        "question": "Can I use liters and watts?",
+        "answer": "Convert units to gallons and BTU/hr before using."
+      },
+      {
+        "question": "Is the result in hours?",
+        "answer": "Yes, multiply by 60 for minutes."
+      }
+    ],
+    "disclaimer": "Approximate; actual recovery varies with heater efficiency and heat losses."
+  },
+  {
+    "slug": "median-of-three",
+    "title": "Median of Three Numbers",
+    "cluster": "Math",
+    "description": "Find the median value among three numbers.",
+    "inputs": [
+      {
+        "name": "a",
+        "label": "First Number",
+        "type": "number",
+        "step": "any",
+        "placeholder": "1"
+      },
+      {
+        "name": "b",
+        "label": "Second Number",
+        "type": "number",
+        "step": "any",
+        "placeholder": "5"
+      },
+      {
+        "name": "c",
+        "label": "Third Number",
+        "type": "number",
+        "step": "any",
+        "placeholder": "3"
+      }
+    ],
+    "expression": "a + b + c - Math.max(a,b,c) - Math.min(a,b,c)",
+    "unit": "",
+    "examples": [
+      {
+        "description": "1, 5, 3 ⇒ 3"
+      },
+      {
+        "description": "10, 20, 15 ⇒ 15"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What is a median?",
+        "answer": "It's the middle value when numbers are ordered."
+      },
+      {
+        "question": "Does order matter?",
+        "answer": "No, the formula works regardless of input order."
+      },
+      {
+        "question": "Can numbers repeat?",
+        "answer": "Yes, duplicates are allowed and may be the median."
+      },
+      {
+        "question": "Why not sort?",
+        "answer": "This formula avoids sorting by using sums and extremes."
+      }
+    ],
+    "disclaimer": "Ensure numeric inputs for accurate results."
+  },
+  {
+    "slug": "quadratic-vertex-x",
+    "title": "Quadratic Vertex X",
+    "cluster": "Math",
+    "description": "Find the x-coordinate of a parabola's vertex.",
+    "inputs": [
+      {
+        "name": "a",
+        "label": "a",
+        "type": "number",
+        "step": "any",
+        "placeholder": "1"
+      },
+      {
+        "name": "b",
+        "label": "b",
+        "type": "number",
+        "step": "any",
+        "placeholder": "4"
+      }
+    ],
+    "expression": "-b / (2 * a)",
+    "unit": "",
+    "examples": [
+      {
+        "description": "a=1, b=4 ⇒ -2"
+      },
+      {
+        "description": "a=2, b=-8 ⇒ 2"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What is a vertex?",
+        "answer": "It's the highest or lowest point of a parabola."
+      },
+      {
+        "question": "Do I need c?",
+        "answer": "No, the x-coordinate depends only on a and b."
+      },
+      {
+        "question": "What if a is zero?",
+        "answer": "a must be non-zero for a valid quadratic."
+      },
+      {
+        "question": "Can I find y too?",
+        "answer": "Use y = c - b²/(4a) once you know a, b, and c."
+      }
+    ],
+    "disclaimer": "Provides only the x-coordinate; verify calculations in complex cases."
+  },
+  {
+    "slug": "battery-charge-time",
+    "title": "Battery Charge Time",
+    "cluster": "Technology",
+    "description": "Estimate how long a battery takes to charge.",
+    "inputs": [
+      {
+        "name": "capacity",
+        "label": "Capacity (mAh)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "3000"
+      },
+      {
+        "name": "current",
+        "label": "Charger Current (mA)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "1000"
+      },
+      {
+        "name": "eff",
+        "label": "Efficiency (%)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "90"
+      }
+    ],
+    "expression": "capacity / (current * (eff/100))",
+    "unit": "h",
+    "examples": [
+      {
+        "description": "3000 mAh with 1000 mA at 90% ⇒ 3.33 h"
+      },
+      {
+        "description": "2000 mAh with 500 mA at 85% ⇒ 4.71 h"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Why include efficiency?",
+        "answer": "Charging isn't perfectly efficient; some energy is lost."
+      },
+      {
+        "question": "Can I use different units?",
+        "answer": "Ensure capacity and current use the same base units."
+      },
+      {
+        "question": "What if efficiency is unknown?",
+        "answer": "Use 90% as a typical estimate."
+      },
+      {
+        "question": "Does this handle fast charging?",
+        "answer": "It provides a basic estimate and doesn't account for tapering."
+      }
+    ],
+    "disclaimer": "Actual charge times vary with battery condition and charger design."
+  },
+  {
+    "slug": "ohms-law-current",
+    "title": "Ohm's Law Current",
+    "cluster": "Technology",
+    "description": "Compute current from voltage and resistance.",
+    "inputs": [
+      {
+        "name": "voltage",
+        "label": "Voltage (V)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "12"
+      },
+      {
+        "name": "resistance",
+        "label": "Resistance (Ω)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "6"
+      }
+    ],
+    "expression": "voltage / resistance",
+    "unit": "A",
+    "examples": [
+      {
+        "description": "12 V and 6 Ω ⇒ 2 A"
+      },
+      {
+        "description": "5 V and 10 Ω ⇒ 0.5 A"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What is Ohm's Law?",
+        "answer": "It states that voltage = current × resistance."
+      },
+      {
+        "question": "Can resistance be zero?",
+        "answer": "No, dividing by zero is undefined and not physical."
+      },
+      {
+        "question": "Does it work for AC?",
+        "answer": "For simple resistive circuits, yes."
+      },
+      {
+        "question": "Which unit is current?",
+        "answer": "The result is in amperes (A)."
+      }
+    ],
+    "disclaimer": "Ideal calculation; real circuits may have additional factors."
+  },
+  {
+    "slug": "cat-age-human-years",
+    "title": "Cat Age in Human Years",
+    "cluster": "Other",
+    "description": "Estimate a cat's age in human years.",
+    "inputs": [
+      {
+        "name": "years",
+        "label": "Cat Age (years)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "3"
+      }
+    ],
+    "expression": "Math.min(years,2)*12 + Math.max(years-2,0)*4",
+    "unit": "years",
+    "examples": [
+      {
+        "description": "1 year ⇒ 12 human years"
+      },
+      {
+        "description": "5 years ⇒ 36 human years"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Why 12 years for the first year?",
+        "answer": "Cats mature quickly, equating to about 12 human years."
+      },
+      {
+        "question": "What about the second year?",
+        "answer": "The first two years equal roughly 24 human years."
+      },
+      {
+        "question": "Do all cats age the same?",
+        "answer": "No, health and breed can affect aging."
+      },
+      {
+        "question": "Is this scientifically exact?",
+        "answer": "It's a widely used estimate but not an exact science."
+      }
+    ],
+    "disclaimer": "For general comparison only; consult veterinarians for precise health assessments."
+  },
+  {
+    "slug": "book-page-count",
+    "title": "Book Page Count Estimator",
+    "cluster": "Other",
+    "description": "Estimate book pages from total word count.",
+    "inputs": [
+      {
+        "name": "words",
+        "label": "Total Words",
+        "type": "number",
+        "step": "any",
+        "placeholder": "50000"
+      },
+      {
+        "name": "wpp",
+        "label": "Words per Page",
+        "type": "number",
+        "step": "any",
+        "placeholder": "300"
+      }
+    ],
+    "expression": "words / wpp",
+    "unit": "pages",
+    "examples": [
+      {
+        "description": "50,000 words at 300 wpp ⇒ 167 pages"
+      },
+      {
+        "description": "8,000 words at 250 wpp ⇒ 32 pages"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What is words per page?",
+        "answer": "It's an average number of words that fit on one page."
+      },
+      {
+        "question": "Does font size matter?",
+        "answer": "Yes, adjust the words-per-page value for different layouts."
+      },
+      {
+        "question": "Can I estimate for ebooks?",
+        "answer": "Yes, but ebook pagination varies by device."
+      },
+      {
+        "question": "Is the result exact?",
+        "answer": "No, it's an estimate for planning purposes."
+      }
+    ],
+    "disclaimer": "Actual page counts vary with formatting and design choices."
   }
 ]

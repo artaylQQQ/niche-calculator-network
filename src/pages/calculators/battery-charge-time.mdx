@@ -1,0 +1,37 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Battery Charge Time"
+description: "Estimate how long a battery takes to charge."
+updated: "2025-10-19"
+cluster: "Technology"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  inputs: [
+    { name: "capacity", label: "Capacity (mAh)", type: "number", step: "any", placeholder: "3000" },
+    { name: "current", label: "Charger Current (mA)", type: "number", step: "any", placeholder: "1000" },
+    { name: "eff", label: "Efficiency (%)", type: "number", step: "any", placeholder: "90" }
+  ],
+  slug: "battery-charge-time",
+  title: "Battery Charge Time",
+  locale: "en",
+  unit: "h",
+  expression: "capacity / (current * (eff/100))",
+  intro: "Estimate the hours needed to charge a battery based on capacity, charger current, and efficiency.",
+  examples: [
+    { description: "3000 mAh with 1000 mA at 90% ⇒ 3.33 h" },
+    { description: "2000 mAh with 500 mA at 85% ⇒ 4.71 h" }
+  ],
+  faqs: [
+    { question: "Why include efficiency?", answer: "Charging isn't perfectly efficient; some energy is lost." },
+    { question: "Can I use different units?", answer: "Ensure capacity and current use the same base units." },
+    { question: "What if efficiency is unknown?", answer: "Use 90% as a typical estimate." },
+    { question: "Does this handle fast charging?", answer: "It provides a basic estimate and doesn't account for tapering." }
+  ],
+  disclaimer: "Actual charge times vary with battery condition and charger design.",
+  cluster: "Technology"
+};
+
+<Calculator schema={schema} />

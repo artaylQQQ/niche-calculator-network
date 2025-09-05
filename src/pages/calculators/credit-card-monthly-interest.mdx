@@ -1,0 +1,36 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Credit Card Monthly Interest"
+description: "Estimate monthly interest charges on a credit card balance."
+updated: "2025-10-19"
+cluster: "Finance"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  inputs: [
+    { name: "balance", label: "Balance (USD)", type: "number", step: "any", placeholder: "1000" },
+    { name: "apr", label: "APR (%)", type: "number", step: "any", placeholder: "18" }
+  ],
+  slug: "credit-card-monthly-interest",
+  title: "Credit Card Monthly Interest",
+  locale: "en",
+  unit: "USD",
+  expression: "(balance * (apr/100)) / 12",
+  intro: "Calculate the interest portion of your credit card bill for one month based on the annual percentage rate (APR).",
+  examples: [
+    { description: "$1,000 balance at 18% APR ⇒ $15.00" },
+    { description: "$5,000 balance at 22% APR ⇒ $91.67" }
+  ],
+  faqs: [
+    { question: "What is APR?", answer: "APR stands for Annual Percentage Rate, the yearly interest rate on your card." },
+    { question: "Does this include fees?", answer: "No, it only calculates interest on the balance." },
+    { question: "Is interest compounded daily?", answer: "This calculator assumes a simple monthly estimate." },
+    { question: "How can I reduce interest?", answer: "Pay down your balance or seek a lower APR." }
+  ],
+  disclaimer: "Estimates only; actual statements may vary with compounding and fees.",
+  cluster: "Finance"
+};
+
+<Calculator schema={schema} />

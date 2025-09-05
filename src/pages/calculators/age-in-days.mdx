@@ -1,0 +1,35 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Age in Days Calculator"
+description: "Convert age in years to days."
+updated: "2025-10-19"
+cluster: "Date & Time"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  inputs: [
+    { name: "years", label: "Age (years)", type: "number", step: "any", placeholder: "30" }
+  ],
+  slug: "age-in-days",
+  title: "Age in Days Calculator",
+  locale: "en",
+  unit: "days",
+  expression: "years * 365.25",
+  intro: "Estimate how many days old you are using the average of 365.25 days per year.",
+  examples: [
+    { description: "1 year ⇒ 365.25 days" },
+    { description: "30 years ⇒ 10,957.5 days" }
+  ],
+  faqs: [
+    { question: "Why use 365.25 days per year?", answer: "It averages leap years into the calculation." },
+    { question: "Can I enter months?", answer: "Convert months to years before using the calculator." },
+    { question: "Does it account for leap seconds?", answer: "No, leap seconds are negligible for this estimate." },
+    { question: "Is this exact?", answer: "It's an approximation; actual day counts depend on calendar dates." }
+  ],
+  disclaimer: "Approximate calculation; for exact days use actual birth and current dates.",
+  cluster: "Date & Time"
+};
+
+<Calculator schema={schema} />

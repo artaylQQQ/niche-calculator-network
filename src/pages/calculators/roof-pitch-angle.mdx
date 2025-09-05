@@ -1,0 +1,36 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Roof Pitch Angle"
+description: "Convert roof rise and run into pitch angle in degrees."
+updated: "2025-10-19"
+cluster: "Home & DIY"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  inputs: [
+    { name: "rise", label: "Rise", type: "number", step: "any", placeholder: "4" },
+    { name: "run", label: "Run", type: "number", step: "any", placeholder: "12" }
+  ],
+  slug: "roof-pitch-angle",
+  title: "Roof Pitch Angle",
+  locale: "en",
+  unit: "°",
+  expression: "Math.atan(rise / run) * (180/Math.PI)",
+  intro: "Determine the roof pitch angle from the rise over run using basic trigonometry.",
+  examples: [
+    { description: "Rise 4, Run 12 ⇒ 18.43°" },
+    { description: "Rise 6, Run 12 ⇒ 26.57°" }
+  ],
+  faqs: [
+    { question: "What units should I use?", answer: "Use consistent units for rise and run, such as inches." },
+    { question: "Does it output slope?", answer: "No, it provides the angle in degrees." },
+    { question: "Why use arctangent?", answer: "Because pitch angle is the arctangent of rise divided by run." },
+    { question: "Is 4/12 a common pitch?", answer: "Yes, it's a typical residential roof slope." }
+  ],
+  disclaimer: "For structural design consult building codes and professionals.",
+  cluster: "Home & DIY"
+};
+
+<Calculator schema={schema} />

@@ -1,0 +1,35 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Pounds to Kilograms Converter"
+description: "Convert pounds (lb) to kilograms (kg)."
+updated: "2025-10-19"
+cluster: "Conversions"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  inputs: [
+    { name: "lb", label: "Weight (lb)", type: "number", step: "any", placeholder: "150" }
+  ],
+  slug: "pounds-to-kilograms",
+  title: "Pounds to Kilograms Converter",
+  locale: "en",
+  unit: "kg",
+  expression: "lb * 0.45359237",
+  intro: "Quickly convert pounds to kilograms using the exact conversion factor of 0.45359237.",
+  examples: [
+    { description: "150 lb ⇒ 68.04 kg" },
+    { description: "10 lb ⇒ 4.54 kg" }
+  ],
+  faqs: [
+    { question: "What is the conversion factor?", answer: "One pound equals 0.45359237 kilograms." },
+    { question: "Can I convert ounces?", answer: "Convert ounces to pounds first, then use this calculator." },
+    { question: "Does it handle decimals?", answer: "Yes, enter any decimal pound value." },
+    { question: "Is this exact?", answer: "Yes, it uses the standard pound-to-kilogram conversion." }
+  ],
+  disclaimer: "Approximate conversions; confirm critical values with calibrated scales.",
+  cluster: "Conversions"
+};
+
+<Calculator schema={schema} />

@@ -1,0 +1,36 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "One-Rep Max Calculator"
+description: "Estimate your one-repetition maximum using the Epley formula."
+updated: "2025-10-19"
+cluster: "Health"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  inputs: [
+    { name: "weight", label: "Lifted Weight (kg)", type: "number", step: "any", placeholder: "100" },
+    { name: "reps", label: "Repetitions", type: "number", step: "any", placeholder: "5" }
+  ],
+  slug: "one-rep-max",
+  title: "One-Rep Max Calculator",
+  locale: "en",
+  unit: "kg",
+  expression: "weight * (1 + reps/30)",
+  intro: "Estimate the maximum weight you can lift for one rep using the Epley formula.",
+  examples: [
+    { description: "100 kg for 5 reps ⇒ 116.67 kg" },
+    { description: "50 kg for 10 reps ⇒ 66.67 kg" }
+  ],
+  faqs: [
+    { question: "What is a one-rep max?", answer: "It's the heaviest weight you can lift once with proper form." },
+    { question: "Why use the Epley formula?", answer: "It's a widely used estimation method for strength training." },
+    { question: "Does it work for low reps?", answer: "It's most accurate between 1 and 10 reps." },
+    { question: "Can I use pounds?", answer: "Yes, input weight in pounds if you interpret the result in pounds." }
+  ],
+  disclaimer: "Use proper form and safety measures; consult a trainer for heavy lifts.",
+  cluster: "Health"
+};
+
+<Calculator schema={schema} />
