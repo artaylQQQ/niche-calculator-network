@@ -1,0 +1,55 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Gallons to Liters Converter"
+description: "Convert US gallons to liters."
+updated: "2024-06-10"
+cluster: "conversions"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  inputs: [
+    {
+      name: "gallons",
+      label: "Gallons",
+      type: "number",
+      min: 0,
+      step: "any",
+      placeholder: "10",
+    },
+  ],
+  slug: "gallons-to-liters",
+  title: "Gallons to Liters Converter",
+  locale: "en",
+  expression: "gallons * 3.78541",
+  intro:
+    "Quickly convert US gallons to liters for cooking, fuel, or any liquid measurement needs.",
+  examples: [
+    { description: "1 gal ⇒ 3.79 L" },
+    { description: "5 gal ⇒ 18.93 L" },
+  ],
+  faqs: [
+    {
+      question: "Is this for US gallons?",
+      answer: "Yes, it uses the US gallon measurement.",
+    },
+    {
+      question: "Can I input decimals?",
+      answer: "Decimal values are supported.",
+    },
+    {
+      question: "Does it handle large volumes?",
+      answer: "You can convert any positive gallon value.",
+    },
+    {
+      question: "What about Imperial gallons?",
+      answer: "This tool does not convert Imperial gallons.",
+    },
+  ],
+  disclaimer: "Verify critical conversions with official sources.",
+  cluster: "conversions",
+  unit: "L",
+};
+
+<Calculator schema={schema} />

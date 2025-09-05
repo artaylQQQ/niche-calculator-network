@@ -1,0 +1,62 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Calories from Fat Percentage Calculator"
+description: "Determine what percentage of calories come from fat."
+updated: "2024-06-10"
+cluster: "health"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  inputs: [
+    {
+      name: "fat",
+      label: "Fat (g)",
+      type: "number",
+      min: 0,
+      step: "any",
+      placeholder: "20",
+    },
+    {
+      name: "calories",
+      label: "Total Calories",
+      type: "number",
+      min: 0,
+      step: "any",
+      placeholder: "500",
+    },
+  ],
+  slug: "calories-from-fat-percentage",
+  title: "Calories from Fat Percentage Calculator",
+  locale: "en",
+  expression: "(fat * 9 / calories) * 100",
+  intro: "Find out what portion of total calories comes from fat grams.",
+  examples: [
+    { description: "Fat 20 g, Calories 500 ⇒ 36%" },
+    { description: "Fat 10 g, Calories 300 ⇒ 30%" },
+  ],
+  faqs: [
+    {
+      question: "Why multiply fat grams by 9?",
+      answer: "Each gram of fat has 9 calories.",
+    },
+    {
+      question: "Is a lower percentage better?",
+      answer: "Dietary needs vary; consult a professional.",
+    },
+    {
+      question: "Can I use this for meal planning?",
+      answer: "Yes, it helps monitor fat intake.",
+    },
+    {
+      question: "Does it include saturated fat?",
+      answer: "It treats all fat grams equally.",
+    },
+  ],
+  disclaimer: "For nutritional guidance only.",
+  cluster: "health",
+  unit: "%",
+};
+
+<Calculator schema={schema} />

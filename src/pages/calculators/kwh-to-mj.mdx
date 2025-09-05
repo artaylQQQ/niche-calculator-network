@@ -1,0 +1,54 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "kWh to MJ Converter"
+description: "Convert kilowatt-hours to megajoules."
+updated: "2024-06-10"
+cluster: "conversions"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  inputs: [
+    {
+      name: "kwh",
+      label: "Kilowatt-hours",
+      type: "number",
+      min: 0,
+      step: "any",
+      placeholder: "2",
+    },
+  ],
+  slug: "kwh-to-mj",
+  title: "kWh to MJ Converter",
+  locale: "en",
+  expression: "kwh * 3.6",
+  intro: "Convert electrical energy from kilowatt-hours to megajoules.",
+  examples: [
+    { description: "1 kWh ⇒ 3.6 MJ" },
+    { description: "5 kWh ⇒ 18 MJ" },
+  ],
+  faqs: [
+    {
+      question: "What does kWh mean?",
+      answer: "It stands for kilowatt-hour, a measure of energy.",
+    },
+    {
+      question: "Is the conversion exact?",
+      answer: "Yes, 1 kWh equals exactly 3.6 MJ.",
+    },
+    {
+      question: "Can I convert small values?",
+      answer: "The converter accepts any non-negative value.",
+    },
+    {
+      question: "Does it work for large power plants?",
+      answer: "Yes, simply enter the total kWh.",
+    },
+  ],
+  disclaimer: "For rough planning only; confirm critical values elsewhere.",
+  cluster: "conversions",
+  unit: "MJ",
+};
+
+<Calculator schema={schema} />
