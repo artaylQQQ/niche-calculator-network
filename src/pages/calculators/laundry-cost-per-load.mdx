@@ -1,0 +1,73 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Laundry Cost Per Load"
+description: "Estimate water and electricity cost for a single laundry load."
+updated: "2025-05-28"
+cluster: "Other"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  inputs: [
+    {
+      name: "waterCost",
+      label: "Water cost per gallon ($)",
+      type: "number",
+      step: "any",
+      placeholder: "0.005",
+    },
+    {
+      name: "gallons",
+      label: "Gallons per load",
+      type: "number",
+      step: "any",
+      placeholder: "30",
+    },
+    {
+      name: "electricCost",
+      label: "Electricity cost per kWh ($)",
+      type: "number",
+      step: "any",
+      placeholder: "0.15",
+    },
+    {
+      name: "kwh",
+      label: "kWh per load",
+      type: "number",
+      step: "any",
+      placeholder: "1.2",
+    },
+  ],
+  slug: "laundry-cost-per-load",
+  title: "Laundry Cost Per Load",
+  locale: "en",
+  unit: "USD",
+  expression: "waterCost * gallons + electricCost * kwh",
+  intro:
+    "Estimate how much a single load of laundry costs based on water and electricity usage.",
+  examples: [
+    { description: "$0.005/gal, 30 gal, $0.15/kWh, 1.2 kWh ⇒ $0.33" },
+    { description: "$0.006/gal, 40 gal, $0.12/kWh, 1.5 kWh ⇒ $0.42" },
+    { description: "$0.004/gal, 25 gal, $0.20/kWh, 2 kWh ⇒ $0.50" },
+  ],
+  faqs: [
+    {
+      question: "Does this include detergent?",
+      answer: "No, it only calculates water and electricity costs.",
+    },
+    {
+      question: "Where can I find kWh per load?",
+      answer: "Check your washer's energy guide label.",
+    },
+    {
+      question: "Can I use metric units?",
+      answer: "Yes, convert to gallons and kWh before entering.",
+    },
+  ],
+  disclaimer:
+    "Costs are estimates and may vary by region and appliance efficiency.",
+  cluster: "Other",
+};
+
+<Calculator schema={schema} />

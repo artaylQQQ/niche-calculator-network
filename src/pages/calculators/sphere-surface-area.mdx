@@ -1,0 +1,51 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Sphere Surface Area Calculator"
+description: "Surface area of a sphere from its radius."
+updated: "2025-05-28"
+cluster: "Math"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  inputs: [
+    {
+      name: "radius",
+      label: "Radius (cm)",
+      type: "number",
+      step: "any",
+      placeholder: "3",
+    },
+  ],
+  slug: "sphere-surface-area",
+  title: "Sphere Surface Area Calculator",
+  locale: "en",
+  unit: "cm²",
+  expression: "4 * 3.141592653589793 * radius^2",
+  intro: "Compute the surface area enclosing a sphere using the formula 4πr².",
+  examples: [
+    { description: "Radius 3 cm ⇒ 113.10 cm²" },
+    { description: "Radius 5 cm ⇒ 314.16 cm²" },
+    { description: "Radius 1.5 cm ⇒ 28.27 cm²" },
+  ],
+  faqs: [
+    {
+      question: "Why 4πr²?",
+      answer: "It's the standard formula for the surface area of a sphere.",
+    },
+    {
+      question: "Can radius be in meters?",
+      answer: "Yes, any unit works; results will be in the squared unit.",
+    },
+    {
+      question: "Does this calculate volume?",
+      answer: "No, it only gives surface area.",
+    },
+  ],
+  disclaimer:
+    "Use for estimation only; double-check values for critical applications.",
+  cluster: "Math",
+};
+
+<Calculator schema={schema} />

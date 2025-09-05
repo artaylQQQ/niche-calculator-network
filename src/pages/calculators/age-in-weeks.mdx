@@ -1,0 +1,52 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Age in Weeks Calculator"
+description: "Convert age in years to weeks."
+updated: "2025-05-28"
+cluster: "Date & Time"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  inputs: [
+    {
+      name: "years",
+      label: "Age (years)",
+      type: "number",
+      step: "any",
+      placeholder: "1",
+    },
+  ],
+  slug: "age-in-weeks",
+  title: "Age in Weeks Calculator",
+  locale: "en",
+  unit: "weeks",
+  expression: "years * 52.1775",
+  intro:
+    "Find how many weeks old you are by multiplying years by 52.1775, the average weeks per year.",
+  examples: [
+    { description: "1 year ⇒ 52.18 weeks" },
+    { description: "25 years ⇒ 1304.44 weeks" },
+    { description: "0.5 year ⇒ 26.09 weeks" },
+  ],
+  faqs: [
+    {
+      question: "Why multiply by 52.1775?",
+      answer: "It uses 365.25 days per year divided by 7 days per week.",
+    },
+    {
+      question: "Does it account for leap years?",
+      answer: "Yes, the average of 365.25 days includes leap years.",
+    },
+    {
+      question: "Can I enter months instead?",
+      answer: "Convert months to years before using the calculator.",
+    },
+  ],
+  disclaimer:
+    "Approximate values only; individual calendars may vary slightly.",
+  cluster: "Date & Time",
+};
+
+<Calculator schema={schema} />

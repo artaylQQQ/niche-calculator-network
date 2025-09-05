@@ -1,0 +1,59 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Net Profit Margin Calculator"
+description: "Compute net profit margin from revenue and expenses."
+updated: "2025-05-28"
+cluster: "Finance"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  inputs: [
+    {
+      name: "revenue",
+      label: "Revenue ($)",
+      type: "number",
+      step: "any",
+      placeholder: "1000",
+    },
+    {
+      name: "expenses",
+      label: "Expenses ($)",
+      type: "number",
+      step: "any",
+      placeholder: "700",
+    },
+  ],
+  slug: "net-profit-margin",
+  title: "Net Profit Margin Calculator",
+  locale: "en",
+  unit: "%",
+  expression: "(revenue - expenses) / revenue * 100",
+  intro:
+    "Determine the percentage of revenue that remains as profit after expenses.",
+  examples: [
+    { description: "Revenue $1000, expenses $700 ⇒ 30%" },
+    { description: "Revenue $5000, expenses $4200 ⇒ 16%" },
+    { description: "Revenue $200, expenses $210 ⇒ -5%" },
+  ],
+  faqs: [
+    {
+      question: "What is net profit margin?",
+      answer: "It measures how much profit is made as a percentage of revenue.",
+    },
+    {
+      question: "Can margin be negative?",
+      answer: "Yes, if expenses exceed revenue the margin is negative.",
+    },
+    {
+      question: "What if revenue is zero?",
+      answer: "Margin is undefined when revenue is zero.",
+    },
+  ],
+  disclaimer:
+    "Financial figures are for estimation only; consult a professional for advice.",
+  cluster: "Finance",
+};
+
+<Calculator schema={schema} />
