@@ -1,0 +1,35 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Square Feet to Square Meters"
+description: "Convert area from square feet to square meters."
+updated: "2025-10-19"
+cluster: "Conversions"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  inputs: [
+    { name: "sqft", label: "Area (ft²)", type: "number", step: "any", placeholder: "100" }
+  ],
+  slug: "square-feet-to-square-meters",
+  title: "Square Feet to Square Meters",
+  locale: "en",
+  unit: "m²",
+  expression: "sqft * 0.092903",
+  intro: "Convert square feet to square meters using the factor 0.092903 for precise area conversions.",
+  examples: [
+    { description: "100 ft² ⇒ 9.29 m²" },
+    { description: "250 ft² ⇒ 23.23 m²" }
+  ],
+  faqs: [
+    { question: "Where does 0.092903 come from?", answer: "It's the exact square-foot to square-meter conversion factor." },
+    { question: "Can I convert square yards?", answer: "Convert square yards to square feet first, then use this tool." },
+    { question: "Does it support decimals?", answer: "Yes, you can enter fractional areas." },
+    { question: "Is the result rounded?", answer: "Results display decimals for accuracy; round as needed." }
+  ],
+  disclaimer: "For large projects, allow extra material for waste and irregularities.",
+  cluster: "Conversions"
+};
+
+<Calculator schema={schema} />

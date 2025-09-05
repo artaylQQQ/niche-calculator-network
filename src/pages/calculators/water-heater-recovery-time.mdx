@@ -1,0 +1,37 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Water Heater Recovery Time"
+description: "Estimate how long a water heater takes to reheat a full tank."
+updated: "2025-10-19"
+cluster: "Home & DIY"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  inputs: [
+    { name: "volume", label: "Tank Volume (gal)", type: "number", step: "any", placeholder: "40" },
+    { name: "rise", label: "Temperature Rise (°F)", type: "number", step: "any", placeholder: "70" },
+    { name: "btu", label: "Heater Output (BTU/hr)", type: "number", step: "any", placeholder: "40000" }
+  ],
+  slug: "water-heater-recovery-time",
+  title: "Water Heater Recovery Time",
+  locale: "en",
+  unit: "h",
+  expression: "(volume * 8.33 * rise) / btu",
+  intro: "Estimate how many hours a water heater needs to reheat a full tank based on its BTU rating and desired temperature rise.",
+  examples: [
+    { description: "40 gal, 70°F rise, 40,000 BTU ⇒ 0.58 h" },
+    { description: "50 gal, 60°F rise, 30,000 BTU ⇒ 0.83 h" }
+  ],
+  faqs: [
+    { question: "What does 8.33 represent?", answer: "It converts gallons of water to pounds." },
+    { question: "Does this assume 100% efficiency?", answer: "Yes, real heaters may take longer." },
+    { question: "Can I use liters and watts?", answer: "Convert units to gallons and BTU/hr before using." },
+    { question: "Is the result in hours?", answer: "Yes, multiply by 60 for minutes." }
+  ],
+  disclaimer: "Approximate; actual recovery varies with heater efficiency and heat losses.",
+  cluster: "Home & DIY"
+};
+
+<Calculator schema={schema} />

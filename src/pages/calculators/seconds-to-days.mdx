@@ -1,0 +1,35 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Seconds to Days Converter"
+description: "Convert seconds into days."
+updated: "2025-10-19"
+cluster: "Date & Time"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  inputs: [
+    { name: "sec", label: "Seconds", type: "number", step: "any", placeholder: "86400" }
+  ],
+  slug: "seconds-to-days",
+  title: "Seconds to Days Converter",
+  locale: "en",
+  unit: "days",
+  expression: "sec / 86400",
+  intro: "Convert any number of seconds into days by dividing by 86,400.",
+  examples: [
+    { description: "86,400 s ⇒ 1 day" },
+    { description: "172,800 s ⇒ 2 days" }
+  ],
+  faqs: [
+    { question: "Why divide by 86,400?", answer: "There are 86,400 seconds in one day." },
+    { question: "Can I convert minutes instead?", answer: "Multiply minutes by 60 first to get seconds." },
+    { question: "Does it handle large numbers?", answer: "Yes, any positive number of seconds is supported." },
+    { question: "Are leap seconds included?", answer: "No, leap seconds are rare and not considered here." }
+  ],
+  disclaimer: "For precise timekeeping, consider leap seconds and calendar adjustments.",
+  cluster: "Date & Time"
+};
+
+<Calculator schema={schema} />

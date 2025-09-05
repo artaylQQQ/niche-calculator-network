@@ -1,0 +1,36 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Credit Utilization Ratio"
+description: "Find your credit card utilization percentage."
+updated: "2025-10-19"
+cluster: "Finance"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  inputs: [
+    { name: "balance", label: "Balance (USD)", type: "number", step: "any", placeholder: "500" },
+    { name: "limit", label: "Credit Limit (USD)", type: "number", step: "any", placeholder: "2000" }
+  ],
+  slug: "credit-utilization-ratio",
+  title: "Credit Utilization Ratio",
+  locale: "en",
+  unit: "%",
+  expression: "(balance / limit) * 100",
+  intro: "See what percentage of your available credit you're using to help manage your credit score.",
+  examples: [
+    { description: "$500 balance on $2,000 limit ⇒ 25%" },
+    { description: "$1,200 balance on $1,500 limit ⇒ 80%" }
+  ],
+  faqs: [
+    { question: "What is credit utilization?", answer: "It's the percentage of your credit limit you're currently using." },
+    { question: "Why does it matter?", answer: "High utilization can lower your credit score." },
+    { question: "Is lower better?", answer: "Yes, keeping utilization below 30% is often recommended." },
+    { question: "Does this include multiple cards?", answer: "This calculator is for a single card; add balances and limits to compute overall utilization." }
+  ],
+  disclaimer: "For guidance only; consult financial advisors for credit advice.",
+  cluster: "Finance"
+};
+
+<Calculator schema={schema} />
