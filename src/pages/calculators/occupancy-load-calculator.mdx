@@ -1,0 +1,59 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Occupancy Load Calculator"
+description: "Estimate maximum occupants based on room area."
+updated: "2025-08-31"
+cluster: "Other"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "occupancy-load-calculator",
+  title: "Occupancy Load Calculator",
+  intro:
+    "Determine the permitted number of occupants in a space using floor area and code-required area per person.",
+  locale: "en",
+  cluster: "Other",
+  inputs: [
+    {
+      name: "areaSqFt",
+      label: "Area (ft²)",
+      type: "number",
+      step: "any",
+      required: true,
+    },
+    {
+      name: "areaPerPerson",
+      label: "Area per Person (ft²)",
+      type: "number",
+      step: "any",
+      required: true,
+    },
+  ],
+  expression: "areaSqFt / areaPerPerson",
+  unit: "people",
+  examples: [
+    { description: "1000 ft² at 20 ft²/person ⇒ 50 people" },
+    { description: "1500 ft² at 25 ft²/person ⇒ 60 people" },
+    { description: "800 ft² at 50 ft²/person ⇒ 16 people" },
+  ],
+  faqs: [
+    {
+      question: "Why calculate occupancy load?",
+      answer: "Building codes limit occupants for safety.",
+    },
+    {
+      question: "Does furniture reduce capacity?",
+      answer: "Yes, if it reduces usable floor area.",
+    },
+    {
+      question: "Should I round down?",
+      answer: "Yes, round down to stay within limits.",
+    },
+  ],
+  disclaimer:
+    "Always verify with local building authorities before finalizing occupancy.",
+};
+
+<Calculator schema={schema} />

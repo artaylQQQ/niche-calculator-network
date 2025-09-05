@@ -1,0 +1,52 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Noise Exposure Limit Calculator"
+description: "Estimate safe exposure time for a given noise level."
+updated: "2025-08-31"
+cluster: "Health"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "noise-exposure-limit",
+  title: "Noise Exposure Limit Calculator",
+  intro:
+    "Calculate the maximum recommended exposure duration to a specific sound level based on OSHA guidelines.",
+  locale: "en",
+  cluster: "Health",
+  inputs: [
+    {
+      name: "dB",
+      label: "Sound Level (dB)",
+      type: "number",
+      step: "any",
+      required: true,
+    },
+  ],
+  expression: "8 / Math.pow(2, (dB - 90) / 5)",
+  unit: "hours",
+  examples: [
+    { description: "90 dB ⇒ 8 h" },
+    { description: "95 dB ⇒ 4 h" },
+    { description: "100 dB ⇒ 2 h" },
+  ],
+  faqs: [
+    {
+      question: "Why limit noise exposure?",
+      answer: "Prolonged loud noise can cause hearing loss.",
+    },
+    {
+      question: "What standard does this follow?",
+      answer: "It uses OSHA's 5 dB exchange rate.",
+    },
+    {
+      question: "Do earplugs extend the limit?",
+      answer: "Yes, if they reduce the effective dB level.",
+    },
+  ],
+  disclaimer:
+    "Consult safety professionals for workplace hearing protection requirements.",
+};
+
+<Calculator schema={schema} />

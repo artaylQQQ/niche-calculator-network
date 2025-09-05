@@ -1,0 +1,58 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Room Diagonal Calculator"
+description: "Compute the diagonal length of a rectangular room."
+updated: "2025-08-31"
+cluster: "Math"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "room-diagonal-calculator",
+  title: "Room Diagonal Calculator",
+  intro:
+    "Find the diagonal distance across a room using its length and width—useful for flooring or trim measurements.",
+  locale: "en",
+  cluster: "Math",
+  inputs: [
+    {
+      name: "length",
+      label: "Length",
+      type: "number",
+      step: "any",
+      required: true,
+    },
+    {
+      name: "width",
+      label: "Width",
+      type: "number",
+      step: "any",
+      required: true,
+    },
+  ],
+  expression: "Math.sqrt(length**2 + width**2)",
+  unit: "units",
+  examples: [
+    { description: "12×9 ⇒ 15 units" },
+    { description: "10×10 ⇒ 14.14 units" },
+    { description: "20×15 ⇒ 25 units" },
+  ],
+  faqs: [
+    {
+      question: "Does it assume right angles?",
+      answer: "Yes, this formula applies to rectangular spaces.",
+    },
+    {
+      question: "Can I input meters or feet?",
+      answer: "Any unit works as long as both inputs share it.",
+    },
+    {
+      question: "What is the diagonal used for?",
+      answer: "It helps estimate material runs like wiring or trim.",
+    },
+  ],
+  disclaimer: "Measurements are theoretical; verify on site.",
+};
+
+<Calculator schema={schema} />

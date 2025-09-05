@@ -1,0 +1,58 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "3D Print Filament Volume Calculator"
+description: "Compute filament volume from length and diameter."
+updated: "2025-08-31"
+cluster: "Technology"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "filament-volume-calculator",
+  title: "3D Print Filament Volume Calculator",
+  intro:
+    "Estimate the volume of filament used for 3D printing architectural models.",
+  locale: "en",
+  cluster: "Technology",
+  inputs: [
+    {
+      name: "length",
+      label: "Length (mm)",
+      type: "number",
+      step: "any",
+      required: true,
+    },
+    {
+      name: "diameter",
+      label: "Diameter (mm)",
+      type: "number",
+      step: "any",
+      required: true,
+    },
+  ],
+  expression: "Math.PI * Math.pow(diameter/2, 2) * length",
+  unit: "mm³",
+  examples: [
+    { description: "10000 mm of 1.75 mm filament ⇒ 24053 mm³" },
+    { description: "5000 mm of 2.85 mm filament ⇒ 31897 mm³" },
+    { description: "12000 mm of 1.75 mm filament ⇒ 28863 mm³" },
+  ],
+  faqs: [
+    {
+      question: "Why calculate filament volume?",
+      answer: "It helps estimate material usage and cost.",
+    },
+    {
+      question: "Does this include infill percentage?",
+      answer: "No, it's raw filament volume.",
+    },
+    {
+      question: "Can I convert volume to weight?",
+      answer: "Yes, multiply by material density.",
+    },
+  ],
+  disclaimer: "Results assume consistent filament diameter.",
+};
+
+<Calculator schema={schema} />

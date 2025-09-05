@@ -1,0 +1,61 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Heat Index Calculator"
+description: "Estimate perceived temperature from air temperature and humidity."
+updated: "2025-08-31"
+cluster: "Health"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "heat-index",
+  title: "Heat Index Calculator",
+  intro:
+    "Assess how hot it feels on site by combining air temperature and relative humidity.",
+  locale: "en",
+  cluster: "Health",
+  inputs: [
+    {
+      name: "T",
+      label: "Temperature (°F)",
+      type: "number",
+      step: "any",
+      required: true,
+    },
+    {
+      name: "RH",
+      label: "Relative Humidity (%)",
+      type: "number",
+      step: "any",
+      required: true,
+    },
+  ],
+  expression:
+    "-42.379 + 2.04901523*T + 10.14333127*RH - 0.22475541*T*RH - 0.00683783*T*T - 0.05481717*RH*RH + 0.00122874*T*T*RH + 0.00085282*T*RH*RH - 0.00000199*T*T*RH*RH",
+  unit: "°F",
+  examples: [
+    { description: "90°F and 70% ⇒ 106°F" },
+    { description: "80°F and 60% ⇒ 82°F" },
+    { description: "95°F and 40% ⇒ 99°F" },
+  ],
+  faqs: [
+    {
+      question: "Why use the heat index?",
+      answer:
+        "It reflects combined effects of temperature and humidity on comfort.",
+    },
+    {
+      question: "Is this formula valid for all conditions?",
+      answer:
+        "It is most accurate for temperatures above 80°F and humidity above 40%.",
+    },
+    {
+      question: "Does shade affect the result?",
+      answer: "Yes, the heat index assumes shade with light wind.",
+    },
+  ],
+  disclaimer: "Values are estimates; monitor workers for heat stress signs.",
+};
+
+<Calculator schema={schema} />

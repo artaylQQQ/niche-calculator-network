@@ -1,0 +1,51 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "PSF to kPa Converter"
+description: "Convert structural load from pounds per square foot to kilopascals."
+updated: "2025-08-31"
+cluster: "Conversions"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "psf-to-kpa-converter",
+  title: "PSF to kPa Converter",
+  intro:
+    "Convert structural load values from pounds per square foot (psf) to kilopascals (kPa) for metric design references.",
+  locale: "en",
+  cluster: "Conversions",
+  inputs: [
+    {
+      name: "psf",
+      label: "Load (psf)",
+      type: "number",
+      step: "any",
+      required: true,
+    },
+  ],
+  expression: "psf * 0.0478803",
+  unit: "kPa",
+  examples: [
+    { description: "50 psf ⇒ 2.39 kPa" },
+    { description: "75 psf ⇒ 3.59 kPa" },
+    { description: "100 psf ⇒ 4.79 kPa" },
+  ],
+  faqs: [
+    {
+      question: "What does psf stand for?",
+      answer: "Pounds per square foot, a unit of pressure or load.",
+    },
+    {
+      question: "Why convert to kPa?",
+      answer: "Metric building codes commonly use kilopascals.",
+    },
+    {
+      question: "Is this conversion linear?",
+      answer: "Yes, multiply psf by 0.0478803 to get kPa.",
+    },
+  ],
+  disclaimer: "Results are approximate and for educational use only.",
+};
+
+<Calculator schema={schema} />

@@ -1,0 +1,59 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Aspect Ratio Calculator"
+description: "Determine the width-to-height ratio of a rectangle."
+updated: "2025-08-31"
+cluster: "Math"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "aspect-ratio-calculator",
+  title: "Aspect Ratio Calculator",
+  intro:
+    "Compute the ratio between width and height for screens, rooms, or drawings.",
+  locale: "en",
+  cluster: "Math",
+  inputs: [
+    {
+      name: "width",
+      label: "Width",
+      type: "number",
+      step: "any",
+      required: true,
+    },
+    {
+      name: "height",
+      label: "Height",
+      type: "number",
+      step: "any",
+      required: true,
+    },
+  ],
+  expression: "width / height",
+  unit: "ratio",
+  examples: [
+    { description: "1920×1080 ⇒ 1.78 ratio" },
+    { description: "16×9 ⇒ 1.78 ratio" },
+    { description: "30×20 ⇒ 1.5 ratio" },
+  ],
+  faqs: [
+    {
+      question: "Why is aspect ratio useful?",
+      answer: "It helps maintain proportional designs across scales.",
+    },
+    {
+      question: "Can ratios be simplified?",
+      answer: "Yes, but this calculator gives the decimal form.",
+    },
+    {
+      question: "Does orientation matter?",
+      answer: "No, just assign width and height consistently.",
+    },
+  ],
+  disclaimer:
+    "Check results against project requirements before finalizing dimensions.",
+};
+
+<Calculator schema={schema} />
