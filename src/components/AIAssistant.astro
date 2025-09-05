@@ -1,0 +1,35 @@
+---
+const { heading = "Need a different calculation?", prompt = "Ask our AI-powered calculator:" } = Astro.props;
+const uid = Math.random().toString(36).slice(2);
+---
+<section class="ai-assistant mt-8">
+  <h2>{heading}</h2>
+  <p class="muted">{prompt}</p>
+  <form id={`ai-form-${uid}`} class="mt-4">
+    <textarea id={`ai-question-${uid}`} class="w-full p-2 border rounded-md" rows="3" placeholder="Type your question"></textarea>
+    <button type="submit" class="btn mt-2">Ask AI</button>
+  </form>
+  <div id={`ai-answer-${uid}`} class="mt-2"></div>
+  <script is:inline>
+    const form = document.getElementById('ai-form-${uid}');
+    const input = document.getElementById('ai-question-${uid}');
+    const out = document.getElementById('ai-answer-${uid}');
+    form?.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const q = input.value.trim();
+      if (!q) return;
+      out.textContent = 'Thinking...';
+      try {
+        const res = await fetch('/api/ai', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ question: q })
+        });
+        const data = await res.json();
+        out.textContent = data.answer || 'No answer available.';
+      } catch (err) {
+        out.textContent = 'Error fetching answer.';
+      }
+    });
+  </script>
+</section>
