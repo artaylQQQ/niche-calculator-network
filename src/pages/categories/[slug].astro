@@ -36,18 +36,40 @@ export async function getStaticPaths() {
     calcs = [];
   }
 
+  // Carga frontmatter de cada calculadora para completar datos faltantes
+  const mdxModules = import.meta.glob('../../pages/calculators/*.mdx', { eager: true });
+  const fmIndex = Object.fromEntries(
+    Object.values(mdxModules).map((m) => {
+      const url = m.url || '';
+      const slug = url.split('/').pop()?.replace('.mdx', '') ?? '';
+      return [slug, m.frontmatter || {}];
+    })
+  );
+
   // 3) Para cada categoría, calcula su lista y la pasa en props
   return CATEGORIES.map((cat) => {
     const list = Array.isArray(calcs)
-      ? calcs.filter((it) =>
-          (it?.cluster ?? '') &&
-          cat.map.some((v) => (it.cluster || '').toLowerCase().includes(v.toLowerCase()))
-        ).slice(0, 200)
+      ? calcs
+          .filter(
+            (it) =>
+              (it?.cluster ?? '') &&
+              cat.map.some((v) => (it.cluster || '').toLowerCase().includes(v.toLowerCase()))
+          )
+          .slice(0, 200)
+          .map((it) => {
+            const fm = fmIndex[it.slug] || {};
+            return {
+              ...it,
+              title: it.title || fm.title || it.slug,
+              intro: it.intro || fm.intro || fm.description,
+              description: it.description || fm.description,
+            };
+          })
       : [];
 
     return {
       params: { slug: cat.slug },
-      props:  { cat, list }
+      props: { cat, list },
     };
   });
 }
@@ -75,7 +97,7 @@ const { cat, list = [] } = Astro.props;
           <div>
             <a class="card" href={`/calculators/${c.slug}/`}>
               <h3>{c.title}</h3>
-              <p>{c.intro ?? ''}</p>
+              <p>{c.intro || c.description || ''}</p>
             </a>
           </div>
         ))}
