@@ -1,0 +1,34 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "MRR to ARR Converter"
+description: "Convert monthly recurring revenue to annual recurring revenue."
+updated: "2025-09-05"
+cluster: "Conversions"
+---
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "mrr-to-arr-converter",
+  title: "MRR to ARR Converter",
+  locale: "en",
+  intro: "Turn monthly recurring revenue into annual recurring revenue for quick planning.",
+  unit: "USD",
+  cluster: "Conversions",
+  inputs: [
+    { name: "mrr", label: "Monthly revenue (USD)", type: "number", step: "any", placeholder: "5000" }
+  ],
+  expression: "mrr * 12",
+  examples: [
+    { description: "1000 USD ⇒ 12000 USD" },
+    { description: "5000 USD ⇒ 60000 USD" },
+    { description: "8500 USD ⇒ 102000 USD" }
+  ],
+  faqs: [
+    { question: "What is MRR?", answer: "Monthly recurring revenue is the predictable income each month." },
+    { question: "Why convert to ARR?", answer: "ARR helps forecast annual performance and valuation." },
+    { question: "Does this include churn?", answer: "No, it assumes no cancellations or upgrades." }
+  ],
+  disclaimer: "For estimation only; actual revenue may vary.",
+};
+
+<Calculator schema={schema} />

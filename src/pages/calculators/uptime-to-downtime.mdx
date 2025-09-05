@@ -1,0 +1,35 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Uptime to Downtime Converter"
+description: "Turn uptime percentage into expected downtime hours."
+updated: "2025-09-05"
+cluster: "Technology"
+---
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "uptime-to-downtime",
+  title: "Uptime to Downtime Converter",
+  locale: "en",
+  intro: "Plan reliability by converting uptime percentage into downtime hours over a period.",
+  unit: "hours",
+  cluster: "Technology",
+  inputs: [
+    { name: "uptime", label: "Uptime (%)", type: "number", step: "any", placeholder: "99.9" },
+    { name: "days", label: "Period (days)", type: "number", step: "any", placeholder: "30" }
+  ],
+  expression: "(1 - uptime / 100) * days * 24",
+  examples: [
+    { description: "99.9% over 30 days ⇒ 0.72 hours" },
+    { description: "99.5% over 365 days ⇒ 43.8 hours" },
+    { description: "99% over 7 days ⇒ 1.68 hours" }
+  ],
+  faqs: [
+    { question: "What is uptime?", answer: "Uptime is the percentage of time a service is operational." },
+    { question: "Why multiply by 24?", answer: "To convert days into hours for downtime output." },
+    { question: "Can I use shorter periods?", answer: "Yes, enter any number of days to evaluate downtime." }
+  ],
+  disclaimer: "For planning purposes; real downtime may vary.",
+};
+
+<Calculator schema={schema} />

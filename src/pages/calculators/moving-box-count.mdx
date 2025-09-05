@@ -1,0 +1,35 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Moving Box Count"
+description: "Estimate how many boxes you need for a move."
+updated: "2025-09-05"
+cluster: "Home & DIY"
+---
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "moving-box-count",
+  title: "Moving Box Count",
+  locale: "en",
+  intro: "Plan your move by estimating the number of boxes based on total volume.",
+  unit: "boxes",
+  cluster: "Home & DIY",
+  inputs: [
+    { name: "totalVolume", label: "Item volume (cu ft)", type: "number", step: "any", placeholder: "120" },
+    { name: "boxVolume", label: "Box volume (cu ft)", type: "number", step: "any", placeholder: "3" }
+  ],
+  expression: "Math.ceil(totalVolume / boxVolume)",
+  examples: [
+    { description: "120 cu ft with 3 cu ft boxes ⇒ 40 boxes" },
+    { description: "75 cu ft with 4 cu ft boxes ⇒ 19 boxes" },
+    { description: "60 cu ft with 2.5 cu ft boxes ⇒ 24 boxes" }
+  ],
+  faqs: [
+    { question: "Does it include packing material?", answer: "No, add extra boxes for padding or odd shapes." },
+    { question: "Can I use metric units?", answer: "Yes, as long as both volumes use the same unit." },
+    { question: "What if I have different box sizes?", answer: "Calculate separately for each size and sum the results." }
+  ],
+  disclaimer: "Estimation only; actual needs may vary.",
+};
+
+<Calculator schema={schema} />

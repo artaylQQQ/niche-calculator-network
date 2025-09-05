@@ -1,0 +1,35 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Employee Turnover Rate"
+description: "Calculate staff turnover percentage over a period."
+updated: "2025-09-05"
+cluster: "Other"
+---
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "employee-turnover-rate",
+  title: "Employee Turnover Rate",
+  locale: "en",
+  intro: "Understand workforce stability by computing turnover rate.",
+  unit: "%",
+  cluster: "Other",
+  inputs: [
+    { name: "departures", label: "Departures", type: "number", step: "any", placeholder: "5" },
+    { name: "averageEmployees", label: "Average employees", type: "number", step: "any", placeholder: "50" }
+  ],
+  expression: "(departures / averageEmployees) * 100",
+  examples: [
+    { description: "5 departures out of 50 ⇒ 10%" },
+    { description: "3 departures out of 80 ⇒ 3.75%" },
+    { description: "15 departures out of 200 ⇒ 7.5%" }
+  ],
+  faqs: [
+    { question: "How is average staff calculated?", answer: "Use the mean of starting and ending headcount." },
+    { question: "Is higher turnover bad?", answer: "High turnover can indicate retention issues and added costs." },
+    { question: "Can this be quarterly?", answer: "Yes, use data for any period as long as it matches the average." }
+  ],
+  disclaimer: "Informational; consult HR guidelines for decisions.",
+};
+
+<Calculator schema={schema} />
