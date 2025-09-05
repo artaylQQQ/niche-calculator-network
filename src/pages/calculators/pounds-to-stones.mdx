@@ -1,0 +1,38 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Pounds to Stones Converter"
+description: "Convert pounds to stones."
+date: 2025-10-14
+updated: 2025-10-14
+cluster: "Conversions"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  slug: "pounds-to-stones",
+  title: "Pounds to Stones Converter",
+  locale: "en",
+  cluster: "Conversions",
+  intro: "Convert a weight in pounds to stones. Enter the value and press Calculate.",
+  inputs: [
+    { name: "pounds", label: "Pounds", type: "number", step: "any", placeholder: "140" }
+  ],
+  expression: "pounds / 14",
+  unit: "st",
+  examples: [
+    { description: "140 lb ⇒ 10 st" },
+    { description: "200 lb ⇒ 14.29 st" },
+    { description: "90 lb ⇒ 6.43 st" }
+  ],
+  faqs: [
+    { question: "What is a stone?", answer: "A stone equals 14 pounds." },
+    { question: "Does it accept decimals?", answer: "Yes, you can enter fractional pounds." },
+    { question: "Where is this unit used?", answer: "Stones are commonly used in the United Kingdom." }
+  ],
+  disclaimer: "For general weight conversion only; medical decisions require professional advice.",
+  related: []
+};
+
+<Calculator schema={schema} />
+

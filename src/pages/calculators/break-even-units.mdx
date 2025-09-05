@@ -1,0 +1,40 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Break-Even Units Calculator"
+description: "Find the units needed to break even."
+date: 2025-10-14
+updated: 2025-10-14
+cluster: "Finance"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  slug: "break-even-units",
+  title: "Break-Even Units Calculator",
+  locale: "en",
+  cluster: "Finance",
+  intro: "Calculate how many units must be sold to cover fixed costs. Enter the values and press Calculate.",
+  inputs: [
+    { name: "fixed", label: "Fixed Cost", type: "number", step: "any", placeholder: "1000" },
+    { name: "price", label: "Price per Unit", type: "number", step: "any", placeholder: "50" },
+    { name: "variable", label: "Variable Cost per Unit", type: "number", step: "any", placeholder: "30" }
+  ],
+  expression: "fixed / (price - variable)",
+  unit: "units",
+  examples: [
+    { description: "Fixed $1000, Price $50, Variable $30 ⇒ 50 units" },
+    { description: "Fixed $5000, Price $100, Variable $60 ⇒ 125 units" },
+    { description: "Fixed $2000, Price $80, Variable $40 ⇒ 50 units" }
+  ],
+  faqs: [
+    { question: "What if price equals variable cost?", answer: "Break-even units become infinite because profit per unit is zero." },
+    { question: "Do results round up?", answer: "Results may be fractional; round up to whole units in practice." },
+    { question: "What are fixed costs?", answer: "Expenses that do not change with production volume." }
+  ],
+  disclaimer: "Simplified model; additional costs and taxes may apply.",
+  related: []
+};
+
+<Calculator schema={schema} />
+

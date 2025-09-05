@@ -1,0 +1,40 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Rectangular Prism Volume Calculator"
+description: "Find volume of a rectangular prism."
+date: 2025-10-14
+updated: 2025-10-14
+cluster: "Math"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  slug: "rectangular-prism-volume",
+  title: "Rectangular Prism Volume Calculator",
+  locale: "en",
+  cluster: "Math",
+  intro: "Compute the volume of a rectangular prism from its length, width, and height. Enter the dimensions and press Calculate.",
+  inputs: [
+    { name: "length", label: "Length", type: "number", step: "any", placeholder: "2" },
+    { name: "width", label: "Width", type: "number", step: "any", placeholder: "3" },
+    { name: "height", label: "Height", type: "number", step: "any", placeholder: "4" }
+  ],
+  expression: "length * width * height",
+  unit: "unit³",
+  examples: [
+    { description: "2 × 3 × 4 ⇒ 24 unit³" },
+    { description: "5 × 5 × 5 ⇒ 125 unit³" },
+    { description: "1.5 × 2 × 3 ⇒ 9 unit³" }
+  ],
+  faqs: [
+    { question: "Can I use any units?", answer: "Yes, just keep dimensions in the same unit." },
+    { question: "Is this the same as box volume?", answer: "Yes, a box is a rectangular prism." },
+    { question: "Does order matter?", answer: "No, multiplication is commutative." }
+  ],
+  disclaimer: "Mathematical calculation; ensure consistent units for accuracy.",
+  related: []
+};
+
+<Calculator schema={schema} />
+

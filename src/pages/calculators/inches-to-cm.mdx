@@ -1,0 +1,38 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Inches to Centimeters Converter"
+description: "Convert inches to centimeters."
+date: 2025-10-14
+updated: 2025-10-14
+cluster: "Conversions"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  slug: "inches-to-cm",
+  title: "Inches to Centimeters Converter",
+  locale: "en",
+  cluster: "Conversions",
+  intro: "Convert a length in inches to centimeters. Enter the value and press Calculate.",
+  inputs: [
+    { name: "inches", label: "Inches", type: "number", step: "any", placeholder: "10" }
+  ],
+  expression: "inches * 2.54",
+  unit: "cm",
+  examples: [
+    { description: "10 in ⇒ 25.4 cm" },
+    { description: "5.5 in ⇒ 13.97 cm" },
+    { description: "0.25 in ⇒ 0.635 cm" }
+  ],
+  faqs: [
+    { question: "What is the conversion factor?", answer: "One inch equals 2.54 centimeters." },
+    { question: "Can I convert fractional inches?", answer: "Yes, enter the value as a decimal." },
+    { question: "Are negative values allowed?", answer: "The calculation works but physical lengths are non-negative." }
+  ],
+  disclaimer: "Verify critical measurements with official sources.",
+  related: []
+};
+
+<Calculator schema={schema} />
+

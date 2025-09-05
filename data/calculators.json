@@ -5896,5 +5896,369 @@
       }
     ],
     "disclaimer": "Actual page counts vary with formatting and design choices."
+  },
+  {
+    "slug": "inches-to-cm",
+    "title": "Inches to Centimeters Converter",
+    "cluster": "Conversions",
+    "intro": "Convert a length in inches to centimeters. Enter the value and press Calculate.",
+    "inputs": [
+      { "name": "inches", "label": "Inches", "type": "number", "step": "any", "placeholder": "10" }
+    ],
+    "expression": "inches * 2.54",
+    "unit": "cm",
+    "examples": [
+      { "description": "10 in ⇒ 25.4 cm" },
+      { "description": "5.5 in ⇒ 13.97 cm" },
+      { "description": "0.25 in ⇒ 0.635 cm" }
+    ],
+    "faqs": [
+      { "question": "What is the conversion factor?", "answer": "One inch equals 2.54 centimeters." },
+      { "question": "Can I convert fractional inches?", "answer": "Yes, enter the value as a decimal." },
+      { "question": "Are negative values allowed?", "answer": "The calculation works but physical lengths are non-negative." }
+    ],
+    "disclaimer": "Verify critical measurements with official sources."
+  },
+  {
+    "slug": "pounds-to-stones",
+    "title": "Pounds to Stones Converter",
+    "cluster": "Conversions",
+    "intro": "Convert a weight in pounds to stones. Enter the value and press Calculate.",
+    "inputs": [
+      { "name": "pounds", "label": "Pounds", "type": "number", "step": "any", "placeholder": "140" }
+    ],
+    "expression": "pounds / 14",
+    "unit": "st",
+    "examples": [
+      { "description": "140 lb ⇒ 10 st" },
+      { "description": "200 lb ⇒ 14.29 st" },
+      { "description": "90 lb ⇒ 6.43 st" }
+    ],
+    "faqs": [
+      { "question": "What is a stone?", "answer": "A stone equals 14 pounds." },
+      { "question": "Does it accept decimals?", "answer": "Yes, you can enter fractional pounds." },
+      { "question": "Where is this unit used?", "answer": "Stones are commonly used in the United Kingdom." }
+    ],
+    "disclaimer": "For general weight conversion only; medical decisions require professional advice."
+  },
+  {
+    "slug": "days-to-seconds",
+    "title": "Days to Seconds Converter",
+    "cluster": "Date & Time",
+    "intro": "Convert a duration in days to total seconds. Enter the value and press Calculate.",
+    "inputs": [
+      { "name": "days", "label": "Days", "type": "number", "step": "any", "placeholder": "1" }
+    ],
+    "expression": "days * 86400",
+    "unit": "seconds",
+    "examples": [
+      { "description": "1 day ⇒ 86400 seconds" },
+      { "description": "2.5 days ⇒ 216000 seconds" },
+      { "description": "0.1 day ⇒ 8640 seconds" }
+    ],
+    "faqs": [
+      { "question": "How many seconds are in one day?", "answer": "There are 86,400 seconds in a standard day." },
+      { "question": "Can I enter fractional days?", "answer": "Yes, decimals are accepted." },
+      { "question": "Does this account for leap seconds?", "answer": "No, it uses the standard 86,400 seconds per day." }
+    ],
+    "disclaimer": "Leap seconds and variations in day length are not considered."
+  },
+  {
+    "slug": "age-in-months",
+    "title": "Age in Months Calculator",
+    "cluster": "Date & Time",
+    "intro": "Convert an age expressed in years to total months. Enter the years and press Calculate.",
+    "inputs": [
+      { "name": "years", "label": "Years", "type": "number", "step": "any", "placeholder": "5" }
+    ],
+    "expression": "years * 12",
+    "unit": "months",
+    "examples": [
+      { "description": "5 years ⇒ 60 months" },
+      { "description": "0.5 years ⇒ 6 months" },
+      { "description": "25 years ⇒ 300 months" }
+    ],
+    "faqs": [
+      { "question": "Why multiply by 12?", "answer": "There are 12 months in a year." },
+      { "question": "Can I enter decimal years?", "answer": "Yes, decimals convert proportionally to months." },
+      { "question": "Does it consider varying month lengths?", "answer": "No, it assumes all months are equal." }
+    ],
+    "disclaimer": "Approximation for calendar planning; actual months vary in length."
+  },
+  {
+    "slug": "gross-margin",
+    "title": "Gross Margin Calculator",
+    "cluster": "Finance",
+    "intro": "Determine gross margin percentage from revenue and cost of goods sold. Enter the values and press Calculate.",
+    "inputs": [
+      { "name": "revenue", "label": "Revenue", "type": "number", "step": "any", "placeholder": "1000" },
+      { "name": "cogs", "label": "Cost of Goods Sold", "type": "number", "step": "any", "placeholder": "600" }
+    ],
+    "expression": "(revenue - cogs) / revenue * 100",
+    "unit": "%",
+    "examples": [
+      { "description": "Revenue $1000, COGS $600 ⇒ 40%" },
+      { "description": "Revenue $250, COGS $200 ⇒ 20%" },
+      { "description": "Revenue $5000, COGS $3500 ⇒ 30%" }
+    ],
+    "faqs": [
+      { "question": "What is gross margin?", "answer": "Gross margin is the percentage of revenue left after subtracting cost of goods sold." },
+      { "question": "Can gross margin be negative?", "answer": "Yes, if COGS exceeds revenue." },
+      { "question": "Does it include other expenses?", "answer": "No, only direct cost of goods sold is considered." }
+    ],
+    "disclaimer": "Simplified calculation; consult a financial professional for detailed analysis."
+  },
+  {
+    "slug": "break-even-units",
+    "title": "Break-Even Units Calculator",
+    "cluster": "Finance",
+    "intro": "Calculate how many units must be sold to cover fixed costs. Enter the values and press Calculate.",
+    "inputs": [
+      { "name": "fixed", "label": "Fixed Cost", "type": "number", "step": "any", "placeholder": "1000" },
+      { "name": "price", "label": "Price per Unit", "type": "number", "step": "any", "placeholder": "50" },
+      { "name": "variable", "label": "Variable Cost per Unit", "type": "number", "step": "any", "placeholder": "30" }
+    ],
+    "expression": "fixed / (price - variable)",
+    "unit": "units",
+    "examples": [
+      { "description": "Fixed $1000, Price $50, Variable $30 ⇒ 50 units" },
+      { "description": "Fixed $5000, Price $100, Variable $60 ⇒ 125 units" },
+      { "description": "Fixed $2000, Price $80, Variable $40 ⇒ 50 units" }
+    ],
+    "faqs": [
+      { "question": "What if price equals variable cost?", "answer": "Break-even units become infinite because profit per unit is zero." },
+      { "question": "Do results round up?", "answer": "Results may be fractional; round up to whole units in practice." },
+      { "question": "What are fixed costs?", "answer": "Expenses that do not change with production volume." }
+    ],
+    "disclaimer": "Simplified model; additional costs and taxes may apply."
+  },
+  {
+    "slug": "calorie-deficit",
+    "title": "Calorie Deficit Daily Intake Calculator",
+    "cluster": "Health",
+    "intro": "Calculate your daily calorie intake after applying a chosen deficit. Enter maintenance calories and desired deficit, then press Calculate.",
+    "inputs": [
+      { "name": "maintenance", "label": "Maintenance Calories", "type": "number", "step": "any", "placeholder": "2500" },
+      { "name": "deficit", "label": "Calorie Deficit", "type": "number", "step": "any", "placeholder": "500" }
+    ],
+    "expression": "maintenance - deficit",
+    "unit": "kcal",
+    "examples": [
+      { "description": "Maintenance 2500 kcal, Deficit 500 ⇒ 2000 kcal" },
+      { "description": "Maintenance 2000 kcal, Deficit 300 ⇒ 1700 kcal" },
+      { "description": "Maintenance 2800 kcal, Deficit 1000 ⇒ 1800 kcal" }
+    ],
+    "faqs": [
+      { "question": "What are maintenance calories?", "answer": "The amount of energy your body needs to maintain weight." },
+      { "question": "Can the deficit be too large?", "answer": "Yes, excessive deficits can be unhealthy." },
+      { "question": "Does this guarantee weight loss?", "answer": "Weight loss also depends on activity and individual factors." }
+    ],
+    "disclaimer": "Consult a healthcare professional before making dietary changes."
+  },
+  {
+    "slug": "body-surface-area-du-bois",
+    "title": "Body Surface Area (Du Bois)",
+    "cluster": "Health",
+    "intro": "Estimate body surface area (BSA) using the Du Bois formula with weight in kilograms and height in centimeters. Enter the values and press Calculate.",
+    "inputs": [
+      { "name": "weight", "label": "Weight (kg)", "type": "number", "step": "any", "placeholder": "70" },
+      { "name": "height", "label": "Height (cm)", "type": "number", "step": "any", "placeholder": "170" }
+    ],
+    "expression": "0.007184 * Math.pow(weight,0.425) * Math.pow(height,0.725)",
+    "unit": "m²",
+    "examples": [
+      { "description": "70 kg & 170 cm ⇒ 1.84 m²" },
+      { "description": "50 kg & 160 cm ⇒ 1.48 m²" },
+      { "description": "90 kg & 180 cm ⇒ 2.08 m²" }
+    ],
+    "faqs": [
+      { "question": "What is BSA used for?", "answer": "BSA helps dose certain medications and assess metabolic needs." },
+      { "question": "Is the Du Bois formula accurate?", "answer": "It's a widely used estimate but may not fit all body types." },
+      { "question": "Do units matter?", "answer": "Yes, weight must be in kilograms and height in centimeters." }
+    ],
+    "disclaimer": "For educational purposes only; consult medical professionals for health decisions."
+  },
+  {
+    "slug": "brick-cost",
+    "title": "Brick Cost Calculator",
+    "cluster": "Home & DIY",
+    "intro": "Estimate the total price of bricks based on quantity and cost per brick. Enter the values and press Calculate.",
+    "inputs": [
+      { "name": "bricks", "label": "Number of Bricks", "type": "number", "step": "any", "placeholder": "500" },
+      { "name": "price", "label": "Price per Brick", "type": "number", "step": "any", "placeholder": "0.75" }
+    ],
+    "expression": "bricks * price",
+    "unit": "USD",
+    "examples": [
+      { "description": "500 bricks at $0.75 ⇒ $375" },
+      { "description": "1000 bricks at $0.50 ⇒ $500" },
+      { "description": "250 bricks at $1.20 ⇒ $300" }
+    ],
+    "faqs": [
+      { "question": "Does this include tax?", "answer": "No, sales tax is not included." },
+      { "question": "Can I enter decimal prices?", "answer": "Yes, enter the cost per brick with decimals if needed." },
+      { "question": "Does it account for mortar or waste?", "answer": "No, it only multiplies quantity by unit price." }
+    ],
+    "disclaimer": "For budgeting purposes only; supplier fees and materials may vary."
+  },
+  {
+    "slug": "lawn-watering-time",
+    "title": "Lawn Watering Time Calculator",
+    "cluster": "Home & DIY",
+    "intro": "Estimate how many minutes are required to water a lawn to a desired depth. Enter area, desired water depth, and sprinkler flow rate, then press Calculate.",
+    "inputs": [
+      { "name": "area", "label": "Area (m²)", "type": "number", "step": "any", "placeholder": "100" },
+      { "name": "depth", "label": "Depth (cm)", "type": "number", "step": "any", "placeholder": "2" },
+      { "name": "rate", "label": "Flow Rate (L/min)", "type": "number", "step": "any", "placeholder": "15" }
+    ],
+    "expression": "area * depth * 10 / rate",
+    "unit": "minutes",
+    "examples": [
+      { "description": "100 m², 2 cm, 15 L/min ⇒ 133.33 minutes" },
+      { "description": "50 m², 1 cm, 10 L/min ⇒ 50 minutes" },
+      { "description": "200 m², 2.5 cm, 20 L/min ⇒ 250 minutes" }
+    ],
+    "faqs": [
+      { "question": "Why multiply by 10?", "answer": "1 m² × 1 cm equals 10 liters of water." },
+      { "question": "Can I use gallons?", "answer": "Convert gallons to liters before using this calculator." },
+      { "question": "Does sprinkler efficiency affect results?", "answer": "Yes, this assumes perfect distribution without losses." }
+    ],
+    "disclaimer": "Actual watering needs depend on soil and weather conditions."
+  },
+  {
+    "slug": "rectangular-prism-volume",
+    "title": "Rectangular Prism Volume Calculator",
+    "cluster": "Math",
+    "intro": "Compute the volume of a rectangular prism from its length, width, and height. Enter the dimensions and press Calculate.",
+    "inputs": [
+      { "name": "length", "label": "Length", "type": "number", "step": "any", "placeholder": "2" },
+      { "name": "width", "label": "Width", "type": "number", "step": "any", "placeholder": "3" },
+      { "name": "height", "label": "Height", "type": "number", "step": "any", "placeholder": "4" }
+    ],
+    "expression": "length * width * height",
+    "unit": "unit³",
+    "examples": [
+      { "description": "2 × 3 × 4 ⇒ 24 unit³" },
+      { "description": "5 × 5 × 5 ⇒ 125 unit³" },
+      { "description": "1.5 × 2 × 3 ⇒ 9 unit³" }
+    ],
+    "faqs": [
+      { "question": "Can I use any units?", "answer": "Yes, just keep dimensions in the same unit." },
+      { "question": "Is this the same as box volume?", "answer": "Yes, a box is a rectangular prism." },
+      { "question": "Does order matter?", "answer": "No, multiplication is commutative." }
+    ],
+    "disclaimer": "Mathematical calculation; ensure consistent units for accuracy."
+  },
+  {
+    "slug": "hexagon-area",
+    "title": "Regular Hexagon Area Calculator",
+    "cluster": "Math",
+    "intro": "Find the area of a regular hexagon using the standard formula based on side length. Enter the side length and press Calculate.",
+    "inputs": [
+      { "name": "side", "label": "Side Length", "type": "number", "step": "any", "placeholder": "2" }
+    ],
+    "expression": "(3 * Math.sqrt(3) / 2) * side * side",
+    "unit": "unit²",
+    "examples": [
+      { "description": "Side 2 ⇒ 10.39 unit²" },
+      { "description": "Side 5 ⇒ 64.95 unit²" },
+      { "description": "Side 10 ⇒ 259.81 unit²" }
+    ],
+    "faqs": [
+      { "question": "Where does the formula come from?", "answer": "It derives from dividing the hexagon into equilateral triangles." },
+      { "question": "What units are used?", "answer": "Any consistent length unit; output is squared." },
+      { "question": "Does this work for irregular hexagons?", "answer": "No, it assumes all sides and angles are equal." }
+    ],
+    "disclaimer": "For regular hexagons only; ensure measurements are accurate."
+  },
+  {
+    "slug": "ohms-law-resistance",
+    "title": "Ohm's Law Resistance Calculator",
+    "cluster": "Technology",
+    "intro": "Determine electrical resistance using voltage divided by current. Enter voltage and current and press Calculate.",
+    "inputs": [
+      { "name": "voltage", "label": "Voltage (V)", "type": "number", "step": "any", "placeholder": "10" },
+      { "name": "current", "label": "Current (A)", "type": "number", "step": "any", "placeholder": "2" }
+    ],
+    "expression": "voltage / current",
+    "unit": "Ω",
+    "examples": [
+      { "description": "10 V / 2 A ⇒ 5 Ω" },
+      { "description": "5 V / 0.5 A ⇒ 10 Ω" },
+      { "description": "12 V / 3 A ⇒ 4 Ω" }
+    ],
+    "faqs": [
+      { "question": "What if current is zero?", "answer": "Resistance becomes undefined; current must be nonzero." },
+      { "question": "What unit is the result?", "answer": "Ohms (Ω)." },
+      { "question": "Does this apply to AC and DC?", "answer": "It represents ideal conditions; real circuits may differ." }
+    ],
+    "disclaimer": "Ideal calculation; real components have tolerances and reactance."
+  },
+  {
+    "slug": "color-depth-to-colors",
+    "title": "Color Depth to Colors Calculator",
+    "cluster": "Technology",
+    "intro": "Calculate how many distinct colors are possible for a given bit depth per pixel. Enter bits and press Calculate.",
+    "inputs": [
+      { "name": "bits", "label": "Bits", "type": "number", "step": "any", "placeholder": "8" }
+    ],
+    "expression": "Math.pow(2, bits)",
+    "unit": "colors",
+    "examples": [
+      { "description": "8 bits ⇒ 256 colors" },
+      { "description": "16 bits ⇒ 65536 colors" },
+      { "description": "24 bits ⇒ 16777216 colors" }
+    ],
+    "faqs": [
+      { "question": "What is color depth?", "answer": "The number of bits used to represent the color of a single pixel." },
+      { "question": "Does higher bit depth mean more colors?", "answer": "Yes, colors double with each additional bit." },
+      { "question": "Can I use fractional bits?", "answer": "Bits are whole numbers; fractions are not meaningful here." }
+    ],
+    "disclaimer": "Assumes standard RGB without additional channels."
+  },
+  {
+    "slug": "horse-age-human-years",
+    "title": "Horse Age in Human Years",
+    "cluster": "Other",
+    "intro": "Approximate a horse's age in human years using a common rule of thumb. Enter the horse's age and press Calculate.",
+    "inputs": [
+      { "name": "years", "label": "Horse Age (years)", "type": "number", "step": "any", "placeholder": "5" }
+    ],
+    "expression": "Math.min(years,2)*6.5 + Math.max(years-2,0)*4.5",
+    "unit": "years",
+    "examples": [
+      { "description": "1 year ⇒ 6.5 human years" },
+      { "description": "5 years ⇒ 26.5 human years" },
+      { "description": "10 years ⇒ 49 human years" }
+    ],
+    "faqs": [
+      { "question": "Why 6.5 years for the first two years?", "answer": "Horses mature quickly during their early years." },
+      { "question": "Do all breeds age the same?", "answer": "No, this is a general approximation." },
+      { "question": "Is the rate linear after two years?", "answer": "Yes, it assumes 4.5 human years per horse year after age two." }
+    ],
+    "disclaimer": "For general comparison only; consult a veterinarian for precise assessments."
+  },
+  {
+    "slug": "dice-roll-probability",
+    "title": "Dice Roll Probability Calculator",
+    "cluster": "Other",
+    "intro": "Find the probability of rolling a specific value at least once with multiple dice. Enter sides and number of dice, then press Calculate.",
+    "inputs": [
+      { "name": "sides", "label": "Sides per Die", "type": "number", "step": "any", "placeholder": "6" },
+      { "name": "dice", "label": "Number of Dice", "type": "number", "step": "any", "placeholder": "2" }
+    ],
+    "expression": "100 * (1 - Math.pow((sides - 1) / sides, dice))",
+    "unit": "%",
+    "examples": [
+      { "description": "1 die (6 sides) ⇒ 16.67%" },
+      { "description": "2 dice (6 sides) ⇒ 30.56%" },
+      { "description": "3 dice (20 sides) ⇒ 14.26%" }
+    ],
+    "faqs": [
+      { "question": "What does the result represent?", "answer": "The probability of rolling at least one specified value." },
+      { "question": "Can I choose a different target number?", "answer": "Yes, this assumes one particular side is the target." },
+      { "question": "Does it work for loaded dice?", "answer": "No, it assumes all sides are equally likely." }
+    ],
+    "disclaimer": "For gaming probability estimates; real-world outcomes may vary."
   }
 ]

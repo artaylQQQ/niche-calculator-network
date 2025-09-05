@@ -1,0 +1,39 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Dice Roll Probability Calculator"
+description: "Chance of rolling a chosen value at least once."
+date: 2025-10-14
+updated: 2025-10-14
+cluster: "Other"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  slug: "dice-roll-probability",
+  title: "Dice Roll Probability Calculator",
+  locale: "en",
+  cluster: "Other",
+  intro: "Find the probability of rolling a specific value at least once with multiple dice. Enter sides and number of dice, then press Calculate.",
+  inputs: [
+    { name: "sides", label: "Sides per Die", type: "number", step: "any", placeholder: "6" },
+    { name: "dice", label: "Number of Dice", type: "number", step: "any", placeholder: "2" }
+  ],
+  expression: "100 * (1 - Math.pow((sides - 1) / sides, dice))",
+  unit: "%",
+  examples: [
+    { description: "1 die (6 sides) ⇒ 16.67%" },
+    { description: "2 dice (6 sides) ⇒ 30.56%" },
+    { description: "3 dice (20 sides) ⇒ 14.26%" }
+  ],
+  faqs: [
+    { question: "What does the result represent?", answer: "The probability of rolling at least one specified value." },
+    { question: "Can I choose a different target number?", answer: "Yes, this assumes one particular side is the target." },
+    { question: "Does it work for loaded dice?", answer: "No, it assumes all sides are equally likely." }
+  ],
+  disclaimer: "For gaming probability estimates; real-world outcomes may vary.",
+  related: []
+};
+
+<Calculator schema={schema} />
+

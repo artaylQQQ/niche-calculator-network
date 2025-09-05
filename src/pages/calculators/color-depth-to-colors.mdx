@@ -1,0 +1,38 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Color Depth to Colors Calculator"
+description: "Find the number of colors from bit depth."
+date: 2025-10-14
+updated: 2025-10-14
+cluster: "Technology"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  slug: "color-depth-to-colors",
+  title: "Color Depth to Colors Calculator",
+  locale: "en",
+  cluster: "Technology",
+  intro: "Calculate how many distinct colors are possible for a given bit depth per pixel. Enter bits and press Calculate.",
+  inputs: [
+    { name: "bits", label: "Bits", type: "number", step: "any", placeholder: "8" }
+  ],
+  expression: "Math.pow(2, bits)",
+  unit: "colors",
+  examples: [
+    { description: "8 bits ⇒ 256 colors" },
+    { description: "16 bits ⇒ 65536 colors" },
+    { description: "24 bits ⇒ 16777216 colors" }
+  ],
+  faqs: [
+    { question: "What is color depth?", answer: "The number of bits used to represent the color of a single pixel." },
+    { question: "Does higher bit depth mean more colors?", answer: "Yes, colors double with each additional bit." },
+    { question: "Can I use fractional bits?", answer: "Bits are whole numbers; fractions are not meaningful here." }
+  ],
+  disclaimer: "Assumes standard RGB without additional channels.",
+  related: []
+};
+
+<Calculator schema={schema} />
+
