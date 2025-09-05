@@ -1,0 +1,41 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Kilograms to Newtons"
+description: "Convert mass in kilograms to weight force in Newtons."
+updated: "2025-09-27"
+cluster: "Conversions"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "inputs": [
+    {
+      "name": "kg",
+      "label": "Mass (kg)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "10"
+    }
+  ],
+  "slug": "kilograms-to-newtons",
+  "title": "Kilograms to Newtons",
+  "locale": "en",
+  "unit": "N",
+  "expression": "kg * 9.80665",
+  "intro": "Calculate the weight force of an object in Newtons from its mass in kilograms assuming standard Earth gravity.",
+  "examples": [
+    { "description": "1 kg ⇒ 9.81 N" },
+    { "description": "5 kg ⇒ 49.03 N" },
+    { "description": "0.2 kg ⇒ 1.96 N" }
+  ],
+  "faqs": [
+    { "question": "What gravity constant is used?", "answer": "The calculator uses standard gravity of 9.80665 m/s²." },
+    { "question": "Can I input decimal masses?", "answer": "Yes, decimals are accepted." },
+    { "question": "Is this valid on other planets?", "answer": "No, the result is specific to Earth's gravity." }
+  ],
+  "disclaimer": "Educational purposes only. Not professional advice.",
+  "cluster": "Conversions"
+}
+
+<Calculator schema={schema} />

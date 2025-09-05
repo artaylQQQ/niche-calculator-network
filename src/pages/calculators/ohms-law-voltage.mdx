@@ -1,0 +1,36 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Ohm's Law Voltage"
+description: "Compute voltage from current and resistance using Ohm's Law."
+updated: "2025-09-27"
+cluster: "Technology"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "inputs": [
+    { "name": "current", "label": "Current (A)", "type": "number", "step": "any", "placeholder": "2" },
+    { "name": "resistance", "label": "Resistance (Ω)", "type": "number", "step": "any", "placeholder": "5" }
+  ],
+  "slug": "ohms-law-voltage",
+  "title": "Ohm's Law Voltage",
+  "locale": "en",
+  "unit": "V",
+  "expression": "current * resistance",
+  "intro": "Apply Ohm's Law to find voltage when current and resistance are known.",
+  "examples": [
+    { "description": "2 A & 5 Ω ⇒ 10 V" },
+    { "description": "0.5 A & 100 Ω ⇒ 50 V" },
+    { "description": "1.2 A & 8 Ω ⇒ 9.6 V" }
+  ],
+  "faqs": [
+    { "question": "What is Ohm's Law?", "answer": "It relates voltage, current, and resistance: V = I × R." },
+    { "question": "Can inputs be decimal?", "answer": "Yes, decimals are accepted for both current and resistance." },
+    { "question": "Is temperature considered?", "answer": "No, resistance changes with temperature are not accounted for." }
+  ],
+  "disclaimer": "Educational purposes only. Not professional advice.",
+  "cluster": "Technology"
+}
+
+<Calculator schema={schema} />

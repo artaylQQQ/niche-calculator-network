@@ -1,0 +1,41 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Celsius to Kelvin"
+description: "Convert temperatures from Celsius to Kelvin."
+updated: "2025-09-27"
+cluster: "Conversions"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "inputs": [
+    {
+      "name": "c",
+      "label": "Celsius (°C)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "25"
+    }
+  ],
+  "slug": "celsius-to-kelvin",
+  "title": "Celsius to Kelvin",
+  "locale": "en",
+  "unit": "K",
+  "expression": "c + 273.15",
+  "intro": "Easily convert temperatures from degrees Celsius to Kelvin for scientific calculations or everyday use.",
+  "examples": [
+    { "description": "0 °C ⇒ 273.15 K" },
+    { "description": "25 °C ⇒ 298.15 K" },
+    { "description": "-10 °C ⇒ 263.15 K" }
+  ],
+  "faqs": [
+    { "question": "Can it handle negative temperatures?", "answer": "Yes, input any Celsius value including negatives." },
+    { "question": "Are decimals supported?", "answer": "Yes, you can enter decimal temperatures." },
+    { "question": "What is absolute zero in Kelvin?", "answer": "Absolute zero is 0 K, equal to -273.15 °C." }
+  ],
+  "disclaimer": "Educational purposes only. Not professional advice.",
+  "cluster": "Conversions"
+}
+
+<Calculator schema={schema} />

@@ -1,0 +1,37 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Inflation Adjusted Price"
+description: "Estimate a future price after inflation."
+updated: "2025-09-27"
+cluster: "Finance"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "inputs": [
+    { "name": "price", "label": "Current Price", "type": "number", "step": "any", "placeholder": "100" },
+    { "name": "rate", "label": "Annual Inflation (%)", "type": "number", "step": "any", "placeholder": "3" },
+    { "name": "years", "label": "Years", "type": "number", "step": "any", "placeholder": "5" }
+  ],
+  "slug": "inflation-adjusted-price",
+  "title": "Inflation Adjusted Price",
+  "locale": "en",
+  "unit": "same as price",
+  "expression": "price * (1 + rate/100) ^ years",
+  "intro": "Calculate how much a price today will cost in the future after applying annual inflation.",
+  "examples": [
+    { "description": "Price 100, 3% for 5 years ⇒ 115.93" },
+    { "description": "Price 50, 2% for 10 years ⇒ 60.95" },
+    { "description": "Price 20, 5% for 2 years ⇒ 22.05" }
+  ],
+  "faqs": [
+    { "question": "Is inflation compounded annually?", "answer": "Yes, the rate is applied once per year." },
+    { "question": "Can I use negative inflation?", "answer": "Yes, enter a negative rate for deflation." },
+    { "question": "What currency is used?", "answer": "The result uses the same currency as your input price." }
+  ],
+  "disclaimer": "Educational purposes only. Not professional advice.",
+  "cluster": "Finance"
+}
+
+<Calculator schema={schema} />

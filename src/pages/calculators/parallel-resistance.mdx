@@ -1,0 +1,36 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Parallel Resistance"
+description: "Equivalent resistance of two resistors in parallel."
+updated: "2025-09-27"
+cluster: "Technology"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "inputs": [
+    { "name": "r1", "label": "Resistor 1 (Ω)", "type": "number", "step": "any", "placeholder": "100" },
+    { "name": "r2", "label": "Resistor 2 (Ω)", "type": "number", "step": "any", "placeholder": "100" }
+  ],
+  "slug": "parallel-resistance",
+  "title": "Parallel Resistance",
+  "locale": "en",
+  "unit": "Ω",
+  "expression": "1 / (1/r1 + 1/r2)",
+  "intro": "Calculate the equivalent resistance for two resistors connected in parallel.",
+  "examples": [
+    { "description": "R1=100 Ω, R2=100 Ω ⇒ 50 Ω" },
+    { "description": "R1=200 Ω, R2=300 Ω ⇒ 120 Ω" },
+    { "description": "R1=10 Ω, R2=20 Ω ⇒ 6.67 Ω" }
+  ],
+  "faqs": [
+    { "question": "Can more than two resistors be used?", "answer": "This calculator is for exactly two resistors." },
+    { "question": "Are units important?", "answer": "Both inputs must be in the same unit, typically ohms." },
+    { "question": "Why does equivalent resistance decrease?", "answer": "Parallel paths allow more current, reducing total resistance." }
+  ],
+  "disclaimer": "Educational purposes only. Not professional advice.",
+  "cluster": "Technology"
+}
+
+<Calculator schema={schema} />

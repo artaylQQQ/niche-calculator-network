@@ -1,0 +1,37 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Monthly Savings Required"
+description: "Monthly deposit needed to reach a savings goal."
+updated: "2025-09-27"
+cluster: "Finance"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "inputs": [
+    { "name": "goal", "label": "Savings Goal", "type": "number", "step": "any", "placeholder": "10000" },
+    { "name": "rate", "label": "Annual Interest (%)", "type": "number", "step": "any", "placeholder": "5" },
+    { "name": "years", "label": "Years", "type": "number", "step": "any", "placeholder": "5" }
+  ],
+  "slug": "monthly-savings-required",
+  "title": "Monthly Savings Required",
+  "locale": "en",
+  "unit": "per month",
+  "expression": "goal * (rate/100/12) / ((1 + rate/100/12)^(years*12) - 1)",
+  "intro": "Determine the monthly contribution needed to achieve a savings target given an annual interest rate.",
+  "examples": [
+    { "description": "Goal 10000, 5% for 5 years ⇒ 147.05 per month" },
+    { "description": "Goal 5000, 3% for 3 years ⇒ 132.91 per month" },
+    { "description": "Goal 20000, 4% for 10 years ⇒ 135.82 per month" }
+  ],
+  "faqs": [
+    { "question": "Is interest compounded monthly?", "answer": "Yes, the annual rate is converted to a monthly rate." },
+    { "question": "Can I use zero interest?", "answer": "Yes, the formula still works with a 0% rate." },
+    { "question": "Does it assume end-of-month deposits?", "answer": "Yes, contributions are assumed at the end of each month." }
+  ],
+  "disclaimer": "Educational purposes only. Not professional advice.",
+  "cluster": "Finance"
+}
+
+<Calculator schema={schema} />

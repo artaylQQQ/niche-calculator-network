@@ -1,0 +1,36 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Mulch Volume"
+description: "Calculate cubic yards of mulch needed for a project."
+updated: "2025-09-27"
+cluster: "Home & DIY"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "inputs": [
+    { "name": "area", "label": "Area (ft²)", "type": "number", "step": "any", "placeholder": "500" },
+    { "name": "depth", "label": "Depth (in)", "type": "number", "step": "any", "placeholder": "3" }
+  ],
+  "slug": "mulch-volume",
+  "title": "Mulch Volume",
+  "locale": "en",
+  "unit": "yd³",
+  "expression": "(area * depth / 12) / 27",
+  "intro": "Estimate how many cubic yards of mulch are needed based on coverage area and desired depth.",
+  "examples": [
+    { "description": "Area 500 ft², depth 3 in ⇒ 4.63 yd³" },
+    { "description": "Area 200 ft², depth 2 in ⇒ 1.23 yd³" },
+    { "description": "Area 1000 ft², depth 4 in ⇒ 12.35 yd³" }
+  ],
+  "faqs": [
+    { "question": "Why divide by 27?", "answer": "There are 27 cubic feet in a cubic yard." },
+    { "question": "Can I use metric units?", "answer": "Convert to feet and inches first for accurate results." },
+    { "question": "Does it account for settling?", "answer": "No, consider ordering extra to account for compaction." }
+  ],
+  "disclaimer": "Educational purposes only. Not professional advice.",
+  "cluster": "Home & DIY"
+}
+
+<Calculator schema={schema} />

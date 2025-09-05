@@ -1,0 +1,36 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Fence Post Count"
+description: "Estimate number of posts needed for a straight fence."
+updated: "2025-09-27"
+cluster: "Home & DIY"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "inputs": [
+    { "name": "length", "label": "Fence Length (ft)", "type": "number", "step": "any", "placeholder": "100" },
+    { "name": "spacing", "label": "Post Spacing (ft)", "type": "number", "step": "any", "placeholder": "8" }
+  ],
+  "slug": "fence-post-count",
+  "title": "Fence Post Count",
+  "locale": "en",
+  "unit": "posts",
+  "expression": "length / spacing + 1",
+  "intro": "Quickly approximate how many posts are needed to build a straight fence given total length and spacing between posts.",
+  "examples": [
+    { "description": "Length 100 ft, spacing 8 ft ⇒ 13.5 posts" },
+    { "description": "Length 50 ft, spacing 6 ft ⇒ 9.33 posts" },
+    { "description": "Length 200 ft, spacing 10 ft ⇒ 21 posts" }
+  ],
+  "faqs": [
+    { "question": "Should I round up the result?", "answer": "Yes, always round up to ensure enough posts." },
+    { "question": "Does it include corner posts?", "answer": "The formula adds one extra post for the end but doesn't account for gates or corners." },
+    { "question": "Can spacing be in meters?", "answer": "Convert to feet before using the calculator." }
+  ],
+  "disclaimer": "Educational purposes only. Not professional advice.",
+  "cluster": "Home & DIY"
+}
+
+<Calculator schema={schema} />

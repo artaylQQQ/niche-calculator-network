@@ -1,0 +1,48 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Daylight Duration"
+description: "Find total daylight hours from sunrise and sunset times."
+updated: "2025-09-27"
+cluster: "Date & Time"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "inputs": [
+    {
+      "name": "sunrise",
+      "label": "Sunrise (h)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "6"
+    },
+    {
+      "name": "sunset",
+      "label": "Sunset (h)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "18"
+    }
+  ],
+  "slug": "daylight-duration",
+  "title": "Daylight Duration",
+  "locale": "en",
+  "unit": "hours",
+  "expression": "sunset - sunrise",
+  "intro": "Determine the length of daylight by subtracting sunrise time from sunset time on a 24-hour clock.",
+  "examples": [
+    { "description": "Sunrise 6, Sunset 18 ⇒ 12 hours" },
+    { "description": "Sunrise 7.5, Sunset 20.25 ⇒ 12.75 hours" },
+    { "description": "Sunrise 5.25, Sunset 19.75 ⇒ 14.5 hours" }
+  ],
+  "faqs": [
+    { "question": "What time format is used?", "answer": "Enter times in decimal hours using a 24-hour clock." },
+    { "question": "Can it handle overnight sun?", "answer": "This calculator assumes sunrise occurs before sunset within the same day." },
+    { "question": "Are fractional hours allowed?", "answer": "Yes, use decimals for minutes (e.g., 7.5 for 7:30)." }
+  ],
+  "disclaimer": "Educational purposes only. Not professional advice.",
+  "cluster": "Date & Time"
+}
+
+<Calculator schema={schema} />
