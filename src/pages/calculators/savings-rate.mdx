@@ -1,0 +1,36 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Savings Rate Calculator"
+description: "Find what percentage of income you save."
+updated: "2025-09-06"
+cluster: "personal finance & loans"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  inputs: [
+    { name: "income", label: "Annual Income", type: "number", step: "any", min: 0, placeholder: "50000" },
+    { name: "savings", label: "Annual Savings", type: "number", step: "any", min: 0, placeholder: "10000" }
+  ],
+  slug: "savings-rate",
+  title: "Savings Rate Calculator",
+  locale: "en",
+  unit: "%",
+  expression: "(savings / income) * 100",
+  intro: "Determine what percentage of your income you set aside each year.",
+  examples: [
+    { description: "Income 50,000 and savings 10,000 ⇒ 20%" },
+    { description: "Income 40,000 and savings 4,000 ⇒ 10%" },
+    { description: "Income 60,000 and savings 9,000 ⇒ 15%" }
+  ],
+  faqs: [
+    { question: "What is a good savings rate?", answer: "Many experts suggest saving at least 20% of your income." },
+    { question: "Can income be zero?", answer: "No, income must be greater than zero." },
+    { question: "Should I use after-tax income?", answer: "Using take-home pay provides a clearer picture." }
+  ],
+  disclaimer: "Estimates only; consult a financial advisor for personalized guidance.",
+  cluster: "personal finance & loans"
+};
+
+<Calculator schema={schema} />

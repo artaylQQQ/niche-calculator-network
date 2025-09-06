@@ -11624,4 +11624,294 @@
     ],
     "disclaimer": "Adjust for specific conference or journal guidelines."
   }
+,
+  {
+    "slug": "inventory-turnover-ratio",
+    "title": "Inventory Turnover Ratio Calculator",
+    "cluster": "finance",
+    "description": "Measure how often inventory is sold and replaced.",
+    "inputs": [
+      { "name": "cogs", "label": "Cost of Goods Sold", "type": "number", "step": "any", "min": 0, "placeholder": "50000" },
+      { "name": "averageInventory", "label": "Average Inventory", "type": "number", "step": "any", "min": 0, "placeholder": "10000" }
+    ],
+    "expression": "cogs / averageInventory",
+    "unit": "times",
+    "intro": "Assess how efficiently a business manages inventory by calculating how many times it sells and replaces stock during a period.",
+    "examples": [
+      { "description": "COGS 50,000 and average inventory 10,000 ⇒ 5 times" },
+      { "description": "COGS 120,000 and average inventory 30,000 ⇒ 4 times" },
+      { "description": "COGS 75,000 and average inventory 15,000 ⇒ 5 times" }
+    ],
+    "faqs": [
+      { "question": "What does a higher ratio indicate?", "answer": "A higher turnover suggests efficient inventory use and strong sales." },
+      { "question": "Is zero inventory allowed?", "answer": "Average inventory must be above zero to compute the ratio." },
+      { "question": "Should I use cost or retail value?", "answer": "Use cost of goods sold and average inventory at cost for consistency." }
+    ],
+    "disclaimer": "General information only; consult a financial professional for analysis."
+  },
+  {
+    "slug": "savings-rate",
+    "title": "Savings Rate Calculator",
+    "cluster": "personal finance & loans",
+    "description": "Find what percentage of income you save.",
+    "inputs": [
+      { "name": "income", "label": "Annual Income", "type": "number", "step": "any", "min": 0, "placeholder": "50000" },
+      { "name": "savings", "label": "Annual Savings", "type": "number", "step": "any", "min": 0, "placeholder": "10000" }
+    ],
+    "expression": "(savings / income) * 100",
+    "unit": "%",
+    "intro": "Determine what percentage of your income you set aside each year.",
+    "examples": [
+      { "description": "Income 50,000 and savings 10,000 ⇒ 20%" },
+      { "description": "Income 40,000 and savings 4,000 ⇒ 10%" },
+      { "description": "Income 60,000 and savings 9,000 ⇒ 15%" }
+    ],
+    "faqs": [
+      { "question": "What is a good savings rate?", "answer": "Many experts suggest saving at least 20% of your income." },
+      { "question": "Can income be zero?", "answer": "No, income must be greater than zero." },
+      { "question": "Should I use after-tax income?", "answer": "Using take-home pay provides a clearer picture." }
+    ],
+    "disclaimer": "Estimates only; consult a financial advisor for personalized guidance."
+  },
+  {
+    "slug": "running-pace",
+    "title": "Running Pace Calculator",
+    "cluster": "health",
+    "description": "Compute average running pace per kilometer.",
+    "inputs": [
+      { "name": "distance", "label": "Distance (km)", "type": "number", "step": "any", "min": 0, "placeholder": "5" },
+      { "name": "time", "label": "Time (minutes)", "type": "number", "step": "any", "min": 0, "placeholder": "25" }
+    ],
+    "expression": "time / distance",
+    "unit": "min/km",
+    "intro": "Compute your average running pace per kilometer from distance and time.",
+    "examples": [
+      { "description": "5 km in 25 min ⇒ 5 min/km" },
+      { "description": "10 km in 45 min ⇒ 4.5 min/km" },
+      { "description": "1 km in 4 min ⇒ 4 min/km" }
+    ],
+    "faqs": [
+      { "question": "Does this work for miles?", "answer": "Yes, convert miles to kilometers first." },
+      { "question": "Can time be in hours?", "answer": "Convert hours to minutes before calculating." },
+      { "question": "What if distance is zero?", "answer": "Pace is undefined when distance is zero." }
+    ],
+    "disclaimer": "For training guidance only; adjust for personal fitness levels."
+  },
+  {
+    "slug": "permutation-calculator",
+    "title": "Permutation Calculator",
+    "cluster": "math",
+    "description": "Compute ordered arrangements of items.",
+    "inputs": [
+      { "name": "n", "label": "Total Items (n)", "type": "number", "step": 1, "min": 0, "placeholder": "5" },
+      { "name": "r", "label": "Chosen Items (r)", "type": "number", "step": 1, "min": 0, "placeholder": "2" }
+    ],
+    "expression": "(function(n,r){n=Math.floor(n);r=Math.floor(r);if(r>n)return 0;let res=1;for(let i=n-r+1;i<=n;i++)res*=i;return res;})(n,r)",
+    "unit": "ways",
+    "intro": "Find the number of ordered arrangements of r items selected from n distinct items.",
+    "examples": [
+      { "description": "n=5, r=2 ⇒ 20 ways" },
+      { "description": "n=6, r=3 ⇒ 120 ways" },
+      { "description": "n=10, r=0 ⇒ 1 way" }
+    ],
+    "faqs": [
+      { "question": "How is this different from combinations?", "answer": "Permutations consider order; combinations do not." },
+      { "question": "Can r be greater than n?", "answer": "If r > n, the result is 0 because you can't choose more items than exist." },
+      { "question": "Does order matter here?", "answer": "Yes, permutations count distinct orderings." }
+    ],
+    "disclaimer": "Mathematical tool only; verify results for critical applications."
+  },
+  {
+    "slug": "cups-to-tbsp",
+    "title": "Cups to Tablespoons Converter",
+    "cluster": "conversions",
+    "description": "Convert cups to tablespoons.",
+    "inputs": [
+      { "name": "cups", "label": "Cups", "type": "number", "step": "any", "min": 0, "placeholder": "1" }
+    ],
+    "expression": "cups * 16",
+    "unit": "tbsp",
+    "intro": "Convert volume in cups to tablespoons using the US customary system.",
+    "examples": [
+      { "description": "1 cup ⇒ 16 tbsp" },
+      { "description": "0.5 cup ⇒ 8 tbsp" },
+      { "description": "2.25 cups ⇒ 36 tbsp" }
+    ],
+    "faqs": [
+      { "question": "Is this US measurement?", "answer": "Yes, it uses US customary units." },
+      { "question": "How many tablespoons in a half cup?", "answer": "There are 8 tablespoons in a half cup." },
+      { "question": "Can I convert back to cups?", "answer": "Divide tablespoons by 16 to get cups." }
+    ],
+    "disclaimer": "For kitchen estimates; check recipe requirements for precision."
+  },
+  {
+    "slug": "day-of-year",
+    "title": "Day of Year Calculator",
+    "cluster": "date-time",
+    "description": "Find the ordinal day number for any date.",
+    "inputs": [
+      { "name": "year", "label": "Year", "type": "number", "step": 1, "min": 1, "placeholder": "2024" },
+      { "name": "month", "label": "Month", "type": "number", "step": 1, "min": 1, "max": 12, "placeholder": "1" },
+      { "name": "day", "label": "Day", "type": "number", "step": 1, "min": 1, "max": 31, "placeholder": "1" }
+    ],
+    "expression": "(function(y,m,d){const days=[0,31,59,90,120,151,181,212,243,273,304,334];const leap=(y%4==0&&y%100!=0)||y%400==0;return days[m-1]+d+(leap&&m>2?1:0);})(year,month,day)",
+    "unit": "day",
+    "intro": "Determine the day number within the year for a given date, accounting for leap years.",
+    "examples": [
+      { "description": "2024-01-01 ⇒ 1" },
+      { "description": "2024-12-31 ⇒ 366" },
+      { "description": "2025-03-01 ⇒ 60" }
+    ],
+    "faqs": [
+      { "question": "Does it handle leap years?", "answer": "Yes, leap years add an extra day after February." },
+      { "question": "What if the date is invalid?", "answer": "Ensure month and day values form a valid date." },
+      { "question": "Is January 1 always day 1?", "answer": "Yes, the first day of any year is day 1." }
+    ],
+    "disclaimer": "For general calendrical calculations; verify for official scheduling."
+  },
+  {
+    "slug": "gpa-calculator",
+    "title": "GPA Calculator",
+    "cluster": "education & learning",
+    "description": "Compute grade point average from points and credits.",
+    "inputs": [
+      { "name": "points", "label": "Total Grade Points", "type": "number", "step": "any", "min": 0, "placeholder": "36" },
+      { "name": "credits", "label": "Total Credits", "type": "number", "step": "any", "min": 0, "placeholder": "12" }
+    ],
+    "expression": "points / credits",
+    "unit": "GPA",
+    "intro": "Compute your grade point average by dividing total quality points by total credits attempted.",
+    "examples": [
+      { "description": "36 points over 12 credits ⇒ 3.0 GPA" },
+      { "description": "45 points over 15 credits ⇒ 3.0 GPA" },
+      { "description": "50 points over 16 credits ⇒ 3.125 GPA" }
+    ],
+    "faqs": [
+      { "question": "What are quality points?", "answer": "They are grade points multiplied by course credits." },
+      { "question": "Can credits be zero?", "answer": "Credits must be greater than zero to compute GPA." },
+      { "question": "Does this handle weighted grades?", "answer": "Use your institution's quality points which already include weights." }
+    ],
+    "disclaimer": "Check with your school for official GPA calculations."
+  },
+  {
+    "slug": "lc-resonant-frequency",
+    "title": "LC Resonant Frequency Calculator",
+    "cluster": "science & engineering",
+    "description": "Find the resonant frequency of an LC circuit.",
+    "inputs": [
+      { "name": "inductance", "label": "Inductance (H)", "type": "number", "step": "any", "min": 0, "placeholder": "0.002" },
+      { "name": "capacitance", "label": "Capacitance (F)", "type": "number", "step": "any", "min": 0, "placeholder": "0.000001" }
+    ],
+    "expression": "1 / (2 * Math.PI * Math.sqrt(inductance * capacitance))",
+    "unit": "Hz",
+    "intro": "Calculate the resonant frequency where inductive and capacitive reactances cancel in an LC circuit.",
+    "examples": [
+      { "description": "L=0.002 H, C=1e-6 F ⇒ 3558.5 Hz" },
+      { "description": "L=0.001 H, C=1e-9 F ⇒ 159154.9 Hz" },
+      { "description": "L=1 H, C=1e-6 F ⇒ 159.15 Hz" }
+    ],
+    "faqs": [
+      { "question": "What is resonant frequency?", "answer": "The frequency where inductive and capacitive reactances are equal and opposite." },
+      { "question": "Do values need to be in henries and farads?", "answer": "Yes, convert units to henries and farads before using." },
+      { "question": "What if L or C is zero?", "answer": "Resonant frequency is undefined if either component is zero." }
+    ],
+    "disclaimer": "Idealized calculation; real circuits include resistance and losses."
+  },
+  {
+    "slug": "cpu-utilization",
+    "title": "CPU Utilization Calculator",
+    "cluster": "technology",
+    "description": "Estimate CPU usage percentage.",
+    "inputs": [
+      { "name": "busy", "label": "Busy Time (ms)", "type": "number", "step": "any", "min": 0, "placeholder": "30" },
+      { "name": "total", "label": "Total Time (ms)", "type": "number", "step": "any", "min": 0, "placeholder": "100" }
+    ],
+    "expression": "(busy / total) * 100",
+    "unit": "%",
+    "intro": "Estimate CPU utilization percentage from measured busy time over total time.",
+    "examples": [
+      { "description": "Busy 30 ms, total 100 ms ⇒ 30%" },
+      { "description": "Busy 5 ms, total 20 ms ⇒ 25%" },
+      { "description": "Busy 200 ms, total 500 ms ⇒ 40%" }
+    ],
+    "faqs": [
+      { "question": "Can total time be zero?", "answer": "No, total time must be greater than zero." },
+      { "question": "Does this handle multiple cores?", "answer": "It reflects a single measurement; aggregate cores separately." },
+      { "question": "Do units need to match?", "answer": "Yes, use the same time units for busy and total." }
+    ],
+    "disclaimer": "Simplified metric; actual CPU usage may vary based on system measurement methods."
+  },
+  {
+    "slug": "paint-cost-estimator",
+    "title": "Paint Cost Estimator",
+    "cluster": "home-diy",
+    "description": "Estimate paint cost from area, coverage and price.",
+    "inputs": [
+      { "name": "area", "label": "Area (sq ft)", "type": "number", "step": "any", "min": 0, "placeholder": "400" },
+      { "name": "coverage", "label": "Coverage per Gallon (sq ft)", "type": "number", "step": "any", "min": 0, "placeholder": "350" },
+      { "name": "price", "label": "Price per Gallon ($)", "type": "number", "step": "any", "min": 0, "placeholder": "25" }
+    ],
+    "expression": "(area / coverage) * price",
+    "unit": "USD",
+    "intro": "Estimate how much a paint project will cost based on area, paint coverage and price per gallon.",
+    "examples": [
+      { "description": "400 sq ft, 350 coverage, $25 ⇒ $28.57" },
+      { "description": "1000 sq ft, 400 coverage, $30 ⇒ $75" },
+      { "description": "600 sq ft, 300 coverage, $20 ⇒ $40" }
+    ],
+    "faqs": [
+      { "question": "Does this include primer?", "answer": "No, primer costs are not included." },
+      { "question": "How many coats are assumed?", "answer": "It assumes a single coat." },
+      { "question": "What if coverage varies?", "answer": "Use the manufacturer's specified coverage." }
+    ],
+    "disclaimer": "Estimate only; actual paint needs may vary by surface and application technique."
+  },
+  {
+    "slug": "road-trip-rest-stops",
+    "title": "Road Trip Rest Stops Calculator",
+    "cluster": "lifestyle & travel",
+    "description": "Plan the number of rest stops for a trip.",
+    "inputs": [
+      { "name": "distance", "label": "Total Distance (km)", "type": "number", "step": "any", "min": 0, "placeholder": "600" },
+      { "name": "maxLeg", "label": "Max Distance per Leg (km)", "type": "number", "step": "any", "min": 1, "placeholder": "150" }
+    ],
+    "expression": "Math.max(Math.ceil(distance / maxLeg) - 1, 0)",
+    "unit": "stops",
+    "intro": "Calculate how many rest stops are needed on a road trip based on your maximum comfortable driving distance per leg.",
+    "examples": [
+      { "description": "600 km with 150 km legs ⇒ 3 stops" },
+      { "description": "500 km with 200 km legs ⇒ 2 stops" },
+      { "description": "100 km with 300 km legs ⇒ 0 stops" }
+    ],
+    "faqs": [
+      { "question": "Why subtract one from the legs?", "answer": "Stops occur between legs, so the last leg ends at your destination." },
+      { "question": "What if max distance is zero?", "answer": "Max distance per leg must be greater than zero." },
+      { "question": "Does this include overnight stays?", "answer": "Treat overnight stays as rest stops." }
+    ],
+    "disclaimer": "Use as a planning aid; adjust for driver fatigue and local regulations."
+  },
+  {
+    "slug": "click-through-rate",
+    "title": "Click-Through Rate Calculator",
+    "cluster": "web & marketing",
+    "description": "Calculate click-through rate from clicks and impressions.",
+    "inputs": [
+      { "name": "clicks", "label": "Clicks", "type": "number", "step": "any", "min": 0, "placeholder": "50" },
+      { "name": "impressions", "label": "Impressions", "type": "number", "step": "any", "min": 0, "placeholder": "1000" }
+    ],
+    "expression": "(clicks / impressions) * 100",
+    "unit": "%",
+    "intro": "Determine the percentage of impressions that result in clicks for an ad or email campaign.",
+    "examples": [
+      { "description": "50 clicks, 1000 impressions ⇒ 5%" },
+      { "description": "120 clicks, 4000 impressions ⇒ 3%" },
+      { "description": "200 clicks, 2000 impressions ⇒ 10%" }
+    ],
+    "faqs": [
+      { "question": "What is a good CTR?", "answer": "It varies by industry and channel." },
+      { "question": "Can impressions be zero?", "answer": "Impressions must be greater than zero to compute CTR." },
+      { "question": "Does CTR measure conversions?", "answer": "No, it only measures clicks relative to impressions." }
+    ],
+    "disclaimer": "For marketing estimates; actual campaign performance may vary."
+  }
 ]
