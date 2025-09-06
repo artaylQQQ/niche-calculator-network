@@ -1,0 +1,37 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Insulation Roll Count Calculator"
+description: "Estimate the number of insulation rolls needed for a project."
+date: 2025-09-05
+updated: 2025-09-05
+cluster: "Home & DIY"
+---
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "insulation-roll-count",
+  "title": "Insulation Roll Count Calculator",
+  "locale": "en",
+  "inputs": [
+    { "label": "Area (ft²)", "name": "area", "type": "number", "placeholder": "500" },
+    { "label": "Coverage per Roll (ft²)", "name": "coverage", "type": "number", "placeholder": "40" }
+  ],
+  "expression": "area / coverage",
+  "intro": "Figure out how many insulation rolls to purchase based on area coverage.",
+  "examples": [
+    { "description": "500 ft² area, 40 ft² per roll ⇒ 12.5 rolls" },
+    { "description": "800 ft² area, 30 ft² per roll ⇒ 26.67 rolls" }
+  ],
+  "faqs": [
+    { "question": "Should I round up?", "answer": "Yes, buy an extra roll to cover waste." },
+    { "question": "Does thickness matter?", "answer": "This calculator only considers area coverage." },
+    { "question": "Can I mix roll sizes?", "answer": "Use the average coverage if mixing sizes." },
+    { "question": "Is this for batt insulation?", "answer": "It works for any roll product measured in square feet." }
+  ],
+  "disclaimer": "Add a margin for cuts and overlaps.",
+  "cluster": "home & diy",
+  "unit": "rolls",
+  "related": []
+}
+
+<Calculator schema={schema} />

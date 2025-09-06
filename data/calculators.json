@@ -7520,4 +7520,383 @@
     ],
     "disclaimer": "Approximate calculation; actual sequestration varies by species and environment."
   }
+,  {
+    "slug": "lux-to-foot-candles",
+    "title": "Lux to Foot-Candles Converter",
+    "cluster": "conversions",
+    "description": "Convert illuminance from lux to foot-candles.",
+    "inputs": [
+      { "name": "lux", "label": "Lux", "type": "number", "placeholder": "500" }
+    ],
+    "expression": "lux / 10.764",
+    "intro": "Convert light level from lux to foot-candles. Enter the lux value and press Calculate.",
+    "examples": [
+      { "description": "500 lux ⇒ 46.45 fc" },
+      { "description": "1000 lux ⇒ 92.90 fc" }
+    ],
+    "faqs": [
+      { "question": "What is a foot-candle?", "answer": "A foot-candle measures illuminance, equal to one lumen per square foot." },
+      { "question": "How many lux are in a foot-candle?", "answer": "One foot-candle equals 10.764 lux." },
+      { "question": "Is this conversion exact?", "answer": "Yes, it uses the standard conversion factor of 10.764 lux per foot-candle." },
+      { "question": "Why convert lux to foot-candles?", "answer": "Foot-candles are commonly used in lighting design in the United States." }
+    ],
+    "disclaimer": "For general lighting reference only.",
+    "unit": "fc"
+  },
+  {
+    "slug": "kilojoules-to-kilocalories",
+    "title": "Kilojoules to Kilocalories Converter",
+    "cluster": "conversions",
+    "description": "Convert energy from kilojoules to kilocalories.",
+    "inputs": [
+      { "name": "kj", "label": "Kilojoules", "type": "number", "placeholder": "100" }
+    ],
+    "expression": "kj / 4.184",
+    "intro": "Convert energy from kilojoules to kilocalories. Enter kilojoules and calculate.",
+    "examples": [
+      { "description": "100 kJ ⇒ 23.90 kcal" },
+      { "description": "250 kJ ⇒ 59.77 kcal" }
+    ],
+    "faqs": [
+      { "question": "What is a kilocalorie?", "answer": "A kilocalorie is the energy needed to raise one kilogram of water by one degree Celsius." },
+      { "question": "How many kilojoules are in a kilocalorie?", "answer": "One kilocalorie equals 4.184 kilojoules." },
+      { "question": "Is the conversion linear?", "answer": "Yes, energy scales linearly between kilojoules and kilocalories." },
+      { "question": "Where is this conversion used?", "answer": "Nutrition labels often list energy in both kilojoules and kilocalories." }
+    ],
+    "disclaimer": "Approximate nutritional conversion.",
+    "unit": "kcal"
+  },
+  {
+    "slug": "weeks-to-hours-converter",
+    "title": "Weeks to Hours Converter",
+    "cluster": "date & time",
+    "description": "Convert weeks to total hours.",
+    "inputs": [
+      { "name": "weeks", "label": "Weeks", "type": "number", "placeholder": "2" }
+    ],
+    "expression": "weeks * 168",
+    "intro": "Convert any number of weeks into hours.",
+    "examples": [
+      { "description": "2 weeks ⇒ 336 hours" },
+      { "description": "0.5 weeks ⇒ 84 hours" }
+    ],
+    "faqs": [
+      { "question": "How many hours are in a week?", "answer": "Each week has 168 hours." },
+      { "question": "Can I enter fractional weeks?", "answer": "Yes, decimals like 0.5 represent partial weeks." },
+      { "question": "Does this account for daylight saving?", "answer": "No, it assumes standard 24-hour days." },
+      { "question": "Why convert weeks to hours?", "answer": "It's useful for project planning and time tracking." }
+    ],
+    "disclaimer": "Uses a constant 7-day week.",
+    "unit": "hours"
+  },
+  {
+    "slug": "seconds-to-months-converter",
+    "title": "Seconds to Months Converter",
+    "cluster": "date & time",
+    "description": "Estimate months from a number of seconds.",
+    "inputs": [
+      { "name": "seconds", "label": "Seconds", "type": "number", "placeholder": "2592000" }
+    ],
+    "expression": "seconds / (30 * 24 * 60 * 60)",
+    "intro": "Approximate how many 30-day months fit in a number of seconds.",
+    "examples": [
+      { "description": "2,592,000 s ⇒ 1 month" },
+      { "description": "5,184,000 s ⇒ 2 months" }
+    ],
+    "faqs": [
+      { "question": "What month length is assumed?", "answer": "Each month is treated as 30 days." },
+      { "question": "Does it handle leap years?", "answer": "No, it uses a fixed month length." },
+      { "question": "Can I convert fractional months?", "answer": "Yes, decimals indicate partial months." },
+      { "question": "Why approximate months?", "answer": "It provides a quick estimate from large second counts." }
+    ],
+    "disclaimer": "Uses an average 30-day month for simplicity.",
+    "unit": "months"
+  },
+  {
+    "slug": "return-on-assets",
+    "title": "Return on Assets Calculator",
+    "cluster": "finance",
+    "description": "Compute return on assets percentage from net income and total assets.",
+    "inputs": [
+      { "name": "net_income", "label": "Net Income", "type": "number", "placeholder": "50000" },
+      { "name": "total_assets", "label": "Total Assets", "type": "number", "placeholder": "200000" }
+    ],
+    "expression": "(net_income / total_assets) * 100",
+    "intro": "Determine how efficiently a company uses its assets to generate profit.",
+    "examples": [
+      { "description": "$50,000 net income / $200,000 assets ⇒ 25%" },
+      { "description": "$80,000 net income / $1,000,000 assets ⇒ 8%" }
+    ],
+    "faqs": [
+      { "question": "What is return on assets?", "answer": "ROA measures profit earned per dollar of assets." },
+      { "question": "Is a higher ROA better?", "answer": "Yes, higher ROA indicates more efficient asset use." },
+      { "question": "Should I use average assets?", "answer": "Using average assets over the period gives a more accurate ROA." },
+      { "question": "Can ROA be negative?", "answer": "Yes, if net income is negative the ROA will also be negative." }
+    ],
+    "disclaimer": "Informational estimation only.",
+    "unit": "%"
+  },
+  {
+    "slug": "debt-to-equity-ratio",
+    "title": "Debt-to-Equity Ratio Calculator",
+    "cluster": "finance",
+    "description": "Determine financial leverage via the debt-to-equity ratio.",
+    "inputs": [
+      { "name": "liabilities", "label": "Total Liabilities", "type": "number", "placeholder": "150000" },
+      { "name": "equity", "label": "Shareholder Equity", "type": "number", "placeholder": "100000" }
+    ],
+    "expression": "liabilities / equity",
+    "intro": "Assess a company's leverage by comparing liabilities to equity.",
+    "examples": [
+      { "description": "$150,000 liabilities / $100,000 equity ⇒ 1.5" },
+      { "description": "$80,000 liabilities / $200,000 equity ⇒ 0.4" }
+    ],
+    "faqs": [
+      { "question": "What is a good debt-to-equity ratio?", "answer": "It varies by industry, but lower ratios imply less risk." },
+      { "question": "Can the ratio be negative?", "answer": "Yes, if equity is negative the ratio becomes negative." },
+      { "question": "Does this include short-term debt?", "answer": "Yes, total liabilities typically include both short- and long-term debt." },
+      { "question": "Why track this ratio?", "answer": "It helps evaluate financial leverage and risk." }
+    ],
+    "disclaimer": "Simplified financial ratio.",
+    "unit": "ratio"
+  },
+  {
+    "slug": "body-fat-mass",
+    "title": "Body Fat Mass Calculator",
+    "cluster": "health",
+    "description": "Estimate body fat mass from weight and body fat percentage.",
+    "inputs": [
+      { "name": "weight", "label": "Weight (kg)", "type": "number", "placeholder": "70" },
+      { "name": "bf", "label": "Body Fat (%)", "type": "number", "placeholder": "20" }
+    ],
+    "expression": "weight * (bf / 100)",
+    "intro": "Find the mass of body fat based on total weight and body fat percentage.",
+    "examples": [
+      { "description": "70 kg at 20% ⇒ 14 kg fat" },
+      { "description": "80 kg at 15% ⇒ 12 kg fat" }
+    ],
+    "faqs": [
+      { "question": "Does this show lean mass?", "answer": "No, it only calculates fat mass." },
+      { "question": "Is body fat percentage required?", "answer": "Yes, you need a measured or estimated body fat percentage." },
+      { "question": "Can I use pounds?", "answer": "Convert pounds to kilograms before using the calculator." },
+      { "question": "Is this medical advice?", "answer": "No, it's a simple estimation tool." }
+    ],
+    "disclaimer": "Not a substitute for professional health assessment.",
+    "unit": "kg"
+  },
+  {
+    "slug": "calorie-surplus-weight-gain",
+    "title": "Calorie Surplus Weight Gain Calculator",
+    "cluster": "health",
+    "description": "Estimate weight gain from a calorie surplus.",
+    "inputs": [
+      { "name": "calories", "label": "Calorie Surplus", "type": "number", "placeholder": "7000" }
+    ],
+    "expression": "calories / 3500",
+    "intro": "Estimate potential weight gain from extra calories consumed.",
+    "examples": [
+      { "description": "7000 calories ⇒ 2 lb" },
+      { "description": "1750 calories ⇒ 0.5 lb" }
+    ],
+    "faqs": [
+      { "question": "Why divide by 3500?", "answer": "Roughly 3,500 calories equal one pound of body weight." },
+      { "question": "Is weight gain guaranteed?", "answer": "Actual weight change depends on many factors like metabolism and activity." },
+      { "question": "Does this work for weight loss?", "answer": "Yes, a calorie deficit would estimate weight loss." },
+      { "question": "Should I track over time?", "answer": "Consistent tracking provides better insight into weight trends." }
+    ],
+    "disclaimer": "Approximation; individual results vary.",
+    "unit": "lb"
+  },
+  {
+    "slug": "tile-grout-volume",
+    "title": "Tile Grout Volume Calculator",
+    "cluster": "home & diy",
+    "description": "Estimate grout volume from tiled area and joint size.",
+    "inputs": [
+      { "name": "area", "label": "Area (ft²)", "type": "number", "placeholder": "50" },
+      { "name": "width", "label": "Joint Width (in)", "type": "number", "placeholder": "0.125" },
+      { "name": "depth", "label": "Joint Depth (in)", "type": "number", "placeholder": "0.25" }
+    ],
+    "expression": "area * width * depth * 144 * 0.0163871",
+    "intro": "Approximate the amount of grout needed based on area and joint dimensions.",
+    "examples": [
+      { "description": "50 ft², 0.125 in width, 0.25 in depth ⇒ 3.69 L" },
+      { "description": "100 ft², 0.1 in width, 0.3 in depth ⇒ 7.09 L" }
+    ],
+    "faqs": [
+      { "question": "Does this account for tile layout?", "answer": "No, it assumes uniform spacing." },
+      { "question": "Can I use metric units?", "answer": "Convert dimensions to feet and inches first." },
+      { "question": "Should I add extra grout?", "answer": "Adding 10% extra is common for waste." },
+      { "question": "Is this volume wet or dry?", "answer": "It represents mixed grout volume." }
+    ],
+    "disclaimer": "Estimate only; actual needs may vary.",
+    "unit": "L"
+  },
+  {
+    "slug": "insulation-roll-count",
+    "title": "Insulation Roll Count Calculator",
+    "cluster": "home & diy",
+    "description": "Estimate the number of insulation rolls needed for a project.",
+    "inputs": [
+      { "name": "area", "label": "Area (ft²)", "type": "number", "placeholder": "500" },
+      { "name": "coverage", "label": "Coverage per Roll (ft²)", "type": "number", "placeholder": "40" }
+    ],
+    "expression": "area / coverage",
+    "intro": "Figure out how many insulation rolls to purchase based on area coverage.",
+    "examples": [
+      { "description": "500 ft² area, 40 ft² per roll ⇒ 12.5 rolls" },
+      { "description": "800 ft² area, 30 ft² per roll ⇒ 26.67 rolls" }
+    ],
+    "faqs": [
+      { "question": "Should I round up?", "answer": "Yes, buy an extra roll to cover waste." },
+      { "question": "Does thickness matter?", "answer": "This calculator only considers area coverage." },
+      { "question": "Can I mix roll sizes?", "answer": "Use the average coverage if mixing sizes." },
+      { "question": "Is this for batt insulation?", "answer": "It works for any roll product measured in square feet." }
+    ],
+    "disclaimer": "Add a margin for cuts and overlaps.",
+    "unit": "rolls"
+  },
+  {
+    "slug": "percentage-error",
+    "title": "Percentage Error Calculator",
+    "cluster": "math",
+    "description": "Compute percentage error between measured and actual values.",
+    "inputs": [
+      { "name": "measured", "label": "Measured Value", "type": "number", "placeholder": "105" },
+      { "name": "actual", "label": "Actual Value", "type": "number", "placeholder": "100" }
+    ],
+    "expression": "(((measured - actual) ^ 2) ^ 0.5 / actual) * 100",
+    "intro": "Find the percent error between a measured quantity and its true value.",
+    "examples": [
+      { "description": "Measured 105 vs actual 100 ⇒ 5%" },
+      { "description": "Measured 95 vs actual 100 ⇒ 5%" }
+    ],
+    "faqs": [
+      { "question": "Why square the difference?", "answer": "Squaring removes negative signs before taking the square root." },
+      { "question": "Does percent error show accuracy?", "answer": "Yes, smaller errors mean measurements closer to the true value." },
+      { "question": "Can actual value be zero?", "answer": "No, percent error is undefined when the true value is zero." },
+      { "question": "Is the result signed?", "answer": "No, percent error is always positive." }
+    ],
+    "disclaimer": "For educational estimation only.",
+    "unit": "%"
+  },
+  {
+    "slug": "polygon-exterior-angle",
+    "title": "Polygon Exterior Angle Calculator",
+    "cluster": "math",
+    "description": "Find the measure of each exterior angle in a regular polygon.",
+    "inputs": [
+      { "name": "n", "label": "Number of Sides", "type": "number", "placeholder": "6" }
+    ],
+    "expression": "360 / n",
+    "intro": "Compute the exterior angle of a regular polygon by dividing 360° by the number of sides.",
+    "examples": [
+      { "description": "n = 6 ⇒ 60°" },
+      { "description": "n = 8 ⇒ 45°" }
+    ],
+    "faqs": [
+      { "question": "What is an exterior angle?", "answer": "It's the angle formed by one side of a polygon and the extension of an adjacent side." },
+      { "question": "Do the exterior angles sum to 360°?", "answer": "Yes, for any polygon the exterior angles sum to 360°." },
+      { "question": "Does this work for irregular polygons?", "answer": "No, the formula applies only to regular polygons." },
+      { "question": "How about interior angles?", "answer": "Interior angle = 180° - exterior angle." }
+    ],
+    "disclaimer": "Assumes a regular polygon.",
+    "unit": "degrees"
+  },
+  {
+    "slug": "compression-savings",
+    "title": "Compression Savings Calculator",
+    "cluster": "technology",
+    "description": "Calculate percentage size reduction after compression.",
+    "inputs": [
+      { "name": "original", "label": "Original Size", "type": "number", "placeholder": "10" },
+      { "name": "compressed", "label": "Compressed Size", "type": "number", "placeholder": "6" }
+    ],
+    "expression": "((original - compressed) / original) * 100",
+    "intro": "See how much space you save after compressing files.",
+    "examples": [
+      { "description": "10 MB → 6 MB ⇒ 40%" },
+      { "description": "50 MB → 25 MB ⇒ 50%" }
+    ],
+    "faqs": [
+      { "question": "Does this depend on file type?", "answer": "No, it only uses file sizes you provide." },
+      { "question": "Can savings be negative?", "answer": "Yes, if the compressed file is larger than the original." },
+      { "question": "Do I need units?", "answer": "Any consistent size unit works, like MB or KB." },
+      { "question": "Is compression lossless?", "answer": "This calculator doesn't indicate quality, only size change." }
+    ],
+    "disclaimer": "Size change only; does not assess quality.",
+    "unit": "%"
+  },
+  {
+    "slug": "screen-to-body-ratio",
+    "title": "Screen-to-Body Ratio Calculator",
+    "cluster": "technology",
+    "description": "Determine screen-to-body ratio of a device.",
+    "inputs": [
+      { "name": "sw", "label": "Screen Width", "type": "number", "placeholder": "68" },
+      { "name": "sh", "label": "Screen Height", "type": "number", "placeholder": "152" },
+      { "name": "bw", "label": "Body Width", "type": "number", "placeholder": "70" },
+      { "name": "bh", "label": "Body Height", "type": "number", "placeholder": "155" }
+    ],
+    "expression": "(sw * sh) / (bw * bh) * 100",
+    "intro": "Calculate the screen area as a percentage of the device's front surface.",
+    "examples": [
+      { "description": "Screen 68×152 mm, body 70×155 mm ⇒ 95.26%" },
+      { "description": "Screen 60×130 mm, body 65×140 mm ⇒ 85.71%" }
+    ],
+    "faqs": [
+      { "question": "Do units matter?", "answer": "No, as long as all measurements use the same units." },
+      { "question": "Does this include bezels?", "answer": "Yes, body size includes bezels around the screen." },
+      { "question": "Is a higher ratio better?", "answer": "Higher ratios indicate less bezel and more screen area." },
+      { "question": "Can I use inches instead of millimeters?", "answer": "Yes, any consistent unit works." }
+    ],
+    "disclaimer": "Simplified geometric estimate.",
+    "unit": "%"
+  },
+  {
+    "slug": "rabbit-age-human-years",
+    "title": "Rabbit Age to Human Years Calculator",
+    "cluster": "other",
+    "description": "Convert rabbit age into equivalent human years.",
+    "inputs": [
+      { "name": "age", "label": "Rabbit Age (years)", "type": "number", "placeholder": "2" }
+    ],
+    "expression": "age * 8",
+    "intro": "Approximate a rabbit's age in human years using a factor of eight.",
+    "examples": [
+      { "description": "2 rabbit years ⇒ 16 human years" },
+      { "description": "5 rabbit years ⇒ 40 human years" }
+    ],
+    "faqs": [
+      { "question": "Is the factor of eight exact?", "answer": "No, it's a rough average for domestic rabbits." },
+      { "question": "Do larger breeds age differently?", "answer": "Yes, size and breed can affect aging." },
+      { "question": "Does this apply to wild rabbits?", "answer": "Wild rabbits often have shorter lifespans." },
+      { "question": "Why compare to human years?", "answer": "It helps owners relate to their pet's life stage." }
+    ],
+    "disclaimer": "For fun estimation; consult a vet for health concerns.",
+    "unit": "human years"
+  },
+  {
+    "slug": "tempo-to-delay-time",
+    "title": "Tempo to Delay Time Calculator",
+    "cluster": "other",
+    "description": "Convert musical tempo in BPM to delay time per beat in milliseconds.",
+    "inputs": [
+      { "name": "bpm", "label": "Tempo (BPM)", "type": "number", "placeholder": "120" }
+    ],
+    "expression": "60000 / bpm",
+    "intro": "Convert beats per minute into milliseconds per beat for music production.",
+    "examples": [
+      { "description": "120 BPM ⇒ 500 ms" },
+      { "description": "90 BPM ⇒ 666.67 ms" }
+    ],
+    "faqs": [
+      { "question": "Why use 60,000?", "answer": "There are 60,000 milliseconds in a minute." },
+      { "question": "Can I use this for note divisions?", "answer": "Yes, divide or multiply the result for different note lengths." },
+      { "question": "Does tapping tempo work?", "answer": "Enter the BPM measured by your tap tempo tool." },
+      { "question": "Is this accurate for swing rhythms?", "answer": "No, swing timing requires additional adjustment." }
+    ],
+    "disclaimer": "Timing values are idealized; musical feel may vary.",
+    "unit": "ms"
+  }
 ]

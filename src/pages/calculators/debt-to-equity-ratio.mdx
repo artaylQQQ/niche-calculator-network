@@ -1,0 +1,37 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Debt-to-Equity Ratio Calculator"
+description: "Determine financial leverage via the debt-to-equity ratio."
+date: 2025-09-05
+updated: 2025-09-05
+cluster: "Finance"
+---
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "debt-to-equity-ratio",
+  "title": "Debt-to-Equity Ratio Calculator",
+  "locale": "en",
+  "inputs": [
+    { "label": "Total Liabilities", "name": "liabilities", "type": "number", "placeholder": "150000" },
+    { "label": "Shareholder Equity", "name": "equity", "type": "number", "placeholder": "100000" }
+  ],
+  "expression": "liabilities / equity",
+  "intro": "Assess a company's leverage by comparing liabilities to equity.",
+  "examples": [
+    { "description": "$150,000 liabilities / $100,000 equity ⇒ 1.5" },
+    { "description": "$80,000 liabilities / $200,000 equity ⇒ 0.4" }
+  ],
+  "faqs": [
+    { "question": "What is a good debt-to-equity ratio?", "answer": "It varies by industry, but lower ratios imply less risk." },
+    { "question": "Can the ratio be negative?", "answer": "Yes, if equity is negative the ratio becomes negative." },
+    { "question": "Does this include short-term debt?", "answer": "Yes, total liabilities typically include both short- and long-term debt." },
+    { "question": "Why track this ratio?", "answer": "It helps evaluate financial leverage and risk." }
+  ],
+  "disclaimer": "Simplified financial ratio.",
+  "cluster": "finance",
+  "unit": "ratio",
+  "related": []
+}
+
+<Calculator schema={schema} />

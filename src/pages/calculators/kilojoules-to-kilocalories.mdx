@@ -1,0 +1,36 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Kilojoules to Kilocalories Converter"
+description: "Convert energy from kilojoules to kilocalories."
+date: 2025-09-05
+updated: 2025-09-05
+cluster: "Conversions"
+---
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "kilojoules-to-kilocalories",
+  "title": "Kilojoules to Kilocalories Converter",
+  "locale": "en",
+  "inputs": [
+    { "label": "Kilojoules", "name": "kj", "type": "number", "placeholder": "100" }
+  ],
+  "expression": "kj / 4.184",
+  "intro": "Convert energy from kilojoules to kilocalories. Enter kilojoules and calculate.",
+  "examples": [
+    { "description": "100 kJ ⇒ 23.90 kcal" },
+    { "description": "250 kJ ⇒ 59.77 kcal" }
+  ],
+  "faqs": [
+    { "question": "What is a kilocalorie?", "answer": "A kilocalorie is the energy needed to raise one kilogram of water by one degree Celsius." },
+    { "question": "How many kilojoules are in a kilocalorie?", "answer": "One kilocalorie equals 4.184 kilojoules." },
+    { "question": "Is the conversion linear?", "answer": "Yes, energy scales linearly between kilojoules and kilocalories." },
+    { "question": "Where is this conversion used?", "answer": "Nutrition labels often list energy in both kilojoules and kilocalories." }
+  ],
+  "disclaimer": "Approximate nutritional conversion.",
+  "cluster": "conversions",
+  "unit": "kcal",
+  "related": []
+}
+
+<Calculator schema={schema} />

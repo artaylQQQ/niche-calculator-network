@@ -1,0 +1,36 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Rabbit Age to Human Years Calculator"
+description: "Convert rabbit age into equivalent human years."
+date: 2025-09-05
+updated: 2025-09-05
+cluster: "Other"
+---
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "rabbit-age-human-years",
+  "title": "Rabbit Age to Human Years Calculator",
+  "locale": "en",
+  "inputs": [
+    { "label": "Rabbit Age (years)", "name": "age", "type": "number", "placeholder": "2" }
+  ],
+  "expression": "age * 8",
+  "intro": "Approximate a rabbit's age in human years using a factor of eight.",
+  "examples": [
+    { "description": "2 rabbit years ⇒ 16 human years" },
+    { "description": "5 rabbit years ⇒ 40 human years" }
+  ],
+  "faqs": [
+    { "question": "Is the factor of eight exact?", "answer": "No, it's a rough average for domestic rabbits." },
+    { "question": "Do larger breeds age differently?", "answer": "Yes, size and breed can affect aging." },
+    { "question": "Does this apply to wild rabbits?", "answer": "Wild rabbits often have shorter lifespans." },
+    { "question": "Why compare to human years?", "answer": "It helps owners relate to their pet's life stage." }
+  ],
+  "disclaimer": "For fun estimation; consult a vet for health concerns.",
+  "cluster": "other",
+  "unit": "human years",
+  "related": []
+}
+
+<Calculator schema={schema} />

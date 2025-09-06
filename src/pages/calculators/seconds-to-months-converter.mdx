@@ -1,0 +1,36 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Seconds to Months Converter"
+description: "Estimate months from a number of seconds."
+date: 2025-09-05
+updated: 2025-09-05
+cluster: "Date & Time"
+---
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "seconds-to-months-converter",
+  "title": "Seconds to Months Converter",
+  "locale": "en",
+  "inputs": [
+    { "label": "Seconds", "name": "seconds", "type": "number", "placeholder": "2592000" }
+  ],
+  "expression": "seconds / (30 * 24 * 60 * 60)",
+  "intro": "Approximate how many 30-day months fit in a number of seconds.",
+  "examples": [
+    { "description": "2,592,000 s ⇒ 1 month" },
+    { "description": "5,184,000 s ⇒ 2 months" }
+  ],
+  "faqs": [
+    { "question": "What month length is assumed?", "answer": "Each month is treated as 30 days." },
+    { "question": "Does it handle leap years?", "answer": "No, it uses a fixed month length." },
+    { "question": "Can I convert fractional months?", "answer": "Yes, decimals indicate partial months." },
+    { "question": "Why approximate months?", "answer": "It provides a quick estimate from large second counts." }
+  ],
+  "disclaimer": "Uses an average 30-day month for simplicity.",
+  "cluster": "date & time",
+  "unit": "months",
+  "related": []
+}
+
+<Calculator schema={schema} />

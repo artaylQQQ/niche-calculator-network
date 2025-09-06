@@ -1,0 +1,37 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Compression Savings Calculator"
+description: "Calculate percentage size reduction after compression."
+date: 2025-09-05
+updated: 2025-09-05
+cluster: "Technology"
+---
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "compression-savings",
+  "title": "Compression Savings Calculator",
+  "locale": "en",
+  "inputs": [
+    { "label": "Original Size", "name": "original", "type": "number", "placeholder": "10" },
+    { "label": "Compressed Size", "name": "compressed", "type": "number", "placeholder": "6" }
+  ],
+  "expression": "((original - compressed) / original) * 100",
+  "intro": "See how much space you save after compressing files.",
+  "examples": [
+    { "description": "10 MB → 6 MB ⇒ 40%" },
+    { "description": "50 MB → 25 MB ⇒ 50%" }
+  ],
+  "faqs": [
+    { "question": "Does this depend on file type?", "answer": "No, it only uses file sizes you provide." },
+    { "question": "Can savings be negative?", "answer": "Yes, if the compressed file is larger than the original." },
+    { "question": "Do I need units?", "answer": "Any consistent size unit works, like MB or KB." },
+    { "question": "Is compression lossless?", "answer": "This calculator doesn't indicate quality, only size change." }
+  ],
+  "disclaimer": "Size change only; does not assess quality.",
+  "cluster": "technology",
+  "unit": "%",
+  "related": []
+}
+
+<Calculator schema={schema} />

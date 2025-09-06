@@ -1,0 +1,39 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Screen-to-Body Ratio Calculator"
+description: "Determine screen-to-body ratio of a device."
+date: 2025-09-05
+updated: 2025-09-05
+cluster: "Technology"
+---
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "screen-to-body-ratio",
+  "title": "Screen-to-Body Ratio Calculator",
+  "locale": "en",
+  "inputs": [
+    { "label": "Screen Width", "name": "sw", "type": "number", "placeholder": "68" },
+    { "label": "Screen Height", "name": "sh", "type": "number", "placeholder": "152" },
+    { "label": "Body Width", "name": "bw", "type": "number", "placeholder": "70" },
+    { "label": "Body Height", "name": "bh", "type": "number", "placeholder": "155" }
+  ],
+  "expression": "(sw * sh) / (bw * bh) * 100",
+  "intro": "Calculate the screen area as a percentage of the device's front surface.",
+  "examples": [
+    { "description": "Screen 68×152 mm, body 70×155 mm ⇒ 95.26%" },
+    { "description": "Screen 60×130 mm, body 65×140 mm ⇒ 85.71%" }
+  ],
+  "faqs": [
+    { "question": "Do units matter?", "answer": "No, as long as all measurements use the same units." },
+    { "question": "Does this include bezels?", "answer": "Yes, body size includes bezels around the screen." },
+    { "question": "Is a higher ratio better?", "answer": "Higher ratios indicate less bezel and more screen area." },
+    { "question": "Can I use inches instead of millimeters?", "answer": "Yes, any consistent unit works." }
+  ],
+  "disclaimer": "Simplified geometric estimate.",
+  "cluster": "technology",
+  "unit": "%",
+  "related": []
+}
+
+<Calculator schema={schema} />
