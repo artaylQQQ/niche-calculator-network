@@ -1,0 +1,58 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "PVC Cure Completion Time"
+description: "Add cure time to a start hour for PVC cement."
+updated: "2025-09-26"
+cluster: "Date & Time"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "pvc-cure-completion",
+  title: "PVC Cure Completion Time",
+  locale: "en",
+  cluster: "Date & Time",
+  unit: "hour",
+  intro: "Estimate the clock time when PVC joints finish curing.",
+  inputs: [
+    {
+      name: "start",
+      label: "Start Hour",
+      type: "number",
+      step: "any",
+      placeholder: "8",
+    },
+    {
+      name: "cure",
+      label: "Cure Hours",
+      type: "number",
+      step: "any",
+      placeholder: "4",
+    },
+  ],
+  expression: "(start + cure) % 24",
+  examples: [
+    { description: "Start 8, cure 4 ⇒ 12" },
+    { description: "Start 15, cure 16 ⇒ 7" },
+    { description: "Start 22, cure 2 ⇒ 0" },
+  ],
+  faqs: [
+    {
+      question: "Are times in 24‑hour format?",
+      answer: "Yes, results range from 0 to 23.",
+    },
+    {
+      question: "Does temperature affect curing?",
+      answer: "Yes, but this calculator assumes ideal conditions.",
+    },
+    {
+      question: "What if curing exceeds 24 hours?",
+      answer: "The modulus wraps the time to the next day.",
+    },
+  ],
+  disclaimer:
+    "Always follow manufacturer cure recommendations and safety guidelines.",
+};
+
+<Calculator schema={schema} />

@@ -1,0 +1,109 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "3x3 Determinant Calculator"
+description: "Compute the determinant of a 3×3 matrix."
+updated: "2025-09-26"
+cluster: "Math"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "determinant-3x3-matrix",
+  title: "3x3 Determinant Calculator",
+  locale: "en",
+  cluster: "Math",
+  unit: "determinant",
+  intro:
+    "Evaluate the determinant of a 3×3 matrix—useful for linear algebra tasks.",
+  inputs: [
+    {
+      name: "a11",
+      label: "a11",
+      type: "number",
+      step: "any",
+      placeholder: "1",
+    },
+    {
+      name: "a12",
+      label: "a12",
+      type: "number",
+      step: "any",
+      placeholder: "2",
+    },
+    {
+      name: "a13",
+      label: "a13",
+      type: "number",
+      step: "any",
+      placeholder: "3",
+    },
+    {
+      name: "a21",
+      label: "a21",
+      type: "number",
+      step: "any",
+      placeholder: "4",
+    },
+    {
+      name: "a22",
+      label: "a22",
+      type: "number",
+      step: "any",
+      placeholder: "5",
+    },
+    {
+      name: "a23",
+      label: "a23",
+      type: "number",
+      step: "any",
+      placeholder: "6",
+    },
+    {
+      name: "a31",
+      label: "a31",
+      type: "number",
+      step: "any",
+      placeholder: "7",
+    },
+    {
+      name: "a32",
+      label: "a32",
+      type: "number",
+      step: "any",
+      placeholder: "8",
+    },
+    {
+      name: "a33",
+      label: "a33",
+      type: "number",
+      step: "any",
+      placeholder: "9",
+    },
+  ],
+  expression:
+    "a11*(a22*a33 - a23*a32) - a12*(a21*a33 - a23*a31) + a13*(a21*a32 - a22*a31)",
+  examples: [
+    { description: "[[1,2,3],[4,5,6],[7,8,9]] ⇒ 0" },
+    { description: "[[2,0,1],[3,0,0],[5,1,1]] ⇒ 3" },
+    { description: "[[6,1,1],[4,-2,5],[2,8,7]] ⇒ -306" },
+  ],
+  faqs: [
+    {
+      question: "What does the determinant signify?",
+      answer: "It indicates matrix invertibility and scaling factor.",
+    },
+    {
+      question: "Can inputs be decimals?",
+      answer: "Yes, any real numbers are accepted.",
+    },
+    {
+      question: "When is the determinant zero?",
+      answer: "When rows or columns are linearly dependent.",
+    },
+  ],
+  disclaimer:
+    "For educational purposes; verify results for critical applications.",
+};
+
+<Calculator schema={schema} />

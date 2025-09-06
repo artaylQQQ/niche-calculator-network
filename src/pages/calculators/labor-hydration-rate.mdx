@@ -1,0 +1,67 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Labor Hydration Calculator"
+description: "Estimate water needed during physical work."
+updated: "2025-09-26"
+cluster: "Health"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "labor-hydration-rate",
+  title: "Labor Hydration Calculator",
+  locale: "en",
+  cluster: "Health",
+  unit: "L",
+  intro:
+    "Approximate water intake for manual labor based on body weight, duration, and temperature.",
+  inputs: [
+    {
+      name: "weight",
+      label: "Weight (kg)",
+      type: "number",
+      step: "any",
+      placeholder: "70",
+    },
+    {
+      name: "hours",
+      label: "Work Hours",
+      type: "number",
+      step: "any",
+      placeholder: "2",
+    },
+    {
+      name: "temperature",
+      label: "Temp (°C)",
+      type: "number",
+      step: "any",
+      placeholder: "30",
+    },
+  ],
+  expression:
+    "hours * 0.035 * weight * (1 + 0.02 * Math.max(0, temperature - 25))",
+  examples: [
+    { description: "70 kg, 2 h, 30°C ⇒ 5.39 L" },
+    { description: "80 kg, 1 h, 25°C ⇒ 2.80 L" },
+    { description: "60 kg, 3 h, 20°C ⇒ 6.30 L" },
+  ],
+  faqs: [
+    {
+      question: "Why adjust for temperature?",
+      answer: "Higher heat increases sweat loss and water needs.",
+    },
+    {
+      question: "Can I use pounds?",
+      answer: "Convert pounds to kilograms before input.",
+    },
+    {
+      question: "Is this medical advice?",
+      answer: "No, it's a general guideline.",
+    },
+  ],
+  disclaimer:
+    "Stay within personal limits and consult health professionals when needed.",
+};
+
+<Calculator schema={schema} />

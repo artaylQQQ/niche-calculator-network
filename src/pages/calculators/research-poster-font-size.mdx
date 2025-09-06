@@ -1,0 +1,51 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Research Poster Font Size"
+description: "Recommend font size based on viewing distance."
+updated: "2025-09-26"
+cluster: "Other"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "research-poster-font-size",
+  title: "Research Poster Font Size",
+  locale: "en",
+  cluster: "Other",
+  unit: "pt",
+  intro:
+    "Determine readable font size for academic posters using viewing distance.",
+  inputs: [
+    {
+      name: "distance",
+      label: "Viewing Distance (m)",
+      type: "number",
+      step: "any",
+      placeholder: "1",
+    },
+  ],
+  expression: "distance * 14.17",
+  examples: [
+    { description: "1 m ⇒ 14.17 pt" },
+    { description: "1.5 m ⇒ 21.26 pt" },
+    { description: "2 m ⇒ 28.34 pt" },
+  ],
+  faqs: [
+    {
+      question: "Why multiply distance by 14.17?",
+      answer: "It derives from the 1/200 viewing rule and point conversion.",
+    },
+    {
+      question: "Does font style matter?",
+      answer: "Yes, bold or thin fonts may need size adjustments.",
+    },
+    {
+      question: "Should titles be larger?",
+      answer: "Typically titles are two to three times body text size.",
+    },
+  ],
+  disclaimer: "Adjust for specific conference or journal guidelines.",
+};
+
+<Calculator schema={schema} />

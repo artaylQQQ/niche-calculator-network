@@ -1,0 +1,66 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Drone Flight Time Calculator"
+description: "Estimate flight time from battery, current draw, and payload."
+updated: "2025-09-26"
+cluster: "Technology"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "drone-flight-time",
+  title: "Drone Flight Time Calculator",
+  locale: "en",
+  cluster: "Technology",
+  unit: "minutes",
+  intro:
+    "Predict drone flight duration considering battery capacity, current draw, and payload weight.",
+  inputs: [
+    {
+      name: "capacity",
+      label: "Battery (mAh)",
+      type: "number",
+      step: "any",
+      placeholder: "5000",
+    },
+    {
+      name: "current",
+      label: "Current Draw (A)",
+      type: "number",
+      step: "any",
+      placeholder: "10",
+    },
+    {
+      name: "payload",
+      label: "Payload (kg)",
+      type: "number",
+      step: "any",
+      placeholder: "0",
+    },
+  ],
+  expression: "(capacity / 1000) / (current * (1 + 0.1 * payload)) * 60",
+  examples: [
+    { description: "5000 mAh, 10 A, 0 kg ⇒ 30 min" },
+    { description: "6000 mAh, 12 A, 1 kg ⇒ 27.3 min" },
+    { description: "8000 mAh, 15 A, 2 kg ⇒ 26.7 min" },
+  ],
+  faqs: [
+    {
+      question: "How accurate is this estimate?",
+      answer: "It assumes constant current and no wind.",
+    },
+    {
+      question: "Why does payload reduce time?",
+      answer: "Extra weight increases power consumption.",
+    },
+    {
+      question: "Can I use different units?",
+      answer: "Convert values to the units shown before input.",
+    },
+  ],
+  disclaimer:
+    "Real-world conditions like wind and battery age affect flight time.",
+};
+
+<Calculator schema={schema} />

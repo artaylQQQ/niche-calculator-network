@@ -1,0 +1,59 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Research Grant Overhead Calculator"
+description: "Estimate net funds after institutional overhead."
+updated: "2025-09-26"
+cluster: "Finance"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "research-grant-overhead",
+  title: "Research Grant Overhead Calculator",
+  locale: "en",
+  cluster: "Finance",
+  unit: "USD",
+  intro:
+    "Calculate how much of a grant remains after an institution's overhead deduction.",
+  inputs: [
+    {
+      name: "amount",
+      label: "Grant Amount",
+      type: "number",
+      step: "any",
+      placeholder: "50000",
+    },
+    {
+      name: "overhead",
+      label: "Overhead (%)",
+      type: "number",
+      step: "any",
+      placeholder: "15",
+    },
+  ],
+  expression: "amount * (1 - overhead / 100)",
+  examples: [
+    { description: "$50,000 with 15% ⇒ $42,500" },
+    { description: "$100,000 with 40% ⇒ $60,000" },
+    { description: "$20,000 with 10% ⇒ $18,000" },
+  ],
+  faqs: [
+    {
+      question: "What is overhead?",
+      answer:
+        "A percentage retained by the institution to cover indirect costs.",
+    },
+    {
+      question: "Are rates fixed?",
+      answer: "They vary by institution and funding agency.",
+    },
+    {
+      question: "Does this include fringe benefits?",
+      answer: "No, it only accounts for overhead percentage.",
+    },
+  ],
+  disclaimer: "Consult your institution for official policies and rates.",
+};
+
+<Calculator schema={schema} />
