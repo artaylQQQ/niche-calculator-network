@@ -1,0 +1,54 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Birthday Paradox Probability"
+description: "Probability that at least two people share a birthday."
+updated: "2024-06-20"
+cluster: "Other"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "birthday-paradox-probability",
+  title: "Birthday Paradox Probability",
+  locale: "en",
+  intro: "Estimate the chance that two people in a group share a birthday.",
+  unit: "%",
+  cluster: "Other",
+  inputs: [
+    {
+      name: "people",
+      label: "Number of People",
+      type: "number",
+      step: "any",
+      placeholder: "23",
+    },
+  ],
+  expression: "100 * (1 - Math.exp(-people * (people - 1) / (2 * 365)))",
+  examples: [
+    { description: "23 people ⇒ 50.00%" },
+    { description: "50 people ⇒ 96.51%" },
+  ],
+  faqs: [
+    {
+      question: "Why is the probability so high?",
+      answer: "Because the number of pairings grows rapidly with group size.",
+    },
+    {
+      question: "Does it consider leap years?",
+      answer: "No, it assumes 365 equally likely birthdays.",
+    },
+    {
+      question: "Are birthdays independent?",
+      answer: "Yes, the model assumes independence.",
+    },
+    {
+      question: "Can I use it for other match problems?",
+      answer: "Yes, similar logic applies to hash collisions and more.",
+    },
+  ],
+  disclaimer:
+    "The formula uses a standard approximation and assumes uniform birthday distribution.",
+};
+
+<Calculator schema={schema} />

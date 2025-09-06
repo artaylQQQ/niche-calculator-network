@@ -7519,5 +7519,830 @@
       }
     ],
     "disclaimer": "Approximate calculation; actual sequestration varies by species and environment."
+  },
+  {
+    "slug": "feet-per-second-to-mph",
+    "title": "Feet per Second to MPH Converter",
+    "cluster": "Conversions",
+    "description": "Convert feet per second to miles per hour.",
+    "intro": "Quickly convert a speed from feet per second to miles per hour.",
+    "inputs": [
+      {
+        "name": "fps",
+        "label": "Speed (ft/s)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "10"
+      }
+    ],
+    "expression": "fps * 0.681818",
+    "unit": "mph",
+    "examples": [
+      {
+        "description": "10 ft/s ⇒ 6.82 mph"
+      },
+      {
+        "description": "60 ft/s ⇒ 40.91 mph"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What is the conversion factor?",
+        "answer": "1 foot per second equals about 0.681818 miles per hour."
+      },
+      {
+        "question": "Can I convert back to feet per second?",
+        "answer": "Yes, divide miles per hour by 0.681818."
+      },
+      {
+        "question": "Is the result exact?",
+        "answer": "It is exact based on the defined conversion factor."
+      },
+      {
+        "question": "Is this useful for running speeds?",
+        "answer": "Yes, it helps translate track speeds into mph."
+      }
+    ],
+    "disclaimer": "For estimation only; verify results for critical applications."
+  },
+  {
+    "slug": "kilojoules-to-calories",
+    "title": "Kilojoules to Calories Converter",
+    "cluster": "Conversions",
+    "description": "Convert energy from kilojoules to calories.",
+    "intro": "Convert energy from kilojoules to calories.",
+    "inputs": [
+      {
+        "name": "kj",
+        "label": "Energy (kJ)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "100"
+      }
+    ],
+    "expression": "kj / 4.184",
+    "unit": "kcal",
+    "examples": [
+      {
+        "description": "100 kJ ⇒ 23.90 kcal"
+      },
+      {
+        "description": "500 kJ ⇒ 119.50 kcal"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What is the conversion factor?",
+        "answer": "1 kilocalorie equals 4.184 kilojoules."
+      },
+      {
+        "question": "Are nutritional calories the same as kilocalories?",
+        "answer": "Yes, food calories are kilocalories."
+      },
+      {
+        "question": "Can I convert calories back to kilojoules?",
+        "answer": "Multiply calories by 4.184."
+      },
+      {
+        "question": "Is this useful for diet tracking?",
+        "answer": "Yes, it helps translate energy values on labels."
+      }
+    ],
+    "disclaimer": "Nutritional estimates only; consult professionals for diet planning."
+  },
+  {
+    "slug": "minutes-to-hours",
+    "title": "Minutes to Hours Converter",
+    "cluster": "Date & Time",
+    "description": "Convert minutes into hours.",
+    "intro": "Convert minutes into decimal hours.",
+    "inputs": [
+      {
+        "name": "minutes",
+        "label": "Minutes",
+        "type": "number",
+        "step": "any",
+        "placeholder": "90"
+      }
+    ],
+    "expression": "minutes / 60",
+    "unit": "hours",
+    "examples": [
+      {
+        "description": "90 min ⇒ 1.5 hours"
+      },
+      {
+        "description": "150 min ⇒ 2.5 hours"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Why divide by 60?",
+        "answer": "There are 60 minutes in an hour."
+      },
+      {
+        "question": "Can I convert hours to minutes?",
+        "answer": "Multiply hours by 60."
+      },
+      {
+        "question": "Does it handle fractions?",
+        "answer": "Yes, you can enter decimal minutes."
+      },
+      {
+        "question": "Is the result in decimal form?",
+        "answer": "Yes, hours are shown as decimals."
+      }
+    ],
+    "disclaimer": "For general time conversion only."
+  },
+  {
+    "slug": "hours-to-days",
+    "title": "Hours to Days Converter",
+    "cluster": "Date & Time",
+    "description": "Convert hours into days.",
+    "intro": "Convert hours into days using the 24-hour day standard.",
+    "inputs": [
+      {
+        "name": "hours",
+        "label": "Hours",
+        "type": "number",
+        "step": "any",
+        "placeholder": "48"
+      }
+    ],
+    "expression": "hours / 24",
+    "unit": "days",
+    "examples": [
+      {
+        "description": "48 hours ⇒ 2 days"
+      },
+      {
+        "description": "36 hours ⇒ 1.5 days"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Why divide by 24?",
+        "answer": "There are 24 hours in a day."
+      },
+      {
+        "question": "Can I convert days to hours?",
+        "answer": "Multiply days by 24."
+      },
+      {
+        "question": "Does it account for daylight saving?",
+        "answer": "No, it uses the standard 24-hour day."
+      },
+      {
+        "question": "Is output in decimal days?",
+        "answer": "Yes, fractional days are shown as decimals."
+      }
+    ],
+    "disclaimer": "For general time conversion only."
+  },
+  {
+    "slug": "real-return-calculator",
+    "title": "Real Return Calculator",
+    "cluster": "Finance",
+    "description": "Adjust investment returns for inflation.",
+    "intro": "Find the inflation-adjusted return of an investment.",
+    "inputs": [
+      {
+        "name": "nominal",
+        "label": "Nominal Return (%)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "8"
+      },
+      {
+        "name": "inflation",
+        "label": "Inflation Rate (%)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "3"
+      }
+    ],
+    "expression": "((1 + nominal/100) / (1 + inflation/100) - 1) * 100",
+    "unit": "%",
+    "examples": [
+      {
+        "description": "8% nominal, 3% inflation ⇒ 4.85% real return"
+      },
+      {
+        "description": "5% nominal, 2% inflation ⇒ 2.94% real return"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What is real return?",
+        "answer": "Return after removing the effect of inflation."
+      },
+      {
+        "question": "Why use this formula?",
+        "answer": "It compares growth of prices and investment value."
+      },
+      {
+        "question": "Can inflation be negative?",
+        "answer": "Yes, deflation increases real returns."
+      },
+      {
+        "question": "Does it account for taxes?",
+        "answer": "No, it only adjusts for inflation."
+      }
+    ],
+    "disclaimer": "For financial estimates; consult an advisor for personal guidance."
+  },
+  {
+    "slug": "mortgage-payment-calculator",
+    "title": "Mortgage Payment Calculator",
+    "cluster": "Finance",
+    "description": "Compute monthly payment for a fixed-rate mortgage.",
+    "intro": "Estimate the monthly payment for a fixed-rate mortgage.",
+    "inputs": [
+      {
+        "name": "loan",
+        "label": "Loan Amount",
+        "type": "number",
+        "step": "any",
+        "placeholder": "250000"
+      },
+      {
+        "name": "rate",
+        "label": "Annual Rate (%)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "4"
+      },
+      {
+        "name": "years",
+        "label": "Years",
+        "type": "number",
+        "step": "any",
+        "placeholder": "30"
+      }
+    ],
+    "expression": "loan * (rate/1200) / (1 - Math.pow(1 + rate/1200, -12*years))",
+    "unit": "USD",
+    "examples": [
+      {
+        "description": "$250,000 at 4% for 30 years ⇒ $1,193.54 per month"
+      },
+      {
+        "description": "$200,000 at 5% for 15 years ⇒ $1,581.59 per month"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Does this include taxes and insurance?",
+        "answer": "No, it calculates principal and interest only."
+      },
+      {
+        "question": "What happens if the rate changes?",
+        "answer": "Payments change; this assumes a fixed rate."
+      },
+      {
+        "question": "Why use 1200 in the formula?",
+        "answer": "It converts annual percentage rate to a monthly decimal."
+      },
+      {
+        "question": "Can I make extra payments?",
+        "answer": "Extra payments reduce the principal but are not included here."
+      }
+    ],
+    "disclaimer": "For estimation purposes; consult a lender for exact payments."
+  },
+  {
+    "slug": "body-fat-mass",
+    "title": "Body Fat Mass Calculator",
+    "cluster": "Health",
+    "description": "Estimate body fat mass from weight and body fat percentage.",
+    "intro": "Calculate how many kilograms of your weight are fat based on body fat percentage.",
+    "inputs": [
+      {
+        "name": "weight",
+        "label": "Weight (kg)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "70"
+      },
+      {
+        "name": "bodyfat",
+        "label": "Body Fat (%)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "20"
+      }
+    ],
+    "expression": "weight * bodyfat / 100",
+    "unit": "kg",
+    "examples": [
+      {
+        "description": "70 kg at 20% ⇒ 14 kg fat"
+      },
+      {
+        "description": "80 kg at 15% ⇒ 12 kg fat"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What is body fat percentage?",
+        "answer": "It is the portion of your body mass that is fat."
+      },
+      {
+        "question": "Can I enter weight in pounds?",
+        "answer": "Convert pounds to kilograms first."
+      },
+      {
+        "question": "Does this show healthy ranges?",
+        "answer": "No, it only computes mass of fat."
+      },
+      {
+        "question": "Is the result exact?",
+        "answer": "It depends on the accuracy of your body fat measurement."
+      }
+    ],
+    "disclaimer": "Informational only; consult a healthcare professional for advice."
+  },
+  {
+    "slug": "ideal-body-weight",
+    "title": "Ideal Body Weight Calculator",
+    "cluster": "Health",
+    "description": "Estimate ideal body weight using a BMI of 22.",
+    "intro": "Estimate an ideal body weight based on a BMI of 22.",
+    "inputs": [
+      {
+        "name": "height",
+        "label": "Height (cm)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "170"
+      }
+    ],
+    "expression": "22 * Math.pow(height/100, 2)",
+    "unit": "kg",
+    "examples": [
+      {
+        "description": "170 cm ⇒ 63.58 kg"
+      },
+      {
+        "description": "160 cm ⇒ 56.32 kg"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Why use BMI 22?",
+        "answer": "It is near the midpoint of the healthy BMI range."
+      },
+      {
+        "question": "Does this apply to everyone?",
+        "answer": "No, individual factors like muscle mass vary."
+      },
+      {
+        "question": "Can I enter inches?",
+        "answer": "Convert inches to centimeters first."
+      },
+      {
+        "question": "Is this a medical recommendation?",
+        "answer": "No, consult a professional for personal advice."
+      }
+    ],
+    "disclaimer": "General guideline only; not a substitute for medical evaluation."
+  },
+  {
+    "slug": "fence-post-calculator",
+    "title": "Fence Post Calculator",
+    "cluster": "Home & DIY",
+    "description": "Estimate number of fence posts needed for a project.",
+    "intro": "Estimate how many posts are required based on fence length and spacing.",
+    "inputs": [
+      {
+        "name": "length",
+        "label": "Fence Length (m)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "30"
+      },
+      {
+        "name": "spacing",
+        "label": "Spacing Between Posts (m)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "2"
+      }
+    ],
+    "expression": "Math.floor(length / spacing) + 1",
+    "unit": "posts",
+    "examples": [
+      {
+        "description": "30 m length, 2 m spacing ⇒ 16 posts"
+      },
+      {
+        "description": "50 m length, 2.5 m spacing ⇒ 21 posts"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Why add one post?",
+        "answer": "To include posts at both ends of the fence."
+      },
+      {
+        "question": "What if the length isn't divisible by spacing?",
+        "answer": "The formula rounds down, leaving a shorter end span."
+      },
+      {
+        "question": "Should I add extra posts?",
+        "answer": "Add extras for gates or corners as needed."
+      },
+      {
+        "question": "Do units matter?",
+        "answer": "Use the same units for length and spacing."
+      }
+    ],
+    "disclaimer": "Approximate estimate; adjust for terrain and design."
+  },
+  {
+    "slug": "board-foot-calculator",
+    "title": "Board Foot Calculator",
+    "cluster": "Home & DIY",
+    "description": "Compute board feet for lumber dimensions.",
+    "intro": "Calculate board feet from thickness, width, and length of lumber.",
+    "inputs": [
+      {
+        "name": "thickness",
+        "label": "Thickness (in)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "2"
+      },
+      {
+        "name": "width",
+        "label": "Width (in)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "6"
+      },
+      {
+        "name": "length",
+        "label": "Length (ft)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "10"
+      }
+    ],
+    "expression": "thickness * width * length / 12",
+    "unit": "bd ft",
+    "examples": [
+      {
+        "description": "2 in × 6 in × 10 ft ⇒ 10 bd ft"
+      },
+      {
+        "description": "1 in × 4 in × 8 ft ⇒ 2.67 bd ft"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What is a board foot?",
+        "answer": "A volume equal to a 1 in × 12 in × 12 in piece of wood."
+      },
+      {
+        "question": "Why divide by 12?",
+        "answer": "It converts the measurement into board feet."
+      },
+      {
+        "question": "Can I use metric units?",
+        "answer": "Convert measurements to inches and feet first."
+      },
+      {
+        "question": "Should results be rounded?",
+        "answer": "Lumber is often sold in whole board feet; round up if needed."
+      }
+    ],
+    "disclaimer": "Estimates only; check with your supplier for exact needs."
+  },
+  {
+    "slug": "harmonic-mean-calculator",
+    "title": "Harmonic Mean Calculator",
+    "cluster": "Math",
+    "description": "Calculate the harmonic mean of three numbers.",
+    "intro": "Find the harmonic mean of three values, useful for averaging rates.",
+    "inputs": [
+      {
+        "name": "a",
+        "label": "A",
+        "type": "number",
+        "step": "any",
+        "placeholder": "3"
+      },
+      {
+        "name": "b",
+        "label": "B",
+        "type": "number",
+        "step": "any",
+        "placeholder": "4"
+      },
+      {
+        "name": "c",
+        "label": "C",
+        "type": "number",
+        "step": "any",
+        "placeholder": "6"
+      }
+    ],
+    "expression": "3 / (1/a + 1/b + 1/c)",
+    "unit": "units",
+    "examples": [
+      {
+        "description": "Values 3,4,6 ⇒ 4.00"
+      },
+      {
+        "description": "Values 10,20,30 ⇒ 16.36"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What is the harmonic mean?",
+        "answer": "It is the reciprocal of the average of reciprocals."
+      },
+      {
+        "question": "When is it used?",
+        "answer": "Commonly for averaging rates like speed or density."
+      },
+      {
+        "question": "Can any value be zero?",
+        "answer": "No, zero would make the expression undefined."
+      },
+      {
+        "question": "Does order matter?",
+        "answer": "No, the harmonic mean is symmetric."
+      }
+    ],
+    "disclaimer": "For mathematical purposes only."
+  },
+  {
+    "slug": "modulo-calculator",
+    "title": "Modulo Calculator",
+    "cluster": "Math",
+    "description": "Find the remainder of division between two numbers.",
+    "intro": "Compute the remainder when one number is divided by another.",
+    "inputs": [
+      {
+        "name": "a",
+        "label": "Dividend",
+        "type": "number",
+        "step": "any",
+        "placeholder": "10"
+      },
+      {
+        "name": "b",
+        "label": "Divisor",
+        "type": "number",
+        "step": "any",
+        "placeholder": "3"
+      }
+    ],
+    "expression": "a % b",
+    "unit": "remainder",
+    "examples": [
+      {
+        "description": "10 ÷ 3 ⇒ remainder 1"
+      },
+      {
+        "description": "25 ÷ 4 ⇒ remainder 1"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What does modulo mean?",
+        "answer": "It gives the remainder after division."
+      },
+      {
+        "question": "Can b be zero?",
+        "answer": "No, division by zero is undefined."
+      },
+      {
+        "question": "Is the result always less than the divisor?",
+        "answer": "Yes, the remainder is smaller than b."
+      },
+      {
+        "question": "Does it work with negative numbers?",
+        "answer": "Results follow JavaScript's sign conventions."
+      }
+    ],
+    "disclaimer": "For arithmetic purposes only."
+  },
+  {
+    "slug": "battery-watt-hour",
+    "title": "Battery Watt-hour Calculator",
+    "cluster": "Technology",
+    "description": "Convert battery capacity from mAh and voltage to watt-hours.",
+    "intro": "Determine battery energy in watt-hours using capacity in mAh and voltage.",
+    "inputs": [
+      {
+        "name": "capacity",
+        "label": "Capacity (mAh)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "2000"
+      },
+      {
+        "name": "voltage",
+        "label": "Voltage (V)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "3.7"
+      }
+    ],
+    "expression": "capacity * voltage / 1000",
+    "unit": "Wh",
+    "examples": [
+      {
+        "description": "2000 mAh at 3.7 V ⇒ 7.4 Wh"
+      },
+      {
+        "description": "5000 mAh at 5 V ⇒ 25 Wh"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Why divide by 1000?",
+        "answer": "To convert milliamp-hours to amp-hours."
+      },
+      {
+        "question": "Is voltage assumed constant?",
+        "answer": "Yes, use nominal battery voltage."
+      },
+      {
+        "question": "Can I input Ah directly?",
+        "answer": "Multiply Ah by 1000 to convert to mAh first."
+      },
+      {
+        "question": "Is this exact energy?",
+        "answer": "Actual capacity varies with load and temperature."
+      }
+    ],
+    "disclaimer": "Approximate electrical calculation; check device specifications."
+  },
+  {
+    "slug": "megapixel-calculator",
+    "title": "Megapixel Calculator",
+    "cluster": "Technology",
+    "description": "Calculate megapixels from image dimensions.",
+    "intro": "Find the megapixel count of an image using its width and height in pixels.",
+    "inputs": [
+      {
+        "name": "width",
+        "label": "Width (px)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "4000"
+      },
+      {
+        "name": "height",
+        "label": "Height (px)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "3000"
+      }
+    ],
+    "expression": "width * height / 1e6",
+    "unit": "MP",
+    "examples": [
+      {
+        "description": "4000×3000 ⇒ 12 MP"
+      },
+      {
+        "description": "1920×1080 ⇒ 2.07 MP"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What is a megapixel?",
+        "answer": "One million pixels."
+      },
+      {
+        "question": "Does aspect ratio matter?",
+        "answer": "Not for calculating total pixels."
+      },
+      {
+        "question": "Can I convert megapixels back to resolution?",
+        "answer": "Multiply width and height to match the megapixel count."
+      },
+      {
+        "question": "Is the result exact?",
+        "answer": "Yes, it's a direct calculation from pixel counts."
+      }
+    ],
+    "disclaimer": "Megapixel count doesn't reflect image quality alone."
+  },
+  {
+    "slug": "social-media-engagement-rate",
+    "title": "Social Media Engagement Rate Calculator",
+    "cluster": "Other",
+    "description": "Compute engagement rate from interactions and followers.",
+    "intro": "Measure engagement as a percentage of followers based on likes, comments, and shares.",
+    "inputs": [
+      {
+        "name": "likes",
+        "label": "Likes",
+        "type": "number",
+        "step": "any",
+        "placeholder": "100"
+      },
+      {
+        "name": "comments",
+        "label": "Comments",
+        "type": "number",
+        "step": "any",
+        "placeholder": "20"
+      },
+      {
+        "name": "shares",
+        "label": "Shares",
+        "type": "number",
+        "step": "any",
+        "placeholder": "10"
+      },
+      {
+        "name": "followers",
+        "label": "Followers",
+        "type": "number",
+        "step": "any",
+        "placeholder": "1000"
+      }
+    ],
+    "expression": "(likes + comments + shares) / followers * 100",
+    "unit": "%",
+    "examples": [
+      {
+        "description": "100 likes, 20 comments, 10 shares, 1000 followers ⇒ 13%"
+      },
+      {
+        "description": "50 likes, 10 comments, 5 shares, 2000 followers ⇒ 3.25%"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What counts as engagement?",
+        "answer": "This calculator uses likes, comments, and shares."
+      },
+      {
+        "question": "Why divide by followers?",
+        "answer": "To express engagement relative to audience size."
+      },
+      {
+        "question": "Can I compare different posts?",
+        "answer": "Yes, engagement rate standardizes performance."
+      },
+      {
+        "question": "Are saves or clicks included?",
+        "answer": "Not here; add them to the formula if needed."
+      }
+    ],
+    "disclaimer": "Engagement definitions vary by platform; adapt as necessary."
+  },
+  {
+    "slug": "birthday-paradox-probability",
+    "title": "Birthday Paradox Probability",
+    "cluster": "Other",
+    "description": "Probability that at least two people share a birthday.",
+    "intro": "Estimate the chance that two people in a group share a birthday.",
+    "inputs": [
+      {
+        "name": "people",
+        "label": "Number of People",
+        "type": "number",
+        "step": "any",
+        "placeholder": "23"
+      }
+    ],
+    "expression": "100 * (1 - Math.exp(-people * (people - 1) / (2 * 365)))",
+    "unit": "%",
+    "examples": [
+      {
+        "description": "23 people ⇒ 50.00%"
+      },
+      {
+        "description": "50 people ⇒ 96.51%"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Why is the probability so high?",
+        "answer": "Because the number of pairings grows rapidly with group size."
+      },
+      {
+        "question": "Does it consider leap years?",
+        "answer": "No, it assumes 365 equally likely birthdays."
+      },
+      {
+        "question": "Are birthdays independent?",
+        "answer": "Yes, the model assumes independence."
+      },
+      {
+        "question": "Can I use it for other match problems?",
+        "answer": "Yes, similar logic applies to hash collisions and more."
+      }
+    ],
+    "disclaimer": "The formula uses a standard approximation and assumes uniform birthday distribution."
   }
 ]

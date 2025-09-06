@@ -1,0 +1,50 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Hours to Days Converter"
+description: "Convert hours into days."
+updated: "2024-06-20"
+cluster: "Date & Time"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "hours-to-days",
+  title: "Hours to Days Converter",
+  locale: "en",
+  intro: "Convert hours into days using the 24-hour day standard.",
+  unit: "days",
+  cluster: "Date & Time",
+  inputs: [
+    {
+      name: "hours",
+      label: "Hours",
+      type: "number",
+      step: "any",
+      placeholder: "48",
+    },
+  ],
+  expression: "hours / 24",
+  examples: [
+    { description: "48 hours ⇒ 2 days" },
+    { description: "36 hours ⇒ 1.5 days" },
+  ],
+  faqs: [
+    { question: "Why divide by 24?", answer: "There are 24 hours in a day." },
+    {
+      question: "Can I convert days to hours?",
+      answer: "Multiply days by 24.",
+    },
+    {
+      question: "Does it account for daylight saving?",
+      answer: "No, it uses the standard 24-hour day.",
+    },
+    {
+      question: "Is output in decimal days?",
+      answer: "Yes, fractional days are shown as decimals.",
+    },
+  ],
+  disclaimer: "For general time conversion only.",
+};
+
+<Calculator schema={schema} />

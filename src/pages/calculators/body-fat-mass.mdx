@@ -1,0 +1,62 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Body Fat Mass Calculator"
+description: "Estimate body fat mass from weight and body fat percentage."
+updated: "2024-06-20"
+cluster: "Health"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "body-fat-mass",
+  title: "Body Fat Mass Calculator",
+  locale: "en",
+  intro:
+    "Calculate how many kilograms of your weight are fat based on body fat percentage.",
+  unit: "kg",
+  cluster: "Health",
+  inputs: [
+    {
+      name: "weight",
+      label: "Weight (kg)",
+      type: "number",
+      step: "any",
+      placeholder: "70",
+    },
+    {
+      name: "bodyfat",
+      label: "Body Fat (%)",
+      type: "number",
+      step: "any",
+      placeholder: "20",
+    },
+  ],
+  expression: "weight * bodyfat / 100",
+  examples: [
+    { description: "70 kg at 20% ⇒ 14 kg fat" },
+    { description: "80 kg at 15% ⇒ 12 kg fat" },
+  ],
+  faqs: [
+    {
+      question: "What is body fat percentage?",
+      answer: "It is the portion of your body mass that is fat.",
+    },
+    {
+      question: "Can I enter weight in pounds?",
+      answer: "Convert pounds to kilograms first.",
+    },
+    {
+      question: "Does this show healthy ranges?",
+      answer: "No, it only computes mass of fat.",
+    },
+    {
+      question: "Is the result exact?",
+      answer: "It depends on the accuracy of your body fat measurement.",
+    },
+  ],
+  disclaimer:
+    "Informational only; consult a healthcare professional for advice.",
+};
+
+<Calculator schema={schema} />

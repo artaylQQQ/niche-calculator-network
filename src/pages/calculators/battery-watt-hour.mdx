@@ -1,0 +1,62 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Battery Watt-hour Calculator"
+description: "Convert battery capacity from mAh and voltage to watt-hours."
+updated: "2024-06-20"
+cluster: "Technology"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "battery-watt-hour",
+  title: "Battery Watt-hour Calculator",
+  locale: "en",
+  intro:
+    "Determine battery energy in watt-hours using capacity in mAh and voltage.",
+  unit: "Wh",
+  cluster: "Technology",
+  inputs: [
+    {
+      name: "capacity",
+      label: "Capacity (mAh)",
+      type: "number",
+      step: "any",
+      placeholder: "2000",
+    },
+    {
+      name: "voltage",
+      label: "Voltage (V)",
+      type: "number",
+      step: "any",
+      placeholder: "3.7",
+    },
+  ],
+  expression: "capacity * voltage / 1000",
+  examples: [
+    { description: "2000 mAh at 3.7 V ⇒ 7.4 Wh" },
+    { description: "5000 mAh at 5 V ⇒ 25 Wh" },
+  ],
+  faqs: [
+    {
+      question: "Why divide by 1000?",
+      answer: "To convert milliamp-hours to amp-hours.",
+    },
+    {
+      question: "Is voltage assumed constant?",
+      answer: "Yes, use nominal battery voltage.",
+    },
+    {
+      question: "Can I input Ah directly?",
+      answer: "Multiply Ah by 1000 to convert to mAh first.",
+    },
+    {
+      question: "Is this exact energy?",
+      answer: "Actual capacity varies with load and temperature.",
+    },
+  ],
+  disclaimer:
+    "Approximate electrical calculation; check device specifications.",
+};
+
+<Calculator schema={schema} />
