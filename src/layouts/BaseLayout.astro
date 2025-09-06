@@ -69,6 +69,11 @@ const cfToken = import.meta.env.VITE_CF_ANALYTICS_TOKEN;
             >Search</a
           >
           <a
+            href="/ai-calculator/"
+            class={['nav-link', Astro.url.pathname.startsWith('/ai-calculator') && 'active'].filter(Boolean).join(' ')}
+            >AI Calculator</a
+          >
+          <a
             href="/traditional-calculator/"
             class={['nav-link', 'traditional', Astro.url.pathname.startsWith('/traditional-calculator') && 'active'].filter(Boolean).join(' ')}
             >Traditional Calculator</a

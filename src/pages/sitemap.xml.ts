@@ -50,6 +50,7 @@ export async function GET({ site }: APIContext) {
     "/date-time",
     "/home-diy",
     "/other",
+    "/ai-calculator",
     "/privacy",
     "/disclaimer",
     "/categories",
