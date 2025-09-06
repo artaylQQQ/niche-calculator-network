@@ -4,6 +4,7 @@
   - Sin JSON.parse necesario (aunque se mantiene opcional).
 */
 import AdBanner from './AdBanner.astro';
+import AiWidget from './AiWidget.astro';
 import allCalcs from '../../data/calculators.json';
 const { schema } = Astro.props;
 const title = schema?.title ?? 'Calculator';
@@ -97,6 +98,12 @@ const jsonLd = {
   </form>
 
   <div class="result" data-role="result" aria-live="polite"></div>
+
+  <div class="ai-helper mt-8">
+    <h2>Need something else?</h2>
+    <p class="muted">Ask our AI-powered calculator for a quick answer.</p>
+    <AiWidget />
+  </div>
 
   <script type="application/json" data-schema set:html={JSON.stringify(schema)}></script>
 </section>

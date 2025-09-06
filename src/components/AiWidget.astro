@@ -1,0 +1,43 @@
+---
+---
+<div class="ai-widget">
+  <form id="ai-form" class="flex flex-col gap-2">
+    <textarea id="ai-question" rows="3" placeholder="Ask anything..." class="p-2 border rounded-md"></textarea>
+    <button type="submit" class="p-2 rounded-md bg-[var(--accent-red)] text-white">Ask AI</button>
+  </form>
+  <div id="ai-answer" class="mt-2"></div>
+</div>
+<script>
+const form = document.getElementById('ai-form');
+const question = document.getElementById('ai-question');
+const answer = document.getElementById('ai-answer');
+form?.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const q = question.value.trim();
+  if (!q) return;
+  answer.textContent = 'Thinking...';
+  try {
+    const res = await fetch('/api/ask', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ question: q })
+    });
+    if (res.ok) {
+      const data = await res.json();
+      answer.textContent = data.answer || 'No answer available.';
+    } else {
+      answer.textContent = 'Error contacting AI.';
+    }
+  } catch (err) {
+    answer.textContent = 'Error contacting AI.';
+  }
+});
+</script>
+<style>
+.ai-widget textarea {
+  width: 100%;
+}
+.ai-widget button {
+  width: fit-content;
+}
+</style>

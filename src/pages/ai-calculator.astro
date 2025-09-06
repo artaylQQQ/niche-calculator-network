@@ -1,0 +1,11 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import AiWidget from '../components/AiWidget.astro';
+---
+<BaseLayout title="AI Calculator" description="Can't find a calculator? Ask our AI assistant for help.">
+  <section class="container mx-auto max-w-2xl px-4">
+    <h1 style="color: var(--ink)">AI Calculator</h1>
+    <p class="muted">Didn't find what you needed on CalcSimpler.com? Ask our AI-powered assistant.</p>
+    <AiWidget />
+  </section>
+</BaseLayout>
