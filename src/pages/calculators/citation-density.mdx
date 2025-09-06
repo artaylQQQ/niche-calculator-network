@@ -1,0 +1,60 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Citation Density Calculator"
+description: "Citations per page in a document."
+updated: "2025-09-06"
+cluster: "Other"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "citation-density",
+  title: "Citation Density Calculator",
+  intro: "Calculate how many citations appear per page in a legal document.",
+  locale: "en",
+  cluster: "Other",
+  unit: "citations per page",
+  inputs: [
+    {
+      name: "citations",
+      label: "Number of Citations",
+      type: "number",
+      step: "any",
+      required: true,
+    },
+    {
+      name: "pages",
+      label: "Pages",
+      type: "number",
+      step: "any",
+      required: true,
+    },
+  ],
+  expression: "citations / pages",
+  examples: [
+    { description: "20 citations over 10 pages ⇒ 2 citations per page" },
+    { description: "45 citations over 15 pages ⇒ 3 citations per page" },
+  ],
+  faqs: [
+    {
+      question: "Why track citation density?",
+      answer: "It helps gauge the style of legal writing.",
+    },
+    {
+      question: "Can pages be decimal?",
+      answer: "Typically no; use whole pages.",
+    },
+    {
+      question: "Does this assess quality?",
+      answer: "No, it only measures quantity.",
+    },
+    {
+      question: "Can I use this for articles?",
+      answer: "Yes, any document with citations.",
+    },
+  ],
+  disclaimer: "Citation counts do not measure argument strength.",
+};
+
+<Calculator schema={schema} />

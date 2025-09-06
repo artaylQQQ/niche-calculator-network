@@ -1,0 +1,60 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Shop Labor Cost Calculator"
+description: "Estimate labor cost from hourly rate and hours."
+updated: "2025-09-06"
+cluster: "Finance"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "shop-labor-cost",
+  title: "Shop Labor Cost Calculator",
+  intro: "Compute total labor cost by multiplying shop rate by hours worked.",
+  locale: "en",
+  cluster: "Finance",
+  unit: "currency",
+  inputs: [
+    {
+      name: "hours",
+      label: "Hours",
+      type: "number",
+      step: "any",
+      required: true,
+    },
+    {
+      name: "rate",
+      label: "Rate per Hour",
+      type: "number",
+      step: "any",
+      required: true,
+    },
+  ],
+  expression: "hours * rate",
+  examples: [
+    { description: "3 h at $90/hr ⇒ $270" },
+    { description: "1.5 h at $120/hr ⇒ $180" },
+  ],
+  faqs: [
+    {
+      question: "Does this include parts?",
+      answer: "No, it only calculates labor cost.",
+    },
+    {
+      question: "Can I include tax?",
+      answer: "No, add tax separately if needed.",
+    },
+    {
+      question: "Are decimals supported?",
+      answer: "Yes, use decimals for hours or rate.",
+    },
+    {
+      question: "Is currency specified?",
+      answer: "Use any currency unit consistently.",
+    },
+  ],
+  disclaimer: "For estimates only; check actual invoices.",
+};
+
+<Calculator schema={schema} />

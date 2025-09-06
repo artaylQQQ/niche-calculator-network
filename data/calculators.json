@@ -7526,7 +7526,13 @@
     "cluster": "Conversions",
     "intro": "Convert electronvolt energy to joules using the factor 1 eV = 1.602176634×10⁻¹⁹ J. Enter eV and press Calculate.",
     "inputs": [
-      { "name": "ev", "label": "Energy (eV)", "type": "number", "step": "any", "placeholder": "1" }
+      {
+        "name": "ev",
+        "label": "Energy (eV)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "1"
+      }
     ],
     "expression": "ev * 1.602176634e-19",
     "unit": "J",
@@ -7535,10 +7541,22 @@
       { "description": "5 eV ⇒ 8.01e-19 J" }
     ],
     "faqs": [
-      { "question": "What is an electronvolt?", "answer": "The energy gained by an electron moving through a potential difference of one volt." },
-      { "question": "Is the conversion factor exact?", "answer": "Yes, it's defined by fundamental physical constants." },
-      { "question": "Can I convert large energies?", "answer": "Yes, just enter the value in electronvolts." },
-      { "question": "Does temperature affect the conversion?", "answer": "No, it's purely a unit conversion." }
+      {
+        "question": "What is an electronvolt?",
+        "answer": "The energy gained by an electron moving through a potential difference of one volt."
+      },
+      {
+        "question": "Is the conversion factor exact?",
+        "answer": "Yes, it's defined by fundamental physical constants."
+      },
+      {
+        "question": "Can I convert large energies?",
+        "answer": "Yes, just enter the value in electronvolts."
+      },
+      {
+        "question": "Does temperature affect the conversion?",
+        "answer": "No, it's purely a unit conversion."
+      }
     ],
     "disclaimer": "For educational use; high-energy calculations may involve additional factors."
   },
@@ -7548,7 +7566,13 @@
     "cluster": "Conversions",
     "intro": "Convert speed in feet per second to miles per hour. Enter ft/s and press Calculate.",
     "inputs": [
-      { "name": "fps", "label": "Speed (ft/s)", "type": "number", "step": "any", "placeholder": "10" }
+      {
+        "name": "fps",
+        "label": "Speed (ft/s)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "10"
+      }
     ],
     "expression": "fps * 0.681818",
     "unit": "mph",
@@ -7557,10 +7581,22 @@
       { "description": "88 ft/s ⇒ 60 mph" }
     ],
     "faqs": [
-      { "question": "Why multiply by 0.681818?", "answer": "Because one foot per second equals about 0.681818 miles per hour." },
-      { "question": "Can I convert mph to ft/s?", "answer": "Divide miles per hour by 0.681818." },
-      { "question": "Does it handle decimal inputs?", "answer": "Yes, you can enter fractional speeds." },
-      { "question": "Is this suitable for physics problems?", "answer": "Yes, it provides a quick unit conversion." }
+      {
+        "question": "Why multiply by 0.681818?",
+        "answer": "Because one foot per second equals about 0.681818 miles per hour."
+      },
+      {
+        "question": "Can I convert mph to ft/s?",
+        "answer": "Divide miles per hour by 0.681818."
+      },
+      {
+        "question": "Does it handle decimal inputs?",
+        "answer": "Yes, you can enter fractional speeds."
+      },
+      {
+        "question": "Is this suitable for physics problems?",
+        "answer": "Yes, it provides a quick unit conversion."
+      }
     ],
     "disclaimer": "Check against precise constants when high accuracy is required."
   },
@@ -7570,9 +7606,27 @@
     "cluster": "Date & Time",
     "intro": "Determine the ISO 8601 week number for a given date. Enter year, month, and day.",
     "inputs": [
-      { "name": "year", "label": "Year", "type": "number", "step": "1", "placeholder": "2024" },
-      { "name": "month", "label": "Month", "type": "number", "step": "1", "placeholder": "1" },
-      { "name": "day", "label": "Day", "type": "number", "step": "1", "placeholder": "1" }
+      {
+        "name": "year",
+        "label": "Year",
+        "type": "number",
+        "step": "1",
+        "placeholder": "2024"
+      },
+      {
+        "name": "month",
+        "label": "Month",
+        "type": "number",
+        "step": "1",
+        "placeholder": "1"
+      },
+      {
+        "name": "day",
+        "label": "Day",
+        "type": "number",
+        "step": "1",
+        "placeholder": "1"
+      }
     ],
     "expression": "(function(y,m,d){const date=new Date(Date.UTC(y,m-1,d));const dayNum=date.getUTCDay()||7;date.setUTCDate(date.getUTCDate()+4-dayNum);const yearStart=new Date(Date.UTC(date.getUTCFullYear(),0,1));return Math.ceil(((date-yearStart)/86400000+1)/7);})(year,month,day)",
     "unit": "week",
@@ -7581,10 +7635,22 @@
       { "description": "2025-01-01 ⇒ 1" }
     ],
     "faqs": [
-      { "question": "What is ISO week numbering?", "answer": "It's a standard where weeks start on Monday and week 1 is the week with the year's first Thursday." },
-      { "question": "Are week numbers always 1–52?", "answer": "Some years have 53 ISO weeks." },
-      { "question": "Do I need to account for time zones?", "answer": "The calculation uses UTC to avoid time zone issues." },
-      { "question": "Can it handle leap years?", "answer": "Yes, the Date object manages leap years automatically." }
+      {
+        "question": "What is ISO week numbering?",
+        "answer": "It's a standard where weeks start on Monday and week 1 is the week with the year's first Thursday."
+      },
+      {
+        "question": "Are week numbers always 1–52?",
+        "answer": "Some years have 53 ISO weeks."
+      },
+      {
+        "question": "Do I need to account for time zones?",
+        "answer": "The calculation uses UTC to avoid time zone issues."
+      },
+      {
+        "question": "Can it handle leap years?",
+        "answer": "Yes, the Date object manages leap years automatically."
+      }
     ],
     "disclaimer": "Uses the Gregorian calendar and ISO 8601 definition of week numbers."
   },
@@ -7594,8 +7660,20 @@
     "cluster": "Date & Time",
     "intro": "Return the number of days in a specific month and year, accounting for leap years.",
     "inputs": [
-      { "name": "year", "label": "Year", "type": "number", "step": "1", "placeholder": "2024" },
-      { "name": "month", "label": "Month", "type": "number", "step": "1", "placeholder": "2" }
+      {
+        "name": "year",
+        "label": "Year",
+        "type": "number",
+        "step": "1",
+        "placeholder": "2024"
+      },
+      {
+        "name": "month",
+        "label": "Month",
+        "type": "number",
+        "step": "1",
+        "placeholder": "2"
+      }
     ],
     "expression": "new Date(year, month, 0).getDate()",
     "unit": "days",
@@ -7604,10 +7682,22 @@
       { "description": "April 2025 ⇒ 30 days" }
     ],
     "faqs": [
-      { "question": "How are leap years handled?", "answer": "JavaScript's Date object automatically adjusts for leap years." },
-      { "question": "What range of years is valid?", "answer": "You can use any Gregorian calendar year." },
-      { "question": "Do I enter month numbers or names?", "answer": "Enter month numbers 1 through 12." },
-      { "question": "Why use day 0 in the formula?", "answer": "Setting day 0 returns the last day of the previous month." }
+      {
+        "question": "How are leap years handled?",
+        "answer": "JavaScript's Date object automatically adjusts for leap years."
+      },
+      {
+        "question": "What range of years is valid?",
+        "answer": "You can use any Gregorian calendar year."
+      },
+      {
+        "question": "Do I enter month numbers or names?",
+        "answer": "Enter month numbers 1 through 12."
+      },
+      {
+        "question": "Why use day 0 in the formula?",
+        "answer": "Setting day 0 returns the last day of the previous month."
+      }
     ],
     "disclaimer": "Assumes the Gregorian calendar; historical calendars may differ."
   },
@@ -7617,8 +7707,20 @@
     "cluster": "Finance",
     "intro": "Find the percentage return on an investment using initial cost and final value.",
     "inputs": [
-      { "name": "cost", "label": "Initial Cost", "type": "number", "step": "any", "placeholder": "1000" },
-      { "name": "gain", "label": "Final Value", "type": "number", "step": "any", "placeholder": "1200" }
+      {
+        "name": "cost",
+        "label": "Initial Cost",
+        "type": "number",
+        "step": "any",
+        "placeholder": "1000"
+      },
+      {
+        "name": "gain",
+        "label": "Final Value",
+        "type": "number",
+        "step": "any",
+        "placeholder": "1200"
+      }
     ],
     "expression": "(gain - cost) / cost * 100",
     "unit": "%",
@@ -7627,10 +7729,22 @@
       { "description": "$5000 cost, $4500 gain ⇒ -10%" }
     ],
     "faqs": [
-      { "question": "What does ROI represent?", "answer": "ROI shows the percentage gain or loss relative to the initial investment." },
-      { "question": "Can ROI be negative?", "answer": "Yes, a negative result indicates a loss." },
-      { "question": "Does this account for time?", "answer": "No, it calculates simple return without considering duration." },
-      { "question": "How do I express the result?", "answer": "Results are shown as a percentage." }
+      {
+        "question": "What does ROI represent?",
+        "answer": "ROI shows the percentage gain or loss relative to the initial investment."
+      },
+      {
+        "question": "Can ROI be negative?",
+        "answer": "Yes, a negative result indicates a loss."
+      },
+      {
+        "question": "Does this account for time?",
+        "answer": "No, it calculates simple return without considering duration."
+      },
+      {
+        "question": "How do I express the result?",
+        "answer": "Results are shown as a percentage."
+      }
     ],
     "disclaimer": "ROI calculations ignore fees, taxes, and time value of money."
   },
@@ -7640,8 +7754,20 @@
     "cluster": "Finance",
     "intro": "Compute your debt-to-income (DTI) ratio as a percentage using monthly debt payments and gross monthly income.",
     "inputs": [
-      { "name": "debt", "label": "Monthly Debt Payments", "type": "number", "step": "any", "placeholder": "2000" },
-      { "name": "income", "label": "Gross Monthly Income", "type": "number", "step": "any", "placeholder": "5000" }
+      {
+        "name": "debt",
+        "label": "Monthly Debt Payments",
+        "type": "number",
+        "step": "any",
+        "placeholder": "2000"
+      },
+      {
+        "name": "income",
+        "label": "Gross Monthly Income",
+        "type": "number",
+        "step": "any",
+        "placeholder": "5000"
+      }
     ],
     "expression": "(debt / income) * 100",
     "unit": "%",
@@ -7650,10 +7776,22 @@
       { "description": "$1500 debt, $3000 income ⇒ 50%" }
     ],
     "faqs": [
-      { "question": "What is DTI?", "answer": "DTI compares your monthly debt payments to your gross income." },
-      { "question": "Why does DTI matter?", "answer": "Lenders use DTI to assess your ability to manage payments." },
-      { "question": "Is lower DTI better?", "answer": "Yes, lower ratios indicate less financial strain." },
-      { "question": "Does this include taxes?", "answer": "Use gross income before taxes for standard DTI calculations." }
+      {
+        "question": "What is DTI?",
+        "answer": "DTI compares your monthly debt payments to your gross income."
+      },
+      {
+        "question": "Why does DTI matter?",
+        "answer": "Lenders use DTI to assess your ability to manage payments."
+      },
+      {
+        "question": "Is lower DTI better?",
+        "answer": "Yes, lower ratios indicate less financial strain."
+      },
+      {
+        "question": "Does this include taxes?",
+        "answer": "Use gross income before taxes for standard DTI calculations."
+      }
     ],
     "disclaimer": "DTI is an estimate; lenders may calculate it differently or include additional factors."
   },
@@ -7663,8 +7801,20 @@
     "cluster": "Health",
     "intro": "Estimate ideal body weight with the Devine formula using height in inches and a gender-specific base value.",
     "inputs": [
-      { "name": "height", "label": "Height (in)", "type": "number", "step": "any", "placeholder": "70" },
-      { "name": "base", "label": "Base (50 men, 45.5 women)", "type": "number", "step": "any", "placeholder": "50" }
+      {
+        "name": "height",
+        "label": "Height (in)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "70"
+      },
+      {
+        "name": "base",
+        "label": "Base (50 men, 45.5 women)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "50"
+      }
     ],
     "expression": "base + 2.3 * (height - 60)",
     "unit": "kg",
@@ -7673,10 +7823,22 @@
       { "description": "64 in, base 45.5 ⇒ 60.7 kg" }
     ],
     "faqs": [
-      { "question": "What is the Devine formula?", "answer": "A method to estimate ideal body weight based on height and sex." },
-      { "question": "How do I choose the base value?", "answer": "Use 50 for men and 45.5 for women." },
-      { "question": "Can I enter centimeters?", "answer": "Convert height to inches before using this calculator." },
-      { "question": "Is this a medical recommendation?", "answer": "No, it's a rough guideline and doesn't replace professional advice." }
+      {
+        "question": "What is the Devine formula?",
+        "answer": "A method to estimate ideal body weight based on height and sex."
+      },
+      {
+        "question": "How do I choose the base value?",
+        "answer": "Use 50 for men and 45.5 for women."
+      },
+      {
+        "question": "Can I enter centimeters?",
+        "answer": "Convert height to inches before using this calculator."
+      },
+      {
+        "question": "Is this a medical recommendation?",
+        "answer": "No, it's a rough guideline and doesn't replace professional advice."
+      }
     ],
     "disclaimer": "Consult healthcare providers for personalized weight assessments."
   },
@@ -7686,8 +7848,20 @@
     "cluster": "Health",
     "intro": "Estimate target exercise heart rate using age-based maximum heart rate and chosen intensity percentage.",
     "inputs": [
-      { "name": "age", "label": "Age (years)", "type": "number", "step": "1", "placeholder": "30" },
-      { "name": "intensity", "label": "Intensity (%)", "type": "number", "step": "any", "placeholder": "70" }
+      {
+        "name": "age",
+        "label": "Age (years)",
+        "type": "number",
+        "step": "1",
+        "placeholder": "30"
+      },
+      {
+        "name": "intensity",
+        "label": "Intensity (%)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "70"
+      }
     ],
     "expression": "(220 - age) * intensity / 100",
     "unit": "bpm",
@@ -7696,10 +7870,22 @@
       { "description": "Age 40 at 85% ⇒ 153 bpm" }
     ],
     "faqs": [
-      { "question": "Why subtract age from 220?", "answer": "It's a common estimate for maximum heart rate." },
-      { "question": "What intensity should I use?", "answer": "Use 50–85% for moderate to vigorous exercise." },
-      { "question": "Is the formula accurate for everyone?", "answer": "It's a guideline; individual max heart rates vary." },
-      { "question": "Do medications affect the result?", "answer": "Yes, some drugs alter heart rate responses." }
+      {
+        "question": "Why subtract age from 220?",
+        "answer": "It's a common estimate for maximum heart rate."
+      },
+      {
+        "question": "What intensity should I use?",
+        "answer": "Use 50–85% for moderate to vigorous exercise."
+      },
+      {
+        "question": "Is the formula accurate for everyone?",
+        "answer": "It's a guideline; individual max heart rates vary."
+      },
+      {
+        "question": "Do medications affect the result?",
+        "answer": "Yes, some drugs alter heart rate responses."
+      }
     ],
     "disclaimer": "Consult a healthcare provider before starting new exercise programs."
   },
@@ -7709,9 +7895,27 @@
     "cluster": "Home & DIY",
     "intro": "Determine the board feet of a piece of lumber from its thickness, width, and length in inches.",
     "inputs": [
-      { "name": "thickness", "label": "Thickness (in)", "type": "number", "step": "any", "placeholder": "2" },
-      { "name": "width", "label": "Width (in)", "type": "number", "step": "any", "placeholder": "6" },
-      { "name": "length", "label": "Length (in)", "type": "number", "step": "any", "placeholder": "96" }
+      {
+        "name": "thickness",
+        "label": "Thickness (in)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "2"
+      },
+      {
+        "name": "width",
+        "label": "Width (in)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "6"
+      },
+      {
+        "name": "length",
+        "label": "Length (in)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "96"
+      }
     ],
     "expression": "(thickness * width * length) / 144",
     "unit": "board ft",
@@ -7720,10 +7924,22 @@
       { "description": "1×10×120 in ⇒ 8.33 board ft" }
     ],
     "faqs": [
-      { "question": "What is a board foot?", "answer": "A volume of lumber equal to 1 in × 12 in × 12 in." },
-      { "question": "Can I use metric units?", "answer": "Convert dimensions to inches before calculating." },
-      { "question": "Why divide by 144?", "answer": "Because 144 cubic inches equal one board foot." },
-      { "question": "Does moisture content affect the result?", "answer": "This formula measures volume only, not weight or moisture." }
+      {
+        "question": "What is a board foot?",
+        "answer": "A volume of lumber equal to 1 in × 12 in × 12 in."
+      },
+      {
+        "question": "Can I use metric units?",
+        "answer": "Convert dimensions to inches before calculating."
+      },
+      {
+        "question": "Why divide by 144?",
+        "answer": "Because 144 cubic inches equal one board foot."
+      },
+      {
+        "question": "Does moisture content affect the result?",
+        "answer": "This formula measures volume only, not weight or moisture."
+      }
     ],
     "disclaimer": "Estimates nominal sizes; actual lumber dimensions may vary."
   },
@@ -7733,9 +7949,27 @@
     "cluster": "Home & DIY",
     "intro": "Estimate the number of drywall sheets needed from total wall area and sheet dimensions.",
     "inputs": [
-      { "name": "area", "label": "Wall Area (ft²)", "type": "number", "step": "any", "placeholder": "500" },
-      { "name": "width", "label": "Sheet Width (ft)", "type": "number", "step": "any", "placeholder": "4" },
-      { "name": "height", "label": "Sheet Height (ft)", "type": "number", "step": "any", "placeholder": "8" }
+      {
+        "name": "area",
+        "label": "Wall Area (ft²)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "500"
+      },
+      {
+        "name": "width",
+        "label": "Sheet Width (ft)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "4"
+      },
+      {
+        "name": "height",
+        "label": "Sheet Height (ft)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "8"
+      }
     ],
     "expression": "area / (width * height)",
     "unit": "sheets",
@@ -7744,10 +7978,22 @@
       { "description": "800 ft² area with 4×12 ft sheets ⇒ 16.67 sheets" }
     ],
     "faqs": [
-      { "question": "Should I round up the result?", "answer": "Yes, round up and add extra for waste and cuts." },
-      { "question": "Does it account for openings?", "answer": "Subtract door and window areas from the wall area before using." },
-      { "question": "Can I mix sheet sizes?", "answer": "This calculator assumes one consistent sheet size." },
-      { "question": "Are seams included?", "answer": "No, it purely estimates sheet count based on area." }
+      {
+        "question": "Should I round up the result?",
+        "answer": "Yes, round up and add extra for waste and cuts."
+      },
+      {
+        "question": "Does it account for openings?",
+        "answer": "Subtract door and window areas from the wall area before using."
+      },
+      {
+        "question": "Can I mix sheet sizes?",
+        "answer": "This calculator assumes one consistent sheet size."
+      },
+      {
+        "question": "Are seams included?",
+        "answer": "No, it purely estimates sheet count based on area."
+      }
     ],
     "disclaimer": "Always purchase extra material to accommodate mistakes and future repairs."
   },
@@ -7757,19 +8003,34 @@
     "cluster": "Math",
     "intro": "Multiply all positive integers up to n to find n factorial.",
     "inputs": [
-      { "name": "n", "label": "n", "type": "number", "step": "1", "placeholder": "5" }
+      {
+        "name": "n",
+        "label": "n",
+        "type": "number",
+        "step": "1",
+        "placeholder": "5"
+      }
     ],
     "expression": "(function(n){n=Math.floor(n);let r=1;for(let i=2;i<=n;i++)r*=i;return r;})(n)",
     "unit": "",
-    "examples": [
-      { "description": "5 ⇒ 120" },
-      { "description": "3 ⇒ 6" }
-    ],
+    "examples": [{ "description": "5 ⇒ 120" }, { "description": "3 ⇒ 6" }],
     "faqs": [
-      { "question": "What is factorial?", "answer": "Factorial of n is the product of all positive integers up to n." },
-      { "question": "Can n be negative?", "answer": "No, factorial is defined for non-negative integers only." },
-      { "question": "Why use Math.floor?", "answer": "It ensures n is treated as an integer." },
-      { "question": "How fast do factorials grow?", "answer": "They increase very rapidly with n." }
+      {
+        "question": "What is factorial?",
+        "answer": "Factorial of n is the product of all positive integers up to n."
+      },
+      {
+        "question": "Can n be negative?",
+        "answer": "No, factorial is defined for non-negative integers only."
+      },
+      {
+        "question": "Why use Math.floor?",
+        "answer": "It ensures n is treated as an integer."
+      },
+      {
+        "question": "How fast do factorials grow?",
+        "answer": "They increase very rapidly with n."
+      }
     ],
     "disclaimer": "Large n may exceed JavaScript's number precision."
   },
@@ -7779,8 +8040,20 @@
     "cluster": "Math",
     "intro": "Compute the greatest common divisor of two numbers using the Euclidean algorithm.",
     "inputs": [
-      { "name": "a", "label": "Number A", "type": "number", "step": "1", "placeholder": "48" },
-      { "name": "b", "label": "Number B", "type": "number", "step": "1", "placeholder": "18" }
+      {
+        "name": "a",
+        "label": "Number A",
+        "type": "number",
+        "step": "1",
+        "placeholder": "48"
+      },
+      {
+        "name": "b",
+        "label": "Number B",
+        "type": "number",
+        "step": "1",
+        "placeholder": "18"
+      }
     ],
     "expression": "(function(a,b){a=Math.abs(Math.floor(a));b=Math.abs(Math.floor(b));while(b){[a,b]=[b,a%b];}return a;})(a,b)",
     "unit": "",
@@ -7789,10 +8062,22 @@
       { "description": "21 & 14 ⇒ 7" }
     ],
     "faqs": [
-      { "question": "What is the GCD?", "answer": "It's the largest integer that divides both numbers without remainder." },
-      { "question": "Can I use negative numbers?", "answer": "Yes, the algorithm uses absolute values." },
-      { "question": "Is order important?", "answer": "No, gcd(a,b) equals gcd(b,a)." },
-      { "question": "How is this useful?", "answer": "GCD is used in simplifying fractions and number theory." }
+      {
+        "question": "What is the GCD?",
+        "answer": "It's the largest integer that divides both numbers without remainder."
+      },
+      {
+        "question": "Can I use negative numbers?",
+        "answer": "Yes, the algorithm uses absolute values."
+      },
+      {
+        "question": "Is order important?",
+        "answer": "No, gcd(a,b) equals gcd(b,a)."
+      },
+      {
+        "question": "How is this useful?",
+        "answer": "GCD is used in simplifying fractions and number theory."
+      }
     ],
     "disclaimer": "Handles integers only; results are exact within JavaScript's numeric limits."
   },
@@ -7802,7 +8087,13 @@
     "cluster": "Technology",
     "intro": "Calculate the number of usable IPv4 host addresses for a given subnet prefix length.",
     "inputs": [
-      { "name": "prefix", "label": "CIDR Prefix", "type": "number", "step": "1", "placeholder": "24" }
+      {
+        "name": "prefix",
+        "label": "CIDR Prefix",
+        "type": "number",
+        "step": "1",
+        "placeholder": "24"
+      }
     ],
     "expression": "Math.max(Math.pow(2, 32 - prefix) - 2, 0)",
     "unit": "hosts",
@@ -7811,10 +8102,22 @@
       { "description": "/30 ⇒ 2 hosts" }
     ],
     "faqs": [
-      { "question": "What is a CIDR prefix?", "answer": "It's the number of bits set to 1 in the subnet mask." },
-      { "question": "Why subtract 2 hosts?", "answer": "Network and broadcast addresses are not usable." },
-      { "question": "Can prefixes be 31 or 32?", "answer": "Yes, but they allow at most 0 or 1 usable host." },
-      { "question": "Does this work for IPv6?", "answer": "No, this formula is specific to IPv4." }
+      {
+        "question": "What is a CIDR prefix?",
+        "answer": "It's the number of bits set to 1 in the subnet mask."
+      },
+      {
+        "question": "Why subtract 2 hosts?",
+        "answer": "Network and broadcast addresses are not usable."
+      },
+      {
+        "question": "Can prefixes be 31 or 32?",
+        "answer": "Yes, but they allow at most 0 or 1 usable host."
+      },
+      {
+        "question": "Does this work for IPv6?",
+        "answer": "No, this formula is specific to IPv4."
+      }
     ],
     "disclaimer": "Assumes standard IPv4 addressing; actual allocations may reserve additional addresses."
   },
@@ -7824,8 +8127,20 @@
     "cluster": "Technology",
     "intro": "Compute usable capacity of a RAID 5 array based on drive count and individual drive size.",
     "inputs": [
-      { "name": "drives", "label": "Number of Drives", "type": "number", "step": "1", "placeholder": "4" },
-      { "name": "size", "label": "Drive Size (TB)", "type": "number", "step": "any", "placeholder": "2" }
+      {
+        "name": "drives",
+        "label": "Number of Drives",
+        "type": "number",
+        "step": "1",
+        "placeholder": "4"
+      },
+      {
+        "name": "size",
+        "label": "Drive Size (TB)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "2"
+      }
     ],
     "expression": "(drives - 1) * size",
     "unit": "TB",
@@ -7834,10 +8149,22 @@
       { "description": "6 drives at 4 TB ⇒ 20 TB" }
     ],
     "faqs": [
-      { "question": "Why subtract one drive?", "answer": "RAID 5 uses the capacity of one drive for parity." },
-      { "question": "What is the minimum number of drives?", "answer": "RAID 5 requires at least three drives." },
-      { "question": "Do drives need to be the same size?", "answer": "Yes, capacity is limited by the smallest drive." },
-      { "question": "Does this include filesystem overhead?", "answer": "No, actual usable space may be slightly less." }
+      {
+        "question": "Why subtract one drive?",
+        "answer": "RAID 5 uses the capacity of one drive for parity."
+      },
+      {
+        "question": "What is the minimum number of drives?",
+        "answer": "RAID 5 requires at least three drives."
+      },
+      {
+        "question": "Do drives need to be the same size?",
+        "answer": "Yes, capacity is limited by the smallest drive."
+      },
+      {
+        "question": "Does this include filesystem overhead?",
+        "answer": "No, actual usable space may be slightly less."
+      }
     ],
     "disclaimer": "Assumes perfect parity distribution; real-world capacity can vary."
   },
@@ -7847,7 +8174,13 @@
     "cluster": "Other",
     "intro": "Approximate how far lightning struck by multiplying the seconds until thunder by the speed of sound in air (0.343 km/s).",
     "inputs": [
-      { "name": "seconds", "label": "Seconds After Flash", "type": "number", "step": "any", "placeholder": "3" }
+      {
+        "name": "seconds",
+        "label": "Seconds After Flash",
+        "type": "number",
+        "step": "any",
+        "placeholder": "3"
+      }
     ],
     "expression": "seconds * 0.343",
     "unit": "km",
@@ -7856,10 +8189,22 @@
       { "description": "5 s ⇒ 1.72 km" }
     ],
     "faqs": [
-      { "question": "Why use 0.343 km/s?", "answer": "It's the approximate speed of sound in air at sea level." },
-      { "question": "Does wind affect the result?", "answer": "Wind and temperature can slightly change sound speed." },
-      { "question": "Can I get distance in miles?", "answer": "Multiply seconds by 0.213 to convert to miles." },
-      { "question": "Is this exact?", "answer": "It's an estimate; terrain and atmospheric conditions may alter sound travel." }
+      {
+        "question": "Why use 0.343 km/s?",
+        "answer": "It's the approximate speed of sound in air at sea level."
+      },
+      {
+        "question": "Does wind affect the result?",
+        "answer": "Wind and temperature can slightly change sound speed."
+      },
+      {
+        "question": "Can I get distance in miles?",
+        "answer": "Multiply seconds by 0.213 to convert to miles."
+      },
+      {
+        "question": "Is this exact?",
+        "answer": "It's an estimate; terrain and atmospheric conditions may alter sound travel."
+      }
     ],
     "disclaimer": "For safety awareness only; seek shelter during storms regardless of distance."
   },
@@ -7869,8 +8214,20 @@
     "cluster": "Other",
     "intro": "Determine how much water to use for a given amount of coffee grounds and desired brew ratio.",
     "inputs": [
-      { "name": "coffee", "label": "Coffee Grounds (g)", "type": "number", "step": "any", "placeholder": "20" },
-      { "name": "ratio", "label": "Brew Ratio", "type": "number", "step": "any", "placeholder": "15" }
+      {
+        "name": "coffee",
+        "label": "Coffee Grounds (g)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "20"
+      },
+      {
+        "name": "ratio",
+        "label": "Brew Ratio",
+        "type": "number",
+        "step": "any",
+        "placeholder": "15"
+      }
     ],
     "expression": "coffee * ratio",
     "unit": "g",
@@ -7879,14 +8236,26 @@
       { "description": "30 g coffee at 16 ⇒ 480 g water" }
     ],
     "faqs": [
-      { "question": "What is brew ratio?", "answer": "It's the amount of water relative to coffee grounds." },
-      { "question": "Can I use ounces?", "answer": "Convert ounces to grams before using the calculator." },
-      { "question": "Does grind size matter?", "answer": "Grind affects extraction but not the ratio calculation." },
-      { "question": "Is this for hot or cold brew?", "answer": "It works for any method as long as ratio is specified." }
+      {
+        "question": "What is brew ratio?",
+        "answer": "It's the amount of water relative to coffee grounds."
+      },
+      {
+        "question": "Can I use ounces?",
+        "answer": "Convert ounces to grams before using the calculator."
+      },
+      {
+        "question": "Does grind size matter?",
+        "answer": "Grind affects extraction but not the ratio calculation."
+      },
+      {
+        "question": "Is this for hot or cold brew?",
+        "answer": "It works for any method as long as ratio is specified."
+      }
     ],
     "disclaimer": "Brewing preferences vary; adjust ratios to taste."
-  }
-,  {
+  },
+  {
     "slug": "lux-to-foot-candles",
     "title": "Lux to Foot-Candles Converter",
     "cluster": "conversions",
@@ -7901,10 +8270,22 @@
       { "description": "1000 lux ⇒ 92.90 fc" }
     ],
     "faqs": [
-      { "question": "What is a foot-candle?", "answer": "A foot-candle measures illuminance, equal to one lumen per square foot." },
-      { "question": "How many lux are in a foot-candle?", "answer": "One foot-candle equals 10.764 lux." },
-      { "question": "Is this conversion exact?", "answer": "Yes, it uses the standard conversion factor of 10.764 lux per foot-candle." },
-      { "question": "Why convert lux to foot-candles?", "answer": "Foot-candles are commonly used in lighting design in the United States." }
+      {
+        "question": "What is a foot-candle?",
+        "answer": "A foot-candle measures illuminance, equal to one lumen per square foot."
+      },
+      {
+        "question": "How many lux are in a foot-candle?",
+        "answer": "One foot-candle equals 10.764 lux."
+      },
+      {
+        "question": "Is this conversion exact?",
+        "answer": "Yes, it uses the standard conversion factor of 10.764 lux per foot-candle."
+      },
+      {
+        "question": "Why convert lux to foot-candles?",
+        "answer": "Foot-candles are commonly used in lighting design in the United States."
+      }
     ],
     "disclaimer": "For general lighting reference only.",
     "unit": "fc"
@@ -7915,7 +8296,12 @@
     "cluster": "conversions",
     "description": "Convert energy from kilojoules to kilocalories.",
     "inputs": [
-      { "name": "kj", "label": "Kilojoules", "type": "number", "placeholder": "100" }
+      {
+        "name": "kj",
+        "label": "Kilojoules",
+        "type": "number",
+        "placeholder": "100"
+      }
     ],
     "expression": "kj / 4.184",
     "intro": "Convert energy from kilojoules to kilocalories. Enter kilojoules and calculate.",
@@ -7924,10 +8310,22 @@
       { "description": "250 kJ ⇒ 59.77 kcal" }
     ],
     "faqs": [
-      { "question": "What is a kilocalorie?", "answer": "A kilocalorie is the energy needed to raise one kilogram of water by one degree Celsius." },
-      { "question": "How many kilojoules are in a kilocalorie?", "answer": "One kilocalorie equals 4.184 kilojoules." },
-      { "question": "Is the conversion linear?", "answer": "Yes, energy scales linearly between kilojoules and kilocalories." },
-      { "question": "Where is this conversion used?", "answer": "Nutrition labels often list energy in both kilojoules and kilocalories." }
+      {
+        "question": "What is a kilocalorie?",
+        "answer": "A kilocalorie is the energy needed to raise one kilogram of water by one degree Celsius."
+      },
+      {
+        "question": "How many kilojoules are in a kilocalorie?",
+        "answer": "One kilocalorie equals 4.184 kilojoules."
+      },
+      {
+        "question": "Is the conversion linear?",
+        "answer": "Yes, energy scales linearly between kilojoules and kilocalories."
+      },
+      {
+        "question": "Where is this conversion used?",
+        "answer": "Nutrition labels often list energy in both kilojoules and kilocalories."
+      }
     ],
     "disclaimer": "Approximate nutritional conversion.",
     "unit": "kcal"
@@ -7938,7 +8336,12 @@
     "cluster": "date & time",
     "description": "Convert weeks to total hours.",
     "inputs": [
-      { "name": "weeks", "label": "Weeks", "type": "number", "placeholder": "2" }
+      {
+        "name": "weeks",
+        "label": "Weeks",
+        "type": "number",
+        "placeholder": "2"
+      }
     ],
     "expression": "weeks * 168",
     "intro": "Convert any number of weeks into hours.",
@@ -7947,10 +8350,22 @@
       { "description": "0.5 weeks ⇒ 84 hours" }
     ],
     "faqs": [
-      { "question": "How many hours are in a week?", "answer": "Each week has 168 hours." },
-      { "question": "Can I enter fractional weeks?", "answer": "Yes, decimals like 0.5 represent partial weeks." },
-      { "question": "Does this account for daylight saving?", "answer": "No, it assumes standard 24-hour days." },
-      { "question": "Why convert weeks to hours?", "answer": "It's useful for project planning and time tracking." }
+      {
+        "question": "How many hours are in a week?",
+        "answer": "Each week has 168 hours."
+      },
+      {
+        "question": "Can I enter fractional weeks?",
+        "answer": "Yes, decimals like 0.5 represent partial weeks."
+      },
+      {
+        "question": "Does this account for daylight saving?",
+        "answer": "No, it assumes standard 24-hour days."
+      },
+      {
+        "question": "Why convert weeks to hours?",
+        "answer": "It's useful for project planning and time tracking."
+      }
     ],
     "disclaimer": "Uses a constant 7-day week.",
     "unit": "hours"
@@ -7961,7 +8376,12 @@
     "cluster": "date & time",
     "description": "Estimate months from a number of seconds.",
     "inputs": [
-      { "name": "seconds", "label": "Seconds", "type": "number", "placeholder": "2592000" }
+      {
+        "name": "seconds",
+        "label": "Seconds",
+        "type": "number",
+        "placeholder": "2592000"
+      }
     ],
     "expression": "seconds / (30 * 24 * 60 * 60)",
     "intro": "Approximate how many 30-day months fit in a number of seconds.",
@@ -7970,10 +8390,22 @@
       { "description": "5,184,000 s ⇒ 2 months" }
     ],
     "faqs": [
-      { "question": "What month length is assumed?", "answer": "Each month is treated as 30 days." },
-      { "question": "Does it handle leap years?", "answer": "No, it uses a fixed month length." },
-      { "question": "Can I convert fractional months?", "answer": "Yes, decimals indicate partial months." },
-      { "question": "Why approximate months?", "answer": "It provides a quick estimate from large second counts." }
+      {
+        "question": "What month length is assumed?",
+        "answer": "Each month is treated as 30 days."
+      },
+      {
+        "question": "Does it handle leap years?",
+        "answer": "No, it uses a fixed month length."
+      },
+      {
+        "question": "Can I convert fractional months?",
+        "answer": "Yes, decimals indicate partial months."
+      },
+      {
+        "question": "Why approximate months?",
+        "answer": "It provides a quick estimate from large second counts."
+      }
     ],
     "disclaimer": "Uses an average 30-day month for simplicity.",
     "unit": "months"
@@ -7984,8 +8416,18 @@
     "cluster": "finance",
     "description": "Compute return on assets percentage from net income and total assets.",
     "inputs": [
-      { "name": "net_income", "label": "Net Income", "type": "number", "placeholder": "50000" },
-      { "name": "total_assets", "label": "Total Assets", "type": "number", "placeholder": "200000" }
+      {
+        "name": "net_income",
+        "label": "Net Income",
+        "type": "number",
+        "placeholder": "50000"
+      },
+      {
+        "name": "total_assets",
+        "label": "Total Assets",
+        "type": "number",
+        "placeholder": "200000"
+      }
     ],
     "expression": "(net_income / total_assets) * 100",
     "intro": "Determine how efficiently a company uses its assets to generate profit.",
@@ -7994,10 +8436,22 @@
       { "description": "$80,000 net income / $1,000,000 assets ⇒ 8%" }
     ],
     "faqs": [
-      { "question": "What is return on assets?", "answer": "ROA measures profit earned per dollar of assets." },
-      { "question": "Is a higher ROA better?", "answer": "Yes, higher ROA indicates more efficient asset use." },
-      { "question": "Should I use average assets?", "answer": "Using average assets over the period gives a more accurate ROA." },
-      { "question": "Can ROA be negative?", "answer": "Yes, if net income is negative the ROA will also be negative." }
+      {
+        "question": "What is return on assets?",
+        "answer": "ROA measures profit earned per dollar of assets."
+      },
+      {
+        "question": "Is a higher ROA better?",
+        "answer": "Yes, higher ROA indicates more efficient asset use."
+      },
+      {
+        "question": "Should I use average assets?",
+        "answer": "Using average assets over the period gives a more accurate ROA."
+      },
+      {
+        "question": "Can ROA be negative?",
+        "answer": "Yes, if net income is negative the ROA will also be negative."
+      }
     ],
     "disclaimer": "Informational estimation only.",
     "unit": "%"
@@ -8008,8 +8462,18 @@
     "cluster": "finance",
     "description": "Determine financial leverage via the debt-to-equity ratio.",
     "inputs": [
-      { "name": "liabilities", "label": "Total Liabilities", "type": "number", "placeholder": "150000" },
-      { "name": "equity", "label": "Shareholder Equity", "type": "number", "placeholder": "100000" }
+      {
+        "name": "liabilities",
+        "label": "Total Liabilities",
+        "type": "number",
+        "placeholder": "150000"
+      },
+      {
+        "name": "equity",
+        "label": "Shareholder Equity",
+        "type": "number",
+        "placeholder": "100000"
+      }
     ],
     "expression": "liabilities / equity",
     "intro": "Assess a company's leverage by comparing liabilities to equity.",
@@ -8018,10 +8482,22 @@
       { "description": "$80,000 liabilities / $200,000 equity ⇒ 0.4" }
     ],
     "faqs": [
-      { "question": "What is a good debt-to-equity ratio?", "answer": "It varies by industry, but lower ratios imply less risk." },
-      { "question": "Can the ratio be negative?", "answer": "Yes, if equity is negative the ratio becomes negative." },
-      { "question": "Does this include short-term debt?", "answer": "Yes, total liabilities typically include both short- and long-term debt." },
-      { "question": "Why track this ratio?", "answer": "It helps evaluate financial leverage and risk." }
+      {
+        "question": "What is a good debt-to-equity ratio?",
+        "answer": "It varies by industry, but lower ratios imply less risk."
+      },
+      {
+        "question": "Can the ratio be negative?",
+        "answer": "Yes, if equity is negative the ratio becomes negative."
+      },
+      {
+        "question": "Does this include short-term debt?",
+        "answer": "Yes, total liabilities typically include both short- and long-term debt."
+      },
+      {
+        "question": "Why track this ratio?",
+        "answer": "It helps evaluate financial leverage and risk."
+      }
     ],
     "disclaimer": "Simplified financial ratio.",
     "unit": "ratio"
@@ -8032,8 +8508,18 @@
     "cluster": "health",
     "description": "Estimate body fat mass from weight and body fat percentage.",
     "inputs": [
-      { "name": "weight", "label": "Weight (kg)", "type": "number", "placeholder": "70" },
-      { "name": "bf", "label": "Body Fat (%)", "type": "number", "placeholder": "20" }
+      {
+        "name": "weight",
+        "label": "Weight (kg)",
+        "type": "number",
+        "placeholder": "70"
+      },
+      {
+        "name": "bf",
+        "label": "Body Fat (%)",
+        "type": "number",
+        "placeholder": "20"
+      }
     ],
     "expression": "weight * (bf / 100)",
     "intro": "Find the mass of body fat based on total weight and body fat percentage.",
@@ -8042,10 +8528,22 @@
       { "description": "80 kg at 15% ⇒ 12 kg fat" }
     ],
     "faqs": [
-      { "question": "Does this show lean mass?", "answer": "No, it only calculates fat mass." },
-      { "question": "Is body fat percentage required?", "answer": "Yes, you need a measured or estimated body fat percentage." },
-      { "question": "Can I use pounds?", "answer": "Convert pounds to kilograms before using the calculator." },
-      { "question": "Is this medical advice?", "answer": "No, it's a simple estimation tool." }
+      {
+        "question": "Does this show lean mass?",
+        "answer": "No, it only calculates fat mass."
+      },
+      {
+        "question": "Is body fat percentage required?",
+        "answer": "Yes, you need a measured or estimated body fat percentage."
+      },
+      {
+        "question": "Can I use pounds?",
+        "answer": "Convert pounds to kilograms before using the calculator."
+      },
+      {
+        "question": "Is this medical advice?",
+        "answer": "No, it's a simple estimation tool."
+      }
     ],
     "disclaimer": "Not a substitute for professional health assessment.",
     "unit": "kg"
@@ -8056,7 +8554,12 @@
     "cluster": "health",
     "description": "Estimate weight gain from a calorie surplus.",
     "inputs": [
-      { "name": "calories", "label": "Calorie Surplus", "type": "number", "placeholder": "7000" }
+      {
+        "name": "calories",
+        "label": "Calorie Surplus",
+        "type": "number",
+        "placeholder": "7000"
+      }
     ],
     "expression": "calories / 3500",
     "intro": "Estimate potential weight gain from extra calories consumed.",
@@ -8065,10 +8568,22 @@
       { "description": "1750 calories ⇒ 0.5 lb" }
     ],
     "faqs": [
-      { "question": "Why divide by 3500?", "answer": "Roughly 3,500 calories equal one pound of body weight." },
-      { "question": "Is weight gain guaranteed?", "answer": "Actual weight change depends on many factors like metabolism and activity." },
-      { "question": "Does this work for weight loss?", "answer": "Yes, a calorie deficit would estimate weight loss." },
-      { "question": "Should I track over time?", "answer": "Consistent tracking provides better insight into weight trends." }
+      {
+        "question": "Why divide by 3500?",
+        "answer": "Roughly 3,500 calories equal one pound of body weight."
+      },
+      {
+        "question": "Is weight gain guaranteed?",
+        "answer": "Actual weight change depends on many factors like metabolism and activity."
+      },
+      {
+        "question": "Does this work for weight loss?",
+        "answer": "Yes, a calorie deficit would estimate weight loss."
+      },
+      {
+        "question": "Should I track over time?",
+        "answer": "Consistent tracking provides better insight into weight trends."
+      }
     ],
     "disclaimer": "Approximation; individual results vary.",
     "unit": "lb"
@@ -8079,9 +8594,24 @@
     "cluster": "home & diy",
     "description": "Estimate grout volume from tiled area and joint size.",
     "inputs": [
-      { "name": "area", "label": "Area (ft²)", "type": "number", "placeholder": "50" },
-      { "name": "width", "label": "Joint Width (in)", "type": "number", "placeholder": "0.125" },
-      { "name": "depth", "label": "Joint Depth (in)", "type": "number", "placeholder": "0.25" }
+      {
+        "name": "area",
+        "label": "Area (ft²)",
+        "type": "number",
+        "placeholder": "50"
+      },
+      {
+        "name": "width",
+        "label": "Joint Width (in)",
+        "type": "number",
+        "placeholder": "0.125"
+      },
+      {
+        "name": "depth",
+        "label": "Joint Depth (in)",
+        "type": "number",
+        "placeholder": "0.25"
+      }
     ],
     "expression": "area * width * depth * 144 * 0.0163871",
     "intro": "Approximate the amount of grout needed based on area and joint dimensions.",
@@ -8090,10 +8620,22 @@
       { "description": "100 ft², 0.1 in width, 0.3 in depth ⇒ 7.09 L" }
     ],
     "faqs": [
-      { "question": "Does this account for tile layout?", "answer": "No, it assumes uniform spacing." },
-      { "question": "Can I use metric units?", "answer": "Convert dimensions to feet and inches first." },
-      { "question": "Should I add extra grout?", "answer": "Adding 10% extra is common for waste." },
-      { "question": "Is this volume wet or dry?", "answer": "It represents mixed grout volume." }
+      {
+        "question": "Does this account for tile layout?",
+        "answer": "No, it assumes uniform spacing."
+      },
+      {
+        "question": "Can I use metric units?",
+        "answer": "Convert dimensions to feet and inches first."
+      },
+      {
+        "question": "Should I add extra grout?",
+        "answer": "Adding 10% extra is common for waste."
+      },
+      {
+        "question": "Is this volume wet or dry?",
+        "answer": "It represents mixed grout volume."
+      }
     ],
     "disclaimer": "Estimate only; actual needs may vary.",
     "unit": "L"
@@ -8104,8 +8646,18 @@
     "cluster": "home & diy",
     "description": "Estimate the number of insulation rolls needed for a project.",
     "inputs": [
-      { "name": "area", "label": "Area (ft²)", "type": "number", "placeholder": "500" },
-      { "name": "coverage", "label": "Coverage per Roll (ft²)", "type": "number", "placeholder": "40" }
+      {
+        "name": "area",
+        "label": "Area (ft²)",
+        "type": "number",
+        "placeholder": "500"
+      },
+      {
+        "name": "coverage",
+        "label": "Coverage per Roll (ft²)",
+        "type": "number",
+        "placeholder": "40"
+      }
     ],
     "expression": "area / coverage",
     "intro": "Figure out how many insulation rolls to purchase based on area coverage.",
@@ -8114,10 +8666,22 @@
       { "description": "800 ft² area, 30 ft² per roll ⇒ 26.67 rolls" }
     ],
     "faqs": [
-      { "question": "Should I round up?", "answer": "Yes, buy an extra roll to cover waste." },
-      { "question": "Does thickness matter?", "answer": "This calculator only considers area coverage." },
-      { "question": "Can I mix roll sizes?", "answer": "Use the average coverage if mixing sizes." },
-      { "question": "Is this for batt insulation?", "answer": "It works for any roll product measured in square feet." }
+      {
+        "question": "Should I round up?",
+        "answer": "Yes, buy an extra roll to cover waste."
+      },
+      {
+        "question": "Does thickness matter?",
+        "answer": "This calculator only considers area coverage."
+      },
+      {
+        "question": "Can I mix roll sizes?",
+        "answer": "Use the average coverage if mixing sizes."
+      },
+      {
+        "question": "Is this for batt insulation?",
+        "answer": "It works for any roll product measured in square feet."
+      }
     ],
     "disclaimer": "Add a margin for cuts and overlaps.",
     "unit": "rolls"
@@ -8128,8 +8692,18 @@
     "cluster": "math",
     "description": "Compute percentage error between measured and actual values.",
     "inputs": [
-      { "name": "measured", "label": "Measured Value", "type": "number", "placeholder": "105" },
-      { "name": "actual", "label": "Actual Value", "type": "number", "placeholder": "100" }
+      {
+        "name": "measured",
+        "label": "Measured Value",
+        "type": "number",
+        "placeholder": "105"
+      },
+      {
+        "name": "actual",
+        "label": "Actual Value",
+        "type": "number",
+        "placeholder": "100"
+      }
     ],
     "expression": "(((measured - actual) ^ 2) ^ 0.5 / actual) * 100",
     "intro": "Find the percent error between a measured quantity and its true value.",
@@ -8138,10 +8712,22 @@
       { "description": "Measured 95 vs actual 100 ⇒ 5%" }
     ],
     "faqs": [
-      { "question": "Why square the difference?", "answer": "Squaring removes negative signs before taking the square root." },
-      { "question": "Does percent error show accuracy?", "answer": "Yes, smaller errors mean measurements closer to the true value." },
-      { "question": "Can actual value be zero?", "answer": "No, percent error is undefined when the true value is zero." },
-      { "question": "Is the result signed?", "answer": "No, percent error is always positive." }
+      {
+        "question": "Why square the difference?",
+        "answer": "Squaring removes negative signs before taking the square root."
+      },
+      {
+        "question": "Does percent error show accuracy?",
+        "answer": "Yes, smaller errors mean measurements closer to the true value."
+      },
+      {
+        "question": "Can actual value be zero?",
+        "answer": "No, percent error is undefined when the true value is zero."
+      },
+      {
+        "question": "Is the result signed?",
+        "answer": "No, percent error is always positive."
+      }
     ],
     "disclaimer": "For educational estimation only.",
     "unit": "%"
@@ -8152,7 +8738,12 @@
     "cluster": "math",
     "description": "Find the measure of each exterior angle in a regular polygon.",
     "inputs": [
-      { "name": "n", "label": "Number of Sides", "type": "number", "placeholder": "6" }
+      {
+        "name": "n",
+        "label": "Number of Sides",
+        "type": "number",
+        "placeholder": "6"
+      }
     ],
     "expression": "360 / n",
     "intro": "Compute the exterior angle of a regular polygon by dividing 360° by the number of sides.",
@@ -8161,10 +8752,22 @@
       { "description": "n = 8 ⇒ 45°" }
     ],
     "faqs": [
-      { "question": "What is an exterior angle?", "answer": "It's the angle formed by one side of a polygon and the extension of an adjacent side." },
-      { "question": "Do the exterior angles sum to 360°?", "answer": "Yes, for any polygon the exterior angles sum to 360°." },
-      { "question": "Does this work for irregular polygons?", "answer": "No, the formula applies only to regular polygons." },
-      { "question": "How about interior angles?", "answer": "Interior angle = 180° - exterior angle." }
+      {
+        "question": "What is an exterior angle?",
+        "answer": "It's the angle formed by one side of a polygon and the extension of an adjacent side."
+      },
+      {
+        "question": "Do the exterior angles sum to 360°?",
+        "answer": "Yes, for any polygon the exterior angles sum to 360°."
+      },
+      {
+        "question": "Does this work for irregular polygons?",
+        "answer": "No, the formula applies only to regular polygons."
+      },
+      {
+        "question": "How about interior angles?",
+        "answer": "Interior angle = 180° - exterior angle."
+      }
     ],
     "disclaimer": "Assumes a regular polygon.",
     "unit": "degrees"
@@ -8175,8 +8778,18 @@
     "cluster": "technology",
     "description": "Calculate percentage size reduction after compression.",
     "inputs": [
-      { "name": "original", "label": "Original Size", "type": "number", "placeholder": "10" },
-      { "name": "compressed", "label": "Compressed Size", "type": "number", "placeholder": "6" }
+      {
+        "name": "original",
+        "label": "Original Size",
+        "type": "number",
+        "placeholder": "10"
+      },
+      {
+        "name": "compressed",
+        "label": "Compressed Size",
+        "type": "number",
+        "placeholder": "6"
+      }
     ],
     "expression": "((original - compressed) / original) * 100",
     "intro": "See how much space you save after compressing files.",
@@ -8185,10 +8798,22 @@
       { "description": "50 MB → 25 MB ⇒ 50%" }
     ],
     "faqs": [
-      { "question": "Does this depend on file type?", "answer": "No, it only uses file sizes you provide." },
-      { "question": "Can savings be negative?", "answer": "Yes, if the compressed file is larger than the original." },
-      { "question": "Do I need units?", "answer": "Any consistent size unit works, like MB or KB." },
-      { "question": "Is compression lossless?", "answer": "This calculator doesn't indicate quality, only size change." }
+      {
+        "question": "Does this depend on file type?",
+        "answer": "No, it only uses file sizes you provide."
+      },
+      {
+        "question": "Can savings be negative?",
+        "answer": "Yes, if the compressed file is larger than the original."
+      },
+      {
+        "question": "Do I need units?",
+        "answer": "Any consistent size unit works, like MB or KB."
+      },
+      {
+        "question": "Is compression lossless?",
+        "answer": "This calculator doesn't indicate quality, only size change."
+      }
     ],
     "disclaimer": "Size change only; does not assess quality.",
     "unit": "%"
@@ -8199,10 +8824,30 @@
     "cluster": "technology",
     "description": "Determine screen-to-body ratio of a device.",
     "inputs": [
-      { "name": "sw", "label": "Screen Width", "type": "number", "placeholder": "68" },
-      { "name": "sh", "label": "Screen Height", "type": "number", "placeholder": "152" },
-      { "name": "bw", "label": "Body Width", "type": "number", "placeholder": "70" },
-      { "name": "bh", "label": "Body Height", "type": "number", "placeholder": "155" }
+      {
+        "name": "sw",
+        "label": "Screen Width",
+        "type": "number",
+        "placeholder": "68"
+      },
+      {
+        "name": "sh",
+        "label": "Screen Height",
+        "type": "number",
+        "placeholder": "152"
+      },
+      {
+        "name": "bw",
+        "label": "Body Width",
+        "type": "number",
+        "placeholder": "70"
+      },
+      {
+        "name": "bh",
+        "label": "Body Height",
+        "type": "number",
+        "placeholder": "155"
+      }
     ],
     "expression": "(sw * sh) / (bw * bh) * 100",
     "intro": "Calculate the screen area as a percentage of the device's front surface.",
@@ -8211,10 +8856,22 @@
       { "description": "Screen 60×130 mm, body 65×140 mm ⇒ 85.71%" }
     ],
     "faqs": [
-      { "question": "Do units matter?", "answer": "No, as long as all measurements use the same units." },
-      { "question": "Does this include bezels?", "answer": "Yes, body size includes bezels around the screen." },
-      { "question": "Is a higher ratio better?", "answer": "Higher ratios indicate less bezel and more screen area." },
-      { "question": "Can I use inches instead of millimeters?", "answer": "Yes, any consistent unit works." }
+      {
+        "question": "Do units matter?",
+        "answer": "No, as long as all measurements use the same units."
+      },
+      {
+        "question": "Does this include bezels?",
+        "answer": "Yes, body size includes bezels around the screen."
+      },
+      {
+        "question": "Is a higher ratio better?",
+        "answer": "Higher ratios indicate less bezel and more screen area."
+      },
+      {
+        "question": "Can I use inches instead of millimeters?",
+        "answer": "Yes, any consistent unit works."
+      }
     ],
     "disclaimer": "Simplified geometric estimate.",
     "unit": "%"
@@ -8225,7 +8882,12 @@
     "cluster": "other",
     "description": "Convert rabbit age into equivalent human years.",
     "inputs": [
-      { "name": "age", "label": "Rabbit Age (years)", "type": "number", "placeholder": "2" }
+      {
+        "name": "age",
+        "label": "Rabbit Age (years)",
+        "type": "number",
+        "placeholder": "2"
+      }
     ],
     "expression": "age * 8",
     "intro": "Approximate a rabbit's age in human years using a factor of eight.",
@@ -8234,10 +8896,22 @@
       { "description": "5 rabbit years ⇒ 40 human years" }
     ],
     "faqs": [
-      { "question": "Is the factor of eight exact?", "answer": "No, it's a rough average for domestic rabbits." },
-      { "question": "Do larger breeds age differently?", "answer": "Yes, size and breed can affect aging." },
-      { "question": "Does this apply to wild rabbits?", "answer": "Wild rabbits often have shorter lifespans." },
-      { "question": "Why compare to human years?", "answer": "It helps owners relate to their pet's life stage." }
+      {
+        "question": "Is the factor of eight exact?",
+        "answer": "No, it's a rough average for domestic rabbits."
+      },
+      {
+        "question": "Do larger breeds age differently?",
+        "answer": "Yes, size and breed can affect aging."
+      },
+      {
+        "question": "Does this apply to wild rabbits?",
+        "answer": "Wild rabbits often have shorter lifespans."
+      },
+      {
+        "question": "Why compare to human years?",
+        "answer": "It helps owners relate to their pet's life stage."
+      }
     ],
     "disclaimer": "For fun estimation; consult a vet for health concerns.",
     "unit": "human years"
@@ -8248,7 +8922,12 @@
     "cluster": "other",
     "description": "Convert musical tempo in BPM to delay time per beat in milliseconds.",
     "inputs": [
-      { "name": "bpm", "label": "Tempo (BPM)", "type": "number", "placeholder": "120" }
+      {
+        "name": "bpm",
+        "label": "Tempo (BPM)",
+        "type": "number",
+        "placeholder": "120"
+      }
     ],
     "expression": "60000 / bpm",
     "intro": "Convert beats per minute into milliseconds per beat for music production.",
@@ -8257,10 +8936,22 @@
       { "description": "90 BPM ⇒ 666.67 ms" }
     ],
     "faqs": [
-      { "question": "Why use 60,000?", "answer": "There are 60,000 milliseconds in a minute." },
-      { "question": "Can I use this for note divisions?", "answer": "Yes, divide or multiply the result for different note lengths." },
-      { "question": "Does tapping tempo work?", "answer": "Enter the BPM measured by your tap tempo tool." },
-      { "question": "Is this accurate for swing rhythms?", "answer": "No, swing timing requires additional adjustment." }
+      {
+        "question": "Why use 60,000?",
+        "answer": "There are 60,000 milliseconds in a minute."
+      },
+      {
+        "question": "Can I use this for note divisions?",
+        "answer": "Yes, divide or multiply the result for different note lengths."
+      },
+      {
+        "question": "Does tapping tempo work?",
+        "answer": "Enter the BPM measured by your tap tempo tool."
+      },
+      {
+        "question": "Is this accurate for swing rhythms?",
+        "answer": "No, swing timing requires additional adjustment."
+      }
     ],
     "disclaimer": "Timing values are idealized; musical feel may vary.",
     "unit": "ms"
@@ -8271,7 +8962,13 @@
     "cluster": "conversions",
     "description": "Convert watts to mechanical horsepower.",
     "inputs": [
-      { "name": "watts", "label": "Power (W)", "type": "number", "step": "any", "placeholder": "1000" }
+      {
+        "name": "watts",
+        "label": "Power (W)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "1000"
+      }
     ],
     "expression": "watts / 745.699872",
     "intro": "Convert electrical power in watts to mechanical horsepower for equipment comparisons.",
@@ -8280,10 +8977,22 @@
       { "description": "1500 W ⇒ 2.01 hp" }
     ],
     "faqs": [
-      { "question": "What is one horsepower in watts?", "answer": "One mechanical horsepower equals roughly 745.7 watts." },
-      { "question": "Can I enter decimal watt values?", "answer": "Yes, the converter accepts fractional watt inputs." },
-      { "question": "Does it use metric horsepower?", "answer": "No, it uses the mechanical (imperial) horsepower definition." },
-      { "question": "Is the conversion exact?", "answer": "It uses a standard constant suitable for most practical needs." }
+      {
+        "question": "What is one horsepower in watts?",
+        "answer": "One mechanical horsepower equals roughly 745.7 watts."
+      },
+      {
+        "question": "Can I enter decimal watt values?",
+        "answer": "Yes, the converter accepts fractional watt inputs."
+      },
+      {
+        "question": "Does it use metric horsepower?",
+        "answer": "No, it uses the mechanical (imperial) horsepower definition."
+      },
+      {
+        "question": "Is the conversion exact?",
+        "answer": "It uses a standard constant suitable for most practical needs."
+      }
     ],
     "disclaimer": "For estimation only; confirm critical conversions independently.",
     "unit": "hp"
@@ -8294,7 +9003,13 @@
     "cluster": "conversions",
     "description": "Convert volume from liters to US gallons.",
     "inputs": [
-      { "name": "liters", "label": "Volume (L)", "type": "number", "step": "any", "placeholder": "10" }
+      {
+        "name": "liters",
+        "label": "Volume (L)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "10"
+      }
     ],
     "expression": "liters * 0.264172",
     "intro": "Convert liquid volumes from liters to US gallons quickly and accurately.",
@@ -8303,10 +9018,22 @@
       { "description": "25 L ⇒ 6.60 gal" }
     ],
     "faqs": [
-      { "question": "Which gallon is used?", "answer": "The calculator uses the US liquid gallon." },
-      { "question": "Can I use decimals?", "answer": "Yes, fractional liter values are supported." },
-      { "question": "How many liters are in one gallon?", "answer": "One US gallon is about 3.785 liters." },
-      { "question": "Does it handle Imperial gallons?", "answer": "No, Imperial gallons differ from US gallons." }
+      {
+        "question": "Which gallon is used?",
+        "answer": "The calculator uses the US liquid gallon."
+      },
+      {
+        "question": "Can I use decimals?",
+        "answer": "Yes, fractional liter values are supported."
+      },
+      {
+        "question": "How many liters are in one gallon?",
+        "answer": "One US gallon is about 3.785 liters."
+      },
+      {
+        "question": "Does it handle Imperial gallons?",
+        "answer": "No, Imperial gallons differ from US gallons."
+      }
     ],
     "disclaimer": "For estimation only; double-check critical measurements.",
     "unit": "gal"
@@ -8317,12 +9044,48 @@
     "cluster": "date & time",
     "description": "Count weekdays between two calendar dates.",
     "inputs": [
-      { "name": "y1", "label": "Start Year", "type": "number", "step": 1, "placeholder": "2024" },
-      { "name": "m1", "label": "Start Month", "type": "number", "step": 1, "placeholder": "6" },
-      { "name": "d1", "label": "Start Day", "type": "number", "step": 1, "placeholder": "1" },
-      { "name": "y2", "label": "End Year", "type": "number", "step": 1, "placeholder": "2024" },
-      { "name": "m2", "label": "End Month", "type": "number", "step": 1, "placeholder": "6" },
-      { "name": "d2", "label": "End Day", "type": "number", "step": 1, "placeholder": "10" }
+      {
+        "name": "y1",
+        "label": "Start Year",
+        "type": "number",
+        "step": 1,
+        "placeholder": "2024"
+      },
+      {
+        "name": "m1",
+        "label": "Start Month",
+        "type": "number",
+        "step": 1,
+        "placeholder": "6"
+      },
+      {
+        "name": "d1",
+        "label": "Start Day",
+        "type": "number",
+        "step": 1,
+        "placeholder": "1"
+      },
+      {
+        "name": "y2",
+        "label": "End Year",
+        "type": "number",
+        "step": 1,
+        "placeholder": "2024"
+      },
+      {
+        "name": "m2",
+        "label": "End Month",
+        "type": "number",
+        "step": 1,
+        "placeholder": "6"
+      },
+      {
+        "name": "d2",
+        "label": "End Day",
+        "type": "number",
+        "step": 1,
+        "placeholder": "10"
+      }
     ],
     "expression": "(function(y1,m1,d1,y2,m2,d2){const start=new Date(y1,m1-1,d1);const end=new Date(y2,m2-1,d2);let count=0;for(let d=new Date(start);d<=end;d.setDate(d.getDate()+1)){const day=d.getDay();if(day!==0&&day!==6)count++;}return count;})(y1,m1,d1,y2,m2,d2)",
     "intro": "Find how many business days fall between two dates, excluding weekends.",
@@ -8331,10 +9094,22 @@
       { "description": "2024-06-01 to 2024-06-10 ⇒ 6 days" }
     ],
     "faqs": [
-      { "question": "Are weekends excluded?", "answer": "Yes, Saturdays and Sundays are skipped." },
-      { "question": "Does it consider holidays?", "answer": "No, only weekends are removed." },
-      { "question": "Should the start date be before the end?", "answer": "Yes, the calculator assumes the start date is earlier." },
-      { "question": "Is the count inclusive?", "answer": "Both start and end dates are counted if they are weekdays." }
+      {
+        "question": "Are weekends excluded?",
+        "answer": "Yes, Saturdays and Sundays are skipped."
+      },
+      {
+        "question": "Does it consider holidays?",
+        "answer": "No, only weekends are removed."
+      },
+      {
+        "question": "Should the start date be before the end?",
+        "answer": "Yes, the calculator assumes the start date is earlier."
+      },
+      {
+        "question": "Is the count inclusive?",
+        "answer": "Both start and end dates are counted if they are weekdays."
+      }
     ],
     "disclaimer": "Exclude public holidays manually for precise scheduling.",
     "unit": "days"
@@ -8345,9 +9120,27 @@
     "cluster": "date & time",
     "description": "Convert a calendar date to its Julian Day Number.",
     "inputs": [
-      { "name": "year", "label": "Year", "type": "number", "step": 1, "placeholder": "2024" },
-      { "name": "month", "label": "Month", "type": "number", "step": 1, "placeholder": "1" },
-      { "name": "day", "label": "Day", "type": "number", "step": 1, "placeholder": "1" }
+      {
+        "name": "year",
+        "label": "Year",
+        "type": "number",
+        "step": 1,
+        "placeholder": "2024"
+      },
+      {
+        "name": "month",
+        "label": "Month",
+        "type": "number",
+        "step": 1,
+        "placeholder": "1"
+      },
+      {
+        "name": "day",
+        "label": "Day",
+        "type": "number",
+        "step": 1,
+        "placeholder": "1"
+      }
     ],
     "expression": "(function(y,m,d){let a=Math.floor((14-m)/12);let y1=y+4800-a;let m1=m+12*a-3;return d+Math.floor((153*m1+2)/5)+365*y1+Math.floor(y1/4)-Math.floor(y1/100)+Math.floor(y1/400)-32045;})(year,month,day)",
     "intro": "Calculate the Julian Day Number for any given calendar date.",
@@ -8356,10 +9149,22 @@
       { "description": "2024-05-15 ⇒ 2460446" }
     ],
     "faqs": [
-      { "question": "What is a Julian Day Number?", "answer": "It's a continuous count of days used by astronomers." },
-      { "question": "Does this include time of day?", "answer": "No, it assumes noon UTC for the given date." },
-      { "question": "Can I convert dates before 1582?", "answer": "The formula works for Gregorian dates after 1582." },
-      { "question": "Why use Julian dates?", "answer": "They simplify calculating intervals between dates." }
+      {
+        "question": "What is a Julian Day Number?",
+        "answer": "It's a continuous count of days used by astronomers."
+      },
+      {
+        "question": "Does this include time of day?",
+        "answer": "No, it assumes noon UTC for the given date."
+      },
+      {
+        "question": "Can I convert dates before 1582?",
+        "answer": "The formula works for Gregorian dates after 1582."
+      },
+      {
+        "question": "Why use Julian dates?",
+        "answer": "They simplify calculating intervals between dates."
+      }
     ],
     "disclaimer": "For civil dates in the Gregorian calendar only.",
     "unit": "JDN"
@@ -8370,8 +9175,20 @@
     "cluster": "finance",
     "description": "Find the dividend payout ratio from dividends and earnings.",
     "inputs": [
-      { "name": "dividends", "label": "Dividends", "type": "number", "step": "any", "placeholder": "2" },
-      { "name": "earnings", "label": "Earnings", "type": "number", "step": "any", "placeholder": "5" }
+      {
+        "name": "dividends",
+        "label": "Dividends",
+        "type": "number",
+        "step": "any",
+        "placeholder": "2"
+      },
+      {
+        "name": "earnings",
+        "label": "Earnings",
+        "type": "number",
+        "step": "any",
+        "placeholder": "5"
+      }
     ],
     "expression": "(dividends / earnings) * 100",
     "intro": "Determine what percentage of earnings is distributed to shareholders as dividends.",
@@ -8380,10 +9197,22 @@
       { "description": "Dividends 3, earnings 6 ⇒ 50%" }
     ],
     "faqs": [
-      { "question": "What does the payout ratio show?", "answer": "It shows the share of earnings paid out as dividends." },
-      { "question": "Can I use net income?", "answer": "Yes, earnings typically refer to net income." },
-      { "question": "What if earnings are zero?", "answer": "The ratio becomes undefined or infinite." },
-      { "question": "Is the result a percentage?", "answer": "Yes, the ratio is expressed as a percentage." }
+      {
+        "question": "What does the payout ratio show?",
+        "answer": "It shows the share of earnings paid out as dividends."
+      },
+      {
+        "question": "Can I use net income?",
+        "answer": "Yes, earnings typically refer to net income."
+      },
+      {
+        "question": "What if earnings are zero?",
+        "answer": "The ratio becomes undefined or infinite."
+      },
+      {
+        "question": "Is the result a percentage?",
+        "answer": "Yes, the ratio is expressed as a percentage."
+      }
     ],
     "disclaimer": "Informational only; consult financial advisors for decisions.",
     "unit": "%"
@@ -8394,8 +9223,20 @@
     "cluster": "finance",
     "description": "Compute the interest coverage ratio using EBIT and interest expense.",
     "inputs": [
-      { "name": "ebit", "label": "EBIT", "type": "number", "step": "any", "placeholder": "60000" },
-      { "name": "interest", "label": "Interest Expense", "type": "number", "step": "any", "placeholder": "10000" }
+      {
+        "name": "ebit",
+        "label": "EBIT",
+        "type": "number",
+        "step": "any",
+        "placeholder": "60000"
+      },
+      {
+        "name": "interest",
+        "label": "Interest Expense",
+        "type": "number",
+        "step": "any",
+        "placeholder": "10000"
+      }
     ],
     "expression": "ebit / interest",
     "intro": "Assess how many times a company's earnings can cover its interest payments.",
@@ -8404,10 +9245,22 @@
       { "description": "EBIT 45000, interest 15000 ⇒ 3" }
     ],
     "faqs": [
-      { "question": "What does a higher ratio mean?", "answer": "Higher values indicate greater ability to meet interest obligations." },
-      { "question": "What if interest is zero?", "answer": "The ratio becomes infinite, indicating no interest burden." },
-      { "question": "Can EBIT be negative?", "answer": "Yes, but it signals financial difficulties." },
-      { "question": "Is this the same as times interest earned?", "answer": "Yes, it's another name for the same metric." }
+      {
+        "question": "What does a higher ratio mean?",
+        "answer": "Higher values indicate greater ability to meet interest obligations."
+      },
+      {
+        "question": "What if interest is zero?",
+        "answer": "The ratio becomes infinite, indicating no interest burden."
+      },
+      {
+        "question": "Can EBIT be negative?",
+        "answer": "Yes, but it signals financial difficulties."
+      },
+      {
+        "question": "Is this the same as times interest earned?",
+        "answer": "Yes, it's another name for the same metric."
+      }
     ],
     "disclaimer": "Financial metrics are estimates; seek professional advice.",
     "unit": "times"
@@ -8418,12 +9271,48 @@
     "cluster": "health",
     "description": "Estimate gestational age in weeks from the last menstrual period.",
     "inputs": [
-      { "name": "y1", "label": "LMP Year", "type": "number", "step": 1, "placeholder": "2024" },
-      { "name": "m1", "label": "LMP Month", "type": "number", "step": 1, "placeholder": "1" },
-      { "name": "d1", "label": "LMP Day", "type": "number", "step": 1, "placeholder": "1" },
-      { "name": "y2", "label": "Current Year", "type": "number", "step": 1, "placeholder": "2024" },
-      { "name": "m2", "label": "Current Month", "type": "number", "step": 1, "placeholder": "3" },
-      { "name": "d2", "label": "Current Day", "type": "number", "step": 1, "placeholder": "15" }
+      {
+        "name": "y1",
+        "label": "LMP Year",
+        "type": "number",
+        "step": 1,
+        "placeholder": "2024"
+      },
+      {
+        "name": "m1",
+        "label": "LMP Month",
+        "type": "number",
+        "step": 1,
+        "placeholder": "1"
+      },
+      {
+        "name": "d1",
+        "label": "LMP Day",
+        "type": "number",
+        "step": 1,
+        "placeholder": "1"
+      },
+      {
+        "name": "y2",
+        "label": "Current Year",
+        "type": "number",
+        "step": 1,
+        "placeholder": "2024"
+      },
+      {
+        "name": "m2",
+        "label": "Current Month",
+        "type": "number",
+        "step": 1,
+        "placeholder": "3"
+      },
+      {
+        "name": "d2",
+        "label": "Current Day",
+        "type": "number",
+        "step": 1,
+        "placeholder": "15"
+      }
     ],
     "expression": "(new Date(y2,m2-1,d2) - new Date(y1,m1-1,d1)) / 604800000",
     "intro": "Calculate how many weeks pregnant you are based on the last menstrual period and today's date.",
@@ -8432,10 +9321,22 @@
       { "description": "LMP 2024-06-01, current 2024-07-13 ⇒ 6.00 weeks" }
     ],
     "faqs": [
-      { "question": "Why use the last menstrual period?", "answer": "It's a common starting point for estimating gestational age." },
-      { "question": "Does this account for cycle length?", "answer": "No, it assumes a typical 28-day cycle." },
-      { "question": "Can I enter future dates?", "answer": "Yes, but results will be negative." },
-      { "question": "Is this a medical diagnosis?", "answer": "No, consult a healthcare provider for official dating." }
+      {
+        "question": "Why use the last menstrual period?",
+        "answer": "It's a common starting point for estimating gestational age."
+      },
+      {
+        "question": "Does this account for cycle length?",
+        "answer": "No, it assumes a typical 28-day cycle."
+      },
+      {
+        "question": "Can I enter future dates?",
+        "answer": "Yes, but results will be negative."
+      },
+      {
+        "question": "Is this a medical diagnosis?",
+        "answer": "No, consult a healthcare provider for official dating."
+      }
     ],
     "disclaimer": "For informational purposes only. Consult a medical professional for pregnancy guidance.",
     "unit": "weeks"
@@ -8446,8 +9347,20 @@
     "cluster": "health",
     "description": "Calculate smoking exposure in pack years.",
     "inputs": [
-      { "name": "packsPerDay", "label": "Packs per Day", "type": "number", "step": "any", "placeholder": "1" },
-      { "name": "years", "label": "Years Smoked", "type": "number", "step": "any", "placeholder": "10" }
+      {
+        "name": "packsPerDay",
+        "label": "Packs per Day",
+        "type": "number",
+        "step": "any",
+        "placeholder": "1"
+      },
+      {
+        "name": "years",
+        "label": "Years Smoked",
+        "type": "number",
+        "step": "any",
+        "placeholder": "10"
+      }
     ],
     "expression": "packsPerDay * years",
     "intro": "Estimate cumulative smoking exposure by multiplying daily packs by years smoked.",
@@ -8456,10 +9369,22 @@
       { "description": "0.5 pack/day for 20 years ⇒ 10 pack-years" }
     ],
     "faqs": [
-      { "question": "What is a pack year?", "answer": "One pack year equals smoking one pack per day for a year." },
-      { "question": "Can I use decimal packs?", "answer": "Yes, enter partial pack values like 0.5." },
-      { "question": "Does quitting reset pack years?", "answer": "No, it's a cumulative measure." },
-      { "question": "Is this used medically?", "answer": "Yes, clinicians use pack years to assess risk." }
+      {
+        "question": "What is a pack year?",
+        "answer": "One pack year equals smoking one pack per day for a year."
+      },
+      {
+        "question": "Can I use decimal packs?",
+        "answer": "Yes, enter partial pack values like 0.5."
+      },
+      {
+        "question": "Does quitting reset pack years?",
+        "answer": "No, it's a cumulative measure."
+      },
+      {
+        "question": "Is this used medically?",
+        "answer": "Yes, clinicians use pack years to assess risk."
+      }
     ],
     "disclaimer": "Informational only; seek medical advice for health assessments.",
     "unit": "pack-years"
@@ -8470,8 +9395,20 @@
     "cluster": "home & diy",
     "description": "Estimate total carpet cost from area and price per square foot.",
     "inputs": [
-      { "name": "area", "label": "Area (ft²)", "type": "number", "step": "any", "placeholder": "200" },
-      { "name": "price", "label": "Cost per ft²", "type": "number", "step": "any", "placeholder": "3" }
+      {
+        "name": "area",
+        "label": "Area (ft²)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "200"
+      },
+      {
+        "name": "price",
+        "label": "Cost per ft²",
+        "type": "number",
+        "step": "any",
+        "placeholder": "3"
+      }
     ],
     "expression": "area * price",
     "intro": "Estimate how much new carpet will cost based on room size and price per square foot.",
@@ -8480,10 +9417,22 @@
       { "description": "Area 150 ft², price $2.5 ⇒ $375" }
     ],
     "faqs": [
-      { "question": "Does it include installation?", "answer": "No, add labor costs separately." },
-      { "question": "Should I buy extra?", "answer": "Yes, order a little more to account for waste." },
-      { "question": "Can I use metric units?", "answer": "Convert area and price to feet and dollars first." },
-      { "question": "Does it handle multiple rooms?", "answer": "Sum areas before entering for total cost." }
+      {
+        "question": "Does it include installation?",
+        "answer": "No, add labor costs separately."
+      },
+      {
+        "question": "Should I buy extra?",
+        "answer": "Yes, order a little more to account for waste."
+      },
+      {
+        "question": "Can I use metric units?",
+        "answer": "Convert area and price to feet and dollars first."
+      },
+      {
+        "question": "Does it handle multiple rooms?",
+        "answer": "Sum areas before entering for total cost."
+      }
     ],
     "disclaimer": "Estimates only; actual costs may vary with vendor and materials.",
     "unit": "USD"
@@ -8494,8 +9443,20 @@
     "cluster": "home & diy",
     "description": "Determine how many plants fit in an area based on spacing.",
     "inputs": [
-      { "name": "area", "label": "Area (ft²)", "type": "number", "step": "any", "placeholder": "100" },
-      { "name": "spacing", "label": "Spacing (ft)", "type": "number", "step": "any", "placeholder": "2" }
+      {
+        "name": "area",
+        "label": "Area (ft²)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "100"
+      },
+      {
+        "name": "spacing",
+        "label": "Spacing (ft)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "2"
+      }
     ],
     "expression": "Math.ceil(area / (spacing * spacing))",
     "intro": "Figure out how many evenly spaced plants can fit into a garden area.",
@@ -8504,10 +9465,22 @@
       { "description": "Area 200 ft², spacing 1.5 ft ⇒ 89 plants" }
     ],
     "faqs": [
-      { "question": "Does it assume a square grid?", "answer": "Yes, spacing is measured between rows and columns." },
-      { "question": "Can I use inches?", "answer": "Convert inches to feet before entering." },
-      { "question": "Should I round up?", "answer": "The calculator already rounds up to ensure enough plants." },
-      { "question": "Does it account for paths?", "answer": "No, subtract walkway areas before calculating." }
+      {
+        "question": "Does it assume a square grid?",
+        "answer": "Yes, spacing is measured between rows and columns."
+      },
+      {
+        "question": "Can I use inches?",
+        "answer": "Convert inches to feet before entering."
+      },
+      {
+        "question": "Should I round up?",
+        "answer": "The calculator already rounds up to ensure enough plants."
+      },
+      {
+        "question": "Does it account for paths?",
+        "answer": "No, subtract walkway areas before calculating."
+      }
     ],
     "disclaimer": "Use as a planning guide; adjust for specific plant needs.",
     "unit": "plants"
@@ -8518,8 +9491,20 @@
     "cluster": "math",
     "description": "Find the least common multiple of two numbers.",
     "inputs": [
-      { "name": "a", "label": "Number A", "type": "number", "step": 1, "placeholder": "12" },
-      { "name": "b", "label": "Number B", "type": "number", "step": 1, "placeholder": "18" }
+      {
+        "name": "a",
+        "label": "Number A",
+        "type": "number",
+        "step": 1,
+        "placeholder": "12"
+      },
+      {
+        "name": "b",
+        "label": "Number B",
+        "type": "number",
+        "step": 1,
+        "placeholder": "18"
+      }
     ],
     "expression": "(function(a,b){a=Math.abs(Math.floor(a));b=Math.abs(Math.floor(b));function g(x,y){while(y){[x,y]=[y,x%y];}return x;}return a*b/g(a,b);})(a,b)",
     "intro": "Compute the smallest common multiple shared by two integers.",
@@ -8528,10 +9513,22 @@
       { "description": "LCM of 7 and 5 ⇒ 35" }
     ],
     "faqs": [
-      { "question": "What is LCM?", "answer": "The least common multiple of two integers." },
-      { "question": "Do negative numbers work?", "answer": "Yes, the calculator uses absolute values." },
-      { "question": "Can I enter decimals?", "answer": "Inputs are floored to integers." },
-      { "question": "What if one number is zero?", "answer": "The LCM with zero is zero." }
+      {
+        "question": "What is LCM?",
+        "answer": "The least common multiple of two integers."
+      },
+      {
+        "question": "Do negative numbers work?",
+        "answer": "Yes, the calculator uses absolute values."
+      },
+      {
+        "question": "Can I enter decimals?",
+        "answer": "Inputs are floored to integers."
+      },
+      {
+        "question": "What if one number is zero?",
+        "answer": "The LCM with zero is zero."
+      }
     ],
     "disclaimer": "Designed for basic educational use only.",
     "unit": ""
@@ -8542,8 +9539,20 @@
     "cluster": "math",
     "description": "Find the remainder of a division operation.",
     "inputs": [
-      { "name": "dividend", "label": "Dividend", "type": "number", "step": "any", "placeholder": "10" },
-      { "name": "divisor", "label": "Divisor", "type": "number", "step": "any", "placeholder": "3" }
+      {
+        "name": "dividend",
+        "label": "Dividend",
+        "type": "number",
+        "step": "any",
+        "placeholder": "10"
+      },
+      {
+        "name": "divisor",
+        "label": "Divisor",
+        "type": "number",
+        "step": "any",
+        "placeholder": "3"
+      }
     ],
     "expression": "((dividend % divisor) + divisor) % divisor",
     "intro": "Compute the non-negative remainder after dividing one number by another.",
@@ -8552,10 +9561,22 @@
       { "description": "-10 mod 3 ⇒ 2" }
     ],
     "faqs": [
-      { "question": "What is modulo?", "answer": "It's the remainder left after division." },
-      { "question": "Can the divisor be negative?", "answer": "Yes, the result is still non-negative." },
-      { "question": "What if the divisor is zero?", "answer": "Division by zero is undefined." },
-      { "question": "Why adjust with divisor?", "answer": "It ensures the remainder is always positive." }
+      {
+        "question": "What is modulo?",
+        "answer": "It's the remainder left after division."
+      },
+      {
+        "question": "Can the divisor be negative?",
+        "answer": "Yes, the result is still non-negative."
+      },
+      {
+        "question": "What if the divisor is zero?",
+        "answer": "Division by zero is undefined."
+      },
+      {
+        "question": "Why adjust with divisor?",
+        "answer": "It ensures the remainder is always positive."
+      }
     ],
     "disclaimer": "Use for educational purposes; verify calculations for critical tasks.",
     "unit": "remainder"
@@ -8566,8 +9587,20 @@
     "cluster": "technology",
     "description": "Estimate password entropy from length and character set size.",
     "inputs": [
-      { "name": "length", "label": "Length", "type": "number", "step": 1, "placeholder": "12" },
-      { "name": "charset", "label": "Character Set Size", "type": "number", "step": 1, "placeholder": "62" }
+      {
+        "name": "length",
+        "label": "Length",
+        "type": "number",
+        "step": 1,
+        "placeholder": "12"
+      },
+      {
+        "name": "charset",
+        "label": "Character Set Size",
+        "type": "number",
+        "step": 1,
+        "placeholder": "62"
+      }
     ],
     "expression": "length * Math.log(charset) / Math.log(2)",
     "intro": "Gauge the theoretical strength of a password using entropy in bits.",
@@ -8576,10 +9609,22 @@
       { "description": "Length 12, charset 96 ⇒ 79.61 bits" }
     ],
     "faqs": [
-      { "question": "What is character set size?", "answer": "The number of possible characters for each position." },
-      { "question": "Does higher entropy mean stronger?", "answer": "Yes, more entropy indicates a harder-to-guess password." },
-      { "question": "Do common words reduce entropy?", "answer": "Yes, real-world strength may be lower than the estimate." },
-      { "question": "Should length be an integer?", "answer": "Yes, password length is typically a whole number." }
+      {
+        "question": "What is character set size?",
+        "answer": "The number of possible characters for each position."
+      },
+      {
+        "question": "Does higher entropy mean stronger?",
+        "answer": "Yes, more entropy indicates a harder-to-guess password."
+      },
+      {
+        "question": "Do common words reduce entropy?",
+        "answer": "Yes, real-world strength may be lower than the estimate."
+      },
+      {
+        "question": "Should length be an integer?",
+        "answer": "Yes, password length is typically a whole number."
+      }
     ],
     "disclaimer": "Entropy is theoretical; follow best practices for secure passwords.",
     "unit": "bits"
@@ -8590,8 +9635,20 @@
     "cluster": "technology",
     "description": "Calculate electrical power from voltage and current.",
     "inputs": [
-      { "name": "voltage", "label": "Voltage (V)", "type": "number", "step": "any", "placeholder": "12" },
-      { "name": "current", "label": "Current (A)", "type": "number", "step": "any", "placeholder": "1.5" }
+      {
+        "name": "voltage",
+        "label": "Voltage (V)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "12"
+      },
+      {
+        "name": "current",
+        "label": "Current (A)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "1.5"
+      }
     ],
     "expression": "voltage * current",
     "intro": "Compute power in watts using voltage and current values.",
@@ -8600,10 +9657,22 @@
       { "description": "12 V and 1.5 A ⇒ 18 W" }
     ],
     "faqs": [
-      { "question": "What is electrical power?", "answer": "It's the rate of energy use, equal to voltage times current." },
-      { "question": "Can I input milliamps?", "answer": "Convert milliamps to amps before entering." },
-      { "question": "Does this apply to AC?", "answer": "It provides an approximation for resistive AC loads." },
-      { "question": "Is the result in watts?", "answer": "Yes, the calculator outputs watts." }
+      {
+        "question": "What is electrical power?",
+        "answer": "It's the rate of energy use, equal to voltage times current."
+      },
+      {
+        "question": "Can I input milliamps?",
+        "answer": "Convert milliamps to amps before entering."
+      },
+      {
+        "question": "Does this apply to AC?",
+        "answer": "It provides an approximation for resistive AC loads."
+      },
+      {
+        "question": "Is the result in watts?",
+        "answer": "Yes, the calculator outputs watts."
+      }
     ],
     "disclaimer": "For basic electronics reference only.",
     "unit": "W"
@@ -8614,7 +9683,13 @@
     "cluster": "other",
     "description": "Chance that at least two people share a birthday in a group.",
     "inputs": [
-      { "name": "people", "label": "People", "type": "number", "step": 1, "placeholder": "23" }
+      {
+        "name": "people",
+        "label": "People",
+        "type": "number",
+        "step": 1,
+        "placeholder": "23"
+      }
     ],
     "expression": "100 * (1 - (function(n){let p=1;for(let i=0;i<n;i++){p*= (365-i)/365;}return p;})(people))",
     "intro": "Estimate the probability that at least two people in a group share the same birthday.",
@@ -8623,10 +9698,22 @@
       { "description": "Group of 50 ⇒ 97.04%" }
     ],
     "faqs": [
-      { "question": "What assumptions are made?", "answer": "All 365 days are equally likely and birthdays are independent." },
-      { "question": "Are leap years considered?", "answer": "No, February 29 is ignored." },
-      { "question": "Is the result a percentage?", "answer": "Yes, values range from 0 to 100%." },
-      { "question": "When does probability exceed 99%?", "answer": "Around 57 people." }
+      {
+        "question": "What assumptions are made?",
+        "answer": "All 365 days are equally likely and birthdays are independent."
+      },
+      {
+        "question": "Are leap years considered?",
+        "answer": "No, February 29 is ignored."
+      },
+      {
+        "question": "Is the result a percentage?",
+        "answer": "Yes, values range from 0 to 100%."
+      },
+      {
+        "question": "When does probability exceed 99%?",
+        "answer": "Around 57 people."
+      }
     ],
     "disclaimer": "A theoretical calculation ignoring real-world birth date distributions.",
     "unit": "%"
@@ -8637,8 +9724,20 @@
     "cluster": "other",
     "description": "Find the length of a shadow from object height and sun angle.",
     "inputs": [
-      { "name": "height", "label": "Height (m)", "type": "number", "step": "any", "placeholder": "2" },
-      { "name": "angle", "label": "Sun Angle (°)", "type": "number", "step": "any", "placeholder": "45" }
+      {
+        "name": "height",
+        "label": "Height (m)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "2"
+      },
+      {
+        "name": "angle",
+        "label": "Sun Angle (°)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "45"
+      }
     ],
     "expression": "height / Math.tan(angle * Math.PI / 180)",
     "intro": "Calculate how long a shadow will be based on object height and sun elevation angle.",
@@ -8647,12 +9746,633 @@
       { "description": "Height 1.5 m, angle 30° ⇒ 2.60 m" }
     ],
     "faqs": [
-      { "question": "What is sun angle?", "answer": "The elevation of the sun above the horizon." },
-      { "question": "Can the angle be zero?", "answer": "No, a zero angle would produce an infinite shadow." },
-      { "question": "Should angle be in degrees?", "answer": "Yes, input angles in degrees." },
-      { "question": "Does this consider terrain?", "answer": "No, it assumes flat ground." }
+      {
+        "question": "What is sun angle?",
+        "answer": "The elevation of the sun above the horizon."
+      },
+      {
+        "question": "Can the angle be zero?",
+        "answer": "No, a zero angle would produce an infinite shadow."
+      },
+      {
+        "question": "Should angle be in degrees?",
+        "answer": "Yes, input angles in degrees."
+      },
+      {
+        "question": "Does this consider terrain?",
+        "answer": "No, it assumes flat ground."
+      }
     ],
     "disclaimer": "Idealized calculation without atmospheric refraction.",
     "unit": "m"
+  },
+  {
+    "slug": "torque-nm-to-ftlb",
+    "title": "Torque Nm to ft-lb Converter",
+    "cluster": "Conversions",
+    "intro": "Convert torque from newton-meters to foot-pounds. Enter the values and press Calculate.",
+    "inputs": [
+      { "name": "nm", "hint": "Torque (Nm)", "placeholder": "Enter nm" }
+    ],
+    "expression": "nm * 0.737562149",
+    "examples": [
+      { "description": "10 Nm → 7.38 ft·lb" },
+      { "description": "250 Nm → 184.39 ft·lb" }
+    ],
+    "faqs": [
+      {
+        "question": "What is a newton-meter?",
+        "answer": "A metric unit of torque."
+      },
+      {
+        "question": "Why convert to foot-pounds?",
+        "answer": "Many specifications in the US use foot-pounds."
+      },
+      {
+        "question": "Does this calculator round results?",
+        "answer": "It shows full precision; round as needed."
+      },
+      {
+        "question": "Can I enter decimal values?",
+        "answer": "Yes, decimals are supported."
+      }
+    ],
+    "disclaimer": "Verify torque settings with manufacturer documentation.",
+    "unit": "ft·lb"
+  },
+  {
+    "slug": "psi-to-kpa",
+    "title": "PSI to kPa Converter",
+    "cluster": "Conversions",
+    "intro": "Convert pressure from pounds per square inch to kilopascals. Enter the values and press Calculate.",
+    "inputs": [
+      { "name": "psi", "hint": "Pressure (PSI)", "placeholder": "Enter psi" }
+    ],
+    "expression": "psi * 6.89476",
+    "examples": [
+      { "description": "30 PSI → 206.84 kPa" },
+      { "description": "100 PSI → 689.48 kPa" }
+    ],
+    "faqs": [
+      {
+        "question": "What is PSI?",
+        "answer": "Pounds per square inch, an imperial pressure unit."
+      },
+      {
+        "question": "What is kPa?",
+        "answer": "Kilopascal, a metric pressure unit."
+      },
+      {
+        "question": "Is the conversion exact?",
+        "answer": "It uses the factor 6.89476 for precision."
+      },
+      {
+        "question": "Can I use this for tire pressure?",
+        "answer": "Yes, but verify with a certified gauge."
+      }
+    ],
+    "disclaimer": "Always verify critical pressure values with certified instruments.",
+    "unit": "kPa"
+  },
+  {
+    "slug": "billable-hours-to-units",
+    "title": "Billable Hours to Units Converter",
+    "cluster": "Date & Time",
+    "intro": "Convert billable hours to standard 6-minute units used on legal invoices. Enter the values and press Calculate.",
+    "inputs": [
+      { "name": "hours", "hint": "Hours", "placeholder": "Enter hours" }
+    ],
+    "expression": "hours * 10",
+    "examples": [
+      { "description": "1.5 h → 15 units" },
+      { "description": "0.3 h → 3 units" }
+    ],
+    "faqs": [
+      {
+        "question": "Why 6-minute units?",
+        "answer": "Many firms bill in tenths of an hour."
+      },
+      {
+        "question": "Can I enter partial hours?",
+        "answer": "Yes, decimals are supported."
+      },
+      {
+        "question": "Does it round results?",
+        "answer": "It multiplies directly; round as needed."
+      },
+      {
+        "question": "Is this only for lawyers?",
+        "answer": "Any profession using 0.1 hour increments can use it."
+      }
+    ],
+    "disclaimer": "Billing practices vary; confirm with your firm's policies.",
+    "unit": "units"
+  },
+  {
+    "slug": "overtime-hours",
+    "title": "Overtime Hours Calculator",
+    "cluster": "Date & Time",
+    "intro": "Find how many overtime hours were worked beyond a regular schedule. Enter the values and press Calculate.",
+    "inputs": [
+      { "name": "total", "hint": "Total Hours", "placeholder": "Enter total" },
+      {
+        "name": "regular",
+        "hint": "Regular Hours",
+        "placeholder": "Enter regular"
+      }
+    ],
+    "expression": "Math.max(total - regular, 0)",
+    "examples": [
+      { "description": "45 total, 40 regular → 5" },
+      { "description": "38 total, 40 regular → 0" }
+    ],
+    "faqs": [
+      {
+        "question": "Can total hours be less than regular?",
+        "answer": "Yes, the result will be zero."
+      },
+      {
+        "question": "Does it account for overtime pay rate?",
+        "answer": "No, it only calculates hours."
+      },
+      {
+        "question": "Can I use decimal hours?",
+        "answer": "Yes, decimals are allowed."
+      },
+      {
+        "question": "Why use this calculator?",
+        "answer": "Quickly separate overtime from total hours."
+      }
+    ],
+    "disclaimer": "Consult local labor laws for overtime rules.",
+    "unit": "hours"
+  },
+  {
+    "slug": "contingency-fee",
+    "title": "Contingency Fee Calculator",
+    "cluster": "Finance",
+    "intro": "Estimate the lawyer's contingency fee based on settlement amount and percentage. Enter the values and press Calculate.",
+    "inputs": [
+      {
+        "name": "amount",
+        "hint": "Settlement Amount",
+        "placeholder": "Enter amount"
+      },
+      { "name": "percent", "hint": "Fee (%)", "placeholder": "Enter percent" }
+    ],
+    "expression": "amount * percent / 100",
+    "examples": [
+      { "description": "$50,000 at 30% → $15,000" },
+      { "description": "$120,000 at 25% → $30,000" }
+    ],
+    "faqs": [
+      {
+        "question": "What is a contingency fee?",
+        "answer": "A lawyer's fee paid only if the case is successful."
+      },
+      {
+        "question": "Does this include expenses?",
+        "answer": "No, litigation expenses are separate."
+      },
+      {
+        "question": "Can percentages exceed 100?",
+        "answer": "No, valid values are 0-100."
+      },
+      {
+        "question": "Is currency specified?",
+        "answer": "Use any currency unit; results match the input."
+      }
+    ],
+    "disclaimer": "Actual fees may vary; consult your retainer agreement.",
+    "unit": "currency"
+  },
+  {
+    "slug": "shop-labor-cost",
+    "title": "Shop Labor Cost Calculator",
+    "cluster": "Finance",
+    "intro": "Compute total labor cost by multiplying shop rate by hours worked. Enter the values and press Calculate.",
+    "inputs": [
+      { "name": "hours", "hint": "Hours", "placeholder": "Enter hours" },
+      { "name": "rate", "hint": "Rate per Hour", "placeholder": "Enter rate" }
+    ],
+    "expression": "hours * rate",
+    "examples": [
+      { "description": "3 h at $90/hr → $270" },
+      { "description": "1.5 h at $120/hr → $180" }
+    ],
+    "faqs": [
+      {
+        "question": "Does this include parts?",
+        "answer": "No, it only calculates labor."
+      },
+      {
+        "question": "Can I include tax?",
+        "answer": "No, add tax separately if needed."
+      },
+      {
+        "question": "Are decimals supported?",
+        "answer": "Yes for hours or rate."
+      },
+      {
+        "question": "Is currency specified?",
+        "answer": "Use any currency unit consistently."
+      }
+    ],
+    "disclaimer": "For estimates only; check actual invoices.",
+    "unit": "currency"
+  },
+  {
+    "slug": "sedentary-calorie-burn",
+    "title": "Sedentary Calorie Burn Calculator",
+    "cluster": "Health",
+    "intro": "Estimate calories burned while sitting using a MET value of 1.3. Enter the values and press Calculate.",
+    "inputs": [
+      {
+        "name": "weight",
+        "hint": "Weight (kg)",
+        "placeholder": "Enter weight"
+      },
+      { "name": "hours", "hint": "Hours Sitting", "placeholder": "Enter hours" }
+    ],
+    "expression": "weight * hours * 1.3",
+    "examples": [
+      { "description": "70 kg for 8 h → 728 kcal" },
+      { "description": "80 kg for 2 h → 208 kcal" }
+    ],
+    "faqs": [
+      {
+        "question": "What is MET 1.3?",
+        "answer": "The metabolic equivalent for sitting quietly."
+      },
+      {
+        "question": "Does it account for activity?",
+        "answer": "No, it assumes sedentary behavior."
+      },
+      {
+        "question": "Can I enter weight in pounds?",
+        "answer": "Convert pounds to kilograms first."
+      },
+      {
+        "question": "Is this exact?",
+        "answer": "It provides an estimate, not a precise measurement."
+      }
+    ],
+    "disclaimer": "Consult a health professional for personalized guidance.",
+    "unit": "kcal"
+  },
+  {
+    "slug": "vibration-exposure-points",
+    "title": "Vibration Exposure Points Calculator",
+    "cluster": "Health",
+    "intro": "Calculate daily exposure points for hand-arm vibration using acceleration and hours. Enter the values and press Calculate.",
+    "inputs": [
+      {
+        "name": "acc",
+        "hint": "Acceleration (m/s²)",
+        "placeholder": "Enter acc"
+      },
+      {
+        "name": "hours",
+        "hint": "Exposure Hours",
+        "placeholder": "Enter hours"
+      }
+    ],
+    "expression": "acc * acc * hours",
+    "examples": [
+      { "description": "5 m/s² for 2 h → 50 points" },
+      { "description": "8 m/s² for 0.5 h → 32 points" }
+    ],
+    "faqs": [
+      {
+        "question": "What are exposure points?",
+        "answer": "A simple metric for daily vibration dose."
+      },
+      {
+        "question": "Does this follow HSE guidance?",
+        "answer": "It uses acceleration squared times hours."
+      },
+      {
+        "question": "Is higher better or worse?",
+        "answer": "Higher points indicate greater exposure."
+      },
+      {
+        "question": "How can I reduce points?",
+        "answer": "Lower the tool's vibration or limit exposure time."
+      }
+    ],
+    "disclaimer": "Compare results with regulatory exposure limits.",
+    "unit": "points"
+  },
+  {
+    "slug": "garage-ramp-slope",
+    "title": "Garage Ramp Slope Calculator",
+    "cluster": "Home & DIY",
+    "intro": "Determine the slope of a garage ramp by dividing rise by run. Enter the values and press Calculate.",
+    "inputs": [
+      { "name": "rise", "hint": "Rise", "placeholder": "Enter rise" },
+      { "name": "run", "hint": "Run", "placeholder": "Enter run" }
+    ],
+    "expression": "rise / run * 100",
+    "examples": [
+      { "description": "6 in rise over 72 in run → 8.33%" },
+      { "description": "4 in rise over 48 in run → 8.33%" }
+    ],
+    "faqs": [
+      {
+        "question": "What is ramp slope?",
+        "answer": "The incline expressed as a percentage of rise over run."
+      },
+      {
+        "question": "Why is slope important?",
+        "answer": "It ensures vehicles can enter safely."
+      },
+      {
+        "question": "Can I use metric units?",
+        "answer": "Yes, use consistent units."
+      },
+      {
+        "question": "Does this meet ADA standards?",
+        "answer": "Check local building codes."
+      }
+    ],
+    "disclaimer": "Verify ramp compliance with local regulations.",
+    "unit": "%"
+  },
+  {
+    "slug": "garage-epoxy-coverage",
+    "title": "Garage Epoxy Coverage Calculator",
+    "cluster": "Home & DIY",
+    "intro": "Estimate how many gallons of epoxy are needed for a garage floor. Enter the values and press Calculate.",
+    "inputs": [
+      { "name": "area", "hint": "Area (sq ft)", "placeholder": "Enter area" },
+      {
+        "name": "coverage",
+        "hint": "Coverage per Gallon",
+        "placeholder": "Enter coverage"
+      }
+    ],
+    "expression": "area / coverage",
+    "examples": [
+      { "description": "400 sq ft at 250 sq ft/gal → 1.6 gal" },
+      { "description": "600 sq ft at 200 sq ft/gal → 3 gal" }
+    ],
+    "faqs": [
+      {
+        "question": "Does coverage include a second coat?",
+        "answer": "No, adjust if multiple coats are needed."
+      },
+      {
+        "question": "Can I use metric measurements?",
+        "answer": "Convert to square feet first."
+      },
+      {
+        "question": "Does surface texture affect coverage?",
+        "answer": "Yes, rough surfaces may require more."
+      },
+      {
+        "question": "Should I buy extra epoxy?",
+        "answer": "A small surplus is usually recommended."
+      }
+    ],
+    "disclaimer": "Always follow product instructions for mixing and application.",
+    "unit": "gallons"
+  },
+  {
+    "slug": "lever-mechanical-advantage",
+    "title": "Lever Mechanical Advantage Calculator",
+    "cluster": "Math",
+    "intro": "Compute the mechanical advantage of a lever using load and effort arm lengths. Enter the values and press Calculate.",
+    "inputs": [
+      {
+        "name": "load",
+        "hint": "Load Arm Length",
+        "placeholder": "Enter load"
+      },
+      {
+        "name": "effort",
+        "hint": "Effort Arm Length",
+        "placeholder": "Enter effort"
+      }
+    ],
+    "expression": "load / effort",
+    "examples": [
+      { "description": "Load arm 2 m, effort arm 0.5 m → 4" },
+      { "description": "Load arm 1 m, effort arm 0.25 m → 4" }
+    ],
+    "faqs": [
+      {
+        "question": "What is mechanical advantage?",
+        "answer": "The ratio of load arm length to effort arm length."
+      },
+      {
+        "question": "Does this include friction?",
+        "answer": "No, it assumes an ideal lever."
+      },
+      {
+        "question": "Can I use different units?",
+        "answer": "Use the same unit for both arms."
+      },
+      {
+        "question": "What does a higher ratio mean?",
+        "answer": "More multiplication of input force."
+      }
+    ],
+    "disclaimer": "Real-world levers lose efficiency due to friction.",
+    "unit": "ratio"
+  },
+  {
+    "slug": "evidence-percentage",
+    "title": "Evidence Percentage Calculator",
+    "cluster": "Math",
+    "intro": "Determine what percentage of total evidence a specific item represents. Enter the values and press Calculate.",
+    "inputs": [
+      { "name": "part", "hint": "Item Weight", "placeholder": "Enter part" },
+      { "name": "total", "hint": "Total Weight", "placeholder": "Enter total" }
+    ],
+    "expression": "part / total * 100",
+    "examples": [
+      { "description": "30 of 120 pages → 25%" },
+      { "description": "15 of 60 exhibits → 25%" }
+    ],
+    "faqs": [
+      {
+        "question": "Why calculate evidence percentage?",
+        "answer": "It helps assess the relative weight of an item."
+      },
+      {
+        "question": "Can total be zero?",
+        "answer": "No, total must be greater than zero."
+      },
+      {
+        "question": "Does it work for digital files?",
+        "answer": "Yes, use file sizes or counts."
+      },
+      {
+        "question": "Can I enter decimals?",
+        "answer": "Yes, decimal values are supported."
+      }
+    ],
+    "disclaimer": "Use results as a rough metric; legal relevance varies.",
+    "unit": "%"
+  },
+  {
+    "slug": "gear-ratio",
+    "title": "Gear Ratio Calculator",
+    "cluster": "Technology",
+    "intro": "Calculate gear ratio by dividing driven gear teeth by driving gear teeth. Enter the values and press Calculate.",
+    "inputs": [
+      {
+        "name": "driving",
+        "hint": "Driving Gear Teeth",
+        "placeholder": "Enter driving"
+      },
+      {
+        "name": "driven",
+        "hint": "Driven Gear Teeth",
+        "placeholder": "Enter driven"
+      }
+    ],
+    "expression": "driven / driving",
+    "examples": [
+      { "description": "Driven 40, driving 20 → 2" },
+      { "description": "Driven 18, driving 12 → 1.5" }
+    ],
+    "faqs": [
+      {
+        "question": "What is gear ratio?",
+        "answer": "The relationship between driver and driven gear speeds."
+      },
+      {
+        "question": "What does a higher ratio mean?",
+        "answer": "Higher torque but lower speed."
+      },
+      {
+        "question": "Can teeth counts be decimals?",
+        "answer": "No, they should be whole numbers."
+      },
+      {
+        "question": "Does gear direction matter?",
+        "answer": "No, only tooth counts affect the ratio."
+      }
+    ],
+    "disclaimer": "Verify gear compatibility before installation.",
+    "unit": "ratio"
+  },
+  {
+    "slug": "battery-runtime",
+    "title": "Battery Runtime Calculator",
+    "cluster": "Technology",
+    "intro": "Estimate how many hours a battery will run a device based on capacity and load. Enter the values and press Calculate.",
+    "inputs": [
+      {
+        "name": "capacity",
+        "hint": "Capacity (Ah)",
+        "placeholder": "Enter capacity"
+      },
+      { "name": "load", "hint": "Load (A)", "placeholder": "Enter load" }
+    ],
+    "expression": "capacity / load",
+    "examples": [
+      { "description": "5 Ah battery at 1 A load → 5 h" },
+      { "description": "2 Ah battery at 0.5 A load → 4 h" }
+    ],
+    "faqs": [
+      {
+        "question": "Does it account for efficiency?",
+        "answer": "No, it assumes 100% efficiency."
+      },
+      {
+        "question": "What if the load varies?",
+        "answer": "Use the average current draw."
+      },
+      {
+        "question": "Can capacity be in mAh?",
+        "answer": "Convert mAh to Ah before using."
+      },
+      {
+        "question": "Is the result exact?",
+        "answer": "Real-world runtime may be lower."
+      }
+    ],
+    "disclaimer": "Actual runtime depends on battery condition and environment.",
+    "unit": "hours"
+  },
+  {
+    "slug": "citation-density",
+    "title": "Citation Density Calculator",
+    "cluster": "Other",
+    "intro": "Calculate how many citations appear per page in a legal document. Enter the values and press Calculate.",
+    "inputs": [
+      {
+        "name": "citations",
+        "hint": "Number of Citations",
+        "placeholder": "Enter citations"
+      },
+      { "name": "pages", "hint": "Pages", "placeholder": "Enter pages" }
+    ],
+    "expression": "citations / pages",
+    "examples": [
+      { "description": "20 citations over 10 pages → 2 citations per page" },
+      { "description": "45 citations over 15 pages → 3 citations per page" }
+    ],
+    "faqs": [
+      {
+        "question": "Why track citation density?",
+        "answer": "It helps gauge the style of legal writing."
+      },
+      {
+        "question": "Can pages be decimal?",
+        "answer": "Typically no; use whole pages."
+      },
+      {
+        "question": "Does this assess quality?",
+        "answer": "No, it only measures quantity."
+      },
+      {
+        "question": "Can I use this for articles?",
+        "answer": "Yes, any document with citations."
+      }
+    ],
+    "disclaimer": "Citation counts do not measure argument strength.",
+    "unit": "citations per page"
+  },
+  {
+    "slug": "safety-incident-rate",
+    "title": "Safety Incident Rate Calculator",
+    "cluster": "Other",
+    "intro": "Compute the safety incident rate based on recordable incidents and hours worked. Enter the values and press Calculate.",
+    "inputs": [
+      {
+        "name": "incidents",
+        "hint": "Recordable Incidents",
+        "placeholder": "Enter incidents"
+      },
+      { "name": "hours", "hint": "Hours Worked", "placeholder": "Enter hours" }
+    ],
+    "expression": "incidents * 200000 / hours",
+    "examples": [
+      { "description": "3 incidents over 400,000 hours → 1.5" },
+      { "description": "1 incident over 50,000 hours → 4" }
+    ],
+    "faqs": [
+      {
+        "question": "What does 200,000 represent?",
+        "answer": "The annual hours for 100 workers (40h × 50w)."
+      },
+      {
+        "question": "Are near-misses included?",
+        "answer": "No, only recordable incidents."
+      },
+      {
+        "question": "Can hours be zero?",
+        "answer": "No, hours worked must be greater than zero."
+      },
+      {
+        "question": "Why use this rate?",
+        "answer": "It allows comparison between different workplaces."
+      }
+    ],
+    "disclaimer": "Follow OSHA guidelines for recordkeeping definitions.",
+    "unit": "incident rate"
   }
 ]

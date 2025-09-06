@@ -526,5 +526,21 @@
   {
     "slug": "discount-calculator-3",
     "date": "2025-09-05"
-  }
+  },
+  { "slug": "torque-nm-to-ftlb", "date": "2025-09-06" },
+  { "slug": "psi-to-kpa", "date": "2025-09-06" },
+  { "slug": "billable-hours-to-units", "date": "2025-09-06" },
+  { "slug": "overtime-hours", "date": "2025-09-06" },
+  { "slug": "contingency-fee", "date": "2025-09-06" },
+  { "slug": "shop-labor-cost", "date": "2025-09-06" },
+  { "slug": "sedentary-calorie-burn", "date": "2025-09-06" },
+  { "slug": "vibration-exposure-points", "date": "2025-09-06" },
+  { "slug": "garage-ramp-slope", "date": "2025-09-06" },
+  { "slug": "garage-epoxy-coverage", "date": "2025-09-06" },
+  { "slug": "lever-mechanical-advantage", "date": "2025-09-06" },
+  { "slug": "evidence-percentage", "date": "2025-09-06" },
+  { "slug": "gear-ratio", "date": "2025-09-06" },
+  { "slug": "battery-runtime", "date": "2025-09-06" },
+  { "slug": "citation-density", "date": "2025-09-06" },
+  { "slug": "safety-incident-rate", "date": "2025-09-06" }
 ]

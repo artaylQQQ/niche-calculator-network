@@ -1,0 +1,60 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Garage Epoxy Coverage Calculator"
+description: "Estimate epoxy needed for garage floors."
+updated: "2025-09-06"
+cluster: "Home & DIY"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "garage-epoxy-coverage",
+  title: "Garage Epoxy Coverage Calculator",
+  intro: "Estimate how many gallons of epoxy are needed for a garage floor.",
+  locale: "en",
+  cluster: "Home & DIY",
+  unit: "gallons",
+  inputs: [
+    {
+      name: "area",
+      label: "Area (sq ft)",
+      type: "number",
+      step: "any",
+      required: true,
+    },
+    {
+      name: "coverage",
+      label: "Coverage per Gallon",
+      type: "number",
+      step: "any",
+      required: true,
+    },
+  ],
+  expression: "area / coverage",
+  examples: [
+    { description: "400 sq ft at 250 sq ft/gal ⇒ 1.6 gal" },
+    { description: "600 sq ft at 200 sq ft/gal ⇒ 3 gal" },
+  ],
+  faqs: [
+    {
+      question: "Does coverage include a second coat?",
+      answer: "No, adjust if multiple coats are needed.",
+    },
+    {
+      question: "Can I use metric measurements?",
+      answer: "Convert to square feet first.",
+    },
+    {
+      question: "Does surface texture affect coverage?",
+      answer: "Yes, rough surfaces may require more product.",
+    },
+    {
+      question: "Should I buy extra epoxy?",
+      answer: "A small surplus is usually recommended.",
+    },
+  ],
+  disclaimer: "Always follow product instructions for mixing and application.",
+};
+
+<Calculator schema={schema} />

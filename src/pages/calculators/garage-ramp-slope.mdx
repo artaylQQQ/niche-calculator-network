@@ -1,0 +1,54 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Garage Ramp Slope Calculator"
+description: "Find ramp slope percentage from rise and run."
+updated: "2025-09-06"
+cluster: "Home & DIY"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "garage-ramp-slope",
+  title: "Garage Ramp Slope Calculator",
+  intro: "Determine the slope of a garage ramp by dividing rise by run.",
+  locale: "en",
+  cluster: "Home & DIY",
+  unit: "%",
+  inputs: [
+    {
+      name: "rise",
+      label: "Rise",
+      type: "number",
+      step: "any",
+      required: true,
+    },
+    { name: "run", label: "Run", type: "number", step: "any", required: true },
+  ],
+  expression: "rise / run * 100",
+  examples: [
+    { description: "6 in rise over 72 in run ⇒ 8.33%" },
+    { description: "4 in rise over 48 in run ⇒ 8.33%" },
+  ],
+  faqs: [
+    {
+      question: "What is ramp slope?",
+      answer: "The incline expressed as a percentage of rise over run.",
+    },
+    {
+      question: "Why is slope important?",
+      answer: "It ensures vehicles can enter safely without scraping.",
+    },
+    {
+      question: "Can I use metric units?",
+      answer: "Yes, as long as rise and run use the same unit.",
+    },
+    {
+      question: "Does this meet ADA standards?",
+      answer: "Check local building codes separately.",
+    },
+  ],
+  disclaimer: "Verify ramp compliance with local regulations.",
+};
+
+<Calculator schema={schema} />

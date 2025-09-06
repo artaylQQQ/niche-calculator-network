@@ -1,0 +1,61 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Lever Mechanical Advantage Calculator"
+description: "Compute mechanical advantage of a lever."
+updated: "2025-09-06"
+cluster: "Math"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "lever-mechanical-advantage",
+  title: "Lever Mechanical Advantage Calculator",
+  intro:
+    "Compute the mechanical advantage of a lever using load and effort arm lengths.",
+  locale: "en",
+  cluster: "Math",
+  unit: "ratio",
+  inputs: [
+    {
+      name: "load",
+      label: "Load Arm Length",
+      type: "number",
+      step: "any",
+      required: true,
+    },
+    {
+      name: "effort",
+      label: "Effort Arm Length",
+      type: "number",
+      step: "any",
+      required: true,
+    },
+  ],
+  expression: "load / effort",
+  examples: [
+    { description: "Load arm 2 m, effort arm 0.5 m ⇒ 4" },
+    { description: "Load arm 1 m, effort arm 0.25 m ⇒ 4" },
+  ],
+  faqs: [
+    {
+      question: "What is mechanical advantage?",
+      answer: "The ratio of load arm length to effort arm length.",
+    },
+    {
+      question: "Does this include friction?",
+      answer: "No, it assumes an ideal lever.",
+    },
+    {
+      question: "Can I use different units?",
+      answer: "Use the same unit for both arms to maintain accuracy.",
+    },
+    {
+      question: "What does a higher ratio mean?",
+      answer: "More multiplication of input force.",
+    },
+  ],
+  disclaimer: "Real-world levers lose efficiency due to friction.",
+};
+
+<Calculator schema={schema} />

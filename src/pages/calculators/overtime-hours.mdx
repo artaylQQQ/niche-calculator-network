@@ -1,0 +1,60 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Overtime Hours Calculator"
+description: "Calculate overtime hours beyond regular schedule."
+updated: "2025-09-06"
+cluster: "Date & Time"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "overtime-hours",
+  title: "Overtime Hours Calculator",
+  intro: "Find how many overtime hours were worked beyond a regular schedule.",
+  locale: "en",
+  cluster: "Date & Time",
+  unit: "hours",
+  inputs: [
+    {
+      name: "total",
+      label: "Total Hours",
+      type: "number",
+      step: "any",
+      required: true,
+    },
+    {
+      name: "regular",
+      label: "Regular Hours",
+      type: "number",
+      step: "any",
+      required: true,
+    },
+  ],
+  expression: "Math.max(total - regular, 0)",
+  examples: [
+    { description: "45 total, 40 regular ⇒ 5 hours overtime" },
+    { description: "38 total, 40 regular ⇒ 0 hours overtime" },
+  ],
+  faqs: [
+    {
+      question: "Can total hours be less than regular?",
+      answer: "Yes, the result will be zero.",
+    },
+    {
+      question: "Does it account for overtime pay rate?",
+      answer: "No, it only calculates overtime hours.",
+    },
+    {
+      question: "Can I use decimal hours?",
+      answer: "Yes, decimal values are allowed.",
+    },
+    {
+      question: "Why use this calculator?",
+      answer: "Quickly separate overtime from total hours.",
+    },
+  ],
+  disclaimer: "Consult local labor laws for overtime rules.",
+};
+
+<Calculator schema={schema} />

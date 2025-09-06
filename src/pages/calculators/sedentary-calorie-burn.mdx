@@ -1,0 +1,60 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Sedentary Calorie Burn Calculator"
+description: "Estimate calories burned while sitting."
+updated: "2025-09-06"
+cluster: "Health"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "sedentary-calorie-burn",
+  title: "Sedentary Calorie Burn Calculator",
+  intro: "Estimate calories burned while sitting using a MET value of 1.3.",
+  locale: "en",
+  cluster: "Health",
+  unit: "kcal",
+  inputs: [
+    {
+      name: "weight",
+      label: "Weight (kg)",
+      type: "number",
+      step: "any",
+      required: true,
+    },
+    {
+      name: "hours",
+      label: "Hours Sitting",
+      type: "number",
+      step: "any",
+      required: true,
+    },
+  ],
+  expression: "weight * hours * 1.3",
+  examples: [
+    { description: "70 kg for 8 h ⇒ 728 kcal" },
+    { description: "80 kg for 2 h ⇒ 208 kcal" },
+  ],
+  faqs: [
+    {
+      question: "What is MET 1.3?",
+      answer: "The metabolic equivalent for sitting quietly.",
+    },
+    {
+      question: "Does it account for activity?",
+      answer: "No, it assumes sedentary behavior.",
+    },
+    {
+      question: "Can I enter weight in pounds?",
+      answer: "Convert pounds to kilograms first.",
+    },
+    {
+      question: "Is this exact?",
+      answer: "It provides an estimate, not a precise measurement.",
+    },
+  ],
+  disclaimer: "Consult a health professional for personalized guidance.",
+};
+
+<Calculator schema={schema} />

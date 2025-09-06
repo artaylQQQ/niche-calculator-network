@@ -1,0 +1,61 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Contingency Fee Calculator"
+description: "Estimate contingency fee from settlement amount."
+updated: "2025-09-06"
+cluster: "Finance"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "contingency-fee",
+  title: "Contingency Fee Calculator",
+  intro:
+    "Estimate the lawyer's contingency fee based on settlement amount and percentage.",
+  locale: "en",
+  cluster: "Finance",
+  unit: "currency",
+  inputs: [
+    {
+      name: "amount",
+      label: "Settlement Amount",
+      type: "number",
+      step: "any",
+      required: true,
+    },
+    {
+      name: "percent",
+      label: "Fee (%)",
+      type: "number",
+      step: "any",
+      required: true,
+    },
+  ],
+  expression: "amount * percent / 100",
+  examples: [
+    { description: "$50,000 at 30% ⇒ $15,000" },
+    { description: "$120,000 at 25% ⇒ $30,000" },
+  ],
+  faqs: [
+    {
+      question: "What is a contingency fee?",
+      answer: "A lawyer's fee paid only if the case is successful.",
+    },
+    {
+      question: "Does this include expenses?",
+      answer: "No, litigation expenses are separate.",
+    },
+    {
+      question: "Can percentages exceed 100?",
+      answer: "No, valid values are between 0 and 100.",
+    },
+    {
+      question: "Is currency specified?",
+      answer: "Use any currency unit; results match the input currency.",
+    },
+  ],
+  disclaimer: "Actual fees may vary; consult your retainer agreement.",
+};
+
+<Calculator schema={schema} />
