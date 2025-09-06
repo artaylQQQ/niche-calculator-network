@@ -1,0 +1,49 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Billable Time to Decimal Hours"
+description: "Convert hours and minutes to decimal hours."
+updated: "2025-02-14"
+cluster: "conversions"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  inputs: [
+    { name: "hours", label: "Hours", type: "number", step: "1", placeholder: "1" },
+    { name: "minutes", label: "Minutes", type: "number", step: "1", placeholder: "30" },
+  ],
+  slug: "billable-time-to-decimal-hours",
+  title: "Billable Time to Decimal Hours",
+  locale: "en",
+  expression: "hours + minutes/60",
+  unit: "hours",
+  intro: "Convert time entries in hours and minutes into decimal hours for billing.",
+  examples: [
+    { description: "1 hr 30 min ⇒ 1.5 hours" },
+    { description: "2 hr 45 min ⇒ 2.75 hours" },
+  ],
+  faqs: [
+    {
+      question: "Why use decimal hours?",
+      answer: "Many legal billing systems require time in decimal form.",
+    },
+    {
+      question: "How many minutes equal 0.1 hours?",
+      answer: "Each 0.1 hour equals 6 minutes.",
+    },
+    {
+      question: "Can minutes exceed 60?",
+      answer: "Yes, the formula converts any number of minutes appropriately.",
+    },
+    {
+      question: "Is rounding applied?",
+      answer: "The result is exact; round according to your billing policy.",
+    },
+  ],
+  disclaimer: "Check your firm's rounding policies before invoicing.",
+  cluster: "conversions",
+};
+
+<Calculator schema={schema} />
+

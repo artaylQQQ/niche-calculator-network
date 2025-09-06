@@ -1,0 +1,49 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Legal Citation Density Calculator"
+description: "Measure citations per page in a legal document."
+updated: "2025-02-14"
+cluster: "other"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  inputs: [
+    { name: "citations", label: "Total Citations", type: "number", step: "1", placeholder: "120" },
+    { name: "pages", label: "Total Pages", type: "number", step: "1", placeholder: "40" },
+  ],
+  slug: "legal-citation-density",
+  title: "Legal Citation Density Calculator",
+  locale: "en",
+  expression: "citations / pages",
+  unit: "citations/page",
+  intro: "Evaluate how densely citations appear in a brief or memorandum.",
+  examples: [
+    { description: "120 citations ÷ 40 pages ⇒ 3 citations/page" },
+    { description: "45 citations ÷ 30 pages ⇒ 1.5 citations/page" },
+  ],
+  faqs: [
+    {
+      question: "Why track citation density?",
+      answer: "It helps assess research depth and compliance with court expectations.",
+    },
+    {
+      question: "Can pages be zero?",
+      answer: "No, enter at least one page.",
+    },
+    {
+      question: "Do footnotes count?",
+      answer: "Include them if they are formal citations.",
+    },
+    {
+      question: "Does this indicate quality?",
+      answer: "Not by itself; context matters.",
+    },
+  ],
+  disclaimer: "Use as a rough metric; citation needs vary by jurisdiction and case type.",
+  cluster: "other",
+};
+
+<Calculator schema={schema} />
+

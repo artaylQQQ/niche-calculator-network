@@ -1,0 +1,53 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Business Days Between Dates"
+description: "Count weekdays between two dates, excluding weekends."
+updated: "2025-02-14"
+cluster: "date-time"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  inputs: [
+    { name: "year1", label: "Start Year", type: "number", step: "1", placeholder: "2024" },
+    { name: "month1", label: "Start Month", type: "number", step: "1", placeholder: "1" },
+    { name: "day1", label: "Start Day", type: "number", step: "1", placeholder: "1" },
+    { name: "year2", label: "End Year", type: "number", step: "1", placeholder: "2024" },
+    { name: "month2", label: "End Month", type: "number", step: "1", placeholder: "1" },
+    { name: "day2", label: "End Day", type: "number", step: "1", placeholder: "10" },
+  ],
+  slug: "business-days-between-dates",
+  title: "Business Days Between Dates",
+  locale: "en",
+  expression: "(() => { const start=new Date(year1,month1-1,day1); const end=new Date(year2,month2-1,day2); let count=0; for(let d=new Date(start); d<end; d.setDate(d.getDate()+1)){ if(d.getDay()%6) count++; } return count; })()",
+  unit: "days",
+  intro: "Compute the number of weekdays between two dates, excluding Saturdays and Sundays.",
+  examples: [
+    { description: "2024-01-01 to 2024-01-10 ⇒ 7 days" },
+    { description: "2024-03-01 to 2024-03-11 ⇒ 7 days" },
+  ],
+  faqs: [
+    {
+      question: "Is the end date included?",
+      answer: "No, the calculation counts business days up to but not including the end date.",
+    },
+    {
+      question: "Does it exclude holidays?",
+      answer: "No, only weekends are excluded.",
+    },
+    {
+      question: "What if the end date precedes the start date?",
+      answer: "The result will be 0 as the loop does not run.",
+    },
+    {
+      question: "How are partial days handled?",
+      answer: "The calculator works with whole dates only.",
+    },
+  ],
+  disclaimer: "Use for approximate planning; confirm deadlines with official calendars.",
+  cluster: "date-time",
+};
+
+<Calculator schema={schema} />
+

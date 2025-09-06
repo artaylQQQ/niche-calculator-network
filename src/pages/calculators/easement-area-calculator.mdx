@@ -1,0 +1,49 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Easement Area Calculator"
+description: "Compute the area of a rectangular easement."
+updated: "2025-02-14"
+cluster: "home-diy"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  inputs: [
+    { name: "length", label: "Length (ft)", type: "number", step: "any", placeholder: "50" },
+    { name: "width", label: "Width (ft)", type: "number", step: "any", placeholder: "10" },
+  ],
+  slug: "easement-area-calculator",
+  title: "Easement Area Calculator",
+  locale: "en",
+  expression: "length * width",
+  unit: "sq ft",
+  intro: "Estimate the surface area of a rectangular property easement.",
+  examples: [
+    { description: "50 ft × 10 ft ⇒ 500 sq ft" },
+    { description: "100 ft × 15 ft ⇒ 1500 sq ft" },
+  ],
+  faqs: [
+    {
+      question: "Can I use meters instead of feet?",
+      answer: "Yes, convert measurements to feet or adjust units consistently.",
+    },
+    {
+      question: "Does it handle irregular shapes?",
+      answer: "No, this calculator assumes a rectangle.",
+    },
+    {
+      question: "Why calculate easement area?",
+      answer: "Area helps determine usage rights and potential compensation.",
+    },
+    {
+      question: "Is elevation considered?",
+      answer: "No, it computes flat surface area only.",
+    },
+  ],
+  disclaimer: "Confirm measurements with a surveyor for legal documentation.",
+  cluster: "home-diy",
+};
+
+<Calculator schema={schema} />
+

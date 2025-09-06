@@ -1,0 +1,49 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "eDiscovery Data Volume Calculator"
+description: "Estimate total data volume from document count and average file size."
+updated: "2025-02-14"
+cluster: "technology"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  inputs: [
+    { name: "documents", label: "Number of Documents", type: "number", step: "1", placeholder: "5000" },
+    { name: "size", label: "Average Size per Doc (MB)", type: "number", step: "any", placeholder: "0.5" },
+  ],
+  slug: "ediscovery-data-volume",
+  title: "eDiscovery Data Volume Calculator",
+  locale: "en",
+  expression: "documents * size / 1024",
+  unit: "GB",
+  intro: "Convert document counts and average sizes into total gigabytes for eDiscovery planning.",
+  examples: [
+    { description: "5000 docs × 0.5 MB ⇒ 2.44 GB" },
+    { description: "10000 docs × 2 MB ⇒ 19.53 GB" },
+  ],
+  faqs: [
+    {
+      question: "Why divide by 1024?",
+      answer: "There are 1024 megabytes in a gigabyte.",
+    },
+    {
+      question: "Does it account for file compression?",
+      answer: "No, it assumes each file size is uncompressed.",
+    },
+    {
+      question: "Can I use kilobytes?",
+      answer: "Convert KB to MB before using the calculator.",
+    },
+    {
+      question: "Is metadata included?",
+      answer: "Include metadata size in the average if relevant.",
+    },
+  ],
+  disclaimer: "Estimates only; actual storage needs may vary with file formats and overhead.",
+  cluster: "technology",
+};
+
+<Calculator schema={schema} />
+

@@ -1,0 +1,50 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Retainer Balance Calculator"
+description: "Track remaining retainer after billed hours."
+updated: "2025-02-14"
+cluster: "finance"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  inputs: [
+    { name: "retainer", label: "Initial Retainer (USD)", type: "number", step: "any", placeholder: "5000" },
+    { name: "rate", label: "Hourly Rate (USD)", type: "number", step: "any", placeholder: "250" },
+    { name: "hours", label: "Hours Worked", type: "number", step: "any", placeholder: "10" },
+  ],
+  slug: "retainer-balance-calculator",
+  title: "Retainer Balance Calculator",
+  locale: "en",
+  expression: "retainer - rate * hours",
+  unit: "USD",
+  intro: "Determine remaining funds in a client retainer after billing hours at an hourly rate.",
+  examples: [
+    { description: "$5000 retainer − $250/hr × 10 hrs ⇒ $2500" },
+    { description: "$2000 retainer − $150/hr × 12 hrs ⇒ $200" },
+  ],
+  faqs: [
+    {
+      question: "What if the result is negative?",
+      answer: "A negative balance indicates the client owes additional funds.",
+    },
+    {
+      question: "Does this include expenses?",
+      answer: "No, include only time charges; add expenses separately.",
+    },
+    {
+      question: "Can I track multiple attorneys?",
+      answer: "Combine their billed hours and rates before using.",
+    },
+    {
+      question: "Is unused retainer refundable?",
+      answer: "Refund policies depend on the engagement agreement.",
+    },
+  ],
+  disclaimer: "For estimation only; maintain detailed trust accounting records.",
+  cluster: "finance",
+};
+
+<Calculator schema={schema} />
+

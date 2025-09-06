@@ -1,0 +1,49 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Comparative Fault Calculator"
+description: "Adjust damages by plaintiff fault percentage."
+updated: "2025-02-14"
+cluster: "math"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  inputs: [
+    { name: "damages", label: "Total Damages (USD)", type: "number", step: "any", placeholder: "100000" },
+    { name: "fault", label: "Plaintiff Fault (%)", type: "number", step: "any", placeholder: "20" },
+  ],
+  slug: "comparative-fault-calculator",
+  title: "Comparative Fault Calculator",
+  locale: "en",
+  expression: "damages * (1 - fault/100)",
+  unit: "USD",
+  intro: "Calculate recoverable damages after accounting for the plaintiff's percentage of fault.",
+  examples: [
+    { description: "$100000 with 20% fault ⇒ $80000" },
+    { description: "$50000 with 50% fault ⇒ $25000" },
+  ],
+  faqs: [
+    {
+      question: "What is comparative fault?",
+      answer: "A system where damages are reduced by the plaintiff's share of responsibility.",
+    },
+    {
+      question: "Can the result be negative?",
+      answer: "No, if fault is 100% the award is zero.",
+    },
+    {
+      question: "Does it handle pure or modified systems?",
+      answer: "It simply applies the percentage; check your jurisdiction's rules.",
+    },
+    {
+      question: "Why use USD as unit?",
+      answer: "Adjust unit if damages are in another currency.",
+    },
+  ],
+  disclaimer: "Legal outcomes depend on jurisdictional rules; use as a simple estimator.",
+  cluster: "math",
+};
+
+<Calculator schema={schema} />
+

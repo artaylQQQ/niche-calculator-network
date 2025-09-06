@@ -1,0 +1,49 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Punitive Damages Ratio Calculator"
+description: "Estimate allowable punitive damages based on a compensatory ratio."
+updated: "2025-02-14"
+cluster: "math"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  inputs: [
+    { name: "compensatory", label: "Compensatory Damages (USD)", type: "number", step: "any", placeholder: "100000" },
+    { name: "ratio", label: "Punitive Ratio", type: "number", step: "any", placeholder: "2" },
+  ],
+  slug: "punitive-damages-ratio",
+  title: "Punitive Damages Ratio Calculator",
+  locale: "en",
+  expression: "compensatory * ratio",
+  unit: "USD",
+  intro: "Calculate punitive damages using a multiplier of compensatory damages.",
+  examples: [
+    { description: "$100000 × 2 ⇒ $200000" },
+    { description: "$50000 × 3 ⇒ $150000" },
+  ],
+  faqs: [
+    {
+      question: "What is a punitive ratio?",
+      answer: "A multiplier courts may apply to determine punitive damages.",
+    },
+    {
+      question: "Is there a typical maximum?",
+      answer: "Many jurisdictions limit ratios, often to single digits.",
+    },
+    {
+      question: "Does this ensure constitutional compliance?",
+      answer: "No, it's a simple multiplication for estimate purposes.",
+    },
+    {
+      question: "Can ratio be fractional?",
+      answer: "Yes, use decimals for ratios like 1.5.",
+    },
+  ],
+  disclaimer: "Consult legal standards; courts determine permissible punitive amounts.",
+  cluster: "math",
+};
+
+<Calculator schema={schema} />
+
