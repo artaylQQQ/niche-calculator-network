@@ -1,0 +1,38 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Net Present Value Calculator"
+description: "Evaluate the net present value of up to three cash flows."
+updated: "2025-02-14"
+cluster: "Finance"
+---
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "net-present-value",
+  title: "Net Present Value Calculator",
+  locale: "en",
+  intro: "Evaluate the net present value of up to three cash flows.",
+  unit: "USD",
+  cluster: "Finance",
+  inputs: [
+    { name: "initial", label: "Initial investment", type: "number", step: "any", placeholder: "1000" },
+    { name: "rate", label: "Discount rate (%)", type: "number", step: "any", placeholder: "10" },
+    { name: "cash1", label: "Cash flow year 1", type: "number", step: "any", placeholder: "500" },
+    { name: "cash2", label: "Cash flow year 2", type: "number", step: "any", placeholder: "500" },
+    { name: "cash3", label: "Cash flow year 3", type: "number", step: "any", placeholder: "500" }
+  ],
+  expression: "-initial + cash1/((1+rate/100)**1) + cash2/((1+rate/100)**2) + cash3/((1+rate/100)**3)",
+  examples: [
+    { description: "$1000 initial, 10% rate, three $500 flows ⇒ NPV ≈ $243.05" },
+    { description: "$2000 initial, 8% rate, flows 800/900/1000 ⇒ NPV ≈ $440.46" }
+  ],
+  faqs: [
+    { question: "What is NPV?", answer: "Net present value discounts future cash flows to today." },
+    { question: "Why only three cash flows?", answer: "This simple tool handles up to three annual flows." },
+    { question: "Can the rate be negative?", answer: "Yes, enter a negative rate for deflationary scenarios." },
+    { question: "Is currency fixed to USD?", answer: "No, treat inputs consistently in any currency." }
+  ],
+  disclaimer: "Simplified NPV; ignore taxes and non-annual flows.",
+};
+
+<Calculator schema={schema} />

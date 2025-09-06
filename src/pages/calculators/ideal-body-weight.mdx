@@ -1,0 +1,35 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Ideal Body Weight Calculator"
+description: "Estimate ideal body weight using the Devine formula."
+updated: "2025-02-14"
+cluster: "Health"
+---
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "ideal-body-weight",
+  title: "Ideal Body Weight Calculator",
+  locale: "en",
+  intro: "Estimate ideal body weight using the Devine formula.",
+  unit: "kg",
+  cluster: "Health",
+  inputs: [
+    { name: "height", label: "Height (cm)", type: "number", step: "any", placeholder: "170" },
+    { name: "gender", label: "Gender (1=male,0=female)", type: "number", step: "1", placeholder: "1" }
+  ],
+  expression: "((gender ? 50 : 45.5) + 2.3 * ((height/2.54) - 60))",
+  examples: [
+    { description: "170 cm male ⇒ 65.98 kg" },
+    { description: "160 cm female ⇒ 52.22 kg" }
+  ],
+  faqs: [
+    { question: "Which formula is used?", answer: "The Devine formula for adults." },
+    { question: "Why use numeric gender?", answer: "The calculator accepts 1 for male and 0 for female to keep inputs numeric." },
+    { question: "Is this exact weight?", answer: "No, it's a rough estimate and does not account for body composition." },
+    { question: "Can I use inches?", answer: "Convert height to centimeters before using." }
+  ],
+  disclaimer: "Not medical advice; consult a healthcare professional for personal guidance.",
+};
+
+<Calculator schema={schema} />

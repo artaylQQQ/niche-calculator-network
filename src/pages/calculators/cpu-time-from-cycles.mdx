@@ -1,0 +1,35 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "CPU Time from Cycles Calculator"
+description: "Convert CPU cycles into execution time."
+updated: "2025-02-14"
+cluster: "Technology"
+---
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "cpu-time-from-cycles",
+  title: "CPU Time from Cycles Calculator",
+  locale: "en",
+  intro: "Convert CPU cycles into execution time.",
+  unit: "s",
+  cluster: "Technology",
+  inputs: [
+    { name: "cycles", label: "CPU cycles", type: "number", step: "any", placeholder: "1000000" },
+    { name: "frequency", label: "Clock frequency (Hz)", type: "number", step: "any", placeholder: "3000000000" }
+  ],
+  expression: "cycles / frequency",
+  examples: [
+    { description: "1,000,000 cycles at 3 GHz ⇒ 0.000333 s" },
+    { description: "5,000,000 cycles at 2 GHz ⇒ 0.0025 s" }
+  ],
+  faqs: [
+    { question: "What are CPU cycles?", answer: "Basic steps a processor performs." },
+    { question: "Can frequency be in MHz?", answer: "Convert MHz to Hz before entering." },
+    { question: "Does this include pipeline stalls?", answer: "No, it assumes ideal execution." },
+    { question: "Is result exact?", answer: "It's an approximation based on provided frequency." }
+  ],
+  disclaimer: "Simplified estimation; actual timings depend on many factors.",
+};
+
+<Calculator schema={schema} />

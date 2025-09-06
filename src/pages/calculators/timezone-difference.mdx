@@ -1,0 +1,35 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Timezone Difference Calculator"
+description: "Find the hour difference between two time zones."
+updated: "2025-02-14"
+cluster: "Date & Time"
+---
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "timezone-difference",
+  title: "Timezone Difference Calculator",
+  locale: "en",
+  intro: "Find the hour difference between two time zones.",
+  unit: "hours",
+  cluster: "Date & Time",
+  inputs: [
+    { name: "offset1", label: "UTC offset 1 (hours)", type: "number", step: "any", placeholder: "-5" },
+    { name: "offset2", label: "UTC offset 2 (hours)", type: "number", step: "any", placeholder: "1" }
+  ],
+  expression: "Math.abs(offset1 - offset2)",
+  examples: [
+    { description: "UTC-5 and UTC+1 ⇒ 6 hours" },
+    { description: "UTC+3 and UTC+8 ⇒ 5 hours" }
+  ],
+  faqs: [
+    { question: "What is a UTC offset?", answer: "The difference in hours from Coordinated Universal Time." },
+    { question: "Do daylight saving changes affect this?", answer: "Yes, adjust offsets for current daylight saving time." },
+    { question: "Can I compare negative offsets?", answer: "Yes, the formula handles negative and positive values." },
+    { question: "Is fractional offset supported?", answer: "Yes, offsets like 5.5 for India are accepted." }
+  ],
+  disclaimer: "Always confirm local time rules for exact scheduling.",
+};
+
+<Calculator schema={schema} />

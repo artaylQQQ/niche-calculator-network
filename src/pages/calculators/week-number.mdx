@@ -1,0 +1,36 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Week Number Calculator"
+description: "Get the week number for a given date."
+updated: "2025-02-14"
+cluster: "Date & Time"
+---
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "week-number",
+  title: "Week Number Calculator",
+  locale: "en",
+  intro: "Get the week number for a given date.",
+  unit: "week",
+  cluster: "Date & Time",
+  inputs: [
+    { name: "year", label: "Year", type: "number", step: "1", placeholder: "2024" },
+    { name: "month", label: "Month", type: "number", step: "1", placeholder: "4" },
+    { name: "day", label: "Day", type: "number", step: "1", placeholder: "15" }
+  ],
+  expression: "((y,m,d)=>{const date=new Date(Date.UTC(y,m-1,d));const jan1=new Date(Date.UTC(y,0,1));return Math.ceil((((date-jan1)/86400000)+jan1.getUTCDay()+1)/7);})(year,month,day)",
+  examples: [
+    { description: "2024-01-01 ⇒ week 1" },
+    { description: "2024-12-31 ⇒ week 53" }
+  ],
+  faqs: [
+    { question: "Which week numbering is used?", answer: "Weeks start on Sunday and week 1 begins on January 1." },
+    { question: "Does it account for leap years?", answer: "Yes, the Date object handles leap years." },
+    { question: "Are ISO weeks supported?", answer: "This simple method approximates ISO week numbers but may differ near year boundaries." },
+    { question: "Can months be written as names?", answer: "No, enter numeric month values 1 through 12." }
+  ],
+  disclaimer: "Approximate week number; consult official calendars for critical planning.",
+};
+
+<Calculator schema={schema} />

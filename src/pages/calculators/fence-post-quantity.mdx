@@ -1,0 +1,35 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Fence Post Quantity Calculator"
+description: "Calculate how many posts are needed for a fence run."
+updated: "2025-02-14"
+cluster: "Home & DIY"
+---
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "fence-post-quantity",
+  title: "Fence Post Quantity Calculator",
+  locale: "en",
+  intro: "Calculate how many posts are needed for a fence run.",
+  unit: "posts",
+  cluster: "Home & DIY",
+  inputs: [
+    { name: "length", label: "Fence length (ft)", type: "number", step: "any", placeholder: "100" },
+    { name: "spacing", label: "Post spacing (ft)", type: "number", step: "any", placeholder: "8" }
+  ],
+  expression: "Math.ceil(length / spacing) + 1",
+  examples: [
+    { description: "100 ft fence, 8 ft spacing ⇒ 14 posts" },
+    { description: "50 ft fence, 10 ft spacing ⇒ 6 posts" }
+  ],
+  faqs: [
+    { question: "Why add one post?", answer: "The calculation includes both end posts." },
+    { question: "Can spacing be fractional?", answer: "Yes, enter any positive value." },
+    { question: "Does this include gate posts?", answer: "No, add additional posts for gates separately." },
+    { question: "Is spacing center-to-center?", answer: "Yes, spacing is measured from the center of each post." }
+  ],
+  disclaimer: "Actual layout may vary; always verify on-site measurements.",
+};
+
+<Calculator schema={schema} />
