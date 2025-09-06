@@ -1,0 +1,49 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Savings Goal Timeline Calculator"
+description: "Estimate months to reach a savings goal."
+updated: "2025-02-14"
+cluster: "finance"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  inputs: [
+    { name: "target", label: "Target Amount (USD)", type: "number", step: "any", placeholder: "10000" },
+    { name: "monthly", label: "Monthly Contribution (USD)", type: "number", step: "any", placeholder: "200" },
+    { name: "apr", label: "APR (%)", type: "number", step: "any", placeholder: "2" },
+  ],
+  slug: "savings-goal-timeline",
+  title: "Savings Goal Timeline Calculator",
+  locale: "en",
+  expression: "Math.log((monthly*(1+apr/1200)+target*apr/1200)/(monthly*(1+apr/1200))) / Math.log(1+apr/1200)",
+  unit: "months",
+  intro: "Estimate how many months are needed to reach a savings goal with monthly deposits and annual interest.",
+  examples: [
+    { description: "$10,000 target, $200 monthly, 2% APR ⇒ 48.0 months" },
+    { description: "$5,000 target, $300 monthly, 0% APR ⇒ 16.67 months" },
+  ],
+  faqs: [
+    {
+      question: "How is interest applied?",
+      answer: "Interest compounds monthly based on the APR provided.",
+    },
+    {
+      question: "What if APR is zero?",
+      answer: "The formula simplifies to target divided by monthly contribution.",
+    },
+    {
+      question: "Is the result rounded?",
+      answer: "No, fractional months show partial progress.",
+    },
+    {
+      question: "Does this include fees or taxes?",
+      answer: "No, it assumes all contributions remain invested.",
+    },
+  ],
+  disclaimer: "For planning purposes; actual returns and timelines may differ.",
+  cluster: "finance",
+};
+
+<Calculator schema={schema} />

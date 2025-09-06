@@ -1,0 +1,52 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Days Between Dates Calculator"
+description: "Count the number of days between two dates."
+updated: "2025-02-14"
+cluster: "Date & Time"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  inputs: [
+    { name: "year1", label: "Start Year", type: "number", step: "1", placeholder: "2024" },
+    { name: "month1", label: "Start Month", type: "number", step: "1", placeholder: "1" },
+    { name: "day1", label: "Start Day", type: "number", step: "1", placeholder: "1" },
+    { name: "year2", label: "End Year", type: "number", step: "1", placeholder: "2024" },
+    { name: "month2", label: "End Month", type: "number", step: "1", placeholder: "12" },
+    { name: "day2", label: "End Day", type: "number", step: "1", placeholder: "31" },
+  ],
+  slug: "days-between-dates",
+  title: "Days Between Dates Calculator",
+  locale: "en",
+  expression: "(new Date(year2, month2-1, day2) - new Date(year1, month1-1, day1)) / 86400000",
+  unit: "days",
+  intro: "Compute the number of days from a start date to an end date.",
+  examples: [
+    { description: "2024-01-01 to 2024-01-31 ⇒ 30 days" },
+    { description: "2020-02-01 to 2020-03-01 ⇒ 29 days" },
+  ],
+  faqs: [
+    {
+      question: "Are start and end dates inclusive?",
+      answer: "The calculation excludes the start date and includes the end date.",
+    },
+    {
+      question: "Does it handle leap years?",
+      answer: "Yes, leap days are automatically counted.",
+    },
+    {
+      question: "What if the end date is before the start date?",
+      answer: "The result will be negative.",
+    },
+    {
+      question: "Do time zones affect the result?",
+      answer: "The calculation uses local time and may vary near midnight.",
+    },
+  ],
+  disclaimer: "Approximate day count; ignore daylight-saving or time-zone changes for precise planning.",
+  cluster: "Date & Time",
+};
+
+<Calculator schema={schema} />

@@ -1,0 +1,49 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Overtime Pay Calculator"
+description: "Estimate earnings from overtime hours."
+updated: "2025-02-14"
+cluster: "finance"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  inputs: [
+    { name: "rate", label: "Hourly Rate (USD)", type: "number", step: "any", placeholder: "20" },
+    { name: "hours", label: "Overtime Hours", type: "number", step: "any", placeholder: "5" },
+    { name: "multiplier", label: "Overtime Multiplier", type: "number", step: "any", placeholder: "1.5" },
+  ],
+  slug: "overtime-pay-calculator",
+  title: "Overtime Pay Calculator",
+  locale: "en",
+  expression: "rate * hours * multiplier",
+  unit: "USD",
+  intro: "Compute additional pay for overtime using hourly rate and overtime multiplier.",
+  examples: [
+    { description: "$20/hr × 5 hrs × 1.5 ⇒ $150" },
+    { description: "$15/hr × 10 hrs × 2 ⇒ $300" },
+  ],
+  faqs: [
+    {
+      question: "What is an overtime multiplier?",
+      answer: "It's the factor by which overtime hours are paid, such as 1.5× for time-and-a-half.",
+    },
+    {
+      question: "Does this include taxes or deductions?",
+      answer: "No, it calculates gross overtime pay only.",
+    },
+    {
+      question: "Can I enter fractional hours?",
+      answer: "Yes, decimals are accepted for partial hours.",
+    },
+    {
+      question: "Is the overtime rate fixed?",
+      answer: "Enter any multiplier your employer uses.",
+    },
+  ],
+  disclaimer: "For estimation purposes; consult payroll policies for exact amounts.",
+  cluster: "finance",
+};
+
+<Calculator schema={schema} />

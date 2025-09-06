@@ -1,0 +1,48 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Arc Length of a Circle"
+description: "Find the length of a circular arc."
+updated: "2025-02-14"
+cluster: "math"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  inputs: [
+    { name: "radius", label: "Radius", type: "number", step: "any", placeholder: "5" },
+    { name: "angle", label: "Angle (°)", type: "number", step: "any", placeholder: "60" },
+  ],
+  slug: "arc-length-circle",
+  title: "Arc Length of a Circle",
+  locale: "en",
+  expression: "2 * Math.PI * radius * (angle / 360)",
+  unit: "units",
+  intro: "Calculate the length of an arc from the circle's radius and central angle in degrees.",
+  examples: [
+    { description: "r=5, angle=60° ⇒ 5.24 units" },
+    { description: "r=10, angle=90° ⇒ 15.71 units" },
+  ],
+  faqs: [
+    {
+      question: "What angle units are used?",
+      answer: "Degrees; convert from radians if necessary.",
+    },
+    {
+      question: "Can the angle exceed 360°?",
+      answer: "Yes, the formula works for any positive angle.",
+    },
+    {
+      question: "Do radius units matter?",
+      answer: "Use any consistent length unit; the result uses the same unit.",
+    },
+    {
+      question: "Is the arc length always less than the circumference?",
+      answer: "If angle is ≤360°, yes; larger angles yield multiple laps.",
+    },
+  ],
+  disclaimer: "Ideal geometric calculation; ensure measurements are accurate.",
+  cluster: "math",
+};
+
+<Calculator schema={schema} />

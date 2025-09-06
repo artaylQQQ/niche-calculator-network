@@ -1,0 +1,47 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Clock Cycle Time Calculator"
+description: "Convert clock frequency to cycle time."
+updated: "2025-02-14"
+cluster: "technology"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  inputs: [
+    { name: "frequency", label: "Frequency (MHz)", type: "number", step: "any", placeholder: "1000" },
+  ],
+  slug: "clock-cycle-time",
+  title: "Clock Cycle Time Calculator",
+  locale: "en",
+  expression: "1000 / frequency",
+  unit: "ns",
+  intro: "Determine the duration of one clock cycle from frequency in megahertz.",
+  examples: [
+    { description: "1000 MHz ⇒ 1 ns" },
+    { description: "3200 MHz ⇒ 0.31 ns" },
+  ],
+  faqs: [
+    {
+      question: "Why divide 1000 by frequency?",
+      answer: "Because 1 MHz corresponds to a 1000 ns period.",
+    },
+    {
+      question: "Can frequency be in GHz?",
+      answer: "Convert GHz to MHz by multiplying by 1000 before using.",
+    },
+    {
+      question: "What if frequency is zero?",
+      answer: "Cycle time is undefined when frequency is zero.",
+    },
+    {
+      question: "Is the result exact?",
+      answer: "It assumes an ideal clock without jitter.",
+    },
+  ],
+  disclaimer: "Idealized calculation; hardware characteristics may affect real timing.",
+  cluster: "technology",
+};
+
+<Calculator schema={schema} />
