@@ -1,0 +1,35 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Statutory Days to Months Converter"
+description: "Approximate months from statutory day counts."
+updated: "2024-08-06"
+cluster: "Date & Time"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "statutory-days-to-months",
+  title: "Statutory Days to Months Converter",
+  locale: "en",
+  unit: "months",
+  inputs: [
+    { name: "days", label: "Days", type: "number", step: "any", placeholder: "90" }
+  ],
+  expression: "days / 30",
+  intro: "Convert legal or contractual time limits expressed in days into an approximate number of months.",
+  examples: [
+    { description: "90 days ⇒ 3 months" },
+    { description: "45 days ⇒ 1.5 months" }
+  ],
+  faqs: [
+    { question: "Why use 30 days per month?", answer: "Many legal contexts treat a month as 30 days for simplicity." },
+    { question: "Does it consider leap years?", answer: "No, it uses a fixed 30-day month." },
+    { question: "Can I convert fractions?", answer: "Yes, decimals indicate partial months." },
+    { question: "Is this legally binding?", answer: "Always verify deadlines with actual calendar dates." }
+  ],
+  disclaimer: "For advisory calculations only; consult relevant statutes for exact deadlines.",
+  cluster: "Date & Time"
+};
+
+<Calculator schema={schema} />

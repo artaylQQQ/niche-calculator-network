@@ -1,0 +1,36 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Gear Ratio Calculator"
+description: "Determine the ratio between driven and driving gears."
+updated: "2024-08-06"
+cluster: "Math"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "gear-ratio",
+  title: "Gear Ratio Calculator",
+  locale: "en",
+  unit: "ratio",
+  inputs: [
+    { name: "driving", label: "Driving Gear Teeth", type: "number", step: "any", placeholder: "15" },
+    { name: "driven", label: "Driven Gear Teeth", type: "number", step: "any", placeholder: "30" }
+  ],
+  expression: "driven / driving",
+  intro: "Calculate how many times the driven gear turns relative to the driving gear, essential for geartrain design.",
+  examples: [
+    { description: "15 driving, 30 driven ⇒ 2" },
+    { description: "20 driving, 10 driven ⇒ 0.5" }
+  ],
+  faqs: [
+    { question: "What is a gear ratio?", answer: "It's the proportion of the driven gear's teeth to the driving gear's teeth." },
+    { question: "Does a higher ratio mean more torque?", answer: "Generally yes, at the cost of speed." },
+    { question: "Can gears have non-integer teeth?", answer: "No, gear teeth counts are whole numbers." },
+    { question: "Is direction considered?", answer: "This calculator provides the magnitude of the ratio only." }
+  ],
+  disclaimer: "Use appropriate engineering standards when designing gear systems.",
+  cluster: "Math"
+};
+
+<Calculator schema={schema} />

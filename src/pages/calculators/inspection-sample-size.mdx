@@ -1,0 +1,35 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Inspection Sample Size Estimator"
+description: "Estimate sample size using the square root method."
+updated: "2024-08-06"
+cluster: "Math"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "inspection-sample-size",
+  title: "Inspection Sample Size Estimator",
+  locale: "en",
+  unit: "samples",
+  inputs: [
+    { name: "population", label: "Population Size", type: "number", step: "any", placeholder: "100" }
+  ],
+  expression: "Math.ceil(Math.sqrt(population))",
+  intro: "Estimate the number of items to inspect using the common square root sampling guideline.",
+  examples: [
+    { description: "100 units ⇒ 10 samples" },
+    { description: "400 units ⇒ 20 samples" }
+  ],
+  faqs: [
+    { question: "Why use the square root method?", answer: "It's a quick rule of thumb for general inspections." },
+    { question: "Is this statistically rigorous?", answer: "No, more precise methods may be needed for critical quality control." },
+    { question: "Can I inspect more than the estimate?", answer: "Yes, increasing the sample improves confidence." },
+    { question: "Does population size need to be exact?", answer: "An estimate is usually sufficient for this guideline." }
+  ],
+  disclaimer: "Sampling plans should follow applicable industry standards.",
+  cluster: "Math"
+};
+
+<Calculator schema={schema} />

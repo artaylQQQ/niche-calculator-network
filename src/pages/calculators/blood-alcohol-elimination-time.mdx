@@ -1,0 +1,37 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Blood Alcohol Elimination Time Calculator"
+description: "Estimate hours needed for BAC to reach a target level."
+updated: "2024-08-06"
+cluster: "Health"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "blood-alcohol-elimination-time",
+  title: "Blood Alcohol Elimination Time Calculator",
+  locale: "en",
+  unit: "hours",
+  inputs: [
+    { name: "initial", label: "Initial BAC (%)", type: "number", step: "any", placeholder: "0.10" },
+    { name: "target", label: "Target BAC (%)", type: "number", step: "any", placeholder: "0.00" },
+    { name: "rate", label: "Elimination Rate (%/h)", type: "number", step: "any", placeholder: "0.015" }
+  ],
+  expression: "(initial - target) / rate",
+  intro: "Estimate how long it takes for blood alcohol concentration to fall to a desired level based on a steady elimination rate.",
+  examples: [
+    { description: "0.10 → 0.00 at 0.015%/h ⇒ 6.67 h" },
+    { description: "0.12 → 0.08 at 0.015%/h ⇒ 2.67 h" }
+  ],
+  faqs: [
+    { question: "Is the elimination rate constant?", answer: "The calculator assumes a constant rate, though actual rates vary." },
+    { question: "Can it predict legal sobriety?", answer: "Enter the legal limit as the target BAC." },
+    { question: "Does food intake affect results?", answer: "Yes, metabolism can change based on many factors." },
+    { question: "Should I rely on this for driving decisions?", answer: "No, always use a certified breath or blood test." }
+  ],
+  disclaimer: "For informational purposes only; not a substitute for legal or medical advice.",
+  cluster: "Health"
+};
+
+<Calculator schema={schema} />

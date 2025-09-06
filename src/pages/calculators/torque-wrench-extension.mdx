@@ -1,0 +1,37 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Torque Wrench Extension Calculator"
+description: "Adjust torque settings when using an extension on a torque wrench."
+updated: "2024-08-06"
+cluster: "Home & DIY"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "torque-wrench-extension",
+  title: "Torque Wrench Extension Calculator",
+  locale: "en",
+  unit: "Nm",
+  inputs: [
+    { name: "desired", label: "Desired Torque (Nm)", type: "number", step: "any", placeholder: "100" },
+    { name: "wrench", label: "Wrench Length (m)", type: "number", step: "any", placeholder: "0.3" },
+    { name: "extension", label: "Extension Length (m)", type: "number", step: "any", placeholder: "0.05" }
+  ],
+  expression: "desired * wrench / (wrench + extension)",
+  intro: "Calculate the torque setting required on your wrench when an extension or crowfoot adapter changes the effective length.",
+  examples: [
+    { description: "100 Nm, 0.3 m wrench, 0.05 m extension ⇒ 85.71 Nm" },
+    { description: "80 Nm, 0.25 m wrench, 0.05 m extension ⇒ 66.67 Nm" }
+  ],
+  faqs: [
+    { question: "Why adjust for extensions?", answer: "Extensions alter the lever arm, affecting applied torque." },
+    { question: "Does this work for 90° extensions?", answer: "Yes, when the extension is inline with the wrench." },
+    { question: "Can I use inches?", answer: "Yes, use consistent units for wrench and extension lengths." },
+    { question: "What if extension length is zero?", answer: "The formula returns the desired torque unchanged." }
+  ],
+  disclaimer: "Always verify torque with calibrated equipment.",
+  cluster: "Home & DIY"
+};
+
+<Calculator schema={schema} />

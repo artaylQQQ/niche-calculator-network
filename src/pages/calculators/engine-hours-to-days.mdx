@@ -1,0 +1,35 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Engine Hours to Days Converter"
+description: "Translate accumulated engine hours into days of operation."
+updated: "2024-08-06"
+cluster: "Date & Time"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "engine-hours-to-days",
+  title: "Engine Hours to Days Converter",
+  locale: "en",
+  unit: "days",
+  inputs: [
+    { name: "hours", label: "Engine Hours", type: "number", step: "any", placeholder: "120" }
+  ],
+  expression: "hours / 24",
+  intro: "Convert engine run-time hours to equivalent days to help schedule maintenance or inspections.",
+  examples: [
+    { description: "120 h ⇒ 5 days" },
+    { description: "36 h ⇒ 1.5 days" }
+  ],
+  faqs: [
+    { question: "Why convert engine hours to days?", answer: "It provides a clearer picture of continuous operation for maintenance planning." },
+    { question: "Does it assume 24-hour days?", answer: "Yes, it divides by 24 to obtain days." },
+    { question: "Can I use decimal hours?", answer: "Yes, fractional hours are supported." },
+    { question: "Is downtime considered?", answer: "No, it assumes the engine ran continuously for the given hours." }
+  ],
+  disclaimer: "Always follow the manufacturer's service intervals.",
+  cluster: "Date & Time"
+};
+
+<Calculator schema={schema} />

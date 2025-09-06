@@ -1,0 +1,36 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Hand-Arm Vibration Safe Time Calculator"
+description: "Estimate allowable daily exposure time based on vibration magnitude."
+updated: "2024-08-06"
+cluster: "Health"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "hand-arm-vibration-time",
+  title: "Hand-Arm Vibration Safe Time Calculator",
+  locale: "en",
+  unit: "hours",
+  inputs: [
+    { name: "magnitude", label: "Vibration (m/s²)", type: "number", step: "any", placeholder: "10" },
+    { name: "limit", label: "Limit (m/s²)", type: "number", step: "any", placeholder: "5" }
+  ],
+  expression: "8 * Math.pow(limit / magnitude, 2)",
+  intro: "Determine how many hours a worker can use a vibrating tool before reaching the daily exposure limit.",
+  examples: [
+    { description: "10 m/s² with 5 m/s² limit ⇒ 2 h" },
+    { description: "4 m/s² with 5 m/s² limit ⇒ 12.5 h" }
+  ],
+  faqs: [
+    { question: "What is the default limit?", answer: "5 m/s² is a common regulatory action limit." },
+    { question: "Does it account for multiple tools?", answer: "No, it assumes a single constant vibration level." },
+    { question: "Can exposure exceed 8 hours?", answer: "The formula may yield more than 8 h, but regulations typically cap at 8 h." },
+    { question: "Why square the ratio?", answer: "Exposure time is inversely proportional to the square of the vibration magnitude." }
+  ],
+  disclaimer: "Consult occupational health standards for comprehensive assessments.",
+  cluster: "Health"
+};
+
+<Calculator schema={schema} />

@@ -1,0 +1,36 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Paint Thinner Amount Calculator"
+description: "Determine how much thinner to add based on paint volume and desired ratio."
+updated: "2024-08-06"
+cluster: "Home & DIY"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "paint-thinner-amount",
+  title: "Paint Thinner Amount Calculator",
+  locale: "en",
+  unit: "liters",
+  inputs: [
+    { name: "paint", label: "Paint Volume (L)", type: "number", step: "any", placeholder: "5" },
+    { name: "ratio", label: "Thinner Ratio (%)", type: "number", step: "any", placeholder: "10" }
+  ],
+  expression: "paint * ratio / 100",
+  intro: "Find the amount of thinner needed to achieve a specific thinning percentage for paint or coatings.",
+  examples: [
+    { description: "5 L paint at 10% ⇒ 0.5 L thinner" },
+    { description: "2 L paint at 5% ⇒ 0.1 L thinner" }
+  ],
+  faqs: [
+    { question: "What does the ratio represent?", answer: "It is the percentage of thinner relative to the paint volume." },
+    { question: "Can I use other units?", answer: "Yes, as long as paint and thinner are in the same units." },
+    { question: "Does this account for additives?", answer: "No, it only calculates thinner volume." },
+    { question: "Is over-thinning a problem?", answer: "Yes, always follow product guidelines." }
+  ],
+  disclaimer: "Always check manufacturer instructions for proper thinning ratios.",
+  cluster: "Home & DIY"
+};
+
+<Calculator schema={schema} />

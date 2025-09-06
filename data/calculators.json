@@ -8655,4 +8655,373 @@
     "disclaimer": "Idealized calculation without atmospheric refraction.",
     "unit": "m"
   }
+, {
+    "slug": "newton-meters-to-foot-pounds",
+    "title": "Newton-Meters to Foot-Pounds Converter",
+    "cluster": "conversions",
+    "description": "Convert torque from newton-meters to foot-pounds.",
+    "inputs": [
+      { "name": "nm", "label": "Torque (N·m)", "type": "number", "step": "any", "placeholder": "10" }
+    ],
+    "expression": "nm * 0.737562149",
+    "intro": "Quickly convert torque values from newton-meters to foot-pounds, useful when working with specifications that use imperial units.",
+    "examples": [
+      { "description": "10 N·m ⇒ 7.38 ft·lb" },
+      { "description": "50 N·m ⇒ 36.88 ft·lb" }
+    ],
+    "faqs": [
+      { "question": "How accurate is this conversion?", "answer": "It uses the exact factor of 1 N·m = 0.737562149 ft·lb." },
+      { "question": "Can I convert the other way?", "answer": "Divide foot-pounds by 0.737562149 to get newton-meters." },
+      { "question": "Are decimals accepted?", "answer": "Yes, you can enter torque values with decimals." },
+      { "question": "Why convert torque units?", "answer": "Some service manuals specify torque in different unit systems." }
+    ],
+    "disclaimer": "Verify with manufacturer specifications for critical applications.",
+    "unit": "ft·lb"
+  }, {
+    "slug": "pascals-to-inches-water",
+    "title": "Pascals to Inches of Water Converter",
+    "cluster": "conversions",
+    "description": "Convert pressure from pascals to inches of water column.",
+    "inputs": [
+      { "name": "pa", "label": "Pressure (Pa)", "type": "number", "step": "any", "placeholder": "500" }
+    ],
+    "expression": "pa / 249.08891",
+    "intro": "Convert pressure readings in pascals to inches of water column, helpful for HVAC balancing and building inspections.",
+    "examples": [
+      { "description": "500 Pa ⇒ 2.01 inH₂O" },
+      { "description": "1000 Pa ⇒ 4.01 inH₂O" }
+    ],
+    "faqs": [
+      { "question": "What is an inch of water column?", "answer": "It's a pressure unit commonly used for low pressure measurements in ventilation." },
+      { "question": "Can I convert the other way?", "answer": "Multiply inches of water by 249.08891 to get pascals." },
+      { "question": "Why use pascals?", "answer": "Pascals are the SI unit for pressure, often used in scientific contexts." },
+      { "question": "Is the conversion linear?", "answer": "Yes, the relationship between pascals and inches of water is a fixed ratio." }
+    ],
+    "disclaimer": "Use calibrated instruments for regulatory measurements.",
+    "unit": "inH₂O"
+  }, {
+    "slug": "engine-hours-to-days",
+    "title": "Engine Hours to Days Converter",
+    "cluster": "date & time",
+    "description": "Translate accumulated engine hours into days of operation.",
+    "inputs": [
+      { "name": "hours", "label": "Engine Hours", "type": "number", "step": "any", "placeholder": "120" }
+    ],
+    "expression": "hours / 24",
+    "intro": "Convert engine run-time hours to equivalent days to help schedule maintenance or inspections.",
+    "examples": [
+      { "description": "120 h ⇒ 5 days" },
+      { "description": "36 h ⇒ 1.5 days" }
+    ],
+    "faqs": [
+      { "question": "Why convert engine hours to days?", "answer": "It provides a clearer picture of continuous operation for maintenance planning." },
+      { "question": "Does it assume 24-hour days?", "answer": "Yes, it divides by 24 to obtain days." },
+      { "question": "Can I use decimal hours?", "answer": "Yes, fractional hours are supported." },
+      { "question": "Is downtime considered?", "answer": "No, it assumes the engine ran continuously for the given hours." }
+    ],
+    "disclaimer": "Always follow the manufacturer's service intervals.",
+    "unit": "days"
+  }, {
+    "slug": "statutory-days-to-months",
+    "title": "Statutory Days to Months Converter",
+    "cluster": "date & time",
+    "description": "Approximate months from statutory day counts.",
+    "inputs": [
+      { "name": "days", "label": "Days", "type": "number", "step": "any", "placeholder": "90" }
+    ],
+    "expression": "days / 30",
+    "intro": "Convert legal or contractual time limits expressed in days into an approximate number of months.",
+    "examples": [
+      { "description": "90 days ⇒ 3 months" },
+      { "description": "45 days ⇒ 1.5 months" }
+    ],
+    "faqs": [
+      { "question": "Why use 30 days per month?", "answer": "Many legal contexts treat a month as 30 days for simplicity." },
+      { "question": "Does it consider leap years?", "answer": "No, it uses a fixed 30-day month." },
+      { "question": "Can I convert fractions?", "answer": "Yes, decimals indicate partial months." },
+      { "question": "Is this legally binding?", "answer": "Always verify deadlines with actual calendar dates." }
+    ],
+    "disclaimer": "For advisory calculations only; consult relevant statutes for exact deadlines.",
+    "unit": "months"
+  }, {
+    "slug": "mechanic-labor-cost",
+    "title": "Mechanic Labor Cost Calculator",
+    "cluster": "finance",
+    "description": "Estimate total labor charges based on hours and hourly rate.",
+    "inputs": [
+      { "name": "hours", "label": "Hours", "type": "number", "step": "any", "placeholder": "3" },
+      { "name": "rate", "label": "Hourly Rate", "type": "number", "step": "any", "placeholder": "80" }
+    ],
+    "expression": "hours * rate",
+    "intro": "Quickly compute labor charges for automotive or equipment repairs.",
+    "examples": [
+      { "description": "3 h at $80/h ⇒ $240" },
+      { "description": "1.5 h at $100/h ⇒ $150" }
+    ],
+    "faqs": [
+      { "question": "Does this include parts?", "answer": "No, it calculates labor cost only." },
+      { "question": "Can I use decimal hours?", "answer": "Yes, enter fractions for partial hours." },
+      { "question": "Is tax included?", "answer": "Taxes or fees must be added separately." },
+      { "question": "Why estimate labor cost?", "answer": "It helps customers and mechanics budget repairs." }
+    ],
+    "disclaimer": "Actual shop rates and billing practices may vary.",
+    "unit": "USD"
+  }, {
+    "slug": "legal-billing-cost",
+    "title": "Legal Billing Cost Calculator",
+    "cluster": "finance",
+    "description": "Compute billable cost using minutes worked, billing increments, and hourly rate.",
+    "inputs": [
+      { "name": "minutes", "label": "Minutes Worked", "type": "number", "step": "any", "placeholder": "50" },
+      { "name": "increment", "label": "Billing Increment (min)", "type": "number", "step": "any", "placeholder": "6" },
+      { "name": "rate", "label": "Hourly Rate", "type": "number", "step": "any", "placeholder": "200" }
+    ],
+    "expression": "Math.ceil(minutes / increment) * increment / 60 * rate",
+    "intro": "Estimate legal fees by rounding work time to the nearest billing increment.",
+    "examples": [
+      { "description": "50 min, 6-min increment at $200/h ⇒ $180" },
+      { "description": "30 min, 15-min increment at $300/h ⇒ $150" }
+    ],
+    "faqs": [
+      { "question": "Why round time?", "answer": "Law firms often bill in fixed increments to simplify invoicing." },
+      { "question": "What happens if minutes equal an increment?", "answer": "The time is billed exactly as that increment." },
+      { "question": "Can I use hourly increments?", "answer": "Yes, set the increment to 60 minutes." },
+      { "question": "Does it handle partial minutes?", "answer": "Fractions are rounded up before billing." }
+    ],
+    "disclaimer": "Actual billing practices may vary by jurisdiction and firm.",
+    "unit": "USD"
+  }, {
+    "slug": "blood-alcohol-elimination-time",
+    "title": "Blood Alcohol Elimination Time Calculator",
+    "cluster": "health",
+    "description": "Estimate hours needed for BAC to reach a target level.",
+    "inputs": [
+      { "name": "initial", "label": "Initial BAC (%)", "type": "number", "step": "any", "placeholder": "0.10" },
+      { "name": "target", "label": "Target BAC (%)", "type": "number", "step": "any", "placeholder": "0.00" },
+      { "name": "rate", "label": "Elimination Rate (%/h)", "type": "number", "step": "any", "placeholder": "0.015" }
+    ],
+    "expression": "(initial - target) / rate",
+    "intro": "Estimate how long it takes for blood alcohol concentration to fall to a desired level based on a steady elimination rate.",
+    "examples": [
+      { "description": "0.10 → 0.00 at 0.015%/h ⇒ 6.67 h" },
+      { "description": "0.12 → 0.08 at 0.015%/h ⇒ 2.67 h" }
+    ],
+    "faqs": [
+      { "question": "Is the elimination rate constant?", "answer": "The calculator assumes a constant rate, though actual rates vary." },
+      { "question": "Can it predict legal sobriety?", "answer": "Enter the legal limit as the target BAC." },
+      { "question": "Does food intake affect results?", "answer": "Yes, metabolism can change based on many factors." },
+      { "question": "Should I rely on this for driving decisions?", "answer": "No, always use a certified breath or blood test." }
+    ],
+    "disclaimer": "For informational purposes only; not a substitute for legal or medical advice.",
+    "unit": "hours"
+  }, {
+    "slug": "hand-arm-vibration-time",
+    "title": "Hand-Arm Vibration Safe Time Calculator",
+    "cluster": "health",
+    "description": "Estimate allowable daily exposure time based on vibration magnitude.",
+    "inputs": [
+      { "name": "magnitude", "label": "Vibration (m/s²)", "type": "number", "step": "any", "placeholder": "10" },
+      { "name": "limit", "label": "Limit (m/s²)", "type": "number", "step": "any", "placeholder": "5" }
+    ],
+    "expression": "8 * Math.pow(limit / magnitude, 2)",
+    "intro": "Determine how many hours a worker can use a vibrating tool before reaching the daily exposure limit.",
+    "examples": [
+      { "description": "10 m/s² with 5 m/s² limit ⇒ 2 h" },
+      { "description": "4 m/s² with 5 m/s² limit ⇒ 12.5 h" }
+    ],
+    "faqs": [
+      { "question": "What is the default limit?", "answer": "5 m/s² is a common regulatory action limit." },
+      { "question": "Does it account for multiple tools?", "answer": "No, it assumes a single constant vibration level." },
+      { "question": "Can exposure exceed 8 hours?", "answer": "The formula may yield more than 8 h, but regulations typically cap at 8 h." },
+      { "question": "Why square the ratio?", "answer": "Exposure time is inversely proportional to the square of the vibration magnitude." }
+    ],
+    "disclaimer": "Consult occupational health standards for comprehensive assessments.",
+    "unit": "hours"
+  }, {
+    "slug": "torque-wrench-extension",
+    "title": "Torque Wrench Extension Calculator",
+    "cluster": "home & diy",
+    "description": "Adjust torque settings when using an extension on a torque wrench.",
+    "inputs": [
+      { "name": "desired", "label": "Desired Torque (Nm)", "type": "number", "step": "any", "placeholder": "100" },
+      { "name": "wrench", "label": "Wrench Length (m)", "type": "number", "step": "any", "placeholder": "0.3" },
+      { "name": "extension", "label": "Extension Length (m)", "type": "number", "step": "any", "placeholder": "0.05" }
+    ],
+    "expression": "desired * wrench / (wrench + extension)",
+    "intro": "Calculate the torque setting required on your wrench when an extension or crowfoot adapter changes the effective length.",
+    "examples": [
+      { "description": "100 Nm, 0.3 m wrench, 0.05 m extension ⇒ 85.71 Nm" },
+      { "description": "80 Nm, 0.25 m wrench, 0.05 m extension ⇒ 66.67 Nm" }
+    ],
+    "faqs": [
+      { "question": "Why adjust for extensions?", "answer": "Extensions alter the lever arm, affecting applied torque." },
+      { "question": "Does this work for 90° extensions?", "answer": "Yes, when the extension is inline with the wrench." },
+      { "question": "Can I use inches?", "answer": "Yes, use consistent units for wrench and extension lengths." },
+      { "question": "What if extension length is zero?", "answer": "The formula returns the desired torque unchanged." }
+    ],
+    "disclaimer": "Always verify torque with calibrated equipment.",
+    "unit": "Nm"
+  }, {
+    "slug": "paint-thinner-amount",
+    "title": "Paint Thinner Amount Calculator",
+    "cluster": "home & diy",
+    "description": "Determine how much thinner to add based on paint volume and desired ratio.",
+    "inputs": [
+      { "name": "paint", "label": "Paint Volume (L)", "type": "number", "step": "any", "placeholder": "5" },
+      { "name": "ratio", "label": "Thinner Ratio (%)", "type": "number", "step": "any", "placeholder": "10" }
+    ],
+    "expression": "paint * ratio / 100",
+    "intro": "Find the amount of thinner needed to achieve a specific thinning percentage for paint or coatings.",
+    "examples": [
+      { "description": "5 L paint at 10% ⇒ 0.5 L thinner" },
+      { "description": "2 L paint at 5% ⇒ 0.1 L thinner" }
+    ],
+    "faqs": [
+      { "question": "What does the ratio represent?", "answer": "It is the percentage of thinner relative to the paint volume." },
+      { "question": "Can I use other units?", "answer": "Yes, as long as paint and thinner are in the same units." },
+      { "question": "Does this account for additives?", "answer": "No, it only calculates thinner volume." },
+      { "question": "Is over-thinning a problem?", "answer": "Yes, always follow product guidelines." }
+    ],
+    "disclaimer": "Always check manufacturer instructions for proper thinning ratios.",
+    "unit": "liters"
+  }, {
+    "slug": "gear-ratio",
+    "title": "Gear Ratio Calculator",
+    "cluster": "math",
+    "description": "Determine the ratio between driven and driving gears.",
+    "inputs": [
+      { "name": "driving", "label": "Driving Gear Teeth", "type": "number", "step": "any", "placeholder": "15" },
+      { "name": "driven", "label": "Driven Gear Teeth", "type": "number", "step": "any", "placeholder": "30" }
+    ],
+    "expression": "driven / driving",
+    "intro": "Calculate how many times the driven gear turns relative to the driving gear, essential for geartrain design.",
+    "examples": [
+      { "description": "15 driving, 30 driven ⇒ 2" },
+      { "description": "20 driving, 10 driven ⇒ 0.5" }
+    ],
+    "faqs": [
+      { "question": "What is a gear ratio?", "answer": "It's the proportion of the driven gear's teeth to the driving gear's teeth." },
+      { "question": "Does a higher ratio mean more torque?", "answer": "Generally yes, at the cost of speed." },
+      { "question": "Can gears have non-integer teeth?", "answer": "No, gear teeth counts are whole numbers." },
+      { "question": "Is direction considered?", "answer": "This calculator provides the magnitude of the ratio only." }
+    ],
+    "disclaimer": "Use appropriate engineering standards when designing gear systems.",
+    "unit": "ratio"
+  }, {
+    "slug": "inspection-sample-size",
+    "title": "Inspection Sample Size Estimator",
+    "cluster": "math",
+    "description": "Estimate sample size using the square root method.",
+    "inputs": [
+      { "name": "population", "label": "Population Size", "type": "number", "step": "any", "placeholder": "100" }
+    ],
+    "expression": "Math.ceil(Math.sqrt(population))",
+    "intro": "Estimate the number of items to inspect using the common square root sampling guideline.",
+    "examples": [
+      { "description": "100 units ⇒ 10 samples" },
+      { "description": "400 units ⇒ 20 samples" }
+    ],
+    "faqs": [
+      { "question": "Why use the square root method?", "answer": "It's a quick rule of thumb for general inspections." },
+      { "question": "Is this statistically rigorous?", "answer": "No, more precise methods may be needed for critical quality control." },
+      { "question": "Can I inspect more than the estimate?", "answer": "Yes, increasing the sample improves confidence." },
+      { "question": "Does population size need to be exact?", "answer": "An estimate is usually sufficient for this guideline." }
+    ],
+    "disclaimer": "Sampling plans should follow applicable industry standards.",
+    "unit": "samples"
+  }, {
+    "slug": "alternator-output-current",
+    "title": "Alternator Output Current Calculator",
+    "cluster": "technology",
+    "description": "Convert alternator power output to charging current.",
+    "inputs": [
+      { "name": "power", "label": "Power (W)", "type": "number", "step": "any", "placeholder": "1200" },
+      { "name": "voltage", "label": "Voltage (V)", "type": "number", "step": "any", "placeholder": "12" }
+    ],
+    "expression": "power / voltage",
+    "intro": "Estimate charging current from an alternator given its power rating and system voltage.",
+    "examples": [
+      { "description": "1200 W at 12 V ⇒ 100 A" },
+      { "description": "600 W at 24 V ⇒ 25 A" }
+    ],
+    "faqs": [
+      { "question": "Does this assume 100% efficiency?", "answer": "Yes, real-world current will be slightly lower." },
+      { "question": "Can it handle different voltages?", "answer": "Input any nominal system voltage." },
+      { "question": "Why calculate alternator current?", "answer": "It helps size wiring and charging systems." },
+      { "question": "Are units interchangeable?", "answer": "Use watts and volts for power and voltage respectively." }
+    ],
+    "disclaimer": "Actual output depends on alternator efficiency and operating conditions.",
+    "unit": "A"
+  }, {
+    "slug": "voltage-divider-output",
+    "title": "Voltage Divider Output Calculator",
+    "cluster": "technology",
+    "description": "Find output voltage from a simple resistor divider.",
+    "inputs": [
+      { "name": "vin", "label": "Input Voltage (V)", "type": "number", "step": "any", "placeholder": "12" },
+      { "name": "r1", "label": "Resistor R1 (Ω)", "type": "number", "step": "any", "placeholder": "1000" },
+      { "name": "r2", "label": "Resistor R2 (Ω)", "type": "number", "step": "any", "placeholder": "1000" }
+    ],
+    "expression": "vin * r2 / (r1 + r2)",
+    "intro": "Calculate the output voltage of a two-resistor divider circuit, useful for sensor or reference design.",
+    "examples": [
+      { "description": "12 V with R1=1kΩ and R2=1kΩ ⇒ 6 V" },
+      { "description": "5 V with R1=2kΩ and R2=1kΩ ⇒ 1.67 V" }
+    ],
+    "faqs": [
+      { "question": "Does this consider load?", "answer": "No, it assumes the output is unloaded." },
+      { "question": "Can resistors be in different units?", "answer": "Use consistent units for both resistors." },
+      { "question": "Why use a voltage divider?", "answer": "To obtain a fraction of an input voltage." },
+      { "question": "What if R2 is zero?", "answer": "Output equals zero volts." }
+    ],
+    "disclaimer": "Ensure divider output meets the input impedance requirements of connected devices.",
+    "unit": "V"
+  }, {
+    "slug": "quorum-requirement",
+    "title": "Quorum Requirement Calculator",
+    "cluster": "other",
+    "description": "Calculate the number of members needed to meet quorum.",
+    "inputs": [
+      { "name": "members", "label": "Total Members", "type": "number", "step": "any", "placeholder": "25" },
+      { "name": "percent", "label": "Quorum (%)", "type": "number", "step": "any", "placeholder": "50" }
+    ],
+    "expression": "Math.ceil(members * percent / 100)",
+    "intro": "Determine how many members must be present to conduct official business according to quorum rules.",
+    "examples": [
+      { "description": "25 members at 50% ⇒ 13" },
+      { "description": "10 members at 60% ⇒ 6" }
+    ],
+    "faqs": [
+      { "question": "Why round up?", "answer": "Quorum typically requires whole members, so fractions are rounded up." },
+      { "question": "Can quorum exceed total members?", "answer": "No, percentages over 100% are invalid." },
+      { "question": "Is this legally binding?", "answer": "Always refer to the organization's bylaws." },
+      { "question": "Does this handle absentee ballots?", "answer": "The calculator assumes physical presence unless bylaws state otherwise." }
+    ],
+    "disclaimer": "Verify quorum requirements with governing documents or legal counsel.",
+    "unit": "members"
+  }, {
+    "slug": "service-interval-remaining",
+    "title": "Service Interval Remaining Calculator",
+    "cluster": "other",
+    "description": "Find remaining mileage until the next scheduled service.",
+    "inputs": [
+      { "name": "current", "label": "Current Mileage", "type": "number", "step": "any", "placeholder": "12000" },
+      { "name": "last", "label": "Last Service Mileage", "type": "number", "step": "any", "placeholder": "10000" },
+      { "name": "interval", "label": "Service Interval (mi)", "type": "number", "step": "any", "placeholder": "5000" }
+    ],
+    "expression": "(last + interval) - current",
+    "intro": "Determine how many miles remain before your vehicle is due for its next service.",
+    "examples": [
+      { "description": "Current 12,000, last 10,000, interval 5,000 ⇒ 3,000 mi" },
+      { "description": "Current 25,000, last 20,000, interval 6,000 ⇒ 1,000 mi" }
+    ],
+    "faqs": [
+      { "question": "What if the result is negative?", "answer": "It means the service is overdue by that many miles." },
+      { "question": "Does it account for time?", "answer": "No, it only calculates mileage." },
+      { "question": "Can I use kilometers?", "answer": "Yes, as long as all values are in kilometers." },
+      { "question": "Why track remaining mileage?", "answer": "It helps schedule maintenance before problems arise." }
+    ],
+    "disclaimer": "Always follow the manufacturer's maintenance recommendations.",
+    "unit": "miles"
+  }
 ]

@@ -1,0 +1,36 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Mechanic Labor Cost Calculator"
+description: "Estimate total labor charges based on hours and hourly rate."
+updated: "2024-08-06"
+cluster: "Finance"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "mechanic-labor-cost",
+  title: "Mechanic Labor Cost Calculator",
+  locale: "en",
+  unit: "USD",
+  inputs: [
+    { name: "hours", label: "Hours", type: "number", step: "any", placeholder: "3" },
+    { name: "rate", label: "Hourly Rate", type: "number", step: "any", placeholder: "80" }
+  ],
+  expression: "hours * rate",
+  intro: "Quickly compute labor charges for automotive or equipment repairs.",
+  examples: [
+    { description: "3 h at $80/h ⇒ $240" },
+    { description: "1.5 h at $100/h ⇒ $150" }
+  ],
+  faqs: [
+    { question: "Does this include parts?", answer: "No, it calculates labor cost only." },
+    { question: "Can I use decimal hours?", answer: "Yes, enter fractions for partial hours." },
+    { question: "Is tax included?", answer: "Taxes or fees must be added separately." },
+    { question: "Why estimate labor cost?", answer: "It helps customers and mechanics budget repairs." }
+  ],
+  disclaimer: "Actual shop rates and billing practices may vary.",
+  cluster: "Finance"
+};
+
+<Calculator schema={schema} />

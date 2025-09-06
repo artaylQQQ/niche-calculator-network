@@ -1,0 +1,36 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Quorum Requirement Calculator"
+description: "Calculate the number of members needed to meet quorum."
+updated: "2024-08-06"
+cluster: "Other"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "quorum-requirement",
+  title: "Quorum Requirement Calculator",
+  locale: "en",
+  unit: "members",
+  inputs: [
+    { name: "members", label: "Total Members", type: "number", step: "any", placeholder: "25" },
+    { name: "percent", label: "Quorum (%)", type: "number", step: "any", placeholder: "50" }
+  ],
+  expression: "Math.ceil(members * percent / 100)",
+  intro: "Determine how many members must be present to conduct official business according to quorum rules.",
+  examples: [
+    { description: "25 members at 50% ⇒ 13" },
+    { description: "10 members at 60% ⇒ 6" }
+  ],
+  faqs: [
+    { question: "Why round up?", answer: "Quorum typically requires whole members, so fractions are rounded up." },
+    { question: "Can quorum exceed total members?", answer: "No, percentages over 100% are invalid." },
+    { question: "Is this legally binding?", answer: "Always refer to the organization's bylaws." },
+    { question: "Does this handle absentee ballots?", answer: "The calculator assumes physical presence unless bylaws state otherwise." }
+  ],
+  disclaimer: "Verify quorum requirements with governing documents or legal counsel.",
+  cluster: "Other"
+};
+
+<Calculator schema={schema} />

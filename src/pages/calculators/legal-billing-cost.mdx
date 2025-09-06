@@ -1,0 +1,37 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Legal Billing Cost Calculator"
+description: "Compute billable cost using minutes worked, billing increments, and hourly rate."
+updated: "2024-08-06"
+cluster: "Finance"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "legal-billing-cost",
+  title: "Legal Billing Cost Calculator",
+  locale: "en",
+  unit: "USD",
+  inputs: [
+    { name: "minutes", label: "Minutes Worked", type: "number", step: "any", placeholder: "50" },
+    { name: "increment", label: "Billing Increment (min)", type: "number", step: "any", placeholder: "6" },
+    { name: "rate", label: "Hourly Rate", type: "number", step: "any", placeholder: "200" }
+  ],
+  expression: "Math.ceil(minutes / increment) * increment / 60 * rate",
+  intro: "Estimate legal fees by rounding work time to the nearest billing increment.",
+  examples: [
+    { description: "50 min, 6-min increment at $200/h ⇒ $180" },
+    { description: "30 min, 15-min increment at $300/h ⇒ $150" }
+  ],
+  faqs: [
+    { question: "Why round time?", answer: "Law firms often bill in fixed increments to simplify invoicing." },
+    { question: "What happens if minutes equal an increment?", answer: "The time is billed exactly as that increment." },
+    { question: "Can I use hourly increments?", answer: "Yes, set the increment to 60 minutes." },
+    { question: "Does it handle partial minutes?", answer: "Fractions are rounded up before billing." }
+  ],
+  disclaimer: "Actual billing practices may vary by jurisdiction and firm.",
+  cluster: "Finance"
+};
+
+<Calculator schema={schema} />

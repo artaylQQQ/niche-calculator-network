@@ -1,0 +1,37 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Voltage Divider Output Calculator"
+description: "Find output voltage from a simple resistor divider."
+updated: "2024-08-06"
+cluster: "Technology"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "voltage-divider-output",
+  title: "Voltage Divider Output Calculator",
+  locale: "en",
+  unit: "V",
+  inputs: [
+    { name: "vin", label: "Input Voltage (V)", type: "number", step: "any", placeholder: "12" },
+    { name: "r1", label: "Resistor R1 (Ω)", type: "number", step: "any", placeholder: "1000" },
+    { name: "r2", label: "Resistor R2 (Ω)", type: "number", step: "any", placeholder: "1000" }
+  ],
+  expression: "vin * r2 / (r1 + r2)",
+  intro: "Calculate the output voltage of a two-resistor divider circuit, useful for sensor or reference design.",
+  examples: [
+    { description: "12 V with R1=1kΩ and R2=1kΩ ⇒ 6 V" },
+    { description: "5 V with R1=2kΩ and R2=1kΩ ⇒ 1.67 V" }
+  ],
+  faqs: [
+    { question: "Does this consider load?", answer: "No, it assumes the output is unloaded." },
+    { question: "Can resistors be in different units?", answer: "Use consistent units for both resistors." },
+    { question: "Why use a voltage divider?", answer: "To obtain a fraction of an input voltage." },
+    { question: "What if R2 is zero?", answer: "Output equals zero volts." }
+  ],
+  disclaimer: "Ensure divider output meets the input impedance requirements of connected devices.",
+  cluster: "Technology"
+};
+
+<Calculator schema={schema} />

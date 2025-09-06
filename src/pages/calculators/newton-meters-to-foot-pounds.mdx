@@ -1,0 +1,35 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Newton-Meters to Foot-Pounds Converter"
+description: "Convert torque from newton-meters to foot-pounds."
+updated: "2024-08-06"
+cluster: "Conversions"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "newton-meters-to-foot-pounds",
+  title: "Newton-Meters to Foot-Pounds Converter",
+  locale: "en",
+  unit: "ft·lb",
+  inputs: [
+    { name: "nm", label: "Torque (N·m)", type: "number", step: "any", placeholder: "10" }
+  ],
+  expression: "nm * 0.737562149",
+  intro: "Quickly convert torque values from newton-meters to foot-pounds, useful when working with specifications that use imperial units.",
+  examples: [
+    { description: "10 N·m ⇒ 7.38 ft·lb" },
+    { description: "50 N·m ⇒ 36.88 ft·lb" }
+  ],
+  faqs: [
+    { question: "How accurate is this conversion?", answer: "It uses the exact factor of 1 N·m = 0.737562149 ft·lb." },
+    { question: "Can I convert the other way?", answer: "Divide foot-pounds by 0.737562149 to get newton-meters." },
+    { question: "Are decimals accepted?", answer: "Yes, you can enter torque values with decimals." },
+    { question: "Why convert torque units?", answer: "Some service manuals specify torque in different unit systems." }
+  ],
+  disclaimer: "Verify with manufacturer specifications for critical applications.",
+  cluster: "Conversions"
+};
+
+<Calculator schema={schema} />

@@ -1,0 +1,37 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Service Interval Remaining Calculator"
+description: "Find remaining mileage until the next scheduled service."
+updated: "2024-08-06"
+cluster: "Other"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "service-interval-remaining",
+  title: "Service Interval Remaining Calculator",
+  locale: "en",
+  unit: "miles",
+  inputs: [
+    { name: "current", label: "Current Mileage", type: "number", step: "any", placeholder: "12000" },
+    { name: "last", label: "Last Service Mileage", type: "number", step: "any", placeholder: "10000" },
+    { name: "interval", label: "Service Interval (mi)", type: "number", step: "any", placeholder: "5000" }
+  ],
+  expression: "(last + interval) - current",
+  intro: "Determine how many miles remain before your vehicle is due for its next service.",
+  examples: [
+    { description: "Current 12,000, last 10,000, interval 5,000 ⇒ 3,000 mi" },
+    { description: "Current 25,000, last 20,000, interval 6,000 ⇒ 1,000 mi" }
+  ],
+  faqs: [
+    { question: "What if the result is negative?", answer: "It means the service is overdue by that many miles." },
+    { question: "Does it account for time?", answer: "No, it only calculates mileage." },
+    { question: "Can I use kilometers?", answer: "Yes, as long as all values are in kilometers." },
+    { question: "Why track remaining mileage?", answer: "It helps schedule maintenance before problems arise." }
+  ],
+  disclaimer: "Always follow the manufacturer's maintenance recommendations.",
+  cluster: "Other"
+};
+
+<Calculator schema={schema} />

@@ -1,0 +1,35 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Pascals to Inches of Water Converter"
+description: "Convert pressure from pascals to inches of water column."
+updated: "2024-08-06"
+cluster: "Conversions"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "pascals-to-inches-water",
+  title: "Pascals to Inches of Water Converter",
+  locale: "en",
+  unit: "inH₂O",
+  inputs: [
+    { name: "pa", label: "Pressure (Pa)", type: "number", step: "any", placeholder: "500" }
+  ],
+  expression: "pa / 249.08891",
+  intro: "Convert pressure readings in pascals to inches of water column, helpful for HVAC balancing and building inspections.",
+  examples: [
+    { description: "500 Pa ⇒ 2.01 inH₂O" },
+    { description: "1000 Pa ⇒ 4.01 inH₂O" }
+  ],
+  faqs: [
+    { question: "What is an inch of water column?", answer: "It's a pressure unit commonly used for low pressure measurements in ventilation." },
+    { question: "Can I convert the other way?", answer: "Multiply inches of water by 249.08891 to get pascals." },
+    { question: "Why use pascals?", answer: "Pascals are the SI unit for pressure, often used in scientific contexts." },
+    { question: "Is the conversion linear?", answer: "Yes, the relationship between pascals and inches of water is a fixed ratio." }
+  ],
+  disclaimer: "Use calibrated instruments for regulatory measurements.",
+  cluster: "Conversions"
+};
+
+<Calculator schema={schema} />

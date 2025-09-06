@@ -1,0 +1,36 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Alternator Output Current Calculator"
+description: "Convert alternator power output to charging current."
+updated: "2024-08-06"
+cluster: "Technology"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "alternator-output-current",
+  title: "Alternator Output Current Calculator",
+  locale: "en",
+  unit: "A",
+  inputs: [
+    { name: "power", label: "Power (W)", type: "number", step: "any", placeholder: "1200" },
+    { name: "voltage", label: "Voltage (V)", type: "number", step: "any", placeholder: "12" }
+  ],
+  expression: "power / voltage",
+  intro: "Estimate charging current from an alternator given its power rating and system voltage.",
+  examples: [
+    { description: "1200 W at 12 V ⇒ 100 A" },
+    { description: "600 W at 24 V ⇒ 25 A" }
+  ],
+  faqs: [
+    { question: "Does this assume 100% efficiency?", answer: "Yes, real-world current will be slightly lower." },
+    { question: "Can it handle different voltages?", answer: "Input any nominal system voltage." },
+    { question: "Why calculate alternator current?", answer: "It helps size wiring and charging systems." },
+    { question: "Are units interchangeable?", answer: "Use watts and volts for power and voltage respectively." }
+  ],
+  disclaimer: "Actual output depends on alternator efficiency and operating conditions.",
+  cluster: "Technology"
+};
+
+<Calculator schema={schema} />
