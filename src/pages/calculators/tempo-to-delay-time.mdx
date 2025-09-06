@@ -1,0 +1,36 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Tempo to Delay Time Calculator"
+description: "Convert musical tempo in BPM to delay time per beat in milliseconds."
+date: 2025-09-05
+updated: 2025-09-05
+cluster: "Other"
+---
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "tempo-to-delay-time",
+  "title": "Tempo to Delay Time Calculator",
+  "locale": "en",
+  "inputs": [
+    { "label": "Tempo (BPM)", "name": "bpm", "type": "number", "placeholder": "120" }
+  ],
+  "expression": "60000 / bpm",
+  "intro": "Convert beats per minute into milliseconds per beat for music production.",
+  "examples": [
+    { "description": "120 BPM ⇒ 500 ms" },
+    { "description": "90 BPM ⇒ 666.67 ms" }
+  ],
+  "faqs": [
+    { "question": "Why use 60,000?", "answer": "There are 60,000 milliseconds in a minute." },
+    { "question": "Can I use this for note divisions?", "answer": "Yes, divide or multiply the result for different note lengths." },
+    { "question": "Does tapping tempo work?", "answer": "Enter the BPM measured by your tap tempo tool." },
+    { "question": "Is this accurate for swing rhythms?", "answer": "No, swing timing requires additional adjustment." }
+  ],
+  "disclaimer": "Timing values are idealized; musical feel may vary.",
+  "cluster": "other",
+  "unit": "ms",
+  "related": []
+}
+
+<Calculator schema={schema} />

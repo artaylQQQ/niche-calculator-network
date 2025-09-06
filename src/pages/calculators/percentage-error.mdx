@@ -1,0 +1,37 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Percentage Error Calculator"
+description: "Compute percentage error between measured and actual values."
+date: 2025-09-05
+updated: 2025-09-05
+cluster: "Math"
+---
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "percentage-error",
+  "title": "Percentage Error Calculator",
+  "locale": "en",
+  "inputs": [
+    { "label": "Measured Value", "name": "measured", "type": "number", "placeholder": "105" },
+    { "label": "Actual Value", "name": "actual", "type": "number", "placeholder": "100" }
+  ],
+  "expression": "(((measured - actual) ^ 2) ^ 0.5 / actual) * 100",
+  "intro": "Find the percent error between a measured quantity and its true value.",
+  "examples": [
+    { "description": "Measured 105 vs actual 100 ⇒ 5%" },
+    { "description": "Measured 95 vs actual 100 ⇒ 5%" }
+  ],
+  "faqs": [
+    { "question": "Why square the difference?", "answer": "Squaring removes negative signs before taking the square root." },
+    { "question": "Does percent error show accuracy?", "answer": "Yes, smaller errors mean measurements closer to the true value." },
+    { "question": "Can actual value be zero?", "answer": "No, percent error is undefined when the true value is zero." },
+    { "question": "Is the result signed?", "answer": "No, percent error is always positive." }
+  ],
+  "disclaimer": "For educational estimation only.",
+  "cluster": "math",
+  "unit": "%",
+  "related": []
+}
+
+<Calculator schema={schema} />
