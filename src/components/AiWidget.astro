@@ -1,0 +1,34 @@
+---
+---
+<section class="ai-widget mt-8">
+  <h2>Ask AI</h2>
+  <form class="mt-2 flex flex-col sm:flex-row gap-2">
+    <label class="sr-only">Question</label>
+    <input type="text" placeholder="Ask a question" class="flex-1 p-2 border rounded-md" required />
+    <button type="submit" class="btn">Ask</button>
+  </form>
+  <p data-role="answer" class="mt-2 text-sm"></p>
+</section>
+<script is:inline>
+  const root = document.currentScript.parentElement;
+  const form = root.querySelector('form');
+  const input = root.querySelector('input');
+  const out = root.querySelector('[data-role="answer"]');
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const q = input.value.trim();
+    if (!q) return;
+    out.textContent = 'Thinking...';
+    try {
+      const res = await fetch('/api/ai', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ question: q })
+      });
+      const data = await res.json();
+      out.textContent = data.answer || 'No answer available.';
+    } catch (err) {
+      out.textContent = 'Error fetching answer.';
+    }
+  });
+</script>

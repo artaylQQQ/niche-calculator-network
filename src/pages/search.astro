@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import AiWidget from "../components/AiWidget.astro";
 const modules = import.meta.glob("./calculators/*.mdx", { eager: true });
 const items = Object.values(modules).map((m) => ({
   url: m.url,
@@ -18,7 +19,7 @@ const items = Object.values(modules).map((m) => ({
       class="w-full mt-4 p-2 border rounded-md"
     />
   </section>
-  <section class="section container mx-auto max-w-5xl px-4" aria-labelledby="search-results">
+    <section class="section container mx-auto max-w-5xl px-4" aria-labelledby="search-results">
     <h2 id="search-results" class="sr-only">Search results</h2>
     <div id="results" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
       {items.map((it) => (
@@ -30,8 +31,9 @@ const items = Object.values(modules).map((m) => ({
         </div>
       ))}
     </div>
-  </section>
-  <script is:inline>
+    </section>
+    <AiWidget />
+    <script is:inline>
     const input = document.getElementById('search-input');
     const cards = Array.from(document.querySelectorAll('#results > div'));
     function filter() {
