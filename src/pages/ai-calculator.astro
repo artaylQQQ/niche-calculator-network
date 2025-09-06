@@ -1,0 +1,13 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import AICalculator from "../components/AICalculator.astro";
+---
+<BaseLayout title="AI Calculator" description="Ask our AI for quick answers to your questions.">
+  <section class="hero container mx-auto max-w-5xl px-4">
+    <h1 style="color: var(--ink)">AI Calculator</h1>
+    <p style="color: var(--muted)">Couldn't find what you needed on CalcSimpler? Ask our AI below.</p>
+  </section>
+  <section class="container mx-auto max-w-5xl px-4">
+    <AICalculator />
+  </section>
+</BaseLayout>

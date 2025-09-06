@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import AICalculator from "../components/AICalculator.astro";
 const modules = import.meta.glob("./calculators/*.mdx", { eager: true });
 const items = Object.values(modules).map((m) => ({
   url: m.url,
@@ -45,4 +46,7 @@ const items = Object.values(modules).map((m) => ({
     }
     input.addEventListener('input', filter);
   </script>
+  <section class="container mx-auto max-w-5xl px-4 py-8">
+    <AICalculator />
+  </section>
 </BaseLayout>

@@ -1,0 +1,44 @@
+---
+// Simple AI calculator component
+---
+<section class="ai-calculator p-4 border rounded-md mt-8">
+  <h2 class="mb-2" style="color: var(--ink)">Ask our AI Calculator</h2>
+  <p class="mb-4" style="color: var(--muted)">
+    Didn't find the calculator you needed? Ask anything below:
+  </p>
+  <textarea
+    id="ai-question"
+    class="w-full p-2 border rounded mb-2"
+    rows="3"
+    placeholder="Type your question here"
+  ></textarea>
+  <button
+    id="ai-submit"
+    class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded"
+    type="button"
+  >
+    Ask
+  </button>
+  <p id="ai-answer" class="mt-4" style="color: var(--ink)"></p>
+  <script>
+    const qEl = document.getElementById('ai-question');
+    const btn = document.getElementById('ai-submit');
+    const ans = document.getElementById('ai-answer');
+    btn.addEventListener('click', async () => {
+      const question = qEl.value.trim();
+      if (!question) return;
+      ans.textContent = 'Thinking...';
+      try {
+        const res = await fetch('/api/ai', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ question })
+        });
+        const data = await res.json();
+        ans.textContent = data.answer || 'No answer available.';
+      } catch (err) {
+        ans.textContent = 'Error contacting AI service.';
+      }
+    });
+  </script>
+</section>
