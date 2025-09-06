@@ -7,20 +7,24 @@ import { fileURLToPath } from 'node:url';
 
 /** Genera rutas y datos sin variables globales */
 export async function getStaticPaths() {
-  // 1) Define the eight supported category slugs and a list of aliases.  The
+  // 1) Define the twelve supported category slugs and a list of aliases.  The
   // generator and pages normalise arbitrary cluster names using these
   // mappings.  Any calculator whose cluster matches (case insensitive)
   // one of the listed aliases will be grouped into the corresponding
   // category page.
   const CATEGORIES = [
-    { slug: 'finance',     title: 'Finance',          map: ['finance','finance & loans','taxes','business','business & commerce','percentages & ratios'] },
-    { slug: 'health',      title: 'Health',           map: ['health','health & fitness','bmi'] },
-    { slug: 'conversions', title: 'Conversions',      map: ['conversions','unit conversions','unit and currency conversions'] },
-    { slug: 'math',        title: 'Math',             map: ['math','geometry','geometry & math','areas & volumes','algebra','percentages & ratios','statistics','averages and probabilities'] },
-    { slug: 'technology',  title: 'Technology',       map: ['technology','tech','computing','technology & computing'] },
-    { slug: 'date-time',   title: 'Date & Time',      map: ['date & time','time & date','time-date','durations and schedules'] },
-    { slug: 'home-diy',    title: 'Home & DIY',       map: ['home & diy','home and diy','diy','household'] },
-    { slug: 'other',       title: 'Everyday & Misc',  map: ['other','misc','miscellaneous','everyday','everyday & misc','general'] }
+    { slug: 'finance-business',        title: 'Finance & Business',        map: ['finance & business','finance','business','business & commerce','taxes','percentages & ratios'] },
+    { slug: 'personal-finance-loans',  title: 'Personal Finance & Loans',  map: ['personal finance & loans','personal finance','loans','loan','mortgage'] },
+    { slug: 'health-fitness',          title: 'Health & Fitness',          map: ['health & fitness','health','fitness','bmi'] },
+    { slug: 'math-statistics',         title: 'Math & Statistics',         map: ['math & statistics','math','geometry','algebra','statistics','averages and probabilities','areas & volumes'] },
+    { slug: 'conversions-units',       title: 'Conversions & Units',       map: ['conversions & units','conversions','unit conversions','unit and currency conversions'] },
+    { slug: 'date-time',               title: 'Date & Time',               map: ['date & time','time & date','time-date','durations and schedules'] },
+    { slug: 'education-learning',      title: 'Education & Learning',      map: ['education & learning','education','learning','study'] },
+    { slug: 'science-engineering',     title: 'Science & Engineering',     map: ['science & engineering','science','engineering','physics'] },
+    { slug: 'technology-coding',       title: 'Technology & Coding',       map: ['technology & coding','technology','tech','computing','coding','technology & computing'] },
+    { slug: 'home-diy',                title: 'Home & DIY',                map: ['home & diy','home and diy','diy','household'] },
+    { slug: 'lifestyle-travel',        title: 'Lifestyle & Travel',        map: ['lifestyle & travel','lifestyle','travel','everyday','misc','miscellaneous','other','general'] },
+    { slug: 'web-marketing',           title: 'Web & Marketing',           map: ['web & marketing','web','marketing','seo'] },
   ];
 
   // 2) Lee calculators.json en build

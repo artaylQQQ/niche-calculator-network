@@ -26,35 +26,45 @@ const LOG_PATH = path.join(ROOT, "meta", "publish_log.json");
 // categories.  This ensures that calculators appear under the correct
 // category page regardless of the input data.  Keys must be lower‑case.
 const CATEGORY_MAP: Record<string, string> = {
-  // finance
-  "finance & loans": "Finance",
-  "percentages & ratios": "Finance",
-  finance: "Finance",
-  business: "Finance",
-  "business & commerce": "Finance",
-  taxes: "Finance",
-  // health
-  "health & fitness": "Health",
-  health: "Health",
-  bmi: "Health",
-  // conversions
-  "conversions & units": "Conversions",
-  "unit conversions": "Conversions",
-  "unit and currency conversions": "Conversions",
-  conversions: "Conversions",
-  // math
-  math: "Math",
-  geometry: "Math",
-  "geometry & math": "Math",
-  "areas & volumes": "Math",
-  algebra: "Math",
-  statistics: "Math",
-  "averages and probabilities": "Math",
-  // technology
-  technology: "Technology",
-  tech: "Technology",
-  computing: "Technology",
-  "technology & computing": "Technology",
+  // finance & business
+  "finance & business": "Finance & Business",
+  finance: "Finance & Business",
+  business: "Finance & Business",
+  "business & commerce": "Finance & Business",
+  taxes: "Finance & Business",
+  "percentages & ratios": "Finance & Business",
+  // personal finance & loans
+  "personal finance & loans": "Personal Finance & Loans",
+  "personal finance": "Personal Finance & Loans",
+  loans: "Personal Finance & Loans",
+  loan: "Personal Finance & Loans",
+  mortgage: "Personal Finance & Loans",
+  // health & fitness
+  "health & fitness": "Health & Fitness",
+  health: "Health & Fitness",
+  fitness: "Health & Fitness",
+  bmi: "Health & Fitness",
+  // conversions & units
+  "conversions & units": "Conversions & Units",
+  "unit conversions": "Conversions & Units",
+  "unit and currency conversions": "Conversions & Units",
+  conversions: "Conversions & Units",
+  // math & statistics
+  "math & statistics": "Math & Statistics",
+  math: "Math & Statistics",
+  geometry: "Math & Statistics",
+  algebra: "Math & Statistics",
+  statistics: "Math & Statistics",
+  "geometry & math": "Math & Statistics",
+  "areas & volumes": "Math & Statistics",
+  "averages and probabilities": "Math & Statistics",
+  // technology & coding
+  "technology & coding": "Technology & Coding",
+  technology: "Technology & Coding",
+  tech: "Technology & Coding",
+  computing: "Technology & Coding",
+  coding: "Technology & Coding",
+  "technology & computing": "Technology & Coding",
   // date & time
   "date & time": "Date & Time",
   "time & date": "Date & Time",
@@ -65,14 +75,30 @@ const CATEGORY_MAP: Record<string, string> = {
   "home and diy": "Home & DIY",
   diy: "Home & DIY",
   household: "Home & DIY",
-  // everyday & misc
-  misc: "Everyday & Misc",
-  miscellaneous: "Everyday & Misc",
-  other: "Everyday & Misc",
-  everyday: "Everyday & Misc",
-  general: "Everyday & Misc",
-  education: "Everyday & Misc",
-  science: "Everyday & Misc",
+  // education & learning
+  "education & learning": "Education & Learning",
+  education: "Education & Learning",
+  learning: "Education & Learning",
+  study: "Education & Learning",
+  // science & engineering
+  "science & engineering": "Science & Engineering",
+  science: "Science & Engineering",
+  engineering: "Science & Engineering",
+  physics: "Science & Engineering",
+  // lifestyle & travel
+  "lifestyle & travel": "Lifestyle & Travel",
+  lifestyle: "Lifestyle & Travel",
+  travel: "Lifestyle & Travel",
+  misc: "Lifestyle & Travel",
+  miscellaneous: "Lifestyle & Travel",
+  other: "Lifestyle & Travel",
+  everyday: "Lifestyle & Travel",
+  general: "Lifestyle & Travel",
+  // web & marketing
+  "web & marketing": "Web & Marketing",
+  web: "Web & Marketing",
+  marketing: "Web & Marketing",
+  seo: "Web & Marketing",
 };
 
 // Safely parse a JSON file, returning a fallback value on error.  This
@@ -133,10 +159,10 @@ function pickRelated(base: any, all: any[], count = 6): string[] {
 
   for (const calc of toPublish) {
     // Normalise the cluster using CATEGORY_MAP.  Fall back to the original
-    // cluster or 'Everyday & Misc' if nothing matches.
+    // cluster or 'Lifestyle & Travel' if nothing matches.
     const rawCluster = (calc.cluster || "").toString().toLowerCase();
     const normCluster =
-      CATEGORY_MAP[rawCluster] || calc.cluster || "Everyday & Misc";
+      CATEGORY_MAP[rawCluster] || calc.cluster || "Lifestyle & Travel";
     // Determine related calculators ahead of time.
     const related = pickRelated(calc, items);
     // Build a runtime schema used by the Calculator component.  Provide

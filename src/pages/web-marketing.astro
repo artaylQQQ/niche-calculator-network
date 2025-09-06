@@ -1,8 +1,8 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import AdBanner from "../components/AdBanner.astro";
-const slug = "other";
-const title = "Everyday & Misc Calculators";
+const slug = "web & marketing";
+const title = "Web & Marketing Calculators";
 const modules = import.meta.glob("../pages/calculators/*.mdx", { eager: true });
 const items = Object.values(modules).map((m) => ({ url: m.url, fm: m.frontmatter || {} }));
 const getTitle = (it) => it.fm.title || it.url.replace('/calculators/','').replace('.mdx','');
