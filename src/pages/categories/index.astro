@@ -3,21 +3,24 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import AdBanner from '../../components/AdBanner.astro';
 
 /*
- * Provide the same normalised list of categories as the home page.  Each
+ * Provide the same normalised list of categories as the home page. Each
  * definition includes a URL slug, title, short description and the name of
- * an SVG icon stored under `/public/icons/`.  Where no dedicated icon
- * exists we reuse a related graphic (see comments in index.astro for
- * details).
+ * an SVG icon stored under `/public/icons/`. Where no dedicated icon exists we
+ * reuse a related graphic.
  */
 const CATEGORIES = [
-  { slug: 'finance',     title: 'Finance',     desc: 'Loans, interest, ROI, taxes',          icon: 'finance' },
-  { slug: 'health',      title: 'Health',      desc: 'BMI and body metrics',                 icon: 'health' },
-  { slug: 'conversions', title: 'Conversions', desc: 'Unit and currency conversions',         icon: 'conversions' },
-  { slug: 'math',        title: 'Math',        desc: 'Geometry, algebra and statistics',      icon: 'geometry' },
-  { slug: 'technology',  title: 'Technology',  desc: 'Computing and tech topics',            icon: 'algebra' },
-  { slug: 'date-time',   title: 'Date & Time', desc: 'Schedules and durations',              icon: 'time-date' },
-  { slug: 'home-diy',    title: 'Home & DIY',  desc: 'Household projects and DIY',           icon: 'business' },
-  { slug: 'other',       title: 'Everyday & Misc',       desc: 'Everyday & misc calculators',          icon: 'statistics' }
+  { slug: 'finance-business',    title: 'Finance & Business',       desc: 'Corporate finance, ROI, taxes',       icon: 'business' },
+  { slug: 'personal-finance',    title: 'Personal Finance & Loans', desc: 'Budgeting, loans, interest',          icon: 'finance' },
+  { slug: 'health-fitness',      title: 'Health & Fitness',         desc: 'BMI and body metrics',                icon: 'health' },
+  { slug: 'math-statistics',     title: 'Math & Statistics',        desc: 'Geometry, algebra and stats',         icon: 'geometry' },
+  { slug: 'conversions-units',   title: 'Conversions & Units',      desc: 'Unit and currency conversions',       icon: 'conversions' },
+  { slug: 'date-time',           title: 'Date & Time',              desc: 'Schedules and durations',             icon: 'time-date' },
+  { slug: 'education-learning',  title: 'Education & Learning',     desc: 'Study aids and learning tools',       icon: 'education' },
+  { slug: 'science-engineering', title: 'Science & Engineering',    desc: 'Scientific and engineering tools',     icon: 'science' },
+  { slug: 'technology-coding',   title: 'Technology & Coding',      desc: 'Computing and tech topics',            icon: 'technology' },
+  { slug: 'home-diy',            title: 'Home & DIY',               desc: 'Household projects and DIY',           icon: 'home' },
+  { slug: 'lifestyle-travel',    title: 'Lifestyle & Travel',       desc: 'Life and travel helpers',              icon: 'lifestyle' },
+  { slug: 'web-marketing',       title: 'Web & Marketing',          desc: 'Online and marketing tools',           icon: 'marketing' },
 ];
 ---
 <BaseLayout title="Categories" description="Browse all calculator categories.">
