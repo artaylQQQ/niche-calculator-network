@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import AiWidget from "../components/AiWidget.astro";
 const modules = import.meta.glob("./calculators/*.mdx", { eager: true });
 const items = Object.values(modules).map((m) => ({
   url: m.url,
@@ -30,6 +31,7 @@ const items = Object.values(modules).map((m) => ({
         </div>
       ))}
     </div>
+    <AiWidget />
   </section>
   <script is:inline>
     const input = document.getElementById('search-input');

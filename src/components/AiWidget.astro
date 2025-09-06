@@ -1,0 +1,54 @@
+---
+---
+<section class="ai-widget mt-8">
+  <h2 class="text-xl font-semibold mb-2">Can't find what you need?</h2>
+  <p class="text-sm text-[var(--muted)] mb-4">Ask our AI for help with any calculation question.</p>
+  <form id="ai-form" class="flex flex-col sm:flex-row gap-2" onsubmit="return false">
+    <input
+      id="ai-question"
+      type="text"
+      placeholder="Ask a question"
+      class="flex-1 p-2 border rounded"
+    />
+    <button id="ai-submit" class="px-4 py-2 rounded bg-[var(--accent-red)] text-[var(--primary-ink)]">Ask AI</button>
+  </form>
+  <div id="ai-answer" class="mt-2 text-[var(--ink)]"></div>
+</section>
+
+<script is:inline>
+  const form = document.getElementById('ai-form');
+  const input = document.getElementById('ai-question');
+  const answer = document.getElementById('ai-answer');
+  const btn = document.getElementById('ai-submit');
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const q = input.value.trim();
+    if (!q) return;
+    answer.textContent = 'Thinking...';
+    btn.disabled = true;
+    try {
+      const res = await fetch('/api/ai', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ question: q })
+      });
+      const data = await res.json();
+      answer.textContent = data.answer || 'No answer available.';
+    } catch (err) {
+      answer.textContent = 'Error fetching answer.';
+    } finally {
+      btn.disabled = false;
+    }
+  });
+</script>
+
+<style>
+  .ai-widget {
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 16px;
+  }
+  #ai-answer {
+    white-space: pre-wrap;
+  }
+</style>
