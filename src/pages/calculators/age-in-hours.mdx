@@ -1,0 +1,36 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Age in Hours Calculator"
+description: "Convert age in years to total hours lived."
+updated: "2025-05-31"
+cluster: "Date & Time"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "age-in-hours",
+  title: "Age in Hours Calculator",
+  locale: "en",
+  intro: "Enter your age in years to estimate total hours lived.",
+  unit: "hours",
+  cluster: "Date & Time",
+  inputs: [
+    { name: "years", label: "Age (years)", type: "number", step: "any", placeholder: "30" }
+  ],
+  expression: "years * 365 * 24",
+  examples: [
+    { description: "30 years ⇒ 262,800 hours" },
+    { description: "18.5 years ⇒ 162,060 hours" }
+  ],
+  faqs: [
+    { question: "Does this include leap years?", answer: "No, it uses 365 days per year for simplicity." },
+    { question: "Can I enter months?", answer: "Convert months to years before using the calculator." },
+    { question: "Is the result exact?", answer: "It's an approximation ignoring leap days and time of day." },
+    { question: "How can I get minutes?", answer: "Multiply the hours result by 60." }
+  ],
+  disclaimer: "Approximate conversion ignoring leap years.",
+};
+
+<Calculator schema={schema} />
+

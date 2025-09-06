@@ -8265,4 +8265,392 @@
     "disclaimer": "Timing values are idealized; musical feel may vary.",
     "unit": "ms"
   }
+  ,
+  {
+    "slug": "miles-to-nautical-miles",
+    "title": "Miles to Nautical Miles Converter",
+    "cluster": "Conversions",
+    "description": "Convert statute miles to nautical miles.",
+    "inputs": [
+      { "name": "miles", "label": "Miles", "type": "number", "step": "any", "placeholder": "10" }
+    ],
+    "expression": "miles * 0.868976",
+    "intro": "Enter distance in miles to see the equivalent in nautical miles.",
+    "examples": [
+      { "description": "10 miles ⇒ 8.69 nmi" },
+      { "description": "25 miles ⇒ 21.72 nmi" }
+    ],
+    "faqs": [
+      { "question": "What is a nautical mile?", "answer": "A nautical mile equals 1,852 meters and is used in marine and air navigation." },
+      { "question": "Is this conversion exact?", "answer": "Yes, it uses the defined factor 1 mile = 0.868976 nautical miles." },
+      { "question": "Can I convert the other way?", "answer": "Yes, divide nautical miles by 0.868976 to get miles." },
+      { "question": "Why use nautical miles?", "answer": "They relate directly to degrees of latitude on Earth." }
+    ],
+    "disclaimer": "Standard conversion factor; rounding may occur.",
+    "unit": "nmi"
+  },
+  {
+    "slug": "kilowatts-to-horsepower",
+    "title": "Kilowatts to Horsepower Converter",
+    "cluster": "Conversions",
+    "description": "Convert power from kilowatts to horsepower.",
+    "inputs": [
+      { "name": "kw", "label": "Kilowatts", "type": "number", "step": "any", "placeholder": "10" }
+    ],
+    "expression": "kw * 1.34102",
+    "intro": "Enter power in kilowatts to find the equivalent horsepower.",
+    "examples": [
+      { "description": "10 kW ⇒ 13.41 hp" },
+      { "description": "50 kW ⇒ 67.05 hp" }
+    ],
+    "faqs": [
+      { "question": "What is a kilowatt?", "answer": "A kilowatt is 1,000 watts of power." },
+      { "question": "Which horsepower is used?", "answer": "This uses the mechanical horsepower definition (1 kW = 1.34102 hp)." },
+      { "question": "Can I convert horsepower to kilowatts?", "answer": "Yes, divide horsepower by 1.34102." },
+      { "question": "Does this account for efficiency?", "answer": "No, it only converts units of power." }
+    ],
+    "disclaimer": "Uses standard conversion factor.",
+    "unit": "hp"
+  },
+  {
+    "slug": "average-lap-time",
+    "title": "Average Lap Time Calculator",
+    "cluster": "Date & Time",
+    "description": "Find average lap time from total time and laps.",
+    "inputs": [
+      { "name": "total", "label": "Total Time (s)", "type": "number", "step": "any", "placeholder": "300" },
+      { "name": "laps", "label": "Laps", "type": "number", "step": "any", "placeholder": "10" }
+    ],
+    "expression": "total / laps",
+    "intro": "Enter total time and number of laps to compute average lap time.",
+    "examples": [
+      { "description": "300 s over 10 laps ⇒ 30 s/lap" },
+      { "description": "95 s over 4 laps ⇒ 23.75 s/lap" }
+    ],
+    "faqs": [
+      { "question": "Can I use minutes?", "answer": "Yes, convert minutes to seconds first." },
+      { "question": "What if laps is zero?", "answer": "Laps must be greater than zero." },
+      { "question": "Does lap length matter?", "answer": "No, only total time and lap count are used." },
+      { "question": "How do I convert to minutes per lap?", "answer": "Divide the result by 60." }
+    ],
+    "disclaimer": "Assumes consistent lap distance.",
+    "unit": "s/lap"
+  },
+  {
+    "slug": "age-in-hours",
+    "title": "Age in Hours Calculator",
+    "cluster": "Date & Time",
+    "description": "Convert age in years to total hours lived.",
+    "inputs": [
+      { "name": "years", "label": "Age (years)", "type": "number", "step": "any", "placeholder": "30" }
+    ],
+    "expression": "years * 365 * 24",
+    "intro": "Enter your age in years to estimate total hours lived.",
+    "examples": [
+      { "description": "30 years ⇒ 262,800 hours" },
+      { "description": "18.5 years ⇒ 162,060 hours" }
+    ],
+    "faqs": [
+      { "question": "Does this include leap years?", "answer": "No, it uses 365 days per year for simplicity." },
+      { "question": "Can I enter months?", "answer": "Convert months to years before using the calculator." },
+      { "question": "Is the result exact?", "answer": "It's an approximation ignoring leap days and time of day." },
+      { "question": "How can I get minutes?", "answer": "Multiply the hours result by 60." }
+    ],
+    "disclaimer": "Approximate conversion ignoring leap years.",
+    "unit": "hours"
+  },
+  {
+    "slug": "effective-annual-rate",
+    "title": "Effective Annual Rate Calculator",
+    "cluster": "Finance",
+    "description": "Convert nominal rate with compounding to effective annual rate.",
+    "inputs": [
+      { "name": "nominal", "label": "Nominal Rate (%)", "type": "number", "step": "any", "placeholder": "6" },
+      { "name": "periods", "label": "Compounds per Year", "type": "number", "step": "any", "placeholder": "12" }
+    ],
+    "expression": "(Math.pow(1 + nominal/100/periods, periods) - 1) * 100",
+    "intro": "Enter nominal interest rate and compounding periods to compute the effective annual rate.",
+    "examples": [
+      { "description": "Nominal 12% with 12 periods ⇒ 12.68%" },
+      { "description": "Nominal 6% with 2 periods ⇒ 6.09%" }
+    ],
+    "faqs": [
+      { "question": "What is a nominal rate?", "answer": "The stated annual rate before considering compounding." },
+      { "question": "Why use the effective rate?", "answer": "It shows the true annual return after compounding." },
+      { "question": "Can periods be 1?", "answer": "Yes, with annual compounding the effective rate equals nominal." },
+      { "question": "Does this include fees?", "answer": "No, it assumes no additional costs." }
+    ],
+    "disclaimer": "Assumes fixed rate and compounding schedule.",
+    "unit": "%"
+  },
+  {
+    "slug": "down-payment-amount",
+    "title": "Down Payment Amount Calculator",
+    "cluster": "Finance",
+    "description": "Calculate required down payment from home price and percentage.",
+    "inputs": [
+      { "name": "price", "label": "Home Price", "type": "number", "step": "any", "placeholder": "250000" },
+      { "name": "percent", "label": "Down Payment (%)", "type": "number", "step": "any", "placeholder": "20" }
+    ],
+    "expression": "price * percent / 100",
+    "intro": "Enter the home price and down payment percentage to compute the upfront amount.",
+    "examples": [
+      { "description": "$250,000 at 20% ⇒ $50,000" },
+      { "description": "$180,000 at 5% ⇒ $9,000" }
+    ],
+    "faqs": [
+      { "question": "Can I use other currencies?", "answer": "Yes, the result uses the same currency as the price." },
+      { "question": "What if percent is zero?", "answer": "Then no down payment is required, but lenders may not allow it." },
+      { "question": "Are closing costs included?", "answer": "No, this only calculates the down payment amount." },
+      { "question": "Can I enter a decimal percent?", "answer": "Yes, enter values like 12.5 for 12.5%." }
+    ],
+    "disclaimer": "Excludes taxes, fees, and closing costs.",
+    "unit": "USD"
+  },
+  {
+    "slug": "smoking-pack-years",
+    "title": "Smoking Pack Years Calculator",
+    "cluster": "Health",
+    "description": "Estimate smoking exposure in pack years.",
+    "inputs": [
+      { "name": "cigs", "label": "Cigarettes per Day", "type": "number", "step": "any", "placeholder": "20" },
+      { "name": "years", "label": "Years Smoked", "type": "number", "step": "any", "placeholder": "10" }
+    ],
+    "expression": "(cigs / 20) * years",
+    "intro": "Enter cigarettes per day and years smoked to estimate total pack years.",
+    "examples": [
+      { "description": "10 cigs/day for 5 years ⇒ 2.5 pack years" },
+      { "description": "30 cigs/day for 10 years ⇒ 15 pack years" }
+    ],
+    "faqs": [
+      { "question": "What is a pack year?", "answer": "One pack year equals smoking 20 cigarettes per day for one year." },
+      { "question": "Can I enter packs per day?", "answer": "Multiply packs by 20 to get cigarettes." },
+      { "question": "What if I smoked intermittently?", "answer": "Use average daily consumption over the years." },
+      { "question": "Does this assess health risk?", "answer": "It estimates exposure; consult a medical professional for advice." }
+    ],
+    "disclaimer": "For informational purposes only; not medical advice.",
+    "unit": "pack years"
+  },
+  {
+    "slug": "child-medication-dosage",
+    "title": "Child Medication Dosage Calculator",
+    "cluster": "Health",
+    "description": "Compute pediatric drug dose by weight.",
+    "inputs": [
+      { "name": "weight", "label": "Weight (kg)", "type": "number", "step": "any", "placeholder": "20" },
+      { "name": "dosage", "label": "Dosage (mg/kg)", "type": "number", "step": "any", "placeholder": "10" }
+    ],
+    "expression": "weight * dosage",
+    "intro": "Enter child weight and dosage per kilogram to calculate total dose.",
+    "examples": [
+      { "description": "20 kg at 10 mg/kg ⇒ 200 mg" },
+      { "description": "15 kg at 5 mg/kg ⇒ 75 mg" }
+    ],
+    "faqs": [
+      { "question": "Can I use pounds?", "answer": "Convert pounds to kilograms before entering the weight." },
+      { "question": "Does age matter?", "answer": "This calculation only uses weight; follow medical advice for age considerations." },
+      { "question": "Should I round the result?", "answer": "Always round doses according to your doctor's instructions." },
+      { "question": "Is this a prescription?", "answer": "No, consult a healthcare professional before administering medication." }
+    ],
+    "disclaimer": "Educational only; follow medical guidance.",
+    "unit": "mg"
+  },
+  {
+    "slug": "fence-post-concrete-volume",
+    "title": "Fence Post Concrete Volume",
+    "cluster": "Home & DIY",
+    "description": "Estimate concrete volume for fence post holes.",
+    "inputs": [
+      { "name": "posts", "label": "Number of Posts", "type": "number", "step": "1", "placeholder": "4" },
+      { "name": "diameter", "label": "Hole Diameter (in)", "type": "number", "step": "any", "placeholder": "12" },
+      { "name": "depth", "label": "Hole Depth (ft)", "type": "number", "step": "any", "placeholder": "2" }
+    ],
+    "expression": "posts * Math.PI * Math.pow(diameter / 24, 2) * depth",
+    "intro": "Enter number of posts, hole diameter, and depth to estimate concrete volume.",
+    "examples": [
+      { "description": "4 posts, 12 in diameter, 2 ft depth ⇒ 6.28 ft³" },
+      { "description": "6 posts, 10 in diameter, 2.5 ft depth ⇒ 8.18 ft³" }
+    ],
+    "faqs": [
+      { "question": "Why divide diameter by 24?", "answer": "It converts diameter in inches to radius in feet." },
+      { "question": "Should I buy extra concrete?", "answer": "Yes, purchase about 10% more to allow for spillage." },
+      { "question": "Can I use metric units?", "answer": "Convert measurements to feet and inches before using." },
+      { "question": "Does this include post volume?", "answer": "No, it assumes holes are filled entirely with concrete." }
+    ],
+    "disclaimer": "Estimate only; adjust for actual site conditions.",
+    "unit": "ft³"
+  },
+  {
+    "slug": "pond-liner-size",
+    "title": "Pond Liner Size Calculator",
+    "cluster": "Home & DIY",
+    "description": "Determine liner dimensions for a rectangular pond.",
+    "inputs": [
+      { "name": "length", "label": "Length (ft)", "type": "number", "step": "any", "placeholder": "10" },
+      { "name": "width", "label": "Width (ft)", "type": "number", "step": "any", "placeholder": "6" },
+      { "name": "depth", "label": "Depth (ft)", "type": "number", "step": "any", "placeholder": "2" },
+      { "name": "overlap", "label": "Overlap (ft)", "type": "number", "step": "any", "placeholder": "1" }
+    ],
+    "expression": "(length + 2*depth + 2*overlap) * (width + 2*depth + 2*overlap)",
+    "intro": "Enter pond length, width, depth, and desired overlap to compute liner area.",
+    "examples": [
+      { "description": "10×6 ft pond, 2 ft depth, 1 ft overlap ⇒ 192 ft²" },
+      { "description": "8×4 ft pond, 1.5 ft depth, 0.5 ft overlap ⇒ 96 ft²" }
+    ],
+    "faqs": [
+      { "question": "Why add overlap?", "answer": "Overlap allows for securing the liner around pond edges." },
+      { "question": "Does shape matter?", "answer": "This calculator assumes a rectangular pond." },
+      { "question": "Can I use meters?", "answer": "Convert measurements to feet before entering." },
+      { "question": "How much extra should I buy?", "answer": "Purchase a bit more to accommodate folds and irregularities." }
+    ],
+    "disclaimer": "Simplified estimate for rectangular ponds.",
+    "unit": "ft²"
+  },
+  {
+    "slug": "matrix-2x2-determinant",
+    "title": "2x2 Matrix Determinant Calculator",
+    "cluster": "Math",
+    "description": "Compute determinant of a 2×2 matrix.",
+    "inputs": [
+      { "name": "a", "label": "a", "type": "number", "step": "any", "placeholder": "1" },
+      { "name": "b", "label": "b", "type": "number", "step": "any", "placeholder": "2" },
+      { "name": "c", "label": "c", "type": "number", "step": "any", "placeholder": "3" },
+      { "name": "d", "label": "d", "type": "number", "step": "any", "placeholder": "4" }
+    ],
+    "expression": "a*d - b*c",
+    "intro": "Enter a, b, c, d to compute the determinant ad − bc.",
+    "examples": [
+      { "description": "|1 2; 3 4| ⇒ -2" },
+      { "description": "|5 7; 2 6| ⇒ 16" }
+    ],
+    "faqs": [
+      { "question": "What does the determinant represent?", "answer": "It indicates area scaling and matrix invertibility." },
+      { "question": "Can the determinant be zero?", "answer": "Yes, zero means the matrix is singular." },
+      { "question": "Do units matter?", "answer": "Determinant shares the squared unit of the matrix entries." },
+      { "question": "Can I use complex numbers?", "answer": "This calculator handles real numbers only." }
+    ],
+    "disclaimer": "For simple numeric matrices only.",
+    "unit": ""
+  },
+  {
+    "slug": "cylinder-surface-area",
+    "title": "Cylinder Surface Area Calculator",
+    "cluster": "Math",
+    "description": "Calculate total surface area of a cylinder.",
+    "inputs": [
+      { "name": "radius", "label": "Radius", "type": "number", "step": "any", "placeholder": "3" },
+      { "name": "height", "label": "Height", "type": "number", "step": "any", "placeholder": "5" }
+    ],
+    "expression": "2 * Math.PI * radius * (height + radius)",
+    "intro": "Enter radius and height to compute 2πr(h + r).",
+    "examples": [
+      { "description": "r=3, h=5 ⇒ 150.80 sq units" },
+      { "description": "r=2, h=4 ⇒ 75.40 sq units" }
+    ],
+    "faqs": [
+      { "question": "What if I know diameter?", "answer": "Divide diameter by 2 to get radius." },
+      { "question": "Are units required?", "answer": "Use any consistent unit; result is in squared form." },
+      { "question": "Does it include top and bottom?", "answer": "Yes, total surface area covers both bases and the side." },
+      { "question": "Can height be zero?", "answer": "Yes, then the result is the area of two circles." }
+    ],
+    "disclaimer": "Ensure measurements use the same units.",
+    "unit": "sq units"
+  },
+  {
+    "slug": "data-transfer-rate",
+    "title": "Data Transfer Rate Calculator",
+    "cluster": "Technology",
+    "description": "Compute transfer speed from file size and time.",
+    "inputs": [
+      { "name": "size", "label": "File Size (MB)", "type": "number", "step": "any", "placeholder": "500" },
+      { "name": "time", "label": "Time (s)", "type": "number", "step": "any", "placeholder": "50" }
+    ],
+    "expression": "size / time",
+    "intro": "Enter file size and transfer time to get rate in MB/s.",
+    "examples": [
+      { "description": "500 MB in 50 s ⇒ 10 MB/s" },
+      { "description": "700 MB in 35 s ⇒ 20 MB/s" }
+    ],
+    "faqs": [
+      { "question": "Can I use GB?", "answer": "Yes, convert to MB or adjust units accordingly." },
+      { "question": "How do I get Mbps?", "answer": "Multiply MB/s by 8 to obtain Mbps." },
+      { "question": "What if time is zero?", "answer": "Time must be greater than zero." },
+      { "question": "Does this include overhead?", "answer": "No, actual transfer speeds may be slightly lower." }
+    ],
+    "disclaimer": "Ideal rate; real-world performance varies.",
+    "unit": "MB/s"
+  },
+  {
+    "slug": "series-resistance",
+    "title": "Series Resistance Calculator",
+    "cluster": "Technology",
+    "description": "Add up resistor values connected in series.",
+    "inputs": [
+      { "name": "r1", "label": "R1 (Ω)", "type": "number", "step": "any", "placeholder": "10" },
+      { "name": "r2", "label": "R2 (Ω)", "type": "number", "step": "any", "placeholder": "20" },
+      { "name": "r3", "label": "R3 (Ω)", "type": "number", "step": "any", "placeholder": "30" }
+    ],
+    "expression": "r1 + r2 + r3",
+    "intro": "Enter resistor values to compute the total series resistance.",
+    "examples": [
+      { "description": "10 Ω, 20 Ω, 30 Ω ⇒ 60 Ω" },
+      { "description": "5 Ω, 10 Ω, 15 Ω ⇒ 30 Ω" }
+    ],
+    "faqs": [
+      { "question": "Do unused fields affect the result?", "answer": "Set unused resistors to 0 ohms." },
+      { "question": "Can I add more resistors?", "answer": "Use the formula and sum additional resistances manually." },
+      { "question": "Are units important?", "answer": "All inputs must be in ohms for correct results." },
+      { "question": "Does wire resistance matter?", "answer": "This simplified calculation ignores wire and temperature effects." }
+    ],
+    "disclaimer": "Ideal calculation; real circuits have additional resistance.",
+    "unit": "Ω"
+  },
+  {
+    "slug": "screen-time-percentage",
+    "title": "Screen Time Percentage Calculator",
+    "cluster": "Other",
+    "description": "See screen time as a percentage of awake hours.",
+    "inputs": [
+      { "name": "screen", "label": "Screen Hours", "type": "number", "step": "any", "placeholder": "5" },
+      { "name": "awake", "label": "Awake Hours", "type": "number", "step": "any", "placeholder": "16" }
+    ],
+    "expression": "(screen / awake) * 100",
+    "intro": "Enter daily screen hours and awake hours to find the screen-time percentage.",
+    "examples": [
+      { "description": "5 h screen of 16 h awake ⇒ 31.25%" },
+      { "description": "2 h screen of 15 h awake ⇒ 13.33%" }
+    ],
+    "faqs": [
+      { "question": "Should I include work hours?", "answer": "Include any time spent in front of a screen." },
+      { "question": "What if awake hours vary?", "answer": "Use an average day for consistency." },
+      { "question": "Can I exceed 100%?", "answer": "No, screen hours cannot surpass awake hours." },
+      { "question": "How can I reduce the percentage?", "answer": "Limit screen use or increase active, screen-free time." }
+    ],
+    "disclaimer": "Approximate lifestyle indicator only.",
+    "unit": "%"
+  },
+  {
+    "slug": "commute-carbon-footprint",
+    "title": "Commute Carbon Footprint Calculator",
+    "cluster": "Other",
+    "description": "Estimate CO₂ from daily car commute.",
+    "inputs": [
+      { "name": "distance", "label": "One-way Distance (km)", "type": "number", "step": "any", "placeholder": "15" },
+      { "name": "factor", "label": "Emission Factor (kg/km)", "type": "number", "step": "any", "placeholder": "0.2" }
+    ],
+    "expression": "distance * 2 * factor",
+    "intro": "Enter one-way distance and vehicle emission factor to estimate daily CO₂ emissions.",
+    "examples": [
+      { "description": "15 km commute, 0.2 kg/km ⇒ 6 kg CO₂" },
+      { "description": "8 km commute, 0.18 kg/km ⇒ 2.88 kg CO₂" }
+    ],
+    "faqs": [
+      { "question": "Why multiply by 2?", "answer": "It accounts for a round trip." },
+      { "question": "Where do I get the emission factor?", "answer": "Use your vehicle's average CO₂ emissions per kilometer." },
+      { "question": "Can I estimate weekly emissions?", "answer": "Multiply the result by the number of commuting days." },
+      { "question": "Does it account for traffic?", "answer": "No, it's a simple distance-based estimate." }
+    ],
+    "disclaimer": "Approximate calculation; actual emissions vary with driving conditions.",
+    "unit": "kg CO₂"
+  }
 ]

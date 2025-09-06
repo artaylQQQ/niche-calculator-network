@@ -1,0 +1,38 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Series Resistance Calculator"
+description: "Add up resistor values connected in series."
+updated: "2025-05-31"
+cluster: "Technology"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "series-resistance",
+  title: "Series Resistance Calculator",
+  locale: "en",
+  intro: "Enter resistor values to compute the total series resistance.",
+  unit: "Ω",
+  cluster: "Technology",
+  inputs: [
+    { name: "r1", label: "R1 (Ω)", type: "number", step: "any", placeholder: "10" },
+    { name: "r2", label: "R2 (Ω)", type: "number", step: "any", placeholder: "20" },
+    { name: "r3", label: "R3 (Ω)", type: "number", step: "any", placeholder: "30" }
+  ],
+  expression: "r1 + r2 + r3",
+  examples: [
+    { description: "10 Ω, 20 Ω, 30 Ω ⇒ 60 Ω" },
+    { description: "5 Ω, 10 Ω, 15 Ω ⇒ 30 Ω" }
+  ],
+  faqs: [
+    { question: "Do unused fields affect the result?", answer: "Set unused resistors to 0 ohms." },
+    { question: "Can I add more resistors?", answer: "Use the formula and sum additional resistances manually." },
+    { question: "Are units important?", answer: "All inputs must be in ohms for correct results." },
+    { question: "Does wire resistance matter?", answer: "This simplified calculation ignores wire and temperature effects." }
+  ],
+  disclaimer: "Ideal calculation; real circuits have additional resistance.",
+};
+
+<Calculator schema={schema} />
+

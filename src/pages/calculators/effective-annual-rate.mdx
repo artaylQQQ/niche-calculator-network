@@ -1,0 +1,37 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Effective Annual Rate Calculator"
+description: "Convert nominal rate with compounding to effective annual rate."
+updated: "2025-05-31"
+cluster: "Finance"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "effective-annual-rate",
+  title: "Effective Annual Rate Calculator",
+  locale: "en",
+  intro: "Enter nominal interest rate and compounding periods to compute the effective annual rate.",
+  unit: "%",
+  cluster: "Finance",
+  inputs: [
+    { name: "nominal", label: "Nominal Rate (%)", type: "number", step: "any", placeholder: "6" },
+    { name: "periods", label: "Compounds per Year", type: "number", step: "any", placeholder: "12" }
+  ],
+  expression: "(Math.pow(1 + nominal/100/periods, periods) - 1) * 100",
+  examples: [
+    { description: "Nominal 12% with 12 periods ⇒ 12.68%" },
+    { description: "Nominal 6% with 2 periods ⇒ 6.09%" }
+  ],
+  faqs: [
+    { question: "What is a nominal rate?", answer: "The stated annual rate before considering compounding." },
+    { question: "Why use the effective rate?", answer: "It shows the true annual return after compounding." },
+    { question: "Can periods be 1?", answer: "Yes, with annual compounding the effective rate equals nominal." },
+    { question: "Does this include fees?", answer: "No, it assumes no additional costs." }
+  ],
+  disclaimer: "Assumes fixed rate and compounding schedule.",
+};
+
+<Calculator schema={schema} />
+

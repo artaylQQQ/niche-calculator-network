@@ -1,0 +1,37 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Screen Time Percentage Calculator"
+description: "See screen time as a percentage of awake hours."
+updated: "2025-05-31"
+cluster: "Other"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "screen-time-percentage",
+  title: "Screen Time Percentage Calculator",
+  locale: "en",
+  intro: "Enter daily screen hours and awake hours to find the screen-time percentage.",
+  unit: "%",
+  cluster: "Other",
+  inputs: [
+    { name: "screen", label: "Screen Hours", type: "number", step: "any", placeholder: "5" },
+    { name: "awake", label: "Awake Hours", type: "number", step: "any", placeholder: "16" }
+  ],
+  expression: "(screen / awake) * 100",
+  examples: [
+    { description: "5 h screen of 16 h awake ⇒ 31.25%" },
+    { description: "2 h screen of 15 h awake ⇒ 13.33%" }
+  ],
+  faqs: [
+    { question: "Should I include work hours?", answer: "Include any time spent in front of a screen." },
+    { question: "What if awake hours vary?", answer: "Use an average day for consistency." },
+    { question: "Can I exceed 100%?", answer: "No, screen hours cannot surpass awake hours." },
+    { question: "How can I reduce the percentage?", answer: "Limit screen use or increase active, screen-free time." }
+  ],
+  disclaimer: "Approximate lifestyle indicator only.",
+};
+
+<Calculator schema={schema} />
+

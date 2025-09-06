@@ -1,0 +1,36 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Miles to Nautical Miles Converter"
+description: "Convert statute miles to nautical miles."
+updated: "2025-05-31"
+cluster: "Conversions"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "miles-to-nautical-miles",
+  title: "Miles to Nautical Miles Converter",
+  locale: "en",
+  intro: "Enter distance in miles to see the equivalent in nautical miles.",
+  unit: "nmi",
+  cluster: "Conversions",
+  inputs: [
+    { name: "miles", label: "Miles", type: "number", step: "any", placeholder: "10" }
+  ],
+  expression: "miles * 0.868976",
+  examples: [
+    { description: "10 miles ⇒ 8.69 nmi" },
+    { description: "25 miles ⇒ 21.72 nmi" }
+  ],
+  faqs: [
+    { question: "What is a nautical mile?", answer: "A nautical mile equals 1,852 meters and is used in marine and air navigation." },
+    { question: "Is this conversion exact?", answer: "Yes, it uses the defined factor 1 mile = 0.868976 nautical miles." },
+    { question: "Can I convert the other way?", answer: "Yes, divide nautical miles by 0.868976 to get miles." },
+    { question: "Why use nautical miles?", answer: "They relate directly to degrees of latitude on Earth." }
+  ],
+  disclaimer: "Standard conversion factor; rounding may occur.",
+};
+
+<Calculator schema={schema} />
+

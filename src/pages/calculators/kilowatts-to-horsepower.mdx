@@ -1,0 +1,36 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Kilowatts to Horsepower Converter"
+description: "Convert power from kilowatts to horsepower."
+updated: "2025-05-31"
+cluster: "Conversions"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "kilowatts-to-horsepower",
+  title: "Kilowatts to Horsepower Converter",
+  locale: "en",
+  intro: "Enter power in kilowatts to find the equivalent horsepower.",
+  unit: "hp",
+  cluster: "Conversions",
+  inputs: [
+    { name: "kw", label: "Kilowatts", type: "number", step: "any", placeholder: "10" }
+  ],
+  expression: "kw * 1.34102",
+  examples: [
+    { description: "10 kW ⇒ 13.41 hp" },
+    { description: "50 kW ⇒ 67.05 hp" }
+  ],
+  faqs: [
+    { question: "What is a kilowatt?", answer: "A kilowatt is 1,000 watts of power." },
+    { question: "Which horsepower is used?", answer: "This uses the mechanical horsepower definition (1 kW = 1.34102 hp)." },
+    { question: "Can I convert horsepower to kilowatts?", answer: "Yes, divide horsepower by 1.34102." },
+    { question: "Does this account for efficiency?", answer: "No, it only converts units of power." }
+  ],
+  disclaimer: "Uses standard conversion factor.",
+};
+
+<Calculator schema={schema} />
+

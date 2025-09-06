@@ -1,0 +1,39 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "2x2 Matrix Determinant Calculator"
+description: "Compute determinant of a 2×2 matrix."
+updated: "2025-05-31"
+cluster: "Math"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "matrix-2x2-determinant",
+  title: "2x2 Matrix Determinant Calculator",
+  locale: "en",
+  intro: "Enter a, b, c, d to compute the determinant ad − bc.",
+  unit: "",
+  cluster: "Math",
+  inputs: [
+    { name: "a", label: "a", type: "number", step: "any", placeholder: "1" },
+    { name: "b", label: "b", type: "number", step: "any", placeholder: "2" },
+    { name: "c", label: "c", type: "number", step: "any", placeholder: "3" },
+    { name: "d", label: "d", type: "number", step: "any", placeholder: "4" }
+  ],
+  expression: "a*d - b*c",
+  examples: [
+    { description: "|1 2; 3 4| ⇒ -2" },
+    { description: "|5 7; 2 6| ⇒ 16" }
+  ],
+  faqs: [
+    { question: "What does the determinant represent?", answer: "It indicates area scaling and matrix invertibility." },
+    { question: "Can the determinant be zero?", answer: "Yes, zero means the matrix is singular." },
+    { question: "Do units matter?", answer: "Determinant shares the squared unit of the matrix entries." },
+    { question: "Can I use complex numbers?", answer: "This calculator handles real numbers only." }
+  ],
+  disclaimer: "For simple numeric matrices only.",
+};
+
+<Calculator schema={schema} />
+

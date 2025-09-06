@@ -1,0 +1,38 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Fence Post Concrete Volume"
+description: "Estimate concrete volume for fence post holes."
+updated: "2025-05-31"
+cluster: "Home & DIY"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "fence-post-concrete-volume",
+  title: "Fence Post Concrete Volume",
+  locale: "en",
+  intro: "Enter number of posts, hole diameter, and depth to estimate concrete volume.",
+  unit: "ft³",
+  cluster: "Home & DIY",
+  inputs: [
+    { name: "posts", label: "Number of Posts", type: "number", step: "1", placeholder: "4" },
+    { name: "diameter", label: "Hole Diameter (in)", type: "number", step: "any", placeholder: "12" },
+    { name: "depth", label: "Hole Depth (ft)", type: "number", step: "any", placeholder: "2" }
+  ],
+  expression: "posts * Math.PI * Math.pow(diameter / 24, 2) * depth",
+  examples: [
+    { description: "4 posts, 12 in diameter, 2 ft depth ⇒ 6.28 ft³" },
+    { description: "6 posts, 10 in diameter, 2.5 ft depth ⇒ 8.18 ft³" }
+  ],
+  faqs: [
+    { question: "Why divide diameter by 24?", answer: "It converts diameter in inches to radius in feet." },
+    { question: "Should I buy extra concrete?", answer: "Yes, purchase about 10% more to allow for spillage." },
+    { question: "Can I use metric units?", answer: "Convert measurements to feet and inches before using." },
+    { question: "Does this include post volume?", answer: "No, it assumes holes are filled entirely with concrete." }
+  ],
+  disclaimer: "Estimate only; adjust for actual site conditions.",
+};
+
+<Calculator schema={schema} />
+

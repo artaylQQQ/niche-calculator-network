@@ -1,0 +1,37 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Down Payment Amount Calculator"
+description: "Calculate required down payment from home price and percentage."
+updated: "2025-05-31"
+cluster: "Finance"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "down-payment-amount",
+  title: "Down Payment Amount Calculator",
+  locale: "en",
+  intro: "Enter the home price and down payment percentage to compute the upfront amount.",
+  unit: "USD",
+  cluster: "Finance",
+  inputs: [
+    { name: "price", label: "Home Price", type: "number", step: "any", placeholder: "250000" },
+    { name: "percent", label: "Down Payment (%)", type: "number", step: "any", placeholder: "20" }
+  ],
+  expression: "price * percent / 100",
+  examples: [
+    { description: "$250,000 at 20% ⇒ $50,000" },
+    { description: "$180,000 at 5% ⇒ $9,000" }
+  ],
+  faqs: [
+    { question: "Can I use other currencies?", answer: "Yes, the result uses the same currency as the price." },
+    { question: "What if percent is zero?", answer: "Then no down payment is required, but lenders may not allow it." },
+    { question: "Are closing costs included?", answer: "No, this only calculates the down payment amount." },
+    { question: "Can I enter a decimal percent?", answer: "Yes, enter values like 12.5 for 12.5%." }
+  ],
+  disclaimer: "Excludes taxes, fees, and closing costs.",
+};
+
+<Calculator schema={schema} />
+

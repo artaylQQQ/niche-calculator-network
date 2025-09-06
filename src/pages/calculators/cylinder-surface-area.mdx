@@ -1,0 +1,37 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Cylinder Surface Area Calculator"
+description: "Calculate total surface area of a cylinder."
+updated: "2025-05-31"
+cluster: "Math"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "cylinder-surface-area",
+  title: "Cylinder Surface Area Calculator",
+  locale: "en",
+  intro: "Enter radius and height to compute 2πr(h + r).",
+  unit: "sq units",
+  cluster: "Math",
+  inputs: [
+    { name: "radius", label: "Radius", type: "number", step: "any", placeholder: "3" },
+    { name: "height", label: "Height", type: "number", step: "any", placeholder: "5" }
+  ],
+  expression: "2 * Math.PI * radius * (height + radius)",
+  examples: [
+    { description: "r=3, h=5 ⇒ 150.80 sq units" },
+    { description: "r=2, h=4 ⇒ 75.40 sq units" }
+  ],
+  faqs: [
+    { question: "What if I know diameter?", answer: "Divide diameter by 2 to get radius." },
+    { question: "Are units required?", answer: "Use any consistent unit; result is in squared form." },
+    { question: "Does it include top and bottom?", answer: "Yes, total surface area covers both bases and the side." },
+    { question: "Can height be zero?", answer: "Yes, then the result is the area of two circles." }
+  ],
+  disclaimer: "Ensure measurements use the same units.",
+};
+
+<Calculator schema={schema} />
+

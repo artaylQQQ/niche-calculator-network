@@ -1,0 +1,37 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Average Lap Time Calculator"
+description: "Find average lap time from total time and laps."
+updated: "2025-05-31"
+cluster: "Date & Time"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "average-lap-time",
+  title: "Average Lap Time Calculator",
+  locale: "en",
+  intro: "Enter total time and number of laps to compute average lap time.",
+  unit: "s/lap",
+  cluster: "Date & Time",
+  inputs: [
+    { name: "total", label: "Total Time (s)", type: "number", step: "any", placeholder: "300" },
+    { name: "laps", label: "Laps", type: "number", step: "any", placeholder: "10" }
+  ],
+  expression: "total / laps",
+  examples: [
+    { description: "300 s over 10 laps ⇒ 30 s/lap" },
+    { description: "95 s over 4 laps ⇒ 23.75 s/lap" }
+  ],
+  faqs: [
+    { question: "Can I use minutes?", answer: "Yes, convert minutes to seconds first." },
+    { question: "What if laps is zero?", answer: "Laps must be greater than zero." },
+    { question: "Does lap length matter?", answer: "No, only total time and lap count are used." },
+    { question: "How do I convert to minutes per lap?", answer: "Divide the result by 60." }
+  ],
+  disclaimer: "Assumes consistent lap distance.",
+};
+
+<Calculator schema={schema} />
+

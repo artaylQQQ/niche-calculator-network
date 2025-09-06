@@ -1,0 +1,39 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Pond Liner Size Calculator"
+description: "Determine liner dimensions for a rectangular pond."
+updated: "2025-05-31"
+cluster: "Home & DIY"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "pond-liner-size",
+  title: "Pond Liner Size Calculator",
+  locale: "en",
+  intro: "Enter pond length, width, depth, and desired overlap to compute liner area.",
+  unit: "ft²",
+  cluster: "Home & DIY",
+  inputs: [
+    { name: "length", label: "Length (ft)", type: "number", step: "any", placeholder: "10" },
+    { name: "width", label: "Width (ft)", type: "number", step: "any", placeholder: "6" },
+    { name: "depth", label: "Depth (ft)", type: "number", step: "any", placeholder: "2" },
+    { name: "overlap", label: "Overlap (ft)", type: "number", step: "any", placeholder: "1" }
+  ],
+  expression: "(length + 2*depth + 2*overlap) * (width + 2*depth + 2*overlap)",
+  examples: [
+    { description: "10×6 ft pond, 2 ft depth, 1 ft overlap ⇒ 192 ft²" },
+    { description: "8×4 ft pond, 1.5 ft depth, 0.5 ft overlap ⇒ 96 ft²" }
+  ],
+  faqs: [
+    { question: "Why add overlap?", answer: "Overlap allows for securing the liner around pond edges." },
+    { question: "Does shape matter?", answer: "This calculator assumes a rectangular pond." },
+    { question: "Can I use meters?", answer: "Convert measurements to feet before entering." },
+    { question: "How much extra should I buy?", answer: "Purchase a bit more to accommodate folds and irregularities." }
+  ],
+  disclaimer: "Simplified estimate for rectangular ponds.",
+};
+
+<Calculator schema={schema} />
+

@@ -1,0 +1,37 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Data Transfer Rate Calculator"
+description: "Compute transfer speed from file size and time."
+updated: "2025-05-31"
+cluster: "Technology"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "data-transfer-rate",
+  title: "Data Transfer Rate Calculator",
+  locale: "en",
+  intro: "Enter file size and transfer time to get rate in MB/s.",
+  unit: "MB/s",
+  cluster: "Technology",
+  inputs: [
+    { name: "size", label: "File Size (MB)", type: "number", step: "any", placeholder: "500" },
+    { name: "time", label: "Time (s)", type: "number", step: "any", placeholder: "50" }
+  ],
+  expression: "size / time",
+  examples: [
+    { description: "500 MB in 50 s ⇒ 10 MB/s" },
+    { description: "700 MB in 35 s ⇒ 20 MB/s" }
+  ],
+  faqs: [
+    { question: "Can I use GB?", answer: "Yes, convert to MB or adjust units accordingly." },
+    { question: "How do I get Mbps?", answer: "Multiply MB/s by 8 to obtain Mbps." },
+    { question: "What if time is zero?", answer: "Time must be greater than zero." },
+    { question: "Does this include overhead?", answer: "No, actual transfer speeds may be slightly lower." }
+  ],
+  disclaimer: "Ideal rate; real-world performance varies.",
+};
+
+<Calculator schema={schema} />
+

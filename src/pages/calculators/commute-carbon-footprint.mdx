@@ -1,0 +1,37 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Commute Carbon Footprint Calculator"
+description: "Estimate CO₂ from daily car commute."
+updated: "2025-05-31"
+cluster: "Other"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "commute-carbon-footprint",
+  title: "Commute Carbon Footprint Calculator",
+  locale: "en",
+  intro: "Enter one-way distance and vehicle emission factor to estimate daily CO₂ emissions.",
+  unit: "kg CO₂",
+  cluster: "Other",
+  inputs: [
+    { name: "distance", label: "One-way Distance (km)", type: "number", step: "any", placeholder: "15" },
+    { name: "factor", label: "Emission Factor (kg/km)", type: "number", step: "any", placeholder: "0.2" }
+  ],
+  expression: "distance * 2 * factor",
+  examples: [
+    { description: "15 km commute, 0.2 kg/km ⇒ 6 kg CO₂" },
+    { description: "8 km commute, 0.18 kg/km ⇒ 2.88 kg CO₂" }
+  ],
+  faqs: [
+    { question: "Why multiply by 2?", answer: "It accounts for a round trip." },
+    { question: "Where do I get the emission factor?", answer: "Use your vehicle's average CO₂ emissions per kilometer." },
+    { question: "Can I estimate weekly emissions?", answer: "Multiply the result by the number of commuting days." },
+    { question: "Does it account for traffic?", answer: "No, it's a simple distance-based estimate." }
+  ],
+  disclaimer: "Approximate calculation; actual emissions vary with driving conditions.",
+};
+
+<Calculator schema={schema} />
+

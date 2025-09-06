@@ -1,0 +1,37 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Child Medication Dosage Calculator"
+description: "Compute pediatric drug dose by weight."
+updated: "2025-05-31"
+cluster: "Health"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "child-medication-dosage",
+  title: "Child Medication Dosage Calculator",
+  locale: "en",
+  intro: "Enter child weight and dosage per kilogram to calculate total dose.",
+  unit: "mg",
+  cluster: "Health",
+  inputs: [
+    { name: "weight", label: "Weight (kg)", type: "number", step: "any", placeholder: "20" },
+    { name: "dosage", label: "Dosage (mg/kg)", type: "number", step: "any", placeholder: "10" }
+  ],
+  expression: "weight * dosage",
+  examples: [
+    { description: "20 kg at 10 mg/kg ⇒ 200 mg" },
+    { description: "15 kg at 5 mg/kg ⇒ 75 mg" }
+  ],
+  faqs: [
+    { question: "Can I use pounds?", answer: "Convert pounds to kilograms before entering the weight." },
+    { question: "Does age matter?", answer: "This calculation only uses weight; follow medical advice for age considerations." },
+    { question: "Should I round the result?", answer: "Always round doses according to your doctor's instructions." },
+    { question: "Is this a prescription?", answer: "No, consult a healthcare professional before administering medication." }
+  ],
+  disclaimer: "Educational only; follow medical guidance.",
+};
+
+<Calculator schema={schema} />
+

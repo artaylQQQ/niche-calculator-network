@@ -1,0 +1,37 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Smoking Pack Years Calculator"
+description: "Estimate smoking exposure in pack years."
+updated: "2025-05-31"
+cluster: "Health"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "smoking-pack-years",
+  title: "Smoking Pack Years Calculator",
+  locale: "en",
+  intro: "Enter cigarettes per day and years smoked to estimate total pack years.",
+  unit: "pack years",
+  cluster: "Health",
+  inputs: [
+    { name: "cigs", label: "Cigarettes per Day", type: "number", step: "any", placeholder: "20" },
+    { name: "years", label: "Years Smoked", type: "number", step: "any", placeholder: "10" }
+  ],
+  expression: "(cigs / 20) * years",
+  examples: [
+    { description: "10 cigs/day for 5 years ⇒ 2.5 pack years" },
+    { description: "30 cigs/day for 10 years ⇒ 15 pack years" }
+  ],
+  faqs: [
+    { question: "What is a pack year?", answer: "One pack year equals smoking 20 cigarettes per day for one year." },
+    { question: "Can I enter packs per day?", answer: "Multiply packs by 20 to get cigarettes." },
+    { question: "What if I smoked intermittently?", answer: "Use average daily consumption over the years." },
+    { question: "Does this assess health risk?", answer: "It estimates exposure; consult a medical professional for advice." }
+  ],
+  disclaimer: "For informational purposes only; not medical advice.",
+};
+
+<Calculator schema={schema} />
+
