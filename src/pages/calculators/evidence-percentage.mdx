@@ -1,0 +1,61 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Evidence Percentage Calculator"
+description: "Find percentage of evidence weight vs total."
+updated: "2025-09-06"
+cluster: "Math"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "evidence-percentage",
+  title: "Evidence Percentage Calculator",
+  intro:
+    "Determine what percentage of total evidence a specific item represents.",
+  locale: "en",
+  cluster: "Math",
+  unit: "%",
+  inputs: [
+    {
+      name: "part",
+      label: "Item Weight",
+      type: "number",
+      step: "any",
+      required: true,
+    },
+    {
+      name: "total",
+      label: "Total Weight",
+      type: "number",
+      step: "any",
+      required: true,
+    },
+  ],
+  expression: "part / total * 100",
+  examples: [
+    { description: "30 of 120 pages ⇒ 25%" },
+    { description: "15 of 60 exhibits ⇒ 25%" },
+  ],
+  faqs: [
+    {
+      question: "Why calculate evidence percentage?",
+      answer: "It helps assess the relative weight of an item.",
+    },
+    {
+      question: "Can total be zero?",
+      answer: "No, total must be greater than zero.",
+    },
+    {
+      question: "Does it work for digital files?",
+      answer: "Yes, use file sizes or counts.",
+    },
+    {
+      question: "Can I enter decimals?",
+      answer: "Yes, decimal values are supported.",
+    },
+  ],
+  disclaimer: "Use results as a rough metric; legal relevance varies.",
+};
+
+<Calculator schema={schema} />

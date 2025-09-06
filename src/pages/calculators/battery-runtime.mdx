@@ -1,0 +1,61 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Battery Runtime Calculator"
+description: "Estimate battery runtime from capacity and load."
+updated: "2025-09-06"
+cluster: "Technology"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "battery-runtime",
+  title: "Battery Runtime Calculator",
+  intro:
+    "Estimate how many hours a battery will run a device based on capacity and load.",
+  locale: "en",
+  cluster: "Technology",
+  unit: "hours",
+  inputs: [
+    {
+      name: "capacity",
+      label: "Capacity (Ah)",
+      type: "number",
+      step: "any",
+      required: true,
+    },
+    {
+      name: "load",
+      label: "Load (A)",
+      type: "number",
+      step: "any",
+      required: true,
+    },
+  ],
+  expression: "capacity / load",
+  examples: [
+    { description: "5 Ah battery at 1 A load ⇒ 5 h" },
+    { description: "2 Ah battery at 0.5 A load ⇒ 4 h" },
+  ],
+  faqs: [
+    {
+      question: "Does it account for efficiency?",
+      answer: "No, it assumes 100% efficiency.",
+    },
+    {
+      question: "What if the load varies?",
+      answer: "Use the average current draw.",
+    },
+    {
+      question: "Can capacity be in mAh?",
+      answer: "Convert mAh to Ah before using.",
+    },
+    {
+      question: "Is the result exact?",
+      answer: "Real-world runtime may be lower.",
+    },
+  ],
+  disclaimer: "Actual runtime depends on battery condition and environment.",
+};
+
+<Calculator schema={schema} />

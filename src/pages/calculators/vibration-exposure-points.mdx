@@ -1,0 +1,62 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Vibration Exposure Points Calculator"
+description: "Calculate hand-arm vibration exposure points."
+updated: "2025-09-06"
+cluster: "Health"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "vibration-exposure-points",
+  title: "Vibration Exposure Points Calculator",
+  intro:
+    "Calculate daily exposure points for hand-arm vibration using acceleration and hours.",
+  locale: "en",
+  cluster: "Health",
+  unit: "points",
+  inputs: [
+    {
+      name: "acc",
+      label: "Acceleration (m/s²)",
+      type: "number",
+      step: "any",
+      required: true,
+    },
+    {
+      name: "hours",
+      label: "Exposure Hours",
+      type: "number",
+      step: "any",
+      required: true,
+    },
+  ],
+  expression: "acc * acc * hours",
+  examples: [
+    { description: "5 m/s² for 2 h ⇒ 50 points" },
+    { description: "8 m/s² for 0.5 h ⇒ 32 points" },
+  ],
+  faqs: [
+    {
+      question: "What are exposure points?",
+      answer: "A simple metric for daily vibration dose.",
+    },
+    {
+      question: "Does this follow HSE guidance?",
+      answer:
+        "It uses acceleration squared times hours, similar to HSE's method.",
+    },
+    {
+      question: "Is higher better or worse?",
+      answer: "Higher points indicate greater exposure.",
+    },
+    {
+      question: "How can I reduce points?",
+      answer: "Lower the tool's vibration level or limit the exposure time.",
+    },
+  ],
+  disclaimer: "Compare results with regulatory exposure limits.",
+};
+
+<Calculator schema={schema} />

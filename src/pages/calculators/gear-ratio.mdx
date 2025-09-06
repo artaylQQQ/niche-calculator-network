@@ -1,0 +1,61 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Gear Ratio Calculator"
+description: "Calculate gear ratio from tooth counts."
+updated: "2025-09-06"
+cluster: "Technology"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "gear-ratio",
+  title: "Gear Ratio Calculator",
+  intro:
+    "Calculate gear ratio by dividing driven gear teeth by driving gear teeth.",
+  locale: "en",
+  cluster: "Technology",
+  unit: "ratio",
+  inputs: [
+    {
+      name: "driving",
+      label: "Driving Gear Teeth",
+      type: "number",
+      step: "any",
+      required: true,
+    },
+    {
+      name: "driven",
+      label: "Driven Gear Teeth",
+      type: "number",
+      step: "any",
+      required: true,
+    },
+  ],
+  expression: "driven / driving",
+  examples: [
+    { description: "Driven 40, driving 20 ⇒ 2" },
+    { description: "Driven 18, driving 12 ⇒ 1.5" },
+  ],
+  faqs: [
+    {
+      question: "What is gear ratio?",
+      answer: "The relationship between driver and driven gear speeds.",
+    },
+    {
+      question: "What does a higher ratio mean?",
+      answer: "Higher torque but lower speed.",
+    },
+    {
+      question: "Can teeth counts be decimals?",
+      answer: "No, they should be whole numbers.",
+    },
+    {
+      question: "Does gear direction matter?",
+      answer: "No, only tooth counts affect the ratio.",
+    },
+  ],
+  disclaimer: "Verify gear compatibility before installation.",
+};
+
+<Calculator schema={schema} />

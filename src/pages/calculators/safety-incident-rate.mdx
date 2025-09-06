@@ -1,0 +1,61 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Safety Incident Rate Calculator"
+description: "Calculate OSHA incident rate per 100 workers."
+updated: "2025-09-06"
+cluster: "Other"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "safety-incident-rate",
+  title: "Safety Incident Rate Calculator",
+  intro:
+    "Compute the safety incident rate based on recordable incidents and hours worked.",
+  locale: "en",
+  cluster: "Other",
+  unit: "incident rate",
+  inputs: [
+    {
+      name: "incidents",
+      label: "Recordable Incidents",
+      type: "number",
+      step: "any",
+      required: true,
+    },
+    {
+      name: "hours",
+      label: "Hours Worked",
+      type: "number",
+      step: "any",
+      required: true,
+    },
+  ],
+  expression: "incidents * 200000 / hours",
+  examples: [
+    { description: "3 incidents over 400,000 hours ⇒ 1.5" },
+    { description: "1 incident over 50,000 hours ⇒ 4" },
+  ],
+  faqs: [
+    {
+      question: "What does 200,000 represent?",
+      answer: "The annual hours for 100 workers (40h × 50w).",
+    },
+    {
+      question: "Are near-misses included?",
+      answer: "No, only recordable incidents.",
+    },
+    {
+      question: "Can hours be zero?",
+      answer: "No, hours worked must be greater than zero.",
+    },
+    {
+      question: "Why use this rate?",
+      answer: "It allows comparison between different workplaces.",
+    },
+  ],
+  disclaimer: "Follow OSHA guidelines for recordkeeping definitions.",
+};
+
+<Calculator schema={schema} />

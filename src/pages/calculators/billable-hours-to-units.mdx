@@ -1,0 +1,54 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Billable Hours to Units Converter"
+description: "Convert billable hours to 6-minute billing units."
+updated: "2025-09-06"
+cluster: "Date & Time"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "billable-hours-to-units",
+  title: "Billable Hours to Units Converter",
+  intro:
+    "Convert billable hours to standard 6-minute units used on legal invoices.",
+  locale: "en",
+  cluster: "Date & Time",
+  unit: "units",
+  inputs: [
+    {
+      name: "hours",
+      label: "Hours",
+      type: "number",
+      step: "any",
+      required: true,
+    },
+  ],
+  expression: "hours * 10",
+  examples: [
+    { description: "1.5 h ⇒ 15 units" },
+    { description: "0.3 h ⇒ 3 units" },
+  ],
+  faqs: [
+    {
+      question: "Why 6-minute units?",
+      answer: "Many law firms bill in tenths of an hour.",
+    },
+    {
+      question: "Can I enter partial hours?",
+      answer: "Yes, decimals are supported.",
+    },
+    {
+      question: "Does it round results?",
+      answer: "It multiplies directly; round as needed.",
+    },
+    {
+      question: "Is this only for lawyers?",
+      answer: "Any profession using 0.1 hour increments can use it.",
+    },
+  ],
+  disclaimer: "Billing practices vary; confirm with your firm's policies.",
+};
+
+<Calculator schema={schema} />
