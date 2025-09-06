@@ -1,0 +1,37 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Ohm's Law Power"
+description: "Calculate electrical power from voltage and current."
+updated: "2025-10-05"
+cluster: "Technology"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  slug: "ohms-law-power",
+  title: "Ohm's Law Power",
+  locale: "en",
+  unit: "W",
+  inputs: [
+    { name: "voltage", label: "Voltage (V)", type: "number", step: "any", placeholder: "12" },
+    { name: "current", label: "Current (A)", type: "number", step: "any", placeholder: "1.5" }
+  ],
+  expression: "voltage * current",
+  intro: "Compute power in watts using voltage and current values.",
+  examples: [
+    { description: "120 V and 2 A ⇒ 240 W" },
+    { description: "12 V and 1.5 A ⇒ 18 W" }
+  ],
+  faqs: [
+    { question: "What is electrical power?", answer: "It's the rate of energy use, equal to voltage times current." },
+    { question: "Can I input milliamps?", answer: "Convert milliamps to amps before entering." },
+    { question: "Does this apply to AC?", answer: "It provides an approximation for resistive AC loads." },
+    { question: "Is the result in watts?", answer: "Yes, the calculator outputs watts." }
+  ],
+  disclaimer: "For basic electronics reference only.",
+  cluster: "Technology",
+};
+
+<Calculator schema={schema} />
+
