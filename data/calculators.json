@@ -7519,5 +7519,371 @@
       }
     ],
     "disclaimer": "Approximate calculation; actual sequestration varies by species and environment."
+  },
+  {
+    "slug": "electronvolt-to-joule",
+    "title": "Electronvolt to Joule Converter",
+    "cluster": "Conversions",
+    "intro": "Convert electronvolt energy to joules using the factor 1 eV = 1.602176634×10⁻¹⁹ J. Enter eV and press Calculate.",
+    "inputs": [
+      { "name": "ev", "label": "Energy (eV)", "type": "number", "step": "any", "placeholder": "1" }
+    ],
+    "expression": "ev * 1.602176634e-19",
+    "unit": "J",
+    "examples": [
+      { "description": "1 eV ⇒ 1.60e-19 J" },
+      { "description": "5 eV ⇒ 8.01e-19 J" }
+    ],
+    "faqs": [
+      { "question": "What is an electronvolt?", "answer": "The energy gained by an electron moving through a potential difference of one volt." },
+      { "question": "Is the conversion factor exact?", "answer": "Yes, it's defined by fundamental physical constants." },
+      { "question": "Can I convert large energies?", "answer": "Yes, just enter the value in electronvolts." },
+      { "question": "Does temperature affect the conversion?", "answer": "No, it's purely a unit conversion." }
+    ],
+    "disclaimer": "For educational use; high-energy calculations may involve additional factors."
+  },
+  {
+    "slug": "feet-per-second-to-mph",
+    "title": "Feet per Second to Miles per Hour",
+    "cluster": "Conversions",
+    "intro": "Convert speed in feet per second to miles per hour. Enter ft/s and press Calculate.",
+    "inputs": [
+      { "name": "fps", "label": "Speed (ft/s)", "type": "number", "step": "any", "placeholder": "10" }
+    ],
+    "expression": "fps * 0.681818",
+    "unit": "mph",
+    "examples": [
+      { "description": "10 ft/s ⇒ 6.82 mph" },
+      { "description": "88 ft/s ⇒ 60 mph" }
+    ],
+    "faqs": [
+      { "question": "Why multiply by 0.681818?", "answer": "Because one foot per second equals about 0.681818 miles per hour." },
+      { "question": "Can I convert mph to ft/s?", "answer": "Divide miles per hour by 0.681818." },
+      { "question": "Does it handle decimal inputs?", "answer": "Yes, you can enter fractional speeds." },
+      { "question": "Is this suitable for physics problems?", "answer": "Yes, it provides a quick unit conversion." }
+    ],
+    "disclaimer": "Check against precise constants when high accuracy is required."
+  },
+  {
+    "slug": "iso-week-number",
+    "title": "ISO Week Number Calculator",
+    "cluster": "Date & Time",
+    "intro": "Determine the ISO 8601 week number for a given date. Enter year, month, and day.",
+    "inputs": [
+      { "name": "year", "label": "Year", "type": "number", "step": "1", "placeholder": "2024" },
+      { "name": "month", "label": "Month", "type": "number", "step": "1", "placeholder": "1" },
+      { "name": "day", "label": "Day", "type": "number", "step": "1", "placeholder": "1" }
+    ],
+    "expression": "(function(y,m,d){const date=new Date(Date.UTC(y,m-1,d));const dayNum=date.getUTCDay()||7;date.setUTCDate(date.getUTCDate()+4-dayNum);const yearStart=new Date(Date.UTC(date.getUTCFullYear(),0,1));return Math.ceil(((date-yearStart)/86400000+1)/7);})(year,month,day)",
+    "unit": "week",
+    "examples": [
+      { "description": "2023-09-01 ⇒ 35" },
+      { "description": "2025-01-01 ⇒ 1" }
+    ],
+    "faqs": [
+      { "question": "What is ISO week numbering?", "answer": "It's a standard where weeks start on Monday and week 1 is the week with the year's first Thursday." },
+      { "question": "Are week numbers always 1–52?", "answer": "Some years have 53 ISO weeks." },
+      { "question": "Do I need to account for time zones?", "answer": "The calculation uses UTC to avoid time zone issues." },
+      { "question": "Can it handle leap years?", "answer": "Yes, the Date object manages leap years automatically." }
+    ],
+    "disclaimer": "Uses the Gregorian calendar and ISO 8601 definition of week numbers."
+  },
+  {
+    "slug": "days-in-month",
+    "title": "Days in Month Calculator",
+    "cluster": "Date & Time",
+    "intro": "Return the number of days in a specific month and year, accounting for leap years.",
+    "inputs": [
+      { "name": "year", "label": "Year", "type": "number", "step": "1", "placeholder": "2024" },
+      { "name": "month", "label": "Month", "type": "number", "step": "1", "placeholder": "2" }
+    ],
+    "expression": "new Date(year, month, 0).getDate()",
+    "unit": "days",
+    "examples": [
+      { "description": "February 2024 ⇒ 29 days" },
+      { "description": "April 2025 ⇒ 30 days" }
+    ],
+    "faqs": [
+      { "question": "How are leap years handled?", "answer": "JavaScript's Date object automatically adjusts for leap years." },
+      { "question": "What range of years is valid?", "answer": "You can use any Gregorian calendar year." },
+      { "question": "Do I enter month numbers or names?", "answer": "Enter month numbers 1 through 12." },
+      { "question": "Why use day 0 in the formula?", "answer": "Setting day 0 returns the last day of the previous month." }
+    ],
+    "disclaimer": "Assumes the Gregorian calendar; historical calendars may differ."
+  },
+  {
+    "slug": "return-on-investment",
+    "title": "Return on Investment (ROI) Calculator",
+    "cluster": "Finance",
+    "intro": "Find the percentage return on an investment using initial cost and final value.",
+    "inputs": [
+      { "name": "cost", "label": "Initial Cost", "type": "number", "step": "any", "placeholder": "1000" },
+      { "name": "gain", "label": "Final Value", "type": "number", "step": "any", "placeholder": "1200" }
+    ],
+    "expression": "(gain - cost) / cost * 100",
+    "unit": "%",
+    "examples": [
+      { "description": "$1000 cost, $1200 gain ⇒ 20%" },
+      { "description": "$5000 cost, $4500 gain ⇒ -10%" }
+    ],
+    "faqs": [
+      { "question": "What does ROI represent?", "answer": "ROI shows the percentage gain or loss relative to the initial investment." },
+      { "question": "Can ROI be negative?", "answer": "Yes, a negative result indicates a loss." },
+      { "question": "Does this account for time?", "answer": "No, it calculates simple return without considering duration." },
+      { "question": "How do I express the result?", "answer": "Results are shown as a percentage." }
+    ],
+    "disclaimer": "ROI calculations ignore fees, taxes, and time value of money."
+  },
+  {
+    "slug": "debt-to-income-ratio",
+    "title": "Debt-to-Income Ratio Calculator",
+    "cluster": "Finance",
+    "intro": "Compute your debt-to-income (DTI) ratio as a percentage using monthly debt payments and gross monthly income.",
+    "inputs": [
+      { "name": "debt", "label": "Monthly Debt Payments", "type": "number", "step": "any", "placeholder": "2000" },
+      { "name": "income", "label": "Gross Monthly Income", "type": "number", "step": "any", "placeholder": "5000" }
+    ],
+    "expression": "(debt / income) * 100",
+    "unit": "%",
+    "examples": [
+      { "description": "$2000 debt, $5000 income ⇒ 40%" },
+      { "description": "$1500 debt, $3000 income ⇒ 50%" }
+    ],
+    "faqs": [
+      { "question": "What is DTI?", "answer": "DTI compares your monthly debt payments to your gross income." },
+      { "question": "Why does DTI matter?", "answer": "Lenders use DTI to assess your ability to manage payments." },
+      { "question": "Is lower DTI better?", "answer": "Yes, lower ratios indicate less financial strain." },
+      { "question": "Does this include taxes?", "answer": "Use gross income before taxes for standard DTI calculations." }
+    ],
+    "disclaimer": "DTI is an estimate; lenders may calculate it differently or include additional factors."
+  },
+  {
+    "slug": "ideal-body-weight",
+    "title": "Ideal Body Weight Calculator",
+    "cluster": "Health",
+    "intro": "Estimate ideal body weight with the Devine formula using height in inches and a gender-specific base value.",
+    "inputs": [
+      { "name": "height", "label": "Height (in)", "type": "number", "step": "any", "placeholder": "70" },
+      { "name": "base", "label": "Base (50 men, 45.5 women)", "type": "number", "step": "any", "placeholder": "50" }
+    ],
+    "expression": "base + 2.3 * (height - 60)",
+    "unit": "kg",
+    "examples": [
+      { "description": "70 in, base 50 ⇒ 73.0 kg" },
+      { "description": "64 in, base 45.5 ⇒ 60.7 kg" }
+    ],
+    "faqs": [
+      { "question": "What is the Devine formula?", "answer": "A method to estimate ideal body weight based on height and sex." },
+      { "question": "How do I choose the base value?", "answer": "Use 50 for men and 45.5 for women." },
+      { "question": "Can I enter centimeters?", "answer": "Convert height to inches before using this calculator." },
+      { "question": "Is this a medical recommendation?", "answer": "No, it's a rough guideline and doesn't replace professional advice." }
+    ],
+    "disclaimer": "Consult healthcare providers for personalized weight assessments."
+  },
+  {
+    "slug": "target-heart-rate",
+    "title": "Target Heart Rate Calculator",
+    "cluster": "Health",
+    "intro": "Estimate target exercise heart rate using age-based maximum heart rate and chosen intensity percentage.",
+    "inputs": [
+      { "name": "age", "label": "Age (years)", "type": "number", "step": "1", "placeholder": "30" },
+      { "name": "intensity", "label": "Intensity (%)", "type": "number", "step": "any", "placeholder": "70" }
+    ],
+    "expression": "(220 - age) * intensity / 100",
+    "unit": "bpm",
+    "examples": [
+      { "description": "Age 30 at 70% ⇒ 133 bpm" },
+      { "description": "Age 40 at 85% ⇒ 153 bpm" }
+    ],
+    "faqs": [
+      { "question": "Why subtract age from 220?", "answer": "It's a common estimate for maximum heart rate." },
+      { "question": "What intensity should I use?", "answer": "Use 50–85% for moderate to vigorous exercise." },
+      { "question": "Is the formula accurate for everyone?", "answer": "It's a guideline; individual max heart rates vary." },
+      { "question": "Do medications affect the result?", "answer": "Yes, some drugs alter heart rate responses." }
+    ],
+    "disclaimer": "Consult a healthcare provider before starting new exercise programs."
+  },
+  {
+    "slug": "board-foot-calculator",
+    "title": "Board Foot Calculator",
+    "cluster": "Home & DIY",
+    "intro": "Determine the board feet of a piece of lumber from its thickness, width, and length in inches.",
+    "inputs": [
+      { "name": "thickness", "label": "Thickness (in)", "type": "number", "step": "any", "placeholder": "2" },
+      { "name": "width", "label": "Width (in)", "type": "number", "step": "any", "placeholder": "6" },
+      { "name": "length", "label": "Length (in)", "type": "number", "step": "any", "placeholder": "96" }
+    ],
+    "expression": "(thickness * width * length) / 144",
+    "unit": "board ft",
+    "examples": [
+      { "description": "2×6×96 in ⇒ 8 board ft" },
+      { "description": "1×10×120 in ⇒ 8.33 board ft" }
+    ],
+    "faqs": [
+      { "question": "What is a board foot?", "answer": "A volume of lumber equal to 1 in × 12 in × 12 in." },
+      { "question": "Can I use metric units?", "answer": "Convert dimensions to inches before calculating." },
+      { "question": "Why divide by 144?", "answer": "Because 144 cubic inches equal one board foot." },
+      { "question": "Does moisture content affect the result?", "answer": "This formula measures volume only, not weight or moisture." }
+    ],
+    "disclaimer": "Estimates nominal sizes; actual lumber dimensions may vary."
+  },
+  {
+    "slug": "drywall-sheet-quantity",
+    "title": "Drywall Sheet Quantity Calculator",
+    "cluster": "Home & DIY",
+    "intro": "Estimate the number of drywall sheets needed from total wall area and sheet dimensions.",
+    "inputs": [
+      { "name": "area", "label": "Wall Area (ft²)", "type": "number", "step": "any", "placeholder": "500" },
+      { "name": "width", "label": "Sheet Width (ft)", "type": "number", "step": "any", "placeholder": "4" },
+      { "name": "height", "label": "Sheet Height (ft)", "type": "number", "step": "any", "placeholder": "8" }
+    ],
+    "expression": "area / (width * height)",
+    "unit": "sheets",
+    "examples": [
+      { "description": "500 ft² area with 4×8 ft sheets ⇒ 15.63 sheets" },
+      { "description": "800 ft² area with 4×12 ft sheets ⇒ 16.67 sheets" }
+    ],
+    "faqs": [
+      { "question": "Should I round up the result?", "answer": "Yes, round up and add extra for waste and cuts." },
+      { "question": "Does it account for openings?", "answer": "Subtract door and window areas from the wall area before using." },
+      { "question": "Can I mix sheet sizes?", "answer": "This calculator assumes one consistent sheet size." },
+      { "question": "Are seams included?", "answer": "No, it purely estimates sheet count based on area." }
+    ],
+    "disclaimer": "Always purchase extra material to accommodate mistakes and future repairs."
+  },
+  {
+    "slug": "factorial-calculator",
+    "title": "Factorial Calculator",
+    "cluster": "Math",
+    "intro": "Multiply all positive integers up to n to find n factorial.",
+    "inputs": [
+      { "name": "n", "label": "n", "type": "number", "step": "1", "placeholder": "5" }
+    ],
+    "expression": "(function(n){n=Math.floor(n);let r=1;for(let i=2;i<=n;i++)r*=i;return r;})(n)",
+    "unit": "",
+    "examples": [
+      { "description": "5 ⇒ 120" },
+      { "description": "3 ⇒ 6" }
+    ],
+    "faqs": [
+      { "question": "What is factorial?", "answer": "Factorial of n is the product of all positive integers up to n." },
+      { "question": "Can n be negative?", "answer": "No, factorial is defined for non-negative integers only." },
+      { "question": "Why use Math.floor?", "answer": "It ensures n is treated as an integer." },
+      { "question": "How fast do factorials grow?", "answer": "They increase very rapidly with n." }
+    ],
+    "disclaimer": "Large n may exceed JavaScript's number precision."
+  },
+  {
+    "slug": "gcd-calculator",
+    "title": "Greatest Common Divisor (GCD) Calculator",
+    "cluster": "Math",
+    "intro": "Compute the greatest common divisor of two numbers using the Euclidean algorithm.",
+    "inputs": [
+      { "name": "a", "label": "Number A", "type": "number", "step": "1", "placeholder": "48" },
+      { "name": "b", "label": "Number B", "type": "number", "step": "1", "placeholder": "18" }
+    ],
+    "expression": "(function(a,b){a=Math.abs(Math.floor(a));b=Math.abs(Math.floor(b));while(b){[a,b]=[b,a%b];}return a;})(a,b)",
+    "unit": "",
+    "examples": [
+      { "description": "48 & 18 ⇒ 6" },
+      { "description": "21 & 14 ⇒ 7" }
+    ],
+    "faqs": [
+      { "question": "What is the GCD?", "answer": "It's the largest integer that divides both numbers without remainder." },
+      { "question": "Can I use negative numbers?", "answer": "Yes, the algorithm uses absolute values." },
+      { "question": "Is order important?", "answer": "No, gcd(a,b) equals gcd(b,a)." },
+      { "question": "How is this useful?", "answer": "GCD is used in simplifying fractions and number theory." }
+    ],
+    "disclaimer": "Handles integers only; results are exact within JavaScript's numeric limits."
+  },
+  {
+    "slug": "subnet-hosts",
+    "title": "Subnet Hosts Calculator",
+    "cluster": "Technology",
+    "intro": "Calculate the number of usable IPv4 host addresses for a given subnet prefix length.",
+    "inputs": [
+      { "name": "prefix", "label": "CIDR Prefix", "type": "number", "step": "1", "placeholder": "24" }
+    ],
+    "expression": "Math.max(Math.pow(2, 32 - prefix) - 2, 0)",
+    "unit": "hosts",
+    "examples": [
+      { "description": "/24 ⇒ 254 hosts" },
+      { "description": "/30 ⇒ 2 hosts" }
+    ],
+    "faqs": [
+      { "question": "What is a CIDR prefix?", "answer": "It's the number of bits set to 1 in the subnet mask." },
+      { "question": "Why subtract 2 hosts?", "answer": "Network and broadcast addresses are not usable." },
+      { "question": "Can prefixes be 31 or 32?", "answer": "Yes, but they allow at most 0 or 1 usable host." },
+      { "question": "Does this work for IPv6?", "answer": "No, this formula is specific to IPv4." }
+    ],
+    "disclaimer": "Assumes standard IPv4 addressing; actual allocations may reserve additional addresses."
+  },
+  {
+    "slug": "raid-5-capacity",
+    "title": "RAID 5 Capacity Calculator",
+    "cluster": "Technology",
+    "intro": "Compute usable capacity of a RAID 5 array based on drive count and individual drive size.",
+    "inputs": [
+      { "name": "drives", "label": "Number of Drives", "type": "number", "step": "1", "placeholder": "4" },
+      { "name": "size", "label": "Drive Size (TB)", "type": "number", "step": "any", "placeholder": "2" }
+    ],
+    "expression": "(drives - 1) * size",
+    "unit": "TB",
+    "examples": [
+      { "description": "4 drives at 2 TB ⇒ 6 TB" },
+      { "description": "6 drives at 4 TB ⇒ 20 TB" }
+    ],
+    "faqs": [
+      { "question": "Why subtract one drive?", "answer": "RAID 5 uses the capacity of one drive for parity." },
+      { "question": "What is the minimum number of drives?", "answer": "RAID 5 requires at least three drives." },
+      { "question": "Do drives need to be the same size?", "answer": "Yes, capacity is limited by the smallest drive." },
+      { "question": "Does this include filesystem overhead?", "answer": "No, actual usable space may be slightly less." }
+    ],
+    "disclaimer": "Assumes perfect parity distribution; real-world capacity can vary."
+  },
+  {
+    "slug": "lightning-distance",
+    "title": "Lightning Distance Calculator",
+    "cluster": "Other",
+    "intro": "Approximate how far lightning struck by multiplying the seconds until thunder by the speed of sound in air (0.343 km/s).",
+    "inputs": [
+      { "name": "seconds", "label": "Seconds After Flash", "type": "number", "step": "any", "placeholder": "3" }
+    ],
+    "expression": "seconds * 0.343",
+    "unit": "km",
+    "examples": [
+      { "description": "3 s ⇒ 1.03 km" },
+      { "description": "5 s ⇒ 1.72 km" }
+    ],
+    "faqs": [
+      { "question": "Why use 0.343 km/s?", "answer": "It's the approximate speed of sound in air at sea level." },
+      { "question": "Does wind affect the result?", "answer": "Wind and temperature can slightly change sound speed." },
+      { "question": "Can I get distance in miles?", "answer": "Multiply seconds by 0.213 to convert to miles." },
+      { "question": "Is this exact?", "answer": "It's an estimate; terrain and atmospheric conditions may alter sound travel." }
+    ],
+    "disclaimer": "For safety awareness only; seek shelter during storms regardless of distance."
+  },
+  {
+    "slug": "coffee-water-ratio",
+    "title": "Coffee Water Ratio Calculator",
+    "cluster": "Other",
+    "intro": "Determine how much water to use for a given amount of coffee grounds and desired brew ratio.",
+    "inputs": [
+      { "name": "coffee", "label": "Coffee Grounds (g)", "type": "number", "step": "any", "placeholder": "20" },
+      { "name": "ratio", "label": "Brew Ratio", "type": "number", "step": "any", "placeholder": "15" }
+    ],
+    "expression": "coffee * ratio",
+    "unit": "g",
+    "examples": [
+      { "description": "20 g coffee at 15 ⇒ 300 g water" },
+      { "description": "30 g coffee at 16 ⇒ 480 g water" }
+    ],
+    "faqs": [
+      { "question": "What is brew ratio?", "answer": "It's the amount of water relative to coffee grounds." },
+      { "question": "Can I use ounces?", "answer": "Convert ounces to grams before using the calculator." },
+      { "question": "Does grind size matter?", "answer": "Grind affects extraction but not the ratio calculation." },
+      { "question": "Is this for hot or cold brew?", "answer": "It works for any method as long as ratio is specified." }
+    ],
+    "disclaimer": "Brewing preferences vary; adjust ratios to taste."
   }
 ]

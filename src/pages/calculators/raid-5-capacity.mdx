@@ -1,0 +1,37 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "RAID 5 Capacity Calculator"
+description: "Estimate usable storage in a RAID 5 array."
+updated: "2025-09-05"
+cluster: "Technology"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "raid-5-capacity",
+  title: "RAID 5 Capacity Calculator",
+  locale: "en",
+  cluster: "Technology",
+  intro: "Compute usable capacity of a RAID 5 array based on drive count and individual drive size.",
+  inputs: [
+    { name: "drives", label: "Number of Drives", type: "number", step: "1", placeholder: "4" },
+    { name: "size", label: "Drive Size (TB)", type: "number", step: "any", placeholder: "2" }
+  ],
+  expression: "(drives - 1) * size",
+  unit: "TB",
+  examples: [
+    { description: "4 drives at 2 TB ⇒ 6 TB" },
+    { description: "6 drives at 4 TB ⇒ 20 TB" }
+  ],
+  faqs: [
+    { question: "Why subtract one drive?", answer: "RAID 5 uses the capacity of one drive for parity." },
+    { question: "What is the minimum number of drives?", answer: "RAID 5 requires at least three drives." },
+    { question: "Do drives need to be the same size?", answer: "Yes, capacity is limited by the smallest drive." },
+    { question: "Does this include filesystem overhead?", answer: "No, actual usable space may be slightly less." }
+  ],
+  disclaimer: "Assumes perfect parity distribution; real-world capacity can vary.",
+};
+
+<Calculator schema={schema} />
+

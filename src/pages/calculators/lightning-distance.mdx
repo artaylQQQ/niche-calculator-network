@@ -1,0 +1,36 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Lightning Distance Calculator"
+description: "Estimate distance to a lightning strike from the thunder delay."
+updated: "2025-09-05"
+cluster: "Other"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "lightning-distance",
+  title: "Lightning Distance Calculator",
+  locale: "en",
+  cluster: "Other",
+  intro: "Approximate how far lightning struck by multiplying the seconds until thunder by the speed of sound in air (0.343 km/s).",
+  inputs: [
+    { name: "seconds", label: "Seconds After Flash", type: "number", step: "any", placeholder: "3" }
+  ],
+  expression: "seconds * 0.343",
+  unit: "km",
+  examples: [
+    { description: "3 s ⇒ 1.03 km" },
+    { description: "5 s ⇒ 1.72 km" }
+  ],
+  faqs: [
+    { question: "Why use 0.343 km/s?", answer: "It's the approximate speed of sound in air at sea level." },
+    { question: "Does wind affect the result?", answer: "Wind and temperature can slightly change sound speed." },
+    { question: "Can I get distance in miles?", answer: "Multiply seconds by 0.213 to convert to miles." },
+    { question: "Is this exact?", answer: "It's an estimate; terrain and atmospheric conditions may alter sound travel." }
+  ],
+  disclaimer: "For safety awareness only; seek shelter during storms regardless of distance.",
+};
+
+<Calculator schema={schema} />
+

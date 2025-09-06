@@ -1,0 +1,37 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Return on Investment (ROI) Calculator"
+description: "Calculate ROI percentage from cost and gain."
+updated: "2025-09-05"
+cluster: "Finance"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "return-on-investment",
+  title: "Return on Investment (ROI) Calculator",
+  locale: "en",
+  cluster: "Finance",
+  intro: "Find the percentage return on an investment using initial cost and final value.",
+  inputs: [
+    { name: "cost", label: "Initial Cost", type: "number", step: "any", placeholder: "1000" },
+    { name: "gain", label: "Final Value", type: "number", step: "any", placeholder: "1200" }
+  ],
+  expression: "(gain - cost) / cost * 100",
+  unit: "%",
+  examples: [
+    { description: "$1000 cost, $1200 gain ⇒ 20%" },
+    { description: "$5000 cost, $4500 gain ⇒ -10%" }
+  ],
+  faqs: [
+    { question: "What does ROI represent?", answer: "ROI shows the percentage gain or loss relative to the initial investment." },
+    { question: "Can ROI be negative?", answer: "Yes, a negative result indicates a loss." },
+    { question: "Does this account for time?", answer: "No, it calculates simple return without considering duration." },
+    { question: "How do I express the result?", answer: "Results are shown as a percentage." }
+  ],
+  disclaimer: "ROI calculations ignore fees, taxes, and time value of money.",
+};
+
+<Calculator schema={schema} />
+

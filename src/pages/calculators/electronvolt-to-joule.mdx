@@ -1,0 +1,36 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Electronvolt to Joule Converter"
+description: "Convert energy in electronvolts to joules."
+updated: "2025-09-05"
+cluster: "Conversions"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "electronvolt-to-joule",
+  title: "Electronvolt to Joule Converter",
+  locale: "en",
+  cluster: "Conversions",
+  intro: "Convert electronvolt energy to joules using the factor 1 eV = 1.602176634×10⁻¹⁹ J. Enter eV and press Calculate.",
+  inputs: [
+    { name: "ev", label: "Energy (eV)", type: "number", step: "any", placeholder: "1" }
+  ],
+  expression: "ev * 1.602176634e-19",
+  unit: "J",
+  examples: [
+    { description: "1 eV ⇒ 1.60e-19 J" },
+    { description: "5 eV ⇒ 8.01e-19 J" }
+  ],
+  faqs: [
+    { question: "What is an electronvolt?", answer: "The energy gained by an electron moving through a potential difference of one volt." },
+    { question: "Is the conversion factor exact?", answer: "Yes, it's defined by fundamental physical constants." },
+    { question: "Can I convert large energies?", answer: "Yes, just enter the value in electronvolts." },
+    { question: "Does temperature affect the conversion?", answer: "No, it's purely a unit conversion." }
+  ],
+  disclaimer: "For educational use; high-energy calculations may involve additional factors.",
+};
+
+<Calculator schema={schema} />
+

@@ -1,0 +1,36 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Factorial Calculator"
+description: "Compute n factorial (n!)."
+updated: "2025-09-05"
+cluster: "Math"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "factorial-calculator",
+  title: "Factorial Calculator",
+  locale: "en",
+  cluster: "Math",
+  intro: "Multiply all positive integers up to n to find n factorial.",
+  inputs: [
+    { name: "n", label: "n", type: "number", step: "1", placeholder: "5" }
+  ],
+  expression: "(function(n){n=Math.floor(n);let r=1;for(let i=2;i<=n;i++)r*=i;return r;})(n)",
+  unit: "",
+  examples: [
+    { description: "5 ⇒ 120" },
+    { description: "3 ⇒ 6" }
+  ],
+  faqs: [
+    { question: "What is factorial?", answer: "Factorial of n is the product of all positive integers up to n." },
+    { question: "Can n be negative?", answer: "No, factorial is defined for non-negative integers only." },
+    { question: "Why use Math.floor?", answer: "It ensures n is treated as an integer." },
+    { question: "How fast do factorials grow?", answer: "They increase very rapidly with n." }
+  ],
+  disclaimer: "Large n may exceed JavaScript's number precision.",
+};
+
+<Calculator schema={schema} />
+

@@ -1,0 +1,36 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Feet per Second to Miles per Hour"
+description: "Convert speed from ft/s to mph."
+updated: "2025-09-05"
+cluster: "Conversions"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "feet-per-second-to-mph",
+  title: "Feet per Second to Miles per Hour",
+  locale: "en",
+  cluster: "Conversions",
+  intro: "Convert speed in feet per second to miles per hour. Enter ft/s and press Calculate.",
+  inputs: [
+    { name: "fps", label: "Speed (ft/s)", type: "number", step: "any", placeholder: "10" }
+  ],
+  expression: "fps * 0.681818",
+  unit: "mph",
+  examples: [
+    { description: "10 ft/s ⇒ 6.82 mph" },
+    { description: "88 ft/s ⇒ 60 mph" }
+  ],
+  faqs: [
+    { question: "Why multiply by 0.681818?", answer: "Because one foot per second equals about 0.681818 miles per hour." },
+    { question: "Can I convert mph to ft/s?", answer: "Divide miles per hour by 0.681818." },
+    { question: "Does it handle decimal inputs?", answer: "Yes, you can enter fractional speeds." },
+    { question: "Is this suitable for physics problems?", answer: "Yes, it provides a quick unit conversion." }
+  ],
+  disclaimer: "Check against precise constants when high accuracy is required.",
+};
+
+<Calculator schema={schema} />
+

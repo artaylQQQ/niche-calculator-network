@@ -1,0 +1,38 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Board Foot Calculator"
+description: "Compute lumber volume in board feet."
+updated: "2025-09-05"
+cluster: "Home & DIY"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "board-foot-calculator",
+  title: "Board Foot Calculator",
+  locale: "en",
+  cluster: "Home & DIY",
+  intro: "Determine the board feet of a piece of lumber from its thickness, width, and length in inches.",
+  inputs: [
+    { name: "thickness", label: "Thickness (in)", type: "number", step: "any", placeholder: "2" },
+    { name: "width", label: "Width (in)", type: "number", step: "any", placeholder: "6" },
+    { name: "length", label: "Length (in)", type: "number", step: "any", placeholder: "96" }
+  ],
+  expression: "(thickness * width * length) / 144",
+  unit: "board ft",
+  examples: [
+    { description: "2×6×96 in ⇒ 8 board ft" },
+    { description: "1×10×120 in ⇒ 8.33 board ft" }
+  ],
+  faqs: [
+    { question: "What is a board foot?", answer: "A volume of lumber equal to 1 in × 12 in × 12 in." },
+    { question: "Can I use metric units?", answer: "Convert dimensions to inches before calculating." },
+    { question: "Why divide by 144?", answer: "Because 144 cubic inches equal one board foot." },
+    { question: "Does moisture content affect the result?", answer: "This formula measures volume only, not weight or moisture." }
+  ],
+  disclaimer: "Estimates nominal sizes; actual lumber dimensions may vary.",
+};
+
+<Calculator schema={schema} />
+
