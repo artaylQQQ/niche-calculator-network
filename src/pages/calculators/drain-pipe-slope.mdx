@@ -1,0 +1,58 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Drain Pipe Slope Calculator"
+description: "Find slope percentage for a drainage pipe."
+updated: "2025-09-26"
+cluster: "Home & DIY"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "drain-pipe-slope",
+  title: "Drain Pipe Slope Calculator",
+  locale: "en",
+  cluster: "Home & DIY",
+  unit: "%",
+  intro:
+    "Calculate the slope needed for proper drainage in plumbing or landscaping.",
+  inputs: [
+    {
+      name: "run",
+      label: "Run Length (ft)",
+      type: "number",
+      step: "any",
+      placeholder: "50",
+    },
+    {
+      name: "drop",
+      label: "Vertical Drop (in)",
+      type: "number",
+      step: "any",
+      placeholder: "12",
+    },
+  ],
+  expression: "(drop / (run * 12)) * 100",
+  examples: [
+    { description: "50 ft run, 12 in drop ⇒ 2 %" },
+    { description: "40 ft run, 6 in drop ⇒ 1.25 %" },
+    { description: "80 ft run, 20 in drop ⇒ 2.08 %" },
+  ],
+  faqs: [
+    {
+      question: "Why convert run to inches?",
+      answer: "Slope uses consistent units for rise over run.",
+    },
+    {
+      question: "What slope is typical?",
+      answer: "Most drains require 1–2% slope for flow.",
+    },
+    {
+      question: "Does pipe diameter matter?",
+      answer: "This calculation ignores diameter; check local codes.",
+    },
+  ],
+  disclaimer: "Verify slope requirements with local building regulations.",
+};
+
+<Calculator schema={schema} />

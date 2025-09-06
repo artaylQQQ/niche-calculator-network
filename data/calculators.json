@@ -7537,8 +7537,12 @@
     "expression": "ev * 1.602176634e-19",
     "unit": "J",
     "examples": [
-      { "description": "1 eV ⇒ 1.60e-19 J" },
-      { "description": "5 eV ⇒ 8.01e-19 J" }
+      {
+        "description": "1 eV ⇒ 1.60e-19 J"
+      },
+      {
+        "description": "5 eV ⇒ 8.01e-19 J"
+      }
     ],
     "faqs": [
       {
@@ -7577,8 +7581,12 @@
     "expression": "fps * 0.681818",
     "unit": "mph",
     "examples": [
-      { "description": "10 ft/s ⇒ 6.82 mph" },
-      { "description": "88 ft/s ⇒ 60 mph" }
+      {
+        "description": "10 ft/s ⇒ 6.82 mph"
+      },
+      {
+        "description": "88 ft/s ⇒ 60 mph"
+      }
     ],
     "faqs": [
       {
@@ -7631,8 +7639,12 @@
     "expression": "(function(y,m,d){const date=new Date(Date.UTC(y,m-1,d));const dayNum=date.getUTCDay()||7;date.setUTCDate(date.getUTCDate()+4-dayNum);const yearStart=new Date(Date.UTC(date.getUTCFullYear(),0,1));return Math.ceil(((date-yearStart)/86400000+1)/7);})(year,month,day)",
     "unit": "week",
     "examples": [
-      { "description": "2023-09-01 ⇒ 35" },
-      { "description": "2025-01-01 ⇒ 1" }
+      {
+        "description": "2023-09-01 ⇒ 35"
+      },
+      {
+        "description": "2025-01-01 ⇒ 1"
+      }
     ],
     "faqs": [
       {
@@ -7678,8 +7690,12 @@
     "expression": "new Date(year, month, 0).getDate()",
     "unit": "days",
     "examples": [
-      { "description": "February 2024 ⇒ 29 days" },
-      { "description": "April 2025 ⇒ 30 days" }
+      {
+        "description": "February 2024 ⇒ 29 days"
+      },
+      {
+        "description": "April 2025 ⇒ 30 days"
+      }
     ],
     "faqs": [
       {
@@ -7725,8 +7741,12 @@
     "expression": "(gain - cost) / cost * 100",
     "unit": "%",
     "examples": [
-      { "description": "$1000 cost, $1200 gain ⇒ 20%" },
-      { "description": "$5000 cost, $4500 gain ⇒ -10%" }
+      {
+        "description": "$1000 cost, $1200 gain ⇒ 20%"
+      },
+      {
+        "description": "$5000 cost, $4500 gain ⇒ -10%"
+      }
     ],
     "faqs": [
       {
@@ -7772,8 +7792,12 @@
     "expression": "(debt / income) * 100",
     "unit": "%",
     "examples": [
-      { "description": "$2000 debt, $5000 income ⇒ 40%" },
-      { "description": "$1500 debt, $3000 income ⇒ 50%" }
+      {
+        "description": "$2000 debt, $5000 income ⇒ 40%"
+      },
+      {
+        "description": "$1500 debt, $3000 income ⇒ 50%"
+      }
     ],
     "faqs": [
       {
@@ -7819,8 +7843,12 @@
     "expression": "base + 2.3 * (height - 60)",
     "unit": "kg",
     "examples": [
-      { "description": "70 in, base 50 ⇒ 73.0 kg" },
-      { "description": "64 in, base 45.5 ⇒ 60.7 kg" }
+      {
+        "description": "70 in, base 50 ⇒ 73.0 kg"
+      },
+      {
+        "description": "64 in, base 45.5 ⇒ 60.7 kg"
+      }
     ],
     "faqs": [
       {
@@ -7866,8 +7894,12 @@
     "expression": "(220 - age) * intensity / 100",
     "unit": "bpm",
     "examples": [
-      { "description": "Age 30 at 70% ⇒ 133 bpm" },
-      { "description": "Age 40 at 85% ⇒ 153 bpm" }
+      {
+        "description": "Age 30 at 70% ⇒ 133 bpm"
+      },
+      {
+        "description": "Age 40 at 85% ⇒ 153 bpm"
+      }
     ],
     "faqs": [
       {
@@ -7920,8 +7952,12 @@
     "expression": "(thickness * width * length) / 144",
     "unit": "board ft",
     "examples": [
-      { "description": "2×6×96 in ⇒ 8 board ft" },
-      { "description": "1×10×120 in ⇒ 8.33 board ft" }
+      {
+        "description": "2×6×96 in ⇒ 8 board ft"
+      },
+      {
+        "description": "1×10×120 in ⇒ 8.33 board ft"
+      }
     ],
     "faqs": [
       {
@@ -7974,8 +8010,12 @@
     "expression": "area / (width * height)",
     "unit": "sheets",
     "examples": [
-      { "description": "500 ft² area with 4×8 ft sheets ⇒ 15.63 sheets" },
-      { "description": "800 ft² area with 4×12 ft sheets ⇒ 16.67 sheets" }
+      {
+        "description": "500 ft² area with 4×8 ft sheets ⇒ 15.63 sheets"
+      },
+      {
+        "description": "800 ft² area with 4×12 ft sheets ⇒ 16.67 sheets"
+      }
     ],
     "faqs": [
       {
@@ -8013,7 +8053,14 @@
     ],
     "expression": "(function(n){n=Math.floor(n);let r=1;for(let i=2;i<=n;i++)r*=i;return r;})(n)",
     "unit": "",
-    "examples": [{ "description": "5 ⇒ 120" }, { "description": "3 ⇒ 6" }],
+    "examples": [
+      {
+        "description": "5 ⇒ 120"
+      },
+      {
+        "description": "3 ⇒ 6"
+      }
+    ],
     "faqs": [
       {
         "question": "What is factorial?",
@@ -8058,8 +8105,12 @@
     "expression": "(function(a,b){a=Math.abs(Math.floor(a));b=Math.abs(Math.floor(b));while(b){[a,b]=[b,a%b];}return a;})(a,b)",
     "unit": "",
     "examples": [
-      { "description": "48 & 18 ⇒ 6" },
-      { "description": "21 & 14 ⇒ 7" }
+      {
+        "description": "48 & 18 ⇒ 6"
+      },
+      {
+        "description": "21 & 14 ⇒ 7"
+      }
     ],
     "faqs": [
       {
@@ -8098,8 +8149,12 @@
     "expression": "Math.max(Math.pow(2, 32 - prefix) - 2, 0)",
     "unit": "hosts",
     "examples": [
-      { "description": "/24 ⇒ 254 hosts" },
-      { "description": "/30 ⇒ 2 hosts" }
+      {
+        "description": "/24 ⇒ 254 hosts"
+      },
+      {
+        "description": "/30 ⇒ 2 hosts"
+      }
     ],
     "faqs": [
       {
@@ -8145,8 +8200,12 @@
     "expression": "(drives - 1) * size",
     "unit": "TB",
     "examples": [
-      { "description": "4 drives at 2 TB ⇒ 6 TB" },
-      { "description": "6 drives at 4 TB ⇒ 20 TB" }
+      {
+        "description": "4 drives at 2 TB ⇒ 6 TB"
+      },
+      {
+        "description": "6 drives at 4 TB ⇒ 20 TB"
+      }
     ],
     "faqs": [
       {
@@ -8185,8 +8244,12 @@
     "expression": "seconds * 0.343",
     "unit": "km",
     "examples": [
-      { "description": "3 s ⇒ 1.03 km" },
-      { "description": "5 s ⇒ 1.72 km" }
+      {
+        "description": "3 s ⇒ 1.03 km"
+      },
+      {
+        "description": "5 s ⇒ 1.72 km"
+      }
     ],
     "faqs": [
       {
@@ -8232,8 +8295,12 @@
     "expression": "coffee * ratio",
     "unit": "g",
     "examples": [
-      { "description": "20 g coffee at 15 ⇒ 300 g water" },
-      { "description": "30 g coffee at 16 ⇒ 480 g water" }
+      {
+        "description": "20 g coffee at 15 ⇒ 300 g water"
+      },
+      {
+        "description": "30 g coffee at 16 ⇒ 480 g water"
+      }
     ],
     "faqs": [
       {
@@ -8261,13 +8328,22 @@
     "cluster": "conversions",
     "description": "Convert illuminance from lux to foot-candles.",
     "inputs": [
-      { "name": "lux", "label": "Lux", "type": "number", "placeholder": "500" }
+      {
+        "name": "lux",
+        "label": "Lux",
+        "type": "number",
+        "placeholder": "500"
+      }
     ],
     "expression": "lux / 10.764",
     "intro": "Convert light level from lux to foot-candles. Enter the lux value and press Calculate.",
     "examples": [
-      { "description": "500 lux ⇒ 46.45 fc" },
-      { "description": "1000 lux ⇒ 92.90 fc" }
+      {
+        "description": "500 lux ⇒ 46.45 fc"
+      },
+      {
+        "description": "1000 lux ⇒ 92.90 fc"
+      }
     ],
     "faqs": [
       {
@@ -8306,8 +8382,12 @@
     "expression": "kj / 4.184",
     "intro": "Convert energy from kilojoules to kilocalories. Enter kilojoules and calculate.",
     "examples": [
-      { "description": "100 kJ ⇒ 23.90 kcal" },
-      { "description": "250 kJ ⇒ 59.77 kcal" }
+      {
+        "description": "100 kJ ⇒ 23.90 kcal"
+      },
+      {
+        "description": "250 kJ ⇒ 59.77 kcal"
+      }
     ],
     "faqs": [
       {
@@ -8346,8 +8426,12 @@
     "expression": "weeks * 168",
     "intro": "Convert any number of weeks into hours.",
     "examples": [
-      { "description": "2 weeks ⇒ 336 hours" },
-      { "description": "0.5 weeks ⇒ 84 hours" }
+      {
+        "description": "2 weeks ⇒ 336 hours"
+      },
+      {
+        "description": "0.5 weeks ⇒ 84 hours"
+      }
     ],
     "faqs": [
       {
@@ -8386,8 +8470,12 @@
     "expression": "seconds / (30 * 24 * 60 * 60)",
     "intro": "Approximate how many 30-day months fit in a number of seconds.",
     "examples": [
-      { "description": "2,592,000 s ⇒ 1 month" },
-      { "description": "5,184,000 s ⇒ 2 months" }
+      {
+        "description": "2,592,000 s ⇒ 1 month"
+      },
+      {
+        "description": "5,184,000 s ⇒ 2 months"
+      }
     ],
     "faqs": [
       {
@@ -8432,8 +8520,12 @@
     "expression": "(net_income / total_assets) * 100",
     "intro": "Determine how efficiently a company uses its assets to generate profit.",
     "examples": [
-      { "description": "$50,000 net income / $200,000 assets ⇒ 25%" },
-      { "description": "$80,000 net income / $1,000,000 assets ⇒ 8%" }
+      {
+        "description": "$50,000 net income / $200,000 assets ⇒ 25%"
+      },
+      {
+        "description": "$80,000 net income / $1,000,000 assets ⇒ 8%"
+      }
     ],
     "faqs": [
       {
@@ -8478,8 +8570,12 @@
     "expression": "liabilities / equity",
     "intro": "Assess a company's leverage by comparing liabilities to equity.",
     "examples": [
-      { "description": "$150,000 liabilities / $100,000 equity ⇒ 1.5" },
-      { "description": "$80,000 liabilities / $200,000 equity ⇒ 0.4" }
+      {
+        "description": "$150,000 liabilities / $100,000 equity ⇒ 1.5"
+      },
+      {
+        "description": "$80,000 liabilities / $200,000 equity ⇒ 0.4"
+      }
     ],
     "faqs": [
       {
@@ -8524,8 +8620,12 @@
     "expression": "weight * (bf / 100)",
     "intro": "Find the mass of body fat based on total weight and body fat percentage.",
     "examples": [
-      { "description": "70 kg at 20% ⇒ 14 kg fat" },
-      { "description": "80 kg at 15% ⇒ 12 kg fat" }
+      {
+        "description": "70 kg at 20% ⇒ 14 kg fat"
+      },
+      {
+        "description": "80 kg at 15% ⇒ 12 kg fat"
+      }
     ],
     "faqs": [
       {
@@ -8564,8 +8664,12 @@
     "expression": "calories / 3500",
     "intro": "Estimate potential weight gain from extra calories consumed.",
     "examples": [
-      { "description": "7000 calories ⇒ 2 lb" },
-      { "description": "1750 calories ⇒ 0.5 lb" }
+      {
+        "description": "7000 calories ⇒ 2 lb"
+      },
+      {
+        "description": "1750 calories ⇒ 0.5 lb"
+      }
     ],
     "faqs": [
       {
@@ -8616,8 +8720,12 @@
     "expression": "area * width * depth * 144 * 0.0163871",
     "intro": "Approximate the amount of grout needed based on area and joint dimensions.",
     "examples": [
-      { "description": "50 ft², 0.125 in width, 0.25 in depth ⇒ 3.69 L" },
-      { "description": "100 ft², 0.1 in width, 0.3 in depth ⇒ 7.09 L" }
+      {
+        "description": "50 ft², 0.125 in width, 0.25 in depth ⇒ 3.69 L"
+      },
+      {
+        "description": "100 ft², 0.1 in width, 0.3 in depth ⇒ 7.09 L"
+      }
     ],
     "faqs": [
       {
@@ -8662,8 +8770,12 @@
     "expression": "area / coverage",
     "intro": "Figure out how many insulation rolls to purchase based on area coverage.",
     "examples": [
-      { "description": "500 ft² area, 40 ft² per roll ⇒ 12.5 rolls" },
-      { "description": "800 ft² area, 30 ft² per roll ⇒ 26.67 rolls" }
+      {
+        "description": "500 ft² area, 40 ft² per roll ⇒ 12.5 rolls"
+      },
+      {
+        "description": "800 ft² area, 30 ft² per roll ⇒ 26.67 rolls"
+      }
     ],
     "faqs": [
       {
@@ -8708,8 +8820,12 @@
     "expression": "(((measured - actual) ^ 2) ^ 0.5 / actual) * 100",
     "intro": "Find the percent error between a measured quantity and its true value.",
     "examples": [
-      { "description": "Measured 105 vs actual 100 ⇒ 5%" },
-      { "description": "Measured 95 vs actual 100 ⇒ 5%" }
+      {
+        "description": "Measured 105 vs actual 100 ⇒ 5%"
+      },
+      {
+        "description": "Measured 95 vs actual 100 ⇒ 5%"
+      }
     ],
     "faqs": [
       {
@@ -8748,8 +8864,12 @@
     "expression": "360 / n",
     "intro": "Compute the exterior angle of a regular polygon by dividing 360° by the number of sides.",
     "examples": [
-      { "description": "n = 6 ⇒ 60°" },
-      { "description": "n = 8 ⇒ 45°" }
+      {
+        "description": "n = 6 ⇒ 60°"
+      },
+      {
+        "description": "n = 8 ⇒ 45°"
+      }
     ],
     "faqs": [
       {
@@ -8794,8 +8914,12 @@
     "expression": "((original - compressed) / original) * 100",
     "intro": "See how much space you save after compressing files.",
     "examples": [
-      { "description": "10 MB → 6 MB ⇒ 40%" },
-      { "description": "50 MB → 25 MB ⇒ 50%" }
+      {
+        "description": "10 MB → 6 MB ⇒ 40%"
+      },
+      {
+        "description": "50 MB → 25 MB ⇒ 50%"
+      }
     ],
     "faqs": [
       {
@@ -8852,8 +8976,12 @@
     "expression": "(sw * sh) / (bw * bh) * 100",
     "intro": "Calculate the screen area as a percentage of the device's front surface.",
     "examples": [
-      { "description": "Screen 68×152 mm, body 70×155 mm ⇒ 95.26%" },
-      { "description": "Screen 60×130 mm, body 65×140 mm ⇒ 85.71%" }
+      {
+        "description": "Screen 68×152 mm, body 70×155 mm ⇒ 95.26%"
+      },
+      {
+        "description": "Screen 60×130 mm, body 65×140 mm ⇒ 85.71%"
+      }
     ],
     "faqs": [
       {
@@ -8892,8 +9020,12 @@
     "expression": "age * 8",
     "intro": "Approximate a rabbit's age in human years using a factor of eight.",
     "examples": [
-      { "description": "2 rabbit years ⇒ 16 human years" },
-      { "description": "5 rabbit years ⇒ 40 human years" }
+      {
+        "description": "2 rabbit years ⇒ 16 human years"
+      },
+      {
+        "description": "5 rabbit years ⇒ 40 human years"
+      }
     ],
     "faqs": [
       {
@@ -8932,8 +9064,12 @@
     "expression": "60000 / bpm",
     "intro": "Convert beats per minute into milliseconds per beat for music production.",
     "examples": [
-      { "description": "120 BPM ⇒ 500 ms" },
-      { "description": "90 BPM ⇒ 666.67 ms" }
+      {
+        "description": "120 BPM ⇒ 500 ms"
+      },
+      {
+        "description": "90 BPM ⇒ 666.67 ms"
+      }
     ],
     "faqs": [
       {
@@ -8973,8 +9109,12 @@
     "expression": "watts / 745.699872",
     "intro": "Convert electrical power in watts to mechanical horsepower for equipment comparisons.",
     "examples": [
-      { "description": "1000 W ⇒ 1.34 hp" },
-      { "description": "1500 W ⇒ 2.01 hp" }
+      {
+        "description": "1000 W ⇒ 1.34 hp"
+      },
+      {
+        "description": "1500 W ⇒ 2.01 hp"
+      }
     ],
     "faqs": [
       {
@@ -9014,8 +9154,12 @@
     "expression": "liters * 0.264172",
     "intro": "Convert liquid volumes from liters to US gallons quickly and accurately.",
     "examples": [
-      { "description": "10 L ⇒ 2.64 gal" },
-      { "description": "25 L ⇒ 6.60 gal" }
+      {
+        "description": "10 L ⇒ 2.64 gal"
+      },
+      {
+        "description": "25 L ⇒ 6.60 gal"
+      }
     ],
     "faqs": [
       {
@@ -9090,8 +9234,12 @@
     "expression": "(function(y1,m1,d1,y2,m2,d2){const start=new Date(y1,m1-1,d1);const end=new Date(y2,m2-1,d2);let count=0;for(let d=new Date(start);d<=end;d.setDate(d.getDate()+1)){const day=d.getDay();if(day!==0&&day!==6)count++;}return count;})(y1,m1,d1,y2,m2,d2)",
     "intro": "Find how many business days fall between two dates, excluding weekends.",
     "examples": [
-      { "description": "2024-06-03 to 2024-06-07 ⇒ 5 days" },
-      { "description": "2024-06-01 to 2024-06-10 ⇒ 6 days" }
+      {
+        "description": "2024-06-03 to 2024-06-07 ⇒ 5 days"
+      },
+      {
+        "description": "2024-06-01 to 2024-06-10 ⇒ 6 days"
+      }
     ],
     "faqs": [
       {
@@ -9145,8 +9293,12 @@
     "expression": "(function(y,m,d){let a=Math.floor((14-m)/12);let y1=y+4800-a;let m1=m+12*a-3;return d+Math.floor((153*m1+2)/5)+365*y1+Math.floor(y1/4)-Math.floor(y1/100)+Math.floor(y1/400)-32045;})(year,month,day)",
     "intro": "Calculate the Julian Day Number for any given calendar date.",
     "examples": [
-      { "description": "2000-01-01 ⇒ 2451545" },
-      { "description": "2024-05-15 ⇒ 2460446" }
+      {
+        "description": "2000-01-01 ⇒ 2451545"
+      },
+      {
+        "description": "2024-05-15 ⇒ 2460446"
+      }
     ],
     "faqs": [
       {
@@ -9193,8 +9345,12 @@
     "expression": "(dividends / earnings) * 100",
     "intro": "Determine what percentage of earnings is distributed to shareholders as dividends.",
     "examples": [
-      { "description": "Dividends 2, earnings 5 ⇒ 40%" },
-      { "description": "Dividends 3, earnings 6 ⇒ 50%" }
+      {
+        "description": "Dividends 2, earnings 5 ⇒ 40%"
+      },
+      {
+        "description": "Dividends 3, earnings 6 ⇒ 50%"
+      }
     ],
     "faqs": [
       {
@@ -9241,8 +9397,12 @@
     "expression": "ebit / interest",
     "intro": "Assess how many times a company's earnings can cover its interest payments.",
     "examples": [
-      { "description": "EBIT 60000, interest 10000 ⇒ 6" },
-      { "description": "EBIT 45000, interest 15000 ⇒ 3" }
+      {
+        "description": "EBIT 60000, interest 10000 ⇒ 6"
+      },
+      {
+        "description": "EBIT 45000, interest 15000 ⇒ 3"
+      }
     ],
     "faqs": [
       {
@@ -9317,8 +9477,12 @@
     "expression": "(new Date(y2,m2-1,d2) - new Date(y1,m1-1,d1)) / 604800000",
     "intro": "Calculate how many weeks pregnant you are based on the last menstrual period and today's date.",
     "examples": [
-      { "description": "LMP 2024-01-01, current 2024-03-15 ⇒ 10.29 weeks" },
-      { "description": "LMP 2024-06-01, current 2024-07-13 ⇒ 6.00 weeks" }
+      {
+        "description": "LMP 2024-01-01, current 2024-03-15 ⇒ 10.29 weeks"
+      },
+      {
+        "description": "LMP 2024-06-01, current 2024-07-13 ⇒ 6.00 weeks"
+      }
     ],
     "faqs": [
       {
@@ -9365,8 +9529,12 @@
     "expression": "packsPerDay * years",
     "intro": "Estimate cumulative smoking exposure by multiplying daily packs by years smoked.",
     "examples": [
-      { "description": "1 pack/day for 10 years ⇒ 10 pack-years" },
-      { "description": "0.5 pack/day for 20 years ⇒ 10 pack-years" }
+      {
+        "description": "1 pack/day for 10 years ⇒ 10 pack-years"
+      },
+      {
+        "description": "0.5 pack/day for 20 years ⇒ 10 pack-years"
+      }
     ],
     "faqs": [
       {
@@ -9413,8 +9581,12 @@
     "expression": "area * price",
     "intro": "Estimate how much new carpet will cost based on room size and price per square foot.",
     "examples": [
-      { "description": "Area 200 ft², price $3 ⇒ $600" },
-      { "description": "Area 150 ft², price $2.5 ⇒ $375" }
+      {
+        "description": "Area 200 ft², price $3 ⇒ $600"
+      },
+      {
+        "description": "Area 150 ft², price $2.5 ⇒ $375"
+      }
     ],
     "faqs": [
       {
@@ -9461,8 +9633,12 @@
     "expression": "Math.ceil(area / (spacing * spacing))",
     "intro": "Figure out how many evenly spaced plants can fit into a garden area.",
     "examples": [
-      { "description": "Area 100 ft², spacing 2 ft ⇒ 25 plants" },
-      { "description": "Area 200 ft², spacing 1.5 ft ⇒ 89 plants" }
+      {
+        "description": "Area 100 ft², spacing 2 ft ⇒ 25 plants"
+      },
+      {
+        "description": "Area 200 ft², spacing 1.5 ft ⇒ 89 plants"
+      }
     ],
     "faqs": [
       {
@@ -9509,8 +9685,12 @@
     "expression": "(function(a,b){a=Math.abs(Math.floor(a));b=Math.abs(Math.floor(b));function g(x,y){while(y){[x,y]=[y,x%y];}return x;}return a*b/g(a,b);})(a,b)",
     "intro": "Compute the smallest common multiple shared by two integers.",
     "examples": [
-      { "description": "LCM of 12 and 18 ⇒ 36" },
-      { "description": "LCM of 7 and 5 ⇒ 35" }
+      {
+        "description": "LCM of 12 and 18 ⇒ 36"
+      },
+      {
+        "description": "LCM of 7 and 5 ⇒ 35"
+      }
     ],
     "faqs": [
       {
@@ -9557,8 +9737,12 @@
     "expression": "((dividend % divisor) + divisor) % divisor",
     "intro": "Compute the non-negative remainder after dividing one number by another.",
     "examples": [
-      { "description": "10 mod 3 ⇒ 1" },
-      { "description": "-10 mod 3 ⇒ 2" }
+      {
+        "description": "10 mod 3 ⇒ 1"
+      },
+      {
+        "description": "-10 mod 3 ⇒ 2"
+      }
     ],
     "faqs": [
       {
@@ -9605,8 +9789,12 @@
     "expression": "length * Math.log(charset) / Math.log(2)",
     "intro": "Gauge the theoretical strength of a password using entropy in bits.",
     "examples": [
-      { "description": "Length 8, charset 62 ⇒ 47.60 bits" },
-      { "description": "Length 12, charset 96 ⇒ 79.61 bits" }
+      {
+        "description": "Length 8, charset 62 ⇒ 47.60 bits"
+      },
+      {
+        "description": "Length 12, charset 96 ⇒ 79.61 bits"
+      }
     ],
     "faqs": [
       {
@@ -9653,8 +9841,12 @@
     "expression": "voltage * current",
     "intro": "Compute power in watts using voltage and current values.",
     "examples": [
-      { "description": "120 V and 2 A ⇒ 240 W" },
-      { "description": "12 V and 1.5 A ⇒ 18 W" }
+      {
+        "description": "120 V and 2 A ⇒ 240 W"
+      },
+      {
+        "description": "12 V and 1.5 A ⇒ 18 W"
+      }
     ],
     "faqs": [
       {
@@ -9694,8 +9886,12 @@
     "expression": "100 * (1 - (function(n){let p=1;for(let i=0;i<n;i++){p*= (365-i)/365;}return p;})(people))",
     "intro": "Estimate the probability that at least two people in a group share the same birthday.",
     "examples": [
-      { "description": "Group of 23 ⇒ 50.73%" },
-      { "description": "Group of 50 ⇒ 97.04%" }
+      {
+        "description": "Group of 23 ⇒ 50.73%"
+      },
+      {
+        "description": "Group of 50 ⇒ 97.04%"
+      }
     ],
     "faqs": [
       {
@@ -9742,8 +9938,12 @@
     "expression": "height / Math.tan(angle * Math.PI / 180)",
     "intro": "Calculate how long a shadow will be based on object height and sun elevation angle.",
     "examples": [
-      { "description": "Height 2 m, angle 45° ⇒ 2 m" },
-      { "description": "Height 1.5 m, angle 30° ⇒ 2.60 m" }
+      {
+        "description": "Height 2 m, angle 45° ⇒ 2 m"
+      },
+      {
+        "description": "Height 1.5 m, angle 30° ⇒ 2.60 m"
+      }
     ],
     "faqs": [
       {
@@ -9772,12 +9972,20 @@
     "cluster": "Conversions",
     "intro": "Convert torque from newton-meters to foot-pounds. Enter the values and press Calculate.",
     "inputs": [
-      { "name": "nm", "hint": "Torque (Nm)", "placeholder": "Enter nm" }
+      {
+        "name": "nm",
+        "hint": "Torque (Nm)",
+        "placeholder": "Enter nm"
+      }
     ],
     "expression": "nm * 0.737562149",
     "examples": [
-      { "description": "10 Nm → 7.38 ft·lb" },
-      { "description": "250 Nm → 184.39 ft·lb" }
+      {
+        "description": "10 Nm → 7.38 ft·lb"
+      },
+      {
+        "description": "250 Nm → 184.39 ft·lb"
+      }
     ],
     "faqs": [
       {
@@ -9806,12 +10014,20 @@
     "cluster": "Conversions",
     "intro": "Convert pressure from pounds per square inch to kilopascals. Enter the values and press Calculate.",
     "inputs": [
-      { "name": "psi", "hint": "Pressure (PSI)", "placeholder": "Enter psi" }
+      {
+        "name": "psi",
+        "hint": "Pressure (PSI)",
+        "placeholder": "Enter psi"
+      }
     ],
     "expression": "psi * 6.89476",
     "examples": [
-      { "description": "30 PSI → 206.84 kPa" },
-      { "description": "100 PSI → 689.48 kPa" }
+      {
+        "description": "30 PSI → 206.84 kPa"
+      },
+      {
+        "description": "100 PSI → 689.48 kPa"
+      }
     ],
     "faqs": [
       {
@@ -9840,12 +10056,20 @@
     "cluster": "Date & Time",
     "intro": "Convert billable hours to standard 6-minute units used on legal invoices. Enter the values and press Calculate.",
     "inputs": [
-      { "name": "hours", "hint": "Hours", "placeholder": "Enter hours" }
+      {
+        "name": "hours",
+        "hint": "Hours",
+        "placeholder": "Enter hours"
+      }
     ],
     "expression": "hours * 10",
     "examples": [
-      { "description": "1.5 h → 15 units" },
-      { "description": "0.3 h → 3 units" }
+      {
+        "description": "1.5 h → 15 units"
+      },
+      {
+        "description": "0.3 h → 3 units"
+      }
     ],
     "faqs": [
       {
@@ -9874,7 +10098,11 @@
     "cluster": "Date & Time",
     "intro": "Find how many overtime hours were worked beyond a regular schedule. Enter the values and press Calculate.",
     "inputs": [
-      { "name": "total", "hint": "Total Hours", "placeholder": "Enter total" },
+      {
+        "name": "total",
+        "hint": "Total Hours",
+        "placeholder": "Enter total"
+      },
       {
         "name": "regular",
         "hint": "Regular Hours",
@@ -9883,8 +10111,12 @@
     ],
     "expression": "Math.max(total - regular, 0)",
     "examples": [
-      { "description": "45 total, 40 regular → 5" },
-      { "description": "38 total, 40 regular → 0" }
+      {
+        "description": "45 total, 40 regular → 5"
+      },
+      {
+        "description": "38 total, 40 regular → 0"
+      }
     ],
     "faqs": [
       {
@@ -9918,12 +10150,20 @@
         "hint": "Settlement Amount",
         "placeholder": "Enter amount"
       },
-      { "name": "percent", "hint": "Fee (%)", "placeholder": "Enter percent" }
+      {
+        "name": "percent",
+        "hint": "Fee (%)",
+        "placeholder": "Enter percent"
+      }
     ],
     "expression": "amount * percent / 100",
     "examples": [
-      { "description": "$50,000 at 30% → $15,000" },
-      { "description": "$120,000 at 25% → $30,000" }
+      {
+        "description": "$50,000 at 30% → $15,000"
+      },
+      {
+        "description": "$120,000 at 25% → $30,000"
+      }
     ],
     "faqs": [
       {
@@ -9952,13 +10192,25 @@
     "cluster": "Finance",
     "intro": "Compute total labor cost by multiplying shop rate by hours worked. Enter the values and press Calculate.",
     "inputs": [
-      { "name": "hours", "hint": "Hours", "placeholder": "Enter hours" },
-      { "name": "rate", "hint": "Rate per Hour", "placeholder": "Enter rate" }
+      {
+        "name": "hours",
+        "hint": "Hours",
+        "placeholder": "Enter hours"
+      },
+      {
+        "name": "rate",
+        "hint": "Rate per Hour",
+        "placeholder": "Enter rate"
+      }
     ],
     "expression": "hours * rate",
     "examples": [
-      { "description": "3 h at $90/hr → $270" },
-      { "description": "1.5 h at $120/hr → $180" }
+      {
+        "description": "3 h at $90/hr → $270"
+      },
+      {
+        "description": "1.5 h at $120/hr → $180"
+      }
     ],
     "faqs": [
       {
@@ -9992,12 +10244,20 @@
         "hint": "Weight (kg)",
         "placeholder": "Enter weight"
       },
-      { "name": "hours", "hint": "Hours Sitting", "placeholder": "Enter hours" }
+      {
+        "name": "hours",
+        "hint": "Hours Sitting",
+        "placeholder": "Enter hours"
+      }
     ],
     "expression": "weight * hours * 1.3",
     "examples": [
-      { "description": "70 kg for 8 h → 728 kcal" },
-      { "description": "80 kg for 2 h → 208 kcal" }
+      {
+        "description": "70 kg for 8 h → 728 kcal"
+      },
+      {
+        "description": "80 kg for 2 h → 208 kcal"
+      }
     ],
     "faqs": [
       {
@@ -10039,8 +10299,12 @@
     ],
     "expression": "acc * acc * hours",
     "examples": [
-      { "description": "5 m/s² for 2 h → 50 points" },
-      { "description": "8 m/s² for 0.5 h → 32 points" }
+      {
+        "description": "5 m/s² for 2 h → 50 points"
+      },
+      {
+        "description": "8 m/s² for 0.5 h → 32 points"
+      }
     ],
     "faqs": [
       {
@@ -10069,13 +10333,25 @@
     "cluster": "Home & DIY",
     "intro": "Determine the slope of a garage ramp by dividing rise by run. Enter the values and press Calculate.",
     "inputs": [
-      { "name": "rise", "hint": "Rise", "placeholder": "Enter rise" },
-      { "name": "run", "hint": "Run", "placeholder": "Enter run" }
+      {
+        "name": "rise",
+        "hint": "Rise",
+        "placeholder": "Enter rise"
+      },
+      {
+        "name": "run",
+        "hint": "Run",
+        "placeholder": "Enter run"
+      }
     ],
     "expression": "rise / run * 100",
     "examples": [
-      { "description": "6 in rise over 72 in run → 8.33%" },
-      { "description": "4 in rise over 48 in run → 8.33%" }
+      {
+        "description": "6 in rise over 72 in run → 8.33%"
+      },
+      {
+        "description": "4 in rise over 48 in run → 8.33%"
+      }
     ],
     "faqs": [
       {
@@ -10104,7 +10380,11 @@
     "cluster": "Home & DIY",
     "intro": "Estimate how many gallons of epoxy are needed for a garage floor. Enter the values and press Calculate.",
     "inputs": [
-      { "name": "area", "hint": "Area (sq ft)", "placeholder": "Enter area" },
+      {
+        "name": "area",
+        "hint": "Area (sq ft)",
+        "placeholder": "Enter area"
+      },
       {
         "name": "coverage",
         "hint": "Coverage per Gallon",
@@ -10113,8 +10393,12 @@
     ],
     "expression": "area / coverage",
     "examples": [
-      { "description": "400 sq ft at 250 sq ft/gal → 1.6 gal" },
-      { "description": "600 sq ft at 200 sq ft/gal → 3 gal" }
+      {
+        "description": "400 sq ft at 250 sq ft/gal → 1.6 gal"
+      },
+      {
+        "description": "600 sq ft at 200 sq ft/gal → 3 gal"
+      }
     ],
     "faqs": [
       {
@@ -10156,8 +10440,12 @@
     ],
     "expression": "load / effort",
     "examples": [
-      { "description": "Load arm 2 m, effort arm 0.5 m → 4" },
-      { "description": "Load arm 1 m, effort arm 0.25 m → 4" }
+      {
+        "description": "Load arm 2 m, effort arm 0.5 m → 4"
+      },
+      {
+        "description": "Load arm 1 m, effort arm 0.25 m → 4"
+      }
     ],
     "faqs": [
       {
@@ -10186,13 +10474,25 @@
     "cluster": "Math",
     "intro": "Determine what percentage of total evidence a specific item represents. Enter the values and press Calculate.",
     "inputs": [
-      { "name": "part", "hint": "Item Weight", "placeholder": "Enter part" },
-      { "name": "total", "hint": "Total Weight", "placeholder": "Enter total" }
+      {
+        "name": "part",
+        "hint": "Item Weight",
+        "placeholder": "Enter part"
+      },
+      {
+        "name": "total",
+        "hint": "Total Weight",
+        "placeholder": "Enter total"
+      }
     ],
     "expression": "part / total * 100",
     "examples": [
-      { "description": "30 of 120 pages → 25%" },
-      { "description": "15 of 60 exhibits → 25%" }
+      {
+        "description": "30 of 120 pages → 25%"
+      },
+      {
+        "description": "15 of 60 exhibits → 25%"
+      }
     ],
     "faqs": [
       {
@@ -10234,8 +10534,12 @@
     ],
     "expression": "driven / driving",
     "examples": [
-      { "description": "Driven 40, driving 20 → 2" },
-      { "description": "Driven 18, driving 12 → 1.5" }
+      {
+        "description": "Driven 40, driving 20 → 2"
+      },
+      {
+        "description": "Driven 18, driving 12 → 1.5"
+      }
     ],
     "faqs": [
       {
@@ -10269,12 +10573,20 @@
         "hint": "Capacity (Ah)",
         "placeholder": "Enter capacity"
       },
-      { "name": "load", "hint": "Load (A)", "placeholder": "Enter load" }
+      {
+        "name": "load",
+        "hint": "Load (A)",
+        "placeholder": "Enter load"
+      }
     ],
     "expression": "capacity / load",
     "examples": [
-      { "description": "5 Ah battery at 1 A load → 5 h" },
-      { "description": "2 Ah battery at 0.5 A load → 4 h" }
+      {
+        "description": "5 Ah battery at 1 A load → 5 h"
+      },
+      {
+        "description": "2 Ah battery at 0.5 A load → 4 h"
+      }
     ],
     "faqs": [
       {
@@ -10308,12 +10620,20 @@
         "hint": "Number of Citations",
         "placeholder": "Enter citations"
       },
-      { "name": "pages", "hint": "Pages", "placeholder": "Enter pages" }
+      {
+        "name": "pages",
+        "hint": "Pages",
+        "placeholder": "Enter pages"
+      }
     ],
     "expression": "citations / pages",
     "examples": [
-      { "description": "20 citations over 10 pages → 2 citations per page" },
-      { "description": "45 citations over 15 pages → 3 citations per page" }
+      {
+        "description": "20 citations over 10 pages → 2 citations per page"
+      },
+      {
+        "description": "45 citations over 15 pages → 3 citations per page"
+      }
     ],
     "faqs": [
       {
@@ -10347,12 +10667,20 @@
         "hint": "Recordable Incidents",
         "placeholder": "Enter incidents"
       },
-      { "name": "hours", "hint": "Hours Worked", "placeholder": "Enter hours" }
+      {
+        "name": "hours",
+        "hint": "Hours Worked",
+        "placeholder": "Enter hours"
+      }
     ],
     "expression": "incidents * 200000 / hours",
     "examples": [
-      { "description": "3 incidents over 400,000 hours → 1.5" },
-      { "description": "1 incident over 50,000 hours → 4" }
+      {
+        "description": "3 incidents over 400,000 hours → 1.5"
+      },
+      {
+        "description": "1 incident over 50,000 hours → 4"
+      }
     ],
     "faqs": [
       {
@@ -10374,5 +10702,926 @@
     ],
     "disclaimer": "Follow OSHA guidelines for recordkeeping definitions.",
     "unit": "incident rate"
+  },
+  {
+    "slug": "gpm-to-lps-converter",
+    "title": "GPM to LPS Converter",
+    "cluster": "Conversions",
+    "description": "Convert gallons per minute to liters per second.",
+    "intro": "Quickly convert flow rates from US gallons per minute to liters per second—handy for plumbing and irrigation setups.",
+    "inputs": [
+      {
+        "name": "gpm",
+        "label": "Flow (gpm)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "10"
+      }
+    ],
+    "expression": "gpm * 0.0630902",
+    "unit": "L/s",
+    "examples": [
+      {
+        "description": "10 gpm ⇒ 0.63 L/s"
+      },
+      {
+        "description": "25 gpm ⇒ 1.58 L/s"
+      },
+      {
+        "description": "40 gpm ⇒ 2.52 L/s"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Why convert to liters per second?",
+        "answer": "International plumbing specs often use metric flow rates."
+      },
+      {
+        "question": "Does temperature affect volume?",
+        "answer": "For most calculations the change is negligible."
+      },
+      {
+        "question": "Can I convert back to gpm?",
+        "answer": "Yes, divide liters per second by 0.0630902."
+      }
+    ],
+    "disclaimer": "Approximate conversion; verify requirements for critical systems."
+  },
+  {
+    "slug": "credit-hours-to-ects",
+    "title": "Credit Hours to ECTS Converter",
+    "cluster": "Conversions",
+    "description": "Convert US credit hours to European ECTS credits.",
+    "intro": "Translate academic credit hours into the European Credit Transfer and Accumulation System.",
+    "inputs": [
+      {
+        "name": "credits",
+        "label": "Credit Hours",
+        "type": "number",
+        "step": "any",
+        "placeholder": "3"
+      }
+    ],
+    "expression": "credits * 2",
+    "unit": "ECTS",
+    "examples": [
+      {
+        "description": "3 credit hours ⇒ 6 ECTS"
+      },
+      {
+        "description": "9 credit hours ⇒ 18 ECTS"
+      },
+      {
+        "description": "12 credit hours ⇒ 24 ECTS"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Is the conversion exact?",
+        "answer": "It's a common approximation; institutions may vary."
+      },
+      {
+        "question": "Can I convert fractional credits?",
+        "answer": "Yes, partial credits convert proportionally."
+      },
+      {
+        "question": "Why use ECTS?",
+        "answer": "ECTS helps compare course loads across European universities."
+      }
+    ],
+    "disclaimer": "Universities may apply different equivalences; confirm with your program."
+  },
+  {
+    "slug": "semester-week-number",
+    "title": "Semester Week Number",
+    "cluster": "Date & Time",
+    "description": "Find the current week number in a semester.",
+    "intro": "Determine how many weeks into the semester a given date falls.",
+    "inputs": [
+      {
+        "name": "start_year",
+        "label": "Start Year",
+        "type": "number",
+        "step": "1",
+        "placeholder": "2025"
+      },
+      {
+        "name": "start_month",
+        "label": "Start Month",
+        "type": "number",
+        "step": "1",
+        "placeholder": "1"
+      },
+      {
+        "name": "start_day",
+        "label": "Start Day",
+        "type": "number",
+        "step": "1",
+        "placeholder": "15"
+      },
+      {
+        "name": "curr_year",
+        "label": "Current Year",
+        "type": "number",
+        "step": "1",
+        "placeholder": "2025"
+      },
+      {
+        "name": "curr_month",
+        "label": "Current Month",
+        "type": "number",
+        "step": "1",
+        "placeholder": "2"
+      },
+      {
+        "name": "curr_day",
+        "label": "Current Day",
+        "type": "number",
+        "step": "1",
+        "placeholder": "12"
+      }
+    ],
+    "expression": "Math.floor((new Date(curr_year, curr_month-1, curr_day) - new Date(start_year, start_month-1, start_day)) / 604800000) + 1",
+    "unit": "week",
+    "examples": [
+      {
+        "description": "Start 2025-01-15, date 2025-02-12 ⇒ 5"
+      },
+      {
+        "description": "Start 2025-08-25, date 2025-08-25 ⇒ 1"
+      },
+      {
+        "description": "Start 2025-08-25, date 2025-12-10 ⇒ 16"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Does week counting start at 1?",
+        "answer": "Yes, the first week begins on the semester start date."
+      },
+      {
+        "question": "What if the date is before the start?",
+        "answer": "The result can be zero or negative, indicating pre-semester."
+      },
+      {
+        "question": "Are leap years handled?",
+        "answer": "Yes, JavaScript date arithmetic accounts for them."
+      }
+    ],
+    "disclaimer": "Academic calendars vary; verify week numbers with your institution."
+  },
+  {
+    "slug": "pvc-cure-completion",
+    "title": "PVC Cure Completion Time",
+    "cluster": "Date & Time",
+    "description": "Add cure time to a start hour for PVC cement.",
+    "intro": "Estimate the clock time when PVC joints finish curing.",
+    "inputs": [
+      {
+        "name": "start",
+        "label": "Start Hour",
+        "type": "number",
+        "step": "any",
+        "placeholder": "8"
+      },
+      {
+        "name": "cure",
+        "label": "Cure Hours",
+        "type": "number",
+        "step": "any",
+        "placeholder": "4"
+      }
+    ],
+    "expression": "(start + cure) % 24",
+    "unit": "hour",
+    "examples": [
+      {
+        "description": "Start 8, cure 4 ⇒ 12"
+      },
+      {
+        "description": "Start 15, cure 16 ⇒ 7"
+      },
+      {
+        "description": "Start 22, cure 2 ⇒ 0"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Are times in 24-hour format?",
+        "answer": "Yes, results range from 0 to 23."
+      },
+      {
+        "question": "Does temperature affect curing?",
+        "answer": "Yes, but this calculator assumes ideal conditions."
+      },
+      {
+        "question": "What if curing exceeds 24 hours?",
+        "answer": "The modulus wraps the time to the next day."
+      }
+    ],
+    "disclaimer": "Always follow manufacturer cure recommendations and safety guidelines."
+  },
+  {
+    "slug": "research-grant-overhead",
+    "title": "Research Grant Overhead Calculator",
+    "cluster": "Finance",
+    "description": "Estimate net funds after institutional overhead.",
+    "intro": "Calculate how much of a grant remains after an institution's overhead deduction.",
+    "inputs": [
+      {
+        "name": "amount",
+        "label": "Grant Amount",
+        "type": "number",
+        "step": "any",
+        "placeholder": "50000"
+      },
+      {
+        "name": "overhead",
+        "label": "Overhead (%)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "15"
+      }
+    ],
+    "expression": "amount * (1 - overhead / 100)",
+    "unit": "USD",
+    "examples": [
+      {
+        "description": "$50,000 with 15% ⇒ $42,500"
+      },
+      {
+        "description": "$100,000 with 40% ⇒ $60,000"
+      },
+      {
+        "description": "$20,000 with 10% ⇒ $18,000"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What is overhead?",
+        "answer": "A percentage retained by the institution to cover indirect costs."
+      },
+      {
+        "question": "Are rates fixed?",
+        "answer": "They vary by institution and funding agency."
+      },
+      {
+        "question": "Does this include fringe benefits?",
+        "answer": "No, it only accounts for overhead percentage."
+      }
+    ],
+    "disclaimer": "Consult your institution for official policies and rates."
+  },
+  {
+    "slug": "pipe-installation-cost",
+    "title": "Pipe Installation Cost",
+    "cluster": "Finance",
+    "description": "Estimate total cost for a pipe run.",
+    "intro": "Compute material and labor costs for installing piping.",
+    "inputs": [
+      {
+        "name": "length",
+        "label": "Length (ft)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "50"
+      },
+      {
+        "name": "material",
+        "label": "Material $/ft",
+        "type": "number",
+        "step": "any",
+        "placeholder": "2"
+      },
+      {
+        "name": "labor_rate",
+        "label": "Labor $/hr",
+        "type": "number",
+        "step": "any",
+        "placeholder": "60"
+      },
+      {
+        "name": "time_per_ft",
+        "label": "Hours per ft",
+        "type": "number",
+        "step": "any",
+        "placeholder": "0.05"
+      }
+    ],
+    "expression": "length * material + length * time_per_ft * labor_rate",
+    "unit": "USD",
+    "examples": [
+      {
+        "description": "50 ft, $2/ft, $60/hr, 0.05 h/ft ⇒ $250"
+      },
+      {
+        "description": "80 ft, $3/ft, $55/hr, 0.06 h/ft ⇒ $504"
+      },
+      {
+        "description": "30 ft, $1.5/ft, $40/hr, 0.04 h/ft ⇒ $93"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Does this include fittings?",
+        "answer": "No, fitting costs should be added separately."
+      },
+      {
+        "question": "Can time per foot vary?",
+        "answer": "Yes, adjust based on project complexity."
+      },
+      {
+        "question": "Are taxes or permits included?",
+        "answer": "No, those should be calculated separately."
+      }
+    ],
+    "disclaimer": "Costs vary by region and project; use for rough estimation only."
+  },
+  {
+    "slug": "labor-hydration-rate",
+    "title": "Labor Hydration Calculator",
+    "cluster": "Health",
+    "description": "Estimate water needed during physical work.",
+    "intro": "Approximate water intake for manual labor based on body weight, duration, and temperature.",
+    "inputs": [
+      {
+        "name": "weight",
+        "label": "Weight (kg)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "70"
+      },
+      {
+        "name": "hours",
+        "label": "Work Hours",
+        "type": "number",
+        "step": "any",
+        "placeholder": "2"
+      },
+      {
+        "name": "temperature",
+        "label": "Temp (°C)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "30"
+      }
+    ],
+    "expression": "hours * 0.035 * weight * (1 + 0.02 * Math.max(0, temperature - 25))",
+    "unit": "L",
+    "examples": [
+      {
+        "description": "70 kg, 2 h, 30°C ⇒ 5.39 L"
+      },
+      {
+        "description": "80 kg, 1 h, 25°C ⇒ 2.80 L"
+      },
+      {
+        "description": "60 kg, 3 h, 20°C ⇒ 6.30 L"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Why adjust for temperature?",
+        "answer": "Higher heat increases sweat loss and water needs."
+      },
+      {
+        "question": "Can I use pounds?",
+        "answer": "Convert pounds to kilograms before input."
+      },
+      {
+        "question": "Is this medical advice?",
+        "answer": "No, it's a general guideline."
+      }
+    ],
+    "disclaimer": "Stay within personal limits and consult health professionals when needed."
+  },
+  {
+    "slug": "vitamin-d-exposure-time",
+    "title": "Vitamin D Exposure Time",
+    "cluster": "Health",
+    "description": "Estimate minutes of sun needed for vitamin D.",
+    "intro": "Approximate sunlight exposure required to synthesize vitamin D.",
+    "inputs": [
+      {
+        "name": "uv",
+        "label": "UV Index",
+        "type": "number",
+        "step": "any",
+        "placeholder": "8"
+      },
+      {
+        "name": "skin",
+        "label": "Skin Type (1-6)",
+        "type": "number",
+        "step": "1",
+        "placeholder": "2"
+      }
+    ],
+    "expression": "200 / (uv * (7 - skin))",
+    "unit": "minutes",
+    "examples": [
+      {
+        "description": "UV 8, skin 2 ⇒ 5 min"
+      },
+      {
+        "description": "UV 5, skin 4 ⇒ 13.33 min"
+      },
+      {
+        "description": "UV 3, skin 6 ⇒ 66.67 min"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What is skin type?",
+        "answer": "The Fitzpatrick skin phototype scale from I to VI."
+      },
+      {
+        "question": "Does sunscreen affect results?",
+        "answer": "Yes, sunscreen greatly reduces vitamin D synthesis."
+      },
+      {
+        "question": "Is cloud cover considered?",
+        "answer": "No, this assumes clear skies."
+      }
+    ],
+    "disclaimer": "Approximation only; follow medical advice for sun exposure."
+  },
+  {
+    "slug": "compost-carbon-nitrogen-ratio",
+    "title": "Compost Carbon-Nitrogen Ratio",
+    "cluster": "Home & DIY",
+    "description": "Calculate the blended C:N ratio of compost materials.",
+    "intro": "Determine the overall carbon-to-nitrogen ratio when mixing green and brown compost materials.",
+    "inputs": [
+      {
+        "name": "green_weight",
+        "label": "Green Weight (kg)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "10"
+      },
+      {
+        "name": "green_cn",
+        "label": "Green C:N",
+        "type": "number",
+        "step": "any",
+        "placeholder": "17"
+      },
+      {
+        "name": "brown_weight",
+        "label": "Brown Weight (kg)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "5"
+      },
+      {
+        "name": "brown_cn",
+        "label": "Brown C:N",
+        "type": "number",
+        "step": "any",
+        "placeholder": "60"
+      }
+    ],
+    "expression": "(green_weight * green_cn + brown_weight * brown_cn) / (green_weight + brown_weight)",
+    "unit": "C:N",
+    "examples": [
+      {
+        "description": "10 kg greens (17), 5 kg browns (60) ⇒ 31.33 C:N"
+      },
+      {
+        "description": "5 kg greens (20), 15 kg browns (80) ⇒ 65 C:N"
+      },
+      {
+        "description": "8 kg greens (15), 8 kg browns (40) ⇒ 27.5 C:N"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Why is C:N important?",
+        "answer": "Proper ratios speed composting and reduce odors."
+      },
+      {
+        "question": "Can I use volume instead of weight?",
+        "answer": "Weight is more accurate because material densities vary."
+      },
+      {
+        "question": "What is the ideal ratio?",
+        "answer": "Around 30:1 for efficient composting."
+      }
+    ],
+    "disclaimer": "Ratios are approximations; materials differ in actual content."
+  },
+  {
+    "slug": "drain-pipe-slope",
+    "title": "Drain Pipe Slope Calculator",
+    "cluster": "Home & DIY",
+    "description": "Find slope percentage for a drainage pipe.",
+    "intro": "Calculate the slope needed for proper drainage in plumbing or landscaping.",
+    "inputs": [
+      {
+        "name": "run",
+        "label": "Run Length (ft)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "50"
+      },
+      {
+        "name": "drop",
+        "label": "Vertical Drop (in)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "12"
+      }
+    ],
+    "expression": "(drop / (run * 12)) * 100",
+    "unit": "%",
+    "examples": [
+      {
+        "description": "50 ft run, 12 in drop ⇒ 2 %"
+      },
+      {
+        "description": "40 ft run, 6 in drop ⇒ 1.25 %"
+      },
+      {
+        "description": "80 ft run, 20 in drop ⇒ 2.08 %"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Why convert run to inches?",
+        "answer": "Slope uses consistent units for rise over run."
+      },
+      {
+        "question": "What slope is typical?",
+        "answer": "Most drains require 1–2% slope for flow."
+      },
+      {
+        "question": "Does pipe diameter matter?",
+        "answer": "This calculation ignores diameter; check local codes."
+      }
+    ],
+    "disclaimer": "Verify slope requirements with local building regulations."
+  },
+  {
+    "slug": "determinant-3x3-matrix",
+    "title": "3x3 Determinant Calculator",
+    "cluster": "Math",
+    "description": "Compute the determinant of a 3×3 matrix.",
+    "intro": "Evaluate the determinant of a 3×3 matrix—useful for linear algebra tasks.",
+    "inputs": [
+      {
+        "name": "a11",
+        "label": "a11",
+        "type": "number",
+        "step": "any",
+        "placeholder": "1"
+      },
+      {
+        "name": "a12",
+        "label": "a12",
+        "type": "number",
+        "step": "any",
+        "placeholder": "2"
+      },
+      {
+        "name": "a13",
+        "label": "a13",
+        "type": "number",
+        "step": "any",
+        "placeholder": "3"
+      },
+      {
+        "name": "a21",
+        "label": "a21",
+        "type": "number",
+        "step": "any",
+        "placeholder": "4"
+      },
+      {
+        "name": "a22",
+        "label": "a22",
+        "type": "number",
+        "step": "any",
+        "placeholder": "5"
+      },
+      {
+        "name": "a23",
+        "label": "a23",
+        "type": "number",
+        "step": "any",
+        "placeholder": "6"
+      },
+      {
+        "name": "a31",
+        "label": "a31",
+        "type": "number",
+        "step": "any",
+        "placeholder": "7"
+      },
+      {
+        "name": "a32",
+        "label": "a32",
+        "type": "number",
+        "step": "any",
+        "placeholder": "8"
+      },
+      {
+        "name": "a33",
+        "label": "a33",
+        "type": "number",
+        "step": "any",
+        "placeholder": "9"
+      }
+    ],
+    "expression": "a11*(a22*a33 - a23*a32) - a12*(a21*a33 - a23*a31) + a13*(a21*a32 - a22*a31)",
+    "unit": "determinant",
+    "examples": [
+      {
+        "description": "[[1,2,3],[4,5,6],[7,8,9]] ⇒ 0"
+      },
+      {
+        "description": "[[2,0,1],[3,0,0],[5,1,1]] ⇒ 3"
+      },
+      {
+        "description": "[[6,1,1],[4,-2,5],[2,8,7]] ⇒ -306"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What does the determinant signify?",
+        "answer": "It indicates matrix invertibility and scaling factor."
+      },
+      {
+        "question": "Can inputs be decimals?",
+        "answer": "Yes, any real numbers are accepted."
+      },
+      {
+        "question": "When is the determinant zero?",
+        "answer": "When rows or columns are linearly dependent."
+      }
+    ],
+    "disclaimer": "For educational purposes; verify results for critical applications."
+  },
+  {
+    "slug": "poisson-probability",
+    "title": "Poisson Probability Calculator",
+    "cluster": "Math",
+    "description": "Find the probability of k events given an average rate.",
+    "intro": "Compute Poisson distribution probabilities for event counts.",
+    "inputs": [
+      {
+        "name": "lambda",
+        "label": "λ (rate)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "2"
+      },
+      {
+        "name": "k",
+        "label": "k (events)",
+        "type": "number",
+        "step": "1",
+        "placeholder": "3"
+      }
+    ],
+    "expression": "(function(l,k){let f=1;for(let i=2;i<=k;i++)f*=i;return Math.exp(-l)*Math.pow(l,k)/f;})(lambda,k)",
+    "unit": "",
+    "examples": [
+      {
+        "description": "λ=2, k=3 ⇒ 0.18"
+      },
+      {
+        "description": "λ=4, k=1 ⇒ 0.07"
+      },
+      {
+        "description": "λ=1, k=0 ⇒ 0.37"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What does λ represent?",
+        "answer": "The average number of events in a given interval."
+      },
+      {
+        "question": "Must k be an integer?",
+        "answer": "Yes, k is the count of events."
+      },
+      {
+        "question": "Do probabilities sum to 1?",
+        "answer": "Yes, over all possible k values."
+      }
+    ],
+    "disclaimer": "Idealized model; real-world data may deviate."
+  },
+  {
+    "slug": "drone-flight-time",
+    "title": "Drone Flight Time Calculator",
+    "cluster": "Technology",
+    "description": "Estimate flight time from battery, current draw, and payload.",
+    "intro": "Predict drone flight duration considering battery capacity, current draw, and payload weight.",
+    "inputs": [
+      {
+        "name": "capacity",
+        "label": "Battery (mAh)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "5000"
+      },
+      {
+        "name": "current",
+        "label": "Current Draw (A)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "10"
+      },
+      {
+        "name": "payload",
+        "label": "Payload (kg)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "0"
+      }
+    ],
+    "expression": "(capacity / 1000) / (current * (1 + 0.1 * payload)) * 60",
+    "unit": "minutes",
+    "examples": [
+      {
+        "description": "5000 mAh, 10 A, 0 kg ⇒ 30 min"
+      },
+      {
+        "description": "6000 mAh, 12 A, 1 kg ⇒ 27.3 min"
+      },
+      {
+        "description": "8000 mAh, 15 A, 2 kg ⇒ 26.7 min"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "How accurate is this estimate?",
+        "answer": "It assumes constant current and no wind."
+      },
+      {
+        "question": "Why does payload reduce time?",
+        "answer": "Extra weight increases power consumption."
+      },
+      {
+        "question": "Can I use different units?",
+        "answer": "Convert values to the units shown before input."
+      }
+    ],
+    "disclaimer": "Real-world conditions like wind and battery age affect flight time."
+  },
+  {
+    "slug": "3d-print-time",
+    "title": "3D Print Time Estimator",
+    "cluster": "Technology",
+    "description": "Approximate printing time from model height, layer height, and speed.",
+    "intro": "Estimate how long a vertical 3D print will take based on layer and speed settings.",
+    "inputs": [
+      {
+        "name": "model_height",
+        "label": "Model Height (mm)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "100"
+      },
+      {
+        "name": "layer_height",
+        "label": "Layer Height (mm)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "0.2"
+      },
+      {
+        "name": "speed",
+        "label": "Print Speed (mm/s)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "50"
+      }
+    ],
+    "expression": "(model_height / layer_height) * 60 / speed",
+    "unit": "minutes",
+    "examples": [
+      {
+        "description": "100 mm, 0.2 mm, 50 mm/s ⇒ 600 min"
+      },
+      {
+        "description": "50 mm, 0.25 mm, 60 mm/s ⇒ 200 min"
+      },
+      {
+        "description": "200 mm, 0.3 mm, 40 mm/s ⇒ 1000 min"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Does this account for infill?",
+        "answer": "No, it's a simplified vertical estimate."
+      },
+      {
+        "question": "Why only model height?",
+        "answer": "It assumes constant cross-section."
+      },
+      {
+        "question": "Can speed vary during print?",
+        "answer": "Yes, this uses an average speed."
+      }
+    ],
+    "disclaimer": "Actual print times depend on model complexity and printer settings."
+  },
+  {
+    "slug": "grant-application-success",
+    "title": "Grant Application Success Probability",
+    "cluster": "Other",
+    "description": "Estimate odds of securing at least one grant.",
+    "intro": "Calculate the probability of at least one successful grant when submitting multiple applications.",
+    "inputs": [
+      {
+        "name": "number",
+        "label": "Applications",
+        "type": "number",
+        "step": "1",
+        "placeholder": "3"
+      },
+      {
+        "name": "success_rate",
+        "label": "Success Rate (%)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "20"
+      }
+    ],
+    "expression": "(1 - Math.pow(1 - success_rate / 100, number)) * 100",
+    "unit": "%",
+    "examples": [
+      {
+        "description": "3 applications at 20% ⇒ 48.8 %"
+      },
+      {
+        "description": "5 applications at 10% ⇒ 40.95 %"
+      },
+      {
+        "description": "1 application at 30% ⇒ 30 %"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Are application outcomes independent?",
+        "answer": "Yes, this assumes each decision is independent."
+      },
+      {
+        "question": "Can success rate exceed 100%?",
+        "answer": "No, it must be between 0 and 100."
+      },
+      {
+        "question": "Does this guarantee funding?",
+        "answer": "No, it's only a probability estimate."
+      }
+    ],
+    "disclaimer": "Probabilities are estimates; actual results vary."
+  },
+  {
+    "slug": "research-poster-font-size",
+    "title": "Research Poster Font Size",
+    "cluster": "Other",
+    "description": "Recommend font size based on viewing distance.",
+    "intro": "Determine readable font size for academic posters using viewing distance.",
+    "inputs": [
+      {
+        "name": "distance",
+        "label": "Viewing Distance (m)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "1"
+      }
+    ],
+    "expression": "distance * 14.17",
+    "unit": "pt",
+    "examples": [
+      {
+        "description": "1 m ⇒ 14.17 pt"
+      },
+      {
+        "description": "1.5 m ⇒ 21.26 pt"
+      },
+      {
+        "description": "2 m ⇒ 28.34 pt"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Why multiply distance by 14.17?",
+        "answer": "It derives from the 1/200 viewing rule and point conversion."
+      },
+      {
+        "question": "Does font style matter?",
+        "answer": "Yes, bold or thin fonts may need size adjustments."
+      },
+      {
+        "question": "Should titles be larger?",
+        "answer": "Typically titles are two to three times body text size."
+      }
+    ],
+    "disclaimer": "Adjust for specific conference or journal guidelines."
   }
 ]

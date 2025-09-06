@@ -1,0 +1,58 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Poisson Probability Calculator"
+description: "Find the probability of k events given an average rate."
+updated: "2025-09-26"
+cluster: "Math"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "poisson-probability",
+  title: "Poisson Probability Calculator",
+  locale: "en",
+  cluster: "Math",
+  unit: "",
+  intro: "Compute Poisson distribution probabilities for event counts.",
+  inputs: [
+    {
+      name: "lambda",
+      label: "λ (rate)",
+      type: "number",
+      step: "any",
+      placeholder: "2",
+    },
+    {
+      name: "k",
+      label: "k (events)",
+      type: "number",
+      step: "1",
+      placeholder: "3",
+    },
+  ],
+  expression:
+    "(function(l,k){let f=1;for(let i=2;i<=k;i++)f*=i;return Math.exp(-l)*Math.pow(l,k)/f;})(lambda,k)",
+  examples: [
+    { description: "λ=2, k=3 ⇒ 0.18" },
+    { description: "λ=4, k=1 ⇒ 0.07" },
+    { description: "λ=1, k=0 ⇒ 0.37" },
+  ],
+  faqs: [
+    {
+      question: "What does λ represent?",
+      answer: "The average number of events in a given interval.",
+    },
+    {
+      question: "Must k be an integer?",
+      answer: "Yes, k is the count of events.",
+    },
+    {
+      question: "Do probabilities sum to 1?",
+      answer: "Yes, over all possible k values.",
+    },
+  ],
+  disclaimer: "Idealized model; real-world data may deviate.",
+};
+
+<Calculator schema={schema} />

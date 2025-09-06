@@ -1,0 +1,57 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Vitamin D Exposure Time"
+description: "Estimate minutes of sun needed for vitamin D."
+updated: "2025-09-26"
+cluster: "Health"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "vitamin-d-exposure-time",
+  title: "Vitamin D Exposure Time",
+  locale: "en",
+  cluster: "Health",
+  unit: "minutes",
+  intro: "Approximate sunlight exposure required to synthesize vitamin D.",
+  inputs: [
+    {
+      name: "uv",
+      label: "UV Index",
+      type: "number",
+      step: "any",
+      placeholder: "8",
+    },
+    {
+      name: "skin",
+      label: "Skin Type (1-6)",
+      type: "number",
+      step: "1",
+      placeholder: "2",
+    },
+  ],
+  expression: "200 / (uv * (7 - skin))",
+  examples: [
+    { description: "UV 8, skin 2 ⇒ 5 min" },
+    { description: "UV 5, skin 4 ⇒ 13.33 min" },
+    { description: "UV 3, skin 6 ⇒ 66.67 min" },
+  ],
+  faqs: [
+    {
+      question: "What is skin type?",
+      answer: "The Fitzpatrick skin phototype scale from I to VI.",
+    },
+    {
+      question: "Does sunscreen affect results?",
+      answer: "Yes, sunscreen greatly reduces vitamin D synthesis.",
+    },
+    {
+      question: "Is cloud cover considered?",
+      answer: "No, this assumes clear skies.",
+    },
+  ],
+  disclaimer: "Approximation only; follow medical advice for sun exposure.",
+};
+
+<Calculator schema={schema} />
