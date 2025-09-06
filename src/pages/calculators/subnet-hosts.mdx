@@ -1,0 +1,36 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Subnet Hosts Calculator"
+description: "Determine usable hosts from a CIDR prefix."
+updated: "2025-09-05"
+cluster: "Technology"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "subnet-hosts",
+  title: "Subnet Hosts Calculator",
+  locale: "en",
+  cluster: "Technology",
+  intro: "Calculate the number of usable IPv4 host addresses for a given subnet prefix length.",
+  inputs: [
+    { name: "prefix", label: "CIDR Prefix", type: "number", step: "1", placeholder: "24" }
+  ],
+  expression: "Math.max(Math.pow(2, 32 - prefix) - 2, 0)",
+  unit: "hosts",
+  examples: [
+    { description: "/24 ⇒ 254 hosts" },
+    { description: "/30 ⇒ 2 hosts" }
+  ],
+  faqs: [
+    { question: "What is a CIDR prefix?", answer: "It's the number of bits set to 1 in the subnet mask." },
+    { question: "Why subtract 2 hosts?", answer: "Network and broadcast addresses are not usable." },
+    { question: "Can prefixes be 31 or 32?", answer: "Yes, but they allow at most 0 or 1 usable host." },
+    { question: "Does this work for IPv6?", answer: "No, this formula is specific to IPv4." }
+  ],
+  disclaimer: "Assumes standard IPv4 addressing; actual allocations may reserve additional addresses.",
+};
+
+<Calculator schema={schema} />
+

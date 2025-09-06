@@ -1,0 +1,37 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Greatest Common Divisor (GCD) Calculator"
+description: "Find the greatest common divisor of two integers."
+updated: "2025-09-05"
+cluster: "Math"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "gcd-calculator",
+  title: "Greatest Common Divisor (GCD) Calculator",
+  locale: "en",
+  cluster: "Math",
+  intro: "Compute the greatest common divisor of two numbers using the Euclidean algorithm.",
+  inputs: [
+    { name: "a", label: "Number A", type: "number", step: "1", placeholder: "48" },
+    { name: "b", label: "Number B", type: "number", step: "1", placeholder: "18" }
+  ],
+  expression: "(function(a,b){a=Math.abs(Math.floor(a));b=Math.abs(Math.floor(b));while(b){[a,b]=[b,a%b];}return a;})(a,b)",
+  unit: "",
+  examples: [
+    { description: "48 & 18 ⇒ 6" },
+    { description: "21 & 14 ⇒ 7" }
+  ],
+  faqs: [
+    { question: "What is the GCD?", answer: "It's the largest integer that divides both numbers without remainder." },
+    { question: "Can I use negative numbers?", answer: "Yes, the algorithm uses absolute values." },
+    { question: "Is order important?", answer: "No, gcd(a,b) equals gcd(b,a)." },
+    { question: "How is this useful?", answer: "GCD is used in simplifying fractions and number theory." }
+  ],
+  disclaimer: "Handles integers only; results are exact within JavaScript's numeric limits.",
+};
+
+<Calculator schema={schema} />
+
