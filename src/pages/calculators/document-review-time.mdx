@@ -1,0 +1,49 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Document Review Time Estimator"
+description: "Estimate hours needed to review a set of documents."
+updated: "2025-02-14"
+cluster: "Technology"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  inputs: [
+    { name: "documents", label: "Number of Documents", type: "number", step: "1", placeholder: "300" },
+    { name: "minutes", label: "Minutes per Document", type: "number", step: "any", placeholder: "2" },
+  ],
+  slug: "document-review-time",
+  title: "Document Review Time Estimator",
+  locale: "en",
+  expression: "documents * minutes / 60",
+  unit: "hours",
+  intro: "Calculate the total hours required to review documents at a set pace.",
+  examples: [
+    { description: "300 docs × 2 min ⇒ 10 hours" },
+    { description: "1000 docs × 3 min ⇒ 50 hours" },
+  ],
+  faqs: [
+    {
+      question: "Does it include breaks?",
+      answer: "No, it assumes continuous review.",
+    },
+    {
+      question: "Can minutes be fractional?",
+      answer: "Yes, enter average minutes with decimals if needed.",
+    },
+    {
+      question: "What if pace varies?",
+      answer: "Use an average or run separate calculations for different sets.",
+    },
+    {
+      question: "Is this suitable for audio/video review?",
+      answer: "Yes, if you estimate minutes per item.",
+    },
+  ],
+  disclaimer: "Actual review time may vary; adjust for complexity and staffing.",
+  cluster: "Technology",
+};
+
+<Calculator schema={schema} />
+

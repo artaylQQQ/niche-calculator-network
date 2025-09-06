@@ -1,0 +1,48 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Daily Protein Intake Calculator"
+description: "Estimate recommended protein consumption."
+updated: "2025-02-14"
+cluster: "health"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  inputs: [
+    { name: "weight", label: "Weight (kg)", type: "number", step: "any", placeholder: "70" },
+    { name: "factor", label: "Grams per kg", type: "number", step: "any", placeholder: "0.8" },
+  ],
+  slug: "daily-protein-intake",
+  title: "Daily Protein Intake Calculator",
+  locale: "en",
+  expression: "weight * factor",
+  unit: "g/day",
+  intro: "Calculate daily protein needs based on body weight and a chosen grams-per-kilogram factor.",
+  examples: [
+    { description: "70 kg at 0.8 g/kg ⇒ 56 g/day" },
+    { description: "80 kg at 1.2 g/kg ⇒ 96 g/day" },
+  ],
+  faqs: [
+    {
+      question: "What factor should I use?",
+      answer: "0.8 g/kg suits sedentary adults; athletes may choose higher values.",
+    },
+    {
+      question: "Can the factor exceed 1?",
+      answer: "Yes, active individuals often use 1.2–2.0 g/kg.",
+    },
+    {
+      question: "Does this account for age or health conditions?",
+      answer: "No, adjust the factor to your circumstances.",
+    },
+    {
+      question: "Are units in kilograms?",
+      answer: "Yes, convert your weight to kilograms before using.",
+    },
+  ],
+  disclaimer: "General guideline; consult a nutritionist for personalized advice.",
+  cluster: "health",
+};
+
+<Calculator schema={schema} />

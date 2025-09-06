@@ -1,0 +1,49 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Contingency Fee Calculator"
+description: "Estimate attorney fees from a settlement based on a contingency percentage."
+updated: "2025-02-14"
+cluster: "finance"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  inputs: [
+    { name: "settlement", label: "Settlement Amount (USD)", type: "number", step: "any", placeholder: "100000" },
+    { name: "percentage", label: "Fee Percentage", type: "number", step: "any", placeholder: "33" },
+  ],
+  slug: "contingency-fee-calculator",
+  title: "Contingency Fee Calculator",
+  locale: "en",
+  expression: "settlement * (percentage/100)",
+  unit: "USD",
+  intro: "Calculate attorney fees for contingency cases by multiplying the settlement by the agreed percentage.",
+  examples: [
+    { description: "$100000 at 33% ⇒ $33000" },
+    { description: "$50000 at 25% ⇒ $12500" },
+  ],
+  faqs: [
+    {
+      question: "What is a contingency fee?",
+      answer: "A fee paid to an attorney only if the case is won, typically a percentage of the recovery.",
+    },
+    {
+      question: "Does this include case expenses?",
+      answer: "No, litigation expenses are usually deducted separately.",
+    },
+    {
+      question: "Can the percentage change?",
+      answer: "Yes, some agreements use tiered percentages based on case stage.",
+    },
+    {
+      question: "What if the case settles for zero?",
+      answer: "The fee would be zero, though expenses may still be owed.",
+    },
+  ],
+  disclaimer: "Consult your fee agreement for exact terms; this is an estimate only.",
+  cluster: "finance",
+};
+
+<Calculator schema={schema} />
+

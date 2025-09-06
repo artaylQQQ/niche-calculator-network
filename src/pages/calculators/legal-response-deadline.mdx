@@ -1,0 +1,51 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Legal Response Deadline Calculator"
+description: "Add a number of days to a filing date to find the response deadline."
+updated: "2025-02-14"
+cluster: "Date & Time"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  inputs: [
+    { name: "year", label: "Start Year", type: "number", step: "1", placeholder: "2024" },
+    { name: "month", label: "Start Month", type: "number", step: "1", placeholder: "1" },
+    { name: "day", label: "Start Day", type: "number", step: "1", placeholder: "1" },
+    { name: "days", label: "Response Days", type: "number", step: "1", placeholder: "30" },
+  ],
+  slug: "legal-response-deadline",
+  title: "Legal Response Deadline Calculator",
+  locale: "en",
+  expression: "new Date(year, month-1, day + days).toISOString().slice(0,10)",
+  unit: "date",
+  intro: "Determine the due date for a legal response by adding days to a starting date.",
+  examples: [
+    { description: "Start 2024-01-01 + 30 days ⇒ 2024-01-31" },
+    { description: "Start 2024-02-10 + 10 days ⇒ 2024-02-20" },
+  ],
+  faqs: [
+    {
+      question: "Does this adjust for weekends?",
+      answer: "No, it adds calendar days; use a business-day calculator if required.",
+    },
+    {
+      question: "Are holidays excluded?",
+      answer: "Holidays are not accounted for in this simple calculation.",
+    },
+    {
+      question: "Can I enter past dates?",
+      answer: "Yes, the calculator works with any valid date.",
+    },
+    {
+      question: "What format is the result?",
+      answer: "The result is a date string in YYYY-MM-DD format.",
+    },
+  ],
+  disclaimer: "Verify deadlines with court rules; this tool adds calendar days only.",
+  cluster: "Date & Time",
+};
+
+<Calculator schema={schema} />
+

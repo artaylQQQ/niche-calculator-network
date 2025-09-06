@@ -1,0 +1,49 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Land Parcel Share Calculator"
+description: "Divide total land area equally among multiple owners."
+updated: "2025-02-14"
+cluster: "Home & DIY"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  inputs: [
+    { name: "area", label: "Total Area (acres)", type: "number", step: "any", placeholder: "10" },
+    { name: "owners", label: "Number of Owners", type: "number", step: "1", placeholder: "4" },
+  ],
+  slug: "land-parcel-share",
+  title: "Land Parcel Share Calculator",
+  locale: "en",
+  expression: "area / owners",
+  unit: "acres",
+  intro: "Determine each owner's equal share when dividing a land parcel.",
+  examples: [
+    { description: "10 acres ÷ 4 owners ⇒ 2.5 acres each" },
+    { description: "5 acres ÷ 2 owners ⇒ 2.5 acres each" },
+  ],
+  faqs: [
+    {
+      question: "Can shares be unequal?",
+      answer: "This tool divides equally; adjust area or run multiple calculations for unequal shares.",
+    },
+    {
+      question: "Does it account for easements?",
+      answer: "No, enter net area after deducting any easements.",
+    },
+    {
+      question: "What if owners is zero?",
+      answer: "Division by zero is undefined; enter at least one owner.",
+    },
+    {
+      question: "Can I use hectares?",
+      answer: "Convert hectares to acres before using the calculator.",
+    },
+  ],
+  disclaimer: "For planning purposes; consult a surveyor for precise divisions.",
+  cluster: "Home & DIY",
+};
+
+<Calculator schema={schema} />
+
