@@ -1,0 +1,38 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Julian Date Converter"
+description: "Convert a calendar date to its Julian Day Number."
+updated: "2025-10-05"
+cluster: "Date & Time"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  slug: "julian-date",
+  title: "Julian Date Converter",
+  locale: "en",
+  unit: "JDN",
+  inputs: [
+    { name: "year", label: "Year", type: "number", step: 1, placeholder: "2024" },
+    { name: "month", label: "Month", type: "number", step: 1, placeholder: "1" },
+    { name: "day", label: "Day", type: "number", step: 1, placeholder: "1" }
+  ],
+  expression: "(function(y,m,d){let a=Math.floor((14-m)/12);let y1=y+4800-a;let m1=m+12*a-3;return d+Math.floor((153*m1+2)/5)+365*y1+Math.floor(y1/4)-Math.floor(y1/100)+Math.floor(y1/400)-32045;})(year,month,day)",
+  intro: "Calculate the Julian Day Number for any given calendar date.",
+  examples: [
+    { description: "2000-01-01 ⇒ 2451545" },
+    { description: "2024-05-15 ⇒ 2460446" }
+  ],
+  faqs: [
+    { question: "What is a Julian Day Number?", answer: "It's a continuous count of days used by astronomers." },
+    { question: "Does this include time of day?", answer: "No, it assumes noon UTC for the given date." },
+    { question: "Can I convert dates before 1582?", answer: "The formula works for Gregorian dates after 1582." },
+    { question: "Why use Julian dates?", answer: "They simplify calculating intervals between dates." }
+  ],
+  disclaimer: "For civil dates in the Gregorian calendar only.",
+  cluster: "Date & Time",
+};
+
+<Calculator schema={schema} />
+

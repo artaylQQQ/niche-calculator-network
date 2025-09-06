@@ -1,0 +1,37 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Smoking Pack Years"
+description: "Calculate smoking exposure in pack years."
+updated: "2025-10-05"
+cluster: "Health"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  slug: "smoking-pack-years",
+  title: "Smoking Pack Years",
+  locale: "en",
+  unit: "pack-years",
+  inputs: [
+    { name: "packsPerDay", label: "Packs per Day", type: "number", step: "any", placeholder: "1" },
+    { name: "years", label: "Years Smoked", type: "number", step: "any", placeholder: "10" }
+  ],
+  expression: "packsPerDay * years",
+  intro: "Estimate cumulative smoking exposure by multiplying daily packs by years smoked.",
+  examples: [
+    { description: "1 pack/day for 10 years ⇒ 10 pack-years" },
+    { description: "0.5 pack/day for 20 years ⇒ 10 pack-years" }
+  ],
+  faqs: [
+    { question: "What is a pack year?", answer: "One pack year equals smoking one pack per day for a year." },
+    { question: "Can I use decimal packs?", answer: "Yes, enter partial pack values like 0.5." },
+    { question: "Does quitting reset pack years?", answer: "No, it's a cumulative measure." },
+    { question: "Is this used medically?", answer: "Yes, clinicians use pack years to assess risk." }
+  ],
+  disclaimer: "Informational only; seek medical advice for health assessments.",
+  cluster: "Health",
+};
+
+<Calculator schema={schema} />
+

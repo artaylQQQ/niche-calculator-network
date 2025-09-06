@@ -8264,5 +8264,395 @@
     ],
     "disclaimer": "Timing values are idealized; musical feel may vary.",
     "unit": "ms"
+  },
+  {
+    "slug": "watts-to-horsepower",
+    "title": "Watts to Horsepower Converter",
+    "cluster": "conversions",
+    "description": "Convert watts to mechanical horsepower.",
+    "inputs": [
+      { "name": "watts", "label": "Power (W)", "type": "number", "step": "any", "placeholder": "1000" }
+    ],
+    "expression": "watts / 745.699872",
+    "intro": "Convert electrical power in watts to mechanical horsepower for equipment comparisons.",
+    "examples": [
+      { "description": "1000 W ⇒ 1.34 hp" },
+      { "description": "1500 W ⇒ 2.01 hp" }
+    ],
+    "faqs": [
+      { "question": "What is one horsepower in watts?", "answer": "One mechanical horsepower equals roughly 745.7 watts." },
+      { "question": "Can I enter decimal watt values?", "answer": "Yes, the converter accepts fractional watt inputs." },
+      { "question": "Does it use metric horsepower?", "answer": "No, it uses the mechanical (imperial) horsepower definition." },
+      { "question": "Is the conversion exact?", "answer": "It uses a standard constant suitable for most practical needs." }
+    ],
+    "disclaimer": "For estimation only; confirm critical conversions independently.",
+    "unit": "hp"
+  },
+  {
+    "slug": "liters-to-gallons",
+    "title": "Liters to Gallons Converter",
+    "cluster": "conversions",
+    "description": "Convert volume from liters to US gallons.",
+    "inputs": [
+      { "name": "liters", "label": "Volume (L)", "type": "number", "step": "any", "placeholder": "10" }
+    ],
+    "expression": "liters * 0.264172",
+    "intro": "Convert liquid volumes from liters to US gallons quickly and accurately.",
+    "examples": [
+      { "description": "10 L ⇒ 2.64 gal" },
+      { "description": "25 L ⇒ 6.60 gal" }
+    ],
+    "faqs": [
+      { "question": "Which gallon is used?", "answer": "The calculator uses the US liquid gallon." },
+      { "question": "Can I use decimals?", "answer": "Yes, fractional liter values are supported." },
+      { "question": "How many liters are in one gallon?", "answer": "One US gallon is about 3.785 liters." },
+      { "question": "Does it handle Imperial gallons?", "answer": "No, Imperial gallons differ from US gallons." }
+    ],
+    "disclaimer": "For estimation only; double-check critical measurements.",
+    "unit": "gal"
+  },
+  {
+    "slug": "business-days-between-dates",
+    "title": "Business Days Between Dates",
+    "cluster": "date & time",
+    "description": "Count weekdays between two calendar dates.",
+    "inputs": [
+      { "name": "y1", "label": "Start Year", "type": "number", "step": 1, "placeholder": "2024" },
+      { "name": "m1", "label": "Start Month", "type": "number", "step": 1, "placeholder": "6" },
+      { "name": "d1", "label": "Start Day", "type": "number", "step": 1, "placeholder": "1" },
+      { "name": "y2", "label": "End Year", "type": "number", "step": 1, "placeholder": "2024" },
+      { "name": "m2", "label": "End Month", "type": "number", "step": 1, "placeholder": "6" },
+      { "name": "d2", "label": "End Day", "type": "number", "step": 1, "placeholder": "10" }
+    ],
+    "expression": "(function(y1,m1,d1,y2,m2,d2){const start=new Date(y1,m1-1,d1);const end=new Date(y2,m2-1,d2);let count=0;for(let d=new Date(start);d<=end;d.setDate(d.getDate()+1)){const day=d.getDay();if(day!==0&&day!==6)count++;}return count;})(y1,m1,d1,y2,m2,d2)",
+    "intro": "Find how many business days fall between two dates, excluding weekends.",
+    "examples": [
+      { "description": "2024-06-03 to 2024-06-07 ⇒ 5 days" },
+      { "description": "2024-06-01 to 2024-06-10 ⇒ 6 days" }
+    ],
+    "faqs": [
+      { "question": "Are weekends excluded?", "answer": "Yes, Saturdays and Sundays are skipped." },
+      { "question": "Does it consider holidays?", "answer": "No, only weekends are removed." },
+      { "question": "Should the start date be before the end?", "answer": "Yes, the calculator assumes the start date is earlier." },
+      { "question": "Is the count inclusive?", "answer": "Both start and end dates are counted if they are weekdays." }
+    ],
+    "disclaimer": "Exclude public holidays manually for precise scheduling.",
+    "unit": "days"
+  },
+  {
+    "slug": "julian-date",
+    "title": "Julian Date Converter",
+    "cluster": "date & time",
+    "description": "Convert a calendar date to its Julian Day Number.",
+    "inputs": [
+      { "name": "year", "label": "Year", "type": "number", "step": 1, "placeholder": "2024" },
+      { "name": "month", "label": "Month", "type": "number", "step": 1, "placeholder": "1" },
+      { "name": "day", "label": "Day", "type": "number", "step": 1, "placeholder": "1" }
+    ],
+    "expression": "(function(y,m,d){let a=Math.floor((14-m)/12);let y1=y+4800-a;let m1=m+12*a-3;return d+Math.floor((153*m1+2)/5)+365*y1+Math.floor(y1/4)-Math.floor(y1/100)+Math.floor(y1/400)-32045;})(year,month,day)",
+    "intro": "Calculate the Julian Day Number for any given calendar date.",
+    "examples": [
+      { "description": "2000-01-01 ⇒ 2451545" },
+      { "description": "2024-05-15 ⇒ 2460446" }
+    ],
+    "faqs": [
+      { "question": "What is a Julian Day Number?", "answer": "It's a continuous count of days used by astronomers." },
+      { "question": "Does this include time of day?", "answer": "No, it assumes noon UTC for the given date." },
+      { "question": "Can I convert dates before 1582?", "answer": "The formula works for Gregorian dates after 1582." },
+      { "question": "Why use Julian dates?", "answer": "They simplify calculating intervals between dates." }
+    ],
+    "disclaimer": "For civil dates in the Gregorian calendar only.",
+    "unit": "JDN"
+  },
+  {
+    "slug": "dividend-payout-ratio",
+    "title": "Dividend Payout Ratio",
+    "cluster": "finance",
+    "description": "Find the dividend payout ratio from dividends and earnings.",
+    "inputs": [
+      { "name": "dividends", "label": "Dividends", "type": "number", "step": "any", "placeholder": "2" },
+      { "name": "earnings", "label": "Earnings", "type": "number", "step": "any", "placeholder": "5" }
+    ],
+    "expression": "(dividends / earnings) * 100",
+    "intro": "Determine what percentage of earnings is distributed to shareholders as dividends.",
+    "examples": [
+      { "description": "Dividends 2, earnings 5 ⇒ 40%" },
+      { "description": "Dividends 3, earnings 6 ⇒ 50%" }
+    ],
+    "faqs": [
+      { "question": "What does the payout ratio show?", "answer": "It shows the share of earnings paid out as dividends." },
+      { "question": "Can I use net income?", "answer": "Yes, earnings typically refer to net income." },
+      { "question": "What if earnings are zero?", "answer": "The ratio becomes undefined or infinite." },
+      { "question": "Is the result a percentage?", "answer": "Yes, the ratio is expressed as a percentage." }
+    ],
+    "disclaimer": "Informational only; consult financial advisors for decisions.",
+    "unit": "%"
+  },
+  {
+    "slug": "interest-coverage-ratio",
+    "title": "Interest Coverage Ratio",
+    "cluster": "finance",
+    "description": "Compute the interest coverage ratio using EBIT and interest expense.",
+    "inputs": [
+      { "name": "ebit", "label": "EBIT", "type": "number", "step": "any", "placeholder": "60000" },
+      { "name": "interest", "label": "Interest Expense", "type": "number", "step": "any", "placeholder": "10000" }
+    ],
+    "expression": "ebit / interest",
+    "intro": "Assess how many times a company's earnings can cover its interest payments.",
+    "examples": [
+      { "description": "EBIT 60000, interest 10000 ⇒ 6" },
+      { "description": "EBIT 45000, interest 15000 ⇒ 3" }
+    ],
+    "faqs": [
+      { "question": "What does a higher ratio mean?", "answer": "Higher values indicate greater ability to meet interest obligations." },
+      { "question": "What if interest is zero?", "answer": "The ratio becomes infinite, indicating no interest burden." },
+      { "question": "Can EBIT be negative?", "answer": "Yes, but it signals financial difficulties." },
+      { "question": "Is this the same as times interest earned?", "answer": "Yes, it's another name for the same metric." }
+    ],
+    "disclaimer": "Financial metrics are estimates; seek professional advice.",
+    "unit": "times"
+  },
+  {
+    "slug": "pregnancy-week",
+    "title": "Pregnancy Week Calculator",
+    "cluster": "health",
+    "description": "Estimate gestational age in weeks from the last menstrual period.",
+    "inputs": [
+      { "name": "y1", "label": "LMP Year", "type": "number", "step": 1, "placeholder": "2024" },
+      { "name": "m1", "label": "LMP Month", "type": "number", "step": 1, "placeholder": "1" },
+      { "name": "d1", "label": "LMP Day", "type": "number", "step": 1, "placeholder": "1" },
+      { "name": "y2", "label": "Current Year", "type": "number", "step": 1, "placeholder": "2024" },
+      { "name": "m2", "label": "Current Month", "type": "number", "step": 1, "placeholder": "3" },
+      { "name": "d2", "label": "Current Day", "type": "number", "step": 1, "placeholder": "15" }
+    ],
+    "expression": "(new Date(y2,m2-1,d2) - new Date(y1,m1-1,d1)) / 604800000",
+    "intro": "Calculate how many weeks pregnant you are based on the last menstrual period and today's date.",
+    "examples": [
+      { "description": "LMP 2024-01-01, current 2024-03-15 ⇒ 10.29 weeks" },
+      { "description": "LMP 2024-06-01, current 2024-07-13 ⇒ 6.00 weeks" }
+    ],
+    "faqs": [
+      { "question": "Why use the last menstrual period?", "answer": "It's a common starting point for estimating gestational age." },
+      { "question": "Does this account for cycle length?", "answer": "No, it assumes a typical 28-day cycle." },
+      { "question": "Can I enter future dates?", "answer": "Yes, but results will be negative." },
+      { "question": "Is this a medical diagnosis?", "answer": "No, consult a healthcare provider for official dating." }
+    ],
+    "disclaimer": "For informational purposes only. Consult a medical professional for pregnancy guidance.",
+    "unit": "weeks"
+  },
+  {
+    "slug": "smoking-pack-years",
+    "title": "Smoking Pack Years",
+    "cluster": "health",
+    "description": "Calculate smoking exposure in pack years.",
+    "inputs": [
+      { "name": "packsPerDay", "label": "Packs per Day", "type": "number", "step": "any", "placeholder": "1" },
+      { "name": "years", "label": "Years Smoked", "type": "number", "step": "any", "placeholder": "10" }
+    ],
+    "expression": "packsPerDay * years",
+    "intro": "Estimate cumulative smoking exposure by multiplying daily packs by years smoked.",
+    "examples": [
+      { "description": "1 pack/day for 10 years ⇒ 10 pack-years" },
+      { "description": "0.5 pack/day for 20 years ⇒ 10 pack-years" }
+    ],
+    "faqs": [
+      { "question": "What is a pack year?", "answer": "One pack year equals smoking one pack per day for a year." },
+      { "question": "Can I use decimal packs?", "answer": "Yes, enter partial pack values like 0.5." },
+      { "question": "Does quitting reset pack years?", "answer": "No, it's a cumulative measure." },
+      { "question": "Is this used medically?", "answer": "Yes, clinicians use pack years to assess risk." }
+    ],
+    "disclaimer": "Informational only; seek medical advice for health assessments.",
+    "unit": "pack-years"
+  },
+  {
+    "slug": "carpet-cost",
+    "title": "Carpet Cost Calculator",
+    "cluster": "home & diy",
+    "description": "Estimate total carpet cost from area and price per square foot.",
+    "inputs": [
+      { "name": "area", "label": "Area (ft²)", "type": "number", "step": "any", "placeholder": "200" },
+      { "name": "price", "label": "Cost per ft²", "type": "number", "step": "any", "placeholder": "3" }
+    ],
+    "expression": "area * price",
+    "intro": "Estimate how much new carpet will cost based on room size and price per square foot.",
+    "examples": [
+      { "description": "Area 200 ft², price $3 ⇒ $600" },
+      { "description": "Area 150 ft², price $2.5 ⇒ $375" }
+    ],
+    "faqs": [
+      { "question": "Does it include installation?", "answer": "No, add labor costs separately." },
+      { "question": "Should I buy extra?", "answer": "Yes, order a little more to account for waste." },
+      { "question": "Can I use metric units?", "answer": "Convert area and price to feet and dollars first." },
+      { "question": "Does it handle multiple rooms?", "answer": "Sum areas before entering for total cost." }
+    ],
+    "disclaimer": "Estimates only; actual costs may vary with vendor and materials.",
+    "unit": "USD"
+  },
+  {
+    "slug": "plant-spacing",
+    "title": "Plant Spacing Calculator",
+    "cluster": "home & diy",
+    "description": "Determine how many plants fit in an area based on spacing.",
+    "inputs": [
+      { "name": "area", "label": "Area (ft²)", "type": "number", "step": "any", "placeholder": "100" },
+      { "name": "spacing", "label": "Spacing (ft)", "type": "number", "step": "any", "placeholder": "2" }
+    ],
+    "expression": "Math.ceil(area / (spacing * spacing))",
+    "intro": "Figure out how many evenly spaced plants can fit into a garden area.",
+    "examples": [
+      { "description": "Area 100 ft², spacing 2 ft ⇒ 25 plants" },
+      { "description": "Area 200 ft², spacing 1.5 ft ⇒ 89 plants" }
+    ],
+    "faqs": [
+      { "question": "Does it assume a square grid?", "answer": "Yes, spacing is measured between rows and columns." },
+      { "question": "Can I use inches?", "answer": "Convert inches to feet before entering." },
+      { "question": "Should I round up?", "answer": "The calculator already rounds up to ensure enough plants." },
+      { "question": "Does it account for paths?", "answer": "No, subtract walkway areas before calculating." }
+    ],
+    "disclaimer": "Use as a planning guide; adjust for specific plant needs.",
+    "unit": "plants"
+  },
+  {
+    "slug": "lcm-calculator",
+    "title": "LCM Calculator",
+    "cluster": "math",
+    "description": "Find the least common multiple of two numbers.",
+    "inputs": [
+      { "name": "a", "label": "Number A", "type": "number", "step": 1, "placeholder": "12" },
+      { "name": "b", "label": "Number B", "type": "number", "step": 1, "placeholder": "18" }
+    ],
+    "expression": "(function(a,b){a=Math.abs(Math.floor(a));b=Math.abs(Math.floor(b));function g(x,y){while(y){[x,y]=[y,x%y];}return x;}return a*b/g(a,b);})(a,b)",
+    "intro": "Compute the smallest common multiple shared by two integers.",
+    "examples": [
+      { "description": "LCM of 12 and 18 ⇒ 36" },
+      { "description": "LCM of 7 and 5 ⇒ 35" }
+    ],
+    "faqs": [
+      { "question": "What is LCM?", "answer": "The least common multiple of two integers." },
+      { "question": "Do negative numbers work?", "answer": "Yes, the calculator uses absolute values." },
+      { "question": "Can I enter decimals?", "answer": "Inputs are floored to integers." },
+      { "question": "What if one number is zero?", "answer": "The LCM with zero is zero." }
+    ],
+    "disclaimer": "Designed for basic educational use only.",
+    "unit": ""
+  },
+  {
+    "slug": "modulo-calculator",
+    "title": "Modulo Calculator",
+    "cluster": "math",
+    "description": "Find the remainder of a division operation.",
+    "inputs": [
+      { "name": "dividend", "label": "Dividend", "type": "number", "step": "any", "placeholder": "10" },
+      { "name": "divisor", "label": "Divisor", "type": "number", "step": "any", "placeholder": "3" }
+    ],
+    "expression": "((dividend % divisor) + divisor) % divisor",
+    "intro": "Compute the non-negative remainder after dividing one number by another.",
+    "examples": [
+      { "description": "10 mod 3 ⇒ 1" },
+      { "description": "-10 mod 3 ⇒ 2" }
+    ],
+    "faqs": [
+      { "question": "What is modulo?", "answer": "It's the remainder left after division." },
+      { "question": "Can the divisor be negative?", "answer": "Yes, the result is still non-negative." },
+      { "question": "What if the divisor is zero?", "answer": "Division by zero is undefined." },
+      { "question": "Why adjust with divisor?", "answer": "It ensures the remainder is always positive." }
+    ],
+    "disclaimer": "Use for educational purposes; verify calculations for critical tasks.",
+    "unit": "remainder"
+  },
+  {
+    "slug": "password-entropy",
+    "title": "Password Entropy Calculator",
+    "cluster": "technology",
+    "description": "Estimate password entropy from length and character set size.",
+    "inputs": [
+      { "name": "length", "label": "Length", "type": "number", "step": 1, "placeholder": "12" },
+      { "name": "charset", "label": "Character Set Size", "type": "number", "step": 1, "placeholder": "62" }
+    ],
+    "expression": "length * Math.log(charset) / Math.log(2)",
+    "intro": "Gauge the theoretical strength of a password using entropy in bits.",
+    "examples": [
+      { "description": "Length 8, charset 62 ⇒ 47.60 bits" },
+      { "description": "Length 12, charset 96 ⇒ 79.61 bits" }
+    ],
+    "faqs": [
+      { "question": "What is character set size?", "answer": "The number of possible characters for each position." },
+      { "question": "Does higher entropy mean stronger?", "answer": "Yes, more entropy indicates a harder-to-guess password." },
+      { "question": "Do common words reduce entropy?", "answer": "Yes, real-world strength may be lower than the estimate." },
+      { "question": "Should length be an integer?", "answer": "Yes, password length is typically a whole number." }
+    ],
+    "disclaimer": "Entropy is theoretical; follow best practices for secure passwords.",
+    "unit": "bits"
+  },
+  {
+    "slug": "ohms-law-power",
+    "title": "Ohm's Law Power",
+    "cluster": "technology",
+    "description": "Calculate electrical power from voltage and current.",
+    "inputs": [
+      { "name": "voltage", "label": "Voltage (V)", "type": "number", "step": "any", "placeholder": "12" },
+      { "name": "current", "label": "Current (A)", "type": "number", "step": "any", "placeholder": "1.5" }
+    ],
+    "expression": "voltage * current",
+    "intro": "Compute power in watts using voltage and current values.",
+    "examples": [
+      { "description": "120 V and 2 A ⇒ 240 W" },
+      { "description": "12 V and 1.5 A ⇒ 18 W" }
+    ],
+    "faqs": [
+      { "question": "What is electrical power?", "answer": "It's the rate of energy use, equal to voltage times current." },
+      { "question": "Can I input milliamps?", "answer": "Convert milliamps to amps before entering." },
+      { "question": "Does this apply to AC?", "answer": "It provides an approximation for resistive AC loads." },
+      { "question": "Is the result in watts?", "answer": "Yes, the calculator outputs watts." }
+    ],
+    "disclaimer": "For basic electronics reference only.",
+    "unit": "W"
+  },
+  {
+    "slug": "birthday-paradox-probability",
+    "title": "Birthday Paradox Probability",
+    "cluster": "other",
+    "description": "Chance that at least two people share a birthday in a group.",
+    "inputs": [
+      { "name": "people", "label": "People", "type": "number", "step": 1, "placeholder": "23" }
+    ],
+    "expression": "100 * (1 - (function(n){let p=1;for(let i=0;i<n;i++){p*= (365-i)/365;}return p;})(people))",
+    "intro": "Estimate the probability that at least two people in a group share the same birthday.",
+    "examples": [
+      { "description": "Group of 23 ⇒ 50.73%" },
+      { "description": "Group of 50 ⇒ 97.04%" }
+    ],
+    "faqs": [
+      { "question": "What assumptions are made?", "answer": "All 365 days are equally likely and birthdays are independent." },
+      { "question": "Are leap years considered?", "answer": "No, February 29 is ignored." },
+      { "question": "Is the result a percentage?", "answer": "Yes, values range from 0 to 100%." },
+      { "question": "When does probability exceed 99%?", "answer": "Around 57 people." }
+    ],
+    "disclaimer": "A theoretical calculation ignoring real-world birth date distributions.",
+    "unit": "%"
+  },
+  {
+    "slug": "shadow-length",
+    "title": "Shadow Length Calculator",
+    "cluster": "other",
+    "description": "Find the length of a shadow from object height and sun angle.",
+    "inputs": [
+      { "name": "height", "label": "Height (m)", "type": "number", "step": "any", "placeholder": "2" },
+      { "name": "angle", "label": "Sun Angle (°)", "type": "number", "step": "any", "placeholder": "45" }
+    ],
+    "expression": "height / Math.tan(angle * Math.PI / 180)",
+    "intro": "Calculate how long a shadow will be based on object height and sun elevation angle.",
+    "examples": [
+      { "description": "Height 2 m, angle 45° ⇒ 2 m" },
+      { "description": "Height 1.5 m, angle 30° ⇒ 2.60 m" }
+    ],
+    "faqs": [
+      { "question": "What is sun angle?", "answer": "The elevation of the sun above the horizon." },
+      { "question": "Can the angle be zero?", "answer": "No, a zero angle would produce an infinite shadow." },
+      { "question": "Should angle be in degrees?", "answer": "Yes, input angles in degrees." },
+      { "question": "Does this consider terrain?", "answer": "No, it assumes flat ground." }
+    ],
+    "disclaimer": "Idealized calculation without atmospheric refraction.",
+    "unit": "m"
   }
 ]

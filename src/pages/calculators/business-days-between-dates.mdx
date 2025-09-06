@@ -1,0 +1,41 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Business Days Between Dates"
+description: "Count weekdays between two calendar dates."
+updated: "2025-10-05"
+cluster: "Date & Time"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  slug: "business-days-between-dates",
+  title: "Business Days Between Dates",
+  locale: "en",
+  unit: "days",
+  inputs: [
+    { name: "y1", label: "Start Year", type: "number", step: 1, placeholder: "2024" },
+    { name: "m1", label: "Start Month", type: "number", step: 1, placeholder: "6" },
+    { name: "d1", label: "Start Day", type: "number", step: 1, placeholder: "1" },
+    { name: "y2", label: "End Year", type: "number", step: 1, placeholder: "2024" },
+    { name: "m2", label: "End Month", type: "number", step: 1, placeholder: "6" },
+    { name: "d2", label: "End Day", type: "number", step: 1, placeholder: "10" }
+  ],
+  expression: "(function(y1,m1,d1,y2,m2,d2){const start=new Date(y1,m1-1,d1);const end=new Date(y2,m2-1,d2);let count=0;for(let d=new Date(start);d<=end;d.setDate(d.getDate()+1)){const day=d.getDay();if(day!==0&&day!==6)count++;}return count;})(y1,m1,d1,y2,m2,d2)",
+  intro: "Find how many business days fall between two dates, excluding weekends.",
+  examples: [
+    { description: "2024-06-03 to 2024-06-07 ⇒ 5 days" },
+    { description: "2024-06-01 to 2024-06-10 ⇒ 6 days" }
+  ],
+  faqs: [
+    { question: "Are weekends excluded?", answer: "Yes, Saturdays and Sundays are skipped." },
+    { question: "Does it consider holidays?", answer: "No, only weekends are removed." },
+    { question: "Should the start date be before the end?", answer: "Yes, the calculator assumes the start date is earlier." },
+    { question: "Is the count inclusive?", answer: "Both start and end dates are counted if they are weekdays." }
+  ],
+  disclaimer: "Exclude public holidays manually for precise scheduling.",
+  cluster: "Date & Time",
+};
+
+<Calculator schema={schema} />
+
