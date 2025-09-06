@@ -1,0 +1,34 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Dog Age Logarithmic Calculator"
+description: "Estimate dog age in human years using a logarithmic formula."
+updated: "2025-02-14"
+cluster: "Other"
+---
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "dog-age-logarithmic",
+  title: "Dog Age Logarithmic Calculator",
+  locale: "en",
+  intro: "Estimate dog age in human years using a logarithmic formula.",
+  unit: "human years",
+  cluster: "Other",
+  inputs: [
+    { name: "dog_age", label: "Dog age (years)", type: "number", step: "any", placeholder: "5" }
+  ],
+  expression: "16 * Math.log(dog_age) + 31",
+  examples: [
+    { description: "1 year ⇒ 31 human years" },
+    { description: "5 years ⇒ 57 human years" }
+  ],
+  faqs: [
+    { question: "Why use logarithms?", answer: "Research suggests dog aging slows after puppyhood." },
+    { question: "Can I use months?", answer: "Convert months to years by dividing by 12." },
+    { question: "Does breed affect results?", answer: "Yes, breeds age differently; this is a general estimate." },
+    { question: "Is Math.log natural log?", answer: "Yes, natural logarithm (base e) is used." }
+  ],
+  disclaimer: "Approximation only; consult a veterinarian for health assessments.",
+};
+
+<Calculator schema={schema} />

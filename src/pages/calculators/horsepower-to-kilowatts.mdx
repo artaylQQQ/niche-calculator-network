@@ -1,0 +1,34 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Horsepower to Kilowatts Converter"
+description: "Convert horsepower to kilowatts."
+updated: "2025-02-14"
+cluster: "Conversions"
+---
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "horsepower-to-kilowatts",
+  title: "Horsepower to Kilowatts Converter",
+  locale: "en",
+  intro: "Convert horsepower to kilowatts.",
+  unit: "kW",
+  cluster: "Conversions",
+  inputs: [
+    { name: "hp", label: "Horsepower", type: "number", step: "any", placeholder: "1" }
+  ],
+  expression: "hp * 0.745699872",
+  examples: [
+    { description: "1 hp ⇒ 0.75 kW" },
+    { description: "5 hp ⇒ 3.73 kW" }
+  ],
+  faqs: [
+    { question: "What is horsepower?", answer: "A unit of power equal to about 745.7 watts." },
+    { question: "Can I use decimals?", answer: "Yes, fractional horsepower values are allowed." },
+    { question: "Is this mechanical horsepower?", answer: "Yes, this uses mechanical horsepower." },
+    { question: "Why convert to kilowatts?", answer: "Kilowatts are commonly used for electric power ratings." }
+  ],
+  disclaimer: "For estimation only. Verify requirements with equipment specifications.",
+};
+
+<Calculator schema={schema} />

@@ -1,0 +1,35 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Logarithm Base Converter"
+description: "Compute logarithms with any base using the change of base formula."
+updated: "2025-02-14"
+cluster: "Math"
+---
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "logarithm-base-converter",
+  title: "Logarithm Base Converter",
+  locale: "en",
+  intro: "Compute logarithms with any base using the change of base formula.",
+  unit: "log",
+  cluster: "Math",
+  inputs: [
+    { name: "x", label: "Value", type: "number", step: "any", placeholder: "8" },
+    { name: "base", label: "Base", type: "number", step: "any", placeholder: "2" }
+  ],
+  expression: "Math.log(x) / Math.log(base)",
+  examples: [
+    { description: "log₂(8) ⇒ 3" },
+    { description: "log₁₀(1000) ⇒ 3" }
+  ],
+  faqs: [
+    { question: "What if base is 1?", answer: "Logarithm with base 1 is undefined." },
+    { question: "Can x be negative?", answer: "No, logarithms are only defined for positive values." },
+    { question: "Is natural log used?", answer: "The calculation uses natural logarithms for conversion." },
+    { question: "What are common bases?", answer: "Base 10 and base 2 are common for science and computing." }
+  ],
+  disclaimer: "Results are mathematical approximations; use adequate precision as needed.",
+};
+
+<Calculator schema={schema} />

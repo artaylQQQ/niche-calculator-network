@@ -1,0 +1,34 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "PSI to Kilopascals Converter"
+description: "Convert pressure from PSI to kilopascals."
+updated: "2025-02-14"
+cluster: "Conversions"
+---
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "psi-to-kpa",
+  title: "PSI to Kilopascals Converter",
+  locale: "en",
+  intro: "Convert pressure from PSI to kilopascals.",
+  unit: "kPa",
+  cluster: "Conversions",
+  inputs: [
+    { name: "psi", label: "Pressure (PSI)", type: "number", step: "any", placeholder: "30" }
+  ],
+  expression: "psi * 6.89476",
+  examples: [
+    { description: "30 psi ⇒ 206.84 kPa" },
+    { description: "100 psi ⇒ 689.48 kPa" }
+  ],
+  faqs: [
+    { question: "What does PSI stand for?", answer: "Pounds per square inch." },
+    { question: "Can it handle low pressures?", answer: "Yes, enter any positive value." },
+    { question: "Is the conversion exact?", answer: "It uses the standard factor 1 psi = 6.89476 kPa." },
+    { question: "Why use kilopascals?", answer: "Kilopascals are a metric unit commonly used worldwide." }
+  ],
+  disclaimer: "Check equipment manuals for precise pressure requirements.",
+};
+
+<Calculator schema={schema} />

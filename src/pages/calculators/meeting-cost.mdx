@@ -1,0 +1,36 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Meeting Cost Calculator"
+description: "Estimate the labor cost of a meeting."
+updated: "2025-02-14"
+cluster: "Other"
+---
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "meeting-cost",
+  title: "Meeting Cost Calculator",
+  locale: "en",
+  intro: "Estimate the labor cost of a meeting.",
+  unit: "USD",
+  cluster: "Other",
+  inputs: [
+    { name: "rate", label: "Hourly rate per person", type: "number", step: "any", placeholder: "50" },
+    { name: "attendees", label: "Number of attendees", type: "number", step: "1", placeholder: "4" },
+    { name: "hours", label: "Duration (hours)", type: "number", step: "any", placeholder: "1.5" }
+  ],
+  expression: "rate * attendees * hours",
+  examples: [
+    { description: "$50/hr, 4 people, 1.5 h ⇒ $300" },
+    { description: "$30/hr, 10 people, 1 h ⇒ $300" }
+  ],
+  faqs: [
+    { question: "Does it include overhead?", answer: "No, only direct labor cost is considered." },
+    { question: "Can rates differ per person?", answer: "This simple tool assumes a uniform rate." },
+    { question: "Should I include preparation time?", answer: "Add extra hours to account for prep if needed." },
+    { question: "Is currency fixed to USD?", answer: "No, use any currency consistently across inputs." }
+  ],
+  disclaimer: "Approximate cost only; actual expenses may vary.",
+};
+
+<Calculator schema={schema} />

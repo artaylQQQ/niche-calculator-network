@@ -1,0 +1,36 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Mulch Bed Volume Calculator"
+description: "Estimate mulch needed for a rectangular garden bed."
+updated: "2025-02-14"
+cluster: "Home & DIY"
+---
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "mulch-bed-volume",
+  title: "Mulch Bed Volume Calculator",
+  locale: "en",
+  intro: "Estimate mulch needed for a rectangular garden bed.",
+  unit: "yd³",
+  cluster: "Home & DIY",
+  inputs: [
+    { name: "length", label: "Bed length (ft)", type: "number", step: "any", placeholder: "10" },
+    { name: "width", label: "Bed width (ft)", type: "number", step: "any", placeholder: "4" },
+    { name: "depth", label: "Depth (inches)", type: "number", step: "any", placeholder: "3" }
+  ],
+  expression: "(length * width * depth / 12) / 27",
+  examples: [
+    { description: "10×4 ft bed at 3 in ⇒ 0.37 yd³" },
+    { description: "20×6 ft bed at 2 in ⇒ 0.74 yd³" }
+  ],
+  faqs: [
+    { question: "Why convert to cubic yards?", answer: "Mulch is often sold by the cubic yard." },
+    { question: "Can I use centimeters?", answer: "Convert dimensions to feet and inches first." },
+    { question: "Does depth include compaction?", answer: "No, depth is the desired finished thickness." },
+    { question: "Should I order extra mulch?", answer: "Ordering 5-10% extra allows for settling and mistakes." }
+  ],
+  disclaimer: "Estimate only; measure your beds carefully before purchasing.",
+};
+
+<Calculator schema={schema} />

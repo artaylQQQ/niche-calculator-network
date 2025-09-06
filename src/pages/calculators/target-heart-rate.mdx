@@ -1,0 +1,36 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Target Heart Rate Calculator"
+description: "Calculate training heart rate using the Karvonen formula."
+updated: "2025-02-14"
+cluster: "Health"
+---
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "target-heart-rate",
+  title: "Target Heart Rate Calculator",
+  locale: "en",
+  intro: "Calculate training heart rate using the Karvonen formula.",
+  unit: "bpm",
+  cluster: "Health",
+  inputs: [
+    { name: "age", label: "Age", type: "number", step: "1", placeholder: "30" },
+    { name: "rest", label: "Resting heart rate", type: "number", step: "1", placeholder: "60" },
+    { name: "intensity", label: "Intensity (%)", type: "number", step: "any", placeholder: "70" }
+  ],
+  expression: "((220 - age - rest) * (intensity/100)) + rest",
+  examples: [
+    { description: "Age 30, rest 60, 70% ⇒ 151 bpm" },
+    { description: "Age 45, rest 55, 60% ⇒ 127 bpm" }
+  ],
+  faqs: [
+    { question: "What formula is used?", answer: "The Karvonen method based on heart rate reserve." },
+    { question: "Can intensity exceed 100%?", answer: "Enter a value between 0 and 100 for training zones." },
+    { question: "Do I need to know max heart rate?", answer: "No, it is estimated as 220 minus age." },
+    { question: "Is this suitable for everyone?", answer: "Consult a doctor before starting new exercise programs." }
+  ],
+  disclaimer: "Information only; not a substitute for professional medical advice.",
+};
+
+<Calculator schema={schema} />
