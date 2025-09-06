@@ -1,0 +1,36 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "CPU Utilization Calculator"
+description: "Estimate CPU usage percentage."
+updated: "2025-09-06"
+cluster: "technology"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  inputs: [
+    { name: "busy", label: "Busy Time (ms)", type: "number", step: "any", min: 0, placeholder: "30" },
+    { name: "total", label: "Total Time (ms)", type: "number", step: "any", min: 0, placeholder: "100" }
+  ],
+  slug: "cpu-utilization",
+  title: "CPU Utilization Calculator",
+  locale: "en",
+  unit: "%",
+  expression: "(busy / total) * 100",
+  intro: "Estimate CPU utilization percentage from measured busy time over total time.",
+  examples: [
+    { description: "Busy 30 ms, total 100 ms ⇒ 30%" },
+    { description: "Busy 5 ms, total 20 ms ⇒ 25%" },
+    { description: "Busy 200 ms, total 500 ms ⇒ 40%" }
+  ],
+  faqs: [
+    { question: "Can total time be zero?", answer: "No, total time must be greater than zero." },
+    { question: "Does this handle multiple cores?", answer: "It reflects a single measurement; aggregate cores separately." },
+    { question: "Do units need to match?", answer: "Yes, use the same time units for busy and total." }
+  ],
+  disclaimer: "Simplified metric; actual CPU usage may vary based on system measurement methods.",
+  cluster: "technology"
+};
+
+<Calculator schema={schema} />

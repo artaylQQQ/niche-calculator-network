@@ -1,0 +1,35 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Cups to Tablespoons Converter"
+description: "Convert cups to tablespoons."
+updated: "2025-09-06"
+cluster: "conversions"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  inputs: [
+    { name: "cups", label: "Cups", type: "number", step: "any", min: 0, placeholder: "1" }
+  ],
+  slug: "cups-to-tbsp",
+  title: "Cups to Tablespoons Converter",
+  locale: "en",
+  unit: "tbsp",
+  expression: "cups * 16",
+  intro: "Convert volume in cups to tablespoons using the US customary system.",
+  examples: [
+    { description: "1 cup ⇒ 16 tbsp" },
+    { description: "0.5 cup ⇒ 8 tbsp" },
+    { description: "2.25 cups ⇒ 36 tbsp" }
+  ],
+  faqs: [
+    { question: "Is this US measurement?", answer: "Yes, it uses US customary units." },
+    { question: "How many tablespoons in a half cup?", answer: "There are 8 tablespoons in a half cup." },
+    { question: "Can I convert back to cups?", answer: "Divide tablespoons by 16 to get cups." }
+  ],
+  disclaimer: "For kitchen estimates; check recipe requirements for precision.",
+  cluster: "conversions"
+};
+
+<Calculator schema={schema} />
