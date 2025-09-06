@@ -13,14 +13,18 @@ export async function getStaticPaths() {
   // one of the listed aliases will be grouped into the corresponding
   // category page.
   const CATEGORIES = [
-    { slug: 'finance',     title: 'Finance',          map: ['finance','finance & loans','taxes','business','business & commerce','percentages & ratios'] },
-    { slug: 'health',      title: 'Health',           map: ['health','health & fitness','bmi'] },
-    { slug: 'conversions', title: 'Conversions',      map: ['conversions','unit conversions','unit and currency conversions'] },
-    { slug: 'math',        title: 'Math',             map: ['math','geometry','geometry & math','areas & volumes','algebra','percentages & ratios','statistics','averages and probabilities'] },
-    { slug: 'technology',  title: 'Technology',       map: ['technology','tech','computing','technology & computing'] },
-    { slug: 'date-time',   title: 'Date & Time',      map: ['date & time','time & date','time-date','durations and schedules'] },
-    { slug: 'home-diy',    title: 'Home & DIY',       map: ['home & diy','home and diy','diy','household'] },
-    { slug: 'other',       title: 'Everyday & Misc',  map: ['other','misc','miscellaneous','everyday','everyday & misc','general'] }
+    { slug: 'finance-business',    title: 'Finance & Business',       map: ['finance & business','business','business & commerce','corporate'] },
+    { slug: 'personal-finance',    title: 'Personal Finance & Loans', map: ['finance','personal finance','loans','finance & loans','budgeting'] },
+    { slug: 'health-fitness',      title: 'Health & Fitness',         map: ['health','health & fitness','bmi','fitness','body'] },
+    { slug: 'math-statistics',     title: 'Math & Statistics',        map: ['math','geometry','statistics','algebra','areas & volumes','percentages & ratios','averages and probabilities'] },
+    { slug: 'conversions-units',   title: 'Conversions & Units',      map: ['conversions','unit conversions','unit and currency conversions'] },
+    { slug: 'date-time',           title: 'Date & Time',              map: ['date & time','time & date','time-date','durations and schedules'] },
+    { slug: 'education-learning',  title: 'Education & Learning',     map: ['education','learning','study','education & learning'] },
+    { slug: 'science-engineering', title: 'Science & Engineering',    map: ['science','engineering','science & engineering'] },
+    { slug: 'technology-coding',   title: 'Technology & Coding',      map: ['technology','tech','computing','coding','technology & computing'] },
+    { slug: 'home-diy',            title: 'Home & DIY',               map: ['home & diy','home and diy','diy','household'] },
+    { slug: 'lifestyle-travel',    title: 'Lifestyle & Travel',       map: ['lifestyle','travel','lifestyle & travel','other','misc','miscellaneous','general'] },
+    { slug: 'web-marketing',       title: 'Web & Marketing',          map: ['web','marketing','web & marketing','seo'] },
   ];
 
   // 2) Lee calculators.json en build
