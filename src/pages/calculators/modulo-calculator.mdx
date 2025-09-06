@@ -1,0 +1,60 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Modulo Calculator"
+description: "Find the remainder of division between two numbers."
+updated: "2024-06-20"
+cluster: "Math"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "modulo-calculator",
+  title: "Modulo Calculator",
+  locale: "en",
+  intro: "Compute the remainder when one number is divided by another.",
+  unit: "remainder",
+  cluster: "Math",
+  inputs: [
+    {
+      name: "a",
+      label: "Dividend",
+      type: "number",
+      step: "any",
+      placeholder: "10",
+    },
+    {
+      name: "b",
+      label: "Divisor",
+      type: "number",
+      step: "any",
+      placeholder: "3",
+    },
+  ],
+  expression: "a % b",
+  examples: [
+    { description: "10 ÷ 3 ⇒ remainder 1" },
+    { description: "25 ÷ 4 ⇒ remainder 1" },
+  ],
+  faqs: [
+    {
+      question: "What does modulo mean?",
+      answer: "It gives the remainder after division.",
+    },
+    {
+      question: "Can b be zero?",
+      answer: "No, division by zero is undefined.",
+    },
+    {
+      question: "Is the result always less than the divisor?",
+      answer: "Yes, the remainder is smaller than b.",
+    },
+    {
+      question: "Does it work with negative numbers?",
+      answer: "Results follow JavaScript's sign conventions.",
+    },
+  ],
+  disclaimer: "For arithmetic purposes only.",
+};
+
+<Calculator schema={schema} />

@@ -1,0 +1,49 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Harmonic Mean Calculator"
+description: "Calculate the harmonic mean of three numbers."
+updated: "2024-06-20"
+cluster: "Math"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "harmonic-mean-calculator",
+  title: "Harmonic Mean Calculator",
+  locale: "en",
+  intro: "Find the harmonic mean of three values, useful for averaging rates.",
+  unit: "units",
+  cluster: "Math",
+  inputs: [
+    { name: "a", label: "A", type: "number", step: "any", placeholder: "3" },
+    { name: "b", label: "B", type: "number", step: "any", placeholder: "4" },
+    { name: "c", label: "C", type: "number", step: "any", placeholder: "6" },
+  ],
+  expression: "3 / (1/a + 1/b + 1/c)",
+  examples: [
+    { description: "Values 3,4,6 ⇒ 4.00" },
+    { description: "Values 10,20,30 ⇒ 16.36" },
+  ],
+  faqs: [
+    {
+      question: "What is the harmonic mean?",
+      answer: "It is the reciprocal of the average of reciprocals.",
+    },
+    {
+      question: "When is it used?",
+      answer: "Commonly for averaging rates like speed or density.",
+    },
+    {
+      question: "Can any value be zero?",
+      answer: "No, zero would make the expression undefined.",
+    },
+    {
+      question: "Does order matter?",
+      answer: "No, the harmonic mean is symmetric.",
+    },
+  ],
+  disclaimer: "For mathematical purposes only.",
+};
+
+<Calculator schema={schema} />

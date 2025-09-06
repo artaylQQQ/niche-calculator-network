@@ -1,0 +1,54 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Ideal Body Weight Calculator"
+description: "Estimate ideal body weight using a BMI of 22."
+updated: "2024-06-20"
+cluster: "Health"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "ideal-body-weight",
+  title: "Ideal Body Weight Calculator",
+  locale: "en",
+  intro: "Estimate an ideal body weight based on a BMI of 22.",
+  unit: "kg",
+  cluster: "Health",
+  inputs: [
+    {
+      name: "height",
+      label: "Height (cm)",
+      type: "number",
+      step: "any",
+      placeholder: "170",
+    },
+  ],
+  expression: "22 * Math.pow(height/100, 2)",
+  examples: [
+    { description: "170 cm ⇒ 63.58 kg" },
+    { description: "160 cm ⇒ 56.32 kg" },
+  ],
+  faqs: [
+    {
+      question: "Why use BMI 22?",
+      answer: "It is near the midpoint of the healthy BMI range.",
+    },
+    {
+      question: "Does this apply to everyone?",
+      answer: "No, individual factors like muscle mass vary.",
+    },
+    {
+      question: "Can I enter inches?",
+      answer: "Convert inches to centimeters first.",
+    },
+    {
+      question: "Is this a medical recommendation?",
+      answer: "No, consult a professional for personal advice.",
+    },
+  ],
+  disclaimer:
+    "General guideline only; not a substitute for medical evaluation.",
+};
+
+<Calculator schema={schema} />

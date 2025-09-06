@@ -1,0 +1,75 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Social Media Engagement Rate Calculator"
+description: "Compute engagement rate from interactions and followers."
+updated: "2024-06-20"
+cluster: "Other"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "social-media-engagement-rate",
+  title: "Social Media Engagement Rate Calculator",
+  locale: "en",
+  intro:
+    "Measure engagement as a percentage of followers based on likes, comments, and shares.",
+  unit: "%",
+  cluster: "Other",
+  inputs: [
+    {
+      name: "likes",
+      label: "Likes",
+      type: "number",
+      step: "any",
+      placeholder: "100",
+    },
+    {
+      name: "comments",
+      label: "Comments",
+      type: "number",
+      step: "any",
+      placeholder: "20",
+    },
+    {
+      name: "shares",
+      label: "Shares",
+      type: "number",
+      step: "any",
+      placeholder: "10",
+    },
+    {
+      name: "followers",
+      label: "Followers",
+      type: "number",
+      step: "any",
+      placeholder: "1000",
+    },
+  ],
+  expression: "(likes + comments + shares) / followers * 100",
+  examples: [
+    { description: "100 likes, 20 comments, 10 shares, 1000 followers ⇒ 13%" },
+    { description: "50 likes, 10 comments, 5 shares, 2000 followers ⇒ 3.25%" },
+  ],
+  faqs: [
+    {
+      question: "What counts as engagement?",
+      answer: "This calculator uses likes, comments, and shares.",
+    },
+    {
+      question: "Why divide by followers?",
+      answer: "To express engagement relative to audience size.",
+    },
+    {
+      question: "Can I compare different posts?",
+      answer: "Yes, engagement rate standardizes performance.",
+    },
+    {
+      question: "Are saves or clicks included?",
+      answer: "Not here; add them to the formula if needed.",
+    },
+  ],
+  disclaimer: "Engagement definitions vary by platform; adapt as necessary.",
+};
+
+<Calculator schema={schema} />

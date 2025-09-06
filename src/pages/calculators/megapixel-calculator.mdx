@@ -1,0 +1,58 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Megapixel Calculator"
+description: "Calculate megapixels from image dimensions."
+updated: "2024-06-20"
+cluster: "Technology"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "megapixel-calculator",
+  title: "Megapixel Calculator",
+  locale: "en",
+  intro:
+    "Find the megapixel count of an image using its width and height in pixels.",
+  unit: "MP",
+  cluster: "Technology",
+  inputs: [
+    {
+      name: "width",
+      label: "Width (px)",
+      type: "number",
+      step: "any",
+      placeholder: "4000",
+    },
+    {
+      name: "height",
+      label: "Height (px)",
+      type: "number",
+      step: "any",
+      placeholder: "3000",
+    },
+  ],
+  expression: "width * height / 1e6",
+  examples: [
+    { description: "4000×3000 ⇒ 12 MP" },
+    { description: "1920×1080 ⇒ 2.07 MP" },
+  ],
+  faqs: [
+    { question: "What is a megapixel?", answer: "One million pixels." },
+    {
+      question: "Does aspect ratio matter?",
+      answer: "Not for calculating total pixels.",
+    },
+    {
+      question: "Can I convert megapixels back to resolution?",
+      answer: "Multiply width and height to match the megapixel count.",
+    },
+    {
+      question: "Is the result exact?",
+      answer: "Yes, it's a direct calculation from pixel counts.",
+    },
+  ],
+  disclaimer: "Megapixel count doesn't reflect image quality alone.",
+};
+
+<Calculator schema={schema} />

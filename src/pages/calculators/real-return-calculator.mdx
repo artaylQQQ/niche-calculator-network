@@ -1,0 +1,61 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Real Return Calculator"
+description: "Adjust investment returns for inflation."
+updated: "2024-06-20"
+cluster: "Finance"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "real-return-calculator",
+  title: "Real Return Calculator",
+  locale: "en",
+  intro: "Find the inflation-adjusted return of an investment.",
+  unit: "%",
+  cluster: "Finance",
+  inputs: [
+    {
+      name: "nominal",
+      label: "Nominal Return (%)",
+      type: "number",
+      step: "any",
+      placeholder: "8",
+    },
+    {
+      name: "inflation",
+      label: "Inflation Rate (%)",
+      type: "number",
+      step: "any",
+      placeholder: "3",
+    },
+  ],
+  expression: "((1 + nominal/100) / (1 + inflation/100) - 1) * 100",
+  examples: [
+    { description: "8% nominal, 3% inflation ⇒ 4.85% real return" },
+    { description: "5% nominal, 2% inflation ⇒ 2.94% real return" },
+  ],
+  faqs: [
+    {
+      question: "What is real return?",
+      answer: "Return after removing the effect of inflation.",
+    },
+    {
+      question: "Why use this formula?",
+      answer: "It compares growth of prices and investment value.",
+    },
+    {
+      question: "Can inflation be negative?",
+      answer: "Yes, deflation increases real returns.",
+    },
+    {
+      question: "Does it account for taxes?",
+      answer: "No, it only adjusts for inflation.",
+    },
+  ],
+  disclaimer:
+    "For financial estimates; consult an advisor for personal guidance.",
+};
+
+<Calculator schema={schema} />

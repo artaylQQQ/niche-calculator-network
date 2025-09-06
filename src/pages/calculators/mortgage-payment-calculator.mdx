@@ -1,0 +1,67 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Mortgage Payment Calculator"
+description: "Compute monthly payment for a fixed-rate mortgage."
+updated: "2024-06-20"
+cluster: "Finance"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "mortgage-payment-calculator",
+  title: "Mortgage Payment Calculator",
+  locale: "en",
+  intro: "Estimate the monthly payment for a fixed-rate mortgage.",
+  unit: "USD",
+  cluster: "Finance",
+  inputs: [
+    {
+      name: "loan",
+      label: "Loan Amount",
+      type: "number",
+      step: "any",
+      placeholder: "250000",
+    },
+    {
+      name: "rate",
+      label: "Annual Rate (%)",
+      type: "number",
+      step: "any",
+      placeholder: "4",
+    },
+    {
+      name: "years",
+      label: "Years",
+      type: "number",
+      step: "any",
+      placeholder: "30",
+    },
+  ],
+  expression: "loan * (rate/1200) / (1 - Math.pow(1 + rate/1200, -12*years))",
+  examples: [
+    { description: "$250,000 at 4% for 30 years ⇒ $1,193.54 per month" },
+    { description: "$200,000 at 5% for 15 years ⇒ $1,581.59 per month" },
+  ],
+  faqs: [
+    {
+      question: "Does this include taxes and insurance?",
+      answer: "No, it calculates principal and interest only.",
+    },
+    {
+      question: "What happens if the rate changes?",
+      answer: "Payments change; this assumes a fixed rate.",
+    },
+    {
+      question: "Why use 1200 in the formula?",
+      answer: "It converts annual percentage rate to a monthly decimal.",
+    },
+    {
+      question: "Can I make extra payments?",
+      answer: "Extra payments reduce the principal but are not included here.",
+    },
+  ],
+  disclaimer: "For estimation purposes; consult a lender for exact payments.",
+};
+
+<Calculator schema={schema} />
