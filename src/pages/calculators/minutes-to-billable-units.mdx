@@ -1,0 +1,48 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Minutes to Billable Units"
+description: "Convert minutes into 0.1 hour billing units."
+updated: "2025-02-14"
+cluster: "Conversions"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  inputs: [
+    { name: "minutes", label: "Minutes", type: "number", step: "1", placeholder: "30" },
+  ],
+  slug: "minutes-to-billable-units",
+  title: "Minutes to Billable Units",
+  locale: "en",
+  expression: "minutes / 6",
+  unit: "units",
+  intro: "Translate minutes worked into 0.1 hour billing units.",
+  examples: [
+    { description: "30 minutes ⇒ 5 units" },
+    { description: "45 minutes ⇒ 7.5 units" },
+  ],
+  faqs: [
+    {
+      question: "Why divide by six?",
+      answer: "Each billing unit represents six minutes, or 0.1 hours.",
+    },
+    {
+      question: "Can I use decimals?",
+      answer: "Yes, partial minutes convert proportionally.",
+    },
+    {
+      question: "Does it round to whole units?",
+      answer: "No rounding is applied; round per firm policy.",
+    },
+    {
+      question: "Is this standard worldwide?",
+      answer: "Six-minute increments are common but confirm local rules.",
+    },
+  ],
+  disclaimer: "Always follow your jurisdiction's billing guidelines.",
+  cluster: "Conversions",
+};
+
+<Calculator schema={schema} />
+

@@ -1,0 +1,49 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Combined Impairment Rating Calculator"
+description: "Merge two impairment percentages using the standard combined values formula."
+updated: "2025-02-14"
+cluster: "Health"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  inputs: [
+    { name: "ratingA", label: "Impairment A (%)", type: "number", step: "any", placeholder: "30" },
+    { name: "ratingB", label: "Impairment B (%)", type: "number", step: "any", placeholder: "20" },
+  ],
+  slug: "combined-impairment-rating",
+  title: "Combined Impairment Rating Calculator",
+  locale: "en",
+  expression: "ratingA + ratingB * (1 - ratingA/100)",
+  unit: "%",
+  intro: "Combine two impairment ratings to estimate whole person impairment.",
+  examples: [
+    { description: "30% & 20% ⇒ 44%" },
+    { description: "10% & 15% ⇒ 23.5%" },
+  ],
+  faqs: [
+    {
+      question: "Why not simply add the percentages?",
+      answer: "The combined values formula accounts for the remaining unimpaired portion of the body.",
+    },
+    {
+      question: "Does the order matter?",
+      answer: "No, combining A with B yields the same result as B with A.",
+    },
+    {
+      question: "Can it handle more than two ratings?",
+      answer: "Combine ratings sequentially, pairing the result with the next rating.",
+    },
+    {
+      question: "Is this based on AMA Guides?",
+      answer: "Yes, it mirrors the combined values approach used in many jurisdictions.",
+    },
+  ],
+  disclaimer: "Use for preliminary estimates; official ratings should follow applicable medical guidelines.",
+  cluster: "Health",
+};
+
+<Calculator schema={schema} />
+

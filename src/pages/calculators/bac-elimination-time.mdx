@@ -1,0 +1,50 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "BAC Elimination Time Calculator"
+description: "Estimate hours required to reach a target blood alcohol concentration."
+updated: "2025-02-14"
+cluster: "Health"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  inputs: [
+    { name: "current", label: "Current BAC", type: "number", step: "any", placeholder: "0.10" },
+    { name: "target", label: "Target BAC", type: "number", step: "any", placeholder: "0.08" },
+    { name: "rate", label: "Elimination Rate per Hour", type: "number", step: "any", placeholder: "0.015" },
+  ],
+  slug: "bac-elimination-time",
+  title: "BAC Elimination Time Calculator",
+  locale: "en",
+  expression: "(current - target) / rate",
+  unit: "hours",
+  intro: "Approximate how long it takes for blood alcohol concentration to drop to a target level.",
+  examples: [
+    { description: "0.10 to 0.08 at 0.015/hr ⇒ 1.33 hours" },
+    { description: "0.15 to 0 at 0.015/hr ⇒ 10 hours" },
+  ],
+  faqs: [
+    {
+      question: "What is a typical elimination rate?",
+      answer: "Average metabolism reduces BAC about 0.015 per hour.",
+    },
+    {
+      question: "Can the rate vary?",
+      answer: "Yes, factors like weight, gender, and health influence metabolism.",
+    },
+    {
+      question: "Does this consider ongoing drinking?",
+      answer: "No, it assumes no additional alcohol is consumed.",
+    },
+    {
+      question: "Is the result legally precise?",
+      answer: "No, it's an estimate; actual BAC should be measured.",
+    },
+  ],
+  disclaimer: "Do not rely on estimates to determine sobriety for driving or legal purposes.",
+  cluster: "Health",
+};
+
+<Calculator schema={schema} />
+

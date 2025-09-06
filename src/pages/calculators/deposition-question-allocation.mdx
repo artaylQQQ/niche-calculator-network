@@ -1,0 +1,49 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Deposition Question Allocation"
+description: "Divide allowed deposition questions evenly across topics."
+updated: "2025-02-14"
+cluster: "Other"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  inputs: [
+    { name: "questions", label: "Total Questions Allowed", type: "number", step: "1", placeholder: "100" },
+    { name: "topics", label: "Number of Topics", type: "number", step: "1", placeholder: "5" },
+  ],
+  slug: "deposition-question-allocation",
+  title: "Deposition Question Allocation",
+  locale: "en",
+  expression: "questions / topics",
+  unit: "questions/topic",
+  intro: "Plan depositions by allocating questions evenly among topics.",
+  examples: [
+    { description: "100 questions ÷ 5 topics ⇒ 20 questions/topic" },
+    { description: "75 questions ÷ 3 topics ⇒ 25 questions/topic" },
+  ],
+  faqs: [
+    {
+      question: "What if some topics need more questions?",
+      answer: "Allocate proportionally or run separate calculations.",
+    },
+    {
+      question: "Can topics be zero?",
+      answer: "No, at least one topic is required.",
+    },
+    {
+      question: "Does this consider follow-up questions?",
+      answer: "It assumes a fixed total; adjust if follow-ups are expected.",
+    },
+    {
+      question: "Is there a federal limit on questions?",
+      answer: "Rules vary by jurisdiction; this tool simply divides the number you enter.",
+    },
+  ],
+  disclaimer: "Always consult procedural rules for question limits and scope.",
+  cluster: "Other",
+};
+
+<Calculator schema={schema} />
+
