@@ -1,0 +1,62 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "File Transfer Time Calculator"
+description: "Estimate how long a file takes to transfer over a network."
+updated: "2025-09-30"
+cluster: "Technology"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "file-transfer-time",
+  title: "File Transfer Time Calculator",
+  locale: "en",
+  cluster: "Technology",
+  intro:
+    "Calculate the transfer duration for a file using its size in megabytes and available bandwidth in megabits per second.",
+  inputs: [
+    {
+      name: "size",
+      label: "File Size (MB)",
+      type: "number",
+      step: "any",
+      placeholder: "500",
+    },
+    {
+      name: "bandwidth",
+      label: "Bandwidth (Mbps)",
+      type: "number",
+      step: "any",
+      placeholder: "20",
+    },
+  ],
+  expression: "(size * 8) / bandwidth",
+  unit: "seconds",
+  examples: [
+    { description: "500 MB over 20 Mbps ⇒ 200 s" },
+    { description: "1000 MB over 50 Mbps ⇒ 160 s" },
+  ],
+  faqs: [
+    {
+      question: "Why multiply size by 8?",
+      answer:
+        "Bandwidth is measured in bits, so megabytes are converted to megabits.",
+    },
+    {
+      question: "Does this include overhead?",
+      answer: "No, protocol overhead and network delays are ignored.",
+    },
+    {
+      question: "Can I use gigabytes?",
+      answer: "Convert GB to MB by multiplying by 1024 before entering.",
+    },
+    {
+      question: "How do I convert seconds to minutes?",
+      answer: "Divide the result by 60 to get minutes.",
+    },
+  ],
+  disclaimer: "Actual transfer times may vary due to network conditions.",
+};
+
+<Calculator schema={schema} />

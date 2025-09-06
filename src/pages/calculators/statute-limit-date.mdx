@@ -1,0 +1,79 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Statute of Limitations Date Calculator"
+description: "Find when a statutory limitation period ends."
+updated: "2025-09-30"
+cluster: "Date & Time"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "statute-limit-date",
+  title: "Statute of Limitations Date Calculator",
+  locale: "en",
+  cluster: "Date & Time",
+  intro:
+    "Determine the deadline for filing a claim by adding a limitation period in years to an incident date.",
+  inputs: [
+    {
+      name: "year",
+      label: "Incident Year",
+      type: "number",
+      step: "1",
+      placeholder: "2024",
+    },
+    {
+      name: "month",
+      label: "Incident Month",
+      type: "number",
+      step: "1",
+      placeholder: "1",
+    },
+    {
+      name: "day",
+      label: "Incident Day",
+      type: "number",
+      step: "1",
+      placeholder: "15",
+    },
+    {
+      name: "years",
+      label: "Limitation (years)",
+      type: "number",
+      step: "any",
+      placeholder: "2",
+    },
+  ],
+  expression:
+    "(function(y,m,d,yrs){const t=new Date(y,m-1,d);t.setFullYear(t.getFullYear()+yrs);return t.toISOString().slice(0,10);})(year,month,day,years)",
+  unit: "date",
+  examples: [
+    { description: "Incident 2024-01-15 with 2 years ⇒ 2026-01-15" },
+    { description: "Incident 2023-06-01 with 3 years ⇒ 2026-06-01" },
+  ],
+  faqs: [
+    {
+      question: "Does this account for leap years?",
+      answer:
+        "Yes, JavaScript's date handling adjusts for leap years automatically.",
+    },
+    {
+      question: "What if the limitation period is in months?",
+      answer: "Convert months to years (e.g., 18 months is 1.5 years).",
+    },
+    {
+      question: "Can the result fall on a weekend or holiday?",
+      answer:
+        "The calculator gives the calendar date only; legal deadlines may extend.",
+    },
+    {
+      question: "Is this a legal opinion?",
+      answer: "No, verify deadlines with professional legal advice.",
+    },
+  ],
+  disclaimer:
+    "For general reference; consult an attorney for exact filing deadlines.",
+};
+
+<Calculator schema={schema} />

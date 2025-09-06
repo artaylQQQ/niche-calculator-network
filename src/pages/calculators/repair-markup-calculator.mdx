@@ -1,0 +1,71 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Repair Markup Calculator"
+description: "Calculate the customer price from part costs, labor, and markup."
+updated: "2025-09-30"
+cluster: "Finance"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "repair-markup-calculator",
+  title: "Repair Markup Calculator",
+  locale: "en",
+  cluster: "Finance",
+  intro:
+    "Estimate the final repair invoice by applying a markup percentage to parts and adding labor costs.",
+  inputs: [
+    {
+      name: "parts",
+      label: "Part Cost (USD)",
+      type: "number",
+      step: "any",
+      placeholder: "200",
+    },
+    {
+      name: "labor",
+      label: "Labor Cost (USD)",
+      type: "number",
+      step: "any",
+      placeholder: "100",
+    },
+    {
+      name: "markup",
+      label: "Markup (%)",
+      type: "number",
+      step: "any",
+      placeholder: "20",
+    },
+  ],
+  expression: "parts * (1 + markup / 100) + labor",
+  unit: "USD",
+  examples: [
+    { description: "Parts 200, labor 100, markup 20% ⇒ 340 USD" },
+    { description: "Parts 80, labor 50, markup 15% ⇒ 142 USD" },
+  ],
+  faqs: [
+    {
+      question: "What is markup?",
+      answer:
+        "The percentage added to the cost of parts to cover overhead and profit.",
+    },
+    {
+      question: "Does markup apply to labor?",
+      answer:
+        "This calculator applies markup only to parts; labor is added afterward.",
+    },
+    {
+      question: "Can I enter negative markup?",
+      answer: "No, markup should be zero or positive.",
+    },
+    {
+      question: "How is sales tax handled?",
+      answer: "Add applicable taxes to the result separately.",
+    },
+  ],
+  disclaimer:
+    "Provides an estimate only; actual invoices may include taxes and additional fees.",
+};
+
+<Calculator schema={schema} />

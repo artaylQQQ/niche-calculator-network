@@ -1,0 +1,62 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Driveway Slope Calculator"
+description: "Find driveway slope percentage from rise and run."
+updated: "2025-09-30"
+cluster: "Home & DIY"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "driveway-slope-calculator",
+  title: "Driveway Slope Calculator",
+  locale: "en",
+  cluster: "Home & DIY",
+  intro:
+    "Determine the grade of a driveway or ramp using vertical rise in inches and horizontal run in feet.",
+  inputs: [
+    {
+      name: "rise",
+      label: "Rise (in)",
+      type: "number",
+      step: "any",
+      placeholder: "24",
+    },
+    {
+      name: "run",
+      label: "Run (ft)",
+      type: "number",
+      step: "any",
+      placeholder: "20",
+    },
+  ],
+  expression: "100 * rise / (run * 12)",
+  unit: "%",
+  examples: [
+    { description: "Rise 24 in, run 20 ft ⇒ 10%" },
+    { description: "Rise 18 in, run 30 ft ⇒ 5%" },
+  ],
+  faqs: [
+    {
+      question: "What slope is recommended?",
+      answer: "Many codes suggest driveways stay under 12% grade.",
+    },
+    {
+      question: "Can I use metric units?",
+      answer: "Convert measurements to inches and feet before calculating.",
+    },
+    {
+      question: "Does this account for curvature?",
+      answer: "No, it assumes a straight driveway.",
+    },
+    {
+      question: "What if the run is zero?",
+      answer: "A zero run would result in an undefined slope.",
+    },
+  ],
+  disclaimer:
+    "Always verify slopes with on-site measurements and local regulations.",
+};
+
+<Calculator schema={schema} />

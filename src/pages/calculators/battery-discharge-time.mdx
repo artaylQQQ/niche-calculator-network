@@ -1,0 +1,62 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Battery Discharge Time Calculator"
+description: "Estimate how long a battery will last under a given load."
+updated: "2025-09-30"
+cluster: "Technology"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "battery-discharge-time",
+  title: "Battery Discharge Time Calculator",
+  locale: "en",
+  cluster: "Technology",
+  intro:
+    "Predict battery runtime in hours using capacity in amp-hours and load current in amps.",
+  inputs: [
+    {
+      name: "capacity",
+      label: "Capacity (Ah)",
+      type: "number",
+      step: "any",
+      placeholder: "5",
+    },
+    {
+      name: "current",
+      label: "Load Current (A)",
+      type: "number",
+      step: "any",
+      placeholder: "1",
+    },
+  ],
+  expression: "capacity / current",
+  unit: "hours",
+  examples: [
+    { description: "5 Ah battery at 1 A ⇒ 5 hours" },
+    { description: "2 Ah battery at 0.5 A ⇒ 4 hours" },
+  ],
+  faqs: [
+    {
+      question: "Does this assume constant current?",
+      answer: "Yes, the current draw is assumed to be steady over time.",
+    },
+    {
+      question: "What about efficiency?",
+      answer:
+        "Real-world factors like temperature and discharge curves can reduce runtime.",
+    },
+    {
+      question: "Can I use milliamp-hours?",
+      answer: "Divide mAh by 1000 to convert to Ah before entering.",
+    },
+    {
+      question: "Does battery aging affect results?",
+      answer: "Older batteries may have less usable capacity than rated.",
+    },
+  ],
+  disclaimer: "Provides an approximation; actual battery life may vary.",
+};
+
+<Calculator schema={schema} />

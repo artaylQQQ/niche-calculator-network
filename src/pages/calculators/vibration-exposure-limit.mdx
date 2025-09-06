@@ -1,0 +1,65 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Vibration Exposure Limit Calculator"
+description: "Estimate daily hand-arm vibration exposure A(8)."
+updated: "2025-09-30"
+cluster: "Health"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "vibration-exposure-limit",
+  title: "Vibration Exposure Limit Calculator",
+  locale: "en",
+  cluster: "Health",
+  intro:
+    "Calculate the standardized 8-hour vibration exposure value (A(8)) using measured acceleration and exposure time.",
+  inputs: [
+    {
+      name: "acc",
+      label: "Acceleration (m/s²)",
+      type: "number",
+      step: "any",
+      placeholder: "5",
+    },
+    {
+      name: "time",
+      label: "Exposure Time (hrs)",
+      type: "number",
+      step: "any",
+      placeholder: "2",
+    },
+  ],
+  expression: "acc * Math.sqrt(time / 8)",
+  unit: "m/s²",
+  examples: [
+    { description: "5 m/s² for 2 h ⇒ 2.50 m/s²" },
+    { description: "3 m/s² for 8 h ⇒ 3.00 m/s²" },
+  ],
+  faqs: [
+    {
+      question: "What is A(8)?",
+      answer:
+        "A standardized measure of daily vibration exposure referenced to an 8-hour working day.",
+    },
+    {
+      question: "Why use square root of time/8?",
+      answer:
+        "Exposure is normalized to an 8-hour period as recommended by ISO 5349.",
+    },
+    {
+      question: "Is higher A(8) more dangerous?",
+      answer:
+        "Yes, larger values indicate greater risk of hand-arm vibration syndrome.",
+    },
+    {
+      question: "Does this account for breaks?",
+      answer: "Input only the total time tools are actively vibrating.",
+    },
+  ],
+  disclaimer:
+    "Use professional instruments for accurate vibration measurements.",
+};
+
+<Calculator schema={schema} />

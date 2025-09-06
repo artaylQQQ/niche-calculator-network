@@ -1,0 +1,56 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Acres to Hectares Converter"
+description: "Convert land area from acres to hectares."
+updated: "2025-09-30"
+cluster: "Conversions"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "acres-to-hectares-converter",
+  title: "Acres to Hectares Converter",
+  locale: "en",
+  cluster: "Conversions",
+  intro:
+    "Convert land area from acres to hectares for property and land use calculations.",
+  inputs: [
+    {
+      name: "acres",
+      label: "Area (ac)",
+      type: "number",
+      step: "any",
+      placeholder: "10",
+    },
+  ],
+  expression: "acres * 0.404686",
+  unit: "ha",
+  examples: [
+    { description: "10 acres ⇒ 4.05 ha" },
+    { description: "2.5 acres ⇒ 1.01 ha" },
+  ],
+  faqs: [
+    {
+      question: "What is an acre?",
+      answer:
+        "A unit of area commonly used in the United States and United Kingdom.",
+    },
+    {
+      question: "Why convert to hectares?",
+      answer:
+        "Hectares are standard in international land records and legal documents.",
+    },
+    {
+      question: "Is the conversion factor exact?",
+      answer: "1 acre equals 0.404686 hectares.",
+    },
+    {
+      question: "Can I convert hectares back to acres?",
+      answer: "Use the inverse conversion of dividing by 0.404686.",
+    },
+  ],
+  disclaimer: "Verify land measurements with official survey data.",
+};
+
+<Calculator schema={schema} />

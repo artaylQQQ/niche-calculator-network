@@ -1,0 +1,69 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Engine Displacement Calculator"
+description: "Find engine size in liters from bore, stroke, and cylinder count."
+updated: "2025-09-30"
+cluster: "Math"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "engine-displacement",
+  title: "Engine Displacement Calculator",
+  locale: "en",
+  cluster: "Math",
+  intro:
+    "Compute engine displacement in liters using cylinder bore, stroke, and number of cylinders (dimensions in centimeters).",
+  inputs: [
+    {
+      name: "bore",
+      label: "Bore (cm)",
+      type: "number",
+      step: "any",
+      placeholder: "8.6",
+    },
+    {
+      name: "stroke",
+      label: "Stroke (cm)",
+      type: "number",
+      step: "any",
+      placeholder: "8.6",
+    },
+    {
+      name: "cyl",
+      label: "Cylinders",
+      type: "number",
+      step: "1",
+      placeholder: "4",
+    },
+  ],
+  expression: "Math.PI * Math.pow(bore/2,2) * stroke * cyl / 1000",
+  unit: "L",
+  examples: [
+    { description: "Bore 8.6 cm, stroke 8.6 cm, 4 cyl ⇒ 2.00 L" },
+    { description: "Bore 9.2 cm, stroke 8.5 cm, 6 cyl ⇒ 3.39 L" },
+  ],
+  faqs: [
+    {
+      question: "Why divide by 1000?",
+      answer: "To convert cubic centimeters to liters.",
+    },
+    {
+      question: "Can I use inches?",
+      answer: "Convert inches to centimeters before entering values.",
+    },
+    {
+      question: "Does this account for turbocharging?",
+      answer: "No, displacement measures physical size only.",
+    },
+    {
+      question: "What about V-shaped engines?",
+      answer: "The formula applies regardless of engine configuration.",
+    },
+  ],
+  disclaimer:
+    "Assumes cylinders are perfectly cylindrical and uses metric units.",
+};
+
+<Calculator schema={schema} />

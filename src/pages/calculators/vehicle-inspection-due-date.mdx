@@ -1,0 +1,76 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Vehicle Inspection Due Date Calculator"
+description: "Predict the next inspection date based on the last inspection and interval."
+updated: "2025-09-30"
+cluster: "Date & Time"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "vehicle-inspection-due-date",
+  title: "Vehicle Inspection Due Date Calculator",
+  locale: "en",
+  cluster: "Date & Time",
+  intro:
+    "Find when a vehicle's next inspection is due by adding a recurring interval in months to the last inspection date.",
+  inputs: [
+    {
+      name: "year",
+      label: "Last Year",
+      type: "number",
+      step: "1",
+      placeholder: "2024",
+    },
+    {
+      name: "month",
+      label: "Last Month",
+      type: "number",
+      step: "1",
+      placeholder: "1",
+    },
+    {
+      name: "day",
+      label: "Last Day",
+      type: "number",
+      step: "1",
+      placeholder: "10",
+    },
+    {
+      name: "interval",
+      label: "Interval (months)",
+      type: "number",
+      step: "1",
+      placeholder: "12",
+    },
+  ],
+  expression:
+    "(function(y,m,d,intv){const t=new Date(y,m-1,d);t.setMonth(t.getMonth()+intv);return t.toISOString().slice(0,10);})(year,month,day,interval)",
+  unit: "date",
+  examples: [
+    { description: "Last 2024-01-10 with 12 months ⇒ 2025-01-10" },
+    { description: "Last 2023-06-01 with 6 months ⇒ 2023-12-01" },
+  ],
+  faqs: [
+    {
+      question: "Can I use weeks instead of months?",
+      answer: "Convert weeks to months or use 0.25 for roughly one week.",
+    },
+    {
+      question: "Does this account for shorter months?",
+      answer: "Yes, JavaScript adjusts dates across month lengths.",
+    },
+    {
+      question: "What if inspections are required annually?",
+      answer: "Use an interval of 12 months.",
+    },
+    {
+      question: "Is this compliant with local laws?",
+      answer: "Check regional regulations to confirm inspection schedules.",
+    },
+  ],
+  disclaimer: "Scheduling tool only; follow official inspection notices.",
+};
+
+<Calculator schema={schema} />

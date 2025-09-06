@@ -1,0 +1,63 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Accident Reconstruction Speed Calculator"
+description: "Estimate vehicle speed from skid distance and drag factor."
+updated: "2025-09-30"
+cluster: "other"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "accident-reconstruction-speed",
+  title: "Accident Reconstruction Speed Calculator",
+  locale: "en",
+  cluster: "other",
+  intro:
+    "Estimate pre-braking vehicle speed using the standard skid formula with skid distance and drag factor.",
+  inputs: [
+    {
+      name: "distance",
+      label: "Skid Distance (ft)",
+      type: "number",
+      step: "any",
+      placeholder: "100",
+    },
+    {
+      name: "drag",
+      label: "Drag Factor",
+      type: "number",
+      step: "any",
+      placeholder: "0.7",
+    },
+  ],
+  expression: "Math.sqrt(30 * distance * drag)",
+  unit: "mph",
+  examples: [
+    { description: "100 ft with drag 0.7 ⇒ 45.83 mph" },
+    { description: "50 ft with drag 0.6 ⇒ 30.00 mph" },
+  ],
+  faqs: [
+    {
+      question: "What is drag factor?",
+      answer:
+        "A coefficient representing surface friction between tires and road.",
+    },
+    {
+      question: "Does this account for braking efficiency?",
+      answer: "The formula assumes locked-wheel skid and level surface.",
+    },
+    {
+      question: "Can I use meters?",
+      answer: "Convert meters to feet before using the calculator.",
+    },
+    {
+      question: "Is the result exact?",
+      answer: "It's an estimate; real-world conditions may vary.",
+    },
+  ],
+  disclaimer:
+    "For accident analysis reference only; consult professional reconstruction experts.",
+};
+
+<Calculator schema={schema} />

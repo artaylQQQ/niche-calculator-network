@@ -1,0 +1,57 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Newton-Meter to Pound-Foot Converter"
+description: "Convert torque from newton-meters to pound-feet."
+updated: "2025-09-30"
+cluster: "Conversions"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "nm-to-lbft-converter",
+  title: "Newton-Meter to Pound-Foot Converter",
+  locale: "en",
+  cluster: "Conversions",
+  intro:
+    "Convert torque from newton-meters to pound-feet for automotive torque specifications.",
+  inputs: [
+    {
+      name: "nm",
+      label: "Torque (N·m)",
+      type: "number",
+      step: "any",
+      placeholder: "100",
+    },
+  ],
+  expression: "nm * 0.737562",
+  unit: "lb·ft",
+  examples: [
+    { description: "100 N·m ⇒ 73.76 lb·ft" },
+    { description: "250 N·m ⇒ 184.39 lb·ft" },
+  ],
+  faqs: [
+    {
+      question: "What is a newton-meter?",
+      answer:
+        "A metric unit of torque equal to one newton applied at a one-meter radius.",
+    },
+    {
+      question: "Why convert to pound-foot?",
+      answer:
+        "Many automotive manuals in the U.S. specify torque in pound-feet.",
+    },
+    {
+      question: "Is the conversion exact?",
+      answer: "1 N·m equals 0.737562 lb·ft.",
+    },
+    {
+      question: "Can I convert the other way?",
+      answer:
+        "Use a pound-foot to newton-meter converter for reverse calculations.",
+    },
+  ],
+  disclaimer: "Double-check critical torque settings with calibrated tools.",
+};
+
+<Calculator schema={schema} />

@@ -1,0 +1,69 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Garage Lighting Lumens Calculator"
+description: "Estimate total lumens needed to light a garage."
+updated: "2025-09-30"
+cluster: "Home & DIY"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "garage-lighting-lumens",
+  title: "Garage Lighting Lumens Calculator",
+  locale: "en",
+  cluster: "Home & DIY",
+  intro:
+    "Calculate recommended lighting output for a garage based on area and desired brightness level in lumens per square foot.",
+  inputs: [
+    {
+      name: "length",
+      label: "Length (ft)",
+      type: "number",
+      step: "any",
+      placeholder: "20",
+    },
+    {
+      name: "width",
+      label: "Width (ft)",
+      type: "number",
+      step: "any",
+      placeholder: "24",
+    },
+    {
+      name: "lumens",
+      label: "Lumens per ft²",
+      type: "number",
+      step: "any",
+      placeholder: "50",
+    },
+  ],
+  expression: "length * width * lumens",
+  unit: "lumens",
+  examples: [
+    { description: "20×24 ft at 50 lm/ft² ⇒ 24000 lumens" },
+    { description: "15×20 ft at 75 lm/ft² ⇒ 22500 lumens" },
+  ],
+  faqs: [
+    {
+      question: "What brightness level should I use?",
+      answer: "Workshops often use 50–75 lumens per square foot.",
+    },
+    {
+      question: "Do LED lights affect lumens?",
+      answer: "Lumens measure light output regardless of bulb type.",
+    },
+    {
+      question: "Should I include fixture efficiency?",
+      answer: "This estimate assumes fixtures deliver their rated lumens.",
+    },
+    {
+      question: "How many fixtures do I need?",
+      answer: "Divide the total lumens by the output of a single fixture.",
+    },
+  ],
+  disclaimer:
+    "Lighting needs vary; consult lighting standards for specialized workspaces.",
+};
+
+<Calculator schema={schema} />

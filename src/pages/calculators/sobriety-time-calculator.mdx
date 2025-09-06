@@ -1,0 +1,62 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Sobriety Time Calculator"
+description: "Estimate hours to reach a legal BAC limit."
+updated: "2025-09-30"
+cluster: "Health"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "sobriety-time-calculator",
+  title: "Sobriety Time Calculator",
+  locale: "en",
+  cluster: "Health",
+  intro:
+    "Estimate how many hours it takes for blood alcohol concentration (BAC) to fall to a legal limit based on a standard metabolism rate.",
+  inputs: [
+    {
+      name: "current",
+      label: "Current BAC (%)",
+      type: "number",
+      step: "any",
+      placeholder: "0.10",
+    },
+    {
+      name: "limit",
+      label: "Legal Limit (%)",
+      type: "number",
+      step: "any",
+      placeholder: "0.08",
+    },
+  ],
+  expression: "Math.max(0, (current - limit) / 0.015)",
+  unit: "hours",
+  examples: [
+    { description: "0.10% to 0.08% ⇒ 1.33 hours" },
+    { description: "0.15% to 0.05% ⇒ 6.67 hours" },
+  ],
+  faqs: [
+    {
+      question: "What is the metabolism rate used?",
+      answer:
+        "The calculation assumes an average BAC decrease of 0.015% per hour.",
+    },
+    {
+      question: "Do body weight or gender affect results?",
+      answer: "Yes, individual metabolism varies; this is a general estimate.",
+    },
+    {
+      question: "Can this predict sobriety for legal purposes?",
+      answer: "No, always use a certified test for legal determinations.",
+    },
+    {
+      question: "What if the current BAC is below the limit?",
+      answer: "The calculator returns 0 hours.",
+    },
+  ],
+  disclaimer: "For educational use only. Never drink and drive.",
+};
+
+<Calculator schema={schema} />

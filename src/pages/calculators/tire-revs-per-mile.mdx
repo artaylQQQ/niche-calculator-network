@@ -1,0 +1,55 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Tire Revolutions per Mile Calculator"
+description: "Convert tire diameter to revolutions per mile."
+updated: "2025-09-30"
+cluster: "other"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "tire-revs-per-mile",
+  title: "Tire Revolutions per Mile Calculator",
+  locale: "en",
+  cluster: "other",
+  intro:
+    "Estimate how many times a tire rotates in one mile using its overall diameter in inches.",
+  inputs: [
+    {
+      name: "diameter",
+      label: "Diameter (in)",
+      type: "number",
+      step: "any",
+      placeholder: "26",
+    },
+  ],
+  expression: "63360 / (Math.PI * diameter)",
+  unit: "rev/mi",
+  examples: [
+    { description: "Diameter 26 in ⇒ 774.6 rev/mi" },
+    { description: "Diameter 30 in ⇒ 671.0 rev/mi" },
+  ],
+  faqs: [
+    {
+      question: "Why 63360 in the formula?",
+      answer: "There are 63,360 inches in a mile.",
+    },
+    {
+      question: "Does tread wear affect diameter?",
+      answer:
+        "Yes, worn tires have slightly smaller diameters and higher revs.",
+    },
+    {
+      question: "Can I use metric units?",
+      answer: "Convert centimeters to inches before using the calculator.",
+    },
+    {
+      question: "Is this exact for all tires?",
+      answer: "It assumes a perfect circle and ignores deformation under load.",
+    },
+  ],
+  disclaimer: "Use manufacturer data for precise drivetrain calculations.",
+};
+
+<Calculator schema={schema} />
