@@ -1,0 +1,11 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import AIAssistant from "../components/AIAssistant.astro";
+---
+<BaseLayout title="AI Calculator" description="Ask the AI for help with any calculation.">
+  <section class="container mx-auto max-w-3xl px-4">
+    <h1>AI Calculator</h1>
+    <p class="muted">Didn't find the calculator you needed on CalcSimpler.com? Ask below.</p>
+    <AIAssistant heading="Ask the AI" prompt="Describe your calculation question:" />
+  </section>
+</BaseLayout>
