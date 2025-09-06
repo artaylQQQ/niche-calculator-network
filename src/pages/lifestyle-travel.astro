@@ -1,23 +1,18 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import AdBanner from "../components/AdBanner.astro";
-const slug = "finance";
-const title = "Finance & Business Calculators";
+// Lists calculators related to lifestyle and travel topics.
+// The slug is `lifestyle & travel` and it gathers all MDX files with that cluster.
+const slug = "lifestyle & travel";
+const title = "Lifestyle & Travel Calculators";
 const modules = import.meta.glob("../pages/calculators/*.mdx", { eager: true });
 const items = Object.values(modules).map((m) => ({ url: m.url, fm: m.frontmatter || {} }));
 const getTitle = (it) => it.fm.title || it.url.replace('/calculators/','').replace('.mdx','');
 const list = items
-  .filter((i) => (i.fm.cluster || "").toLowerCase() === "finance")
+  .filter((i) => (i.fm.cluster || "").toLowerCase() === slug)
   .sort((a, b) => getTitle(a).localeCompare(getTitle(b)));
 ---
-<BaseLayout title={title} description={`Browse ${slug} calculators`}>
-  {/*
-    Use a hero section to introduce the category.  This layout mirrors the
-    appearance of the homepage cards: a large heading and a brief
-    explanatory paragraph.  Below the hero we either list the
-    calculators in a responsive grid of cards or show a friendly
-    placeholder when the list is empty.
-  */}
+<BaseLayout title={title} description="Browse lifestyle & travel calculators">
     <section class="hero container mx-auto max-w-5xl px-4">
       <h1 style="color: var(--ink)">{title}</h1>
       <p style="color: var(--muted)">Explore calculators in this category.</p>

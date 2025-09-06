@@ -3,23 +3,24 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import AdBanner from '../components/AdBanner.astro';
 
 /*
- * The home page lists eight high‑level calculator categories.  To avoid
- * confusion between the navigation and the card grid, we normalise the list
- * here.  Each item defines a `slug` (used in the URL), a human‑friendly
- * `title`, a short `desc` and an `icon` file stored under `/public/icons/`.
- * For some topics we reuse the closest existing icon (e.g. `geometry.svg` for
- * Math, `algebra.svg` for Technology, `business.svg` for Home & DIY and
- * `statistics.svg` for Everyday & Misc).
+ * The home page lists twelve high‑level calculator categories.  Each item
+ * defines a `slug` (used in the URL), a human‑friendly `title`, a short
+ * `desc` and an `icon` file stored under `/public/icons/`.  Icons are reused
+ * where dedicated artwork is not available.
  */
 const CATEGORIES = [
-  { slug: 'finance',     title: 'Finance',     desc: 'Loans, interest, ROI, taxes',          icon: 'finance' },
-  { slug: 'health',      title: 'Health',      desc: 'BMI and body metrics',                 icon: 'health' },
-  { slug: 'conversions', title: 'Conversions', desc: 'Unit and currency conversions',         icon: 'conversions' },
-  { slug: 'math',        title: 'Math',        desc: 'Geometry, algebra and statistics',      icon: 'geometry' },
-  { slug: 'technology',  title: 'Technology',  desc: 'Computing and tech topics',            icon: 'algebra' },
-  { slug: 'date-time',   title: 'Date & Time', desc: 'Schedules and durations',              icon: 'time-date' },
-  { slug: 'home-diy',    title: 'Home & DIY',  desc: 'Household projects and DIY',           icon: 'business' },
-  { slug: 'other',       title: 'Everyday & Misc',       desc: 'Everyday & misc calculators',          icon: 'statistics' }
+  { slug: 'finance-business',        title: 'Finance & Business',        desc: 'Corporate finance, ROI, taxes',       icon: 'finance' },
+  { slug: 'personal-finance-loans',  title: 'Personal Finance & Loans',  desc: 'Budgeting and loan payments',          icon: 'business' },
+  { slug: 'health-fitness',          title: 'Health & Fitness',          desc: 'BMI and body metrics',                 icon: 'health' },
+  { slug: 'math-statistics',         title: 'Math & Statistics',         desc: 'Geometry, algebra and statistics',     icon: 'geometry' },
+  { slug: 'conversions-units',       title: 'Conversions & Units',       desc: 'Unit and currency conversions',        icon: 'conversions' },
+  { slug: 'date-time',               title: 'Date & Time',               desc: 'Schedules and durations',              icon: 'time-date' },
+  { slug: 'education-learning',      title: 'Education & Learning',      desc: 'Study tools and references',           icon: 'algebra' },
+  { slug: 'science-engineering',     title: 'Science & Engineering',     desc: 'Physics and engineering tools',        icon: 'statistics' },
+  { slug: 'technology-coding',       title: 'Technology & Coding',       desc: 'Computing and tech topics',            icon: 'algebra' },
+  { slug: 'home-diy',                title: 'Home & DIY',                desc: 'Household projects and DIY',           icon: 'business' },
+  { slug: 'lifestyle-travel',        title: 'Lifestyle & Travel',        desc: 'Everyday life and travel',             icon: 'statistics' },
+  { slug: 'web-marketing',           title: 'Web & Marketing',           desc: 'Online tools and marketing',           icon: 'finance' }
 ];
 ---
 <BaseLayout title="Smart & Fast Calculators" description="Calculate anything quickly and easily with our collection of online calculators.">

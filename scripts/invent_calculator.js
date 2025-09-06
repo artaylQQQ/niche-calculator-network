@@ -3,14 +3,18 @@ import path from "node:path";
 
 // Map human‑readable categories to canonical slugs used in the site
 const CATEGORY_SLUGS = {
-  Finance: "finance",
-  Health: "health",
-  Conversions: "conversions",
-  Math: "math",
-  Technology: "technology",
+  "Finance & Business": "finance & business",
+  "Personal Finance & Loans": "personal finance & loans",
+  "Health & Fitness": "health & fitness",
+  "Math & Statistics": "math & statistics",
+  "Conversions & Units": "conversions & units",
   "Date & Time": "date & time",
+  "Education & Learning": "education & learning",
+  "Science & Engineering": "science & engineering",
+  "Technology & Coding": "technology & coding",
   "Home & DIY": "home & diy",
-  "Everyday & Misc": "other",
+  "Lifestyle & Travel": "lifestyle & travel",
+  "Web & Marketing": "web & marketing",
 };
 
 // Template calculators per category to keep output varied and useful
@@ -239,7 +243,7 @@ const outDir = path.join(root, "src", "pages", "calculators");
 const logPath = path.join(root, "meta", "publish_log.json");
 const dataPath = path.join(root, "data", "calculators.json");
 
-const inputCategory = process.env.CATEGORY || "Everyday & Misc";
+const inputCategory = process.env.CATEGORY || "Lifestyle & Travel";
 const cluster = CATEGORY_SLUGS[inputCategory] || inputCategory.toLowerCase();
 const templates = TEMPLATES[cluster] || TEMPLATES.other;
 const tpl = templates[Math.floor(Math.random() * templates.length)];

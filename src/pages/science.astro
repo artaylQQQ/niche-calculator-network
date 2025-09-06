@@ -1,10 +1,9 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import AdBanner from "../components/AdBanner.astro";
-// Science calculators have been merged into the everyday & misc category.
-// Use the `other` slug to display them.
-const slug = "other";
-const title = "Everyday & Misc Calculators";
+// Lists calculators for science and engineering topics.
+const slug = "science & engineering";
+const title = "Science & Engineering Calculators";
 const modules = import.meta.glob("../pages/calculators/*.mdx", { eager: true });
 const items = Object.values(modules).map((m) => ({ url: m.url, fm: m.frontmatter || {} }));
 const getTitle = (it) => it.fm.title || it.url.replace('/calculators/','').replace('.mdx','');
