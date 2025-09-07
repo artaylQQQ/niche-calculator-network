@@ -1,0 +1,32 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Pregnancy Due Date Calculator"
+description: "Estimate expected due date 280 days from the last menstrual period."
+updated: "2025-09-26"
+cluster: "Health"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  slug: "pregnancy-due-date",
+  title: "Pregnancy Due Date Calculator",
+  locale: "en",
+  intro: "Estimate expected due date 280 days from the last menstrual period.",
+  inputs: [
+    { name: "year", label: "LMP Year", type: "number", step: "1", placeholder: "2025" },
+    { name: "month", label: "LMP Month", type: "number", step: "1", placeholder: "1" },
+    { name: "day", label: "LMP Day", type: "number", step: "1", placeholder: "1" }
+  ],
+  expression: "(new Date(year, month-1, day + 280)).toISOString().slice(0,10)",
+  examples: [
+    { description: "LMP 2025-01-01 ⇒ 2025-10-08" }
+  ],
+  faqs: [
+    { question: "How accurate is this?", answer: "Actual delivery can vary by several weeks." }
+  ],
+  disclaimer: "Not medical advice; consult a healthcare provider.",
+  cluster: "Health"
+};
+
+<Calculator schema={schema} />

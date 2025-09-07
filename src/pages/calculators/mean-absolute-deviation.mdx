@@ -1,0 +1,33 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Mean Absolute Deviation Calculator"
+description: "Average distance of numbers from their mean."
+updated: "2025-09-26"
+cluster: "Math"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  slug: "mean-absolute-deviation",
+  title: "Mean Absolute Deviation Calculator",
+  locale: "en",
+  unit: "",
+  intro: "Average distance of numbers from their mean.",
+  inputs: [
+    { name: "a", label: "Number 1", type: "number", step: "any", placeholder: "2" },
+    { name: "b", label: "Number 2", type: "number", step: "any", placeholder: "4" },
+    { name: "c", label: "Number 3", type: "number", step: "any", placeholder: "7" }
+  ],
+  expression: "((Math.abs(a-((a+b+c)/3)) + Math.abs(b-((a+b+c)/3)) + Math.abs(c-((a+b+c)/3)))/3)",
+  examples: [
+    { description: "2, 4, 7 ⇒ 1.78" }
+  ],
+  faqs: [
+    { question: "What does MAD show?", answer: "It indicates variability around the mean." }
+  ],
+  disclaimer: "For educational purposes.",
+  cluster: "Math"
+};
+
+<Calculator schema={schema} />

@@ -1,0 +1,33 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Working Capital Ratio Calculator"
+description: "Measure liquidity by dividing current assets by current liabilities."
+updated: "2025-09-26"
+cluster: "Finance"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  slug: "working-capital-ratio",
+  title: "Working Capital Ratio Calculator",
+  locale: "en",
+  unit: "",
+  intro: "Measure liquidity by dividing current assets by current liabilities.",
+  inputs: [
+    { name: "assets", label: "Current Assets", type: "number", step: "any", placeholder: "50000" },
+    { name: "liabilities", label: "Current Liabilities", type: "number", step: "any", placeholder: "25000" }
+  ],
+  expression: "assets / liabilities",
+  examples: [
+    { description: "50,000 assets and 25,000 liabilities ⇒ 2" }
+  ],
+  faqs: [
+    { question: "What does the ratio indicate?", answer: "It shows short-term financial health." },
+    { question: "What is a good ratio?", answer: "Generally between 1.2 and 2.0." }
+  ],
+  disclaimer: "For educational purposes only.",
+  cluster: "Finance"
+};
+
+<Calculator schema={schema} />
