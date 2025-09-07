@@ -1,0 +1,97 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Scientific Calculator" description="Perform advanced scientific calculations including parentheses and trigonometric functions.">
+  <div class="max-w-sm mx-auto mt-8">
+    <div id="calc" class="bg-white p-4 rounded-lg shadow-lg">
+      <input
+        id="display"
+        class="w-full mb-2 p-3 border rounded text-right text-2xl bg-gray-100 text-slate-900"
+        readonly
+      />
+      <div class="grid grid-cols-4 gap-2">
+        <button data-value="sin(" class="p-2 rounded border bg-gray-100 text-slate-900 hover:bg-gray-200 active:bg-gray-300 transition-colors font-semibold">sin</button>
+        <button data-value="cos(" class="p-2 rounded border bg-gray-100 text-slate-900 hover:bg-gray-200 active:bg-gray-300 transition-colors font-semibold">cos</button>
+        <button data-value="tan(" class="p-2 rounded border bg-gray-100 text-slate-900 hover:bg-gray-200 active:bg-gray-300 transition-colors font-semibold">tan</button>
+        <button data-value="log(" class="p-2 rounded border bg-gray-100 text-slate-900 hover:bg-gray-200 active:bg-gray-300 transition-colors font-semibold">log</button>
+        <button data-value="sqrt(" class="p-2 rounded border bg-gray-100 text-slate-900 hover:bg-gray-200 active:bg-gray-300 transition-colors font-semibold">√</button>
+        <button data-value="^" class="p-2 rounded border bg-gray-100 text-slate-900 hover:bg-gray-200 active:bg-gray-300 transition-colors font-semibold">^</button>
+        <button data-value="(" class="p-2 rounded border bg-gray-100 text-slate-900 hover:bg-gray-200 active:bg-gray-300 transition-colors font-semibold">(</button>
+        <button data-value=")" class="p-2 rounded border bg-gray-100 text-slate-900 hover:bg-gray-200 active:bg-gray-300 transition-colors font-semibold">)</button>
+        <button data-value="7" class="p-2 rounded border bg-gray-100 text-slate-900 hover:bg-gray-200 active:bg-gray-300 transition-colors font-semibold">7</button>
+        <button data-value="8" class="p-2 rounded border bg-gray-100 text-slate-900 hover:bg-gray-200 active:bg-gray-300 transition-colors font-semibold">8</button>
+        <button data-value="9" class="p-2 rounded border bg-gray-100 text-slate-900 hover:bg-gray-200 active:bg-gray-300 transition-colors font-semibold">9</button>
+        <button data-value="/" class="p-2 rounded border bg-gray-100 text-slate-900 hover:bg-gray-200 active:bg-gray-300 transition-colors font-semibold">÷</button>
+        <button data-value="4" class="p-2 rounded border bg-gray-100 text-slate-900 hover:bg-gray-200 active:bg-gray-300 transition-colors font-semibold">4</button>
+        <button data-value="5" class="p-2 rounded border bg-gray-100 text-slate-900 hover:bg-gray-200 active:bg-gray-300 transition-colors font-semibold">5</button>
+        <button data-value="6" class="p-2 rounded border bg-gray-100 text-slate-900 hover:bg-gray-200 active:bg-gray-300 transition-colors font-semibold">6</button>
+        <button data-value="*" class="p-2 rounded border bg-gray-100 text-slate-900 hover:bg-gray-200 active:bg-gray-300 transition-colors font-semibold">×</button>
+        <button data-value="1" class="p-2 rounded border bg-gray-100 text-slate-900 hover:bg-gray-200 active:bg-gray-300 transition-colors font-semibold">1</button>
+        <button data-value="2" class="p-2 rounded border bg-gray-100 text-slate-900 hover:bg-gray-200 active:bg-gray-300 transition-colors font-semibold">2</button>
+        <button data-value="3" class="p-2 rounded border bg-gray-100 text-slate-900 hover:bg-gray-200 active:bg-gray-300 transition-colors font-semibold">3</button>
+        <button data-value="-" class="p-2 rounded border bg-gray-100 text-slate-900 hover:bg-gray-200 active:bg-gray-300 transition-colors font-semibold">−</button>
+        <button data-value="0" class="p-2 rounded border bg-gray-100 text-slate-900 hover:bg-gray-200 active:bg-gray-300 transition-colors font-semibold">0</button>
+        <button data-value="." class="p-2 rounded border bg-gray-100 text-slate-900 hover:bg-gray-200 active:bg-gray-300 transition-colors font-semibold">.</button>
+        <button data-value="=" class="p-2 rounded border bg-gray-100 text-slate-900 hover:bg-gray-200 active:bg-gray-300 transition-colors font-semibold">=</button>
+        <button data-value="+" class="p-2 rounded border bg-gray-100 text-slate-900 hover:bg-gray-200 active:bg-gray-300 transition-colors font-semibold">+</button>
+        <button data-value="C" class="col-span-4 p-2 rounded border bg-red-500 hover:bg-red-600 text-white font-semibold">C</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.12.0/dist/tf.min.js"></script>
+  <script>
+    const display = document.getElementById('display');
+    const buttons = document.querySelectorAll('#calc button');
+    let current = '';
+
+    function evaluateExpression(expr) {
+      let transformed = expr
+        .replace(/\^/g, '**')
+        .replace(/sin\(/g, 'tf.sin(')
+        .replace(/cos\(/g, 'tf.cos(')
+        .replace(/tan\(/g, 'tf.tan(')
+        .replace(/log\(/g, 'tf.log(')
+        .replace(/sqrt\(/g, 'tf.sqrt(');
+      let result = eval(transformed);
+      if (result && typeof result.dataSync === 'function') {
+        result = result.dataSync()[0];
+      }
+      return result;
+    }
+
+    function handleInput(val) {
+      if (val === 'C') {
+        current = '';
+      } else if (val === '=') {
+        try {
+          current = evaluateExpression(current).toString();
+        } catch {
+          current = 'Error';
+        }
+      } else {
+        current += val;
+      }
+      display.value = current;
+    }
+
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => handleInput(btn.dataset.value));
+    });
+
+    document.addEventListener('keydown', e => {
+      const key = e.key;
+      if (/[0-9]/.test(key) || ['+', '-', '*', '/', '.', '(', ')', '^'].includes(key)) {
+        handleInput(key);
+      } else if (key === 'Enter') {
+        handleInput('=');
+      } else if (key === 'Escape') {
+        handleInput('C');
+      } else if (key === 'Backspace') {
+        current = current.slice(0, -1);
+        display.value = current;
+      }
+    });
+  </script>
+</BaseLayout>
