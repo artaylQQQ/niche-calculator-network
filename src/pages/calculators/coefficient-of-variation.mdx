@@ -1,0 +1,36 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Coefficient of Variation Calculator"
+description: "Measure relative variability from mean and standard deviation."
+date: 2025-05-11
+updated: 2025-05-11
+cluster: "Math & Statistics"
+---
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "coefficient-of-variation",
+  "title": "Coefficient of Variation Calculator",
+  "locale": "en",
+  "inputs": [
+    { "name": "sd", "label": "Standard deviation", "type": "number", "step": "any", "placeholder": "5" },
+    { "name": "mean", "label": "Mean", "type": "number", "step": "any", "placeholder": "50" }
+  ],
+  "expression": "sd / mean * 100",
+  "unit": "%",
+  "intro": "Calculate the coefficient of variation (CV) to compare variability across datasets.",
+  "examples": [
+    { "description": "SD 5, mean 50 ⇒ 10%" },
+    { "description": "SD 4, mean 80 ⇒ 5%" },
+    { "description": "SD 3, mean 10 ⇒ 30%" }
+  ],
+  "faqs": [
+    { "question": "What does CV show?", "answer": "CV expresses standard deviation as a percentage of the mean." },
+    { "question": "Can mean be zero?", "answer": "No, CV is undefined when the mean is zero." },
+    { "question": "Is the result always a percentage?", "answer": "Yes, CV is typically expressed as a percent." }
+  ],
+  "disclaimer": "Use alongside other statistics for full analysis.",
+  "cluster": "Math & Statistics"
+}
+
+<Calculator schema={schema} />

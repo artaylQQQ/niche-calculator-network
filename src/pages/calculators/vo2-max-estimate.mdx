@@ -1,0 +1,36 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "VO2 Max Estimate"
+description: "Estimate aerobic capacity from age and resting heart rate."
+date: 2025-05-11
+updated: 2025-05-11
+cluster: "Health & Fitness"
+---
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "vo2-max-estimate",
+  "title": "VO2 Max Estimate",
+  "locale": "en",
+  "inputs": [
+    { "name": "age", "label": "Age (years)", "type": "number", "step": "any", "placeholder": "30" },
+    { "name": "rest", "label": "Resting heart rate (bpm)", "type": "number", "step": "any", "placeholder": "60" }
+  ],
+  "expression": "15 * ((220 - age) / rest)",
+  "unit": "ml/kg/min",
+  "intro": "Estimate maximal oxygen uptake using age and resting heart rate.",
+  "examples": [
+    { "description": "Age 30, 60 bpm ⇒ 47.5 ml/kg/min" },
+    { "description": "Age 40, 70 bpm ⇒ 38.6 ml/kg/min" },
+    { "description": "Age 25, 55 bpm ⇒ 53.6 ml/kg/min" }
+  ],
+  "faqs": [
+    { "question": "Is this formula exact?", "answer": "No, it provides a rough estimate of VO2 max." },
+    { "question": "Do fitness levels affect results?", "answer": "Yes, trained athletes may have higher actual VO2 max." },
+    { "question": "What units are used?", "answer": "Milliliters of oxygen per kilogram per minute." }
+  ],
+  "disclaimer": "Informational use only; not medical advice.",
+  "cluster": "Health & Fitness"
+}
+
+<Calculator schema={schema} />

@@ -1,0 +1,35 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "IPv6 Subnet Address Count"
+description: "Total addresses available for an IPv6 prefix length."
+date: 2025-05-11
+updated: 2025-05-11
+cluster: "Technology & Coding"
+---
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "ipv6-subnet-address-count",
+  "title": "IPv6 Subnet Address Count",
+  "locale": "en",
+  "inputs": [
+    { "name": "prefix", "label": "Prefix length", "type": "number", "step": 1, "placeholder": "64" }
+  ],
+  "expression": "2 ** (128 - prefix)",
+  "unit": "addresses",
+  "intro": "Determine how many IPv6 addresses are contained in a subnet given its prefix length.",
+  "examples": [
+    { "description": "/64 ⇒ 18,446,744,073,709,551,616 addresses" },
+    { "description": "/48 ⇒ 1,208,925,819,614,629,174,706,176 addresses" },
+    { "description": "/32 ⇒ 79,228,162,514,264,337,593,543,950,336 addresses" }
+  ],
+  "faqs": [
+    { "question": "Why are the numbers so large?", "answer": "IPv6 uses 128-bit addresses, yielding vast address spaces." },
+    { "question": "Can prefix exceed 128?", "answer": "No, valid prefixes range from 0 to 128." },
+    { "question": "Are reserved addresses included?", "answer": "Yes, this counts all addresses in the range." }
+  ],
+  "disclaimer": "Theoretical counts; practical allocations may differ.",
+  "cluster": "Technology & Coding"
+}
+
+<Calculator schema={schema} />

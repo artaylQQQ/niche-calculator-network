@@ -1,0 +1,37 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Radioactive Decay Remaining"
+description: "Estimate remaining quantity after radioactive decay."
+date: 2025-05-11
+updated: 2025-05-11
+cluster: "Science & Engineering"
+---
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "radioactive-decay-remaining",
+  "title": "Radioactive Decay Remaining",
+  "locale": "en",
+  "inputs": [
+    { "name": "initial", "label": "Initial amount", "type": "number", "step": "any", "placeholder": "100" },
+    { "name": "half", "label": "Half-life", "type": "number", "step": "any", "placeholder": "5" },
+    { "name": "time", "label": "Elapsed time", "type": "number", "step": "any", "placeholder": "5" }
+  ],
+  "expression": "initial * (0.5 ** (time / half))",
+  "unit": "g",
+  "intro": "Estimate how much of a radioactive substance remains after a given time using its half-life.",
+  "examples": [
+    { "description": "100 g with 5 y half-life after 5 y ⇒ 50 g" },
+    { "description": "80 g with 2 y half-life after 6 y ⇒ 10 g" },
+    { "description": "1 g with 3 d half-life after 9 d ⇒ 0.125 g" }
+  ],
+  "faqs": [
+    { "question": "Must time and half-life use same units?", "answer": "Yes, both values must be in the same unit." },
+    { "question": "Does environment affect decay?", "answer": "No, decay is constant regardless of external conditions." },
+    { "question": "What if time is zero?", "answer": "The remaining amount equals the initial quantity." }
+  ],
+  "disclaimer": "Simplified model; consult physics texts for detailed decay chains.",
+  "cluster": "Science & Engineering"
+}
+
+<Calculator schema={schema} />
