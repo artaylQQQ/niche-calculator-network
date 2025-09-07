@@ -33,9 +33,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <button data-value="-" class="p-2 rounded border bg-gray-100 text-slate-900 hover:bg-gray-200 active:bg-gray-300 transition-colors font-semibold">−</button>
         <button data-value="0" class="p-2 rounded border bg-gray-100 text-slate-900 hover:bg-gray-200 active:bg-gray-300 transition-colors font-semibold">0</button>
         <button data-value="." class="p-2 rounded border bg-gray-100 text-slate-900 hover:bg-gray-200 active:bg-gray-300 transition-colors font-semibold">.</button>
-        <button data-value="=" class="p-2 rounded border bg-gray-100 text-slate-900 hover:bg-gray-200 active:bg-gray-300 transition-colors font-semibold">=</button>
+        <button data-value="C" class="p-2 rounded border bg-blue-500 hover:bg-blue-600 text-white font-semibold">C</button>
         <button data-value="+" class="p-2 rounded border bg-gray-100 text-slate-900 hover:bg-gray-200 active:bg-gray-300 transition-colors font-semibold">+</button>
-        <button data-value="C" class="col-span-4 p-2 rounded border bg-red-500 hover:bg-red-600 text-white font-semibold">C</button>
+        <button data-value="=" class="col-span-4 p-2 rounded border bg-red-500 hover:bg-red-600 text-white font-semibold">=</button>
       </div>
     </div>
   </div>
@@ -61,6 +61,16 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       return result;
     }
 
+    function formatNumber(numStr) {
+      const [intPart, decPart] = numStr.split('.');
+      const formattedInt = intPart.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+      return decPart ? `${formattedInt}.${decPart}` : formattedInt;
+    }
+
+    function formatDisplay(expr) {
+      return expr.replace(/\d+(?:\.\d+)?/g, match => formatNumber(match));
+    }
+
     function handleInput(val) {
       if (val === 'C') {
         current = '';
@@ -73,7 +83,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       } else {
         current += val;
       }
-      display.value = current;
+      display.value = formatDisplay(current);
     }
 
     buttons.forEach(btn => {
@@ -90,7 +100,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         handleInput('C');
       } else if (key === 'Backspace') {
         current = current.slice(0, -1);
-        display.value = current;
+        display.value = formatDisplay(current);
       }
     });
   </script>
