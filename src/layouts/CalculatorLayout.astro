@@ -1,5 +1,6 @@
 ---
 import BaseLayout from './BaseLayout.astro';
+import AICalculator from '../components/AICalculator.astro';
 
 /**
  * Simplified calculator layout that wraps individual calculator pages with
@@ -10,5 +11,8 @@ const { title, description, canonical } = Astro.props;
 ---
 <BaseLayout {title} {description} {canonical}>
   <slot />
+  <section class="container mx-auto max-w-5xl px-4">
+    <AICalculator />
+  </section>
 </BaseLayout>
 
