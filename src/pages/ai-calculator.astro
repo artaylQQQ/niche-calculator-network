@@ -1,0 +1,103 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Calculadora IA" description="Calculadora inteligente con TensorFlow">
+  <div class="container mx-auto max-w-xl p-4">
+    <h1 class="text-3xl font-bold mb-4">Bienvenido a la Calculadora IA</h1>
+    <p class="mb-6">Introduce tu cálculo en el formulario y obtén la respuesta al instante.</p>
+    <form id="calc-form" class="flex flex-col gap-4">
+      <input id="expression" type="text" class="p-2 border rounded" placeholder="Ej: (2+3)*4" required />
+      <button type="submit" class="p-2 bg-blue-500 text-white rounded">Calcular</button>
+    </form>
+    <div id="result" class="mt-4 text-lg font-semibold"></div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.14.0/dist/tf.min.js"></script>
+  <script>
+    const form = document.getElementById('calc-form');
+    const result = document.getElementById('result');
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const expr = document.getElementById('expression').value;
+      try {
+        const tokens = tokenize(expr);
+        const rpn = toRPN(tokens);
+        const tensor = tf.tidy(() => evaluateRPN(rpn));
+        const value = tensor.dataSync()[0];
+        result.textContent = `Resultado: ${value}`;
+      } catch (err) {
+        result.textContent = 'Error en la expresión';
+      }
+    });
+
+    function tokenize(str) {
+      const regex = /\d+\.?\d*|[+\-*/^()]/g;
+      return str.match(regex) || [];
+    }
+
+    function toRPN(tokens) {
+      const out = [];
+      const ops = [];
+      const prec = { '+': 1, '-': 1, '*': 2, '/': 2, '^': 3 };
+      const assoc = { '^': 'right' };
+      tokens.forEach((t) => {
+        if (!isNaN(t)) {
+          out.push(t);
+        } else if (t in prec) {
+          while (
+            ops.length &&
+            ops[ops.length - 1] in prec &&
+            (prec[ops[ops.length - 1]] > prec[t] ||
+              (prec[ops[ops.length - 1]] === prec[t] && assoc[t] !== 'right'))
+          ) {
+            out.push(ops.pop());
+          }
+          ops.push(t);
+        } else if (t === '(') {
+          ops.push(t);
+        } else if (t === ')') {
+          while (ops.length && ops[ops.length - 1] !== '(') {
+            out.push(ops.pop());
+          }
+          ops.pop();
+        }
+      });
+      while (ops.length) out.push(ops.pop());
+      return out;
+    }
+
+    function evaluateRPN(rpn) {
+      const stack = [];
+      rpn.forEach((t) => {
+        if (!isNaN(t)) {
+          stack.push(tf.scalar(parseFloat(t)));
+        } else {
+          const b = stack.pop();
+          const a = stack.pop();
+          let res;
+          switch (t) {
+            case '+':
+              res = a.add(b);
+              break;
+            case '-':
+              res = a.sub(b);
+              break;
+            case '*':
+              res = a.mul(b);
+              break;
+            case '/':
+              res = a.div(b);
+              break;
+            case '^':
+              res = tf.pow(a, b);
+              break;
+          }
+          stack.push(res);
+        }
+      });
+      return stack.pop();
+    }
+  </script>
+</BaseLayout>
