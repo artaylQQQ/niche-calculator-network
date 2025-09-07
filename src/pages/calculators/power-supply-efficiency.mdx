@@ -2,62 +2,72 @@
 layout: ../../layouts/CalculatorLayout.astro
 title: "Power Supply Efficiency Calculator"
 description: "Determine PSU efficiency from output and input power."
-updated: "2024-06-10"
-cluster: "technology"
+date: 2025-09-07
+updated: 2025-09-07
+cluster: "Technology & Coding"
 ---
-
-import Calculator from "../../components/Calculator.astro";
+import Calculator from '../../components/Calculator.astro';
 
 export const schema = {
-  inputs: [
+  "slug": "power-supply-efficiency",
+  "title": "Power Supply Efficiency Calculator",
+  "locale": "en",
+  "inputs": [
     {
-      name: "output",
-      label: "Output Power (W)",
-      type: "number",
-      min: 0,
-      step: "any",
-      placeholder: "400",
+      "name": "output",
+      "label": "Output Power (W)",
+      "type": "number",
+      "min": 0,
+      "step": "any",
+      "placeholder": "400"
     },
     {
-      name: "input",
-      label: "Input Power (W)",
-      type: "number",
-      min: 0,
-      step: "any",
-      placeholder: "500",
-    },
+      "name": "input",
+      "label": "Input Power (W)",
+      "type": "number",
+      "min": 0,
+      "step": "any",
+      "placeholder": "500"
+    }
   ],
-  slug: "power-supply-efficiency",
-  title: "Power Supply Efficiency Calculator",
-  locale: "en",
-  expression: "(output / input) * 100",
-  intro:
-    "Calculate how efficiently a power supply converts input electricity into usable output.",
-  examples: [
-    { description: "Output 400 W, Input 500 W ⇒ 80%" },
-    { description: "Output 300 W, Input 360 W ⇒ 83.33%" },
+  "expression": "(output / input) * 100",
+  "intro": "Determine PSU efficiency from output and input power.",
+  "examples": [
+    {
+      "description": "Output 400 W, Input 500 W ⇒ 80%"
+    },
+    {
+      "description": "Output 300 W, Input 360 W ⇒ 83.33%"
+    }
   ],
-  faqs: [
+  "faqs": [
     {
-      question: "Why is efficiency important?",
-      answer: "Higher efficiency reduces wasted energy.",
+      "question": "Why is efficiency important?",
+      "answer": "Higher efficiency reduces wasted energy."
     },
     {
-      question: "Can efficiency exceed 100%?",
-      answer: "No, it's always below 100%.",
+      "question": "Can efficiency exceed 100%?",
+      "answer": "No, it's always below 100%."
     },
     {
-      question: "Do ratings vary with load?",
-      answer: "Yes, efficiency changes depending on load.",
+      "question": "Do ratings vary with load?",
+      "answer": "Yes, efficiency changes depending on load."
     },
     {
-      question: "Is this for AC to DC supplies?",
-      answer: "Yes, it's commonly used for PSU comparisons.",
-    },
+      "question": "Is this for AC to DC supplies?",
+      "answer": "Yes, it's commonly used for PSU comparisons."
+    }
   ],
-  disclaimer: "Approximate values; check manufacturer specifications.",
-  cluster: "technology",
-  unit: "%",
-};
+  "disclaimer": "Approximate values; check manufacturer specifications.",
+  "cluster": "Technology & Coding",
+  "related": [
+    "download-time",
+    "storage-redundancy-overhead",
+    "battery-life-estimator",
+    "cpu-power-to-current",
+    "bandwidth-delay-product",
+    "ping-distance-estimator"
+  ]
+}
 
 <Calculator schema={schema} />

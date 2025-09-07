@@ -2,70 +2,80 @@
 layout: ../../layouts/CalculatorLayout.astro
 title: "Straight-Line Depreciation Calculator"
 description: "Annual depreciation using the straight-line method."
-updated: "2024-06-10"
-cluster: "finance"
+date: 2025-09-07
+updated: 2025-09-07
+cluster: "Finance & Business"
 ---
-
-import Calculator from "../../components/Calculator.astro";
+import Calculator from '../../components/Calculator.astro';
 
 export const schema = {
-  inputs: [
+  "slug": "straight-line-depreciation",
+  "title": "Straight-Line Depreciation Calculator",
+  "locale": "en",
+  "inputs": [
     {
-      name: "cost",
-      label: "Asset Cost",
-      type: "number",
-      min: 0,
-      step: "any",
-      placeholder: "10000",
+      "name": "cost",
+      "label": "Asset Cost",
+      "type": "number",
+      "min": 0,
+      "step": "any",
+      "placeholder": "10000"
     },
     {
-      name: "salvage",
-      label: "Salvage Value",
-      type: "number",
-      min: 0,
-      step: "any",
-      placeholder: "1000",
+      "name": "salvage",
+      "label": "Salvage Value",
+      "type": "number",
+      "min": 0,
+      "step": "any",
+      "placeholder": "1000"
     },
     {
-      name: "life",
-      label: "Useful Life (years)",
-      type: "number",
-      min: 1,
-      step: "any",
-      placeholder: "5",
-    },
+      "name": "life",
+      "label": "Useful Life (years)",
+      "type": "number",
+      "min": 1,
+      "step": "any",
+      "placeholder": "5"
+    }
   ],
-  slug: "straight-line-depreciation",
-  title: "Straight-Line Depreciation Calculator",
-  locale: "en",
-  expression: "(cost - salvage) / life",
-  intro:
-    "Compute annual depreciation of an asset using the straight-line method.",
-  examples: [
-    { description: "Cost 10000, Salvage 1000, Life 5 ⇒ 1800 per year" },
-    { description: "Cost 5000, Salvage 500, Life 10 ⇒ 450 per year" },
+  "expression": "(cost - salvage) / life",
+  "intro": "Annual depreciation using the straight-line method.",
+  "examples": [
+    {
+      "description": "Cost 10000, Salvage 1000, Life 5 ⇒ 1800 per year"
+    },
+    {
+      "description": "Cost 5000, Salvage 500, Life 10 ⇒ 450 per year"
+    }
   ],
-  faqs: [
+  "faqs": [
     {
-      question: "What is straight-line depreciation?",
-      answer: "It spreads asset cost evenly over its useful life.",
+      "question": "What is straight-line depreciation?",
+      "answer": "It spreads asset cost evenly over its useful life."
     },
     {
-      question: "Can life be decimal?",
-      answer: "Yes, partial years are supported.",
+      "question": "Can life be decimal?",
+      "answer": "Yes, partial years are supported."
     },
     {
-      question: "What if salvage exceeds cost?",
-      answer: "Then depreciation result will be negative.",
+      "question": "What if salvage exceeds cost?",
+      "answer": "Then depreciation result will be negative."
     },
     {
-      question: "Does it account for taxes?",
-      answer: "No, tax implications are not included.",
-    },
+      "question": "Does it account for taxes?",
+      "answer": "No, tax implications are not included."
+    }
   ],
-  disclaimer: "Consult a financial professional for accounting advice.",
-  cluster: "finance",
-  unit: "per year",
-};
+  "disclaimer": "Consult a financial professional for accounting advice.",
+  "cluster": "Finance & Business",
+  "related": [
+    "percentage-discount",
+    "simple-interest",
+    "crypto-mining-breakeven",
+    "freelancer-hourly-rate",
+    "subscription-ltv",
+    "emergency-fund-duration"
+  ]
+}
 
 <Calculator schema={schema} />

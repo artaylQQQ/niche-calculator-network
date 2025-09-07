@@ -2,36 +2,72 @@
 layout: ../../layouts/CalculatorLayout.astro
 title: "Roaming Data Cost"
 description: "Estimate the cost of mobile data while roaming."
-updated: "2025-10-15"
-cluster: "Technology"
+date: 2025-09-07
+updated: 2025-09-07
+cluster: "Technology & Coding"
 ---
-
 import Calculator from '../../components/Calculator.astro';
 
 export const schema = {
-  slug: "roaming-data-cost",
-  title: "Roaming Data Cost",
-  locale: "en",
-  unit: "home currency",
-  inputs: [
-    { name: "data", label: "Data Used (MB)", type: "number", step: "any", min: 0, placeholder: "500" },
-    { name: "price", label: "Cost per MB", type: "number", step: "any", min: 0, placeholder: "0.02" }
+  "slug": "roaming-data-cost",
+  "title": "Roaming Data Cost",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "data",
+      "label": "Data Used (MB)",
+      "type": "number",
+      "step": "any",
+      "min": 0,
+      "placeholder": "500"
+    },
+    {
+      "name": "price",
+      "label": "Cost per MB",
+      "type": "number",
+      "step": "any",
+      "min": 0,
+      "placeholder": "0.02"
+    }
   ],
-  expression: "data * price",
-  intro: "Calculate how much you'll spend on mobile data while traveling abroad.",
-  examples: [
-    { description: "500 MB at 0.02 ⇒ 10" },
-    { description: "200 MB at 0.05 ⇒ 10" }
+  "expression": "data * price",
+  "intro": "Estimate the cost of mobile data while roaming.",
+  "examples": [
+    {
+      "description": "500 MB at 0.02 ⇒ 10"
+    },
+    {
+      "description": "200 MB at 0.05 ⇒ 10"
+    }
   ],
-  faqs: [
-    { question: "Where do I get the cost per MB?", answer: "Check with your mobile carrier for roaming rates." },
-    { question: "Does this include taxes?", answer: "No, additional fees may apply." },
-    { question: "Can I enter GB values?", answer: "Yes, convert GB to MB before using the calculator." },
-    { question: "What if I have a roaming package?", answer: "Use the effective per-MB cost of your package." }
+  "faqs": [
+    {
+      "question": "Where do I get the cost per MB?",
+      "answer": "Check with your mobile carrier for roaming rates."
+    },
+    {
+      "question": "Does this include taxes?",
+      "answer": "No, additional fees may apply."
+    },
+    {
+      "question": "Can I enter GB values?",
+      "answer": "Yes, convert GB to MB before using the calculator."
+    },
+    {
+      "question": "What if I have a roaming package?",
+      "answer": "Use the effective per-MB cost of your package."
+    }
   ],
-  disclaimer: "Educational information, not professional advice.",
-  cluster: "Technology"
-};
+  "disclaimer": "Educational information, not professional advice.",
+  "cluster": "Technology & Coding",
+  "related": [
+    "download-time",
+    "storage-redundancy-overhead",
+    "battery-life-estimator",
+    "cpu-power-to-current",
+    "bandwidth-delay-product",
+    "ping-distance-estimator"
+  ]
+}
 
 <Calculator schema={schema} />
-

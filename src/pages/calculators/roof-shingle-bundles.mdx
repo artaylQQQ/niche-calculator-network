@@ -2,62 +2,72 @@
 layout: ../../layouts/CalculatorLayout.astro
 title: "Roof Shingle Bundle Calculator"
 description: "Estimate bundles of shingles needed for a roof."
-updated: "2024-06-10"
+date: 2025-09-07
+updated: 2025-09-07
 cluster: "home-diy"
 ---
-
-import Calculator from "../../components/Calculator.astro";
+import Calculator from '../../components/Calculator.astro';
 
 export const schema = {
-  inputs: [
+  "slug": "roof-shingle-bundles",
+  "title": "Roof Shingle Bundle Calculator",
+  "locale": "en",
+  "inputs": [
     {
-      name: "area",
-      label: "Roof Area (sq ft)",
-      type: "number",
-      min: 0,
-      step: "any",
-      placeholder: "1500",
+      "name": "area",
+      "label": "Roof Area (sq ft)",
+      "type": "number",
+      "min": 0,
+      "step": "any",
+      "placeholder": "1500"
     },
     {
-      name: "coverage",
-      label: "Coverage per Bundle (sq ft)",
-      type: "number",
-      min: 0,
-      step: "any",
-      placeholder: "33",
-    },
+      "name": "coverage",
+      "label": "Coverage per Bundle (sq ft)",
+      "type": "number",
+      "min": 0,
+      "step": "any",
+      "placeholder": "33"
+    }
   ],
-  slug: "roof-shingle-bundles",
-  title: "Roof Shingle Bundle Calculator",
-  locale: "en",
-  expression: "area / coverage",
-  intro:
-    "Determine how many bundles of shingles are required based on roof area and bundle coverage.",
-  examples: [
-    { description: "Area 1500 sq ft, Coverage 33 ⇒ 45.45 bundles" },
-    { description: "Area 2000 sq ft, Coverage 25 ⇒ 80 bundles" },
+  "expression": "area / coverage",
+  "intro": "Estimate bundles of shingles needed for a roof.",
+  "examples": [
+    {
+      "description": "Area 1500 sq ft, Coverage 33 ⇒ 45.45 bundles"
+    },
+    {
+      "description": "Area 2000 sq ft, Coverage 25 ⇒ 80 bundles"
+    }
   ],
-  faqs: [
+  "faqs": [
     {
-      question: "Should I add extra for waste?",
-      answer: "Yes, consider buying 10% more.",
+      "question": "Should I add extra for waste?",
+      "answer": "Yes, consider buying 10% more."
     },
     {
-      question: "Is coverage per bundle standardized?",
-      answer: "It varies; check product specs.",
+      "question": "Is coverage per bundle standardized?",
+      "answer": "It varies; check product specs."
     },
     {
-      question: "Does slope affect area?",
-      answer: "Measure the actual surface area of the roof.",
+      "question": "Does slope affect area?",
+      "answer": "Measure the actual surface area of the roof."
     },
     {
-      question: "Can I input metric units?",
-      answer: "Convert to square feet before using.",
-    },
+      "question": "Can I input metric units?",
+      "answer": "Convert to square feet before using."
+    }
   ],
-  disclaimer: "Estimates only; consult roofing guidelines.",
-  cluster: "home-diy",
-  unit: "bundles",
-};
+  "disclaimer": "Estimates only; consult roofing guidelines.",
+  "cluster": "home-diy",
+  "related": [
+    "percentage-discount",
+    "simple-interest",
+    "bmi-calculator",
+    "daily-calorie-burn",
+    "celsius-to-fahrenheit",
+    "km-to-miles"
+  ]
+}
 
 <Calculator schema={schema} />

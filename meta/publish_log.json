@@ -527,20 +527,228 @@
     "slug": "discount-calculator-3",
     "date": "2025-09-05"
   },
-  { "slug": "torque-nm-to-ftlb", "date": "2025-09-06" },
-  { "slug": "psi-to-kpa", "date": "2025-09-06" },
-  { "slug": "billable-hours-to-units", "date": "2025-09-06" },
-  { "slug": "overtime-hours", "date": "2025-09-06" },
-  { "slug": "contingency-fee", "date": "2025-09-06" },
-  { "slug": "shop-labor-cost", "date": "2025-09-06" },
-  { "slug": "sedentary-calorie-burn", "date": "2025-09-06" },
-  { "slug": "vibration-exposure-points", "date": "2025-09-06" },
-  { "slug": "garage-ramp-slope", "date": "2025-09-06" },
-  { "slug": "garage-epoxy-coverage", "date": "2025-09-06" },
-  { "slug": "lever-mechanical-advantage", "date": "2025-09-06" },
-  { "slug": "evidence-percentage", "date": "2025-09-06" },
-  { "slug": "gear-ratio", "date": "2025-09-06" },
-  { "slug": "battery-runtime", "date": "2025-09-06" },
-  { "slug": "citation-density", "date": "2025-09-06" },
-  { "slug": "safety-incident-rate", "date": "2025-09-06" }
+  {
+    "slug": "torque-nm-to-ftlb",
+    "date": "2025-09-06"
+  },
+  {
+    "slug": "psi-to-kpa",
+    "date": "2025-09-06"
+  },
+  {
+    "slug": "billable-hours-to-units",
+    "date": "2025-09-06"
+  },
+  {
+    "slug": "overtime-hours",
+    "date": "2025-09-06"
+  },
+  {
+    "slug": "contingency-fee",
+    "date": "2025-09-06"
+  },
+  {
+    "slug": "shop-labor-cost",
+    "date": "2025-09-06"
+  },
+  {
+    "slug": "sedentary-calorie-burn",
+    "date": "2025-09-06"
+  },
+  {
+    "slug": "vibration-exposure-points",
+    "date": "2025-09-06"
+  },
+  {
+    "slug": "garage-ramp-slope",
+    "date": "2025-09-06"
+  },
+  {
+    "slug": "garage-epoxy-coverage",
+    "date": "2025-09-06"
+  },
+  {
+    "slug": "lever-mechanical-advantage",
+    "date": "2025-09-06"
+  },
+  {
+    "slug": "evidence-percentage",
+    "date": "2025-09-06"
+  },
+  {
+    "slug": "gear-ratio",
+    "date": "2025-09-06"
+  },
+  {
+    "slug": "battery-runtime",
+    "date": "2025-09-06"
+  },
+  {
+    "slug": "citation-density",
+    "date": "2025-09-06"
+  },
+  {
+    "slug": "safety-incident-rate",
+    "date": "2025-09-06"
+  },
+  {
+    "slug": "ounces-to-milliliters",
+    "date": "2025-09-07"
+  },
+  {
+    "slug": "mpg-to-liters-per-100km",
+    "date": "2025-09-07"
+  },
+  {
+    "slug": "layover-duration",
+    "date": "2025-09-07"
+  },
+  {
+    "slug": "trip-duration",
+    "date": "2025-09-07"
+  },
+  {
+    "slug": "foreign-tip-converter",
+    "date": "2025-09-07"
+  },
+  {
+    "slug": "hotel-stay-cost",
+    "date": "2025-09-07"
+  },
+  {
+    "slug": "flight-water-intake",
+    "date": "2025-09-07"
+  },
+  {
+    "slug": "jet-lag-recovery",
+    "date": "2025-09-07"
+  },
+  {
+    "slug": "suitcase-volume-to-liters",
+    "date": "2025-09-07"
+  },
+  {
+    "slug": "travel-clothesline-length",
+    "date": "2025-09-07"
+  },
+  {
+    "slug": "hiking-elevation-gradient",
+    "date": "2025-09-07"
+  },
+  {
+    "slug": "road-trip-time",
+    "date": "2025-09-07"
+  },
+  {
+    "slug": "power-bank-recharges",
+    "date": "2025-09-07"
+  },
+  {
+    "slug": "roaming-data-cost",
+    "date": "2025-09-07"
+  },
+  {
+    "slug": "flight-carbon-footprint",
+    "date": "2025-09-07"
+  },
+  {
+    "slug": "souvenir-weight-allowance",
+    "date": "2025-09-07"
+  },
+  {
+    "slug": "gallons-to-liters",
+    "date": "2025-09-07"
+  },
+  {
+    "slug": "kwh-to-mj",
+    "date": "2025-09-07"
+  },
+  {
+    "slug": "seconds-to-minutes",
+    "date": "2025-09-07"
+  },
+  {
+    "slug": "weeks-to-seconds",
+    "date": "2025-09-07"
+  },
+  {
+    "slug": "dividend-yield",
+    "date": "2025-09-07"
+  },
+  {
+    "slug": "straight-line-depreciation",
+    "date": "2025-09-07"
+  },
+  {
+    "slug": "daily-fiber-requirement",
+    "date": "2025-09-07"
+  },
+  {
+    "slug": "calories-from-fat-percentage",
+    "date": "2025-09-07"
+  },
+  {
+    "slug": "air-conditioner-btu",
+    "date": "2025-09-07"
+  },
+  {
+    "slug": "roof-shingle-bundles",
+    "date": "2025-09-07"
+  },
+  {
+    "slug": "slope-between-two-points",
+    "date": "2025-09-07"
+  },
+  {
+    "slug": "nth-root",
+    "date": "2025-09-07"
+  },
+  {
+    "slug": "hashrate-efficiency",
+    "date": "2025-09-07"
+  },
+  {
+    "slug": "power-supply-efficiency",
+    "date": "2025-09-07"
+  },
+  {
+    "slug": "paper-roll-length",
+    "date": "2025-09-07"
+  },
+  {
+    "slug": "convection-oven-time",
+    "date": "2025-09-07"
+  },
+  {
+    "slug": "pounds-to-kilograms",
+    "date": "2025-09-07"
+  },
+  {
+    "slug": "square-feet-to-square-meters",
+    "date": "2025-09-07"
+  },
+  {
+    "slug": "age-in-days",
+    "date": "2025-09-07"
+  },
+  {
+    "slug": "seconds-to-days",
+    "date": "2025-09-07"
+  },
+  {
+    "slug": "credit-card-monthly-interest",
+    "date": "2025-09-07"
+  },
+  {
+    "slug": "credit-utilization-ratio",
+    "date": "2025-09-07"
+  },
+  {
+    "slug": "body-fat-percentage",
+    "date": "2025-09-07"
+  },
+  {
+    "slug": "one-rep-max",
+    "date": "2025-09-07"
+  }
 ]

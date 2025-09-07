@@ -2,35 +2,64 @@
 layout: ../../layouts/CalculatorLayout.astro
 title: "MPG to L/100km"
 description: "Convert miles per gallon to liters per 100 kilometers."
-updated: "2025-10-15"
-cluster: "Conversions"
+date: 2025-09-07
+updated: 2025-09-07
+cluster: "Conversions & Units"
 ---
-
 import Calculator from '../../components/Calculator.astro';
 
 export const schema = {
-  slug: "mpg-to-liters-per-100km",
-  title: "MPG to L/100km",
-  locale: "en",
-  unit: "L/100km",
-  inputs: [
-    { name: "mpg", label: "Miles per Gallon", type: "number", step: "any", min: 0, placeholder: "30" }
+  "slug": "mpg-to-liters-per-100km",
+  "title": "MPG to L/100km",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "mpg",
+      "label": "Miles per Gallon",
+      "type": "number",
+      "step": "any",
+      "min": 0,
+      "placeholder": "30"
+    }
   ],
-  expression: "235.215 / mpg",
-  intro: "Convert fuel economy from miles per gallon to liters per 100 kilometers for comparing rental cars abroad.",
-  examples: [
-    { description: "30 mpg ⇒ 7.84 L/100km" },
-    { description: "50 mpg ⇒ 4.70 L/100km" }
+  "expression": "235.215 / mpg",
+  "intro": "Convert miles per gallon to liters per 100 kilometers.",
+  "examples": [
+    {
+      "description": "30 mpg ⇒ 7.84 L/100km"
+    },
+    {
+      "description": "50 mpg ⇒ 4.70 L/100km"
+    }
   ],
-  faqs: [
-    { question: "What constant is used?", answer: "It uses 235.215 as the conversion factor." },
-    { question: "Why would travelers need this?", answer: "Many countries quote fuel economy in L/100km." },
-    { question: "Can I enter fractional MPG?", answer: "Yes, decimals are supported." },
-    { question: "Does it work for US or UK gallons?", answer: "It assumes US gallons." }
+  "faqs": [
+    {
+      "question": "What constant is used?",
+      "answer": "It uses 235.215 as the conversion factor."
+    },
+    {
+      "question": "Why would travelers need this?",
+      "answer": "Many countries quote fuel economy in L/100km."
+    },
+    {
+      "question": "Can I enter fractional MPG?",
+      "answer": "Yes, decimals are supported."
+    },
+    {
+      "question": "Does it work for US or UK gallons?",
+      "answer": "It assumes US gallons."
+    }
   ],
-  disclaimer: "Educational information, not professional advice.",
-  cluster: "Conversions"
-};
+  "disclaimer": "Educational information, not professional advice.",
+  "cluster": "Conversions & Units",
+  "related": [
+    "celsius-to-fahrenheit",
+    "km-to-miles",
+    "meters-to-feet",
+    "smoots-to-meters",
+    "hogsheads-to-liters",
+    "furlongs-per-fortnight"
+  ]
+}
 
 <Calculator schema={schema} />
-

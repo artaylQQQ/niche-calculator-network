@@ -2,37 +2,80 @@
 layout: ../../layouts/CalculatorLayout.astro
 title: "Hotel Stay Cost"
 description: "Estimate total hotel cost including taxes."
-updated: "2025-10-15"
-cluster: "Finance"
+date: 2025-09-07
+updated: 2025-09-07
+cluster: "Finance & Business"
 ---
-
 import Calculator from '../../components/Calculator.astro';
 
 export const schema = {
-  slug: "hotel-stay-cost",
-  title: "Hotel Stay Cost",
-  locale: "en",
-  unit: "USD",
-  inputs: [
-    { name: "rate", label: "Nightly Rate", type: "number", step: "any", min: 0, placeholder: "120" },
-    { name: "nights", label: "Number of Nights", type: "number", step: 1, min: 1, placeholder: "3" },
-    { name: "tax", label: "Tax (%)", type: "number", step: "any", min: 0, placeholder: "10" }
+  "slug": "hotel-stay-cost",
+  "title": "Hotel Stay Cost",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "rate",
+      "label": "Nightly Rate",
+      "type": "number",
+      "step": "any",
+      "min": 0,
+      "placeholder": "120"
+    },
+    {
+      "name": "nights",
+      "label": "Number of Nights",
+      "type": "number",
+      "step": 1,
+      "min": 1,
+      "placeholder": "3"
+    },
+    {
+      "name": "tax",
+      "label": "Tax (%)",
+      "type": "number",
+      "step": "any",
+      "min": 0,
+      "placeholder": "10"
+    }
   ],
-  expression: "rate * nights * (1 + tax / 100)",
-  intro: "Calculate the total cost of a hotel stay including local taxes—ideal for budgeting trips.",
-  examples: [
-    { description: "$120, 3 nights, 10% tax ⇒ $396" },
-    { description: "$80, 5 nights, 8% tax ⇒ $432" }
+  "expression": "rate * nights * (1 + tax / 100)",
+  "intro": "Estimate total hotel cost including taxes.",
+  "examples": [
+    {
+      "description": "$120, 3 nights, 10% tax ⇒ $396"
+    },
+    {
+      "description": "$80, 5 nights, 8% tax ⇒ $432"
+    }
   ],
-  faqs: [
-    { question: "Does this include resort fees?", answer: "No, add any extra fees separately." },
-    { question: "Can I change currency?", answer: "Yes, enter values in your preferred currency." },
-    { question: "What if tax is already included?", answer: "Set tax to 0 to skip additional tax." },
-    { question: "Does it handle discounts?", answer: "Apply discounts to the nightly rate before calculating." }
+  "faqs": [
+    {
+      "question": "Does this include resort fees?",
+      "answer": "No, add any extra fees separately."
+    },
+    {
+      "question": "Can I change currency?",
+      "answer": "Yes, enter values in your preferred currency."
+    },
+    {
+      "question": "What if tax is already included?",
+      "answer": "Set tax to 0 to skip additional tax."
+    },
+    {
+      "question": "Does it handle discounts?",
+      "answer": "Apply discounts to the nightly rate before calculating."
+    }
   ],
-  disclaimer: "Educational information, not professional advice.",
-  cluster: "Finance"
-};
+  "disclaimer": "Educational information, not professional advice.",
+  "cluster": "Finance & Business",
+  "related": [
+    "percentage-discount",
+    "simple-interest",
+    "crypto-mining-breakeven",
+    "freelancer-hourly-rate",
+    "subscription-ltv",
+    "emergency-fund-duration"
+  ]
+}
 
 <Calculator schema={schema} />
-

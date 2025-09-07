@@ -2,36 +2,72 @@
 layout: ../../layouts/CalculatorLayout.astro
 title: "Hiking Elevation Gradient"
 description: "Compute slope percentage of a hike."
-updated: "2025-10-15"
-cluster: "Math"
+date: 2025-09-07
+updated: 2025-09-07
+cluster: "Math & Statistics"
 ---
-
 import Calculator from '../../components/Calculator.astro';
 
 export const schema = {
-  slug: "hiking-elevation-gradient",
-  title: "Hiking Elevation Gradient",
-  locale: "en",
-  unit: "%",
-  inputs: [
-    { name: "rise", label: "Elevation Gain (m)", type: "number", step: "any", min: 0, placeholder: "300" },
-    { name: "run", label: "Horizontal Distance (m)", type: "number", step: "any", min: 0, placeholder: "2000" }
+  "slug": "hiking-elevation-gradient",
+  "title": "Hiking Elevation Gradient",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "rise",
+      "label": "Elevation Gain (m)",
+      "type": "number",
+      "step": "any",
+      "min": 0,
+      "placeholder": "300"
+    },
+    {
+      "name": "run",
+      "label": "Horizontal Distance (m)",
+      "type": "number",
+      "step": "any",
+      "min": 0,
+      "placeholder": "2000"
+    }
   ],
-  expression: "(rise / run) * 100",
-  intro: "Find the gradient of a hiking trail as a percentage to gauge steepness.",
-  examples: [
-    { description: "300 m rise over 2000 m run ⇒ 15%" },
-    { description: "100 m rise over 1000 m run ⇒ 10%" }
+  "expression": "(rise / run) * 100",
+  "intro": "Compute slope percentage of a hike.",
+  "examples": [
+    {
+      "description": "300 m rise over 2000 m run ⇒ 15%"
+    },
+    {
+      "description": "100 m rise over 1000 m run ⇒ 10%"
+    }
   ],
-  faqs: [
-    { question: "What is gradient?", answer: "Gradient is the elevation gain divided by horizontal distance." },
-    { question: "Does this account for altitude?", answer: "No, it only uses rise and run." },
-    { question: "Can I use feet instead of meters?", answer: "Yes, use the same units for both inputs." },
-    { question: "Is a higher percentage steeper?", answer: "Yes, larger values indicate steeper slopes." }
+  "faqs": [
+    {
+      "question": "What is gradient?",
+      "answer": "Gradient is the elevation gain divided by horizontal distance."
+    },
+    {
+      "question": "Does this account for altitude?",
+      "answer": "No, it only uses rise and run."
+    },
+    {
+      "question": "Can I use feet instead of meters?",
+      "answer": "Yes, use the same units for both inputs."
+    },
+    {
+      "question": "Is a higher percentage steeper?",
+      "answer": "Yes, larger values indicate steeper slopes."
+    }
   ],
-  disclaimer: "Educational information, not professional advice.",
-  cluster: "Math"
-};
+  "disclaimer": "Educational information, not professional advice.",
+  "cluster": "Math & Statistics",
+  "related": [
+    "percentage-increase",
+    "circle-area",
+    "pythagorean-theorem-calculator",
+    "geometric-series-sum",
+    "circumference-from-area",
+    "triangle-inradius"
+  ]
+}
 
 <Calculator schema={schema} />
-

@@ -2,37 +2,81 @@
 layout: ../../layouts/CalculatorLayout.astro
 title: "Power Bank Recharges"
 description: "Estimate how many times a power bank can charge your device."
-updated: "2025-10-15"
-cluster: "Technology"
+date: 2025-09-07
+updated: 2025-09-07
+cluster: "Technology & Coding"
 ---
-
 import Calculator from '../../components/Calculator.astro';
 
 export const schema = {
-  slug: "power-bank-recharges",
-  title: "Power Bank Recharges",
-  locale: "en",
-  unit: "charges",
-  inputs: [
-    { name: "bank", label: "Power Bank Capacity (mAh)", type: "number", step: "any", min: 0, placeholder: "10000" },
-    { name: "device", label: "Device Battery (mAh)", type: "number", step: "any", min: 0, placeholder: "3000" },
-    { name: "eff", label: "Efficiency (%)", type: "number", step: "any", min: 0, max: 100, placeholder: "85" }
+  "slug": "power-bank-recharges",
+  "title": "Power Bank Recharges",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "bank",
+      "label": "Power Bank Capacity (mAh)",
+      "type": "number",
+      "step": "any",
+      "min": 0,
+      "placeholder": "10000"
+    },
+    {
+      "name": "device",
+      "label": "Device Battery (mAh)",
+      "type": "number",
+      "step": "any",
+      "min": 0,
+      "placeholder": "3000"
+    },
+    {
+      "name": "eff",
+      "label": "Efficiency (%)",
+      "type": "number",
+      "step": "any",
+      "min": 0,
+      "max": 100,
+      "placeholder": "85"
+    }
   ],
-  expression: "(bank * (eff / 100)) / device",
-  intro: "See how many full charges your power bank can deliver to your device.",
-  examples: [
-    { description: "10000 mAh bank, 3000 mAh device, 85% ⇒ 2.83 charges" },
-    { description: "20000 mAh bank, 4000 mAh device, 90% ⇒ 4.5 charges" }
+  "expression": "(bank * (eff / 100)) / device",
+  "intro": "Estimate how many times a power bank can charge your device.",
+  "examples": [
+    {
+      "description": "10000 mAh bank, 3000 mAh device, 85% ⇒ 2.83 charges"
+    },
+    {
+      "description": "20000 mAh bank, 4000 mAh device, 90% ⇒ 4.5 charges"
+    }
   ],
-  faqs: [
-    { question: "Why include efficiency?", answer: "Energy is lost during transfer, so not all capacity is usable." },
-    { question: "Can I use Wh instead of mAh?", answer: "Use consistent units for both capacities." },
-    { question: "Does it account for cable losses?", answer: "Efficiency covers typical losses, but results are estimates." },
-    { question: "Is it safe to fully discharge a power bank?", answer: "Check manufacturer guidelines for best practices." }
+  "faqs": [
+    {
+      "question": "Why include efficiency?",
+      "answer": "Energy is lost during transfer, so not all capacity is usable."
+    },
+    {
+      "question": "Can I use Wh instead of mAh?",
+      "answer": "Use consistent units for both capacities."
+    },
+    {
+      "question": "Does it account for cable losses?",
+      "answer": "Efficiency covers typical losses, but results are estimates."
+    },
+    {
+      "question": "Is it safe to fully discharge a power bank?",
+      "answer": "Check manufacturer guidelines for best practices."
+    }
   ],
-  disclaimer: "Educational information, not professional advice.",
-  cluster: "Technology"
-};
+  "disclaimer": "Educational information, not professional advice.",
+  "cluster": "Technology & Coding",
+  "related": [
+    "download-time",
+    "storage-redundancy-overhead",
+    "battery-life-estimator",
+    "cpu-power-to-current",
+    "bandwidth-delay-product",
+    "ping-distance-estimator"
+  ]
+}
 
 <Calculator schema={schema} />
-

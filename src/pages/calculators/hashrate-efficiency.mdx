@@ -2,62 +2,72 @@
 layout: ../../layouts/CalculatorLayout.astro
 title: "Hashrate Efficiency Calculator"
 description: "Compute mining hashrate per watt of power."
-updated: "2024-06-10"
-cluster: "technology"
+date: 2025-09-07
+updated: 2025-09-07
+cluster: "Technology & Coding"
 ---
-
-import Calculator from "../../components/Calculator.astro";
+import Calculator from '../../components/Calculator.astro';
 
 export const schema = {
-  inputs: [
+  "slug": "hashrate-efficiency",
+  "title": "Hashrate Efficiency Calculator",
+  "locale": "en",
+  "inputs": [
     {
-      name: "hashrate",
-      label: "Hashrate (MH/s)",
-      type: "number",
-      min: 0,
-      step: "any",
-      placeholder: "500",
+      "name": "hashrate",
+      "label": "Hashrate (MH/s)",
+      "type": "number",
+      "min": 0,
+      "step": "any",
+      "placeholder": "500"
     },
     {
-      name: "power",
-      label: "Power (W)",
-      type: "number",
-      min: 0,
-      step: "any",
-      placeholder: "100",
-    },
+      "name": "power",
+      "label": "Power (W)",
+      "type": "number",
+      "min": 0,
+      "step": "any",
+      "placeholder": "100"
+    }
   ],
-  slug: "hashrate-efficiency",
-  title: "Hashrate Efficiency Calculator",
-  locale: "en",
-  expression: "hashrate / power",
-  intro:
-    "Evaluate the efficiency of mining hardware by dividing hashrate by power consumption.",
-  examples: [
-    { description: "500 MH/s at 100 W ⇒ 5 MH/s per W" },
-    { description: "120 MH/s at 60 W ⇒ 2 MH/s per W" },
+  "expression": "hashrate / power",
+  "intro": "Compute mining hashrate per watt of power.",
+  "examples": [
+    {
+      "description": "500 MH/s at 100 W ⇒ 5 MH/s per W"
+    },
+    {
+      "description": "120 MH/s at 60 W ⇒ 2 MH/s per W"
+    }
   ],
-  faqs: [
+  "faqs": [
     {
-      question: "What is hashrate?",
-      answer: "It measures how many hashes a miner computes per second.",
+      "question": "What is hashrate?",
+      "answer": "It measures how many hashes a miner computes per second."
     },
     {
-      question: "Why consider efficiency?",
-      answer: "Higher efficiency means lower electricity costs.",
+      "question": "Why consider efficiency?",
+      "answer": "Higher efficiency means lower electricity costs."
     },
     {
-      question: "Can I use GH/s values?",
-      answer: "Convert to MH/s before input.",
+      "question": "Can I use GH/s values?",
+      "answer": "Convert to MH/s before input."
     },
     {
-      question: "Does it include pool fees?",
-      answer: "No, it only compares raw hashrate and power.",
-    },
+      "question": "Does it include pool fees?",
+      "answer": "No, it only compares raw hashrate and power."
+    }
   ],
-  disclaimer: "Mining results vary; check hardware specifications.",
-  cluster: "technology",
-  unit: "MH/s per W",
-};
+  "disclaimer": "Mining results vary; check hardware specifications.",
+  "cluster": "Technology & Coding",
+  "related": [
+    "download-time",
+    "storage-redundancy-overhead",
+    "battery-life-estimator",
+    "cpu-power-to-current",
+    "bandwidth-delay-product",
+    "ping-distance-estimator"
+  ]
+}
 
 <Calculator schema={schema} />

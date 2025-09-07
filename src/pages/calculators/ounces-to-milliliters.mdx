@@ -2,35 +2,64 @@
 layout: ../../layouts/CalculatorLayout.astro
 title: "Ounces to Milliliters"
 description: "Convert U.S. fluid ounces to milliliters for travel bottles."
-updated: "2025-10-15"
-cluster: "Conversions"
+date: 2025-09-07
+updated: 2025-09-07
+cluster: "Conversions & Units"
 ---
-
 import Calculator from '../../components/Calculator.astro';
 
 export const schema = {
-  slug: "ounces-to-milliliters",
-  title: "Ounces to Milliliters",
-  locale: "en",
-  unit: "mL",
-  inputs: [
-    { name: "oz", label: "Fluid Ounces", type: "number", step: "any", min: 0, placeholder: "3" }
+  "slug": "ounces-to-milliliters",
+  "title": "Ounces to Milliliters",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "oz",
+      "label": "Fluid Ounces",
+      "type": "number",
+      "step": "any",
+      "min": 0,
+      "placeholder": "3"
+    }
   ],
-  expression: "oz * 29.5735",
-  intro: "Quickly convert U.S. fluid ounces to milliliters when filling travel-sized containers.",
-  examples: [
-    { description: "3 oz ⇒ 88.72 mL" },
-    { description: "12 oz ⇒ 354.88 mL" }
+  "expression": "oz * 29.5735",
+  "intro": "Convert U.S. fluid ounces to milliliters for travel bottles.",
+  "examples": [
+    {
+      "description": "3 oz ⇒ 88.72 mL"
+    },
+    {
+      "description": "12 oz ⇒ 354.88 mL"
+    }
   ],
-  faqs: [
-    { question: "Which ounce definition is used?", answer: "This calculator uses U.S. fluid ounces." },
-    { question: "Why is this useful for travelers?", answer: "It helps ensure your liquids comply with carry-on limits." },
-    { question: "Can I enter decimal values?", answer: "Yes, decimals are supported." },
-    { question: "Does it work for U.K. ounces?", answer: "No, U.K. imperial ounces differ slightly." }
+  "faqs": [
+    {
+      "question": "Which ounce definition is used?",
+      "answer": "This calculator uses U.S. fluid ounces."
+    },
+    {
+      "question": "Why is this useful for travelers?",
+      "answer": "It helps ensure your liquids comply with carry-on limits."
+    },
+    {
+      "question": "Can I enter decimal values?",
+      "answer": "Yes, decimals are supported."
+    },
+    {
+      "question": "Does it work for U.K. ounces?",
+      "answer": "No, U.K. imperial ounces differ slightly."
+    }
   ],
-  disclaimer: "Educational information, not professional advice.",
-  cluster: "Conversions"
-};
+  "disclaimer": "Educational information, not professional advice.",
+  "cluster": "Conversions & Units",
+  "related": [
+    "celsius-to-fahrenheit",
+    "km-to-miles",
+    "meters-to-feet",
+    "smoots-to-meters",
+    "hogsheads-to-liters",
+    "furlongs-per-fortnight"
+  ]
+}
 
 <Calculator schema={schema} />
-

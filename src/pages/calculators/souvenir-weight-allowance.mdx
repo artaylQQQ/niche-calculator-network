@@ -2,36 +2,72 @@
 layout: ../../layouts/CalculatorLayout.astro
 title: "Souvenir Weight Allowance"
 description: "See how much weight you can still add to your luggage."
-updated: "2025-10-15"
-cluster: "Other"
+date: 2025-09-07
+updated: 2025-09-07
+cluster: "Lifestyle & Travel"
 ---
-
 import Calculator from '../../components/Calculator.astro';
 
 export const schema = {
-  slug: "souvenir-weight-allowance",
-  title: "Souvenir Weight Allowance",
-  locale: "en",
-  unit: "kg",
-  inputs: [
-    { name: "limit", label: "Luggage Weight Limit (kg)", type: "number", step: "any", min: 0, placeholder: "23" },
-    { name: "current", label: "Current Luggage Weight (kg)", type: "number", step: "any", min: 0, placeholder: "17" }
+  "slug": "souvenir-weight-allowance",
+  "title": "Souvenir Weight Allowance",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "limit",
+      "label": "Luggage Weight Limit (kg)",
+      "type": "number",
+      "step": "any",
+      "min": 0,
+      "placeholder": "23"
+    },
+    {
+      "name": "current",
+      "label": "Current Luggage Weight (kg)",
+      "type": "number",
+      "step": "any",
+      "min": 0,
+      "placeholder": "17"
+    }
   ],
-  expression: "limit - current",
-  intro: "Determine how many kilograms of souvenirs you can still pack without exceeding airline limits.",
-  examples: [
-    { description: "Limit 23 kg, current 17 kg ⇒ 6 kg left" },
-    { description: "Limit 20 kg, current 19.5 kg ⇒ 0.5 kg left" }
+  "expression": "limit - current",
+  "intro": "See how much weight you can still add to your luggage.",
+  "examples": [
+    {
+      "description": "Limit 23 kg, current 17 kg ⇒ 6 kg left"
+    },
+    {
+      "description": "Limit 20 kg, current 19.5 kg ⇒ 0.5 kg left"
+    }
   ],
-  faqs: [
-    { question: "What if the result is negative?", answer: "It means you're over the weight limit." },
-    { question: "Do airlines allow rounding?", answer: "Policies vary; always check with your airline." },
-    { question: "Does this include carry-on?", answer: "This calculator is for a single checked bag." },
-    { question: "Should I weigh souvenirs individually?", answer: "Weighing helps avoid surprises at the airport." }
+  "faqs": [
+    {
+      "question": "What if the result is negative?",
+      "answer": "It means you're over the weight limit."
+    },
+    {
+      "question": "Do airlines allow rounding?",
+      "answer": "Policies vary; always check with your airline."
+    },
+    {
+      "question": "Does this include carry-on?",
+      "answer": "This calculator is for a single checked bag."
+    },
+    {
+      "question": "Should I weigh souvenirs individually?",
+      "answer": "Weighing helps avoid surprises at the airport."
+    }
   ],
-  disclaimer: "Educational information, not professional advice.",
-  cluster: "Other"
-};
+  "disclaimer": "Educational information, not professional advice.",
+  "cluster": "Lifestyle & Travel",
+  "related": [
+    "discount-calculator",
+    "discount-calculator-2",
+    "tip-calculator-2",
+    "coffee-to-water-ratio",
+    "reading-time-estimator",
+    "travel-budget-per-day"
+  ]
+}
 
 <Calculator schema={schema} />
-

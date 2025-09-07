@@ -2,61 +2,71 @@
 layout: ../../layouts/CalculatorLayout.astro
 title: "Nth Root Calculator"
 description: "Compute the nth root of a number."
-updated: "2024-06-10"
-cluster: "math"
+date: 2025-09-07
+updated: 2025-09-07
+cluster: "Math & Statistics"
 ---
-
-import Calculator from "../../components/Calculator.astro";
+import Calculator from '../../components/Calculator.astro';
 
 export const schema = {
-  inputs: [
+  "slug": "nth-root",
+  "title": "Nth Root Calculator",
+  "locale": "en",
+  "inputs": [
     {
-      name: "value",
-      label: "Value",
-      type: "number",
-      step: "any",
-      placeholder: "27",
+      "name": "value",
+      "label": "Value",
+      "type": "number",
+      "step": "any",
+      "placeholder": "27"
     },
     {
-      name: "n",
-      label: "Root (n)",
-      type: "number",
-      min: 1,
-      step: "any",
-      placeholder: "3",
-    },
+      "name": "n",
+      "label": "Root (n)",
+      "type": "number",
+      "min": 1,
+      "step": "any",
+      "placeholder": "3"
+    }
   ],
-  slug: "nth-root",
-  title: "Nth Root Calculator",
-  locale: "en",
-  expression: "Math.pow(value, 1/n)",
-  intro:
-    "Find the number that, when raised to the nth power, equals the given value.",
-  examples: [
-    { description: "Value 27, n 3 ⇒ 3" },
-    { description: "Value 16, n 4 ⇒ 2" },
+  "expression": "Math.pow(value, 1/n)",
+  "intro": "Compute the nth root of a number.",
+  "examples": [
+    {
+      "description": "Value 27, n 3 ⇒ 3"
+    },
+    {
+      "description": "Value 16, n 4 ⇒ 2"
+    }
   ],
-  faqs: [
+  "faqs": [
     {
-      question: "Can n be fractional?",
-      answer: "No, enter a positive number greater than zero.",
+      "question": "Can n be fractional?",
+      "answer": "No, enter a positive number greater than zero."
     },
     {
-      question: "What if value is negative?",
-      answer: "Negative values are not supported in this calculator.",
+      "question": "What if value is negative?",
+      "answer": "Negative values are not supported in this calculator."
     },
     {
-      question: "Is the square root just n=2?",
-      answer: "Yes, set n to 2 for square roots.",
+      "question": "Is the square root just n=2?",
+      "answer": "Yes, set n to 2 for square roots."
     },
     {
-      question: "Are results rounded?",
-      answer: "Results use JavaScript's floating-point precision.",
-    },
+      "question": "Are results rounded?",
+      "answer": "Results use JavaScript's floating-point precision."
+    }
   ],
-  disclaimer: "Educational tool; verify results independently.",
-  cluster: "math",
-  unit: "value",
-};
+  "disclaimer": "Educational tool; verify results independently.",
+  "cluster": "Math & Statistics",
+  "related": [
+    "percentage-increase",
+    "circle-area",
+    "pythagorean-theorem-calculator",
+    "geometric-series-sum",
+    "circumference-from-area",
+    "triangle-inradius"
+  ]
+}
 
 <Calculator schema={schema} />

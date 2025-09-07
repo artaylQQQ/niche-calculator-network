@@ -2,53 +2,64 @@
 layout: ../../layouts/CalculatorLayout.astro
 title: "Seconds to Minutes Converter"
 description: "Convert seconds to minutes."
-updated: "2024-06-10"
+date: 2025-09-07
+updated: 2025-09-07
 cluster: "date-time"
 ---
-
-import Calculator from "../../components/Calculator.astro";
+import Calculator from '../../components/Calculator.astro';
 
 export const schema = {
-  inputs: [
+  "slug": "seconds-to-minutes",
+  "title": "Seconds to Minutes Converter",
+  "locale": "en",
+  "inputs": [
     {
-      name: "seconds",
-      label: "Seconds",
-      type: "number",
-      min: 0,
-      step: "any",
-      placeholder: "120",
-    },
+      "name": "seconds",
+      "label": "Seconds",
+      "type": "number",
+      "min": 0,
+      "step": "any",
+      "placeholder": "120"
+    }
   ],
-  slug: "seconds-to-minutes",
-  title: "Seconds to Minutes Converter",
-  locale: "en",
-  expression: "seconds / 60",
-  intro: "Transform any number of seconds into minutes instantly.",
-  examples: [
-    { description: "120 s ⇒ 2 min" },
-    { description: "90 s ⇒ 1.5 min" },
+  "expression": "seconds / 60",
+  "intro": "Convert seconds to minutes.",
+  "examples": [
+    {
+      "description": "120 s ⇒ 2 min"
+    },
+    {
+      "description": "90 s ⇒ 1.5 min"
+    }
   ],
-  faqs: [
+  "faqs": [
     {
-      question: "Does it support decimals?",
-      answer: "Yes, fractional seconds are allowed.",
+      "question": "Does it support decimals?",
+      "answer": "Yes, fractional seconds are allowed."
     },
     {
-      question: "Can I convert minutes back to seconds?",
-      answer: "Use our minutes-to-seconds tool for that.",
+      "question": "Can I convert minutes back to seconds?",
+      "answer": "Use our minutes-to-seconds tool for that."
     },
     {
-      question: "Is the conversion exact?",
-      answer: "Yes, it divides by 60 precisely.",
+      "question": "Is the conversion exact?",
+      "answer": "Yes, it divides by 60 precisely."
     },
     {
-      question: "Any unit limits?",
-      answer: "Input any non-negative time in seconds.",
-    },
+      "question": "Any unit limits?",
+      "answer": "Input any non-negative time in seconds."
+    }
   ],
-  disclaimer: "For general time conversions only.",
-  cluster: "date-time",
-  unit: "min",
-};
+  "disclaimer": "For general time conversions only.",
+  "cluster": "date-time",
+  "related": [
+    "percentage-discount",
+    "simple-interest",
+    "bmi-calculator",
+    "daily-calorie-burn",
+    "celsius-to-fahrenheit",
+    "km-to-miles"
+  ]
+}
 
 <Calculator schema={schema} />

@@ -2,55 +2,64 @@
 layout: ../../layouts/CalculatorLayout.astro
 title: "Daily Fiber Requirement Calculator"
 description: "Estimate daily fiber needs based on calorie intake."
-updated: "2024-06-10"
-cluster: "health"
+date: 2025-09-07
+updated: 2025-09-07
+cluster: "Health & Fitness"
 ---
-
-import Calculator from "../../components/Calculator.astro";
+import Calculator from '../../components/Calculator.astro';
 
 export const schema = {
-  inputs: [
+  "slug": "daily-fiber-requirement",
+  "title": "Daily Fiber Requirement Calculator",
+  "locale": "en",
+  "inputs": [
     {
-      name: "calories",
-      label: "Daily Calories",
-      type: "number",
-      min: 0,
-      step: "any",
-      placeholder: "2000",
-    },
+      "name": "calories",
+      "label": "Daily Calories",
+      "type": "number",
+      "min": 0,
+      "step": "any",
+      "placeholder": "2000"
+    }
   ],
-  slug: "daily-fiber-requirement",
-  title: "Daily Fiber Requirement Calculator",
-  locale: "en",
-  expression: "calories / 1000 * 14",
-  intro:
-    "Estimate recommended fiber intake using the guideline of 14 grams per 1,000 calories.",
-  examples: [
-    { description: "2000 kcal ⇒ 28 g" },
-    { description: "1500 kcal ⇒ 21 g" },
+  "expression": "calories / 1000 * 14",
+  "intro": "Estimate daily fiber needs based on calorie intake.",
+  "examples": [
+    {
+      "description": "2000 kcal ⇒ 28 g"
+    },
+    {
+      "description": "1500 kcal ⇒ 21 g"
+    }
   ],
-  faqs: [
+  "faqs": [
     {
-      question: "Where does 14 g per 1000 kcal come from?",
-      answer: "It's a common dietary guideline.",
+      "question": "Where does 14 g per 1000 kcal come from?",
+      "answer": "It's a common dietary guideline."
     },
     {
-      question: "Can this replace medical advice?",
-      answer: "No, always consult a healthcare professional.",
+      "question": "Can this replace medical advice?",
+      "answer": "No, always consult a healthcare professional."
     },
     {
-      question: "Does fiber aid digestion?",
-      answer: "Adequate fiber supports digestive health.",
+      "question": "Does fiber aid digestion?",
+      "answer": "Adequate fiber supports digestive health."
     },
     {
-      question: "Should I exceed the result?",
-      answer: "Stick to recommended amounts unless advised otherwise.",
-    },
+      "question": "Should I exceed the result?",
+      "answer": "Stick to recommended amounts unless advised otherwise."
+    }
   ],
-  disclaimer:
-    "For educational use; consult a dietitian for personalized advice.",
-  cluster: "health",
-  unit: "g",
-};
+  "disclaimer": "For educational use; consult a dietitian for personalized advice.",
+  "cluster": "Health & Fitness",
+  "related": [
+    "bmi-calculator",
+    "daily-calorie-burn",
+    "sleep-debt-weekly",
+    "sugar-cube-equivalent",
+    "caffeine-half-life",
+    "protein-calorie-percentage"
+  ]
+}
 
 <Calculator schema={schema} />

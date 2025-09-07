@@ -2,36 +2,72 @@
 layout: ../../layouts/CalculatorLayout.astro
 title: "Flight Water Intake"
 description: "Estimate how much water to drink during a flight."
-updated: "2025-10-15"
-cluster: "Health"
+date: 2025-09-07
+updated: 2025-09-07
+cluster: "Health & Fitness"
 ---
-
 import Calculator from '../../components/Calculator.astro';
 
 export const schema = {
-  slug: "flight-water-intake",
-  title: "Flight Water Intake",
-  locale: "en",
-  unit: "L",
-  inputs: [
-    { name: "hours", label: "Flight Duration (hours)", type: "number", step: "any", min: 0, placeholder: "5" },
-    { name: "rate", label: "Water per Hour (L)", type: "number", step: "any", min: 0, placeholder: "0.25" }
+  "slug": "flight-water-intake",
+  "title": "Flight Water Intake",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "hours",
+      "label": "Flight Duration (hours)",
+      "type": "number",
+      "step": "any",
+      "min": 0,
+      "placeholder": "5"
+    },
+    {
+      "name": "rate",
+      "label": "Water per Hour (L)",
+      "type": "number",
+      "step": "any",
+      "min": 0,
+      "placeholder": "0.25"
+    }
   ],
-  expression: "hours * rate",
-  intro: "Plan your hydration by estimating the total water you should drink during a flight.",
-  examples: [
-    { description: "5 h, 0.25 L/h ⇒ 1.25 L" },
-    { description: "8 h, 0.2 L/h ⇒ 1.6 L" }
+  "expression": "hours * rate",
+  "intro": "Estimate how much water to drink during a flight.",
+  "examples": [
+    {
+      "description": "5 h, 0.25 L/h ⇒ 1.25 L"
+    },
+    {
+      "description": "8 h, 0.2 L/h ⇒ 1.6 L"
+    }
   ],
-  faqs: [
-    { question: "Is this medical advice?", answer: "No, consult a professional for personalized guidance." },
-    { question: "Why is hydration important in-flight?", answer: "Cabin air is dry and can lead to dehydration." },
-    { question: "Can I use ounces instead?", answer: "Enter equivalent liters if using other units." },
-    { question: "Does it account for alcohol or caffeine?", answer: "No, adjust your rate based on personal needs." }
+  "faqs": [
+    {
+      "question": "Is this medical advice?",
+      "answer": "No, consult a professional for personalized guidance."
+    },
+    {
+      "question": "Why is hydration important in-flight?",
+      "answer": "Cabin air is dry and can lead to dehydration."
+    },
+    {
+      "question": "Can I use ounces instead?",
+      "answer": "Enter equivalent liters if using other units."
+    },
+    {
+      "question": "Does it account for alcohol or caffeine?",
+      "answer": "No, adjust your rate based on personal needs."
+    }
   ],
-  disclaimer: "Educational information, not medical advice.",
-  cluster: "Health"
-};
+  "disclaimer": "Educational information, not professional advice.",
+  "cluster": "Health & Fitness",
+  "related": [
+    "bmi-calculator",
+    "daily-calorie-burn",
+    "sleep-debt-weekly",
+    "sugar-cube-equivalent",
+    "caffeine-half-life",
+    "protein-calorie-percentage"
+  ]
+}
 
 <Calculator schema={schema} />
-

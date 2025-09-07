@@ -2,62 +2,72 @@
 layout: ../../layouts/CalculatorLayout.astro
 title: "Air Conditioner BTU Calculator"
 description: "Estimate cooling capacity needed for a room."
-updated: "2024-06-10"
+date: 2025-09-07
+updated: 2025-09-07
 cluster: "home-diy"
 ---
-
-import Calculator from "../../components/Calculator.astro";
+import Calculator from '../../components/Calculator.astro';
 
 export const schema = {
-  inputs: [
+  "slug": "air-conditioner-btu",
+  "title": "Air Conditioner BTU Calculator",
+  "locale": "en",
+  "inputs": [
     {
-      name: "area",
-      label: "Room Area (sq ft)",
-      type: "number",
-      min: 0,
-      step: "any",
-      placeholder: "250",
+      "name": "area",
+      "label": "Room Area (sq ft)",
+      "type": "number",
+      "min": 0,
+      "step": "any",
+      "placeholder": "250"
     },
     {
-      name: "btu",
-      label: "BTU per sq ft",
-      type: "number",
-      min: 0,
-      step: "any",
-      placeholder: "20",
-    },
+      "name": "btu",
+      "label": "BTU per sq ft",
+      "type": "number",
+      "min": 0,
+      "step": "any",
+      "placeholder": "20"
+    }
   ],
-  slug: "air-conditioner-btu",
-  title: "Air Conditioner BTU Calculator",
-  locale: "en",
-  expression: "area * btu",
-  intro:
-    "Determine the recommended BTU rating for an air conditioner based on room size.",
-  examples: [
-    { description: "Area 250 sq ft, BTU 20 ⇒ 5000 BTU" },
-    { description: "Area 400 sq ft, BTU 25 ⇒ 10000 BTU" },
+  "expression": "area * btu",
+  "intro": "Estimate cooling capacity needed for a room.",
+  "examples": [
+    {
+      "description": "Area 250 sq ft, BTU 20 ⇒ 5000 BTU"
+    },
+    {
+      "description": "Area 400 sq ft, BTU 25 ⇒ 10000 BTU"
+    }
   ],
-  faqs: [
+  "faqs": [
     {
-      question: "What is BTU?",
-      answer: "British Thermal Unit, a measure of cooling power.",
+      "question": "What is BTU?",
+      "answer": "British Thermal Unit, a measure of cooling power."
     },
     {
-      question: "Is 20 BTU per sq ft standard?",
-      answer: "20 is a common rule of thumb; adjust for climate.",
+      "question": "Is 20 BTU per sq ft standard?",
+      "answer": "20 is a common rule of thumb; adjust for climate."
     },
     {
-      question: "Do high ceilings require more BTU?",
-      answer: "Yes, increase the BTU factor.",
+      "question": "Do high ceilings require more BTU?",
+      "answer": "Yes, increase the BTU factor."
     },
     {
-      question: "Should I round up?",
-      answer: "Choose a unit with at least the calculated BTU.",
-    },
+      "question": "Should I round up?",
+      "answer": "Choose a unit with at least the calculated BTU."
+    }
   ],
-  disclaimer: "Consult HVAC professionals for precise sizing.",
-  cluster: "home-diy",
-  unit: "BTU",
-};
+  "disclaimer": "Consult HVAC professionals for precise sizing.",
+  "cluster": "home-diy",
+  "related": [
+    "percentage-discount",
+    "simple-interest",
+    "bmi-calculator",
+    "daily-calorie-burn",
+    "celsius-to-fahrenheit",
+    "km-to-miles"
+  ]
+}
 
 <Calculator schema={schema} />

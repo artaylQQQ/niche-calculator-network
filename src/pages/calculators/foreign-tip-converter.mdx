@@ -2,37 +2,80 @@
 layout: ../../layouts/CalculatorLayout.astro
 title: "Foreign Tip Converter"
 description: "Convert a tip into your home currency."
-updated: "2025-10-15"
-cluster: "Finance"
+date: 2025-09-07
+updated: 2025-09-07
+cluster: "Finance & Business"
 ---
-
 import Calculator from '../../components/Calculator.astro';
 
 export const schema = {
-  slug: "foreign-tip-converter",
-  title: "Foreign Tip Converter",
-  locale: "en",
-  unit: "home currency",
-  inputs: [
-    { name: "bill", label: "Bill Amount (foreign)", type: "number", step: "any", min: 0, placeholder: "50" },
-    { name: "tip", label: "Tip (%)", type: "number", step: "any", min: 0, placeholder: "15" },
-    { name: "rate", label: "Exchange Rate (home per foreign)", type: "number", step: "any", min: 0, placeholder: "1.1" }
+  "slug": "foreign-tip-converter",
+  "title": "Foreign Tip Converter",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "bill",
+      "label": "Bill Amount (foreign)",
+      "type": "number",
+      "step": "any",
+      "min": 0,
+      "placeholder": "50"
+    },
+    {
+      "name": "tip",
+      "label": "Tip (%)",
+      "type": "number",
+      "step": "any",
+      "min": 0,
+      "placeholder": "15"
+    },
+    {
+      "name": "rate",
+      "label": "Exchange Rate (home per foreign)",
+      "type": "number",
+      "step": "any",
+      "min": 0,
+      "placeholder": "1.1"
+    }
   ],
-  expression: "bill * (tip / 100) * rate",
-  intro: "Calculate how much a tip in foreign currency costs in your home currency.",
-  examples: [
-    { description: "€50 bill, 15% tip, rate 1.1 ⇒ 8.25 home currency" },
-    { description: "¥2000 bill, 10% tip, rate 0.007 ⇒ 14 home currency" }
+  "expression": "bill * (tip / 100) * rate",
+  "intro": "Convert a tip into your home currency.",
+  "examples": [
+    {
+      "description": "€50 bill, 15% tip, rate 1.1 ⇒ 8.25 home currency"
+    },
+    {
+      "description": "¥2000 bill, 10% tip, rate 0.007 ⇒ 14 home currency"
+    }
   ],
-  faqs: [
-    { question: "Does this include the bill itself?", answer: "No, it only converts the tip amount." },
-    { question: "Where do I find the exchange rate?", answer: "Use rates from your bank or a currency app." },
-    { question: "Can I use it for service charges?", answer: "Yes, enter the service charge percentage as the tip." },
-    { question: "What if I pay in cash?", answer: "The calculation still shows the equivalent value in your home currency." }
+  "faqs": [
+    {
+      "question": "Does this include the bill itself?",
+      "answer": "No, it only converts the tip amount."
+    },
+    {
+      "question": "Where do I find the exchange rate?",
+      "answer": "Use rates from your bank or a currency app."
+    },
+    {
+      "question": "Can I use it for service charges?",
+      "answer": "Yes, enter the service charge percentage as the tip."
+    },
+    {
+      "question": "What if I pay in cash?",
+      "answer": "The calculation still shows the equivalent value in your home currency."
+    }
   ],
-  disclaimer: "Educational information, not professional advice.",
-  cluster: "Finance"
-};
+  "disclaimer": "Educational information, not professional advice.",
+  "cluster": "Finance & Business",
+  "related": [
+    "percentage-discount",
+    "simple-interest",
+    "crypto-mining-breakeven",
+    "freelancer-hourly-rate",
+    "subscription-ltv",
+    "emergency-fund-duration"
+  ]
+}
 
 <Calculator schema={schema} />
-

@@ -2,70 +2,80 @@
 layout: ../../layouts/CalculatorLayout.astro
 title: "Paper Roll Length Calculator"
 description: "Estimate the length of paper on a roll."
-updated: "2024-06-10"
-cluster: "other"
+date: 2025-09-07
+updated: 2025-09-07
+cluster: "Lifestyle & Travel"
 ---
-
-import Calculator from "../../components/Calculator.astro";
+import Calculator from '../../components/Calculator.astro';
 
 export const schema = {
-  inputs: [
+  "slug": "paper-roll-length",
+  "title": "Paper Roll Length Calculator",
+  "locale": "en",
+  "inputs": [
     {
-      name: "outer",
-      label: "Outer Diameter (cm)",
-      type: "number",
-      min: 0,
-      step: "any",
-      placeholder: "10",
+      "name": "outer",
+      "label": "Outer Diameter (cm)",
+      "type": "number",
+      "min": 0,
+      "step": "any",
+      "placeholder": "10"
     },
     {
-      name: "core",
-      label: "Core Diameter (cm)",
-      type: "number",
-      min: 0,
-      step: "any",
-      placeholder: "4",
+      "name": "core",
+      "label": "Core Diameter (cm)",
+      "type": "number",
+      "min": 0,
+      "step": "any",
+      "placeholder": "4"
     },
     {
-      name: "thickness",
-      label: "Paper Thickness (mm)",
-      type: "number",
-      min: 0,
-      step: "any",
-      placeholder: "0.1",
-    },
+      "name": "thickness",
+      "label": "Paper Thickness (mm)",
+      "type": "number",
+      "min": 0,
+      "step": "any",
+      "placeholder": "0.1"
+    }
   ],
-  slug: "paper-roll-length",
-  title: "Paper Roll Length Calculator",
-  locale: "en",
-  expression: "( ( (outer/2)^2 - (core/2)^2 ) * Math.PI * 1000 ) / thickness",
-  intro:
-    "Estimate how many meters of paper are on a roll using diameters and thickness.",
-  examples: [
-    { description: "Outer 10 cm, Core 4 cm, Thickness 0.1 mm ⇒ 2356 m" },
-    { description: "Outer 8 cm, Core 3 cm, Thickness 0.12 mm ⇒ 1222 m" },
+  "expression": "( ( (outer/2)^2 - (core/2)^2 ) * Math.PI * 1000 ) / thickness",
+  "intro": "Estimate the length of paper on a roll.",
+  "examples": [
+    {
+      "description": "Outer 10 cm, Core 4 cm, Thickness 0.1 mm ⇒ 2356 m"
+    },
+    {
+      "description": "Outer 8 cm, Core 3 cm, Thickness 0.12 mm ⇒ 1222 m"
+    }
   ],
-  faqs: [
+  "faqs": [
     {
-      question: "Why convert to millimeters?",
-      answer: "The formula requires consistent units.",
+      "question": "Why convert to millimeters?",
+      "answer": "The formula requires consistent units."
     },
     {
-      question: "Does it assume tightly wound paper?",
-      answer: "Yes, gaps between layers aren't considered.",
+      "question": "Does it assume tightly wound paper?",
+      "answer": "Yes, gaps between layers aren't considered."
     },
     {
-      question: "Can I use inches?",
-      answer: "Convert dimensions to centimeters and millimeters first.",
+      "question": "Can I use inches?",
+      "answer": "Convert dimensions to centimeters and millimeters first."
     },
     {
-      question: "Is thickness constant?",
-      answer: "The calculator assumes uniform thickness.",
-    },
+      "question": "Is thickness constant?",
+      "answer": "The calculator assumes uniform thickness."
+    }
   ],
-  disclaimer: "Approximate result; actual length may vary.",
-  cluster: "other",
-  unit: "m",
-};
+  "disclaimer": "Approximate result; actual length may vary.",
+  "cluster": "Lifestyle & Travel",
+  "related": [
+    "discount-calculator",
+    "discount-calculator-2",
+    "tip-calculator-2",
+    "coffee-to-water-ratio",
+    "reading-time-estimator",
+    "travel-budget-per-day"
+  ]
+}
 
 <Calculator schema={schema} />

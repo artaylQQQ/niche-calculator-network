@@ -2,37 +2,84 @@
 layout: ../../layouts/CalculatorLayout.astro
 title: "Body Fat Percentage"
 description: "Estimate body fat percentage from weight, height, age, and gender."
-updated: "2025-10-19"
-cluster: "Health"
+date: 2025-09-07
+updated: 2025-09-07
+cluster: "Health & Fitness"
 ---
-
-import Calculator from "../../components/Calculator.astro";
+import Calculator from '../../components/Calculator.astro';
 
 export const schema = {
-  inputs: [
-    { name: "weight", label: "Weight (kg)", type: "number", step: "any", placeholder: "70" },
-    { name: "height", label: "Height (cm)", type: "number", step: "any", placeholder: "175" },
-    { name: "age", label: "Age (years)", type: "number", step: "any", placeholder: "30" },
-    { name: "gender", label: "Gender (1=male,0=female)", type: "number", step: "any", placeholder: "1" }
+  "slug": "body-fat-percentage",
+  "title": "Body Fat Percentage",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "weight",
+      "label": "Weight (kg)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "70"
+    },
+    {
+      "name": "height",
+      "label": "Height (cm)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "175"
+    },
+    {
+      "name": "age",
+      "label": "Age (years)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "30"
+    },
+    {
+      "name": "gender",
+      "label": "Gender (1=male,0=female)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "1"
+    }
   ],
-  slug: "body-fat-percentage",
-  title: "Body Fat Percentage",
-  locale: "en",
-  unit: "%",
-  expression: "1.20 * (weight / ((height/100)**2)) + 0.23 * age - 5.4 - 10.8 * gender",
-  intro: "Approximate body fat percentage using the Deurenberg formula based on BMI, age, and gender.",
-  examples: [
-    { description: "70 kg, 175 cm, age 30, male ⇒ 18.22%" },
-    { description: "60 kg, 165 cm, age 25, female ⇒ 24.22%" }
+  "expression": "1.20 * (weight / ((height/100)^2)) + 0.23 * age - 5.4 - 10.8 * gender",
+  "intro": "Estimate body fat percentage from weight, height, age, and gender.",
+  "examples": [
+    {
+      "description": "70 kg, 175 cm, age 30, male ⇒ 18.22%"
+    },
+    {
+      "description": "60 kg, 165 cm, age 25, female ⇒ 24.22%"
+    }
   ],
-  faqs: [
-    { question: "What does gender input mean?", answer: "Use 1 for male and 0 for female." },
-    { question: "Is this accurate?", answer: "It's an estimate; actual body fat may vary." },
-    { question: "Do I need BMI first?", answer: "No, the formula calculates BMI internally from weight and height." },
-    { question: "Can I use pounds and inches?", answer: "Convert to kilograms and centimeters before using." }
+  "faqs": [
+    {
+      "question": "What does gender input mean?",
+      "answer": "Use 1 for male and 0 for female."
+    },
+    {
+      "question": "Is this accurate?",
+      "answer": "It's an estimate; actual body fat may vary."
+    },
+    {
+      "question": "Do I need BMI first?",
+      "answer": "No, the formula calculates BMI internally from weight and height."
+    },
+    {
+      "question": "Can I use pounds and inches?",
+      "answer": "Convert to kilograms and centimeters before using."
+    }
   ],
-  disclaimer: "Not a medical diagnosis; consult professionals for health advice.",
-  cluster: "Health"
-};
+  "disclaimer": "Not a medical diagnosis; consult professionals for health advice.",
+  "cluster": "Health & Fitness",
+  "related": [
+    "calories-burned-met",
+    "daily-water-intake",
+    "waist-to-height-ratio",
+    "one-rep-max",
+    "calorie-deficit",
+    "body-surface-area-du-bois"
+  ]
+}
 
 <Calculator schema={schema} />

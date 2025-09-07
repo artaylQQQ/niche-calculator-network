@@ -2,36 +2,72 @@
 layout: ../../layouts/CalculatorLayout.astro
 title: "Travel Clothesline Length"
 description: "Estimate clothesline length needed for hand-washed laundry."
-updated: "2025-10-15"
+date: 2025-09-07
+updated: 2025-09-07
 cluster: "Home & DIY"
 ---
-
 import Calculator from '../../components/Calculator.astro';
 
 export const schema = {
-  slug: "travel-clothesline-length",
-  title: "Travel Clothesline Length",
-  locale: "en",
-  unit: "m",
-  inputs: [
-    { name: "garments", label: "Number of Garments", type: "number", step: 1, min: 0, placeholder: "8" },
-    { name: "spacing", label: "Spacing per Garment (m)", type: "number", step: "any", min: 0, placeholder: "0.15" }
+  "slug": "travel-clothesline-length",
+  "title": "Travel Clothesline Length",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "garments",
+      "label": "Number of Garments",
+      "type": "number",
+      "step": 1,
+      "min": 0,
+      "placeholder": "8"
+    },
+    {
+      "name": "spacing",
+      "label": "Spacing per Garment (m)",
+      "type": "number",
+      "step": "any",
+      "min": 0,
+      "placeholder": "0.15"
+    }
   ],
-  expression: "garments * spacing",
-  intro: "Plan how much cord you need to dry clothes while traveling.",
-  examples: [
-    { description: "8 garments, 0.15 m spacing ⇒ 1.2 m" },
-    { description: "5 garments, 0.2 m spacing ⇒ 1 m" }
+  "expression": "garments * spacing",
+  "intro": "Estimate clothesline length needed for hand-washed laundry.",
+  "examples": [
+    {
+      "description": "8 garments, 0.15 m spacing ⇒ 1.2 m"
+    },
+    {
+      "description": "5 garments, 0.2 m spacing ⇒ 1 m"
+    }
   ],
-  faqs: [
-    { question: "Does spacing include clothespins?", answer: "Yes, leave extra room if needed." },
-    { question: "Can I use feet instead of meters?", answer: "Convert to meters before calculating." },
-    { question: "What if garments are large?", answer: "Increase the spacing to accommodate larger items." },
-    { question: "Is extra line for tying included?", answer: "No, add additional length for knots." }
+  "faqs": [
+    {
+      "question": "Does spacing include clothespins?",
+      "answer": "Yes, leave extra room if needed."
+    },
+    {
+      "question": "Can I use feet instead of meters?",
+      "answer": "Convert to meters before calculating."
+    },
+    {
+      "question": "What if garments are large?",
+      "answer": "Increase the spacing to accommodate larger items."
+    },
+    {
+      "question": "Is extra line for tying included?",
+      "answer": "No, add additional length for knots."
+    }
   ],
-  disclaimer: "Educational information, not professional advice.",
-  cluster: "Home & DIY"
-};
+  "disclaimer": "Educational information, not professional advice.",
+  "cluster": "Home & DIY",
+  "related": [
+    "paint-coverage",
+    "garden-soil-volume",
+    "home-diy-division-calculator",
+    "rainwater-harvest",
+    "garden-soil-weight",
+    "brick-count-estimator"
+  ]
+}
 
 <Calculator schema={schema} />
-

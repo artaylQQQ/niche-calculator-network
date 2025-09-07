@@ -2,55 +2,64 @@
 layout: ../../layouts/CalculatorLayout.astro
 title: "Weeks to Seconds Converter"
 description: "Convert weeks to seconds."
-updated: "2024-06-10"
+date: 2025-09-07
+updated: 2025-09-07
 cluster: "date-time"
 ---
-
-import Calculator from "../../components/Calculator.astro";
+import Calculator from '../../components/Calculator.astro';
 
 export const schema = {
-  inputs: [
+  "slug": "weeks-to-seconds",
+  "title": "Weeks to Seconds Converter",
+  "locale": "en",
+  "inputs": [
     {
-      name: "weeks",
-      label: "Weeks",
-      type: "number",
-      min: 0,
-      step: "any",
-      placeholder: "2",
-    },
+      "name": "weeks",
+      "label": "Weeks",
+      "type": "number",
+      "min": 0,
+      "step": "any",
+      "placeholder": "2"
+    }
   ],
-  slug: "weeks-to-seconds",
-  title: "Weeks to Seconds Converter",
-  locale: "en",
-  expression: "weeks * 604800",
-  intro:
-    "Convert whole or partial weeks into their equivalent number of seconds.",
-  examples: [
-    { description: "1 week ⇒ 604,800 s" },
-    { description: "2.5 weeks ⇒ 1,512,000 s" },
+  "expression": "weeks * 604800",
+  "intro": "Convert weeks to seconds.",
+  "examples": [
+    {
+      "description": "1 week ⇒ 604,800 s"
+    },
+    {
+      "description": "2.5 weeks ⇒ 1,512,000 s"
+    }
   ],
-  faqs: [
+  "faqs": [
     {
-      question: "Why 604,800 seconds per week?",
-      answer: "It's 7 days × 24 hours × 60 minutes × 60 seconds.",
+      "question": "Why 604,800 seconds per week?",
+      "answer": "It's 7 days × 24 hours × 60 minutes × 60 seconds."
     },
     {
-      question: "Does it handle fractional weeks?",
-      answer: "Yes, decimal weeks are supported.",
+      "question": "Does it handle fractional weeks?",
+      "answer": "Yes, decimal weeks are supported."
     },
     {
-      question: "Is leap year considered?",
-      answer: "Weeks are always 7 days in this calculator.",
+      "question": "Is leap year considered?",
+      "answer": "Weeks are always 7 days in this calculator."
     },
     {
-      question: "Can I convert seconds to weeks?",
-      answer: "Use our seconds-to-weeks calculator for that.",
-    },
+      "question": "Can I convert seconds to weeks?",
+      "answer": "Use our seconds-to-weeks calculator for that."
+    }
   ],
-  disclaimer:
-    "Approximate conversion; actual weeks may vary with leap seconds.",
-  cluster: "date-time",
-  unit: "s",
-};
+  "disclaimer": "Approximate conversion; actual weeks may vary with leap seconds.",
+  "cluster": "date-time",
+  "related": [
+    "percentage-discount",
+    "simple-interest",
+    "bmi-calculator",
+    "daily-calorie-burn",
+    "celsius-to-fahrenheit",
+    "km-to-miles"
+  ]
+}
 
 <Calculator schema={schema} />
