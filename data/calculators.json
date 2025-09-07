@@ -14327,5 +14327,488 @@
       }
     ],
     "disclaimer": "For fun estimates only; not for official records."
+  },
+  {
+    "slug": "payback-period",
+    "title": "Payback Period Calculator",
+    "cluster": "Finance",
+    "intro": "Years to recover an initial investment from annual cash inflow.",
+    "inputs": [
+      {
+        "name": "investment",
+        "label": "Initial investment",
+        "type": "number",
+        "step": "any",
+        "min": 0,
+        "placeholder": "10000"
+      },
+      {
+        "name": "inflow",
+        "label": "Annual cash inflow",
+        "type": "number",
+        "step": "any",
+        "min": 0,
+        "placeholder": "2500"
+      }
+    ],
+    "expression": "investment / inflow",
+    "unit": "years",
+    "examples": [
+      {
+        "description": "10000 investment and 2500 inflow ⇒ 4 years"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What is payback period?",
+        "answer": "Time needed for cumulative cash inflows to equal the initial investment."
+      },
+      {
+        "question": "Does it consider time value of money?",
+        "answer": "No, it is a simple measure without discounting."
+      }
+    ]
+  },
+  {
+    "slug": "rent-affordability",
+    "title": "Rent Affordability Calculator",
+    "cluster": "personal finance & loans",
+    "intro": "Maximum monthly rent based on income and percentage.",
+    "inputs": [
+      {
+        "name": "income",
+        "label": "Monthly income",
+        "type": "number",
+        "step": "any",
+        "min": 0,
+        "placeholder": "4000"
+      },
+      {
+        "name": "percent",
+        "label": "Percent of income",
+        "type": "number",
+        "step": "any",
+        "min": 0,
+        "placeholder": "30"
+      }
+    ],
+    "expression": "income * percent / 100",
+    "unit": "currency",
+    "examples": [
+      {
+        "description": "4000 income at 30% ⇒ 1200 rent"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Why 30%?",
+        "answer": "Many budgeting guidelines suggest keeping rent around 30% of income."
+      },
+      {
+        "question": "Can I use a different percent?",
+        "answer": "Yes, enter any percentage that suits your budget."
+      }
+    ]
+  },
+  {
+    "slug": "protein-per-meal",
+    "title": "Protein Per Meal Calculator",
+    "cluster": "Health",
+    "intro": "Recommended protein grams per meal from body weight.",
+    "inputs": [
+      {
+        "name": "weight",
+        "label": "Body weight (kg)",
+        "type": "number",
+        "step": "any",
+        "min": 0,
+        "placeholder": "70"
+      },
+      {
+        "name": "meals",
+        "label": "Meals per day",
+        "type": "number",
+        "step": 1,
+        "min": 1,
+        "placeholder": "3"
+      }
+    ],
+    "expression": "0.8 * weight / meals",
+    "unit": "grams",
+    "examples": [
+      {
+        "description": "70 kg and 3 meals ⇒ 18.67 g"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Why 0.8 g per kg?",
+        "answer": "It's a common baseline recommendation for adults."
+      },
+      {
+        "question": "Can athletes need more?",
+        "answer": "Yes, adjust the formula if higher intake is desired."
+      }
+    ]
+  },
+  {
+    "slug": "matrix-trace",
+    "title": "Matrix Trace Calculator",
+    "cluster": "Math",
+    "intro": "Sum of the diagonal elements of a 3×3 matrix.",
+    "inputs": [
+      {
+        "name": "a",
+        "label": "a₁₁",
+        "type": "number",
+        "step": "any",
+        "placeholder": "1"
+      },
+      {
+        "name": "b",
+        "label": "a₂₂",
+        "type": "number",
+        "step": "any",
+        "placeholder": "2"
+      },
+      {
+        "name": "c",
+        "label": "a₃₃",
+        "type": "number",
+        "step": "any",
+        "placeholder": "3"
+      }
+    ],
+    "expression": "a + b + c",
+    "examples": [
+      {
+        "description": "[1,2,3] on diagonal ⇒ trace 6"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What is matrix trace?",
+        "answer": "The sum of the elements on the main diagonal of a square matrix."
+      },
+      {
+        "question": "Does trace require square matrices?",
+        "answer": "Yes, trace is only defined for square matrices."
+      }
+    ]
+  },
+  {
+    "slug": "meters-per-second-to-knots",
+    "title": "Meters per Second to Knots",
+    "cluster": "Conversions",
+    "intro": "Convert speed from meters per second to knots.",
+    "inputs": [
+      {
+        "name": "mps",
+        "label": "Speed (m/s)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "10"
+      }
+    ],
+    "expression": "mps * 1.94384",
+    "unit": "knots",
+    "examples": [
+      {
+        "description": "10 m/s ⇒ 19.44 kn"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What is a knot?",
+        "answer": "A nautical mile per hour, commonly used in maritime and aviation."
+      },
+      {
+        "question": "Can I convert knots to m/s?",
+        "answer": "Divide knots by 1.94384 to get meters per second."
+      }
+    ]
+  },
+  {
+    "slug": "unix-timestamp",
+    "title": "Unix Timestamp Calculator",
+    "cluster": "Date & Time",
+    "intro": "Seconds since 1 Jan 1970 for a given date.",
+    "inputs": [
+      {
+        "name": "year",
+        "label": "Year",
+        "type": "number",
+        "step": 1,
+        "placeholder": "2024"
+      },
+      {
+        "name": "month",
+        "label": "Month",
+        "type": "number",
+        "step": 1,
+        "placeholder": "1"
+      },
+      {
+        "name": "day",
+        "label": "Day",
+        "type": "number",
+        "step": 1,
+        "placeholder": "1"
+      }
+    ],
+    "expression": "Date.UTC(year, month-1, day) / 1000",
+    "examples": [
+      {
+        "description": "1970-01-01 ⇒ 0"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What is Unix time?",
+        "answer": "Seconds elapsed since 00:00:00 UTC on 1 January 1970."
+      },
+      {
+        "question": "Does it account for time zones?",
+        "answer": "The calculation uses UTC and ignores local time zones."
+      }
+    ]
+  },
+  {
+    "slug": "presentation-time",
+    "title": "Presentation Time Calculator",
+    "cluster": "education & learning",
+    "intro": "Estimate total presentation time from slides and minutes per slide.",
+    "inputs": [
+      {
+        "name": "slides",
+        "label": "Number of slides",
+        "type": "number",
+        "step": 1,
+        "min": 0,
+        "placeholder": "20"
+      },
+      {
+        "name": "minutes",
+        "label": "Minutes per slide",
+        "type": "number",
+        "step": "any",
+        "min": 0,
+        "placeholder": "2"
+      }
+    ],
+    "expression": "slides * minutes",
+    "unit": "minutes",
+    "examples": [
+      {
+        "description": "20 slides at 2 min ⇒ 40 minutes"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Is this exact?",
+        "answer": "Actual times may vary based on content and pace."
+      },
+      {
+        "question": "Can I use seconds per slide?",
+        "answer": "Enter minutes as a decimal (e.g., 0.5 for 30 seconds)."
+      }
+    ]
+  },
+  {
+    "slug": "escape-velocity",
+    "title": "Escape Velocity Calculator",
+    "cluster": "science & engineering",
+    "intro": "Speed needed to leave a celestial body's gravitational field.",
+    "inputs": [
+      {
+        "name": "mass",
+        "label": "Mass of body (kg)",
+        "type": "number",
+        "step": "any",
+        "min": 0,
+        "placeholder": "5.97e24"
+      },
+      {
+        "name": "radius",
+        "label": "Radius (m)",
+        "type": "number",
+        "step": "any",
+        "min": 0,
+        "placeholder": "6.37e6"
+      }
+    ],
+    "expression": "Math.sqrt(2 * 6.67430e-11 * mass / radius)",
+    "unit": "m/s",
+    "examples": [
+      {
+        "description": "Earth values ⇒ ~11186 m/s"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What constant is used?",
+        "answer": "Gravitational constant G = 6.67430×10⁻¹¹ N·m²/kg²."
+      },
+      {
+        "question": "Does this ignore atmosphere?",
+        "answer": "Yes, it assumes no air resistance."
+      }
+    ]
+  },
+  {
+    "slug": "clock-frequency",
+    "title": "Clock Frequency Calculator",
+    "cluster": "technology",
+    "intro": "Convert clock cycle time to frequency in MHz.",
+    "inputs": [
+      {
+        "name": "cycle",
+        "label": "Cycle time (ns)",
+        "type": "number",
+        "step": "any",
+        "min": 0,
+        "placeholder": "1"
+      }
+    ],
+    "expression": "1000 / cycle",
+    "unit": "MHz",
+    "examples": [
+      {
+        "description": "1 ns ⇒ 1000 MHz"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What is cycle time?",
+        "answer": "Duration of one clock cycle."
+      },
+      {
+        "question": "How to convert to GHz?",
+        "answer": "Divide the MHz result by 1000."
+      }
+    ]
+  },
+  {
+    "slug": "room-perimeter",
+    "title": "Room Perimeter Calculator",
+    "cluster": "home & diy",
+    "intro": "Total distance around a rectangular room.",
+    "inputs": [
+      {
+        "name": "length",
+        "label": "Length",
+        "type": "number",
+        "step": "any",
+        "min": 0,
+        "placeholder": "5"
+      },
+      {
+        "name": "width",
+        "label": "Width",
+        "type": "number",
+        "step": "any",
+        "min": 0,
+        "placeholder": "4"
+      }
+    ],
+    "expression": "2 * (length + width)",
+    "unit": "units",
+    "examples": [
+      {
+        "description": "5 by 4 ⇒ 18"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What units are used?",
+        "answer": "Use any consistent unit such as meters or feet."
+      },
+      {
+        "question": "Does this handle irregular shapes?",
+        "answer": "No, it assumes a rectangular room."
+      }
+    ]
+  },
+  {
+    "slug": "trip-miles-per-day",
+    "title": "Trip Miles Per Day Calculator",
+    "cluster": "lifestyle & travel",
+    "intro": "Average miles to cover each day of a trip.",
+    "inputs": [
+      {
+        "name": "distance",
+        "label": "Total miles",
+        "type": "number",
+        "step": "any",
+        "min": 0,
+        "placeholder": "1000"
+      },
+      {
+        "name": "days",
+        "label": "Days",
+        "type": "number",
+        "step": 1,
+        "min": 1,
+        "placeholder": "5"
+      }
+    ],
+    "expression": "distance / days",
+    "unit": "miles/day",
+    "examples": [
+      {
+        "description": "1000 miles over 5 days ⇒ 200 miles/day"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Does this account for rest days?",
+        "answer": "Enter total travel days excluding rest days for accuracy."
+      },
+      {
+        "question": "Can I use kilometers?",
+        "answer": "Yes, enter kilometers and label the result accordingly."
+      }
+    ]
+  },
+  {
+    "slug": "cost-per-lead",
+    "title": "Cost Per Lead Calculator",
+    "cluster": "web & marketing",
+    "intro": "Marketing spend divided by number of leads generated.",
+    "inputs": [
+      {
+        "name": "spend",
+        "label": "Total spend",
+        "type": "number",
+        "step": "any",
+        "min": 0,
+        "placeholder": "5000"
+      },
+      {
+        "name": "leads",
+        "label": "Leads generated",
+        "type": "number",
+        "step": 1,
+        "min": 1,
+        "placeholder": "200"
+      }
+    ],
+    "expression": "spend / leads",
+    "unit": "cost per lead",
+    "examples": [
+      {
+        "description": "5000 spend for 200 leads ⇒ 25"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What does cost per lead indicate?",
+        "answer": "It shows how much you spend on average to acquire one lead."
+      },
+      {
+        "question": "Is lower better?",
+        "answer": "Yes, a lower cost per lead indicates more efficient marketing."
+      }
+    ]
   }
 ]

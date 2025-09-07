@@ -1,0 +1,31 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Cost Per Lead Calculator"
+description: "Marketing spend divided by number of leads generated."
+updated: "2025-02-14"
+cluster: "web & marketing"
+---
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  slug: "cost-per-lead",
+  title: "Cost Per Lead Calculator",
+  locale: "en",
+  cluster: "web & marketing",
+  intro: "Marketing spend divided by number of leads generated.",
+  unit: "cost per lead",
+  inputs: [
+    { name: "spend", label: "Total spend", type: "number", step: "any", min: 0, placeholder: "5000" },
+    { name: "leads", label: "Leads generated", type: "number", step: 1, min: 1, placeholder: "200" }
+  ],
+  expression: "spend / leads",
+  examples: [
+    { description: "5000 spend for 200 leads ⇒ 25" }
+  ],
+  faqs: [
+    { question: "What does cost per lead indicate?", answer: "It shows how much you spend on average to acquire one lead." },
+    { question: "Is lower better?", answer: "Yes, a lower cost per lead indicates more efficient marketing." }
+  ]
+};
+
+<Calculator {schema} />

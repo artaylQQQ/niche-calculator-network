@@ -1,0 +1,31 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Trip Miles Per Day Calculator"
+description: "Average miles to cover each day of a trip."
+updated: "2025-02-14"
+cluster: "lifestyle & travel"
+---
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  slug: "trip-miles-per-day",
+  title: "Trip Miles Per Day Calculator",
+  locale: "en",
+  cluster: "lifestyle & travel",
+  intro: "Average miles to cover each day of a trip.",
+  unit: "miles/day",
+  inputs: [
+    { name: "distance", label: "Total miles", type: "number", step: "any", min: 0, placeholder: "1000" },
+    { name: "days", label: "Days", type: "number", step: 1, min: 1, placeholder: "5" }
+  ],
+  expression: "distance / days",
+  examples: [
+    { description: "1000 miles over 5 days ⇒ 200 miles/day" }
+  ],
+  faqs: [
+    { question: "Does this account for rest days?", answer: "Enter total travel days excluding rest days for accuracy." },
+    { question: "Can I use kilometers?", answer: "Yes, enter kilometers and label the result accordingly." }
+  ]
+};
+
+<Calculator {schema} />

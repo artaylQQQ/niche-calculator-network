@@ -1,0 +1,31 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Payback Period Calculator"
+description: "Years to recover an initial investment from annual cash inflow."
+updated: "2025-02-14"
+cluster: "Finance"
+---
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  slug: "payback-period",
+  title: "Payback Period Calculator",
+  locale: "en",
+  cluster: "Finance",
+  intro: "Years to recover an initial investment from annual cash inflow.",
+  unit: "years",
+  inputs: [
+    { name: "investment", label: "Initial investment", type: "number", step: "any", min: 0, placeholder: "10000" },
+    { name: "inflow", label: "Annual cash inflow", type: "number", step: "any", min: 0, placeholder: "2500" }
+  ],
+  expression: "investment / inflow",
+  examples: [
+    { description: "10000 investment and 2500 inflow ⇒ 4 years" }
+  ],
+  faqs: [
+    { question: "What is payback period?", answer: "Time needed for cumulative cash inflows to equal the initial investment." },
+    { question: "Does it consider time value of money?", answer: "No, it is a simple measure without discounting." }
+  ]
+};
+
+<Calculator {schema} />

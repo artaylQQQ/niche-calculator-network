@@ -1,0 +1,31 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Rent Affordability Calculator"
+description: "Maximum monthly rent based on income and percentage."
+updated: "2025-02-14"
+cluster: "personal finance & loans"
+---
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  slug: "rent-affordability",
+  title: "Rent Affordability Calculator",
+  locale: "en",
+  cluster: "personal finance & loans",
+  intro: "Maximum monthly rent based on income and percentage.",
+  unit: "currency",
+  inputs: [
+    { name: "income", label: "Monthly income", type: "number", step: "any", min: 0, placeholder: "4000" },
+    { name: "percent", label: "Percent of income", type: "number", step: "any", min: 0, placeholder: "30" }
+  ],
+  expression: "income * percent / 100",
+  examples: [
+    { description: "4000 income at 30% ⇒ 1200 rent" }
+  ],
+  faqs: [
+    { question: "Why 30%?", answer: "Many budgeting guidelines suggest keeping rent around 30% of income." },
+    { question: "Can I use a different percent?", answer: "Yes, enter any percentage that suits your budget." }
+  ]
+};
+
+<Calculator {schema} />

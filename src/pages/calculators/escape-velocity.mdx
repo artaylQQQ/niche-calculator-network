@@ -1,0 +1,31 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Escape Velocity Calculator"
+description: "Speed needed to leave a celestial body's gravitational field."
+updated: "2025-02-14"
+cluster: "science & engineering"
+---
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  slug: "escape-velocity",
+  title: "Escape Velocity Calculator",
+  locale: "en",
+  cluster: "science & engineering",
+  intro: "Speed needed to leave a celestial body's gravitational field.",
+  unit: "m/s",
+  inputs: [
+    { name: "mass", label: "Mass of body (kg)", type: "number", step: "any", min: 0, placeholder: "5.97e24" },
+    { name: "radius", label: "Radius (m)", type: "number", step: "any", min: 0, placeholder: "6.37e6" }
+  ],
+  expression: "Math.sqrt(2 * 6.67430e-11 * mass / radius)",
+  examples: [
+    { description: "Earth values ⇒ ~11186 m/s" }
+  ],
+  faqs: [
+    { question: "What constant is used?", answer: "Gravitational constant G = 6.67430×10⁻¹¹ N·m²/kg²." },
+    { question: "Does this ignore atmosphere?", answer: "Yes, it assumes no air resistance." }
+  ]
+};
+
+<Calculator {schema} />

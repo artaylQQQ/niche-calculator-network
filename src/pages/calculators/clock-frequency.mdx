@@ -1,0 +1,30 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Clock Frequency Calculator"
+description: "Convert clock cycle time to frequency in MHz."
+updated: "2025-02-14"
+cluster: "technology"
+---
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  slug: "clock-frequency",
+  title: "Clock Frequency Calculator",
+  locale: "en",
+  cluster: "technology",
+  intro: "Convert clock cycle time to frequency in MHz.",
+  unit: "MHz",
+  inputs: [
+    { name: "cycle", label: "Cycle time (ns)", type: "number", step: "any", min: 0, placeholder: "1" }
+  ],
+  expression: "1000 / cycle",
+  examples: [
+    { description: "1 ns ⇒ 1000 MHz" }
+  ],
+  faqs: [
+    { question: "What is cycle time?", answer: "Duration of one clock cycle." },
+    { question: "How to convert to GHz?", answer: "Divide the MHz result by 1000." }
+  ]
+};
+
+<Calculator {schema} />

@@ -1,0 +1,31 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Presentation Time Calculator"
+description: "Estimate total presentation time from slides and minutes per slide."
+updated: "2025-02-14"
+cluster: "education & learning"
+---
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  slug: "presentation-time",
+  title: "Presentation Time Calculator",
+  locale: "en",
+  cluster: "education & learning",
+  intro: "Estimate total presentation time from slides and minutes per slide.",
+  unit: "minutes",
+  inputs: [
+    { name: "slides", label: "Number of slides", type: "number", step: 1, min: 0, placeholder: "20" },
+    { name: "minutes", label: "Minutes per slide", type: "number", step: "any", min: 0, placeholder: "2" }
+  ],
+  expression: "slides * minutes",
+  examples: [
+    { description: "20 slides at 2 min ⇒ 40 minutes" }
+  ],
+  faqs: [
+    { question: "Is this exact?", answer: "Actual times may vary based on content and pace." },
+    { question: "Can I use seconds per slide?", answer: "Enter minutes as a decimal (e.g., 0.5 for 30 seconds)." }
+  ]
+};
+
+<Calculator {schema} />

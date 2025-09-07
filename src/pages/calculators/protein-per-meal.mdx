@@ -1,0 +1,31 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Protein Per Meal Calculator"
+description: "Recommended protein grams per meal from body weight."
+updated: "2025-02-14"
+cluster: "Health"
+---
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  slug: "protein-per-meal",
+  title: "Protein Per Meal Calculator",
+  locale: "en",
+  cluster: "Health",
+  intro: "Recommended protein grams per meal from body weight.",
+  unit: "grams",
+  inputs: [
+    { name: "weight", label: "Body weight (kg)", type: "number", step: "any", min: 0, placeholder: "70" },
+    { name: "meals", label: "Meals per day", type: "number", step: 1, min: 1, placeholder: "3" }
+  ],
+  expression: "0.8 * weight / meals",
+  examples: [
+    { description: "70 kg and 3 meals ⇒ 18.67 g" }
+  ],
+  faqs: [
+    { question: "Why 0.8 g per kg?", answer: "It's a common baseline recommendation for adults." },
+    { question: "Can athletes need more?", answer: "Yes, adjust the formula if higher intake is desired." }
+  ]
+};
+
+<Calculator {schema} />

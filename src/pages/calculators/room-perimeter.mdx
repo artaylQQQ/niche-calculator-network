@@ -1,0 +1,31 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Room Perimeter Calculator"
+description: "Total distance around a rectangular room."
+updated: "2025-02-14"
+cluster: "home & diy"
+---
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  slug: "room-perimeter",
+  title: "Room Perimeter Calculator",
+  locale: "en",
+  cluster: "home & diy",
+  intro: "Total distance around a rectangular room.",
+  unit: "units",
+  inputs: [
+    { name: "length", label: "Length", type: "number", step: "any", min: 0, placeholder: "5" },
+    { name: "width", label: "Width", type: "number", step: "any", min: 0, placeholder: "4" }
+  ],
+  expression: "2 * (length + width)",
+  examples: [
+    { description: "5 by 4 ⇒ 18" }
+  ],
+  faqs: [
+    { question: "What units are used?", answer: "Use any consistent unit such as meters or feet." },
+    { question: "Does this handle irregular shapes?", answer: "No, it assumes a rectangular room." }
+  ]
+};
+
+<Calculator {schema} />

@@ -1,0 +1,31 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Unix Timestamp Calculator"
+description: "Seconds since 1 Jan 1970 for a given date."
+updated: "2025-02-14"
+cluster: "Date & Time"
+---
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  slug: "unix-timestamp",
+  title: "Unix Timestamp Calculator",
+  locale: "en",
+  cluster: "Date & Time",
+  intro: "Seconds since 1 Jan 1970 for a given date.",
+  inputs: [
+    { name: "year", label: "Year", type: "number", step: 1, placeholder: "2024" },
+    { name: "month", label: "Month", type: "number", step: 1, placeholder: "1" },
+    { name: "day", label: "Day", type: "number", step: 1, placeholder: "1" }
+  ],
+  expression: "Date.UTC(year, month-1, day) / 1000",
+  examples: [
+    { description: "1970-01-01 ⇒ 0" }
+  ],
+  faqs: [
+    { question: "What is Unix time?", answer: "Seconds elapsed since 00:00:00 UTC on 1 January 1970." },
+    { question: "Does it account for time zones?", answer: "The calculation uses UTC and ignores local time zones." }
+  ]
+};
+
+<Calculator {schema} />

@@ -1,0 +1,31 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Matrix Trace Calculator"
+description: "Sum of the diagonal elements of a 3×3 matrix."
+updated: "2025-02-14"
+cluster: "Math"
+---
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  slug: "matrix-trace",
+  title: "Matrix Trace Calculator",
+  locale: "en",
+  cluster: "Math",
+  intro: "Sum of the diagonal elements of a 3×3 matrix.",
+  inputs: [
+    { name: "a", label: "a₁₁", type: "number", step: "any", placeholder: "1" },
+    { name: "b", label: "a₂₂", type: "number", step: "any", placeholder: "2" },
+    { name: "c", label: "a₃₃", type: "number", step: "any", placeholder: "3" }
+  ],
+  expression: "a + b + c",
+  examples: [
+    { description: "[1,2,3] on diagonal ⇒ trace 6" }
+  ],
+  faqs: [
+    { question: "What is matrix trace?", answer: "The sum of the elements on the main diagonal of a square matrix." },
+    { question: "Does trace require square matrices?", answer: "Yes, trace is only defined for square matrices." }
+  ]
+};
+
+<Calculator {schema} />
