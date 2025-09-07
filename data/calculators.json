@@ -13113,5 +13113,617 @@
         "answer": "Include usable space."
       }
     ]
+  },
+  {
+    "slug": "gross-profit-margin",
+    "title": "Gross Profit Margin Calculator",
+    "cluster": "Finance & Business",
+    "description": "Compute gross profit margin percentage from revenue and COGS.",
+    "intro": "Calculate gross profit margin percentage from revenue and cost of goods sold.",
+    "inputs": [
+      {
+        "name": "revenue",
+        "label": "Revenue ($)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "20000"
+      },
+      {
+        "name": "cogs",
+        "label": "Cost of goods sold ($)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "12000"
+      }
+    ],
+    "expression": "(revenue - cogs) / revenue * 100",
+    "unit": "%",
+    "examples": [
+      {
+        "description": "$20,000 revenue, $12,000 COGS ⇒ 40%"
+      },
+      {
+        "description": "$8,000 revenue, $4,000 COGS ⇒ 50%"
+      },
+      {
+        "description": "$1,000 revenue, $800 COGS ⇒ 20%"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What is gross profit margin?",
+        "answer": "It's the percentage of revenue retained after accounting for the cost of goods sold."
+      },
+      {
+        "question": "Can margin exceed 100%?",
+        "answer": "No, the maximum margin is below 100% because COGS cannot be negative."
+      },
+      {
+        "question": "Why use revenue instead of net sales?",
+        "answer": "Gross margin focuses on revenue before other expenses."
+      }
+    ],
+    "disclaimer": "For general financial estimates only."
+  },
+  {
+    "slug": "down-payment-amount",
+    "title": "Down Payment Calculator",
+    "cluster": "Personal Finance & Loans",
+    "description": "Determine the required down payment from purchase price and percentage.",
+    "intro": "Calculate the upfront amount needed for a purchase based on price and down payment percentage.",
+    "inputs": [
+      {
+        "name": "price",
+        "label": "Purchase price ($)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "300000"
+      },
+      {
+        "name": "percent",
+        "label": "Down payment (%)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "20"
+      }
+    ],
+    "expression": "price * (percent / 100)",
+    "unit": "USD",
+    "examples": [
+      {
+        "description": "$300,000 price at 20% ⇒ $60,000"
+      },
+      {
+        "description": "$20,000 price at 10% ⇒ $2,000"
+      },
+      {
+        "description": "$15,000 price at 15% ⇒ $2,250"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Is the loan amount price minus down payment?",
+        "answer": "Yes, subtract the down payment from the purchase price to get the loan amount."
+      },
+      {
+        "question": "Can the percentage be zero?",
+        "answer": "Yes, but many lenders require some down payment."
+      },
+      {
+        "question": "Are closing costs included?",
+        "answer": "No, this only calculates the down payment itself."
+      }
+    ],
+    "disclaimer": "Consult lenders for exact requirements."
+  },
+  {
+    "slug": "vo2-max-estimate",
+    "title": "VO2 Max Estimate",
+    "cluster": "Health & Fitness",
+    "description": "Estimate aerobic capacity from age and resting heart rate.",
+    "intro": "Estimate maximal oxygen uptake using age and resting heart rate.",
+    "inputs": [
+      {
+        "name": "age",
+        "label": "Age (years)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "30"
+      },
+      {
+        "name": "rest",
+        "label": "Resting heart rate (bpm)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "60"
+      }
+    ],
+    "expression": "15 * ((220 - age) / rest)",
+    "unit": "ml/kg/min",
+    "examples": [
+      {
+        "description": "Age 30, 60 bpm ⇒ 47.5 ml/kg/min"
+      },
+      {
+        "description": "Age 40, 70 bpm ⇒ 38.6 ml/kg/min"
+      },
+      {
+        "description": "Age 25, 55 bpm ⇒ 53.6 ml/kg/min"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Is this formula exact?",
+        "answer": "No, it provides a rough estimate of VO2 max."
+      },
+      {
+        "question": "Do fitness levels affect results?",
+        "answer": "Yes, trained athletes may have higher actual VO2 max."
+      },
+      {
+        "question": "What units are used?",
+        "answer": "Milliliters of oxygen per kilogram per minute."
+      }
+    ],
+    "disclaimer": "Informational use only; not medical advice."
+  },
+  {
+    "slug": "coefficient-of-variation",
+    "title": "Coefficient of Variation Calculator",
+    "cluster": "Math & Statistics",
+    "description": "Measure relative variability from mean and standard deviation.",
+    "intro": "Calculate the coefficient of variation (CV) to compare variability across datasets.",
+    "inputs": [
+      {
+        "name": "sd",
+        "label": "Standard deviation",
+        "type": "number",
+        "step": "any",
+        "placeholder": "5"
+      },
+      {
+        "name": "mean",
+        "label": "Mean",
+        "type": "number",
+        "step": "any",
+        "placeholder": "50"
+      }
+    ],
+    "expression": "sd / mean * 100",
+    "unit": "%",
+    "examples": [
+      {
+        "description": "SD 5, mean 50 ⇒ 10%"
+      },
+      {
+        "description": "SD 4, mean 80 ⇒ 5%"
+      },
+      {
+        "description": "SD 3, mean 10 ⇒ 30%"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What does CV show?",
+        "answer": "CV expresses standard deviation as a percentage of the mean."
+      },
+      {
+        "question": "Can mean be zero?",
+        "answer": "No, CV is undefined when the mean is zero."
+      },
+      {
+        "question": "Is the result always a percentage?",
+        "answer": "Yes, CV is typically expressed as a percent."
+      }
+    ],
+    "disclaimer": "Use alongside other statistics for full analysis."
+  },
+  {
+    "slug": "amp-hours-to-watt-hours",
+    "title": "Amp-hours to Watt-hours Converter",
+    "cluster": "Conversions & Units",
+    "description": "Convert battery capacity from amp-hours and voltage to watt-hours.",
+    "intro": "Convert a battery's capacity in amp-hours to energy in watt-hours using its voltage.",
+    "inputs": [
+      {
+        "name": "ah",
+        "label": "Capacity (Ah)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "10"
+      },
+      {
+        "name": "volts",
+        "label": "Voltage (V)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "12"
+      }
+    ],
+    "expression": "ah * volts",
+    "unit": "Wh",
+    "examples": [
+      {
+        "description": "10 Ah at 12 V ⇒ 120 Wh"
+      },
+      {
+        "description": "5 Ah at 24 V ⇒ 120 Wh"
+      },
+      {
+        "description": "2 Ah at 3.7 V ⇒ 7.4 Wh"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Does this assume constant voltage?",
+        "answer": "Yes, voltage is treated as constant for the calculation."
+      },
+      {
+        "question": "Can I input mAh?",
+        "answer": "Divide mAh by 1000 to convert to Ah first."
+      },
+      {
+        "question": "Is efficiency considered?",
+        "answer": "No, this shows theoretical energy only."
+      }
+    ],
+    "disclaimer": "Actual usable energy depends on discharge characteristics."
+  },
+  {
+    "slug": "time-to-decimal-hours",
+    "title": "Time to Decimal Hours",
+    "cluster": "Date & Time",
+    "description": "Convert hours and minutes into decimal hours.",
+    "intro": "Convert a time duration of hours and minutes to decimal hours for timesheets or billing.",
+    "inputs": [
+      {
+        "name": "hrs",
+        "label": "Hours",
+        "type": "number",
+        "step": "any",
+        "placeholder": "2"
+      },
+      {
+        "name": "mins",
+        "label": "Minutes",
+        "type": "number",
+        "step": "any",
+        "placeholder": "30"
+      }
+    ],
+    "expression": "hrs + mins / 60",
+    "unit": "hours",
+    "examples": [
+      {
+        "description": "2 h 30 m ⇒ 2.5 hours"
+      },
+      {
+        "description": "1 h 45 m ⇒ 1.75 hours"
+      },
+      {
+        "description": "0 h 15 m ⇒ 0.25 hours"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Can minutes exceed 59?",
+        "answer": "Yes, any number of minutes will be converted proportionally."
+      },
+      {
+        "question": "Does it handle negative values?",
+        "answer": "No, enter positive durations only."
+      },
+      {
+        "question": "Why use decimal hours?",
+        "answer": "Decimal hours simplify payroll and billing calculations."
+      }
+    ],
+    "disclaimer": "Round results according to workplace policy."
+  },
+  {
+    "slug": "reading-pace-planner",
+    "title": "Reading Pace Planner",
+    "cluster": "Education & Learning",
+    "description": "Set a daily page goal to finish a book on time.",
+    "intro": "Plan how many pages to read each day to complete a book within a target timeframe.",
+    "inputs": [
+      {
+        "name": "pages",
+        "label": "Total pages",
+        "type": "number",
+        "step": "any",
+        "placeholder": "300"
+      },
+      {
+        "name": "days",
+        "label": "Days to finish",
+        "type": "number",
+        "step": "any",
+        "placeholder": "30"
+      }
+    ],
+    "expression": "pages / days",
+    "unit": "pages/day",
+    "examples": [
+      {
+        "description": "300 pages in 30 days ⇒ 10 pages/day"
+      },
+      {
+        "description": "150 pages in 5 days ⇒ 30 pages/day"
+      },
+      {
+        "description": "500 pages in 20 days ⇒ 25 pages/day"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Can days be fractional?",
+        "answer": "Yes, decimals represent partial days."
+      },
+      {
+        "question": "Does it account for rest days?",
+        "answer": "No, it assumes reading every day."
+      },
+      {
+        "question": "What if days is zero?",
+        "answer": "Enter a positive number of days."
+      }
+    ],
+    "disclaimer": "Adjust goals based on your schedule and reading speed."
+  },
+  {
+    "slug": "radioactive-decay-remaining",
+    "title": "Radioactive Decay Remaining",
+    "cluster": "Science & Engineering",
+    "description": "Estimate remaining quantity after radioactive decay.",
+    "intro": "Estimate how much of a radioactive substance remains after a given time using its half-life.",
+    "inputs": [
+      {
+        "name": "initial",
+        "label": "Initial amount",
+        "type": "number",
+        "step": "any",
+        "placeholder": "100"
+      },
+      {
+        "name": "half",
+        "label": "Half-life",
+        "type": "number",
+        "step": "any",
+        "placeholder": "5"
+      },
+      {
+        "name": "time",
+        "label": "Elapsed time",
+        "type": "number",
+        "step": "any",
+        "placeholder": "5"
+      }
+    ],
+    "expression": "initial * (0.5 ** (time / half))",
+    "unit": "g",
+    "examples": [
+      {
+        "description": "100 g with 5 y half-life after 5 y ⇒ 50 g"
+      },
+      {
+        "description": "80 g with 2 y half-life after 6 y ⇒ 10 g"
+      },
+      {
+        "description": "1 g with 3 d half-life after 9 d ⇒ 0.125 g"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Must time and half-life use same units?",
+        "answer": "Yes, both values must be in the same unit."
+      },
+      {
+        "question": "Does environment affect decay?",
+        "answer": "No, decay is constant regardless of external conditions."
+      },
+      {
+        "question": "What if time is zero?",
+        "answer": "The remaining amount equals the initial quantity."
+      }
+    ],
+    "disclaimer": "Simplified model; consult physics texts for detailed decay chains."
+  },
+  {
+    "slug": "ipv6-subnet-address-count",
+    "title": "IPv6 Subnet Address Count",
+    "cluster": "Technology & Coding",
+    "description": "Total addresses available for an IPv6 prefix length.",
+    "intro": "Determine how many IPv6 addresses are contained in a subnet given its prefix length.",
+    "inputs": [
+      {
+        "name": "prefix",
+        "label": "Prefix length",
+        "type": "number",
+        "step": 1,
+        "placeholder": "64"
+      }
+    ],
+    "expression": "2 ** (128 - prefix)",
+    "unit": "addresses",
+    "examples": [
+      {
+        "description": "/64 ⇒ 18,446,744,073,709,551,616 addresses"
+      },
+      {
+        "description": "/48 ⇒ 1,208,925,819,614,629,174,706,176 addresses"
+      },
+      {
+        "description": "/32 ⇒ 79,228,162,514,264,337,593,543,950,336 addresses"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Why are the numbers so large?",
+        "answer": "IPv6 uses 128-bit addresses, yielding vast address spaces."
+      },
+      {
+        "question": "Can prefix exceed 128?",
+        "answer": "No, valid prefixes range from 0 to 128."
+      },
+      {
+        "question": "Are reserved addresses included?",
+        "answer": "Yes, this counts all addresses in the range."
+      }
+    ],
+    "disclaimer": "Theoretical counts; practical allocations may differ."
+  },
+  {
+    "slug": "shelf-load-capacity",
+    "title": "Shelf Load Capacity",
+    "cluster": "Home & DIY",
+    "description": "Total weight a shelving unit can hold.",
+    "intro": "Estimate the total load a shelving unit can support based on per-shelf capacity and shelf count.",
+    "inputs": [
+      {
+        "name": "capacity",
+        "label": "Capacity per shelf (kg)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "50"
+      },
+      {
+        "name": "count",
+        "label": "Number of shelves",
+        "type": "number",
+        "step": 1,
+        "placeholder": "4"
+      }
+    ],
+    "expression": "capacity * count",
+    "unit": "kg",
+    "examples": [
+      {
+        "description": "50 kg per shelf × 4 shelves ⇒ 200 kg"
+      },
+      {
+        "description": "30 kg per shelf × 5 shelves ⇒ 150 kg"
+      },
+      {
+        "description": "100 kg per shelf × 3 shelves ⇒ 300 kg"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Does this assume even weight distribution?",
+        "answer": "Yes, weight should be spread evenly across shelves."
+      },
+      {
+        "question": "Can I mix units?",
+        "answer": "Use the same unit for capacity and desired result."
+      },
+      {
+        "question": "Is a safety factor included?",
+        "answer": "No, consider a safety margin for real use."
+      }
+    ],
+    "disclaimer": "Always follow manufacturer load ratings."
+  },
+  {
+    "slug": "road-trip-fuel-stops",
+    "title": "Road Trip Fuel Stops",
+    "cluster": "Lifestyle & Travel",
+    "description": "Estimate refueling stops for a trip based on range.",
+    "intro": "Estimate how many refueling stops are needed on a road trip when starting with a full tank.",
+    "inputs": [
+      {
+        "name": "distance",
+        "label": "Trip distance (km)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "800"
+      },
+      {
+        "name": "range",
+        "label": "Vehicle range per tank (km)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "400"
+      }
+    ],
+    "expression": "Math.max(0, Math.ceil(distance / range) - 1)",
+    "unit": "stops",
+    "examples": [
+      {
+        "description": "800 km trip, 400 km range ⇒ 1 stop"
+      },
+      {
+        "description": "1500 km trip, 500 km range ⇒ 2 stops"
+      },
+      {
+        "description": "300 km trip, 600 km range ⇒ 0 stops"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Does this assume starting with a full tank?",
+        "answer": "Yes, the first leg uses the initial fuel."
+      },
+      {
+        "question": "Is reserve fuel considered?",
+        "answer": "No, plan additional stops if you need a buffer."
+      },
+      {
+        "question": "Can driving style change the result?",
+        "answer": "Yes, real-world range varies with conditions."
+      }
+    ],
+    "disclaimer": "Always account for traffic and fuel availability."
+  },
+  {
+    "slug": "conversion-rate",
+    "title": "Conversion Rate Calculator",
+    "cluster": "Web & Marketing",
+    "description": "Calculate conversion rate from visitor and action counts.",
+    "intro": "Determine the percentage of visitors who complete a desired action such as a purchase or signup.",
+    "inputs": [
+      {
+        "name": "conversions",
+        "label": "Conversions",
+        "type": "number",
+        "step": "any",
+        "placeholder": "50"
+      },
+      {
+        "name": "visitors",
+        "label": "Visitors",
+        "type": "number",
+        "step": "any",
+        "placeholder": "1000"
+      }
+    ],
+    "expression": "(conversions / visitors) * 100",
+    "unit": "%",
+    "examples": [
+      {
+        "description": "50 conversions, 1000 visitors ⇒ 5%"
+      },
+      {
+        "description": "200 conversions, 4000 visitors ⇒ 5%"
+      },
+      {
+        "description": "120 conversions, 1500 visitors ⇒ 8%"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "How is this different from click-through rate?",
+        "answer": "Conversion rate measures completed actions, not just clicks."
+      },
+      {
+        "question": "Can visitors be zero?",
+        "answer": "No, visitors must be greater than zero."
+      },
+      {
+        "question": "Is the result a percentage?",
+        "answer": "Yes, multiply by 100 to express as percent."
+      }
+    ],
+    "disclaimer": "Use accurate analytics data for business decisions."
   }
 ]

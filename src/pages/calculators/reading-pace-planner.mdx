@@ -1,0 +1,36 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Reading Pace Planner"
+description: "Set a daily page goal to finish a book on time."
+date: 2025-05-11
+updated: 2025-05-11
+cluster: "Education & Learning"
+---
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "reading-pace-planner",
+  "title": "Reading Pace Planner",
+  "locale": "en",
+  "inputs": [
+    { "name": "pages", "label": "Total pages", "type": "number", "step": "any", "placeholder": "300" },
+    { "name": "days", "label": "Days to finish", "type": "number", "step": "any", "placeholder": "30" }
+  ],
+  "expression": "pages / days",
+  "unit": "pages/day",
+  "intro": "Plan how many pages to read each day to complete a book within a target timeframe.",
+  "examples": [
+    { "description": "300 pages in 30 days ⇒ 10 pages/day" },
+    { "description": "150 pages in 5 days ⇒ 30 pages/day" },
+    { "description": "500 pages in 20 days ⇒ 25 pages/day" }
+  ],
+  "faqs": [
+    { "question": "Can days be fractional?", "answer": "Yes, decimals represent partial days." },
+    { "question": "Does it account for rest days?", "answer": "No, it assumes reading every day." },
+    { "question": "What if days is zero?", "answer": "Enter a positive number of days." }
+  ],
+  "disclaimer": "Adjust goals based on your schedule and reading speed.",
+  "cluster": "Education & Learning"
+}
+
+<Calculator schema={schema} />
