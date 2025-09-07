@@ -1,0 +1,60 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Operating Profit Margin Calculator"
+description: "Calculate operating profit margin from operating income and revenue."
+updated: "2025-09-07"
+cluster: "Finance"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "operating-profit-margin",
+  title: "Operating Profit Margin Calculator",
+  locale: "en",
+  cluster: "Finance",
+  unit: "%",
+  intro:
+    "Determine the percentage of revenue remaining after covering operating expenses.",
+  inputs: [
+    {
+      name: "income",
+      label: "Operating income",
+      type: "number",
+      step: "any",
+      placeholder: "50000",
+    },
+    {
+      name: "revenue",
+      label: "Revenue",
+      type: "number",
+      step: "any",
+      placeholder: "200000",
+    },
+  ],
+  expression: "(income / revenue) * 100",
+  examples: [
+    { description: "$50,000 income and $200,000 revenue ⇒ 25%" },
+    { description: "$120,000 income and $600,000 revenue ⇒ 20%" },
+    { description: "$80,000 income and $400,000 revenue ⇒ 20%" },
+  ],
+  faqs: [
+    {
+      question: "What is operating profit margin?",
+      answer:
+        "It shows how efficiently a company turns sales into operating profit.",
+    },
+    {
+      question: "Can the margin be negative?",
+      answer: "Yes, if operating expenses exceed revenue.",
+    },
+    {
+      question: "Does this include taxes?",
+      answer: "No, it only uses operating income before interest and taxes.",
+    },
+  ],
+  disclaimer:
+    "This calculator provides a simplified estimate and ignores non-operating items.",
+};
+
+<Calculator schema={schema} />

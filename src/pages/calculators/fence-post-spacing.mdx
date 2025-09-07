@@ -1,0 +1,59 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Fence Post Spacing"
+description: "Determine how many fence posts are needed for a given length."
+updated: "2025-09-07"
+cluster: "home & diy"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "fence-post-spacing",
+  title: "Fence Post Spacing",
+  locale: "en",
+  cluster: "home & diy",
+  unit: "posts",
+  intro:
+    "Estimate the number of fence posts required based on fence length and desired spacing.",
+  inputs: [
+    {
+      name: "length",
+      label: "Fence length (m)",
+      type: "number",
+      step: "any",
+      placeholder: "30",
+    },
+    {
+      name: "spacing",
+      label: "Post spacing (m)",
+      type: "number",
+      step: "any",
+      placeholder: "2.5",
+    },
+  ],
+  expression: "Math.floor(length / spacing) + 1",
+  examples: [
+    { description: "30 m fence, 2.5 m spacing ⇒ 13 posts" },
+    { description: "20 m fence, 3 m spacing ⇒ 7 posts" },
+    { description: "25 m fence, 2 m spacing ⇒ 13 posts" },
+  ],
+  faqs: [
+    {
+      question: "Should I add extra posts?",
+      answer: "Include additional posts for gates or corners as needed.",
+    },
+    {
+      question: "Does this account for post width?",
+      answer: "No, spacing is measured center-to-center.",
+    },
+    {
+      question: "What if the fence length isn't a multiple of spacing?",
+      answer: "The last segment may be shorter; adjust spacing if desired.",
+    },
+  ],
+  disclaimer:
+    "Verify local building codes and structural requirements before construction.",
+};
+
+<Calculator schema={schema} />

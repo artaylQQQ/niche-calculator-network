@@ -13725,5 +13725,607 @@
       }
     ],
     "disclaimer": "Use accurate analytics data for business decisions."
+  },
+  {
+    "slug": "operating-profit-margin",
+    "title": "Operating Profit Margin Calculator",
+    "cluster": "Finance",
+    "description": "Calculate operating profit margin from operating income and revenue.",
+    "intro": "Determine the percentage of revenue remaining after covering operating expenses.",
+    "inputs": [
+      {
+        "name": "income",
+        "label": "Operating income",
+        "type": "number",
+        "step": "any",
+        "placeholder": "50000"
+      },
+      {
+        "name": "revenue",
+        "label": "Revenue",
+        "type": "number",
+        "step": "any",
+        "placeholder": "200000"
+      }
+    ],
+    "expression": "(income / revenue) * 100",
+    "unit": "%",
+    "examples": [
+      {
+        "description": "$50,000 income and $200,000 revenue ⇒ 25%"
+      },
+      {
+        "description": "$120,000 income and $600,000 revenue ⇒ 20%"
+      },
+      {
+        "description": "$80,000 income and $400,000 revenue ⇒ 20%"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What is operating profit margin?",
+        "answer": "It shows how efficiently a company turns sales into operating profit."
+      },
+      {
+        "question": "Can the margin be negative?",
+        "answer": "Yes, if operating expenses exceed revenue."
+      },
+      {
+        "question": "Does this include taxes?",
+        "answer": "No, it only uses operating income before interest and taxes."
+      }
+    ],
+    "disclaimer": "This calculator provides a simplified estimate and ignores non-operating items."
+  },
+  {
+    "slug": "emergency-fund-target",
+    "title": "Emergency Fund Target",
+    "cluster": "personal finance & loans",
+    "description": "Estimate how much to save for an emergency fund.",
+    "intro": "Find the recommended emergency fund size based on monthly expenses and months of coverage.",
+    "inputs": [
+      {
+        "name": "monthly",
+        "label": "Monthly expenses (USD)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "2000"
+      },
+      {
+        "name": "months",
+        "label": "Months of coverage",
+        "type": "number",
+        "step": "any",
+        "placeholder": "3"
+      }
+    ],
+    "expression": "monthly * months",
+    "unit": "USD",
+    "examples": [
+      {
+        "description": "$2,000 expenses for 3 months ⇒ $6,000"
+      },
+      {
+        "description": "$2,500 expenses for 6 months ⇒ $15,000"
+      },
+      {
+        "description": "$1,800 expenses for 4 months ⇒ $7,200"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What is an emergency fund?",
+        "answer": "Savings set aside for unexpected expenses or loss of income."
+      },
+      {
+        "question": "How many months should I cover?",
+        "answer": "Many planners suggest 3 to 6 months of essential expenses."
+      },
+      {
+        "question": "Does this include investment returns?",
+        "answer": "No, it simply multiplies expenses by months."
+      }
+    ],
+    "disclaimer": "This is general guidance; personal situations may vary."
+  },
+  {
+    "slug": "weight-loss-time",
+    "title": "Weight Loss Time",
+    "cluster": "health",
+    "description": "Estimate days to reach a weight loss goal based on daily calorie deficit.",
+    "intro": "Approximate how many days it may take to lose a target weight given a daily calorie deficit (3500 calories per pound).",
+    "inputs": [
+      {
+        "name": "goal",
+        "label": "Weight loss goal (lb)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "10"
+      },
+      {
+        "name": "deficit",
+        "label": "Daily calorie deficit",
+        "type": "number",
+        "step": "any",
+        "placeholder": "500"
+      }
+    ],
+    "expression": "(goal * 3500) / deficit",
+    "unit": "days",
+    "examples": [
+      {
+        "description": "10 lb goal with 500 calorie deficit ⇒ 70 days"
+      },
+      {
+        "description": "5 lb goal with 750 calorie deficit ⇒ 23.33 days"
+      },
+      {
+        "description": "15 lb goal with 600 calorie deficit ⇒ 87.5 days"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Why 3500 calories per pound?",
+        "answer": "It's a common estimate of the energy content of one pound of body fat."
+      },
+      {
+        "question": "Is this exact?",
+        "answer": "No, weight loss varies with metabolism and activity."
+      },
+      {
+        "question": "Can deficit be zero?",
+        "answer": "No, a deficit greater than zero is required to estimate time."
+      }
+    ],
+    "disclaimer": "This is an approximation; consult a healthcare professional for personalized advice."
+  },
+  {
+    "slug": "harmonic-mean",
+    "title": "Harmonic Mean Calculator",
+    "cluster": "Math",
+    "description": "Compute the harmonic mean of three numbers.",
+    "intro": "Find the harmonic mean of three positive numbers, useful for averaging rates.",
+    "inputs": [
+      {
+        "name": "a",
+        "label": "Value 1",
+        "type": "number",
+        "step": "any",
+        "placeholder": "1"
+      },
+      {
+        "name": "b",
+        "label": "Value 2",
+        "type": "number",
+        "step": "any",
+        "placeholder": "2"
+      },
+      {
+        "name": "c",
+        "label": "Value 3",
+        "type": "number",
+        "step": "any",
+        "placeholder": "4"
+      }
+    ],
+    "expression": "3 / (1/a + 1/b + 1/c)",
+    "examples": [
+      {
+        "description": "1, 2, 4 ⇒ 1.71"
+      },
+      {
+        "description": "10, 15, 20 ⇒ 14.40"
+      },
+      {
+        "description": "5, 7, 9 ⇒ 6.77"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "When is the harmonic mean used?",
+        "answer": "It averages rates like speed or ratios."
+      },
+      {
+        "question": "Can values be zero?",
+        "answer": "No, all inputs must be positive numbers."
+      },
+      {
+        "question": "Is order important?",
+        "answer": "No, the harmonic mean is symmetric."
+      }
+    ],
+    "disclaimer": "For positive numbers only; using zero or negatives yields invalid results."
+  },
+  {
+    "slug": "final-exam-score-needed",
+    "title": "Final Exam Score Needed",
+    "cluster": "education",
+    "description": "Determine the score required on a final exam to reach a target overall grade.",
+    "intro": "Calculate the minimum final exam score needed to achieve a desired course grade.",
+    "inputs": [
+      {
+        "name": "current",
+        "label": "Current grade (%)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "85"
+      },
+      {
+        "name": "final_weight",
+        "label": "Final exam weight (%)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "40"
+      },
+      {
+        "name": "target",
+        "label": "Desired overall grade (%)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "90"
+      }
+    ],
+    "expression": "(target - current * (1 - final_weight/100)) / (final_weight/100)",
+    "unit": "%",
+    "examples": [
+      {
+        "description": "Current 85%, final 40%, target 90% ⇒ 97.5%"
+      },
+      {
+        "description": "Current 78%, final 30%, target 80% ⇒ 86.67%"
+      },
+      {
+        "description": "Current 92%, final 50%, target 95% ⇒ 98%"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Can this result exceed 100%?",
+        "answer": "Yes, meaning the target is unattainable with the given scores."
+      },
+      {
+        "question": "What if my current grade changes?",
+        "answer": "Update the current grade to see the new required final score."
+      },
+      {
+        "question": "Does it account for extra credit?",
+        "answer": "No, extra credit would need to be added to the current grade."
+      }
+    ],
+    "disclaimer": "Check your course syllabus for exact grading policies."
+  },
+  {
+    "slug": "hydrostatic-pressure",
+    "title": "Hydrostatic Pressure Calculator",
+    "cluster": "science",
+    "description": "Calculate pressure at a depth in a fluid.",
+    "intro": "Determine the pressure exerted by a static fluid at a given depth using ρ g h.",
+    "inputs": [
+      {
+        "name": "density",
+        "label": "Fluid density (kg/m³)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "1000"
+      },
+      {
+        "name": "depth",
+        "label": "Depth (m)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "5"
+      }
+    ],
+    "expression": "density * 9.81 * depth",
+    "unit": "Pa",
+    "examples": [
+      {
+        "description": "1000 kg/m³ at 5 m ⇒ 49,050 Pa"
+      },
+      {
+        "description": "1025 kg/m³ at 10 m ⇒ 100,552.5 Pa"
+      },
+      {
+        "description": "850 kg/m³ at 3 m ⇒ 25,011.5 Pa"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What constant is used for gravity?",
+        "answer": "This calculation uses 9.81 m/s² for gravitational acceleration."
+      },
+      {
+        "question": "Does it include atmospheric pressure?",
+        "answer": "No, add atmospheric pressure separately for absolute pressure."
+      },
+      {
+        "question": "Is the density fixed?",
+        "answer": "Enter the appropriate density for the fluid in question."
+      }
+    ],
+    "disclaimer": "Assumes uniform fluid density and ignores temperature variations."
+  },
+  {
+    "slug": "binary-to-decimal",
+    "title": "Binary to Decimal Converter",
+    "cluster": "technology",
+    "description": "Convert a binary number to decimal.",
+    "intro": "Translate a binary string into its decimal equivalent.",
+    "inputs": [
+      {
+        "name": "binary",
+        "label": "Binary number",
+        "type": "text",
+        "placeholder": "1010"
+      }
+    ],
+    "expression": "parseInt(binary, 2)",
+    "examples": [
+      {
+        "description": "1010 ⇒ 10"
+      },
+      {
+        "description": "11111111 ⇒ 255"
+      },
+      {
+        "description": "100000 ⇒ 32"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Can I include spaces?",
+        "answer": "No, enter the binary digits without spaces."
+      },
+      {
+        "question": "What digits are allowed?",
+        "answer": "Only 0 and 1 are valid in a binary number."
+      },
+      {
+        "question": "Does it handle large numbers?",
+        "answer": "Yes, but very long binaries may exceed JavaScript precision."
+      }
+    ],
+    "disclaimer": "For educational purposes; verify critical conversions independently."
+  },
+  {
+    "slug": "fence-post-spacing",
+    "title": "Fence Post Spacing",
+    "cluster": "home & diy",
+    "description": "Determine how many fence posts are needed for a given length.",
+    "intro": "Estimate the number of fence posts required based on fence length and desired spacing.",
+    "inputs": [
+      {
+        "name": "length",
+        "label": "Fence length (m)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "30"
+      },
+      {
+        "name": "spacing",
+        "label": "Post spacing (m)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "2.5"
+      }
+    ],
+    "expression": "Math.floor(length / spacing) + 1",
+    "unit": "posts",
+    "examples": [
+      {
+        "description": "30 m fence, 2.5 m spacing ⇒ 13 posts"
+      },
+      {
+        "description": "20 m fence, 3 m spacing ⇒ 7 posts"
+      },
+      {
+        "description": "25 m fence, 2 m spacing ⇒ 13 posts"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Should I add extra posts?",
+        "answer": "Include additional posts for gates or corners as needed."
+      },
+      {
+        "question": "Does this account for post width?",
+        "answer": "No, spacing is measured center-to-center."
+      },
+      {
+        "question": "What if the fence length isn't a multiple of spacing?",
+        "answer": "The last segment may be shorter; adjust spacing if desired."
+      }
+    ],
+    "disclaimer": "Verify local building codes and structural requirements before construction."
+  },
+  {
+    "slug": "vacation-budget-per-day",
+    "title": "Vacation Budget Per Day",
+    "cluster": "lifestyle & travel",
+    "description": "Divide your trip budget by days to plan daily spending.",
+    "intro": "Plan how much you can spend each day of your vacation based on total budget and trip length.",
+    "inputs": [
+      {
+        "name": "budget",
+        "label": "Total budget (USD)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "2000"
+      },
+      {
+        "name": "days",
+        "label": "Number of days",
+        "type": "number",
+        "step": "any",
+        "placeholder": "5"
+      }
+    ],
+    "expression": "budget / days",
+    "unit": "USD/day",
+    "examples": [
+      {
+        "description": "$2,000 over 5 days ⇒ $400/day"
+      },
+      {
+        "description": "$1,500 over 7 days ⇒ $214.29/day"
+      },
+      {
+        "description": "$3,000 over 10 days ⇒ $300/day"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Does this include travel costs?",
+        "answer": "Include airfare or transport in the total budget if desired."
+      },
+      {
+        "question": "What if days are zero?",
+        "answer": "Days must be greater than zero to calculate a daily amount."
+      },
+      {
+        "question": "Can I use different currencies?",
+        "answer": "Yes, as long as both inputs use the same currency."
+      }
+    ],
+    "disclaimer": "Actual expenses may vary; track spending during the trip."
+  },
+  {
+    "slug": "email-open-rate",
+    "title": "Email Open Rate",
+    "cluster": "web & marketing",
+    "description": "Calculate email open rate from messages sent and opened.",
+    "intro": "Determine the percentage of sent emails that were opened by recipients.",
+    "inputs": [
+      {
+        "name": "opened",
+        "label": "Opened emails",
+        "type": "number",
+        "step": "any",
+        "placeholder": "500"
+      },
+      {
+        "name": "sent",
+        "label": "Emails sent",
+        "type": "number",
+        "step": "any",
+        "placeholder": "1000"
+      }
+    ],
+    "expression": "(opened / sent) * 100",
+    "unit": "%",
+    "examples": [
+      {
+        "description": "500 opened of 1000 sent ⇒ 50%"
+      },
+      {
+        "description": "750 opened of 1500 sent ⇒ 50%"
+      },
+      {
+        "description": "200 opened of 800 sent ⇒ 25%"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Does this account for spam filters?",
+        "answer": "No, it assumes the opened count is accurate from your email provider."
+      },
+      {
+        "question": "Can sent be zero?",
+        "answer": "No, at least one email must be sent to calculate a rate."
+      },
+      {
+        "question": "Is this unique opens?",
+        "answer": "Use unique opens if available for more accurate rates."
+      }
+    ],
+    "disclaimer": "Metrics vary by platform; verify with your email service analytics."
+  },
+  {
+    "slug": "ounces-to-cups",
+    "title": "Ounces to Cups Converter",
+    "cluster": "conversions",
+    "description": "Convert US fluid ounces to cups.",
+    "intro": "Convert a volume in US fluid ounces to cups using 1 cup = 8 fl oz.",
+    "inputs": [
+      {
+        "name": "ounces",
+        "label": "Fluid ounces",
+        "type": "number",
+        "step": "any",
+        "placeholder": "16"
+      }
+    ],
+    "expression": "ounces / 8",
+    "unit": "cups",
+    "examples": [
+      {
+        "description": "16 fl oz ⇒ 2 cups"
+      },
+      {
+        "description": "10 fl oz ⇒ 1.25 cups"
+      },
+      {
+        "description": "32 fl oz ⇒ 4 cups"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Is this US cups?",
+        "answer": "Yes, it uses the US customary cup of 8 fluid ounces."
+      },
+      {
+        "question": "Does it handle fractions?",
+        "answer": "Yes, enter decimals for fractional ounces."
+      },
+      {
+        "question": "Can I convert cups to ounces?",
+        "answer": "Use our cups to ounces converter for the reverse conversion."
+      }
+    ],
+    "disclaimer": "For recipe use; verify conversions for critical measurements."
+  },
+  {
+    "slug": "age-in-hours",
+    "title": "Age in Hours",
+    "cluster": "date & time",
+    "description": "Convert age in years to total hours lived.",
+    "intro": "Estimate how many hours you have lived based on age in years.",
+    "inputs": [
+      {
+        "name": "years",
+        "label": "Age (years)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "30"
+      }
+    ],
+    "expression": "years * 365 * 24",
+    "unit": "hours",
+    "examples": [
+      {
+        "description": "30 years ⇒ 262,800 hours"
+      },
+      {
+        "description": "25 years ⇒ 219,000 hours"
+      },
+      {
+        "description": "40 years ⇒ 350,400 hours"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Does this account for leap years?",
+        "answer": "No, it uses 365 days per year for a rough estimate."
+      },
+      {
+        "question": "Can I enter decimals?",
+        "answer": "Yes, use decimal years for months or days."
+      },
+      {
+        "question": "Is this precise?",
+        "answer": "It's an approximation; actual hours depend on exact birth time and leap years."
+      }
+    ],
+    "disclaimer": "For fun estimates only; not for official records."
   }
 ]
