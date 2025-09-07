@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import AiAssistant from "../components/AiAssistant.astro";
 const modules = import.meta.glob("./calculators/*.mdx", { eager: true });
 const items = Object.values(modules).map((m) => ({
   url: m.url,
@@ -31,6 +32,7 @@ const items = Object.values(modules).map((m) => ({
       ))}
     </div>
   </section>
+  <AiAssistant />
   <script is:inline>
     const input = document.getElementById('search-input');
     const cards = Array.from(document.querySelectorAll('#results > div'));

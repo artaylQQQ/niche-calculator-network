@@ -1,0 +1,36 @@
+---
+// Reusable AI calculator section
+---
+<section class="ai-calc my-8 p-4 border rounded" data-ai-calc aria-labelledby="ai-calc-heading">
+  <h2 id="ai-calc-heading" class="text-xl font-bold mb-2" style="color: var(--ink)">¿No encontraste lo que necesitabas en Calcsimpler.com?</h2>
+  <p class="mb-4" style="color: var(--muted)">Pregunta a nuestra calculadora con IA:</p>
+  <form class="flex flex-col gap-4">
+    <label for="ai-query" class="sr-only">Pregunta</label>
+    <input id="ai-query" name="query" type="text" class="p-2 border rounded-md" placeholder="Escribe tu pregunta..." required />
+    <button type="submit" class="p-2 rounded bg-blue-600 text-white hover:bg-blue-700">Enviar</button>
+  </form>
+  <div class="ai-result mt-4 text-lg font-semibold" style="color: var(--ink)"></div>
+</section>
+<script>
+(() => {
+  const root = document.currentScript.parentElement;
+  const form = root.querySelector('form');
+  const input = root.querySelector('input[name="query"]');
+  const resultEl = root.querySelector('.ai-result');
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    resultEl.textContent = 'Pensando...';
+    try {
+      const resp = await fetch('/api/ai-calculator', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ query: input.value })
+      });
+      const data = await resp.json();
+      resultEl.textContent = data.result || data.error || 'Error';
+    } catch (err) {
+      resultEl.textContent = 'Error';
+    }
+  });
+})();
+</script>
