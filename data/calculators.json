@@ -11623,29 +11623,57 @@
       }
     ],
     "disclaimer": "Adjust for specific conference or journal guidelines."
-  }
-,
+  },
   {
     "slug": "inventory-turnover-ratio",
     "title": "Inventory Turnover Ratio Calculator",
     "cluster": "finance",
     "description": "Measure how often inventory is sold and replaced.",
     "inputs": [
-      { "name": "cogs", "label": "Cost of Goods Sold", "type": "number", "step": "any", "min": 0, "placeholder": "50000" },
-      { "name": "averageInventory", "label": "Average Inventory", "type": "number", "step": "any", "min": 0, "placeholder": "10000" }
+      {
+        "name": "cogs",
+        "label": "Cost of Goods Sold",
+        "type": "number",
+        "step": "any",
+        "min": 0,
+        "placeholder": "50000"
+      },
+      {
+        "name": "averageInventory",
+        "label": "Average Inventory",
+        "type": "number",
+        "step": "any",
+        "min": 0,
+        "placeholder": "10000"
+      }
     ],
     "expression": "cogs / averageInventory",
     "unit": "times",
     "intro": "Assess how efficiently a business manages inventory by calculating how many times it sells and replaces stock during a period.",
     "examples": [
-      { "description": "COGS 50,000 and average inventory 10,000 ⇒ 5 times" },
-      { "description": "COGS 120,000 and average inventory 30,000 ⇒ 4 times" },
-      { "description": "COGS 75,000 and average inventory 15,000 ⇒ 5 times" }
+      {
+        "description": "COGS 50,000 and average inventory 10,000 ⇒ 5 times"
+      },
+      {
+        "description": "COGS 120,000 and average inventory 30,000 ⇒ 4 times"
+      },
+      {
+        "description": "COGS 75,000 and average inventory 15,000 ⇒ 5 times"
+      }
     ],
     "faqs": [
-      { "question": "What does a higher ratio indicate?", "answer": "A higher turnover suggests efficient inventory use and strong sales." },
-      { "question": "Is zero inventory allowed?", "answer": "Average inventory must be above zero to compute the ratio." },
-      { "question": "Should I use cost or retail value?", "answer": "Use cost of goods sold and average inventory at cost for consistency." }
+      {
+        "question": "What does a higher ratio indicate?",
+        "answer": "A higher turnover suggests efficient inventory use and strong sales."
+      },
+      {
+        "question": "Is zero inventory allowed?",
+        "answer": "Average inventory must be above zero to compute the ratio."
+      },
+      {
+        "question": "Should I use cost or retail value?",
+        "answer": "Use cost of goods sold and average inventory at cost for consistency."
+      }
     ],
     "disclaimer": "General information only; consult a financial professional for analysis."
   },
@@ -11655,21 +11683,50 @@
     "cluster": "personal finance & loans",
     "description": "Find what percentage of income you save.",
     "inputs": [
-      { "name": "income", "label": "Annual Income", "type": "number", "step": "any", "min": 0, "placeholder": "50000" },
-      { "name": "savings", "label": "Annual Savings", "type": "number", "step": "any", "min": 0, "placeholder": "10000" }
+      {
+        "name": "income",
+        "label": "Annual Income",
+        "type": "number",
+        "step": "any",
+        "min": 0,
+        "placeholder": "50000"
+      },
+      {
+        "name": "savings",
+        "label": "Annual Savings",
+        "type": "number",
+        "step": "any",
+        "min": 0,
+        "placeholder": "10000"
+      }
     ],
     "expression": "(savings / income) * 100",
     "unit": "%",
     "intro": "Determine what percentage of your income you set aside each year.",
     "examples": [
-      { "description": "Income 50,000 and savings 10,000 ⇒ 20%" },
-      { "description": "Income 40,000 and savings 4,000 ⇒ 10%" },
-      { "description": "Income 60,000 and savings 9,000 ⇒ 15%" }
+      {
+        "description": "Income 50,000 and savings 10,000 ⇒ 20%"
+      },
+      {
+        "description": "Income 40,000 and savings 4,000 ⇒ 10%"
+      },
+      {
+        "description": "Income 60,000 and savings 9,000 ⇒ 15%"
+      }
     ],
     "faqs": [
-      { "question": "What is a good savings rate?", "answer": "Many experts suggest saving at least 20% of your income." },
-      { "question": "Can income be zero?", "answer": "No, income must be greater than zero." },
-      { "question": "Should I use after-tax income?", "answer": "Using take-home pay provides a clearer picture." }
+      {
+        "question": "What is a good savings rate?",
+        "answer": "Many experts suggest saving at least 20% of your income."
+      },
+      {
+        "question": "Can income be zero?",
+        "answer": "No, income must be greater than zero."
+      },
+      {
+        "question": "Should I use after-tax income?",
+        "answer": "Using take-home pay provides a clearer picture."
+      }
     ],
     "disclaimer": "Estimates only; consult a financial advisor for personalized guidance."
   },
@@ -11679,21 +11736,50 @@
     "cluster": "health",
     "description": "Compute average running pace per kilometer.",
     "inputs": [
-      { "name": "distance", "label": "Distance (km)", "type": "number", "step": "any", "min": 0, "placeholder": "5" },
-      { "name": "time", "label": "Time (minutes)", "type": "number", "step": "any", "min": 0, "placeholder": "25" }
+      {
+        "name": "distance",
+        "label": "Distance (km)",
+        "type": "number",
+        "step": "any",
+        "min": 0,
+        "placeholder": "5"
+      },
+      {
+        "name": "time",
+        "label": "Time (minutes)",
+        "type": "number",
+        "step": "any",
+        "min": 0,
+        "placeholder": "25"
+      }
     ],
     "expression": "time / distance",
     "unit": "min/km",
     "intro": "Compute your average running pace per kilometer from distance and time.",
     "examples": [
-      { "description": "5 km in 25 min ⇒ 5 min/km" },
-      { "description": "10 km in 45 min ⇒ 4.5 min/km" },
-      { "description": "1 km in 4 min ⇒ 4 min/km" }
+      {
+        "description": "5 km in 25 min ⇒ 5 min/km"
+      },
+      {
+        "description": "10 km in 45 min ⇒ 4.5 min/km"
+      },
+      {
+        "description": "1 km in 4 min ⇒ 4 min/km"
+      }
     ],
     "faqs": [
-      { "question": "Does this work for miles?", "answer": "Yes, convert miles to kilometers first." },
-      { "question": "Can time be in hours?", "answer": "Convert hours to minutes before calculating." },
-      { "question": "What if distance is zero?", "answer": "Pace is undefined when distance is zero." }
+      {
+        "question": "Does this work for miles?",
+        "answer": "Yes, convert miles to kilometers first."
+      },
+      {
+        "question": "Can time be in hours?",
+        "answer": "Convert hours to minutes before calculating."
+      },
+      {
+        "question": "What if distance is zero?",
+        "answer": "Pace is undefined when distance is zero."
+      }
     ],
     "disclaimer": "For training guidance only; adjust for personal fitness levels."
   },
@@ -11703,21 +11789,50 @@
     "cluster": "math",
     "description": "Compute ordered arrangements of items.",
     "inputs": [
-      { "name": "n", "label": "Total Items (n)", "type": "number", "step": 1, "min": 0, "placeholder": "5" },
-      { "name": "r", "label": "Chosen Items (r)", "type": "number", "step": 1, "min": 0, "placeholder": "2" }
+      {
+        "name": "n",
+        "label": "Total Items (n)",
+        "type": "number",
+        "step": 1,
+        "min": 0,
+        "placeholder": "5"
+      },
+      {
+        "name": "r",
+        "label": "Chosen Items (r)",
+        "type": "number",
+        "step": 1,
+        "min": 0,
+        "placeholder": "2"
+      }
     ],
     "expression": "(function(n,r){n=Math.floor(n);r=Math.floor(r);if(r>n)return 0;let res=1;for(let i=n-r+1;i<=n;i++)res*=i;return res;})(n,r)",
     "unit": "ways",
     "intro": "Find the number of ordered arrangements of r items selected from n distinct items.",
     "examples": [
-      { "description": "n=5, r=2 ⇒ 20 ways" },
-      { "description": "n=6, r=3 ⇒ 120 ways" },
-      { "description": "n=10, r=0 ⇒ 1 way" }
+      {
+        "description": "n=5, r=2 ⇒ 20 ways"
+      },
+      {
+        "description": "n=6, r=3 ⇒ 120 ways"
+      },
+      {
+        "description": "n=10, r=0 ⇒ 1 way"
+      }
     ],
     "faqs": [
-      { "question": "How is this different from combinations?", "answer": "Permutations consider order; combinations do not." },
-      { "question": "Can r be greater than n?", "answer": "If r > n, the result is 0 because you can't choose more items than exist." },
-      { "question": "Does order matter here?", "answer": "Yes, permutations count distinct orderings." }
+      {
+        "question": "How is this different from combinations?",
+        "answer": "Permutations consider order; combinations do not."
+      },
+      {
+        "question": "Can r be greater than n?",
+        "answer": "If r > n, the result is 0 because you can't choose more items than exist."
+      },
+      {
+        "question": "Does order matter here?",
+        "answer": "Yes, permutations count distinct orderings."
+      }
     ],
     "disclaimer": "Mathematical tool only; verify results for critical applications."
   },
@@ -11727,20 +11842,42 @@
     "cluster": "conversions",
     "description": "Convert cups to tablespoons.",
     "inputs": [
-      { "name": "cups", "label": "Cups", "type": "number", "step": "any", "min": 0, "placeholder": "1" }
+      {
+        "name": "cups",
+        "label": "Cups",
+        "type": "number",
+        "step": "any",
+        "min": 0,
+        "placeholder": "1"
+      }
     ],
     "expression": "cups * 16",
     "unit": "tbsp",
     "intro": "Convert volume in cups to tablespoons using the US customary system.",
     "examples": [
-      { "description": "1 cup ⇒ 16 tbsp" },
-      { "description": "0.5 cup ⇒ 8 tbsp" },
-      { "description": "2.25 cups ⇒ 36 tbsp" }
+      {
+        "description": "1 cup ⇒ 16 tbsp"
+      },
+      {
+        "description": "0.5 cup ⇒ 8 tbsp"
+      },
+      {
+        "description": "2.25 cups ⇒ 36 tbsp"
+      }
     ],
     "faqs": [
-      { "question": "Is this US measurement?", "answer": "Yes, it uses US customary units." },
-      { "question": "How many tablespoons in a half cup?", "answer": "There are 8 tablespoons in a half cup." },
-      { "question": "Can I convert back to cups?", "answer": "Divide tablespoons by 16 to get cups." }
+      {
+        "question": "Is this US measurement?",
+        "answer": "Yes, it uses US customary units."
+      },
+      {
+        "question": "How many tablespoons in a half cup?",
+        "answer": "There are 8 tablespoons in a half cup."
+      },
+      {
+        "question": "Can I convert back to cups?",
+        "answer": "Divide tablespoons by 16 to get cups."
+      }
     ],
     "disclaimer": "For kitchen estimates; check recipe requirements for precision."
   },
@@ -11750,22 +11887,60 @@
     "cluster": "date-time",
     "description": "Find the ordinal day number for any date.",
     "inputs": [
-      { "name": "year", "label": "Year", "type": "number", "step": 1, "min": 1, "placeholder": "2024" },
-      { "name": "month", "label": "Month", "type": "number", "step": 1, "min": 1, "max": 12, "placeholder": "1" },
-      { "name": "day", "label": "Day", "type": "number", "step": 1, "min": 1, "max": 31, "placeholder": "1" }
+      {
+        "name": "year",
+        "label": "Year",
+        "type": "number",
+        "step": 1,
+        "min": 1,
+        "placeholder": "2024"
+      },
+      {
+        "name": "month",
+        "label": "Month",
+        "type": "number",
+        "step": 1,
+        "min": 1,
+        "max": 12,
+        "placeholder": "1"
+      },
+      {
+        "name": "day",
+        "label": "Day",
+        "type": "number",
+        "step": 1,
+        "min": 1,
+        "max": 31,
+        "placeholder": "1"
+      }
     ],
     "expression": "(function(y,m,d){const days=[0,31,59,90,120,151,181,212,243,273,304,334];const leap=(y%4==0&&y%100!=0)||y%400==0;return days[m-1]+d+(leap&&m>2?1:0);})(year,month,day)",
     "unit": "day",
     "intro": "Determine the day number within the year for a given date, accounting for leap years.",
     "examples": [
-      { "description": "2024-01-01 ⇒ 1" },
-      { "description": "2024-12-31 ⇒ 366" },
-      { "description": "2025-03-01 ⇒ 60" }
+      {
+        "description": "2024-01-01 ⇒ 1"
+      },
+      {
+        "description": "2024-12-31 ⇒ 366"
+      },
+      {
+        "description": "2025-03-01 ⇒ 60"
+      }
     ],
     "faqs": [
-      { "question": "Does it handle leap years?", "answer": "Yes, leap years add an extra day after February." },
-      { "question": "What if the date is invalid?", "answer": "Ensure month and day values form a valid date." },
-      { "question": "Is January 1 always day 1?", "answer": "Yes, the first day of any year is day 1." }
+      {
+        "question": "Does it handle leap years?",
+        "answer": "Yes, leap years add an extra day after February."
+      },
+      {
+        "question": "What if the date is invalid?",
+        "answer": "Ensure month and day values form a valid date."
+      },
+      {
+        "question": "Is January 1 always day 1?",
+        "answer": "Yes, the first day of any year is day 1."
+      }
     ],
     "disclaimer": "For general calendrical calculations; verify for official scheduling."
   },
@@ -11775,21 +11950,50 @@
     "cluster": "education & learning",
     "description": "Compute grade point average from points and credits.",
     "inputs": [
-      { "name": "points", "label": "Total Grade Points", "type": "number", "step": "any", "min": 0, "placeholder": "36" },
-      { "name": "credits", "label": "Total Credits", "type": "number", "step": "any", "min": 0, "placeholder": "12" }
+      {
+        "name": "points",
+        "label": "Total Grade Points",
+        "type": "number",
+        "step": "any",
+        "min": 0,
+        "placeholder": "36"
+      },
+      {
+        "name": "credits",
+        "label": "Total Credits",
+        "type": "number",
+        "step": "any",
+        "min": 0,
+        "placeholder": "12"
+      }
     ],
     "expression": "points / credits",
     "unit": "GPA",
     "intro": "Compute your grade point average by dividing total quality points by total credits attempted.",
     "examples": [
-      { "description": "36 points over 12 credits ⇒ 3.0 GPA" },
-      { "description": "45 points over 15 credits ⇒ 3.0 GPA" },
-      { "description": "50 points over 16 credits ⇒ 3.125 GPA" }
+      {
+        "description": "36 points over 12 credits ⇒ 3.0 GPA"
+      },
+      {
+        "description": "45 points over 15 credits ⇒ 3.0 GPA"
+      },
+      {
+        "description": "50 points over 16 credits ⇒ 3.125 GPA"
+      }
     ],
     "faqs": [
-      { "question": "What are quality points?", "answer": "They are grade points multiplied by course credits." },
-      { "question": "Can credits be zero?", "answer": "Credits must be greater than zero to compute GPA." },
-      { "question": "Does this handle weighted grades?", "answer": "Use your institution's quality points which already include weights." }
+      {
+        "question": "What are quality points?",
+        "answer": "They are grade points multiplied by course credits."
+      },
+      {
+        "question": "Can credits be zero?",
+        "answer": "Credits must be greater than zero to compute GPA."
+      },
+      {
+        "question": "Does this handle weighted grades?",
+        "answer": "Use your institution's quality points which already include weights."
+      }
     ],
     "disclaimer": "Check with your school for official GPA calculations."
   },
@@ -11799,21 +12003,50 @@
     "cluster": "science & engineering",
     "description": "Find the resonant frequency of an LC circuit.",
     "inputs": [
-      { "name": "inductance", "label": "Inductance (H)", "type": "number", "step": "any", "min": 0, "placeholder": "0.002" },
-      { "name": "capacitance", "label": "Capacitance (F)", "type": "number", "step": "any", "min": 0, "placeholder": "0.000001" }
+      {
+        "name": "inductance",
+        "label": "Inductance (H)",
+        "type": "number",
+        "step": "any",
+        "min": 0,
+        "placeholder": "0.002"
+      },
+      {
+        "name": "capacitance",
+        "label": "Capacitance (F)",
+        "type": "number",
+        "step": "any",
+        "min": 0,
+        "placeholder": "0.000001"
+      }
     ],
     "expression": "1 / (2 * Math.PI * Math.sqrt(inductance * capacitance))",
     "unit": "Hz",
     "intro": "Calculate the resonant frequency where inductive and capacitive reactances cancel in an LC circuit.",
     "examples": [
-      { "description": "L=0.002 H, C=1e-6 F ⇒ 3558.5 Hz" },
-      { "description": "L=0.001 H, C=1e-9 F ⇒ 159154.9 Hz" },
-      { "description": "L=1 H, C=1e-6 F ⇒ 159.15 Hz" }
+      {
+        "description": "L=0.002 H, C=1e-6 F ⇒ 3558.5 Hz"
+      },
+      {
+        "description": "L=0.001 H, C=1e-9 F ⇒ 159154.9 Hz"
+      },
+      {
+        "description": "L=1 H, C=1e-6 F ⇒ 159.15 Hz"
+      }
     ],
     "faqs": [
-      { "question": "What is resonant frequency?", "answer": "The frequency where inductive and capacitive reactances are equal and opposite." },
-      { "question": "Do values need to be in henries and farads?", "answer": "Yes, convert units to henries and farads before using." },
-      { "question": "What if L or C is zero?", "answer": "Resonant frequency is undefined if either component is zero." }
+      {
+        "question": "What is resonant frequency?",
+        "answer": "The frequency where inductive and capacitive reactances are equal and opposite."
+      },
+      {
+        "question": "Do values need to be in henries and farads?",
+        "answer": "Yes, convert units to henries and farads before using."
+      },
+      {
+        "question": "What if L or C is zero?",
+        "answer": "Resonant frequency is undefined if either component is zero."
+      }
     ],
     "disclaimer": "Idealized calculation; real circuits include resistance and losses."
   },
@@ -11823,21 +12056,50 @@
     "cluster": "technology",
     "description": "Estimate CPU usage percentage.",
     "inputs": [
-      { "name": "busy", "label": "Busy Time (ms)", "type": "number", "step": "any", "min": 0, "placeholder": "30" },
-      { "name": "total", "label": "Total Time (ms)", "type": "number", "step": "any", "min": 0, "placeholder": "100" }
+      {
+        "name": "busy",
+        "label": "Busy Time (ms)",
+        "type": "number",
+        "step": "any",
+        "min": 0,
+        "placeholder": "30"
+      },
+      {
+        "name": "total",
+        "label": "Total Time (ms)",
+        "type": "number",
+        "step": "any",
+        "min": 0,
+        "placeholder": "100"
+      }
     ],
     "expression": "(busy / total) * 100",
     "unit": "%",
     "intro": "Estimate CPU utilization percentage from measured busy time over total time.",
     "examples": [
-      { "description": "Busy 30 ms, total 100 ms ⇒ 30%" },
-      { "description": "Busy 5 ms, total 20 ms ⇒ 25%" },
-      { "description": "Busy 200 ms, total 500 ms ⇒ 40%" }
+      {
+        "description": "Busy 30 ms, total 100 ms ⇒ 30%"
+      },
+      {
+        "description": "Busy 5 ms, total 20 ms ⇒ 25%"
+      },
+      {
+        "description": "Busy 200 ms, total 500 ms ⇒ 40%"
+      }
     ],
     "faqs": [
-      { "question": "Can total time be zero?", "answer": "No, total time must be greater than zero." },
-      { "question": "Does this handle multiple cores?", "answer": "It reflects a single measurement; aggregate cores separately." },
-      { "question": "Do units need to match?", "answer": "Yes, use the same time units for busy and total." }
+      {
+        "question": "Can total time be zero?",
+        "answer": "No, total time must be greater than zero."
+      },
+      {
+        "question": "Does this handle multiple cores?",
+        "answer": "It reflects a single measurement; aggregate cores separately."
+      },
+      {
+        "question": "Do units need to match?",
+        "answer": "Yes, use the same time units for busy and total."
+      }
     ],
     "disclaimer": "Simplified metric; actual CPU usage may vary based on system measurement methods."
   },
@@ -11847,22 +12109,58 @@
     "cluster": "home-diy",
     "description": "Estimate paint cost from area, coverage and price.",
     "inputs": [
-      { "name": "area", "label": "Area (sq ft)", "type": "number", "step": "any", "min": 0, "placeholder": "400" },
-      { "name": "coverage", "label": "Coverage per Gallon (sq ft)", "type": "number", "step": "any", "min": 0, "placeholder": "350" },
-      { "name": "price", "label": "Price per Gallon ($)", "type": "number", "step": "any", "min": 0, "placeholder": "25" }
+      {
+        "name": "area",
+        "label": "Area (sq ft)",
+        "type": "number",
+        "step": "any",
+        "min": 0,
+        "placeholder": "400"
+      },
+      {
+        "name": "coverage",
+        "label": "Coverage per Gallon (sq ft)",
+        "type": "number",
+        "step": "any",
+        "min": 0,
+        "placeholder": "350"
+      },
+      {
+        "name": "price",
+        "label": "Price per Gallon ($)",
+        "type": "number",
+        "step": "any",
+        "min": 0,
+        "placeholder": "25"
+      }
     ],
     "expression": "(area / coverage) * price",
     "unit": "USD",
     "intro": "Estimate how much a paint project will cost based on area, paint coverage and price per gallon.",
     "examples": [
-      { "description": "400 sq ft, 350 coverage, $25 ⇒ $28.57" },
-      { "description": "1000 sq ft, 400 coverage, $30 ⇒ $75" },
-      { "description": "600 sq ft, 300 coverage, $20 ⇒ $40" }
+      {
+        "description": "400 sq ft, 350 coverage, $25 ⇒ $28.57"
+      },
+      {
+        "description": "1000 sq ft, 400 coverage, $30 ⇒ $75"
+      },
+      {
+        "description": "600 sq ft, 300 coverage, $20 ⇒ $40"
+      }
     ],
     "faqs": [
-      { "question": "Does this include primer?", "answer": "No, primer costs are not included." },
-      { "question": "How many coats are assumed?", "answer": "It assumes a single coat." },
-      { "question": "What if coverage varies?", "answer": "Use the manufacturer's specified coverage." }
+      {
+        "question": "Does this include primer?",
+        "answer": "No, primer costs are not included."
+      },
+      {
+        "question": "How many coats are assumed?",
+        "answer": "It assumes a single coat."
+      },
+      {
+        "question": "What if coverage varies?",
+        "answer": "Use the manufacturer's specified coverage."
+      }
     ],
     "disclaimer": "Estimate only; actual paint needs may vary by surface and application technique."
   },
@@ -11872,21 +12170,50 @@
     "cluster": "lifestyle & travel",
     "description": "Plan the number of rest stops for a trip.",
     "inputs": [
-      { "name": "distance", "label": "Total Distance (km)", "type": "number", "step": "any", "min": 0, "placeholder": "600" },
-      { "name": "maxLeg", "label": "Max Distance per Leg (km)", "type": "number", "step": "any", "min": 1, "placeholder": "150" }
+      {
+        "name": "distance",
+        "label": "Total Distance (km)",
+        "type": "number",
+        "step": "any",
+        "min": 0,
+        "placeholder": "600"
+      },
+      {
+        "name": "maxLeg",
+        "label": "Max Distance per Leg (km)",
+        "type": "number",
+        "step": "any",
+        "min": 1,
+        "placeholder": "150"
+      }
     ],
     "expression": "Math.max(Math.ceil(distance / maxLeg) - 1, 0)",
     "unit": "stops",
     "intro": "Calculate how many rest stops are needed on a road trip based on your maximum comfortable driving distance per leg.",
     "examples": [
-      { "description": "600 km with 150 km legs ⇒ 3 stops" },
-      { "description": "500 km with 200 km legs ⇒ 2 stops" },
-      { "description": "100 km with 300 km legs ⇒ 0 stops" }
+      {
+        "description": "600 km with 150 km legs ⇒ 3 stops"
+      },
+      {
+        "description": "500 km with 200 km legs ⇒ 2 stops"
+      },
+      {
+        "description": "100 km with 300 km legs ⇒ 0 stops"
+      }
     ],
     "faqs": [
-      { "question": "Why subtract one from the legs?", "answer": "Stops occur between legs, so the last leg ends at your destination." },
-      { "question": "What if max distance is zero?", "answer": "Max distance per leg must be greater than zero." },
-      { "question": "Does this include overnight stays?", "answer": "Treat overnight stays as rest stops." }
+      {
+        "question": "Why subtract one from the legs?",
+        "answer": "Stops occur between legs, so the last leg ends at your destination."
+      },
+      {
+        "question": "What if max distance is zero?",
+        "answer": "Max distance per leg must be greater than zero."
+      },
+      {
+        "question": "Does this include overnight stays?",
+        "answer": "Treat overnight stays as rest stops."
+      }
     ],
     "disclaimer": "Use as a planning aid; adjust for driver fatigue and local regulations."
   },
@@ -11896,22 +12223,895 @@
     "cluster": "web & marketing",
     "description": "Calculate click-through rate from clicks and impressions.",
     "inputs": [
-      { "name": "clicks", "label": "Clicks", "type": "number", "step": "any", "min": 0, "placeholder": "50" },
-      { "name": "impressions", "label": "Impressions", "type": "number", "step": "any", "min": 0, "placeholder": "1000" }
+      {
+        "name": "clicks",
+        "label": "Clicks",
+        "type": "number",
+        "step": "any",
+        "min": 0,
+        "placeholder": "50"
+      },
+      {
+        "name": "impressions",
+        "label": "Impressions",
+        "type": "number",
+        "step": "any",
+        "min": 0,
+        "placeholder": "1000"
+      }
     ],
     "expression": "(clicks / impressions) * 100",
     "unit": "%",
     "intro": "Determine the percentage of impressions that result in clicks for an ad or email campaign.",
     "examples": [
-      { "description": "50 clicks, 1000 impressions ⇒ 5%" },
-      { "description": "120 clicks, 4000 impressions ⇒ 3%" },
-      { "description": "200 clicks, 2000 impressions ⇒ 10%" }
+      {
+        "description": "50 clicks, 1000 impressions ⇒ 5%"
+      },
+      {
+        "description": "120 clicks, 4000 impressions ⇒ 3%"
+      },
+      {
+        "description": "200 clicks, 2000 impressions ⇒ 10%"
+      }
     ],
     "faqs": [
-      { "question": "What is a good CTR?", "answer": "It varies by industry and channel." },
-      { "question": "Can impressions be zero?", "answer": "Impressions must be greater than zero to compute CTR." },
-      { "question": "Does CTR measure conversions?", "answer": "No, it only measures clicks relative to impressions." }
+      {
+        "question": "What is a good CTR?",
+        "answer": "It varies by industry and channel."
+      },
+      {
+        "question": "Can impressions be zero?",
+        "answer": "Impressions must be greater than zero to compute CTR."
+      },
+      {
+        "question": "Does CTR measure conversions?",
+        "answer": "No, it only measures clicks relative to impressions."
+      }
     ],
     "disclaimer": "For marketing estimates; actual campaign performance may vary."
+  },
+  {
+    "slug": "mb-to-gb-converter",
+    "title": "MB to GB Converter",
+    "cluster": "Conversions",
+    "intro": "Convert megabytes to gigabytes for quick storage planning.",
+    "inputs": [
+      {
+        "name": "mb",
+        "hint": "Megabytes (MB)"
+      }
+    ],
+    "expression": "mb/1024",
+    "examples": [
+      {
+        "description": "2048 MB ⇒ 2 GB"
+      },
+      {
+        "description": "5120 MB ⇒ 5 GB"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Is it binary?",
+        "answer": "Yes, 1 GB = 1024 MB."
+      },
+      {
+        "question": "Can I use decimals?",
+        "answer": "Yes, decimals are allowed."
+      }
+    ]
+  },
+  {
+    "slug": "percentage-to-decimal",
+    "title": "Percentage to Decimal Converter",
+    "cluster": "Conversions",
+    "intro": "Quickly turn a percentage into a decimal for spreadsheets and formulas.",
+    "inputs": [
+      {
+        "name": "percent",
+        "hint": "Percentage (%)"
+      }
+    ],
+    "expression": "percent/100",
+    "examples": [
+      {
+        "description": "25% ⇒ 0.25"
+      },
+      {
+        "description": "150% ⇒ 1.5"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Why divide by 100?",
+        "answer": "Percent means per hundred."
+      },
+      {
+        "question": "Negative values?",
+        "answer": "Yes, negatives work too."
+      }
+    ]
+  },
+  {
+    "slug": "decimal-to-percentage",
+    "title": "Decimal to Percentage Converter",
+    "cluster": "Conversions",
+    "intro": "Convert decimals to percentages for reports and presentations.",
+    "inputs": [
+      {
+        "name": "decimal",
+        "hint": "Decimal"
+      }
+    ],
+    "expression": "decimal*100",
+    "examples": [
+      {
+        "description": "0.85 ⇒ 85%"
+      },
+      {
+        "description": "1.2 ⇒ 120%"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "How is conversion done?",
+        "answer": "Multiply by 100."
+      },
+      {
+        "question": "Percent sign added?",
+        "answer": "Result is numeric percent."
+      }
+    ]
+  },
+  {
+    "slug": "meeting-time-percentage",
+    "title": "Meeting Time Percentage",
+    "cluster": "Date & Time",
+    "intro": "See how much of your workday is spent in meetings.",
+    "inputs": [
+      {
+        "name": "meeting",
+        "hint": "Meeting time (min)"
+      },
+      {
+        "name": "workday",
+        "hint": "Workday length (min)"
+      }
+    ],
+    "expression": "(meeting/workday)*100",
+    "examples": [
+      {
+        "description": "90 min of 480 ⇒ 18.75%"
+      },
+      {
+        "description": "30 min of 300 ⇒ 10%"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Typical workday?",
+        "answer": "Many offices use 480 minutes."
+      },
+      {
+        "question": "Multiple meetings?",
+        "answer": "Sum minutes before entering."
+      }
+    ]
+  },
+  {
+    "slug": "break-time-planner",
+    "title": "Break Time Planner",
+    "cluster": "Date & Time",
+    "intro": "Plan how many minutes of break you should take in a workday.",
+    "inputs": [
+      {
+        "name": "hours",
+        "hint": "Hours worked"
+      }
+    ],
+    "expression": "(hours/2)*15",
+    "examples": [
+      {
+        "description": "8 h ⇒ 60 min"
+      },
+      {
+        "description": "5 h ⇒ 37.5 min"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What guideline?",
+        "answer": "15 minutes per 2 hours of work."
+      },
+      {
+        "question": "Adjustable?",
+        "answer": "Modify formula for your policy."
+      }
+    ]
+  },
+  {
+    "slug": "work-hours-to-days",
+    "title": "Work Hours to Days Converter",
+    "cluster": "Date & Time",
+    "intro": "Translate hours of effort into standard workdays.",
+    "inputs": [
+      {
+        "name": "hours",
+        "hint": "Total hours"
+      },
+      {
+        "name": "day",
+        "hint": "Hours per workday"
+      }
+    ],
+    "expression": "hours/day",
+    "examples": [
+      {
+        "description": "40 h at 8 ⇒ 5 days"
+      },
+      {
+        "description": "60 h at 7.5 ⇒ 8 days"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Standard day?",
+        "answer": "Often 8 hours."
+      },
+      {
+        "question": "Include breaks?",
+        "answer": "Enter net work hours."
+      }
+    ]
+  },
+  {
+    "slug": "hourly-to-annual-salary",
+    "title": "Hourly to Annual Salary",
+    "cluster": "Finance",
+    "intro": "Convert an hourly wage into an annual salary for budgeting.",
+    "inputs": [
+      {
+        "name": "rate",
+        "hint": "Hourly rate ($)"
+      },
+      {
+        "name": "hours",
+        "hint": "Hours per week"
+      },
+      {
+        "name": "weeks",
+        "hint": "Weeks per year"
+      }
+    ],
+    "expression": "rate*hours*weeks",
+    "examples": [
+      {
+        "description": "$25,40h,52w ⇒ $52000"
+      },
+      {
+        "description": "$30,35h,48w ⇒ $50400"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Include overtime?",
+        "answer": "Add it to weekly hours."
+      },
+      {
+        "question": "Unpaid leave?",
+        "answer": "Reduce weeks per year."
+      }
+    ]
+  },
+  {
+    "slug": "budget-variance-percentage",
+    "title": "Budget Variance Percentage",
+    "cluster": "Finance",
+    "intro": "Find the percentage difference between actual and budgeted costs.",
+    "inputs": [
+      {
+        "name": "actual",
+        "hint": "Actual amount ($)"
+      },
+      {
+        "name": "budget",
+        "hint": "Budgeted amount ($)"
+      }
+    ],
+    "expression": "((actual-budget)/budget)*100",
+    "examples": [
+      {
+        "description": "$1200 vs $1000 ⇒ 20%"
+      },
+      {
+        "description": "$900 vs $1000 ⇒ -10%"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Negative result?",
+        "answer": "Means under budget."
+      },
+      {
+        "question": "Use for revenue?",
+        "answer": "Yes, any target vs actual."
+      }
+    ]
+  },
+  {
+    "slug": "gross-up-calculator",
+    "title": "Gross-Up Calculator",
+    "cluster": "Finance",
+    "intro": "Determine the pre-tax amount required to provide a specific net payment.",
+    "inputs": [
+      {
+        "name": "net",
+        "hint": "Net amount ($)"
+      },
+      {
+        "name": "tax",
+        "hint": "Tax rate (%)"
+      }
+    ],
+    "expression": "net/(1-tax/100)",
+    "examples": [
+      {
+        "description": "$1000 net at 30% ⇒ $1428.57"
+      },
+      {
+        "description": "$500 net at 25% ⇒ $666.67"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Multiple taxes?",
+        "answer": "Combine rates before entering."
+      },
+      {
+        "question": "Tax 0%?",
+        "answer": "Gross equals net."
+      }
+    ]
+  },
+  {
+    "slug": "standing-time-percentage",
+    "title": "Standing Time Percentage",
+    "cluster": "Health",
+    "intro": "Track the share of your day spent standing versus sitting.",
+    "inputs": [
+      {
+        "name": "standing",
+        "hint": "Standing time (min)"
+      },
+      {
+        "name": "total",
+        "hint": "Total awake time (min)"
+      }
+    ],
+    "expression": "(standing/total)*100",
+    "examples": [
+      {
+        "description": "120 of 960 ⇒ 12.5%"
+      },
+      {
+        "description": "240 of 600 ⇒ 40%"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Why track?",
+        "answer": "Standing reduces sedentary risk."
+      },
+      {
+        "question": "Awake time?",
+        "answer": "Hours you're not sleeping."
+      }
+    ]
+  },
+  {
+    "slug": "caffeine-limit-by-weight",
+    "title": "Caffeine Limit by Weight",
+    "cluster": "Health",
+    "intro": "Estimate a moderate daily caffeine limit based on body weight.",
+    "inputs": [
+      {
+        "name": "weight",
+        "hint": "Weight (kg)"
+      }
+    ],
+    "expression": "weight*3",
+    "examples": [
+      {
+        "description": "70 kg ⇒ 210 mg"
+      },
+      {
+        "description": "90 kg ⇒ 270 mg"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Why 3 mg/kg?",
+        "answer": "Conservative guideline."
+      },
+      {
+        "question": "Medical advice?",
+        "answer": "No, consult a professional."
+      }
+    ]
+  },
+  {
+    "slug": "screen-break-frequency",
+    "title": "Screen Break Frequency",
+    "cluster": "Health",
+    "intro": "Count how many 20-second eye breaks to take every 20 minutes of screen time.",
+    "inputs": [
+      {
+        "name": "hours",
+        "hint": "Screen time (hours)"
+      }
+    ],
+    "expression": "(hours*60)/20",
+    "examples": [
+      {
+        "description": "6 h ⇒ 18 breaks"
+      },
+      {
+        "description": "3 h ⇒ 9 breaks"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What is 20-20-20?",
+        "answer": "Every 20 minutes look 20 feet away for 20 seconds."
+      },
+      {
+        "question": "Short sessions?",
+        "answer": "Enter total daily hours."
+      }
+    ]
+  },
+  {
+    "slug": "box-volume-calculator",
+    "title": "Box Volume Calculator",
+    "cluster": "Home & DIY",
+    "intro": "Find the capacity of a box from its length, width, and height.",
+    "inputs": [
+      {
+        "name": "length",
+        "hint": "Length (m)"
+      },
+      {
+        "name": "width",
+        "hint": "Width (m)"
+      },
+      {
+        "name": "height",
+        "hint": "Height (m)"
+      }
+    ],
+    "expression": "length*width*height",
+    "examples": [
+      {
+        "description": "0.5×0.4×0.3 ⇒ 0.06 m³"
+      },
+      {
+        "description": "1×0.5×0.5 ⇒ 0.25 m³"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Use cm?",
+        "answer": "Convert to meters first."
+      },
+      {
+        "question": "Exact?",
+        "answer": "Assumes perfect box."
+      }
+    ]
+  },
+  {
+    "slug": "curtain-width-calculator",
+    "title": "Curtain Width Calculator",
+    "cluster": "Home & DIY",
+    "intro": "Determine total curtain width needed using a fullness ratio.",
+    "inputs": [
+      {
+        "name": "window",
+        "hint": "Window width (cm)"
+      },
+      {
+        "name": "fullness",
+        "hint": "Fullness ratio"
+      }
+    ],
+    "expression": "window*fullness",
+    "examples": [
+      {
+        "description": "150 cm at 2× ⇒ 300 cm"
+      },
+      {
+        "description": "120 cm at 1.5× ⇒ 180 cm"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Fullness?",
+        "answer": "Multiplier for gathers."
+      },
+      {
+        "question": "Overlap?",
+        "answer": "Add extra width if needed."
+      }
+    ]
+  },
+  {
+    "slug": "led-savings-calculator",
+    "title": "LED Savings Calculator",
+    "cluster": "Home & DIY",
+    "intro": "Estimate energy cost savings by replacing incandescent bulbs with LEDs.",
+    "inputs": [
+      {
+        "name": "old",
+        "hint": "Incandescent wattage"
+      },
+      {
+        "name": "new",
+        "hint": "LED wattage"
+      },
+      {
+        "name": "hours",
+        "hint": "Hours per day"
+      },
+      {
+        "name": "rate",
+        "hint": "Electricity rate ($/kWh)"
+      }
+    ],
+    "expression": "((old-new)*hours*30/1000)*rate",
+    "examples": [
+      {
+        "description": "60→9W,5h,$0.15 ⇒ $6.84"
+      },
+      {
+        "description": "75→10W,3h,$0.20 ⇒ $11.70"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Why 30 days?",
+        "answer": "Assumes monthly usage."
+      },
+      {
+        "question": "Bulb cost included?",
+        "answer": "No, only energy savings."
+      }
+    ]
+  },
+  {
+    "slug": "weighted-average-calculator",
+    "title": "Weighted Average Calculator",
+    "cluster": "Math",
+    "intro": "Find the weighted average of up to three data points.",
+    "inputs": [
+      {
+        "name": "v1",
+        "hint": "Value 1"
+      },
+      {
+        "name": "w1",
+        "hint": "Weight 1"
+      },
+      {
+        "name": "v2",
+        "hint": "Value 2"
+      },
+      {
+        "name": "w2",
+        "hint": "Weight 2"
+      },
+      {
+        "name": "v3",
+        "hint": "Value 3"
+      },
+      {
+        "name": "w3",
+        "hint": "Weight 3"
+      }
+    ],
+    "expression": "(v1*w1+v2*w2+v3*w3)/(w1+w2+w3)",
+    "examples": [
+      {
+        "description": "80,90,75 with 1,2,1 ⇒ 83.75"
+      },
+      {
+        "description": "10,20,30 with 1,1,1 ⇒ 20"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Skip values?",
+        "answer": "Use zero for unused inputs."
+      },
+      {
+        "question": "Equal weights?",
+        "answer": "Set all weights to 1."
+      }
+    ]
+  },
+  {
+    "slug": "standard-deviation-3-numbers",
+    "title": "Standard Deviation (3 Numbers)",
+    "cluster": "Math",
+    "intro": "Compute the sample standard deviation for three data points.",
+    "inputs": [
+      {
+        "name": "a",
+        "hint": "Value A"
+      },
+      {
+        "name": "b",
+        "hint": "Value B"
+      },
+      {
+        "name": "c",
+        "hint": "Value C"
+      }
+    ],
+    "expression": "(((a-((a+b+c)/3))^2+(b-((a+b+c)/3))^2+(c-((a+b+c)/3))^2)/2)^0.5",
+    "examples": [
+      {
+        "description": "10,12,15 ⇒ 2.52"
+      },
+      {
+        "description": "5,5,5 ⇒ 0"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Why divide by 2?",
+        "answer": "n-1 for sample deviation."
+      },
+      {
+        "question": "More numbers?",
+        "answer": "This tool uses three inputs."
+      }
+    ]
+  },
+  {
+    "slug": "part-of-total-percentage",
+    "title": "Part of Total Percentage",
+    "cluster": "Math",
+    "intro": "Calculate what percentage a value represents of a whole.",
+    "inputs": [
+      {
+        "name": "part",
+        "hint": "Part"
+      },
+      {
+        "name": "total",
+        "hint": "Total"
+      }
+    ],
+    "expression": "(part/total)*100",
+    "examples": [
+      {
+        "description": "30 of 200 ⇒ 15%"
+      },
+      {
+        "description": "50 of 80 ⇒ 62.5%"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Over 100%?",
+        "answer": "Occurs if part > total."
+      },
+      {
+        "question": "Total 0?",
+        "answer": "Calculation undefined."
+      }
+    ]
+  },
+  {
+    "slug": "psu-load-percentage",
+    "title": "PSU Load Percentage",
+    "cluster": "Technology",
+    "intro": "Check how much of a power supply's capacity your system draws.",
+    "inputs": [
+      {
+        "name": "load",
+        "hint": "System load (W)"
+      },
+      {
+        "name": "capacity",
+        "hint": "PSU capacity (W)"
+      }
+    ],
+    "expression": "(load/capacity)*100",
+    "examples": [
+      {
+        "description": "300 W on 500 W ⇒ 60%"
+      },
+      {
+        "description": "450 W on 600 W ⇒ 75%"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Why keep under 80%?",
+        "answer": "For headroom and efficiency."
+      },
+      {
+        "question": "Overload?",
+        "answer": "Result over 100% means overload."
+      }
+    ]
+  },
+  {
+    "slug": "cloud-storage-cost",
+    "title": "Cloud Storage Cost",
+    "cluster": "Technology",
+    "intro": "Find the monthly bill for storing data in the cloud.",
+    "inputs": [
+      {
+        "name": "data",
+        "hint": "Data stored (GB)"
+      },
+      {
+        "name": "rate",
+        "hint": "Price per GB ($)"
+      }
+    ],
+    "expression": "data*rate",
+    "examples": [
+      {
+        "description": "100 GB at $0.02 ⇒ $2"
+      },
+      {
+        "description": "250 GB at $0.015 ⇒ $3.75"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Include egress?",
+        "answer": "No, storage only."
+      },
+      {
+        "question": "Free tier?",
+        "answer": "Subtract free allowance first."
+      }
+    ]
+  },
+  {
+    "slug": "printer-cost-per-page",
+    "title": "Printer Cost per Page",
+    "cluster": "Technology",
+    "intro": "Determine how much each printed page costs based on cartridge price and yield.",
+    "inputs": [
+      {
+        "name": "price",
+        "hint": "Cartridge price ($)"
+      },
+      {
+        "name": "yield",
+        "hint": "Yield (pages)"
+      }
+    ],
+    "expression": "price/yield",
+    "examples": [
+      {
+        "description": "$40 and 2000 pages ⇒ $0.02"
+      },
+      {
+        "description": "$25 and 500 pages ⇒ $0.05"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Paper cost?",
+        "answer": "Not included."
+      },
+      {
+        "question": "Yield exact?",
+        "answer": "Manufacturer estimate only."
+      }
+    ]
+  },
+  {
+    "slug": "ream-duration-calculator",
+    "title": "Ream Duration Calculator",
+    "cluster": "Other",
+    "intro": "See how many days a paper ream covers based on daily printing.",
+    "inputs": [
+      {
+        "name": "pages",
+        "hint": "Pages printed per day"
+      }
+    ],
+    "expression": "500/pages",
+    "examples": [
+      {
+        "description": "100 pages/day ⇒ 5 days"
+      },
+      {
+        "description": "25 pages/day ⇒ 20 days"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Half ream?",
+        "answer": "Adjust the 500 figure."
+      },
+      {
+        "question": "Double-sided?",
+        "answer": "Count each side separately."
+      }
+    ]
+  },
+  {
+    "slug": "printing-carbon-footprint",
+    "title": "Printing Carbon Footprint",
+    "cluster": "Other",
+    "intro": "Approximate CO₂ emissions using 0.0044 kg per printed page.",
+    "inputs": [
+      {
+        "name": "pages",
+        "hint": "Pages printed"
+      }
+    ],
+    "expression": "pages*0.0044",
+    "examples": [
+      {
+        "description": "500 pages ⇒ 2.2 kg CO₂"
+      },
+      {
+        "description": "100 pages ⇒ 0.44 kg CO₂"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Source factor?",
+        "answer": "Average emission per page."
+      },
+      {
+        "question": "Double-sided?",
+        "answer": "Count each side."
+      }
+    ]
+  },
+  {
+    "slug": "space-per-employee",
+    "title": "Space per Employee",
+    "cluster": "Other",
+    "intro": "Calculate floor area allocated to each employee.",
+    "inputs": [
+      {
+        "name": "area",
+        "hint": "Total area (m²)"
+      },
+      {
+        "name": "people",
+        "hint": "Number of employees"
+      }
+    ],
+    "expression": "area/people",
+    "examples": [
+      {
+        "description": "200 m² & 10 ⇒ 20 m²/person"
+      },
+      {
+        "description": "90 m² & 15 ⇒ 6 m²/person"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Recommended area?",
+        "answer": "Often 10–15 m² per person."
+      },
+      {
+        "question": "Include common areas?",
+        "answer": "Include usable space."
+      }
+    ]
   }
 ]
