@@ -81,12 +81,11 @@ body {
   text-decoration: none;
 }
 .logo {
-  color: #000;
-  transition: font-size 0.2s ease;
+  display: inline-block;
+  transition: transform 0.2s ease;
 }
 .logo:hover {
-  font-size: 150%;
-  color: #000;
+  transform: scale(1.1);
 }
 .nav-link {
   display: inline-block;

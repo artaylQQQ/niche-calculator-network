@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 60" fill="none">
+  <defs>
+    <linearGradient id="grad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#6366f1"/>
+      <stop offset="100%" stop-color="#a855f7"/>
+    </linearGradient>
+  </defs>
+  <rect width="200" height="60" rx="12" fill="url(#grad)"/>
+  <rect x="20" y="15" width="30" height="30" rx="6" fill="#ffffff" opacity="0.95"/>
+  <path d="M30 25h10M30 35h10M25 30h20" stroke="#6366f1" stroke-width="2" stroke-linecap="round"/>
+  <text x="70" y="38" font-size="24" font-family="'Inter', sans-serif" font-weight="600" fill="#ffffff">CalcSimpler</text>
+</svg>
