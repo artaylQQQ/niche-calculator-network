@@ -1,0 +1,35 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+<BaseLayout title="Calculadora IA" description="Utiliza la potencia de la IA para resolver cualquier cálculo al instante.">
+  <section class="max-w-2xl mx-auto py-8">
+    <h1 class="text-3xl font-bold mb-4" style="color: var(--ink)">Calculadora IA</h1>
+    <p class="mb-6" style="color: var(--muted)">¡Bienvenido! Ingresa cualquier operación matemática y la inteligencia artificial te dará la respuesta.</p>
+    <form id="ai-form" class="flex flex-col gap-4">
+      <label for="query" class="sr-only">Operación</label>
+      <input id="query" name="query" type="text" class="p-2 border rounded-md" placeholder="Ej. (5*3)^2" required />
+      <button type="submit" class="p-2 rounded bg-blue-600 text-white hover:bg-blue-700">Calcular</button>
+    </form>
+    <div id="result" class="mt-4 text-lg font-semibold" style="color: var(--ink)"></div>
+  </section>
+  <script>
+    const form = document.getElementById('ai-form');
+    const input = document.getElementById('query');
+    const resultEl = document.getElementById('result');
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      resultEl.textContent = 'Calculando...';
+      try {
+        const resp = await fetch('/api/ai-calculator', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ query: input.value }),
+        });
+        const data = await resp.json();
+        resultEl.textContent = data.result || data.error || 'Error';
+      } catch (err) {
+        resultEl.textContent = 'Error';
+      }
+    });
+  </script>
+</BaseLayout>
