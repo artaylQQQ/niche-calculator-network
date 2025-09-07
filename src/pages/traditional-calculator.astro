@@ -87,22 +87,38 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     const display = document.getElementById('display');
     const buttons = document.querySelectorAll('#calc button');
     let current = '';
-    buttons.forEach(btn => {
-      btn.addEventListener('click', () => {
-        const val = btn.dataset.value;
-        if (val === 'C') {
-          current = '';
-        } else if (val === '=') {
-          try {
-            current = eval(current).toString();
-          } catch {
-            current = 'Error';
-          }
-        } else {
-          current += val;
+
+    function handleInput(val) {
+      if (val === 'C') {
+        current = '';
+      } else if (val === '=') {
+        try {
+          current = eval(current).toString();
+        } catch {
+          current = 'Error';
         }
+      } else {
+        current += val;
+      }
+      display.value = current;
+    }
+
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => handleInput(btn.dataset.value));
+    });
+
+    document.addEventListener('keydown', e => {
+      const key = e.key;
+      if (/[0-9]/.test(key) || ['+', '-', '*', '/', '.'].includes(key)) {
+        handleInput(key);
+      } else if (key === 'Enter') {
+        handleInput('=');
+      } else if (key === 'Escape') {
+        handleInput('C');
+      } else if (key === 'Backspace') {
+        current = current.slice(0, -1);
         display.value = current;
-      });
+      }
     });
   </script>
 </BaseLayout>
