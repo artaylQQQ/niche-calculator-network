@@ -1,0 +1,31 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Hex to Decimal Converter"
+description: "Convert a hexadecimal value to decimal."
+updated: "2025-09-26"
+cluster: "Technology"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  slug: "hex-to-decimal",
+  title: "Hex to Decimal Converter",
+  locale: "en",
+  intro: "Translate a hexadecimal string into its decimal value.",
+  inputs: [
+    { name: "hex", label: "Hex number", type: "text", placeholder: "FF" }
+  ],
+  expression: "parseInt(hex, 16)",
+  examples: [
+    { description: "FF ⇒ 255" },
+    { description: "1A3 ⇒ 419" }
+  ],
+  faqs: [
+    { question: "Can I include 0x?", answer: "No, enter the hex digits only." }
+  ],
+  disclaimer: "For quick conversions.",
+  cluster: "Technology"
+};
+
+<Calculator schema={schema} />

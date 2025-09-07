@@ -1,0 +1,32 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Map Scale Distance Calculator"
+description: "Find real-world distance from map measurement and scale."
+updated: "2025-09-26"
+cluster: "Lifestyle & Travel"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  slug: "map-scale-distance",
+  title: "Map Scale Distance Calculator",
+  locale: "en",
+  unit: "km",
+  intro: "Find real-world distance from map measurement and scale.",
+  inputs: [
+    { name: "map", label: "Map Distance (cm)", type: "number", step: "any", placeholder: "5" },
+    { name: "scale", label: "Scale Denominator", type: "number", step: "any", placeholder: "50000" }
+  ],
+  expression: "(map * scale) / 100000",
+  examples: [
+    { description: "5 cm at 1:50,000 ⇒ 2.5 km" }
+  ],
+  faqs: [
+    { question: "Why divide by 100000?", answer: "There are 100,000 centimeters in a kilometer." }
+  ],
+  disclaimer: "Assumes map scale is accurate.",
+  cluster: "Lifestyle & Travel"
+};
+
+<Calculator schema={schema} />
