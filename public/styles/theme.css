@@ -144,6 +144,12 @@ body {
   background: #d1d5db;
   color: #1f2937;
 }
+@media (max-width: 768px) {
+  .nav-link {
+    padding: 6px 8px;
+    font-size: 14px;
+  }
+}
 @media (max-width: 640px) {
   footer .links {
     gap: 12px;

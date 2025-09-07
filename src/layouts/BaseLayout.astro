@@ -53,13 +53,13 @@ const cfToken = import.meta.env.VITE_CF_ANALYTICS_TOKEN;
         </button>
         <nav
           id="nav"
-          class="hidden absolute top-full left-0 right-0 mx-4 mt-2 flex flex-col items-end gap-2 bg-[var(--card)] border border-[var(--border)] rounded-md p-4 shadow-md sm:static sm:flex sm:flex-row sm:items-center sm:gap-4 sm:justify-end sm:mx-0 sm:mt-0 sm:border-0 sm:p-0 sm:shadow-none"
+          class="hidden absolute top-full left-0 right-0 mx-4 mt-2 flex flex-col items-end gap-2 bg-[var(--card)] border border-[var(--border)] rounded-md p-4 shadow-md sm:static sm:flex sm:flex-row sm:items-center sm:gap-2 md:gap-4 sm:justify-end sm:mx-0 sm:mt-0 sm:border-0 sm:p-0 sm:shadow-none"
           aria-label="Primary"
         >
           <a
-            href="/all"
-            class={['nav-link', Astro.url.pathname.startsWith('/all') && 'active'].filter(Boolean).join(' ')}
-            >All Calculators</a
+            href="/search"
+            class={['nav-link', Astro.url.pathname.startsWith('/search') && 'active'].filter(Boolean).join(' ')}
+            >Search</a
           >
           <a
             href="/categories/"
@@ -67,9 +67,9 @@ const cfToken = import.meta.env.VITE_CF_ANALYTICS_TOKEN;
             >Categories</a
           >
           <a
-            href="/search"
-            class={['nav-link', Astro.url.pathname.startsWith('/search') && 'active'].filter(Boolean).join(' ')}
-            >Search</a
+            href="/all"
+            class={['nav-link', Astro.url.pathname.startsWith('/all') && 'active'].filter(Boolean).join(' ')}
+            >All Calculators</a
           >
           <a
             href="/scientific-calculator/"
