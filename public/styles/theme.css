@@ -82,10 +82,17 @@ body {
 }
 .logo {
   color: #000;
-  transition: font-size 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: transform 0.2s ease;
+}
+.logo img {
+  height: 32px;
+  width: 32px;
 }
 .logo:hover {
-  font-size: 150%;
+  transform: scale(1.05);
   color: #000;
 }
 .nav-link {
