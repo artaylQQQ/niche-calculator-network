@@ -1,0 +1,50 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Ounces to Cups Converter"
+description: "Convert US fluid ounces to cups."
+updated: "2025-09-07"
+cluster: "conversions"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "ounces-to-cups",
+  title: "Ounces to Cups Converter",
+  locale: "en",
+  cluster: "conversions",
+  unit: "cups",
+  intro: "Convert a volume in US fluid ounces to cups using 1 cup = 8 fl oz.",
+  inputs: [
+    {
+      name: "ounces",
+      label: "Fluid ounces",
+      type: "number",
+      step: "any",
+      placeholder: "16",
+    },
+  ],
+  expression: "ounces / 8",
+  examples: [
+    { description: "16 fl oz ⇒ 2 cups" },
+    { description: "10 fl oz ⇒ 1.25 cups" },
+    { description: "32 fl oz ⇒ 4 cups" },
+  ],
+  faqs: [
+    {
+      question: "Is this US cups?",
+      answer: "Yes, it uses the US customary cup of 8 fluid ounces.",
+    },
+    {
+      question: "Does it handle fractions?",
+      answer: "Yes, enter decimals for fractional ounces.",
+    },
+    {
+      question: "Can I convert cups to ounces?",
+      answer: "Use our cups to ounces converter for the reverse conversion.",
+    },
+  ],
+  disclaimer: "For recipe use; verify conversions for critical measurements.",
+};
+
+<Calculator schema={schema} />

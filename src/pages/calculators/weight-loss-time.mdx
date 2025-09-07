@@ -1,0 +1,60 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Weight Loss Time"
+description: "Estimate days to reach a weight loss goal based on daily calorie deficit."
+updated: "2025-09-07"
+cluster: "health"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "weight-loss-time",
+  title: "Weight Loss Time",
+  locale: "en",
+  cluster: "health",
+  unit: "days",
+  intro:
+    "Approximate how many days it may take to lose a target weight given a daily calorie deficit (3500 calories per pound).",
+  inputs: [
+    {
+      name: "goal",
+      label: "Weight loss goal (lb)",
+      type: "number",
+      step: "any",
+      placeholder: "10",
+    },
+    {
+      name: "deficit",
+      label: "Daily calorie deficit",
+      type: "number",
+      step: "any",
+      placeholder: "500",
+    },
+  ],
+  expression: "(goal * 3500) / deficit",
+  examples: [
+    { description: "10 lb goal with 500 calorie deficit ⇒ 70 days" },
+    { description: "5 lb goal with 750 calorie deficit ⇒ 23.33 days" },
+    { description: "15 lb goal with 600 calorie deficit ⇒ 87.5 days" },
+  ],
+  faqs: [
+    {
+      question: "Why 3500 calories per pound?",
+      answer:
+        "It's a common estimate of the energy content of one pound of body fat.",
+    },
+    {
+      question: "Is this exact?",
+      answer: "No, weight loss varies with metabolism and activity.",
+    },
+    {
+      question: "Can deficit be zero?",
+      answer: "No, a deficit greater than zero is required to estimate time.",
+    },
+  ],
+  disclaimer:
+    "This is an approximation; consult a healthcare professional for personalized advice.",
+};
+
+<Calculator schema={schema} />

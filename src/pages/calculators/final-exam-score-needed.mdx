@@ -1,0 +1,66 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Final Exam Score Needed"
+description: "Determine the score required on a final exam to reach a target overall grade."
+updated: "2025-09-07"
+cluster: "education"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "final-exam-score-needed",
+  title: "Final Exam Score Needed",
+  locale: "en",
+  cluster: "education",
+  unit: "%",
+  intro:
+    "Calculate the minimum final exam score needed to achieve a desired course grade.",
+  inputs: [
+    {
+      name: "current",
+      label: "Current grade (%)",
+      type: "number",
+      step: "any",
+      placeholder: "85",
+    },
+    {
+      name: "final_weight",
+      label: "Final exam weight (%)",
+      type: "number",
+      step: "any",
+      placeholder: "40",
+    },
+    {
+      name: "target",
+      label: "Desired overall grade (%)",
+      type: "number",
+      step: "any",
+      placeholder: "90",
+    },
+  ],
+  expression:
+    "(target - current * (1 - final_weight/100)) / (final_weight/100)",
+  examples: [
+    { description: "Current 85%, final 40%, target 90% ⇒ 97.5%" },
+    { description: "Current 78%, final 30%, target 80% ⇒ 86.67%" },
+    { description: "Current 92%, final 50%, target 95% ⇒ 98%" },
+  ],
+  faqs: [
+    {
+      question: "Can this result exceed 100%?",
+      answer: "Yes, meaning the target is unattainable with the given scores.",
+    },
+    {
+      question: "What if my current grade changes?",
+      answer: "Update the current grade to see the new required final score.",
+    },
+    {
+      question: "Does it account for extra credit?",
+      answer: "No, extra credit would need to be added to the current grade.",
+    },
+  ],
+  disclaimer: "Check your course syllabus for exact grading policies.",
+};
+
+<Calculator schema={schema} />

@@ -1,0 +1,60 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Email Open Rate"
+description: "Calculate email open rate from messages sent and opened."
+updated: "2025-09-07"
+cluster: "web & marketing"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "email-open-rate",
+  title: "Email Open Rate",
+  locale: "en",
+  cluster: "web & marketing",
+  unit: "%",
+  intro:
+    "Determine the percentage of sent emails that were opened by recipients.",
+  inputs: [
+    {
+      name: "opened",
+      label: "Opened emails",
+      type: "number",
+      step: "any",
+      placeholder: "500",
+    },
+    {
+      name: "sent",
+      label: "Emails sent",
+      type: "number",
+      step: "any",
+      placeholder: "1000",
+    },
+  ],
+  expression: "(opened / sent) * 100",
+  examples: [
+    { description: "500 opened of 1000 sent ⇒ 50%" },
+    { description: "750 opened of 1500 sent ⇒ 50%" },
+    { description: "200 opened of 800 sent ⇒ 25%" },
+  ],
+  faqs: [
+    {
+      question: "Does this account for spam filters?",
+      answer:
+        "No, it assumes the opened count is accurate from your email provider.",
+    },
+    {
+      question: "Can sent be zero?",
+      answer: "No, at least one email must be sent to calculate a rate.",
+    },
+    {
+      question: "Is this unique opens?",
+      answer: "Use unique opens if available for more accurate rates.",
+    },
+  ],
+  disclaimer:
+    "Metrics vary by platform; verify with your email service analytics.",
+};
+
+<Calculator schema={schema} />
