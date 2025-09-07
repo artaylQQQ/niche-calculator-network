@@ -1,0 +1,54 @@
+---
+const { heading = 'Need another answer?' } = Astro.props;
+---
+<div class="ai-widget">
+  <h2>{heading}</h2>
+  <form id="ai-form" class="ai-form">
+    <input
+      id="ai-question"
+      type="text"
+      placeholder="Ask a question"
+      required
+    />
+    <button type="submit" class="btn">Ask AI</button>
+  </form>
+  <p id="ai-answer" class="ai-answer"></p>
+</div>
+
+<script>
+  const form = document.getElementById('ai-form');
+  const input = document.getElementById('ai-question');
+  const answerEl = document.getElementById('ai-answer');
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const question = input.value.trim();
+    if (!question) return;
+    answerEl.textContent = 'Thinking...';
+    try {
+      const res = await fetch('/api/ai', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ question }),
+      });
+      const data = await res.json();
+      answerEl.textContent = data.answer || 'No answer available.';
+    } catch {
+      answerEl.textContent = 'Error retrieving answer.';
+    }
+  });
+</script>
+
+<style>
+  .ai-widget { margin-top: 2rem; }
+  .ai-form { display: flex; gap: 0.5rem; }
+  .ai-form input {
+    flex: 1;
+    padding: 0.5rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+  }
+  .ai-answer {
+    margin-top: 0.5rem;
+    color: var(--ink);
+  }
+</style>

@@ -4,6 +4,7 @@
   - Sin JSON.parse necesario (aunque se mantiene opcional).
 */
 import AdBanner from './AdBanner.astro';
+import AiWidget from './AiWidget.astro';
 import allCalcs from '../../data/calculators.json';
 const { schema } = Astro.props;
 const title = schema?.title ?? 'Calculator';
@@ -128,6 +129,8 @@ const jsonLd = {
     ))}
   </ul>
 </section>
+
+<AiWidget />
 
 <script type="application/ld+json" set:html={JSON.stringify(jsonLd)}></script>
 

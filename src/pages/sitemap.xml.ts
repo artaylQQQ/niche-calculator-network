@@ -57,6 +57,7 @@ export async function GET({ site }: APIContext) {
     "/privacy",
     "/disclaimer",
     "/categories",
+    "/ai",
   ];
 
   type UrlItem = {
