@@ -9,10 +9,10 @@
   --neutral-sky:#e5e7eb;
   --neutral-warm:#f5f5f4;
   /* Primary brand colour and complementary accents */
-  --primary:#0057B8;
-  --accent:#FACC15; /* Energetic yellow accent */
+  --primary:#2563EB;
+  --accent:#10B981; /* Turquoise accent */
   --accent-red:#DC2626;
-  --ring:#0057B833;
+  --ring:#2563EB33;
   --radius:12px;
   --shadow:0 2px 4px rgba(0,0,0,.1),0 8px 16px rgba(0,0,0,.08);
 }

@@ -4,8 +4,8 @@ module.exports = {
     extend: {
       container: { center: true, padding: "1rem" },
       colors: {
-        primary: "#0057B8",
-        accent: { yellow: "#FACC15", red: "#DC2626" },
+        primary: "#2563EB",
+        accent: { turquoise: "#10B981", red: "#DC2626" },
         neutral: { ink: "#000000", muted: "#4B5563" }
       },
       boxShadow: {
