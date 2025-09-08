@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import AdBanner from '../components/AdBanner.astro';
+import AdSidebar from '../components/AdSidebar.astro';
 
 /*
  * The home page lists twelve high‑level calculator categories.  Each item
@@ -24,16 +24,20 @@ const CATEGORIES = [
 ];
 ---
 <BaseLayout title="Smart & Fast Calculators" description="Calculate anything quickly and easily with our collection of online calculators.">
-  <section class="container mx-auto max-w-5xl px-4 pt-10">
-    <h1 class="text-4xl sm:text-5xl font-extrabold leading-tight" style="color: var(--ink)">
-      Smart &amp; Fast<br />Calculators
-    </h1>
-    <p class="mt-3" style="color: var(--muted)">
-      Calculate anything quickly and easily with our collection of online calculators.
-    </p>
+  <section class="container mx-auto max-w-5xl px-4 pt-10 flex flex-col lg:flex-row items-start gap-8">
+    <div class="flex-1">
+      <div class="flex items-center gap-4">
+        <img src="/logo.svg" alt="CalcSimpler logo" class="h-20 w-auto sm:h-24" />
+        <h1 class="text-4xl sm:text-5xl font-extrabold leading-tight" style="color: var(--ink)">
+          Smart &amp; Fast<br />Calculators
+        </h1>
+      </div>
+      <p class="mt-6 text-lg" style="color: var(--muted)">
+        Calculate anything quickly and easily with our growing collection of smart online calculators for work, home and everyday life.
+      </p>
+    </div>
+    <AdSidebar />
   </section>
-
-  <AdBanner />
 
   <section class="container mx-auto max-w-5xl px-4 py-8">
     <h2 class="sr-only">Categories</h2>
