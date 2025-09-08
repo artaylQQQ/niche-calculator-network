@@ -24,16 +24,30 @@ const CATEGORIES = [
 ];
 ---
 <BaseLayout title="Smart & Fast Calculators" description="Calculate anything quickly and easily with our collection of online calculators.">
-  <section class="container mx-auto max-w-5xl px-4 pt-10">
-    <h1 class="text-4xl sm:text-5xl font-extrabold leading-tight" style="color: var(--ink)">
-      Smart &amp; Fast<br />Calculators
-    </h1>
-    <p class="mt-3" style="color: var(--muted)">
-      Calculate anything quickly and easily with our collection of online calculators.
+  <section class="container mx-auto max-w-5xl px-4 pt-20 pb-10 text-center">
+    <div class="flex items-center justify-center gap-4">
+      <img
+        src="/logo.svg"
+        width="64"
+        height="64"
+        alt="Smart &amp; Fast Calculators logo"
+        loading="lazy"
+      />
+      <h1 class="text-4xl sm:text-5xl font-extrabold leading-tight" style="color: var(--ink)">
+        Smart &amp; Fast<br />Calculators
+      </h1>
+    </div>
+    <p class="mt-4" style="color: var(--muted)">
+      Explore a wide range of accurate, user‑friendly tools for finance, health,
+      math and more to solve everyday problems in seconds.
     </p>
+    <img
+      src="/icons/geometry.svg"
+      alt="Calculator illustration"
+      class="mx-auto mt-8 w-32 h-32"
+      loading="lazy"
+    />
   </section>
-
-  <AdBanner />
 
   <section class="container mx-auto max-w-5xl px-4 py-8">
     <h2 class="sr-only">Categories</h2>
@@ -63,5 +77,7 @@ const CATEGORIES = [
       ))}
     </ul>
   </section>
+
+  <AdBanner />
 
 </BaseLayout>
