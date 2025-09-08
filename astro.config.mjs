@@ -1,5 +1,5 @@
 // astro.config.mjs
-import { defineConfig } from 'astro/config';
+import { defineConfig } from "astro/config";
 
 /**
  * Carga integraciones de forma segura (opcional):
@@ -18,16 +18,16 @@ async function safeAdd(pkgName, makeIntegration) {
 }
 
 // Tailwind (si está instalado)
-await safeAdd('@astrojs/tailwind', (tw) => tw({ applyBaseStyles: true }));
+await safeAdd("@astrojs/tailwind", (tw) => tw({ applyBaseStyles: true }));
 // MDX (si está instalado)
-await safeAdd('@astrojs/mdx', (mdx) => mdx());
-// Sitemap (si está instalado). Genera /sitemap.xml en build.
-await safeAdd('@astrojs/sitemap', (sitemap) => sitemap());
+await safeAdd("@astrojs/mdx", (mdx) => mdx());
+// Sitemap desactivado: existe un generador personalizado en src/pages/sitemap.xml.ts
+// await safeAdd('@astrojs/sitemap', (sitemap) => sitemap());
 
 export default defineConfig({
   // URL pública FINAL del sitio (requerida para canónicos y sitemap)
-  site: 'https://www.calcsimpler.com',
+  site: "https://www.calcsimpler.com",
   // Mantiene URLs sin barra final, coherente con las rutas visibles en producción
-  trailingSlash: 'never',
+  trailingSlash: "never",
   integrations,
 });
