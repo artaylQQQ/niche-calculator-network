@@ -2,35 +2,70 @@
 layout: ../../layouts/CalculatorLayout.astro
 title: "Ohm's Law Current"
 description: "Compute current from voltage and resistance."
-updated: "2025-10-19"
-cluster: "Technology"
+date: 2025-09-08
+updated: 2025-09-08
+cluster: "Technology & Coding"
 ---
-
-import Calculator from "../../components/Calculator.astro";
+import Calculator from '../../components/Calculator.astro';
 
 export const schema = {
-  inputs: [
-    { name: "voltage", label: "Voltage (V)", type: "number", step: "any", placeholder: "12" },
-    { name: "resistance", label: "Resistance (Ω)", type: "number", step: "any", placeholder: "6" }
+  "slug": "ohms-law-current",
+  "title": "Ohm's Law Current",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "voltage",
+      "label": "Voltage (V)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "12"
+    },
+    {
+      "name": "resistance",
+      "label": "Resistance (Ω)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "6"
+    }
   ],
-  slug: "ohms-law-current",
-  title: "Ohm's Law Current",
-  locale: "en",
-  unit: "A",
-  expression: "voltage / resistance",
-  intro: "Apply Ohm's Law to find electric current by dividing voltage by resistance.",
-  examples: [
-    { description: "12 V and 6 Ω ⇒ 2 A" },
-    { description: "5 V and 10 Ω ⇒ 0.5 A" }
+  "expression": "voltage / resistance",
+  "intro": "Compute current from voltage and resistance.",
+  "examples": [
+    {
+      "description": "12 V and 6 Ω ⇒ 2 A"
+    },
+    {
+      "description": "5 V and 10 Ω ⇒ 0.5 A"
+    }
   ],
-  faqs: [
-    { question: "What is Ohm's Law?", answer: "It states that voltage = current × resistance." },
-    { question: "Can resistance be zero?", answer: "No, dividing by zero is undefined and not physical." },
-    { question: "Does it work for AC?", answer: "For simple resistive circuits, yes." },
-    { question: "Which unit is current?", answer: "The result is in amperes (A)." }
+  "faqs": [
+    {
+      "question": "What is Ohm's Law?",
+      "answer": "It states that voltage = current × resistance."
+    },
+    {
+      "question": "Can resistance be zero?",
+      "answer": "No, dividing by zero is undefined and not physical."
+    },
+    {
+      "question": "Does it work for AC?",
+      "answer": "For simple resistive circuits, yes."
+    },
+    {
+      "question": "Which unit is current?",
+      "answer": "The result is in amperes (A)."
+    }
   ],
-  disclaimer: "Ideal calculation; real circuits may have additional factors.",
-  cluster: "Technology"
-};
+  "disclaimer": "Ideal calculation; real circuits may have additional factors.",
+  "cluster": "Technology & Coding",
+  "related": [
+    "data-transfer-time",
+    "kb-to-mb",
+    "download-cost",
+    "dpi-calculator",
+    "battery-charge-time",
+    "ohms-law-resistance"
+  ]
+}
 
 <Calculator schema={schema} />

@@ -2,35 +2,70 @@
 layout: ../../layouts/CalculatorLayout.astro
 title: "Book Page Count Estimator"
 description: "Estimate book pages from total word count."
-updated: "2025-10-19"
-cluster: "Other"
+date: 2025-09-08
+updated: 2025-09-08
+cluster: "Lifestyle & Travel"
 ---
-
-import Calculator from "../../components/Calculator.astro";
+import Calculator from '../../components/Calculator.astro';
 
 export const schema = {
-  inputs: [
-    { name: "words", label: "Total Words", type: "number", step: "any", placeholder: "50000" },
-    { name: "wpp", label: "Words per Page", type: "number", step: "any", placeholder: "300" }
+  "slug": "book-page-count",
+  "title": "Book Page Count Estimator",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "words",
+      "label": "Total Words",
+      "type": "number",
+      "step": "any",
+      "placeholder": "50000"
+    },
+    {
+      "name": "wpp",
+      "label": "Words per Page",
+      "type": "number",
+      "step": "any",
+      "placeholder": "300"
+    }
   ],
-  slug: "book-page-count",
-  title: "Book Page Count Estimator",
-  locale: "en",
-  unit: "pages",
-  expression: "words / wpp",
-  intro: "Estimate how many pages a manuscript will produce based on total words and words per page.",
-  examples: [
-    { description: "50,000 words at 300 wpp ⇒ 167 pages" },
-    { description: "8,000 words at 250 wpp ⇒ 32 pages" }
+  "expression": "words / wpp",
+  "intro": "Estimate book pages from total word count.",
+  "examples": [
+    {
+      "description": "50,000 words at 300 wpp ⇒ 167 pages"
+    },
+    {
+      "description": "8,000 words at 250 wpp ⇒ 32 pages"
+    }
   ],
-  faqs: [
-    { question: "What is words per page?", answer: "It's an average number of words that fit on one page." },
-    { question: "Does font size matter?", answer: "Yes, adjust the words-per-page value for different layouts." },
-    { question: "Can I estimate for ebooks?", answer: "Yes, but ebook pagination varies by device." },
-    { question: "Is the result exact?", answer: "No, it's an estimate for planning purposes." }
+  "faqs": [
+    {
+      "question": "What is words per page?",
+      "answer": "It's an average number of words that fit on one page."
+    },
+    {
+      "question": "Does font size matter?",
+      "answer": "Yes, adjust the words-per-page value for different layouts."
+    },
+    {
+      "question": "Can I estimate for ebooks?",
+      "answer": "Yes, but ebook pagination varies by device."
+    },
+    {
+      "question": "Is the result exact?",
+      "answer": "No, it's an estimate for planning purposes."
+    }
   ],
-  disclaimer: "Actual page counts vary with formatting and design choices.",
-  cluster: "Other"
-};
+  "disclaimer": "Actual page counts vary with formatting and design choices.",
+  "cluster": "Lifestyle & Travel",
+  "related": [
+    "cat-age-human-years",
+    "horse-age-human-years",
+    "dice-roll-probability",
+    "wind-chill-index",
+    "tree-carbon-offset",
+    "lightning-distance"
+  ]
+}
 
 <Calculator schema={schema} />

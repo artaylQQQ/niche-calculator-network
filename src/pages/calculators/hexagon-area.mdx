@@ -1,38 +1,63 @@
 ---
 layout: ../../layouts/CalculatorLayout.astro
 title: "Regular Hexagon Area Calculator"
-description: "Compute the area of a regular hexagon."
-date: 2025-10-14
-updated: 2025-10-14
-cluster: "Math"
+description: "Find the area of a regular hexagon using the standard formula based on side length. Enter the side length and press Calculate."
+date: 2025-09-08
+updated: 2025-09-08
+cluster: "Math & Statistics"
 ---
-
 import Calculator from '../../components/Calculator.astro';
 
 export const schema = {
-  slug: "hexagon-area",
-  title: "Regular Hexagon Area Calculator",
-  locale: "en",
-  cluster: "Math",
-  intro: "Find the area of a regular hexagon using the standard formula based on side length. Enter the side length and press Calculate.",
-  inputs: [
-    { name: "side", label: "Side Length", type: "number", step: "any", placeholder: "2" }
+  "slug": "hexagon-area",
+  "title": "Regular Hexagon Area Calculator",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "side",
+      "label": "Side Length",
+      "type": "number",
+      "step": "any",
+      "placeholder": "2"
+    }
   ],
-  expression: "(3 * Math.sqrt(3) / 2) * side * side",
-  unit: "unit²",
-  examples: [
-    { description: "Side 2 ⇒ 10.39 unit²" },
-    { description: "Side 5 ⇒ 64.95 unit²" },
-    { description: "Side 10 ⇒ 259.81 unit²" }
+  "expression": "(3 * Math.sqrt(3) / 2) * side * side",
+  "intro": "Find the area of a regular hexagon using the standard formula based on side length. Enter the side length and press Calculate.",
+  "examples": [
+    {
+      "description": "Side 2 ⇒ 10.39 unit²"
+    },
+    {
+      "description": "Side 5 ⇒ 64.95 unit²"
+    },
+    {
+      "description": "Side 10 ⇒ 259.81 unit²"
+    }
   ],
-  faqs: [
-    { question: "Where does the formula come from?", answer: "It derives from dividing the hexagon into equilateral triangles." },
-    { question: "What units are used?", answer: "Any consistent length unit; output is squared." },
-    { question: "Does this work for irregular hexagons?", answer: "No, it assumes all sides and angles are equal." }
+  "faqs": [
+    {
+      "question": "Where does the formula come from?",
+      "answer": "It derives from dividing the hexagon into equilateral triangles."
+    },
+    {
+      "question": "What units are used?",
+      "answer": "Any consistent length unit; output is squared."
+    },
+    {
+      "question": "Does this work for irregular hexagons?",
+      "answer": "No, it assumes all sides and angles are equal."
+    }
   ],
-  disclaimer: "For regular hexagons only; ensure measurements are accurate.",
-  related: []
-};
+  "disclaimer": "For regular hexagons only; ensure measurements are accurate.",
+  "cluster": "Math & Statistics",
+  "related": [
+    "grade-average",
+    "median-of-three",
+    "quadratic-vertex-x",
+    "rectangular-prism-volume",
+    "arc-length-circle",
+    "polygon-interior-angle-sum"
+  ]
+}
 
 <Calculator schema={schema} />
-

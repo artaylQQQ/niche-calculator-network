@@ -1,38 +1,63 @@
 ---
 layout: ../../layouts/CalculatorLayout.astro
 title: "Age in Months Calculator"
-description: "Convert years to months."
-date: 2025-10-14
-updated: 2025-10-14
+description: "Convert an age expressed in years to total months. Enter the years and press Calculate."
+date: 2025-09-08
+updated: 2025-09-08
 cluster: "Date & Time"
 ---
-
 import Calculator from '../../components/Calculator.astro';
 
 export const schema = {
-  slug: "age-in-months",
-  title: "Age in Months Calculator",
-  locale: "en",
-  cluster: "Date & Time",
-  intro: "Convert an age expressed in years to total months. Enter the years and press Calculate.",
-  inputs: [
-    { name: "years", label: "Years", type: "number", step: "any", placeholder: "5" }
+  "slug": "age-in-months",
+  "title": "Age in Months Calculator",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "years",
+      "label": "Years",
+      "type": "number",
+      "step": "any",
+      "placeholder": "5"
+    }
   ],
-  expression: "years * 12",
-  unit: "months",
-  examples: [
-    { description: "5 years ⇒ 60 months" },
-    { description: "0.5 years ⇒ 6 months" },
-    { description: "25 years ⇒ 300 months" }
+  "expression": "years * 12",
+  "intro": "Convert an age expressed in years to total months. Enter the years and press Calculate.",
+  "examples": [
+    {
+      "description": "5 years ⇒ 60 months"
+    },
+    {
+      "description": "0.5 years ⇒ 6 months"
+    },
+    {
+      "description": "25 years ⇒ 300 months"
+    }
   ],
-  faqs: [
-    { question: "Why multiply by 12?", answer: "There are 12 months in a year." },
-    { question: "Can I enter decimal years?", answer: "Yes, decimals convert proportionally to months." },
-    { question: "Does it consider varying month lengths?", answer: "No, it assumes all months are equal." }
+  "faqs": [
+    {
+      "question": "Why multiply by 12?",
+      "answer": "There are 12 months in a year."
+    },
+    {
+      "question": "Can I enter decimal years?",
+      "answer": "Yes, decimals convert proportionally to months."
+    },
+    {
+      "question": "Does it consider varying month lengths?",
+      "answer": "No, it assumes all months are equal."
+    }
   ],
-  disclaimer: "Approximation for calendar planning; actual months vary in length.",
-  related: []
-};
+  "disclaimer": "Approximation for calendar planning; actual months vary in length.",
+  "cluster": "Date & Time",
+  "related": [
+    "minutes-to-seconds",
+    "weeks-to-days",
+    "years-to-days",
+    "age-in-days",
+    "seconds-to-days",
+    "days-to-seconds"
+  ]
+}
 
 <Calculator schema={schema} />
-

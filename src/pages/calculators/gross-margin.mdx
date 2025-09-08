@@ -1,39 +1,70 @@
 ---
 layout: ../../layouts/CalculatorLayout.astro
 title: "Gross Margin Calculator"
-description: "Calculate gross margin percentage."
-date: 2025-10-14
-updated: 2025-10-14
-cluster: "Finance"
+description: "Determine gross margin percentage from revenue and cost of goods sold. Enter the values and press Calculate."
+date: 2025-09-08
+updated: 2025-09-08
+cluster: "Finance & Business"
 ---
-
 import Calculator from '../../components/Calculator.astro';
 
 export const schema = {
-  slug: "gross-margin",
-  title: "Gross Margin Calculator",
-  locale: "en",
-  cluster: "Finance",
-  intro: "Determine gross margin percentage from revenue and cost of goods sold. Enter the values and press Calculate.",
-  inputs: [
-    { name: "revenue", label: "Revenue", type: "number", step: "any", placeholder: "1000" },
-    { name: "cogs", label: "Cost of Goods Sold", type: "number", step: "any", placeholder: "600" }
+  "slug": "gross-margin",
+  "title": "Gross Margin Calculator",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "revenue",
+      "label": "Revenue",
+      "type": "number",
+      "step": "any",
+      "placeholder": "1000"
+    },
+    {
+      "name": "cogs",
+      "label": "Cost of Goods Sold",
+      "type": "number",
+      "step": "any",
+      "placeholder": "600"
+    }
   ],
-  expression: "(revenue - cogs) / revenue * 100",
-  unit: "%",
-  examples: [
-    { description: "Revenue $1000, COGS $600 ⇒ 40%" },
-    { description: "Revenue $250, COGS $200 ⇒ 20%" },
-    { description: "Revenue $5000, COGS $3500 ⇒ 30%" }
+  "expression": "(revenue - cogs) / revenue * 100",
+  "intro": "Determine gross margin percentage from revenue and cost of goods sold. Enter the values and press Calculate.",
+  "examples": [
+    {
+      "description": "Revenue $1000, COGS $600 ⇒ 40%"
+    },
+    {
+      "description": "Revenue $250, COGS $200 ⇒ 20%"
+    },
+    {
+      "description": "Revenue $5000, COGS $3500 ⇒ 30%"
+    }
   ],
-  faqs: [
-    { question: "What is gross margin?", answer: "Gross margin is the percentage of revenue left after subtracting cost of goods sold." },
-    { question: "Can gross margin be negative?", answer: "Yes, if COGS exceeds revenue." },
-    { question: "Does it include other expenses?", answer: "No, only direct cost of goods sold is considered." }
+  "faqs": [
+    {
+      "question": "What is gross margin?",
+      "answer": "Gross margin is the percentage of revenue left after subtracting cost of goods sold."
+    },
+    {
+      "question": "Can gross margin be negative?",
+      "answer": "Yes, if COGS exceeds revenue."
+    },
+    {
+      "question": "Does it include other expenses?",
+      "answer": "No, only direct cost of goods sold is considered."
+    }
   ],
-  disclaimer: "Simplified calculation; consult a financial professional for detailed analysis.",
-  related: []
-};
+  "disclaimer": "Simplified calculation; consult a financial professional for detailed analysis.",
+  "cluster": "Finance & Business",
+  "related": [
+    "tip-calculator",
+    "fuel-trip-cost",
+    "credit-card-monthly-interest",
+    "credit-utilization-ratio",
+    "break-even-units",
+    "overtime-pay-calculator"
+  ]
+}
 
 <Calculator schema={schema} />
-

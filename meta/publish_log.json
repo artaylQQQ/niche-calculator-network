@@ -750,5 +750,165 @@
   {
     "slug": "one-rep-max",
     "date": "2025-09-07"
+  },
+  {
+    "slug": "roof-pitch-angle",
+    "date": "2025-09-08"
+  },
+  {
+    "slug": "water-heater-recovery-time",
+    "date": "2025-09-08"
+  },
+  {
+    "slug": "median-of-three",
+    "date": "2025-09-08"
+  },
+  {
+    "slug": "quadratic-vertex-x",
+    "date": "2025-09-08"
+  },
+  {
+    "slug": "battery-charge-time",
+    "date": "2025-09-08"
+  },
+  {
+    "slug": "ohms-law-current",
+    "date": "2025-09-08"
+  },
+  {
+    "slug": "cat-age-human-years",
+    "date": "2025-09-08"
+  },
+  {
+    "slug": "book-page-count",
+    "date": "2025-09-08"
+  },
+  {
+    "slug": "inches-to-cm",
+    "date": "2025-09-08"
+  },
+  {
+    "slug": "pounds-to-stones",
+    "date": "2025-09-08"
+  },
+  {
+    "slug": "days-to-seconds",
+    "date": "2025-09-08"
+  },
+  {
+    "slug": "age-in-months",
+    "date": "2025-09-08"
+  },
+  {
+    "slug": "gross-margin",
+    "date": "2025-09-08"
+  },
+  {
+    "slug": "break-even-units",
+    "date": "2025-09-08"
+  },
+  {
+    "slug": "calorie-deficit",
+    "date": "2025-09-08"
+  },
+  {
+    "slug": "body-surface-area-du-bois",
+    "date": "2025-09-08"
+  },
+  {
+    "slug": "brick-cost",
+    "date": "2025-09-08"
+  },
+  {
+    "slug": "lawn-watering-time",
+    "date": "2025-09-08"
+  },
+  {
+    "slug": "rectangular-prism-volume",
+    "date": "2025-09-08"
+  },
+  {
+    "slug": "hexagon-area",
+    "date": "2025-09-08"
+  },
+  {
+    "slug": "ohms-law-resistance",
+    "date": "2025-09-08"
+  },
+  {
+    "slug": "color-depth-to-colors",
+    "date": "2025-09-08"
+  },
+  {
+    "slug": "horse-age-human-years",
+    "date": "2025-09-08"
+  },
+  {
+    "slug": "dice-roll-probability",
+    "date": "2025-09-08"
+  },
+  {
+    "slug": "btu-to-watts",
+    "date": "2025-09-08"
+  },
+  {
+    "slug": "rpm-to-hertz",
+    "date": "2025-09-08"
+  },
+  {
+    "slug": "day-of-week-finder",
+    "date": "2025-09-08"
+  },
+  {
+    "slug": "days-between-dates",
+    "date": "2025-09-08"
+  },
+  {
+    "slug": "overtime-pay-calculator",
+    "date": "2025-09-08"
+  },
+  {
+    "slug": "savings-goal-timeline",
+    "date": "2025-09-08"
+  },
+  {
+    "slug": "bmr-calculator",
+    "date": "2025-09-08"
+  },
+  {
+    "slug": "daily-protein-intake",
+    "date": "2025-09-08"
+  },
+  {
+    "slug": "rain-gutter-volume",
+    "date": "2025-09-08"
+  },
+  {
+    "slug": "stair-step-count",
+    "date": "2025-09-08"
+  },
+  {
+    "slug": "arc-length-circle",
+    "date": "2025-09-08"
+  },
+  {
+    "slug": "polygon-interior-angle-sum",
+    "date": "2025-09-08"
+  },
+  {
+    "slug": "compression-ratio",
+    "date": "2025-09-08"
+  },
+  {
+    "slug": "clock-cycle-time",
+    "date": "2025-09-08"
+  },
+  {
+    "slug": "wind-chill-index",
+    "date": "2025-09-08"
+  },
+  {
+    "slug": "tree-carbon-offset",
+    "date": "2025-09-08"
   }
 ]

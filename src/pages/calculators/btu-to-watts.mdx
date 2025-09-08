@@ -2,53 +2,63 @@
 layout: ../../layouts/CalculatorLayout.astro
 title: "BTU/hr to Watts Converter"
 description: "Convert BTU per hour to watts of power."
-updated: "2025-02-14"
-cluster: "conversions"
+date: 2025-09-08
+updated: 2025-09-08
+cluster: "Conversions & Units"
 ---
-
-import Calculator from "../../components/Calculator.astro";
+import Calculator from '../../components/Calculator.astro';
 
 export const schema = {
-  inputs: [
+  "slug": "btu-to-watts",
+  "title": "BTU/hr to Watts Converter",
+  "locale": "en",
+  "inputs": [
     {
-      name: "btu",
-      label: "BTU/hr",
-      type: "number",
-      step: "any",
-      min: 0,
-      placeholder: "1000",
-    },
+      "name": "btu",
+      "label": "BTU/hr",
+      "type": "number",
+      "step": "any",
+      "placeholder": "1000"
+    }
   ],
-  slug: "btu-to-watts",
-  title: "BTU/hr to Watts Converter",
-  locale: "en",
-  expression: "btu * 0.29307107",
-  unit: "W",
-  intro: "Convert heating or cooling power from BTU per hour to watts.",
-  examples: [
-    { description: "1000 BTU/hr ⇒ 293.07 W" },
-    { description: "5000 BTU/hr ⇒ 1465.36 W" },
+  "expression": "btu * 0.29307107",
+  "intro": "Convert BTU per hour to watts of power.",
+  "examples": [
+    {
+      "description": "1000 BTU/hr ⇒ 293.07 W"
+    },
+    {
+      "description": "5000 BTU/hr ⇒ 1465.36 W"
+    }
   ],
-  faqs: [
+  "faqs": [
     {
-      question: "What is BTU/hr?",
-      answer: "It measures energy transfer rate in British Thermal Units per hour.",
+      "question": "What is BTU/hr?",
+      "answer": "It measures energy transfer rate in British Thermal Units per hour."
     },
     {
-      question: "Is the conversion linear?",
-      answer: "Yes, each BTU/hr equals 0.29307107 watts.",
+      "question": "Is the conversion linear?",
+      "answer": "Yes, each BTU/hr equals 0.29307107 watts."
     },
     {
-      question: "Can I convert watts to BTU/hr?",
-      answer: "Divide watts by 0.29307107 to get BTU/hr.",
+      "question": "Can I convert watts to BTU/hr?",
+      "answer": "Divide watts by 0.29307107 to get BTU/hr."
     },
     {
-      question: "Does this consider system efficiency?",
-      answer: "No, it only converts units of power.",
-    },
+      "question": "Does this consider system efficiency?",
+      "answer": "No, it only converts units of power."
+    }
   ],
-  disclaimer: "Energy conversion only; efficiency losses are not included.",
-  cluster: "conversions",
-};
+  "disclaimer": "Energy conversion only; efficiency losses are not included.",
+  "cluster": "Conversions & Units",
+  "related": [
+    "pounds-to-kilograms",
+    "square-feet-to-square-meters",
+    "inches-to-cm",
+    "pounds-to-stones",
+    "rpm-to-hertz",
+    "electronvolt-to-joule"
+  ]
+}
 
 <Calculator schema={schema} />

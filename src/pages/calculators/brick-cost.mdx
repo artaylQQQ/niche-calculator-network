@@ -1,39 +1,70 @@
 ---
 layout: ../../layouts/CalculatorLayout.astro
 title: "Brick Cost Calculator"
-description: "Estimate total cost for bricks."
-date: 2025-10-14
-updated: 2025-10-14
+description: "Estimate the total price of bricks based on quantity and cost per brick. Enter the values and press Calculate."
+date: 2025-09-08
+updated: 2025-09-08
 cluster: "Home & DIY"
 ---
-
 import Calculator from '../../components/Calculator.astro';
 
 export const schema = {
-  slug: "brick-cost",
-  title: "Brick Cost Calculator",
-  locale: "en",
-  cluster: "Home & DIY",
-  intro: "Estimate the total price of bricks based on quantity and cost per brick. Enter the values and press Calculate.",
-  inputs: [
-    { name: "bricks", label: "Number of Bricks", type: "number", step: "any", placeholder: "500" },
-    { name: "price", label: "Price per Brick", type: "number", step: "any", placeholder: "0.75" }
+  "slug": "brick-cost",
+  "title": "Brick Cost Calculator",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "bricks",
+      "label": "Number of Bricks",
+      "type": "number",
+      "step": "any",
+      "placeholder": "500"
+    },
+    {
+      "name": "price",
+      "label": "Price per Brick",
+      "type": "number",
+      "step": "any",
+      "placeholder": "0.75"
+    }
   ],
-  expression: "bricks * price",
-  unit: "USD",
-  examples: [
-    { description: "500 bricks at $0.75 ⇒ $375" },
-    { description: "1000 bricks at $0.50 ⇒ $500" },
-    { description: "250 bricks at $1.20 ⇒ $300" }
+  "expression": "bricks * price",
+  "intro": "Estimate the total price of bricks based on quantity and cost per brick. Enter the values and press Calculate.",
+  "examples": [
+    {
+      "description": "500 bricks at $0.75 ⇒ $375"
+    },
+    {
+      "description": "1000 bricks at $0.50 ⇒ $500"
+    },
+    {
+      "description": "250 bricks at $1.20 ⇒ $300"
+    }
   ],
-  faqs: [
-    { question: "Does this include tax?", answer: "No, sales tax is not included." },
-    { question: "Can I enter decimal prices?", answer: "Yes, enter the cost per brick with decimals if needed." },
-    { question: "Does it account for mortar or waste?", answer: "No, it only multiplies quantity by unit price." }
+  "faqs": [
+    {
+      "question": "Does this include tax?",
+      "answer": "No, sales tax is not included."
+    },
+    {
+      "question": "Can I enter decimal prices?",
+      "answer": "Yes, enter the cost per brick with decimals if needed."
+    },
+    {
+      "question": "Does it account for mortar or waste?",
+      "answer": "No, it only multiplies quantity by unit price."
+    }
   ],
-  disclaimer: "For budgeting purposes only; supplier fees and materials may vary.",
-  related: []
-};
+  "disclaimer": "For budgeting purposes only; supplier fees and materials may vary.",
+  "cluster": "Home & DIY",
+  "related": [
+    "paint-needed",
+    "flooring-cost",
+    "concrete-slab-volume",
+    "wallpaper-roll-coverage",
+    "roof-pitch-angle",
+    "water-heater-recovery-time"
+  ]
+}
 
 <Calculator schema={schema} />
-

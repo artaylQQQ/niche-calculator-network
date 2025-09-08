@@ -1,39 +1,70 @@
 ---
 layout: ../../layouts/CalculatorLayout.astro
 title: "Body Surface Area (Du Bois)"
-description: "Estimate body surface area using the Du Bois formula."
-date: 2025-10-14
-updated: 2025-10-14
-cluster: "Health"
+description: "Estimate body surface area (BSA) using the Du Bois formula with weight in kilograms and height in centimeters. Enter the values and press Calculate."
+date: 2025-09-08
+updated: 2025-09-08
+cluster: "Health & Fitness"
 ---
-
 import Calculator from '../../components/Calculator.astro';
 
 export const schema = {
-  slug: "body-surface-area-du-bois",
-  title: "Body Surface Area (Du Bois)",
-  locale: "en",
-  cluster: "Health",
-  intro: "Estimate body surface area (BSA) using the Du Bois formula with weight in kilograms and height in centimeters. Enter the values and press Calculate.",
-  inputs: [
-    { name: "weight", label: "Weight (kg)", type: "number", step: "any", placeholder: "70" },
-    { name: "height", label: "Height (cm)", type: "number", step: "any", placeholder: "170" }
+  "slug": "body-surface-area-du-bois",
+  "title": "Body Surface Area (Du Bois)",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "weight",
+      "label": "Weight (kg)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "70"
+    },
+    {
+      "name": "height",
+      "label": "Height (cm)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "170"
+    }
   ],
-  expression: "0.007184 * Math.pow(weight,0.425) * Math.pow(height,0.725)",
-  unit: "m²",
-  examples: [
-    { description: "70 kg & 170 cm ⇒ 1.84 m²" },
-    { description: "50 kg & 160 cm ⇒ 1.48 m²" },
-    { description: "90 kg & 180 cm ⇒ 2.08 m²" }
+  "expression": "0.007184 * Math.pow(weight,0.425) * Math.pow(height,0.725)",
+  "intro": "Estimate body surface area (BSA) using the Du Bois formula with weight in kilograms and height in centimeters. Enter the values and press Calculate.",
+  "examples": [
+    {
+      "description": "70 kg & 170 cm ⇒ 1.84 m²"
+    },
+    {
+      "description": "50 kg & 160 cm ⇒ 1.48 m²"
+    },
+    {
+      "description": "90 kg & 180 cm ⇒ 2.08 m²"
+    }
   ],
-  faqs: [
-    { question: "What is BSA used for?", answer: "BSA helps dose certain medications and assess metabolic needs." },
-    { question: "Is the Du Bois formula accurate?", answer: "It's a widely used estimate but may not fit all body types." },
-    { question: "Do units matter?", answer: "Yes, weight must be in kilograms and height in centimeters." }
+  "faqs": [
+    {
+      "question": "What is BSA used for?",
+      "answer": "BSA helps dose certain medications and assess metabolic needs."
+    },
+    {
+      "question": "Is the Du Bois formula accurate?",
+      "answer": "It's a widely used estimate but may not fit all body types."
+    },
+    {
+      "question": "Do units matter?",
+      "answer": "Yes, weight must be in kilograms and height in centimeters."
+    }
   ],
-  disclaimer: "For educational purposes only; consult medical professionals for health decisions.",
-  related: []
-};
+  "disclaimer": "For educational purposes only; consult medical professionals for health decisions.",
+  "cluster": "Health & Fitness",
+  "related": [
+    "calories-burned-met",
+    "daily-water-intake",
+    "waist-to-height-ratio",
+    "body-fat-percentage",
+    "one-rep-max",
+    "calorie-deficit"
+  ]
+}
 
 <Calculator schema={schema} />
-

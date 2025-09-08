@@ -1,38 +1,63 @@
 ---
 layout: ../../layouts/CalculatorLayout.astro
 title: "Horse Age in Human Years"
-description: "Estimate a horse's age in human years."
-date: 2025-10-14
-updated: 2025-10-14
-cluster: "Other"
+description: "Approximate a horse's age in human years using a common rule of thumb. Enter the horse's age and press Calculate."
+date: 2025-09-08
+updated: 2025-09-08
+cluster: "Lifestyle & Travel"
 ---
-
 import Calculator from '../../components/Calculator.astro';
 
 export const schema = {
-  slug: "horse-age-human-years",
-  title: "Horse Age in Human Years",
-  locale: "en",
-  cluster: "Other",
-  intro: "Approximate a horse's age in human years using a common rule of thumb. Enter the horse's age and press Calculate.",
-  inputs: [
-    { name: "years", label: "Horse Age (years)", type: "number", step: "any", placeholder: "5" }
+  "slug": "horse-age-human-years",
+  "title": "Horse Age in Human Years",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "years",
+      "label": "Horse Age (years)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "5"
+    }
   ],
-  expression: "Math.min(years,2)*6.5 + Math.max(years-2,0)*4.5",
-  unit: "years",
-  examples: [
-    { description: "1 year ⇒ 6.5 human years" },
-    { description: "5 years ⇒ 26.5 human years" },
-    { description: "10 years ⇒ 49 human years" }
+  "expression": "Math.min(years,2)*6.5 + Math.max(years-2,0)*4.5",
+  "intro": "Approximate a horse's age in human years using a common rule of thumb. Enter the horse's age and press Calculate.",
+  "examples": [
+    {
+      "description": "1 year ⇒ 6.5 human years"
+    },
+    {
+      "description": "5 years ⇒ 26.5 human years"
+    },
+    {
+      "description": "10 years ⇒ 49 human years"
+    }
   ],
-  faqs: [
-    { question: "Why 6.5 years for the first two years?", answer: "Horses mature quickly during their early years." },
-    { question: "Do all breeds age the same?", answer: "No, this is a general approximation." },
-    { question: "Is the rate linear after two years?", answer: "Yes, it assumes 4.5 human years per horse year after age two." }
+  "faqs": [
+    {
+      "question": "Why 6.5 years for the first two years?",
+      "answer": "Horses mature quickly during their early years."
+    },
+    {
+      "question": "Do all breeds age the same?",
+      "answer": "No, this is a general approximation."
+    },
+    {
+      "question": "Is the rate linear after two years?",
+      "answer": "Yes, it assumes 4.5 human years per horse year after age two."
+    }
   ],
-  disclaimer: "For general comparison only; consult a veterinarian for precise assessments.",
-  related: []
-};
+  "disclaimer": "For general comparison only; consult a veterinarian for precise assessments.",
+  "cluster": "Lifestyle & Travel",
+  "related": [
+    "cat-age-human-years",
+    "book-page-count",
+    "dice-roll-probability",
+    "wind-chill-index",
+    "tree-carbon-offset",
+    "lightning-distance"
+  ]
+}
 
 <Calculator schema={schema} />
-

@@ -2,35 +2,70 @@
 layout: ../../layouts/CalculatorLayout.astro
 title: "Quadratic Vertex X"
 description: "Find the x-coordinate of a parabola's vertex."
-updated: "2025-10-19"
-cluster: "Math"
+date: 2025-09-08
+updated: 2025-09-08
+cluster: "Math & Statistics"
 ---
-
-import Calculator from "../../components/Calculator.astro";
+import Calculator from '../../components/Calculator.astro';
 
 export const schema = {
-  inputs: [
-    { name: "a", label: "a", type: "number", step: "any", placeholder: "1" },
-    { name: "b", label: "b", type: "number", step: "any", placeholder: "4" }
+  "slug": "quadratic-vertex-x",
+  "title": "Quadratic Vertex X",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "a",
+      "label": "a",
+      "type": "number",
+      "step": "any",
+      "placeholder": "1"
+    },
+    {
+      "name": "b",
+      "label": "b",
+      "type": "number",
+      "step": "any",
+      "placeholder": "4"
+    }
   ],
-  slug: "quadratic-vertex-x",
-  title: "Quadratic Vertex X",
-  locale: "en",
-  unit: "",
-  expression: "-b / (2 * a)",
-  intro: "Calculate the x-coordinate of the vertex for y = ax² + bx + c.",
-  examples: [
-    { description: "a=1, b=4 ⇒ -2" },
-    { description: "a=2, b=-8 ⇒ 2" }
+  "expression": "-b / (2 * a)",
+  "intro": "Find the x-coordinate of a parabola's vertex.",
+  "examples": [
+    {
+      "description": "a=1, b=4 ⇒ -2"
+    },
+    {
+      "description": "a=2, b=-8 ⇒ 2"
+    }
   ],
-  faqs: [
-    { question: "What is a vertex?", answer: "It's the highest or lowest point of a parabola." },
-    { question: "Do I need c?", answer: "No, the x-coordinate depends only on a and b." },
-    { question: "What if a is zero?", answer: "a must be non-zero for a valid quadratic." },
-    { question: "Can I find y too?", answer: "Use y = c - b²/(4a) once you know a, b, and c." }
+  "faqs": [
+    {
+      "question": "What is a vertex?",
+      "answer": "It's the highest or lowest point of a parabola."
+    },
+    {
+      "question": "Do I need c?",
+      "answer": "No, the x-coordinate depends only on a and b."
+    },
+    {
+      "question": "What if a is zero?",
+      "answer": "a must be non-zero for a valid quadratic."
+    },
+    {
+      "question": "Can I find y too?",
+      "answer": "Use y = c - b²/(4a) once you know a, b, and c."
+    }
   ],
-  disclaimer: "Provides only the x-coordinate; verify calculations in complex cases.",
-  cluster: "Math"
-};
+  "disclaimer": "Provides only the x-coordinate; verify calculations in complex cases.",
+  "cluster": "Math & Statistics",
+  "related": [
+    "grade-average",
+    "median-of-three",
+    "rectangular-prism-volume",
+    "hexagon-area",
+    "arc-length-circle",
+    "polygon-interior-angle-sum"
+  ]
+}
 
 <Calculator schema={schema} />

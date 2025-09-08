@@ -2,34 +2,63 @@
 layout: ../../layouts/CalculatorLayout.astro
 title: "Cat Age in Human Years"
 description: "Estimate a cat's age in human years."
-updated: "2025-10-19"
-cluster: "Other"
+date: 2025-09-08
+updated: 2025-09-08
+cluster: "Lifestyle & Travel"
 ---
-
-import Calculator from "../../components/Calculator.astro";
+import Calculator from '../../components/Calculator.astro';
 
 export const schema = {
-  inputs: [
-    { name: "years", label: "Cat Age (years)", type: "number", step: "any", placeholder: "3" }
+  "slug": "cat-age-human-years",
+  "title": "Cat Age in Human Years",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "years",
+      "label": "Cat Age (years)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "3"
+    }
   ],
-  slug: "cat-age-human-years",
-  title: "Cat Age in Human Years",
-  locale: "en",
-  unit: "years",
-  expression: "Math.min(years,2)*12 + Math.max(years-2,0)*4",
-  intro: "Convert a cat's age to an equivalent human age using a common veterinary approximation.",
-  examples: [
-    { description: "1 year ⇒ 12 human years" },
-    { description: "5 years ⇒ 36 human years" }
+  "expression": "Math.min(years,2)*12 + Math.max(years-2,0)*4",
+  "intro": "Estimate a cat's age in human years.",
+  "examples": [
+    {
+      "description": "1 year ⇒ 12 human years"
+    },
+    {
+      "description": "5 years ⇒ 36 human years"
+    }
   ],
-  faqs: [
-    { question: "Why 12 years for the first year?", answer: "Cats mature quickly, equating to about 12 human years." },
-    { question: "What about the second year?", answer: "The first two years equal roughly 24 human years." },
-    { question: "Do all cats age the same?", answer: "No, health and breed can affect aging." },
-    { question: "Is this scientifically exact?", answer: "It's a widely used estimate but not an exact science." }
+  "faqs": [
+    {
+      "question": "Why 12 years for the first year?",
+      "answer": "Cats mature quickly, equating to about 12 human years."
+    },
+    {
+      "question": "What about the second year?",
+      "answer": "The first two years equal roughly 24 human years."
+    },
+    {
+      "question": "Do all cats age the same?",
+      "answer": "No, health and breed can affect aging."
+    },
+    {
+      "question": "Is this scientifically exact?",
+      "answer": "It's a widely used estimate but not an exact science."
+    }
   ],
-  disclaimer: "For general comparison only; consult veterinarians for precise health assessments.",
-  cluster: "Other"
-};
+  "disclaimer": "For general comparison only; consult veterinarians for precise health assessments.",
+  "cluster": "Lifestyle & Travel",
+  "related": [
+    "book-page-count",
+    "horse-age-human-years",
+    "dice-roll-probability",
+    "wind-chill-index",
+    "tree-carbon-offset",
+    "lightning-distance"
+  ]
+}
 
 <Calculator schema={schema} />

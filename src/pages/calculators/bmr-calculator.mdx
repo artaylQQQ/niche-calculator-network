@@ -2,49 +2,84 @@
 layout: ../../layouts/CalculatorLayout.astro
 title: "Basal Metabolic Rate Calculator"
 description: "Estimate daily calories burned at rest."
-updated: "2025-02-14"
-cluster: "health"
+date: 2025-09-08
+updated: 2025-09-08
+cluster: "Health & Fitness"
 ---
-
-import Calculator from "../../components/Calculator.astro";
+import Calculator from '../../components/Calculator.astro';
 
 export const schema = {
-  inputs: [
-    { name: "weight", label: "Weight (kg)", type: "number", step: "any", placeholder: "70" },
-    { name: "height", label: "Height (cm)", type: "number", step: "any", placeholder: "175" },
-    { name: "age", label: "Age (years)", type: "number", step: "any", placeholder: "30" },
-    { name: "gender", label: "Gender (1=male,0=female)", type: "number", step: "any", placeholder: "1" },
+  "slug": "bmr-calculator",
+  "title": "Basal Metabolic Rate Calculator",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "weight",
+      "label": "Weight (kg)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "70"
+    },
+    {
+      "name": "height",
+      "label": "Height (cm)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "175"
+    },
+    {
+      "name": "age",
+      "label": "Age (years)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "30"
+    },
+    {
+      "name": "gender",
+      "label": "Gender (1=male,0=female)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "1"
+    }
   ],
-  slug: "bmr-calculator",
-  title: "Basal Metabolic Rate Calculator",
-  locale: "en",
-  expression: "10*weight + 6.25*height - 5*age + (gender*166) - 161",
-  unit: "kcal/day",
-  intro: "Estimate basal metabolic rate using the Mifflin–St Jeor equation.",
-  examples: [
-    { description: "70kg, 175cm, 30y, male ⇒ 1648.8 kcal/day" },
-    { description: "60kg, 160cm, 25y, female ⇒ 1314 kcal/day" },
+  "expression": "10*weight + 6.25*height - 5*age + (gender*166) - 161",
+  "intro": "Estimate daily calories burned at rest.",
+  "examples": [
+    {
+      "description": "70kg, 175cm, 30y, male ⇒ 1648.8 kcal/day"
+    },
+    {
+      "description": "60kg, 160cm, 25y, female ⇒ 1314 kcal/day"
+    }
   ],
-  faqs: [
+  "faqs": [
     {
-      question: "What is BMR?",
-      answer: "It is the calories your body burns at rest to maintain vital functions.",
+      "question": "What is BMR?",
+      "answer": "It is the calories your body burns at rest to maintain vital functions."
     },
     {
-      question: "Why use 1 for male and 0 for female?",
-      answer: "The formula adjusts by adding 5 for males and subtracting 161 for females.",
+      "question": "Why use 1 for male and 0 for female?",
+      "answer": "The formula adjusts by adding 5 for males and subtracting 161 for females."
     },
     {
-      question: "Can I enter weight in pounds?",
-      answer: "Convert pounds to kilograms before using the calculator.",
+      "question": "Can I enter weight in pounds?",
+      "answer": "Convert pounds to kilograms before using the calculator."
     },
     {
-      question: "Does this include activity?",
-      answer: "No, it estimates resting metabolic rate only.",
-    },
+      "question": "Does this include activity?",
+      "answer": "No, it estimates resting metabolic rate only."
+    }
   ],
-  disclaimer: "Approximation only; consult a healthcare professional for personalized advice.",
-  cluster: "health",
-};
+  "disclaimer": "Approximation only; consult a healthcare professional for personalized advice.",
+  "cluster": "Health & Fitness",
+  "related": [
+    "calories-burned-met",
+    "daily-water-intake",
+    "waist-to-height-ratio",
+    "body-fat-percentage",
+    "one-rep-max",
+    "calorie-deficit"
+  ]
+}
 
 <Calculator schema={schema} />

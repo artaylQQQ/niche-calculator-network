@@ -2,53 +2,63 @@
 layout: ../../layouts/CalculatorLayout.astro
 title: "RPM to Hertz Converter"
 description: "Convert revolutions per minute to hertz."
-updated: "2025-02-14"
-cluster: "conversions"
+date: 2025-09-08
+updated: 2025-09-08
+cluster: "Conversions & Units"
 ---
-
-import Calculator from "../../components/Calculator.astro";
+import Calculator from '../../components/Calculator.astro';
 
 export const schema = {
-  inputs: [
+  "slug": "rpm-to-hertz",
+  "title": "RPM to Hertz Converter",
+  "locale": "en",
+  "inputs": [
     {
-      name: "rpm",
-      label: "RPM",
-      type: "number",
-      step: "any",
-      min: 0,
-      placeholder: "120",
-    },
+      "name": "rpm",
+      "label": "RPM",
+      "type": "number",
+      "step": "any",
+      "placeholder": "120"
+    }
   ],
-  slug: "rpm-to-hertz",
-  title: "RPM to Hertz Converter",
-  locale: "en",
-  expression: "rpm / 60",
-  unit: "Hz",
-  intro: "Transform rotational speed from revolutions per minute to cycles per second.",
-  examples: [
-    { description: "120 RPM ⇒ 2 Hz" },
-    { description: "3600 RPM ⇒ 60 Hz" },
+  "expression": "rpm / 60",
+  "intro": "Convert revolutions per minute to hertz.",
+  "examples": [
+    {
+      "description": "120 RPM ⇒ 2 Hz"
+    },
+    {
+      "description": "3600 RPM ⇒ 60 Hz"
+    }
   ],
-  faqs: [
+  "faqs": [
     {
-      question: "What is a hertz?",
-      answer: "A hertz equals one cycle per second.",
+      "question": "What is a hertz?",
+      "answer": "A hertz equals one cycle per second."
     },
     {
-      question: "Can RPM be fractional?",
-      answer: "Yes, the converter accepts any numeric value.",
+      "question": "Can RPM be fractional?",
+      "answer": "Yes, the converter accepts any numeric value."
     },
     {
-      question: "How do I convert hertz back to RPM?",
-      answer: "Multiply hertz by 60 to get RPM.",
+      "question": "How do I convert hertz back to RPM?",
+      "answer": "Multiply hertz by 60 to get RPM."
     },
     {
-      question: "Does direction of rotation matter?",
-      answer: "No, only magnitude is considered.",
-    },
+      "question": "Does direction of rotation matter?",
+      "answer": "No, only magnitude is considered."
+    }
   ],
-  disclaimer: "Assumes constant rotational speed without gear losses.",
-  cluster: "conversions",
-};
+  "disclaimer": "Assumes constant rotational speed without gear losses.",
+  "cluster": "Conversions & Units",
+  "related": [
+    "pounds-to-kilograms",
+    "square-feet-to-square-meters",
+    "inches-to-cm",
+    "pounds-to-stones",
+    "btu-to-watts",
+    "electronvolt-to-joule"
+  ]
+}
 
 <Calculator schema={schema} />

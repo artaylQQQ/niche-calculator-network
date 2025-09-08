@@ -1,39 +1,70 @@
 ---
 layout: ../../layouts/CalculatorLayout.astro
 title: "Calorie Deficit Daily Intake Calculator"
-description: "Determine daily calories after a deficit."
-date: 2025-10-14
-updated: 2025-10-14
-cluster: "Health"
+description: "Calculate your daily calorie intake after applying a chosen deficit. Enter maintenance calories and desired deficit, then press Calculate."
+date: 2025-09-08
+updated: 2025-09-08
+cluster: "Health & Fitness"
 ---
-
 import Calculator from '../../components/Calculator.astro';
 
 export const schema = {
-  slug: "calorie-deficit",
-  title: "Calorie Deficit Daily Intake Calculator",
-  locale: "en",
-  cluster: "Health",
-  intro: "Calculate your daily calorie intake after applying a chosen deficit. Enter maintenance calories and desired deficit, then press Calculate.",
-  inputs: [
-    { name: "maintenance", label: "Maintenance Calories", type: "number", step: "any", placeholder: "2500" },
-    { name: "deficit", label: "Calorie Deficit", type: "number", step: "any", placeholder: "500" }
+  "slug": "calorie-deficit",
+  "title": "Calorie Deficit Daily Intake Calculator",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "maintenance",
+      "label": "Maintenance Calories",
+      "type": "number",
+      "step": "any",
+      "placeholder": "2500"
+    },
+    {
+      "name": "deficit",
+      "label": "Calorie Deficit",
+      "type": "number",
+      "step": "any",
+      "placeholder": "500"
+    }
   ],
-  expression: "maintenance - deficit",
-  unit: "kcal",
-  examples: [
-    { description: "Maintenance 2500 kcal, Deficit 500 ⇒ 2000 kcal" },
-    { description: "Maintenance 2000 kcal, Deficit 300 ⇒ 1700 kcal" },
-    { description: "Maintenance 2800 kcal, Deficit 1000 ⇒ 1800 kcal" }
+  "expression": "maintenance - deficit",
+  "intro": "Calculate your daily calorie intake after applying a chosen deficit. Enter maintenance calories and desired deficit, then press Calculate.",
+  "examples": [
+    {
+      "description": "Maintenance 2500 kcal, Deficit 500 ⇒ 2000 kcal"
+    },
+    {
+      "description": "Maintenance 2000 kcal, Deficit 300 ⇒ 1700 kcal"
+    },
+    {
+      "description": "Maintenance 2800 kcal, Deficit 1000 ⇒ 1800 kcal"
+    }
   ],
-  faqs: [
-    { question: "What are maintenance calories?", answer: "The amount of energy your body needs to maintain weight." },
-    { question: "Can the deficit be too large?", answer: "Yes, excessive deficits can be unhealthy." },
-    { question: "Does this guarantee weight loss?", answer: "Weight loss also depends on activity and individual factors." }
+  "faqs": [
+    {
+      "question": "What are maintenance calories?",
+      "answer": "The amount of energy your body needs to maintain weight."
+    },
+    {
+      "question": "Can the deficit be too large?",
+      "answer": "Yes, excessive deficits can be unhealthy."
+    },
+    {
+      "question": "Does this guarantee weight loss?",
+      "answer": "Weight loss also depends on activity and individual factors."
+    }
   ],
-  disclaimer: "Consult a healthcare professional before making dietary changes.",
-  related: []
-};
+  "disclaimer": "Consult a healthcare professional before making dietary changes.",
+  "cluster": "Health & Fitness",
+  "related": [
+    "calories-burned-met",
+    "daily-water-intake",
+    "waist-to-height-ratio",
+    "body-fat-percentage",
+    "one-rep-max",
+    "body-surface-area-du-bois"
+  ]
+}
 
 <Calculator schema={schema} />
-

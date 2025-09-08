@@ -2,47 +2,70 @@
 layout: ../../layouts/CalculatorLayout.astro
 title: "Stair Step Count Calculator"
 description: "Determine number of steps for a staircase."
-updated: "2025-02-14"
-cluster: "home-diy"
+date: 2025-09-08
+updated: 2025-09-08
+cluster: "Home & DIY"
 ---
-
-import Calculator from "../../components/Calculator.astro";
+import Calculator from '../../components/Calculator.astro';
 
 export const schema = {
-  inputs: [
-    { name: "totalRise", label: "Total Rise (in)", type: "number", step: "any", placeholder: "96" },
-    { name: "risePer", label: "Rise per Step (in)", type: "number", step: "any", placeholder: "7.5" },
+  "slug": "stair-step-count",
+  "title": "Stair Step Count Calculator",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "totalRise",
+      "label": "Total Rise (in)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "96"
+    },
+    {
+      "name": "risePer",
+      "label": "Rise per Step (in)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "7.5"
+    }
   ],
-  slug: "stair-step-count",
-  title: "Stair Step Count Calculator",
-  locale: "en",
-  expression: "Math.ceil(totalRise / risePer)",
-  unit: "steps",
-  intro: "Estimate how many steps are needed based on total rise and desired rise per step.",
-  examples: [
-    { description: "96 in total rise at 7.5 in ⇒ 13 steps" },
-    { description: "108 in total rise at 7 in ⇒ 16 steps" },
+  "expression": "Math.ceil(totalRise / risePer)",
+  "intro": "Determine number of steps for a staircase.",
+  "examples": [
+    {
+      "description": "96 in total rise at 7.5 in ⇒ 13 steps"
+    },
+    {
+      "description": "108 in total rise at 7 in ⇒ 16 steps"
+    }
   ],
-  faqs: [
+  "faqs": [
     {
-      question: "Why is the result rounded up?",
-      answer: "A partial step would not meet the total rise, so the number is rounded up.",
+      "question": "Why is the result rounded up?",
+      "answer": "A partial step would not meet the total rise, so the number is rounded up."
     },
     {
-      question: "Does this include landings?",
-      answer: "No, it only counts steps.",
+      "question": "Does this include landings?",
+      "answer": "No, it only counts steps."
     },
     {
-      question: "What is a typical rise per step?",
-      answer: "Most building codes allow 7–8 inches per step.",
+      "question": "What is a typical rise per step?",
+      "answer": "Most building codes allow 7–8 inches per step."
     },
     {
-      question: "Should local codes be checked?",
-      answer: "Yes, always verify requirements before construction.",
-    },
+      "question": "Should local codes be checked?",
+      "answer": "Yes, always verify requirements before construction."
+    }
   ],
-  disclaimer: "Consult building standards and professionals for safe staircase design.",
-  cluster: "home-diy",
-};
+  "disclaimer": "Consult building standards and professionals for safe staircase design.",
+  "cluster": "Home & DIY",
+  "related": [
+    "paint-needed",
+    "flooring-cost",
+    "concrete-slab-volume",
+    "wallpaper-roll-coverage",
+    "roof-pitch-angle",
+    "water-heater-recovery-time"
+  ]
+}
 
 <Calculator schema={schema} />

@@ -2,46 +2,63 @@
 layout: ../../layouts/CalculatorLayout.astro
 title: "Tree Carbon Offset Calculator"
 description: "Estimate trees needed to offset CO₂ emissions."
-updated: "2025-02-14"
-cluster: "other"
+date: 2025-09-08
+updated: 2025-09-08
+cluster: "Lifestyle & Travel"
 ---
-
-import Calculator from "../../components/Calculator.astro";
+import Calculator from '../../components/Calculator.astro';
 
 export const schema = {
-  inputs: [
-    { name: "co2", label: "CO₂ Emissions (kg/yr)", type: "number", step: "any", placeholder: "100" },
+  "slug": "tree-carbon-offset",
+  "title": "Tree Carbon Offset Calculator",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "co2",
+      "label": "CO₂ Emissions (kg/yr)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "100"
+    }
   ],
-  slug: "tree-carbon-offset",
-  title: "Tree Carbon Offset Calculator",
-  locale: "en",
-  expression: "co2 / 21.77",
-  unit: "trees",
-  intro: "Approximate how many trees are required to absorb a given amount of carbon dioxide annually.",
-  examples: [
-    { description: "100 kg CO₂ ⇒ 4.59 trees" },
-    { description: "1000 kg CO₂ ⇒ 45.92 trees" },
+  "expression": "co2 / 21.77",
+  "intro": "Estimate trees needed to offset CO₂ emissions.",
+  "examples": [
+    {
+      "description": "100 kg CO₂ ⇒ 4.59 trees"
+    },
+    {
+      "description": "1000 kg CO₂ ⇒ 45.92 trees"
+    }
   ],
-  faqs: [
+  "faqs": [
     {
-      question: "What absorption rate is assumed?",
-      answer: "Each tree is estimated to absorb 21.77 kg of CO₂ per year.",
+      "question": "What absorption rate is assumed?",
+      "answer": "Each tree is estimated to absorb 21.77 kg of CO₂ per year."
     },
     {
-      question: "Do different species absorb different amounts?",
-      answer: "Yes, species and growth conditions affect absorption.",
+      "question": "Do different species absorb different amounts?",
+      "answer": "Yes, species and growth conditions affect absorption."
     },
     {
-      question: "Is this a lifetime or annual estimate?",
-      answer: "It represents annual offset for living trees.",
+      "question": "Is this a lifetime or annual estimate?",
+      "answer": "It represents annual offset for living trees."
     },
     {
-      question: "Does planting guarantee absorption?",
-      answer: "Tree survival and growth are required to sequester carbon.",
-    },
+      "question": "Does planting guarantee absorption?",
+      "answer": "Tree survival and growth are required to sequester carbon."
+    }
   ],
-  disclaimer: "Approximate calculation; actual sequestration varies by species and environment.",
-  cluster: "other",
-};
+  "disclaimer": "Approximate calculation; actual sequestration varies by species and environment.",
+  "cluster": "Lifestyle & Travel",
+  "related": [
+    "cat-age-human-years",
+    "book-page-count",
+    "horse-age-human-years",
+    "dice-roll-probability",
+    "wind-chill-index",
+    "lightning-distance"
+  ]
+}
 
 <Calculator schema={schema} />

@@ -2,48 +2,77 @@
 layout: ../../layouts/CalculatorLayout.astro
 title: "Rain Gutter Volume Calculator"
 description: "Estimate water capacity of a gutter section."
-updated: "2025-02-14"
-cluster: "home-diy"
+date: 2025-09-08
+updated: 2025-09-08
+cluster: "Home & DIY"
 ---
-
-import Calculator from "../../components/Calculator.astro";
+import Calculator from '../../components/Calculator.astro';
 
 export const schema = {
-  inputs: [
-    { name: "length", label: "Length (ft)", type: "number", step: "any", placeholder: "10" },
-    { name: "width", label: "Width (in)", type: "number", step: "any", placeholder: "5" },
-    { name: "depth", label: "Depth (in)", type: "number", step: "any", placeholder: "4" },
+  "slug": "rain-gutter-volume",
+  "title": "Rain Gutter Volume Calculator",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "length",
+      "label": "Length (ft)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "10"
+    },
+    {
+      "name": "width",
+      "label": "Width (in)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "5"
+    },
+    {
+      "name": "depth",
+      "label": "Depth (in)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "4"
+    }
   ],
-  slug: "rain-gutter-volume",
-  title: "Rain Gutter Volume Calculator",
-  locale: "en",
-  expression: "(length * 12 * width * depth) / 231",
-  unit: "gallons",
-  intro: "Determine how many gallons a rectangular gutter segment can hold.",
-  examples: [
-    { description: "10 ft × 5 in × 4 in ⇒ 10.39 gallons" },
-    { description: "20 ft × 6 in × 4 in ⇒ 24.94 gallons" },
+  "expression": "(length * 12 * width * depth) / 231",
+  "intro": "Estimate water capacity of a gutter section.",
+  "examples": [
+    {
+      "description": "10 ft × 5 in × 4 in ⇒ 10.39 gallons"
+    },
+    {
+      "description": "20 ft × 6 in × 4 in ⇒ 24.94 gallons"
+    }
   ],
-  faqs: [
+  "faqs": [
     {
-      question: "Why divide by 231?",
-      answer: "There are 231 cubic inches in a gallon.",
+      "question": "Why divide by 231?",
+      "answer": "There are 231 cubic inches in a gallon."
     },
     {
-      question: "Does gutter slope matter?",
-      answer: "This calculation assumes no slope.",
+      "question": "Does gutter slope matter?",
+      "answer": "This calculation assumes no slope."
     },
     {
-      question: "Can I use metric units?",
-      answer: "Convert measurements to inches and feet before using the formula.",
+      "question": "Can I use metric units?",
+      "answer": "Convert measurements to inches and feet before using the formula."
     },
     {
-      question: "Does debris reduce capacity?",
-      answer: "Yes, debris or screens can reduce actual volume.",
-    },
+      "question": "Does debris reduce capacity?",
+      "answer": "Yes, debris or screens can reduce actual volume."
+    }
   ],
-  disclaimer: "Approximate capacity; actual performance may vary with installation conditions.",
-  cluster: "home-diy",
-};
+  "disclaimer": "Approximate capacity; actual performance may vary with installation conditions.",
+  "cluster": "Home & DIY",
+  "related": [
+    "paint-needed",
+    "flooring-cost",
+    "concrete-slab-volume",
+    "wallpaper-roll-coverage",
+    "roof-pitch-angle",
+    "water-heater-recovery-time"
+  ]
+}
 
 <Calculator schema={schema} />

@@ -2,36 +2,77 @@
 layout: ../../layouts/CalculatorLayout.astro
 title: "Median of Three Numbers"
 description: "Find the median value among three numbers."
-updated: "2025-10-19"
-cluster: "Math"
+date: 2025-09-08
+updated: 2025-09-08
+cluster: "Math & Statistics"
 ---
-
-import Calculator from "../../components/Calculator.astro";
+import Calculator from '../../components/Calculator.astro';
 
 export const schema = {
-  inputs: [
-    { name: "a", label: "First Number", type: "number", step: "any", placeholder: "1" },
-    { name: "b", label: "Second Number", type: "number", step: "any", placeholder: "5" },
-    { name: "c", label: "Third Number", type: "number", step: "any", placeholder: "3" }
+  "slug": "median-of-three",
+  "title": "Median of Three Numbers",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "a",
+      "label": "First Number",
+      "type": "number",
+      "step": "any",
+      "placeholder": "1"
+    },
+    {
+      "name": "b",
+      "label": "Second Number",
+      "type": "number",
+      "step": "any",
+      "placeholder": "5"
+    },
+    {
+      "name": "c",
+      "label": "Third Number",
+      "type": "number",
+      "step": "any",
+      "placeholder": "3"
+    }
   ],
-  slug: "median-of-three",
-  title: "Median of Three Numbers",
-  locale: "en",
-  unit: "",
-  expression: "a + b + c - Math.max(a,b,c) - Math.min(a,b,c)",
-  intro: "Calculate the middle value of any three numbers without sorting.",
-  examples: [
-    { description: "1, 5, 3 ⇒ 3" },
-    { description: "10, 20, 15 ⇒ 15" }
+  "expression": "a + b + c - Math.max(a,b,c) - Math.min(a,b,c)",
+  "intro": "Find the median value among three numbers.",
+  "examples": [
+    {
+      "description": "1, 5, 3 ⇒ 3"
+    },
+    {
+      "description": "10, 20, 15 ⇒ 15"
+    }
   ],
-  faqs: [
-    { question: "What is a median?", answer: "It's the middle value when numbers are ordered." },
-    { question: "Does order matter?", answer: "No, the formula works regardless of input order." },
-    { question: "Can numbers repeat?", answer: "Yes, duplicates are allowed and may be the median." },
-    { question: "Why not sort?", answer: "This formula avoids sorting by using sums and extremes." }
+  "faqs": [
+    {
+      "question": "What is a median?",
+      "answer": "It's the middle value when numbers are ordered."
+    },
+    {
+      "question": "Does order matter?",
+      "answer": "No, the formula works regardless of input order."
+    },
+    {
+      "question": "Can numbers repeat?",
+      "answer": "Yes, duplicates are allowed and may be the median."
+    },
+    {
+      "question": "Why not sort?",
+      "answer": "This formula avoids sorting by using sums and extremes."
+    }
   ],
-  disclaimer: "Ensure numeric inputs for accurate results.",
-  cluster: "Math"
-};
+  "disclaimer": "Ensure numeric inputs for accurate results.",
+  "cluster": "Math & Statistics",
+  "related": [
+    "grade-average",
+    "quadratic-vertex-x",
+    "rectangular-prism-volume",
+    "hexagon-area",
+    "arc-length-circle",
+    "polygon-interior-angle-sum"
+  ]
+}
 
 <Calculator schema={schema} />

@@ -1,39 +1,70 @@
 ---
 layout: ../../layouts/CalculatorLayout.astro
 title: "Ohm's Law Resistance Calculator"
-description: "Compute resistance from voltage and current."
-date: 2025-10-14
-updated: 2025-10-14
-cluster: "Technology"
+description: "Determine electrical resistance using voltage divided by current. Enter voltage and current and press Calculate."
+date: 2025-09-08
+updated: 2025-09-08
+cluster: "Technology & Coding"
 ---
-
 import Calculator from '../../components/Calculator.astro';
 
 export const schema = {
-  slug: "ohms-law-resistance",
-  title: "Ohm's Law Resistance Calculator",
-  locale: "en",
-  cluster: "Technology",
-  intro: "Determine electrical resistance using voltage divided by current. Enter voltage and current and press Calculate.",
-  inputs: [
-    { name: "voltage", label: "Voltage (V)", type: "number", step: "any", placeholder: "10" },
-    { name: "current", label: "Current (A)", type: "number", step: "any", placeholder: "2" }
+  "slug": "ohms-law-resistance",
+  "title": "Ohm's Law Resistance Calculator",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "voltage",
+      "label": "Voltage (V)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "10"
+    },
+    {
+      "name": "current",
+      "label": "Current (A)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "2"
+    }
   ],
-  expression: "voltage / current",
-  unit: "Ω",
-  examples: [
-    { description: "10 V / 2 A ⇒ 5 Ω" },
-    { description: "5 V / 0.5 A ⇒ 10 Ω" },
-    { description: "12 V / 3 A ⇒ 4 Ω" }
+  "expression": "voltage / current",
+  "intro": "Determine electrical resistance using voltage divided by current. Enter voltage and current and press Calculate.",
+  "examples": [
+    {
+      "description": "10 V / 2 A ⇒ 5 Ω"
+    },
+    {
+      "description": "5 V / 0.5 A ⇒ 10 Ω"
+    },
+    {
+      "description": "12 V / 3 A ⇒ 4 Ω"
+    }
   ],
-  faqs: [
-    { question: "What if current is zero?", answer: "Resistance becomes undefined; current must be nonzero." },
-    { question: "What unit is the result?", answer: "Ohms (Ω)." },
-    { question: "Does this apply to AC and DC?", answer: "It represents ideal conditions; real circuits may differ." }
+  "faqs": [
+    {
+      "question": "What if current is zero?",
+      "answer": "Resistance becomes undefined; current must be nonzero."
+    },
+    {
+      "question": "What unit is the result?",
+      "answer": "Ohms (Ω)."
+    },
+    {
+      "question": "Does this apply to AC and DC?",
+      "answer": "It represents ideal conditions; real circuits may differ."
+    }
   ],
-  disclaimer: "Ideal calculation; real components have tolerances and reactance.",
-  related: []
-};
+  "disclaimer": "Ideal calculation; real components have tolerances and reactance.",
+  "cluster": "Technology & Coding",
+  "related": [
+    "data-transfer-time",
+    "kb-to-mb",
+    "download-cost",
+    "dpi-calculator",
+    "battery-charge-time",
+    "ohms-law-current"
+  ]
+}
 
 <Calculator schema={schema} />
-
