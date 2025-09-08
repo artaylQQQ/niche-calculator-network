@@ -14327,23 +14327,41 @@
       }
     ],
     "disclaimer": "For fun estimates only; not for official records."
-  }
-,
+  },
   {
     "slug": "working-capital-ratio",
     "title": "Working Capital Ratio Calculator",
     "cluster": "finance",
     "description": "Measure liquidity by dividing current assets by current liabilities.",
     "inputs": [
-      { "name": "assets", "label": "Current Assets", "type": "number", "min": 0, "step": "any", "placeholder": "50000" },
-      { "name": "liabilities", "label": "Current Liabilities", "type": "number", "min": 0, "step": "any", "placeholder": "25000" }
+      {
+        "name": "assets",
+        "label": "Current Assets",
+        "type": "number",
+        "min": 0,
+        "step": "any",
+        "placeholder": "50000"
+      },
+      {
+        "name": "liabilities",
+        "label": "Current Liabilities",
+        "type": "number",
+        "min": 0,
+        "step": "any",
+        "placeholder": "25000"
+      }
     ],
     "expression": "assets / liabilities",
     "examples": [
-      { "description": "50,000 assets and 25,000 liabilities ⇒ 2" }
+      {
+        "description": "50,000 assets and 25,000 liabilities ⇒ 2"
+      }
     ],
     "faqs": [
-      { "question": "What does the ratio indicate?", "answer": "It shows short-term financial health." }
+      {
+        "question": "What does the ratio indicate?",
+        "answer": "It shows short-term financial health."
+      }
     ]
   },
   {
@@ -14352,15 +14370,34 @@
     "cluster": "personal finance & loans",
     "description": "Estimate monthly private mortgage insurance cost from loan amount and PMI rate.",
     "inputs": [
-      { "name": "loan", "label": "Loan Amount", "type": "number", "min": 0, "step": "any", "placeholder": "200000" },
-      { "name": "rate", "label": "PMI Rate (%) per year", "type": "number", "min": 0, "step": "any", "placeholder": "0.5" }
+      {
+        "name": "loan",
+        "label": "Loan Amount",
+        "type": "number",
+        "min": 0,
+        "step": "any",
+        "placeholder": "200000"
+      },
+      {
+        "name": "rate",
+        "label": "PMI Rate (%) per year",
+        "type": "number",
+        "min": 0,
+        "step": "any",
+        "placeholder": "0.5"
+      }
     ],
     "expression": "(loan * rate/100) / 12",
     "examples": [
-      { "description": "200,000 loan at 0.5% ⇒ 83.33" }
+      {
+        "description": "200,000 loan at 0.5% ⇒ 83.33"
+      }
     ],
     "faqs": [
-      { "question": "When does PMI end?", "answer": "Usually when loan-to-value drops below 80%." }
+      {
+        "question": "When does PMI end?",
+        "answer": "Usually when loan-to-value drops below 80%."
+      }
     ]
   },
   {
@@ -14369,16 +14406,42 @@
     "cluster": "health",
     "description": "Estimate expected due date 280 days from the last menstrual period.",
     "inputs": [
-      { "name": "year", "label": "LMP Year", "type": "number", "min": 0, "step": "1", "placeholder": "2025" },
-      { "name": "month", "label": "LMP Month", "type": "number", "min": 1, "step": "1", "placeholder": "1" },
-      { "name": "day", "label": "LMP Day", "type": "number", "min": 1, "step": "1", "placeholder": "1" }
+      {
+        "name": "year",
+        "label": "LMP Year",
+        "type": "number",
+        "min": 0,
+        "step": "1",
+        "placeholder": "2025"
+      },
+      {
+        "name": "month",
+        "label": "LMP Month",
+        "type": "number",
+        "min": 1,
+        "step": "1",
+        "placeholder": "1"
+      },
+      {
+        "name": "day",
+        "label": "LMP Day",
+        "type": "number",
+        "min": 1,
+        "step": "1",
+        "placeholder": "1"
+      }
     ],
     "expression": "(new Date(year, month-1, day + 280)).toISOString().slice(0,10)",
     "examples": [
-      { "description": "LMP 2025-01-01 ⇒ 2025-10-08" }
+      {
+        "description": "LMP 2025-01-01 ⇒ 2025-10-08"
+      }
     ],
     "faqs": [
-      { "question": "How accurate is this?", "answer": "Actual delivery can vary by several weeks." }
+      {
+        "question": "How accurate is this?",
+        "answer": "Actual delivery can vary by several weeks."
+      }
     ]
   },
   {
@@ -14387,16 +14450,39 @@
     "cluster": "math",
     "description": "Average distance of numbers from their mean.",
     "inputs": [
-      { "name": "a", "label": "Number 1", "type": "number", "step": "any", "placeholder": "2" },
-      { "name": "b", "label": "Number 2", "type": "number", "step": "any", "placeholder": "4" },
-      { "name": "c", "label": "Number 3", "type": "number", "step": "any", "placeholder": "7" }
+      {
+        "name": "a",
+        "label": "Number 1",
+        "type": "number",
+        "step": "any",
+        "placeholder": "2"
+      },
+      {
+        "name": "b",
+        "label": "Number 2",
+        "type": "number",
+        "step": "any",
+        "placeholder": "4"
+      },
+      {
+        "name": "c",
+        "label": "Number 3",
+        "type": "number",
+        "step": "any",
+        "placeholder": "7"
+      }
     ],
     "expression": "((Math.abs(a-((a+b+c)/3)) + Math.abs(b-((a+b+c)/3)) + Math.abs(c-((a+b+c)/3)))/3)",
     "examples": [
-      { "description": "2, 4, 7 ⇒ 1.78" }
+      {
+        "description": "2, 4, 7 ⇒ 1.78"
+      }
     ],
     "faqs": [
-      { "question": "What does MAD show?", "answer": "It indicates variability around the mean." }
+      {
+        "question": "What does MAD show?",
+        "answer": "It indicates variability around the mean."
+      }
     ]
   },
   {
@@ -14405,14 +14491,26 @@
     "cluster": "conversions",
     "description": "Convert miles per hour to kilometers per hour.",
     "inputs": [
-      { "name": "mph", "label": "Miles per hour", "type": "number", "min": 0, "step": "any", "placeholder": "60" }
+      {
+        "name": "mph",
+        "label": "Miles per hour",
+        "type": "number",
+        "min": 0,
+        "step": "any",
+        "placeholder": "60"
+      }
     ],
     "expression": "mph * 1.60934",
     "examples": [
-      { "description": "60 mph ⇒ 96.56 km/h" }
+      {
+        "description": "60 mph ⇒ 96.56 km/h"
+      }
     ],
     "faqs": [
-      { "question": "Can it convert backward?", "answer": "Divide km/h by 1.60934 to get mph." }
+      {
+        "question": "Can it convert backward?",
+        "answer": "Divide km/h by 1.60934 to get mph."
+      }
     ]
   },
   {
@@ -14421,16 +14519,42 @@
     "cluster": "date & time",
     "description": "Convert a calendar date to seconds since the Unix epoch.",
     "inputs": [
-      { "name": "year", "label": "Year", "type": "number", "min": 0, "step": "1", "placeholder": "2025" },
-      { "name": "month", "label": "Month", "type": "number", "min": 1, "step": "1", "placeholder": "1" },
-      { "name": "day", "label": "Day", "type": "number", "min": 1, "step": "1", "placeholder": "1" }
+      {
+        "name": "year",
+        "label": "Year",
+        "type": "number",
+        "min": 0,
+        "step": "1",
+        "placeholder": "2025"
+      },
+      {
+        "name": "month",
+        "label": "Month",
+        "type": "number",
+        "min": 1,
+        "step": "1",
+        "placeholder": "1"
+      },
+      {
+        "name": "day",
+        "label": "Day",
+        "type": "number",
+        "min": 1,
+        "step": "1",
+        "placeholder": "1"
+      }
     ],
     "expression": "Date.UTC(year, month-1, day)/1000",
     "examples": [
-      { "description": "1970-01-01 ⇒ 0" }
+      {
+        "description": "1970-01-01 ⇒ 0"
+      }
     ],
     "faqs": [
-      { "question": "Does it account for time of day?", "answer": "No, it assumes midnight UTC." }
+      {
+        "question": "Does it account for time of day?",
+        "answer": "No, it assumes midnight UTC."
+      }
     ]
   },
   {
@@ -14439,15 +14563,34 @@
     "cluster": "education & learning",
     "description": "Find the percentage of classes attended.",
     "inputs": [
-      { "name": "attended", "label": "Classes Attended", "type": "number", "min": 0, "step": "1", "placeholder": "18" },
-      { "name": "total", "label": "Total Classes", "type": "number", "min": 1, "step": "1", "placeholder": "20" }
+      {
+        "name": "attended",
+        "label": "Classes Attended",
+        "type": "number",
+        "min": 0,
+        "step": "1",
+        "placeholder": "18"
+      },
+      {
+        "name": "total",
+        "label": "Total Classes",
+        "type": "number",
+        "min": 1,
+        "step": "1",
+        "placeholder": "20"
+      }
     ],
     "expression": "(attended / total) * 100",
     "examples": [
-      { "description": "18 attended of 20 ⇒ 90%" }
+      {
+        "description": "18 attended of 20 ⇒ 90%"
+      }
     ],
     "faqs": [
-      { "question": "Can total be zero?", "answer": "Total classes must be greater than zero." }
+      {
+        "question": "Can total be zero?",
+        "answer": "Total classes must be greater than zero."
+      }
     ]
   },
   {
@@ -14456,15 +14599,33 @@
     "cluster": "science & engineering",
     "description": "Compute force using Hooke's Law (F = k × x).",
     "inputs": [
-      { "name": "k", "label": "Spring Constant (N/m)", "type": "number", "min": 0, "step": "any", "placeholder": "200" },
-      { "name": "x", "label": "Displacement (m)", "type": "number", "step": "any", "placeholder": "0.1" }
+      {
+        "name": "k",
+        "label": "Spring Constant (N/m)",
+        "type": "number",
+        "min": 0,
+        "step": "any",
+        "placeholder": "200"
+      },
+      {
+        "name": "x",
+        "label": "Displacement (m)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "0.1"
+      }
     ],
     "expression": "k * x",
     "examples": [
-      { "description": "k=200 N/m, x=0.1 m ⇒ 20 N" }
+      {
+        "description": "k=200 N/m, x=0.1 m ⇒ 20 N"
+      }
     ],
     "faqs": [
-      { "question": "Does direction matter?", "answer": "This returns magnitude; direction depends on compression or extension." }
+      {
+        "question": "Does direction matter?",
+        "answer": "This returns magnitude; direction depends on compression or extension."
+      }
     ]
   },
   {
@@ -14473,14 +14634,24 @@
     "cluster": "technology",
     "description": "Convert a hexadecimal value to decimal.",
     "inputs": [
-      { "name": "hex", "label": "Hex number", "type": "text", "placeholder": "FF" }
+      {
+        "name": "hex",
+        "label": "Hex number",
+        "type": "text",
+        "placeholder": "FF"
+      }
     ],
     "expression": "parseInt(hex, 16)",
     "examples": [
-      { "description": "FF ⇒ 255" }
+      {
+        "description": "FF ⇒ 255"
+      }
     ],
     "faqs": [
-      { "question": "Can I include 0x?", "answer": "No, enter the hex digits only." }
+      {
+        "question": "Can I include 0x?",
+        "answer": "No, enter the hex digits only."
+      }
     ]
   },
   {
@@ -14489,14 +14660,26 @@
     "cluster": "home & diy",
     "description": "Recommend fan blade span based on room area.",
     "inputs": [
-      { "name": "area", "label": "Room Area (sq ft)", "type": "number", "min": 0, "step": "any", "placeholder": "150" }
+      {
+        "name": "area",
+        "label": "Room Area (sq ft)",
+        "type": "number",
+        "min": 0,
+        "step": "any",
+        "placeholder": "150"
+      }
     ],
     "expression": "area <= 75 ? 36 : area <= 144 ? 42 : area <= 225 ? 50 : area <= 400 ? 54 : 56",
     "examples": [
-      { "description": "150 sq ft ⇒ 50 in" }
+      {
+        "description": "150 sq ft ⇒ 50 in"
+      }
     ],
     "faqs": [
-      { "question": "What if my room is long and narrow?", "answer": "Consider multiple fans for large or odd-shaped rooms." }
+      {
+        "question": "What if my room is long and narrow?",
+        "answer": "Consider multiple fans for large or odd-shaped rooms."
+      }
     ]
   },
   {
@@ -14505,15 +14688,34 @@
     "cluster": "lifestyle & travel",
     "description": "Find real-world distance from map measurement and scale.",
     "inputs": [
-      { "name": "map", "label": "Map Distance (cm)", "type": "number", "min": 0, "step": "any", "placeholder": "5" },
-      { "name": "scale", "label": "Scale Denominator", "type": "number", "min": 1, "step": "any", "placeholder": "50000" }
+      {
+        "name": "map",
+        "label": "Map Distance (cm)",
+        "type": "number",
+        "min": 0,
+        "step": "any",
+        "placeholder": "5"
+      },
+      {
+        "name": "scale",
+        "label": "Scale Denominator",
+        "type": "number",
+        "min": 1,
+        "step": "any",
+        "placeholder": "50000"
+      }
     ],
     "expression": "(map * scale) / 100000",
     "examples": [
-      { "description": "5 cm at 1:50,000 ⇒ 2.5 km" }
+      {
+        "description": "5 cm at 1:50,000 ⇒ 2.5 km"
+      }
     ],
     "faqs": [
-      { "question": "Why divide by 100000?", "answer": "There are 100,000 centimeters in a kilometer." }
+      {
+        "question": "Why divide by 100000?",
+        "answer": "There are 100,000 centimeters in a kilometer."
+      }
     ]
   },
   {
@@ -14522,15 +14724,34 @@
     "cluster": "web & marketing",
     "description": "Determine the percentage of single-page visits on your site.",
     "inputs": [
-      { "name": "bounces", "label": "Bounces", "type": "number", "min": 0, "step": "1", "placeholder": "25" },
-      { "name": "visits", "label": "Total Visits", "type": "number", "min": 1, "step": "1", "placeholder": "100" }
+      {
+        "name": "bounces",
+        "label": "Bounces",
+        "type": "number",
+        "min": 0,
+        "step": "1",
+        "placeholder": "25"
+      },
+      {
+        "name": "visits",
+        "label": "Total Visits",
+        "type": "number",
+        "min": 1,
+        "step": "1",
+        "placeholder": "100"
+      }
     ],
     "expression": "(bounces / visits) * 100",
     "examples": [
-      { "description": "25 bounces out of 100 visits ⇒ 25%" }
+      {
+        "description": "25 bounces out of 100 visits ⇒ 25%"
+      }
     ],
     "faqs": [
-      { "question": "What is a bounce?", "answer": "A single-page session with no interaction." }
+      {
+        "question": "What is a bounce?",
+        "answer": "A single-page session with no interaction."
+      }
     ]
   }
 ]
