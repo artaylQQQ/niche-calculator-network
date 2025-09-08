@@ -127,8 +127,9 @@ body {
 }
 .nav-link:hover,
 .nav-link:focus {
-  filter: brightness(1.05);
-  transform: translateY(1px);
+  filter: brightness(1.2);
+  transform: translateY(2px);
+  color: #ffffff;
 }
 .nav-link.traditional {
   background: var(--accent-red);
@@ -138,7 +139,8 @@ body {
 .nav-link.traditional:focus {
   background: #b91c1c;
   color: #ffffff;
-  transform: translateY(1px);
+  filter: brightness(1.1);
+  transform: translateY(2px);
 }
 .nav-link.active {
   filter: brightness(0.9);
