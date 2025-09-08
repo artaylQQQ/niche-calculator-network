@@ -7,6 +7,8 @@
 // - Deduplica slugs y nunca lanza el build por fallos de import: todo va envuelto en try/catch.
 
 import type { APIContext } from "astro";
+import { stat } from "node:fs/promises";
+import { resolve } from "node:path";
 let getCollectionFn: undefined | ((...args: any[]) => Promise<any[]>);
 let hasCalcCollection = false;
 try {
@@ -35,28 +37,40 @@ export const prerender = true;
 
 const FALLBACK_SITE = "https://www.calcsimpler.com";
 
+async function fileLastmod(p: string): Promise<string | undefined> {
+  try {
+    const { mtime } = await stat(resolve(p));
+    return mtime.toISOString();
+  } catch {
+    return undefined;
+  }
+}
+
 export async function GET({ site }: APIContext) {
   const origin = String(site ?? FALLBACK_SITE).replace(/\/$/, "");
 
-  // 1) Rutas estáticas de alto valor
+  // 1) Rutas estáticas de alto valor con sus archivos fuente
   const staticPaths = [
-    "/",
-    "/all",
-    "/finance",
-    "/personal-finance-loans",
-    "/health",
-    "/math",
-    "/conversions",
-    "/technology",
-    "/date-time",
-    "/home-diy",
-    "/education",
-    "/science",
-    "/lifestyle-travel",
-    "/web-marketing",
-    "/privacy",
-    "/disclaimer",
-    "/categories",
+    { route: "/", file: "src/pages/index.astro" },
+    { route: "/all", file: "src/pages/all.astro" },
+    { route: "/finance", file: "src/pages/finance.astro" },
+    {
+      route: "/personal-finance-loans",
+      file: "src/pages/personal-finance-loans.astro",
+    },
+    { route: "/health", file: "src/pages/health.astro" },
+    { route: "/math", file: "src/pages/math.astro" },
+    { route: "/conversions", file: "src/pages/conversions.astro" },
+    { route: "/technology", file: "src/pages/technology.astro" },
+    { route: "/date-time", file: "src/pages/date-time.astro" },
+    { route: "/home-diy", file: "src/pages/home-diy.astro" },
+    { route: "/education", file: "src/pages/education.astro" },
+    { route: "/science", file: "src/pages/science.astro" },
+    { route: "/lifestyle-travel", file: "src/pages/lifestyle-travel.astro" },
+    { route: "/web-marketing", file: "src/pages/web-marketing.astro" },
+    { route: "/privacy", file: "src/pages/privacy.astro" },
+    { route: "/disclaimer", file: "src/pages/disclaimer.astro" },
+    { route: "/categories", file: "src/pages/categories/index.astro" },
   ];
 
   type UrlItem = {
@@ -65,11 +79,16 @@ export async function GET({ site }: APIContext) {
     priority?: number;
     lastmod?: string;
   };
-  const urls: UrlItem[] = staticPaths.map((p) => ({
-    loc: origin + p,
-    changefreq: p === "/" ? "daily" : "weekly",
-    priority: p === "/" ? 1.0 : 0.6,
-  }));
+  const urls: UrlItem[] = [];
+  for (const p of staticPaths) {
+    const lastmod = await fileLastmod(p.file);
+    urls.push({
+      loc: origin + p.route,
+      changefreq: p.route === "/" ? "daily" : "weekly",
+      priority: p.route === "/" ? 1.0 : 0.6,
+      ...(lastmod ? { lastmod } : {}),
+    });
+  }
 
   // 2) Recolectar slugs de calculadoras (varios orígenes, con tolerancia de errores)
   let slugs: string[] = [];
@@ -141,12 +160,23 @@ export async function GET({ site }: APIContext) {
   // 3) Deduplicación robusta
   slugs = Array.from(new Set(slugs.filter(Boolean)));
 
-  // 4) Añadir URLs de calculadoras
+  // 4) Añadir URLs de calculadoras con su fecha de modificación real
   for (const s of slugs) {
+    const candidates = [
+      `src/pages/calculators/${s}.astro`,
+      `src/content/calculators/${s}.mdx`,
+      `content/calculators/${s}.mdx`,
+    ];
+    let lastmod: string | undefined;
+    for (const c of candidates) {
+      lastmod = await fileLastmod(c);
+      if (lastmod) break;
+    }
     urls.push({
       loc: `${origin}/calculators/${s}`,
       changefreq: "monthly",
       priority: 0.8,
+      ...(lastmod ? { lastmod } : {}),
     });
   }
 
