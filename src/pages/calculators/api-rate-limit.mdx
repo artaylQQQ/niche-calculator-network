@@ -1,0 +1,47 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "API Rate Limit Calculator"
+description: "Requests allowed per second from limit and window."
+updated: "2025-02-14"
+cluster: "Technology & Coding"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "api-rate-limit",
+  "title": "API Rate Limit Calculator",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "limit",
+      "label": "Requests Allowed",
+      "type": "number",
+      "step": "any",
+      "placeholder": "1000"
+    },
+    {
+      "name": "window",
+      "label": "Window (sec)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "60"
+    }
+  ],
+  "expression": "limit / window",
+  "intro": "Determine average requests per second allowed by an API.",
+  "examples": [
+    {
+      "description": "1000 requests per 60s ⇒ 16.67 rps"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Is bursting allowed?",
+      "answer": "This provides average rate; actual APIs may allow bursts."
+    }
+  ],
+  "cluster": "Technology & Coding"
+};
+
+<Calculator schema={schema} />

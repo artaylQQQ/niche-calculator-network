@@ -1,0 +1,54 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "EBITDA Calculator"
+description: "Calculate earnings before interest, taxes, depreciation, and amortization."
+updated: "2025-02-14"
+cluster: "Finance & Business"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "ebitda-calculator",
+  "title": "EBITDA Calculator",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "revenue",
+      "label": "Revenue",
+      "type": "number",
+      "step": "any",
+      "placeholder": "100000"
+    },
+    {
+      "name": "cogs",
+      "label": "COGS",
+      "type": "number",
+      "step": "any",
+      "placeholder": "40000"
+    },
+    {
+      "name": "operating",
+      "label": "Operating Expenses",
+      "type": "number",
+      "step": "any",
+      "placeholder": "20000"
+    }
+  ],
+  "expression": "revenue - cogs - operating",
+  "intro": "Estimate earnings before interest, taxes, depreciation, and amortization.",
+  "examples": [
+    {
+      "description": "100000 revenue, 40000 COGS, 20000 expenses ⇒ 40000"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Does this include depreciation?",
+      "answer": "Depreciation and amortization are excluded."
+    }
+  ],
+  "cluster": "Finance & Business"
+};
+
+<Calculator schema={schema} />

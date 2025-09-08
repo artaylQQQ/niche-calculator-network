@@ -1,0 +1,47 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Customer Churn Rate Calculator"
+description: "Find churn percentage from lost customers and total customers."
+updated: "2025-02-14"
+cluster: "Finance & Business"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "customer-churn-rate",
+  "title": "Customer Churn Rate Calculator",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "lost",
+      "label": "Customers Lost",
+      "type": "number",
+      "step": "any",
+      "placeholder": "20"
+    },
+    {
+      "name": "total",
+      "label": "Total Customers",
+      "type": "number",
+      "step": "any",
+      "placeholder": "200"
+    }
+  ],
+  "expression": "(lost / total) * 100",
+  "intro": "Determine customer churn rate over a period.",
+  "examples": [
+    {
+      "description": "20 lost out of 200 ⇒ 10%"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Is lower churn better?",
+      "answer": "Yes, lower churn means more customers retained."
+    }
+  ],
+  "cluster": "Finance & Business"
+};
+
+<Calculator schema={schema} />

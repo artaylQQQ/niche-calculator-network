@@ -1,0 +1,75 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Weeks Between Dates Calculator"
+description: "Find weeks between two dates."
+updated: "2025-02-14"
+cluster: "Date & Time"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "weeks-between-dates",
+  "title": "Weeks Between Dates Calculator",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "y1",
+      "label": "Start Year",
+      "type": "number",
+      "step": "1",
+      "placeholder": "2024"
+    },
+    {
+      "name": "m1",
+      "label": "Start Month",
+      "type": "number",
+      "step": "1",
+      "placeholder": "1"
+    },
+    {
+      "name": "d1",
+      "label": "Start Day",
+      "type": "number",
+      "step": "1",
+      "placeholder": "1"
+    },
+    {
+      "name": "y2",
+      "label": "End Year",
+      "type": "number",
+      "step": "1",
+      "placeholder": "2024"
+    },
+    {
+      "name": "m2",
+      "label": "End Month",
+      "type": "number",
+      "step": "1",
+      "placeholder": "12"
+    },
+    {
+      "name": "d2",
+      "label": "End Day",
+      "type": "number",
+      "step": "1",
+      "placeholder": "31"
+    }
+  ],
+  "expression": "(new Date(y2, m2-1, d2) - new Date(y1, m1-1, d1)) / 604800000",
+  "intro": "Calculate number of weeks between two calendar dates.",
+  "examples": [
+    {
+      "description": "Jan 1 to Jan 29 2024 ⇒ 4 weeks"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Are partial weeks shown?",
+      "answer": "Yes, result may include decimals."
+    }
+  ],
+  "cluster": "Date & Time"
+};
+
+<Calculator schema={schema} />

@@ -1,0 +1,40 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Cube Root Calculator"
+description: "Find the cube root of a number."
+updated: "2025-02-14"
+cluster: "Math & Statistics"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "cube-root",
+  "title": "Cube Root Calculator",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "value",
+      "label": "Value",
+      "type": "number",
+      "step": "any",
+      "placeholder": "27"
+    }
+  ],
+  "expression": "Math.cbrt(value)",
+  "intro": "Compute the cube root of a number.",
+  "examples": [
+    {
+      "description": "27 ⇒ 3"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Can input be negative?",
+      "answer": "Yes, cube root of negative numbers is supported."
+    }
+  ],
+  "cluster": "Math & Statistics"
+};
+
+<Calculator schema={schema} />

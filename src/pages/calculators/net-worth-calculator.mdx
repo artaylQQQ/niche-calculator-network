@@ -1,0 +1,47 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Net Worth Calculator"
+description: "Assets minus liabilities."
+updated: "2025-02-14"
+cluster: "Personal Finance & Loans"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "net-worth-calculator",
+  "title": "Net Worth Calculator",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "assets",
+      "label": "Total Assets",
+      "type": "number",
+      "step": "any",
+      "placeholder": "150000"
+    },
+    {
+      "name": "liabilities",
+      "label": "Total Liabilities",
+      "type": "number",
+      "step": "any",
+      "placeholder": "50000"
+    }
+  ],
+  "expression": "assets - liabilities",
+  "intro": "Estimate personal net worth by subtracting liabilities from assets.",
+  "examples": [
+    {
+      "description": "150000 assets minus 50000 liabilities ⇒ 100000"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Include home value?",
+      "answer": "Yes, include total assets and debts."
+    }
+  ],
+  "cluster": "Personal Finance & Loans"
+};
+
+<Calculator schema={schema} />

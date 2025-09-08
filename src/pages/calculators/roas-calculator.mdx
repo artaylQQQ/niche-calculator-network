@@ -1,0 +1,47 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "ROAS Calculator"
+description: "Return on ad spend as percentage."
+updated: "2025-02-14"
+cluster: "Web & Marketing"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "roas-calculator",
+  "title": "ROAS Calculator",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "revenue",
+      "label": "Revenue",
+      "type": "number",
+      "step": "any",
+      "placeholder": "2000"
+    },
+    {
+      "name": "adcost",
+      "label": "Ad Cost",
+      "type": "number",
+      "step": "any",
+      "placeholder": "500"
+    }
+  ],
+  "expression": "(revenue / adcost) * 100",
+  "intro": "Evaluate return on advertising investment.",
+  "examples": [
+    {
+      "description": "$2000 revenue from $500 cost ⇒ 400%"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Is higher ROAS better?",
+      "answer": "Yes, higher indicates more revenue per dollar spent."
+    }
+  ],
+  "cluster": "Web & Marketing"
+};
+
+<Calculator schema={schema} />

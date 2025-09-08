@@ -1,0 +1,54 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Final Grade Needed Calculator"
+description: "Required final exam score to reach desired course grade."
+updated: "2025-02-14"
+cluster: "Education & Learning"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "final-grade-needed",
+  "title": "Final Grade Needed Calculator",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "current",
+      "label": "Current Grade (%)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "85"
+    },
+    {
+      "name": "desired",
+      "label": "Desired Grade (%)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "90"
+    },
+    {
+      "name": "weight",
+      "label": "Final Exam Weight (%)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "30"
+    }
+  ],
+  "expression": "((desired - current*(100 - weight)/100) / (weight/100))",
+  "intro": "Compute the score needed on a final exam to achieve a target grade.",
+  "examples": [
+    {
+      "description": "85 current, 90 desired, 30% final ⇒ 100"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "What if result >100?",
+      "answer": "It means desired grade is unattainable."
+    }
+  ],
+  "cluster": "Education & Learning"
+};
+
+<Calculator schema={schema} />

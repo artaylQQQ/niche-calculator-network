@@ -1,0 +1,47 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Trip Daily Budget Calculator"
+description: "Daily spending limit for a trip."
+updated: "2025-02-14"
+cluster: "Lifestyle & Travel"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "trip-daily-budget",
+  "title": "Trip Daily Budget Calculator",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "budget",
+      "label": "Total Budget",
+      "type": "number",
+      "step": "any",
+      "placeholder": "1000"
+    },
+    {
+      "name": "days",
+      "label": "Days",
+      "type": "number",
+      "step": "any",
+      "placeholder": "5"
+    }
+  ],
+  "expression": "budget / days",
+  "intro": "Divide total trip budget by number of days.",
+  "examples": [
+    {
+      "description": "$1000 over 5 days ⇒ $200/day"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Does this include travel costs?",
+      "answer": "Include all expenses in total budget."
+    }
+  ],
+  "cluster": "Lifestyle & Travel"
+};
+
+<Calculator schema={schema} />

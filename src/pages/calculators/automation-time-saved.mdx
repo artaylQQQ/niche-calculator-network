@@ -1,0 +1,54 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Automation Time Saved Calculator"
+description: "Total time saved by automating a task."
+updated: "2025-02-14"
+cluster: "Technology & Coding"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "automation-time-saved",
+  "title": "Automation Time Saved Calculator",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "manual",
+      "label": "Manual Time (min)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "10"
+    },
+    {
+      "name": "automated",
+      "label": "Automated Time (min)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "2"
+    },
+    {
+      "name": "occurrences",
+      "label": "Occurrences",
+      "type": "number",
+      "step": "any",
+      "placeholder": "50"
+    }
+  ],
+  "expression": "(manual - automated) * occurrences",
+  "intro": "Estimate minutes saved when automating repetitive tasks.",
+  "examples": [
+    {
+      "description": "10 min manual, 2 min automated, 50 times ⇒ 400 min saved"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Can savings be negative?",
+      "answer": "If automation takes longer, result may be negative."
+    }
+  ],
+  "cluster": "Technology & Coding"
+};
+
+<Calculator schema={schema} />

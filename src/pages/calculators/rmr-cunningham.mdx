@@ -1,0 +1,40 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Resting Metabolic Rate (Cunningham) Calculator"
+description: "Estimate resting calorie needs using fat-free mass."
+updated: "2025-02-14"
+cluster: "Health & Fitness"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "rmr-cunningham",
+  "title": "Resting Metabolic Rate (Cunningham) Calculator",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "ffm",
+      "label": "Fat-Free Mass (kg)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "60"
+    }
+  ],
+  "expression": "500 + 22 * ffm",
+  "intro": "Estimate resting metabolic rate using the Cunningham formula.",
+  "examples": [
+    {
+      "description": "60 kg FFM ⇒ 1820 kcal/day"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Does it require body fat measurements?",
+      "answer": "Yes, fat-free mass is needed."
+    }
+  ],
+  "cluster": "Health & Fitness"
+};
+
+<Calculator schema={schema} />

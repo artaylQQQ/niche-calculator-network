@@ -1,0 +1,47 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Kinetic Energy Calculator"
+description: "Compute kinetic energy from mass and velocity."
+updated: "2025-02-14"
+cluster: "Science & Engineering"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "kinetic-energy",
+  "title": "Kinetic Energy Calculator",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "mass",
+      "label": "Mass (kg)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "2"
+    },
+    {
+      "name": "velocity",
+      "label": "Velocity (m/s)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "3"
+    }
+  ],
+  "expression": "0.5 * mass * velocity * velocity",
+  "intro": "Calculate kinetic energy using the classical formula.",
+  "examples": [
+    {
+      "description": "2 kg at 3 m/s ⇒ 9 J"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Does this assume non-relativistic speeds?",
+      "answer": "Yes, formula applies at typical speeds."
+    }
+  ],
+  "cluster": "Science & Engineering"
+};
+
+<Calculator schema={schema} />

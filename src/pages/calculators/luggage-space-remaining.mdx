@@ -1,0 +1,47 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Luggage Space Remaining Calculator"
+description: "Remaining volume in luggage."
+updated: "2025-02-14"
+cluster: "Lifestyle & Travel"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "luggage-space-remaining",
+  "title": "Luggage Space Remaining Calculator",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "capacity",
+      "label": "Capacity (L)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "50"
+    },
+    {
+      "name": "used",
+      "label": "Used Volume (L)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "30"
+    }
+  ],
+  "expression": "capacity - used",
+  "intro": "See how much luggage volume is still available.",
+  "examples": [
+    {
+      "description": "50 L capacity, 30 L used ⇒ 20 L remaining"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Include weight limits?",
+      "answer": "No, only volume is considered."
+    }
+  ],
+  "cluster": "Lifestyle & Travel"
+};
+
+<Calculator schema={schema} />
