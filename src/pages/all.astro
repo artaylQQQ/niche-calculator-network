@@ -10,6 +10,7 @@ const items = Object.values(modules).map((m) => ({
   description:
     m.frontmatter?.intro || m.frontmatter?.description || ''
 }));
+const q = Astro.url.searchParams.get('q') || '';
 ---
 <BaseLayout title="All Calculators" description="Browse every calculator available on the site.">
   <section class="hero container mx-auto max-w-5xl px-4">
@@ -20,6 +21,7 @@ const items = Object.values(modules).map((m) => ({
       type="search"
       placeholder="Search calculators"
       class="w-full mt-4 p-2 border rounded-md"
+      value={q}
     />
   </section>
   <AdBanner />
@@ -56,5 +58,6 @@ const items = Object.values(modules).map((m) => ({
       });
     }
     input.addEventListener('input', filter);
+    filter();
   </script>
 </BaseLayout>
