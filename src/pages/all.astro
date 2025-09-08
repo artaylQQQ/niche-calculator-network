@@ -2,26 +2,59 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import AdBanner from "../components/AdBanner.astro";
 const modules = import.meta.glob("../pages/calculators/*.mdx", { eager: true });
-const items = Object.values(modules).map((m) => ({ url: m.url, fm: m.frontmatter || {} }));
+const items = Object.values(modules).map((m) => ({
+  url: m.url,
+  title:
+    m.frontmatter?.title ||
+    m.url.replace('/calculators/', '').replace('.mdx', ''),
+  description:
+    m.frontmatter?.intro || m.frontmatter?.description || ''
+}));
 ---
 <BaseLayout title="All Calculators" description="Browse every calculator available on the site.">
   <section class="hero container mx-auto max-w-5xl px-4">
     <h1 style="color: var(--ink)">All Calculators</h1>
     <p style="color: var(--muted)">Explore every calculator available on the site.</p>
+    <input
+      id="search-input"
+      type="search"
+      placeholder="Search calculators"
+      class="w-full mt-4 p-2 border rounded-md"
+    />
   </section>
   <AdBanner />
   <section class="section container mx-auto max-w-5xl px-4" aria-labelledby="list-all">
     <h2 id="list-all" class="sr-only">All calculators list</h2>
     <!-- Use a responsive Tailwind grid for consistent card sizes across breakpoints -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+    <div
+      id="results"
+      class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"
+    >
       {items.map((it) => (
-        <div>
+        <div
+          data-title={it.title.toLowerCase()}
+          data-description={it.description.toLowerCase()}
+        >
           <a class="card" href={it.url}>
-            <h3>{it.fm.title || it.url.replace('/calculators/','').replace('.mdx','')}</h3>
-            <p>{it.fm.intro || it.fm.description || ''}</p>
+            <h3>{it.title}</h3>
+            <p>{it.description}</p>
           </a>
         </div>
       ))}
     </div>
   </section>
+  <script is:inline>
+    const input = document.getElementById('search-input');
+    const cards = Array.from(document.querySelectorAll('#results > div'));
+    function filter() {
+      const q = input.value.trim().toLowerCase();
+      cards.forEach((card) => {
+        const t = card.dataset.title;
+        const d = card.dataset.description;
+        const match = !q || t.includes(q) || d.includes(q);
+        card.style.display = match ? '' : 'none';
+      });
+    }
+    input.addEventListener('input', filter);
+  </script>
 </BaseLayout>
