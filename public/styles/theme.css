@@ -303,22 +303,24 @@ footer .links {
 footer .links a {
   display: inline-block;
   padding: 8px 12px;
-  border-radius: 12px;
-  background: #d1d5db;
-  color: #000000;
-  font-weight: 400;
+  border-radius: var(--radius);
+  background: var(--card);
+  color: var(--primary);
+  border: 1px solid var(--border);
+  font-weight: 600;
   text-decoration: none;
   box-shadow: var(--shadow);
   transition:
     background 0.2s,
     color 0.2s,
-    font-weight 0.2s,
+    border-color 0.2s,
     transform 0.2s;
 }
 footer .links a:hover,
 footer .links a:focus {
-  background: #b8860b;
-  color: #ffffff;
+  background: var(--primary);
+  color: var(--primary-ink);
+  border-color: var(--primary);
   font-weight: 700;
   transform: translateY(1px);
 }
