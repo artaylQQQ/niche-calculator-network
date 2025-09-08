@@ -51,8 +51,8 @@ a {
   color: var(--primary);
   text-decoration: none;
 }
-a:hover,
-a:focus {
+a:not(.nav-link):hover,
+a:not(.nav-link):focus {
   color: var(--accent-red);
   font-weight: 600;
 }
@@ -127,8 +127,9 @@ body {
 }
 .nav-link:hover,
 .nav-link:focus {
-  filter: brightness(1.05);
-  transform: translateY(1px);
+  color: #ffffff;
+  filter: brightness(1.15);
+  transform: translateY(2px);
 }
 .nav-link.traditional {
   background: var(--accent-red);
@@ -138,7 +139,8 @@ body {
 .nav-link.traditional:focus {
   background: #b91c1c;
   color: #ffffff;
-  transform: translateY(1px);
+  filter: brightness(1.1);
+  transform: translateY(2px);
 }
 .nav-link.active {
   filter: brightness(0.9);
