@@ -24,48 +24,48 @@ const CATEGORIES = [
 ];
 ---
 <BaseLayout title="Smart & Fast Calculators" description="Calculate anything quickly and easily with our collection of online calculators.">
-  <section class="container mx-auto max-w-5xl px-4 pt-10 flex flex-col lg:flex-row items-start gap-6">
-    <div class="flex-1">
-      <div class="flex items-center gap-4">
-        <img src="/logo.svg" alt="CalcSimpler" class="w-20 h-auto" />
-        <h1 class="text-4xl sm:text-5xl font-extrabold leading-tight" style="color: var(--ink)">
-          Smart &amp; Fast<br />Calculators
-        </h1>
-      </div>
-      <p class="mt-6 text-lg" style="color: var(--muted)">
-        Calculate anything quickly and easily with our growing collection of smart online calculators covering finance, health, math and everyday problems.
-      </p>
+  <section class="container mx-auto max-w-5xl px-4 pt-10">
+    <div class="flex items-center gap-4">
+      <img src="/logo.svg" alt="CalcSimpler" class="w-20 h-auto" />
+      <h1 class="text-4xl sm:text-5xl font-extrabold leading-tight" style="color: var(--ink)">
+        Smart &amp; Fast<br />Calculators
+      </h1>
     </div>
-    <AdSidebar />
+    <p class="mt-6 text-lg" style="color: var(--muted)">
+      Calculate anything quickly and easily with our growing collection of smart online calculators covering finance, health, math and everyday problems.
+    </p>
   </section>
 
-  <section class="container mx-auto max-w-5xl px-4 py-8">
-    <h2 class="sr-only">Categories</h2>
-    <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-      {CATEGORIES.map((cat) => (
-        <li>
-          <a href={`/categories/${cat.slug}/`} class="card" aria-label={`${cat.title} calculators`}>
-            <div class="flex items-start gap-3">
-              {/**
-               * Provide meaningful alt text for icons to improve accessibility.
-               * Use the category title followed by "icon" as the description.
-               */}
-              <img
-                src={`/icons/${cat.icon}.svg`}
-                width="28"
-                height="28"
-                alt={`${cat.title} icon`}
-                loading="lazy"
-              />
-              <div>
-                <h3 class="text-lg font-semibold text-[var(--ink)]">{cat.title}</h3>
-                <p class="text-sm text-[var(--muted)]">{cat.desc}</p>
+  <section class="container mx-auto max-w-5xl px-4 py-8 flex flex-col lg:flex-row items-start gap-6">
+    <div class="flex-1">
+      <h2 class="sr-only">Categories</h2>
+      <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+        {CATEGORIES.map((cat) => (
+          <li>
+            <a href={`/categories/${cat.slug}/`} class="card" aria-label={`${cat.title} calculators`}>
+              <div class="flex items-start gap-3">
+                {/**
+                 * Provide meaningful alt text for icons to improve accessibility.
+                 * Use the category title followed by "icon" as the description.
+                 */}
+                <img
+                  src={`/icons/${cat.icon}.svg`}
+                  width="28"
+                  height="28"
+                  alt={`${cat.title} icon`}
+                  loading="lazy"
+                />
+                <div>
+                  <h3 class="text-lg font-semibold text-[var(--ink)]">{cat.title}</h3>
+                  <p class="text-sm text-[var(--muted)]">{cat.desc}</p>
+                </div>
               </div>
-            </div>
-          </a>
-        </li>
-      ))}
-    </ul>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+    <AdSidebar />
   </section>
 
 </BaseLayout>
