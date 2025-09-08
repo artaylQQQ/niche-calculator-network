@@ -14754,4 +14754,497 @@
       }
     ]
   }
+,
+  {
+    "slug": "payback-period",
+    "title": "Payback Period Calculator",
+    "cluster": "finance",
+    "description": "Estimate years to recover an initial investment.",
+    "inputs": [
+      {"name": "investment", "label": "Initial Investment", "type": "number", "step": "any", "placeholder": "10000"},
+      {"name": "cashflow", "label": "Annual Cash Inflow", "type": "number", "step": "any", "placeholder": "2500"}
+    ],
+    "expression": "investment / cashflow",
+    "examples": [
+      {"description": "$10,000 investment with $2,500 inflow ⇒ 4 years"},
+      {"description": "$5,000 investment with $1,000 inflow ⇒ 5 years"}
+    ],
+    "faqs": [
+      {"question": "What is payback period?", "answer": "The time required for an investment to generate cash equal to its cost."},
+      {"question": "Does this consider time value of money?", "answer": "No, it uses simple payback analysis."}
+    ],
+    "disclaimer": "For basic estimation only; consult financial advisors for investment decisions."
+  },
+  {
+    "slug": "operating-expense-ratio",
+    "title": "Operating Expense Ratio Calculator",
+    "cluster": "finance",
+    "description": "Find operating expenses as a percentage of revenue.",
+    "inputs": [
+      {"name": "expenses", "label": "Operating Expenses", "type": "number", "step": "any", "placeholder": "200000"},
+      {"name": "revenue", "label": "Revenue", "type": "number", "step": "any", "placeholder": "500000"}
+    ],
+    "expression": "(expenses / revenue) * 100",
+    "examples": [
+      {"description": "Expenses $200k on $500k revenue ⇒ 40%"},
+      {"description": "Expenses $50k on $100k revenue ⇒ 50%"}
+    ],
+    "faqs": [
+      {"question": "What does a lower ratio mean?", "answer": "Lower operating expenses relative to revenue."},
+      {"question": "Can revenue be zero?", "answer": "No, revenue must be positive to compute the ratio."}
+    ],
+    "disclaimer": "Approximation only; review financial statements for accuracy."
+  },
+  {
+    "slug": "credit-card-payoff-time",
+    "title": "Credit Card Payoff Time Calculator",
+    "cluster": "personal finance & loans",
+    "description": "Estimate months to pay off a credit card balance.",
+    "inputs": [
+      {"name": "balance", "label": "Balance", "type": "number", "step": "any", "placeholder": "1000"},
+      {"name": "apr", "label": "APR (%)", "type": "number", "step": "any", "placeholder": "18"},
+      {"name": "payment", "label": "Monthly Payment", "type": "number", "step": "any", "placeholder": "50"}
+    ],
+    "expression": "(function(balance,apr,payment){const r=apr/100/12;return Math.log(payment/(payment-r*balance))/Math.log(1+r);})(balance,apr,payment)",
+    "examples": [
+      {"description": "$1,000 at 18% APR with $50 payment ⇒ 24 months"},
+      {"description": "$5,000 at 20% APR with $200 payment ⇒ 33 months"}
+    ],
+    "faqs": [
+      {"question": "What if payment is too low?", "answer": "The formula requires payment to exceed monthly interest."},
+      {"question": "Is compounding considered?", "answer": "Yes, it assumes monthly compounding."}
+    ],
+    "disclaimer": "Educational estimate; actual payoff may vary with fees and rate changes."
+  },
+  {
+    "slug": "loan-extra-payment-saved",
+    "title": "Loan Extra Payment Time Saved",
+    "cluster": "personal finance & loans",
+    "description": "Estimate months saved by adding extra to loan payments.",
+    "inputs": [
+      {"name": "principal", "label": "Loan Amount", "type": "number", "step": "any", "placeholder": "200000"},
+      {"name": "rate", "label": "Rate (%)", "type": "number", "step": "any", "placeholder": "5"},
+      {"name": "termYears", "label": "Term (years)", "type": "number", "step": "any", "placeholder": "30"},
+      {"name": "extra", "label": "Extra Monthly Payment", "type": "number", "step": "any", "placeholder": "200"}
+    ],
+    "expression": "(function(p,rate,years,extra){const r=rate/100/12;const n=years*12;const pay=p*r*Math.pow(1+r,n)/(Math.pow(1+r,n)-1);const newPay=pay+extra;const newN=Math.log(newPay/(newPay - r*p))/Math.log(1+r);return n-newN;})(principal,rate,termYears,extra)",
+    "examples": [
+      {"description": "$200k at 5% for 30y with $200 extra ⇒ 51 months saved"},
+      {"description": "$100k at 4% for 15y with $100 extra ⇒ 19 months saved"}
+    ],
+    "faqs": [
+      {"question": "Why is the result in months?", "answer": "It shows how many months earlier the loan ends."},
+      {"question": "Does it include fees?", "answer": "No, it assumes fixed rate and regular payments."}
+    ],
+    "disclaimer": "Approximation only; consult lenders for official schedules."
+  },
+  {
+    "slug": "body-adiposity-index",
+    "title": "Body Adiposity Index Calculator",
+    "cluster": "health",
+    "description": "Estimate body fat percentage using hip circumference and height.",
+    "inputs": [
+      {"name": "hip", "label": "Hip Circumference (cm)", "type": "number", "step": "any", "placeholder": "100"},
+      {"name": "height", "label": "Height (cm)", "type": "number", "step": "any", "placeholder": "170"}
+    ],
+    "expression": "(hip / Math.pow(height/100, 1.5)) - 18",
+    "examples": [
+      {"description": "Hip 100cm, height 170cm ⇒ 27%"},
+      {"description": "Hip 90cm, height 165cm ⇒ 25%"}
+    ],
+    "faqs": [
+      {"question": "What is BAI?", "answer": "An alternative to BMI using hip circumference and height."},
+      {"question": "Is it for all ages?", "answer": "It is an estimate and may vary by population."}
+    ],
+    "disclaimer": "Informational only; consult health professionals for body composition analysis."
+  },
+  {
+    "slug": "workout-water-loss",
+    "title": "Workout Water Loss Calculator",
+    "cluster": "health",
+    "description": "Estimate fluid lost during exercise from weight change.",
+    "inputs": [
+      {"name": "before", "label": "Weight Before (kg)", "type": "number", "step": "any", "placeholder": "70"},
+      {"name": "after", "label": "Weight After (kg)", "type": "number", "step": "any", "placeholder": "69"}
+    ],
+    "expression": "before - after",
+    "examples": [
+      {"description": "70kg before, 69kg after ⇒ 1 liter"},
+      {"description": "80kg before, 79.2kg after ⇒ 0.8 liters"}
+    ],
+    "faqs": [
+      {"question": "Why equate weight loss to liters?", "answer": "1 kg of weight change roughly equals 1 liter of water."},
+      {"question": "Does it include sweat absorbed by clothes?", "answer": "No, weigh clothing separately for accuracy."}
+    ],
+    "disclaimer": "Approximate hydration loss; replace fluids responsibly."
+  },
+  {
+    "slug": "lcm-three-numbers",
+    "title": "LCM of Three Numbers",
+    "cluster": "math",
+    "description": "Find the least common multiple of three integers.",
+    "inputs": [
+      {"name": "a", "label": "Number A", "type": "number", "step": 1, "placeholder": "4"},
+      {"name": "b", "label": "Number B", "type": "number", "step": 1, "placeholder": "6"},
+      {"name": "c", "label": "Number C", "type": "number", "step": 1, "placeholder": "8"}
+    ],
+    "expression": "(function(a,b,c){a=Math.abs(Math.floor(a));b=Math.abs(Math.floor(b));c=Math.abs(Math.floor(c));function g(x,y){while(y){[x,y]=[y,x%y];}return x;}const l=a*b/g(a,b);return l*c/g(l,c);})(a,b,c)",
+    "examples": [
+      {"description": "LCM of 4, 6, 8 ⇒ 24"},
+      {"description": "LCM of 5, 7, 9 ⇒ 315"}
+    ],
+    "faqs": [
+      {"question": "Can inputs be negative?", "answer": "Yes, absolute values are used."},
+      {"question": "What if any number is zero?", "answer": "LCM with zero is zero."}
+    ],
+    "disclaimer": "For educational purposes; verify results for critical applications."
+  },
+  {
+    "slug": "combination-calculator",
+    "title": "Combination Calculator",
+    "cluster": "math",
+    "description": "Compute n choose r combinations.",
+    "inputs": [
+      {"name": "n", "label": "n", "type": "number", "step": 1, "placeholder": "5"},
+      {"name": "r", "label": "r", "type": "number", "step": 1, "placeholder": "2"}
+    ],
+    "expression": "(function(n,r){n=Math.floor(n);r=Math.floor(r);if(r<0||n<0||r>n)return 0;let num=1,den=1;for(let i=1;i<=r;i++){num*=n-(i-1);den*=i;}return num/den;})(n,r)",
+    "examples": [
+      {"description": "5 choose 2 ⇒ 10"},
+      {"description": "10 choose 3 ⇒ 120"}
+    ],
+    "faqs": [
+      {"question": "What does n choose r mean?", "answer": "The number of ways to pick r items from n without order."},
+      {"question": "Can r exceed n?", "answer": "No, result is zero if r > n."}
+    ],
+    "disclaimer": "For math practice; verify large values with reliable tools."
+  },
+  {
+    "slug": "fahrenheit-to-kelvin",
+    "title": "Fahrenheit to Kelvin Converter",
+    "cluster": "conversions",
+    "description": "Convert temperature from Fahrenheit to Kelvin.",
+    "inputs": [
+      {"name": "f", "label": "Fahrenheit", "type": "number", "step": "any", "placeholder": "32"}
+    ],
+    "expression": "(f - 32) * 5/9 + 273.15",
+    "examples": [
+      {"description": "32°F ⇒ 273.15 K"},
+      {"description": "212°F ⇒ 373.15 K"}
+    ],
+    "faqs": [
+      {"question": "Why add 273.15?", "answer": "It shifts Celsius to Kelvin scale."},
+      {"question": "Can I convert negative Fahrenheit?", "answer": "Yes, the formula handles negative values."}
+    ],
+    "disclaimer": "Verify critical temperature conversions with reliable references."
+  },
+  {
+    "slug": "millimeters-to-inches",
+    "title": "Millimeters to Inches Converter",
+    "cluster": "conversions",
+    "description": "Convert length from millimeters to inches.",
+    "inputs": [
+      {"name": "mm", "label": "Millimeters", "type": "number", "step": "any", "placeholder": "50"}
+    ],
+    "expression": "mm / 25.4",
+    "examples": [
+      {"description": "50 mm ⇒ 1.97 in"},
+      {"description": "100 mm ⇒ 3.94 in"}
+    ],
+    "faqs": [
+      {"question": "What is the conversion factor?", "answer": "1 inch equals 25.4 millimeters."},
+      {"question": "Does it handle decimals?", "answer": "Yes, fractional values are accepted."}
+    ],
+    "disclaimer": "Approximate conversion; use precise tools for engineering work."
+  },
+  {
+    "slug": "week-number-to-date",
+    "title": "Week Number to Date",
+    "cluster": "date & time",
+    "description": "Get the Monday date for a given ISO week.",
+    "inputs": [
+      {"name": "year", "label": "Year", "type": "number", "step": 1, "placeholder": "2024"},
+      {"name": "week", "label": "ISO Week", "type": "number", "step": 1, "placeholder": "10"}
+    ],
+    "expression": "(function(y,w){const first=new Date(y,0,4);const day=(first.getDay()+6)%7;const monday=new Date(first);monday.setDate(first.getDate()-day);const target=new Date(monday);target.setDate(monday.getDate()+(w-1)*7);return target.toISOString().split('T')[0];})(year,week)",
+    "examples": [
+      {"description": "2024 week 1 ⇒ 2024-01-01"},
+      {"description": "2024 week 10 ⇒ 2024-03-04"}
+    ],
+    "faqs": [
+      {"question": "What is ISO week 1?", "answer": "The week containing January 4th."},
+      {"question": "Are results in ISO format?", "answer": "Yes, YYYY-MM-DD."}
+    ],
+    "disclaimer": "For planning purposes; verify dates for official schedules."
+  },
+  {
+    "slug": "add-business-days",
+    "title": "Add Business Days",
+    "cluster": "date & time",
+    "description": "Add a number of business days to a start date.",
+    "inputs": [
+      {"name": "y", "label": "Start Year", "type": "number", "step": 1, "placeholder": "2024"},
+      {"name": "m", "label": "Start Month", "type": "number", "step": 1, "placeholder": "6"},
+      {"name": "d", "label": "Start Day", "type": "number", "step": 1, "placeholder": "3"},
+      {"name": "days", "label": "Business Days to Add", "type": "number", "step": 1, "placeholder": "5"}
+    ],
+    "expression": "(function(y,m,d,days){let date=new Date(y,m-1,d);let added=0;while(added<days){date.setDate(date.getDate()+1);const day=date.getDay();if(day!==0&&day!==6)added++;}return date.toISOString().split('T')[0];})(y,m,d,days)",
+    "examples": [
+      {"description": "Start 2024-06-03 +5 business days ⇒ 2024-06-10"},
+      {"description": "Start 2024-12-29 +1 business day ⇒ 2024-12-31"}
+    ],
+    "faqs": [
+      {"question": "Are weekends skipped?", "answer": "Yes, Saturdays and Sundays are excluded."},
+      {"question": "Does it account for holidays?", "answer": "No, only weekends are skipped."}
+    ],
+    "disclaimer": "Verify with local holidays for precise scheduling."
+  },
+  {
+    "slug": "attendance-requirement",
+    "title": "Attendance Requirement Calculator",
+    "cluster": "education & learning",
+    "description": "Find maximum classes you can miss to meet attendance rules.",
+    "inputs": [
+      {"name": "total", "label": "Total Classes", "type": "number", "step": 1, "placeholder": "30"},
+      {"name": "required", "label": "Required Attendance (%)", "type": "number", "step": "any", "placeholder": "80"}
+    ],
+    "expression": "total - Math.ceil(total * required / 100)",
+    "examples": [
+      {"description": "30 classes with 80% required ⇒ 6 absences allowed"},
+      {"description": "40 classes with 75% required ⇒ 10 absences allowed"}
+    ],
+    "faqs": [
+      {"question": "Why use ceiling?", "answer": "It ensures you attend enough classes."},
+      {"question": "Does it consider excused absences?", "answer": "It treats all absences the same."}
+    ],
+    "disclaimer": "Always confirm attendance policies with your institution."
+  },
+  {
+    "slug": "target-gpa-grade",
+    "title": "Target GPA Grade Calculator",
+    "cluster": "education & learning",
+    "description": "Determine GPA needed in upcoming credits to reach a target overall GPA.",
+    "inputs": [
+      {"name": "current", "label": "Current GPA", "type": "number", "step": "any", "placeholder": "3.0"},
+      {"name": "creditsCompleted", "label": "Completed Credits", "type": "number", "step": "any", "placeholder": "60"},
+      {"name": "target", "label": "Target GPA", "type": "number", "step": "any", "placeholder": "3.2"},
+      {"name": "newCredits", "label": "Upcoming Credits", "type": "number", "step": "any", "placeholder": "15"}
+    ],
+    "expression": "(target*(creditsCompleted+newCredits) - current*creditsCompleted) / newCredits",
+    "examples": [
+      {"description": "Current 3.0 over 60 credits aiming 3.2 with 15 credits ⇒ 4.0 GPA needed"},
+      {"description": "Current 3.5 over 45 credits aiming 3.6 with 15 credits ⇒ 3.9 GPA needed"}
+    ],
+    "faqs": [
+      {"question": "Can result exceed 4.0?", "answer": "Yes, the goal may be unattainable if required GPA is above 4.0."},
+      {"question": "Does it handle pass/fail courses?", "answer": "No, it assumes graded credits only."}
+    ],
+    "disclaimer": "Check with your registrar for official GPA calculations."
+  },
+  {
+    "slug": "escape-velocity",
+    "title": "Escape Velocity Calculator",
+    "cluster": "science & engineering",
+    "description": "Compute escape velocity from celestial mass and radius.",
+    "inputs": [
+      {"name": "mass", "label": "Mass (kg)", "type": "number", "step": "any", "placeholder": "5.972e24"},
+      {"name": "radius", "label": "Radius (m)", "type": "number", "step": "any", "placeholder": "6.371e6"}
+    ],
+    "expression": "Math.sqrt((2 * 6.674e-11 * mass) / radius)",
+    "examples": [
+      {"description": "Earth ⇒ 11186 m/s"},
+      {"description": "Moon ⇒ 2376 m/s"}
+    ],
+    "faqs": [
+      {"question": "What is escape velocity?", "answer": "Speed needed to break free from a body's gravity."},
+      {"question": "Does rotation matter?", "answer": "This simple model ignores planetary rotation and atmosphere."}
+    ],
+    "disclaimer": "Idealized calculation; actual escape speeds vary with conditions."
+  },
+  {
+    "slug": "ideal-gas-pressure",
+    "title": "Ideal Gas Pressure Calculator",
+    "cluster": "science & engineering",
+    "description": "Estimate pressure using the ideal gas law.",
+    "inputs": [
+      {"name": "n", "label": "Moles (n)", "type": "number", "step": "any", "placeholder": "1"},
+      {"name": "temperature", "label": "Temperature (K)", "type": "number", "step": "any", "placeholder": "300"},
+      {"name": "volume", "label": "Volume (L)", "type": "number", "step": "any", "placeholder": "24"}
+    ],
+    "expression": "(n * 0.082057 * temperature) / volume",
+    "examples": [
+      {"description": "1 mol at 300K in 24L ⇒ 1.03 atm"},
+      {"description": "2 mol at 350K in 30L ⇒ 1.91 atm"}
+    ],
+    "faqs": [
+      {"question": "What constant is used?", "answer": "R = 0.082057 L·atm/(mol·K)."},
+      {"question": "Does it work for real gases?", "answer": "It is an approximation for ideal behavior."}
+    ],
+    "disclaimer": "Use more precise models for high pressures or low temperatures."
+  },
+  {
+    "slug": "password-crack-time",
+    "title": "Password Crack Time Calculator",
+    "cluster": "technology",
+    "description": "Estimate time to brute-force a password given entropy and guess rate.",
+    "inputs": [
+      {"name": "entropy", "label": "Entropy (bits)", "type": "number", "step": "any", "placeholder": "40"},
+      {"name": "guesses", "label": "Guesses per Second", "type": "number", "step": "any", "placeholder": "1000000"}
+    ],
+    "expression": "Math.pow(2, entropy) / (2 * guesses) / 3600 / 24 / 365",
+    "examples": [
+      {"description": "Entropy 40 with 1e6 guesses/sec ⇒ 0.017 years"},
+      {"description": "Entropy 60 with 1e9 guesses/sec ⇒ 18 years"}
+    ],
+    "faqs": [
+      {"question": "Why divide by 2?", "answer": "On average, half the keyspace is searched before success."},
+      {"question": "Is entropy in bits?", "answer": "Yes, typically calculated from password length and character set."}
+    ],
+    "disclaimer": "Simplified estimate; real attack times vary by method and hardware."
+  },
+  {
+    "slug": "database-growth-projection",
+    "title": "Database Growth Projection",
+    "cluster": "technology",
+    "description": "Estimate months until a database reaches capacity.",
+    "inputs": [
+      {"name": "current", "label": "Current Size (GB)", "type": "number", "step": "any", "placeholder": "50"},
+      {"name": "monthlyGrowth", "label": "Monthly Growth (GB)", "type": "number", "step": "any", "placeholder": "5"},
+      {"name": "capacity", "label": "Capacity (GB)", "type": "number", "step": "any", "placeholder": "200"}
+    ],
+    "expression": "(capacity - current) / monthlyGrowth",
+    "examples": [
+      {"description": "50GB now, +5GB/mo to 200GB ⇒ 30 months"},
+      {"description": "20GB now, +2GB/mo to 50GB ⇒ 15 months"}
+    ],
+    "faqs": [
+      {"question": "What if growth is zero?", "answer": "Then the database never reaches capacity."},
+      {"question": "Does it consider compaction?", "answer": "No, it assumes linear growth."}
+    ],
+    "disclaimer": "Projection only; monitor usage for real capacity planning."
+  },
+  {
+    "slug": "roof-snow-load",
+    "title": "Roof Snow Load Calculator",
+    "cluster": "home & diy",
+    "description": "Estimate weight of snow on a roof.",
+    "inputs": [
+      {"name": "area", "label": "Roof Area (sq ft)", "type": "number", "step": "any", "placeholder": "1000"},
+      {"name": "depth", "label": "Snow Depth (ft)", "type": "number", "step": "any", "placeholder": "2"},
+      {"name": "density", "label": "Snow Density (lb/ft³)", "type": "number", "step": "any", "placeholder": "20"}
+    ],
+    "expression": "area * depth * density",
+    "examples": [
+      {"description": "1000 sq ft, 2 ft depth at 20 lb/ft³ ⇒ 40,000 lbs"},
+      {"description": "500 sq ft, 1 ft depth at 15 lb/ft³ ⇒ 7,500 lbs"}
+    ],
+    "faqs": [
+      {"question": "Why use density?", "answer": "Snow weight varies with water content."},
+      {"question": "Does roof pitch matter?", "answer": "This simple estimate ignores slope and drifting."}
+    ],
+    "disclaimer": "For safety, consult structural engineers for heavy snow loads."
+  },
+  {
+    "slug": "baseboard-length",
+    "title": "Baseboard Trim Length",
+    "cluster": "home & diy",
+    "description": "Calculate baseboard length needed for a room minus openings.",
+    "inputs": [
+      {"name": "length", "label": "Room Length (ft)", "type": "number", "step": "any", "placeholder": "20"},
+      {"name": "width", "label": "Room Width (ft)", "type": "number", "step": "any", "placeholder": "15"},
+      {"name": "doors", "label": "Total Door Width (ft)", "type": "number", "step": "any", "placeholder": "6"},
+      {"name": "windows", "label": "Total Window Width (ft)", "type": "number", "step": "any", "placeholder": "8"}
+    ],
+    "expression": "2*(length + width) - doors - windows",
+    "examples": [
+      {"description": "20×15 room minus 6ft doors and 8ft windows ⇒ 56 ft"},
+      {"description": "12×10 room minus 3ft doors and 6ft windows ⇒ 35 ft"}
+    ],
+    "faqs": [
+      {"question": "Should I add waste?", "answer": "Yes, consider extra for cuts and mistakes."},
+      {"question": "Does it include closets?", "answer": "Measure each wall segment you plan to trim."}
+    ],
+    "disclaimer": "Round up and purchase extra material as needed."
+  },
+  {
+    "slug": "hotel-nights-budget",
+    "title": "Hotel Nights Within Budget",
+    "cluster": "lifestyle & travel",
+    "description": "See how many hotel nights your budget can cover.",
+    "inputs": [
+      {"name": "budget", "label": "Total Budget", "type": "number", "step": "any", "placeholder": "1000"},
+      {"name": "nightly", "label": "Price per Night", "type": "number", "step": "any", "placeholder": "120"}
+    ],
+    "expression": "budget / nightly",
+    "examples": [
+      {"description": "$1000 budget at $120/night ⇒ 8.33 nights"},
+      {"description": "$600 budget at $75/night ⇒ 8 nights"}
+    ],
+    "faqs": [
+      {"question": "Are taxes included?", "answer": "No, add local taxes and fees separately."},
+      {"question": "Can I enter decimals?", "answer": "Yes, useful for partial nights or shared rooms."}
+    ],
+    "disclaimer": "Check hotel policies for taxes and additional charges."
+  },
+  {
+    "slug": "luggage-volumetric-weight",
+    "title": "Luggage Volumetric Weight",
+    "cluster": "lifestyle & travel",
+    "description": "Calculate airline volumetric weight from bag dimensions.",
+    "inputs": [
+      {"name": "length", "label": "Length (cm)", "type": "number", "step": "any", "placeholder": "50"},
+      {"name": "width", "label": "Width (cm)", "type": "number", "step": "any", "placeholder": "40"},
+      {"name": "height", "label": "Height (cm)", "type": "number", "step": "any", "placeholder": "20"}
+    ],
+    "expression": "(length * width * height) / 5000",
+    "examples": [
+      {"description": "50×40×20 cm ⇒ 8 kg"},
+      {"description": "80×50×30 cm ⇒ 24 kg"}
+    ],
+    "faqs": [
+      {"question": "Why divide by 5000?", "answer": "Airlines often use 5000 to convert cm³ to kg for volume weight."},
+      {"question": "Do all airlines use this factor?", "answer": "Some use 6000; check your carrier."}
+    ],
+    "disclaimer": "Always confirm volumetric policies with your airline."
+  },
+  {
+    "slug": "cost-per-click",
+    "title": "Cost Per Click Calculator",
+    "cluster": "web & marketing",
+    "description": "Calculate advertising cost per click.",
+    "inputs": [
+      {"name": "cost", "label": "Total Cost", "type": "number", "step": "any", "placeholder": "200"},
+      {"name": "clicks", "label": "Total Clicks", "type": "number", "step": "any", "placeholder": "1000"}
+    ],
+    "expression": "cost / clicks",
+    "examples": [
+      {"description": "$200 cost for 1000 clicks ⇒ $0.20 CPC"},
+      {"description": "$50 cost for 200 clicks ⇒ $0.25 CPC"}
+    ],
+    "faqs": [
+      {"question": "What is CPC?", "answer": "The amount paid for each click on an ad."},
+      {"question": "Can clicks be zero?", "answer": "No, at least one click is required."}
+    ],
+    "disclaimer": "Use with campaign data; results exclude platform fees."
+  },
+  {
+    "slug": "return-on-ad-spend",
+    "title": "Return on Ad Spend Calculator",
+    "cluster": "web & marketing",
+    "description": "Measure revenue return per advertising dollar.",
+    "inputs": [
+      {"name": "revenue", "label": "Revenue", "type": "number", "step": "any", "placeholder": "5000"},
+      {"name": "adspend", "label": "Ad Spend", "type": "number", "step": "any", "placeholder": "1000"}
+    ],
+    "expression": "(revenue / adspend) * 100",
+    "examples": [
+      {"description": "$5,000 revenue on $1,000 spend ⇒ 500% ROAS"},
+      {"description": "$3,000 revenue on $1,500 spend ⇒ 200% ROAS"}
+    ],
+    "faqs": [
+      {"question": "What is a good ROAS?", "answer": "It depends on margins and campaign goals."},
+      {"question": "Is ROAS the same as ROI?", "answer": "ROAS looks only at revenue versus ad spend."}
+    ],
+    "disclaimer": "Exclude fixed costs to focus on ad efficiency."
+  }
 ]

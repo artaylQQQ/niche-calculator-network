@@ -1,0 +1,36 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Target GPA Grade Calculator"
+description: "Determine GPA needed in upcoming credits to reach a target overall GPA."
+date: 2025-09-09
+updated: 2025-09-09
+cluster: "Education & Learning"
+---
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "target-gpa-grade",
+  "title": "Target GPA Grade Calculator",
+  "locale": "en",
+  "inputs": [
+    {"name":"current","label":"Current GPA","type":"number","step":"any","placeholder":"3.0"},
+    {"name":"creditsCompleted","label":"Completed Credits","type":"number","step":"any","placeholder":"60"},
+    {"name":"target","label":"Target GPA","type":"number","step":"any","placeholder":"3.2"},
+    {"name":"newCredits","label":"Upcoming Credits","type":"number","step":"any","placeholder":"15"}
+  ],
+  "expression": "(target*(creditsCompleted+newCredits) - current*creditsCompleted) / newCredits",
+  "intro": "Determine GPA needed in upcoming credits to reach a target overall GPA.",
+  "examples": [
+    {"description":"Current 3.0 over 60 credits aiming 3.2 with 15 credits ⇒ 4.0 GPA needed"},
+    {"description":"Current 3.5 over 45 credits aiming 3.6 with 15 credits ⇒ 3.9 GPA needed"}
+  ],
+  "faqs": [
+    {"question":"Can result exceed 4.0?","answer":"Yes, the goal may be unattainable if required GPA is above 4.0."},
+    {"question":"Does it handle pass/fail courses?","answer":"No, it assumes graded credits only."}
+  ],
+  "disclaimer": "Check with your registrar for official GPA calculations.",
+  "cluster": "Education & Learning"
+};
+
+<Calculator schema={schema} />
+

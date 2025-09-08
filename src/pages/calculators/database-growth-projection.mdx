@@ -1,0 +1,35 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Database Growth Projection"
+description: "Estimate months until a database reaches capacity."
+date: 2025-09-09
+updated: 2025-09-09
+cluster: "Technology"
+---
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "database-growth-projection",
+  "title": "Database Growth Projection",
+  "locale": "en",
+  "inputs": [
+    {"name":"current","label":"Current Size (GB)","type":"number","step":"any","placeholder":"50"},
+    {"name":"monthlyGrowth","label":"Monthly Growth (GB)","type":"number","step":"any","placeholder":"5"},
+    {"name":"capacity","label":"Capacity (GB)","type":"number","step":"any","placeholder":"200"}
+  ],
+  "expression": "(capacity - current) / monthlyGrowth",
+  "intro": "Estimate months until a database reaches capacity.",
+  "examples": [
+    {"description":"50GB now, +5GB/mo to 200GB ⇒ 30 months"},
+    {"description":"20GB now, +2GB/mo to 50GB ⇒ 15 months"}
+  ],
+  "faqs": [
+    {"question":"What if growth is zero?","answer":"Then the database never reaches capacity."},
+    {"question":"Does it consider compaction?","answer":"No, it assumes linear growth."}
+  ],
+  "disclaimer": "Projection only; monitor usage for real capacity planning.",
+  "cluster": "Technology"
+};
+
+<Calculator schema={schema} />
+

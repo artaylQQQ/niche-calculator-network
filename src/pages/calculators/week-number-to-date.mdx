@@ -1,0 +1,34 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Week Number to Date"
+description: "Get the Monday date for a given ISO week."
+date: 2025-09-09
+updated: 2025-09-09
+cluster: "Date & Time"
+---
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "week-number-to-date",
+  "title": "Week Number to Date",
+  "locale": "en",
+  "inputs": [
+    {"name":"year","label":"Year","type":"number","step":1,"placeholder":"2024"},
+    {"name":"week","label":"ISO Week","type":"number","step":1,"placeholder":"10"}
+  ],
+  "expression": "(function(y,w){const first=new Date(y,0,4);const day=(first.getDay()+6)%7;const monday=new Date(first);monday.setDate(first.getDate()-day);const target=new Date(monday);target.setDate(monday.getDate()+(w-1)*7);return target.toISOString().split('T')[0];})(year,week)",
+  "intro": "Get the Monday date for a given ISO week.",
+  "examples": [
+    {"description":"2024 week 1 ⇒ 2024-01-01"},
+    {"description":"2024 week 10 ⇒ 2024-03-04"}
+  ],
+  "faqs": [
+    {"question":"What is ISO week 1?","answer":"The week containing January 4th."},
+    {"question":"Are results in ISO format?","answer":"Yes, YYYY-MM-DD."}
+  ],
+  "disclaimer": "For planning purposes; verify dates for official schedules.",
+  "cluster": "Date & Time"
+};
+
+<Calculator schema={schema} />
+

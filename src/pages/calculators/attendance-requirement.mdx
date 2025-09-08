@@ -1,0 +1,34 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Attendance Requirement Calculator"
+description: "Find maximum classes you can miss to meet attendance rules."
+date: 2025-09-09
+updated: 2025-09-09
+cluster: "Education & Learning"
+---
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "attendance-requirement",
+  "title": "Attendance Requirement Calculator",
+  "locale": "en",
+  "inputs": [
+    {"name":"total","label":"Total Classes","type":"number","step":1,"placeholder":"30"},
+    {"name":"required","label":"Required Attendance (%)","type":"number","step":"any","placeholder":"80"}
+  ],
+  "expression": "total - Math.ceil(total * required / 100)",
+  "intro": "Find maximum classes you can miss to meet attendance rules.",
+  "examples": [
+    {"description":"30 classes with 80% required ⇒ 6 absences allowed"},
+    {"description":"40 classes with 75% required ⇒ 10 absences allowed"}
+  ],
+  "faqs": [
+    {"question":"Why use ceiling?","answer":"It ensures you attend enough classes."},
+    {"question":"Does it consider excused absences?","answer":"It treats all absences the same."}
+  ],
+  "disclaimer": "Always confirm attendance policies with your institution.",
+  "cluster": "Education & Learning"
+};
+
+<Calculator schema={schema} />
+

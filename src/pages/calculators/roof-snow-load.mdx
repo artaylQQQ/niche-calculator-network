@@ -1,0 +1,36 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Roof Snow Load Calculator"
+description: "Estimate weight of snow on a roof."
+date: 2025-09-09
+updated: 2025-09-09
+cluster: "Home & DIY"
+---
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "roof-snow-load",
+  "title": "Roof Snow Load Calculator",
+  "locale": "en",
+  "unit": "lbs",
+  "inputs": [
+    {"name":"area","label":"Roof Area (sq ft)","type":"number","step":"any","placeholder":"1000"},
+    {"name":"depth","label":"Snow Depth (ft)","type":"number","step":"any","placeholder":"2"},
+    {"name":"density","label":"Snow Density (lb/ft³)","type":"number","step":"any","placeholder":"20"}
+  ],
+  "expression": "area * depth * density",
+  "intro": "Estimate weight of snow on a roof.",
+  "examples": [
+    {"description":"1000 sq ft, 2 ft depth at 20 lb/ft³ ⇒ 40,000 lbs"},
+    {"description":"500 sq ft, 1 ft depth at 15 lb/ft³ ⇒ 7,500 lbs"}
+  ],
+  "faqs": [
+    {"question":"Why use density?","answer":"Snow weight varies with water content."},
+    {"question":"Does roof pitch matter?","answer":"This simple estimate ignores slope and drifting."}
+  ],
+  "disclaimer": "For safety, consult structural engineers for heavy snow loads.",
+  "cluster": "Home & DIY"
+};
+
+<Calculator schema={schema} />
+

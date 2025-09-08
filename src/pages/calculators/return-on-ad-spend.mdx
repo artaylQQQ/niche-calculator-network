@@ -1,0 +1,34 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Return on Ad Spend Calculator"
+description: "Measure revenue return per advertising dollar."
+date: 2025-09-09
+updated: 2025-09-09
+cluster: "Web & Marketing"
+---
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "return-on-ad-spend",
+  "title": "Return on Ad Spend Calculator",
+  "locale": "en",
+  "inputs": [
+    {"name":"revenue","label":"Revenue","type":"number","step":"any","placeholder":"5000"},
+    {"name":"adspend","label":"Ad Spend","type":"number","step":"any","placeholder":"1000"}
+  ],
+  "expression": "(revenue / adspend) * 100",
+  "intro": "Measure revenue return per advertising dollar.",
+  "examples": [
+    {"description":"$5,000 revenue on $1,000 spend ⇒ 500% ROAS"},
+    {"description":"$3,000 revenue on $1,500 spend ⇒ 200% ROAS"}
+  ],
+  "faqs": [
+    {"question":"What is a good ROAS?","answer":"It depends on margins and campaign goals."},
+    {"question":"Is ROAS the same as ROI?","answer":"ROAS looks only at revenue versus ad spend."}
+  ],
+  "disclaimer": "Exclude fixed costs to focus on ad efficiency.",
+  "cluster": "Web & Marketing"
+};
+
+<Calculator schema={schema} />
+

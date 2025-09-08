@@ -1,0 +1,36 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Add Business Days"
+description: "Add a number of business days to a start date."
+date: 2025-09-09
+updated: 2025-09-09
+cluster: "Date & Time"
+---
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "add-business-days",
+  "title": "Add Business Days",
+  "locale": "en",
+  "inputs": [
+    {"name":"y","label":"Start Year","type":"number","step":1,"placeholder":"2024"},
+    {"name":"m","label":"Start Month","type":"number","step":1,"placeholder":"6"},
+    {"name":"d","label":"Start Day","type":"number","step":1,"placeholder":"3"},
+    {"name":"days","label":"Business Days to Add","type":"number","step":1,"placeholder":"5"}
+  ],
+  "expression": "(function(y,m,d,days){let date=new Date(y,m-1,d);let added=0;while(added<days){date.setDate(date.getDate()+1);const day=date.getDay();if(day!==0&&day!==6)added++;}return date.toISOString().split('T')[0];})(y,m,d,days)",
+  "intro": "Add a number of business days to a start date.",
+  "examples": [
+    {"description":"Start 2024-06-03 +5 business days ⇒ 2024-06-10"},
+    {"description":"Start 2024-12-29 +1 business day ⇒ 2024-12-31"}
+  ],
+  "faqs": [
+    {"question":"Are weekends skipped?","answer":"Yes, Saturdays and Sundays are excluded."},
+    {"question":"Does it account for holidays?","answer":"No, only weekends are skipped."}
+  ],
+  "disclaimer": "Verify with local holidays for precise scheduling.",
+  "cluster": "Date & Time"
+};
+
+<Calculator schema={schema} />
+
