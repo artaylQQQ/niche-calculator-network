@@ -1,0 +1,35 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "LCM of Three Numbers"
+description: "Find the least common multiple of three integers."
+date: 2025-09-09
+updated: 2025-09-09
+cluster: "Math"
+---
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "lcm-three-numbers",
+  "title": "LCM of Three Numbers",
+  "locale": "en",
+  "inputs": [
+    {"name":"a","label":"Number A","type":"number","step":1,"placeholder":"4"},
+    {"name":"b","label":"Number B","type":"number","step":1,"placeholder":"6"},
+    {"name":"c","label":"Number C","type":"number","step":1,"placeholder":"8"}
+  ],
+  "expression": "(function(a,b,c){a=Math.abs(Math.floor(a));b=Math.abs(Math.floor(b));c=Math.abs(Math.floor(c));function g(x,y){while(y){[x,y]=[y,x%y];}return x;}const l=a*b/g(a,b);return l*c/g(l,c);})(a,b,c)",
+  "intro": "Find the least common multiple of three integers.",
+  "examples": [
+    {"description":"LCM of 4, 6, 8 ⇒ 24"},
+    {"description":"LCM of 5, 7, 9 ⇒ 315"}
+  ],
+  "faqs": [
+    {"question":"Can inputs be negative?","answer":"Yes, absolute values are used."},
+    {"question":"What if any number is zero?","answer":"LCM with zero is zero."}
+  ],
+  "disclaimer": "For educational purposes; verify results for critical applications.",
+  "cluster": "Math"
+};
+
+<Calculator schema={schema} />
+

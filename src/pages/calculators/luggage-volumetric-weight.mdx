@@ -1,0 +1,36 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Luggage Volumetric Weight"
+description: "Calculate airline volumetric weight from bag dimensions."
+date: 2025-09-09
+updated: 2025-09-09
+cluster: "Lifestyle & Travel"
+---
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "luggage-volumetric-weight",
+  "title": "Luggage Volumetric Weight",
+  "locale": "en",
+  "unit": "kg",
+  "inputs": [
+    {"name":"length","label":"Length (cm)","type":"number","step":"any","placeholder":"50"},
+    {"name":"width","label":"Width (cm)","type":"number","step":"any","placeholder":"40"},
+    {"name":"height","label":"Height (cm)","type":"number","step":"any","placeholder":"20"}
+  ],
+  "expression": "(length * width * height) / 5000",
+  "intro": "Calculate airline volumetric weight from bag dimensions.",
+  "examples": [
+    {"description":"50×40×20 cm ⇒ 8 kg"},
+    {"description":"80×50×30 cm ⇒ 24 kg"}
+  ],
+  "faqs": [
+    {"question":"Why divide by 5000?","answer":"Airlines often use 5000 to convert cm³ to kg for volume weight."},
+    {"question":"Do all airlines use this factor?","answer":"Some use 6000; check your carrier."}
+  ],
+  "disclaimer": "Always confirm volumetric policies with your airline.",
+  "cluster": "Lifestyle & Travel"
+};
+
+<Calculator schema={schema} />
+

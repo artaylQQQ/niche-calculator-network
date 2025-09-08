@@ -1,0 +1,34 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Hotel Nights Within Budget"
+description: "See how many hotel nights your budget can cover."
+date: 2025-09-09
+updated: 2025-09-09
+cluster: "Lifestyle & Travel"
+---
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "hotel-nights-budget",
+  "title": "Hotel Nights Within Budget",
+  "locale": "en",
+  "inputs": [
+    {"name":"budget","label":"Total Budget","type":"number","step":"any","placeholder":"1000"},
+    {"name":"nightly","label":"Price per Night","type":"number","step":"any","placeholder":"120"}
+  ],
+  "expression": "budget / nightly",
+  "intro": "See how many hotel nights your budget can cover.",
+  "examples": [
+    {"description":"$1000 budget at $120/night ⇒ 8.33 nights"},
+    {"description":"$600 budget at $75/night ⇒ 8 nights"}
+  ],
+  "faqs": [
+    {"question":"Are taxes included?","answer":"No, add local taxes and fees separately."},
+    {"question":"Can I enter decimals?","answer":"Yes, useful for partial nights or shared rooms."}
+  ],
+  "disclaimer": "Check hotel policies for taxes and additional charges.",
+  "cluster": "Lifestyle & Travel"
+};
+
+<Calculator schema={schema} />
+

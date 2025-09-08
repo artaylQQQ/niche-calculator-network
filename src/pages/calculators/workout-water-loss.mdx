@@ -1,0 +1,35 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Workout Water Loss Calculator"
+description: "Estimate fluid lost during exercise from weight change."
+date: 2025-09-09
+updated: 2025-09-09
+cluster: "Health"
+---
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "workout-water-loss",
+  "title": "Workout Water Loss Calculator",
+  "locale": "en",
+  "unit": "liters",
+  "inputs": [
+    {"name":"before","label":"Weight Before (kg)","type":"number","step":"any","placeholder":"70"},
+    {"name":"after","label":"Weight After (kg)","type":"number","step":"any","placeholder":"69"}
+  ],
+  "expression": "before - after",
+  "intro": "Estimate fluid lost during exercise from weight change.",
+  "examples": [
+    {"description":"70kg before, 69kg after ⇒ 1 liter"},
+    {"description":"80kg before, 79.2kg after ⇒ 0.8 liters"}
+  ],
+  "faqs": [
+    {"question":"Why equate weight loss to liters?","answer":"1 kg of weight change roughly equals 1 liter of water."},
+    {"question":"Does it include sweat absorbed by clothes?","answer":"No, weigh clothing separately for accuracy."}
+  ],
+  "disclaimer": "Approximate hydration loss; replace fluids responsibly.",
+  "cluster": "Health"
+};
+
+<Calculator schema={schema} />
+

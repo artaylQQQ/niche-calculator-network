@@ -1,0 +1,34 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Payback Period Calculator"
+description: "Estimate years to recover an initial investment."
+date: 2025-09-09
+updated: 2025-09-09
+cluster: "Finance"
+---
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "payback-period",
+  "title": "Payback Period Calculator",
+  "locale": "en",
+  "inputs": [
+    {"name":"investment","label":"Initial Investment","type":"number","step":"any","placeholder":"10000"},
+    {"name":"cashflow","label":"Annual Cash Inflow","type":"number","step":"any","placeholder":"2500"}
+  ],
+  "expression": "investment / cashflow",
+  "intro": "Estimate years to recover an initial investment.",
+  "examples": [
+    {"description":"$10,000 investment with $2,500 inflow ⇒ 4 years"},
+    {"description":"$5,000 investment with $1,000 inflow ⇒ 5 years"}
+  ],
+  "faqs": [
+    {"question":"What is payback period?","answer":"The time required for an investment to generate cash equal to its cost."},
+    {"question":"Does this consider time value of money?","answer":"No, it uses simple payback analysis."}
+  ],
+  "disclaimer": "For basic estimation only; consult financial advisors for investment decisions.",
+  "cluster": "Finance"
+};
+
+<Calculator schema={schema} />
+

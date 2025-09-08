@@ -1,0 +1,36 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Loan Extra Payment Time Saved"
+description: "Estimate months saved by adding extra to loan payments."
+date: 2025-09-09
+updated: 2025-09-09
+cluster: "Personal Finance & Loans"
+---
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "loan-extra-payment-saved",
+  "title": "Loan Extra Payment Time Saved",
+  "locale": "en",
+  "inputs": [
+    {"name":"principal","label":"Loan Amount","type":"number","step":"any","placeholder":"200000"},
+    {"name":"rate","label":"Rate (%)","type":"number","step":"any","placeholder":"5"},
+    {"name":"termYears","label":"Term (years)","type":"number","step":"any","placeholder":"30"},
+    {"name":"extra","label":"Extra Monthly Payment","type":"number","step":"any","placeholder":"200"}
+  ],
+  "expression": "(function(p,rate,years,extra){const r=rate/100/12;const n=years*12;const pay=p*r*Math.pow(1+r,n)/(Math.pow(1+r,n)-1);const newPay=pay+extra;const newN=Math.log(newPay/(newPay - r*p))/Math.log(1+r);return n-newN;})(principal,rate,termYears,extra)",
+  "intro": "Estimate months saved by adding extra to loan payments.",
+  "examples": [
+    {"description":"$200k at 5% for 30y with $200 extra ⇒ 51 months saved"},
+    {"description":"$100k at 4% for 15y with $100 extra ⇒ 19 months saved"}
+  ],
+  "faqs": [
+    {"question":"Why is the result in months?","answer":"It shows how many months earlier the loan ends."},
+    {"question":"Does it include fees?","answer":"No, it assumes fixed rate and regular payments."}
+  ],
+  "disclaimer": "Approximation only; consult lenders for official schedules.",
+  "cluster": "Personal Finance & Loans"
+};
+
+<Calculator schema={schema} />
+
