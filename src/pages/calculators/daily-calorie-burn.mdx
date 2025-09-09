@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/CalculatorLayout.astro
 title: "Daily Calorie Burn (Rough)"
-description: "Rough estimate of daily calories burned from steps and exercise minutes."
+description: "Estimate daily calories burned from your step count and exercise time."
 updated: "2025-08-26"
 cluster: "Health"
 ---
@@ -31,17 +31,17 @@ export const schema = {
   "title": "Daily Calorie Burn (Rough)",
   "locale": "en",
   "expression": "(steps * 0.04) + (exercise * 7)",
-  "intro": "Rough estimate of daily calories burned from steps and exercise minutes.",
+  "unit": "kcal",
+  "intro": "Provides a rough estimate of calories burned in a day using your steps and minutes of exercise.",
   "examples": [
-    {
-      "description": "8000 steps and 30 min \u21d2 \u2248 470 kcal (rough)"
-    }
+    {"description": "8000 steps and 30 min exercise ⇒ ≈ 470 kcal"},
+    {"description": "5000 steps and 60 min exercise ⇒ ≈ 620 kcal"}
   ],
   "faqs": [
-    {
-      "question": "Is this accurate?",
-      "answer": "It is a rough estimate; for precision use a medical-grade calculator."
-    }
+    {"question": "How are calories from steps calculated?","answer": "Each step is estimated to burn about 0.04 kcal."},
+    {"question": "What about exercise minutes?","answer": "Every minute of exercise adds roughly 7 kcal to the total."},
+    {"question": "Can I enter zero for steps or exercise?","answer": "Yes, set either field to 0 if it doesn't apply."},
+    {"question": "How accurate is the result?","answer": "It's a simple approximation and does not account for intensity or personal factors."}
   ],
   "disclaimer": "Educational purposes only. Not professional advice.",
   "cluster": "Health"

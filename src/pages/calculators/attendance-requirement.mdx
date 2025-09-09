@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/CalculatorLayout.astro
 title: "Attendance Requirement Calculator"
-description: "Find maximum classes you can miss to meet attendance rules."
+description: "Determine how many classes you can miss while still meeting attendance rules."
 date: 2025-09-09
 updated: 2025-09-09
 cluster: "Education & Learning"
@@ -17,14 +17,17 @@ export const schema = {
     {"name":"required","label":"Required Attendance (%)","type":"number","step":"any","placeholder":"80"}
   ],
   "expression": "total - Math.ceil(total * required / 100)",
-  "intro": "Find maximum classes you can miss to meet attendance rules.",
+  "unit": "classes",
+  "intro": "Determine how many classes you can skip while still meeting the minimum attendance percentage for your course.",
   "examples": [
-    {"description":"30 classes with 80% required ⇒ 6 absences allowed"},
-    {"description":"40 classes with 75% required ⇒ 10 absences allowed"}
+    {"description":"30 total classes with 80% required ⇒ 6 classes can be missed"},
+    {"description":"40 total classes with 75% required ⇒ 10 classes can be missed"}
   ],
   "faqs": [
-    {"question":"Why use ceiling?","answer":"It ensures you attend enough classes."},
-    {"question":"Does it consider excused absences?","answer":"It treats all absences the same."}
+    {"question":"What does the result represent?","answer":"The number of classes you can miss and still meet the required attendance."},
+    {"question":"Why use ceiling in the formula?","answer":"It rounds up the required classes so you never fall short of the requirement."},
+    {"question":"Can I enter decimal class counts?","answer":"No, total classes should be a whole number."},
+    {"question":"Does it account for excused absences?","answer":"All absences are treated the same; check your institution's policy."}
   ],
   "disclaimer": "Always confirm attendance policies with your institution.",
   "cluster": "Education & Learning"
