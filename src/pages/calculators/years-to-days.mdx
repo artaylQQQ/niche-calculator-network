@@ -1,10 +1,10 @@
 ---
 layout: ../../layouts/CalculatorLayout.astro
 title: "Years to Days Calculator"
-description: "Approximate years to days (365)."
+description: "Convert years to days using a 365-day year."
 date: 2025-08-26
 updated: 2025-08-26
-cluster: "Date & Time"
+cluster: "date & time"
 ---
 import Calculator from '../../components/Calculator.astro';
 
@@ -19,15 +19,32 @@ export const schema = {
     }
   ],
   "expression": "years*365",
-  "intro": "Approximate years to days (365).",
+  "unit": "days",
+  "intro": "Convert a span of years to days using a 365-day year. Decimals are allowed for partial years.",
   "examples": [
+    { "description": "2 years ⇒ 730 days" },
+    { "description": "3.5 years ⇒ 1277.5 days" }
+  ],
+  "faqs": [
     {
-      "description": "Enter the values and press Calculate."
+      "question": "Does this account for leap years?",
+      "answer": "No, it assumes exactly 365 days per year."
+    },
+    {
+      "question": "Can I enter decimal years?",
+      "answer": "Yes, decimals let you represent partial years."
+    },
+    {
+      "question": "Is the result rounded?",
+      "answer": "The calculator provides the exact multiplication result."
+    },
+    {
+      "question": "What units are used?",
+      "answer": "Input is in years and the output is in days."
     }
   ],
-  "faqs": [],
   "disclaimer": "Educational information, not professional advice.",
-  "cluster": "Date & Time",
+  "cluster": "date & time",
   "related": [
     "percentage-discount-calculator",
     "loan-payment-calculator",
@@ -36,6 +53,6 @@ export const schema = {
     "percentage-increase-calculator",
     "sales-tax-calculator"
   ]
-}
+};
 
 <Calculator schema={schema} />

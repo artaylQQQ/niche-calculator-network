@@ -241,6 +241,7 @@
     "title": "Percentage Increase",
     "cluster": "math",
     "description": "Get the percentage increase from an old value to a new value.",
+    "intro": "Determine how much a value has grown. Enter the original and new values to see the percentage increase.",
     "inputs": [
       {
         "name": "oldValue",
@@ -260,16 +261,56 @@
       }
     ],
     "expression": "((newValue - oldValue) / oldValue) * 100",
+    "unit": "%",
     "examples": [
       {
         "description": "From 50 to 70 ⇒ 40% increase"
+      },
+      {
+        "description": "From 80 to 100 ⇒ 25% increase"
       }
     ],
     "faqs": [
       {
-        "question": "What if old value is 0?",
-        "answer": "Percentage change is undefined when the old value is 0."
+        "question": "What if the new value is lower?",
+        "answer": "The result will be negative, indicating a percentage decrease."
+      },
+      {
+        "question": "Can I use negative numbers?",
+        "answer": "Yes, but interpret the result carefully depending on context."
+      },
+      {
+        "question": "Why is the result undefined when the old value is 0?",
+        "answer": "Division by zero makes the percentage change impossible to compute."
+      },
+      {
+        "question": "Is percentage increase the same as growth rate?",
+        "answer": "It expresses growth relative to the original value, often used as a growth rate."
       }
+    ]
+  },
+  {
+    "slug": "rule-of-three-calculator",
+    "title": "Rule of Three Calculator",
+    "cluster": "math",
+    "description": "Find the missing value in a proportion using three known numbers.",
+    "intro": "Enter A, B, and C to solve for X in the proportion A/B = C/X.",
+    "inputs": [
+      { "name": "a", "label": "A", "type": "number", "step": "any", "placeholder": "2" },
+      { "name": "b", "label": "B", "type": "number", "step": "any", "placeholder": "10" },
+      { "name": "c", "label": "C", "type": "number", "step": "any", "placeholder": "5" }
+    ],
+    "expression": "b * c / a",
+    "unit": "same as C",
+    "examples": [
+      { "description": "2 books cost $10 ⇒ 5 books cost $25" },
+      { "description": "3 kg correspond to $12 ⇒ 7 kg cost $28" }
+    ],
+    "faqs": [
+      { "question": "What is the rule of three?", "answer": "It solves a proportion a:b = c:x by computing x = b × c / a." },
+      { "question": "Can I use decimals?", "answer": "Yes, the calculator accepts decimal values." },
+      { "question": "Why must A not be zero?", "answer": "Division by zero is undefined, so A must be nonzero." },
+      { "question": "Do the inputs need units?", "answer": "Use consistent units for B and C so the result carries that unit." }
     ]
   },
   {
@@ -372,50 +413,67 @@
       }
     ]
   },
-  {
-    "slug": "duration-seconds",
-    "title": "Duration to Seconds",
-    "cluster": "date & time",
-    "description": "Convert hours, minutes, and seconds into total seconds.",
-    "inputs": [
-      {
-        "name": "hours",
-        "label": "Hours",
-        "type": "number",
-        "min": 0,
-        "step": "1",
-        "placeholder": "1"
-      },
-      {
-        "name": "minutes",
-        "label": "Minutes",
-        "type": "number",
-        "min": 0,
-        "step": "1",
-        "placeholder": "30"
-      },
-      {
-        "name": "seconds",
-        "label": "Seconds",
-        "type": "number",
-        "min": 0,
-        "step": "1",
-        "placeholder": "15"
-      }
-    ],
-    "expression": "(hours*3600) + (minutes*60) + seconds",
-    "examples": [
-      {
-        "description": "1h 30m 15s ⇒ 5415 seconds"
-      }
-    ],
-    "faqs": [
-      {
-        "question": "Supports decimals?",
-        "answer": "Use whole numbers for simplicity in this tool."
-      }
-    ]
-  },
+    {
+      "slug": "duration-seconds",
+      "title": "Duration to Seconds",
+      "cluster": "date & time",
+      "description": "Convert hours, minutes, and seconds into total seconds.",
+      "intro": "Enter hours, minutes, and seconds to get the total duration expressed in seconds.",
+      "inputs": [
+        {
+          "name": "hours",
+          "label": "Hours",
+          "type": "number",
+          "min": 0,
+          "step": "1",
+          "placeholder": "1"
+        },
+        {
+          "name": "minutes",
+          "label": "Minutes",
+          "type": "number",
+          "min": 0,
+          "step": "1",
+          "placeholder": "30"
+        },
+        {
+          "name": "seconds",
+          "label": "Seconds",
+          "type": "number",
+          "min": 0,
+          "step": "1",
+          "placeholder": "15"
+        }
+      ],
+      "expression": "(hours*3600) + (minutes*60) + seconds",
+      "unit": "seconds",
+      "examples": [
+        {
+          "description": "1h 30m 15s ⇒ 5415 seconds"
+        },
+        {
+          "description": "0h 45m 0s ⇒ 2700 seconds"
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Can I leave fields blank?",
+          "answer": "Empty fields are treated as zero."
+        },
+        {
+          "question": "Does it handle durations longer than a day?",
+          "answer": "Yes, enter any non-negative values."
+        },
+        {
+          "question": "Can I use decimals?",
+          "answer": "Use whole numbers; the calculator treats inputs as integers."
+        },
+        {
+          "question": "What if I enter negative numbers?",
+          "answer": "Negative values are invalid and will not calculate."
+        }
+      ]
+    },
   {
     "slug": "days-to-hours",
     "title": "Days to Hours",
@@ -857,8 +915,9 @@
   {
     "slug": "years-to-days",
     "title": "Years to Days Calculator",
-    "cluster": "Date & Time",
-    "intro": "Approximate years to days (365). Enter the values and press Calculate.",
+    "cluster": "date & time",
+    "description": "Convert years to days using a 365-day year.",
+    "intro": "Convert a span of years to days using a 365-day year. Decimals are allowed for partial years.",
     "inputs": [
       {
         "name": "years",
@@ -867,11 +926,16 @@
       }
     ],
     "expression": "years*365",
+    "unit": "days",
+    "examples": [
+      { "description": "2 years ⇒ 730 days" },
+      { "description": "3.5 years ⇒ 1277.5 days" }
+    ],
     "faqs": [
-      {
-        "question": "What does the Years to Days Calculator do?",
-        "answer": "Approximate years to days (365). Enter the values and press Calculate."
-      }
+      { "question": "Does this account for leap years?", "answer": "No, it assumes exactly 365 days per year." },
+      { "question": "Can I enter decimal years?", "answer": "Yes, decimals let you represent partial years." },
+      { "question": "Is the result rounded?", "answer": "The calculator provides the exact multiplication result." },
+      { "question": "What units are used?", "answer": "Input is in years and the output is in days." }
     ]
   },
   {

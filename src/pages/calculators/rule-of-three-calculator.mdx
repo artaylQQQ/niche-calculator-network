@@ -1,9 +1,9 @@
 ---
 layout: ../../layouts/CalculatorLayout.astro
 title: "Rule of Three Calculator"
-description: "Solve proportions using the rule of three."
+description: "Find the missing value in a proportion using three known numbers."
 updated: "2025-08-22"
-cluster: "Math"
+cluster: "math"
 ---
 
 import Calculator from '../../components/Calculator.astro';
@@ -36,20 +36,32 @@ export const schema = {
   "title": "Rule of Three Calculator",
   "locale": "en",
   "expression": "b * c / a",
-  "intro": "Solve proportions using the rule of three (If a is to b as c is to x…).",
+  "unit": "same as C",
+  "intro": "This calculator finds the fourth value in a proportion. Enter A, B, and C where A/B = C/X to solve for X.",
   "examples": [
-    {
-      "description": "If 2 is to 4 as 3 is to x, then x = 4 * 3 / 2 = 6."
-    }
+    { "description": "2 books cost $10 ⇒ 5 books cost $25" },
+    { "description": "3 kg correspond to $12 ⇒ 7 kg cost $28" }
   ],
   "faqs": [
     {
       "question": "What is the rule of three?",
-      "answer": "The rule of three solves proportions. If a is to b as c is to x, then x = b × c / a."
+      "answer": "It solves a proportion a:b = c:x by computing x = b × c / a."
+    },
+    {
+      "question": "Can I use decimals?",
+      "answer": "Yes, the calculator accepts decimal values."
+    },
+    {
+      "question": "Why must A not be zero?",
+      "answer": "Division by zero is undefined, so A must be nonzero."
+    },
+    {
+      "question": "Do the inputs need units?",
+      "answer": "Use consistent units for B and C so the result carries that unit."
     }
   ],
   "disclaimer": "Educational information, not professional advice.",
-  "cluster": "Math"
+  "cluster": "math"
 };
 
 <Calculator schema={schema} />
