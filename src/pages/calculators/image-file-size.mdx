@@ -1,0 +1,59 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Image File Size Calculator"
+description: "Estimate uncompressed image file size from dimensions and color depth."
+updated: "2025-09-15"
+cluster: "Technology"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  inputs: [
+    {
+      name: "width",
+      label: "Width (px)",
+      type: "number",
+      min: 0,
+      step: "1",
+      placeholder: "1920"
+    },
+    {
+      name: "height",
+      label: "Height (px)",
+      type: "number",
+      min: 0,
+      step: "1",
+      placeholder: "1080"
+    },
+    {
+      name: "depth",
+      label: "Bit Depth",
+      type: "number",
+      min: 1,
+      step: "1",
+      placeholder: "24"
+    }
+  ],
+  slug: "image-file-size",
+  title: "Image File Size Calculator",
+  locale: "en",
+  expression: "width * height * depth / 8388608",
+  unit: "MB",
+  intro: "Calculate the approximate uncompressed bitmap file size using image dimensions and bit depth. Enter width, height, and bits per pixel to estimate size in megabytes.",
+  examples: [
+    { description: "1920\u00d71080 at 24-bit \u21d2 5.93 MB" },
+    { description: "800\u00d7600 at 8-bit \u21d2 0.46 MB" }
+  ],
+  faqs: [
+    { question: "Does this include compression?", answer: "No, it assumes uncompressed bitmap data." },
+    { question: "What about alpha channels?", answer: "Include them in the bit depth if present." },
+    { question: "Can I use it for JPEGs?", answer: "JPEG uses compression, so actual file size will be smaller." },
+    { question: "Why divide by 8388608?", answer: "It's the number of bits in a megabyte (1024\u00b2 bytes)." }
+  ],
+  disclaimer: "Approximate size; actual files may vary due to headers or compression.",
+  cluster: "Technology"
+};
+
+<Calculator schema={schema} />
+

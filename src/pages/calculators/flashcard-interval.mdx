@@ -1,0 +1,51 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Flashcard Interval Calculator"
+description: "Estimate the next review interval for spaced repetition."
+updated: "2025-09-15"
+cluster: "Education & Learning"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  inputs: [
+    {
+      name: "previous",
+      label: "Previous Interval (days)",
+      type: "number",
+      min: 0,
+      step: "any",
+      placeholder: "5"
+    },
+    {
+      name: "ease",
+      label: "Ease Factor",
+      type: "number",
+      min: 0,
+      step: "any",
+      placeholder: "2.5"
+    }
+  ],
+  slug: "flashcard-interval",
+  title: "Flashcard Interval Calculator",
+  locale: "en",
+  expression: "previous * ease",
+  unit: "days",
+  intro: "Use this calculator to estimate the next review interval in a spaced repetition system. Multiply the previous interval by an ease factor to plan your study schedule.",
+  examples: [
+    { description: "4-day interval with 2.5 ease \u21d2 10 days" },
+    { description: "10-day interval with 1.5 ease \u21d2 15 days" }
+  ],
+  faqs: [
+    { question: "What is the ease factor?", answer: "A multiplier reflecting how well you remembered the material." },
+    { question: "Can the ease factor be less than 1?", answer: "Yes, values below 1 shorten the next interval." },
+    { question: "Should intervals be whole numbers?", answer: "They can include decimals; round as needed for your schedule." },
+    { question: "Does this replace SRS software?", answer: "No, it's a simple aid for manual planning." }
+  ],
+  disclaimer: "For study planning only; adjust based on personal progress.",
+  cluster: "Education & Learning"
+};
+
+<Calculator schema={schema} />
+

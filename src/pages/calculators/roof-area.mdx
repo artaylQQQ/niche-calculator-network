@@ -1,0 +1,59 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Roof Area Calculator"
+description: "Estimate roof surface area from building size and pitch."
+updated: "2025-09-15"
+cluster: "Home & DIY"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  inputs: [
+    {
+      name: "length",
+      label: "Building Length (ft)",
+      type: "number",
+      min: 0,
+      step: "any",
+      placeholder: "30"
+    },
+    {
+      name: "width",
+      label: "Building Width (ft)",
+      type: "number",
+      min: 0,
+      step: "any",
+      placeholder: "20"
+    },
+    {
+      name: "pitch",
+      label: "Roof Pitch (rise per 12 in)",
+      type: "number",
+      min: 0,
+      step: "any",
+      placeholder: "6"
+    }
+  ],
+  slug: "roof-area",
+  title: "Roof Area Calculator",
+  locale: "en",
+  expression: "length * width * sqrt(1 + (pitch/12)^2)",
+  unit: "sq ft",
+  intro: "Estimate the surface area of a simple gable roof. Enter the building footprint dimensions and roof pitch to compute the total roof area.",
+  examples: [
+    { description: "30 ft \u00d7 20 ft with 6 pitch \u21d2 670.82 sq ft" },
+    { description: "40 ft \u00d7 30 ft with 8 pitch \u21d2 1442.22 sq ft" }
+  ],
+  faqs: [
+    { question: "What is roof pitch?", answer: "The rise in inches for every 12 inches of horizontal run." },
+    { question: "Does this handle complex roofs?", answer: "No, it's for simple gable roofs only." },
+    { question: "Should I add extra material?", answer: "Yes, allow for waste and overhangs when purchasing materials." },
+    { question: "Can pitch be zero?", answer: "Yes, a pitch of zero gives flat-roof area." }
+  ],
+  disclaimer: "Estimates only; consult roofing professionals for precise measurements.",
+  cluster: "Home & DIY"
+};
+
+<Calculator schema={schema} />
+

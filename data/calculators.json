@@ -17071,5 +17071,695 @@
       }
     ],
     "disclaimer": "For marketing analysis only; actual growth may vary."
+  },
+  {
+    "slug": "revenue-per-employee",
+    "title": "Revenue per Employee Calculator",
+    "cluster": "Finance",
+    "description": "Calculate revenue generated per employee.",
+    "intro": "Calculate how much revenue each employee generates on average. Enter the company's total revenue and the number of employees to find the revenue per employee.",
+    "inputs": [
+      {
+        "name": "revenue",
+        "label": "Total Revenue (USD)",
+        "type": "number",
+        "min": 0,
+        "step": "any",
+        "placeholder": "500000"
+      },
+      {
+        "name": "employees",
+        "label": "Number of Employees",
+        "type": "number",
+        "min": 1,
+        "step": "any",
+        "placeholder": "25"
+      }
+    ],
+    "expression": "revenue / employees",
+    "unit": "USD/employee",
+    "examples": [
+      {
+        "description": "$1,000,000 revenue with 50 employees \u21d2 $20000 per employee"
+      },
+      {
+        "description": "$500,000 revenue with 10 employees \u21d2 $50000 per employee"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Should I include contractors?",
+        "answer": "Include anyone contributing to revenue if you want them represented in the average."
+      },
+      {
+        "question": "Can employee count be zero?",
+        "answer": "No, the calculator requires at least one employee."
+      },
+      {
+        "question": "Which revenue metric should I use?",
+        "answer": "Use the revenue figure that matches your analysis, typically annual net revenue."
+      },
+      {
+        "question": "Why compute revenue per employee?",
+        "answer": "It helps assess productivity and compare efficiency across businesses."
+      }
+    ],
+    "disclaimer": "For informational purposes only; not financial advice."
+  },
+  {
+    "slug": "rent-to-income-ratio",
+    "title": "Rent-to-Income Ratio Calculator",
+    "cluster": "Personal Finance & Loans",
+    "description": "Check what percentage of income goes toward rent.",
+    "intro": "Determine what portion of your income is spent on rent. Enter your monthly rent and monthly income to see the percentage.",
+    "inputs": [
+      {
+        "name": "rent",
+        "label": "Monthly Rent (USD)",
+        "type": "number",
+        "min": 0,
+        "step": "any",
+        "placeholder": "1200"
+      },
+      {
+        "name": "income",
+        "label": "Monthly Income (USD)",
+        "type": "number",
+        "min": 0,
+        "step": "any",
+        "placeholder": "4000"
+      }
+    ],
+    "expression": "(rent / income) * 100",
+    "unit": "%",
+    "examples": [
+      {
+        "description": "$1,200 rent from $4,000 income \u21d2 30%"
+      },
+      {
+        "description": "$800 rent from $2,400 income \u21d2 33.33%"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Does this include utilities?",
+        "answer": "Only if you include them in the rent value."
+      },
+      {
+        "question": "Is a lower ratio better?",
+        "answer": "Generally yes; many advisors recommend staying under 30%."
+      },
+      {
+        "question": "Can income be zero?",
+        "answer": "No, income must be greater than zero to compute the ratio."
+      },
+      {
+        "question": "Why track this ratio?",
+        "answer": "It helps evaluate housing affordability."
+      }
+    ],
+    "disclaimer": "Estimates only; consult a financial advisor for personalized guidance."
+  },
+  {
+    "slug": "race-time",
+    "title": "Race Time Calculator",
+    "cluster": "Health",
+    "description": "Predict race finish time from distance and pace.",
+    "intro": "Estimate your race finish time by multiplying distance and running pace. Enter both values to see the predicted time in minutes.",
+    "inputs": [
+      {
+        "name": "distance",
+        "label": "Distance (km)",
+        "type": "number",
+        "min": 0,
+        "step": "any",
+        "placeholder": "5"
+      },
+      {
+        "name": "pace",
+        "label": "Pace (min/km)",
+        "type": "number",
+        "min": 0,
+        "step": "any",
+        "placeholder": "5"
+      }
+    ],
+    "expression": "distance * pace",
+    "unit": "minutes",
+    "examples": [
+      {
+        "description": "5 km at 5 min/km \u21d2 25 minutes"
+      },
+      {
+        "description": "10 km at 6 min/km \u21d2 60 minutes"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Does this account for terrain?",
+        "answer": "No, it assumes a consistent pace throughout."
+      },
+      {
+        "question": "Can I use miles?",
+        "answer": "Convert miles to kilometers first for accurate results."
+      },
+      {
+        "question": "What if pace is zero?",
+        "answer": "The time will be zero, which isn't realistic for running."
+      },
+      {
+        "question": "How precise is the result?",
+        "answer": "It provides a simple estimate based on constant pace."
+      }
+    ],
+    "disclaimer": "For general fitness planning only; actual race times may vary."
+  },
+  {
+    "slug": "fibonacci-number",
+    "title": "Fibonacci Number Calculator",
+    "cluster": "Math",
+    "description": "Compute the nth Fibonacci number.",
+    "intro": "Find the Fibonacci number at any position using Binet's formula. Enter an integer n to get the corresponding Fibonacci value.",
+    "inputs": [
+      {
+        "name": "n",
+        "label": "n (position)",
+        "type": "number",
+        "min": 0,
+        "step": "1",
+        "placeholder": "10"
+      }
+    ],
+    "expression": "round((( (1 + sqrt(5))/2 )^n - ( (1 - sqrt(5))/2 )^n ) / sqrt(5))",
+    "unit": "value",
+    "examples": [
+      {
+        "description": "n = 7 \u21d2 13"
+      },
+      {
+        "description": "n = 10 \u21d2 55"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Can I use negative numbers?",
+        "answer": "This calculator works for non-negative integers only."
+      },
+      {
+        "question": "Why is the result rounded?",
+        "answer": "Binet's formula uses decimals, so rounding gives the exact integer."
+      },
+      {
+        "question": "What is the first Fibonacci number?",
+        "answer": "By this calculator's convention, F(0) = 0 and F(1) = 1."
+      },
+      {
+        "question": "Is there a faster way to compute?",
+        "answer": "This closed-form expression avoids iterative calculation."
+      }
+    ],
+    "disclaimer": "For educational purposes only."
+  },
+  {
+    "slug": "pascal-to-mmhg",
+    "title": "Pascal to mmHg Converter",
+    "cluster": "Conversions",
+    "description": "Convert pressure from pascals to millimeters of mercury.",
+    "intro": "Convert pressure values from pascals to millimeters of mercury using the standard conversion factor 1 mmHg = 133.322 Pa.",
+    "inputs": [
+      {
+        "name": "pascal",
+        "label": "Pressure (Pa)",
+        "type": "number",
+        "min": 0,
+        "step": "any",
+        "placeholder": "101325"
+      }
+    ],
+    "expression": "pascal / 133.322",
+    "unit": "mmHg",
+    "examples": [
+      {
+        "description": "1333.22 Pa \u21d2 10 mmHg"
+      },
+      {
+        "description": "101325 Pa \u21d2 760 mmHg"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Is this conversion exact?",
+        "answer": "It uses the standard conversion factor and is precise for most purposes."
+      },
+      {
+        "question": "Can I convert negative pressures?",
+        "answer": "Negative values represent vacuum relative to atmospheric pressure and are allowed."
+      },
+      {
+        "question": "What is mmHg?",
+        "answer": "Millimeters of mercury, a unit commonly used for blood pressure and barometric pressure."
+      },
+      {
+        "question": "How do I convert back to pascals?",
+        "answer": "Multiply the mmHg value by 133.322."
+      }
+    ],
+    "disclaimer": "Verify critical pressure conversions with official standards."
+  },
+  {
+    "slug": "weeks-between-dates",
+    "title": "Weeks Between Dates Calculator",
+    "cluster": "Date & Time",
+    "description": "Count the weeks separating two calendar dates.",
+    "intro": "Find the number of weeks between two dates. Enter the start and end dates to see the difference expressed in weeks.",
+    "inputs": [
+      {
+        "name": "year1",
+        "label": "Start Year",
+        "type": "number",
+        "step": "1",
+        "placeholder": "2024"
+      },
+      {
+        "name": "month1",
+        "label": "Start Month",
+        "type": "number",
+        "step": "1",
+        "placeholder": "1"
+      },
+      {
+        "name": "day1",
+        "label": "Start Day",
+        "type": "number",
+        "step": "1",
+        "placeholder": "1"
+      },
+      {
+        "name": "year2",
+        "label": "End Year",
+        "type": "number",
+        "step": "1",
+        "placeholder": "2024"
+      },
+      {
+        "name": "month2",
+        "label": "End Month",
+        "type": "number",
+        "step": "1",
+        "placeholder": "3"
+      },
+      {
+        "name": "day2",
+        "label": "End Day",
+        "type": "number",
+        "step": "1",
+        "placeholder": "15"
+      }
+    ],
+    "expression": "(new Date(year2, month2-1, day2) - new Date(year1, month1-1, day1)) / 604800000",
+    "unit": "weeks",
+    "examples": [
+      {
+        "description": "Jan 1, 2024 to Feb 12, 2024 \u21d2 6 weeks"
+      },
+      {
+        "description": "Jul 1, 2024 to Aug 26, 2024 \u21d2 8 weeks"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Does it account for leap years?",
+        "answer": "Yes, the Date object handles leap years automatically."
+      },
+      {
+        "question": "Can the result be negative?",
+        "answer": "If the end date is before the start date, the result will be negative."
+      },
+      {
+        "question": "Are partial weeks shown?",
+        "answer": "Yes, the result may include decimals for partial weeks."
+      },
+      {
+        "question": "What time zone is used?",
+        "answer": "The calculation uses the local time zone of your device."
+      }
+    ],
+    "disclaimer": "Approximate calculation; verify critical timelines independently."
+  },
+  {
+    "slug": "flashcard-interval",
+    "title": "Flashcard Interval Calculator",
+    "cluster": "Education & Learning",
+    "description": "Estimate the next review interval for spaced repetition.",
+    "intro": "Use this calculator to estimate the next review interval in a spaced repetition system. Multiply the previous interval by an ease factor to plan your study schedule.",
+    "inputs": [
+      {
+        "name": "previous",
+        "label": "Previous Interval (days)",
+        "type": "number",
+        "min": 0,
+        "step": "any",
+        "placeholder": "5"
+      },
+      {
+        "name": "ease",
+        "label": "Ease Factor",
+        "type": "number",
+        "min": 0,
+        "step": "any",
+        "placeholder": "2.5"
+      }
+    ],
+    "expression": "previous * ease",
+    "unit": "days",
+    "examples": [
+      {
+        "description": "4-day interval with 2.5 ease \u21d2 10 days"
+      },
+      {
+        "description": "10-day interval with 1.5 ease \u21d2 15 days"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What is the ease factor?",
+        "answer": "A multiplier reflecting how well you remembered the material."
+      },
+      {
+        "question": "Can the ease factor be less than 1?",
+        "answer": "Yes, values below 1 shorten the next interval."
+      },
+      {
+        "question": "Should intervals be whole numbers?",
+        "answer": "They can include decimals; round as needed for your schedule."
+      },
+      {
+        "question": "Does this replace SRS software?",
+        "answer": "No, it's a simple aid for manual planning."
+      }
+    ],
+    "disclaimer": "For study planning only; adjust based on personal progress."
+  },
+  {
+    "slug": "force-from-mass-acceleration",
+    "title": "Force from Mass and Acceleration",
+    "cluster": "Science & Engineering",
+    "description": "Compute force using Newton's second law.",
+    "intro": "Apply Newton's second law to calculate force from mass and acceleration. Provide values for both to see the resulting force in newtons.",
+    "inputs": [
+      {
+        "name": "mass",
+        "label": "Mass (kg)",
+        "type": "number",
+        "min": 0,
+        "step": "any",
+        "placeholder": "10"
+      },
+      {
+        "name": "acceleration",
+        "label": "Acceleration (m/s^2)",
+        "type": "number",
+        "min": 0,
+        "step": "any",
+        "placeholder": "2"
+      }
+    ],
+    "expression": "mass * acceleration",
+    "unit": "N",
+    "examples": [
+      {
+        "description": "10 kg with 2 m/s^2 \u21d2 20 N"
+      },
+      {
+        "description": "5 kg with 9.81 m/s^2 \u21d2 49.05 N"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Can mass be zero?",
+        "answer": "A mass of zero results in zero force."
+      },
+      {
+        "question": "Is gravity included?",
+        "answer": "Include gravitational acceleration if calculating weight force."
+      },
+      {
+        "question": "What units are required?",
+        "answer": "Mass in kilograms and acceleration in meters per second squared."
+      },
+      {
+        "question": "Why use newtons?",
+        "answer": "The newton is the SI unit of force."
+      }
+    ],
+    "disclaimer": "Educational tool; not for precision engineering."
+  },
+  {
+    "slug": "image-file-size",
+    "title": "Image File Size Calculator",
+    "cluster": "Technology",
+    "description": "Estimate uncompressed image file size from dimensions and color depth.",
+    "intro": "Calculate the approximate uncompressed bitmap file size using image dimensions and bit depth. Enter width, height, and bits per pixel to estimate size in megabytes.",
+    "inputs": [
+      {
+        "name": "width",
+        "label": "Width (px)",
+        "type": "number",
+        "min": 0,
+        "step": "1",
+        "placeholder": "1920"
+      },
+      {
+        "name": "height",
+        "label": "Height (px)",
+        "type": "number",
+        "min": 0,
+        "step": "1",
+        "placeholder": "1080"
+      },
+      {
+        "name": "depth",
+        "label": "Bit Depth",
+        "type": "number",
+        "min": 1,
+        "step": "1",
+        "placeholder": "24"
+      }
+    ],
+    "expression": "width * height * depth / 8388608",
+    "unit": "MB",
+    "examples": [
+      {
+        "description": "1920\u00d71080 at 24-bit \u21d2 5.93 MB"
+      },
+      {
+        "description": "800\u00d7600 at 8-bit \u21d2 0.46 MB"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Does this include compression?",
+        "answer": "No, it assumes uncompressed bitmap data."
+      },
+      {
+        "question": "What about alpha channels?",
+        "answer": "Include them in the bit depth if present."
+      },
+      {
+        "question": "Can I use it for JPEGs?",
+        "answer": "JPEG uses compression, so actual file size will be smaller."
+      },
+      {
+        "question": "Why divide by 8388608?",
+        "answer": "It's the number of bits in a megabyte (1024^2 bytes)."
+      }
+    ],
+    "disclaimer": "Approximate size; actual files may vary due to headers or compression."
+  },
+  {
+    "slug": "roof-area",
+    "title": "Roof Area Calculator",
+    "cluster": "Home & DIY",
+    "description": "Estimate roof surface area from building size and pitch.",
+    "intro": "Estimate the surface area of a simple gable roof. Enter the building footprint dimensions and roof pitch to compute the total roof area.",
+    "inputs": [
+      {
+        "name": "length",
+        "label": "Building Length (ft)",
+        "type": "number",
+        "min": 0,
+        "step": "any",
+        "placeholder": "30"
+      },
+      {
+        "name": "width",
+        "label": "Building Width (ft)",
+        "type": "number",
+        "min": 0,
+        "step": "any",
+        "placeholder": "20"
+      },
+      {
+        "name": "pitch",
+        "label": "Roof Pitch (rise per 12 in)",
+        "type": "number",
+        "min": 0,
+        "step": "any",
+        "placeholder": "6"
+      }
+    ],
+    "expression": "length * width * sqrt(1 + (pitch/12)^2)",
+    "unit": "sq ft",
+    "examples": [
+      {
+        "description": "30 ft \u00d7 20 ft with 6 pitch \u21d2 670.82 sq ft"
+      },
+      {
+        "description": "40 ft \u00d7 30 ft with 8 pitch \u21d2 1442.22 sq ft"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What is roof pitch?",
+        "answer": "The rise in inches for every 12 inches of horizontal run."
+      },
+      {
+        "question": "Does this handle complex roofs?",
+        "answer": "No, it's for simple gable roofs only."
+      },
+      {
+        "question": "Should I add extra material?",
+        "answer": "Yes, allow for waste and overhangs when purchasing materials."
+      },
+      {
+        "question": "Can pitch be zero?",
+        "answer": "Yes, a pitch of zero gives flat-roof area."
+      }
+    ],
+    "disclaimer": "Estimates only; consult roofing professionals for precise measurements."
+  },
+  {
+    "slug": "hotel-point-value",
+    "title": "Hotel Point Value Calculator",
+    "cluster": "Lifestyle & Travel",
+    "description": "Find the dollar value of hotel loyalty points.",
+    "intro": "Evaluate how much each hotel loyalty point is worth by dividing the cash price of a stay by the number of points required.",
+    "inputs": [
+      {
+        "name": "points",
+        "label": "Points Used",
+        "type": "number",
+        "min": 0,
+        "step": "any",
+        "placeholder": "50000"
+      },
+      {
+        "name": "cash",
+        "label": "Cash Price (USD)",
+        "type": "number",
+        "min": 0,
+        "step": "any",
+        "placeholder": "700"
+      }
+    ],
+    "expression": "cash / points",
+    "unit": "USD/point",
+    "examples": [
+      {
+        "description": "50,000 points for $700 stay \u21d2 $0.014 per point"
+      },
+      {
+        "description": "40,000 points for $500 stay \u21d2 $0.0125 per point"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Are taxes included?",
+        "answer": "Include all costs you would pay in cash for a fair comparison."
+      },
+      {
+        "question": "What if the stay is partially paid with points?",
+        "answer": "Use only the points and cash equivalent for the points portion."
+      },
+      {
+        "question": "Is a higher value better?",
+        "answer": "Yes, a higher dollar-per-point value means better redemption."
+      },
+      {
+        "question": "Do point values vary by program?",
+        "answer": "Yes, each hotel loyalty program values points differently."
+      }
+    ],
+    "disclaimer": "Estimates only; check your loyalty program for exact values."
+  },
+  {
+    "slug": "social-media-engagement-rate",
+    "title": "Social Media Engagement Rate",
+    "cluster": "Web & Marketing",
+    "description": "Measure engagement as a percentage of followers.",
+    "intro": "Calculate the engagement rate of a social media post by comparing total interactions to follower count.",
+    "inputs": [
+      {
+        "name": "likes",
+        "label": "Likes",
+        "type": "number",
+        "min": 0,
+        "step": "any",
+        "placeholder": "500"
+      },
+      {
+        "name": "comments",
+        "label": "Comments",
+        "type": "number",
+        "min": 0,
+        "step": "any",
+        "placeholder": "60"
+      },
+      {
+        "name": "shares",
+        "label": "Shares",
+        "type": "number",
+        "min": 0,
+        "step": "any",
+        "placeholder": "40"
+      },
+      {
+        "name": "followers",
+        "label": "Followers",
+        "type": "number",
+        "min": 1,
+        "step": "any",
+        "placeholder": "10000"
+      }
+    ],
+    "expression": "(likes + comments + shares) / followers * 100",
+    "unit": "%",
+    "examples": [
+      {
+        "description": "500 likes, 60 comments, 40 shares, 10,000 followers \u21d2 6%"
+      },
+      {
+        "description": "100 likes, 10 comments, 5 shares, 5,000 followers \u21d2 2.3%"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What interactions are counted?",
+        "answer": "This calculator sums likes, comments, and shares."
+      },
+      {
+        "question": "Why use follower count?",
+        "answer": "It normalizes engagement across accounts of different sizes."
+      },
+      {
+        "question": "Can I include other metrics?",
+        "answer": "Yes, add them to the likes field if you want to incorporate them."
+      },
+      {
+        "question": "Is higher always better?",
+        "answer": "Generally yes, but context and industry averages matter."
+      }
+    ],
+    "disclaimer": "For marketing analysis only; real engagement may vary by platform."
   }
 ]

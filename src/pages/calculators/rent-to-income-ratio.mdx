@@ -1,0 +1,51 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Rent-to-Income Ratio Calculator"
+description: "Check what percentage of income goes toward rent."
+updated: "2025-09-15"
+cluster: "Personal Finance & Loans"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  inputs: [
+    {
+      name: "rent",
+      label: "Monthly Rent (USD)",
+      type: "number",
+      min: 0,
+      step: "any",
+      placeholder: "1200"
+    },
+    {
+      name: "income",
+      label: "Monthly Income (USD)",
+      type: "number",
+      min: 0,
+      step: "any",
+      placeholder: "4000"
+    }
+  ],
+  slug: "rent-to-income-ratio",
+  title: "Rent-to-Income Ratio Calculator",
+  locale: "en",
+  expression: "(rent / income) * 100",
+  unit: "%",
+  intro: "Determine what portion of your income is spent on rent. Enter your monthly rent and monthly income to see the percentage.",
+  examples: [
+    { description: "$1,200 rent from $4,000 income \u21d2 30%" },
+    { description: "$800 rent from $2,400 income \u21d2 33.33%" }
+  ],
+  faqs: [
+    { question: "Does this include utilities?", answer: "Only if you include them in the rent value." },
+    { question: "Is a lower ratio better?", answer: "Generally yes; many advisors recommend staying under 30%." },
+    { question: "Can income be zero?", answer: "No, income must be greater than zero to compute the ratio." },
+    { question: "Why track this ratio?", answer: "It helps evaluate housing affordability." }
+  ],
+  disclaimer: "Estimates only; consult a financial advisor for personalized guidance.",
+  cluster: "Personal Finance & Loans"
+};
+
+<Calculator schema={schema} />
+

@@ -1,0 +1,51 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Race Time Calculator"
+description: "Predict race finish time from distance and pace."
+updated: "2025-09-15"
+cluster: "Health"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  inputs: [
+    {
+      name: "distance",
+      label: "Distance (km)",
+      type: "number",
+      min: 0,
+      step: "any",
+      placeholder: "5"
+    },
+    {
+      name: "pace",
+      label: "Pace (min/km)",
+      type: "number",
+      min: 0,
+      step: "any",
+      placeholder: "5"
+    }
+  ],
+  slug: "race-time",
+  title: "Race Time Calculator",
+  locale: "en",
+  expression: "distance * pace",
+  unit: "minutes",
+  intro: "Estimate your race finish time by multiplying distance and running pace. Enter both values to see the predicted time in minutes.",
+  examples: [
+    { description: "5 km at 5 min/km \u21d2 25 minutes" },
+    { description: "10 km at 6 min/km \u21d2 60 minutes" }
+  ],
+  faqs: [
+    { question: "Does this account for terrain?", answer: "No, it assumes a consistent pace throughout." },
+    { question: "Can I use miles?", answer: "Convert miles to kilometers first for accurate results." },
+    { question: "What if pace is zero?", answer: "The time will be zero, which isn't realistic for running." },
+    { question: "How precise is the result?", answer: "It provides a simple estimate based on constant pace." }
+  ],
+  disclaimer: "For general fitness planning only; actual race times may vary.",
+  cluster: "Health"
+};
+
+<Calculator schema={schema} />
+

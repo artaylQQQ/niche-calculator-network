@@ -1,0 +1,51 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Revenue per Employee Calculator"
+description: "Calculate revenue generated per employee."
+updated: "2025-09-15"
+cluster: "Finance"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  inputs: [
+    {
+      name: "revenue",
+      label: "Total Revenue (USD)",
+      type: "number",
+      min: 0,
+      step: "any",
+      placeholder: "500000"
+    },
+    {
+      name: "employees",
+      label: "Number of Employees",
+      type: "number",
+      min: 1,
+      step: "any",
+      placeholder: "25"
+    }
+  ],
+  slug: "revenue-per-employee",
+  title: "Revenue per Employee Calculator",
+  locale: "en",
+  expression: "revenue / employees",
+  unit: "USD/employee",
+  intro: "Calculate how much revenue each employee generates on average. Enter the company's total revenue and the number of employees to find the revenue per employee.",
+  examples: [
+    { description: "$1,000,000 revenue with 50 employees \u21d2 $20000 per employee" },
+    { description: "$500,000 revenue with 10 employees \u21d2 $50000 per employee" }
+  ],
+  faqs: [
+    { question: "Should I include contractors?", answer: "Include anyone contributing to revenue if you want them represented in the average." },
+    { question: "Can employee count be zero?", answer: "No, the calculator requires at least one employee." },
+    { question: "Which revenue metric should I use?", answer: "Use the revenue figure that matches your analysis, typically annual net revenue." },
+    { question: "Why compute revenue per employee?", answer: "It helps assess productivity and compare efficiency across businesses." }
+  ],
+  disclaimer: "For informational purposes only; not financial advice.",
+  cluster: "Finance"
+};
+
+<Calculator schema={schema} />
+
