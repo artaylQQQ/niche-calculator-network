@@ -1,0 +1,62 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Flashcard Retention Rate Calculator"
+description: "Evaluate study retention by calculating the percentage of correct flashcards."
+updated: "2025-10-21"
+cluster: "Education & Learning"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "flashcard-retention-rate",
+  title: "Flashcard Retention Rate Calculator",
+  locale: "en",
+  unit: "%",
+  expression: "(recalled / total) * 100",
+  intro:
+    "Determine your flashcard retention rate by dividing recalled cards by total cards and converting to a percentage.",
+  cluster: "Education & Learning",
+  inputs: [
+    {
+      name: "total",
+      label: "Total Cards",
+      type: "number",
+      step: 1,
+      required: true,
+    },
+    {
+      name: "recalled",
+      label: "Recalled Correctly",
+      type: "number",
+      step: 1,
+      required: true,
+    },
+  ],
+  examples: [
+    { description: "40 of 50 cards correct ⇒ 80%" },
+    { description: "24 of 30 cards correct ⇒ 80%" },
+  ],
+  faqs: [
+    {
+      question: "Why use a percentage?",
+      answer: "Percentages make it easy to compare sessions of different sizes.",
+    },
+    {
+      question: "What if the total is zero?",
+      answer: "The calculation is undefined with zero cards.",
+    },
+    {
+      question: "Should I track multiple sessions?",
+      answer: "Yes, monitoring trends helps gauge improvement.",
+    },
+    {
+      question: "How can I improve retention?",
+      answer: "Regular review and spaced repetition can boost memory.",
+    },
+  ],
+  disclaimer:
+    "Educational estimate only; individual results may vary.",
+};
+
+<Calculator schema={schema} />
