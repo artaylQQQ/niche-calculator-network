@@ -11,10 +11,10 @@ const items = Object.values(modules).map((m) => ({
     m.frontmatter?.intro || m.frontmatter?.description || ''
 }));
 ---
-<BaseLayout title="All Calculators" description="Browse every calculator available on the site.">
+<BaseLayout title="Search Calculators" description="Find any calculator available on the site.">
   <section class="hero container mx-auto max-w-5xl px-4">
-    <h1 style="color: var(--ink)">All Calculators</h1>
-    <p style="color: var(--muted)">Explore every calculator available on the site.</p>
+    <h1 style="color: var(--ink)">Search Calculators</h1>
+    <p style="color: var(--muted)">Search through every calculator available on the site.</p>
     <input
       id="search-input"
       type="search"
@@ -24,7 +24,7 @@ const items = Object.values(modules).map((m) => ({
   </section>
   <AdBanner />
   <section class="section container mx-auto max-w-5xl px-4" aria-labelledby="list-all">
-    <h2 id="list-all" class="sr-only">All calculators list</h2>
+    <h2 id="list-all" class="sr-only">Calculator search results</h2>
     <!-- Use a responsive Tailwind grid for consistent card sizes across breakpoints -->
     <div
       id="results"
