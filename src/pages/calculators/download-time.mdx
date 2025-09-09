@@ -1,50 +1,65 @@
 ---
 layout: ../../layouts/CalculatorLayout.astro
 title: "Download Time"
-description: "Estimate seconds to download a file by size and speed."
+description: "Estimate how long a file download will take based on size and speed."
 updated: "2025-08-26"
 cluster: "Technology"
 ---
 
-import Calculator from '../../components/Calculator.astro';
+import Calculator from "../../components/Calculator.astro";
 
 export const schema = {
-  "inputs": [
+  inputs: [
     {
-      "name": "sizeMB",
-      "label": "File size (MB)",
-      "type": "number",
-      "min": 0,
-      "step": "any",
-      "placeholder": "700"
+      name: "sizeMB",
+      label: "File size (MB)",
+      type: "number",
+      min: 0,
+      step: "any",
+      placeholder: "700",
     },
     {
-      "name": "speedMbps",
-      "label": "Speed (Mbps)",
-      "type": "number",
-      "min": 0.1,
-      "step": "any",
-      "placeholder": "50"
-    }
+      name: "speedMbps",
+      label: "Speed (Mbps)",
+      type: "number",
+      min: 0.1,
+      step: "any",
+      placeholder: "50",
+    },
   ],
-  "slug": "download-time",
-  "title": "Download Time",
-  "locale": "en",
-  "expression": "(sizeMB * 8) / speedMbps",
-  "intro": "Estimate seconds to download a file by size and speed.",
-  "examples": [
+  slug: "download-time",
+  title: "Download Time",
+  locale: "en",
+  expression: "(sizeMB * 8) / speedMbps",
+  unit: "seconds",
+  intro:
+    "Estimate how long a download will take by dividing file size by connection speed.",
+  examples: [
+    { description: "700 MB at 50 Mbps \u21d2 112 s" },
+    { description: "1500 MB at 100 Mbps \u21d2 120 s" },
+  ],
+  faqs: [
     {
-      "description": "700 MB at 50 Mbps \u21d2 \u2248 112 sec"
-    }
-  ],
-  "faqs": [
+      question: "Why multiply by 8?",
+      answer:
+        "There are 8 bits in a byte, so megabytes are converted to megabits.",
+    },
     {
-      "question": "Overheads considered?",
-      "answer": "No, this is the ideal time without protocol overheads."
-    }
+      question: "Does this include network overhead?",
+      answer: "No, it assumes ideal conditions without protocol overhead.",
+    },
+    {
+      question: "Can I use gigabytes?",
+      answer:
+        "Convert gigabytes to megabytes before entering (1 GB = 1024 MB).",
+    },
+    {
+      question: "What if my speed fluctuates?",
+      answer: "Use your average download speed for a rough estimate.",
+    },
   ],
-  "disclaimer": "Educational purposes only. Not professional advice.",
-  "cluster": "Technology"
-}
+  disclaimer: "Educational purposes only. Not professional advice.",
+  cluster: "Technology",
+};
 
 <Calculator schema={schema} />

@@ -1,42 +1,56 @@
 ---
 layout: ../../layouts/CalculatorLayout.astro
 title: "Circle Area"
-description: "Compute area of a circle from its radius."
+description: "Calculate the area of a circle from its radius using \u03c0r\u00b2."
 updated: "2025-08-26"
 cluster: "Math"
 ---
 
-import Calculator from '../../components/Calculator.astro';
+import Calculator from "../../components/Calculator.astro";
 
 export const schema = {
-  "inputs": [
+  inputs: [
     {
-      "name": "r",
-      "label": "Radius",
-      "type": "number",
-      "min": 0,
-      "step": "any",
-      "placeholder": "5"
-    }
+      name: "r",
+      label: "Radius",
+      type: "number",
+      min: 0,
+      step: "any",
+      placeholder: "5",
+    },
   ],
-  "slug": "circle-area",
-  "title": "Circle Area",
-  "locale": "en",
-  "expression": "3.141592653589793 * r * r",
-  "intro": "Compute area of a circle from its radius.",
-  "examples": [
+  slug: "circle-area",
+  title: "Circle Area",
+  locale: "en",
+  expression: "3.141592653589793 * r * r",
+  unit: "units\u00b2",
+  intro:
+    "Determine the surface area enclosed by a circle using A = \u03c0r\u00b2. Enter the radius to compute the area.",
+  examples: [
+    { description: "radius 3 m \u21d2 28.27 m\u00b2" },
+    { description: "radius 10 cm \u21d2 314.16 cm\u00b2" },
+  ],
+  faqs: [
     {
-      "description": "r = 5 \u21d2 area \u2248 78.5398"
-    }
-  ],
-  "faqs": [
+      question: "What formula is used?",
+      answer: "The area equals \u03c0 times the radius squared.",
+    },
     {
-      "question": "Units?",
-      "answer": "Area units are squared units of the input (e.g., cm\u00b2)."
-    }
+      question: "Can I use the diameter instead?",
+      answer: "Yes, divide the diameter by 2 to get the radius first.",
+    },
+    {
+      question: "Which units are supported?",
+      answer:
+        "Any length unit works; the result uses the squared version of that unit.",
+    },
+    {
+      question: "What if the radius is zero?",
+      answer: "A radius of zero yields an area of zero.",
+    },
   ],
-  "disclaimer": "Educational purposes only. Not professional advice.",
-  "cluster": "Math"
-}
+  disclaimer: "Educational purposes only. Not professional advice.",
+  cluster: "Math",
+};
 
 <Calculator schema={schema} />

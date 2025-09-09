@@ -27,14 +27,26 @@
     "expression": "price * (1 - discount/100)",
     "unit": "USD",
     "examples": [
-      {"description": "$100 with a 20% discount ⇒ $80"},
-      {"description": "$250 with a 15% discount ⇒ $212.50"}
+      { "description": "$100 with a 20% discount ⇒ $80" },
+      { "description": "$250 with a 15% discount ⇒ $212.50" }
     ],
     "faqs": [
-      {"question": "Can I enter decimal prices?", "answer": "Yes, the calculator accepts cents and fractional percentages."},
-      {"question": "What if the discount is 0%?", "answer": "The final price equals the original price."},
-      {"question": "How do I find the discount amount?", "answer": "Subtract the final price from the original price."},
-      {"question": "What happens with discounts over 100%?", "answer": "A percentage above 100% results in a negative price, which isn't realistic."}
+      {
+        "question": "Can I enter decimal prices?",
+        "answer": "Yes, the calculator accepts cents and fractional percentages."
+      },
+      {
+        "question": "What if the discount is 0%?",
+        "answer": "The final price equals the original price."
+      },
+      {
+        "question": "How do I find the discount amount?",
+        "answer": "Subtract the final price from the original price."
+      },
+      {
+        "question": "What happens with discounts over 100%?",
+        "answer": "A percentage above 100% results in a negative price, which isn't realistic."
+      }
     ]
   },
   {
@@ -93,7 +105,7 @@
       },
       {
         "question": "Does the result include the principal?",
-        "answer": "No, it returns only the interest earned." 
+        "answer": "No, it returns only the interest earned."
       }
     ]
   },
@@ -104,22 +116,56 @@
     "description": "Compute the future value using compound interest.",
     "intro": "Compound interest grows your money by applying interest on both the principal and the interest already earned. Enter the principal, annual rate, compounding frequency, and years to see the future value.",
     "inputs": [
-      {"name": "principal", "label": "Principal", "type": "number", "placeholder": "1000"},
-      {"name": "rate", "label": "Rate (%)", "type": "number", "placeholder": "5"},
-      {"name": "times", "label": "Times per year", "type": "number", "placeholder": "4"},
-      {"name": "years", "label": "Years", "type": "number", "placeholder": "10"}
+      {
+        "name": "principal",
+        "label": "Principal",
+        "type": "number",
+        "placeholder": "1000"
+      },
+      {
+        "name": "rate",
+        "label": "Rate (%)",
+        "type": "number",
+        "placeholder": "5"
+      },
+      {
+        "name": "times",
+        "label": "Times per year",
+        "type": "number",
+        "placeholder": "4"
+      },
+      {
+        "name": "years",
+        "label": "Years",
+        "type": "number",
+        "placeholder": "10"
+      }
     ],
     "expression": "principal * (1 + rate / 100 / times) ^ (times * years)",
     "unit": "USD",
     "examples": [
-      {"description": "$1,000 at 5% compounded quarterly for 10 years ⇒ $1,643.62"},
-      {"description": "$500 at 3% compounded monthly for 5 years ⇒ $580.81"}
+      {
+        "description": "$1,000 at 5% compounded quarterly for 10 years ⇒ $1,643.62"
+      },
+      { "description": "$500 at 3% compounded monthly for 5 years ⇒ $580.81" }
     ],
     "faqs": [
-      {"question": "What is compound interest?", "answer": "Interest calculated on both the initial principal and accumulated interest."},
-      {"question": "How do I choose compounding frequency?", "answer": "Use how often interest is added per year, such as 12 for monthly or 4 for quarterly."},
-      {"question": "What if rate or years is zero?", "answer": "The future value equals the principal since no interest accrues."},
-      {"question": "Does this assume reinvestment of interest?", "answer": "Yes, all interest is reinvested each period."}
+      {
+        "question": "What is compound interest?",
+        "answer": "Interest calculated on both the initial principal and accumulated interest."
+      },
+      {
+        "question": "How do I choose compounding frequency?",
+        "answer": "Use how often interest is added per year, such as 12 for monthly or 4 for quarterly."
+      },
+      {
+        "question": "What if rate or years is zero?",
+        "answer": "The future value equals the principal since no interest accrues."
+      },
+      {
+        "question": "Does this assume reinvestment of interest?",
+        "answer": "Yes, all interest is reinvested each period."
+      }
     ]
   },
   {
@@ -149,14 +195,26 @@
     "expression": "weight / ((height/100) ** 2)",
     "unit": "kg/m²",
     "examples": [
-      {"description": "70 kg and 175 cm ⇒ 22.86 kg/m²"},
-      {"description": "90 kg and 160 cm ⇒ 35.16 kg/m²"}
+      { "description": "70 kg and 175 cm ⇒ 22.86 kg/m²" },
+      { "description": "90 kg and 160 cm ⇒ 35.16 kg/m²" }
     ],
     "faqs": [
-      {"question": "What is BMI?", "answer": "BMI is a ratio of weight to height used to classify weight categories."},
-      {"question": "What BMI range is considered healthy?", "answer": "A BMI between 18.5 and 24.9 is typically considered normal."},
-      {"question": "Does BMI account for muscle mass?", "answer": "No, muscular people may have a high BMI despite low body fat."},
-      {"question": "Can I use pounds and inches?", "answer": "Convert values to kilograms and centimeters to use this calculator."}
+      {
+        "question": "What is BMI?",
+        "answer": "BMI is a ratio of weight to height used to classify weight categories."
+      },
+      {
+        "question": "What BMI range is considered healthy?",
+        "answer": "A BMI between 18.5 and 24.9 is typically considered normal."
+      },
+      {
+        "question": "Does BMI account for muscle mass?",
+        "answer": "No, muscular people may have a high BMI despite low body fat."
+      },
+      {
+        "question": "Can I use pounds and inches?",
+        "answer": "Convert values to kilograms and centimeters to use this calculator."
+      }
     ]
   },
   {
@@ -186,21 +244,34 @@
     "expression": "(steps * 0.04) + (exercise * 7)",
     "unit": "kcal",
     "examples": [
-      {"description": "8000 steps and 30 min exercise ⇒ ≈ 470 kcal"},
-      {"description": "5000 steps and 60 min exercise ⇒ ≈ 620 kcal"}
+      { "description": "8000 steps and 30 min exercise ⇒ ≈ 470 kcal" },
+      { "description": "5000 steps and 60 min exercise ⇒ ≈ 620 kcal" }
     ],
     "faqs": [
-      {"question": "How are calories from steps calculated?", "answer": "Each step is approximated to burn about 0.04 kcal."},
-      {"question": "What about exercise minutes?", "answer": "Every minute of exercise adds roughly 7 kcal."},
-      {"question": "Can I enter zero for steps or exercise?", "answer": "Yes, set either field to 0 if it doesn't apply."},
-      {"question": "How accurate is this estimate?", "answer": "It's a simple approximation that doesn't consider intensity or individual differences."}
+      {
+        "question": "How are calories from steps calculated?",
+        "answer": "Each step is approximated to burn about 0.04 kcal."
+      },
+      {
+        "question": "What about exercise minutes?",
+        "answer": "Every minute of exercise adds roughly 7 kcal."
+      },
+      {
+        "question": "Can I enter zero for steps or exercise?",
+        "answer": "Yes, set either field to 0 if it doesn't apply."
+      },
+      {
+        "question": "How accurate is this estimate?",
+        "answer": "It's a simple approximation that doesn't consider intensity or individual differences."
+      }
     ]
   },
   {
     "slug": "celsius-to-fahrenheit",
     "title": "Celsius to Fahrenheit",
-    "cluster": "conversions",
-    "description": "Convert Celsius degrees into Fahrenheit.",
+    "cluster": "Conversions",
+    "description": "Convert a temperature from Celsius into Fahrenheit.",
+    "intro": "This calculator converts temperatures in degrees Celsius to degrees Fahrenheit using the formula F = C \u00d7 9/5 + 32. Enter any Celsius value to see the equivalent Fahrenheit reading.",
     "inputs": [
       {
         "name": "c",
@@ -211,15 +282,27 @@
       }
     ],
     "expression": "(c * 9/5) + 32",
+    "unit": "\u00b0F",
     "examples": [
-      {
-        "description": "25°C ⇒ 77°F"
-      }
+      { "description": "0\u00b0C \u21d2 32\u00b0F" },
+      { "description": "37\u00b0C \u21d2 98.6\u00b0F" }
     ],
     "faqs": [
       {
-        "question": "Does it support negatives?",
-        "answer": "Yes, negative temperatures are supported."
+        "question": "How is Celsius converted to Fahrenheit?",
+        "answer": "Multiply the Celsius value by 9/5 and add 32."
+      },
+      {
+        "question": "Can I convert negative temperatures?",
+        "answer": "Yes, the formula works for any real number."
+      },
+      {
+        "question": "Does it support decimals?",
+        "answer": "Yes, you can enter decimal values."
+      },
+      {
+        "question": "How do I convert Fahrenheit to Celsius?",
+        "answer": "Use the Fahrenheit to Celsius calculator or apply C = (F - 32) \u00d7 5/9."
       }
     ]
   },
@@ -338,9 +421,27 @@
     "description": "Find the missing value in a proportion using three known numbers.",
     "intro": "Enter A, B, and C to solve for X in the proportion A/B = C/X.",
     "inputs": [
-      { "name": "a", "label": "A", "type": "number", "step": "any", "placeholder": "2" },
-      { "name": "b", "label": "B", "type": "number", "step": "any", "placeholder": "10" },
-      { "name": "c", "label": "C", "type": "number", "step": "any", "placeholder": "5" }
+      {
+        "name": "a",
+        "label": "A",
+        "type": "number",
+        "step": "any",
+        "placeholder": "2"
+      },
+      {
+        "name": "b",
+        "label": "B",
+        "type": "number",
+        "step": "any",
+        "placeholder": "10"
+      },
+      {
+        "name": "c",
+        "label": "C",
+        "type": "number",
+        "step": "any",
+        "placeholder": "5"
+      }
     ],
     "expression": "b * c / a",
     "unit": "same as C",
@@ -349,17 +450,30 @@
       { "description": "3 kg correspond to $12 ⇒ 7 kg cost $28" }
     ],
     "faqs": [
-      { "question": "What is the rule of three?", "answer": "It solves a proportion a:b = c:x by computing x = b × c / a." },
-      { "question": "Can I use decimals?", "answer": "Yes, the calculator accepts decimal values." },
-      { "question": "Why must A not be zero?", "answer": "Division by zero is undefined, so A must be nonzero." },
-      { "question": "Do the inputs need units?", "answer": "Use consistent units for B and C so the result carries that unit." }
+      {
+        "question": "What is the rule of three?",
+        "answer": "It solves a proportion a:b = c:x by computing x = b × c / a."
+      },
+      {
+        "question": "Can I use decimals?",
+        "answer": "Yes, the calculator accepts decimal values."
+      },
+      {
+        "question": "Why must A not be zero?",
+        "answer": "Division by zero is undefined, so A must be nonzero."
+      },
+      {
+        "question": "Do the inputs need units?",
+        "answer": "Use consistent units for B and C so the result carries that unit."
+      }
     ]
   },
   {
     "slug": "circle-area",
     "title": "Circle Area",
-    "cluster": "math",
-    "description": "Compute area of a circle from its radius.",
+    "cluster": "Math",
+    "description": "Calculate the area of a circle from its radius.",
+    "intro": "Determine the surface area enclosed by a circle using A = \u03c0r\u00b2. Enter the radius to compute the area.",
     "inputs": [
       {
         "name": "r",
@@ -371,23 +485,36 @@
       }
     ],
     "expression": "3.141592653589793 * r * r",
+    "unit": "units\u00b2",
     "examples": [
-      {
-        "description": "r = 5 ⇒ area ≈ 78.5398"
-      }
+      { "description": "radius 3 m \u21d2 28.27 m\u00b2" },
+      { "description": "radius 10 cm \u21d2 314.16 cm\u00b2" }
     ],
     "faqs": [
       {
-        "question": "Units?",
-        "answer": "Area units are squared units of the input (e.g., cm²)."
+        "question": "What formula is used?",
+        "answer": "The area equals \u03c0 times the radius squared."
+      },
+      {
+        "question": "Can I use the diameter instead?",
+        "answer": "Yes, divide the diameter by 2 to get the radius first."
+      },
+      {
+        "question": "Which units are supported?",
+        "answer": "Any length unit works; the result uses the squared version of that unit."
+      },
+      {
+        "question": "What if the radius is zero?",
+        "answer": "A radius of zero yields an area of zero."
       }
     ]
   },
   {
     "slug": "download-time",
     "title": "Download Time",
-    "cluster": "technology",
-    "description": "Estimate seconds to download a file by size and speed.",
+    "cluster": "Technology",
+    "description": "Estimate how long a file download will take based on size and speed.",
+    "intro": "This tool divides file size by connection speed to estimate the download duration. Enter the file size in megabytes and your download speed in megabits per second to get the time in seconds.",
     "inputs": [
       {
         "name": "sizeMB",
@@ -407,15 +534,154 @@
       }
     ],
     "expression": "(sizeMB * 8) / speedMbps",
+    "unit": "seconds",
     "examples": [
-      {
-        "description": "700 MB at 50 Mbps ⇒ ≈ 112 sec"
-      }
+      { "description": "700 MB at 50 Mbps ⇒ 112 s" },
+      { "description": "1500 MB at 100 Mbps ⇒ 120 s" }
     ],
     "faqs": [
       {
-        "question": "Overheads considered?",
-        "answer": "No, this is the ideal time without protocol overheads."
+        "question": "Why multiply by 8?",
+        "answer": "There are 8 bits in a byte, so megabytes are converted to megabits."
+      },
+      {
+        "question": "Does this include network overhead?",
+        "answer": "No, it assumes ideal conditions without protocol overhead."
+      },
+      {
+        "question": "Can I use gigabytes?",
+        "answer": "Convert gigabytes to megabytes before entering (1 GB = 1024 MB)."
+      },
+      {
+        "question": "What if my speed fluctuates?",
+        "answer": "Use your average download speed for a rough estimate."
+      }
+    ]
+  },
+  {
+    "slug": "cm-to-inches-calculator",
+    "title": "Centimeters to Inches Converter",
+    "cluster": "Conversions",
+    "description": "Convert a length from centimeters to inches.",
+    "intro": "Enter a length in centimeters to instantly see the equivalent in inches.",
+    "inputs": [
+      {
+        "name": "cm",
+        "label": "Centimeters",
+        "type": "number",
+        "step": "any",
+        "placeholder": "10"
+      }
+    ],
+    "expression": "cm / 2.54",
+    "unit": "in",
+    "examples": [
+      { "description": "10 cm \u21d2 3.94 in" },
+      { "description": "25 cm \u21d2 9.84 in" }
+    ],
+    "faqs": [
+      {
+        "question": "What is the conversion factor?",
+        "answer": "One inch equals exactly 2.54 centimeters."
+      },
+      {
+        "question": "Can I convert fractional centimeters?",
+        "answer": "Yes, decimals are supported."
+      },
+      {
+        "question": "Is this calculator suitable for fabric measurements?",
+        "answer": "Yes, it works for any length in centimeters."
+      },
+      {
+        "question": "How do I convert inches to centimeters?",
+        "answer": "Multiply inches by 2.54 or use the inches to centimeters calculator."
+      }
+    ]
+  },
+  {
+    "slug": "cylinder-volume-calculator",
+    "title": "Cylinder Volume Calculator",
+    "cluster": "Math",
+    "description": "Calculate the volume of a cylinder from radius and height.",
+    "intro": "Compute the volume of a cylinder using \u03c0r\u00b2h. Enter the radius and height in centimeters to get the volume in cubic centimeters.",
+    "inputs": [
+      {
+        "name": "height",
+        "label": "Height (cm)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "10"
+      },
+      {
+        "name": "radius",
+        "label": "Radius (cm)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "5"
+      }
+    ],
+    "expression": "3.141592653589793 * radius ^ 2 * height",
+    "unit": "cm\u00b3",
+    "examples": [
+      { "description": "radius 5 cm & height 10 cm \u21d2 785.40 cm\u00b3" },
+      { "description": "radius 2 cm & height 4 cm \u21d2 50.27 cm\u00b3" }
+    ],
+    "faqs": [
+      {
+        "question": "What formula is used?",
+        "answer": "Volume equals \u03c0 times the radius squared times the height."
+      },
+      {
+        "question": "Can I use different units?",
+        "answer": "Yes, keep radius and height in the same units to get volume in cubic of that unit."
+      },
+      {
+        "question": "Does the calculator accept decimals?",
+        "answer": "Yes, you may enter decimal measurements."
+      },
+      {
+        "question": "What happens if a value is zero?",
+        "answer": "If radius or height is zero, the volume is zero."
+      }
+    ]
+  },
+  {
+    "slug": "f-to-c-calculator",
+    "title": "Fahrenheit to Celsius Converter",
+    "cluster": "Conversions",
+    "description": "Convert Fahrenheit temperatures to Celsius.",
+    "intro": "Enter a temperature in degrees Fahrenheit to convert it to degrees Celsius.",
+    "inputs": [
+      {
+        "name": "f",
+        "label": "Degrees Fahrenheit",
+        "type": "number",
+        "step": "any",
+        "placeholder": "77"
+      }
+    ],
+    "expression": "(f - 32) * 5 / 9",
+    "unit": "\u00b0C",
+    "examples": [
+      { "description": "32\u00b0F \u21d2 0\u00b0C" },
+      { "description": "68\u00b0F \u21d2 20\u00b0C" }
+    ],
+    "faqs": [
+      {
+        "question": "How does the formula work?",
+        "answer": "Subtract 32 from the Fahrenheit value and multiply by 5/9 to get Celsius."
+      },
+      {
+        "question": "Can I convert below-freezing temperatures?",
+        "answer": "Yes, negative results are valid Celsius values."
+      },
+      {
+        "question": "Are decimal inputs allowed?",
+        "answer": "Yes, the calculator supports decimal Fahrenheit values."
+      },
+      {
+        "question": "How do I convert Celsius back to Fahrenheit?",
+        "answer": "Use the Celsius to Fahrenheit calculator or apply F = C \u00d7 9/5 + 32."
       }
     ]
   },
@@ -446,77 +712,89 @@
     "expression": "(redundantTB / dataTB) * 100",
     "unit": "%",
     "examples": [
-      {"description": "10 TB data with 5 TB redundancy ⇒ 50% overhead"},
-      {"description": "100 TB data with 20 TB redundancy ⇒ 20% overhead"}
+      { "description": "10 TB data with 5 TB redundancy ⇒ 50% overhead" },
+      { "description": "100 TB data with 20 TB redundancy ⇒ 20% overhead" }
     ],
     "faqs": [
-      {"question": "What is redundancy overhead?", "answer": "The extra storage required for redundancy expressed as a percentage of the original data."},
-      {"question": "Can I use GB instead of TB?", "answer": "Yes. Any consistent units work; the percentage remains the same."},
-      {"question": "What if redundant data is zero?", "answer": "The overhead is 0% when no redundancy is stored."},
-      {"question": "Why can't data be 0?", "answer": "The calculation divides by the data size, so overhead is undefined if data is 0."}
+      {
+        "question": "What is redundancy overhead?",
+        "answer": "The extra storage required for redundancy expressed as a percentage of the original data."
+      },
+      {
+        "question": "Can I use GB instead of TB?",
+        "answer": "Yes. Any consistent units work; the percentage remains the same."
+      },
+      {
+        "question": "What if redundant data is zero?",
+        "answer": "The overhead is 0% when no redundancy is stored."
+      },
+      {
+        "question": "Why can't data be 0?",
+        "answer": "The calculation divides by the data size, so overhead is undefined if data is 0."
+      }
     ]
   },
-    {
-      "slug": "duration-seconds",
-      "title": "Duration to Seconds",
-      "cluster": "date & time",
-      "description": "Convert hours, minutes, and seconds into total seconds.",
-      "intro": "Enter hours, minutes, and seconds to get the total duration expressed in seconds.",
-      "inputs": [
-        {
-          "name": "hours",
-          "label": "Hours",
-          "type": "number",
-          "min": 0,
-          "step": "1",
-          "placeholder": "1"
-        },
-        {
-          "name": "minutes",
-          "label": "Minutes",
-          "type": "number",
-          "min": 0,
-          "step": "1",
-          "placeholder": "30"
-        },
-        {
-          "name": "seconds",
-          "label": "Seconds",
-          "type": "number",
-          "min": 0,
-          "step": "1",
-          "placeholder": "15"
-        }
-      ],
-      "expression": "(hours*3600) + (minutes*60) + seconds",
-      "unit": "seconds",
-      "examples": [
-        {
-          "description": "1h 30m 15s ⇒ 5415 seconds"
-        },
-        {
-          "description": "0h 45m 0s ⇒ 2700 seconds"
-        }
-      ],
-      "faqs": [
-        {
-          "question": "Can I leave fields blank?",
-          "answer": "Empty fields are treated as zero."
-        },
-        {
-          "question": "Does it handle durations longer than a day?",
-          "answer": "Yes, enter any non-negative values."
-        },
-        {
-          "question": "Can I use decimals?",
-          "answer": "Use whole numbers; the calculator treats inputs as integers."
-        },
-        {
-          "question": "What if I enter negative numbers?",
-          "answer": "Negative values are invalid and will not calculate."
-        }
-      ]
-    },
+  {
+    "slug": "duration-seconds",
+    "title": "Duration to Seconds",
+    "cluster": "date & time",
+    "description": "Convert hours, minutes, and seconds into total seconds.",
+    "intro": "Enter hours, minutes, and seconds to get the total duration expressed in seconds.",
+    "inputs": [
+      {
+        "name": "hours",
+        "label": "Hours",
+        "type": "number",
+        "min": 0,
+        "step": "1",
+        "placeholder": "1"
+      },
+      {
+        "name": "minutes",
+        "label": "Minutes",
+        "type": "number",
+        "min": 0,
+        "step": "1",
+        "placeholder": "30"
+      },
+      {
+        "name": "seconds",
+        "label": "Seconds",
+        "type": "number",
+        "min": 0,
+        "step": "1",
+        "placeholder": "15"
+      }
+    ],
+    "expression": "(hours*3600) + (minutes*60) + seconds",
+    "unit": "seconds",
+    "examples": [
+      {
+        "description": "1h 30m 15s ⇒ 5415 seconds"
+      },
+      {
+        "description": "0h 45m 0s ⇒ 2700 seconds"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Can I leave fields blank?",
+        "answer": "Empty fields are treated as zero."
+      },
+      {
+        "question": "Does it handle durations longer than a day?",
+        "answer": "Yes, enter any non-negative values."
+      },
+      {
+        "question": "Can I use decimals?",
+        "answer": "Use whole numbers; the calculator treats inputs as integers."
+      },
+      {
+        "question": "What if I enter negative numbers?",
+        "answer": "Negative values are invalid and will not calculate."
+      }
+    ]
+  },
   {
     "slug": "days-to-hours",
     "title": "Days to Hours",
@@ -734,14 +1012,26 @@
     "expression": "met*weight*3.5/200*duration",
     "unit": "kcal",
     "examples": [
-      {"description": "Jogging at MET 7, 70 kg, 30 min ⇒ about 257 kcal"},
-      {"description": "Cycling at MET 5, 80 kg, 45 min ⇒ about 315 kcal"}
+      { "description": "Jogging at MET 7, 70 kg, 30 min ⇒ about 257 kcal" },
+      { "description": "Cycling at MET 5, 80 kg, 45 min ⇒ about 315 kcal" }
     ],
     "faqs": [
-      {"question": "What is a MET?", "answer": "A MET compares the energy cost of an activity to resting metabolic rate."},
-      {"question": "Where can I find MET values?", "answer": "Consult exercise physiology tables or reliable fitness resources."},
-      {"question": "Do I need weight in kilograms?", "answer": "Yes, convert your weight to kilograms for accurate results."},
-      {"question": "Why enter duration in minutes?", "answer": "The formula expects minutes; convert hours to minutes first."}
+      {
+        "question": "What is a MET?",
+        "answer": "A MET compares the energy cost of an activity to resting metabolic rate."
+      },
+      {
+        "question": "Where can I find MET values?",
+        "answer": "Consult exercise physiology tables or reliable fitness resources."
+      },
+      {
+        "question": "Do I need weight in kilograms?",
+        "answer": "Yes, convert your weight to kilograms for accurate results."
+      },
+      {
+        "question": "Why enter duration in minutes?",
+        "answer": "The formula expects minutes; convert hours to minutes first."
+      }
     ]
   },
   {
@@ -790,14 +1080,26 @@
     "expression": "waist/height",
     "unit": "ratio",
     "examples": [
-      {"description": "80 cm waist and 170 cm height ⇒ 0.47"},
-      {"description": "90 cm waist and 180 cm height ⇒ 0.50"}
+      { "description": "80 cm waist and 170 cm height ⇒ 0.47" },
+      { "description": "90 cm waist and 180 cm height ⇒ 0.50" }
     ],
     "faqs": [
-      {"question": "What is WHtR?", "answer": "The waist-to-height ratio compares waist circumference to height as a health indicator."},
-      {"question": "What range is considered healthy?", "answer": "A value below 0.5 is often regarded as low risk for adults."},
-      {"question": "Do waist and height need the same unit?", "answer": "Yes, using the same unit ensures the ratio is correct."},
-      {"question": "Can I use inches instead of centimeters?", "answer": "Yes, as long as both measurements use inches."}
+      {
+        "question": "What is WHtR?",
+        "answer": "The waist-to-height ratio compares waist circumference to height as a health indicator."
+      },
+      {
+        "question": "What range is considered healthy?",
+        "answer": "A value below 0.5 is often regarded as low risk for adults."
+      },
+      {
+        "question": "Do waist and height need the same unit?",
+        "answer": "Yes, using the same unit ensures the ratio is correct."
+      },
+      {
+        "question": "Can I use inches instead of centimeters?",
+        "answer": "Yes, as long as both measurements use inches."
+      }
     ]
   },
   {
@@ -846,14 +1148,26 @@
     "expression": "kb/1024",
     "unit": "MB",
     "examples": [
-      {"description": "2048 KB → 2 MB"},
-      {"description": "5000 KB → 4.88 MB"}
+      { "description": "2048 KB → 2 MB" },
+      { "description": "5000 KB → 4.88 MB" }
     ],
     "faqs": [
-      {"question": "How many kilobytes make a megabyte?", "answer": "One megabyte equals 1024 kilobytes."},
-      {"question": "Does this use the binary standard?", "answer": "Yes, it is based on 1 MB = 1024 KB."},
-      {"question": "Can I convert MB back to KB?", "answer": "Multiply megabytes by 1024 to get kilobytes."},
-      {"question": "Why do some systems use 1000 KB per MB?", "answer": "Some contexts use the decimal SI standard, but computing typically follows the binary convention."}
+      {
+        "question": "How many kilobytes make a megabyte?",
+        "answer": "One megabyte equals 1024 kilobytes."
+      },
+      {
+        "question": "Does this use the binary standard?",
+        "answer": "Yes, it is based on 1 MB = 1024 KB."
+      },
+      {
+        "question": "Can I convert MB back to KB?",
+        "answer": "Multiply megabytes by 1024 to get kilobytes."
+      },
+      {
+        "question": "Why do some systems use 1000 KB per MB?",
+        "answer": "Some contexts use the decimal SI standard, but computing typically follows the binary convention."
+      }
     ]
   },
   {
@@ -976,10 +1290,22 @@
       { "description": "3.5 years ⇒ 1277.5 days" }
     ],
     "faqs": [
-      { "question": "Does this account for leap years?", "answer": "No, it assumes exactly 365 days per year." },
-      { "question": "Can I enter decimal years?", "answer": "Yes, decimals let you represent partial years." },
-      { "question": "Is the result rounded?", "answer": "The calculator provides the exact multiplication result." },
-      { "question": "What units are used?", "answer": "Input is in years and the output is in days." }
+      {
+        "question": "Does this account for leap years?",
+        "answer": "No, it assumes exactly 365 days per year."
+      },
+      {
+        "question": "Can I enter decimal years?",
+        "answer": "Yes, decimals let you represent partial years."
+      },
+      {
+        "question": "Is the result rounded?",
+        "answer": "The calculator provides the exact multiplication result."
+      },
+      {
+        "question": "What units are used?",
+        "answer": "Input is in years and the output is in days."
+      }
     ]
   },
   {
@@ -1528,14 +1854,26 @@
     "expression": "income / (hours * weeks)",
     "unit": "USD/hr",
     "examples": [
-      {"description": "$80k income, 30 h/week, 48 weeks ⇒ $55.56/hr"},
-      {"description": "$50k income, 20 h/week, 40 weeks ⇒ $62.50/hr"}
+      { "description": "$80k income, 30 h/week, 48 weeks ⇒ $55.56/hr" },
+      { "description": "$50k income, 20 h/week, 40 weeks ⇒ $62.50/hr" }
     ],
     "faqs": [
-      {"question": "Why billable hours?", "answer": "Non‑billable time isn't paid, so exclude it to price correctly."},
-      {"question": "Should I include taxes and expenses?", "answer": "Yes, factor them into your desired income so the rate covers all costs."},
-      {"question": "What if my hours vary?", "answer": "Use an average number of billable hours per week to estimate."},
-      {"question": "Can I use other currencies?", "answer": "Yes, enter all amounts in the same currency; the result will use that currency per hour."}
+      {
+        "question": "Why billable hours?",
+        "answer": "Non‑billable time isn't paid, so exclude it to price correctly."
+      },
+      {
+        "question": "Should I include taxes and expenses?",
+        "answer": "Yes, factor them into your desired income so the rate covers all costs."
+      },
+      {
+        "question": "What if my hours vary?",
+        "answer": "Use an average number of billable hours per week to estimate."
+      },
+      {
+        "question": "Can I use other currencies?",
+        "answer": "Yes, enter all amounts in the same currency; the result will use that currency per hour."
+      }
     ]
   },
   {
@@ -15492,14 +15830,30 @@
     "expression": "total - Math.ceil(total * required / 100)",
     "unit": "classes",
     "examples": [
-      {"description": "30 total classes with 80% required ⇒ 6 classes can be missed"},
-      {"description": "40 total classes with 75% required ⇒ 10 classes can be missed"}
+      {
+        "description": "30 total classes with 80% required ⇒ 6 classes can be missed"
+      },
+      {
+        "description": "40 total classes with 75% required ⇒ 10 classes can be missed"
+      }
     ],
     "faqs": [
-      {"question": "What does the result represent?", "answer": "The number of classes you can miss and still satisfy the attendance requirement."},
-      {"question": "Why use ceiling?", "answer": "It rounds up the needed classes so you don't fall short."},
-      {"question": "Can I enter decimal class counts?", "answer": "No, total classes should be whole numbers."},
-      {"question": "Does it consider excused absences?", "answer": "All absences are treated the same; verify policies with your institution."}
+      {
+        "question": "What does the result represent?",
+        "answer": "The number of classes you can miss and still satisfy the attendance requirement."
+      },
+      {
+        "question": "Why use ceiling?",
+        "answer": "It rounds up the needed classes so you don't fall short."
+      },
+      {
+        "question": "Can I enter decimal class counts?",
+        "answer": "No, total classes should be whole numbers."
+      },
+      {
+        "question": "Does it consider excused absences?",
+        "answer": "All absences are treated the same; verify policies with your institution."
+      }
     ],
     "disclaimer": "Always confirm attendance policies with your institution."
   },

@@ -1,48 +1,62 @@
 ---
 layout: ../../layouts/CalculatorLayout.astro
 title: "Cylinder Volume Calculator"
-description: "Volume of a cylinder."
+description: "Calculate the volume of a cylinder from radius and height."
 updated: "2025-08-21"
 cluster: "Math"
 ---
 
-import Calculator from '../../components/Calculator.astro';
+import Calculator from "../../components/Calculator.astro";
 
 export const schema = {
-  "inputs": [
+  inputs: [
     {
-      "name": "height",
-      "label": "Height (cm)",
-      "type": "number",
-      "placeholder": "Enter Height (cm)",
-      "step": "any"
+      name: "height",
+      label: "Height (cm)",
+      type: "number",
+      placeholder: "10",
+      step: "any",
     },
     {
-      "name": "radius",
-      "label": "Radius",
-      "type": "number",
-      "placeholder": "Enter Radius",
-      "step": "any"
-    }
+      name: "radius",
+      label: "Radius (cm)",
+      type: "number",
+      placeholder: "5",
+      step: "any",
+    },
   ],
-  "slug": "cylinder-volume-calculator",
-  "title": "Cylinder Volume Calculator",
-  "locale": "en",
-  "expression": "3.141592653589793 * radius ^ 2 * height",
-  "intro": "Volume of a cylinder.",
-  "examples": [
+  slug: "cylinder-volume-calculator",
+  title: "Cylinder Volume Calculator",
+  locale: "en",
+  expression: "3.141592653589793 * radius ^ 2 * height",
+  unit: "cm\u00b3",
+  intro:
+    "Compute the volume of a cylinder using \u03c0r\u00b2h. Enter the radius and height in centimeters to get the volume in cubic centimeters.",
+  examples: [
+    { description: "radius 5 cm & height 10 cm \u21d2 785.40 cm\u00b3" },
+    { description: "radius 2 cm & height 4 cm \u21d2 50.27 cm\u00b3" },
+  ],
+  faqs: [
     {
-      "description": "Enter values and click Calculate."
-    }
-  ],
-  "faqs": [
+      question: "What formula is used?",
+      answer: "Volume equals \u03c0 times the radius squared times the height.",
+    },
     {
-      "question": "How do I use the Cylinder Volume Calculator?",
-      "answer": "Enter the required values and press Calculate to get the result."
-    }
+      question: "Can I use different units?",
+      answer:
+        "Yes, just keep radius and height in the same units to get volume in cubic of that unit.",
+    },
+    {
+      question: "Does the calculator accept decimals?",
+      answer: "Yes, you may enter decimal measurements.",
+    },
+    {
+      question: "What happens if a value is zero?",
+      answer: "If radius or height is zero, the volume is zero.",
+    },
   ],
-  "disclaimer": "Educational information, not professional advice.",
-  "cluster": "Math"
+  disclaimer: "Educational information, not professional advice.",
+  cluster: "Math",
 };
 
 <Calculator schema={schema} />

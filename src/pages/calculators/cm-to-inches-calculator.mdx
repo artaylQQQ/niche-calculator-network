@@ -1,41 +1,55 @@
 ---
 layout: ../../layouts/CalculatorLayout.astro
 title: "Centimeters to Inches Converter"
-description: "Convert centimeters to inches."
+description: "Convert a length from centimeters to inches."
 updated: "2025-08-21"
 cluster: "Conversions"
 ---
 
-import Calculator from '../../components/Calculator.astro';
+import Calculator from "../../components/Calculator.astro";
 
 export const schema = {
-  "inputs": [
+  inputs: [
     {
-      "name": "cm",
-      "label": "Cm",
-      "type": "number",
-      "placeholder": "Enter Cm",
-      "step": "any"
-    }
+      name: "cm",
+      label: "Centimeters",
+      type: "number",
+      placeholder: "10",
+      step: "any",
+    },
   ],
-  "slug": "cm-to-inches-calculator",
-  "title": "Centimeters to Inches Converter",
-  "locale": "en",
-  "expression": "cm / 2.54",
-  "intro": "Convert centimeters to inches.",
-  "examples": [
+  slug: "cm-to-inches-calculator",
+  title: "Centimeters to Inches Converter",
+  locale: "en",
+  expression: "cm / 2.54",
+  unit: "in",
+  intro:
+    "Enter a length in centimeters to instantly see the equivalent in inches.",
+  examples: [
+    { description: "10 cm \u21d2 3.94 in" },
+    { description: "25 cm \u21d2 9.84 in" },
+  ],
+  faqs: [
     {
-      "description": "Enter values and click Calculate."
-    }
-  ],
-  "faqs": [
+      question: "What is the conversion factor?",
+      answer: "One inch equals exactly 2.54 centimeters.",
+    },
     {
-      "question": "How do I use the Centimeters to Inches Converter?",
-      "answer": "Enter the required values and press Calculate to get the result."
-    }
+      question: "Can I convert fractional centimeters?",
+      answer: "Yes, decimals are supported.",
+    },
+    {
+      question: "Is this calculator suitable for fabric measurements?",
+      answer: "Yes, it works for any length in centimeters.",
+    },
+    {
+      question: "How do I convert inches to centimeters?",
+      answer:
+        "Multiply inches by 2.54 or use the inches to centimeters calculator.",
+    },
   ],
-  "disclaimer": "Educational information, not professional advice.",
-  "cluster": "Conversions"
+  disclaimer: "Educational information, not professional advice.",
+  cluster: "Conversions",
 };
 
 <Calculator schema={schema} />
