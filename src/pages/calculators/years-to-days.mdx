@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/CalculatorLayout.astro
 title: "Years to Days Calculator"
-description: "Approximate years to days (365)."
+description: "Convert a number of years into days using a 365-day year."
 date: 2025-08-26
 updated: 2025-08-26
 cluster: "Date & Time"
@@ -19,13 +19,18 @@ export const schema = {
     }
   ],
   "expression": "years*365",
-  "intro": "Approximate years to days (365).",
+  "unit": "days",
+  "intro": "Quickly convert any number of years into days, assuming each year has 365 days.",
   "examples": [
-    {
-      "description": "Enter the values and press Calculate."
-    }
+    {"description": "2 years ⇒ 730 days"},
+    {"description": "0.5 years ⇒ 182.5 days"}
   ],
-  "faqs": [],
+  "faqs": [
+    {"question": "Does this consider leap years?","answer": "No, it assumes each year has 365 days."},
+    {"question": "Can I enter decimal years?","answer": "Yes, decimals are allowed for partial years."},
+    {"question": "How do I convert days back to years?","answer": "Divide the number of days by 365."},
+    {"question": "Why use 365 days?","answer": "It's a simple average that works for quick estimates."}
+  ],
   "disclaimer": "Educational information, not professional advice.",
   "cluster": "Date & Time",
   "related": [
@@ -39,3 +44,4 @@ export const schema = {
 }
 
 <Calculator schema={schema} />
+

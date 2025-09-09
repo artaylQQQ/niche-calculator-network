@@ -5,7 +5,6 @@ description: "Get the percentage increase from an old value to a new value."
 updated: "2025-08-26"
 cluster: "Math"
 ---
-
 import Calculator from '../../components/Calculator.astro';
 
 export const schema = {
@@ -31,20 +30,21 @@ export const schema = {
   "title": "Percentage Increase",
   "locale": "en",
   "expression": "((newValue - oldValue) / oldValue) * 100",
-  "intro": "Get the percentage increase from an old value to a new value.",
+  "unit": "%",
+  "intro": "Calculate how much a value has increased in percentage terms from its original amount to a new amount.",
   "examples": [
-    {
-      "description": "From 50 to 70 \u21d2 40% increase"
-    }
+    {"description": "From 50 to 70 ⇒ 40% increase"},
+    {"description": "From 120 to 150 ⇒ 25% increase"}
   ],
   "faqs": [
-    {
-      "question": "What if old value is 0?",
-      "answer": "Percentage change is undefined when the old value is 0."
-    }
+    {"question": "What if old value is 0?","answer": "Percentage change is undefined when the old value is 0."},
+    {"question": "Can the result be negative?","answer": "Yes, a negative result indicates a percentage decrease."},
+    {"question": "Does it handle decimals?","answer": "Yes, you can enter decimal values."},
+    {"question": "Is percentage increase the same as percent change?","answer": "Percent change includes both increases and decreases; this tool focuses on increases."}
   ],
   "disclaimer": "Educational purposes only. Not professional advice.",
   "cluster": "Math"
-}
+};
 
 <Calculator schema={schema} />
+
