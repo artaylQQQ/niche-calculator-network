@@ -1,0 +1,28 @@
+---
+import calculators from '../../data/calculators.json';
+---
+<div class="relative">
+  <input
+    id="header-search"
+    list="header-search-list"
+    type="search"
+    placeholder="Search calculators"
+    class="w-48 sm:w-64 p-2 border rounded-md"
+  />
+  <datalist id="header-search-list">
+    {calculators.map((c) => (
+      <option value={c.title} data-url={`/calculators/${c.slug}/`}></option>
+    ))}
+  </datalist>
+</div>
+<script is:inline>
+  const input = document.getElementById('header-search');
+  const options = Array.from(document.querySelectorAll('#header-search-list option'));
+  input?.addEventListener('change', () => {
+    const val = input.value.toLowerCase();
+    const opt = options.find((o) => o.value.toLowerCase() === val);
+    if (opt) {
+      window.location.href = opt.dataset.url;
+    }
+  });
+</script>
