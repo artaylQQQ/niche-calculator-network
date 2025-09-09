@@ -12,7 +12,8 @@ export const schema = {
   slug: "weeks-to-months-converter",
   title: "Weeks to Months Converter",
   locale: "en",
-  intro: "Convert a number of weeks into approximate calendar months based on the average month length of 30.4375 days.",
+  intro:
+    "Convert any number of weeks into approximate calendar months using the average month length of 30.4375 days. This helps with planning timelines, subscriptions, or project schedules that span multiple months.",
   unit: "months",
   cluster: "Date & Time",
   inputs: [
@@ -24,8 +25,22 @@ export const schema = {
     { description: "12 weeks ⇒ 2.76 months" }
   ],
   faqs: [
-    { question: "Why use 30.4375 days?", answer: "It is the average length of a month over a year." },
-    { question: "Is this exact?", answer: "No, months vary in length; this is an approximation." }
+    {
+      question: "Why use 30.4375 days?",
+      answer: "It is the average length of a month over a year.",
+    },
+    {
+      question: "Is this exact?",
+      answer: "No, months vary in length; this is an approximation.",
+    },
+    {
+      question: "Can I enter fractional weeks?",
+      answer: "Yes, decimals like 2.5 represent partial weeks.",
+    },
+    {
+      question: "Does it account for leap years?",
+      answer: "Leap years slightly change the average but the difference is minimal.",
+    },
   ],
   disclaimer: "Approximate conversion only."
 };

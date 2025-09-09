@@ -13,19 +13,20 @@ export const schema = {
   title: "Quarter of Year Calculator",
   locale: "en",
   unit: "quarter",
-  expression: "Math.ceil(month / 3)",
+  expression: "((month + 2) - ((month + 2) % 3)) / 3",
   intro:
-    "Find the calendar quarter by entering a month number from 1 to 12.",
+    "Find the calendar quarter by entering a month number from 1 to 12. This helps with budgeting, financial reporting, or planning seasonal activities.",
   cluster: "Date & Time",
   inputs: [
-    {
-      name: "month",
-      label: "Month (1-12)",
-      type: "number",
-      step: 1,
-      required: true,
-    },
-  ],
+      {
+        name: "month",
+        label: "Month (1-12)",
+        type: "number",
+        step: 1,
+        placeholder: "2",
+        required: true,
+      },
+    ],
   examples: [
     { description: "Month 2 ⇒ Q1" },
     { description: "Month 11 ⇒ Q4" },
@@ -40,8 +41,8 @@ export const schema = {
       answer: "No, months must be between 1 and 12.",
     },
     {
-      question: "Why use Math.ceil?",
-      answer: "It rounds up to the nearest integer after dividing by three.",
+      question: "How is the quarter calculated?",
+      answer: "The month number is adjusted by two, then divided by three with the remainder discarded.",
     },
     {
       question: "Is this useful for fiscal planning?",
