@@ -8,7 +8,8 @@ const items = Object.values(modules).map((m) => ({
     m.frontmatter?.title ||
     m.url.replace('/calculators/', '').replace('.mdx', ''),
   description:
-    m.frontmatter?.intro || m.frontmatter?.description || ''
+    m.frontmatter?.intro || m.frontmatter?.description || '',
+  updated: m.frontmatter?.updated || ''
 }));
 ---
 <BaseLayout title="Search Calculators" description="Find any calculator available on the site.">
@@ -21,6 +22,16 @@ const items = Object.values(modules).map((m) => ({
       placeholder="Search calculators"
       class="w-full mt-4 p-2 border rounded-md"
     />
+    <label for="sort-select" class="sr-only">Sort calculators</label>
+    <select
+      id="sort-select"
+      class="mt-4 p-2 border rounded-md"
+    >
+      <option value="az">A - Z</option>
+      <option value="za">Z - A</option>
+      <option value="newest">Newest First</option>
+      <option value="oldest">Oldest First</option>
+    </select>
   </section>
   <AdBanner />
   <section class="section container mx-auto max-w-5xl px-4" aria-labelledby="list-all">
@@ -34,6 +45,7 @@ const items = Object.values(modules).map((m) => ({
         <div
           data-title={it.title.toLowerCase()}
           data-description={it.description.toLowerCase()}
+          data-updated={it.updated}
         >
           <a class="card" href={it.url}>
             <h3>{it.title}</h3>
@@ -45,16 +57,39 @@ const items = Object.values(modules).map((m) => ({
   </section>
   <script is:inline>
     const input = document.getElementById('search-input');
+    const sort = document.getElementById('sort-select');
     const cards = Array.from(document.querySelectorAll('#results > div'));
-    function filter() {
+    const container = document.getElementById('results');
+    function apply() {
       const q = input.value.trim().toLowerCase();
-      cards.forEach((card) => {
+      const sorted = [...cards].sort((a, b) => {
+        const ta = a.dataset.title;
+        const tb = b.dataset.title;
+        const da = new Date(a.dataset.updated).getTime() || 0;
+        const db = new Date(b.dataset.updated).getTime() || 0;
+        switch (sort.value) {
+          case 'za':
+            return tb.localeCompare(ta);
+          case 'newest':
+            return db - da;
+          case 'oldest':
+            return da - db;
+          case 'az':
+          default:
+            return ta.localeCompare(tb);
+        }
+      });
+      container.innerHTML = '';
+      sorted.forEach((card) => {
         const t = card.dataset.title;
         const d = card.dataset.description;
         const match = !q || t.includes(q) || d.includes(q);
         card.style.display = match ? '' : 'none';
+        container.appendChild(card);
       });
     }
-    input.addEventListener('input', filter);
+    input.addEventListener('input', apply);
+    sort.addEventListener('change', apply);
+    apply();
   </script>
 </BaseLayout>
