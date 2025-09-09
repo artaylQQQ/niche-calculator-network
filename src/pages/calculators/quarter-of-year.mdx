@@ -15,17 +15,18 @@ export const schema = {
   unit: "quarter",
   expression: "Math.ceil(month / 3)",
   intro:
-    "Find the calendar quarter by entering a month number from 1 to 12.",
+    "Find the calendar quarter by entering a month number from 1 to 12. This helps with budgeting, financial reporting, or planning seasonal activities.",
   cluster: "Date & Time",
   inputs: [
-    {
-      name: "month",
-      label: "Month (1-12)",
-      type: "number",
-      step: 1,
-      required: true,
-    },
-  ],
+      {
+        name: "month",
+        label: "Month (1-12)",
+        type: "number",
+        step: 1,
+        placeholder: "2",
+        required: true,
+      },
+    ],
   examples: [
     { description: "Month 2 ⇒ Q1" },
     { description: "Month 11 ⇒ Q4" },
