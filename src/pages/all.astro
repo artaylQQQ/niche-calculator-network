@@ -8,7 +8,8 @@ const items = Object.values(modules).map((m) => ({
     m.frontmatter?.title ||
     m.url.replace('/calculators/', '').replace('.mdx', ''),
   description:
-    m.frontmatter?.intro || m.frontmatter?.description || ''
+    m.frontmatter?.intro || m.frontmatter?.description || '',
+  date: m.frontmatter?.date || ''
 }));
 ---
 <BaseLayout title="Search Calculators" description="Find any calculator available on the site.">
@@ -21,6 +22,15 @@ const items = Object.values(modules).map((m) => ({
       placeholder="Search calculators"
       class="w-full mt-4 p-2 border rounded-md"
     />
+    <div class="mt-4">
+      <label for="sort-select" class="sr-only">Sort calculators</label>
+      <select id="sort-select" class="p-2 border rounded-md">
+        <option value="title-asc">Alphabetical (A-Z)</option>
+        <option value="title-desc">Alphabetical (Z-A)</option>
+        <option value="date-desc">Newest to Oldest</option>
+        <option value="date-asc">Oldest to Newest</option>
+      </select>
+    </div>
   </section>
   <AdBanner />
   <section class="section container mx-auto max-w-5xl px-4" aria-labelledby="list-all">
@@ -34,6 +44,7 @@ const items = Object.values(modules).map((m) => ({
         <div
           data-title={it.title.toLowerCase()}
           data-description={it.description.toLowerCase()}
+          data-date={it.date}
         >
           <a class="card" href={it.url}>
             <h3>{it.title}</h3>
@@ -45,16 +56,45 @@ const items = Object.values(modules).map((m) => ({
   </section>
   <script is:inline>
     const input = document.getElementById('search-input');
-    const cards = Array.from(document.querySelectorAll('#results > div'));
-    function filter() {
+    const select = document.getElementById('sort-select');
+    const container = document.getElementById('results');
+    const cards = Array.from(container.children);
+
+    function sortCards(list, value) {
+      switch (value) {
+        case 'title-desc':
+          return list.sort((a, b) =>
+            b.dataset.title.localeCompare(a.dataset.title)
+          );
+        case 'date-asc':
+          return list.sort(
+            (a, b) => new Date(a.dataset.date) - new Date(b.dataset.date)
+          );
+        case 'date-desc':
+          return list.sort(
+            (a, b) => new Date(b.dataset.date) - new Date(a.dataset.date)
+          );
+        default:
+          return list.sort((a, b) =>
+            a.dataset.title.localeCompare(b.dataset.title)
+          );
+      }
+    }
+
+    function apply() {
       const q = input.value.trim().toLowerCase();
-      cards.forEach((card) => {
+      const ordered = sortCards([...cards], select.value);
+      ordered.forEach((card) => {
         const t = card.dataset.title;
         const d = card.dataset.description;
         const match = !q || t.includes(q) || d.includes(q);
         card.style.display = match ? '' : 'none';
+        container.appendChild(card);
       });
     }
-    input.addEventListener('input', filter);
+
+    input.addEventListener('input', apply);
+    select.addEventListener('change', apply);
+    apply();
   </script>
 </BaseLayout>
