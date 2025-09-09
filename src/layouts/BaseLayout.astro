@@ -71,6 +71,14 @@ const cfToken = import.meta.env.VITE_CF_ANALYTICS_TOKEN;
             class={['nav-link', 'traditional', Astro.url.pathname.startsWith('/scientific-calculator') && 'active'].filter(Boolean).join(' ')}
             >Scientific Calculator</a
           >
+          <form action="/all" method="get" class="w-full sm:w-auto">
+            <input
+              type="search"
+              name="q"
+              placeholder="Search calculators"
+              class="w-full p-2 border rounded-md"
+            />
+          </form>
         </nav>
       </div>
     </header>
