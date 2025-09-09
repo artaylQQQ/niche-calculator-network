@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/CalculatorLayout.astro
 title: "BMI Calculator"
-description: "Body Mass Index from weight (kg) and height (m)."
+description: "Compute your Body Mass Index from weight and height to assess weight status."
 updated: "2025-08-21"
 cluster: "Health"
 ---
@@ -31,17 +31,17 @@ export const schema = {
   "title": "BMI Calculator",
   "locale": "en",
   "expression": "weight / (height ^ 2)",
-  "intro": "Body Mass Index from weight (kg) and height (m).",
+  "unit": "kg/m²",
+  "intro": "Compute BMI using metric units of weight and height to evaluate body mass.",
   "examples": [
-    {
-      "description": "Enter values and click Calculate."
-    }
+    {"description": "70 kg weight and 1.75 m height ⇒ 22.86 kg/m²"},
+    {"description": "90 kg weight and 1.60 m height ⇒ 35.16 kg/m²"}
   ],
   "faqs": [
-    {
-      "question": "How do I use the BMI Calculator?",
-      "answer": "Enter the required values and press Calculate to get the result."
-    }
+    {"question": "What is BMI?","answer": "BMI is a ratio of weight to height used to classify underweight and overweight."},
+    {"question": "What BMI range is considered healthy?","answer": "A BMI between 18.5 and 24.9 is generally regarded as normal."},
+    {"question": "Does BMI account for muscle mass?","answer": "No, muscular individuals may have a high BMI despite low body fat."},
+    {"question": "Can I use pounds and inches?","answer": "Convert to kilograms and meters before using this calculator."}
   ],
   "disclaimer": "Educational information, not professional advice.",
   "cluster": "Health"

@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/CalculatorLayout.astro
 title: "Waist-to-Height Ratio Calculator"
-description: "Compute waist-to-height ratio (WHtR)."
+description: "Calculate your waist-to-height ratio (WHtR) to evaluate body fat distribution."
 date: 2025-08-26
 updated: 2025-08-26
 cluster: "Health"
@@ -23,13 +23,18 @@ export const schema = {
     }
   ],
   "expression": "waist/height",
-  "intro": "Compute waist-to-height ratio (WHtR).",
+  "unit": "ratio",
+  "intro": "Enter your waist and height in centimeters to find the waist-to-height ratio.",
   "examples": [
-    {
-      "description": "80 cm waist, 170 cm height → 0.47"
-    }
+    {"description": "80 cm waist and 170 cm height ⇒ 0.47"},
+    {"description": "90 cm waist and 180 cm height ⇒ 0.50"}
   ],
-  "faqs": [],
+  "faqs": [
+    {"question": "What is WHtR?","answer": "It's the ratio of waist circumference to height, used as an indicator of health risk."},
+    {"question": "What range is considered healthy?","answer": "A value below 0.5 is often seen as low risk for adults."},
+    {"question": "Why use centimeters?","answer": "Using the same unit for waist and height ensures the ratio is correct."},
+    {"question": "Can I use inches?","answer": "Yes, if both measurements use inches the ratio will be the same."}
+  ],
   "disclaimer": "Educational information, not professional advice.",
   "cluster": "Health",
   "related": [

@@ -83,8 +83,9 @@
   {
     "slug": "bmi-calculator",
     "title": "BMI Calculator",
-    "cluster": "health",
-    "description": "Estimate Body Mass Index from weight (kg) and height (cm).",
+    "cluster": "Health",
+    "description": "Compute Body Mass Index from weight and height to assess weight status.",
+    "intro": "Compute BMI using metric units of weight and height to evaluate body mass.",
     "inputs": [
       {
         "name": "weight",
@@ -104,23 +105,24 @@
       }
     ],
     "expression": "weight / ((height/100) ** 2)",
+    "unit": "kg/m²",
     "examples": [
-      {
-        "description": "70 kg and 175 cm ⇒ BMI ≈ 22.86"
-      }
+      {"description": "70 kg and 175 cm ⇒ 22.86 kg/m²"},
+      {"description": "90 kg and 160 cm ⇒ 35.16 kg/m²"}
     ],
     "faqs": [
-      {
-        "question": "What is BMI?",
-        "answer": "A simple index of weight-for-height commonly used to classify underweight, overweight and obesity."
-      }
+      {"question": "What is BMI?", "answer": "BMI is a ratio of weight to height used to classify weight categories."},
+      {"question": "What BMI range is considered healthy?", "answer": "A BMI between 18.5 and 24.9 is typically considered normal."},
+      {"question": "Does BMI account for muscle mass?", "answer": "No, muscular people may have a high BMI despite low body fat."},
+      {"question": "Can I use pounds and inches?", "answer": "Convert values to kilograms and centimeters to use this calculator."}
     ]
   },
   {
     "slug": "daily-calorie-burn",
     "title": "Daily Calorie Burn (Rough)",
-    "cluster": "health",
-    "description": "Rough estimate of daily calories burned from steps and exercise minutes.",
+    "cluster": "Health",
+    "description": "Estimate daily calories burned from your step count and exercise time.",
+    "intro": "Provides a rough estimate of calories burned in a day using steps walked and exercise minutes.",
     "inputs": [
       {
         "name": "steps",
@@ -140,16 +142,16 @@
       }
     ],
     "expression": "(steps * 0.04) + (exercise * 7)",
+    "unit": "kcal",
     "examples": [
-      {
-        "description": "8000 steps and 30 min ⇒ ≈ 470 kcal (rough)"
-      }
+      {"description": "8000 steps and 30 min exercise ⇒ ≈ 470 kcal"},
+      {"description": "5000 steps and 60 min exercise ⇒ ≈ 620 kcal"}
     ],
     "faqs": [
-      {
-        "question": "Is this accurate?",
-        "answer": "It is a rough estimate; for precision use a medical-grade calculator."
-      }
+      {"question": "How are calories from steps calculated?", "answer": "Each step is approximated to burn about 0.04 kcal."},
+      {"question": "What about exercise minutes?", "answer": "Every minute of exercise adds roughly 7 kcal."},
+      {"question": "Can I enter zero for steps or exercise?", "answer": "Yes, set either field to 0 if it doesn't apply."},
+      {"question": "How accurate is this estimate?", "answer": "It's a simple approximation that doesn't consider intensity or individual differences."}
     ]
   },
   {
@@ -609,7 +611,8 @@
     "slug": "calories-burned-met",
     "title": "Calories Burned (MET) Calculator",
     "cluster": "Health",
-    "intro": "Estimate calories burned using MET, weight, and duration. Enter the values and press Calculate.",
+    "description": "Estimate calories burned using activity MET value, weight, and duration.",
+    "intro": "Use MET, body weight, and activity duration to approximate calories burned.",
     "inputs": [
       {
         "name": "met",
@@ -628,16 +631,16 @@
       }
     ],
     "expression": "met*weight*3.5/200*duration",
+    "unit": "kcal",
     "examples": [
-      {
-        "description": "Jogging at MET 7, 70 kg, 30 minutes → about 257 kcal"
-      }
+      {"description": "Jogging at MET 7, 70 kg, 30 min ⇒ about 257 kcal"},
+      {"description": "Cycling at MET 5, 80 kg, 45 min ⇒ about 315 kcal"}
     ],
     "faqs": [
-      {
-        "question": "What is a MET?",
-        "answer": "A MET is a unit that estimates energy cost of physical activities."
-      }
+      {"question": "What is a MET?", "answer": "A MET compares the energy cost of an activity to resting metabolic rate."},
+      {"question": "Where can I find MET values?", "answer": "Consult exercise physiology tables or reliable fitness resources."},
+      {"question": "Do I need weight in kilograms?", "answer": "Yes, convert your weight to kilograms for accurate results."},
+      {"question": "Why enter duration in minutes?", "answer": "The formula expects minutes; convert hours to minutes first."}
     ]
   },
   {
@@ -669,7 +672,8 @@
     "slug": "waist-to-height-ratio",
     "title": "Waist-to-Height Ratio Calculator",
     "cluster": "Health",
-    "intro": "Compute waist-to-height ratio (WHtR). Enter the values and press Calculate.",
+    "description": "Calculate waist-to-height ratio (WHtR) to evaluate body fat distribution.",
+    "intro": "Enter your waist and height in the same units to compute the waist-to-height ratio.",
     "inputs": [
       {
         "name": "waist",
@@ -683,16 +687,16 @@
       }
     ],
     "expression": "waist/height",
+    "unit": "ratio",
     "examples": [
-      {
-        "description": "80 cm waist, 170 cm height → 0.47"
-      }
+      {"description": "80 cm waist and 170 cm height ⇒ 0.47"},
+      {"description": "90 cm waist and 180 cm height ⇒ 0.50"}
     ],
     "faqs": [
-      {
-        "question": "What does the Waist-to-Height Ratio Calculator do?",
-        "answer": "Compute waist-to-height ratio (WHtR). Enter the values and press Calculate."
-      }
+      {"question": "What is WHtR?", "answer": "The waist-to-height ratio compares waist circumference to height as a health indicator."},
+      {"question": "What range is considered healthy?", "answer": "A value below 0.5 is often regarded as low risk for adults."},
+      {"question": "Do waist and height need the same unit?", "answer": "Yes, using the same unit ensures the ratio is correct."},
+      {"question": "Can I use inches instead of centimeters?", "answer": "Yes, as long as both measurements use inches."}
     ]
   },
   {
@@ -15289,8 +15293,9 @@
   {
     "slug": "attendance-requirement",
     "title": "Attendance Requirement Calculator",
-    "cluster": "education & learning",
-    "description": "Find maximum classes you can miss to meet attendance rules.",
+    "cluster": "Education & Learning",
+    "description": "Determine how many classes you can miss while still meeting attendance rules.",
+    "intro": "Enter total class sessions and the required attendance percentage to find allowable absences.",
     "inputs": [
       {
         "name": "total",
@@ -15308,23 +15313,16 @@
       }
     ],
     "expression": "total - Math.ceil(total * required / 100)",
+    "unit": "classes",
     "examples": [
-      {
-        "description": "30 classes with 80% required ⇒ 6 absences allowed"
-      },
-      {
-        "description": "40 classes with 75% required ⇒ 10 absences allowed"
-      }
+      {"description": "30 total classes with 80% required ⇒ 6 classes can be missed"},
+      {"description": "40 total classes with 75% required ⇒ 10 classes can be missed"}
     ],
     "faqs": [
-      {
-        "question": "Why use ceiling?",
-        "answer": "It ensures you attend enough classes."
-      },
-      {
-        "question": "Does it consider excused absences?",
-        "answer": "It treats all absences the same."
-      }
+      {"question": "What does the result represent?", "answer": "The number of classes you can miss and still satisfy the attendance requirement."},
+      {"question": "Why use ceiling?", "answer": "It rounds up the needed classes so you don't fall short."},
+      {"question": "Can I enter decimal class counts?", "answer": "No, total classes should be whole numbers."},
+      {"question": "Does it consider excused absences?", "answer": "All absences are treated the same; verify policies with your institution."}
     ],
     "disclaimer": "Always confirm attendance policies with your institution."
   },
