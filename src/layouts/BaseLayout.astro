@@ -46,32 +46,96 @@ const cfToken = import.meta.env.VITE_CF_ANALYTICS_TOKEN;
           <img src="/logo.svg" alt="CalcSimpler" />
           <span class="logo-text">CalcSimpler</span>
         </a>
-        <button id="menu-btn" class="sm:hidden p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-[var(--accent)]" aria-label="Toggle navigation" aria-expanded="false">
-          <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
-        </button>
-        <nav
-          id="nav"
-          class="hidden absolute top-full left-0 right-0 mx-4 mt-2 flex flex-col items-end gap-2 bg-[var(--card)] border border-[var(--border)] rounded-md p-4 shadow-md sm:static sm:flex sm:flex-row sm:items-center sm:gap-2 md:gap-4 sm:justify-end sm:mx-0 sm:mt-0 sm:border-0 sm:p-0 sm:shadow-none"
-          aria-label="Primary"
+        <div class="flex items-center gap-2">
+          <form action="/all" method="get" class="hidden sm:block">
+            <input
+              type="search"
+              name="q"
+              placeholder="Search calculators"
+              class="w-48 p-2 border rounded-md"
+            />
+          </form>
+          <button
+            id="search-btn"
+            class="sm:hidden p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-[var(--accent)]"
+            aria-label="Toggle search"
+            aria-expanded="false"
+          >
+            <svg
+              class="h-6 w-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M21 21l-4.35-4.35M11 19a8 8 0 100-16 8 8 0 000 16z"
+              />
+            </svg>
+          </button>
+          <button
+            id="menu-btn"
+            class="sm:hidden p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-[var(--accent)]"
+            aria-label="Toggle navigation"
+            aria-expanded="false"
+          >
+            <svg
+              class="h-6 w-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </button>
+          <nav
+            id="nav"
+            class="hidden absolute top-full left-0 right-0 mx-4 mt-2 flex flex-col items-end gap-2 bg-[var(--card)] border border-[var(--border)] rounded-md p-4 shadow-md sm:static sm:flex sm:flex-row sm:items-center sm:gap-2 md:gap-4 sm:justify-end sm:mx-0 sm:mt-0 sm:border-0 sm:p-0 sm:shadow-none"
+            aria-label="Primary"
+          >
+            <a
+              href="/categories/"
+              class={['nav-link', Astro.url.pathname.startsWith('/categories') && 'active'].filter(Boolean).join(' ')}
+              >Categories</a
+            >
+            <a
+              href="/all"
+              class={['nav-link', Astro.url.pathname.startsWith('/all') && 'active'].filter(Boolean).join(' ')}
+              >All Calculators</a
+            >
+            <a
+              href="/scientific-calculator/"
+              class={['nav-link', 'traditional', Astro.url.pathname.startsWith('/scientific-calculator') && 'active'].filter(Boolean).join(' ')}
+              >Scientific Calculator</a
+            >
+          </nav>
+        </div>
+      </div>
+      <div
+        id="mobile-search"
+        class="hidden absolute top-full left-0 right-0 mx-4 mt-2 sm:hidden"
+      >
+        <form
+          action="/all"
+          method="get"
+          class="bg-[var(--card)] border border-[var(--border)] rounded-md p-4 shadow-md"
         >
-          <a
-            href="/categories/"
-            class={['nav-link', Astro.url.pathname.startsWith('/categories') && 'active'].filter(Boolean).join(' ')}
-            >Categories</a
-          >
-          <a
-            href="/all"
-            class={['nav-link', Astro.url.pathname.startsWith('/all') && 'active'].filter(Boolean).join(' ')}
-            >All Calculators</a
-          >
-          <a
-            href="/scientific-calculator/"
-            class={['nav-link', 'traditional', Astro.url.pathname.startsWith('/scientific-calculator') && 'active'].filter(Boolean).join(' ')}
-            >Scientific Calculator</a
-          >
-        </nav>
+          <input
+            type="search"
+            name="q"
+            placeholder="Search calculators"
+            class="w-full p-2 border rounded-md"
+          />
+        </form>
       </div>
     </header>
     <main class="container" id="main" role="main">
@@ -90,12 +154,22 @@ const cfToken = import.meta.env.VITE_CF_ANALYTICS_TOKEN;
       <div style="text-align:center;margin-top:8px;color:var(--muted)">© {new Date().getFullYear()} CalcSimpler.com</div>
     </footer>
     <script is:inline>
-      const btn = document.getElementById('menu-btn');
+      const menuBtn = document.getElementById('menu-btn');
       const nav = document.getElementById('nav');
-      btn?.addEventListener('click', () => {
-        const expanded = btn.getAttribute('aria-expanded') === 'true';
-        btn.setAttribute('aria-expanded', String(!expanded));
+      menuBtn?.addEventListener('click', () => {
+        const expanded = menuBtn.getAttribute('aria-expanded') === 'true';
+        menuBtn.setAttribute('aria-expanded', String(!expanded));
         nav.classList.toggle('hidden');
+      });
+      const searchBtn = document.getElementById('search-btn');
+      const mobileSearch = document.getElementById('mobile-search');
+      searchBtn?.addEventListener('click', () => {
+        const expanded = searchBtn.getAttribute('aria-expanded') === 'true';
+        searchBtn.setAttribute('aria-expanded', String(!expanded));
+        mobileSearch.classList.toggle('hidden');
+        if (!expanded) {
+          mobileSearch.querySelector('input')?.focus();
+        }
       });
     </script>
   </body>
