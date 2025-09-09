@@ -30,18 +30,18 @@ export const schema = {
   "slug": "bmi-calculator",
   "title": "BMI Calculator",
   "locale": "en",
+  "unit": "kg/m²",
   "expression": "weight / (height ^ 2)",
-  "intro": "Body Mass Index from weight (kg) and height (m).",
+  "intro": "Compute Body Mass Index by dividing weight in kilograms by height in meters squared. Use it to screen weight categories.",
   "examples": [
-    {
-      "description": "Enter values and click Calculate."
-    }
+    { "description": "70 kg and 1.75 m ⇒ BMI ≈ 22.86 kg/m²" },
+    { "description": "90 kg and 1.80 m ⇒ BMI ≈ 27.78 kg/m²" }
   ],
   "faqs": [
-    {
-      "question": "How do I use the BMI Calculator?",
-      "answer": "Enter the required values and press Calculate to get the result."
-    }
+    { "question": "What is a healthy BMI range?", "answer": "A BMI between 18.5 and 24.9 is considered normal for adults." },
+    { "question": "Does BMI account for muscle mass?", "answer": "No, muscular individuals may have higher BMI without excess fat." },
+    { "question": "Can BMI be used for children?", "answer": "Child BMI should be interpreted using age- and sex-specific percentiles." },
+    { "question": "Is height entered in centimeters?", "answer": "No, height must be in meters for the calculation." }
   ],
   "disclaimer": "Educational information, not professional advice.",
   "cluster": "Health"

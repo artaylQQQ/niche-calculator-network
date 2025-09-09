@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/CalculatorLayout.astro
 title: "Calories Burned (MET) Calculator"
-description: "Estimate calories burned using MET, weight, and duration. Enter the values and press Calculate."
+description: "Estimate calories burned using MET, weight, and duration."
 date: 2025-08-26
 updated: 2025-08-26
 cluster: "Health"
@@ -13,43 +13,23 @@ export const schema = {
   slug: "calories-burned-met",
   title: "Calories Burned (MET) Calculator",
   locale: "en",
+  unit: "kcal",
   inputs: [
-    {
-      name: "met",
-      label: "MET value",
-      type: "number",
-      placeholder: "Enter MET value",
-      hint: "Metabolic Equivalent of Task",
-    },
-    {
-      name: "weight",
-      label: "Weight",
-      type: "number",
-      placeholder: "Enter weight in kilograms",
-      hint: "in kilograms",
-    },
-    {
-      name: "duration",
-      label: "Duration",
-      type: "number",
-      placeholder: "Enter duration in minutes",
-      hint: "in minutes",
-    },
+    { name: "met", label: "MET value", type: "number", placeholder: "Enter MET value", hint: "Metabolic Equivalent of Task" },
+    { name: "weight", label: "Weight (kg)", type: "number", placeholder: "Enter weight in kilograms" },
+    { name: "duration", label: "Duration (minutes)", type: "number", placeholder: "Enter duration in minutes" }
   ],
   expression: "met*weight*3.5/200*duration",
-  intro:
-    "Estimate calories burned using MET, weight, and duration. Enter the values and press Calculate.",
+  intro: "Estimate calories burned for an activity using its MET value, your body weight in kilograms, and the activity duration in minutes.",
   examples: [
-    {
-      description: "Jogging at MET 7, 70 kg, 30 minutes → about 257 kcal",
-    },
+    { description: "Jogging at MET 7, 70 kg, 30 min ⇒ 257 kcal" },
+    { description: "Cycling at MET 8, 80 kg, 45 min ⇒ 504 kcal" }
   ],
   faqs: [
-    {
-      question: "What is a MET?",
-      answer:
-        "A MET is a unit that estimates energy cost of physical activities.",
-    },
+    { question: "What is a MET?", answer: "A MET is a unit that estimates the energy cost of physical activities." },
+    { question: "Does weight affect calories burned?", answer: "Yes, heavier individuals burn more calories at the same MET and duration." },
+    { question: "Can duration be in hours?", answer: "Enter duration in minutes; 60 minutes equals one hour." },
+    { question: "Are MET values exact?", answer: "No, they are averages and actual burn varies by individual." }
   ],
   disclaimer: "Educational information, not professional advice.",
   cluster: "Health",
@@ -59,7 +39,7 @@ export const schema = {
     "daily-water-intake",
     "waist-to-height-ratio",
     "weight-to-bmi-projection-calculator",
-    "kg-to-lb-calculator",
+    "kg-to-lb-calculator"
   ],
 };
 

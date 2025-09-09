@@ -12,24 +12,23 @@ export const schema = {
   "slug": "waist-to-height-ratio",
   "title": "Waist-to-Height Ratio Calculator",
   "locale": "en",
+  "unit": "ratio",
   "inputs": [
-    {
-      "name": "waist",
-      "hint": "Waist (cm)"
-    },
-    {
-      "name": "height",
-      "hint": "Height (cm)"
-    }
+    { "name": "waist", "hint": "Waist (cm)" },
+    { "name": "height", "hint": "Height (cm)" }
   ],
   "expression": "waist/height",
-  "intro": "Compute waist-to-height ratio (WHtR).",
+  "intro": "Assess central obesity by comparing waist circumference to height. A lower ratio generally indicates lower health risk.",
   "examples": [
-    {
-      "description": "80 cm waist, 170 cm height → 0.47"
-    }
+    { "description": "80 cm waist, 170 cm height ⇒ 0.47" },
+    { "description": "90 cm waist, 160 cm height ⇒ 0.56" }
   ],
-  "faqs": [],
+  "faqs": [
+    { "question": "What is a healthy WHtR?", "answer": "A ratio below 0.5 is often considered low risk for adults." },
+    { "question": "Do units need to match?", "answer": "Yes, use the same units for waist and height, such as centimeters." },
+    { "question": "Does WHtR replace BMI?", "answer": "No, it complements BMI by focusing on abdominal fat distribution." },
+    { "question": "Can children use WHtR?", "answer": "Children can use it, but consult growth charts for interpretation." }
+  ],
   "disclaimer": "Educational information, not professional advice.",
   "cluster": "Health",
   "related": [
