@@ -26,19 +26,19 @@ export const schema = {
       "placeholder": "1500"
     }
   ],
-  "expression": "savings / monthly",
-  "intro": "Estimate how many months your savings can cover expenses.",
-  "examples": [
-    {
-      "description": "$5000 and $1500 expenses ⇒ 3.33 months"
-    }
-  ],
-  "faqs": [
-    {
-      "question": "Does it include income?",
-      "answer": "No, it only divides savings by monthly expenses."
-    }
-  ],
+    "expression": "savings / monthly",
+    "unit": "months",
+    "intro": "Provide your total savings and monthly living costs to see how many months your emergency fund will last.",
+    "examples": [
+      {"description": "$5,000 savings with $1,500 monthly expenses ⇒ 3.33 months"},
+      {"description": "$12,000 savings with $2,000 monthly expenses ⇒ 6 months"}
+    ],
+    "faqs": [
+      {"question": "Does it include future income?", "answer": "No, the calculation only uses current savings and expenses."},
+      {"question": "Should taxes be part of expenses?", "answer": "Include taxes in your monthly expenses if they apply."},
+      {"question": "What if my expenses change?", "answer": "Recalculate whenever your monthly costs increase or decrease."},
+      {"question": "Is the result rounded?", "answer": "The calculator outputs a precise decimal number of months."}
+    ],
   "disclaimer": "Educational information, not professional advice.",
   "cluster": "Finance",
   "related": [
