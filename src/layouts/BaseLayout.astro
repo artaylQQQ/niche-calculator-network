@@ -6,6 +6,14 @@ const site = Astro.site?.toString() || (import.meta.env.SITE_URL ?? 'https://exa
 const href = canonical ?? new URL(Astro.url.pathname, site).toString();
 const adsClient = import.meta.env.VITE_ADSENSE_CLIENT;
 const cfToken = import.meta.env.VITE_CF_ANALYTICS_TOKEN;
+// Load calculator metadata for the header search
+const modules = import.meta.glob("../pages/calculators/*.mdx", { eager: true });
+const searchItems = Object.values(modules).map((m) => ({
+  url: m.url,
+  title:
+    m.frontmatter?.title ||
+    m.url.replace('/calculators/', '').replace('.mdx', ''),
+}));
 ---
 <html lang="en">
   <head>
@@ -46,32 +54,46 @@ const cfToken = import.meta.env.VITE_CF_ANALYTICS_TOKEN;
           <img src="/logo.svg" alt="CalcSimpler" />
           <span class="logo-text">CalcSimpler</span>
         </a>
-        <button id="menu-btn" class="sm:hidden p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-[var(--accent)]" aria-label="Toggle navigation" aria-expanded="false">
-          <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
-        </button>
-        <nav
-          id="nav"
-          class="hidden absolute top-full left-0 right-0 mx-4 mt-2 flex flex-col items-end gap-2 bg-[var(--card)] border border-[var(--border)] rounded-md p-4 shadow-md sm:static sm:flex sm:flex-row sm:items-center sm:gap-2 md:gap-4 sm:justify-end sm:mx-0 sm:mt-0 sm:border-0 sm:p-0 sm:shadow-none"
-          aria-label="Primary"
-        >
-          <a
-            href="/categories/"
-            class={['nav-link', Astro.url.pathname.startsWith('/categories') && 'active'].filter(Boolean).join(' ')}
-            >Categories</a
+        <div class="flex items-center gap-2">
+          <div class="relative">
+            <input
+              id="header-search"
+              type="search"
+              placeholder="Search calculators"
+              class="border rounded-md px-2 py-1 w-40 sm:w-56"
+            />
+            <div
+              id="header-search-results"
+              class="absolute z-10 mt-1 w-full bg-[var(--card)] border border-[var(--border)] rounded-md shadow-md hidden"
+            ></div>
+          </div>
+          <button id="menu-btn" class="sm:hidden p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-[var(--accent)]" aria-label="Toggle navigation" aria-expanded="false">
+            <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+          <nav
+            id="nav"
+            class="hidden absolute top-full left-0 right-0 mx-4 mt-2 flex flex-col items-end gap-2 bg-[var(--card)] border border-[var(--border)] rounded-md p-4 shadow-md sm:static sm:flex sm:flex-row sm:items-center sm:gap-2 md:gap-4 sm:justify-end sm:mx-0 sm:mt-0 sm:border-0 sm:p-0 sm:shadow-none"
+            aria-label="Primary"
           >
-          <a
-            href="/all"
-            class={['nav-link', Astro.url.pathname.startsWith('/all') && 'active'].filter(Boolean).join(' ')}
-            >All Calculators</a
-          >
-          <a
-            href="/scientific-calculator/"
-            class={['nav-link', 'traditional', Astro.url.pathname.startsWith('/scientific-calculator') && 'active'].filter(Boolean).join(' ')}
-            >Scientific Calculator</a
-          >
-        </nav>
+            <a
+              href="/categories/"
+              class={['nav-link', Astro.url.pathname.startsWith('/categories') && 'active'].filter(Boolean).join(' ')}
+              >Categories</a
+            >
+            <a
+              href="/all"
+              class={['nav-link', Astro.url.pathname.startsWith('/all') && 'active'].filter(Boolean).join(' ')}
+              >All Calculators</a
+            >
+            <a
+              href="/scientific-calculator/"
+              class={['nav-link', 'traditional', Astro.url.pathname.startsWith('/scientific-calculator') && 'active'].filter(Boolean).join(' ')}
+              >Scientific Calculator</a
+            >
+          </nav>
+        </div>
       </div>
     </header>
     <main class="container" id="main" role="main">
@@ -96,6 +118,31 @@ const cfToken = import.meta.env.VITE_CF_ANALYTICS_TOKEN;
         const expanded = btn.getAttribute('aria-expanded') === 'true';
         btn.setAttribute('aria-expanded', String(!expanded));
         nav.classList.toggle('hidden');
+      });
+
+      // Calculator search functionality
+      const searchData = JSON.parse(`{JSON.stringify(searchItems)}`);
+      const searchInput = document.getElementById('header-search');
+      const searchResults = document.getElementById('header-search-results');
+      searchInput?.addEventListener('input', () => {
+        const q = searchInput.value.trim().toLowerCase();
+        if (!q) {
+          searchResults.innerHTML = '';
+          searchResults.classList.add('hidden');
+          return;
+        }
+        const matches = searchData.filter((it) =>
+          it.title.toLowerCase().includes(q)
+        ).slice(0, 5);
+        searchResults.innerHTML = matches
+          .map((m) => `<a class="block px-2 py-1 hover:bg-[var(--accent)]/10" href="${m.url}">${m.title}</a>`)
+          .join('');
+        searchResults.classList.toggle('hidden', matches.length === 0);
+      });
+      document.addEventListener('click', (e) => {
+        if (!searchResults.contains(e.target) && e.target !== searchInput) {
+          searchResults.classList.add('hidden');
+        }
       });
     </script>
   </body>
