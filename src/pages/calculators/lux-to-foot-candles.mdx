@@ -1,10 +1,10 @@
 ---
 layout: ../../layouts/CalculatorLayout.astro
 title: "Lux to Foot-Candles Converter"
-description: "Convert illuminance from lux to foot-candles."
-date: 2025-09-05
-updated: 2025-09-05
-cluster: "Conversions"
+description: "Convert light level from lux to foot-candles. Enter the lux value and press Calculate."
+date: 2025-09-09
+updated: 2025-09-09
+cluster: "Conversions & Units"
 ---
 import Calculator from '../../components/Calculator.astro';
 
@@ -13,24 +13,51 @@ export const schema = {
   "title": "Lux to Foot-Candles Converter",
   "locale": "en",
   "inputs": [
-    { "label": "Lux", "name": "lux", "type": "number", "placeholder": "500" }
+    {
+      "name": "lux",
+      "label": "Lux",
+      "type": "number",
+      "placeholder": "500"
+    }
   ],
   "expression": "lux / 10.764",
   "intro": "Convert light level from lux to foot-candles. Enter the lux value and press Calculate.",
   "examples": [
-    { "description": "500 lux ⇒ 46.45 fc" },
-    { "description": "1000 lux ⇒ 92.90 fc" }
+    {
+      "description": "500 lux ⇒ 46.45 fc"
+    },
+    {
+      "description": "1000 lux ⇒ 92.90 fc"
+    }
   ],
   "faqs": [
-    { "question": "What is a foot-candle?", "answer": "A foot-candle measures illuminance, equal to one lumen per square foot." },
-    { "question": "How many lux are in a foot-candle?", "answer": "One foot-candle equals 10.764 lux." },
-    { "question": "Is this conversion exact?", "answer": "Yes, it uses the standard conversion factor of 10.764 lux per foot-candle." },
-    { "question": "Why convert lux to foot-candles?", "answer": "Foot-candles are commonly used in lighting design in the United States." }
+    {
+      "question": "What is a foot-candle?",
+      "answer": "A foot-candle measures illuminance, equal to one lumen per square foot."
+    },
+    {
+      "question": "How many lux are in a foot-candle?",
+      "answer": "One foot-candle equals 10.764 lux."
+    },
+    {
+      "question": "Is this conversion exact?",
+      "answer": "Yes, it uses the standard conversion factor of 10.764 lux per foot-candle."
+    },
+    {
+      "question": "Why convert lux to foot-candles?",
+      "answer": "Foot-candles are commonly used in lighting design in the United States."
+    }
   ],
   "disclaimer": "For general lighting reference only.",
-  "cluster": "conversions",
-  "unit": "fc",
-  "related": []
+  "cluster": "Conversions & Units",
+  "related": [
+    "celsius-to-fahrenheit",
+    "km-to-miles",
+    "meters-to-feet",
+    "smoots-to-meters",
+    "hogsheads-to-liters",
+    "furlongs-per-fortnight"
+  ]
 }
 
 <Calculator schema={schema} />

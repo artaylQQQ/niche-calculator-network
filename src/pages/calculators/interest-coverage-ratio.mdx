@@ -1,37 +1,71 @@
 ---
 layout: ../../layouts/CalculatorLayout.astro
 title: "Interest Coverage Ratio"
-description: "Compute the interest coverage ratio using EBIT and interest expense."
-updated: "2025-10-05"
-cluster: "Finance"
+description: "Assess how many times a company's earnings can cover its interest payments."
+date: 2025-09-09
+updated: 2025-09-09
+cluster: "Finance & Business"
 ---
-
 import Calculator from '../../components/Calculator.astro';
 
 export const schema = {
-  slug: "interest-coverage-ratio",
-  title: "Interest Coverage Ratio",
-  locale: "en",
-  unit: "times",
-  inputs: [
-    { name: "ebit", label: "EBIT", type: "number", step: "any", placeholder: "60000" },
-    { name: "interest", label: "Interest Expense", type: "number", step: "any", placeholder: "10000" }
+  "slug": "interest-coverage-ratio",
+  "title": "Interest Coverage Ratio",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "ebit",
+      "label": "EBIT",
+      "type": "number",
+      "step": "any",
+      "placeholder": "60000"
+    },
+    {
+      "name": "interest",
+      "label": "Interest Expense",
+      "type": "number",
+      "step": "any",
+      "placeholder": "10000"
+    }
   ],
-  expression: "ebit / interest",
-  intro: "Assess how many times a company's earnings can cover its interest payments.",
-  examples: [
-    { description: "EBIT 60000, interest 10000 ⇒ 6" },
-    { description: "EBIT 45000, interest 15000 ⇒ 3" }
+  "expression": "ebit / interest",
+  "intro": "Assess how many times a company's earnings can cover its interest payments.",
+  "examples": [
+    {
+      "description": "EBIT 60000, interest 10000 ⇒ 6"
+    },
+    {
+      "description": "EBIT 45000, interest 15000 ⇒ 3"
+    }
   ],
-  faqs: [
-    { question: "What does a higher ratio mean?", answer: "Higher values indicate greater ability to meet interest obligations." },
-    { question: "What if interest is zero?", answer: "The ratio becomes infinite, indicating no interest burden." },
-    { question: "Can EBIT be negative?", answer: "Yes, but it signals financial difficulties." },
-    { question: "Is this the same as times interest earned?", answer: "Yes, it's another name for the same metric." }
+  "faqs": [
+    {
+      "question": "What does a higher ratio mean?",
+      "answer": "Higher values indicate greater ability to meet interest obligations."
+    },
+    {
+      "question": "What if interest is zero?",
+      "answer": "The ratio becomes infinite, indicating no interest burden."
+    },
+    {
+      "question": "Can EBIT be negative?",
+      "answer": "Yes, but it signals financial difficulties."
+    },
+    {
+      "question": "Is this the same as times interest earned?",
+      "answer": "Yes, it's another name for the same metric."
+    }
   ],
-  disclaimer: "Financial metrics are estimates; seek professional advice.",
-  cluster: "Finance",
-};
+  "disclaimer": "Financial metrics are estimates; seek professional advice.",
+  "cluster": "Finance & Business",
+  "related": [
+    "percentage-discount",
+    "simple-interest",
+    "crypto-mining-breakeven",
+    "freelancer-hourly-rate",
+    "subscription-ltv",
+    "emergency-fund-duration"
+  ]
+}
 
 <Calculator schema={schema} />
-

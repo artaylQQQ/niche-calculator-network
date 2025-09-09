@@ -1,10 +1,10 @@
 ---
 layout: ../../layouts/CalculatorLayout.astro
 title: "Polygon Exterior Angle Calculator"
-description: "Find the measure of each exterior angle in a regular polygon."
-date: 2025-09-05
-updated: 2025-09-05
-cluster: "Math"
+description: "Compute the exterior angle of a regular polygon by dividing 360° by the number of sides."
+date: 2025-09-09
+updated: 2025-09-09
+cluster: "Math & Statistics"
 ---
 import Calculator from '../../components/Calculator.astro';
 
@@ -13,24 +13,51 @@ export const schema = {
   "title": "Polygon Exterior Angle Calculator",
   "locale": "en",
   "inputs": [
-    { "label": "Number of Sides", "name": "n", "type": "number", "placeholder": "6" }
+    {
+      "name": "n",
+      "label": "Number of Sides",
+      "type": "number",
+      "placeholder": "6"
+    }
   ],
   "expression": "360 / n",
   "intro": "Compute the exterior angle of a regular polygon by dividing 360° by the number of sides.",
   "examples": [
-    { "description": "n = 6 ⇒ 60°" },
-    { "description": "n = 8 ⇒ 45°" }
+    {
+      "description": "n = 6 ⇒ 60°"
+    },
+    {
+      "description": "n = 8 ⇒ 45°"
+    }
   ],
   "faqs": [
-    { "question": "What is an exterior angle?", "answer": "It's the angle formed by one side of a polygon and the extension of an adjacent side." },
-    { "question": "Do the exterior angles sum to 360°?", "answer": "Yes, for any polygon the exterior angles sum to 360°." },
-    { "question": "Does this work for irregular polygons?", "answer": "No, the formula applies only to regular polygons." },
-    { "question": "How about interior angles?", "answer": "Interior angle = 180° - exterior angle." }
+    {
+      "question": "What is an exterior angle?",
+      "answer": "It's the angle formed by one side of a polygon and the extension of an adjacent side."
+    },
+    {
+      "question": "Do the exterior angles sum to 360°?",
+      "answer": "Yes, for any polygon the exterior angles sum to 360°."
+    },
+    {
+      "question": "Does this work for irregular polygons?",
+      "answer": "No, the formula applies only to regular polygons."
+    },
+    {
+      "question": "How about interior angles?",
+      "answer": "Interior angle = 180° - exterior angle."
+    }
   ],
   "disclaimer": "Assumes a regular polygon.",
-  "cluster": "math",
-  "unit": "degrees",
-  "related": []
+  "cluster": "Math & Statistics",
+  "related": [
+    "percentage-increase",
+    "circle-area",
+    "pythagorean-theorem-calculator",
+    "geometric-series-sum",
+    "circumference-from-area",
+    "triangle-inradius"
+  ]
 }
 
 <Calculator schema={schema} />

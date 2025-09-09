@@ -1,37 +1,71 @@
 ---
 layout: ../../layouts/CalculatorLayout.astro
 title: "Ideal Body Weight Calculator"
-description: "Estimate ideal body weight using the Devine formula."
-updated: "2025-09-05"
-cluster: "Health"
+description: "Estimate ideal body weight with the Devine formula using height in inches and a gender-specific base value."
+date: 2025-09-09
+updated: 2025-09-09
+cluster: "Health & Fitness"
 ---
-
-import Calculator from "../../components/Calculator.astro";
+import Calculator from '../../components/Calculator.astro';
 
 export const schema = {
-  slug: "ideal-body-weight",
-  title: "Ideal Body Weight Calculator",
-  locale: "en",
-  cluster: "Health",
-  intro: "Estimate ideal body weight with the Devine formula using height in inches and a gender-specific base value.",
-  inputs: [
-    { name: "height", label: "Height (in)", type: "number", step: "any", placeholder: "70" },
-    { name: "base", label: "Base (50 men, 45.5 women)", type: "number", step: "any", placeholder: "50" }
+  "slug": "ideal-body-weight",
+  "title": "Ideal Body Weight Calculator",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "height",
+      "label": "Height (in)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "70"
+    },
+    {
+      "name": "base",
+      "label": "Base (50 men, 45.5 women)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "50"
+    }
   ],
-  expression: "base + 2.3 * (height - 60)",
-  unit: "kg",
-  examples: [
-    { description: "70 in, base 50 ⇒ 73.0 kg" },
-    { description: "64 in, base 45.5 ⇒ 60.7 kg" }
+  "expression": "base + 2.3 * (height - 60)",
+  "intro": "Estimate ideal body weight with the Devine formula using height in inches and a gender-specific base value.",
+  "examples": [
+    {
+      "description": "70 in, base 50 ⇒ 73.0 kg"
+    },
+    {
+      "description": "64 in, base 45.5 ⇒ 60.7 kg"
+    }
   ],
-  faqs: [
-    { question: "What is the Devine formula?", answer: "A method to estimate ideal body weight based on height and sex." },
-    { question: "How do I choose the base value?", answer: "Use 50 for men and 45.5 for women." },
-    { question: "Can I enter centimeters?", answer: "Convert height to inches before using this calculator." },
-    { question: "Is this a medical recommendation?", answer: "No, it's a rough guideline and doesn't replace professional advice." }
+  "faqs": [
+    {
+      "question": "What is the Devine formula?",
+      "answer": "A method to estimate ideal body weight based on height and sex."
+    },
+    {
+      "question": "How do I choose the base value?",
+      "answer": "Use 50 for men and 45.5 for women."
+    },
+    {
+      "question": "Can I enter centimeters?",
+      "answer": "Convert height to inches before using this calculator."
+    },
+    {
+      "question": "Is this a medical recommendation?",
+      "answer": "No, it's a rough guideline and doesn't replace professional advice."
+    }
   ],
-  disclaimer: "Consult healthcare providers for personalized weight assessments.",
-};
+  "disclaimer": "Consult healthcare providers for personalized weight assessments.",
+  "cluster": "Health & Fitness",
+  "related": [
+    "calories-burned-met",
+    "daily-water-intake",
+    "waist-to-height-ratio",
+    "body-fat-percentage",
+    "one-rep-max",
+    "calorie-deficit"
+  ]
+}
 
 <Calculator schema={schema} />
-

@@ -1,9 +1,9 @@
 ---
 layout: ../../layouts/CalculatorLayout.astro
 title: "Weeks to Hours Converter"
-description: "Convert weeks to total hours."
-date: 2025-09-05
-updated: 2025-09-05
+description: "Convert any number of weeks into hours."
+date: 2025-09-09
+updated: 2025-09-09
 cluster: "Date & Time"
 ---
 import Calculator from '../../components/Calculator.astro';
@@ -13,24 +13,51 @@ export const schema = {
   "title": "Weeks to Hours Converter",
   "locale": "en",
   "inputs": [
-    { "label": "Weeks", "name": "weeks", "type": "number", "placeholder": "2" }
+    {
+      "name": "weeks",
+      "label": "Weeks",
+      "type": "number",
+      "placeholder": "2"
+    }
   ],
   "expression": "weeks * 168",
   "intro": "Convert any number of weeks into hours.",
   "examples": [
-    { "description": "2 weeks ⇒ 336 hours" },
-    { "description": "0.5 weeks ⇒ 84 hours" }
+    {
+      "description": "2 weeks ⇒ 336 hours"
+    },
+    {
+      "description": "0.5 weeks ⇒ 84 hours"
+    }
   ],
   "faqs": [
-    { "question": "How many hours are in a week?", "answer": "Each week has 168 hours." },
-    { "question": "Can I enter fractional weeks?", "answer": "Yes, decimals like 0.5 represent partial weeks." },
-    { "question": "Does this account for daylight saving?", "answer": "No, it assumes standard 24-hour days." },
-    { "question": "Why convert weeks to hours?", "answer": "It's useful for project planning and time tracking." }
+    {
+      "question": "How many hours are in a week?",
+      "answer": "Each week has 168 hours."
+    },
+    {
+      "question": "Can I enter fractional weeks?",
+      "answer": "Yes, decimals like 0.5 represent partial weeks."
+    },
+    {
+      "question": "Does this account for daylight saving?",
+      "answer": "No, it assumes standard 24-hour days."
+    },
+    {
+      "question": "Why convert weeks to hours?",
+      "answer": "It's useful for project planning and time tracking."
+    }
   ],
   "disclaimer": "Uses a constant 7-day week.",
-  "cluster": "date & time",
-  "unit": "hours",
-  "related": []
+  "cluster": "Date & Time",
+  "related": [
+    "duration-seconds",
+    "days-to-hours",
+    "mars-sol-to-earth-days",
+    "microfortnight-to-seconds",
+    "pomodoro-planner",
+    "earth-years-to-mars-years"
+  ]
 }
 
 <Calculator schema={schema} />

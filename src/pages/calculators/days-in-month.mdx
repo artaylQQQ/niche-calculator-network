@@ -1,37 +1,71 @@
 ---
 layout: ../../layouts/CalculatorLayout.astro
 title: "Days in Month Calculator"
-description: "Find how many days are in a given month."
-updated: "2025-09-05"
+description: "Return the number of days in a specific month and year, accounting for leap years."
+date: 2025-09-09
+updated: 2025-09-09
 cluster: "Date & Time"
 ---
-
-import Calculator from "../../components/Calculator.astro";
+import Calculator from '../../components/Calculator.astro';
 
 export const schema = {
-  slug: "days-in-month",
-  title: "Days in Month Calculator",
-  locale: "en",
-  cluster: "Date & Time",
-  intro: "Return the number of days in a specific month and year, accounting for leap years.",
-  inputs: [
-    { name: "year", label: "Year", type: "number", step: "1", placeholder: "2024" },
-    { name: "month", label: "Month", type: "number", step: "1", placeholder: "2" }
+  "slug": "days-in-month",
+  "title": "Days in Month Calculator",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "year",
+      "label": "Year",
+      "type": "number",
+      "step": "1",
+      "placeholder": "2024"
+    },
+    {
+      "name": "month",
+      "label": "Month",
+      "type": "number",
+      "step": "1",
+      "placeholder": "2"
+    }
   ],
-  expression: "new Date(year, month, 0).getDate()",
-  unit: "days",
-  examples: [
-    { description: "February 2024 ⇒ 29 days" },
-    { description: "April 2025 ⇒ 30 days" }
+  "expression": "new Date(year, month, 0).getDate()",
+  "intro": "Return the number of days in a specific month and year, accounting for leap years.",
+  "examples": [
+    {
+      "description": "February 2024 ⇒ 29 days"
+    },
+    {
+      "description": "April 2025 ⇒ 30 days"
+    }
   ],
-  faqs: [
-    { question: "How are leap years handled?", answer: "JavaScript's Date object automatically adjusts for leap years." },
-    { question: "What range of years is valid?", answer: "You can use any Gregorian calendar year." },
-    { question: "Do I enter month numbers or names?", answer: "Enter month numbers 1 through 12." },
-    { question: "Why use day 0 in the formula?", answer: "Setting day 0 returns the last day of the previous month." }
+  "faqs": [
+    {
+      "question": "How are leap years handled?",
+      "answer": "JavaScript's Date object automatically adjusts for leap years."
+    },
+    {
+      "question": "What range of years is valid?",
+      "answer": "You can use any Gregorian calendar year."
+    },
+    {
+      "question": "Do I enter month numbers or names?",
+      "answer": "Enter month numbers 1 through 12."
+    },
+    {
+      "question": "Why use day 0 in the formula?",
+      "answer": "Setting day 0 returns the last day of the previous month."
+    }
   ],
-  disclaimer: "Assumes the Gregorian calendar; historical calendars may differ.",
-};
+  "disclaimer": "Assumes the Gregorian calendar; historical calendars may differ.",
+  "cluster": "Date & Time",
+  "related": [
+    "minutes-to-seconds",
+    "weeks-to-days",
+    "years-to-days",
+    "age-in-days",
+    "seconds-to-days",
+    "days-to-seconds"
+  ]
+}
 
 <Calculator schema={schema} />
-

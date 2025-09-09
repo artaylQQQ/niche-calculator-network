@@ -1,10 +1,10 @@
 ---
 layout: ../../layouts/CalculatorLayout.astro
 title: "Return on Assets Calculator"
-description: "Compute return on assets percentage from net income and total assets."
-date: 2025-09-05
-updated: 2025-09-05
-cluster: "Finance"
+description: "Determine how efficiently a company uses its assets to generate profit."
+date: 2025-09-09
+updated: 2025-09-09
+cluster: "Finance & Business"
 ---
 import Calculator from '../../components/Calculator.astro';
 
@@ -13,25 +13,57 @@ export const schema = {
   "title": "Return on Assets Calculator",
   "locale": "en",
   "inputs": [
-    { "label": "Net Income", "name": "net_income", "type": "number", "placeholder": "50000" },
-    { "label": "Total Assets", "name": "total_assets", "type": "number", "placeholder": "200000" }
+    {
+      "name": "net_income",
+      "label": "Net Income",
+      "type": "number",
+      "placeholder": "50000"
+    },
+    {
+      "name": "total_assets",
+      "label": "Total Assets",
+      "type": "number",
+      "placeholder": "200000"
+    }
   ],
   "expression": "(net_income / total_assets) * 100",
   "intro": "Determine how efficiently a company uses its assets to generate profit.",
   "examples": [
-    { "description": "$50,000 net income / $200,000 assets ⇒ 25%" },
-    { "description": "$80,000 net income / $1,000,000 assets ⇒ 8%" }
+    {
+      "description": "$50,000 net income / $200,000 assets ⇒ 25%"
+    },
+    {
+      "description": "$80,000 net income / $1,000,000 assets ⇒ 8%"
+    }
   ],
   "faqs": [
-    { "question": "What is return on assets?", "answer": "ROA measures profit earned per dollar of assets." },
-    { "question": "Is a higher ROA better?", "answer": "Yes, higher ROA indicates more efficient asset use." },
-    { "question": "Should I use average assets?", "answer": "Using average assets over the period gives a more accurate ROA." },
-    { "question": "Can ROA be negative?", "answer": "Yes, if net income is negative the ROA will also be negative." }
+    {
+      "question": "What is return on assets?",
+      "answer": "ROA measures profit earned per dollar of assets."
+    },
+    {
+      "question": "Is a higher ROA better?",
+      "answer": "Yes, higher ROA indicates more efficient asset use."
+    },
+    {
+      "question": "Should I use average assets?",
+      "answer": "Using average assets over the period gives a more accurate ROA."
+    },
+    {
+      "question": "Can ROA be negative?",
+      "answer": "Yes, if net income is negative the ROA will also be negative."
+    }
   ],
   "disclaimer": "Informational estimation only.",
-  "cluster": "finance",
-  "unit": "%",
-  "related": []
+  "cluster": "Finance & Business",
+  "related": [
+    "percentage-discount",
+    "simple-interest",
+    "crypto-mining-breakeven",
+    "freelancer-hourly-rate",
+    "subscription-ltv",
+    "emergency-fund-duration"
+  ]
 }
 
 <Calculator schema={schema} />

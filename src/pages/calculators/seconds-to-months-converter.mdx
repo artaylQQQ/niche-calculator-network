@@ -1,9 +1,9 @@
 ---
 layout: ../../layouts/CalculatorLayout.astro
 title: "Seconds to Months Converter"
-description: "Estimate months from a number of seconds."
-date: 2025-09-05
-updated: 2025-09-05
+description: "Approximate how many 30-day months fit in a number of seconds."
+date: 2025-09-09
+updated: 2025-09-09
 cluster: "Date & Time"
 ---
 import Calculator from '../../components/Calculator.astro';
@@ -13,24 +13,51 @@ export const schema = {
   "title": "Seconds to Months Converter",
   "locale": "en",
   "inputs": [
-    { "label": "Seconds", "name": "seconds", "type": "number", "placeholder": "2592000" }
+    {
+      "name": "seconds",
+      "label": "Seconds",
+      "type": "number",
+      "placeholder": "2592000"
+    }
   ],
   "expression": "seconds / (30 * 24 * 60 * 60)",
   "intro": "Approximate how many 30-day months fit in a number of seconds.",
   "examples": [
-    { "description": "2,592,000 s ⇒ 1 month" },
-    { "description": "5,184,000 s ⇒ 2 months" }
+    {
+      "description": "2,592,000 s ⇒ 1 month"
+    },
+    {
+      "description": "5,184,000 s ⇒ 2 months"
+    }
   ],
   "faqs": [
-    { "question": "What month length is assumed?", "answer": "Each month is treated as 30 days." },
-    { "question": "Does it handle leap years?", "answer": "No, it uses a fixed month length." },
-    { "question": "Can I convert fractional months?", "answer": "Yes, decimals indicate partial months." },
-    { "question": "Why approximate months?", "answer": "It provides a quick estimate from large second counts." }
+    {
+      "question": "What month length is assumed?",
+      "answer": "Each month is treated as 30 days."
+    },
+    {
+      "question": "Does it handle leap years?",
+      "answer": "No, it uses a fixed month length."
+    },
+    {
+      "question": "Can I convert fractional months?",
+      "answer": "Yes, decimals indicate partial months."
+    },
+    {
+      "question": "Why approximate months?",
+      "answer": "It provides a quick estimate from large second counts."
+    }
   ],
   "disclaimer": "Uses an average 30-day month for simplicity.",
-  "cluster": "date & time",
-  "unit": "months",
-  "related": []
+  "cluster": "Date & Time",
+  "related": [
+    "duration-seconds",
+    "days-to-hours",
+    "mars-sol-to-earth-days",
+    "microfortnight-to-seconds",
+    "pomodoro-planner",
+    "earth-years-to-mars-years"
+  ]
 }
 
 <Calculator schema={schema} />

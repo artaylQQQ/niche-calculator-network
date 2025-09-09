@@ -1,37 +1,71 @@
 ---
 layout: ../../layouts/CalculatorLayout.astro
 title: "Coffee Water Ratio Calculator"
-description: "Compute brew water from coffee grounds and ratio."
-updated: "2025-09-05"
-cluster: "Other"
+description: "Determine how much water to use for a given amount of coffee grounds and desired brew ratio."
+date: 2025-09-09
+updated: 2025-09-09
+cluster: "Lifestyle & Travel"
 ---
-
-import Calculator from "../../components/Calculator.astro";
+import Calculator from '../../components/Calculator.astro';
 
 export const schema = {
-  slug: "coffee-water-ratio",
-  title: "Coffee Water Ratio Calculator",
-  locale: "en",
-  cluster: "Other",
-  intro: "Determine how much water to use for a given amount of coffee grounds and desired brew ratio.",
-  inputs: [
-    { name: "coffee", label: "Coffee Grounds (g)", type: "number", step: "any", placeholder: "20" },
-    { name: "ratio", label: "Brew Ratio", type: "number", step: "any", placeholder: "15" }
+  "slug": "coffee-water-ratio",
+  "title": "Coffee Water Ratio Calculator",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "coffee",
+      "label": "Coffee Grounds (g)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "20"
+    },
+    {
+      "name": "ratio",
+      "label": "Brew Ratio",
+      "type": "number",
+      "step": "any",
+      "placeholder": "15"
+    }
   ],
-  expression: "coffee * ratio",
-  unit: "g",
-  examples: [
-    { description: "20 g coffee at 15 ⇒ 300 g water" },
-    { description: "30 g coffee at 16 ⇒ 480 g water" }
+  "expression": "coffee * ratio",
+  "intro": "Determine how much water to use for a given amount of coffee grounds and desired brew ratio.",
+  "examples": [
+    {
+      "description": "20 g coffee at 15 ⇒ 300 g water"
+    },
+    {
+      "description": "30 g coffee at 16 ⇒ 480 g water"
+    }
   ],
-  faqs: [
-    { question: "What is brew ratio?", answer: "It's the amount of water relative to coffee grounds." },
-    { question: "Can I use ounces?", answer: "Convert ounces to grams before using the calculator." },
-    { question: "Does grind size matter?", answer: "Grind affects extraction but not the ratio calculation." },
-    { question: "Is this for hot or cold brew?", answer: "It works for any method as long as ratio is specified." }
+  "faqs": [
+    {
+      "question": "What is brew ratio?",
+      "answer": "It's the amount of water relative to coffee grounds."
+    },
+    {
+      "question": "Can I use ounces?",
+      "answer": "Convert ounces to grams before using the calculator."
+    },
+    {
+      "question": "Does grind size matter?",
+      "answer": "Grind affects extraction but not the ratio calculation."
+    },
+    {
+      "question": "Is this for hot or cold brew?",
+      "answer": "It works for any method as long as ratio is specified."
+    }
   ],
-  disclaimer: "Brewing preferences vary; adjust ratios to taste.",
-};
+  "disclaimer": "Brewing preferences vary; adjust ratios to taste.",
+  "cluster": "Lifestyle & Travel",
+  "related": [
+    "cat-age-human-years",
+    "book-page-count",
+    "horse-age-human-years",
+    "dice-roll-probability",
+    "wind-chill-index",
+    "tree-carbon-offset"
+  ]
+}
 
 <Calculator schema={schema} />
-

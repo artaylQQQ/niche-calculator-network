@@ -1,10 +1,10 @@
 ---
 layout: ../../layouts/CalculatorLayout.astro
 title: "Calorie Surplus Weight Gain Calculator"
-description: "Estimate weight gain from a calorie surplus."
-date: 2025-09-05
-updated: 2025-09-05
-cluster: "Health"
+description: "Estimate potential weight gain from extra calories consumed."
+date: 2025-09-09
+updated: 2025-09-09
+cluster: "Health & Fitness"
 ---
 import Calculator from '../../components/Calculator.astro';
 
@@ -13,24 +13,51 @@ export const schema = {
   "title": "Calorie Surplus Weight Gain Calculator",
   "locale": "en",
   "inputs": [
-    { "label": "Calorie Surplus", "name": "calories", "type": "number", "placeholder": "7000" }
+    {
+      "name": "calories",
+      "label": "Calorie Surplus",
+      "type": "number",
+      "placeholder": "7000"
+    }
   ],
   "expression": "calories / 3500",
   "intro": "Estimate potential weight gain from extra calories consumed.",
   "examples": [
-    { "description": "7000 calories ⇒ 2 lb" },
-    { "description": "1750 calories ⇒ 0.5 lb" }
+    {
+      "description": "7000 calories ⇒ 2 lb"
+    },
+    {
+      "description": "1750 calories ⇒ 0.5 lb"
+    }
   ],
   "faqs": [
-    { "question": "Why divide by 3500?", "answer": "Roughly 3,500 calories equal one pound of body weight." },
-    { "question": "Is weight gain guaranteed?", "answer": "Actual weight change depends on many factors like metabolism and activity." },
-    { "question": "Does this work for weight loss?", "answer": "Yes, a calorie deficit would estimate weight loss." },
-    { "question": "Should I track over time?", "answer": "Consistent tracking provides better insight into weight trends." }
+    {
+      "question": "Why divide by 3500?",
+      "answer": "Roughly 3,500 calories equal one pound of body weight."
+    },
+    {
+      "question": "Is weight gain guaranteed?",
+      "answer": "Actual weight change depends on many factors like metabolism and activity."
+    },
+    {
+      "question": "Does this work for weight loss?",
+      "answer": "Yes, a calorie deficit would estimate weight loss."
+    },
+    {
+      "question": "Should I track over time?",
+      "answer": "Consistent tracking provides better insight into weight trends."
+    }
   ],
   "disclaimer": "Approximation; individual results vary.",
-  "cluster": "health",
-  "unit": "lb",
-  "related": []
+  "cluster": "Health & Fitness",
+  "related": [
+    "bmi-calculator",
+    "daily-calorie-burn",
+    "sleep-debt-weekly",
+    "sugar-cube-equivalent",
+    "caffeine-half-life",
+    "protein-calorie-percentage"
+  ]
 }
 
 <Calculator schema={schema} />

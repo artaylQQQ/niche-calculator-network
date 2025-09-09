@@ -1,37 +1,71 @@
 ---
 layout: ../../layouts/CalculatorLayout.astro
 title: "Target Heart Rate Calculator"
-description: "Find exercise heart rate from age and intensity."
-updated: "2025-09-05"
-cluster: "Health"
+description: "Estimate target exercise heart rate using age-based maximum heart rate and chosen intensity percentage."
+date: 2025-09-09
+updated: 2025-09-09
+cluster: "Health & Fitness"
 ---
-
-import Calculator from "../../components/Calculator.astro";
+import Calculator from '../../components/Calculator.astro';
 
 export const schema = {
-  slug: "target-heart-rate",
-  title: "Target Heart Rate Calculator",
-  locale: "en",
-  cluster: "Health",
-  intro: "Estimate target exercise heart rate using age-based maximum heart rate and chosen intensity percentage.",
-  inputs: [
-    { name: "age", label: "Age (years)", type: "number", step: "1", placeholder: "30" },
-    { name: "intensity", label: "Intensity (%)", type: "number", step: "any", placeholder: "70" }
+  "slug": "target-heart-rate",
+  "title": "Target Heart Rate Calculator",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "age",
+      "label": "Age (years)",
+      "type": "number",
+      "step": "1",
+      "placeholder": "30"
+    },
+    {
+      "name": "intensity",
+      "label": "Intensity (%)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "70"
+    }
   ],
-  expression: "(220 - age) * intensity / 100",
-  unit: "bpm",
-  examples: [
-    { description: "Age 30 at 70% ⇒ 133 bpm" },
-    { description: "Age 40 at 85% ⇒ 153 bpm" }
+  "expression": "(220 - age) * intensity / 100",
+  "intro": "Estimate target exercise heart rate using age-based maximum heart rate and chosen intensity percentage.",
+  "examples": [
+    {
+      "description": "Age 30 at 70% ⇒ 133 bpm"
+    },
+    {
+      "description": "Age 40 at 85% ⇒ 153 bpm"
+    }
   ],
-  faqs: [
-    { question: "Why subtract age from 220?", answer: "It's a common estimate for maximum heart rate." },
-    { question: "What intensity should I use?", answer: "Use 50–85% for moderate to vigorous exercise." },
-    { question: "Is the formula accurate for everyone?", answer: "It's a guideline; individual max heart rates vary." },
-    { question: "Do medications affect the result?", answer: "Yes, some drugs alter heart rate responses." }
+  "faqs": [
+    {
+      "question": "Why subtract age from 220?",
+      "answer": "It's a common estimate for maximum heart rate."
+    },
+    {
+      "question": "What intensity should I use?",
+      "answer": "Use 50–85% for moderate to vigorous exercise."
+    },
+    {
+      "question": "Is the formula accurate for everyone?",
+      "answer": "It's a guideline; individual max heart rates vary."
+    },
+    {
+      "question": "Do medications affect the result?",
+      "answer": "Yes, some drugs alter heart rate responses."
+    }
   ],
-  disclaimer: "Consult a healthcare provider before starting new exercise programs.",
-};
+  "disclaimer": "Consult a healthcare provider before starting new exercise programs.",
+  "cluster": "Health & Fitness",
+  "related": [
+    "calories-burned-met",
+    "daily-water-intake",
+    "waist-to-height-ratio",
+    "body-fat-percentage",
+    "one-rep-max",
+    "calorie-deficit"
+  ]
+}
 
 <Calculator schema={schema} />
-

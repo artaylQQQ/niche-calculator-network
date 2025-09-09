@@ -1,37 +1,71 @@
 ---
 layout: ../../layouts/CalculatorLayout.astro
 title: "Dividend Payout Ratio"
-description: "Find the dividend payout ratio from dividends and earnings."
-updated: "2025-10-05"
-cluster: "Finance"
+description: "Determine what percentage of earnings is distributed to shareholders as dividends."
+date: 2025-09-09
+updated: 2025-09-09
+cluster: "Finance & Business"
 ---
-
 import Calculator from '../../components/Calculator.astro';
 
 export const schema = {
-  slug: "dividend-payout-ratio",
-  title: "Dividend Payout Ratio",
-  locale: "en",
-  unit: "%",
-  inputs: [
-    { name: "dividends", label: "Dividends", type: "number", step: "any", placeholder: "2" },
-    { name: "earnings", label: "Earnings", type: "number", step: "any", placeholder: "5" }
+  "slug": "dividend-payout-ratio",
+  "title": "Dividend Payout Ratio",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "dividends",
+      "label": "Dividends",
+      "type": "number",
+      "step": "any",
+      "placeholder": "2"
+    },
+    {
+      "name": "earnings",
+      "label": "Earnings",
+      "type": "number",
+      "step": "any",
+      "placeholder": "5"
+    }
   ],
-  expression: "(dividends / earnings) * 100",
-  intro: "Determine what percentage of earnings is distributed to shareholders as dividends.",
-  examples: [
-    { description: "Dividends 2, earnings 5 ⇒ 40%" },
-    { description: "Dividends 3, earnings 6 ⇒ 50%" }
+  "expression": "(dividends / earnings) * 100",
+  "intro": "Determine what percentage of earnings is distributed to shareholders as dividends.",
+  "examples": [
+    {
+      "description": "Dividends 2, earnings 5 ⇒ 40%"
+    },
+    {
+      "description": "Dividends 3, earnings 6 ⇒ 50%"
+    }
   ],
-  faqs: [
-    { question: "What does the payout ratio show?", answer: "It shows the share of earnings paid out as dividends." },
-    { question: "Can I use net income?", answer: "Yes, earnings typically refer to net income." },
-    { question: "What if earnings are zero?", answer: "The ratio becomes undefined or infinite." },
-    { question: "Is the result a percentage?", answer: "Yes, the ratio is expressed as a percentage." }
+  "faqs": [
+    {
+      "question": "What does the payout ratio show?",
+      "answer": "It shows the share of earnings paid out as dividends."
+    },
+    {
+      "question": "Can I use net income?",
+      "answer": "Yes, earnings typically refer to net income."
+    },
+    {
+      "question": "What if earnings are zero?",
+      "answer": "The ratio becomes undefined or infinite."
+    },
+    {
+      "question": "Is the result a percentage?",
+      "answer": "Yes, the ratio is expressed as a percentage."
+    }
   ],
-  disclaimer: "Informational only; consult financial advisors for decisions.",
-  cluster: "Finance",
-};
+  "disclaimer": "Informational only; consult financial advisors for decisions.",
+  "cluster": "Finance & Business",
+  "related": [
+    "percentage-discount",
+    "simple-interest",
+    "crypto-mining-breakeven",
+    "freelancer-hourly-rate",
+    "subscription-ltv",
+    "emergency-fund-duration"
+  ]
+}
 
 <Calculator schema={schema} />
-

@@ -1,9 +1,9 @@
 ---
 layout: ../../layouts/CalculatorLayout.astro
 title: "Tile Grout Volume Calculator"
-description: "Estimate grout volume from tiled area and joint size."
-date: 2025-09-05
-updated: 2025-09-05
+description: "Approximate the amount of grout needed based on area and joint dimensions."
+date: 2025-09-09
+updated: 2025-09-09
 cluster: "Home & DIY"
 ---
 import Calculator from '../../components/Calculator.astro';
@@ -13,26 +13,63 @@ export const schema = {
   "title": "Tile Grout Volume Calculator",
   "locale": "en",
   "inputs": [
-    { "label": "Area (ft²)", "name": "area", "type": "number", "placeholder": "50" },
-    { "label": "Joint Width (in)", "name": "width", "type": "number", "placeholder": "0.125" },
-    { "label": "Joint Depth (in)", "name": "depth", "type": "number", "placeholder": "0.25" }
+    {
+      "name": "area",
+      "label": "Area (ft²)",
+      "type": "number",
+      "placeholder": "50"
+    },
+    {
+      "name": "width",
+      "label": "Joint Width (in)",
+      "type": "number",
+      "placeholder": "0.125"
+    },
+    {
+      "name": "depth",
+      "label": "Joint Depth (in)",
+      "type": "number",
+      "placeholder": "0.25"
+    }
   ],
   "expression": "area * width * depth * 144 * 0.0163871",
   "intro": "Approximate the amount of grout needed based on area and joint dimensions.",
   "examples": [
-    { "description": "50 ft², 0.125 in width, 0.25 in depth ⇒ 3.69 L" },
-    { "description": "100 ft², 0.1 in width, 0.3 in depth ⇒ 7.09 L" }
+    {
+      "description": "50 ft², 0.125 in width, 0.25 in depth ⇒ 3.69 L"
+    },
+    {
+      "description": "100 ft², 0.1 in width, 0.3 in depth ⇒ 7.09 L"
+    }
   ],
   "faqs": [
-    { "question": "Does this account for tile layout?", "answer": "No, it assumes uniform spacing." },
-    { "question": "Can I use metric units?", "answer": "Convert dimensions to feet and inches first." },
-    { "question": "Should I add extra grout?", "answer": "Adding 10% extra is common for waste." },
-    { "question": "Is this volume wet or dry?", "answer": "It represents mixed grout volume." }
+    {
+      "question": "Does this account for tile layout?",
+      "answer": "No, it assumes uniform spacing."
+    },
+    {
+      "question": "Can I use metric units?",
+      "answer": "Convert dimensions to feet and inches first."
+    },
+    {
+      "question": "Should I add extra grout?",
+      "answer": "Adding 10% extra is common for waste."
+    },
+    {
+      "question": "Is this volume wet or dry?",
+      "answer": "It represents mixed grout volume."
+    }
   ],
   "disclaimer": "Estimate only; actual needs may vary.",
-  "cluster": "home & diy",
-  "unit": "L",
-  "related": []
+  "cluster": "Home & DIY",
+  "related": [
+    "paint-coverage",
+    "garden-soil-volume",
+    "home-diy-division-calculator",
+    "rainwater-harvest",
+    "garden-soil-weight",
+    "brick-count-estimator"
+  ]
 }
 
 <Calculator schema={schema} />

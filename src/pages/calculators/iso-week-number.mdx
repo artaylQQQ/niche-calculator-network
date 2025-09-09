@@ -1,38 +1,78 @@
 ---
 layout: ../../layouts/CalculatorLayout.astro
 title: "ISO Week Number Calculator"
-description: "Find the ISO week number for any date."
-updated: "2025-09-05"
+description: "Determine the ISO 8601 week number for a given date. Enter year, month, and day."
+date: 2025-09-09
+updated: 2025-09-09
 cluster: "Date & Time"
 ---
-
-import Calculator from "../../components/Calculator.astro";
+import Calculator from '../../components/Calculator.astro';
 
 export const schema = {
-  slug: "iso-week-number",
-  title: "ISO Week Number Calculator",
-  locale: "en",
-  cluster: "Date & Time",
-  intro: "Determine the ISO 8601 week number for a given date. Enter year, month, and day.",
-  inputs: [
-    { name: "year", label: "Year", type: "number", step: "1", placeholder: "2024" },
-    { name: "month", label: "Month", type: "number", step: "1", placeholder: "1" },
-    { name: "day", label: "Day", type: "number", step: "1", placeholder: "1" }
+  "slug": "iso-week-number",
+  "title": "ISO Week Number Calculator",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "year",
+      "label": "Year",
+      "type": "number",
+      "step": "1",
+      "placeholder": "2024"
+    },
+    {
+      "name": "month",
+      "label": "Month",
+      "type": "number",
+      "step": "1",
+      "placeholder": "1"
+    },
+    {
+      "name": "day",
+      "label": "Day",
+      "type": "number",
+      "step": "1",
+      "placeholder": "1"
+    }
   ],
-  expression: "(function(y,m,d){const date=new Date(Date.UTC(y,m-1,d));const dayNum=date.getUTCDay()||7;date.setUTCDate(date.getUTCDate()+4-dayNum);const yearStart=new Date(Date.UTC(date.getUTCFullYear(),0,1));return Math.ceil(((date-yearStart)/86400000+1)/7);})(year,month,day)",
-  unit: "week",
-  examples: [
-    { description: "2023-09-01 ⇒ 35" },
-    { description: "2025-01-01 ⇒ 1" }
+  "expression": "(function(y,m,d){const date=new Date(Date.UTC(y,m-1,d));const dayNum=date.getUTCDay()||7;date.setUTCDate(date.getUTCDate()+4-dayNum);const yearStart=new Date(Date.UTC(date.getUTCFullYear(),0,1));return Math.ceil(((date-yearStart)/86400000+1)/7);})(year,month,day)",
+  "intro": "Determine the ISO 8601 week number for a given date. Enter year, month, and day.",
+  "examples": [
+    {
+      "description": "2023-09-01 ⇒ 35"
+    },
+    {
+      "description": "2025-01-01 ⇒ 1"
+    }
   ],
-  faqs: [
-    { question: "What is ISO week numbering?", answer: "It's a standard where weeks start on Monday and week 1 is the week with the year's first Thursday." },
-    { question: "Are week numbers always 1–52?", answer: "Some years have 53 ISO weeks." },
-    { question: "Do I need to account for time zones?", answer: "The calculation uses UTC to avoid time zone issues." },
-    { question: "Can it handle leap years?", answer: "Yes, the Date object manages leap years automatically." }
+  "faqs": [
+    {
+      "question": "What is ISO week numbering?",
+      "answer": "It's a standard where weeks start on Monday and week 1 is the week with the year's first Thursday."
+    },
+    {
+      "question": "Are week numbers always 1–52?",
+      "answer": "Some years have 53 ISO weeks."
+    },
+    {
+      "question": "Do I need to account for time zones?",
+      "answer": "The calculation uses UTC to avoid time zone issues."
+    },
+    {
+      "question": "Can it handle leap years?",
+      "answer": "Yes, the Date object manages leap years automatically."
+    }
   ],
-  disclaimer: "Uses the Gregorian calendar and ISO 8601 definition of week numbers.",
-};
+  "disclaimer": "Uses the Gregorian calendar and ISO 8601 definition of week numbers.",
+  "cluster": "Date & Time",
+  "related": [
+    "minutes-to-seconds",
+    "weeks-to-days",
+    "years-to-days",
+    "age-in-days",
+    "seconds-to-days",
+    "days-to-seconds"
+  ]
+}
 
 <Calculator schema={schema} />
-

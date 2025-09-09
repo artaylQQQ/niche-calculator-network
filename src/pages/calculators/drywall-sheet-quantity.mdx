@@ -1,38 +1,78 @@
 ---
 layout: ../../layouts/CalculatorLayout.astro
 title: "Drywall Sheet Quantity Calculator"
-description: "Estimate how many drywall panels a project requires."
-updated: "2025-09-05"
+description: "Estimate the number of drywall sheets needed from total wall area and sheet dimensions."
+date: 2025-09-09
+updated: 2025-09-09
 cluster: "Home & DIY"
 ---
-
-import Calculator from "../../components/Calculator.astro";
+import Calculator from '../../components/Calculator.astro';
 
 export const schema = {
-  slug: "drywall-sheet-quantity",
-  title: "Drywall Sheet Quantity Calculator",
-  locale: "en",
-  cluster: "Home & DIY",
-  intro: "Estimate the number of drywall sheets needed from total wall area and sheet dimensions.",
-  inputs: [
-    { name: "area", label: "Wall Area (ft²)", type: "number", step: "any", placeholder: "500" },
-    { name: "width", label: "Sheet Width (ft)", type: "number", step: "any", placeholder: "4" },
-    { name: "height", label: "Sheet Height (ft)", type: "number", step: "any", placeholder: "8" }
+  "slug": "drywall-sheet-quantity",
+  "title": "Drywall Sheet Quantity Calculator",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "area",
+      "label": "Wall Area (ft²)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "500"
+    },
+    {
+      "name": "width",
+      "label": "Sheet Width (ft)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "4"
+    },
+    {
+      "name": "height",
+      "label": "Sheet Height (ft)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "8"
+    }
   ],
-  expression: "area / (width * height)",
-  unit: "sheets",
-  examples: [
-    { description: "500 ft² area with 4×8 ft sheets ⇒ 15.63 sheets" },
-    { description: "800 ft² area with 4×12 ft sheets ⇒ 16.67 sheets" }
+  "expression": "area / (width * height)",
+  "intro": "Estimate the number of drywall sheets needed from total wall area and sheet dimensions.",
+  "examples": [
+    {
+      "description": "500 ft² area with 4×8 ft sheets ⇒ 15.63 sheets"
+    },
+    {
+      "description": "800 ft² area with 4×12 ft sheets ⇒ 16.67 sheets"
+    }
   ],
-  faqs: [
-    { question: "Should I round up the result?", answer: "Yes, round up and add extra for waste and cuts." },
-    { question: "Does it account for openings?", answer: "Subtract door and window areas from the wall area before using." },
-    { question: "Can I mix sheet sizes?", answer: "This calculator assumes one consistent sheet size." },
-    { question: "Are seams included?", answer: "No, it purely estimates sheet count based on area." }
+  "faqs": [
+    {
+      "question": "Should I round up the result?",
+      "answer": "Yes, round up and add extra for waste and cuts."
+    },
+    {
+      "question": "Does it account for openings?",
+      "answer": "Subtract door and window areas from the wall area before using."
+    },
+    {
+      "question": "Can I mix sheet sizes?",
+      "answer": "This calculator assumes one consistent sheet size."
+    },
+    {
+      "question": "Are seams included?",
+      "answer": "No, it purely estimates sheet count based on area."
+    }
   ],
-  disclaimer: "Always purchase extra material to accommodate mistakes and future repairs.",
-};
+  "disclaimer": "Always purchase extra material to accommodate mistakes and future repairs.",
+  "cluster": "Home & DIY",
+  "related": [
+    "paint-needed",
+    "flooring-cost",
+    "concrete-slab-volume",
+    "wallpaper-roll-coverage",
+    "roof-pitch-angle",
+    "water-heater-recovery-time"
+  ]
+}
 
 <Calculator schema={schema} />
-

@@ -1,36 +1,64 @@
 ---
 layout: ../../layouts/CalculatorLayout.astro
 title: "Liters to Gallons Converter"
-description: "Convert volume from liters to US gallons."
-updated: "2025-10-05"
-cluster: "Conversions"
+description: "Convert liquid volumes from liters to US gallons quickly and accurately."
+date: 2025-09-09
+updated: 2025-09-09
+cluster: "Conversions & Units"
 ---
-
 import Calculator from '../../components/Calculator.astro';
 
 export const schema = {
-  slug: "liters-to-gallons",
-  title: "Liters to Gallons Converter",
-  locale: "en",
-  unit: "gal",
-  inputs: [
-    { name: "liters", label: "Volume (L)", type: "number", step: "any", placeholder: "10" }
+  "slug": "liters-to-gallons",
+  "title": "Liters to Gallons Converter",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "liters",
+      "label": "Volume (L)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "10"
+    }
   ],
-  expression: "liters * 0.264172",
-  intro: "Convert liquid volumes from liters to US gallons quickly and accurately.",
-  examples: [
-    { description: "10 L ⇒ 2.64 gal" },
-    { description: "25 L ⇒ 6.60 gal" }
+  "expression": "liters * 0.264172",
+  "intro": "Convert liquid volumes from liters to US gallons quickly and accurately.",
+  "examples": [
+    {
+      "description": "10 L ⇒ 2.64 gal"
+    },
+    {
+      "description": "25 L ⇒ 6.60 gal"
+    }
   ],
-  faqs: [
-    { question: "Which gallon is used?", answer: "The calculator uses the US liquid gallon." },
-    { question: "Can I use decimals?", answer: "Yes, fractional liter values are supported." },
-    { question: "How many liters are in one gallon?", answer: "One US gallon is about 3.785 liters." },
-    { question: "Does it handle Imperial gallons?", answer: "No, Imperial gallons differ from US gallons." }
+  "faqs": [
+    {
+      "question": "Which gallon is used?",
+      "answer": "The calculator uses the US liquid gallon."
+    },
+    {
+      "question": "Can I use decimals?",
+      "answer": "Yes, fractional liter values are supported."
+    },
+    {
+      "question": "How many liters are in one gallon?",
+      "answer": "One US gallon is about 3.785 liters."
+    },
+    {
+      "question": "Does it handle Imperial gallons?",
+      "answer": "No, Imperial gallons differ from US gallons."
+    }
   ],
-  disclaimer: "For estimation only; double-check critical measurements.",
-  cluster: "Conversions",
-};
+  "disclaimer": "For estimation only; double-check critical measurements.",
+  "cluster": "Conversions & Units",
+  "related": [
+    "celsius-to-fahrenheit",
+    "km-to-miles",
+    "meters-to-feet",
+    "smoots-to-meters",
+    "hogsheads-to-liters",
+    "furlongs-per-fortnight"
+  ]
+}
 
 <Calculator schema={schema} />
-

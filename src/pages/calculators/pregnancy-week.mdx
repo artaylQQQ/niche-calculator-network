@@ -1,41 +1,99 @@
 ---
 layout: ../../layouts/CalculatorLayout.astro
 title: "Pregnancy Week Calculator"
-description: "Estimate gestational age in weeks from the last menstrual period."
-updated: "2025-10-05"
-cluster: "Health"
+description: "Calculate how many weeks pregnant you are based on the last menstrual period and today's date."
+date: 2025-09-09
+updated: 2025-09-09
+cluster: "Health & Fitness"
 ---
-
 import Calculator from '../../components/Calculator.astro';
 
 export const schema = {
-  slug: "pregnancy-week",
-  title: "Pregnancy Week Calculator",
-  locale: "en",
-  unit: "weeks",
-  inputs: [
-    { name: "y1", label: "LMP Year", type: "number", step: 1, placeholder: "2024" },
-    { name: "m1", label: "LMP Month", type: "number", step: 1, placeholder: "1" },
-    { name: "d1", label: "LMP Day", type: "number", step: 1, placeholder: "1" },
-    { name: "y2", label: "Current Year", type: "number", step: 1, placeholder: "2024" },
-    { name: "m2", label: "Current Month", type: "number", step: 1, placeholder: "3" },
-    { name: "d2", label: "Current Day", type: "number", step: 1, placeholder: "15" }
+  "slug": "pregnancy-week",
+  "title": "Pregnancy Week Calculator",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "y1",
+      "label": "LMP Year",
+      "type": "number",
+      "step": 1,
+      "placeholder": "2024"
+    },
+    {
+      "name": "m1",
+      "label": "LMP Month",
+      "type": "number",
+      "step": 1,
+      "placeholder": "1"
+    },
+    {
+      "name": "d1",
+      "label": "LMP Day",
+      "type": "number",
+      "step": 1,
+      "placeholder": "1"
+    },
+    {
+      "name": "y2",
+      "label": "Current Year",
+      "type": "number",
+      "step": 1,
+      "placeholder": "2024"
+    },
+    {
+      "name": "m2",
+      "label": "Current Month",
+      "type": "number",
+      "step": 1,
+      "placeholder": "3"
+    },
+    {
+      "name": "d2",
+      "label": "Current Day",
+      "type": "number",
+      "step": 1,
+      "placeholder": "15"
+    }
   ],
-  expression: "(new Date(y2,m2-1,d2) - new Date(y1,m1-1,d1)) / 604800000",
-  intro: "Calculate how many weeks pregnant you are based on the last menstrual period and today's date.",
-  examples: [
-    { description: "LMP 2024-01-01, current 2024-03-15 ⇒ 10.29 weeks" },
-    { description: "LMP 2024-06-01, current 2024-07-13 ⇒ 6.00 weeks" }
+  "expression": "(new Date(y2,m2-1,d2) - new Date(y1,m1-1,d1)) / 604800000",
+  "intro": "Calculate how many weeks pregnant you are based on the last menstrual period and today's date.",
+  "examples": [
+    {
+      "description": "LMP 2024-01-01, current 2024-03-15 ⇒ 10.29 weeks"
+    },
+    {
+      "description": "LMP 2024-06-01, current 2024-07-13 ⇒ 6.00 weeks"
+    }
   ],
-  faqs: [
-    { question: "Why use the last menstrual period?", answer: "It's a common starting point for estimating gestational age." },
-    { question: "Does this account for cycle length?", answer: "No, it assumes a typical 28-day cycle." },
-    { question: "Can I enter future dates?", answer: "Yes, but results will be negative." },
-    { question: "Is this a medical diagnosis?", answer: "No, consult a healthcare provider for official dating." }
+  "faqs": [
+    {
+      "question": "Why use the last menstrual period?",
+      "answer": "It's a common starting point for estimating gestational age."
+    },
+    {
+      "question": "Does this account for cycle length?",
+      "answer": "No, it assumes a typical 28-day cycle."
+    },
+    {
+      "question": "Can I enter future dates?",
+      "answer": "Yes, but results will be negative."
+    },
+    {
+      "question": "Is this a medical diagnosis?",
+      "answer": "No, consult a healthcare provider for official dating."
+    }
   ],
-  disclaimer: "For informational purposes only. Consult a medical professional for pregnancy guidance.",
-  cluster: "Health",
-};
+  "disclaimer": "For informational purposes only. Consult a medical professional for pregnancy guidance.",
+  "cluster": "Health & Fitness",
+  "related": [
+    "bmi-calculator",
+    "daily-calorie-burn",
+    "sleep-debt-weekly",
+    "sugar-cube-equivalent",
+    "caffeine-half-life",
+    "protein-calorie-percentage"
+  ]
+}
 
 <Calculator schema={schema} />
-

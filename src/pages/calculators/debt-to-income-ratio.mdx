@@ -1,37 +1,71 @@
 ---
 layout: ../../layouts/CalculatorLayout.astro
 title: "Debt-to-Income Ratio Calculator"
-description: "Compare monthly debt payments to gross income."
-updated: "2025-09-05"
-cluster: "Finance"
+description: "Compute your debt-to-income (DTI) ratio as a percentage using monthly debt payments and gross monthly income."
+date: 2025-09-09
+updated: 2025-09-09
+cluster: "Finance & Business"
 ---
-
-import Calculator from "../../components/Calculator.astro";
+import Calculator from '../../components/Calculator.astro';
 
 export const schema = {
-  slug: "debt-to-income-ratio",
-  title: "Debt-to-Income Ratio Calculator",
-  locale: "en",
-  cluster: "Finance",
-  intro: "Compute your debt-to-income (DTI) ratio as a percentage using monthly debt payments and gross monthly income.",
-  inputs: [
-    { name: "debt", label: "Monthly Debt Payments", type: "number", step: "any", placeholder: "2000" },
-    { name: "income", label: "Gross Monthly Income", type: "number", step: "any", placeholder: "5000" }
+  "slug": "debt-to-income-ratio",
+  "title": "Debt-to-Income Ratio Calculator",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "debt",
+      "label": "Monthly Debt Payments",
+      "type": "number",
+      "step": "any",
+      "placeholder": "2000"
+    },
+    {
+      "name": "income",
+      "label": "Gross Monthly Income",
+      "type": "number",
+      "step": "any",
+      "placeholder": "5000"
+    }
   ],
-  expression: "(debt / income) * 100",
-  unit: "%",
-  examples: [
-    { description: "$2000 debt, $5000 income ⇒ 40%" },
-    { description: "$1500 debt, $3000 income ⇒ 50%" }
+  "expression": "(debt / income) * 100",
+  "intro": "Compute your debt-to-income (DTI) ratio as a percentage using monthly debt payments and gross monthly income.",
+  "examples": [
+    {
+      "description": "$2000 debt, $5000 income ⇒ 40%"
+    },
+    {
+      "description": "$1500 debt, $3000 income ⇒ 50%"
+    }
   ],
-  faqs: [
-    { question: "What is DTI?", answer: "DTI compares your monthly debt payments to your gross income." },
-    { question: "Why does DTI matter?", answer: "Lenders use DTI to assess your ability to manage payments." },
-    { question: "Is lower DTI better?", answer: "Yes, lower ratios indicate less financial strain." },
-    { question: "Does this include taxes?", answer: "Use gross income before taxes for standard DTI calculations." }
+  "faqs": [
+    {
+      "question": "What is DTI?",
+      "answer": "DTI compares your monthly debt payments to your gross income."
+    },
+    {
+      "question": "Why does DTI matter?",
+      "answer": "Lenders use DTI to assess your ability to manage payments."
+    },
+    {
+      "question": "Is lower DTI better?",
+      "answer": "Yes, lower ratios indicate less financial strain."
+    },
+    {
+      "question": "Does this include taxes?",
+      "answer": "Use gross income before taxes for standard DTI calculations."
+    }
   ],
-  disclaimer: "DTI is an estimate; lenders may calculate it differently or include additional factors.",
-};
+  "disclaimer": "DTI is an estimate; lenders may calculate it differently or include additional factors.",
+  "cluster": "Finance & Business",
+  "related": [
+    "tip-calculator",
+    "fuel-trip-cost",
+    "credit-card-monthly-interest",
+    "credit-utilization-ratio",
+    "gross-margin",
+    "break-even-units"
+  ]
+}
 
 <Calculator schema={schema} />
-

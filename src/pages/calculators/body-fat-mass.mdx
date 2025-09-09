@@ -1,10 +1,10 @@
 ---
 layout: ../../layouts/CalculatorLayout.astro
 title: "Body Fat Mass Calculator"
-description: "Estimate body fat mass from weight and body fat percentage."
-date: 2025-09-05
-updated: 2025-09-05
-cluster: "Health"
+description: "Find the mass of body fat based on total weight and body fat percentage."
+date: 2025-09-09
+updated: 2025-09-09
+cluster: "Health & Fitness"
 ---
 import Calculator from '../../components/Calculator.astro';
 
@@ -13,25 +13,57 @@ export const schema = {
   "title": "Body Fat Mass Calculator",
   "locale": "en",
   "inputs": [
-    { "label": "Weight (kg)", "name": "weight", "type": "number", "placeholder": "70" },
-    { "label": "Body Fat (%)", "name": "bf", "type": "number", "placeholder": "20" }
+    {
+      "name": "weight",
+      "label": "Weight (kg)",
+      "type": "number",
+      "placeholder": "70"
+    },
+    {
+      "name": "bf",
+      "label": "Body Fat (%)",
+      "type": "number",
+      "placeholder": "20"
+    }
   ],
   "expression": "weight * (bf / 100)",
   "intro": "Find the mass of body fat based on total weight and body fat percentage.",
   "examples": [
-    { "description": "70 kg at 20% ⇒ 14 kg fat" },
-    { "description": "80 kg at 15% ⇒ 12 kg fat" }
+    {
+      "description": "70 kg at 20% ⇒ 14 kg fat"
+    },
+    {
+      "description": "80 kg at 15% ⇒ 12 kg fat"
+    }
   ],
   "faqs": [
-    { "question": "Does this show lean mass?", "answer": "No, it only calculates fat mass." },
-    { "question": "Is body fat percentage required?", "answer": "Yes, you need a measured or estimated body fat percentage." },
-    { "question": "Can I use pounds?", "answer": "Convert pounds to kilograms before using the calculator." },
-    { "question": "Is this medical advice?", "answer": "No, it's a simple estimation tool." }
+    {
+      "question": "Does this show lean mass?",
+      "answer": "No, it only calculates fat mass."
+    },
+    {
+      "question": "Is body fat percentage required?",
+      "answer": "Yes, you need a measured or estimated body fat percentage."
+    },
+    {
+      "question": "Can I use pounds?",
+      "answer": "Convert pounds to kilograms before using the calculator."
+    },
+    {
+      "question": "Is this medical advice?",
+      "answer": "No, it's a simple estimation tool."
+    }
   ],
   "disclaimer": "Not a substitute for professional health assessment.",
-  "cluster": "health",
-  "unit": "kg",
-  "related": []
+  "cluster": "Health & Fitness",
+  "related": [
+    "bmi-calculator",
+    "daily-calorie-burn",
+    "sleep-debt-weekly",
+    "sugar-cube-equivalent",
+    "caffeine-half-life",
+    "protein-calorie-percentage"
+  ]
 }
 
 <Calculator schema={schema} />
