@@ -1,6 +1,7 @@
 ---
 import "../styles/tailwind.css";
 import AdBanner from "../components/AdBanner.astro";
+import calculators from "../../data/calculators.json";
 const { title = 'CalcSimpler', description = 'Smart & Fast Calculators', canonical } = Astro.props;
 const site = Astro.site?.toString() || (import.meta.env.SITE_URL ?? 'https://example.com');
 const href = canonical ?? new URL(Astro.url.pathname, site).toString();
@@ -46,32 +47,89 @@ const cfToken = import.meta.env.VITE_CF_ANALYTICS_TOKEN;
           <img src="/logo.svg" alt="CalcSimpler" />
           <span class="logo-text">CalcSimpler</span>
         </a>
-        <button id="menu-btn" class="sm:hidden p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-[var(--accent)]" aria-label="Toggle navigation" aria-expanded="false">
-          <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
-        </button>
-        <nav
-          id="nav"
-          class="hidden absolute top-full left-0 right-0 mx-4 mt-2 flex flex-col items-end gap-2 bg-[var(--card)] border border-[var(--border)] rounded-md p-4 shadow-md sm:static sm:flex sm:flex-row sm:items-center sm:gap-2 md:gap-4 sm:justify-end sm:mx-0 sm:mt-0 sm:border-0 sm:p-0 sm:shadow-none"
-          aria-label="Primary"
-        >
-          <a
-            href="/categories/"
-            class={['nav-link', Astro.url.pathname.startsWith('/categories') && 'active'].filter(Boolean).join(' ')}
-            >Categories</a
+        <div class="relative flex items-center gap-2">
+          <form
+            id="search-form"
+            role="search"
+            class="hidden absolute top-full left-0 right-0 mx-4 mt-2 bg-[var(--card)] border border-[var(--border)] rounded-md p-2 shadow-md sm:static sm:block sm:mx-0 sm:mt-0 sm:border-0 sm:p-0 sm:shadow-none"
           >
-          <a
-            href="/all"
-            class={['nav-link', Astro.url.pathname.startsWith('/all') && 'active'].filter(Boolean).join(' ')}
-            >All Calculators</a
+            <input
+              id="site-search"
+              list="calc-options"
+              type="search"
+              placeholder="Search calculators"
+              class="w-full p-2 border rounded-md sm:w-64"
+            />
+            <datalist id="calc-options">
+              {calculators.map((c) => (
+                <option value={c.title}></option>
+              ))}
+            </datalist>
+          </form>
+          <button
+            id="search-btn"
+            class="sm:hidden p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-[var(--accent)]"
+            aria-label="Search"
+            aria-expanded="false"
           >
-          <a
-            href="/scientific-calculator/"
-            class={['nav-link', 'traditional', Astro.url.pathname.startsWith('/scientific-calculator') && 'active'].filter(Boolean).join(' ')}
-            >Scientific Calculator</a
+            <svg
+              class="h-6 w-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M21 21l-4.35-4.35m0 0A7.5 7.5 0 103.5 3.5a7.5 7.5 0 0013.15 13.15z"
+              />
+            </svg>
+          </button>
+          <button
+            id="menu-btn"
+            class="sm:hidden p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-[var(--accent)]"
+            aria-label="Toggle navigation"
+            aria-expanded="false"
           >
-        </nav>
+            <svg
+              class="h-6 w-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </button>
+          <nav
+            id="nav"
+            class="hidden absolute top-full left-0 right-0 mx-4 mt-2 flex flex-col items-end gap-2 bg-[var(--card)] border border-[var(--border)] rounded-md p-4 shadow-md sm:static sm:flex sm:flex-row sm:items-center sm:gap-2 md:gap-4 sm:justify-end sm:mx-0 sm:mt-0 sm:border-0 sm:p-0 sm:shadow-none"
+            aria-label="Primary"
+          >
+            <a
+              href="/categories/"
+              class={['nav-link', Astro.url.pathname.startsWith('/categories') && 'active'].filter(Boolean).join(' ')}
+              >Categories</a
+            >
+            <a
+              href="/all"
+              class={['nav-link', Astro.url.pathname.startsWith('/all') && 'active'].filter(Boolean).join(' ')}
+              >All Calculators</a
+            >
+            <a
+              href="/scientific-calculator/"
+              class={['nav-link', 'traditional', Astro.url.pathname.startsWith('/scientific-calculator') && 'active'].filter(Boolean).join(' ')}
+              >Scientific Calculator</a
+            >
+          </nav>
+        </div>
       </div>
     </header>
     <main class="container" id="main" role="main">
@@ -96,6 +154,27 @@ const cfToken = import.meta.env.VITE_CF_ANALYTICS_TOKEN;
         const expanded = btn.getAttribute('aria-expanded') === 'true';
         btn.setAttribute('aria-expanded', String(!expanded));
         nav.classList.toggle('hidden');
+      });
+      const searchBtn = document.getElementById('search-btn');
+      const searchForm = document.getElementById('search-form');
+      const searchInput = document.getElementById('site-search');
+      const calculators = {JSON.stringify(calculators)};
+      const calcMap = new Map(calculators.map((c) => [c.title.toLowerCase(), c.slug]));
+      searchBtn?.addEventListener('click', () => {
+        const expanded = searchBtn.getAttribute('aria-expanded') === 'true';
+        searchBtn.setAttribute('aria-expanded', String(!expanded));
+        searchForm.classList.toggle('hidden');
+        if (!expanded) searchInput.focus();
+      });
+      searchForm?.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const q = searchInput.value.trim().toLowerCase();
+        const slug = calcMap.get(q);
+        if (slug) {
+          window.location.href = `/calculators/${slug}/`;
+        } else {
+          window.location.href = `/all?q=${encodeURIComponent(searchInput.value.trim())}`;
+        }
       });
     </script>
   </body>
