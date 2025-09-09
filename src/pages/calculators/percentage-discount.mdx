@@ -28,24 +28,24 @@ export const schema = {
       "placeholder": "15"
     }
   ],
-  "slug": "percentage-discount",
-  "title": "Percentage Discount Calculator",
-  "locale": "en",
-  "expression": "price * (1 - discount/100)",
-  "intro": "Calculate the final price after a percentage discount.",
-  "examples": [
-    {
-      "description": "Price 100 with 20% discount \u21d2 80"
-    }
-  ],
-  "faqs": [
-    {
-      "question": "Does it support decimals?",
-      "answer": "Yes, you can use decimal prices and percentage values."
-    }
-  ],
-  "disclaimer": "Educational purposes only. Not professional advice.",
-  "cluster": "Finance"
-}
+    "slug": "percentage-discount",
+    "title": "Percentage Discount Calculator",
+    "locale": "en",
+    "expression": "price * (1 - discount/100)",
+    "unit": "USD",
+    "intro": "This calculator determines the sale price after applying a percentage discount. Enter the original amount and the discount percent to see the reduced price.",
+    "examples": [
+      {"description": "$100 with a 20% discount \u21d2 $80"},
+      {"description": "$250 with a 15% discount \u21d2 $212.50"}
+    ],
+    "faqs": [
+      {"question": "Can I enter decimal prices?", "answer": "Yes, the calculator accepts cents and fractional percentages."},
+      {"question": "What if the discount is 0%?", "answer": "The final price equals the original price."},
+      {"question": "How do I find the discount amount?", "answer": "Subtract the final price from the original price."},
+      {"question": "What happens with discounts over 100%?", "answer": "A percentage above 100% results in a negative price, which isn't realistic."}
+    ],
+    "disclaimer": "Educational purposes only. Not professional advice.",
+    "cluster": "Finance"
+  }
 
 <Calculator schema={schema} />

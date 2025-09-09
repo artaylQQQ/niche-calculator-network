@@ -31,17 +31,17 @@ export const schema = {
   "title": "Storage Redundancy Overhead",
   "locale": "en",
   "expression": "(redundantTB / dataTB) * 100",
-  "intro": "Compute overhead percentage when storing data with redundancy.",
+  "unit": "%",
+  "intro": "Redundant storage protects data by duplicating files, but it consumes extra capacity. This calculator compares redundant data to original data to show what percentage of your total storage is overhead.",
   "examples": [
-    {
-      "description": "10TB data + 5TB redundancy \u21d2 50% overhead"
-    }
+    {"description": "10 TB data with 5 TB redundancy \u21d2 50% overhead"},
+    {"description": "100 TB data with 20 TB redundancy \u21d2 20% overhead"}
   ],
   "faqs": [
-    {
-      "question": "What if data is 0?",
-      "answer": "Overhead is undefined when data is 0."
-    }
+    {"question": "What is redundancy overhead?", "answer": "The extra storage required for redundancy expressed as a percentage of the original data."},
+    {"question": "Can I use GB instead of TB?", "answer": "Yes. Any consistent units work; the percentage remains the same."},
+    {"question": "What if redundant data is zero?", "answer": "The overhead is 0% when no redundancy is stored."},
+    {"question": "Why can't data be 0?", "answer": "The calculation divides by the data size, so overhead is undefined if data is 0."}
   ],
   "disclaimer": "Educational purposes only. Not professional advice.",
   "cluster": "Technology"
