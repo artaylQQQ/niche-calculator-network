@@ -1,41 +1,56 @@
 ---
 layout: ../../layouts/CalculatorLayout.astro
 title: "Fahrenheit to Celsius Converter"
-description: "Convert Fahrenheit to Celsius."
+description: "Convert Fahrenheit temperatures to Celsius."
 updated: "2025-08-21"
 cluster: "Conversions"
 ---
 
-import Calculator from '../../components/Calculator.astro';
+import Calculator from "../../components/Calculator.astro";
 
 export const schema = {
-  "inputs": [
+  inputs: [
     {
-      "name": "f",
-      "label": "F",
-      "type": "number",
-      "placeholder": "Enter F",
-      "step": "any"
-    }
+      name: "f",
+      label: "Degrees Fahrenheit",
+      type: "number",
+      placeholder: "77",
+      step: "any",
+    },
   ],
-  "slug": "f-to-c-calculator",
-  "title": "Fahrenheit to Celsius Converter",
-  "locale": "en",
-  "expression": "(f - 32) * 5 / 9",
-  "intro": "Convert Fahrenheit to Celsius.",
-  "examples": [
+  slug: "f-to-c-calculator",
+  title: "Fahrenheit to Celsius Converter",
+  locale: "en",
+  expression: "(f - 32) * 5 / 9",
+  unit: "\u00b0C",
+  intro:
+    "Enter a temperature in degrees Fahrenheit to convert it to degrees Celsius.",
+  examples: [
+    { description: "32\u00b0F \u21d2 0\u00b0C" },
+    { description: "68\u00b0F \u21d2 20\u00b0C" },
+  ],
+  faqs: [
     {
-      "description": "Enter values and click Calculate."
-    }
-  ],
-  "faqs": [
+      question: "How does the formula work?",
+      answer:
+        "Subtract 32 from the Fahrenheit value and multiply by 5/9 to get Celsius.",
+    },
     {
-      "question": "How do I use the Fahrenheit to Celsius Converter?",
-      "answer": "Enter the required values and press Calculate to get the result."
-    }
+      question: "Can I convert below-freezing temperatures?",
+      answer: "Yes, negative results are valid Celsius values.",
+    },
+    {
+      question: "Are decimal inputs allowed?",
+      answer: "Yes, the calculator supports decimal Fahrenheit values.",
+    },
+    {
+      question: "How do I convert Celsius back to Fahrenheit?",
+      answer:
+        "Use the Celsius to Fahrenheit calculator or apply F = C \u00d7 9/5 + 32.",
+    },
   ],
-  "disclaimer": "Educational information, not professional advice.",
-  "cluster": "Conversions"
+  disclaimer: "Educational information, not professional advice.",
+  cluster: "Conversions",
 };
 
 <Calculator schema={schema} />

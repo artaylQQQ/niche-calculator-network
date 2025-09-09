@@ -1,41 +1,55 @@
 ---
 layout: ../../layouts/CalculatorLayout.astro
 title: "Celsius to Fahrenheit"
-description: "Convert Celsius degrees into Fahrenheit."
+description: "Convert Celsius temperatures to Fahrenheit."
 updated: "2025-08-26"
 cluster: "Conversions"
 ---
 
-import Calculator from '../../components/Calculator.astro';
+import Calculator from "../../components/Calculator.astro";
 
 export const schema = {
-  "inputs": [
+  inputs: [
     {
-      "name": "c",
-      "label": "Degrees Celsius",
-      "type": "number",
-      "step": "any",
-      "placeholder": "25"
-    }
+      name: "c",
+      label: "Degrees Celsius",
+      type: "number",
+      step: "any",
+      placeholder: "25",
+    },
   ],
-  "slug": "celsius-to-fahrenheit",
-  "title": "Celsius to Fahrenheit",
-  "locale": "en",
-  "expression": "(c * 9/5) + 32",
-  "intro": "Convert Celsius degrees into Fahrenheit.",
-  "examples": [
+  slug: "celsius-to-fahrenheit",
+  title: "Celsius to Fahrenheit",
+  locale: "en",
+  expression: "(c * 9/5) + 32",
+  unit: "\u00b0F",
+  intro:
+    "This calculator converts temperatures in degrees Celsius to degrees Fahrenheit using the formula F = C \u00d7 9/5 + 32. Enter any Celsius value to see the equivalent Fahrenheit reading.",
+  examples: [
+    { description: "0\u00b0C \u21d2 32\u00b0F" },
+    { description: "37\u00b0C \u21d2 98.6\u00b0F" },
+  ],
+  faqs: [
     {
-      "description": "25\u00b0C \u21d2 77\u00b0F"
-    }
-  ],
-  "faqs": [
+      question: "How is Celsius converted to Fahrenheit?",
+      answer: "Multiply the Celsius value by 9/5 and add 32.",
+    },
     {
-      "question": "Does it support negatives?",
-      "answer": "Yes, negative temperatures are supported."
-    }
+      question: "Can I convert negative temperatures?",
+      answer: "Yes, the formula works for any real number.",
+    },
+    {
+      question: "Does it support decimals?",
+      answer: "Yes, you can enter decimal values.",
+    },
+    {
+      question: "How do I convert Fahrenheit to Celsius?",
+      answer:
+        "Use the Fahrenheit to Celsius calculator or apply C = (F - 32) \u00d7 5/9.",
+    },
   ],
-  "disclaimer": "Educational purposes only. Not professional advice.",
-  "cluster": "Conversions"
-}
+  disclaimer: "Educational purposes only. Not professional advice.",
+  cluster: "Conversions",
+};
 
 <Calculator schema={schema} />
