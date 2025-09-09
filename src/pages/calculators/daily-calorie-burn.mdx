@@ -30,18 +30,18 @@ export const schema = {
   "slug": "daily-calorie-burn",
   "title": "Daily Calorie Burn (Rough)",
   "locale": "en",
+  "unit": "kcal/day",
   "expression": "(steps * 0.04) + (exercise * 7)",
-  "intro": "Rough estimate of daily calories burned from steps and exercise minutes.",
+  "intro": "Estimate the calories you burn in a day using your step count and minutes of structured exercise.",
   "examples": [
-    {
-      "description": "8000 steps and 30 min \u21d2 \u2248 470 kcal (rough)"
-    }
+    { "description": "8000 steps and 30 min ⇒ 530 kcal/day" },
+    { "description": "12000 steps and 60 min ⇒ 900 kcal/day" }
   ],
   "faqs": [
-    {
-      "question": "Is this accurate?",
-      "answer": "It is a rough estimate; for precision use a medical-grade calculator."
-    }
+    { "question": "Does this include basal metabolic rate?", "answer": "No, it only adds calories from steps and exercise." },
+    { "question": "Are all steps equal?", "answer": "It assumes average walking intensity; vigorous steps may burn more." },
+    { "question": "Can exercise minutes be fractional?", "answer": "Yes, decimals like 45.5 are allowed." },
+    { "question": "Why is this a rough estimate?", "answer": "Actual burn varies with weight, intensity, and metabolism." }
   ],
   "disclaimer": "Educational purposes only. Not professional advice.",
   "cluster": "Health"

@@ -12,19 +12,22 @@ export const schema = {
   "slug": "attendance-requirement",
   "title": "Attendance Requirement Calculator",
   "locale": "en",
+  "unit": "classes",
   "inputs": [
     {"name":"total","label":"Total Classes","type":"number","step":1,"placeholder":"30"},
     {"name":"required","label":"Required Attendance (%)","type":"number","step":"any","placeholder":"80"}
   ],
   "expression": "total - Math.ceil(total * required / 100)",
-  "intro": "Find maximum classes you can miss to meet attendance rules.",
+  "intro": "Determine how many classes you may miss while still meeting a required attendance percentage.",
   "examples": [
-    {"description":"30 classes with 80% required ⇒ 6 absences allowed"},
-    {"description":"40 classes with 75% required ⇒ 10 absences allowed"}
+    {"description":"30 classes with 80% required ⇒ 6 classes may be missed"},
+    {"description":"40 classes with 75% required ⇒ 10 classes may be missed"}
   ],
   "faqs": [
     {"question":"Why use ceiling?","answer":"It ensures you attend enough classes."},
-    {"question":"Does it consider excused absences?","answer":"It treats all absences the same."}
+    {"question":"Does it consider excused absences?","answer":"It treats all absences the same."},
+    {"question":"Can total classes be zero?","answer":"Total classes must be greater than zero."},
+    {"question":"What if required attendance is 100%?","answer":"You must attend every class with zero absences."}
   ],
   "disclaimer": "Always confirm attendance policies with your institution.",
   "cluster": "Education & Learning"
