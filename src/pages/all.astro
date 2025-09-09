@@ -2,25 +2,33 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import AdBanner from "../components/AdBanner.astro";
 const modules = import.meta.glob("../pages/calculators/*.mdx", { eager: true });
-const items = Object.values(modules).map((m) => ({
-  url: m.url,
-  title:
-    m.frontmatter?.title ||
-    m.url.replace('/calculators/', '').replace('.mdx', ''),
-  description:
-    m.frontmatter?.intro || m.frontmatter?.description || ''
-}));
+const items = Object.values(modules)
+  .map((m) => ({
+    url: m.url,
+    title:
+      m.frontmatter?.title ||
+      m.url.replace('/calculators/', '').replace('.mdx', ''),
+    description:
+      m.frontmatter?.intro || m.frontmatter?.description || '',
+    updated: m.frontmatter?.updated || ''
+  }));
 ---
 <BaseLayout title="Search Calculators" description="Find any calculator available on the site.">
   <section class="hero container mx-auto max-w-5xl px-4">
     <h1 style="color: var(--ink)">Search Calculators</h1>
     <p style="color: var(--muted)">Search through every calculator available on the site.</p>
-    <input
-      id="search-input"
-      type="search"
-      placeholder="Search calculators"
-      class="w-full mt-4 p-2 border rounded-md"
-    />
+    <div class="mt-4 flex gap-2">
+      <input
+        id="search-input"
+        type="search"
+        placeholder="Search calculators"
+        class="flex-1 p-2 border rounded-md"
+      />
+      <select id="sort-select" class="p-2 border rounded-md">
+        <option value="alpha">Alphabetical</option>
+        <option value="recent">Newest</option>
+      </select>
+    </div>
   </section>
   <AdBanner />
   <section class="section container mx-auto max-w-5xl px-4" aria-labelledby="list-all">
@@ -34,6 +42,7 @@ const items = Object.values(modules).map((m) => ({
         <div
           data-title={it.title.toLowerCase()}
           data-description={it.description.toLowerCase()}
+          data-updated={it.updated}
         >
           <a class="card" href={it.url}>
             <h3>{it.title}</h3>
@@ -45,7 +54,10 @@ const items = Object.values(modules).map((m) => ({
   </section>
   <script is:inline>
     const input = document.getElementById('search-input');
-    const cards = Array.from(document.querySelectorAll('#results > div'));
+    const sortSelect = document.getElementById('sort-select');
+    const container = document.getElementById('results');
+    const cards = Array.from(container.children);
+
     function filter() {
       const q = input.value.trim().toLowerCase();
       cards.forEach((card) => {
@@ -55,6 +67,24 @@ const items = Object.values(modules).map((m) => ({
         card.style.display = match ? '' : 'none';
       });
     }
+
+    function sortCards() {
+      const order = sortSelect.value;
+      const sorted = [...cards].sort((a, b) => {
+        if (order === 'recent') {
+          return (
+            new Date(b.dataset.updated || 0).getTime() -
+            new Date(a.dataset.updated || 0).getTime()
+          );
+        }
+        return a.dataset.title.localeCompare(b.dataset.title);
+      });
+      sorted.forEach((card) => container.appendChild(card));
+      filter();
+    }
+
     input.addEventListener('input', filter);
+    sortSelect.addEventListener('change', sortCards);
+    sortCards();
   </script>
 </BaseLayout>
