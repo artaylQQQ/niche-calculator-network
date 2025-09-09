@@ -26,19 +26,19 @@ export const schema = {
       "placeholder": "10"
     }
   ],
-  "expression": "cost / profit",
-  "intro": "Estimate days to recoup mining hardware cost.",
-  "examples": [
-    {
-      "description": "$3000 cost, $10 profit ⇒ 300 days"
-    }
-  ],
-  "faqs": [
-    {
-      "question": "Does this include electricity?",
-      "answer": "Include electricity in daily profit for accuracy."
-    }
-  ],
+    "expression": "cost / profit",
+    "unit": "days",
+    "intro": "Enter your total hardware cost and expected daily net profit to find how many days it takes to break even.",
+    "examples": [
+      {"description": "$3,000 hardware cost with $10 daily profit ⇒ 300 days"},
+      {"description": "$5,000 hardware cost with $25 daily profit ⇒ 200 days"}
+    ],
+    "faqs": [
+      {"question": "Does this include electricity?", "answer": "Include electricity costs in the daily profit for accuracy."},
+      {"question": "What if my profit changes over time?", "answer": "Recalculate using the updated average daily profit."},
+      {"question": "Is hardware resale value considered?", "answer": "No, only initial cost and daily profit are used."},
+      {"question": "Can I enter a negative profit?", "answer": "Daily profit should be positive to compute breakeven time."}
+    ],
   "disclaimer": "Educational information, not professional advice.",
   "cluster": "Finance",
   "related": [

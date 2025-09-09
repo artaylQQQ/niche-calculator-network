@@ -40,7 +40,7 @@
   {
     "slug": "simple-interest",
     "title": "Simple Interest Calculator",
-    "cluster": "finance",
+    "cluster": "Finance",
     "description": "Compute simple interest based on principal, rate and time.",
     "inputs": [
       {
@@ -69,15 +69,31 @@
       }
     ],
     "expression": "principal * (rate/100) * years",
+    "unit": "USD",
     "examples": [
       {
         "description": "$1,000 at 5% for 3 years ⇒ $150 interest"
+      },
+      {
+        "description": "$2,500 at 4% for 2 years ⇒ $200 interest"
       }
     ],
     "faqs": [
       {
         "question": "Is compounding included?",
         "answer": "No. Use a compound interest calculator for compounding."
+      },
+      {
+        "question": "How is the interest calculated?",
+        "answer": "Interest equals principal multiplied by rate and time in years."
+      },
+      {
+        "question": "Can I use months instead of years?",
+        "answer": "Convert months to years by dividing by 12 before calculating."
+      },
+      {
+        "question": "Does the result include the principal?",
+        "answer": "No, it returns only the interest earned." 
       }
     ]
   },
@@ -1437,8 +1453,9 @@
   {
     "slug": "crypto-mining-breakeven",
     "title": "Crypto Mining Breakeven Time",
-    "cluster": "finance",
-    "intro": "Estimate days to recoup mining hardware cost.",
+    "cluster": "Finance",
+    "description": "Estimate days to recoup mining hardware cost.",
+    "intro": "Enter your total hardware cost and expected daily net profit to find how many days it takes to break even.",
     "inputs": [
       {
         "name": "cost",
@@ -1454,15 +1471,31 @@
       }
     ],
     "expression": "cost / profit",
+    "unit": "days",
     "examples": [
       {
-        "description": "$3000 cost, $10 profit ⇒ 300 days"
+        "description": "$3,000 hardware cost with $10 daily profit ⇒ 300 days"
+      },
+      {
+        "description": "$5,000 hardware cost with $25 daily profit ⇒ 200 days"
       }
     ],
     "faqs": [
       {
         "question": "Does this include electricity?",
-        "answer": "Include electricity in daily profit for accuracy."
+        "answer": "Include electricity costs in the daily profit for accuracy."
+      },
+      {
+        "question": "What if my profit changes over time?",
+        "answer": "Recalculate using the updated average daily profit."
+      },
+      {
+        "question": "Is hardware resale value considered?",
+        "answer": "No, the calculation uses only upfront cost and daily profit."
+      },
+      {
+        "question": "Can I enter a negative profit?",
+        "answer": "Daily profit should be a positive number to compute breakeven time."
       }
     ]
   },
@@ -1508,8 +1541,9 @@
   {
     "slug": "subscription-ltv",
     "title": "Subscription Lifetime Value",
-    "cluster": "finance",
-    "intro": "Compute lifetime value of a subscription.",
+    "cluster": "Finance",
+    "description": "Compute lifetime value of a subscription.",
+    "intro": "Enter the monthly subscription fee and average retention length to estimate customer lifetime value.",
     "inputs": [
       {
         "name": "fee",
@@ -1525,15 +1559,31 @@
       }
     ],
     "expression": "fee * months",
+    "unit": "USD",
     "examples": [
       {
-        "description": "$20 for 12 months ⇒ $240 LTV"
+        "description": "$20 monthly fee for 12 months ⇒ $240 LTV"
+      },
+      {
+        "description": "$15 monthly fee for 24 months ⇒ $360 LTV"
       }
     ],
     "faqs": [
       {
-        "question": "Does this include churn?",
-        "answer": "Use average retention to account for churn."
+        "question": "Does this include discounts or promotions?",
+        "answer": "Adjust the monthly fee to reflect any discounts."
+      },
+      {
+        "question": "How do I factor in churn?",
+        "answer": "Use the average retention period that already accounts for churn."
+      },
+      {
+        "question": "Can I use annual subscriptions?",
+        "answer": "Convert the annual price to a monthly fee and months of retention."
+      },
+      {
+        "question": "Is profit margin considered?",
+        "answer": "No, this calculator returns gross revenue only."
       }
     ]
   },
@@ -2053,8 +2103,9 @@
   {
     "slug": "emergency-fund-duration",
     "title": "Emergency Fund Duration",
-    "cluster": "finance",
-    "intro": "Estimate how many months your savings can cover expenses.",
+    "cluster": "Finance",
+    "description": "Estimate how many months your savings can cover expenses.",
+    "intro": "Provide your total savings and monthly living costs to see how many months your emergency fund will last.",
     "inputs": [
       {
         "name": "savings",
@@ -2070,23 +2121,40 @@
       }
     ],
     "expression": "savings / monthly",
+    "unit": "months",
     "examples": [
       {
-        "description": "$5000 and $1500 expenses ⇒ 3.33 months"
+        "description": "$5,000 savings with $1,500 monthly expenses ⇒ 3.33 months"
+      },
+      {
+        "description": "$12,000 savings with $2,000 monthly expenses ⇒ 6 months"
       }
     ],
     "faqs": [
       {
-        "question": "Does it include income?",
-        "answer": "No, it only divides savings by monthly expenses."
+        "question": "Does it include future income?",
+        "answer": "No, the calculation only uses current savings and expenses."
+      },
+      {
+        "question": "Should taxes be part of expenses?",
+        "answer": "Include taxes in your monthly expenses if they apply."
+      },
+      {
+        "question": "What if my expenses change?",
+        "answer": "Recalculate whenever your monthly costs increase or decrease."
+      },
+      {
+        "question": "Is the result rounded?",
+        "answer": "The calculator outputs a precise decimal number of months."
       }
     ]
   },
   {
     "slug": "fire-number",
     "title": "FIRE Number Calculator",
-    "cluster": "finance",
-    "intro": "Compute target savings for financial independence using annual expenses and withdrawal rate.",
+    "cluster": "Finance",
+    "description": "Compute target savings for financial independence using annual expenses and withdrawal rate.",
+    "intro": "Enter your yearly spending and desired withdrawal rate to estimate the savings needed for financial independence.",
     "inputs": [
       {
         "name": "annual",
@@ -2102,15 +2170,31 @@
       }
     ],
     "expression": "annual / (rate/100)",
+    "unit": "USD",
     "examples": [
       {
-        "description": "$40k at 4% ⇒ $1,000,000"
+        "description": "$40,000 yearly expenses at a 4% rate ⇒ $1,000,000"
+      },
+      {
+        "description": "$60,000 yearly expenses at a 3.5% rate ⇒ $1,714,286"
       }
     ],
     "faqs": [
       {
         "question": "What is FIRE?",
         "answer": "FIRE stands for Financial Independence, Retire Early."
+      },
+      {
+        "question": "What does withdrawal rate mean?",
+        "answer": "It is the percentage of your portfolio you plan to withdraw annually."
+      },
+      {
+        "question": "Does this account for inflation?",
+        "answer": "No, it simply divides annual expenses by the withdrawal rate."
+      },
+      {
+        "question": "Can I use monthly expenses?",
+        "answer": "Convert monthly expenses to annual figures before using the calculator."
       }
     ]
   },

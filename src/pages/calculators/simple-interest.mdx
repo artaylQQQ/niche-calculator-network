@@ -35,22 +35,22 @@ export const schema = {
       "placeholder": "3"
     }
   ],
-  "slug": "simple-interest",
-  "title": "Simple Interest Calculator",
-  "locale": "en",
-  "expression": "principal * (rate/100) * years",
-  "intro": "Compute simple interest based on principal, rate and time.",
-  "examples": [
-    {
-      "description": "$1,000 at 5% for 3 years \u21d2 $150 interest"
-    }
-  ],
-  "faqs": [
-    {
-      "question": "Is compounding included?",
-      "answer": "No. Use a compound interest calculator for compounding."
-    }
-  ],
+    "slug": "simple-interest",
+    "title": "Simple Interest Calculator",
+    "locale": "en",
+    "expression": "principal * (rate/100) * years",
+    "unit": "USD",
+    "intro": "Enter principal amount, annual interest rate, and time in years to calculate simple interest earned.",
+    "examples": [
+      {"description": "$1,000 at 5% for 3 years \u21d2 $150 interest"},
+      {"description": "$2,500 at 4% for 2 years \u21d2 $200 interest"}
+    ],
+    "faqs": [
+      {"question": "Is compounding included?", "answer": "No. Use a compound interest calculator for compounding."},
+      {"question": "How is the interest calculated?", "answer": "Interest equals principal multiplied by rate and time in years."},
+      {"question": "Can I use months instead of years?", "answer": "Convert months to years by dividing by 12."},
+      {"question": "Does the result include the principal?", "answer": "No, it returns only the interest earned."}
+    ],
   "disclaimer": "Educational purposes only. Not professional advice.",
   "cluster": "Finance"
 }

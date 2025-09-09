@@ -26,19 +26,19 @@ export const schema = {
       "placeholder": "12"
     }
   ],
-  "expression": "fee * months",
-  "intro": "Compute lifetime value of a subscription.",
-  "examples": [
-    {
-      "description": "$20 for 12 months ⇒ $240 LTV"
-    }
-  ],
-  "faqs": [
-    {
-      "question": "Does this include churn?",
-      "answer": "Use average retention to account for churn."
-    }
-  ],
+    "expression": "fee * months",
+    "unit": "USD",
+    "intro": "Enter the monthly subscription fee and average retention length to estimate customer lifetime value.",
+    "examples": [
+      {"description": "$20 monthly fee for 12 months ⇒ $240 LTV"},
+      {"description": "$15 monthly fee for 24 months ⇒ $360 LTV"}
+    ],
+    "faqs": [
+      {"question": "Does this include discounts or promotions?", "answer": "Adjust the monthly fee to reflect any discounts."},
+      {"question": "How do I factor in churn?", "answer": "Use the average retention period that already accounts for churn."},
+      {"question": "Can I use annual subscriptions?", "answer": "Convert the annual price to a monthly fee and months of retention."},
+      {"question": "Is profit margin considered?", "answer": "No, this calculator returns gross revenue only."}
+    ],
   "disclaimer": "Educational information, not professional advice.",
   "cluster": "Finance",
   "related": [

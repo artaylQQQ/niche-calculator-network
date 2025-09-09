@@ -26,19 +26,19 @@ export const schema = {
       "placeholder": "4"
     }
   ],
-  "expression": "annual / (rate/100)",
-  "intro": "Compute target savings for financial independence using annual expenses and withdrawal rate.",
-  "examples": [
-    {
-      "description": "$40k at 4% ⇒ $1,000,000"
-    }
-  ],
-  "faqs": [
-    {
-      "question": "What is FIRE?",
-      "answer": "FIRE stands for Financial Independence, Retire Early."
-    }
-  ],
+    "expression": "annual / (rate/100)",
+    "unit": "USD",
+    "intro": "Enter your yearly spending and desired withdrawal rate to estimate the savings needed for financial independence.",
+    "examples": [
+      {"description": "$40,000 yearly expenses at a 4% rate ⇒ $1,000,000"},
+      {"description": "$60,000 yearly expenses at a 3.5% rate ⇒ $1,714,286"}
+    ],
+    "faqs": [
+      {"question": "What is FIRE?", "answer": "FIRE stands for Financial Independence, Retire Early."},
+      {"question": "What does withdrawal rate mean?", "answer": "It is the percentage of your portfolio you plan to withdraw each year."},
+      {"question": "Does this account for inflation?", "answer": "No, it simply divides annual expenses by the withdrawal rate."},
+      {"question": "Can I use monthly expenses?", "answer": "Convert monthly expenses to annual figures before using the calculator."}
+    ],
   "disclaimer": "Educational information, not professional advice.",
   "cluster": "Finance",
   "related": [
