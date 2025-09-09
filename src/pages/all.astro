@@ -8,7 +8,10 @@ const items = Object.values(modules).map((m) => ({
     m.frontmatter?.title ||
     m.url.replace('/calculators/', '').replace('.mdx', ''),
   description:
-    m.frontmatter?.intro || m.frontmatter?.description || ''
+    m.frontmatter?.intro || m.frontmatter?.description || '',
+  date: m.frontmatter?.date
+    ? new Date(m.frontmatter.date).getTime()
+    : 0
 }));
 ---
 <BaseLayout title="Search Calculators" description="Find any calculator available on the site.">
@@ -21,6 +24,15 @@ const items = Object.values(modules).map((m) => ({
       placeholder="Search calculators"
       class="w-full mt-4 p-2 border rounded-md"
     />
+    <select
+      id="sort-order"
+      class="w-full mt-4 p-2 border rounded-md"
+    >
+      <option value="az">Alphabetical (A-Z)</option>
+      <option value="za">Alphabetical (Z-A)</option>
+      <option value="newest">Newest to Oldest</option>
+      <option value="oldest">Oldest to Newest</option>
+    </select>
   </section>
   <AdBanner />
   <section class="section container mx-auto max-w-5xl px-4" aria-labelledby="list-all">
@@ -34,6 +46,7 @@ const items = Object.values(modules).map((m) => ({
         <div
           data-title={it.title.toLowerCase()}
           data-description={it.description.toLowerCase()}
+          data-date={it.date}
         >
           <a class="card" href={it.url}>
             <h3>{it.title}</h3>
@@ -45,6 +58,7 @@ const items = Object.values(modules).map((m) => ({
   </section>
   <script is:inline>
     const input = document.getElementById('search-input');
+    const sort = document.getElementById('sort-order');
     const cards = Array.from(document.querySelectorAll('#results > div'));
     function filter() {
       const q = input.value.trim().toLowerCase();
@@ -55,6 +69,26 @@ const items = Object.values(modules).map((m) => ({
         card.style.display = match ? '' : 'none';
       });
     }
+    function sortCards() {
+      const container = document.getElementById('results');
+      const ordered = cards.slice().sort((a, b) => {
+        switch (sort.value) {
+          case 'az':
+            return a.dataset.title.localeCompare(b.dataset.title);
+          case 'za':
+            return b.dataset.title.localeCompare(a.dataset.title);
+          case 'newest':
+            return Number(b.dataset.date) - Number(a.dataset.date);
+          case 'oldest':
+            return Number(a.dataset.date) - Number(b.dataset.date);
+          default:
+            return 0;
+        }
+      });
+      ordered.forEach((card) => container.appendChild(card));
+    }
     input.addEventListener('input', filter);
+    sort.addEventListener('change', sortCards);
+    sortCards();
   </script>
 </BaseLayout>
