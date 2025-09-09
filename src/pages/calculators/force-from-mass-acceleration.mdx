@@ -1,0 +1,51 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Force from Mass and Acceleration"
+description: "Compute force using Newton's second law."
+updated: "2025-09-15"
+cluster: "Science & Engineering"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  inputs: [
+    {
+      name: "mass",
+      label: "Mass (kg)",
+      type: "number",
+      min: 0,
+      step: "any",
+      placeholder: "10"
+    },
+    {
+      name: "acceleration",
+      label: "Acceleration (m/s^2)",
+      type: "number",
+      min: 0,
+      step: "any",
+      placeholder: "2"
+    }
+  ],
+  slug: "force-from-mass-acceleration",
+  title: "Force from Mass and Acceleration",
+  locale: "en",
+  expression: "mass * acceleration",
+  unit: "N",
+  intro: "Apply Newton's second law to calculate force from mass and acceleration. Provide values for both to see the resulting force in newtons.",
+  examples: [
+    { description: "10 kg with 2 m/s^2 \u21d2 20 N" },
+    { description: "5 kg with 9.81 m/s^2 \u21d2 49.05 N" }
+  ],
+  faqs: [
+    { question: "Can mass be zero?", answer: "A mass of zero results in zero force." },
+    { question: "Is gravity included?", answer: "Include gravitational acceleration if calculating weight force." },
+    { question: "What units are required?", answer: "Mass in kilograms and acceleration in meters per second squared." },
+    { question: "Why use newtons?", answer: "The newton is the SI unit of force." }
+  ],
+  disclaimer: "Educational tool; not for precision engineering.",
+  cluster: "Science & Engineering"
+};
+
+<Calculator schema={schema} />
+

@@ -1,0 +1,43 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Pascal to mmHg Converter"
+description: "Convert pressure from pascals to millimeters of mercury."
+updated: "2025-09-15"
+cluster: "Conversions"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  inputs: [
+    {
+      name: "pascal",
+      label: "Pressure (Pa)",
+      type: "number",
+      min: 0,
+      step: "any",
+      placeholder: "101325"
+    }
+  ],
+  slug: "pascal-to-mmhg",
+  title: "Pascal to mmHg Converter",
+  locale: "en",
+  expression: "pascal / 133.322",
+  unit: "mmHg",
+  intro: "Convert pressure values from pascals to millimeters of mercury using the standard conversion factor 1 mmHg = 133.322 Pa.",
+  examples: [
+    { description: "1333.22 Pa \u21d2 10 mmHg" },
+    { description: "101325 Pa \u21d2 760 mmHg" }
+  ],
+  faqs: [
+    { question: "Is this conversion exact?", answer: "It uses the standard conversion factor and is precise for most purposes." },
+    { question: "Can I convert negative pressures?", answer: "Negative values represent vacuum relative to atmospheric pressure and are allowed." },
+    { question: "What is mmHg?", answer: "Millimeters of mercury, a unit commonly used for blood pressure and barometric pressure." },
+    { question: "How do I convert back to pascals?", answer: "Multiply the mmHg value by 133.322." }
+  ],
+  disclaimer: "Verify critical pressure conversions with official standards.",
+  cluster: "Conversions"
+};
+
+<Calculator schema={schema} />
+

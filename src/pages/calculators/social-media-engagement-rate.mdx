@@ -1,0 +1,39 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Social Media Engagement Rate"
+description: "Measure engagement as a percentage of followers."
+updated: "2025-09-15"
+cluster: "Web & Marketing"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  inputs: [
+    { name: "likes", label: "Likes", type: "number", min: 0, step: "any", placeholder: "500" },
+    { name: "comments", label: "Comments", type: "number", min: 0, step: "any", placeholder: "60" },
+    { name: "shares", label: "Shares", type: "number", min: 0, step: "any", placeholder: "40" },
+    { name: "followers", label: "Followers", type: "number", min: 1, step: "any", placeholder: "10000" }
+  ],
+  slug: "social-media-engagement-rate",
+  title: "Social Media Engagement Rate",
+  locale: "en",
+  expression: "(likes + comments + shares) / followers * 100",
+  unit: "%",
+  intro: "Calculate the engagement rate of a social media post by comparing total interactions to follower count.",
+  examples: [
+    { description: "500 likes, 60 comments, 40 shares, 10,000 followers \u21d2 6%" },
+    { description: "100 likes, 10 comments, 5 shares, 5,000 followers \u21d2 2.3%" }
+  ],
+  faqs: [
+    { question: "What interactions are counted?", answer: "This calculator sums likes, comments, and shares." },
+    { question: "Why use follower count?", answer: "It normalizes engagement across accounts of different sizes." },
+    { question: "Can I include other metrics?", answer: "Yes, add them to the likes field if you want to incorporate them." },
+    { question: "Is higher always better?", answer: "Generally yes, but context and industry averages matter." }
+  ],
+  disclaimer: "For marketing analysis only; real engagement may vary by platform.",
+  cluster: "Web & Marketing"
+};
+
+<Calculator schema={schema} />
+

@@ -1,0 +1,41 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Weeks Between Dates Calculator"
+description: "Count the weeks separating two calendar dates."
+updated: "2025-09-15"
+cluster: "Date & Time"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  inputs: [
+    { name: "year1", label: "Start Year", type: "number", step: "1", placeholder: "2024" },
+    { name: "month1", label: "Start Month", type: "number", step: "1", placeholder: "1" },
+    { name: "day1", label: "Start Day", type: "number", step: "1", placeholder: "1" },
+    { name: "year2", label: "End Year", type: "number", step: "1", placeholder: "2024" },
+    { name: "month2", label: "End Month", type: "number", step: "1", placeholder: "3" },
+    { name: "day2", label: "End Day", type: "number", step: "1", placeholder: "15" }
+  ],
+  slug: "weeks-between-dates",
+  title: "Weeks Between Dates Calculator",
+  locale: "en",
+  expression: "(new Date(year2, month2-1, day2) - new Date(year1, month1-1, day1)) / 604800000",
+  unit: "weeks",
+  intro: "Find the number of weeks between two dates. Enter the start and end dates to see the difference expressed in weeks.",
+  examples: [
+    { description: "Jan 1, 2024 to Feb 12, 2024 \u21d2 6 weeks" },
+    { description: "Jul 1, 2024 to Aug 26, 2024 \u21d2 8 weeks" }
+  ],
+  faqs: [
+    { question: "Does it account for leap years?", answer: "Yes, the Date object handles leap years automatically." },
+    { question: "Can the result be negative?", answer: "If the end date is before the start date, the result will be negative." },
+    { question: "Are partial weeks shown?", answer: "Yes, the result may include decimals for partial weeks." },
+    { question: "What time zone is used?", answer: "The calculation uses the local time zone of your device." }
+  ],
+  disclaimer: "Approximate calculation; verify critical timelines independently.",
+  cluster: "Date & Time"
+};
+
+<Calculator schema={schema} />
+
