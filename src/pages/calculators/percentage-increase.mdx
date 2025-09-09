@@ -1,9 +1,9 @@
 ---
 layout: ../../layouts/CalculatorLayout.astro
 title: "Percentage Increase"
-description: "Get the percentage increase from an old value to a new value."
+description: "Calculate the percentage gain from an original value to a new value."
 updated: "2025-08-26"
-cluster: "Math"
+cluster: "math"
 ---
 
 import Calculator from '../../components/Calculator.astro';
@@ -31,20 +31,32 @@ export const schema = {
   "title": "Percentage Increase",
   "locale": "en",
   "expression": "((newValue - oldValue) / oldValue) * 100",
-  "intro": "Get the percentage increase from an old value to a new value.",
+  "unit": "%",
+  "intro": "Determine how much a value has grown. Enter the original and new values to see the percentage increase.",
   "examples": [
-    {
-      "description": "From 50 to 70 \u21d2 40% increase"
-    }
+    { "description": "From 50 to 70 ⇒ 40% increase" },
+    { "description": "From 80 to 100 ⇒ 25% increase" }
   ],
   "faqs": [
     {
-      "question": "What if old value is 0?",
-      "answer": "Percentage change is undefined when the old value is 0."
+      "question": "What if the new value is lower?",
+      "answer": "The result will be negative, indicating a percentage decrease."
+    },
+    {
+      "question": "Can I use negative numbers?",
+      "answer": "Yes, but interpret the result carefully depending on context."
+    },
+    {
+      "question": "Why is the result undefined when the old value is 0?",
+      "answer": "Division by zero makes the percentage change impossible to compute."
+    },
+    {
+      "question": "Is percentage increase the same as growth rate?",
+      "answer": "It expresses growth relative to the original value, often used as a growth rate."
     }
   ],
   "disclaimer": "Educational purposes only. Not professional advice.",
-  "cluster": "Math"
-}
+  "cluster": "math"
+};
 
 <Calculator schema={schema} />

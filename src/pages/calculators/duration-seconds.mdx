@@ -1,9 +1,9 @@
 ---
 layout: ../../layouts/CalculatorLayout.astro
 title: "Duration to Seconds"
-description: "Convert hours, minutes, and seconds into total seconds."
+description: "Convert a time duration into total seconds."
 updated: "2025-08-26"
-cluster: "Date & Time"
+cluster: "date & time"
 ---
 
 import Calculator from '../../components/Calculator.astro';
@@ -39,20 +39,32 @@ export const schema = {
   "title": "Duration to Seconds",
   "locale": "en",
   "expression": "(hours*3600) + (minutes*60) + seconds",
-  "intro": "Convert hours, minutes, and seconds into total seconds.",
+  "unit": "seconds",
+  "intro": "Enter hours, minutes, and seconds to get the total duration expressed in seconds.",
   "examples": [
-    {
-      "description": "1h 30m 15s \u21d2 5415 seconds"
-    }
+    { "description": "1h 30m 15s ⇒ 5415 seconds" },
+    { "description": "0h 45m 0s ⇒ 2700 seconds" }
   ],
   "faqs": [
     {
-      "question": "Supports decimals?",
-      "answer": "Use whole numbers for simplicity in this tool."
+      "question": "Can I leave fields blank?",
+      "answer": "Empty fields are treated as zero."
+    },
+    {
+      "question": "Does it handle durations longer than a day?",
+      "answer": "Yes, enter any non-negative values."
+    },
+    {
+      "question": "Can I use decimals?",
+      "answer": "Use whole numbers; the calculator treats inputs as integers."
+    },
+    {
+      "question": "What if I enter negative numbers?",
+      "answer": "Negative values are invalid and will not calculate."
     }
   ],
   "disclaimer": "Educational purposes only. Not professional advice.",
-  "cluster": "Date & Time"
-}
+  "cluster": "date & time"
+};
 
 <Calculator schema={schema} />
