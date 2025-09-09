@@ -1,0 +1,47 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Insulation R-Value Calculator"
+description: "Compute insulation R-value from material rating and thickness."
+updated: "2025-02-14"
+cluster: "Home & DIY"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "insulation-r-value",
+  "title": "Insulation R-Value Calculator",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "rperinch",
+      "label": "R per Inch",
+      "type": "number",
+      "step": "any",
+      "placeholder": "3.5"
+    },
+    {
+      "name": "thickness",
+      "label": "Thickness (in)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "6"
+    }
+  ],
+  "expression": "rperinch * thickness",
+  "intro": "Find total insulation R-value from per-inch rating.",
+  "examples": [
+    {
+      "description": "R-3.5 per inch at 6 in ⇒ R-21"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Does compression affect R-value?",
+      "answer": "Yes, compressed insulation reduces R-value."
+    }
+  ],
+  "cluster": "Home & DIY"
+};
+
+<Calculator schema={schema} />

@@ -1,0 +1,47 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Logarithm Base Change Calculator"
+description: "Convert logarithm to any base."
+updated: "2025-02-14"
+cluster: "Math & Statistics"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "log-base-change",
+  "title": "Logarithm Base Change Calculator",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "value",
+      "label": "Value",
+      "type": "number",
+      "step": "any",
+      "placeholder": "8"
+    },
+    {
+      "name": "base",
+      "label": "Base",
+      "type": "number",
+      "step": "any",
+      "placeholder": "2"
+    }
+  ],
+  "expression": "Math.log(value)/Math.log(base)",
+  "intro": "Compute log of a value with any base using change-of-base formula.",
+  "examples": [
+    {
+      "description": "log base 2 of 8 ⇒ 3"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Can base be 10?",
+      "answer": "Yes, base can be any positive number except 1."
+    }
+  ],
+  "cluster": "Math & Statistics"
+};
+
+<Calculator schema={schema} />

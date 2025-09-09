@@ -1,0 +1,54 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Radioactive Half-Life Calculator"
+description: "Amount remaining after given half-lives."
+updated: "2025-02-14"
+cluster: "Science & Engineering"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "radioactive-half-life",
+  "title": "Radioactive Half-Life Calculator",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "initial",
+      "label": "Initial Amount",
+      "type": "number",
+      "step": "any",
+      "placeholder": "100"
+    },
+    {
+      "name": "time",
+      "label": "Time",
+      "type": "number",
+      "step": "any",
+      "placeholder": "5"
+    },
+    {
+      "name": "half",
+      "label": "Half-life",
+      "type": "number",
+      "step": "any",
+      "placeholder": "1"
+    }
+  ],
+  "expression": "initial * Math.pow(0.5, time / half)",
+  "intro": "Estimate remaining quantity after radioactive decay.",
+  "examples": [
+    {
+      "description": "100 initial, 5 time, 1 half-life ⇒ 3.125"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Is decay continuous?",
+      "answer": "Yes, modeled as exponential decay."
+    }
+  ],
+  "cluster": "Science & Engineering"
+};
+
+<Calculator schema={schema} />

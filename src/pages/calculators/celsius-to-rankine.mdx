@@ -1,0 +1,40 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Celsius to Rankine Converter"
+description: "Convert degrees Celsius to Rankine."
+updated: "2025-02-14"
+cluster: "Conversions & Units"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "celsius-to-rankine",
+  "title": "Celsius to Rankine Converter",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "celsius",
+      "label": "Celsius",
+      "type": "number",
+      "step": "any",
+      "placeholder": "0"
+    }
+  ],
+  "expression": "(celsius + 273.15) * 9/5",
+  "intro": "Convert temperature from Celsius to Rankine.",
+  "examples": [
+    {
+      "description": "0°C ⇒ 491.67 R"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Is Rankine used in engineering?",
+      "answer": "Yes, Rankine is used in some engineering fields."
+    }
+  ],
+  "cluster": "Conversions & Units"
+};
+
+<Calculator schema={schema} />

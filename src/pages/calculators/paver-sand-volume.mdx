@@ -1,0 +1,54 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Paver Sand Volume Calculator"
+description: "Cubic yards of sand needed for a paver base."
+updated: "2025-02-14"
+cluster: "Home & DIY"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "paver-sand-volume",
+  "title": "Paver Sand Volume Calculator",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "length",
+      "label": "Length (ft)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "10"
+    },
+    {
+      "name": "width",
+      "label": "Width (ft)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "10"
+    },
+    {
+      "name": "depth",
+      "label": "Depth (in)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "4"
+    }
+  ],
+  "expression": "length * width * (depth/12) / 27",
+  "intro": "Estimate paver base sand volume in cubic yards.",
+  "examples": [
+    {
+      "description": "10×10 ft area, 4 in depth ⇒ 1.23 yd³"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Add extra for compaction?",
+      "answer": "Ordering a bit extra is recommended."
+    }
+  ],
+  "cluster": "Home & DIY"
+};
+
+<Calculator schema={schema} />

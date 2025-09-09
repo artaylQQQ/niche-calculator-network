@@ -17072,4 +17072,887 @@
     ],
     "disclaimer": "For marketing analysis only; actual growth may vary."
   }
+,
+{
+  "slug": "ebitda-calculator",
+  "title": "EBITDA Calculator",
+  "cluster": "Finance & Business",
+  "description": "Calculate earnings before interest, taxes, depreciation, and amortization.",
+  "inputs": [
+    {
+      "name": "revenue",
+      "label": "Revenue",
+      "type": "number",
+      "step": "any",
+      "placeholder": "100000"
+    },
+    {
+      "name": "cogs",
+      "label": "COGS",
+      "type": "number",
+      "step": "any",
+      "placeholder": "40000"
+    },
+    {
+      "name": "operating",
+      "label": "Operating Expenses",
+      "type": "number",
+      "step": "any",
+      "placeholder": "20000"
+    }
+  ],
+  "expression": "revenue - cogs - operating",
+  "intro": "Estimate earnings before interest, taxes, depreciation, and amortization.",
+  "examples": [
+    {
+      "description": "100000 revenue, 40000 COGS, 20000 expenses ⇒ 40000"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Does this include depreciation?",
+      "answer": "Depreciation and amortization are excluded."
+    }
+  ]
+},
+{
+  "slug": "customer-churn-rate",
+  "title": "Customer Churn Rate Calculator",
+  "cluster": "Finance & Business",
+  "description": "Find churn percentage from lost customers and total customers.",
+  "inputs": [
+    {
+      "name": "lost",
+      "label": "Customers Lost",
+      "type": "number",
+      "step": "any",
+      "placeholder": "20"
+    },
+    {
+      "name": "total",
+      "label": "Total Customers",
+      "type": "number",
+      "step": "any",
+      "placeholder": "200"
+    }
+  ],
+  "expression": "(lost / total) * 100",
+  "intro": "Determine customer churn rate over a period.",
+  "examples": [
+    {
+      "description": "20 lost out of 200 ⇒ 10%"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Is lower churn better?",
+      "answer": "Yes, lower churn means more customers retained."
+    }
+  ]
+},
+{
+  "slug": "net-worth-calculator",
+  "title": "Net Worth Calculator",
+  "cluster": "Personal Finance & Loans",
+  "description": "Assets minus liabilities.",
+  "inputs": [
+    {
+      "name": "assets",
+      "label": "Total Assets",
+      "type": "number",
+      "step": "any",
+      "placeholder": "150000"
+    },
+    {
+      "name": "liabilities",
+      "label": "Total Liabilities",
+      "type": "number",
+      "step": "any",
+      "placeholder": "50000"
+    }
+  ],
+  "expression": "assets - liabilities",
+  "intro": "Estimate personal net worth by subtracting liabilities from assets.",
+  "examples": [
+    {
+      "description": "150000 assets minus 50000 liabilities ⇒ 100000"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Include home value?",
+      "answer": "Yes, include total assets and debts."
+    }
+  ]
+},
+{
+  "slug": "apy-calculator",
+  "title": "APY Calculator",
+  "cluster": "Personal Finance & Loans",
+  "description": "Calculate annual percentage yield from nominal rate and compounding periods.",
+  "inputs": [
+    {
+      "name": "rate",
+      "label": "Nominal Rate (%)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "5"
+    },
+    {
+      "name": "n",
+      "label": "Compounds per Year",
+      "type": "number",
+      "step": "any",
+      "placeholder": "12"
+    }
+  ],
+  "expression": "(Math.pow(1 + rate/100/n, n) - 1) * 100",
+  "intro": "Find APY from interest rate and compounding frequency.",
+  "examples": [
+    {
+      "description": "5% rate compounded monthly ⇒ 5.12% APY"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Why is APY higher than rate?",
+      "answer": "Compounding increases effective yield."
+    }
+  ]
+},
+{
+  "slug": "sleep-efficiency",
+  "title": "Sleep Efficiency Calculator",
+  "cluster": "Health & Fitness",
+  "description": "Percentage of time in bed spent asleep.",
+  "inputs": [
+    {
+      "name": "timeAsleep",
+      "label": "Time Asleep (hrs)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "7"
+    },
+    {
+      "name": "timeInBed",
+      "label": "Time in Bed (hrs)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "8"
+    }
+  ],
+  "expression": "(timeAsleep / timeInBed) * 100",
+  "intro": "Assess sleep efficiency from total time in bed.",
+  "examples": [
+    {
+      "description": "7 hours asleep in 8 hours bed ⇒ 87.5%"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Is higher efficiency better?",
+      "answer": "Yes, higher efficiency indicates better sleep."
+    }
+  ]
+},
+{
+  "slug": "rmr-cunningham",
+  "title": "Resting Metabolic Rate (Cunningham) Calculator",
+  "cluster": "Health & Fitness",
+  "description": "Estimate resting calorie needs using fat-free mass.",
+  "inputs": [
+    {
+      "name": "ffm",
+      "label": "Fat-Free Mass (kg)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "60"
+    }
+  ],
+  "expression": "500 + 22 * ffm",
+  "intro": "Estimate resting metabolic rate using the Cunningham formula.",
+  "examples": [
+    {
+      "description": "60 kg FFM ⇒ 1820 kcal/day"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Does it require body fat measurements?",
+      "answer": "Yes, fat-free mass is needed."
+    }
+  ]
+},
+{
+  "slug": "cube-root",
+  "title": "Cube Root Calculator",
+  "cluster": "Math & Statistics",
+  "description": "Find the cube root of a number.",
+  "inputs": [
+    {
+      "name": "value",
+      "label": "Value",
+      "type": "number",
+      "step": "any",
+      "placeholder": "27"
+    }
+  ],
+  "expression": "Math.cbrt(value)",
+  "intro": "Compute the cube root of a number.",
+  "examples": [
+    {
+      "description": "27 ⇒ 3"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Can input be negative?",
+      "answer": "Yes, cube root of negative numbers is supported."
+    }
+  ]
+},
+{
+  "slug": "log-base-change",
+  "title": "Logarithm Base Change Calculator",
+  "cluster": "Math & Statistics",
+  "description": "Convert logarithm to any base.",
+  "inputs": [
+    {
+      "name": "value",
+      "label": "Value",
+      "type": "number",
+      "step": "any",
+      "placeholder": "8"
+    },
+    {
+      "name": "base",
+      "label": "Base",
+      "type": "number",
+      "step": "any",
+      "placeholder": "2"
+    }
+  ],
+  "expression": "Math.log(value)/Math.log(base)",
+  "intro": "Compute log of a value with any base using change-of-base formula.",
+  "examples": [
+    {
+      "description": "log base 2 of 8 ⇒ 3"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Can base be 10?",
+      "answer": "Yes, base can be any positive number except 1."
+    }
+  ]
+},
+{
+  "slug": "celsius-to-rankine",
+  "title": "Celsius to Rankine Converter",
+  "cluster": "Conversions & Units",
+  "description": "Convert degrees Celsius to Rankine.",
+  "inputs": [
+    {
+      "name": "celsius",
+      "label": "Celsius",
+      "type": "number",
+      "step": "any",
+      "placeholder": "0"
+    }
+  ],
+  "expression": "(celsius + 273.15) * 9/5",
+  "intro": "Convert temperature from Celsius to Rankine.",
+  "examples": [
+    {
+      "description": "0°C ⇒ 491.67 R"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Is Rankine used in engineering?",
+      "answer": "Yes, Rankine is used in some engineering fields."
+    }
+  ]
+},
+{
+  "slug": "fps-to-mph",
+  "title": "Feet per Second to Miles per Hour",
+  "cluster": "Conversions & Units",
+  "description": "Convert speed from ft/s to mph.",
+  "inputs": [
+    {
+      "name": "fps",
+      "label": "Feet per Second",
+      "type": "number",
+      "step": "any",
+      "placeholder": "88"
+    }
+  ],
+  "expression": "fps * 0.681818",
+  "intro": "Convert feet per second to miles per hour.",
+  "examples": [
+    {
+      "description": "88 ft/s ⇒ ~60 mph"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Does it assume exact conversion?",
+      "answer": "Yes, using 1 mph = 1.46667 ft/s."
+    }
+  ]
+},
+{
+  "slug": "weeks-between-dates",
+  "title": "Weeks Between Dates Calculator",
+  "cluster": "Date & Time",
+  "description": "Find weeks between two dates.",
+  "inputs": [
+    {
+      "name": "y1",
+      "label": "Start Year",
+      "type": "number",
+      "step": "1",
+      "placeholder": "2024"
+    },
+    {
+      "name": "m1",
+      "label": "Start Month",
+      "type": "number",
+      "step": "1",
+      "placeholder": "1"
+    },
+    {
+      "name": "d1",
+      "label": "Start Day",
+      "type": "number",
+      "step": "1",
+      "placeholder": "1"
+    },
+    {
+      "name": "y2",
+      "label": "End Year",
+      "type": "number",
+      "step": "1",
+      "placeholder": "2024"
+    },
+    {
+      "name": "m2",
+      "label": "End Month",
+      "type": "number",
+      "step": "1",
+      "placeholder": "12"
+    },
+    {
+      "name": "d2",
+      "label": "End Day",
+      "type": "number",
+      "step": "1",
+      "placeholder": "31"
+    }
+  ],
+  "expression": "(new Date(y2, m2-1, d2) - new Date(y1, m1-1, d1)) / 604800000",
+  "intro": "Calculate number of weeks between two calendar dates.",
+  "examples": [
+    {
+      "description": "Jan 1 to Jan 29 2024 ⇒ 4 weeks"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Are partial weeks shown?",
+      "answer": "Yes, result may include decimals."
+    }
+  ]
+},
+{
+  "slug": "days-until-date",
+  "title": "Days Until Date Calculator",
+  "cluster": "Date & Time",
+  "description": "Count days from today until a future date.",
+  "inputs": [
+    {
+      "name": "year",
+      "label": "Year",
+      "type": "number",
+      "step": "1",
+      "placeholder": "2025"
+    },
+    {
+      "name": "month",
+      "label": "Month",
+      "type": "number",
+      "step": "1",
+      "placeholder": "12"
+    },
+    {
+      "name": "day",
+      "label": "Day",
+      "type": "number",
+      "step": "1",
+      "placeholder": "31"
+    }
+  ],
+  "expression": "(new Date(year, month-1, day) - new Date()) / 86400000",
+  "intro": "Find how many days remain until a specified date.",
+  "examples": [
+    {
+      "description": "Future date 10 days away ⇒ 10"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Does it handle past dates?",
+      "answer": "Past dates yield negative values."
+    }
+  ]
+},
+{
+  "slug": "final-grade-needed",
+  "title": "Final Grade Needed Calculator",
+  "cluster": "Education & Learning",
+  "description": "Required final exam score to reach desired course grade.",
+  "inputs": [
+    {
+      "name": "current",
+      "label": "Current Grade (%)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "85"
+    },
+    {
+      "name": "desired",
+      "label": "Desired Grade (%)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "90"
+    },
+    {
+      "name": "weight",
+      "label": "Final Exam Weight (%)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "30"
+    }
+  ],
+  "expression": "((desired - current*(100 - weight)/100) / (weight/100))",
+  "intro": "Compute the score needed on a final exam to achieve a target grade.",
+  "examples": [
+    {
+      "description": "85 current, 90 desired, 30% final ⇒ 100"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "What if result >100?",
+      "answer": "It means desired grade is unattainable."
+    }
+  ]
+},
+{
+  "slug": "quiz-score-percentage",
+  "title": "Quiz Score Percentage Calculator",
+  "cluster": "Education & Learning",
+  "description": "Convert quiz score to percentage.",
+  "inputs": [
+    {
+      "name": "score",
+      "label": "Score",
+      "type": "number",
+      "step": "any",
+      "placeholder": "18"
+    },
+    {
+      "name": "total",
+      "label": "Total Points",
+      "type": "number",
+      "step": "any",
+      "placeholder": "20"
+    }
+  ],
+  "expression": "(score / total) * 100",
+  "intro": "Find percentage score from points earned and total points.",
+  "examples": [
+    {
+      "description": "18 of 20 ⇒ 90%"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Does this round?",
+      "answer": "Result shows exact percentage."
+    }
+  ]
+},
+{
+  "slug": "kinetic-energy",
+  "title": "Kinetic Energy Calculator",
+  "cluster": "Science & Engineering",
+  "description": "Compute kinetic energy from mass and velocity.",
+  "inputs": [
+    {
+      "name": "mass",
+      "label": "Mass (kg)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "2"
+    },
+    {
+      "name": "velocity",
+      "label": "Velocity (m/s)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "3"
+    }
+  ],
+  "expression": "0.5 * mass * velocity * velocity",
+  "intro": "Calculate kinetic energy using the classical formula.",
+  "examples": [
+    {
+      "description": "2 kg at 3 m/s ⇒ 9 J"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Does this assume non-relativistic speeds?",
+      "answer": "Yes, formula applies at typical speeds."
+    }
+  ]
+},
+{
+  "slug": "radioactive-half-life",
+  "title": "Radioactive Half-Life Calculator",
+  "cluster": "Science & Engineering",
+  "description": "Amount remaining after given half-lives.",
+  "inputs": [
+    {
+      "name": "initial",
+      "label": "Initial Amount",
+      "type": "number",
+      "step": "any",
+      "placeholder": "100"
+    },
+    {
+      "name": "time",
+      "label": "Time",
+      "type": "number",
+      "step": "any",
+      "placeholder": "5"
+    },
+    {
+      "name": "half",
+      "label": "Half-life",
+      "type": "number",
+      "step": "any",
+      "placeholder": "1"
+    }
+  ],
+  "expression": "initial * Math.pow(0.5, time / half)",
+  "intro": "Estimate remaining quantity after radioactive decay.",
+  "examples": [
+    {
+      "description": "100 initial, 5 time, 1 half-life ⇒ 3.125"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Is decay continuous?",
+      "answer": "Yes, modeled as exponential decay."
+    }
+  ]
+},
+{
+  "slug": "api-rate-limit",
+  "title": "API Rate Limit Calculator",
+  "cluster": "Technology & Coding",
+  "description": "Requests allowed per second from limit and window.",
+  "inputs": [
+    {
+      "name": "limit",
+      "label": "Requests Allowed",
+      "type": "number",
+      "step": "any",
+      "placeholder": "1000"
+    },
+    {
+      "name": "window",
+      "label": "Window (sec)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "60"
+    }
+  ],
+  "expression": "limit / window",
+  "intro": "Determine average requests per second allowed by an API.",
+  "examples": [
+    {
+      "description": "1000 requests per 60s ⇒ 16.67 rps"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Is bursting allowed?",
+      "answer": "This provides average rate; actual APIs may allow bursts."
+    }
+  ]
+},
+{
+  "slug": "automation-time-saved",
+  "title": "Automation Time Saved Calculator",
+  "cluster": "Technology & Coding",
+  "description": "Total time saved by automating a task.",
+  "inputs": [
+    {
+      "name": "manual",
+      "label": "Manual Time (min)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "10"
+    },
+    {
+      "name": "automated",
+      "label": "Automated Time (min)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "2"
+    },
+    {
+      "name": "occurrences",
+      "label": "Occurrences",
+      "type": "number",
+      "step": "any",
+      "placeholder": "50"
+    }
+  ],
+  "expression": "(manual - automated) * occurrences",
+  "intro": "Estimate minutes saved when automating repetitive tasks.",
+  "examples": [
+    {
+      "description": "10 min manual, 2 min automated, 50 times ⇒ 400 min saved"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Can savings be negative?",
+      "answer": "If automation takes longer, result may be negative."
+    }
+  ]
+},
+{
+  "slug": "paver-sand-volume",
+  "title": "Paver Sand Volume Calculator",
+  "cluster": "Home & DIY",
+  "description": "Cubic yards of sand needed for a paver base.",
+  "inputs": [
+    {
+      "name": "length",
+      "label": "Length (ft)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "10"
+    },
+    {
+      "name": "width",
+      "label": "Width (ft)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "10"
+    },
+    {
+      "name": "depth",
+      "label": "Depth (in)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "4"
+    }
+  ],
+  "expression": "length * width * (depth/12) / 27",
+  "intro": "Estimate paver base sand volume in cubic yards.",
+  "examples": [
+    {
+      "description": "10×10 ft area, 4 in depth ⇒ 1.23 yd³"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Add extra for compaction?",
+      "answer": "Ordering a bit extra is recommended."
+    }
+  ]
+},
+{
+  "slug": "insulation-r-value",
+  "title": "Insulation R-Value Calculator",
+  "cluster": "Home & DIY",
+  "description": "Compute insulation R-value from material rating and thickness.",
+  "inputs": [
+    {
+      "name": "rperinch",
+      "label": "R per Inch",
+      "type": "number",
+      "step": "any",
+      "placeholder": "3.5"
+    },
+    {
+      "name": "thickness",
+      "label": "Thickness (in)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "6"
+    }
+  ],
+  "expression": "rperinch * thickness",
+  "intro": "Find total insulation R-value from per-inch rating.",
+  "examples": [
+    {
+      "description": "R-3.5 per inch at 6 in ⇒ R-21"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Does compression affect R-value?",
+      "answer": "Yes, compressed insulation reduces R-value."
+    }
+  ]
+},
+{
+  "slug": "luggage-space-remaining",
+  "title": "Luggage Space Remaining Calculator",
+  "cluster": "Lifestyle & Travel",
+  "description": "Remaining volume in luggage.",
+  "inputs": [
+    {
+      "name": "capacity",
+      "label": "Capacity (L)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "50"
+    },
+    {
+      "name": "used",
+      "label": "Used Volume (L)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "30"
+    }
+  ],
+  "expression": "capacity - used",
+  "intro": "See how much luggage volume is still available.",
+  "examples": [
+    {
+      "description": "50 L capacity, 30 L used ⇒ 20 L remaining"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Include weight limits?",
+      "answer": "No, only volume is considered."
+    }
+  ]
+},
+{
+  "slug": "trip-daily-budget",
+  "title": "Trip Daily Budget Calculator",
+  "cluster": "Lifestyle & Travel",
+  "description": "Daily spending limit for a trip.",
+  "inputs": [
+    {
+      "name": "budget",
+      "label": "Total Budget",
+      "type": "number",
+      "step": "any",
+      "placeholder": "1000"
+    },
+    {
+      "name": "days",
+      "label": "Days",
+      "type": "number",
+      "step": "any",
+      "placeholder": "5"
+    }
+  ],
+  "expression": "budget / days",
+  "intro": "Divide total trip budget by number of days.",
+  "examples": [
+    {
+      "description": "$1000 over 5 days ⇒ $200/day"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Does this include travel costs?",
+      "answer": "Include all expenses in total budget."
+    }
+  ]
+},
+{
+  "slug": "cpm-calculator",
+  "title": "CPM Calculator",
+  "cluster": "Web & Marketing",
+  "description": "Cost per thousand impressions.",
+  "inputs": [
+    {
+      "name": "cost",
+      "label": "Campaign Cost",
+      "type": "number",
+      "step": "any",
+      "placeholder": "500"
+    },
+    {
+      "name": "impressions",
+      "label": "Impressions",
+      "type": "number",
+      "step": "any",
+      "placeholder": "100000"
+    }
+  ],
+  "expression": "(cost / impressions) * 1000",
+  "intro": "Compute cost per thousand ad impressions.",
+  "examples": [
+    {
+      "description": "$500 for 100000 impressions ⇒ $5 CPM"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Are impressions unique?",
+      "answer": "Impressions may include repeated views."
+    }
+  ]
+},
+{
+  "slug": "roas-calculator",
+  "title": "ROAS Calculator",
+  "cluster": "Web & Marketing",
+  "description": "Return on ad spend as percentage.",
+  "inputs": [
+    {
+      "name": "revenue",
+      "label": "Revenue",
+      "type": "number",
+      "step": "any",
+      "placeholder": "2000"
+    },
+    {
+      "name": "adcost",
+      "label": "Ad Cost",
+      "type": "number",
+      "step": "any",
+      "placeholder": "500"
+    }
+  ],
+  "expression": "(revenue / adcost) * 100",
+  "intro": "Evaluate return on advertising investment.",
+  "examples": [
+    {
+      "description": "$2000 revenue from $500 cost ⇒ 400%"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Is higher ROAS better?",
+      "answer": "Yes, higher indicates more revenue per dollar spent."
+    }
+  ]
+}
 ]

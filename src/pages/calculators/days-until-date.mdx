@@ -1,0 +1,54 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Days Until Date Calculator"
+description: "Count days from today until a future date."
+updated: "2025-02-14"
+cluster: "Date & Time"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "days-until-date",
+  "title": "Days Until Date Calculator",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "year",
+      "label": "Year",
+      "type": "number",
+      "step": "1",
+      "placeholder": "2025"
+    },
+    {
+      "name": "month",
+      "label": "Month",
+      "type": "number",
+      "step": "1",
+      "placeholder": "12"
+    },
+    {
+      "name": "day",
+      "label": "Day",
+      "type": "number",
+      "step": "1",
+      "placeholder": "31"
+    }
+  ],
+  "expression": "(new Date(year, month-1, day) - new Date()) / 86400000",
+  "intro": "Find how many days remain until a specified date.",
+  "examples": [
+    {
+      "description": "Future date 10 days away ⇒ 10"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Does it handle past dates?",
+      "answer": "Past dates yield negative values."
+    }
+  ],
+  "cluster": "Date & Time"
+};
+
+<Calculator schema={schema} />

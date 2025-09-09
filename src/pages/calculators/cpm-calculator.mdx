@@ -1,0 +1,47 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "CPM Calculator"
+description: "Cost per thousand impressions."
+updated: "2025-02-14"
+cluster: "Web & Marketing"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "cpm-calculator",
+  "title": "CPM Calculator",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "cost",
+      "label": "Campaign Cost",
+      "type": "number",
+      "step": "any",
+      "placeholder": "500"
+    },
+    {
+      "name": "impressions",
+      "label": "Impressions",
+      "type": "number",
+      "step": "any",
+      "placeholder": "100000"
+    }
+  ],
+  "expression": "(cost / impressions) * 1000",
+  "intro": "Compute cost per thousand ad impressions.",
+  "examples": [
+    {
+      "description": "$500 for 100000 impressions ⇒ $5 CPM"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Are impressions unique?",
+      "answer": "Impressions may include repeated views."
+    }
+  ],
+  "cluster": "Web & Marketing"
+};
+
+<Calculator schema={schema} />

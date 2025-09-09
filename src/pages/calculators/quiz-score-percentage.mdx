@@ -1,0 +1,47 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Quiz Score Percentage Calculator"
+description: "Convert quiz score to percentage."
+updated: "2025-02-14"
+cluster: "Education & Learning"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "quiz-score-percentage",
+  "title": "Quiz Score Percentage Calculator",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "score",
+      "label": "Score",
+      "type": "number",
+      "step": "any",
+      "placeholder": "18"
+    },
+    {
+      "name": "total",
+      "label": "Total Points",
+      "type": "number",
+      "step": "any",
+      "placeholder": "20"
+    }
+  ],
+  "expression": "(score / total) * 100",
+  "intro": "Find percentage score from points earned and total points.",
+  "examples": [
+    {
+      "description": "18 of 20 ⇒ 90%"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Does this round?",
+      "answer": "Result shows exact percentage."
+    }
+  ],
+  "cluster": "Education & Learning"
+};
+
+<Calculator schema={schema} />

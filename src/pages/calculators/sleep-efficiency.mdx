@@ -1,0 +1,47 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Sleep Efficiency Calculator"
+description: "Percentage of time in bed spent asleep."
+updated: "2025-02-14"
+cluster: "Health & Fitness"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "sleep-efficiency",
+  "title": "Sleep Efficiency Calculator",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "timeAsleep",
+      "label": "Time Asleep (hrs)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "7"
+    },
+    {
+      "name": "timeInBed",
+      "label": "Time in Bed (hrs)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "8"
+    }
+  ],
+  "expression": "(timeAsleep / timeInBed) * 100",
+  "intro": "Assess sleep efficiency from total time in bed.",
+  "examples": [
+    {
+      "description": "7 hours asleep in 8 hours bed ⇒ 87.5%"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Is higher efficiency better?",
+      "answer": "Yes, higher efficiency indicates better sleep."
+    }
+  ],
+  "cluster": "Health & Fitness"
+};
+
+<Calculator schema={schema} />

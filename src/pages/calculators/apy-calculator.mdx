@@ -1,0 +1,47 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "APY Calculator"
+description: "Calculate annual percentage yield from nominal rate and compounding periods."
+updated: "2025-02-14"
+cluster: "Personal Finance & Loans"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "apy-calculator",
+  "title": "APY Calculator",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "rate",
+      "label": "Nominal Rate (%)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "5"
+    },
+    {
+      "name": "n",
+      "label": "Compounds per Year",
+      "type": "number",
+      "step": "any",
+      "placeholder": "12"
+    }
+  ],
+  "expression": "(Math.pow(1 + rate/100/n, n) - 1) * 100",
+  "intro": "Find APY from interest rate and compounding frequency.",
+  "examples": [
+    {
+      "description": "5% rate compounded monthly ⇒ 5.12% APY"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Why is APY higher than rate?",
+      "answer": "Compounding increases effective yield."
+    }
+  ],
+  "cluster": "Personal Finance & Loans"
+};
+
+<Calculator schema={schema} />
