@@ -9040,6 +9040,47 @@
     "unit": "hours"
   },
   {
+    "slug": "weeks-to-months-converter",
+    "title": "Weeks to Months Converter",
+    "cluster": "Date & Time",
+    "description": "Convert weeks to approximate months using the average month length.",
+    "intro": "Convert any number of weeks into approximate calendar months using the average month length of 30.4375 days. This helps with planning timelines, subscriptions, or project schedules that span multiple months.",
+    "inputs": [
+      {
+        "name": "weeks",
+        "label": "Weeks",
+        "type": "number",
+        "step": "any",
+        "placeholder": "4"
+      }
+    ],
+    "expression": "weeks * 7 / 30.4375",
+    "unit": "months",
+    "examples": [
+      { "description": "4 weeks \u21d2 0.92 months" },
+      { "description": "12 weeks \u21d2 2.76 months" }
+    ],
+    "faqs": [
+      {
+        "question": "Why use 30.4375 days?",
+        "answer": "It is the average length of a month over a year."
+      },
+      {
+        "question": "Is this exact?",
+        "answer": "No, months vary in length; this is an approximation."
+      },
+      {
+        "question": "Can I enter fractional weeks?",
+        "answer": "Yes, decimals like 2.5 represent partial weeks."
+      },
+      {
+        "question": "Does it account for leap years?",
+        "answer": "Leap years slightly change the average but the difference is minimal."
+      }
+    ],
+    "disclaimer": "Approximate conversion only."
+  },
+  {
     "slug": "seconds-to-months-converter",
     "title": "Seconds to Months Converter",
     "cluster": "date & time",
@@ -16706,7 +16747,7 @@
     "title": "Quarter of Year Calculator",
     "cluster": "Date & Time",
     "description": "Determine the calendar quarter for a given month.",
-    "intro": "Find the calendar quarter by entering a month number from 1 to 12.",
+    "intro": "Find the calendar quarter by entering a month number from 1 to 12. This helps with budgeting, financial reporting, or planning seasonal activities.",
     "inputs": [
       {
         "name": "month",
