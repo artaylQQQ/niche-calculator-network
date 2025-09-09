@@ -1,0 +1,62 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Accounts Receivable Turnover Calculator"
+description: "Measure how quickly a business collects receivables."
+updated: "2025-10-21"
+cluster: "Finance & Business"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "accounts-receivable-turnover",
+  title: "Accounts Receivable Turnover Calculator",
+  locale: "en",
+  unit: "times",
+  expression: "net_credit_sales / average_accounts_receivable",
+  intro:
+    "Compute accounts receivable turnover by dividing net credit sales by average accounts receivable. Enter both values to assess collection efficiency.",
+  cluster: "Finance & Business",
+  inputs: [
+    {
+      name: "net_credit_sales",
+      label: "Net Credit Sales",
+      type: "number",
+      step: "any",
+      required: true,
+    },
+    {
+      name: "average_accounts_receivable",
+      label: "Average Accounts Receivable",
+      type: "number",
+      step: "any",
+      required: true,
+    },
+  ],
+  examples: [
+    { description: "500000 sales and 62500 receivables ⇒ 8 times" },
+    { description: "200000 sales and 40000 receivables ⇒ 5 times" },
+  ],
+  faqs: [
+    {
+      question: "What does a higher turnover indicate?",
+      answer: "It suggests faster collection of receivables.",
+    },
+    {
+      question: "Should I use net or gross sales?",
+      answer: "Use net credit sales excluding returns and allowances.",
+    },
+    {
+      question: "How often should turnover be calculated?",
+      answer: "Typically each quarter or year for trend analysis.",
+    },
+    {
+      question: "Can accounts receivable be negative?",
+      answer: "No, negative receivables would indicate an accounting error.",
+    },
+  ],
+  disclaimer:
+    "Informational purposes only; consult a finance professional for advice.",
+};
+
+<Calculator schema={schema} />

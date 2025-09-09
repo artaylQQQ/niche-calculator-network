@@ -1,0 +1,62 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Sunscreen Protection Time Calculator"
+description: "Estimate sun protection duration based on SPF."
+updated: "2025-10-21"
+cluster: "Lifestyle & Travel"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "sunscreen-protection-time",
+  title: "Sunscreen Protection Time Calculator",
+  locale: "en",
+  unit: "minutes",
+  expression: "burn_time * spf",
+  intro:
+    "Estimate how long sunscreen protects you by multiplying your unprotected burn time by the SPF value.",
+  cluster: "Lifestyle & Travel",
+  inputs: [
+    {
+      name: "burn_time",
+      label: "Unprotected Burn Time (min)",
+      type: "number",
+      step: "any",
+      required: true,
+    },
+    {
+      name: "spf",
+      label: "SPF Value",
+      type: "number",
+      step: 1,
+      required: true,
+    },
+  ],
+  examples: [
+    { description: "Burn time 10 min, SPF 30 ⇒ 300 min" },
+    { description: "Burn time 15 min, SPF 20 ⇒ 300 min" },
+  ],
+  faqs: [
+    {
+      question: "What is burn time?",
+      answer: "The time it takes for your skin to redden without protection.",
+    },
+    {
+      question: "Does water affect protection time?",
+      answer: "Yes, swimming or sweating can reduce effectiveness.",
+    },
+    {
+      question: "Should I reapply sooner?",
+      answer: "Yes, reapply at least every two hours regardless of SPF.",
+    },
+    {
+      question: "Is SPF protection linear?",
+      answer: "The multiplication provides an estimate; real protection may vary.",
+    },
+  ],
+  disclaimer:
+    "Actual protection varies; follow sunscreen instructions and seek shade as needed.",
+};
+
+<Calculator schema={schema} />

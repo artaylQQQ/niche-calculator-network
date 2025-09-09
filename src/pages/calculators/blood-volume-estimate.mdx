@@ -1,0 +1,62 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Blood Volume Estimate"
+description: "Estimate total blood volume based on weight and gender."
+updated: "2025-10-21"
+cluster: "Health & Fitness"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "blood-volume-estimate",
+  title: "Blood Volume Estimate",
+  locale: "en",
+  unit: "L",
+  expression: "weight * (gender ? 0.07 : 0.065)",
+  intro:
+    "Approximate total blood volume using average liters per kilogram. Enter weight in kilograms and 1 for male or 0 for female.",
+  cluster: "Health & Fitness",
+  inputs: [
+    {
+      name: "weight",
+      label: "Weight (kg)",
+      type: "number",
+      step: "any",
+      required: true,
+    },
+    {
+      name: "gender",
+      label: "Gender (1=male, 0=female)",
+      type: "number",
+      step: 1,
+      required: true,
+    },
+  ],
+  examples: [
+    { description: "Male 80 kg ⇒ 5.6 L" },
+    { description: "Female 60 kg ⇒ 3.9 L" },
+  ],
+  faqs: [
+    {
+      question: "Why do males and females use different factors?",
+      answer: "Average blood volume per kilogram differs slightly by gender.",
+    },
+    {
+      question: "Does height affect the estimate?",
+      answer: "This simple method uses only weight for calculation.",
+    },
+    {
+      question: "Is it accurate for children?",
+      answer: "No, children's blood volume ratios differ.",
+    },
+    {
+      question: "Can I use this for medical decisions?",
+      answer: "No, always consult healthcare professionals for medical advice.",
+    },
+  ],
+  disclaimer:
+    "Not for medical use; consult a healthcare provider for personalized information.",
+};
+
+<Calculator schema={schema} />

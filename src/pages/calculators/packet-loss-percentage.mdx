@@ -1,0 +1,62 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Packet Loss Percentage Calculator"
+description: "Determine network packet loss based on sent and received counts."
+updated: "2025-10-21"
+cluster: "Technology & Coding"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "packet-loss-percentage",
+  title: "Packet Loss Percentage Calculator",
+  locale: "en",
+  unit: "%",
+  expression: "((sent - received) / sent) * 100",
+  intro:
+    "Calculate the percentage of lost packets by comparing sent and received counts.",
+  cluster: "Technology & Coding",
+  inputs: [
+    {
+      name: "sent",
+      label: "Packets Sent",
+      type: "number",
+      step: 1,
+      required: true,
+    },
+    {
+      name: "received",
+      label: "Packets Received",
+      type: "number",
+      step: 1,
+      required: true,
+    },
+  ],
+  examples: [
+    { description: "Sent 1000, received 995 ⇒ 0.5% loss" },
+    { description: "Sent 500, received 475 ⇒ 5% loss" },
+  ],
+  faqs: [
+    {
+      question: "What causes packet loss?",
+      answer: "Network congestion, hardware issues, or wireless interference.",
+    },
+    {
+      question: "Can loss exceed 100%?",
+      answer: "No, received packets cannot exceed those sent.",
+    },
+    {
+      question: "Is packet loss always bad?",
+      answer: "Minor loss may be acceptable, but high loss affects performance.",
+    },
+    {
+      question: "How can I reduce packet loss?",
+      answer: "Improve network hardware and reduce congestion.",
+    },
+  ],
+  disclaimer:
+    "Results are estimates; real networks may vary.",
+};
+
+<Calculator schema={schema} />

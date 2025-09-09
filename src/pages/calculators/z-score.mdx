@@ -1,0 +1,69 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Z-Score Calculator"
+description: "Compute the standardized z-score of a value."
+updated: "2025-10-21"
+cluster: "Math & Statistics"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "z-score",
+  title: "Z-Score Calculator",
+  locale: "en",
+  unit: "z",
+  expression: "(value - mean) / std_dev",
+  intro:
+    "Find how many standard deviations a value is from the mean. Enter the individual value, the population mean, and standard deviation.",
+  cluster: "Math & Statistics",
+  inputs: [
+    {
+      name: "value",
+      label: "Value",
+      type: "number",
+      step: "any",
+      required: true,
+    },
+    {
+      name: "mean",
+      label: "Mean",
+      type: "number",
+      step: "any",
+      required: true,
+    },
+    {
+      name: "std_dev",
+      label: "Standard Deviation",
+      type: "number",
+      step: "any",
+      required: true,
+    },
+  ],
+  examples: [
+    { description: "Value 85, mean 70, SD 10 ⇒ 1.5 z" },
+    { description: "Value 60, mean 50, SD 5 ⇒ 2 z" },
+  ],
+  faqs: [
+    {
+      question: "What is a z-score?",
+      answer: "It expresses how far a value is from the mean in standard deviations.",
+    },
+    {
+      question: "Can standard deviation be zero?",
+      answer: "No, a zero standard deviation would make the calculation invalid.",
+    },
+    {
+      question: "How is the z-score used?",
+      answer: "It's used to compare values across different distributions.",
+    },
+    {
+      question: "Does the sign matter?",
+      answer: "Yes, positive means above the mean, negative below it.",
+    },
+  ],
+  disclaimer:
+    "For statistical guidance only; use with appropriate data.",
+};
+
+<Calculator schema={schema} />

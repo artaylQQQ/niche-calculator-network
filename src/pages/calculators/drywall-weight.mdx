@@ -1,0 +1,62 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Drywall Weight Calculator"
+description: "Estimate drywall sheet weight from area and thickness."
+updated: "2025-10-21"
+cluster: "Home & DIY"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "drywall-weight",
+  title: "Drywall Weight Calculator",
+  locale: "en",
+  unit: "lb",
+  expression: "area_sqft * thickness_in * 5.5",
+  intro:
+    "Estimate drywall weight assuming 2.75 lb per square foot at 1/2 inch thickness. Enter area in square feet and panel thickness in inches.",
+  cluster: "Home & DIY",
+  inputs: [
+    {
+      name: "area_sqft",
+      label: "Area (sq ft)",
+      type: "number",
+      step: "any",
+      required: true,
+    },
+    {
+      name: "thickness_in",
+      label: "Thickness (in)",
+      type: "number",
+      step: "any",
+      required: true,
+    },
+  ],
+  examples: [
+    { description: "200 sq ft at 0.5 in ⇒ 550 lb" },
+    { description: "120 sq ft at 0.625 in ⇒ 412.5 lb" },
+  ],
+  faqs: [
+    {
+      question: "Where does 5.5 come from?",
+      answer: "It's the weight per square foot per inch based on 2.75 lb for 1/2 in.",
+    },
+    {
+      question: "Does moisture affect weight?",
+      answer: "Yes, damp drywall can weigh more than estimated.",
+    },
+    {
+      question: "Can I use metric units?",
+      answer: "This calculator uses imperial units only.",
+    },
+    {
+      question: "Is the relationship linear with thickness?",
+      answer: "Yes, weight increases proportionally with thickness.",
+    },
+  ],
+  disclaimer:
+    "Verify weights with manufacturer data for precise needs.",
+};
+
+<Calculator schema={schema} />
