@@ -16,17 +16,17 @@ export const schema = {
     {"name":"total","label":"Total Classes","type":"number","step":1,"placeholder":"30"},
     {"name":"required","label":"Required Attendance (%)","type":"number","step":"any","placeholder":"80"}
   ],
-  "expression": "total - Math.ceil(total * required / 100)",
+  "expression": "(total*(100-required)/100) - (total*(100-required)/100)%1",
   "unit": "classes",
-  "intro": "Determine how many classes you can skip while still meeting the minimum attendance percentage for your course.",
+  "intro": "This tool shows the maximum number of classes you may skip while still meeting a minimum attendance percentage. Enter the total class sessions and the required attendance percentage to see how many absences are allowed.",
   "examples": [
-    {"description":"30 total classes with 80% required ⇒ 6 classes can be missed"},
-    {"description":"40 total classes with 75% required ⇒ 10 classes can be missed"}
+    {"description":"30 classes with 80% required ⇒ 6 classes can be missed"},
+    {"description":"40 classes with 75% required ⇒ 10 classes can be missed"}
   ],
   "faqs": [
-    {"question":"What does the result represent?","answer":"The number of classes you can miss and still meet the required attendance."},
-    {"question":"Why use ceiling in the formula?","answer":"It rounds up the required classes so you never fall short of the requirement."},
-    {"question":"Can I enter decimal class counts?","answer":"No, total classes should be a whole number."},
+    {"question":"What does the result represent?","answer":"The number of classes you can miss and still satisfy the attendance requirement."},
+    {"question":"Why are required classes rounded up?","answer":"Any fractional requirement counts as a full class, ensuring you don't fall below the mandated percentage."},
+    {"question":"Can I enter decimal class counts?","answer":"No, total classes should be whole numbers."},
     {"question":"Does it account for excused absences?","answer":"All absences are treated the same; check your institution's policy."}
   ],
   "disclaimer": "Always confirm attendance policies with your institution.",

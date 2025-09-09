@@ -198,7 +198,7 @@
     "slug": "years-to-days",
     "title": "Years to Days Calculator",
     "cluster": "Date & Time",
-    "intro": "Approximate years to days (365).",
+    "intro": "Convert a number of years into days using a 365-day year.",
     "inputs": [
       {
         "name": "years",

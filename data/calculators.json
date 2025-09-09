@@ -239,7 +239,7 @@
   {
     "slug": "percentage-increase",
     "title": "Percentage Increase",
-    "cluster": "math",
+    "cluster": "Math",
     "description": "Get the percentage increase from an old value to a new value.",
     "inputs": [
       {
@@ -260,17 +260,43 @@
       }
     ],
     "expression": "((newValue - oldValue) / oldValue) * 100",
+    "unit": "%",
+    "intro": "Calculate how much a value has increased in percentage terms from its original amount to a new amount.",
     "examples": [
-      {
-        "description": "From 50 to 70 ⇒ 40% increase"
-      }
+      {"description": "From 50 to 70 ⇒ 40% increase"},
+      {"description": "From 120 to 150 ⇒ 25% increase"}
     ],
     "faqs": [
-      {
-        "question": "What if old value is 0?",
-        "answer": "Percentage change is undefined when the old value is 0."
-      }
+      {"question": "What if old value is 0?", "answer": "Percentage change is undefined when the old value is 0."},
+      {"question": "Can the result be negative?", "answer": "Yes, a negative result indicates a percentage decrease."},
+      {"question": "Does it handle decimals?", "answer": "Yes, you can enter decimal values."},
+      {"question": "Is percentage increase the same as percent change?", "answer": "Percent change includes both increases and decreases; this tool focuses on increases."}
     ]
+  },
+  {
+    "slug": "rule-of-three-calculator",
+    "title": "Rule of Three Calculator",
+    "cluster": "Math",
+    "description": "Solve proportions using the rule of three.",
+    "intro": "Use this calculator to solve direct proportions. Provide three values so that if A is to B as C is to X, the tool returns X = B × C / A.",
+    "inputs": [
+      {"name": "a", "label": "A", "type": "number", "step": 0.01, "placeholder": "First value"},
+      {"name": "b", "label": "B", "type": "number", "step": 0.01, "placeholder": "Second value"},
+      {"name": "c", "label": "C", "type": "number", "step": 0.01, "placeholder": "Third value"}
+    ],
+    "expression": "b * c / a",
+    "unit": "value",
+    "examples": [
+      {"description": "3 books cost $15 ⇒ 5 books cost $25"},
+      {"description": "4 hours correspond to 200 km ⇒ 6 hours correspond to 300 km"}
+    ],
+    "faqs": [
+      {"question": "What is the rule of three?", "answer": "It finds a fourth proportional value: if A is to B as C is to X, then X = B × C / A."},
+      {"question": "Can the inputs be decimals?", "answer": "Yes, the calculator accepts both whole numbers and decimals."},
+      {"question": "What if A is zero?", "answer": "The calculation is undefined when A is 0 because division by zero is not possible."},
+      {"question": "Do the units need to match?", "answer": "Yes. A and C share the same units, while B and the result share another."}
+    ],
+    "disclaimer": "Educational information, not professional advice."
   },
   {
     "slug": "circle-area",
@@ -373,49 +399,6 @@
     ]
   },
   {
-    "slug": "duration-seconds",
-    "title": "Duration to Seconds",
-    "cluster": "date & time",
-    "description": "Convert hours, minutes, and seconds into total seconds.",
-    "inputs": [
-      {
-        "name": "hours",
-        "label": "Hours",
-        "type": "number",
-        "min": 0,
-        "step": "1",
-        "placeholder": "1"
-      },
-      {
-        "name": "minutes",
-        "label": "Minutes",
-        "type": "number",
-        "min": 0,
-        "step": "1",
-        "placeholder": "30"
-      },
-      {
-        "name": "seconds",
-        "label": "Seconds",
-        "type": "number",
-        "min": 0,
-        "step": "1",
-        "placeholder": "15"
-      }
-    ],
-    "expression": "(hours*3600) + (minutes*60) + seconds",
-    "examples": [
-      {
-        "description": "1h 30m 15s ⇒ 5415 seconds"
-      }
-    ],
-    "faqs": [
-      {
-        "question": "Supports decimals?",
-        "answer": "Use whole numbers for simplicity in this tool."
-      }
-    ]
-  },
   {
     "slug": "days-to-hours",
     "title": "Days to Hours",
@@ -858,7 +841,8 @@
     "slug": "years-to-days",
     "title": "Years to Days Calculator",
     "cluster": "Date & Time",
-    "intro": "Approximate years to days (365). Enter the values and press Calculate.",
+    "description": "Convert a number of years into days using a 365-day year.",
+    "intro": "Quickly convert any number of years into days, assuming each year has 365 days.",
     "inputs": [
       {
         "name": "years",
@@ -867,12 +851,42 @@
       }
     ],
     "expression": "years*365",
+    "unit": "days",
+    "examples": [
+      {"description": "2 years ⇒ 730 days"},
+      {"description": "0.5 years ⇒ 182.5 days"}
+    ],
     "faqs": [
-      {
-        "question": "What does the Years to Days Calculator do?",
-        "answer": "Approximate years to days (365). Enter the values and press Calculate."
-      }
+      {"question": "Does this consider leap years?", "answer": "No, it assumes each year has 365 days."},
+      {"question": "Can I enter decimal years?", "answer": "Yes, decimals are allowed for partial years."},
+      {"question": "How do I convert days back to years?", "answer": "Divide the number of days by 365."},
+      {"question": "Why use 365 days?", "answer": "It's a simple average that works for quick estimates."}
     ]
+  },
+  {
+    "slug": "duration-seconds",
+    "title": "Duration to Seconds",
+    "cluster": "Date & Time",
+    "description": "Convert hours, minutes, and seconds into total seconds.",
+    "intro": "Convert a duration given in hours, minutes, and seconds into a single total expressed in seconds.",
+    "inputs": [
+      {"name": "hours", "label": "Hours", "type": "number", "min": 0, "step": "1", "placeholder": "1"},
+      {"name": "minutes", "label": "Minutes", "type": "number", "min": 0, "step": "1", "placeholder": "30"},
+      {"name": "seconds", "label": "Seconds", "type": "number", "min": 0, "step": "1", "placeholder": "15"}
+    ],
+    "expression": "(hours*3600) + (minutes*60) + seconds",
+    "unit": "seconds",
+    "examples": [
+      {"description": "1 h 30 m 15 s ⇒ 5415 seconds"},
+      {"description": "0 h 45 m 30 s ⇒ 2730 seconds"}
+    ],
+    "faqs": [
+      {"question": "Can I leave a field blank?", "answer": "Blank fields are treated as 0."},
+      {"question": "What if minutes exceed 59?", "answer": "They're converted directly; 90 minutes becomes 5400 seconds."},
+      {"question": "Supports decimals?", "answer": "Use whole numbers for simplicity in this tool."},
+      {"question": "Why convert durations to seconds?", "answer": "Seconds provide a standard unit that simplifies further time calculations."}
+    ],
+    "disclaimer": "Educational purposes only. Not professional advice."
   },
   {
     "slug": "paint-needed",
@@ -15295,7 +15309,7 @@
     "title": "Attendance Requirement Calculator",
     "cluster": "Education & Learning",
     "description": "Determine how many classes you can miss while still meeting attendance rules.",
-    "intro": "Enter total class sessions and the required attendance percentage to find allowable absences.",
+    "intro": "This tool shows the maximum number of classes you may skip while still meeting a minimum attendance percentage. Enter the total class sessions and the required attendance percentage to see how many absences are allowed.",
     "inputs": [
       {
         "name": "total",
@@ -15312,15 +15326,15 @@
         "placeholder": "80"
       }
     ],
-    "expression": "total - Math.ceil(total * required / 100)",
+    "expression": "(total*(100-required)/100) - (total*(100-required)/100)%1",
     "unit": "classes",
     "examples": [
-      {"description": "30 total classes with 80% required ⇒ 6 classes can be missed"},
-      {"description": "40 total classes with 75% required ⇒ 10 classes can be missed"}
+      {"description": "30 classes with 80% required ⇒ 6 classes can be missed"},
+      {"description": "40 classes with 75% required ⇒ 10 classes can be missed"}
     ],
     "faqs": [
       {"question": "What does the result represent?", "answer": "The number of classes you can miss and still satisfy the attendance requirement."},
-      {"question": "Why use ceiling?", "answer": "It rounds up the needed classes so you don't fall short."},
+      {"question": "Why are required classes rounded up?", "answer": "Any fractional requirement counts as a full class, ensuring you don't fall below the mandated percentage."},
       {"question": "Can I enter decimal class counts?", "answer": "No, total classes should be whole numbers."},
       {"question": "Does it consider excused absences?", "answer": "All absences are treated the same; verify policies with your institution."}
     ],

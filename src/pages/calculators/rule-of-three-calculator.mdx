@@ -36,17 +36,17 @@ export const schema = {
   "title": "Rule of Three Calculator",
   "locale": "en",
   "expression": "b * c / a",
-  "intro": "Solve proportions using the rule of three (If a is to b as c is to x…).",
+  "unit": "value",
+  "intro": "Use this calculator to solve direct proportions. Provide three values so that if A is to B as C is to X, the tool returns X = B × C / A.",
   "examples": [
-    {
-      "description": "If 2 is to 4 as 3 is to x, then x = 4 * 3 / 2 = 6."
-    }
+    {"description": "3 books cost $15 ⇒ 5 books cost $25"},
+    {"description": "4 hours correspond to 200 km ⇒ 6 hours correspond to 300 km"}
   ],
   "faqs": [
-    {
-      "question": "What is the rule of three?",
-      "answer": "The rule of three solves proportions. If a is to b as c is to x, then x = b × c / a."
-    }
+    {"question": "What is the rule of three?","answer": "It finds a fourth proportional value: if A is to B as C is to X, then X = B × C / A."},
+    {"question": "Can the inputs be decimals?","answer": "Yes, the calculator accepts both whole numbers and decimals."},
+    {"question": "What if A is zero?","answer": "The calculation is undefined when A is 0 because division by zero is not possible."},
+    {"question": "Do the units need to match?","answer": "Yes. A and C share the same units, while B and the result share another."}
   ],
   "disclaimer": "Educational information, not professional advice.",
   "cluster": "Math"

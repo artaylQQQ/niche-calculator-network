@@ -39,20 +39,21 @@ export const schema = {
   "title": "Duration to Seconds",
   "locale": "en",
   "expression": "(hours*3600) + (minutes*60) + seconds",
-  "intro": "Convert hours, minutes, and seconds into total seconds.",
+  "unit": "seconds",
+  "intro": "Convert a duration given in hours, minutes, and seconds into a single total expressed in seconds.",
   "examples": [
-    {
-      "description": "1h 30m 15s \u21d2 5415 seconds"
-    }
+    {"description": "1 h 30 m 15 s ⇒ 5415 seconds"},
+    {"description": "0 h 45 m 30 s ⇒ 2730 seconds"}
   ],
   "faqs": [
-    {
-      "question": "Supports decimals?",
-      "answer": "Use whole numbers for simplicity in this tool."
-    }
+    {"question": "Can I leave a field blank?","answer": "Blank fields are treated as 0."},
+    {"question": "What if minutes exceed 59?","answer": "They're converted directly; 90 minutes becomes 5400 seconds."},
+    {"question": "Supports decimals?","answer": "Use whole numbers for simplicity in this tool."},
+    {"question": "Why convert durations to seconds?","answer": "Seconds provide a standard unit that simplifies further time calculations."}
   ],
   "disclaimer": "Educational purposes only. Not professional advice.",
   "cluster": "Date & Time"
 }
 
 <Calculator schema={schema} />
+
