@@ -15312,7 +15312,7 @@
         "placeholder": "80"
       }
     ],
-    "expression": "total - Math.ceil(total * required / 100)",
+    "expression": "total - ceil(total * required / 100)",
     "unit": "classes",
     "examples": [
       {"description": "30 total classes with 80% required ⇒ 6 classes can be missed"},
