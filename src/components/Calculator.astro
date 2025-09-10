@@ -427,6 +427,19 @@ const jsonLd = {
             value = (Math.pow(fVal / iVal, 1 / yVal) - 1) * 100;
             break;
           }
+          case 'biweekly-mortgage-payment': {
+            const P = num(vars.principal);
+            const rate = num(vars.rate);
+            const years = num(vars.years);
+            if (!isFinite(P) || !isFinite(rate) || !isFinite(years) || years <= 0) {
+              showMessage('error', 'Please fill all fields with valid numbers');
+              return;
+            }
+            const r = rate / 100 / 26;
+            const n = years * 26;
+            value = r === 0 ? P / n : (P * r) / (1 - Math.pow(1 + r, -n));
+            break;
+          }
           case 'bmi-calculator': {
             const h = num(vars.height);
             value = num(vars.weight) / (h * h);
@@ -523,7 +536,7 @@ const jsonLd = {
           }
           case 'bits-required-number': {
             const n = num(vars.number);
-            if (n < 0) {
+            if (!Number.isInteger(n) || n < 0) {
               showMessage('error', 'Please fill all fields with valid numbers');
               return;
             }
@@ -532,8 +545,12 @@ const jsonLd = {
           }
           case 'birthday-paradox-probability': {
             const people = num(vars.people);
+            if (!Number.isInteger(people) || people < 0) {
+              showMessage('error', 'Please fill all fields with valid numbers');
+              return;
+            }
             let p = 1;
-            for (let i = 0; i < people; i++) {
+            for (let i = 0; i < people && i < 365; i++) {
               p *= (365 - i) / 365;
             }
             value = 100 * (1 - p);
@@ -543,8 +560,22 @@ const jsonLd = {
             const y = num(vars.year);
             const m = num(vars.month);
             const d = num(vars.day);
-            const days = [0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334];
+            if (!Number.isInteger(y) || !Number.isInteger(m) || !Number.isInteger(d)) {
+              showMessage('error', 'Please fill all fields with valid numbers');
+              return;
+            }
+            if (m < 1 || m > 12 || d < 1 || d > 31) {
+              showMessage('error', 'Please fill all fields with valid numbers');
+              return;
+            }
+            const monthDays = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
             const leap = (y % 4 === 0 && y % 100 !== 0) || y % 400 === 0;
+            if (leap) monthDays[1] = 29;
+            if (d > monthDays[m - 1]) {
+              showMessage('error', 'Please fill all fields with valid numbers');
+              return;
+            }
+            const days = [0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334];
             value = days[m - 1] + d + (leap && m > 2 ? 1 : 0);
             break;
           }

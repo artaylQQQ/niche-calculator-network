@@ -15,7 +15,7 @@ export const schema = {
   "inputs": [
     { "name": "number", "label": "Integer", "type": "number", "step": "1", "min": "0", "placeholder": "15" }
   ],
-  "expression": "Math.ceil(Math.log2(number + 1))",
+  "expression": "number === 0 ? 1 : Math.floor(Math.log2(number)) + 1",
   "unit": "bits",
   "intro": "Determine how many bits are needed to encode a non-negative integer in binary.",
   "examples": [

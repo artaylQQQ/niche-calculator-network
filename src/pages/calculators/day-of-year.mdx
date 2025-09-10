@@ -40,7 +40,7 @@ export const schema = {
       "placeholder": "1"
     }
   ],
-  "expression": "(function(y,m,d){const days=[0,31,59,90,120,151,181,212,243,273,304,334];const leap=(y%4==0&&y%100!=0)||y%400==0;return days[m-1]+d+(leap&&m>2?1:0);})(year,month,day)",
+  "expression": "(function(y,m,d){const md=[31,28,31,30,31,30,31,31,30,31,30,31];const leap=(y%4==0&&y%100!=0)||y%400==0;if(leap)md[1]=29;if(m<1||m>12||d<1||d>md[m-1])return NaN;const days=[0,31,59,90,120,151,181,212,243,273,304,334];return days[m-1]+d+(leap&&m>2?1:0);})(year,month,day)",
   "intro": "Determine the day number within the year for a given date, accounting for leap years.",
   "examples": [
     {
