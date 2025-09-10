@@ -6,49 +6,54 @@ date: 2025-09-04
 updated: 2025-09-04
 cluster: "Home & DIY"
 ---
-import Calculator from '../../components/Calculator.astro';
+
+import Calculator from "../../components/Calculator.astro";
 
 export const schema = {
-  "slug": "rain-barrel-fill-time",
-  "title": "Rain Barrel Fill Time",
-  "locale": "en",
-  "inputs": [
+  slug: "rain-barrel-fill-time",
+  title: "Rain Barrel Fill Time",
+  locale: "en",
+  inputs: [
     {
-      "name": "volume",
-      "label": "Barrel volume (L)",
-      "type": "number",
-      "placeholder": "200"
+      name: "volume",
+      label: "Barrel volume (L)",
+      type: "number",
+      placeholder: "200",
     },
     {
-      "name": "flow",
-      "label": "Flow rate (L/min)",
-      "type": "number",
-      "placeholder": "10"
-    }
+      name: "flow",
+      label: "Flow rate (L/min)",
+      type: "number",
+      placeholder: "10",
+    },
   ],
-  "expression": "volume / flow",
-  "intro": "Estimate time to fill a barrel from a hose.",
-  "examples": [
+  expression: "volume / flow",
+  intro: "Estimate time to fill a barrel from a hose.",
+  examples: [
     {
-      "description": "200 L at 10 L/min ⇒ 20 min"
-    }
+      description: "200 L at 10 L/min ⇒ 20 min",
+    },
   ],
-  "faqs": [
+  faqs: [
     {
-      "question": "Assumes constant flow?",
-      "answer": "Yes, flow rate is assumed constant."
-    }
+      question: "Assumes constant flow?",
+      answer: "Yes, flow rate is assumed constant.",
+    },
   ],
-  "disclaimer": "Educational information, not professional advice.",
-  "cluster": "Home & DIY",
-  "related": [
+  notes: [
+    "Volume is measured in liters (L).",
+    "Flow rate is expressed in liters per minute (L/min).",
+  ],
+  disclaimer: "Educational information, not professional advice.",
+  cluster: "Home & DIY",
+  related: [
     "paint-coverage",
     "garden-soil-volume",
     "home-diy-division-calculator",
     "rainwater-harvest",
     "garden-soil-weight",
-    "brick-count-estimator"
-  ]
-}
+    "brick-count-estimator",
+  ],
+};
 
 <Calculator schema={schema} />

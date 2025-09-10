@@ -22,6 +22,10 @@ const faqs = Array.isArray(schema?.faqs) && schema.faqs.length
       answer: 'Enter the required values and press Calculate to get the result.'
     }];
 
+const notes = Array.isArray(schema?.notes) && schema.notes.length
+  ? schema.notes
+  : [];
+
 function pickRelated(slug: string, cluster: string): string[] {
   const same = allCalcs.filter(
     (c) => c.slug !== slug && c.cluster && c.cluster.toLowerCase() === (cluster || '').toLowerCase()
@@ -109,6 +113,15 @@ const jsonLd = {
     ))}
   </ul>
 </section>
+
+{notes.length > 0 && (
+  <section class="notes">
+    <h2>Additional Information</h2>
+    {notes.map((n) => (
+      <p>{n}</p>
+    ))}
+  </section>
+)}
 
 <section class="faq">
   <h2>FAQ</h2>
@@ -210,6 +223,7 @@ const jsonLd = {
     font-size: 1.6em;
   }
   .examples,
+  .notes,
   .faq,
   .related {
     max-width: 720px;
@@ -221,6 +235,7 @@ const jsonLd = {
     box-shadow: var(--shadow);
   }
   .examples ul { margin: 8px 0 0 20px; }
+  .notes p { margin: 8px 0 0; }
   .faq details { margin: 8px 0; }
   .faq summary { cursor: pointer; font-weight: 600; }
   .faq p { margin: 4px 0 0 16px; }
