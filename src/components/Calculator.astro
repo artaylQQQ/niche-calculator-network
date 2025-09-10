@@ -357,15 +357,13 @@ const jsonLd = {
         // ensure every symbol referenced in the expression is provided in vars
         const varNames = expr.match(/[A-Za-z_][A-Za-z0-9_]*/g) || [];
         const unknown = varNames.filter(n => !(n in vars));
-        if (unknown.length) {
-          showMessage('error', 'Unknown variable: ' + unknown[0]);
-          return;
-        }
-        try {
-          value = evalExpr(expr, vars);
-          usedExpr = isFinite(value);
-        } catch (e) {
-          usedExpr = false;
+        if (!unknown.length) {
+          try {
+            value = evalExpr(expr, vars);
+            usedExpr = isFinite(value);
+          } catch (e) {
+            usedExpr = false;
+          }
         }
       }
       // When expression evaluation is unavailable use per‑calculator fallbacks
@@ -425,6 +423,62 @@ const jsonLd = {
               return;
             }
             value = (Math.pow(fVal / iVal, 1 / yVal) - 1) * 100;
+            break;
+          }
+          case 'birthday-paradox-probability': {
+            const n = Math.floor(num(vars.people));
+            if (!isFinite(n) || n < 0) {
+              showMessage('error', 'Please enter a valid group size');
+              return;
+            }
+            if (n > 365) {
+              value = 100;
+            } else {
+              let p = 1;
+              for (let i = 0; i < n; i++) p *= (365 - i) / 365;
+              value = 100 * (1 - p);
+            }
+            break;
+          }
+          case 'biweekly-mortgage-payment': {
+            const P = num(vars.principal);
+            const rate = num(vars.rate);
+            const years = num(vars.years);
+            if (!isFinite(P) || !isFinite(rate) || !isFinite(years) || years <= 0) {
+              showMessage('error', 'Please fill all fields with valid numbers');
+              return;
+            }
+            const r = rate / 100 / 26;
+            const n = years * 26;
+            value = r === 0 ? P / n : (P * r) / (1 - Math.pow(1 + r, -n));
+            break;
+          }
+          case 'bits-required-number': {
+            const n = num(vars.number);
+            if (!Number.isInteger(n) || n < 0) {
+              showMessage('error', 'Please enter a non-negative integer');
+              return;
+            }
+            value = n === 0 ? 1 : Math.floor(Math.log2(n)) + 1;
+            break;
+          }
+          case 'day-of-year': {
+            const y = Math.floor(num(vars.year));
+            const m = Math.floor(num(vars.month));
+            const d = Math.floor(num(vars.day));
+            if (!isFinite(y) || !isFinite(m) || !isFinite(d)) {
+              showMessage('error', 'Please fill all fields with valid numbers');
+              return;
+            }
+            const md = [31,28,31,30,31,30,31,31,30,31,30,31];
+            const leap = (y % 4 === 0 && y % 100 !== 0) || y % 400 === 0;
+            if (leap) md[1] = 29;
+            if (m < 1 || m > 12 || d < 1 || d > md[m-1]) {
+              showMessage('error', 'Invalid date');
+              return;
+            }
+            const days = [0,31,59,90,120,151,181,212,243,273,304,334];
+            value = days[m-1] + d + (leap && m > 2 ? 1 : 0);
             break;
           }
           case 'bmi-calculator': {
@@ -523,7 +577,7 @@ const jsonLd = {
           }
           case 'bits-required-number': {
             const n = num(vars.number);
-            if (n < 0) {
+            if (!Number.isInteger(n) || n < 0) {
               showMessage('error', 'Please fill all fields with valid numbers');
               return;
             }
@@ -532,8 +586,12 @@ const jsonLd = {
           }
           case 'birthday-paradox-probability': {
             const people = num(vars.people);
+            if (!Number.isInteger(people) || people < 0) {
+              showMessage('error', 'Please fill all fields with valid numbers');
+              return;
+            }
             let p = 1;
-            for (let i = 0; i < people; i++) {
+            for (let i = 0; i < people && i < 365; i++) {
               p *= (365 - i) / 365;
             }
             value = 100 * (1 - p);
@@ -543,8 +601,22 @@ const jsonLd = {
             const y = num(vars.year);
             const m = num(vars.month);
             const d = num(vars.day);
-            const days = [0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334];
+            if (!Number.isInteger(y) || !Number.isInteger(m) || !Number.isInteger(d)) {
+              showMessage('error', 'Please fill all fields with valid numbers');
+              return;
+            }
+            if (m < 1 || m > 12 || d < 1 || d > 31) {
+              showMessage('error', 'Please fill all fields with valid numbers');
+              return;
+            }
+            const monthDays = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
             const leap = (y % 4 === 0 && y % 100 !== 0) || y % 400 === 0;
+            if (leap) monthDays[1] = 29;
+            if (d > monthDays[m - 1]) {
+              showMessage('error', 'Please fill all fields with valid numbers');
+              return;
+            }
+            const days = [0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334];
             value = days[m - 1] + d + (leap && m > 2 ? 1 : 0);
             break;
           }

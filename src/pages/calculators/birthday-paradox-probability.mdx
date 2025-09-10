@@ -21,7 +21,7 @@ export const schema = {
       "placeholder": "23"
     }
   ],
-  "expression": "100 * (1 - (function(n){let p=1;for(let i=0;i<n;i++){p*= (365-i)/365;}return p;})(people))",
+  "expression": "100 * (1 - (function(n){n=Math.floor(n);if(n<0)return NaN;let p=1;for(let i=0;i<n&&i<365;i++){p*=(365-i)/365;}return p;})(people))",
   "intro": "Estimate the probability that at least two people in a group share the same birthday.",
   "examples": [
     {
