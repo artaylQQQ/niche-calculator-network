@@ -36,6 +36,7 @@ export const schema = {
     }
   ],
   "expression": "hours * 0.035 * weight * (1 + 0.02 * Math.max(0, temperature - 25))",
+  "unit": "L",
   "intro": "Approximate water intake for manual labor based on body weight, duration, and temperature.",
   "examples": [
     {
@@ -60,9 +61,17 @@ export const schema = {
     {
       "question": "Is this medical advice?",
       "answer": "No, it's a general guideline."
+    },
+    {
+      "question": "How often should I drink?",
+      "answer": "Sip water regularly rather than consuming it all at once."
     }
   ],
   "disclaimer": "Stay within personal limits and consult health professionals when needed.",
+  "info": [
+    "Formula uses 35 mL of water per kg per hour as a base rate.",
+    "Higher temperatures increase recommended intake by 2% per °C above 25."
+  ],
   "cluster": "Health & Fitness",
   "related": [
     "bmi-calculator",
@@ -72,6 +81,6 @@ export const schema = {
     "waist-to-height-ratio",
     "body-fat-percentage"
   ]
-}
+};
 
 <Calculator schema={schema} />

@@ -27,6 +27,7 @@ export const schema = {
     }
   ],
   "expression": "area / coverage",
+  "unit": "rolls",
   "intro": "Figure out how many insulation rolls to purchase based on area coverage.",
   "examples": [
     {
@@ -55,6 +56,10 @@ export const schema = {
     }
   ],
   "disclaimer": "Add a margin for cuts and overlaps.",
+  "info": [
+    "Always round up to account for waste and overlaps.",
+    "Coverage per roll varies by product thickness and width."
+  ],
   "cluster": "Home & DIY",
   "related": [
     "paint-coverage",
@@ -64,6 +69,6 @@ export const schema = {
     "garden-soil-weight",
     "brick-count-estimator"
   ]
-}
+};
 
 <Calculator schema={schema} />

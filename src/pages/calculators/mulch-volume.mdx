@@ -18,7 +18,7 @@ export const schema = {
   "locale": "en",
   "unit": "yd³",
   "expression": "(area * depth / 12) / 27",
-  "intro": "Estimate how many cubic yards of mulch are needed based on coverage area and desired depth.",
+  "intro": "Estimate how many cubic yards of mulch are needed based on coverage area and desired depth. Input the area in square feet and depth in inches to plan your order.",
   "examples": [
     { "description": "Area 500 ft², depth 3 in ⇒ 4.63 yd³" },
     { "description": "Area 200 ft², depth 2 in ⇒ 1.23 yd³" },
@@ -27,10 +27,15 @@ export const schema = {
   "faqs": [
     { "question": "Why divide by 27?", "answer": "There are 27 cubic feet in a cubic yard." },
     { "question": "Can I use metric units?", "answer": "Convert to feet and inches first for accurate results." },
-    { "question": "Does it account for settling?", "answer": "No, consider ordering extra to account for compaction." }
+    { "question": "Does it account for settling?", "answer": "No, consider ordering extra to account for compaction." },
+    { "question": "How do I convert to cubic feet?", "answer": "Multiply the result by 27 to get cubic feet." }
   ],
   "disclaimer": "Educational purposes only. Not professional advice.",
+  "info": [
+    "27 cubic feet equal 1 cubic yard.",
+    "Mulch depth of 2–4 inches is common for garden beds."
+  ],
   "cluster": "Home & DIY"
-}
+};
 
 <Calculator schema={schema} />
