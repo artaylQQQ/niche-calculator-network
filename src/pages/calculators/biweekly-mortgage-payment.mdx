@@ -17,7 +17,7 @@ export const schema = {
     { "name": "rate", "label": "Annual Interest Rate (%)", "type": "number", "step": "any", "placeholder": "5" },
     { "name": "years", "label": "Loan Term (years)", "type": "number", "step": "any", "placeholder": "30" }
   ],
-  "expression": "principal * ((rate/100)/26) / (1 - (1 + (rate/100)/26)^(-26*years))",
+  "expression": "principal*(rate/100/26)/(1 - 1/(1 + rate/100/26)^(26*years))",
   "unit": "USD",
   "intro": "Find your biweekly mortgage payment based on principal, interest rate, and loan term using 26 payments per year.",
   "examples": [
