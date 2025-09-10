@@ -1,0 +1,43 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Backpack Weight Percentage"
+description: "See how heavy your pack is relative to your body weight."
+date: 2025-09-30
+updated: 2025-09-30
+cluster: "lifestyle & travel"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "backpack-weight-percentage",
+  "title": "Backpack Weight Percentage",
+  "locale": "en",
+  "inputs": [
+    {"name":"pack","label":"Pack weight","type":"number","step":"any","placeholder":"10"},
+    {"name":"body","label":"Body weight","type":"number","step":"any","placeholder":"70"}
+  ],
+  "expression": "(pack / body) * 100",
+  "unit": "%",
+  "intro": "Determine your backpack's weight as a percentage of your body weight to plan comfortable loads for travel or hiking.",
+  "examples": [
+    {"description":"10 kg pack with 70 kg body ⇒ 14.29%"},
+    {"description":"15 lb pack with 180 lb body ⇒ 8.33%"}
+  ],
+  "faqs": [
+    {"question":"What is a recommended pack weight?","answer":"Many hikers aim to carry 10–20% of their body weight."},
+    {"question":"Can I use pounds instead of kilograms?","answer":"Yes, use the same unit for both weights."},
+    {"question":"Does this include water and gear?","answer":"Include everything you plan to carry."},
+    {"question":"Why track pack weight percentage?","answer":"It helps avoid overloading and reduces risk of injury."}
+  ],
+  "disclaimer": "Use as a general guideline; adjust for your fitness level and terrain.",
+  "cluster": "lifestyle & travel"
+};
+
+<Calculator schema={schema} />
+
+<section class="mt-8">
+  <h2>Understanding the Units</h2>
+  <p>Enter pack and body weights using the same unit (kilograms or pounds). The result shows the pack weight as a percentage of body weight.</p>
+</section>
+
