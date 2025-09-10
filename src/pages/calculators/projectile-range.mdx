@@ -1,0 +1,43 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Projectile Range Calculator"
+description: "Compute the horizontal distance a projectile travels."
+date: 2025-09-30
+updated: 2025-09-30
+cluster: "science & engineering"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "projectile-range",
+  "title": "Projectile Range Calculator",
+  "locale": "en",
+  "inputs": [
+    {"name":"velocity","label":"Launch Speed (m/s)","type":"number","step":"any","placeholder":"30"},
+    {"name":"angle","label":"Launch Angle (°)","type":"number","step":"any","placeholder":"45"},
+    {"name":"gravity","label":"Gravity (m/s²)","type":"number","step":"any","placeholder":"9.81"}
+  ],
+  "expression": "(function(velocity,angle,gravity){return velocity*velocity*Math.sin(2*angle*Math.PI/180)/gravity;})(velocity,angle,gravity)",
+  "unit": "m",
+  "intro": "Find how far an object launched at a given speed and angle travels horizontally under constant gravity, ignoring air resistance.",
+  "examples": [
+    {"description":"30 m/s at 45° under 9.81 m/s² ⇒ 91.74 m"},
+    {"description":"20 m/s at 30° under 9.81 m/s² ⇒ 35.31 m"}
+  ],
+  "faqs": [
+    {"question":"Does this include air resistance?","answer":"No, it assumes a vacuum and level ground."},
+    {"question":"What units should I use?","answer":"Use meters per second for speed, degrees for angle, and meters per second squared for gravity."},
+    {"question":"Can I use degrees for the angle?","answer":"Yes, the angle input is in degrees."},
+    {"question":"How do I adapt for other planets?","answer":"Replace gravity with the planet's gravitational acceleration."}
+  ],
+  "disclaimer": "Simplified physics model; actual trajectories vary with air resistance and terrain.",
+  "cluster": "science & engineering"
+};
+
+<Calculator schema={schema} />
+
+## Understanding the Units
+
+Velocity is measured in meters per second (m/s), angle in degrees, gravity in meters per second squared (m/s²), and the resulting range is given in meters (m).
+

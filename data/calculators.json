@@ -17761,5 +17761,78 @@
       }
     ],
     "disclaimer": "For marketing analysis only; real engagement may vary by platform."
+  },
+  {
+    "slug": "projectile-range",
+    "title": "Projectile Range Calculator",
+    "cluster": "science & engineering",
+    "description": "Compute the horizontal distance a projectile travels.",
+    "intro": "Find how far an object launched at a given speed and angle travels horizontally under constant gravity, ignoring air resistance.",
+    "inputs": [
+      {"name": "velocity", "label": "Launch Speed (m/s)", "type": "number", "step": "any", "placeholder": "30"},
+      {"name": "angle", "label": "Launch Angle (°)", "type": "number", "step": "any", "placeholder": "45"},
+      {"name": "gravity", "label": "Gravity (m/s²)", "type": "number", "step": "any", "placeholder": "9.81"}
+    ],
+    "expression": "(function(velocity,angle,gravity){return velocity*velocity*Math.sin(2*angle*Math.PI/180)/gravity;})(velocity,angle,gravity)",
+    "unit": "m",
+    "examples": [
+      {"description": "30 m/s at 45° under 9.81 m/s² ⇒ 91.74 m"},
+      {"description": "20 m/s at 30° under 9.81 m/s² ⇒ 35.31 m"}
+    ],
+    "faqs": [
+      {"question": "Does this include air resistance?", "answer": "No, it assumes a vacuum and level ground."},
+      {"question": "What units should I use?", "answer": "Speed in m/s, angle in degrees, and gravity in m/s²."},
+      {"question": "Can I use degrees for the angle?", "answer": "Yes, the angle input is in degrees."},
+      {"question": "How do I adapt for other planets?", "answer": "Replace gravity with the planet's gravitational acceleration."}
+    ],
+    "disclaimer": "Simplified physics model; actual trajectories vary with air resistance and terrain."
+  },
+  {
+    "slug": "email-click-to-open-rate",
+    "title": "Email Click-to-Open Rate",
+    "cluster": "web & marketing",
+    "description": "Measure email effectiveness by dividing clicks by opens.",
+    "intro": "Calculate the percentage of opened emails that resulted in a click. Enter the number of link clicks and total opens.",
+    "inputs": [
+      {"name": "clicks", "label": "Link clicks", "type": "number", "step": "any", "placeholder": "150"},
+      {"name": "opens", "label": "Emails opened", "type": "number", "step": "any", "placeholder": "3000"}
+    ],
+    "expression": "(clicks / opens) * 100",
+    "unit": "%",
+    "examples": [
+      {"description": "150 clicks from 3000 opens ⇒ 5%"},
+      {"description": "80 clicks from 1000 opens ⇒ 8%"}
+    ],
+    "faqs": [
+      {"question": "How is CTOR different from CTR?", "answer": "CTOR divides clicks by opens, while CTR uses emails sent."},
+      {"question": "Can opens be zero?", "answer": "No, at least one open is required."},
+      {"question": "Should I use unique clicks?", "answer": "Yes, unique clicks give a clearer measure."},
+      {"question": "Does this handle multiple links?", "answer": "Add up clicks from all links within the email."}
+    ],
+    "disclaimer": "Analytics may vary by platform; verify with your provider."
+  },
+  {
+    "slug": "backpack-weight-percentage",
+    "title": "Backpack Weight Percentage",
+    "cluster": "lifestyle & travel",
+    "description": "See how heavy your pack is relative to your body weight.",
+    "intro": "Determine your backpack's weight as a percentage of your body weight to plan comfortable loads for travel or hiking.",
+    "inputs": [
+      {"name": "pack", "label": "Pack weight", "type": "number", "step": "any", "placeholder": "10"},
+      {"name": "body", "label": "Body weight", "type": "number", "step": "any", "placeholder": "70"}
+    ],
+    "expression": "(pack / body) * 100",
+    "unit": "%",
+    "examples": [
+      {"description": "10 kg pack with 70 kg body ⇒ 14.29%"},
+      {"description": "15 lb pack with 180 lb body ⇒ 8.33%"}
+    ],
+    "faqs": [
+      {"question": "What is a recommended pack weight?", "answer": "Many hikers aim to carry 10–20% of their body weight."},
+      {"question": "Can I use pounds instead of kilograms?", "answer": "Yes, use the same unit for both weights."},
+      {"question": "Does this include water and gear?", "answer": "Include everything you plan to carry."},
+      {"question": "Why track pack weight percentage?", "answer": "It helps avoid overloading and reduces risk of injury."}
+    ],
+    "disclaimer": "Use as a general guideline; adjust for your fitness level and terrain."
   }
 ]

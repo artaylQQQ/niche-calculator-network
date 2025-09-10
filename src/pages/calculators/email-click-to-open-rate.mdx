@@ -1,0 +1,42 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Email Click-to-Open Rate"
+description: "Measure email effectiveness by dividing clicks by opens."
+date: 2025-09-30
+updated: 2025-09-30
+cluster: "web & marketing"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "email-click-to-open-rate",
+  "title": "Email Click-to-Open Rate",
+  "locale": "en",
+  "inputs": [
+    {"name":"clicks","label":"Link clicks","type":"number","step":"any","placeholder":"150"},
+    {"name":"opens","label":"Emails opened","type":"number","step":"any","placeholder":"3000"}
+  ],
+  "expression": "(clicks / opens) * 100",
+  "unit": "%",
+  "intro": "Calculate the percentage of opened emails that resulted in a click. Enter the number of link clicks and total opens.",
+  "examples": [
+    {"description":"150 clicks from 3000 opens ⇒ 5%"},
+    {"description":"80 clicks from 1000 opens ⇒ 8%"}
+  ],
+  "faqs": [
+    {"question":"How is CTOR different from CTR?","answer":"CTOR divides clicks by opens, while CTR uses emails sent."},
+    {"question":"Can opens be zero?","answer":"No, there must be at least one open."},
+    {"question":"Should I use unique clicks?","answer":"Yes, use unique clicks for a clearer measure."},
+    {"question":"Does this handle multiple links?","answer":"Add up clicks from all links within the email."}
+  ],
+  "disclaimer": "Analytics may vary by platform; verify with your provider.",
+  "cluster": "web & marketing"
+};
+
+<Calculator schema={schema} />
+
+## Understanding the Units
+
+Clicks and opens are counts of emails. The resulting click-to-open rate is expressed as a percentage (%) showing how many opens led to a click.
+
