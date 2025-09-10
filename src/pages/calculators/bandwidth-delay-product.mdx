@@ -26,19 +26,19 @@ export const schema = {
       "placeholder": "50"
     }
   ],
-  "expression": "bandwidth * 1000000 * latency / 1000 / 8",
-  "intro": "Estimate in-flight data on a network link.",
-  "examples": [
-    {
-      "description": "100 Mbps with 50 ms ⇒ 625000 bytes"
-    }
-  ],
-  "faqs": [
-    {
-      "question": "Why divide by 8?",
-      "answer": "To convert bits to bytes."
-    }
-  ],
+    "expression": "bandwidth * 1000000 * latency / 1000 / 8",
+    "unit": "bytes",
+    "intro": "Calculate the amount of data that can be in transit on a link using bandwidth and latency.",
+    "examples": [
+      {"description": "100 Mbps with 50 ms ⇒ 625000 bytes"},
+      {"description": "50 Mbps with 10 ms ⇒ 62500 bytes"}
+    ],
+    "faqs": [
+      {"question": "Why divide by 8?","answer": "To convert bits to bytes."},
+      {"question": "What does the result represent?","answer": "It is the maximum data that can fill the network path at once."},
+      {"question": "Does higher latency increase BDP?","answer": "Yes, more latency allows more data in-flight."},
+      {"question": "How is this used?","answer": "It helps tune TCP window sizes for optimal throughput."}
+    ],
   "disclaimer": "Educational information, not professional advice.",
   "cluster": "Technology",
   "related": [
