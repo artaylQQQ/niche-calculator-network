@@ -6,45 +6,64 @@ updated: "2025-08-21"
 cluster: "Health"
 ---
 
-import Calculator from '../../components/Calculator.astro';
+import Calculator from "../../components/Calculator.astro";
 
 export const schema = {
-  "inputs": [
+  inputs: [
     {
-      "name": "weight",
-      "label": "Weight (kg)",
-      "type": "number",
-      "placeholder": "Enter weight in kilograms",
-      "step": 0.1,
-      "min": 0
+      name: "weight",
+      label: "Weight (kg)",
+      type: "number",
+      placeholder: "Enter weight in kilograms",
+      step: 0.1,
+      min: 0,
     },
     {
-      "name": "height",
-      "label": "Height (m)",
-      "type": "number",
-      "placeholder": "Enter height in meters",
-      "step": 0.01,
-      "min": 0
-    }
+      name: "height",
+      label: "Height (m)",
+      type: "number",
+      placeholder: "Enter height in meters",
+      step: 0.01,
+      min: 0,
+    },
   ],
-  "slug": "bmi-calculator",
-  "title": "BMI Calculator",
-  "locale": "en",
-  "expression": "weight / (height ^ 2)",
-  "unit": "kg/m²",
-  "intro": "Compute BMI using metric units of weight and height to evaluate body mass.",
-  "examples": [
-    {"description": "70 kg weight and 1.75 m height ⇒ 22.86 kg/m²"},
-    {"description": "90 kg weight and 1.60 m height ⇒ 35.16 kg/m²"}
+  slug: "bmi-calculator",
+  title: "BMI Calculator",
+  locale: "en",
+  expression: "weight / (height ^ 2)",
+  unit: "kg/m²",
+  intro:
+    "Compute BMI using metric units of weight and height to evaluate body mass.",
+  examples: [
+    { description: "70 kg weight and 1.75 m height ⇒ 22.86 kg/m²" },
+    { description: "90 kg weight and 1.60 m height ⇒ 35.16 kg/m²" },
   ],
-  "faqs": [
-    {"question": "What is BMI?","answer": "BMI is a ratio of weight to height used to classify underweight and overweight."},
-    {"question": "What BMI range is considered healthy?","answer": "A BMI between 18.5 and 24.9 is generally regarded as normal."},
-    {"question": "Does BMI account for muscle mass?","answer": "No, muscular individuals may have a high BMI despite low body fat."},
-    {"question": "Can I use pounds and inches?","answer": "Convert to kilograms and meters before using this calculator."}
+  info: [
+    "BMI is expressed in kilograms per square meter (kg/m²).",
+    "The body mass index was introduced by Adolphe Quetelet in the 19th century.",
   ],
-  "disclaimer": "Educational information, not professional advice.",
-  "cluster": "Health"
+  faqs: [
+    {
+      question: "What is BMI?",
+      answer:
+        "BMI is a ratio of weight to height used to classify underweight and overweight.",
+    },
+    {
+      question: "What BMI range is considered healthy?",
+      answer: "A BMI between 18.5 and 24.9 is generally regarded as normal.",
+    },
+    {
+      question: "Does BMI account for muscle mass?",
+      answer:
+        "No, muscular individuals may have a high BMI despite low body fat.",
+    },
+    {
+      question: "Can I use pounds and inches?",
+      answer: "Convert to kilograms and meters before using this calculator.",
+    },
+  ],
+  disclaimer: "Educational information, not professional advice.",
+  cluster: "Health",
 };
 
 <Calculator schema={schema} />
