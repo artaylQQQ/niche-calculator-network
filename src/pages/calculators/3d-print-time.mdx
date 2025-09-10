@@ -1,66 +1,77 @@
 ---
 layout: ../../layouts/CalculatorLayout.astro
 title: "3D Print Time Estimator"
-description: "Approximate printing time from model height, layer height, and speed."
-updated: "2025-09-26"
-cluster: "Technology"
+description: "Estimate how long a vertical 3D print will take based on layer and speed settings."
+date: 2025-09-10
+updated: 2025-09-10
+cluster: "Technology & Coding"
 ---
-
-import Calculator from "../../components/Calculator.astro";
+import Calculator from '../../components/Calculator.astro';
 
 export const schema = {
-  slug: "3d-print-time",
-  title: "3D Print Time Estimator",
-  locale: "en",
-  cluster: "Technology",
-  unit: "minutes",
-  intro:
-    "Estimate how long a vertical 3D print will take based on layer and speed settings.",
-  inputs: [
+  "slug": "3d-print-time",
+  "title": "3D Print Time Estimator",
+  "locale": "en",
+  "inputs": [
     {
-      name: "model_height",
-      label: "Model Height (mm)",
-      type: "number",
-      step: "any",
-      placeholder: "100",
+      "name": "model_height",
+      "label": "Model Height (mm)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "100"
     },
     {
-      name: "layer_height",
-      label: "Layer Height (mm)",
-      type: "number",
-      step: "any",
-      placeholder: "0.2",
+      "name": "layer_height",
+      "label": "Layer Height (mm)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "0.2"
     },
     {
-      name: "speed",
-      label: "Print Speed (mm/s)",
-      type: "number",
-      step: "any",
-      placeholder: "50",
-    },
+      "name": "speed",
+      "label": "Print Speed (mm/s)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "50"
+    }
   ],
-  expression: "(model_height / layer_height) * 60 / speed",
-  examples: [
-    { description: "100 mm, 0.2 mm, 50 mm/s ⇒ 600 min" },
-    { description: "50 mm, 0.25 mm, 60 mm/s ⇒ 200 min" },
-    { description: "200 mm, 0.3 mm, 40 mm/s ⇒ 1000 min" },
+  "expression": "(model_height / layer_height) * 60 / speed",
+  "intro": "Estimate how long a vertical 3D print will take based on layer and speed settings.",
+  "examples": [
+    {
+      "description": "100 mm, 0.2 mm, 50 mm/s ⇒ 600 min"
+    },
+    {
+      "description": "50 mm, 0.25 mm, 60 mm/s ⇒ 200 min"
+    },
+    {
+      "description": "200 mm, 0.3 mm, 40 mm/s ⇒ 1000 min"
+    }
   ],
-  faqs: [
+  "faqs": [
     {
-      question: "Does this account for infill?",
-      answer: "No, it's a simplified vertical estimate.",
+      "question": "Does this account for infill?",
+      "answer": "No, it's a simplified vertical estimate."
     },
     {
-      question: "Why only model height?",
-      answer: "It assumes constant cross-section.",
+      "question": "Why only model height?",
+      "answer": "It assumes constant cross-section."
     },
     {
-      question: "Can speed vary during print?",
-      answer: "Yes, this uses an average speed.",
-    },
+      "question": "Can speed vary during print?",
+      "answer": "Yes, this uses an average speed."
+    }
   ],
-  disclaimer:
-    "Actual print times depend on model complexity and printer settings.",
-};
+  "disclaimer": "Actual print times depend on model complexity and printer settings.",
+  "cluster": "Technology & Coding",
+  "related": [
+    "download-time",
+    "storage-redundancy-overhead",
+    "data-transfer-time",
+    "kb-to-mb",
+    "download-cost",
+    "dpi-calculator"
+  ]
+}
 
 <Calculator schema={schema} />

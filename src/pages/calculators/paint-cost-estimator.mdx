@@ -1,37 +1,80 @@
 ---
 layout: ../../layouts/CalculatorLayout.astro
 title: "Paint Cost Estimator"
-description: "Estimate paint cost from area, coverage and price."
-updated: "2025-09-06"
+description: "Estimate how much a paint project will cost based on area, paint coverage and price per gallon."
+date: 2025-09-10
+updated: 2025-09-10
 cluster: "home-diy"
 ---
-
 import Calculator from '../../components/Calculator.astro';
 
 export const schema = {
-  inputs: [
-    { name: "area", label: "Area (sq ft)", type: "number", step: "any", min: 0, placeholder: "400" },
-    { name: "coverage", label: "Coverage per Gallon (sq ft)", type: "number", step: "any", min: 0, placeholder: "350" },
-    { name: "price", label: "Price per Gallon ($)", type: "number", step: "any", min: 0, placeholder: "25" }
+  "slug": "paint-cost-estimator",
+  "title": "Paint Cost Estimator",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "area",
+      "label": "Area (sq ft)",
+      "type": "number",
+      "step": "any",
+      "min": 0,
+      "placeholder": "400"
+    },
+    {
+      "name": "coverage",
+      "label": "Coverage per Gallon (sq ft)",
+      "type": "number",
+      "step": "any",
+      "min": 0,
+      "placeholder": "350"
+    },
+    {
+      "name": "price",
+      "label": "Price per Gallon ($)",
+      "type": "number",
+      "step": "any",
+      "min": 0,
+      "placeholder": "25"
+    }
   ],
-  slug: "paint-cost-estimator",
-  title: "Paint Cost Estimator",
-  locale: "en",
-  unit: "USD",
-  expression: "(area / coverage) * price",
-  intro: "Estimate how much a paint project will cost based on area, paint coverage and price per gallon.",
-  examples: [
-    { description: "400 sq ft, 350 coverage, $25 ⇒ $28.57" },
-    { description: "1000 sq ft, 400 coverage, $30 ⇒ $75" },
-    { description: "600 sq ft, 300 coverage, $20 ⇒ $40" }
+  "expression": "(area / coverage) * price",
+  "intro": "Estimate how much a paint project will cost based on area, paint coverage and price per gallon.",
+  "examples": [
+    {
+      "description": "400 sq ft, 350 coverage, $25 ⇒ $28.57"
+    },
+    {
+      "description": "1000 sq ft, 400 coverage, $30 ⇒ $75"
+    },
+    {
+      "description": "600 sq ft, 300 coverage, $20 ⇒ $40"
+    }
   ],
-  faqs: [
-    { question: "Does this include primer?", answer: "No, primer costs are not included." },
-    { question: "How many coats are assumed?", answer: "It assumes a single coat." },
-    { question: "What if coverage varies?", answer: "Use the manufacturer's specified coverage." }
+  "faqs": [
+    {
+      "question": "Does this include primer?",
+      "answer": "No, primer costs are not included."
+    },
+    {
+      "question": "How many coats are assumed?",
+      "answer": "It assumes a single coat."
+    },
+    {
+      "question": "What if coverage varies?",
+      "answer": "Use the manufacturer's specified coverage."
+    }
   ],
-  disclaimer: "Estimate only; actual paint needs may vary by surface and application technique.",
-  cluster: "home-diy"
-};
+  "disclaimer": "Estimate only; actual paint needs may vary by surface and application technique.",
+  "cluster": "home-diy",
+  "related": [
+    "percentage-discount",
+    "simple-interest",
+    "compound-interest-calculator",
+    "bmi-calculator",
+    "daily-calorie-burn",
+    "celsius-to-fahrenheit"
+  ]
+}
 
 <Calculator schema={schema} />

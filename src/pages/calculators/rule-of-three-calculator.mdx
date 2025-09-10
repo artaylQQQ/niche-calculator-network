@@ -1,46 +1,49 @@
 ---
 layout: ../../layouts/CalculatorLayout.astro
 title: "Rule of Three Calculator"
-description: "Find the missing value in a proportion using three known numbers."
-updated: "2025-08-22"
-cluster: "math"
+description: "Enter A, B, and C to solve for X in the proportion A/B = C/X."
+date: 2025-09-10
+updated: 2025-09-10
+cluster: "Math & Statistics"
 ---
-
 import Calculator from '../../components/Calculator.astro';
 
 export const schema = {
+  "slug": "rule-of-three-calculator",
+  "title": "Rule of Three Calculator",
+  "locale": "en",
   "inputs": [
     {
       "name": "a",
       "label": "A",
       "type": "number",
-      "placeholder": "First value",
-      "step": 0.01
+      "step": "any",
+      "placeholder": "2"
     },
     {
       "name": "b",
       "label": "B",
       "type": "number",
-      "placeholder": "Second value",
-      "step": 0.01
+      "step": "any",
+      "placeholder": "10"
     },
     {
       "name": "c",
       "label": "C",
       "type": "number",
-      "placeholder": "Third value",
-      "step": 0.01
+      "step": "any",
+      "placeholder": "5"
     }
   ],
-  "slug": "rule-of-three-calculator",
-  "title": "Rule of Three Calculator",
-  "locale": "en",
   "expression": "b * c / a",
-  "unit": "same as C",
-  "intro": "This calculator finds the fourth value in a proportion. Enter A, B, and C where A/B = C/X to solve for X.",
+  "intro": "Enter A, B, and C to solve for X in the proportion A/B = C/X.",
   "examples": [
-    { "description": "2 books cost $10 ⇒ 5 books cost $25" },
-    { "description": "3 kg correspond to $12 ⇒ 7 kg cost $28" }
+    {
+      "description": "2 books cost $10 ⇒ 5 books cost $25"
+    },
+    {
+      "description": "3 kg correspond to $12 ⇒ 7 kg cost $28"
+    }
   ],
   "faqs": [
     {
@@ -61,7 +64,15 @@ export const schema = {
     }
   ],
   "disclaimer": "Educational information, not professional advice.",
-  "cluster": "math"
-};
+  "cluster": "Math & Statistics",
+  "related": [
+    "percentage-increase",
+    "pythagorean-theorem-calculator",
+    "geometric-series-sum",
+    "circumference-from-area",
+    "triangle-inradius",
+    "triangle-area-heron"
+  ]
+}
 
 <Calculator schema={schema} />

@@ -1,72 +1,84 @@
 ---
 layout: ../../layouts/CalculatorLayout.astro
 title: "Pipe Installation Cost"
-description: "Estimate total cost for a pipe run."
-updated: "2025-09-26"
-cluster: "Finance"
+description: "Compute material and labor costs for installing piping."
+date: 2025-09-10
+updated: 2025-09-10
+cluster: "Finance & Business"
 ---
-
-import Calculator from "../../components/Calculator.astro";
+import Calculator from '../../components/Calculator.astro';
 
 export const schema = {
-  slug: "pipe-installation-cost",
-  title: "Pipe Installation Cost",
-  locale: "en",
-  cluster: "Finance",
-  unit: "USD",
-  intro: "Compute material and labor costs for installing piping.",
-  inputs: [
+  "slug": "pipe-installation-cost",
+  "title": "Pipe Installation Cost",
+  "locale": "en",
+  "inputs": [
     {
-      name: "length",
-      label: "Length (ft)",
-      type: "number",
-      step: "any",
-      placeholder: "50",
+      "name": "length",
+      "label": "Length (ft)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "50"
     },
     {
-      name: "material",
-      label: "Material $/ft",
-      type: "number",
-      step: "any",
-      placeholder: "2",
+      "name": "material",
+      "label": "Material $/ft",
+      "type": "number",
+      "step": "any",
+      "placeholder": "2"
     },
     {
-      name: "labor_rate",
-      label: "Labor $/hr",
-      type: "number",
-      step: "any",
-      placeholder: "60",
+      "name": "labor_rate",
+      "label": "Labor $/hr",
+      "type": "number",
+      "step": "any",
+      "placeholder": "60"
     },
     {
-      name: "time_per_ft",
-      label: "Hours per ft",
-      type: "number",
-      step: "any",
-      placeholder: "0.05",
-    },
+      "name": "time_per_ft",
+      "label": "Hours per ft",
+      "type": "number",
+      "step": "any",
+      "placeholder": "0.05"
+    }
   ],
-  expression: "length * material + length * time_per_ft * labor_rate",
-  examples: [
-    { description: "50 ft, $2/ft, $60/hr, 0.05 h/ft ⇒ $250" },
-    { description: "80 ft, $3/ft, $55/hr, 0.06 h/ft ⇒ $504" },
-    { description: "30 ft, $1.5/ft, $40/hr, 0.04 h/ft ⇒ $93" },
+  "expression": "length * material + length * time_per_ft * labor_rate",
+  "intro": "Compute material and labor costs for installing piping.",
+  "examples": [
+    {
+      "description": "50 ft, $2/ft, $60/hr, 0.05 h/ft ⇒ $250"
+    },
+    {
+      "description": "80 ft, $3/ft, $55/hr, 0.06 h/ft ⇒ $504"
+    },
+    {
+      "description": "30 ft, $1.5/ft, $40/hr, 0.04 h/ft ⇒ $93"
+    }
   ],
-  faqs: [
+  "faqs": [
     {
-      question: "Does this include fittings?",
-      answer: "No, fitting costs should be added separately.",
+      "question": "Does this include fittings?",
+      "answer": "No, fitting costs should be added separately."
     },
     {
-      question: "Can time per foot vary?",
-      answer: "Yes, adjust based on project complexity.",
+      "question": "Can time per foot vary?",
+      "answer": "Yes, adjust based on project complexity."
     },
     {
-      question: "Are taxes or permits included?",
-      answer: "No, those should be calculated separately.",
-    },
+      "question": "Are taxes or permits included?",
+      "answer": "No, those should be calculated separately."
+    }
   ],
-  disclaimer:
-    "Costs vary by region and project; use for rough estimation only.",
-};
+  "disclaimer": "Costs vary by region and project; use for rough estimation only.",
+  "cluster": "Finance & Business",
+  "related": [
+    "percentage-discount",
+    "simple-interest",
+    "compound-interest-calculator",
+    "tip-calculator",
+    "fuel-trip-cost",
+    "crypto-mining-breakeven"
+  ]
+}
 
 <Calculator schema={schema} />

@@ -1,37 +1,71 @@
 ---
 layout: ../../layouts/CalculatorLayout.astro
 title: "Modulo Calculator"
-description: "Find the remainder of a division operation."
-updated: "2025-10-05"
-cluster: "Math"
+description: "Compute the non-negative remainder after dividing one number by another."
+date: 2025-09-10
+updated: 2025-09-10
+cluster: "Math & Statistics"
 ---
-
 import Calculator from '../../components/Calculator.astro';
 
 export const schema = {
-  slug: "modulo-calculator",
-  title: "Modulo Calculator",
-  locale: "en",
-  unit: "remainder",
-  inputs: [
-    { name: "dividend", label: "Dividend", type: "number", step: "any", placeholder: "10" },
-    { name: "divisor", label: "Divisor", type: "number", step: "any", placeholder: "3" }
+  "slug": "modulo-calculator",
+  "title": "Modulo Calculator",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "dividend",
+      "label": "Dividend",
+      "type": "number",
+      "step": "any",
+      "placeholder": "10"
+    },
+    {
+      "name": "divisor",
+      "label": "Divisor",
+      "type": "number",
+      "step": "any",
+      "placeholder": "3"
+    }
   ],
-  expression: "((dividend % divisor) + divisor) % divisor",
-  intro: "Compute the non-negative remainder after dividing one number by another.",
-  examples: [
-    { description: "10 mod 3 ⇒ 1" },
-    { description: "-10 mod 3 ⇒ 2" }
+  "expression": "((dividend % divisor) + divisor) % divisor",
+  "intro": "Compute the non-negative remainder after dividing one number by another.",
+  "examples": [
+    {
+      "description": "10 mod 3 ⇒ 1"
+    },
+    {
+      "description": "-10 mod 3 ⇒ 2"
+    }
   ],
-  faqs: [
-    { question: "What is modulo?", answer: "It's the remainder left after division." },
-    { question: "Can the divisor be negative?", answer: "Yes, the result is still non-negative." },
-    { question: "What if the divisor is zero?", answer: "Division by zero is undefined." },
-    { question: "Why adjust with divisor?", answer: "It ensures the remainder is always positive." }
+  "faqs": [
+    {
+      "question": "What is modulo?",
+      "answer": "It's the remainder left after division."
+    },
+    {
+      "question": "Can the divisor be negative?",
+      "answer": "Yes, the result is still non-negative."
+    },
+    {
+      "question": "What if the divisor is zero?",
+      "answer": "Division by zero is undefined."
+    },
+    {
+      "question": "Why adjust with divisor?",
+      "answer": "It ensures the remainder is always positive."
+    }
   ],
-  disclaimer: "Use for educational purposes; verify calculations for critical tasks.",
-  cluster: "Math",
-};
+  "disclaimer": "Use for educational purposes; verify calculations for critical tasks.",
+  "cluster": "Math & Statistics",
+  "related": [
+    "percentage-increase",
+    "rule-of-three-calculator",
+    "pythagorean-theorem-calculator",
+    "geometric-series-sum",
+    "circumference-from-area",
+    "triangle-inradius"
+  ]
+}
 
 <Calculator schema={schema} />
-

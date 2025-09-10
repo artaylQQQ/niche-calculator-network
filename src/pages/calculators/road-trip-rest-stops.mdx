@@ -1,36 +1,72 @@
 ---
 layout: ../../layouts/CalculatorLayout.astro
 title: "Road Trip Rest Stops Calculator"
-description: "Plan the number of rest stops for a trip."
-updated: "2025-09-06"
-cluster: "lifestyle & travel"
+description: "Calculate how many rest stops are needed on a road trip based on your maximum comfortable driving distance per leg."
+date: 2025-09-10
+updated: 2025-09-10
+cluster: "Lifestyle & Travel"
 ---
-
 import Calculator from '../../components/Calculator.astro';
 
 export const schema = {
-  inputs: [
-    { name: "distance", label: "Total Distance (km)", type: "number", step: "any", min: 0, placeholder: "600" },
-    { name: "maxLeg", label: "Max Distance per Leg (km)", type: "number", step: "any", min: 1, placeholder: "150" }
+  "slug": "road-trip-rest-stops",
+  "title": "Road Trip Rest Stops Calculator",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "distance",
+      "label": "Total Distance (km)",
+      "type": "number",
+      "step": "any",
+      "min": 0,
+      "placeholder": "600"
+    },
+    {
+      "name": "maxLeg",
+      "label": "Max Distance per Leg (km)",
+      "type": "number",
+      "step": "any",
+      "min": 1,
+      "placeholder": "150"
+    }
   ],
-  slug: "road-trip-rest-stops",
-  title: "Road Trip Rest Stops Calculator",
-  locale: "en",
-  unit: "stops",
-  expression: "Math.max(Math.ceil(distance / maxLeg) - 1, 0)",
-  intro: "Calculate how many rest stops are needed on a road trip based on your maximum comfortable driving distance per leg.",
-  examples: [
-    { description: "600 km with 150 km legs ⇒ 3 stops" },
-    { description: "500 km with 200 km legs ⇒ 2 stops" },
-    { description: "100 km with 300 km legs ⇒ 0 stops" }
+  "expression": "Math.max(Math.ceil(distance / maxLeg) - 1, 0)",
+  "intro": "Calculate how many rest stops are needed on a road trip based on your maximum comfortable driving distance per leg.",
+  "examples": [
+    {
+      "description": "600 km with 150 km legs ⇒ 3 stops"
+    },
+    {
+      "description": "500 km with 200 km legs ⇒ 2 stops"
+    },
+    {
+      "description": "100 km with 300 km legs ⇒ 0 stops"
+    }
   ],
-  faqs: [
-    { question: "Why subtract one from the legs?", answer: "Stops occur between legs, so the last leg ends at your destination." },
-    { question: "What if max distance is zero?", answer: "Max distance per leg must be greater than zero." },
-    { question: "Does this include overnight stays?", answer: "Treat overnight stays as rest stops." }
+  "faqs": [
+    {
+      "question": "Why subtract one from the legs?",
+      "answer": "Stops occur between legs, so the last leg ends at your destination."
+    },
+    {
+      "question": "What if max distance is zero?",
+      "answer": "Max distance per leg must be greater than zero."
+    },
+    {
+      "question": "Does this include overnight stays?",
+      "answer": "Treat overnight stays as rest stops."
+    }
   ],
-  disclaimer: "Use as a planning aid; adjust for driver fatigue and local regulations.",
-  cluster: "lifestyle & travel"
-};
+  "disclaimer": "Use as a planning aid; adjust for driver fatigue and local regulations.",
+  "cluster": "Lifestyle & Travel",
+  "related": [
+    "percentage-discount",
+    "simple-interest",
+    "compound-interest-calculator",
+    "bmi-calculator",
+    "daily-calorie-burn",
+    "celsius-to-fahrenheit"
+  ]
+}
 
 <Calculator schema={schema} />

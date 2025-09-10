@@ -1,32 +1,53 @@
 ---
 layout: ../../layouts/CalculatorLayout.astro
 title: "Percentage to Decimal Converter"
-description: "Convert a percentage to its decimal form."
-updated: "2025-10-24"
-cluster: "Conversions"
+description: "Quickly turn a percentage into a decimal for spreadsheets and formulas."
+date: 2025-09-10
+updated: 2025-09-10
+cluster: "Conversions & Units"
 ---
-import Calculator from "../../components/Calculator.astro";
+import Calculator from '../../components/Calculator.astro';
 
 export const schema = {
-  slug: "percentage-to-decimal",
-  title: "Percentage to Decimal Converter",
-  locale: "en",
-  intro: "Quickly turn a percentage into a decimal for spreadsheets and formulas.",
-  unit: "decimal",
-  cluster: "Conversions",
-  inputs: [
-    { name: "percent", label: "Percentage (%)", type: "number", step: "any", placeholder: "25" }
+  "slug": "percentage-to-decimal",
+  "title": "Percentage to Decimal Converter",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "percent",
+      "hint": "Percentage (%)"
+    }
   ],
-  expression: "percent / 100",
-  examples: [
-    { description: "25% ⇒ 0.25" },
-    { description: "150% ⇒ 1.5" }
+  "expression": "percent/100",
+  "intro": "Quickly turn a percentage into a decimal for spreadsheets and formulas.",
+  "examples": [
+    {
+      "description": "25% ⇒ 0.25"
+    },
+    {
+      "description": "150% ⇒ 1.5"
+    }
   ],
-  faqs: [
-    { question: "Why divide by 100?", answer: "Percent means per hundred, so dividing converts to decimal." },
-    { question: "Can it handle negative values?", answer: "Yes, negatives work the same way." }
+  "faqs": [
+    {
+      "question": "Why divide by 100?",
+      "answer": "Percent means per hundred."
+    },
+    {
+      "question": "Negative values?",
+      "answer": "Yes, negatives work too."
+    }
   ],
-  disclaimer: "For informational purposes only.",
-};
+  "disclaimer": "Educational information, not professional advice.",
+  "cluster": "Conversions & Units",
+  "related": [
+    "celsius-to-fahrenheit",
+    "cm-to-inches-calculator",
+    "f-to-c-calculator",
+    "pounds-to-kilograms",
+    "square-feet-to-square-meters",
+    "inches-to-cm"
+  ]
+}
 
 <Calculator schema={schema} />

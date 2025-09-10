@@ -1,32 +1,53 @@
 ---
 layout: ../../layouts/CalculatorLayout.astro
 title: "Decimal to Percentage Converter"
-description: "Convert a decimal number into a percentage."
-updated: "2025-10-24"
-cluster: "Conversions"
+description: "Convert decimals to percentages for reports and presentations."
+date: 2025-09-10
+updated: 2025-09-10
+cluster: "Conversions & Units"
 ---
-import Calculator from "../../components/Calculator.astro";
+import Calculator from '../../components/Calculator.astro';
 
 export const schema = {
-  slug: "decimal-to-percentage",
-  title: "Decimal to Percentage Converter",
-  locale: "en",
-  intro: "Convert decimals to percentages for reports and presentations.",
-  unit: "%",
-  cluster: "Conversions",
-  inputs: [
-    { name: "decimal", label: "Decimal", type: "number", step: "any", placeholder: "0.85" }
+  "slug": "decimal-to-percentage",
+  "title": "Decimal to Percentage Converter",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "decimal",
+      "hint": "Decimal"
+    }
   ],
-  expression: "decimal * 100",
-  examples: [
-    { description: "0.85 ⇒ 85%" },
-    { description: "1.2 ⇒ 120%" }
+  "expression": "decimal*100",
+  "intro": "Convert decimals to percentages for reports and presentations.",
+  "examples": [
+    {
+      "description": "0.85 ⇒ 85%"
+    },
+    {
+      "description": "1.2 ⇒ 120%"
+    }
   ],
-  faqs: [
-    { question: "How is the conversion done?", answer: "Multiply the decimal by 100 to get a percentage." },
-    { question: "Does it add a percent sign?", answer: "The result is a numeric value representing percent." }
+  "faqs": [
+    {
+      "question": "How is conversion done?",
+      "answer": "Multiply by 100."
+    },
+    {
+      "question": "Percent sign added?",
+      "answer": "Result is numeric percent."
+    }
   ],
-  disclaimer: "For informational purposes only.",
-};
+  "disclaimer": "Educational information, not professional advice.",
+  "cluster": "Conversions & Units",
+  "related": [
+    "celsius-to-fahrenheit",
+    "cm-to-inches-calculator",
+    "f-to-c-calculator",
+    "pounds-to-kilograms",
+    "square-feet-to-square-meters",
+    "inches-to-cm"
+  ]
+}
 
 <Calculator schema={schema} />

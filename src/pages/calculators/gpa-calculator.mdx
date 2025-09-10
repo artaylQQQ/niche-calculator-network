@@ -1,36 +1,72 @@
 ---
 layout: ../../layouts/CalculatorLayout.astro
 title: "GPA Calculator"
-description: "Compute grade point average from points and credits."
-updated: "2025-09-06"
-cluster: "education & learning"
+description: "Compute your grade point average by dividing total quality points by total credits attempted."
+date: 2025-09-10
+updated: 2025-09-10
+cluster: "Education & Learning"
 ---
-
 import Calculator from '../../components/Calculator.astro';
 
 export const schema = {
-  inputs: [
-    { name: "points", label: "Total Grade Points", type: "number", step: "any", min: 0, placeholder: "36" },
-    { name: "credits", label: "Total Credits", type: "number", step: "any", min: 0, placeholder: "12" }
+  "slug": "gpa-calculator",
+  "title": "GPA Calculator",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "points",
+      "label": "Total Grade Points",
+      "type": "number",
+      "step": "any",
+      "min": 0,
+      "placeholder": "36"
+    },
+    {
+      "name": "credits",
+      "label": "Total Credits",
+      "type": "number",
+      "step": "any",
+      "min": 0,
+      "placeholder": "12"
+    }
   ],
-  slug: "gpa-calculator",
-  title: "GPA Calculator",
-  locale: "en",
-  unit: "GPA",
-  expression: "points / credits",
-  intro: "Compute your grade point average by dividing total quality points by total credits attempted.",
-  examples: [
-    { description: "36 points over 12 credits ⇒ 3.0 GPA" },
-    { description: "45 points over 15 credits ⇒ 3.0 GPA" },
-    { description: "50 points over 16 credits ⇒ 3.125 GPA" }
+  "expression": "points / credits",
+  "intro": "Compute your grade point average by dividing total quality points by total credits attempted.",
+  "examples": [
+    {
+      "description": "36 points over 12 credits ⇒ 3.0 GPA"
+    },
+    {
+      "description": "45 points over 15 credits ⇒ 3.0 GPA"
+    },
+    {
+      "description": "50 points over 16 credits ⇒ 3.125 GPA"
+    }
   ],
-  faqs: [
-    { question: "What are quality points?", answer: "They are grade points multiplied by course credits." },
-    { question: "Can credits be zero?", answer: "Credits must be greater than zero to compute GPA." },
-    { question: "Does this handle weighted grades?", answer: "Use your institution's quality points which already include weights." }
+  "faqs": [
+    {
+      "question": "What are quality points?",
+      "answer": "They are grade points multiplied by course credits."
+    },
+    {
+      "question": "Can credits be zero?",
+      "answer": "Credits must be greater than zero to compute GPA."
+    },
+    {
+      "question": "Does this handle weighted grades?",
+      "answer": "Use your institution's quality points which already include weights."
+    }
   ],
-  disclaimer: "Check with your school for official GPA calculations.",
-  cluster: "education & learning"
-};
+  "disclaimer": "Check with your school for official GPA calculations.",
+  "cluster": "Education & Learning",
+  "related": [
+    "percentage-discount",
+    "simple-interest",
+    "compound-interest-calculator",
+    "bmi-calculator",
+    "daily-calorie-burn",
+    "celsius-to-fahrenheit"
+  ]
+}
 
 <Calculator schema={schema} />

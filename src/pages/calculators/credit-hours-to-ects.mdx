@@ -1,52 +1,63 @@
 ---
 layout: ../../layouts/CalculatorLayout.astro
 title: "Credit Hours to ECTS Converter"
-description: "Convert US credit hours to European ECTS credits."
-updated: "2025-09-26"
-cluster: "Conversions"
+description: "Translate academic credit hours into the European Credit Transfer and Accumulation System."
+date: 2025-09-10
+updated: 2025-09-10
+cluster: "Conversions & Units"
 ---
-
-import Calculator from "../../components/Calculator.astro";
+import Calculator from '../../components/Calculator.astro';
 
 export const schema = {
-  slug: "credit-hours-to-ects",
-  title: "Credit Hours to ECTS Converter",
-  locale: "en",
-  cluster: "Conversions",
-  unit: "ECTS",
-  intro:
-    "Translate academic credit hours into the European Credit Transfer and Accumulation System.",
-  inputs: [
+  "slug": "credit-hours-to-ects",
+  "title": "Credit Hours to ECTS Converter",
+  "locale": "en",
+  "inputs": [
     {
-      name: "credits",
-      label: "Credit Hours",
-      type: "number",
-      step: "any",
-      placeholder: "3",
-    },
+      "name": "credits",
+      "label": "Credit Hours",
+      "type": "number",
+      "step": "any",
+      "placeholder": "3"
+    }
   ],
-  expression: "credits * 2",
-  examples: [
-    { description: "3 credit hours ⇒ 6 ECTS" },
-    { description: "9 credit hours ⇒ 18 ECTS" },
-    { description: "12 credit hours ⇒ 24 ECTS" },
+  "expression": "credits * 2",
+  "intro": "Translate academic credit hours into the European Credit Transfer and Accumulation System.",
+  "examples": [
+    {
+      "description": "3 credit hours ⇒ 6 ECTS"
+    },
+    {
+      "description": "9 credit hours ⇒ 18 ECTS"
+    },
+    {
+      "description": "12 credit hours ⇒ 24 ECTS"
+    }
   ],
-  faqs: [
+  "faqs": [
     {
-      question: "Is the conversion exact?",
-      answer: "It's a common approximation; institutions may vary.",
+      "question": "Is the conversion exact?",
+      "answer": "It's a common approximation; institutions may vary."
     },
     {
-      question: "Can I convert fractional credits?",
-      answer: "Yes, partial credits convert proportionally.",
+      "question": "Can I convert fractional credits?",
+      "answer": "Yes, partial credits convert proportionally."
     },
     {
-      question: "Why use ECTS?",
-      answer: "ECTS helps compare course loads across European universities.",
-    },
+      "question": "Why use ECTS?",
+      "answer": "ECTS helps compare course loads across European universities."
+    }
   ],
-  disclaimer:
-    "Universities may apply different equivalences; confirm with your program.",
-};
+  "disclaimer": "Universities may apply different equivalences; confirm with your program.",
+  "cluster": "Conversions & Units",
+  "related": [
+    "celsius-to-fahrenheit",
+    "cm-to-inches-calculator",
+    "f-to-c-calculator",
+    "pounds-to-kilograms",
+    "square-feet-to-square-meters",
+    "inches-to-cm"
+  ]
+}
 
 <Calculator schema={schema} />

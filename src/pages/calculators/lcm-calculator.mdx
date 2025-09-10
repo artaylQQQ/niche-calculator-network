@@ -1,37 +1,71 @@
 ---
 layout: ../../layouts/CalculatorLayout.astro
 title: "LCM Calculator"
-description: "Find the least common multiple of two numbers."
-updated: "2025-10-05"
-cluster: "Math"
+description: "Compute the smallest common multiple shared by two integers."
+date: 2025-09-10
+updated: 2025-09-10
+cluster: "Math & Statistics"
 ---
-
 import Calculator from '../../components/Calculator.astro';
 
 export const schema = {
-  slug: "lcm-calculator",
-  title: "LCM Calculator",
-  locale: "en",
-  unit: "",
-  inputs: [
-    { name: "a", label: "Number A", type: "number", step: 1, placeholder: "12" },
-    { name: "b", label: "Number B", type: "number", step: 1, placeholder: "18" }
+  "slug": "lcm-calculator",
+  "title": "LCM Calculator",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "a",
+      "label": "Number A",
+      "type": "number",
+      "step": 1,
+      "placeholder": "12"
+    },
+    {
+      "name": "b",
+      "label": "Number B",
+      "type": "number",
+      "step": 1,
+      "placeholder": "18"
+    }
   ],
-  expression: "(function(a,b){a=Math.abs(Math.floor(a));b=Math.abs(Math.floor(b));function g(x,y){while(y){[x,y]=[y,x%y];}return x;}return a*b/g(a,b);})(a,b)",
-  intro: "Compute the smallest common multiple shared by two integers.",
-  examples: [
-    { description: "LCM of 12 and 18 ⇒ 36" },
-    { description: "LCM of 7 and 5 ⇒ 35" }
+  "expression": "(function(a,b){a=Math.abs(Math.floor(a));b=Math.abs(Math.floor(b));function g(x,y){while(y){[x,y]=[y,x%y];}return x;}return a*b/g(a,b);})(a,b)",
+  "intro": "Compute the smallest common multiple shared by two integers.",
+  "examples": [
+    {
+      "description": "LCM of 12 and 18 ⇒ 36"
+    },
+    {
+      "description": "LCM of 7 and 5 ⇒ 35"
+    }
   ],
-  faqs: [
-    { question: "What is LCM?", answer: "The least common multiple of two integers." },
-    { question: "Do negative numbers work?", answer: "Yes, the calculator uses absolute values." },
-    { question: "Can I enter decimals?", answer: "Inputs are floored to integers." },
-    { question: "What if one number is zero?", answer: "The LCM with zero is zero." }
+  "faqs": [
+    {
+      "question": "What is LCM?",
+      "answer": "The least common multiple of two integers."
+    },
+    {
+      "question": "Do negative numbers work?",
+      "answer": "Yes, the calculator uses absolute values."
+    },
+    {
+      "question": "Can I enter decimals?",
+      "answer": "Inputs are floored to integers."
+    },
+    {
+      "question": "What if one number is zero?",
+      "answer": "The LCM with zero is zero."
+    }
   ],
-  disclaimer: "Designed for basic educational use only.",
-  cluster: "Math",
-};
+  "disclaimer": "Designed for basic educational use only.",
+  "cluster": "Math & Statistics",
+  "related": [
+    "percentage-increase",
+    "rule-of-three-calculator",
+    "pythagorean-theorem-calculator",
+    "geometric-series-sum",
+    "circumference-from-area",
+    "triangle-inradius"
+  ]
+}
 
 <Calculator schema={schema} />
-

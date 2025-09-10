@@ -1,36 +1,72 @@
 ---
 layout: ../../layouts/CalculatorLayout.astro
 title: "LC Resonant Frequency Calculator"
-description: "Find the resonant frequency of an LC circuit."
-updated: "2025-09-06"
-cluster: "science & engineering"
+description: "Calculate the resonant frequency where inductive and capacitive reactances cancel in an LC circuit."
+date: 2025-09-10
+updated: 2025-09-10
+cluster: "Science & Engineering"
 ---
-
 import Calculator from '../../components/Calculator.astro';
 
 export const schema = {
-  inputs: [
-    { name: "inductance", label: "Inductance (H)", type: "number", step: "any", min: 0, placeholder: "0.002" },
-    { name: "capacitance", label: "Capacitance (F)", type: "number", step: "any", min: 0, placeholder: "0.000001" }
+  "slug": "lc-resonant-frequency",
+  "title": "LC Resonant Frequency Calculator",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "inductance",
+      "label": "Inductance (H)",
+      "type": "number",
+      "step": "any",
+      "min": 0,
+      "placeholder": "0.002"
+    },
+    {
+      "name": "capacitance",
+      "label": "Capacitance (F)",
+      "type": "number",
+      "step": "any",
+      "min": 0,
+      "placeholder": "0.000001"
+    }
   ],
-  slug: "lc-resonant-frequency",
-  title: "LC Resonant Frequency Calculator",
-  locale: "en",
-  unit: "Hz",
-  expression: "1 / (2 * Math.PI * Math.sqrt(inductance * capacitance))",
-  intro: "Calculate the resonant frequency where inductive and capacitive reactances cancel in an LC circuit.",
-  examples: [
-    { description: "L=0.002 H, C=1e-6 F ⇒ 3558.5 Hz" },
-    { description: "L=0.001 H, C=1e-9 F ⇒ 159154.9 Hz" },
-    { description: "L=1 H, C=1e-6 F ⇒ 159.15 Hz" }
+  "expression": "1 / (2 * Math.PI * Math.sqrt(inductance * capacitance))",
+  "intro": "Calculate the resonant frequency where inductive and capacitive reactances cancel in an LC circuit.",
+  "examples": [
+    {
+      "description": "L=0.002 H, C=1e-6 F ⇒ 3558.5 Hz"
+    },
+    {
+      "description": "L=0.001 H, C=1e-9 F ⇒ 159154.9 Hz"
+    },
+    {
+      "description": "L=1 H, C=1e-6 F ⇒ 159.15 Hz"
+    }
   ],
-  faqs: [
-    { question: "What is resonant frequency?", answer: "The frequency where inductive and capacitive reactances are equal and opposite." },
-    { question: "Do values need to be in henries and farads?", answer: "Yes, convert units to henries and farads before using." },
-    { question: "What if L or C is zero?", answer: "Resonant frequency is undefined if either component is zero." }
+  "faqs": [
+    {
+      "question": "What is resonant frequency?",
+      "answer": "The frequency where inductive and capacitive reactances are equal and opposite."
+    },
+    {
+      "question": "Do values need to be in henries and farads?",
+      "answer": "Yes, convert units to henries and farads before using."
+    },
+    {
+      "question": "What if L or C is zero?",
+      "answer": "Resonant frequency is undefined if either component is zero."
+    }
   ],
-  disclaimer: "Idealized calculation; real circuits include resistance and losses.",
-  cluster: "science & engineering"
-};
+  "disclaimer": "Idealized calculation; real circuits include resistance and losses.",
+  "cluster": "Science & Engineering",
+  "related": [
+    "percentage-discount",
+    "simple-interest",
+    "compound-interest-calculator",
+    "bmi-calculator",
+    "daily-calorie-burn",
+    "celsius-to-fahrenheit"
+  ]
+}
 
 <Calculator schema={schema} />

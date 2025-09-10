@@ -1,58 +1,70 @@
 ---
 layout: ../../layouts/CalculatorLayout.astro
 title: "Grant Application Success Probability"
-description: "Estimate odds of securing at least one grant."
-updated: "2025-09-26"
-cluster: "Other"
+description: "Calculate the probability of at least one successful grant when submitting multiple applications."
+date: 2025-09-10
+updated: 2025-09-10
+cluster: "Lifestyle & Travel"
 ---
-
-import Calculator from "../../components/Calculator.astro";
+import Calculator from '../../components/Calculator.astro';
 
 export const schema = {
-  slug: "grant-application-success",
-  title: "Grant Application Success Probability",
-  locale: "en",
-  cluster: "Other",
-  unit: "%",
-  intro:
-    "Calculate the probability of at least one successful grant when submitting multiple applications.",
-  inputs: [
+  "slug": "grant-application-success",
+  "title": "Grant Application Success Probability",
+  "locale": "en",
+  "inputs": [
     {
-      name: "number",
-      label: "Applications",
-      type: "number",
-      step: "1",
-      placeholder: "3",
+      "name": "number",
+      "label": "Applications",
+      "type": "number",
+      "step": "1",
+      "placeholder": "3"
     },
     {
-      name: "success_rate",
-      label: "Success Rate (%)",
-      type: "number",
-      step: "any",
-      placeholder: "20",
-    },
+      "name": "success_rate",
+      "label": "Success Rate (%)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "20"
+    }
   ],
-  expression: "(1 - Math.pow(1 - success_rate / 100, number)) * 100",
-  examples: [
-    { description: "3 applications at 20% ⇒ 48.8 %" },
-    { description: "5 applications at 10% ⇒ 40.95 %" },
-    { description: "1 application at 30% ⇒ 30 %" },
+  "expression": "(1 - Math.pow(1 - success_rate / 100, number)) * 100",
+  "intro": "Calculate the probability of at least one successful grant when submitting multiple applications.",
+  "examples": [
+    {
+      "description": "3 applications at 20% ⇒ 48.8 %"
+    },
+    {
+      "description": "5 applications at 10% ⇒ 40.95 %"
+    },
+    {
+      "description": "1 application at 30% ⇒ 30 %"
+    }
   ],
-  faqs: [
+  "faqs": [
     {
-      question: "Are application outcomes independent?",
-      answer: "Yes, this assumes each decision is independent.",
+      "question": "Are application outcomes independent?",
+      "answer": "Yes, this assumes each decision is independent."
     },
     {
-      question: "Can success rate exceed 100%?",
-      answer: "No, it must be between 0 and 100.",
+      "question": "Can success rate exceed 100%?",
+      "answer": "No, it must be between 0 and 100."
     },
     {
-      question: "Does this guarantee funding?",
-      answer: "No, it's only a probability estimate.",
-    },
+      "question": "Does this guarantee funding?",
+      "answer": "No, it's only a probability estimate."
+    }
   ],
-  disclaimer: "Probabilities are estimates; actual results vary.",
-};
+  "disclaimer": "Probabilities are estimates; actual results vary.",
+  "cluster": "Lifestyle & Travel",
+  "related": [
+    "cat-age-human-years",
+    "book-page-count",
+    "horse-age-human-years",
+    "dice-roll-probability",
+    "wind-chill-index",
+    "tree-carbon-offset"
+  ]
+}
 
 <Calculator schema={schema} />

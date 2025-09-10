@@ -1,32 +1,53 @@
 ---
 layout: ../../layouts/CalculatorLayout.astro
 title: "MB to GB Converter"
-description: "Convert megabytes to gigabytes."
-updated: "2025-10-24"
-cluster: "Conversions"
+description: "Convert megabytes to gigabytes for quick storage planning."
+date: 2025-09-10
+updated: 2025-09-10
+cluster: "Conversions & Units"
 ---
-import Calculator from "../../components/Calculator.astro";
+import Calculator from '../../components/Calculator.astro';
 
 export const schema = {
-  slug: "mb-to-gb-converter",
-  title: "MB to GB Converter",
-  locale: "en",
-  intro: "Convert megabytes to gigabytes for quick storage planning.",
-  unit: "GB",
-  cluster: "Conversions",
-  inputs: [
-    { name: "mb", label: "Megabytes (MB)", type: "number", step: "any", placeholder: "2048" }
+  "slug": "mb-to-gb-converter",
+  "title": "MB to GB Converter",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "mb",
+      "hint": "Megabytes (MB)"
+    }
   ],
-  expression: "mb / 1024",
-  examples: [
-    { description: "2048 MB ⇒ 2 GB" },
-    { description: "5120 MB ⇒ 5 GB" }
+  "expression": "mb/1024",
+  "intro": "Convert megabytes to gigabytes for quick storage planning.",
+  "examples": [
+    {
+      "description": "2048 MB ⇒ 2 GB"
+    },
+    {
+      "description": "5120 MB ⇒ 5 GB"
+    }
   ],
-  faqs: [
-    { question: "Is it using binary units?", answer: "Yes, it divides by 1024 to convert MB to GB." },
-    { question: "Can I use decimals?", answer: "Yes, enter any numeric value." }
+  "faqs": [
+    {
+      "question": "Is it binary?",
+      "answer": "Yes, 1 GB = 1024 MB."
+    },
+    {
+      "question": "Can I use decimals?",
+      "answer": "Yes, decimals are allowed."
+    }
   ],
-  disclaimer: "For informational purposes only.",
-};
+  "disclaimer": "Educational information, not professional advice.",
+  "cluster": "Conversions & Units",
+  "related": [
+    "celsius-to-fahrenheit",
+    "cm-to-inches-calculator",
+    "f-to-c-calculator",
+    "pounds-to-kilograms",
+    "square-feet-to-square-meters",
+    "inches-to-cm"
+  ]
+}
 
 <Calculator schema={schema} />

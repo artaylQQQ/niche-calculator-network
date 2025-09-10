@@ -1,37 +1,71 @@
 ---
 layout: ../../layouts/CalculatorLayout.astro
 title: "Carpet Cost Calculator"
-description: "Estimate total carpet cost from area and price per square foot."
-updated: "2025-10-05"
+description: "Estimate how much new carpet will cost based on room size and price per square foot."
+date: 2025-09-10
+updated: 2025-09-10
 cluster: "Home & DIY"
 ---
-
 import Calculator from '../../components/Calculator.astro';
 
 export const schema = {
-  slug: "carpet-cost",
-  title: "Carpet Cost Calculator",
-  locale: "en",
-  unit: "USD",
-  inputs: [
-    { name: "area", label: "Area (ft²)", type: "number", step: "any", placeholder: "200" },
-    { name: "price", label: "Cost per ft²", type: "number", step: "any", placeholder: "3" }
+  "slug": "carpet-cost",
+  "title": "Carpet Cost Calculator",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "area",
+      "label": "Area (ft²)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "200"
+    },
+    {
+      "name": "price",
+      "label": "Cost per ft²",
+      "type": "number",
+      "step": "any",
+      "placeholder": "3"
+    }
   ],
-  expression: "area * price",
-  intro: "Estimate how much new carpet will cost based on room size and price per square foot.",
-  examples: [
-    { description: "Area 200 ft², price $3 ⇒ $600" },
-    { description: "Area 150 ft², price $2.5 ⇒ $375" }
+  "expression": "area * price",
+  "intro": "Estimate how much new carpet will cost based on room size and price per square foot.",
+  "examples": [
+    {
+      "description": "Area 200 ft², price $3 ⇒ $600"
+    },
+    {
+      "description": "Area 150 ft², price $2.5 ⇒ $375"
+    }
   ],
-  faqs: [
-    { question: "Does it include installation?", answer: "No, add labor costs separately." },
-    { question: "Should I buy extra?", answer: "Yes, order a little more to account for waste." },
-    { question: "Can I use metric units?", answer: "Convert area and price to feet and dollars first." },
-    { question: "Does it handle multiple rooms?", answer: "Sum areas before entering for total cost." }
+  "faqs": [
+    {
+      "question": "Does it include installation?",
+      "answer": "No, add labor costs separately."
+    },
+    {
+      "question": "Should I buy extra?",
+      "answer": "Yes, order a little more to account for waste."
+    },
+    {
+      "question": "Can I use metric units?",
+      "answer": "Convert area and price to feet and dollars first."
+    },
+    {
+      "question": "Does it handle multiple rooms?",
+      "answer": "Sum areas before entering for total cost."
+    }
   ],
-  disclaimer: "Estimates only; actual costs may vary with vendor and materials.",
-  cluster: "Home & DIY",
-};
+  "disclaimer": "Estimates only; actual costs may vary with vendor and materials.",
+  "cluster": "Home & DIY",
+  "related": [
+    "paint-coverage",
+    "garden-soil-volume",
+    "home-diy-division-calculator",
+    "rainwater-harvest",
+    "garden-soil-weight",
+    "brick-count-estimator"
+  ]
+}
 
 <Calculator schema={schema} />
-

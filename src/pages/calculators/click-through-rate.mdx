@@ -1,36 +1,72 @@
 ---
 layout: ../../layouts/CalculatorLayout.astro
 title: "Click-Through Rate Calculator"
-description: "Calculate click-through rate from clicks and impressions."
-updated: "2025-09-06"
-cluster: "web & marketing"
+description: "Determine the percentage of impressions that result in clicks for an ad or email campaign."
+date: 2025-09-10
+updated: 2025-09-10
+cluster: "Web & Marketing"
 ---
-
 import Calculator from '../../components/Calculator.astro';
 
 export const schema = {
-  inputs: [
-    { name: "clicks", label: "Clicks", type: "number", step: "any", min: 0, placeholder: "50" },
-    { name: "impressions", label: "Impressions", type: "number", step: "any", min: 0, placeholder: "1000" }
+  "slug": "click-through-rate",
+  "title": "Click-Through Rate Calculator",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "clicks",
+      "label": "Clicks",
+      "type": "number",
+      "step": "any",
+      "min": 0,
+      "placeholder": "50"
+    },
+    {
+      "name": "impressions",
+      "label": "Impressions",
+      "type": "number",
+      "step": "any",
+      "min": 0,
+      "placeholder": "1000"
+    }
   ],
-  slug: "click-through-rate",
-  title: "Click-Through Rate Calculator",
-  locale: "en",
-  unit: "%",
-  expression: "(clicks / impressions) * 100",
-  intro: "Determine the percentage of impressions that result in clicks for an ad or email campaign.",
-  examples: [
-    { description: "50 clicks, 1000 impressions ⇒ 5%" },
-    { description: "120 clicks, 4000 impressions ⇒ 3%" },
-    { description: "200 clicks, 2000 impressions ⇒ 10%" }
+  "expression": "(clicks / impressions) * 100",
+  "intro": "Determine the percentage of impressions that result in clicks for an ad or email campaign.",
+  "examples": [
+    {
+      "description": "50 clicks, 1000 impressions ⇒ 5%"
+    },
+    {
+      "description": "120 clicks, 4000 impressions ⇒ 3%"
+    },
+    {
+      "description": "200 clicks, 2000 impressions ⇒ 10%"
+    }
   ],
-  faqs: [
-    { question: "What is a good CTR?", answer: "It varies by industry and channel." },
-    { question: "Can impressions be zero?", answer: "Impressions must be greater than zero to compute CTR." },
-    { question: "Does CTR measure conversions?", answer: "No, it only measures clicks relative to impressions." }
+  "faqs": [
+    {
+      "question": "What is a good CTR?",
+      "answer": "It varies by industry and channel."
+    },
+    {
+      "question": "Can impressions be zero?",
+      "answer": "Impressions must be greater than zero to compute CTR."
+    },
+    {
+      "question": "Does CTR measure conversions?",
+      "answer": "No, it only measures clicks relative to impressions."
+    }
   ],
-  disclaimer: "For marketing estimates; actual campaign performance may vary.",
-  cluster: "web & marketing"
-};
+  "disclaimer": "For marketing estimates; actual campaign performance may vary.",
+  "cluster": "Web & Marketing",
+  "related": [
+    "percentage-discount",
+    "simple-interest",
+    "compound-interest-calculator",
+    "bmi-calculator",
+    "daily-calorie-burn",
+    "celsius-to-fahrenheit"
+  ]
+}
 
 <Calculator schema={schema} />

@@ -1,37 +1,71 @@
 ---
 layout: ../../layouts/CalculatorLayout.astro
 title: "Shadow Length Calculator"
-description: "Find the length of a shadow from object height and sun angle."
-updated: "2025-10-05"
-cluster: "Other"
+description: "Calculate how long a shadow will be based on object height and sun elevation angle."
+date: 2025-09-10
+updated: 2025-09-10
+cluster: "Lifestyle & Travel"
 ---
-
 import Calculator from '../../components/Calculator.astro';
 
 export const schema = {
-  slug: "shadow-length",
-  title: "Shadow Length Calculator",
-  locale: "en",
-  unit: "m",
-  inputs: [
-    { name: "height", label: "Height (m)", type: "number", step: "any", placeholder: "2" },
-    { name: "angle", label: "Sun Angle (°)", type: "number", step: "any", placeholder: "45" }
+  "slug": "shadow-length",
+  "title": "Shadow Length Calculator",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "height",
+      "label": "Height (m)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "2"
+    },
+    {
+      "name": "angle",
+      "label": "Sun Angle (°)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "45"
+    }
   ],
-  expression: "height / Math.tan(angle * Math.PI / 180)",
-  intro: "Calculate how long a shadow will be based on object height and sun elevation angle.",
-  examples: [
-    { description: "Height 2 m, angle 45° ⇒ 2 m" },
-    { description: "Height 1.5 m, angle 30° ⇒ 2.60 m" }
+  "expression": "height / Math.tan(angle * Math.PI / 180)",
+  "intro": "Calculate how long a shadow will be based on object height and sun elevation angle.",
+  "examples": [
+    {
+      "description": "Height 2 m, angle 45° ⇒ 2 m"
+    },
+    {
+      "description": "Height 1.5 m, angle 30° ⇒ 2.60 m"
+    }
   ],
-  faqs: [
-    { question: "What is sun angle?", answer: "The elevation of the sun above the horizon." },
-    { question: "Can the angle be zero?", answer: "No, a zero angle would produce an infinite shadow." },
-    { question: "Should angle be in degrees?", answer: "Yes, input angles in degrees." },
-    { question: "Does this consider terrain?", answer: "No, it assumes flat ground." }
+  "faqs": [
+    {
+      "question": "What is sun angle?",
+      "answer": "The elevation of the sun above the horizon."
+    },
+    {
+      "question": "Can the angle be zero?",
+      "answer": "No, a zero angle would produce an infinite shadow."
+    },
+    {
+      "question": "Should angle be in degrees?",
+      "answer": "Yes, input angles in degrees."
+    },
+    {
+      "question": "Does this consider terrain?",
+      "answer": "No, it assumes flat ground."
+    }
   ],
-  disclaimer: "Idealized calculation without atmospheric refraction.",
-  cluster: "Other",
-};
+  "disclaimer": "Idealized calculation without atmospheric refraction.",
+  "cluster": "Lifestyle & Travel",
+  "related": [
+    "discount-calculator",
+    "discount-calculator-2",
+    "tip-calculator-2",
+    "coffee-to-water-ratio",
+    "reading-time-estimator",
+    "travel-budget-per-day"
+  ]
+}
 
 <Calculator schema={schema} />
-

@@ -1,37 +1,71 @@
 ---
 layout: ../../layouts/CalculatorLayout.astro
 title: "Plant Spacing Calculator"
-description: "Determine how many plants fit in an area based on spacing."
-updated: "2025-10-05"
+description: "Figure out how many evenly spaced plants can fit into a garden area."
+date: 2025-09-10
+updated: 2025-09-10
 cluster: "Home & DIY"
 ---
-
 import Calculator from '../../components/Calculator.astro';
 
 export const schema = {
-  slug: "plant-spacing",
-  title: "Plant Spacing Calculator",
-  locale: "en",
-  unit: "plants",
-  inputs: [
-    { name: "area", label: "Area (ft²)", type: "number", step: "any", placeholder: "100" },
-    { name: "spacing", label: "Spacing (ft)", type: "number", step: "any", placeholder: "2" }
+  "slug": "plant-spacing",
+  "title": "Plant Spacing Calculator",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "area",
+      "label": "Area (ft²)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "100"
+    },
+    {
+      "name": "spacing",
+      "label": "Spacing (ft)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "2"
+    }
   ],
-  expression: "Math.ceil(area / (spacing * spacing))",
-  intro: "Figure out how many evenly spaced plants can fit into a garden area.",
-  examples: [
-    { description: "Area 100 ft², spacing 2 ft ⇒ 25 plants" },
-    { description: "Area 200 ft², spacing 1.5 ft ⇒ 89 plants" }
+  "expression": "Math.ceil(area / (spacing * spacing))",
+  "intro": "Figure out how many evenly spaced plants can fit into a garden area.",
+  "examples": [
+    {
+      "description": "Area 100 ft², spacing 2 ft ⇒ 25 plants"
+    },
+    {
+      "description": "Area 200 ft², spacing 1.5 ft ⇒ 89 plants"
+    }
   ],
-  faqs: [
-    { question: "Does it assume a square grid?", answer: "Yes, spacing is measured between rows and columns." },
-    { question: "Can I use inches?", answer: "Convert inches to feet before entering." },
-    { question: "Should I round up?", answer: "The calculator already rounds up to ensure enough plants." },
-    { question: "Does it account for paths?", answer: "No, subtract walkway areas before calculating." }
+  "faqs": [
+    {
+      "question": "Does it assume a square grid?",
+      "answer": "Yes, spacing is measured between rows and columns."
+    },
+    {
+      "question": "Can I use inches?",
+      "answer": "Convert inches to feet before entering."
+    },
+    {
+      "question": "Should I round up?",
+      "answer": "The calculator already rounds up to ensure enough plants."
+    },
+    {
+      "question": "Does it account for paths?",
+      "answer": "No, subtract walkway areas before calculating."
+    }
   ],
-  disclaimer: "Use as a planning guide; adjust for specific plant needs.",
-  cluster: "Home & DIY",
-};
+  "disclaimer": "Use as a planning guide; adjust for specific plant needs.",
+  "cluster": "Home & DIY",
+  "related": [
+    "paint-coverage",
+    "garden-soil-volume",
+    "home-diy-division-calculator",
+    "rainwater-harvest",
+    "garden-soil-weight",
+    "brick-count-estimator"
+  ]
+}
 
 <Calculator schema={schema} />
-

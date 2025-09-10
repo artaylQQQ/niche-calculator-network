@@ -1,73 +1,84 @@
 ---
 layout: ../../layouts/CalculatorLayout.astro
 title: "Compost Carbon-Nitrogen Ratio"
-description: "Calculate the blended C:N ratio of compost materials."
-updated: "2025-09-26"
+description: "Determine the overall carbon-to-nitrogen ratio when mixing green and brown compost materials."
+date: 2025-09-10
+updated: 2025-09-10
 cluster: "Home & DIY"
 ---
-
-import Calculator from "../../components/Calculator.astro";
+import Calculator from '../../components/Calculator.astro';
 
 export const schema = {
-  slug: "compost-carbon-nitrogen-ratio",
-  title: "Compost Carbon-Nitrogen Ratio",
-  locale: "en",
-  cluster: "Home & DIY",
-  unit: "C:N",
-  intro:
-    "Determine the overall carbon-to-nitrogen ratio when mixing green and brown compost materials.",
-  inputs: [
+  "slug": "compost-carbon-nitrogen-ratio",
+  "title": "Compost Carbon-Nitrogen Ratio",
+  "locale": "en",
+  "inputs": [
     {
-      name: "green_weight",
-      label: "Green Weight (kg)",
-      type: "number",
-      step: "any",
-      placeholder: "10",
+      "name": "green_weight",
+      "label": "Green Weight (kg)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "10"
     },
     {
-      name: "green_cn",
-      label: "Green C:N",
-      type: "number",
-      step: "any",
-      placeholder: "17",
+      "name": "green_cn",
+      "label": "Green C:N",
+      "type": "number",
+      "step": "any",
+      "placeholder": "17"
     },
     {
-      name: "brown_weight",
-      label: "Brown Weight (kg)",
-      type: "number",
-      step: "any",
-      placeholder: "5",
+      "name": "brown_weight",
+      "label": "Brown Weight (kg)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "5"
     },
     {
-      name: "brown_cn",
-      label: "Brown C:N",
-      type: "number",
-      step: "any",
-      placeholder: "60",
-    },
+      "name": "brown_cn",
+      "label": "Brown C:N",
+      "type": "number",
+      "step": "any",
+      "placeholder": "60"
+    }
   ],
-  expression:
-    "(green_weight * green_cn + brown_weight * brown_cn) / (green_weight + brown_weight)",
-  examples: [
-    { description: "10 kg greens (17), 5 kg browns (60) ⇒ 31.33 C:N" },
-    { description: "5 kg greens (20), 15 kg browns (80) ⇒ 65 C:N" },
-    { description: "8 kg greens (15), 8 kg browns (40) ⇒ 27.5 C:N" },
+  "expression": "(green_weight * green_cn + brown_weight * brown_cn) / (green_weight + brown_weight)",
+  "intro": "Determine the overall carbon-to-nitrogen ratio when mixing green and brown compost materials.",
+  "examples": [
+    {
+      "description": "10 kg greens (17), 5 kg browns (60) ⇒ 31.33 C:N"
+    },
+    {
+      "description": "5 kg greens (20), 15 kg browns (80) ⇒ 65 C:N"
+    },
+    {
+      "description": "8 kg greens (15), 8 kg browns (40) ⇒ 27.5 C:N"
+    }
   ],
-  faqs: [
+  "faqs": [
     {
-      question: "Why is C:N important?",
-      answer: "Proper ratios speed composting and reduce odors.",
+      "question": "Why is C:N important?",
+      "answer": "Proper ratios speed composting and reduce odors."
     },
     {
-      question: "Can I use volume instead of weight?",
-      answer: "Weight is more accurate because material densities vary.",
+      "question": "Can I use volume instead of weight?",
+      "answer": "Weight is more accurate because material densities vary."
     },
     {
-      question: "What is the ideal ratio?",
-      answer: "Around 30:1 for efficient composting.",
-    },
+      "question": "What is the ideal ratio?",
+      "answer": "Around 30:1 for efficient composting."
+    }
   ],
-  disclaimer: "Ratios are approximations; materials differ in actual content.",
-};
+  "disclaimer": "Ratios are approximations; materials differ in actual content.",
+  "cluster": "Home & DIY",
+  "related": [
+    "paint-needed",
+    "flooring-cost",
+    "concrete-slab-volume",
+    "wallpaper-roll-coverage",
+    "roof-pitch-angle",
+    "water-heater-recovery-time"
+  ]
+}
 
 <Calculator schema={schema} />

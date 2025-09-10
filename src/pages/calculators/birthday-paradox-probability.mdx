@@ -1,36 +1,64 @@
 ---
 layout: ../../layouts/CalculatorLayout.astro
 title: "Birthday Paradox Probability"
-description: "Chance that at least two people share a birthday in a group."
-updated: "2025-10-05"
-cluster: "Other"
+description: "Estimate the probability that at least two people in a group share the same birthday."
+date: 2025-09-10
+updated: 2025-09-10
+cluster: "Lifestyle & Travel"
 ---
-
 import Calculator from '../../components/Calculator.astro';
 
 export const schema = {
-  slug: "birthday-paradox-probability",
-  title: "Birthday Paradox Probability",
-  locale: "en",
-  unit: "%",
-  inputs: [
-    { name: "people", label: "People", type: "number", step: 1, placeholder: "23" }
+  "slug": "birthday-paradox-probability",
+  "title": "Birthday Paradox Probability",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "people",
+      "label": "People",
+      "type": "number",
+      "step": 1,
+      "placeholder": "23"
+    }
   ],
-  expression: "100 * (1 - (function(n){let p=1;for(let i=0;i<n;i++){p*= (365-i)/365;}return p;})(people))",
-  intro: "Estimate the probability that at least two people in a group share the same birthday.",
-  examples: [
-    { description: "Group of 23 ⇒ 50.73%" },
-    { description: "Group of 50 ⇒ 97.04%" }
+  "expression": "100 * (1 - (function(n){let p=1;for(let i=0;i<n;i++){p*= (365-i)/365;}return p;})(people))",
+  "intro": "Estimate the probability that at least two people in a group share the same birthday.",
+  "examples": [
+    {
+      "description": "Group of 23 ⇒ 50.73%"
+    },
+    {
+      "description": "Group of 50 ⇒ 97.04%"
+    }
   ],
-  faqs: [
-    { question: "What assumptions are made?", answer: "All 365 days are equally likely and birthdays are independent." },
-    { question: "Are leap years considered?", answer: "No, February 29 is ignored." },
-    { question: "Is the result a percentage?", answer: "Yes, values range from 0 to 100%." },
-    { question: "When does probability exceed 99%?", answer: "Around 57 people." }
+  "faqs": [
+    {
+      "question": "What assumptions are made?",
+      "answer": "All 365 days are equally likely and birthdays are independent."
+    },
+    {
+      "question": "Are leap years considered?",
+      "answer": "No, February 29 is ignored."
+    },
+    {
+      "question": "Is the result a percentage?",
+      "answer": "Yes, values range from 0 to 100%."
+    },
+    {
+      "question": "When does probability exceed 99%?",
+      "answer": "Around 57 people."
+    }
   ],
-  disclaimer: "A theoretical calculation ignoring real-world birth date distributions.",
-  cluster: "Other",
-};
+  "disclaimer": "A theoretical calculation ignoring real-world birth date distributions.",
+  "cluster": "Lifestyle & Travel",
+  "related": [
+    "discount-calculator",
+    "discount-calculator-2",
+    "tip-calculator-2",
+    "coffee-to-water-ratio",
+    "reading-time-estimator",
+    "travel-budget-per-day"
+  ]
+}
 
 <Calculator schema={schema} />
-

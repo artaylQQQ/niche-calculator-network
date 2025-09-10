@@ -1,52 +1,63 @@
 ---
 layout: ../../layouts/CalculatorLayout.astro
 title: "GPM to LPS Converter"
-description: "Convert gallons per minute to liters per second."
-updated: "2025-09-26"
-cluster: "Conversions"
+description: "Quickly convert flow rates from US gallons per minute to liters per second—handy for plumbing and irrigation setups."
+date: 2025-09-10
+updated: 2025-09-10
+cluster: "Conversions & Units"
 ---
-
-import Calculator from "../../components/Calculator.astro";
+import Calculator from '../../components/Calculator.astro';
 
 export const schema = {
-  slug: "gpm-to-lps-converter",
-  title: "GPM to LPS Converter",
-  locale: "en",
-  cluster: "Conversions",
-  unit: "L/s",
-  intro:
-    "Quickly convert flow rates from US gallons per minute to liters per second—handy for plumbing and irrigation setups.",
-  inputs: [
+  "slug": "gpm-to-lps-converter",
+  "title": "GPM to LPS Converter",
+  "locale": "en",
+  "inputs": [
     {
-      name: "gpm",
-      label: "Flow (gpm)",
-      type: "number",
-      step: "any",
-      placeholder: "10",
-    },
+      "name": "gpm",
+      "label": "Flow (gpm)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "10"
+    }
   ],
-  expression: "gpm * 0.0630902",
-  examples: [
-    { description: "10 gpm ⇒ 0.63 L/s" },
-    { description: "25 gpm ⇒ 1.58 L/s" },
-    { description: "40 gpm ⇒ 2.52 L/s" },
+  "expression": "gpm * 0.0630902",
+  "intro": "Quickly convert flow rates from US gallons per minute to liters per second—handy for plumbing and irrigation setups.",
+  "examples": [
+    {
+      "description": "10 gpm ⇒ 0.63 L/s"
+    },
+    {
+      "description": "25 gpm ⇒ 1.58 L/s"
+    },
+    {
+      "description": "40 gpm ⇒ 2.52 L/s"
+    }
   ],
-  faqs: [
+  "faqs": [
     {
-      question: "Why convert to liters per second?",
-      answer: "International plumbing specs often use metric flow rates.",
+      "question": "Why convert to liters per second?",
+      "answer": "International plumbing specs often use metric flow rates."
     },
     {
-      question: "Does temperature affect volume?",
-      answer: "For most calculations the change is negligible.",
+      "question": "Does temperature affect volume?",
+      "answer": "For most calculations the change is negligible."
     },
     {
-      question: "Can I convert back to gpm?",
-      answer: "Yes, divide liters per second by 0.0630902.",
-    },
+      "question": "Can I convert back to gpm?",
+      "answer": "Yes, divide liters per second by 0.0630902."
+    }
   ],
-  disclaimer:
-    "Approximate conversion; verify requirements for critical systems.",
-};
+  "disclaimer": "Approximate conversion; verify requirements for critical systems.",
+  "cluster": "Conversions & Units",
+  "related": [
+    "celsius-to-fahrenheit",
+    "cm-to-inches-calculator",
+    "f-to-c-calculator",
+    "pounds-to-kilograms",
+    "square-feet-to-square-meters",
+    "inches-to-cm"
+  ]
+}
 
 <Calculator schema={schema} />

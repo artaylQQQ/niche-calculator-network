@@ -1,36 +1,72 @@
 ---
 layout: ../../layouts/CalculatorLayout.astro
 title: "Running Pace Calculator"
-description: "Compute average running pace per kilometer."
-updated: "2025-09-06"
-cluster: "health"
+description: "Compute your average running pace per kilometer from distance and time."
+date: 2025-09-10
+updated: 2025-09-10
+cluster: "Health & Fitness"
 ---
-
 import Calculator from '../../components/Calculator.astro';
 
 export const schema = {
-  inputs: [
-    { name: "distance", label: "Distance (km)", type: "number", step: "any", min: 0, placeholder: "5" },
-    { name: "time", label: "Time (minutes)", type: "number", step: "any", min: 0, placeholder: "25" }
+  "slug": "running-pace",
+  "title": "Running Pace Calculator",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "distance",
+      "label": "Distance (km)",
+      "type": "number",
+      "step": "any",
+      "min": 0,
+      "placeholder": "5"
+    },
+    {
+      "name": "time",
+      "label": "Time (minutes)",
+      "type": "number",
+      "step": "any",
+      "min": 0,
+      "placeholder": "25"
+    }
   ],
-  slug: "running-pace",
-  title: "Running Pace Calculator",
-  locale: "en",
-  unit: "min/km",
-  expression: "time / distance",
-  intro: "Compute your average running pace per kilometer from distance and time.",
-  examples: [
-    { description: "5 km in 25 min ⇒ 5 min/km" },
-    { description: "10 km in 45 min ⇒ 4.5 min/km" },
-    { description: "1 km in 4 min ⇒ 4 min/km" }
+  "expression": "time / distance",
+  "intro": "Compute your average running pace per kilometer from distance and time.",
+  "examples": [
+    {
+      "description": "5 km in 25 min ⇒ 5 min/km"
+    },
+    {
+      "description": "10 km in 45 min ⇒ 4.5 min/km"
+    },
+    {
+      "description": "1 km in 4 min ⇒ 4 min/km"
+    }
   ],
-  faqs: [
-    { question: "Does this work for miles?", answer: "Yes, convert miles to kilometers first." },
-    { question: "Can time be in hours?", answer: "Convert hours to minutes before calculating." },
-    { question: "What if distance is zero?", answer: "Pace is undefined when distance is zero." }
+  "faqs": [
+    {
+      "question": "Does this work for miles?",
+      "answer": "Yes, convert miles to kilometers first."
+    },
+    {
+      "question": "Can time be in hours?",
+      "answer": "Convert hours to minutes before calculating."
+    },
+    {
+      "question": "What if distance is zero?",
+      "answer": "Pace is undefined when distance is zero."
+    }
   ],
-  disclaimer: "For training guidance only; adjust for personal fitness levels.",
-  cluster: "health"
-};
+  "disclaimer": "For training guidance only; adjust for personal fitness levels.",
+  "cluster": "Health & Fitness",
+  "related": [
+    "sleep-debt-weekly",
+    "sugar-cube-equivalent",
+    "caffeine-half-life",
+    "protein-calorie-percentage",
+    "bmi-prime",
+    "heart-rate-reserve-percentage"
+  ]
+}
 
 <Calculator schema={schema} />

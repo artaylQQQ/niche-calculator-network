@@ -1,36 +1,72 @@
 ---
 layout: ../../layouts/CalculatorLayout.astro
 title: "Permutation Calculator"
-description: "Compute ordered arrangements of items."
-updated: "2025-09-06"
-cluster: "math"
+description: "Find the number of ordered arrangements of r items selected from n distinct items."
+date: 2025-09-10
+updated: 2025-09-10
+cluster: "Math & Statistics"
 ---
-
 import Calculator from '../../components/Calculator.astro';
 
 export const schema = {
-  inputs: [
-    { name: "n", label: "Total Items (n)", type: "number", step: 1, min: 0, placeholder: "5" },
-    { name: "r", label: "Chosen Items (r)", type: "number", step: 1, min: 0, placeholder: "2" }
+  "slug": "permutation-calculator",
+  "title": "Permutation Calculator",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "n",
+      "label": "Total Items (n)",
+      "type": "number",
+      "step": 1,
+      "min": 0,
+      "placeholder": "5"
+    },
+    {
+      "name": "r",
+      "label": "Chosen Items (r)",
+      "type": "number",
+      "step": 1,
+      "min": 0,
+      "placeholder": "2"
+    }
   ],
-  slug: "permutation-calculator",
-  title: "Permutation Calculator",
-  locale: "en",
-  unit: "ways",
-  expression: "(function(n,r){n=Math.floor(n);r=Math.floor(r);if(r>n)return 0;let res=1;for(let i=n-r+1;i<=n;i++)res*=i;return res;})(n,r)",
-  intro: "Find the number of ordered arrangements of r items selected from n distinct items.",
-  examples: [
-    { description: "n=5, r=2 ⇒ 20 ways" },
-    { description: "n=6, r=3 ⇒ 120 ways" },
-    { description: "n=10, r=0 ⇒ 1 way" }
+  "expression": "(function(n,r){n=Math.floor(n);r=Math.floor(r);if(r>n)return 0;let res=1;for(let i=n-r+1;i<=n;i++)res*=i;return res;})(n,r)",
+  "intro": "Find the number of ordered arrangements of r items selected from n distinct items.",
+  "examples": [
+    {
+      "description": "n=5, r=2 ⇒ 20 ways"
+    },
+    {
+      "description": "n=6, r=3 ⇒ 120 ways"
+    },
+    {
+      "description": "n=10, r=0 ⇒ 1 way"
+    }
   ],
-  faqs: [
-    { question: "How is this different from combinations?", answer: "Permutations consider order; combinations do not." },
-    { question: "Can r be greater than n?", answer: "If r > n, the result is 0 because you can't choose more items than exist." },
-    { question: "Does order matter here?", answer: "Yes, permutations count distinct orderings." }
+  "faqs": [
+    {
+      "question": "How is this different from combinations?",
+      "answer": "Permutations consider order; combinations do not."
+    },
+    {
+      "question": "Can r be greater than n?",
+      "answer": "If r > n, the result is 0 because you can't choose more items than exist."
+    },
+    {
+      "question": "Does order matter here?",
+      "answer": "Yes, permutations count distinct orderings."
+    }
   ],
-  disclaimer: "Mathematical tool only; verify results for critical applications.",
-  cluster: "math"
-};
+  "disclaimer": "Mathematical tool only; verify results for critical applications.",
+  "cluster": "Math & Statistics",
+  "related": [
+    "percentage-increase",
+    "rule-of-three-calculator",
+    "pythagorean-theorem-calculator",
+    "geometric-series-sum",
+    "circumference-from-area",
+    "triangle-inradius"
+  ]
+}
 
 <Calculator schema={schema} />

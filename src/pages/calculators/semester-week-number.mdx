@@ -1,87 +1,98 @@
 ---
 layout: ../../layouts/CalculatorLayout.astro
 title: "Semester Week Number"
-description: "Find the current week number in a semester."
-updated: "2025-09-26"
+description: "Determine how many weeks into the semester a given date falls."
+date: 2025-09-10
+updated: 2025-09-10
 cluster: "Date & Time"
 ---
-
-import Calculator from "../../components/Calculator.astro";
+import Calculator from '../../components/Calculator.astro';
 
 export const schema = {
-  slug: "semester-week-number",
-  title: "Semester Week Number",
-  locale: "en",
-  cluster: "Date & Time",
-  unit: "week",
-  intro: "Determine how many weeks into the semester a given date falls.",
-  inputs: [
+  "slug": "semester-week-number",
+  "title": "Semester Week Number",
+  "locale": "en",
+  "inputs": [
     {
-      name: "start_year",
-      label: "Start Year",
-      type: "number",
-      step: "1",
-      placeholder: "2025",
+      "name": "start_year",
+      "label": "Start Year",
+      "type": "number",
+      "step": "1",
+      "placeholder": "2025"
     },
     {
-      name: "start_month",
-      label: "Start Month",
-      type: "number",
-      step: "1",
-      placeholder: "1",
+      "name": "start_month",
+      "label": "Start Month",
+      "type": "number",
+      "step": "1",
+      "placeholder": "1"
     },
     {
-      name: "start_day",
-      label: "Start Day",
-      type: "number",
-      step: "1",
-      placeholder: "15",
+      "name": "start_day",
+      "label": "Start Day",
+      "type": "number",
+      "step": "1",
+      "placeholder": "15"
     },
     {
-      name: "curr_year",
-      label: "Current Year",
-      type: "number",
-      step: "1",
-      placeholder: "2025",
+      "name": "curr_year",
+      "label": "Current Year",
+      "type": "number",
+      "step": "1",
+      "placeholder": "2025"
     },
     {
-      name: "curr_month",
-      label: "Current Month",
-      type: "number",
-      step: "1",
-      placeholder: "2",
+      "name": "curr_month",
+      "label": "Current Month",
+      "type": "number",
+      "step": "1",
+      "placeholder": "2"
     },
     {
-      name: "curr_day",
-      label: "Current Day",
-      type: "number",
-      step: "1",
-      placeholder: "12",
-    },
+      "name": "curr_day",
+      "label": "Current Day",
+      "type": "number",
+      "step": "1",
+      "placeholder": "12"
+    }
   ],
-  expression:
-    "Math.floor((new Date(curr_year, curr_month-1, curr_day) - new Date(start_year, start_month-1, start_day)) / 604800000) + 1",
-  examples: [
-    { description: "Start 2025-01-15, date 2025-02-12 ⇒ 5" },
-    { description: "Start 2025-08-25, date 2025-08-25 ⇒ 1" },
-    { description: "Start 2025-08-25, date 2025-12-10 ⇒ 16" },
+  "expression": "Math.floor((new Date(curr_year, curr_month-1, curr_day) - new Date(start_year, start_month-1, start_day)) / 604800000) + 1",
+  "intro": "Determine how many weeks into the semester a given date falls.",
+  "examples": [
+    {
+      "description": "Start 2025-01-15, date 2025-02-12 ⇒ 5"
+    },
+    {
+      "description": "Start 2025-08-25, date 2025-08-25 ⇒ 1"
+    },
+    {
+      "description": "Start 2025-08-25, date 2025-12-10 ⇒ 16"
+    }
   ],
-  faqs: [
+  "faqs": [
     {
-      question: "Does week counting start at 1?",
-      answer: "Yes, the first week begins on the semester start date.",
+      "question": "Does week counting start at 1?",
+      "answer": "Yes, the first week begins on the semester start date."
     },
     {
-      question: "What if the date is before the start?",
-      answer: "The result can be zero or negative, indicating pre-semester.",
+      "question": "What if the date is before the start?",
+      "answer": "The result can be zero or negative, indicating pre-semester."
     },
     {
-      question: "Are leap years handled?",
-      answer: "Yes, JavaScript date arithmetic accounts for them.",
-    },
+      "question": "Are leap years handled?",
+      "answer": "Yes, JavaScript date arithmetic accounts for them."
+    }
   ],
-  disclaimer:
-    "Academic calendars vary; verify week numbers with your institution.",
-};
+  "disclaimer": "Academic calendars vary; verify week numbers with your institution.",
+  "cluster": "Date & Time",
+  "related": [
+    "minutes-to-seconds",
+    "weeks-to-days",
+    "age-in-days",
+    "seconds-to-days",
+    "days-to-seconds",
+    "age-in-months"
+  ]
+}
 
 <Calculator schema={schema} />
