@@ -10,11 +10,11 @@ import { execSync } from "node:child_process";
  * `meta/publish_log.json` prevents previously published calculators from
  * being regenerated.  The `MAX_PER_DAY` environment variable controls
  * how many new calculators are emitted on each run.  Values are
-* clamped between 20 and 100 to ensure a steady flow of fresh
-* content without overloading the site.  Title, intro, examples,
-* related calculators and FAQ content are rendered by the Calculator
-* component itself.
-*/
+ * clamped between 20 and 100 to ensure a steady flow of fresh
+ * content without overloading the site.  Title, intro, examples,
+ * related calculators and FAQ content are rendered by the Calculator
+ * component itself.
+ */
 
 const ROOT = process.cwd();
 const DATA_PATH = path.join(ROOT, "data", "calculators.json");
@@ -176,6 +176,7 @@ function pickRelated(base, all, count = 6) {
         Array.isArray(calc.examples) && calc.examples.length
           ? calc.examples
           : [{ description: "Enter the values and press Calculate." }],
+      info: Array.isArray(calc.info) ? calc.info : [],
       faqs: Array.isArray(calc.faqs) ? calc.faqs : [],
       disclaimer:
         calc.disclaimer || "Educational information, not professional advice.",
