@@ -1,0 +1,42 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Biweekly Mortgage Payment Calculator"
+description: "Compute the biweekly payment needed to amortize a mortgage."
+date: 2025-09-10
+updated: 2025-09-10
+cluster: "Personal Finance & Loans"
+---
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "biweekly-mortgage-payment",
+  "title": "Biweekly Mortgage Payment Calculator",
+  "locale": "en",
+  "inputs": [
+    { "name": "principal", "label": "Loan Principal (USD)", "type": "number", "step": "any", "placeholder": "250000" },
+    { "name": "rate", "label": "Annual Interest Rate (%)", "type": "number", "step": "any", "placeholder": "5" },
+    { "name": "years", "label": "Loan Term (years)", "type": "number", "step": "any", "placeholder": "30" }
+  ],
+  "expression": "principal * ((rate/100)/26) / (1 - (1 + (rate/100)/26)^(-26*years))",
+  "unit": "USD",
+  "intro": "Find your biweekly mortgage payment based on principal, interest rate, and loan term using 26 payments per year.",
+  "examples": [
+    { "description": "$250,000 at 5% for 30 years ⇒ $619.11 biweekly" },
+    { "description": "$400,000 at 4.5% for 20 years ⇒ $1,167.24 biweekly" }
+  ],
+  "faqs": [
+    { "question": "Why 26 payments per year?", "answer": "Biweekly schedules split monthly payments into 26 half-month installments." },
+    { "question": "Does this reduce interest?", "answer": "Yes, paying more frequently lowers total interest over the loan term." },
+    { "question": "Are taxes and insurance included?", "answer": "No, this calculator only covers principal and interest." },
+    { "question": "Can I change payment frequency?", "answer": "For monthly payments use a standard mortgage calculator." }
+  ],
+  "disclaimer": "Estimates only; consult your lender for actual payment schedules.",
+  "cluster": "Personal Finance & Loans",
+  "info": [
+    "Biweekly payments result in one extra monthly payment per year.",
+    "Round results to match your lender's payment structure."
+  ],
+  "related": []
+}
+
+<Calculator schema={schema} />

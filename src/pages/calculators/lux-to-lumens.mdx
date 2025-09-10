@@ -1,0 +1,41 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Lux to Lumens Calculator"
+description: "Convert illuminance in lux and area to luminous flux in lumens."
+date: 2025-09-10
+updated: 2025-09-10
+cluster: "Conversions & Units"
+---
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "lux-to-lumens",
+  "title": "Lux to Lumens Calculator",
+  "locale": "en",
+  "inputs": [
+    { "name": "lux", "label": "Illuminance (lux)", "type": "number", "step": "any", "placeholder": "500" },
+    { "name": "area", "label": "Area (m²)", "type": "number", "step": "any", "placeholder": "20" }
+  ],
+  "expression": "lux * area",
+  "unit": "lumens",
+  "intro": "Determine total luminous flux by multiplying illuminance in lux by the lit area in square meters.",
+  "examples": [
+    { "description": "500 lux over 20 m² ⇒ 10,000 lumens" },
+    { "description": "300 lux over 10 m² ⇒ 3,000 lumens" }
+  ],
+  "faqs": [
+    { "question": "What is lux?", "answer": "Lux measures illuminance or light per unit area." },
+    { "question": "Why multiply by area?", "answer": "Lumens quantify total light output; lux is lumens per square meter." },
+    { "question": "Does surface color matter?", "answer": "This calculation assumes uniform reflection and ignores color." },
+    { "question": "Can I use feet²?", "answer": "Convert feet² to m² before using this calculator." }
+  ],
+  "disclaimer": "Assumes even light distribution across the area.",
+  "cluster": "Conversions & Units",
+  "info": [
+    "1 lumen equals 1 candela·steradian.",
+    "Typical office lighting ranges from 300–500 lux."
+  ],
+  "related": []
+}
+
+<Calculator schema={schema} />

@@ -1,0 +1,42 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Specific Heat Energy Calculator"
+description: "Estimate heat energy required using mass, specific heat, and temperature change."
+date: 2025-09-10
+updated: 2025-09-10
+cluster: "Science & Engineering"
+---
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "specific-heat-energy",
+  "title": "Specific Heat Energy Calculator",
+  "locale": "en",
+  "inputs": [
+    { "name": "mass", "label": "Mass (kg)", "type": "number", "step": "any", "placeholder": "2" },
+    { "name": "c", "label": "Specific Heat (J/kg°C)", "type": "number", "step": "any", "placeholder": "4186" },
+    { "name": "delta", "label": "Temperature Change (°C)", "type": "number", "step": "any", "placeholder": "10" }
+  ],
+  "expression": "mass * c * delta",
+  "unit": "J",
+  "intro": "Calculate the heat energy required to change the temperature of a substance using Q = m·c·ΔT.",
+  "examples": [
+    { "description": "2 kg with c=4186 J/kg°C and ΔT=10°C ⇒ 83,720 J" },
+    { "description": "0.5 kg with c=900 J/kg°C and ΔT=30°C ⇒ 13,500 J" }
+  ],
+  "faqs": [
+    { "question": "What is specific heat?", "answer": "The energy needed to raise 1 kg of a substance by 1°C." },
+    { "question": "Can c vary?", "answer": "Yes, it depends on the material and temperature." },
+    { "question": "Is the result in Joules?", "answer": "Yes, Joules are the SI unit of energy." },
+    { "question": "Does phase change require more energy?", "answer": "Yes, additional latent heat is needed for phase transitions." }
+  ],
+  "disclaimer": "Assumes no heat loss to the environment.",
+  "cluster": "Science & Engineering",
+  "info": [
+    "Water has a high specific heat of about 4186 J/kg°C.",
+    "Metal objects typically have lower specific heats than water."
+  ],
+  "related": []
+}
+
+<Calculator schema={schema} />
