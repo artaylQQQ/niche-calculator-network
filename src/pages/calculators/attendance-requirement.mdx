@@ -16,7 +16,6 @@ export const schema = {
     {"name":"total","label":"Total Classes","type":"number","step":1,"placeholder":"30"},
     {"name":"required","label":"Required Attendance (%)","type":"number","step":"any","placeholder":"80"}
   ],
-  "expression": "total - Math.ceil(total * required / 100)",
   "unit": "classes",
   "intro": "Determine how many classes you can skip while still meeting the minimum attendance percentage for your course.",
   "examples": [

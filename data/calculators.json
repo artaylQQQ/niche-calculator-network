@@ -16245,7 +16245,7 @@
         "placeholder": "80"
       }
     ],
-    "expression": "total - Math.ceil(total * required / 100)",
+    "expression": "total - ceil(total * required / 100)",
     "unit": "classes",
     "examples": [
       {

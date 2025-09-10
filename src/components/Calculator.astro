@@ -463,6 +463,16 @@ const jsonLd = {
             value = P2 * Math.pow(1 + r2 / n2, n2 * t2);
             break;
           }
+          case 'attendance-requirement': {
+            const total = num(vars.total);
+            const required = num(vars.required);
+            if (!isFinite(total) || !isFinite(required)) {
+              showMessage('error', 'Please fill all fields with valid numbers');
+              return;
+            }
+            value = total - Math.ceil(total * required / 100);
+            break;
+          }
           case 'triangle-area-calculator': {
             value = (num(vars.base) * num(vars.height)) / 2;
             break;
