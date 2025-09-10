@@ -28,10 +28,10 @@
     "unit": "USD",
     "examples": [
       {
-        "description": "$100 with a 20% discount \u21d2 $80"
+        "description": "$100 with a 20% discount ⇒ $80"
       },
       {
-        "description": "$250 with a 15% discount \u21d2 $212.50"
+        "description": "$250 with a 15% discount ⇒ $212.50"
       }
     ],
     "faqs": [
@@ -88,10 +88,10 @@
     "unit": "USD",
     "examples": [
       {
-        "description": "$1,000 at 5% for 3 years \u21d2 $150 interest"
+        "description": "$1,000 at 5% for 3 years ⇒ $150 interest"
       },
       {
-        "description": "$2,500 at 4% for 2 years \u21d2 $200 interest"
+        "description": "$2,500 at 4% for 2 years ⇒ $200 interest"
       }
     ],
     "faqs": [
@@ -149,10 +149,10 @@
     "unit": "USD",
     "examples": [
       {
-        "description": "$1,000 at 5% compounded quarterly for 10 years \u21d2 $1,643.62"
+        "description": "$1,000 at 5% compounded quarterly for 10 years ⇒ $1,643.62"
       },
       {
-        "description": "$500 at 3% compounded monthly for 5 years \u21d2 $580.81"
+        "description": "$500 at 3% compounded monthly for 5 years ⇒ $580.81"
       }
     ],
     "faqs": [
@@ -199,13 +199,13 @@
       }
     ],
     "expression": "weight / ((height/100) ** 2)",
-    "unit": "kg/m\u00b2",
+    "unit": "kg/m²",
     "examples": [
       {
-        "description": "70 kg and 175 cm \u21d2 22.86 kg/m\u00b2"
+        "description": "70 kg and 175 cm ⇒ 22.86 kg/m²"
       },
       {
-        "description": "90 kg and 160 cm \u21d2 35.16 kg/m\u00b2"
+        "description": "90 kg and 160 cm ⇒ 35.16 kg/m²"
       }
     ],
     "faqs": [
@@ -255,10 +255,10 @@
     "unit": "kcal",
     "examples": [
       {
-        "description": "8000 steps and 30 min exercise \u21d2 \u2248 470 kcal"
+        "description": "8000 steps and 30 min exercise ⇒ ≈ 470 kcal"
       },
       {
-        "description": "5000 steps and 60 min exercise \u21d2 \u2248 620 kcal"
+        "description": "5000 steps and 60 min exercise ⇒ ≈ 620 kcal"
       }
     ],
     "faqs": [
@@ -285,7 +285,7 @@
     "title": "Celsius to Fahrenheit",
     "cluster": "Conversions",
     "description": "Convert a temperature from Celsius into Fahrenheit.",
-    "intro": "This calculator converts temperatures in degrees Celsius to degrees Fahrenheit using the formula F = C \u00d7 9/5 + 32. Enter any Celsius value to see the equivalent Fahrenheit reading.",
+    "intro": "This calculator converts temperatures in degrees Celsius to degrees Fahrenheit using the formula F = C × 9/5 + 32. Enter any Celsius value to see the equivalent Fahrenheit reading.",
     "inputs": [
       {
         "name": "c",
@@ -296,13 +296,13 @@
       }
     ],
     "expression": "(c * 9/5) + 32",
-    "unit": "\u00b0F",
+    "unit": "°F",
     "examples": [
       {
-        "description": "0\u00b0C \u21d2 32\u00b0F"
+        "description": "0°C ⇒ 32°F"
       },
       {
-        "description": "37\u00b0C \u21d2 98.6\u00b0F"
+        "description": "37°C ⇒ 98.6°F"
       }
     ],
     "faqs": [
@@ -320,7 +320,7 @@
       },
       {
         "question": "How do I convert Fahrenheit to Celsius?",
-        "answer": "Use the Fahrenheit to Celsius calculator or apply C = (F - 32) \u00d7 5/9."
+        "answer": "Use the Fahrenheit to Celsius calculator or apply C = (F - 32) × 5/9."
       }
     ]
   },
@@ -342,7 +342,7 @@
     "expression": "km * 0.621371",
     "examples": [
       {
-        "description": "10 km \u21d2 6.21371 miles"
+        "description": "10 km ⇒ 6.21371 miles"
       }
     ],
     "faqs": [
@@ -369,7 +369,7 @@
     "expression": "meters * 3.28084",
     "examples": [
       {
-        "description": "2 m \u21d2 6.56168 ft"
+        "description": "2 m ⇒ 6.56168 ft"
       }
     ],
     "faqs": [
@@ -407,10 +407,10 @@
     "unit": "%",
     "examples": [
       {
-        "description": "From 50 to 70 \u21d2 40% increase"
+        "description": "From 50 to 70 ⇒ 40% increase"
       },
       {
-        "description": "From 80 to 100 \u21d2 25% increase"
+        "description": "From 80 to 100 ⇒ 25% increase"
       }
     ],
     "faqs": [
@@ -465,16 +465,16 @@
     "unit": "same as C",
     "examples": [
       {
-        "description": "2 books cost $10 \u21d2 5 books cost $25"
+        "description": "2 books cost $10 ⇒ 5 books cost $25"
       },
       {
-        "description": "3 kg correspond to $12 \u21d2 7 kg cost $28"
+        "description": "3 kg correspond to $12 ⇒ 7 kg cost $28"
       }
     ],
     "faqs": [
       {
         "question": "What is the rule of three?",
-        "answer": "It solves a proportion a:b = c:x by computing x = b \u00d7 c / a."
+        "answer": "It solves a proportion a:b = c:x by computing x = b × c / a."
       },
       {
         "question": "Can I use decimals?",
@@ -495,7 +495,7 @@
     "title": "Circle Area",
     "cluster": "Math",
     "description": "Calculate the area of a circle from its radius.",
-    "intro": "Determine the surface area enclosed by a circle using A = \u03c0r\u00b2. Enter the radius to compute the area.",
+    "intro": "Determine the surface area enclosed by a circle using A = πr². Enter the radius to compute the area.",
     "inputs": [
       {
         "name": "r",
@@ -507,19 +507,19 @@
       }
     ],
     "expression": "3.141592653589793 * r * r",
-    "unit": "units\u00b2",
+    "unit": "units²",
     "examples": [
       {
-        "description": "radius 3 m \u21d2 28.27 m\u00b2"
+        "description": "radius 3 m ⇒ 28.27 m²"
       },
       {
-        "description": "radius 10 cm \u21d2 314.16 cm\u00b2"
+        "description": "radius 10 cm ⇒ 314.16 cm²"
       }
     ],
     "faqs": [
       {
         "question": "What formula is used?",
-        "answer": "The area equals \u03c0 times the radius squared."
+        "answer": "The area equals π times the radius squared."
       },
       {
         "question": "Can I use the diameter instead?",
@@ -563,10 +563,10 @@
     "unit": "seconds",
     "examples": [
       {
-        "description": "700 MB at 50 Mbps \u21d2 112 s"
+        "description": "700 MB at 50 Mbps ⇒ 112 s"
       },
       {
-        "description": "1500 MB at 100 Mbps \u21d2 120 s"
+        "description": "1500 MB at 100 Mbps ⇒ 120 s"
       }
     ],
     "faqs": [
@@ -607,10 +607,10 @@
     "unit": "in",
     "examples": [
       {
-        "description": "10 cm \u21d2 3.94 in"
+        "description": "10 cm ⇒ 3.94 in"
       },
       {
-        "description": "25 cm \u21d2 9.84 in"
+        "description": "25 cm ⇒ 9.84 in"
       }
     ],
     "faqs": [
@@ -637,7 +637,7 @@
     "title": "Cylinder Volume Calculator",
     "cluster": "Math",
     "description": "Calculate the volume of a cylinder from radius and height.",
-    "intro": "Compute the volume of a cylinder using \u03c0r\u00b2h. Enter the radius and height in centimeters to get the volume in cubic centimeters.",
+    "intro": "Compute the volume of a cylinder using πr²h. Enter the radius and height in centimeters to get the volume in cubic centimeters.",
     "inputs": [
       {
         "name": "height",
@@ -655,19 +655,19 @@
       }
     ],
     "expression": "3.141592653589793 * radius ^ 2 * height",
-    "unit": "cm\u00b3",
+    "unit": "cm³",
     "examples": [
       {
-        "description": "radius 5 cm & height 10 cm \u21d2 785.40 cm\u00b3"
+        "description": "radius 5 cm & height 10 cm ⇒ 785.40 cm³"
       },
       {
-        "description": "radius 2 cm & height 4 cm \u21d2 50.27 cm\u00b3"
+        "description": "radius 2 cm & height 4 cm ⇒ 50.27 cm³"
       }
     ],
     "faqs": [
       {
         "question": "What formula is used?",
-        "answer": "Volume equals \u03c0 times the radius squared times the height."
+        "answer": "Volume equals π times the radius squared times the height."
       },
       {
         "question": "Can I use different units?",
@@ -699,13 +699,13 @@
       }
     ],
     "expression": "(f - 32) * 5 / 9",
-    "unit": "\u00b0C",
+    "unit": "°C",
     "examples": [
       {
-        "description": "32\u00b0F \u21d2 0\u00b0C"
+        "description": "32°F ⇒ 0°C"
       },
       {
-        "description": "68\u00b0F \u21d2 20\u00b0C"
+        "description": "68°F ⇒ 20°C"
       }
     ],
     "faqs": [
@@ -723,7 +723,7 @@
       },
       {
         "question": "How do I convert Celsius back to Fahrenheit?",
-        "answer": "Use the Celsius to Fahrenheit calculator or apply F = C \u00d7 9/5 + 32."
+        "answer": "Use the Celsius to Fahrenheit calculator or apply F = C × 9/5 + 32."
       }
     ]
   },
@@ -755,10 +755,10 @@
     "unit": "%",
     "examples": [
       {
-        "description": "10 TB data with 5 TB redundancy \u21d2 50% overhead"
+        "description": "10 TB data with 5 TB redundancy ⇒ 50% overhead"
       },
       {
-        "description": "100 TB data with 20 TB redundancy \u21d2 20% overhead"
+        "description": "100 TB data with 20 TB redundancy ⇒ 20% overhead"
       }
     ],
     "faqs": [
@@ -816,10 +816,10 @@
     "unit": "seconds",
     "examples": [
       {
-        "description": "1h 30m 15s \u21d2 5415 seconds"
+        "description": "1h 30m 15s ⇒ 5415 seconds"
       },
       {
-        "description": "0h 45m 0s \u21d2 2700 seconds"
+        "description": "0h 45m 0s ⇒ 2700 seconds"
       }
     ],
     "faqs": [
@@ -859,7 +859,7 @@
     "expression": "days * 24",
     "examples": [
       {
-        "description": "3.5 days \u21d2 84 hours"
+        "description": "3.5 days ⇒ 84 hours"
       }
     ],
     "faqs": [
@@ -877,7 +877,7 @@
     "inputs": [
       {
         "name": "area",
-        "label": "Area (m\u00b2)",
+        "label": "Area (m²)",
         "type": "number",
         "min": 0,
         "step": "any",
@@ -885,7 +885,7 @@
       },
       {
         "name": "coverage",
-        "label": "Coverage (m\u00b2/L)",
+        "label": "Coverage (m²/L)",
         "type": "number",
         "min": 0.1,
         "step": "any",
@@ -895,7 +895,7 @@
     "expression": "area / coverage",
     "examples": [
       {
-        "description": "100 m\u00b2 at 12 m\u00b2/L \u21d2 \u2248 8.33 L"
+        "description": "100 m² at 12 m²/L ⇒ ≈ 8.33 L"
       }
     ],
     "faqs": [
@@ -909,7 +909,7 @@
     "slug": "garden-soil-volume",
     "title": "Garden Soil Volume",
     "cluster": "home & diy",
-    "description": "Compute soil volume for a rectangular bed (m\u00b3).",
+    "description": "Compute soil volume for a rectangular bed (m³).",
     "inputs": [
       {
         "name": "length",
@@ -939,7 +939,7 @@
     "expression": "length * width * depth",
     "examples": [
       {
-        "description": "4\u00d72\u00d70.3 m \u21d2 2.4 m\u00b3"
+        "description": "4×2×0.3 m ⇒ 2.4 m³"
       }
     ],
     "faqs": [
@@ -975,7 +975,7 @@
     "expression": "bill * (1 + tip/100)",
     "examples": [
       {
-        "description": "$50 with 15% tip \u21d2 $57.5"
+        "description": "$50 with 15% tip ⇒ $57.5"
       }
     ],
     "faqs": [
@@ -1022,7 +1022,7 @@
     "expression": "(a + b + c) / 3",
     "examples": [
       {
-        "description": "80, 90, 70 \u21d2 80"
+        "description": "80, 90, 70 ⇒ 80"
       }
     ],
     "faqs": [
@@ -1059,10 +1059,10 @@
     "unit": "kcal",
     "examples": [
       {
-        "description": "Jogging at MET 7, 70 kg, 30 min \u21d2 about 257 kcal"
+        "description": "Jogging at MET 7, 70 kg, 30 min ⇒ about 257 kcal"
       },
       {
-        "description": "Cycling at MET 5, 80 kg, 45 min \u21d2 about 315 kcal"
+        "description": "Cycling at MET 5, 80 kg, 45 min ⇒ about 315 kcal"
       }
     ],
     "faqs": [
@@ -1099,7 +1099,7 @@
     "expression": "weight*0.033",
     "examples": [
       {
-        "description": "75 kg \u2192 ~2.48 liters/day"
+        "description": "75 kg → ~2.48 liters/day"
       }
     ],
     "faqs": [
@@ -1131,10 +1131,10 @@
     "unit": "ratio",
     "examples": [
       {
-        "description": "80 cm waist and 170 cm height \u21d2 0.47"
+        "description": "80 cm waist and 170 cm height ⇒ 0.47"
       },
       {
-        "description": "90 cm waist and 180 cm height \u21d2 0.50"
+        "description": "90 cm waist and 180 cm height ⇒ 0.50"
       }
     ],
     "faqs": [
@@ -1176,7 +1176,7 @@
     "expression": "(size_mb*8)/speed_mbps/60",
     "examples": [
       {
-        "description": "700 MB at 20 Mbps \u2192 ~4.67 minutes"
+        "description": "700 MB at 20 Mbps → ~4.67 minutes"
       }
     ],
     "faqs": [
@@ -1203,10 +1203,10 @@
     "unit": "MB",
     "examples": [
       {
-        "description": "2048 KB \u2192 2 MB"
+        "description": "2048 KB → 2 MB"
       },
       {
-        "description": "5000 KB \u2192 4.88 MB"
+        "description": "5000 KB → 4.88 MB"
       }
     ],
     "faqs": [
@@ -1248,7 +1248,7 @@
     "expression": "size_gb*price_per_gb",
     "examples": [
       {
-        "description": "10 GB at $0.10/GB \u2192 $1"
+        "description": "10 GB at $0.10/GB → $1"
       }
     ],
     "faqs": [
@@ -1278,7 +1278,7 @@
     "expression": "pixels/inches",
     "examples": [
       {
-        "description": "3000 px across 10 inches \u2192 300 DPI"
+        "description": "3000 px across 10 inches → 300 DPI"
       }
     ],
     "faqs": [
@@ -1345,10 +1345,10 @@
     "unit": "days",
     "examples": [
       {
-        "description": "2 years \u21d2 730 days"
+        "description": "2 years ⇒ 730 days"
       },
       {
-        "description": "3.5 years \u21d2 1277.5 days"
+        "description": "3.5 years ⇒ 1277.5 days"
       }
     ],
     "faqs": [
@@ -1378,12 +1378,12 @@
     "inputs": [
       {
         "name": "area",
-        "hint": "Wall area (m\u00b2)",
+        "hint": "Wall area (m²)",
         "placeholder": "Enter area"
       },
       {
         "name": "coverage",
-        "hint": "Coverage (m\u00b2/L)",
+        "hint": "Coverage (m²/L)",
         "placeholder": "Enter coverage"
       }
     ],
@@ -1403,12 +1403,12 @@
     "inputs": [
       {
         "name": "area",
-        "hint": "Area (m\u00b2)",
+        "hint": "Area (m²)",
         "placeholder": "Enter area"
       },
       {
         "name": "cost",
-        "hint": "Cost per m\u00b2 ($)",
+        "hint": "Cost per m² ($)",
         "placeholder": "Enter cost"
       }
     ],
@@ -1458,12 +1458,12 @@
     "inputs": [
       {
         "name": "wall_area",
-        "hint": "Wall area (m\u00b2)",
+        "hint": "Wall area (m²)",
         "placeholder": "Enter wall_area"
       },
       {
         "name": "roll_coverage",
-        "hint": "Coverage per roll (m\u00b2)",
+        "hint": "Coverage per roll (m²)",
         "placeholder": "Enter roll_coverage"
       }
     ],
@@ -1559,7 +1559,7 @@
     "expression": "Math.sqrt(a ** 2 + b ** 2)",
     "examples": [
       {
-        "description": "3 and 4 \u21d2 5"
+        "description": "3 and 4 ⇒ 5"
       }
     ],
     "faqs": [
@@ -1682,7 +1682,7 @@
     "expression": "s * 1.7018",
     "examples": [
       {
-        "description": "5 smoots \u21d2 8.509 m"
+        "description": "5 smoots ⇒ 8.509 m"
       }
     ],
     "faqs": [
@@ -1709,7 +1709,7 @@
     "expression": "h * 238.481",
     "examples": [
       {
-        "description": "1 hogshead \u21d2 238.481 L"
+        "description": "1 hogshead ⇒ 238.481 L"
       }
     ],
     "faqs": [
@@ -1736,7 +1736,7 @@
     "expression": "fpf * 201.168 / 1209600",
     "examples": [
       {
-        "description": "1000 fpf \u21d2 0.1663 m/s"
+        "description": "1000 fpf ⇒ 0.1663 m/s"
       }
     ],
     "faqs": [
@@ -1763,7 +1763,7 @@
     "expression": "sols * 1.027491",
     "examples": [
       {
-        "description": "3 sols \u21d2 3.0825 Earth days"
+        "description": "3 sols ⇒ 3.0825 Earth days"
       }
     ],
     "faqs": [
@@ -1790,7 +1790,7 @@
     "expression": "mf * 1.2096",
     "examples": [
       {
-        "description": "10 \u00b5fortnights \u21d2 12.096 s"
+        "description": "10 µfortnights ⇒ 12.096 s"
       }
     ],
     "faqs": [
@@ -1828,7 +1828,7 @@
     "expression": "s * f + (s - 1) * b",
     "examples": [
       {
-        "description": "4 sessions \u21d2 110 minutes"
+        "description": "4 sessions ⇒ 110 minutes"
       }
     ],
     "faqs": [
@@ -1862,10 +1862,10 @@
     "unit": "days",
     "examples": [
       {
-        "description": "$3,000 hardware cost with $10 daily profit \u21d2 300 days"
+        "description": "$3,000 hardware cost with $10 daily profit ⇒ 300 days"
       },
       {
-        "description": "$5,000 hardware cost with $25 daily profit \u21d2 200 days"
+        "description": "$5,000 hardware cost with $25 daily profit ⇒ 200 days"
       }
     ],
     "faqs": [
@@ -1917,16 +1917,16 @@
     "unit": "USD/hr",
     "examples": [
       {
-        "description": "$80k income, 30 h/week, 48 weeks \u21d2 $55.56/hr"
+        "description": "$80k income, 30 h/week, 48 weeks ⇒ $55.56/hr"
       },
       {
-        "description": "$50k income, 20 h/week, 40 weeks \u21d2 $62.50/hr"
+        "description": "$50k income, 20 h/week, 40 weeks ⇒ $62.50/hr"
       }
     ],
     "faqs": [
       {
         "question": "Why billable hours?",
-        "answer": "Non\u2011billable time isn't paid, so exclude it to price correctly."
+        "answer": "Non‑billable time isn't paid, so exclude it to price correctly."
       },
       {
         "question": "Should I include taxes and expenses?",
@@ -1966,10 +1966,10 @@
     "unit": "USD",
     "examples": [
       {
-        "description": "$20 monthly fee for 12 months \u21d2 $240 LTV"
+        "description": "$20 monthly fee for 12 months ⇒ $240 LTV"
       },
       {
-        "description": "$15 monthly fee for 24 months \u21d2 $360 LTV"
+        "description": "$15 monthly fee for 24 months ⇒ $360 LTV"
       }
     ],
     "faqs": [
@@ -2008,13 +2008,13 @@
     "expression": "(8 - hours) * 7",
     "examples": [
       {
-        "description": "6 h/night \u21d2 14 h debt"
+        "description": "6 h/night ⇒ 14 h debt"
       }
     ],
     "faqs": [
       {
         "question": "What if result is negative?",
-        "answer": "Negative means you exceed the 8\u2011hour recommendation."
+        "answer": "Negative means you exceed the 8‑hour recommendation."
       }
     ]
   },
@@ -2035,7 +2035,7 @@
     "expression": "grams / 4",
     "examples": [
       {
-        "description": "16 g \u21d2 4 cubes"
+        "description": "16 g ⇒ 4 cubes"
       }
     ],
     "faqs": [
@@ -2067,7 +2067,7 @@
     "expression": "mg * (0.5 ^ (hrs / 5))",
     "examples": [
       {
-        "description": "200 mg after 5 h \u21d2 100 mg"
+        "description": "200 mg after 5 h ⇒ 100 mg"
       }
     ],
     "faqs": [
@@ -2085,7 +2085,7 @@
     "inputs": [
       {
         "name": "area",
-        "label": "Roof area (m\u00b2)",
+        "label": "Roof area (m²)",
         "type": "number",
         "step": "any",
         "placeholder": "50"
@@ -2108,7 +2108,7 @@
     "expression": "area * rain * (eff / 100) / 1000",
     "examples": [
       {
-        "description": "50 m\u00b2, 20 mm, 80% \u21d2 0.8 m\u00b3"
+        "description": "50 m², 20 mm, 80% ⇒ 0.8 m³"
       }
     ],
     "faqs": [
@@ -2147,7 +2147,7 @@
       },
       {
         "name": "density",
-        "label": "Soil density (kg/m\u00b3)",
+        "label": "Soil density (kg/m³)",
         "type": "number",
         "placeholder": "1200"
       }
@@ -2155,13 +2155,13 @@
     "expression": "length * width * depth * density",
     "examples": [
       {
-        "description": "2\u00d71\u00d70.5 m at 1200 kg/m\u00b3 \u21d2 1200 kg"
+        "description": "2×1×0.5 m at 1200 kg/m³ ⇒ 1200 kg"
       }
     ],
     "faqs": [
       {
         "question": "Why approximate density?",
-        "answer": "Different soils vary; 1200 kg/m\u00b3 is a common average."
+        "answer": "Different soils vary; 1200 kg/m³ is a common average."
       }
     ]
   },
@@ -2173,7 +2173,7 @@
     "inputs": [
       {
         "name": "area",
-        "label": "Wall area (m\u00b2)",
+        "label": "Wall area (m²)",
         "type": "number",
         "step": "any",
         "placeholder": "10"
@@ -2194,7 +2194,7 @@
     "expression": "area / (length * height / 10000)",
     "examples": [
       {
-        "description": "10 m\u00b2 wall, 20\u00d76 cm bricks \u21d2 ~833 bricks"
+        "description": "10 m² wall, 20×6 cm bricks ⇒ ~833 bricks"
       }
     ],
     "faqs": [
@@ -2233,7 +2233,7 @@
     "expression": "a1 * (1 - r ^ n) / (1 - r)",
     "examples": [
       {
-        "description": "a1=2, r=0.5, n=4 \u21d2 3.75"
+        "description": "a1=2, r=0.5, n=4 ⇒ 3.75"
       }
     ],
     "faqs": [
@@ -2260,13 +2260,13 @@
     "expression": "2 * (area * 3.141592653589793) ^ 0.5",
     "examples": [
       {
-        "description": "Area 50 \u21d2 25.07 circumference"
+        "description": "Area 50 ⇒ 25.07 circumference"
       }
     ],
     "faqs": [
       {
         "question": "Why such a long number?",
-        "answer": "It's a high-precision value of \u03c0."
+        "answer": "It's a high-precision value of π."
       }
     ]
   },
@@ -2301,7 +2301,7 @@
     "expression": "(( (a + b + c) / 2 * ((a + b + c) / 2 - a) * ((a + b + c) / 2 - b) * ((a + b + c) / 2 - c) ) ^ 0.5) / ((a + b + c) / 2)",
     "examples": [
       {
-        "description": "3-4-5 triangle \u21d2 1 radius"
+        "description": "3-4-5 triangle ⇒ 1 radius"
       }
     ],
     "faqs": [
@@ -2333,7 +2333,7 @@
     "expression": "capacity / draw",
     "examples": [
       {
-        "description": "3000 mAh at 150 mA \u21d2 20 h"
+        "description": "3000 mAh at 150 mA ⇒ 20 h"
       }
     ],
     "faqs": [
@@ -2365,7 +2365,7 @@
     "expression": "power / voltage",
     "examples": [
       {
-        "description": "95 W at 12 V \u21d2 7.92 A"
+        "description": "95 W at 12 V ⇒ 7.92 A"
       }
     ],
     "faqs": [
@@ -2397,7 +2397,7 @@
     "expression": "bandwidth * 1000000 * latency / 1000 / 8",
     "examples": [
       {
-        "description": "100 Mbps with 50 ms \u21d2 625000 bytes"
+        "description": "100 Mbps with 50 ms ⇒ 625000 bytes"
       }
     ],
     "faqs": [
@@ -2430,7 +2430,7 @@
     "expression": "coffee * ratio",
     "examples": [
       {
-        "description": "30 g at 1:15 \u21d2 450 g water"
+        "description": "30 g at 1:15 ⇒ 450 g water"
       }
     ],
     "faqs": [
@@ -2462,13 +2462,13 @@
     "expression": "words / speed",
     "examples": [
       {
-        "description": "1200 words at 200 wpm \u21d2 6 minutes"
+        "description": "1200 words at 200 wpm ⇒ 6 minutes"
       }
     ],
     "faqs": [
       {
         "question": "Typical speed?",
-        "answer": "Around 200 words per minute for non\u2011technical texts."
+        "answer": "Around 200 words per minute for non‑technical texts."
       }
     ]
   },
@@ -2494,7 +2494,7 @@
     "expression": "budget / days",
     "examples": [
       {
-        "description": "$1000 over 5 days \u21d2 $200/day"
+        "description": "$1000 over 5 days ⇒ $200/day"
       }
     ],
     "faqs": [
@@ -2528,10 +2528,10 @@
     "unit": "months",
     "examples": [
       {
-        "description": "$5,000 savings with $1,500 monthly expenses \u21d2 3.33 months"
+        "description": "$5,000 savings with $1,500 monthly expenses ⇒ 3.33 months"
       },
       {
-        "description": "$12,000 savings with $2,000 monthly expenses \u21d2 6 months"
+        "description": "$12,000 savings with $2,000 monthly expenses ⇒ 6 months"
       }
     ],
     "faqs": [
@@ -2577,10 +2577,10 @@
     "unit": "USD",
     "examples": [
       {
-        "description": "$40,000 yearly expenses at a 4% rate \u21d2 $1,000,000"
+        "description": "$40,000 yearly expenses at a 4% rate ⇒ $1,000,000"
       },
       {
-        "description": "$60,000 yearly expenses at a 3.5% rate \u21d2 $1,714,286"
+        "description": "$60,000 yearly expenses at a 3.5% rate ⇒ $1,714,286"
       }
     ],
     "faqs": [
@@ -2618,7 +2618,7 @@
     "expression": "(100/(100 - loss) - 1) * 100",
     "examples": [
       {
-        "description": "A 25% drop needs \u224833.33% gain"
+        "description": "A 25% drop needs ≈33.33% gain"
       }
     ],
     "faqs": [
@@ -2650,7 +2650,7 @@
     "expression": "(protein * 4) / calories * 100",
     "examples": [
       {
-        "description": "50 g protein in 2000 kcal \u21d2 10%"
+        "description": "50 g protein in 2000 kcal ⇒ 10%"
       }
     ],
     "faqs": [
@@ -2682,7 +2682,7 @@
     "expression": "(weight / ((height/100)^2)) / 25",
     "examples": [
       {
-        "description": "70 kg and 175 cm \u21d2 0.91"
+        "description": "70 kg and 175 cm ⇒ 0.91"
       }
     ],
     "faqs": [
@@ -2720,7 +2720,7 @@
     "expression": "(current - rest) / (max - rest) * 100",
     "examples": [
       {
-        "description": "Rest 60, max 190, current 150 \u21d2 69%"
+        "description": "Rest 60, max 190, current 150 ⇒ 69%"
       }
     ],
     "faqs": [
@@ -2738,7 +2738,7 @@
     "inputs": [
       {
         "name": "usv",
-        "label": "Dose (\u00b5Sv)",
+        "label": "Dose (µSv)",
         "type": "number",
         "placeholder": "1"
       }
@@ -2746,13 +2746,13 @@
     "expression": "usv / 0.1",
     "examples": [
       {
-        "description": "1 \u00b5Sv \u21d2 10 bananas"
+        "description": "1 µSv ⇒ 10 bananas"
       }
     ],
     "faqs": [
       {
         "question": "How much radiation is one banana?",
-        "answer": "About 0.1 \u00b5Sv per banana."
+        "answer": "About 0.1 µSv per banana."
       }
     ]
   },
@@ -2772,7 +2772,7 @@
     "expression": "beards * 5e-9",
     "examples": [
       {
-        "description": "1 beard-second \u21d2 5e-9 m"
+        "description": "1 beard-second ⇒ 5e-9 m"
       }
     ],
     "faqs": [
@@ -2798,13 +2798,13 @@
     "expression": "shep * 1400",
     "examples": [
       {
-        "description": "1 sheppey \u21d2 1400 m"
+        "description": "1 sheppey ⇒ 1400 m"
       }
     ],
     "faqs": [
       {
         "question": "What's a sheppey?",
-        "answer": "A whimsical unit equal to about 1.4 km\u2014the distance at which sheep remain picturesque."
+        "answer": "A whimsical unit equal to about 1.4 km—the distance at which sheep remain picturesque."
       }
     ]
   },
@@ -2836,7 +2836,7 @@
     "expression": "(((a + b + c)/2) * ((a + b + c)/2 - a) * ((a + b + c)/2 - b) * ((a + b + c)/2 - c))^(0.5)",
     "examples": [
       {
-        "description": "3,4,5 \u21d2 6"
+        "description": "3,4,5 ⇒ 6"
       }
     ],
     "faqs": [
@@ -2854,25 +2854,25 @@
     "inputs": [
       {
         "name": "x1",
-        "label": "x\u2081",
+        "label": "x₁",
         "type": "number",
         "placeholder": "0"
       },
       {
         "name": "y1",
-        "label": "y\u2081",
+        "label": "y₁",
         "type": "number",
         "placeholder": "0"
       },
       {
         "name": "x2",
-        "label": "x\u2082",
+        "label": "x₂",
         "type": "number",
         "placeholder": "3"
       },
       {
         "name": "y2",
-        "label": "y\u2082",
+        "label": "y₂",
         "type": "number",
         "placeholder": "4"
       }
@@ -2880,7 +2880,7 @@
     "expression": "((x2 - x1)^2 + (y2 - y1)^2)^(0.5)",
     "examples": [
       {
-        "description": "(0,0) to (3,4) \u21d2 5"
+        "description": "(0,0) to (3,4) ⇒ 5"
       }
     ],
     "faqs": [
@@ -2894,7 +2894,7 @@
     "slug": "polygon-diagonals",
     "title": "Polygon Diagonals Calculator",
     "cluster": "math",
-    "intro": "Number of diagonals in an n\u2011sided polygon.",
+    "intro": "Number of diagonals in an n‑sided polygon.",
     "inputs": [
       {
         "name": "n",
@@ -2906,7 +2906,7 @@
     "expression": "n * (n - 3) / 2",
     "examples": [
       {
-        "description": "Hexagon \u21d2 9 diagonals"
+        "description": "Hexagon ⇒ 9 diagonals"
       }
     ],
     "faqs": [
@@ -2932,7 +2932,7 @@
     "expression": "ping / 1000 * 299792.458 / 2",
     "examples": [
       {
-        "description": "50 ms \u21d2 ~7494 km"
+        "description": "50 ms ⇒ ~7494 km"
       }
     ],
     "faqs": [
@@ -2970,7 +2970,7 @@
     "expression": "((width^2 + height^2)^(0.5)) / diagonal",
     "examples": [
       {
-        "description": "1920\u00d71080 at 24\" \u21d2 ~92 PPI"
+        "description": "1920×1080 at 24\" ⇒ ~92 PPI"
       }
     ],
     "faqs": [
@@ -3002,13 +3002,13 @@
     "expression": "tbw * 1000 / (daily * 365)",
     "examples": [
       {
-        "description": "600 TBW with 50 GB/day \u21d2 32.9 years"
+        "description": "600 TBW with 50 GB/day ⇒ 32.9 years"
       }
     ],
     "faqs": [
       {
         "question": "What is TBW?",
-        "answer": "Terabytes written\u2014an endurance rating for SSDs."
+        "answer": "Terabytes written—an endurance rating for SSDs."
       }
     ]
   },
@@ -3028,7 +3028,7 @@
     "expression": "years / 1.8808",
     "examples": [
       {
-        "description": "5 Earth years \u21d2 2.66 Mars years"
+        "description": "5 Earth years ⇒ 2.66 Mars years"
       }
     ],
     "faqs": [
@@ -3054,7 +3054,7 @@
     "expression": "jiffies / 60",
     "examples": [
       {
-        "description": "120 jiffies \u21d2 2 seconds"
+        "description": "120 jiffies ⇒ 2 seconds"
       }
     ],
     "faqs": [
@@ -3080,7 +3080,7 @@
     "expression": "sidereal * 23.9344696",
     "examples": [
       {
-        "description": "1 sidereal day \u21d2 23.93 h"
+        "description": "1 sidereal day ⇒ 23.93 h"
       }
     ],
     "faqs": [
@@ -3112,7 +3112,7 @@
     "expression": "volume / flow",
     "examples": [
       {
-        "description": "200 L at 10 L/min \u21d2 20 min"
+        "description": "200 L at 10 L/min ⇒ 20 min"
       }
     ],
     "faqs": [
@@ -3150,7 +3150,7 @@
     "expression": "length * wpm / voltage",
     "examples": [
       {
-        "description": "5 m at 14 W/m on 12 V \u21d2 5.83 A"
+        "description": "5 m at 14 W/m on 12 V ⇒ 5.83 A"
       }
     ],
     "faqs": [
@@ -3194,7 +3194,7 @@
     "expression": "(roomL * roomW) / (tileL * tileW)",
     "examples": [
       {
-        "description": "4\u00d73 m with 0.3\u00d70.3 m tiles \u21d2 133.33 tiles"
+        "description": "4×3 m with 0.3×0.3 m tiles ⇒ 133.33 tiles"
       }
     ],
     "faqs": [
@@ -3226,7 +3226,7 @@
     "expression": "desired / original",
     "examples": [
       {
-        "description": "4 to 6 servings \u21d2 factor 1.5"
+        "description": "4 to 6 servings ⇒ factor 1.5"
       }
     ],
     "faqs": [
@@ -3252,7 +3252,7 @@
     "expression": "360 / slices",
     "examples": [
       {
-        "description": "8 slices \u21d2 45\u00b0 each"
+        "description": "8 slices ⇒ 45° each"
       }
     ],
     "faqs": [
@@ -3284,7 +3284,7 @@
     "expression": "people * minutes",
     "examples": [
       {
-        "description": "5 people at 3 min \u21d2 15 minutes"
+        "description": "5 people at 3 min ⇒ 15 minutes"
       }
     ],
     "faqs": [
@@ -3349,10 +3349,10 @@
     "expression": "nm * 1.852",
     "examples": [
       {
-        "description": "1 nmi \u21d2 1.85 km"
+        "description": "1 nmi ⇒ 1.85 km"
       },
       {
-        "description": "50 nmi \u21d2 92.6 km"
+        "description": "50 nmi ⇒ 92.6 km"
       }
     ],
     "faqs": [
@@ -3383,10 +3383,10 @@
     "expression": "bits / 8",
     "examples": [
       {
-        "description": "8 bits \u21d2 1 byte"
+        "description": "8 bits ⇒ 1 byte"
       },
       {
-        "description": "1024 bits \u21d2 128 bytes"
+        "description": "1024 bits ⇒ 128 bytes"
       }
     ],
     "faqs": [
@@ -3396,7 +3396,7 @@
       },
       {
         "question": "Does this handle large numbers?",
-        "answer": "Yes, enter any non\u2011negative numeric value."
+        "answer": "Yes, enter any non‑negative numeric value."
       }
     ]
   },
@@ -3417,10 +3417,10 @@
     "expression": "seconds / 604800",
     "examples": [
       {
-        "description": "604800 seconds \u21d2 1 week"
+        "description": "604800 seconds ⇒ 1 week"
       },
       {
-        "description": "1209600 seconds \u21d2 2 weeks"
+        "description": "1209600 seconds ⇒ 2 weeks"
       }
     ],
     "faqs": [
@@ -3451,10 +3451,10 @@
     "expression": "distance_km / 299792.458",
     "examples": [
       {
-        "description": "299,792.458 km \u21d2 1 s"
+        "description": "299,792.458 km ⇒ 1 s"
       },
       {
-        "description": "384,400 km \u21d2 1.28 s"
+        "description": "384,400 km ⇒ 1.28 s"
       }
     ],
     "faqs": [
@@ -3492,10 +3492,10 @@
     "expression": "(loan / value) * 100",
     "examples": [
       {
-        "description": "150000 / 200000 \u21d2 75%"
+        "description": "150000 / 200000 ⇒ 75%"
       },
       {
-        "description": "80000 / 100000 \u21d2 80%"
+        "description": "80000 / 100000 ⇒ 80%"
       }
     ],
     "faqs": [
@@ -3533,10 +3533,10 @@
     "expression": "(income / equity) * 100",
     "examples": [
       {
-        "description": "50000 / 250000 \u21d2 20%"
+        "description": "50000 / 250000 ⇒ 20%"
       },
       {
-        "description": "75000 / 300000 \u21d2 25%"
+        "description": "75000 / 300000 ⇒ 25%"
       }
     ],
     "faqs": [
@@ -3567,10 +3567,10 @@
     "expression": "220 - age",
     "examples": [
       {
-        "description": "Age 30 \u21d2 190 bpm"
+        "description": "Age 30 ⇒ 190 bpm"
       },
       {
-        "description": "Age 50 \u21d2 170 bpm"
+        "description": "Age 50 ⇒ 170 bpm"
       }
     ],
     "faqs": [
@@ -3601,10 +3601,10 @@
     "expression": "weight_kg * 0.8",
     "examples": [
       {
-        "description": "70 kg \u21d2 56 g"
+        "description": "70 kg ⇒ 56 g"
       },
       {
-        "description": "90 kg \u21d2 72 g"
+        "description": "90 kg ⇒ 72 g"
       }
     ],
     "faqs": [
@@ -3656,10 +3656,10 @@
     "expression": "(deck_length * deck_width) / (board_length * board_width)",
     "examples": [
       {
-        "description": "6\u00d74 m deck with 2\u00d70.15 m boards \u21d2 80 boards"
+        "description": "6×4 m deck with 2×0.15 m boards ⇒ 80 boards"
       },
       {
-        "description": "5\u00d75 m deck with 2.5\u00d70.1 m boards \u21d2 100 boards"
+        "description": "5×5 m deck with 2.5×0.1 m boards ⇒ 100 boards"
       }
     ],
     "faqs": [
@@ -3697,10 +3697,10 @@
     "expression": "3.141592653589793 * (diameter/2)^2 * depth",
     "examples": [
       {
-        "description": "0.3 m \u00d7 0.6 m \u21d2 0.042 m\u00b3"
+        "description": "0.3 m × 0.6 m ⇒ 0.042 m³"
       },
       {
-        "description": "0.2 m \u00d7 0.8 m \u21d2 0.025 m\u00b3"
+        "description": "0.2 m × 0.8 m ⇒ 0.025 m³"
       }
     ],
     "faqs": [
@@ -3731,16 +3731,16 @@
     "expression": "(4/3) * 3.141592653589793 * radius^3",
     "examples": [
       {
-        "description": "r = 1 \u21d2 4.19"
+        "description": "r = 1 ⇒ 4.19"
       },
       {
-        "description": "r = 3 \u21d2 113.10"
+        "description": "r = 3 ⇒ 113.10"
       }
     ],
     "faqs": [
       {
         "question": "What is the formula?",
-        "answer": "4/3 \u00d7 \u03c0 \u00d7 r\u00b3."
+        "answer": "4/3 × π × r³."
       },
       {
         "question": "Are units cubed?",
@@ -3763,7 +3763,7 @@
       },
       {
         "name": "angle",
-        "label": "Angle (\u00b0)",
+        "label": "Angle (°)",
         "type": "number",
         "step": "any",
         "placeholder": "90"
@@ -3772,10 +3772,10 @@
     "expression": "3.141592653589793 * radius^2 * angle / 360",
     "examples": [
       {
-        "description": "r = 5, angle = 90\u00b0 \u21d2 19.63"
+        "description": "r = 5, angle = 90° ⇒ 19.63"
       },
       {
-        "description": "r = 3, angle = 45\u00b0 \u21d2 3.53"
+        "description": "r = 3, angle = 45° ⇒ 3.53"
       }
     ],
     "faqs": [
@@ -3784,7 +3784,7 @@
         "answer": "Degrees."
       },
       {
-        "question": "What if the angle is 360\u00b0?",
+        "question": "What if the angle is 360°?",
         "answer": "The area equals that of the full circle."
       }
     ]
@@ -3806,10 +3806,10 @@
     "expression": "2^(32 - prefix) - 2",
     "examples": [
       {
-        "description": "/24 \u21d2 254 hosts"
+        "description": "/24 ⇒ 254 hosts"
       },
       {
-        "description": "/16 \u21d2 65534 hosts"
+        "description": "/16 ⇒ 65534 hosts"
       }
     ],
     "faqs": [
@@ -3847,10 +3847,10 @@
     "expression": "bitrate * duration * 60 / 8",
     "examples": [
       {
-        "description": "5 Mbps for 10 min \u21d2 375 MB"
+        "description": "5 Mbps for 10 min ⇒ 375 MB"
       },
       {
-        "description": "8 Mbps for 60 min \u21d2 3600 MB"
+        "description": "8 Mbps for 60 min ⇒ 3600 MB"
       }
     ],
     "faqs": [
@@ -3888,10 +3888,10 @@
     "expression": "price / mpg",
     "examples": [
       {
-        "description": "$3.50 and 25 mpg \u21d2 $0.14/mi"
+        "description": "$3.50 and 25 mpg ⇒ $0.14/mi"
       },
       {
-        "description": "$4.20 and 30 mpg \u21d2 $0.14/mi"
+        "description": "$4.20 and 30 mpg ⇒ $0.14/mi"
       }
     ],
     "faqs": [
@@ -3929,16 +3929,16 @@
     "expression": "flow_rate * minutes",
     "examples": [
       {
-        "description": "9 L/min \u00d7 5 min \u21d2 45 L"
+        "description": "9 L/min × 5 min ⇒ 45 L"
       },
       {
-        "description": "12 L/min \u00d7 10 min \u21d2 120 L"
+        "description": "12 L/min × 10 min ⇒ 120 L"
       }
     ],
     "faqs": [
       {
         "question": "Typical shower flow rate?",
-        "answer": "Around 9\u201312 liters per minute."
+        "answer": "Around 9–12 liters per minute."
       },
       {
         "question": "How can I reduce usage?",
@@ -3996,10 +3996,10 @@
     "expression": "oz * 29.5735",
     "examples": [
       {
-        "description": "3 oz \u21d2 88.72 mL"
+        "description": "3 oz ⇒ 88.72 mL"
       },
       {
-        "description": "12 oz \u21d2 354.88 mL"
+        "description": "12 oz ⇒ 354.88 mL"
       }
     ],
     "faqs": [
@@ -4039,10 +4039,10 @@
     "expression": "235.215 / mpg",
     "examples": [
       {
-        "description": "30 mpg \u21d2 7.84 L/100km"
+        "description": "30 mpg ⇒ 7.84 L/100km"
       },
       {
-        "description": "50 mpg \u21d2 4.70 L/100km"
+        "description": "50 mpg ⇒ 4.70 L/100km"
       }
     ],
     "faqs": [
@@ -4100,10 +4100,10 @@
     "expression": "(days * 24 + depart) - arrival",
     "examples": [
       {
-        "description": "Arrival 9, departure 14, days 0 \u21d2 5 hours"
+        "description": "Arrival 9, departure 14, days 0 ⇒ 5 hours"
       },
       {
-        "description": "Arrival 22, departure 7, days 1 \u21d2 9 hours"
+        "description": "Arrival 22, departure 7, days 1 ⇒ 9 hours"
       }
     ],
     "faqs": [
@@ -4153,10 +4153,10 @@
     "expression": "end - start",
     "examples": [
       {
-        "description": "Start 120, end 127 \u21d2 7 days"
+        "description": "Start 120, end 127 ⇒ 7 days"
       },
       {
-        "description": "Start 200, end 205 \u21d2 5 days"
+        "description": "Start 200, end 205 ⇒ 5 days"
       }
     ],
     "faqs": [
@@ -4212,10 +4212,10 @@
     "expression": "bill * (tip / 100) * rate",
     "examples": [
       {
-        "description": "\u20ac50 bill, 15% tip, rate 1.1 \u21d2 8.25 home currency"
+        "description": "€50 bill, 15% tip, rate 1.1 ⇒ 8.25 home currency"
       },
       {
-        "description": "\u00a52000 bill, 10% tip, rate 0.007 \u21d2 14 home currency"
+        "description": "¥2000 bill, 10% tip, rate 0.007 ⇒ 14 home currency"
       }
     ],
     "faqs": [
@@ -4271,10 +4271,10 @@
     "expression": "rate * nights * (1 + tax / 100)",
     "examples": [
       {
-        "description": "$120, 3 nights, 10% tax \u21d2 $396"
+        "description": "$120, 3 nights, 10% tax ⇒ $396"
       },
       {
-        "description": "$80, 5 nights, 8% tax \u21d2 $432"
+        "description": "$80, 5 nights, 8% tax ⇒ $432"
       }
     ],
     "faqs": [
@@ -4322,10 +4322,10 @@
     "expression": "hours * rate",
     "examples": [
       {
-        "description": "5 h, 0.25 L/h \u21d2 1.25 L"
+        "description": "5 h, 0.25 L/h ⇒ 1.25 L"
       },
       {
-        "description": "8 h, 0.2 L/h \u21d2 1.6 L"
+        "description": "8 h, 0.2 L/h ⇒ 1.6 L"
       }
     ],
     "faqs": [
@@ -4365,10 +4365,10 @@
     "expression": "zones / 2",
     "examples": [
       {
-        "description": "6 zones \u21d2 3 days"
+        "description": "6 zones ⇒ 3 days"
       },
       {
-        "description": "3 zones \u21d2 1.5 days"
+        "description": "3 zones ⇒ 1.5 days"
       }
     ],
     "faqs": [
@@ -4424,10 +4424,10 @@
     "expression": "(length * width * height) / 1000",
     "examples": [
       {
-        "description": "55\u00d740\u00d720 cm \u21d2 44 L"
+        "description": "55×40×20 cm ⇒ 44 L"
       },
       {
-        "description": "70\u00d750\u00d730 cm \u21d2 105 L"
+        "description": "70×50×30 cm ⇒ 105 L"
       }
     ],
     "faqs": [
@@ -4475,10 +4475,10 @@
     "expression": "garments * spacing",
     "examples": [
       {
-        "description": "8 garments, 0.15 m spacing \u21d2 1.2 m"
+        "description": "8 garments, 0.15 m spacing ⇒ 1.2 m"
       },
       {
-        "description": "5 garments, 0.2 m spacing \u21d2 1 m"
+        "description": "5 garments, 0.2 m spacing ⇒ 1 m"
       }
     ],
     "faqs": [
@@ -4526,10 +4526,10 @@
     "expression": "(rise / run) * 100",
     "examples": [
       {
-        "description": "300 m rise over 2000 m run \u21d2 15%"
+        "description": "300 m rise over 2000 m run ⇒ 15%"
       },
       {
-        "description": "100 m rise over 1000 m run \u21d2 10%"
+        "description": "100 m rise over 1000 m run ⇒ 10%"
       }
     ],
     "faqs": [
@@ -4593,10 +4593,10 @@
     "expression": "(distance / speed) + (stops * stopTime)",
     "examples": [
       {
-        "description": "600 km at 100 km/h with 2 stops of 0.5 h \u21d2 7 h"
+        "description": "600 km at 100 km/h with 2 stops of 0.5 h ⇒ 7 h"
       },
       {
-        "description": "300 km at 75 km/h with 1 stop of 0.25 h \u21d2 4.25 h"
+        "description": "300 km at 75 km/h with 1 stop of 0.25 h ⇒ 4.25 h"
       }
     ],
     "faqs": [
@@ -4653,10 +4653,10 @@
     "expression": "(bank * (eff / 100)) / device",
     "examples": [
       {
-        "description": "10000 mAh bank, 3000 mAh device, 85% \u21d2 2.83 charges"
+        "description": "10000 mAh bank, 3000 mAh device, 85% ⇒ 2.83 charges"
       },
       {
-        "description": "20000 mAh bank, 4000 mAh device, 90% \u21d2 4.5 charges"
+        "description": "20000 mAh bank, 4000 mAh device, 90% ⇒ 4.5 charges"
       }
     ],
     "faqs": [
@@ -4704,10 +4704,10 @@
     "expression": "data * price",
     "examples": [
       {
-        "description": "500 MB at 0.02 \u21d2 10"
+        "description": "500 MB at 0.02 ⇒ 10"
       },
       {
-        "description": "200 MB at 0.05 \u21d2 10"
+        "description": "200 MB at 0.05 ⇒ 10"
       }
     ],
     "faqs": [
@@ -4733,7 +4733,7 @@
     "slug": "flight-carbon-footprint",
     "title": "Flight Carbon Footprint",
     "cluster": "other",
-    "description": "Estimate CO\u2082 emissions from a flight.",
+    "description": "Estimate CO₂ emissions from a flight.",
     "inputs": [
       {
         "name": "distance",
@@ -4755,16 +4755,16 @@
     "expression": "distance * factor",
     "examples": [
       {
-        "description": "1000 km at 0.115 \u21d2 115 kg CO\u2082"
+        "description": "1000 km at 0.115 ⇒ 115 kg CO₂"
       },
       {
-        "description": "5000 km at 0.115 \u21d2 575 kg CO\u2082"
+        "description": "5000 km at 0.115 ⇒ 575 kg CO₂"
       }
     ],
     "faqs": [
       {
         "question": "What emission factor is used?",
-        "answer": "0.115 kg CO\u2082 per passenger-km is a common estimate."
+        "answer": "0.115 kg CO₂ per passenger-km is a common estimate."
       },
       {
         "question": "Does this include radiative forcing?",
@@ -4806,10 +4806,10 @@
     "expression": "limit - current",
     "examples": [
       {
-        "description": "Limit 23 kg, current 17 kg \u21d2 6 kg left"
+        "description": "Limit 23 kg, current 17 kg ⇒ 6 kg left"
       },
       {
-        "description": "Limit 20 kg, current 19.5 kg \u21d2 0.5 kg left"
+        "description": "Limit 20 kg, current 19.5 kg ⇒ 0.5 kg left"
       }
     ],
     "faqs": [
@@ -4850,10 +4850,10 @@
     "unit": "L",
     "examples": [
       {
-        "description": "1 gal \u21d2 3.79 L"
+        "description": "1 gal ⇒ 3.79 L"
       },
       {
-        "description": "5 gal \u21d2 18.93 L"
+        "description": "5 gal ⇒ 18.93 L"
       }
     ],
     "faqs": [
@@ -4895,10 +4895,10 @@
     "unit": "MJ",
     "examples": [
       {
-        "description": "1 kWh \u21d2 3.6 MJ"
+        "description": "1 kWh ⇒ 3.6 MJ"
       },
       {
-        "description": "5 kWh \u21d2 18 MJ"
+        "description": "5 kWh ⇒ 18 MJ"
       }
     ],
     "faqs": [
@@ -4940,10 +4940,10 @@
     "unit": "min",
     "examples": [
       {
-        "description": "120 s \u21d2 2 min"
+        "description": "120 s ⇒ 2 min"
       },
       {
-        "description": "90 s \u21d2 1.5 min"
+        "description": "90 s ⇒ 1.5 min"
       }
     ],
     "faqs": [
@@ -4985,16 +4985,16 @@
     "unit": "s",
     "examples": [
       {
-        "description": "1 week \u21d2 604,800 s"
+        "description": "1 week ⇒ 604,800 s"
       },
       {
-        "description": "2.5 weeks \u21d2 1,512,000 s"
+        "description": "2.5 weeks ⇒ 1,512,000 s"
       }
     ],
     "faqs": [
       {
         "question": "Why 604,800 seconds per week?",
-        "answer": "It's 7 days \u00d7 24 hours \u00d7 60 minutes \u00d7 60 seconds."
+        "answer": "It's 7 days × 24 hours × 60 minutes × 60 seconds."
       },
       {
         "question": "Does it handle fractional weeks?",
@@ -5038,10 +5038,10 @@
     "unit": "%",
     "examples": [
       {
-        "description": "Dividend 2, Price 40 \u21d2 5%"
+        "description": "Dividend 2, Price 40 ⇒ 5%"
       },
       {
-        "description": "Dividend 1.5, Price 30 \u21d2 5%"
+        "description": "Dividend 1.5, Price 30 ⇒ 5%"
       }
     ],
     "faqs": [
@@ -5099,10 +5099,10 @@
     "unit": "per year",
     "examples": [
       {
-        "description": "Cost 10000, Salvage 1000, Life 5 \u21d2 1800 per year"
+        "description": "Cost 10000, Salvage 1000, Life 5 ⇒ 1800 per year"
       },
       {
-        "description": "Cost 5000, Salvage 500, Life 10 \u21d2 450 per year"
+        "description": "Cost 5000, Salvage 500, Life 10 ⇒ 450 per year"
       }
     ],
     "faqs": [
@@ -5144,10 +5144,10 @@
     "unit": "g",
     "examples": [
       {
-        "description": "2000 kcal \u21d2 28 g"
+        "description": "2000 kcal ⇒ 28 g"
       },
       {
-        "description": "1500 kcal \u21d2 21 g"
+        "description": "1500 kcal ⇒ 21 g"
       }
     ],
     "faqs": [
@@ -5197,10 +5197,10 @@
     "unit": "%",
     "examples": [
       {
-        "description": "Fat 20 g, Calories 500 \u21d2 36%"
+        "description": "Fat 20 g, Calories 500 ⇒ 36%"
       },
       {
-        "description": "Fat 10 g, Calories 300 \u21d2 30%"
+        "description": "Fat 10 g, Calories 300 ⇒ 30%"
       }
     ],
     "faqs": [
@@ -5250,10 +5250,10 @@
     "unit": "BTU",
     "examples": [
       {
-        "description": "Area 250 sq ft, BTU 20 \u21d2 5000 BTU"
+        "description": "Area 250 sq ft, BTU 20 ⇒ 5000 BTU"
       },
       {
-        "description": "Area 400 sq ft, BTU 25 \u21d2 10000 BTU"
+        "description": "Area 400 sq ft, BTU 25 ⇒ 10000 BTU"
       }
     ],
     "faqs": [
@@ -5303,10 +5303,10 @@
     "unit": "bundles",
     "examples": [
       {
-        "description": "Area 1500 sq ft, Coverage 33 \u21d2 45.45 bundles"
+        "description": "Area 1500 sq ft, Coverage 33 ⇒ 45.45 bundles"
       },
       {
-        "description": "Area 2000 sq ft, Coverage 25 \u21d2 80 bundles"
+        "description": "Area 2000 sq ft, Coverage 25 ⇒ 80 bundles"
       }
     ],
     "faqs": [
@@ -5337,28 +5337,28 @@
     "inputs": [
       {
         "name": "x1",
-        "label": "x\u2081",
+        "label": "x₁",
         "type": "number",
         "step": "any",
         "placeholder": "1"
       },
       {
         "name": "y1",
-        "label": "y\u2081",
+        "label": "y₁",
         "type": "number",
         "step": "any",
         "placeholder": "2"
       },
       {
         "name": "x2",
-        "label": "x\u2082",
+        "label": "x₂",
         "type": "number",
         "step": "any",
         "placeholder": "4"
       },
       {
         "name": "y2",
-        "label": "y\u2082",
+        "label": "y₂",
         "type": "number",
         "step": "any",
         "placeholder": "6"
@@ -5368,15 +5368,15 @@
     "unit": "slope",
     "examples": [
       {
-        "description": "(1,2) to (4,6) \u21d2 4/3"
+        "description": "(1,2) to (4,6) ⇒ 4/3"
       },
       {
-        "description": "(0,0) to (5,5) \u21d2 1"
+        "description": "(0,0) to (5,5) ⇒ 1"
       }
     ],
     "faqs": [
       {
-        "question": "What if x\u2082 equals x\u2081?",
+        "question": "What if x₂ equals x₁?",
         "answer": "The slope is undefined because division by zero occurs."
       },
       {
@@ -5420,10 +5420,10 @@
     "unit": "value",
     "examples": [
       {
-        "description": "Value 27, n 3 \u21d2 3"
+        "description": "Value 27, n 3 ⇒ 3"
       },
       {
-        "description": "Value 16, n 4 \u21d2 2"
+        "description": "Value 16, n 4 ⇒ 2"
       }
     ],
     "faqs": [
@@ -5473,10 +5473,10 @@
     "unit": "MH/s per W",
     "examples": [
       {
-        "description": "500 MH/s at 100 W \u21d2 5 MH/s per W"
+        "description": "500 MH/s at 100 W ⇒ 5 MH/s per W"
       },
       {
-        "description": "120 MH/s at 60 W \u21d2 2 MH/s per W"
+        "description": "120 MH/s at 60 W ⇒ 2 MH/s per W"
       }
     ],
     "faqs": [
@@ -5526,10 +5526,10 @@
     "unit": "%",
     "examples": [
       {
-        "description": "Output 400 W, Input 500 W \u21d2 80%"
+        "description": "Output 400 W, Input 500 W ⇒ 80%"
       },
       {
-        "description": "Output 300 W, Input 360 W \u21d2 83.33%"
+        "description": "Output 300 W, Input 360 W ⇒ 83.33%"
       }
     ],
     "faqs": [
@@ -5587,10 +5587,10 @@
     "unit": "m",
     "examples": [
       {
-        "description": "Outer 10 cm, Core 4 cm, Thickness 0.1 mm \u21d2 2356 m"
+        "description": "Outer 10 cm, Core 4 cm, Thickness 0.1 mm ⇒ 2356 m"
       },
       {
-        "description": "Outer 8 cm, Core 3 cm, Thickness 0.12 mm \u21d2 1222 m"
+        "description": "Outer 8 cm, Core 3 cm, Thickness 0.12 mm ⇒ 1222 m"
       }
     ],
     "faqs": [
@@ -5640,10 +5640,10 @@
     "unit": "min",
     "examples": [
       {
-        "description": "Time 60 min, Factor 0.75 \u21d2 45 min"
+        "description": "Time 60 min, Factor 0.75 ⇒ 45 min"
       },
       {
-        "description": "Time 40 min, Factor 0.7 \u21d2 28 min"
+        "description": "Time 40 min, Factor 0.7 ⇒ 28 min"
       }
     ],
     "faqs": [
@@ -5657,7 +5657,7 @@
       },
       {
         "question": "Does temperature change too?",
-        "answer": "Usually reduce temperature by 25\u00b0F."
+        "answer": "Usually reduce temperature by 25°F."
       },
       {
         "question": "Is this for baking and roasting?",
@@ -5684,10 +5684,10 @@
     "unit": "kg",
     "examples": [
       {
-        "description": "150 lb \u21d2 68.04 kg"
+        "description": "150 lb ⇒ 68.04 kg"
       },
       {
-        "description": "10 lb \u21d2 4.54 kg"
+        "description": "10 lb ⇒ 4.54 kg"
       }
     ],
     "faqs": [
@@ -5718,20 +5718,20 @@
     "inputs": [
       {
         "name": "sqft",
-        "label": "Area (ft\u00b2)",
+        "label": "Area (ft²)",
         "type": "number",
         "step": "any",
         "placeholder": "100"
       }
     ],
     "expression": "sqft * 0.092903",
-    "unit": "m\u00b2",
+    "unit": "m²",
     "examples": [
       {
-        "description": "100 ft\u00b2 \u21d2 9.29 m\u00b2"
+        "description": "100 ft² ⇒ 9.29 m²"
       },
       {
-        "description": "250 ft\u00b2 \u21d2 23.23 m\u00b2"
+        "description": "250 ft² ⇒ 23.23 m²"
       }
     ],
     "faqs": [
@@ -5772,10 +5772,10 @@
     "unit": "days",
     "examples": [
       {
-        "description": "1 year \u21d2 365.25 days"
+        "description": "1 year ⇒ 365.25 days"
       },
       {
-        "description": "30 years \u21d2 10,957.5 days"
+        "description": "30 years ⇒ 10,957.5 days"
       }
     ],
     "faqs": [
@@ -5816,10 +5816,10 @@
     "unit": "days",
     "examples": [
       {
-        "description": "86,400 s \u21d2 1 day"
+        "description": "86,400 s ⇒ 1 day"
       },
       {
-        "description": "172,800 s \u21d2 2 days"
+        "description": "172,800 s ⇒ 2 days"
       }
     ],
     "faqs": [
@@ -5867,10 +5867,10 @@
     "unit": "USD",
     "examples": [
       {
-        "description": "$1,000 balance at 18% APR \u21d2 $15.00"
+        "description": "$1,000 balance at 18% APR ⇒ $15.00"
       },
       {
-        "description": "$5,000 balance at 22% APR \u21d2 $91.67"
+        "description": "$5,000 balance at 22% APR ⇒ $91.67"
       }
     ],
     "faqs": [
@@ -5918,10 +5918,10 @@
     "unit": "%",
     "examples": [
       {
-        "description": "$500 balance on $2,000 limit \u21d2 25%"
+        "description": "$500 balance on $2,000 limit ⇒ 25%"
       },
       {
-        "description": "$1,200 balance on $1,500 limit \u21d2 80%"
+        "description": "$1,200 balance on $1,500 limit ⇒ 80%"
       }
     ],
     "faqs": [
@@ -5983,10 +5983,10 @@
     "unit": "%",
     "examples": [
       {
-        "description": "70 kg, 175 cm, age 30, male \u21d2 18.22%"
+        "description": "70 kg, 175 cm, age 30, male ⇒ 18.22%"
       },
       {
-        "description": "60 kg, 165 cm, age 25, female \u21d2 24.22%"
+        "description": "60 kg, 165 cm, age 25, female ⇒ 24.22%"
       }
     ],
     "faqs": [
@@ -6034,10 +6034,10 @@
     "unit": "kg",
     "examples": [
       {
-        "description": "100 kg for 5 reps \u21d2 116.67 kg"
+        "description": "100 kg for 5 reps ⇒ 116.67 kg"
       },
       {
-        "description": "50 kg for 10 reps \u21d2 66.67 kg"
+        "description": "50 kg for 10 reps ⇒ 66.67 kg"
       }
     ],
     "faqs": [
@@ -6082,13 +6082,13 @@
       }
     ],
     "expression": "Math.atan(rise / run) * (180/Math.PI)",
-    "unit": "\u00b0",
+    "unit": "°",
     "examples": [
       {
-        "description": "Rise 4, Run 12 \u21d2 18.43\u00b0"
+        "description": "Rise 4, Run 12 ⇒ 18.43°"
       },
       {
-        "description": "Rise 6, Run 12 \u21d2 26.57\u00b0"
+        "description": "Rise 6, Run 12 ⇒ 26.57°"
       }
     ],
     "faqs": [
@@ -6126,7 +6126,7 @@
       },
       {
         "name": "rise",
-        "label": "Temperature Rise (\u00b0F)",
+        "label": "Temperature Rise (°F)",
         "type": "number",
         "step": "any",
         "placeholder": "70"
@@ -6143,10 +6143,10 @@
     "unit": "h",
     "examples": [
       {
-        "description": "40 gal, 70\u00b0F rise, 40,000 BTU \u21d2 0.58 h"
+        "description": "40 gal, 70°F rise, 40,000 BTU ⇒ 0.58 h"
       },
       {
-        "description": "50 gal, 60\u00b0F rise, 30,000 BTU \u21d2 0.83 h"
+        "description": "50 gal, 60°F rise, 30,000 BTU ⇒ 0.83 h"
       }
     ],
     "faqs": [
@@ -6201,10 +6201,10 @@
     "unit": "",
     "examples": [
       {
-        "description": "1, 5, 3 \u21d2 3"
+        "description": "1, 5, 3 ⇒ 3"
       },
       {
-        "description": "10, 20, 15 \u21d2 15"
+        "description": "10, 20, 15 ⇒ 15"
       }
     ],
     "faqs": [
@@ -6252,10 +6252,10 @@
     "unit": "",
     "examples": [
       {
-        "description": "a=1, b=4 \u21d2 -2"
+        "description": "a=1, b=4 ⇒ -2"
       },
       {
-        "description": "a=2, b=-8 \u21d2 2"
+        "description": "a=2, b=-8 ⇒ 2"
       }
     ],
     "faqs": [
@@ -6273,7 +6273,7 @@
       },
       {
         "question": "Can I find y too?",
-        "answer": "Use y = c - b\u00b2/(4a) once you know a, b, and c."
+        "answer": "Use y = c - b²/(4a) once you know a, b, and c."
       }
     ],
     "disclaimer": "Provides only the x-coordinate; verify calculations in complex cases."
@@ -6310,10 +6310,10 @@
     "unit": "h",
     "examples": [
       {
-        "description": "3000 mAh with 1000 mA at 90% \u21d2 3.33 h"
+        "description": "3000 mAh with 1000 mA at 90% ⇒ 3.33 h"
       },
       {
-        "description": "2000 mAh with 500 mA at 85% \u21d2 4.71 h"
+        "description": "2000 mAh with 500 mA at 85% ⇒ 4.71 h"
       }
     ],
     "faqs": [
@@ -6351,7 +6351,7 @@
       },
       {
         "name": "resistance",
-        "label": "Resistance (\u03a9)",
+        "label": "Resistance (Ω)",
         "type": "number",
         "step": "any",
         "placeholder": "6"
@@ -6361,16 +6361,16 @@
     "unit": "A",
     "examples": [
       {
-        "description": "12 V and 6 \u03a9 \u21d2 2 A"
+        "description": "12 V and 6 Ω ⇒ 2 A"
       },
       {
-        "description": "5 V and 10 \u03a9 \u21d2 0.5 A"
+        "description": "5 V and 10 Ω ⇒ 0.5 A"
       }
     ],
     "faqs": [
       {
         "question": "What is Ohm's Law?",
-        "answer": "It states that voltage = current \u00d7 resistance."
+        "answer": "It states that voltage = current × resistance."
       },
       {
         "question": "Can resistance be zero?",
@@ -6405,10 +6405,10 @@
     "unit": "years",
     "examples": [
       {
-        "description": "1 year \u21d2 12 human years"
+        "description": "1 year ⇒ 12 human years"
       },
       {
-        "description": "5 years \u21d2 36 human years"
+        "description": "5 years ⇒ 36 human years"
       }
     ],
     "faqs": [
@@ -6456,10 +6456,10 @@
     "unit": "pages",
     "examples": [
       {
-        "description": "50,000 words at 300 wpp \u21d2 167 pages"
+        "description": "50,000 words at 300 wpp ⇒ 167 pages"
       },
       {
-        "description": "8,000 words at 250 wpp \u21d2 32 pages"
+        "description": "8,000 words at 250 wpp ⇒ 32 pages"
       }
     ],
     "faqs": [
@@ -6500,13 +6500,13 @@
     "unit": "cm",
     "examples": [
       {
-        "description": "10 in \u21d2 25.4 cm"
+        "description": "10 in ⇒ 25.4 cm"
       },
       {
-        "description": "5.5 in \u21d2 13.97 cm"
+        "description": "5.5 in ⇒ 13.97 cm"
       },
       {
-        "description": "0.25 in \u21d2 0.635 cm"
+        "description": "0.25 in ⇒ 0.635 cm"
       }
     ],
     "faqs": [
@@ -6543,13 +6543,13 @@
     "unit": "st",
     "examples": [
       {
-        "description": "140 lb \u21d2 10 st"
+        "description": "140 lb ⇒ 10 st"
       },
       {
-        "description": "200 lb \u21d2 14.29 st"
+        "description": "200 lb ⇒ 14.29 st"
       },
       {
-        "description": "90 lb \u21d2 6.43 st"
+        "description": "90 lb ⇒ 6.43 st"
       }
     ],
     "faqs": [
@@ -6586,13 +6586,13 @@
     "unit": "seconds",
     "examples": [
       {
-        "description": "1 day \u21d2 86400 seconds"
+        "description": "1 day ⇒ 86400 seconds"
       },
       {
-        "description": "2.5 days \u21d2 216000 seconds"
+        "description": "2.5 days ⇒ 216000 seconds"
       },
       {
-        "description": "0.1 day \u21d2 8640 seconds"
+        "description": "0.1 day ⇒ 8640 seconds"
       }
     ],
     "faqs": [
@@ -6629,13 +6629,13 @@
     "unit": "months",
     "examples": [
       {
-        "description": "5 years \u21d2 60 months"
+        "description": "5 years ⇒ 60 months"
       },
       {
-        "description": "0.5 years \u21d2 6 months"
+        "description": "0.5 years ⇒ 6 months"
       },
       {
-        "description": "25 years \u21d2 300 months"
+        "description": "25 years ⇒ 300 months"
       }
     ],
     "faqs": [
@@ -6679,13 +6679,13 @@
     "unit": "%",
     "examples": [
       {
-        "description": "Revenue $1000, COGS $600 \u21d2 40%"
+        "description": "Revenue $1000, COGS $600 ⇒ 40%"
       },
       {
-        "description": "Revenue $250, COGS $200 \u21d2 20%"
+        "description": "Revenue $250, COGS $200 ⇒ 20%"
       },
       {
-        "description": "Revenue $5000, COGS $3500 \u21d2 30%"
+        "description": "Revenue $5000, COGS $3500 ⇒ 30%"
       }
     ],
     "faqs": [
@@ -6736,13 +6736,13 @@
     "unit": "units",
     "examples": [
       {
-        "description": "Fixed $1000, Price $50, Variable $30 \u21d2 50 units"
+        "description": "Fixed $1000, Price $50, Variable $30 ⇒ 50 units"
       },
       {
-        "description": "Fixed $5000, Price $100, Variable $60 \u21d2 125 units"
+        "description": "Fixed $5000, Price $100, Variable $60 ⇒ 125 units"
       },
       {
-        "description": "Fixed $2000, Price $80, Variable $40 \u21d2 50 units"
+        "description": "Fixed $2000, Price $80, Variable $40 ⇒ 50 units"
       }
     ],
     "faqs": [
@@ -6786,13 +6786,13 @@
     "unit": "kcal",
     "examples": [
       {
-        "description": "Maintenance 2500 kcal, Deficit 500 \u21d2 2000 kcal"
+        "description": "Maintenance 2500 kcal, Deficit 500 ⇒ 2000 kcal"
       },
       {
-        "description": "Maintenance 2000 kcal, Deficit 300 \u21d2 1700 kcal"
+        "description": "Maintenance 2000 kcal, Deficit 300 ⇒ 1700 kcal"
       },
       {
-        "description": "Maintenance 2800 kcal, Deficit 1000 \u21d2 1800 kcal"
+        "description": "Maintenance 2800 kcal, Deficit 1000 ⇒ 1800 kcal"
       }
     ],
     "faqs": [
@@ -6833,16 +6833,16 @@
       }
     ],
     "expression": "0.007184 * Math.pow(weight,0.425) * Math.pow(height,0.725)",
-    "unit": "m\u00b2",
+    "unit": "m²",
     "examples": [
       {
-        "description": "70 kg & 170 cm \u21d2 1.84 m\u00b2"
+        "description": "70 kg & 170 cm ⇒ 1.84 m²"
       },
       {
-        "description": "50 kg & 160 cm \u21d2 1.48 m\u00b2"
+        "description": "50 kg & 160 cm ⇒ 1.48 m²"
       },
       {
-        "description": "90 kg & 180 cm \u21d2 2.08 m\u00b2"
+        "description": "90 kg & 180 cm ⇒ 2.08 m²"
       }
     ],
     "faqs": [
@@ -6886,13 +6886,13 @@
     "unit": "USD",
     "examples": [
       {
-        "description": "500 bricks at $0.75 \u21d2 $375"
+        "description": "500 bricks at $0.75 ⇒ $375"
       },
       {
-        "description": "1000 bricks at $0.50 \u21d2 $500"
+        "description": "1000 bricks at $0.50 ⇒ $500"
       },
       {
-        "description": "250 bricks at $1.20 \u21d2 $300"
+        "description": "250 bricks at $1.20 ⇒ $300"
       }
     ],
     "faqs": [
@@ -6919,7 +6919,7 @@
     "inputs": [
       {
         "name": "area",
-        "label": "Area (m\u00b2)",
+        "label": "Area (m²)",
         "type": "number",
         "step": "any",
         "placeholder": "100"
@@ -6943,19 +6943,19 @@
     "unit": "minutes",
     "examples": [
       {
-        "description": "100 m\u00b2, 2 cm, 15 L/min \u21d2 133.33 minutes"
+        "description": "100 m², 2 cm, 15 L/min ⇒ 133.33 minutes"
       },
       {
-        "description": "50 m\u00b2, 1 cm, 10 L/min \u21d2 50 minutes"
+        "description": "50 m², 1 cm, 10 L/min ⇒ 50 minutes"
       },
       {
-        "description": "200 m\u00b2, 2.5 cm, 20 L/min \u21d2 250 minutes"
+        "description": "200 m², 2.5 cm, 20 L/min ⇒ 250 minutes"
       }
     ],
     "faqs": [
       {
         "question": "Why multiply by 10?",
-        "answer": "1 m\u00b2 \u00d7 1 cm equals 10 liters of water."
+        "answer": "1 m² × 1 cm equals 10 liters of water."
       },
       {
         "question": "Can I use gallons?",
@@ -6997,16 +6997,16 @@
       }
     ],
     "expression": "length * width * height",
-    "unit": "unit\u00b3",
+    "unit": "unit³",
     "examples": [
       {
-        "description": "2 \u00d7 3 \u00d7 4 \u21d2 24 unit\u00b3"
+        "description": "2 × 3 × 4 ⇒ 24 unit³"
       },
       {
-        "description": "5 \u00d7 5 \u00d7 5 \u21d2 125 unit\u00b3"
+        "description": "5 × 5 × 5 ⇒ 125 unit³"
       },
       {
-        "description": "1.5 \u00d7 2 \u00d7 3 \u21d2 9 unit\u00b3"
+        "description": "1.5 × 2 × 3 ⇒ 9 unit³"
       }
     ],
     "faqs": [
@@ -7040,16 +7040,16 @@
       }
     ],
     "expression": "(3 * Math.sqrt(3) / 2) * side * side",
-    "unit": "unit\u00b2",
+    "unit": "unit²",
     "examples": [
       {
-        "description": "Side 2 \u21d2 10.39 unit\u00b2"
+        "description": "Side 2 ⇒ 10.39 unit²"
       },
       {
-        "description": "Side 5 \u21d2 64.95 unit\u00b2"
+        "description": "Side 5 ⇒ 64.95 unit²"
       },
       {
-        "description": "Side 10 \u21d2 259.81 unit\u00b2"
+        "description": "Side 10 ⇒ 259.81 unit²"
       }
     ],
     "faqs": [
@@ -7090,16 +7090,16 @@
       }
     ],
     "expression": "voltage / current",
-    "unit": "\u03a9",
+    "unit": "Ω",
     "examples": [
       {
-        "description": "10 V / 2 A \u21d2 5 \u03a9"
+        "description": "10 V / 2 A ⇒ 5 Ω"
       },
       {
-        "description": "5 V / 0.5 A \u21d2 10 \u03a9"
+        "description": "5 V / 0.5 A ⇒ 10 Ω"
       },
       {
-        "description": "12 V / 3 A \u21d2 4 \u03a9"
+        "description": "12 V / 3 A ⇒ 4 Ω"
       }
     ],
     "faqs": [
@@ -7109,7 +7109,7 @@
       },
       {
         "question": "What unit is the result?",
-        "answer": "Ohms (\u03a9)."
+        "answer": "Ohms (Ω)."
       },
       {
         "question": "Does this apply to AC and DC?",
@@ -7136,13 +7136,13 @@
     "unit": "colors",
     "examples": [
       {
-        "description": "8 bits \u21d2 256 colors"
+        "description": "8 bits ⇒ 256 colors"
       },
       {
-        "description": "16 bits \u21d2 65536 colors"
+        "description": "16 bits ⇒ 65536 colors"
       },
       {
-        "description": "24 bits \u21d2 16777216 colors"
+        "description": "24 bits ⇒ 16777216 colors"
       }
     ],
     "faqs": [
@@ -7179,13 +7179,13 @@
     "unit": "years",
     "examples": [
       {
-        "description": "1 year \u21d2 6.5 human years"
+        "description": "1 year ⇒ 6.5 human years"
       },
       {
-        "description": "5 years \u21d2 26.5 human years"
+        "description": "5 years ⇒ 26.5 human years"
       },
       {
-        "description": "10 years \u21d2 49 human years"
+        "description": "10 years ⇒ 49 human years"
       }
     ],
     "faqs": [
@@ -7229,13 +7229,13 @@
     "unit": "%",
     "examples": [
       {
-        "description": "1 die (6 sides) \u21d2 16.67%"
+        "description": "1 die (6 sides) ⇒ 16.67%"
       },
       {
-        "description": "2 dice (6 sides) \u21d2 30.56%"
+        "description": "2 dice (6 sides) ⇒ 30.56%"
       },
       {
-        "description": "3 dice (20 sides) \u21d2 14.26%"
+        "description": "3 dice (20 sides) ⇒ 14.26%"
       }
     ],
     "faqs": [
@@ -7272,10 +7272,10 @@
     "unit": "W",
     "examples": [
       {
-        "description": "1000 BTU/hr \u21d2 293.07 W"
+        "description": "1000 BTU/hr ⇒ 293.07 W"
       },
       {
-        "description": "5000 BTU/hr \u21d2 1465.36 W"
+        "description": "5000 BTU/hr ⇒ 1465.36 W"
       }
     ],
     "faqs": [
@@ -7316,10 +7316,10 @@
     "unit": "Hz",
     "examples": [
       {
-        "description": "120 RPM \u21d2 2 Hz"
+        "description": "120 RPM ⇒ 2 Hz"
       },
       {
-        "description": "3600 RPM \u21d2 60 Hz"
+        "description": "3600 RPM ⇒ 60 Hz"
       }
     ],
     "faqs": [
@@ -7374,10 +7374,10 @@
     "unit": "weekday index",
     "examples": [
       {
-        "description": "2023-09-01 \u21d2 5"
+        "description": "2023-09-01 ⇒ 5"
       },
       {
-        "description": "2000-01-01 \u21d2 6"
+        "description": "2000-01-01 ⇒ 6"
       }
     ],
     "faqs": [
@@ -7453,10 +7453,10 @@
     "unit": "days",
     "examples": [
       {
-        "description": "2024-01-01 to 2024-01-31 \u21d2 30 days"
+        "description": "2024-01-01 to 2024-01-31 ⇒ 30 days"
       },
       {
-        "description": "2020-02-01 to 2020-03-01 \u21d2 29 days"
+        "description": "2020-02-01 to 2020-03-01 ⇒ 29 days"
       }
     ],
     "faqs": [
@@ -7511,16 +7511,16 @@
     "unit": "USD",
     "examples": [
       {
-        "description": "$20/hr \u00d7 5 hrs \u00d7 1.5 \u21d2 $150"
+        "description": "$20/hr × 5 hrs × 1.5 ⇒ $150"
       },
       {
-        "description": "$15/hr \u00d7 10 hrs \u00d7 2 \u21d2 $300"
+        "description": "$15/hr × 10 hrs × 2 ⇒ $300"
       }
     ],
     "faqs": [
       {
         "question": "What is an overtime multiplier?",
-        "answer": "It's the factor by which overtime hours are paid, such as 1.5\u00d7 for time-and-a-half."
+        "answer": "It's the factor by which overtime hours are paid, such as 1.5× for time-and-a-half."
       },
       {
         "question": "Does this include taxes or deductions?",
@@ -7569,10 +7569,10 @@
     "unit": "months",
     "examples": [
       {
-        "description": "$10,000 target, $200 monthly, 2% APR \u21d2 48.0 months"
+        "description": "$10,000 target, $200 monthly, 2% APR ⇒ 48.0 months"
       },
       {
-        "description": "$5,000 target, $300 monthly, 0% APR \u21d2 16.67 months"
+        "description": "$5,000 target, $300 monthly, 0% APR ⇒ 16.67 months"
       }
     ],
     "faqs": [
@@ -7634,10 +7634,10 @@
     "unit": "kcal/day",
     "examples": [
       {
-        "description": "70kg, 175cm, 30y, male \u21d2 1648.8 kcal/day"
+        "description": "70kg, 175cm, 30y, male ⇒ 1648.8 kcal/day"
       },
       {
-        "description": "60kg, 160cm, 25y, female \u21d2 1314 kcal/day"
+        "description": "60kg, 160cm, 25y, female ⇒ 1314 kcal/day"
       }
     ],
     "faqs": [
@@ -7685,10 +7685,10 @@
     "unit": "g/day",
     "examples": [
       {
-        "description": "70 kg at 0.8 g/kg \u21d2 56 g/day"
+        "description": "70 kg at 0.8 g/kg ⇒ 56 g/day"
       },
       {
-        "description": "80 kg at 1.2 g/kg \u21d2 96 g/day"
+        "description": "80 kg at 1.2 g/kg ⇒ 96 g/day"
       }
     ],
     "faqs": [
@@ -7698,7 +7698,7 @@
       },
       {
         "question": "Can the factor exceed 1?",
-        "answer": "Yes, active individuals often use 1.2\u20132.0 g/kg."
+        "answer": "Yes, active individuals often use 1.2–2.0 g/kg."
       },
       {
         "question": "Does this account for age or health conditions?",
@@ -7743,10 +7743,10 @@
     "unit": "gallons",
     "examples": [
       {
-        "description": "10 ft \u00d7 5 in \u00d7 4 in \u21d2 10.39 gallons"
+        "description": "10 ft × 5 in × 4 in ⇒ 10.39 gallons"
       },
       {
-        "description": "20 ft \u00d7 6 in \u00d7 4 in \u21d2 24.94 gallons"
+        "description": "20 ft × 6 in × 4 in ⇒ 24.94 gallons"
       }
     ],
     "faqs": [
@@ -7794,10 +7794,10 @@
     "unit": "steps",
     "examples": [
       {
-        "description": "96 in total rise at 7.5 in \u21d2 13 steps"
+        "description": "96 in total rise at 7.5 in ⇒ 13 steps"
       },
       {
-        "description": "108 in total rise at 7 in \u21d2 16 steps"
+        "description": "108 in total rise at 7 in ⇒ 16 steps"
       }
     ],
     "faqs": [
@@ -7811,7 +7811,7 @@
       },
       {
         "question": "What is a typical rise per step?",
-        "answer": "Most building codes allow 7\u20138 inches per step."
+        "answer": "Most building codes allow 7–8 inches per step."
       },
       {
         "question": "Should local codes be checked?",
@@ -7835,7 +7835,7 @@
       },
       {
         "name": "angle",
-        "label": "Angle (\u00b0)",
+        "label": "Angle (°)",
         "type": "number",
         "step": "any",
         "placeholder": "60"
@@ -7845,10 +7845,10 @@
     "unit": "units",
     "examples": [
       {
-        "description": "r=5, angle=60\u00b0 \u21d2 5.24 units"
+        "description": "r=5, angle=60° ⇒ 5.24 units"
       },
       {
-        "description": "r=10, angle=90\u00b0 \u21d2 15.71 units"
+        "description": "r=10, angle=90° ⇒ 15.71 units"
       }
     ],
     "faqs": [
@@ -7857,7 +7857,7 @@
         "answer": "Degrees; convert from radians if necessary."
       },
       {
-        "question": "Can the angle exceed 360\u00b0?",
+        "question": "Can the angle exceed 360°?",
         "answer": "Yes, the formula works for any positive angle."
       },
       {
@@ -7866,7 +7866,7 @@
       },
       {
         "question": "Is the arc length always less than the circumference?",
-        "answer": "If angle is \u2264360\u00b0, yes; larger angles yield multiple laps."
+        "answer": "If angle is ≤360°, yes; larger angles yield multiple laps."
       }
     ],
     "disclaimer": "Ideal geometric calculation; ensure measurements are accurate."
@@ -7886,13 +7886,13 @@
       }
     ],
     "expression": "(sides - 2) * 180",
-    "unit": "\u00b0",
+    "unit": "°",
     "examples": [
       {
-        "description": "3 sides \u21d2 180\u00b0"
+        "description": "3 sides ⇒ 180°"
       },
       {
-        "description": "6 sides \u21d2 720\u00b0"
+        "description": "6 sides ⇒ 720°"
       }
     ],
     "faqs": [
@@ -7910,7 +7910,7 @@
       },
       {
         "question": "Why multiply by 180?",
-        "answer": "Each triangle has 180\u00b0, and a polygon can be divided into (n\u22122) triangles."
+        "answer": "Each triangle has 180°, and a polygon can be divided into (n−2) triangles."
       }
     ],
     "disclaimer": "Pure geometric formula; ensure the figure is a simple polygon."
@@ -7940,10 +7940,10 @@
     "unit": "ratio",
     "examples": [
       {
-        "description": "10 MB / 2 MB \u21d2 5 ratio"
+        "description": "10 MB / 2 MB ⇒ 5 ratio"
       },
       {
-        "description": "50 MB / 20 MB \u21d2 2.5 ratio"
+        "description": "50 MB / 20 MB ⇒ 2.5 ratio"
       }
     ],
     "faqs": [
@@ -7984,10 +7984,10 @@
     "unit": "ns",
     "examples": [
       {
-        "description": "1000 MHz \u21d2 1 ns"
+        "description": "1000 MHz ⇒ 1 ns"
       },
       {
-        "description": "3200 MHz \u21d2 0.31 ns"
+        "description": "3200 MHz ⇒ 0.31 ns"
       }
     ],
     "faqs": [
@@ -8018,7 +8018,7 @@
     "inputs": [
       {
         "name": "temperature",
-        "label": "Temperature (\u00b0F)",
+        "label": "Temperature (°F)",
         "type": "number",
         "step": "any",
         "placeholder": "30"
@@ -8032,19 +8032,19 @@
       }
     ],
     "expression": "35.74 + 0.6215*temperature - 35.75*Math.pow(wind,0.16) + 0.4275*temperature*Math.pow(wind,0.16)",
-    "unit": "\u00b0F",
+    "unit": "°F",
     "examples": [
       {
-        "description": "30\u00b0F & 10 mph \u21d2 21.25\u00b0F"
+        "description": "30°F & 10 mph ⇒ 21.25°F"
       },
       {
-        "description": "0\u00b0F & 20 mph \u21d2 -22.00\u00b0F"
+        "description": "0°F & 20 mph ⇒ -22.00°F"
       }
     ],
     "faqs": [
       {
         "question": "When is this formula valid?",
-        "answer": "For temperatures at or below 50\u00b0F and winds above 3 mph."
+        "answer": "For temperatures at or below 50°F and winds above 3 mph."
       },
       {
         "question": "Does sunshine affect wind chill?",
@@ -8065,11 +8065,11 @@
     "slug": "tree-carbon-offset",
     "title": "Tree Carbon Offset Calculator",
     "cluster": "Other",
-    "description": "Estimate trees needed to offset CO\u2082 emissions.",
+    "description": "Estimate trees needed to offset CO₂ emissions.",
     "inputs": [
       {
         "name": "co2",
-        "label": "CO\u2082 Emissions (kg/yr)",
+        "label": "CO₂ Emissions (kg/yr)",
         "type": "number",
         "step": "any",
         "placeholder": "100"
@@ -8079,16 +8079,16 @@
     "unit": "trees",
     "examples": [
       {
-        "description": "100 kg CO\u2082 \u21d2 4.59 trees"
+        "description": "100 kg CO₂ ⇒ 4.59 trees"
       },
       {
-        "description": "1000 kg CO\u2082 \u21d2 45.92 trees"
+        "description": "1000 kg CO₂ ⇒ 45.92 trees"
       }
     ],
     "faqs": [
       {
         "question": "What absorption rate is assumed?",
-        "answer": "Each tree is estimated to absorb 21.77 kg of CO\u2082 per year."
+        "answer": "Each tree is estimated to absorb 21.77 kg of CO₂ per year."
       },
       {
         "question": "Do different species absorb different amounts?",
@@ -8109,7 +8109,7 @@
     "slug": "electronvolt-to-joule",
     "title": "Electronvolt to Joule Converter",
     "cluster": "Conversions",
-    "intro": "Convert electronvolt energy to joules using the factor 1 eV = 1.602176634\u00d710\u207b\u00b9\u2079 J. Enter eV and press Calculate.",
+    "intro": "Convert electronvolt energy to joules using the factor 1 eV = 1.602176634×10⁻¹⁹ J. Enter eV and press Calculate.",
     "inputs": [
       {
         "name": "ev",
@@ -8123,10 +8123,10 @@
     "unit": "J",
     "examples": [
       {
-        "description": "1 eV \u21d2 1.60e-19 J"
+        "description": "1 eV ⇒ 1.60e-19 J"
       },
       {
-        "description": "5 eV \u21d2 8.01e-19 J"
+        "description": "5 eV ⇒ 8.01e-19 J"
       }
     ],
     "faqs": [
@@ -8167,10 +8167,10 @@
     "unit": "mph",
     "examples": [
       {
-        "description": "10 ft/s \u21d2 6.82 mph"
+        "description": "10 ft/s ⇒ 6.82 mph"
       },
       {
-        "description": "88 ft/s \u21d2 60 mph"
+        "description": "88 ft/s ⇒ 60 mph"
       }
     ],
     "faqs": [
@@ -8225,10 +8225,10 @@
     "unit": "week",
     "examples": [
       {
-        "description": "2023-09-01 \u21d2 35"
+        "description": "2023-09-01 ⇒ 35"
       },
       {
-        "description": "2025-01-01 \u21d2 1"
+        "description": "2025-01-01 ⇒ 1"
       }
     ],
     "faqs": [
@@ -8237,7 +8237,7 @@
         "answer": "It's a standard where weeks start on Monday and week 1 is the week with the year's first Thursday."
       },
       {
-        "question": "Are week numbers always 1\u201352?",
+        "question": "Are week numbers always 1–52?",
         "answer": "Some years have 53 ISO weeks."
       },
       {
@@ -8276,10 +8276,10 @@
     "unit": "days",
     "examples": [
       {
-        "description": "February 2024 \u21d2 29 days"
+        "description": "February 2024 ⇒ 29 days"
       },
       {
-        "description": "April 2025 \u21d2 30 days"
+        "description": "April 2025 ⇒ 30 days"
       }
     ],
     "faqs": [
@@ -8327,10 +8327,10 @@
     "unit": "%",
     "examples": [
       {
-        "description": "$1000 cost, $1200 gain \u21d2 20%"
+        "description": "$1000 cost, $1200 gain ⇒ 20%"
       },
       {
-        "description": "$5000 cost, $4500 gain \u21d2 -10%"
+        "description": "$5000 cost, $4500 gain ⇒ -10%"
       }
     ],
     "faqs": [
@@ -8378,10 +8378,10 @@
     "unit": "%",
     "examples": [
       {
-        "description": "$2000 debt, $5000 income \u21d2 40%"
+        "description": "$2000 debt, $5000 income ⇒ 40%"
       },
       {
-        "description": "$1500 debt, $3000 income \u21d2 50%"
+        "description": "$1500 debt, $3000 income ⇒ 50%"
       }
     ],
     "faqs": [
@@ -8429,10 +8429,10 @@
     "unit": "kg",
     "examples": [
       {
-        "description": "70 in, base 50 \u21d2 73.0 kg"
+        "description": "70 in, base 50 ⇒ 73.0 kg"
       },
       {
-        "description": "64 in, base 45.5 \u21d2 60.7 kg"
+        "description": "64 in, base 45.5 ⇒ 60.7 kg"
       }
     ],
     "faqs": [
@@ -8480,10 +8480,10 @@
     "unit": "bpm",
     "examples": [
       {
-        "description": "Age 30 at 70% \u21d2 133 bpm"
+        "description": "Age 30 at 70% ⇒ 133 bpm"
       },
       {
-        "description": "Age 40 at 85% \u21d2 153 bpm"
+        "description": "Age 40 at 85% ⇒ 153 bpm"
       }
     ],
     "faqs": [
@@ -8493,7 +8493,7 @@
       },
       {
         "question": "What intensity should I use?",
-        "answer": "Use 50\u201385% for moderate to vigorous exercise."
+        "answer": "Use 50–85% for moderate to vigorous exercise."
       },
       {
         "question": "Is the formula accurate for everyone?",
@@ -8538,16 +8538,16 @@
     "unit": "board ft",
     "examples": [
       {
-        "description": "2\u00d76\u00d796 in \u21d2 8 board ft"
+        "description": "2×6×96 in ⇒ 8 board ft"
       },
       {
-        "description": "1\u00d710\u00d7120 in \u21d2 8.33 board ft"
+        "description": "1×10×120 in ⇒ 8.33 board ft"
       }
     ],
     "faqs": [
       {
         "question": "What is a board foot?",
-        "answer": "A volume of lumber equal to 1 in \u00d7 12 in \u00d7 12 in."
+        "answer": "A volume of lumber equal to 1 in × 12 in × 12 in."
       },
       {
         "question": "Can I use metric units?",
@@ -8572,7 +8572,7 @@
     "inputs": [
       {
         "name": "area",
-        "label": "Wall Area (ft\u00b2)",
+        "label": "Wall Area (ft²)",
         "type": "number",
         "step": "any",
         "placeholder": "500"
@@ -8596,10 +8596,10 @@
     "unit": "sheets",
     "examples": [
       {
-        "description": "500 ft\u00b2 area with 4\u00d78 ft sheets \u21d2 15.63 sheets"
+        "description": "500 ft² area with 4×8 ft sheets ⇒ 15.63 sheets"
       },
       {
-        "description": "800 ft\u00b2 area with 4\u00d712 ft sheets \u21d2 16.67 sheets"
+        "description": "800 ft² area with 4×12 ft sheets ⇒ 16.67 sheets"
       }
     ],
     "faqs": [
@@ -8640,10 +8640,10 @@
     "unit": "",
     "examples": [
       {
-        "description": "5 \u21d2 120"
+        "description": "5 ⇒ 120"
       },
       {
-        "description": "3 \u21d2 6"
+        "description": "3 ⇒ 6"
       }
     ],
     "faqs": [
@@ -8691,10 +8691,10 @@
     "unit": "",
     "examples": [
       {
-        "description": "48 & 18 \u21d2 6"
+        "description": "48 & 18 ⇒ 6"
       },
       {
-        "description": "21 & 14 \u21d2 7"
+        "description": "21 & 14 ⇒ 7"
       }
     ],
     "faqs": [
@@ -8735,10 +8735,10 @@
     "unit": "hosts",
     "examples": [
       {
-        "description": "/24 \u21d2 254 hosts"
+        "description": "/24 ⇒ 254 hosts"
       },
       {
-        "description": "/30 \u21d2 2 hosts"
+        "description": "/30 ⇒ 2 hosts"
       }
     ],
     "faqs": [
@@ -8786,10 +8786,10 @@
     "unit": "TB",
     "examples": [
       {
-        "description": "4 drives at 2 TB \u21d2 6 TB"
+        "description": "4 drives at 2 TB ⇒ 6 TB"
       },
       {
-        "description": "6 drives at 4 TB \u21d2 20 TB"
+        "description": "6 drives at 4 TB ⇒ 20 TB"
       }
     ],
     "faqs": [
@@ -8830,10 +8830,10 @@
     "unit": "km",
     "examples": [
       {
-        "description": "3 s \u21d2 1.03 km"
+        "description": "3 s ⇒ 1.03 km"
       },
       {
-        "description": "5 s \u21d2 1.72 km"
+        "description": "5 s ⇒ 1.72 km"
       }
     ],
     "faqs": [
@@ -8881,10 +8881,10 @@
     "unit": "g",
     "examples": [
       {
-        "description": "20 g coffee at 15 \u21d2 300 g water"
+        "description": "20 g coffee at 15 ⇒ 300 g water"
       },
       {
-        "description": "30 g coffee at 16 \u21d2 480 g water"
+        "description": "30 g coffee at 16 ⇒ 480 g water"
       }
     ],
     "faqs": [
@@ -8924,10 +8924,10 @@
     "intro": "Convert light level from lux to foot-candles. Enter the lux value and press Calculate.",
     "examples": [
       {
-        "description": "500 lux \u21d2 46.45 fc"
+        "description": "500 lux ⇒ 46.45 fc"
       },
       {
-        "description": "1000 lux \u21d2 92.90 fc"
+        "description": "1000 lux ⇒ 92.90 fc"
       }
     ],
     "faqs": [
@@ -8968,10 +8968,10 @@
     "intro": "Convert energy from kilojoules to kilocalories. Enter kilojoules and calculate.",
     "examples": [
       {
-        "description": "100 kJ \u21d2 23.90 kcal"
+        "description": "100 kJ ⇒ 23.90 kcal"
       },
       {
-        "description": "250 kJ \u21d2 59.77 kcal"
+        "description": "250 kJ ⇒ 59.77 kcal"
       }
     ],
     "faqs": [
@@ -9012,10 +9012,10 @@
     "intro": "Convert any number of weeks into hours.",
     "examples": [
       {
-        "description": "2 weeks \u21d2 336 hours"
+        "description": "2 weeks ⇒ 336 hours"
       },
       {
-        "description": "0.5 weeks \u21d2 84 hours"
+        "description": "0.5 weeks ⇒ 84 hours"
       }
     ],
     "faqs": [
@@ -9056,10 +9056,10 @@
     "intro": "Approximate how many 30-day months fit in a number of seconds.",
     "examples": [
       {
-        "description": "2,592,000 s \u21d2 1 month"
+        "description": "2,592,000 s ⇒ 1 month"
       },
       {
-        "description": "5,184,000 s \u21d2 2 months"
+        "description": "5,184,000 s ⇒ 2 months"
       }
     ],
     "faqs": [
@@ -9106,10 +9106,10 @@
     "intro": "Determine how efficiently a company uses its assets to generate profit.",
     "examples": [
       {
-        "description": "$50,000 net income / $200,000 assets \u21d2 25%"
+        "description": "$50,000 net income / $200,000 assets ⇒ 25%"
       },
       {
-        "description": "$80,000 net income / $1,000,000 assets \u21d2 8%"
+        "description": "$80,000 net income / $1,000,000 assets ⇒ 8%"
       }
     ],
     "faqs": [
@@ -9156,10 +9156,10 @@
     "intro": "Assess a company's leverage by comparing liabilities to equity.",
     "examples": [
       {
-        "description": "$150,000 liabilities / $100,000 equity \u21d2 1.5"
+        "description": "$150,000 liabilities / $100,000 equity ⇒ 1.5"
       },
       {
-        "description": "$80,000 liabilities / $200,000 equity \u21d2 0.4"
+        "description": "$80,000 liabilities / $200,000 equity ⇒ 0.4"
       }
     ],
     "faqs": [
@@ -9206,10 +9206,10 @@
     "intro": "Find the mass of body fat based on total weight and body fat percentage.",
     "examples": [
       {
-        "description": "70 kg at 20% \u21d2 14 kg fat"
+        "description": "70 kg at 20% ⇒ 14 kg fat"
       },
       {
-        "description": "80 kg at 15% \u21d2 12 kg fat"
+        "description": "80 kg at 15% ⇒ 12 kg fat"
       }
     ],
     "faqs": [
@@ -9250,10 +9250,10 @@
     "intro": "Estimate potential weight gain from extra calories consumed.",
     "examples": [
       {
-        "description": "7000 calories \u21d2 2 lb"
+        "description": "7000 calories ⇒ 2 lb"
       },
       {
-        "description": "1750 calories \u21d2 0.5 lb"
+        "description": "1750 calories ⇒ 0.5 lb"
       }
     ],
     "faqs": [
@@ -9285,7 +9285,7 @@
     "inputs": [
       {
         "name": "area",
-        "label": "Area (ft\u00b2)",
+        "label": "Area (ft²)",
         "type": "number",
         "placeholder": "50"
       },
@@ -9306,10 +9306,10 @@
     "intro": "Approximate the amount of grout needed based on area and joint dimensions.",
     "examples": [
       {
-        "description": "50 ft\u00b2, 0.125 in width, 0.25 in depth \u21d2 3.69 L"
+        "description": "50 ft², 0.125 in width, 0.25 in depth ⇒ 3.69 L"
       },
       {
-        "description": "100 ft\u00b2, 0.1 in width, 0.3 in depth \u21d2 7.09 L"
+        "description": "100 ft², 0.1 in width, 0.3 in depth ⇒ 7.09 L"
       }
     ],
     "faqs": [
@@ -9341,13 +9341,13 @@
     "inputs": [
       {
         "name": "area",
-        "label": "Area (ft\u00b2)",
+        "label": "Area (ft²)",
         "type": "number",
         "placeholder": "500"
       },
       {
         "name": "coverage",
-        "label": "Coverage per Roll (ft\u00b2)",
+        "label": "Coverage per Roll (ft²)",
         "type": "number",
         "placeholder": "40"
       }
@@ -9356,10 +9356,10 @@
     "intro": "Figure out how many insulation rolls to purchase based on area coverage.",
     "examples": [
       {
-        "description": "500 ft\u00b2 area, 40 ft\u00b2 per roll \u21d2 12.5 rolls"
+        "description": "500 ft² area, 40 ft² per roll ⇒ 12.5 rolls"
       },
       {
-        "description": "800 ft\u00b2 area, 30 ft\u00b2 per roll \u21d2 26.67 rolls"
+        "description": "800 ft² area, 30 ft² per roll ⇒ 26.67 rolls"
       }
     ],
     "faqs": [
@@ -9406,10 +9406,10 @@
     "intro": "Find the percent error between a measured quantity and its true value.",
     "examples": [
       {
-        "description": "Measured 105 vs actual 100 \u21d2 5%"
+        "description": "Measured 105 vs actual 100 ⇒ 5%"
       },
       {
-        "description": "Measured 95 vs actual 100 \u21d2 5%"
+        "description": "Measured 95 vs actual 100 ⇒ 5%"
       }
     ],
     "faqs": [
@@ -9447,13 +9447,13 @@
       }
     ],
     "expression": "360 / n",
-    "intro": "Compute the exterior angle of a regular polygon by dividing 360\u00b0 by the number of sides.",
+    "intro": "Compute the exterior angle of a regular polygon by dividing 360° by the number of sides.",
     "examples": [
       {
-        "description": "n = 6 \u21d2 60\u00b0"
+        "description": "n = 6 ⇒ 60°"
       },
       {
-        "description": "n = 8 \u21d2 45\u00b0"
+        "description": "n = 8 ⇒ 45°"
       }
     ],
     "faqs": [
@@ -9462,8 +9462,8 @@
         "answer": "It's the angle formed by one side of a polygon and the extension of an adjacent side."
       },
       {
-        "question": "Do the exterior angles sum to 360\u00b0?",
-        "answer": "Yes, for any polygon the exterior angles sum to 360\u00b0."
+        "question": "Do the exterior angles sum to 360°?",
+        "answer": "Yes, for any polygon the exterior angles sum to 360°."
       },
       {
         "question": "Does this work for irregular polygons?",
@@ -9471,7 +9471,7 @@
       },
       {
         "question": "How about interior angles?",
-        "answer": "Interior angle = 180\u00b0 - exterior angle."
+        "answer": "Interior angle = 180° - exterior angle."
       }
     ],
     "disclaimer": "Assumes a regular polygon.",
@@ -9500,10 +9500,10 @@
     "intro": "See how much space you save after compressing files.",
     "examples": [
       {
-        "description": "10 MB \u2192 6 MB \u21d2 40%"
+        "description": "10 MB → 6 MB ⇒ 40%"
       },
       {
-        "description": "50 MB \u2192 25 MB \u21d2 50%"
+        "description": "50 MB → 25 MB ⇒ 50%"
       }
     ],
     "faqs": [
@@ -9562,10 +9562,10 @@
     "intro": "Calculate the screen area as a percentage of the device's front surface.",
     "examples": [
       {
-        "description": "Screen 68\u00d7152 mm, body 70\u00d7155 mm \u21d2 95.26%"
+        "description": "Screen 68×152 mm, body 70×155 mm ⇒ 95.26%"
       },
       {
-        "description": "Screen 60\u00d7130 mm, body 65\u00d7140 mm \u21d2 85.71%"
+        "description": "Screen 60×130 mm, body 65×140 mm ⇒ 85.71%"
       }
     ],
     "faqs": [
@@ -9606,10 +9606,10 @@
     "intro": "Approximate a rabbit's age in human years using a factor of eight.",
     "examples": [
       {
-        "description": "2 rabbit years \u21d2 16 human years"
+        "description": "2 rabbit years ⇒ 16 human years"
       },
       {
-        "description": "5 rabbit years \u21d2 40 human years"
+        "description": "5 rabbit years ⇒ 40 human years"
       }
     ],
     "faqs": [
@@ -9650,10 +9650,10 @@
     "intro": "Convert beats per minute into milliseconds per beat for music production.",
     "examples": [
       {
-        "description": "120 BPM \u21d2 500 ms"
+        "description": "120 BPM ⇒ 500 ms"
       },
       {
-        "description": "90 BPM \u21d2 666.67 ms"
+        "description": "90 BPM ⇒ 666.67 ms"
       }
     ],
     "faqs": [
@@ -9695,10 +9695,10 @@
     "intro": "Convert electrical power in watts to mechanical horsepower for equipment comparisons.",
     "examples": [
       {
-        "description": "1000 W \u21d2 1.34 hp"
+        "description": "1000 W ⇒ 1.34 hp"
       },
       {
-        "description": "1500 W \u21d2 2.01 hp"
+        "description": "1500 W ⇒ 2.01 hp"
       }
     ],
     "faqs": [
@@ -9740,10 +9740,10 @@
     "intro": "Convert liquid volumes from liters to US gallons quickly and accurately.",
     "examples": [
       {
-        "description": "10 L \u21d2 2.64 gal"
+        "description": "10 L ⇒ 2.64 gal"
       },
       {
-        "description": "25 L \u21d2 6.60 gal"
+        "description": "25 L ⇒ 6.60 gal"
       }
     ],
     "faqs": [
@@ -9820,10 +9820,10 @@
     "intro": "Find how many business days fall between two dates, excluding weekends.",
     "examples": [
       {
-        "description": "2024-06-03 to 2024-06-07 \u21d2 5 days"
+        "description": "2024-06-03 to 2024-06-07 ⇒ 5 days"
       },
       {
-        "description": "2024-06-01 to 2024-06-10 \u21d2 6 days"
+        "description": "2024-06-01 to 2024-06-10 ⇒ 6 days"
       }
     ],
     "faqs": [
@@ -9879,10 +9879,10 @@
     "intro": "Calculate the Julian Day Number for any given calendar date.",
     "examples": [
       {
-        "description": "2000-01-01 \u21d2 2451545"
+        "description": "2000-01-01 ⇒ 2451545"
       },
       {
-        "description": "2024-05-15 \u21d2 2460446"
+        "description": "2024-05-15 ⇒ 2460446"
       }
     ],
     "faqs": [
@@ -9931,10 +9931,10 @@
     "intro": "Determine what percentage of earnings is distributed to shareholders as dividends.",
     "examples": [
       {
-        "description": "Dividends 2, earnings 5 \u21d2 40%"
+        "description": "Dividends 2, earnings 5 ⇒ 40%"
       },
       {
-        "description": "Dividends 3, earnings 6 \u21d2 50%"
+        "description": "Dividends 3, earnings 6 ⇒ 50%"
       }
     ],
     "faqs": [
@@ -9983,10 +9983,10 @@
     "intro": "Assess how many times a company's earnings can cover its interest payments.",
     "examples": [
       {
-        "description": "EBIT 60000, interest 10000 \u21d2 6"
+        "description": "EBIT 60000, interest 10000 ⇒ 6"
       },
       {
-        "description": "EBIT 45000, interest 15000 \u21d2 3"
+        "description": "EBIT 45000, interest 15000 ⇒ 3"
       }
     ],
     "faqs": [
@@ -10063,10 +10063,10 @@
     "intro": "Calculate how many weeks pregnant you are based on the last menstrual period and today's date.",
     "examples": [
       {
-        "description": "LMP 2024-01-01, current 2024-03-15 \u21d2 10.29 weeks"
+        "description": "LMP 2024-01-01, current 2024-03-15 ⇒ 10.29 weeks"
       },
       {
-        "description": "LMP 2024-06-01, current 2024-07-13 \u21d2 6.00 weeks"
+        "description": "LMP 2024-06-01, current 2024-07-13 ⇒ 6.00 weeks"
       }
     ],
     "faqs": [
@@ -10115,10 +10115,10 @@
     "intro": "Estimate cumulative smoking exposure by multiplying daily packs by years smoked.",
     "examples": [
       {
-        "description": "1 pack/day for 10 years \u21d2 10 pack-years"
+        "description": "1 pack/day for 10 years ⇒ 10 pack-years"
       },
       {
-        "description": "0.5 pack/day for 20 years \u21d2 10 pack-years"
+        "description": "0.5 pack/day for 20 years ⇒ 10 pack-years"
       }
     ],
     "faqs": [
@@ -10150,14 +10150,14 @@
     "inputs": [
       {
         "name": "area",
-        "label": "Area (ft\u00b2)",
+        "label": "Area (ft²)",
         "type": "number",
         "step": "any",
         "placeholder": "200"
       },
       {
         "name": "price",
-        "label": "Cost per ft\u00b2",
+        "label": "Cost per ft²",
         "type": "number",
         "step": "any",
         "placeholder": "3"
@@ -10167,10 +10167,10 @@
     "intro": "Estimate how much new carpet will cost based on room size and price per square foot.",
     "examples": [
       {
-        "description": "Area 200 ft\u00b2, price $3 \u21d2 $600"
+        "description": "Area 200 ft², price $3 ⇒ $600"
       },
       {
-        "description": "Area 150 ft\u00b2, price $2.5 \u21d2 $375"
+        "description": "Area 150 ft², price $2.5 ⇒ $375"
       }
     ],
     "faqs": [
@@ -10202,7 +10202,7 @@
     "inputs": [
       {
         "name": "area",
-        "label": "Area (ft\u00b2)",
+        "label": "Area (ft²)",
         "type": "number",
         "step": "any",
         "placeholder": "100"
@@ -10219,10 +10219,10 @@
     "intro": "Figure out how many evenly spaced plants can fit into a garden area.",
     "examples": [
       {
-        "description": "Area 100 ft\u00b2, spacing 2 ft \u21d2 25 plants"
+        "description": "Area 100 ft², spacing 2 ft ⇒ 25 plants"
       },
       {
-        "description": "Area 200 ft\u00b2, spacing 1.5 ft \u21d2 89 plants"
+        "description": "Area 200 ft², spacing 1.5 ft ⇒ 89 plants"
       }
     ],
     "faqs": [
@@ -10271,10 +10271,10 @@
     "intro": "Compute the smallest common multiple shared by two integers.",
     "examples": [
       {
-        "description": "LCM of 12 and 18 \u21d2 36"
+        "description": "LCM of 12 and 18 ⇒ 36"
       },
       {
-        "description": "LCM of 7 and 5 \u21d2 35"
+        "description": "LCM of 7 and 5 ⇒ 35"
       }
     ],
     "faqs": [
@@ -10323,10 +10323,10 @@
     "intro": "Compute the non-negative remainder after dividing one number by another.",
     "examples": [
       {
-        "description": "10 mod 3 \u21d2 1"
+        "description": "10 mod 3 ⇒ 1"
       },
       {
-        "description": "-10 mod 3 \u21d2 2"
+        "description": "-10 mod 3 ⇒ 2"
       }
     ],
     "faqs": [
@@ -10375,10 +10375,10 @@
     "intro": "Gauge the theoretical strength of a password using entropy in bits.",
     "examples": [
       {
-        "description": "Length 8, charset 62 \u21d2 47.60 bits"
+        "description": "Length 8, charset 62 ⇒ 47.60 bits"
       },
       {
-        "description": "Length 12, charset 96 \u21d2 79.61 bits"
+        "description": "Length 12, charset 96 ⇒ 79.61 bits"
       }
     ],
     "faqs": [
@@ -10427,10 +10427,10 @@
     "intro": "Compute power in watts using voltage and current values.",
     "examples": [
       {
-        "description": "120 V and 2 A \u21d2 240 W"
+        "description": "120 V and 2 A ⇒ 240 W"
       },
       {
-        "description": "12 V and 1.5 A \u21d2 18 W"
+        "description": "12 V and 1.5 A ⇒ 18 W"
       }
     ],
     "faqs": [
@@ -10472,10 +10472,10 @@
     "intro": "Estimate the probability that at least two people in a group share the same birthday.",
     "examples": [
       {
-        "description": "Group of 23 \u21d2 50.73%"
+        "description": "Group of 23 ⇒ 50.73%"
       },
       {
-        "description": "Group of 50 \u21d2 97.04%"
+        "description": "Group of 50 ⇒ 97.04%"
       }
     ],
     "faqs": [
@@ -10514,7 +10514,7 @@
       },
       {
         "name": "angle",
-        "label": "Sun Angle (\u00b0)",
+        "label": "Sun Angle (°)",
         "type": "number",
         "step": "any",
         "placeholder": "45"
@@ -10524,10 +10524,10 @@
     "intro": "Calculate how long a shadow will be based on object height and sun elevation angle.",
     "examples": [
       {
-        "description": "Height 2 m, angle 45\u00b0 \u21d2 2 m"
+        "description": "Height 2 m, angle 45° ⇒ 2 m"
       },
       {
-        "description": "Height 1.5 m, angle 30\u00b0 \u21d2 2.60 m"
+        "description": "Height 1.5 m, angle 30° ⇒ 2.60 m"
       }
     ],
     "faqs": [
@@ -10566,10 +10566,10 @@
     "expression": "nm * 0.737562149",
     "examples": [
       {
-        "description": "10 Nm \u2192 7.38 ft\u00b7lb"
+        "description": "10 Nm → 7.38 ft·lb"
       },
       {
-        "description": "250 Nm \u2192 184.39 ft\u00b7lb"
+        "description": "250 Nm → 184.39 ft·lb"
       }
     ],
     "faqs": [
@@ -10591,7 +10591,7 @@
       }
     ],
     "disclaimer": "Verify torque settings with manufacturer documentation.",
-    "unit": "ft\u00b7lb"
+    "unit": "ft·lb"
   },
   {
     "slug": "psi-to-kpa",
@@ -10608,10 +10608,10 @@
     "expression": "psi * 6.89476",
     "examples": [
       {
-        "description": "30 PSI \u2192 206.84 kPa"
+        "description": "30 PSI → 206.84 kPa"
       },
       {
-        "description": "100 PSI \u2192 689.48 kPa"
+        "description": "100 PSI → 689.48 kPa"
       }
     ],
     "faqs": [
@@ -10650,10 +10650,10 @@
     "expression": "hours * 10",
     "examples": [
       {
-        "description": "1.5 h \u2192 15 units"
+        "description": "1.5 h → 15 units"
       },
       {
-        "description": "0.3 h \u2192 3 units"
+        "description": "0.3 h → 3 units"
       }
     ],
     "faqs": [
@@ -10697,10 +10697,10 @@
     "expression": "Math.max(total - regular, 0)",
     "examples": [
       {
-        "description": "45 total, 40 regular \u2192 5"
+        "description": "45 total, 40 regular → 5"
       },
       {
-        "description": "38 total, 40 regular \u2192 0"
+        "description": "38 total, 40 regular → 0"
       }
     ],
     "faqs": [
@@ -10744,10 +10744,10 @@
     "expression": "amount * percent / 100",
     "examples": [
       {
-        "description": "$50,000 at 30% \u2192 $15,000"
+        "description": "$50,000 at 30% → $15,000"
       },
       {
-        "description": "$120,000 at 25% \u2192 $30,000"
+        "description": "$120,000 at 25% → $30,000"
       }
     ],
     "faqs": [
@@ -10791,10 +10791,10 @@
     "expression": "hours * rate",
     "examples": [
       {
-        "description": "3 h at $90/hr \u2192 $270"
+        "description": "3 h at $90/hr → $270"
       },
       {
-        "description": "1.5 h at $120/hr \u2192 $180"
+        "description": "1.5 h at $120/hr → $180"
       }
     ],
     "faqs": [
@@ -10838,10 +10838,10 @@
     "expression": "weight * hours * 1.3",
     "examples": [
       {
-        "description": "70 kg for 8 h \u2192 728 kcal"
+        "description": "70 kg for 8 h → 728 kcal"
       },
       {
-        "description": "80 kg for 2 h \u2192 208 kcal"
+        "description": "80 kg for 2 h → 208 kcal"
       }
     ],
     "faqs": [
@@ -10873,7 +10873,7 @@
     "inputs": [
       {
         "name": "acc",
-        "hint": "Acceleration (m/s\u00b2)",
+        "hint": "Acceleration (m/s²)",
         "placeholder": "Enter acc"
       },
       {
@@ -10885,10 +10885,10 @@
     "expression": "acc * acc * hours",
     "examples": [
       {
-        "description": "5 m/s\u00b2 for 2 h \u2192 50 points"
+        "description": "5 m/s² for 2 h → 50 points"
       },
       {
-        "description": "8 m/s\u00b2 for 0.5 h \u2192 32 points"
+        "description": "8 m/s² for 0.5 h → 32 points"
       }
     ],
     "faqs": [
@@ -10932,10 +10932,10 @@
     "expression": "rise / run * 100",
     "examples": [
       {
-        "description": "6 in rise over 72 in run \u2192 8.33%"
+        "description": "6 in rise over 72 in run → 8.33%"
       },
       {
-        "description": "4 in rise over 48 in run \u2192 8.33%"
+        "description": "4 in rise over 48 in run → 8.33%"
       }
     ],
     "faqs": [
@@ -10979,10 +10979,10 @@
     "expression": "area / coverage",
     "examples": [
       {
-        "description": "400 sq ft at 250 sq ft/gal \u2192 1.6 gal"
+        "description": "400 sq ft at 250 sq ft/gal → 1.6 gal"
       },
       {
-        "description": "600 sq ft at 200 sq ft/gal \u2192 3 gal"
+        "description": "600 sq ft at 200 sq ft/gal → 3 gal"
       }
     ],
     "faqs": [
@@ -11026,10 +11026,10 @@
     "expression": "load / effort",
     "examples": [
       {
-        "description": "Load arm 2 m, effort arm 0.5 m \u2192 4"
+        "description": "Load arm 2 m, effort arm 0.5 m → 4"
       },
       {
-        "description": "Load arm 1 m, effort arm 0.25 m \u2192 4"
+        "description": "Load arm 1 m, effort arm 0.25 m → 4"
       }
     ],
     "faqs": [
@@ -11073,10 +11073,10 @@
     "expression": "part / total * 100",
     "examples": [
       {
-        "description": "30 of 120 pages \u2192 25%"
+        "description": "30 of 120 pages → 25%"
       },
       {
-        "description": "15 of 60 exhibits \u2192 25%"
+        "description": "15 of 60 exhibits → 25%"
       }
     ],
     "faqs": [
@@ -11120,10 +11120,10 @@
     "expression": "driven / driving",
     "examples": [
       {
-        "description": "Driven 40, driving 20 \u2192 2"
+        "description": "Driven 40, driving 20 → 2"
       },
       {
-        "description": "Driven 18, driving 12 \u2192 1.5"
+        "description": "Driven 18, driving 12 → 1.5"
       }
     ],
     "faqs": [
@@ -11167,10 +11167,10 @@
     "expression": "capacity / load",
     "examples": [
       {
-        "description": "5 Ah battery at 1 A load \u2192 5 h"
+        "description": "5 Ah battery at 1 A load → 5 h"
       },
       {
-        "description": "2 Ah battery at 0.5 A load \u2192 4 h"
+        "description": "2 Ah battery at 0.5 A load → 4 h"
       }
     ],
     "faqs": [
@@ -11214,10 +11214,10 @@
     "expression": "citations / pages",
     "examples": [
       {
-        "description": "20 citations over 10 pages \u2192 2 citations per page"
+        "description": "20 citations over 10 pages → 2 citations per page"
       },
       {
-        "description": "45 citations over 15 pages \u2192 3 citations per page"
+        "description": "45 citations over 15 pages → 3 citations per page"
       }
     ],
     "faqs": [
@@ -11261,16 +11261,16 @@
     "expression": "incidents * 200000 / hours",
     "examples": [
       {
-        "description": "3 incidents over 400,000 hours \u2192 1.5"
+        "description": "3 incidents over 400,000 hours → 1.5"
       },
       {
-        "description": "1 incident over 50,000 hours \u2192 4"
+        "description": "1 incident over 50,000 hours → 4"
       }
     ],
     "faqs": [
       {
         "question": "What does 200,000 represent?",
-        "answer": "The annual hours for 100 workers (40h \u00d7 50w)."
+        "answer": "The annual hours for 100 workers (40h × 50w)."
       },
       {
         "question": "Are near-misses included?",
@@ -11293,7 +11293,7 @@
     "title": "GPM to LPS Converter",
     "cluster": "Conversions",
     "description": "Convert gallons per minute to liters per second.",
-    "intro": "Quickly convert flow rates from US gallons per minute to liters per second\u2014handy for plumbing and irrigation setups.",
+    "intro": "Quickly convert flow rates from US gallons per minute to liters per second—handy for plumbing and irrigation setups.",
     "inputs": [
       {
         "name": "gpm",
@@ -11307,13 +11307,13 @@
     "unit": "L/s",
     "examples": [
       {
-        "description": "10 gpm \u21d2 0.63 L/s"
+        "description": "10 gpm ⇒ 0.63 L/s"
       },
       {
-        "description": "25 gpm \u21d2 1.58 L/s"
+        "description": "25 gpm ⇒ 1.58 L/s"
       },
       {
-        "description": "40 gpm \u21d2 2.52 L/s"
+        "description": "40 gpm ⇒ 2.52 L/s"
       }
     ],
     "faqs": [
@@ -11351,13 +11351,13 @@
     "unit": "ECTS",
     "examples": [
       {
-        "description": "3 credit hours \u21d2 6 ECTS"
+        "description": "3 credit hours ⇒ 6 ECTS"
       },
       {
-        "description": "9 credit hours \u21d2 18 ECTS"
+        "description": "9 credit hours ⇒ 18 ECTS"
       },
       {
-        "description": "12 credit hours \u21d2 24 ECTS"
+        "description": "12 credit hours ⇒ 24 ECTS"
       }
     ],
     "faqs": [
@@ -11430,13 +11430,13 @@
     "unit": "week",
     "examples": [
       {
-        "description": "Start 2025-01-15, date 2025-02-12 \u21d2 5"
+        "description": "Start 2025-01-15, date 2025-02-12 ⇒ 5"
       },
       {
-        "description": "Start 2025-08-25, date 2025-08-25 \u21d2 1"
+        "description": "Start 2025-08-25, date 2025-08-25 ⇒ 1"
       },
       {
-        "description": "Start 2025-08-25, date 2025-12-10 \u21d2 16"
+        "description": "Start 2025-08-25, date 2025-12-10 ⇒ 16"
       }
     ],
     "faqs": [
@@ -11481,13 +11481,13 @@
     "unit": "hour",
     "examples": [
       {
-        "description": "Start 8, cure 4 \u21d2 12"
+        "description": "Start 8, cure 4 ⇒ 12"
       },
       {
-        "description": "Start 15, cure 16 \u21d2 7"
+        "description": "Start 15, cure 16 ⇒ 7"
       },
       {
-        "description": "Start 22, cure 2 \u21d2 0"
+        "description": "Start 22, cure 2 ⇒ 0"
       }
     ],
     "faqs": [
@@ -11532,13 +11532,13 @@
     "unit": "USD",
     "examples": [
       {
-        "description": "$50,000 with 15% \u21d2 $42,500"
+        "description": "$50,000 with 15% ⇒ $42,500"
       },
       {
-        "description": "$100,000 with 40% \u21d2 $60,000"
+        "description": "$100,000 with 40% ⇒ $60,000"
       },
       {
-        "description": "$20,000 with 10% \u21d2 $18,000"
+        "description": "$20,000 with 10% ⇒ $18,000"
       }
     ],
     "faqs": [
@@ -11597,13 +11597,13 @@
     "unit": "USD",
     "examples": [
       {
-        "description": "50 ft, $2/ft, $60/hr, 0.05 h/ft \u21d2 $250"
+        "description": "50 ft, $2/ft, $60/hr, 0.05 h/ft ⇒ $250"
       },
       {
-        "description": "80 ft, $3/ft, $55/hr, 0.06 h/ft \u21d2 $504"
+        "description": "80 ft, $3/ft, $55/hr, 0.06 h/ft ⇒ $504"
       },
       {
-        "description": "30 ft, $1.5/ft, $40/hr, 0.04 h/ft \u21d2 $93"
+        "description": "30 ft, $1.5/ft, $40/hr, 0.04 h/ft ⇒ $93"
       }
     ],
     "faqs": [
@@ -11645,7 +11645,7 @@
       },
       {
         "name": "temperature",
-        "label": "Temp (\u00b0C)",
+        "label": "Temp (°C)",
         "type": "number",
         "step": "any",
         "placeholder": "30"
@@ -11655,13 +11655,13 @@
     "unit": "L",
     "examples": [
       {
-        "description": "70 kg, 2 h, 30\u00b0C \u21d2 5.39 L"
+        "description": "70 kg, 2 h, 30°C ⇒ 5.39 L"
       },
       {
-        "description": "80 kg, 1 h, 25\u00b0C \u21d2 2.80 L"
+        "description": "80 kg, 1 h, 25°C ⇒ 2.80 L"
       },
       {
-        "description": "60 kg, 3 h, 20\u00b0C \u21d2 6.30 L"
+        "description": "60 kg, 3 h, 20°C ⇒ 6.30 L"
       }
     ],
     "faqs": [
@@ -11706,13 +11706,13 @@
     "unit": "minutes",
     "examples": [
       {
-        "description": "UV 8, skin 2 \u21d2 5 min"
+        "description": "UV 8, skin 2 ⇒ 5 min"
       },
       {
-        "description": "UV 5, skin 4 \u21d2 13.33 min"
+        "description": "UV 5, skin 4 ⇒ 13.33 min"
       },
       {
-        "description": "UV 3, skin 6 \u21d2 66.67 min"
+        "description": "UV 3, skin 6 ⇒ 66.67 min"
       }
     ],
     "faqs": [
@@ -11771,13 +11771,13 @@
     "unit": "C:N",
     "examples": [
       {
-        "description": "10 kg greens (17), 5 kg browns (60) \u21d2 31.33 C:N"
+        "description": "10 kg greens (17), 5 kg browns (60) ⇒ 31.33 C:N"
       },
       {
-        "description": "5 kg greens (20), 15 kg browns (80) \u21d2 65 C:N"
+        "description": "5 kg greens (20), 15 kg browns (80) ⇒ 65 C:N"
       },
       {
-        "description": "8 kg greens (15), 8 kg browns (40) \u21d2 27.5 C:N"
+        "description": "8 kg greens (15), 8 kg browns (40) ⇒ 27.5 C:N"
       }
     ],
     "faqs": [
@@ -11822,13 +11822,13 @@
     "unit": "%",
     "examples": [
       {
-        "description": "50 ft run, 12 in drop \u21d2 2 %"
+        "description": "50 ft run, 12 in drop ⇒ 2 %"
       },
       {
-        "description": "40 ft run, 6 in drop \u21d2 1.25 %"
+        "description": "40 ft run, 6 in drop ⇒ 1.25 %"
       },
       {
-        "description": "80 ft run, 20 in drop \u21d2 2.08 %"
+        "description": "80 ft run, 20 in drop ⇒ 2.08 %"
       }
     ],
     "faqs": [
@@ -11838,7 +11838,7 @@
       },
       {
         "question": "What slope is typical?",
-        "answer": "Most drains require 1\u20132% slope for flow."
+        "answer": "Most drains require 1–2% slope for flow."
       },
       {
         "question": "Does pipe diameter matter?",
@@ -11851,8 +11851,8 @@
     "slug": "determinant-3x3-matrix",
     "title": "3x3 Determinant Calculator",
     "cluster": "Math",
-    "description": "Compute the determinant of a 3\u00d73 matrix.",
-    "intro": "Evaluate the determinant of a 3\u00d73 matrix\u2014useful for linear algebra tasks.",
+    "description": "Compute the determinant of a 3×3 matrix.",
+    "intro": "Evaluate the determinant of a 3×3 matrix—useful for linear algebra tasks.",
     "inputs": [
       {
         "name": "a11",
@@ -11922,13 +11922,13 @@
     "unit": "determinant",
     "examples": [
       {
-        "description": "[[1,2,3],[4,5,6],[7,8,9]] \u21d2 0"
+        "description": "[[1,2,3],[4,5,6],[7,8,9]] ⇒ 0"
       },
       {
-        "description": "[[2,0,1],[3,0,0],[5,1,1]] \u21d2 3"
+        "description": "[[2,0,1],[3,0,0],[5,1,1]] ⇒ 3"
       },
       {
-        "description": "[[6,1,1],[4,-2,5],[2,8,7]] \u21d2 -306"
+        "description": "[[6,1,1],[4,-2,5],[2,8,7]] ⇒ -306"
       }
     ],
     "faqs": [
@@ -11956,7 +11956,7 @@
     "inputs": [
       {
         "name": "lambda",
-        "label": "\u03bb (rate)",
+        "label": "λ (rate)",
         "type": "number",
         "step": "any",
         "placeholder": "2"
@@ -11973,18 +11973,18 @@
     "unit": "",
     "examples": [
       {
-        "description": "\u03bb=2, k=3 \u21d2 0.18"
+        "description": "λ=2, k=3 ⇒ 0.18"
       },
       {
-        "description": "\u03bb=4, k=1 \u21d2 0.07"
+        "description": "λ=4, k=1 ⇒ 0.07"
       },
       {
-        "description": "\u03bb=1, k=0 \u21d2 0.37"
+        "description": "λ=1, k=0 ⇒ 0.37"
       }
     ],
     "faqs": [
       {
-        "question": "What does \u03bb represent?",
+        "question": "What does λ represent?",
         "answer": "The average number of events in a given interval."
       },
       {
@@ -12031,13 +12031,13 @@
     "unit": "minutes",
     "examples": [
       {
-        "description": "5000 mAh, 10 A, 0 kg \u21d2 30 min"
+        "description": "5000 mAh, 10 A, 0 kg ⇒ 30 min"
       },
       {
-        "description": "6000 mAh, 12 A, 1 kg \u21d2 27.3 min"
+        "description": "6000 mAh, 12 A, 1 kg ⇒ 27.3 min"
       },
       {
-        "description": "8000 mAh, 15 A, 2 kg \u21d2 26.7 min"
+        "description": "8000 mAh, 15 A, 2 kg ⇒ 26.7 min"
       }
     ],
     "faqs": [
@@ -12089,13 +12089,13 @@
     "unit": "minutes",
     "examples": [
       {
-        "description": "100 mm, 0.2 mm, 50 mm/s \u21d2 600 min"
+        "description": "100 mm, 0.2 mm, 50 mm/s ⇒ 600 min"
       },
       {
-        "description": "50 mm, 0.25 mm, 60 mm/s \u21d2 200 min"
+        "description": "50 mm, 0.25 mm, 60 mm/s ⇒ 200 min"
       },
       {
-        "description": "200 mm, 0.3 mm, 40 mm/s \u21d2 1000 min"
+        "description": "200 mm, 0.3 mm, 40 mm/s ⇒ 1000 min"
       }
     ],
     "faqs": [
@@ -12140,13 +12140,13 @@
     "unit": "%",
     "examples": [
       {
-        "description": "3 applications at 20% \u21d2 48.8 %"
+        "description": "3 applications at 20% ⇒ 48.8 %"
       },
       {
-        "description": "5 applications at 10% \u21d2 40.95 %"
+        "description": "5 applications at 10% ⇒ 40.95 %"
       },
       {
-        "description": "1 application at 30% \u21d2 30 %"
+        "description": "1 application at 30% ⇒ 30 %"
       }
     ],
     "faqs": [
@@ -12184,13 +12184,13 @@
     "unit": "pt",
     "examples": [
       {
-        "description": "1 m \u21d2 14.17 pt"
+        "description": "1 m ⇒ 14.17 pt"
       },
       {
-        "description": "1.5 m \u21d2 21.26 pt"
+        "description": "1.5 m ⇒ 21.26 pt"
       },
       {
-        "description": "2 m \u21d2 28.34 pt"
+        "description": "2 m ⇒ 28.34 pt"
       }
     ],
     "faqs": [
@@ -12237,13 +12237,13 @@
     "intro": "Assess how efficiently a business manages inventory by calculating how many times it sells and replaces stock during a period.",
     "examples": [
       {
-        "description": "COGS 50,000 and average inventory 10,000 \u21d2 5 times"
+        "description": "COGS 50,000 and average inventory 10,000 ⇒ 5 times"
       },
       {
-        "description": "COGS 120,000 and average inventory 30,000 \u21d2 4 times"
+        "description": "COGS 120,000 and average inventory 30,000 ⇒ 4 times"
       },
       {
-        "description": "COGS 75,000 and average inventory 15,000 \u21d2 5 times"
+        "description": "COGS 75,000 and average inventory 15,000 ⇒ 5 times"
       }
     ],
     "faqs": [
@@ -12290,13 +12290,13 @@
     "intro": "Determine what percentage of your income you set aside each year.",
     "examples": [
       {
-        "description": "Income 50,000 and savings 10,000 \u21d2 20%"
+        "description": "Income 50,000 and savings 10,000 ⇒ 20%"
       },
       {
-        "description": "Income 40,000 and savings 4,000 \u21d2 10%"
+        "description": "Income 40,000 and savings 4,000 ⇒ 10%"
       },
       {
-        "description": "Income 60,000 and savings 9,000 \u21d2 15%"
+        "description": "Income 60,000 and savings 9,000 ⇒ 15%"
       }
     ],
     "faqs": [
@@ -12343,13 +12343,13 @@
     "intro": "Compute your average running pace per kilometer from distance and time.",
     "examples": [
       {
-        "description": "5 km in 25 min \u21d2 5 min/km"
+        "description": "5 km in 25 min ⇒ 5 min/km"
       },
       {
-        "description": "10 km in 45 min \u21d2 4.5 min/km"
+        "description": "10 km in 45 min ⇒ 4.5 min/km"
       },
       {
-        "description": "1 km in 4 min \u21d2 4 min/km"
+        "description": "1 km in 4 min ⇒ 4 min/km"
       }
     ],
     "faqs": [
@@ -12396,13 +12396,13 @@
     "intro": "Find the number of ordered arrangements of r items selected from n distinct items.",
     "examples": [
       {
-        "description": "n=5, r=2 \u21d2 20 ways"
+        "description": "n=5, r=2 ⇒ 20 ways"
       },
       {
-        "description": "n=6, r=3 \u21d2 120 ways"
+        "description": "n=6, r=3 ⇒ 120 ways"
       },
       {
-        "description": "n=10, r=0 \u21d2 1 way"
+        "description": "n=10, r=0 ⇒ 1 way"
       }
     ],
     "faqs": [
@@ -12441,13 +12441,13 @@
     "intro": "Convert volume in cups to tablespoons using the US customary system.",
     "examples": [
       {
-        "description": "1 cup \u21d2 16 tbsp"
+        "description": "1 cup ⇒ 16 tbsp"
       },
       {
-        "description": "0.5 cup \u21d2 8 tbsp"
+        "description": "0.5 cup ⇒ 8 tbsp"
       },
       {
-        "description": "2.25 cups \u21d2 36 tbsp"
+        "description": "2.25 cups ⇒ 36 tbsp"
       }
     ],
     "faqs": [
@@ -12504,13 +12504,13 @@
     "intro": "Determine the day number within the year for a given date, accounting for leap years.",
     "examples": [
       {
-        "description": "2024-01-01 \u21d2 1"
+        "description": "2024-01-01 ⇒ 1"
       },
       {
-        "description": "2024-12-31 \u21d2 366"
+        "description": "2024-12-31 ⇒ 366"
       },
       {
-        "description": "2025-03-01 \u21d2 60"
+        "description": "2025-03-01 ⇒ 60"
       }
     ],
     "faqs": [
@@ -12557,13 +12557,13 @@
     "intro": "Compute your grade point average by dividing total quality points by total credits attempted.",
     "examples": [
       {
-        "description": "36 points over 12 credits \u21d2 3.0 GPA"
+        "description": "36 points over 12 credits ⇒ 3.0 GPA"
       },
       {
-        "description": "45 points over 15 credits \u21d2 3.0 GPA"
+        "description": "45 points over 15 credits ⇒ 3.0 GPA"
       },
       {
-        "description": "50 points over 16 credits \u21d2 3.125 GPA"
+        "description": "50 points over 16 credits ⇒ 3.125 GPA"
       }
     ],
     "faqs": [
@@ -12610,13 +12610,13 @@
     "intro": "Calculate the resonant frequency where inductive and capacitive reactances cancel in an LC circuit.",
     "examples": [
       {
-        "description": "L=0.002 H, C=1e-6 F \u21d2 3558.5 Hz"
+        "description": "L=0.002 H, C=1e-6 F ⇒ 3558.5 Hz"
       },
       {
-        "description": "L=0.001 H, C=1e-9 F \u21d2 159154.9 Hz"
+        "description": "L=0.001 H, C=1e-9 F ⇒ 159154.9 Hz"
       },
       {
-        "description": "L=1 H, C=1e-6 F \u21d2 159.15 Hz"
+        "description": "L=1 H, C=1e-6 F ⇒ 159.15 Hz"
       }
     ],
     "faqs": [
@@ -12663,13 +12663,13 @@
     "intro": "Estimate CPU utilization percentage from measured busy time over total time.",
     "examples": [
       {
-        "description": "Busy 30 ms, total 100 ms \u21d2 30%"
+        "description": "Busy 30 ms, total 100 ms ⇒ 30%"
       },
       {
-        "description": "Busy 5 ms, total 20 ms \u21d2 25%"
+        "description": "Busy 5 ms, total 20 ms ⇒ 25%"
       },
       {
-        "description": "Busy 200 ms, total 500 ms \u21d2 40%"
+        "description": "Busy 200 ms, total 500 ms ⇒ 40%"
       }
     ],
     "faqs": [
@@ -12724,13 +12724,13 @@
     "intro": "Estimate how much a paint project will cost based on area, paint coverage and price per gallon.",
     "examples": [
       {
-        "description": "400 sq ft, 350 coverage, $25 \u21d2 $28.57"
+        "description": "400 sq ft, 350 coverage, $25 ⇒ $28.57"
       },
       {
-        "description": "1000 sq ft, 400 coverage, $30 \u21d2 $75"
+        "description": "1000 sq ft, 400 coverage, $30 ⇒ $75"
       },
       {
-        "description": "600 sq ft, 300 coverage, $20 \u21d2 $40"
+        "description": "600 sq ft, 300 coverage, $20 ⇒ $40"
       }
     ],
     "faqs": [
@@ -12777,13 +12777,13 @@
     "intro": "Calculate how many rest stops are needed on a road trip based on your maximum comfortable driving distance per leg.",
     "examples": [
       {
-        "description": "600 km with 150 km legs \u21d2 3 stops"
+        "description": "600 km with 150 km legs ⇒ 3 stops"
       },
       {
-        "description": "500 km with 200 km legs \u21d2 2 stops"
+        "description": "500 km with 200 km legs ⇒ 2 stops"
       },
       {
-        "description": "100 km with 300 km legs \u21d2 0 stops"
+        "description": "100 km with 300 km legs ⇒ 0 stops"
       }
     ],
     "faqs": [
@@ -12830,13 +12830,13 @@
     "intro": "Determine the percentage of impressions that result in clicks for an ad or email campaign.",
     "examples": [
       {
-        "description": "50 clicks, 1000 impressions \u21d2 5%"
+        "description": "50 clicks, 1000 impressions ⇒ 5%"
       },
       {
-        "description": "120 clicks, 4000 impressions \u21d2 3%"
+        "description": "120 clicks, 4000 impressions ⇒ 3%"
       },
       {
-        "description": "200 clicks, 2000 impressions \u21d2 10%"
+        "description": "200 clicks, 2000 impressions ⇒ 10%"
       }
     ],
     "faqs": [
@@ -12869,10 +12869,10 @@
     "expression": "mb/1024",
     "examples": [
       {
-        "description": "2048 MB \u21d2 2 GB"
+        "description": "2048 MB ⇒ 2 GB"
       },
       {
-        "description": "5120 MB \u21d2 5 GB"
+        "description": "5120 MB ⇒ 5 GB"
       }
     ],
     "faqs": [
@@ -12900,10 +12900,10 @@
     "expression": "percent/100",
     "examples": [
       {
-        "description": "25% \u21d2 0.25"
+        "description": "25% ⇒ 0.25"
       },
       {
-        "description": "150% \u21d2 1.5"
+        "description": "150% ⇒ 1.5"
       }
     ],
     "faqs": [
@@ -12931,10 +12931,10 @@
     "expression": "decimal*100",
     "examples": [
       {
-        "description": "0.85 \u21d2 85%"
+        "description": "0.85 ⇒ 85%"
       },
       {
-        "description": "1.2 \u21d2 120%"
+        "description": "1.2 ⇒ 120%"
       }
     ],
     "faqs": [
@@ -12966,10 +12966,10 @@
     "expression": "(meeting/workday)*100",
     "examples": [
       {
-        "description": "90 min of 480 \u21d2 18.75%"
+        "description": "90 min of 480 ⇒ 18.75%"
       },
       {
-        "description": "30 min of 300 \u21d2 10%"
+        "description": "30 min of 300 ⇒ 10%"
       }
     ],
     "faqs": [
@@ -12997,10 +12997,10 @@
     "expression": "(hours/2)*15",
     "examples": [
       {
-        "description": "8 h \u21d2 60 min"
+        "description": "8 h ⇒ 60 min"
       },
       {
-        "description": "5 h \u21d2 37.5 min"
+        "description": "5 h ⇒ 37.5 min"
       }
     ],
     "faqs": [
@@ -13032,10 +13032,10 @@
     "expression": "hours/day",
     "examples": [
       {
-        "description": "40 h at 8 \u21d2 5 days"
+        "description": "40 h at 8 ⇒ 5 days"
       },
       {
-        "description": "60 h at 7.5 \u21d2 8 days"
+        "description": "60 h at 7.5 ⇒ 8 days"
       }
     ],
     "faqs": [
@@ -13071,10 +13071,10 @@
     "expression": "rate*hours*weeks",
     "examples": [
       {
-        "description": "$25,40h,52w \u21d2 $52000"
+        "description": "$25,40h,52w ⇒ $52000"
       },
       {
-        "description": "$30,35h,48w \u21d2 $50400"
+        "description": "$30,35h,48w ⇒ $50400"
       }
     ],
     "faqs": [
@@ -13106,10 +13106,10 @@
     "expression": "((actual-budget)/budget)*100",
     "examples": [
       {
-        "description": "$1200 vs $1000 \u21d2 20%"
+        "description": "$1200 vs $1000 ⇒ 20%"
       },
       {
-        "description": "$900 vs $1000 \u21d2 -10%"
+        "description": "$900 vs $1000 ⇒ -10%"
       }
     ],
     "faqs": [
@@ -13141,10 +13141,10 @@
     "expression": "net/(1-tax/100)",
     "examples": [
       {
-        "description": "$1000 net at 30% \u21d2 $1428.57"
+        "description": "$1000 net at 30% ⇒ $1428.57"
       },
       {
-        "description": "$500 net at 25% \u21d2 $666.67"
+        "description": "$500 net at 25% ⇒ $666.67"
       }
     ],
     "faqs": [
@@ -13176,10 +13176,10 @@
     "expression": "(standing/total)*100",
     "examples": [
       {
-        "description": "120 of 960 \u21d2 12.5%"
+        "description": "120 of 960 ⇒ 12.5%"
       },
       {
-        "description": "240 of 600 \u21d2 40%"
+        "description": "240 of 600 ⇒ 40%"
       }
     ],
     "faqs": [
@@ -13207,10 +13207,10 @@
     "expression": "weight*3",
     "examples": [
       {
-        "description": "70 kg \u21d2 210 mg"
+        "description": "70 kg ⇒ 210 mg"
       },
       {
-        "description": "90 kg \u21d2 270 mg"
+        "description": "90 kg ⇒ 270 mg"
       }
     ],
     "faqs": [
@@ -13238,10 +13238,10 @@
     "expression": "(hours*60)/20",
     "examples": [
       {
-        "description": "6 h \u21d2 18 breaks"
+        "description": "6 h ⇒ 18 breaks"
       },
       {
-        "description": "3 h \u21d2 9 breaks"
+        "description": "3 h ⇒ 9 breaks"
       }
     ],
     "faqs": [
@@ -13277,10 +13277,10 @@
     "expression": "length*width*height",
     "examples": [
       {
-        "description": "0.5\u00d70.4\u00d70.3 \u21d2 0.06 m\u00b3"
+        "description": "0.5×0.4×0.3 ⇒ 0.06 m³"
       },
       {
-        "description": "1\u00d70.5\u00d70.5 \u21d2 0.25 m\u00b3"
+        "description": "1×0.5×0.5 ⇒ 0.25 m³"
       }
     ],
     "faqs": [
@@ -13312,10 +13312,10 @@
     "expression": "window*fullness",
     "examples": [
       {
-        "description": "150 cm at 2\u00d7 \u21d2 300 cm"
+        "description": "150 cm at 2× ⇒ 300 cm"
       },
       {
-        "description": "120 cm at 1.5\u00d7 \u21d2 180 cm"
+        "description": "120 cm at 1.5× ⇒ 180 cm"
       }
     ],
     "faqs": [
@@ -13355,10 +13355,10 @@
     "expression": "((old-new)*hours*30/1000)*rate",
     "examples": [
       {
-        "description": "60\u21929W,5h,$0.15 \u21d2 $6.84"
+        "description": "60→9W,5h,$0.15 ⇒ $6.84"
       },
       {
-        "description": "75\u219210W,3h,$0.20 \u21d2 $11.70"
+        "description": "75→10W,3h,$0.20 ⇒ $11.70"
       }
     ],
     "faqs": [
@@ -13406,10 +13406,10 @@
     "expression": "(v1*w1+v2*w2+v3*w3)/(w1+w2+w3)",
     "examples": [
       {
-        "description": "80,90,75 with 1,2,1 \u21d2 83.75"
+        "description": "80,90,75 with 1,2,1 ⇒ 83.75"
       },
       {
-        "description": "10,20,30 with 1,1,1 \u21d2 20"
+        "description": "10,20,30 with 1,1,1 ⇒ 20"
       }
     ],
     "faqs": [
@@ -13445,10 +13445,10 @@
     "expression": "(((a-((a+b+c)/3))^2+(b-((a+b+c)/3))^2+(c-((a+b+c)/3))^2)/2)^0.5",
     "examples": [
       {
-        "description": "10,12,15 \u21d2 2.52"
+        "description": "10,12,15 ⇒ 2.52"
       },
       {
-        "description": "5,5,5 \u21d2 0"
+        "description": "5,5,5 ⇒ 0"
       }
     ],
     "faqs": [
@@ -13480,10 +13480,10 @@
     "expression": "(part/total)*100",
     "examples": [
       {
-        "description": "30 of 200 \u21d2 15%"
+        "description": "30 of 200 ⇒ 15%"
       },
       {
-        "description": "50 of 80 \u21d2 62.5%"
+        "description": "50 of 80 ⇒ 62.5%"
       }
     ],
     "faqs": [
@@ -13515,10 +13515,10 @@
     "expression": "(load/capacity)*100",
     "examples": [
       {
-        "description": "300 W on 500 W \u21d2 60%"
+        "description": "300 W on 500 W ⇒ 60%"
       },
       {
-        "description": "450 W on 600 W \u21d2 75%"
+        "description": "450 W on 600 W ⇒ 75%"
       }
     ],
     "faqs": [
@@ -13550,10 +13550,10 @@
     "expression": "data*rate",
     "examples": [
       {
-        "description": "100 GB at $0.02 \u21d2 $2"
+        "description": "100 GB at $0.02 ⇒ $2"
       },
       {
-        "description": "250 GB at $0.015 \u21d2 $3.75"
+        "description": "250 GB at $0.015 ⇒ $3.75"
       }
     ],
     "faqs": [
@@ -13585,10 +13585,10 @@
     "expression": "price/yield",
     "examples": [
       {
-        "description": "$40 and 2000 pages \u21d2 $0.02"
+        "description": "$40 and 2000 pages ⇒ $0.02"
       },
       {
-        "description": "$25 and 500 pages \u21d2 $0.05"
+        "description": "$25 and 500 pages ⇒ $0.05"
       }
     ],
     "faqs": [
@@ -13616,10 +13616,10 @@
     "expression": "500/pages",
     "examples": [
       {
-        "description": "100 pages/day \u21d2 5 days"
+        "description": "100 pages/day ⇒ 5 days"
       },
       {
-        "description": "25 pages/day \u21d2 20 days"
+        "description": "25 pages/day ⇒ 20 days"
       }
     ],
     "faqs": [
@@ -13637,7 +13637,7 @@
     "slug": "printing-carbon-footprint",
     "title": "Printing Carbon Footprint",
     "cluster": "Other",
-    "intro": "Approximate CO\u2082 emissions using 0.0044 kg per printed page.",
+    "intro": "Approximate CO₂ emissions using 0.0044 kg per printed page.",
     "inputs": [
       {
         "name": "pages",
@@ -13647,10 +13647,10 @@
     "expression": "pages*0.0044",
     "examples": [
       {
-        "description": "500 pages \u21d2 2.2 kg CO\u2082"
+        "description": "500 pages ⇒ 2.2 kg CO₂"
       },
       {
-        "description": "100 pages \u21d2 0.44 kg CO\u2082"
+        "description": "100 pages ⇒ 0.44 kg CO₂"
       }
     ],
     "faqs": [
@@ -13672,7 +13672,7 @@
     "inputs": [
       {
         "name": "area",
-        "hint": "Total area (m\u00b2)"
+        "hint": "Total area (m²)"
       },
       {
         "name": "people",
@@ -13682,16 +13682,16 @@
     "expression": "area/people",
     "examples": [
       {
-        "description": "200 m\u00b2 & 10 \u21d2 20 m\u00b2/person"
+        "description": "200 m² & 10 ⇒ 20 m²/person"
       },
       {
-        "description": "90 m\u00b2 & 15 \u21d2 6 m\u00b2/person"
+        "description": "90 m² & 15 ⇒ 6 m²/person"
       }
     ],
     "faqs": [
       {
         "question": "Recommended area?",
-        "answer": "Often 10\u201315 m\u00b2 per person."
+        "answer": "Often 10–15 m² per person."
       },
       {
         "question": "Include common areas?",
@@ -13725,13 +13725,13 @@
     "unit": "%",
     "examples": [
       {
-        "description": "$20,000 revenue, $12,000 COGS \u21d2 40%"
+        "description": "$20,000 revenue, $12,000 COGS ⇒ 40%"
       },
       {
-        "description": "$8,000 revenue, $4,000 COGS \u21d2 50%"
+        "description": "$8,000 revenue, $4,000 COGS ⇒ 50%"
       },
       {
-        "description": "$1,000 revenue, $800 COGS \u21d2 20%"
+        "description": "$1,000 revenue, $800 COGS ⇒ 20%"
       }
     ],
     "faqs": [
@@ -13776,13 +13776,13 @@
     "unit": "USD",
     "examples": [
       {
-        "description": "$300,000 price at 20% \u21d2 $60,000"
+        "description": "$300,000 price at 20% ⇒ $60,000"
       },
       {
-        "description": "$20,000 price at 10% \u21d2 $2,000"
+        "description": "$20,000 price at 10% ⇒ $2,000"
       },
       {
-        "description": "$15,000 price at 15% \u21d2 $2,250"
+        "description": "$15,000 price at 15% ⇒ $2,250"
       }
     ],
     "faqs": [
@@ -13827,13 +13827,13 @@
     "unit": "ml/kg/min",
     "examples": [
       {
-        "description": "Age 30, 60 bpm \u21d2 47.5 ml/kg/min"
+        "description": "Age 30, 60 bpm ⇒ 47.5 ml/kg/min"
       },
       {
-        "description": "Age 40, 70 bpm \u21d2 38.6 ml/kg/min"
+        "description": "Age 40, 70 bpm ⇒ 38.6 ml/kg/min"
       },
       {
-        "description": "Age 25, 55 bpm \u21d2 53.6 ml/kg/min"
+        "description": "Age 25, 55 bpm ⇒ 53.6 ml/kg/min"
       }
     ],
     "faqs": [
@@ -13878,13 +13878,13 @@
     "unit": "%",
     "examples": [
       {
-        "description": "SD 5, mean 50 \u21d2 10%"
+        "description": "SD 5, mean 50 ⇒ 10%"
       },
       {
-        "description": "SD 4, mean 80 \u21d2 5%"
+        "description": "SD 4, mean 80 ⇒ 5%"
       },
       {
-        "description": "SD 3, mean 10 \u21d2 30%"
+        "description": "SD 3, mean 10 ⇒ 30%"
       }
     ],
     "faqs": [
@@ -13929,13 +13929,13 @@
     "unit": "Wh",
     "examples": [
       {
-        "description": "10 Ah at 12 V \u21d2 120 Wh"
+        "description": "10 Ah at 12 V ⇒ 120 Wh"
       },
       {
-        "description": "5 Ah at 24 V \u21d2 120 Wh"
+        "description": "5 Ah at 24 V ⇒ 120 Wh"
       },
       {
-        "description": "2 Ah at 3.7 V \u21d2 7.4 Wh"
+        "description": "2 Ah at 3.7 V ⇒ 7.4 Wh"
       }
     ],
     "faqs": [
@@ -13980,13 +13980,13 @@
     "unit": "hours",
     "examples": [
       {
-        "description": "2 h 30 m \u21d2 2.5 hours"
+        "description": "2 h 30 m ⇒ 2.5 hours"
       },
       {
-        "description": "1 h 45 m \u21d2 1.75 hours"
+        "description": "1 h 45 m ⇒ 1.75 hours"
       },
       {
-        "description": "0 h 15 m \u21d2 0.25 hours"
+        "description": "0 h 15 m ⇒ 0.25 hours"
       }
     ],
     "faqs": [
@@ -14031,13 +14031,13 @@
     "unit": "pages/day",
     "examples": [
       {
-        "description": "300 pages in 30 days \u21d2 10 pages/day"
+        "description": "300 pages in 30 days ⇒ 10 pages/day"
       },
       {
-        "description": "150 pages in 5 days \u21d2 30 pages/day"
+        "description": "150 pages in 5 days ⇒ 30 pages/day"
       },
       {
-        "description": "500 pages in 20 days \u21d2 25 pages/day"
+        "description": "500 pages in 20 days ⇒ 25 pages/day"
       }
     ],
     "faqs": [
@@ -14089,13 +14089,13 @@
     "unit": "g",
     "examples": [
       {
-        "description": "100 g with 5 y half-life after 5 y \u21d2 50 g"
+        "description": "100 g with 5 y half-life after 5 y ⇒ 50 g"
       },
       {
-        "description": "80 g with 2 y half-life after 6 y \u21d2 10 g"
+        "description": "80 g with 2 y half-life after 6 y ⇒ 10 g"
       },
       {
-        "description": "1 g with 3 d half-life after 9 d \u21d2 0.125 g"
+        "description": "1 g with 3 d half-life after 9 d ⇒ 0.125 g"
       }
     ],
     "faqs": [
@@ -14133,13 +14133,13 @@
     "unit": "addresses",
     "examples": [
       {
-        "description": "/64 \u21d2 18,446,744,073,709,551,616 addresses"
+        "description": "/64 ⇒ 18,446,744,073,709,551,616 addresses"
       },
       {
-        "description": "/48 \u21d2 1,208,925,819,614,629,174,706,176 addresses"
+        "description": "/48 ⇒ 1,208,925,819,614,629,174,706,176 addresses"
       },
       {
-        "description": "/32 \u21d2 79,228,162,514,264,337,593,543,950,336 addresses"
+        "description": "/32 ⇒ 79,228,162,514,264,337,593,543,950,336 addresses"
       }
     ],
     "faqs": [
@@ -14184,13 +14184,13 @@
     "unit": "kg",
     "examples": [
       {
-        "description": "50 kg per shelf \u00d7 4 shelves \u21d2 200 kg"
+        "description": "50 kg per shelf × 4 shelves ⇒ 200 kg"
       },
       {
-        "description": "30 kg per shelf \u00d7 5 shelves \u21d2 150 kg"
+        "description": "30 kg per shelf × 5 shelves ⇒ 150 kg"
       },
       {
-        "description": "100 kg per shelf \u00d7 3 shelves \u21d2 300 kg"
+        "description": "100 kg per shelf × 3 shelves ⇒ 300 kg"
       }
     ],
     "faqs": [
@@ -14235,13 +14235,13 @@
     "unit": "stops",
     "examples": [
       {
-        "description": "800 km trip, 400 km range \u21d2 1 stop"
+        "description": "800 km trip, 400 km range ⇒ 1 stop"
       },
       {
-        "description": "1500 km trip, 500 km range \u21d2 2 stops"
+        "description": "1500 km trip, 500 km range ⇒ 2 stops"
       },
       {
-        "description": "300 km trip, 600 km range \u21d2 0 stops"
+        "description": "300 km trip, 600 km range ⇒ 0 stops"
       }
     ],
     "faqs": [
@@ -14286,13 +14286,13 @@
     "unit": "%",
     "examples": [
       {
-        "description": "50 conversions, 1000 visitors \u21d2 5%"
+        "description": "50 conversions, 1000 visitors ⇒ 5%"
       },
       {
-        "description": "200 conversions, 4000 visitors \u21d2 5%"
+        "description": "200 conversions, 4000 visitors ⇒ 5%"
       },
       {
-        "description": "120 conversions, 1500 visitors \u21d2 8%"
+        "description": "120 conversions, 1500 visitors ⇒ 8%"
       }
     ],
     "faqs": [
@@ -14337,13 +14337,13 @@
     "unit": "%",
     "examples": [
       {
-        "description": "$50,000 income and $200,000 revenue \u21d2 25%"
+        "description": "$50,000 income and $200,000 revenue ⇒ 25%"
       },
       {
-        "description": "$120,000 income and $600,000 revenue \u21d2 20%"
+        "description": "$120,000 income and $600,000 revenue ⇒ 20%"
       },
       {
-        "description": "$80,000 income and $400,000 revenue \u21d2 20%"
+        "description": "$80,000 income and $400,000 revenue ⇒ 20%"
       }
     ],
     "faqs": [
@@ -14388,13 +14388,13 @@
     "unit": "USD",
     "examples": [
       {
-        "description": "$2,000 expenses for 3 months \u21d2 $6,000"
+        "description": "$2,000 expenses for 3 months ⇒ $6,000"
       },
       {
-        "description": "$2,500 expenses for 6 months \u21d2 $15,000"
+        "description": "$2,500 expenses for 6 months ⇒ $15,000"
       },
       {
-        "description": "$1,800 expenses for 4 months \u21d2 $7,200"
+        "description": "$1,800 expenses for 4 months ⇒ $7,200"
       }
     ],
     "faqs": [
@@ -14439,13 +14439,13 @@
     "unit": "days",
     "examples": [
       {
-        "description": "10 lb goal with 500 calorie deficit \u21d2 70 days"
+        "description": "10 lb goal with 500 calorie deficit ⇒ 70 days"
       },
       {
-        "description": "5 lb goal with 750 calorie deficit \u21d2 23.33 days"
+        "description": "5 lb goal with 750 calorie deficit ⇒ 23.33 days"
       },
       {
-        "description": "15 lb goal with 600 calorie deficit \u21d2 87.5 days"
+        "description": "15 lb goal with 600 calorie deficit ⇒ 87.5 days"
       }
     ],
     "faqs": [
@@ -14496,13 +14496,13 @@
     "expression": "3 / (1/a + 1/b + 1/c)",
     "examples": [
       {
-        "description": "1, 2, 4 \u21d2 1.71"
+        "description": "1, 2, 4 ⇒ 1.71"
       },
       {
-        "description": "10, 15, 20 \u21d2 14.40"
+        "description": "10, 15, 20 ⇒ 14.40"
       },
       {
-        "description": "5, 7, 9 \u21d2 6.77"
+        "description": "5, 7, 9 ⇒ 6.77"
       }
     ],
     "faqs": [
@@ -14554,13 +14554,13 @@
     "unit": "%",
     "examples": [
       {
-        "description": "Current 85%, final 40%, target 90% \u21d2 97.5%"
+        "description": "Current 85%, final 40%, target 90% ⇒ 97.5%"
       },
       {
-        "description": "Current 78%, final 30%, target 80% \u21d2 86.67%"
+        "description": "Current 78%, final 30%, target 80% ⇒ 86.67%"
       },
       {
-        "description": "Current 92%, final 50%, target 95% \u21d2 98%"
+        "description": "Current 92%, final 50%, target 95% ⇒ 98%"
       }
     ],
     "faqs": [
@@ -14584,11 +14584,11 @@
     "title": "Hydrostatic Pressure Calculator",
     "cluster": "science",
     "description": "Calculate pressure at a depth in a fluid.",
-    "intro": "Determine the pressure exerted by a static fluid at a given depth using \u03c1 g h.",
+    "intro": "Determine the pressure exerted by a static fluid at a given depth using ρ g h.",
     "inputs": [
       {
         "name": "density",
-        "label": "Fluid density (kg/m\u00b3)",
+        "label": "Fluid density (kg/m³)",
         "type": "number",
         "step": "any",
         "placeholder": "1000"
@@ -14605,19 +14605,19 @@
     "unit": "Pa",
     "examples": [
       {
-        "description": "1000 kg/m\u00b3 at 5 m \u21d2 49,050 Pa"
+        "description": "1000 kg/m³ at 5 m ⇒ 49,050 Pa"
       },
       {
-        "description": "1025 kg/m\u00b3 at 10 m \u21d2 100,552.5 Pa"
+        "description": "1025 kg/m³ at 10 m ⇒ 100,552.5 Pa"
       },
       {
-        "description": "850 kg/m\u00b3 at 3 m \u21d2 25,011.5 Pa"
+        "description": "850 kg/m³ at 3 m ⇒ 25,011.5 Pa"
       }
     ],
     "faqs": [
       {
         "question": "What constant is used for gravity?",
-        "answer": "This calculation uses 9.81 m/s\u00b2 for gravitational acceleration."
+        "answer": "This calculation uses 9.81 m/s² for gravitational acceleration."
       },
       {
         "question": "Does it include atmospheric pressure?",
@@ -14647,13 +14647,13 @@
     "expression": "parseInt(binary, 2)",
     "examples": [
       {
-        "description": "1010 \u21d2 10"
+        "description": "1010 ⇒ 10"
       },
       {
-        "description": "11111111 \u21d2 255"
+        "description": "11111111 ⇒ 255"
       },
       {
-        "description": "100000 \u21d2 32"
+        "description": "100000 ⇒ 32"
       }
     ],
     "faqs": [
@@ -14698,13 +14698,13 @@
     "unit": "posts",
     "examples": [
       {
-        "description": "30 m fence, 2.5 m spacing \u21d2 13 posts"
+        "description": "30 m fence, 2.5 m spacing ⇒ 13 posts"
       },
       {
-        "description": "20 m fence, 3 m spacing \u21d2 7 posts"
+        "description": "20 m fence, 3 m spacing ⇒ 7 posts"
       },
       {
-        "description": "25 m fence, 2 m spacing \u21d2 13 posts"
+        "description": "25 m fence, 2 m spacing ⇒ 13 posts"
       }
     ],
     "faqs": [
@@ -14749,13 +14749,13 @@
     "unit": "USD/day",
     "examples": [
       {
-        "description": "$2,000 over 5 days \u21d2 $400/day"
+        "description": "$2,000 over 5 days ⇒ $400/day"
       },
       {
-        "description": "$1,500 over 7 days \u21d2 $214.29/day"
+        "description": "$1,500 over 7 days ⇒ $214.29/day"
       },
       {
-        "description": "$3,000 over 10 days \u21d2 $300/day"
+        "description": "$3,000 over 10 days ⇒ $300/day"
       }
     ],
     "faqs": [
@@ -14800,13 +14800,13 @@
     "unit": "%",
     "examples": [
       {
-        "description": "500 opened of 1000 sent \u21d2 50%"
+        "description": "500 opened of 1000 sent ⇒ 50%"
       },
       {
-        "description": "750 opened of 1500 sent \u21d2 50%"
+        "description": "750 opened of 1500 sent ⇒ 50%"
       },
       {
-        "description": "200 opened of 800 sent \u21d2 25%"
+        "description": "200 opened of 800 sent ⇒ 25%"
       }
     ],
     "faqs": [
@@ -14844,13 +14844,13 @@
     "unit": "cups",
     "examples": [
       {
-        "description": "16 fl oz \u21d2 2 cups"
+        "description": "16 fl oz ⇒ 2 cups"
       },
       {
-        "description": "10 fl oz \u21d2 1.25 cups"
+        "description": "10 fl oz ⇒ 1.25 cups"
       },
       {
-        "description": "32 fl oz \u21d2 4 cups"
+        "description": "32 fl oz ⇒ 4 cups"
       }
     ],
     "faqs": [
@@ -14888,13 +14888,13 @@
     "unit": "hours",
     "examples": [
       {
-        "description": "30 years \u21d2 262,800 hours"
+        "description": "30 years ⇒ 262,800 hours"
       },
       {
-        "description": "25 years \u21d2 219,000 hours"
+        "description": "25 years ⇒ 219,000 hours"
       },
       {
-        "description": "40 years \u21d2 350,400 hours"
+        "description": "40 years ⇒ 350,400 hours"
       }
     ],
     "faqs": [
@@ -14939,7 +14939,7 @@
     "expression": "assets / liabilities",
     "examples": [
       {
-        "description": "50,000 assets and 25,000 liabilities \u21d2 2"
+        "description": "50,000 assets and 25,000 liabilities ⇒ 2"
       }
     ],
     "faqs": [
@@ -14975,7 +14975,7 @@
     "expression": "(loan * rate/100) / 12",
     "examples": [
       {
-        "description": "200,000 loan at 0.5% \u21d2 83.33"
+        "description": "200,000 loan at 0.5% ⇒ 83.33"
       }
     ],
     "faqs": [
@@ -15019,7 +15019,7 @@
     "expression": "(new Date(year, month-1, day + 280)).toISOString().slice(0,10)",
     "examples": [
       {
-        "description": "LMP 2025-01-01 \u21d2 2025-10-08"
+        "description": "LMP 2025-01-01 ⇒ 2025-10-08"
       }
     ],
     "faqs": [
@@ -15060,7 +15060,7 @@
     "expression": "((Math.abs(a-((a+b+c)/3)) + Math.abs(b-((a+b+c)/3)) + Math.abs(c-((a+b+c)/3)))/3)",
     "examples": [
       {
-        "description": "2, 4, 7 \u21d2 1.78"
+        "description": "2, 4, 7 ⇒ 1.78"
       }
     ],
     "faqs": [
@@ -15088,7 +15088,7 @@
     "expression": "mph * 1.60934",
     "examples": [
       {
-        "description": "60 mph \u21d2 96.56 km/h"
+        "description": "60 mph ⇒ 96.56 km/h"
       }
     ],
     "faqs": [
@@ -15132,7 +15132,7 @@
     "expression": "Date.UTC(year, month-1, day)/1000",
     "examples": [
       {
-        "description": "1970-01-01 \u21d2 0"
+        "description": "1970-01-01 ⇒ 0"
       }
     ],
     "faqs": [
@@ -15168,7 +15168,7 @@
     "expression": "(attended / total) * 100",
     "examples": [
       {
-        "description": "18 attended of 20 \u21d2 90%"
+        "description": "18 attended of 20 ⇒ 90%"
       }
     ],
     "faqs": [
@@ -15182,7 +15182,7 @@
     "slug": "spring-force",
     "title": "Spring Force Calculator",
     "cluster": "science & engineering",
-    "description": "Compute force using Hooke's Law (F = k \u00d7 x).",
+    "description": "Compute force using Hooke's Law (F = k × x).",
     "inputs": [
       {
         "name": "k",
@@ -15203,7 +15203,7 @@
     "expression": "k * x",
     "examples": [
       {
-        "description": "k=200 N/m, x=0.1 m \u21d2 20 N"
+        "description": "k=200 N/m, x=0.1 m ⇒ 20 N"
       }
     ],
     "faqs": [
@@ -15229,7 +15229,7 @@
     "expression": "parseInt(hex, 16)",
     "examples": [
       {
-        "description": "FF \u21d2 255"
+        "description": "FF ⇒ 255"
       }
     ],
     "faqs": [
@@ -15257,7 +15257,7 @@
     "expression": "area <= 75 ? 36 : area <= 144 ? 42 : area <= 225 ? 50 : area <= 400 ? 54 : 56",
     "examples": [
       {
-        "description": "150 sq ft \u21d2 50 in"
+        "description": "150 sq ft ⇒ 50 in"
       }
     ],
     "faqs": [
@@ -15293,7 +15293,7 @@
     "expression": "(map * scale) / 100000",
     "examples": [
       {
-        "description": "5 cm at 1:50,000 \u21d2 2.5 km"
+        "description": "5 cm at 1:50,000 ⇒ 2.5 km"
       }
     ],
     "faqs": [
@@ -15329,7 +15329,7 @@
     "expression": "(bounces / visits) * 100",
     "examples": [
       {
-        "description": "25 bounces out of 100 visits \u21d2 25%"
+        "description": "25 bounces out of 100 visits ⇒ 25%"
       }
     ],
     "faqs": [
@@ -15363,10 +15363,10 @@
     "expression": "investment / cashflow",
     "examples": [
       {
-        "description": "$10,000 investment with $2,500 inflow \u21d2 4 years"
+        "description": "$10,000 investment with $2,500 inflow ⇒ 4 years"
       },
       {
-        "description": "$5,000 investment with $1,000 inflow \u21d2 5 years"
+        "description": "$5,000 investment with $1,000 inflow ⇒ 5 years"
       }
     ],
     "faqs": [
@@ -15405,10 +15405,10 @@
     "expression": "(expenses / revenue) * 100",
     "examples": [
       {
-        "description": "Expenses $200k on $500k revenue \u21d2 40%"
+        "description": "Expenses $200k on $500k revenue ⇒ 40%"
       },
       {
-        "description": "Expenses $50k on $100k revenue \u21d2 50%"
+        "description": "Expenses $50k on $100k revenue ⇒ 50%"
       }
     ],
     "faqs": [
@@ -15454,10 +15454,10 @@
     "expression": "(function(balance,apr,payment){const r=apr/100/12;return Math.log(payment/(payment-r*balance))/Math.log(1+r);})(balance,apr,payment)",
     "examples": [
       {
-        "description": "$1,000 at 18% APR with $50 payment \u21d2 24 months"
+        "description": "$1,000 at 18% APR with $50 payment ⇒ 24 months"
       },
       {
-        "description": "$5,000 at 20% APR with $200 payment \u21d2 33 months"
+        "description": "$5,000 at 20% APR with $200 payment ⇒ 33 months"
       }
     ],
     "faqs": [
@@ -15510,10 +15510,10 @@
     "expression": "(function(p,rate,years,extra){const r=rate/100/12;const n=years*12;const pay=p*r*Math.pow(1+r,n)/(Math.pow(1+r,n)-1);const newPay=pay+extra;const newN=Math.log(newPay/(newPay - r*p))/Math.log(1+r);return n-newN;})(principal,rate,termYears,extra)",
     "examples": [
       {
-        "description": "$200k at 5% for 30y with $200 extra \u21d2 51 months saved"
+        "description": "$200k at 5% for 30y with $200 extra ⇒ 51 months saved"
       },
       {
-        "description": "$100k at 4% for 15y with $100 extra \u21d2 19 months saved"
+        "description": "$100k at 4% for 15y with $100 extra ⇒ 19 months saved"
       }
     ],
     "faqs": [
@@ -15552,10 +15552,10 @@
     "expression": "(hip / Math.pow(height/100, 1.5)) - 18",
     "examples": [
       {
-        "description": "Hip 100cm, height 170cm \u21d2 27%"
+        "description": "Hip 100cm, height 170cm ⇒ 27%"
       },
       {
-        "description": "Hip 90cm, height 165cm \u21d2 25%"
+        "description": "Hip 90cm, height 165cm ⇒ 25%"
       }
     ],
     "faqs": [
@@ -15594,10 +15594,10 @@
     "expression": "before - after",
     "examples": [
       {
-        "description": "70kg before, 69kg after \u21d2 1 liter"
+        "description": "70kg before, 69kg after ⇒ 1 liter"
       },
       {
-        "description": "80kg before, 79.2kg after \u21d2 0.8 liters"
+        "description": "80kg before, 79.2kg after ⇒ 0.8 liters"
       }
     ],
     "faqs": [
@@ -15643,10 +15643,10 @@
     "expression": "(function(a,b,c){a=Math.abs(Math.floor(a));b=Math.abs(Math.floor(b));c=Math.abs(Math.floor(c));function g(x,y){while(y){[x,y]=[y,x%y];}return x;}const l=a*b/g(a,b);return l*c/g(l,c);})(a,b,c)",
     "examples": [
       {
-        "description": "LCM of 4, 6, 8 \u21d2 24"
+        "description": "LCM of 4, 6, 8 ⇒ 24"
       },
       {
-        "description": "LCM of 5, 7, 9 \u21d2 315"
+        "description": "LCM of 5, 7, 9 ⇒ 315"
       }
     ],
     "faqs": [
@@ -15685,10 +15685,10 @@
     "expression": "(function(n,r){n=Math.floor(n);r=Math.floor(r);if(r<0||n<0||r>n)return 0;let num=1,den=1;for(let i=1;i<=r;i++){num*=n-(i-1);den*=i;}return num/den;})(n,r)",
     "examples": [
       {
-        "description": "5 choose 2 \u21d2 10"
+        "description": "5 choose 2 ⇒ 10"
       },
       {
-        "description": "10 choose 3 \u21d2 120"
+        "description": "10 choose 3 ⇒ 120"
       }
     ],
     "faqs": [
@@ -15720,10 +15720,10 @@
     "expression": "(f - 32) * 5/9 + 273.15",
     "examples": [
       {
-        "description": "32\u00b0F \u21d2 273.15 K"
+        "description": "32°F ⇒ 273.15 K"
       },
       {
-        "description": "212\u00b0F \u21d2 373.15 K"
+        "description": "212°F ⇒ 373.15 K"
       }
     ],
     "faqs": [
@@ -15755,10 +15755,10 @@
     "expression": "mm / 25.4",
     "examples": [
       {
-        "description": "50 mm \u21d2 1.97 in"
+        "description": "50 mm ⇒ 1.97 in"
       },
       {
-        "description": "100 mm \u21d2 3.94 in"
+        "description": "100 mm ⇒ 3.94 in"
       }
     ],
     "faqs": [
@@ -15797,10 +15797,10 @@
     "expression": "(function(y,w){const first=new Date(y,0,4);const day=(first.getDay()+6)%7;const monday=new Date(first);monday.setDate(first.getDate()-day);const target=new Date(monday);target.setDate(monday.getDate()+(w-1)*7);return target.toISOString().split('T')[0];})(year,week)",
     "examples": [
       {
-        "description": "2024 week 1 \u21d2 2024-01-01"
+        "description": "2024 week 1 ⇒ 2024-01-01"
       },
       {
-        "description": "2024 week 10 \u21d2 2024-03-04"
+        "description": "2024 week 10 ⇒ 2024-03-04"
       }
     ],
     "faqs": [
@@ -15853,10 +15853,10 @@
     "expression": "(function(y,m,d,days){let date=new Date(y,m-1,d);let added=0;while(added<days){date.setDate(date.getDate()+1);const day=date.getDay();if(day!==0&&day!==6)added++;}return date.toISOString().split('T')[0];})(y,m,d,days)",
     "examples": [
       {
-        "description": "Start 2024-06-03 +5 business days \u21d2 2024-06-10"
+        "description": "Start 2024-06-03 +5 business days ⇒ 2024-06-10"
       },
       {
-        "description": "Start 2024-12-29 +1 business day \u21d2 2024-12-31"
+        "description": "Start 2024-12-29 +1 business day ⇒ 2024-12-31"
       }
     ],
     "faqs": [
@@ -15897,10 +15897,10 @@
     "unit": "classes",
     "examples": [
       {
-        "description": "30 total classes with 80% required \u21d2 6 classes can be missed"
+        "description": "30 total classes with 80% required ⇒ 6 classes can be missed"
       },
       {
-        "description": "40 total classes with 75% required \u21d2 10 classes can be missed"
+        "description": "40 total classes with 75% required ⇒ 10 classes can be missed"
       }
     ],
     "faqs": [
@@ -15961,10 +15961,10 @@
     "expression": "(target*(creditsCompleted+newCredits) - current*creditsCompleted) / newCredits",
     "examples": [
       {
-        "description": "Current 3.0 over 60 credits aiming 3.2 with 15 credits \u21d2 4.0 GPA needed"
+        "description": "Current 3.0 over 60 credits aiming 3.2 with 15 credits ⇒ 4.0 GPA needed"
       },
       {
-        "description": "Current 3.5 over 45 credits aiming 3.6 with 15 credits \u21d2 3.9 GPA needed"
+        "description": "Current 3.5 over 45 credits aiming 3.6 with 15 credits ⇒ 3.9 GPA needed"
       }
     ],
     "faqs": [
@@ -16003,10 +16003,10 @@
     "expression": "Math.sqrt((2 * 6.674e-11 * mass) / radius)",
     "examples": [
       {
-        "description": "Earth \u21d2 11186 m/s"
+        "description": "Earth ⇒ 11186 m/s"
       },
       {
-        "description": "Moon \u21d2 2376 m/s"
+        "description": "Moon ⇒ 2376 m/s"
       }
     ],
     "faqs": [
@@ -16052,16 +16052,16 @@
     "expression": "(n * 0.082057 * temperature) / volume",
     "examples": [
       {
-        "description": "1 mol at 300K in 24L \u21d2 1.03 atm"
+        "description": "1 mol at 300K in 24L ⇒ 1.03 atm"
       },
       {
-        "description": "2 mol at 350K in 30L \u21d2 1.91 atm"
+        "description": "2 mol at 350K in 30L ⇒ 1.91 atm"
       }
     ],
     "faqs": [
       {
         "question": "What constant is used?",
-        "answer": "R = 0.082057 L\u00b7atm/(mol\u00b7K)."
+        "answer": "R = 0.082057 L·atm/(mol·K)."
       },
       {
         "question": "Does it work for real gases?",
@@ -16094,10 +16094,10 @@
     "expression": "Math.pow(2, entropy) / (2 * guesses) / 3600 / 24 / 365",
     "examples": [
       {
-        "description": "Entropy 40 with 1e6 guesses/sec \u21d2 0.017 years"
+        "description": "Entropy 40 with 1e6 guesses/sec ⇒ 0.017 years"
       },
       {
-        "description": "Entropy 60 with 1e9 guesses/sec \u21d2 18 years"
+        "description": "Entropy 60 with 1e9 guesses/sec ⇒ 18 years"
       }
     ],
     "faqs": [
@@ -16143,10 +16143,10 @@
     "expression": "(capacity - current) / monthlyGrowth",
     "examples": [
       {
-        "description": "50GB now, +5GB/mo to 200GB \u21d2 30 months"
+        "description": "50GB now, +5GB/mo to 200GB ⇒ 30 months"
       },
       {
-        "description": "20GB now, +2GB/mo to 50GB \u21d2 15 months"
+        "description": "20GB now, +2GB/mo to 50GB ⇒ 15 months"
       }
     ],
     "faqs": [
@@ -16183,7 +16183,7 @@
       },
       {
         "name": "density",
-        "label": "Snow Density (lb/ft\u00b3)",
+        "label": "Snow Density (lb/ft³)",
         "type": "number",
         "step": "any",
         "placeholder": "20"
@@ -16192,10 +16192,10 @@
     "expression": "area * depth * density",
     "examples": [
       {
-        "description": "1000 sq ft, 2 ft depth at 20 lb/ft\u00b3 \u21d2 40,000 lbs"
+        "description": "1000 sq ft, 2 ft depth at 20 lb/ft³ ⇒ 40,000 lbs"
       },
       {
-        "description": "500 sq ft, 1 ft depth at 15 lb/ft\u00b3 \u21d2 7,500 lbs"
+        "description": "500 sq ft, 1 ft depth at 15 lb/ft³ ⇒ 7,500 lbs"
       }
     ],
     "faqs": [
@@ -16248,10 +16248,10 @@
     "expression": "2*(length + width) - doors - windows",
     "examples": [
       {
-        "description": "20\u00d715 room minus 6ft doors and 8ft windows \u21d2 56 ft"
+        "description": "20×15 room minus 6ft doors and 8ft windows ⇒ 56 ft"
       },
       {
-        "description": "12\u00d710 room minus 3ft doors and 6ft windows \u21d2 35 ft"
+        "description": "12×10 room minus 3ft doors and 6ft windows ⇒ 35 ft"
       }
     ],
     "faqs": [
@@ -16290,10 +16290,10 @@
     "expression": "budget / nightly",
     "examples": [
       {
-        "description": "$1000 budget at $120/night \u21d2 8.33 nights"
+        "description": "$1000 budget at $120/night ⇒ 8.33 nights"
       },
       {
-        "description": "$600 budget at $75/night \u21d2 8 nights"
+        "description": "$600 budget at $75/night ⇒ 8 nights"
       }
     ],
     "faqs": [
@@ -16339,16 +16339,16 @@
     "expression": "(length * width * height) / 5000",
     "examples": [
       {
-        "description": "50\u00d740\u00d720 cm \u21d2 8 kg"
+        "description": "50×40×20 cm ⇒ 8 kg"
       },
       {
-        "description": "80\u00d750\u00d730 cm \u21d2 24 kg"
+        "description": "80×50×30 cm ⇒ 24 kg"
       }
     ],
     "faqs": [
       {
         "question": "Why divide by 5000?",
-        "answer": "Airlines often use 5000 to convert cm\u00b3 to kg for volume weight."
+        "answer": "Airlines often use 5000 to convert cm³ to kg for volume weight."
       },
       {
         "question": "Do all airlines use this factor?",
@@ -16381,10 +16381,10 @@
     "expression": "cost / clicks",
     "examples": [
       {
-        "description": "$200 cost for 1000 clicks \u21d2 $0.20 CPC"
+        "description": "$200 cost for 1000 clicks ⇒ $0.20 CPC"
       },
       {
-        "description": "$50 cost for 200 clicks \u21d2 $0.25 CPC"
+        "description": "$50 cost for 200 clicks ⇒ $0.25 CPC"
       }
     ],
     "faqs": [
@@ -16423,10 +16423,10 @@
     "expression": "(revenue / adspend) * 100",
     "examples": [
       {
-        "description": "$5,000 revenue on $1,000 spend \u21d2 500% ROAS"
+        "description": "$5,000 revenue on $1,000 spend ⇒ 500% ROAS"
       },
       {
-        "description": "$3,000 revenue on $1,500 spend \u21d2 200% ROAS"
+        "description": "$3,000 revenue on $1,500 spend ⇒ 200% ROAS"
       }
     ],
     "faqs": [
@@ -16467,10 +16467,10 @@
     "unit": "times",
     "examples": [
       {
-        "description": "500000 sales and 62500 receivables \u21d2 8 times"
+        "description": "500000 sales and 62500 receivables ⇒ 8 times"
       },
       {
-        "description": "200000 sales and 40000 receivables \u21d2 5 times"
+        "description": "200000 sales and 40000 receivables ⇒ 5 times"
       }
     ],
     "faqs": [
@@ -16519,10 +16519,10 @@
     "unit": "USD",
     "examples": [
       {
-        "description": "Assets $150,000 and liabilities $90,000 \u21d2 $60,000"
+        "description": "Assets $150,000 and liabilities $90,000 ⇒ $60,000"
       },
       {
-        "description": "Assets $100,000 and liabilities $120,000 \u21d2 -$20,000"
+        "description": "Assets $100,000 and liabilities $120,000 ⇒ -$20,000"
       }
     ],
     "faqs": [
@@ -16571,10 +16571,10 @@
     "unit": "L",
     "examples": [
       {
-        "description": "Male 80 kg \u21d2 5.6 L"
+        "description": "Male 80 kg ⇒ 5.6 L"
       },
       {
-        "description": "Female 60 kg \u21d2 3.9 L"
+        "description": "Female 60 kg ⇒ 3.9 L"
       }
     ],
     "faqs": [
@@ -16630,10 +16630,10 @@
     "unit": "z",
     "examples": [
       {
-        "description": "Value 85, mean 70, SD 10 \u21d2 1.5 z"
+        "description": "Value 85, mean 70, SD 10 ⇒ 1.5 z"
       },
       {
-        "description": "Value 60, mean 50, SD 5 \u21d2 2 z"
+        "description": "Value 60, mean 50, SD 5 ⇒ 2 z"
       }
     ],
     "faqs": [
@@ -16672,13 +16672,13 @@
       }
     ],
     "expression": "kelvin * 1.8",
-    "unit": "\u00b0R",
+    "unit": "°R",
     "examples": [
       {
-        "description": "273.15 K \u21d2 491.67 \u00b0R"
+        "description": "273.15 K ⇒ 491.67 °R"
       },
       {
-        "description": "400 K \u21d2 720 \u00b0R"
+        "description": "400 K ⇒ 720 °R"
       }
     ],
     "faqs": [
@@ -16720,10 +16720,10 @@
     "unit": "quarter",
     "examples": [
       {
-        "description": "Month 2 \u21d2 Q1"
+        "description": "Month 2 ⇒ Q1"
       },
       {
-        "description": "Month 11 \u21d2 Q4"
+        "description": "Month 11 ⇒ Q4"
       }
     ],
     "faqs": [
@@ -16772,10 +16772,10 @@
     "unit": "%",
     "examples": [
       {
-        "description": "40 of 50 cards correct \u21d2 80%"
+        "description": "40 of 50 cards correct ⇒ 80%"
       },
       {
-        "description": "24 of 30 cards correct \u21d2 80%"
+        "description": "24 of 30 cards correct ⇒ 80%"
       }
     ],
     "faqs": [
@@ -16828,13 +16828,13 @@
       }
     ],
     "expression": "(supply_voltage - forward_voltage) / (current_mA / 1000)",
-    "unit": "\u03a9",
+    "unit": "Ω",
     "examples": [
       {
-        "description": "9V supply, 2V LED, 20mA \u21d2 350 \u03a9"
+        "description": "9V supply, 2V LED, 20mA ⇒ 350 Ω"
       },
       {
-        "description": "5V supply, 3.2V LED, 25mA \u21d2 72 \u03a9"
+        "description": "5V supply, 3.2V LED, 25mA ⇒ 72 Ω"
       }
     ],
     "faqs": [
@@ -16883,10 +16883,10 @@
     "unit": "%",
     "examples": [
       {
-        "description": "Sent 1000, received 995 \u21d2 0.5% loss"
+        "description": "Sent 1000, received 995 ⇒ 0.5% loss"
       },
       {
-        "description": "Sent 500, received 475 \u21d2 5% loss"
+        "description": "Sent 500, received 475 ⇒ 5% loss"
       }
     ],
     "faqs": [
@@ -16935,10 +16935,10 @@
     "unit": "lb",
     "examples": [
       {
-        "description": "200 sq ft at 0.5 in \u21d2 550 lb"
+        "description": "200 sq ft at 0.5 in ⇒ 550 lb"
       },
       {
-        "description": "120 sq ft at 0.625 in \u21d2 412.5 lb"
+        "description": "120 sq ft at 0.625 in ⇒ 412.5 lb"
       }
     ],
     "faqs": [
@@ -16987,10 +16987,10 @@
     "unit": "minutes",
     "examples": [
       {
-        "description": "Burn time 10 min, SPF 30 \u21d2 300 min"
+        "description": "Burn time 10 min, SPF 30 ⇒ 300 min"
       },
       {
-        "description": "Burn time 15 min, SPF 20 \u21d2 300 min"
+        "description": "Burn time 15 min, SPF 20 ⇒ 300 min"
       }
     ],
     "faqs": [
@@ -17046,10 +17046,10 @@
     "unit": "%",
     "examples": [
       {
-        "description": "Start 1000, end 1500 over 6 months \u21d2 6.99%"
+        "description": "Start 1000, end 1500 over 6 months ⇒ 6.99%"
       },
       {
-        "description": "Start 2000, end 2600 over 12 months \u21d2 2.41%"
+        "description": "Start 2000, end 2600 over 12 months ⇒ 2.41%"
       }
     ],
     "faqs": [
@@ -17100,10 +17100,10 @@
     "unit": "USD/employee",
     "examples": [
       {
-        "description": "$1,000,000 revenue with 50 employees \u21d2 $20000 per employee"
+        "description": "$1,000,000 revenue with 50 employees ⇒ $20000 per employee"
       },
       {
-        "description": "$500,000 revenue with 10 employees \u21d2 $50000 per employee"
+        "description": "$500,000 revenue with 10 employees ⇒ $50000 per employee"
       }
     ],
     "faqs": [
@@ -17154,10 +17154,10 @@
     "unit": "%",
     "examples": [
       {
-        "description": "$1,200 rent from $4,000 income \u21d2 30%"
+        "description": "$1,200 rent from $4,000 income ⇒ 30%"
       },
       {
-        "description": "$800 rent from $2,400 income \u21d2 33.33%"
+        "description": "$800 rent from $2,400 income ⇒ 33.33%"
       }
     ],
     "faqs": [
@@ -17208,10 +17208,10 @@
     "unit": "minutes",
     "examples": [
       {
-        "description": "5 km at 5 min/km \u21d2 25 minutes"
+        "description": "5 km at 5 min/km ⇒ 25 minutes"
       },
       {
-        "description": "10 km at 6 min/km \u21d2 60 minutes"
+        "description": "10 km at 6 min/km ⇒ 60 minutes"
       }
     ],
     "faqs": [
@@ -17254,10 +17254,10 @@
     "unit": "value",
     "examples": [
       {
-        "description": "n = 7 \u21d2 13"
+        "description": "n = 7 ⇒ 13"
       },
       {
-        "description": "n = 10 \u21d2 55"
+        "description": "n = 10 ⇒ 55"
       }
     ],
     "faqs": [
@@ -17300,10 +17300,10 @@
     "unit": "mmHg",
     "examples": [
       {
-        "description": "1333.22 Pa \u21d2 10 mmHg"
+        "description": "1333.22 Pa ⇒ 10 mmHg"
       },
       {
-        "description": "101325 Pa \u21d2 760 mmHg"
+        "description": "101325 Pa ⇒ 760 mmHg"
       }
     ],
     "faqs": [
@@ -17380,10 +17380,10 @@
     "unit": "weeks",
     "examples": [
       {
-        "description": "Jan 1, 2024 to Feb 12, 2024 \u21d2 6 weeks"
+        "description": "Jan 1, 2024 to Feb 12, 2024 ⇒ 6 weeks"
       },
       {
-        "description": "Jul 1, 2024 to Aug 26, 2024 \u21d2 8 weeks"
+        "description": "Jul 1, 2024 to Aug 26, 2024 ⇒ 8 weeks"
       }
     ],
     "faqs": [
@@ -17434,10 +17434,10 @@
     "unit": "days",
     "examples": [
       {
-        "description": "4-day interval with 2.5 ease \u21d2 10 days"
+        "description": "4-day interval with 2.5 ease ⇒ 10 days"
       },
       {
-        "description": "10-day interval with 1.5 ease \u21d2 15 days"
+        "description": "10-day interval with 1.5 ease ⇒ 15 days"
       }
     ],
     "faqs": [
@@ -17488,10 +17488,10 @@
     "unit": "N",
     "examples": [
       {
-        "description": "10 kg with 2 m/s^2 \u21d2 20 N"
+        "description": "10 kg with 2 m/s^2 ⇒ 20 N"
       },
       {
-        "description": "5 kg with 9.81 m/s^2 \u21d2 49.05 N"
+        "description": "5 kg with 9.81 m/s^2 ⇒ 49.05 N"
       }
     ],
     "faqs": [
@@ -17550,10 +17550,10 @@
     "unit": "MB",
     "examples": [
       {
-        "description": "1920\u00d71080 at 24-bit \u21d2 5.93 MB"
+        "description": "1920×1080 at 24-bit ⇒ 5.93 MB"
       },
       {
-        "description": "800\u00d7600 at 8-bit \u21d2 0.46 MB"
+        "description": "800×600 at 8-bit ⇒ 0.46 MB"
       }
     ],
     "faqs": [
@@ -17612,10 +17612,10 @@
     "unit": "sq ft",
     "examples": [
       {
-        "description": "30 ft \u00d7 20 ft with 6 pitch \u21d2 670.82 sq ft"
+        "description": "30 ft × 20 ft with 6 pitch ⇒ 670.82 sq ft"
       },
       {
-        "description": "40 ft \u00d7 30 ft with 8 pitch \u21d2 1442.22 sq ft"
+        "description": "40 ft × 30 ft with 8 pitch ⇒ 1442.22 sq ft"
       }
     ],
     "faqs": [
@@ -17666,10 +17666,10 @@
     "unit": "USD/point",
     "examples": [
       {
-        "description": "50,000 points for $700 stay \u21d2 $0.014 per point"
+        "description": "50,000 points for $700 stay ⇒ $0.014 per point"
       },
       {
-        "description": "40,000 points for $500 stay \u21d2 $0.0125 per point"
+        "description": "40,000 points for $500 stay ⇒ $0.0125 per point"
       }
     ],
     "faqs": [
@@ -17736,10 +17736,10 @@
     "unit": "%",
     "examples": [
       {
-        "description": "500 likes, 60 comments, 40 shares, 10,000 followers \u21d2 6%"
+        "description": "500 likes, 60 comments, 40 shares, 10,000 followers ⇒ 6%"
       },
       {
-        "description": "100 likes, 10 comments, 5 shares, 5,000 followers \u21d2 2.3%"
+        "description": "100 likes, 10 comments, 5 shares, 5,000 followers ⇒ 2.3%"
       }
     ],
     "faqs": [
