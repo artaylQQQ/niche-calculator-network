@@ -22,6 +22,23 @@ const faqs = Array.isArray(schema?.faqs) && schema.faqs.length
       answer: 'Enter the required values and press Calculate to get the result.'
     }];
 
+// Additional informational snippets about units, measures, or context
+const info = (() => {
+  let extra = Array.isArray(schema?.info)
+    ? schema.info
+    : schema?.info
+    ? [schema.info]
+    : [];
+  if (!extra.length) {
+    if (schema?.unit) extra.push(`Result unit: ${schema.unit}`);
+    inputs.forEach((i) => {
+      if (i.units) extra.push(`${i.label ?? i.name} uses ${i.units}`);
+      else if (i.hint) extra.push(`${i.label ?? i.name}: ${i.hint}`);
+    });
+  }
+  return extra;
+})();
+
 function pickRelated(slug: string, cluster: string): string[] {
   const same = allCalcs.filter(
     (c) => c.slug !== slug && c.cluster && c.cluster.toLowerCase() === (cluster || '').toLowerCase()
@@ -118,6 +135,19 @@ const jsonLd = {
       <p>{f.answer}</p>
     </details>
   ))}
+</section>
+
+<section class="info">
+  <h2>Additional Information</h2>
+  {info.length ? (
+    <ul>
+      {info.map((i) => (
+        <li>{i}</li>
+      ))}
+    </ul>
+  ) : (
+    <p>No additional information available.</p>
+  )}
 </section>
 
 <section class="related">
