@@ -1,0 +1,52 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Water Hardness Converter"
+description: "Convert water hardness from ppm to grains per gallon."
+updated: "2025-09-30"
+cluster: "Home & DIY"
+---
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "water-hardness-converter",
+  "title": "Water Hardness Converter",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "ppm",
+      "label": "Hardness (ppm)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "120"
+    }
+  ],
+  "expression": "ppm / 17.118",
+  "unit": "gpg",
+  "intro": "This converter changes water hardness from parts per million (ppm) to grains per gallon (gpg). Enter hardness in ppm to see the equivalent gpg.",
+  "examples": [
+    {"description": "180 ppm ⇒ 10.52 gpg"},
+    {"description": "60 ppm ⇒ 3.51 gpg"}
+  ],
+  "faqs": [
+    {"question": "What is water hardness?", "answer": "It measures dissolved minerals, mainly calcium and magnesium, expressed as calcium carbonate."},
+    {"question": "How do I convert ppm to gpg?", "answer": "Divide the ppm value by 17.118 to obtain grains per gallon."},
+    {"question": "Does a higher gpg mean harder water?", "answer": "Yes, larger gpg values indicate harder water."},
+    {"question": "Can this calculator handle very high values?", "answer": "Yes, but residential water usually stays below 30 gpg."}
+  ],
+  "disclaimer": "For water quality guidance only; confirm results with professional testing.",
+  "info": [
+    "1 gpg equals 17.118 ppm.",
+    "Soft water is generally below 3 gpg."
+  ],
+  "cluster": "Home & DIY",
+  "related": [
+    "water-heater-recovery-time",
+    "shower-water-usage",
+    "daily-water-intake",
+    "rainwater-harvest",
+    "lawn-watering-time",
+    "coffee-to-water-ratio"
+  ]
+}
+
+<Calculator schema={schema} />
