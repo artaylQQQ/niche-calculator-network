@@ -1,0 +1,41 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Subscriber Churn Rate Calculator"
+description: "Measure the percentage of subscribers lost over a period."
+date: 2025-09-10
+updated: 2025-09-10
+cluster: "Web & Marketing"
+---
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "subscriber-churn-rate",
+  "title": "Subscriber Churn Rate Calculator",
+  "locale": "en",
+  "inputs": [
+    { "name": "start", "label": "Subscribers at Start", "type": "number", "step": "any", "placeholder": "1000" },
+    { "name": "end", "label": "Subscribers at End", "type": "number", "step": "any", "placeholder": "950" }
+  ],
+  "expression": "(start - end) / start * 100",
+  "unit": "%",
+  "intro": "Calculate the percentage of subscribers lost during a period by comparing starting and ending counts.",
+  "examples": [
+    { "description": "1000 start, 950 end ⇒ 5% churn" },
+    { "description": "5000 start, 4700 end ⇒ 6% churn" }
+  ],
+  "faqs": [
+    { "question": "What period should I use?", "answer": "Any consistent time frame such as month or year." },
+    { "question": "Does this include new subscribers?", "answer": "Churn measures loss; acquirements are not included." },
+    { "question": "Why track churn?", "answer": "High churn indicates retention issues in your service or content." },
+    { "question": "Can churn be negative?", "answer": "If end exceeds start, churn becomes negative, indicating growth." }
+  ],
+  "disclaimer": "Use accurate subscriber counts for meaningful results.",
+  "cluster": "Web & Marketing",
+  "info": [
+    "Lower churn rates reflect better subscriber retention.",
+    "Combine churn with acquisition metrics for full growth insights."
+  ],
+  "related": []
+}
+
+<Calculator schema={schema} />

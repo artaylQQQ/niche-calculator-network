@@ -1,0 +1,40 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "WPM to CPM Converter"
+description: "Convert typing speed from words per minute to characters per minute."
+date: 2025-09-10
+updated: 2025-09-10
+cluster: "Education & Learning"
+---
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "wpm-to-cpm",
+  "title": "WPM to CPM Converter",
+  "locale": "en",
+  "inputs": [
+    { "name": "wpm", "label": "Words per Minute", "type": "number", "step": "any", "placeholder": "40" }
+  ],
+  "expression": "wpm * 5",
+  "unit": "CPM",
+  "intro": "Estimate characters typed per minute by assuming an average word length of five characters.",
+  "examples": [
+    { "description": "40 WPM ⇒ 200 CPM" },
+    { "description": "70 WPM ⇒ 350 CPM" }
+  ],
+  "faqs": [
+    { "question": "Why multiply by five?", "answer": "Typing metrics commonly assume five characters per word." },
+    { "question": "Does accuracy matter?", "answer": "This conversion is an approximation; actual word length varies." },
+    { "question": "Can I convert CPM to WPM?", "answer": "Yes, divide characters per minute by five." },
+    { "question": "Is punctuation counted?", "answer": "Yes, characters include letters, spaces, and punctuation." }
+  ],
+  "disclaimer": "Average word length varies by language and context.",
+  "cluster": "Education & Learning",
+  "info": [
+    "Typing tests often use five characters per word.",
+    "CPM can be useful for coding or text-heavy tasks."
+  ],
+  "related": []
+}
+
+<Calculator schema={schema} />

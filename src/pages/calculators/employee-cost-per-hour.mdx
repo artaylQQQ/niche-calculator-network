@@ -1,0 +1,43 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Employee Cost per Hour Calculator"
+description: "Estimate the true hourly cost of an employee including salary, benefits, and overhead."
+date: 2025-09-10
+updated: 2025-09-10
+cluster: "Finance & Business"
+---
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "employee-cost-per-hour",
+  "title": "Employee Cost per Hour Calculator",
+  "locale": "en",
+  "inputs": [
+    { "name": "salary", "label": "Annual Salary (USD)", "type": "number", "step": "any", "placeholder": "52000" },
+    { "name": "benefits", "label": "Annual Benefits (USD)", "type": "number", "step": "any", "placeholder": "8000" },
+    { "name": "overhead", "label": "Annual Overhead (USD)", "type": "number", "step": "any", "placeholder": "7000" },
+    { "name": "hours", "label": "Annual Work Hours", "type": "number", "step": "any", "placeholder": "2080" }
+  ],
+  "expression": "(salary + benefits + overhead) / hours",
+  "unit": "USD/hour",
+  "intro": "Calculate the hourly cost of an employee by factoring salary, benefits, and overhead and dividing by annual work hours.",
+  "examples": [
+    { "description": "$52,000 salary + $8,000 benefits + $7,000 overhead over 2,080 hours ⇒ $32.21 per hour" },
+    { "description": "$60,000 salary + $10,000 benefits + $9,000 overhead over 2,000 hours ⇒ $39.50 per hour" }
+  ],
+  "faqs": [
+    { "question": "What counts as overhead?", "answer": "Overhead includes office space, equipment, and other indirect costs." },
+    { "question": "Why use annual hours?", "answer": "Annual hours spread total costs across actual working time." },
+    { "question": "Can this help with pricing?", "answer": "Yes, knowing true hourly cost aids in setting billing rates." },
+    { "question": "Does it include bonuses?", "answer": "Include bonuses in the salary field if they are expected annually." }
+  ],
+  "disclaimer": "Approximation only; adjust inputs for accurate results.",
+  "cluster": "Finance & Business",
+  "info": [
+    "Full-time work typically equals 2,080 hours per year.",
+    "Include all employee-related expenses for a realistic hourly rate."
+  ],
+  "related": []
+}
+
+<Calculator schema={schema} />

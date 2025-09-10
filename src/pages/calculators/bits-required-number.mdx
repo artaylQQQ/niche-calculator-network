@@ -1,0 +1,40 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Bits Required for Number Calculator"
+description: "Find the minimum number of bits needed to represent an integer."
+date: 2025-09-10
+updated: 2025-09-10
+cluster: "Technology & Coding"
+---
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "bits-required-number",
+  "title": "Bits Required for Number Calculator",
+  "locale": "en",
+  "inputs": [
+    { "name": "number", "label": "Integer", "type": "number", "step": "1", "min": "0", "placeholder": "15" }
+  ],
+  "expression": "Math.ceil(Math.log2(number + 1))",
+  "unit": "bits",
+  "intro": "Determine how many bits are needed to encode a non-negative integer in binary.",
+  "examples": [
+    { "description": "15 ⇒ 4 bits" },
+    { "description": "1023 ⇒ 10 bits" }
+  ],
+  "faqs": [
+    { "question": "Why add one before taking log2?", "answer": "It ensures exact bit count for powers of two." },
+    { "question": "What if the number is zero?", "answer": "Zero requires 1 bit (value 0)." },
+    { "question": "Can it handle large numbers?", "answer": "Yes, as long as they fit in JavaScript's numeric range." },
+    { "question": "Is this for signed integers?", "answer": "No, it calculates bits for unsigned representation." }
+  ],
+  "disclaimer": "Assumes ideal binary storage without overhead.",
+  "cluster": "Technology & Coding",
+  "info": [
+    "log2 computes the base-2 logarithm.",
+    "Binary digits (bits) are fundamental units of digital data."
+  ],
+  "related": []
+}
+
+<Calculator schema={schema} />

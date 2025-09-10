@@ -18177,5 +18177,348 @@
     ],
     "disclaimer": "For marketing analysis only; real engagement may vary by platform.",
     "info": []
+  },
+  {
+    "slug": "employee-cost-per-hour",
+    "title": "Employee Cost per Hour Calculator",
+    "cluster": "Finance & Business",
+    "description": "Estimate the true hourly cost of an employee including salary, benefits, and overhead.",
+    "intro": "Calculate the hourly cost of an employee by factoring salary, benefits, and overhead and dividing by annual work hours.",
+    "inputs": [
+      { "name": "salary", "label": "Annual Salary (USD)", "type": "number", "step": "any", "placeholder": "52000" },
+      { "name": "benefits", "label": "Annual Benefits (USD)", "type": "number", "step": "any", "placeholder": "8000" },
+      { "name": "overhead", "label": "Annual Overhead (USD)", "type": "number", "step": "any", "placeholder": "7000" },
+      { "name": "hours", "label": "Annual Work Hours", "type": "number", "step": "any", "placeholder": "2080" }
+    ],
+    "expression": "(salary + benefits + overhead) / hours",
+    "unit": "USD/hour",
+    "examples": [
+      { "description": "$52,000 salary + $8,000 benefits + $7,000 overhead over 2,080 hours ⇒ $32.21 per hour" },
+      { "description": "$60,000 salary + $10,000 benefits + $9,000 overhead over 2,000 hours ⇒ $39.50 per hour" }
+    ],
+    "faqs": [
+      { "question": "What counts as overhead?", "answer": "Overhead includes office space, equipment, and other indirect costs." },
+      { "question": "Why use annual hours?", "answer": "Annual hours spread total costs across actual working time." },
+      { "question": "Can this help with pricing?", "answer": "Yes, knowing true hourly cost aids in setting billing rates." },
+      { "question": "Does it include bonuses?", "answer": "Include bonuses in the salary field if they are expected annually." }
+    ],
+    "disclaimer": "Approximation only; adjust inputs for accurate results.",
+    "info": [
+      "Full-time work typically equals 2,080 hours per year.",
+      "Include all employee-related expenses for a realistic hourly rate."
+    ]
+  },
+  {
+    "slug": "biweekly-mortgage-payment",
+    "title": "Biweekly Mortgage Payment Calculator",
+    "cluster": "Personal Finance & Loans",
+    "description": "Compute the biweekly payment needed to amortize a mortgage.",
+    "intro": "Find your biweekly mortgage payment based on principal, interest rate, and loan term using 26 payments per year.",
+    "inputs": [
+      { "name": "principal", "label": "Loan Principal (USD)", "type": "number", "step": "any", "placeholder": "250000" },
+      { "name": "rate", "label": "Annual Interest Rate (%)", "type": "number", "step": "any", "placeholder": "5" },
+      { "name": "years", "label": "Loan Term (years)", "type": "number", "step": "any", "placeholder": "30" }
+    ],
+    "expression": "principal * ((rate/100)/26) / (1 - (1 + (rate/100)/26)^(-26*years))",
+    "unit": "USD",
+    "examples": [
+      { "description": "$250,000 at 5% for 30 years ⇒ $619.11 biweekly" },
+      { "description": "$400,000 at 4.5% for 20 years ⇒ $1,167.24 biweekly" }
+    ],
+    "faqs": [
+      { "question": "Why 26 payments per year?", "answer": "Biweekly schedules split monthly payments into 26 half-month installments." },
+      { "question": "Does this reduce interest?", "answer": "Yes, paying more frequently lowers total interest over the loan term." },
+      { "question": "Are taxes and insurance included?", "answer": "No, this calculator only covers principal and interest." },
+      { "question": "Can I change payment frequency?", "answer": "For monthly payments use a standard mortgage calculator." }
+    ],
+    "disclaimer": "Estimates only; consult your lender for actual payment schedules.",
+    "info": [
+      "Biweekly payments result in one extra monthly payment per year.",
+      "Round results to match your lender's payment structure."
+    ]
+  },
+  {
+    "slug": "target-heart-rate-karvonen",
+    "title": "Target Heart Rate (Karvonen) Calculator",
+    "cluster": "Health & Fitness",
+    "description": "Estimate training heart rate using the Karvonen formula.",
+    "intro": "Use the Karvonen method to find your target heart rate for exercise based on age, resting heart rate, and desired intensity.",
+    "inputs": [
+      { "name": "age", "label": "Age", "type": "number", "step": "any", "placeholder": "30" },
+      { "name": "rest", "label": "Resting Heart Rate", "type": "number", "step": "any", "placeholder": "60" },
+      { "name": "intensity", "label": "Intensity (%)", "type": "number", "step": "any", "placeholder": "70" }
+    ],
+    "expression": "(220 - age - rest) * (intensity/100) + rest",
+    "unit": "bpm",
+    "examples": [
+      { "description": "Age 30, resting 60 bpm at 70% ⇒ 151 bpm" },
+      { "description": "Age 45, resting 55 bpm at 60% ⇒ 127 bpm" }
+    ],
+    "faqs": [
+      { "question": "What is the Karvonen formula?", "answer": "It adjusts training heart rate using heart rate reserve." },
+      { "question": "Why include resting heart rate?", "answer": "Resting heart rate personalizes the calculation to your fitness level." },
+      { "question": "What intensity should I use?", "answer": "Use 50–85% depending on workout goals and fitness." },
+      { "question": "Is this accurate for everyone?", "answer": "It provides an estimate; consult a healthcare professional if unsure." }
+    ],
+    "disclaimer": "Not medical advice; seek professional guidance for training plans.",
+    "info": [
+      "Heart rate reserve equals maximum heart rate minus resting heart rate.",
+      "Intensity percentage reflects desired workout effort."
+    ]
+  },
+  {
+    "slug": "bayes-theorem",
+    "title": "Bayes' Theorem Calculator",
+    "cluster": "Math & Statistics",
+    "description": "Compute posterior probability from prior, likelihood, and false positive rate.",
+    "intro": "Apply Bayes' theorem to update a prior probability after observing new evidence.",
+    "inputs": [
+      { "name": "prior", "label": "Prior Probability (%)", "type": "number", "step": "any", "placeholder": "1" },
+      { "name": "likelihood", "label": "Likelihood P(B|A) (%)", "type": "number", "step": "any", "placeholder": "90" },
+      { "name": "falsePos", "label": "False Positive P(B|¬A) (%)", "type": "number", "step": "any", "placeholder": "5" }
+    ],
+    "expression": "((likelihood/100) * (prior/100)) / (((likelihood/100) * (prior/100)) + (falsePos/100) * (1 - prior/100)) * 100",
+    "unit": "%",
+    "examples": [
+      { "description": "Prior 1%, likelihood 90%, false positive 5% ⇒ 15.38%" },
+      { "description": "Prior 20%, likelihood 80%, false positive 10% ⇒ 66.67%" }
+    ],
+    "faqs": [
+      { "question": "What is a prior?", "answer": "The initial probability of an event before new evidence." },
+      { "question": "Why use percentages?", "answer": "Percentages are easier for many users; the formula converts them to decimals." },
+      { "question": "Can probabilities exceed 100%?", "answer": "No, inputs should be between 0 and 100%." },
+      { "question": "What does the result represent?", "answer": "The updated probability of the event after considering the evidence." }
+    ],
+    "disclaimer": "Assumes independent evidence and accurate input probabilities.",
+    "info": [
+      "Named after Reverend Thomas Bayes.",
+      "Useful for diagnostic testing and decision making under uncertainty."
+    ]
+  },
+  {
+    "slug": "lux-to-lumens",
+    "title": "Lux to Lumens Calculator",
+    "cluster": "Conversions & Units",
+    "description": "Convert illuminance in lux and area to luminous flux in lumens.",
+    "intro": "Determine total luminous flux by multiplying illuminance in lux by the lit area in square meters.",
+    "inputs": [
+      { "name": "lux", "label": "Illuminance (lux)", "type": "number", "step": "any", "placeholder": "500" },
+      { "name": "area", "label": "Area (m²)", "type": "number", "step": "any", "placeholder": "20" }
+    ],
+    "expression": "lux * area",
+    "unit": "lumens",
+    "examples": [
+      { "description": "500 lux over 20 m² ⇒ 10,000 lumens" },
+      { "description": "300 lux over 10 m² ⇒ 3,000 lumens" }
+    ],
+    "faqs": [
+      { "question": "What is lux?", "answer": "Lux measures illuminance or light per unit area." },
+      { "question": "Why multiply by area?", "answer": "Lumens quantify total light output; lux is lumens per square meter." },
+      { "question": "Does surface color matter?", "answer": "This calculation assumes uniform reflection and ignores color." },
+      { "question": "Can I use feet²?", "answer": "Convert feet² to m² before using this calculator." }
+    ],
+    "disclaimer": "Assumes even light distribution across the area.",
+    "info": [
+      "1 lumen equals 1 candela·steradian.",
+      "Typical office lighting ranges from 300–500 lux."
+    ]
+  },
+  {
+    "slug": "time-until-new-year",
+    "title": "Time Until New Year Calculator",
+    "cluster": "Date & Time",
+    "description": "Find the number of days from a date to the next New Year.",
+    "intro": "Enter a date to see how many days remain until January 1 of the following year.",
+    "inputs": [
+      { "name": "year", "label": "Current Year", "type": "number", "placeholder": "2024" },
+      { "name": "month", "label": "Month", "type": "number", "placeholder": "12" },
+      { "name": "day", "label": "Day", "type": "number", "placeholder": "1" }
+    ],
+    "expression": "(function(y,m,d){const now=new Date(Date.UTC(y,m-1,d));const next=new Date(Date.UTC(y+1,0,1));return (next-now)/86400000;})(year,month,day)",
+    "unit": "days",
+    "examples": [
+      { "description": "December 1, 2024 ⇒ 31 days" },
+      { "description": "July 1, 2024 ⇒ 184 days" }
+    ],
+    "faqs": [
+      { "question": "Does it account for leap years?", "answer": "Yes, using actual calendar days between dates." },
+      { "question": "Can I enter past years?", "answer": "Yes, the calculator works for any valid Gregorian date." },
+      { "question": "What if it's New Year's Day?", "answer": "The result will be 365 or 366 days depending on the year." },
+      { "question": "Why use UTC?", "answer": "UTC avoids time-zone differences affecting day counts." }
+    ],
+    "disclaimer": "Assumes Gregorian calendar without historical adjustments.",
+    "info": [
+      "There are 365 or 366 days in a year depending on leap years.",
+      "Day counts ignore daylight saving time changes."
+    ]
+  },
+  {
+    "slug": "wpm-to-cpm",
+    "title": "WPM to CPM Converter",
+    "cluster": "Education & Learning",
+    "description": "Convert typing speed from words per minute to characters per minute.",
+    "intro": "Estimate characters typed per minute by assuming an average word length of five characters.",
+    "inputs": [
+      { "name": "wpm", "label": "Words per Minute", "type": "number", "step": "any", "placeholder": "40" }
+    ],
+    "expression": "wpm * 5",
+    "unit": "CPM",
+    "examples": [
+      { "description": "40 WPM ⇒ 200 CPM" },
+      { "description": "70 WPM ⇒ 350 CPM" }
+    ],
+    "faqs": [
+      { "question": "Why multiply by five?", "answer": "Typing metrics commonly assume five characters per word." },
+      { "question": "Does accuracy matter?", "answer": "This conversion is an approximation; actual word length varies." },
+      { "question": "Can I convert CPM to WPM?", "answer": "Yes, divide characters per minute by five." },
+      { "question": "Is punctuation counted?", "answer": "Yes, characters include letters, spaces, and punctuation." }
+    ],
+    "disclaimer": "Average word length varies by language and context.",
+    "info": [
+      "Typing tests often use five characters per word.",
+      "CPM can be useful for coding or text-heavy tasks."
+    ]
+  },
+  {
+    "slug": "specific-heat-energy",
+    "title": "Specific Heat Energy Calculator",
+    "cluster": "Science & Engineering",
+    "description": "Estimate heat energy required using mass, specific heat, and temperature change.",
+    "intro": "Calculate the heat energy required to change the temperature of a substance using Q = m·c·ΔT.",
+    "inputs": [
+      { "name": "mass", "label": "Mass (kg)", "type": "number", "step": "any", "placeholder": "2" },
+      { "name": "c", "label": "Specific Heat (J/kg°C)", "type": "number", "step": "any", "placeholder": "4186" },
+      { "name": "delta", "label": "Temperature Change (°C)", "type": "number", "step": "any", "placeholder": "10" }
+    ],
+    "expression": "mass * c * delta",
+    "unit": "J",
+    "examples": [
+      { "description": "2 kg with c=4186 J/kg°C and ΔT=10°C ⇒ 83,720 J" },
+      { "description": "0.5 kg with c=900 J/kg°C and ΔT=30°C ⇒ 13,500 J" }
+    ],
+    "faqs": [
+      { "question": "What is specific heat?", "answer": "The energy needed to raise 1 kg of a substance by 1°C." },
+      { "question": "Can c vary?", "answer": "Yes, it depends on the material and temperature." },
+      { "question": "Is the result in Joules?", "answer": "Yes, Joules are the SI unit of energy." },
+      { "question": "Does phase change require more energy?", "answer": "Yes, additional latent heat is needed for phase transitions." }
+    ],
+    "disclaimer": "Assumes no heat loss to the environment.",
+    "info": [
+      "Water has a high specific heat of about 4186 J/kg°C.",
+      "Metal objects typically have lower specific heats than water."
+    ]
+  },
+  {
+    "slug": "bits-required-number",
+    "title": "Bits Required for Number Calculator",
+    "cluster": "Technology & Coding",
+    "description": "Find the minimum number of bits needed to represent an integer.",
+    "intro": "Determine how many bits are needed to encode a non-negative integer in binary.",
+    "inputs": [
+      { "name": "number", "label": "Integer", "type": "number", "step": "1", "min": "0", "placeholder": "15" }
+    ],
+    "expression": "Math.ceil(Math.log2(number + 1))",
+    "unit": "bits",
+    "examples": [
+      { "description": "15 ⇒ 4 bits" },
+      { "description": "1023 ⇒ 10 bits" }
+    ],
+    "faqs": [
+      { "question": "Why add one before taking log2?", "answer": "It ensures exact bit count for powers of two." },
+      { "question": "What if the number is zero?", "answer": "Zero requires 1 bit (value 0)." },
+      { "question": "Can it handle large numbers?", "answer": "Yes, as long as they fit in JavaScript's numeric range." },
+      { "question": "Is this for signed integers?", "answer": "No, it calculates bits for unsigned representation." }
+    ],
+    "disclaimer": "Assumes ideal binary storage without overhead.",
+    "info": [
+      "log2 computes the base-2 logarithm.",
+      "Binary digits (bits) are fundamental units of digital data."
+    ]
+  },
+  {
+    "slug": "ceiling-paint-needed",
+    "title": "Ceiling Paint Needed Calculator",
+    "cluster": "Home & DIY",
+    "description": "Estimate gallons of paint required for a ceiling based on area, coats, and coverage.",
+    "intro": "Calculate how many gallons of paint are needed for a ceiling by multiplying area by coats and dividing by paint coverage.",
+    "inputs": [
+      { "name": "length", "label": "Length (m)", "type": "number", "step": "any", "placeholder": "5" },
+      { "name": "width", "label": "Width (m)", "type": "number", "step": "any", "placeholder": "4" },
+      { "name": "coats", "label": "Number of Coats", "type": "number", "step": "any", "placeholder": "2" },
+      { "name": "coverage", "label": "Coverage (m² per gallon)", "type": "number", "step": "any", "placeholder": "35" }
+    ],
+    "expression": "length * width * coats / coverage",
+    "unit": "gallons",
+    "examples": [
+      { "description": "5 m × 4 m, 2 coats, 35 m²/gal ⇒ 1.14 gallons" },
+      { "description": "6 m × 3 m, 1 coat, 40 m²/gal ⇒ 0.45 gallons" }
+    ],
+    "faqs": [
+      { "question": "Does coverage vary by paint?", "answer": "Yes, check the paint can for exact coverage rates." },
+      { "question": "Should I add extra paint?", "answer": "Buying a little extra helps with touch-ups and errors." },
+      { "question": "How do I convert to liters?", "answer": "1 gallon is approximately 3.785 liters." },
+      { "question": "Does texture affect coverage?", "answer": "Rough surfaces may require more paint." }
+    ],
+    "disclaimer": "Estimates only; actual coverage depends on surface conditions.",
+    "info": [
+      "Standard ceiling paint coverage ranges 30–40 m² per gallon.",
+      "Include primer requirements separately if needed."
+    ]
+  },
+  {
+    "slug": "hiking-time-estimator",
+    "title": "Hiking Time Estimator",
+    "cluster": "Lifestyle & Travel",
+    "description": "Estimate hiking duration using distance and elevation gain.",
+    "intro": "Apply Naismith's rule to estimate hiking time from distance and elevation gain.",
+    "inputs": [
+      { "name": "distance", "label": "Distance (km)", "type": "number", "step": "any", "placeholder": "10" },
+      { "name": "elevation", "label": "Elevation Gain (m)", "type": "number", "step": "any", "placeholder": "600" }
+    ],
+    "expression": "distance / 5 + elevation / 600",
+    "unit": "hours",
+    "examples": [
+      { "description": "10 km with 600 m gain ⇒ 3 hours" },
+      { "description": "15 km with 300 m gain ⇒ 3.5 hours" }
+    ],
+    "faqs": [
+      { "question": "What is Naismith's rule?", "answer": "A formula estimating walking time based on distance and climb." },
+      { "question": "Does terrain matter?", "answer": "Yes, rough terrain can increase time beyond this estimate." },
+      { "question": "Is descent included?", "answer": "This basic rule focuses on ascent; adjust for steep descents." },
+      { "question": "Can I use miles and feet?", "answer": "Convert to kilometers and meters before using the calculator." }
+    ],
+    "disclaimer": "Times are estimates; adjust for fitness, weather, and trail conditions.",
+    "info": [
+      "Average hiking speed assumed is 5 km/h on flat terrain.",
+      "Add extra time for breaks and navigational challenges."
+    ]
+  },
+  {
+    "slug": "subscriber-churn-rate",
+    "title": "Subscriber Churn Rate Calculator",
+    "cluster": "Web & Marketing",
+    "description": "Measure the percentage of subscribers lost over a period.",
+    "intro": "Calculate the percentage of subscribers lost during a period by comparing starting and ending counts.",
+    "inputs": [
+      { "name": "start", "label": "Subscribers at Start", "type": "number", "step": "any", "placeholder": "1000" },
+      { "name": "end", "label": "Subscribers at End", "type": "number", "step": "any", "placeholder": "950" }
+    ],
+    "expression": "(start - end) / start * 100",
+    "unit": "%",
+    "examples": [
+      { "description": "1000 start, 950 end ⇒ 5% churn" },
+      { "description": "5000 start, 4700 end ⇒ 6% churn" }
+    ],
+    "faqs": [
+      { "question": "What period should I use?", "answer": "Any consistent time frame such as month or year." },
+      { "question": "Does this include new subscribers?", "answer": "Churn measures loss; acquirements are not included." },
+      { "question": "Why track churn?", "answer": "High churn indicates retention issues in your service or content." },
+      { "question": "Can churn be negative?", "answer": "If end exceeds start, churn becomes negative, indicating growth." }
+    ],
+    "disclaimer": "Use accurate subscriber counts for meaningful results.",
+    "info": [
+      "Lower churn rates reflect better subscriber retention.",
+      "Combine churn with acquisition metrics for full growth insights."
+    ]
   }
 ]

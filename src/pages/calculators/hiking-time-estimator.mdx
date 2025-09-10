@@ -1,0 +1,41 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Hiking Time Estimator"
+description: "Estimate hiking duration using distance and elevation gain."
+date: 2025-09-10
+updated: 2025-09-10
+cluster: "Lifestyle & Travel"
+---
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "hiking-time-estimator",
+  "title": "Hiking Time Estimator",
+  "locale": "en",
+  "inputs": [
+    { "name": "distance", "label": "Distance (km)", "type": "number", "step": "any", "placeholder": "10" },
+    { "name": "elevation", "label": "Elevation Gain (m)", "type": "number", "step": "any", "placeholder": "600" }
+  ],
+  "expression": "distance / 5 + elevation / 600",
+  "unit": "hours",
+  "intro": "Apply Naismith's rule to estimate hiking time from distance and elevation gain.",
+  "examples": [
+    { "description": "10 km with 600 m gain ⇒ 3 hours" },
+    { "description": "15 km with 300 m gain ⇒ 3.5 hours" }
+  ],
+  "faqs": [
+    { "question": "What is Naismith's rule?", "answer": "A formula estimating walking time based on distance and climb." },
+    { "question": "Does terrain matter?", "answer": "Yes, rough terrain can increase time beyond this estimate." },
+    { "question": "Is descent included?", "answer": "This basic rule focuses on ascent; adjust for steep descents." },
+    { "question": "Can I use miles and feet?", "answer": "Convert to kilometers and meters before using the calculator." }
+  ],
+  "disclaimer": "Times are estimates; adjust for fitness, weather, and trail conditions.",
+  "cluster": "Lifestyle & Travel",
+  "info": [
+    "Average hiking speed assumed is 5 km/h on flat terrain.",
+    "Add extra time for breaks and navigational challenges."
+  ],
+  "related": []
+}
+
+<Calculator schema={schema} />
