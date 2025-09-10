@@ -6,77 +6,79 @@ date: 2025-09-10
 updated: 2025-09-10
 cluster: "date-time"
 ---
-import Calculator from '../../components/Calculator.astro';
+
+import Calculator from "../../components/Calculator.astro";
 
 export const schema = {
-  "slug": "day-of-year",
-  "title": "Day of Year Calculator",
-  "locale": "en",
-  "inputs": [
+  slug: "day-of-year",
+  title: "Day of Year Calculator",
+  locale: "en",
+  inputs: [
     {
-      "name": "year",
-      "label": "Year",
-      "type": "number",
-      "step": 1,
-      "min": 1,
-      "placeholder": "2024"
+      name: "year",
+      label: "Year",
+      type: "number",
+      step: 1,
+      min: 1,
+      placeholder: "2024",
     },
     {
-      "name": "month",
-      "label": "Month",
-      "type": "number",
-      "step": 1,
-      "min": 1,
-      "max": 12,
-      "placeholder": "1"
+      name: "month",
+      label: "Month",
+      type: "number",
+      step: 1,
+      min: 1,
+      max: 12,
+      placeholder: "1",
     },
     {
-      "name": "day",
-      "label": "Day",
-      "type": "number",
-      "step": 1,
-      "min": 1,
-      "max": 31,
-      "placeholder": "1"
-    }
+      name: "day",
+      label: "Day",
+      type: "number",
+      step: 1,
+      min: 1,
+      max: 31,
+      placeholder: "1",
+    },
   ],
-  "expression": "(function(y,m,d){const days=[0,31,59,90,120,151,181,212,243,273,304,334];const leap=(y%4==0&&y%100!=0)||y%400==0;return days[m-1]+d+(leap&&m>2?1:0);})(year,month,day)",
-  "intro": "Determine the day number within the year for a given date, accounting for leap years.",
-  "examples": [
+  intro:
+    "Determine the day number within the year for a given date, accounting for leap years.",
+  examples: [
     {
-      "description": "2024-01-01 ⇒ 1"
+      description: "2024-01-01 ⇒ 1",
     },
     {
-      "description": "2024-12-31 ⇒ 366"
+      description: "2024-12-31 ⇒ 366",
     },
     {
-      "description": "2025-03-01 ⇒ 60"
-    }
+      description: "2025-03-01 ⇒ 60",
+    },
   ],
-  "faqs": [
+  faqs: [
     {
-      "question": "Does it handle leap years?",
-      "answer": "Yes, leap years add an extra day after February."
+      question: "Does it handle leap years?",
+      answer: "Yes, leap years add an extra day after February.",
     },
     {
-      "question": "What if the date is invalid?",
-      "answer": "Ensure month and day values form a valid date."
+      question: "What if the date is invalid?",
+      answer: "Ensure month and day values form a valid date.",
     },
     {
-      "question": "Is January 1 always day 1?",
-      "answer": "Yes, the first day of any year is day 1."
-    }
+      question: "Is January 1 always day 1?",
+      answer: "Yes, the first day of any year is day 1.",
+    },
   ],
-  "disclaimer": "For general calendrical calculations; verify for official scheduling.",
-  "cluster": "date-time",
-  "related": [
+  disclaimer:
+    "For general calendrical calculations; verify for official scheduling.",
+  cluster: "date-time",
+  related: [
     "percentage-discount",
     "simple-interest",
     "compound-interest-calculator",
     "bmi-calculator",
     "daily-calorie-burn",
-    "celsius-to-fahrenheit"
-  ]
-}
+    "celsius-to-fahrenheit",
+  ],
+};
 
 <Calculator schema={schema} />

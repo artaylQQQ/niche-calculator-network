@@ -116,11 +116,11 @@
         "answer": "No, it returns only the interest earned."
       }
     ],
-      "info": [
-        "Assumes constant monthly fee over the retention period.",
-        "Result represents gross revenue and excludes costs."
-      ]
-    },
+    "info": [
+      "Assumes constant monthly fee over the retention period.",
+      "Result represents gross revenue and excludes costs."
+    ]
+  },
   {
     "slug": "compound-interest-calculator",
     "title": "Compound Interest Calculator",
@@ -1146,17 +1146,17 @@
     "description": "Calculate waist-to-height ratio (WHtR) to evaluate body fat distribution.",
     "intro": "Enter your waist and height in the same units to compute the waist-to-height ratio.",
     "inputs": [
-        {
-          "name": "waist",
-          "hint": "Waist (cm)",
-          "placeholder": "80"
-        },
-        {
-          "name": "height",
-          "hint": "Height (cm)",
-          "placeholder": "170"
-        }
-      ],
+      {
+        "name": "waist",
+        "hint": "Waist (cm)",
+        "placeholder": "80"
+      },
+      {
+        "name": "height",
+        "hint": "Height (cm)",
+        "placeholder": "170"
+      }
+    ],
     "expression": "waist/height",
     "unit": "ratio",
     "examples": [
@@ -1167,29 +1167,29 @@
         "description": "90 cm waist and 180 cm height ⇒ 0.50"
       }
     ],
-      "faqs": [
-        {
-          "question": "What is WHtR?",
-          "answer": "The waist-to-height ratio compares waist circumference to height as a health indicator."
-        },
-        {
-          "question": "What range is considered healthy?",
-          "answer": "A value below 0.5 is often regarded as low risk for adults."
-        },
-        {
-          "question": "Do waist and height need the same unit?",
-          "answer": "Yes, using the same unit ensures the ratio is correct."
-        },
-        {
-          "question": "Can I use inches instead of centimeters?",
-          "answer": "Yes, as long as both measurements use inches."
-        }
-      ],
-      "info": [
-        "Result is a unitless ratio of waist circumference to height.",
-        "Values above 0.5 may indicate increased health risks."
-      ]
-    },
+    "faqs": [
+      {
+        "question": "What is WHtR?",
+        "answer": "The waist-to-height ratio compares waist circumference to height as a health indicator."
+      },
+      {
+        "question": "What range is considered healthy?",
+        "answer": "A value below 0.5 is often regarded as low risk for adults."
+      },
+      {
+        "question": "Do waist and height need the same unit?",
+        "answer": "Yes, using the same unit ensures the ratio is correct."
+      },
+      {
+        "question": "Can I use inches instead of centimeters?",
+        "answer": "Yes, as long as both measurements use inches."
+      }
+    ],
+    "info": [
+      "Result is a unitless ratio of waist circumference to height.",
+      "Values above 0.5 may indicate increased health risks."
+    ]
+  },
   {
     "slug": "data-transfer-time",
     "title": "Data Transfer Time Calculator",
@@ -1437,41 +1437,53 @@
     ],
     "info": []
   },
-    {
-      "slug": "flooring-cost",
-      "title": "Flooring Cost Calculator",
-      "cluster": "Home & DIY",
-      "description": "Estimate material cost of a flooring project from area and price per square meter.",
-      "intro": "Estimate total floor cost. Enter the values and press Calculate.",
-      "inputs": [
-        {
-          "name": "area",
-          "hint": "Area (m²)",
-          "placeholder": "50"
-        },
-        {
-          "name": "cost",
-          "hint": "Cost per m² ($)",
-          "placeholder": "10"
-        }
-      ],
-      "expression": "area*cost",
-      "unit": "USD",
-      "examples": [
-        {"description": "50 m² at $10 per m² ⇒ $500"},
-        {"description": "75 m² at $12 per m² ⇒ $900"}
-      ],
-      "faqs": [
-        {"question": "Does the price include installation?","answer": "No, it only multiplies area by cost per m²."},
-        {"question": "Can I use square feet?","answer": "Yes, as long as area and cost use the same unit."},
-        {"question": "How do I account for waste?","answer": "Increase the area by your expected waste percentage before calculating."},
-        {"question": "Is tax included?","answer": "Add any applicable taxes separately."}
-      ],
-      "info": [
-        "Result shows material cost only; labor and extras are not included.",
-        "Convert units before input if using feet or yards."
-      ]
-    },
+  {
+    "slug": "flooring-cost",
+    "title": "Flooring Cost Calculator",
+    "cluster": "Home & DIY",
+    "description": "Estimate material cost of a flooring project from area and price per square meter.",
+    "intro": "Estimate total floor cost. Enter the values and press Calculate.",
+    "inputs": [
+      {
+        "name": "area",
+        "hint": "Area (m²)",
+        "placeholder": "50"
+      },
+      {
+        "name": "cost",
+        "hint": "Cost per m² ($)",
+        "placeholder": "10"
+      }
+    ],
+    "expression": "area*cost",
+    "unit": "USD",
+    "examples": [
+      { "description": "50 m² at $10 per m² ⇒ $500" },
+      { "description": "75 m² at $12 per m² ⇒ $900" }
+    ],
+    "faqs": [
+      {
+        "question": "Does the price include installation?",
+        "answer": "No, it only multiplies area by cost per m²."
+      },
+      {
+        "question": "Can I use square feet?",
+        "answer": "Yes, as long as area and cost use the same unit."
+      },
+      {
+        "question": "How do I account for waste?",
+        "answer": "Increase the area by your expected waste percentage before calculating."
+      },
+      {
+        "question": "Is tax included?",
+        "answer": "Add any applicable taxes separately."
+      }
+    ],
+    "info": [
+      "Result shows material cost only; labor and extras are not included.",
+      "Convert units before input if using feet or yards."
+    ]
+  },
   {
     "slug": "concrete-slab-volume",
     "title": "Concrete Slab Volume",
@@ -2481,14 +2493,23 @@
     "expression": "bandwidth * 1000000 * latency / 1000 / 8",
     "unit": "bytes",
     "examples": [
-      {"description": "100 Mbps with 50 ms ⇒ 625000 bytes"},
-      {"description": "10 Mbps with 100 ms ⇒ 125000 bytes"}
+      { "description": "100 Mbps with 50 ms ⇒ 625000 bytes" },
+      { "description": "10 Mbps with 100 ms ⇒ 125000 bytes" }
     ],
     "faqs": [
-      {"question": "Why divide by 8?","answer": "To convert bits to bytes."},
-      {"question": "What is this value used for?","answer": "It helps determine optimal TCP window sizes."},
-      {"question": "Does higher latency increase the result?","answer": "Yes, more latency allows more data in-flight."},
-      {"question": "What units are returned?","answer": "The result is in bytes."}
+      { "question": "Why divide by 8?", "answer": "To convert bits to bytes." },
+      {
+        "question": "What is this value used for?",
+        "answer": "It helps determine optimal TCP window sizes."
+      },
+      {
+        "question": "Does higher latency increase the result?",
+        "answer": "Yes, more latency allows more data in-flight."
+      },
+      {
+        "question": "What units are returned?",
+        "answer": "The result is in bytes."
+      }
     ],
     "info": [
       "Useful for assessing network throughput and tuning protocols.",
@@ -6455,11 +6476,11 @@
     "disclaimer": "Provides only the x-coordinate; verify calculations in complex cases.",
     "info": []
   },
-    {
-      "slug": "battery-charge-time",
-      "title": "Battery Charge Time",
-      "cluster": "Technology & Coding",
-      "description": "Estimate how long a battery takes to charge.",
+  {
+    "slug": "battery-charge-time",
+    "title": "Battery Charge Time",
+    "cluster": "Technology & Coding",
+    "description": "Estimate how long a battery takes to charge.",
     "inputs": [
       {
         "name": "capacity",
@@ -6511,12 +6532,12 @@
         "answer": "It provides a basic estimate and doesn't account for tapering."
       }
     ],
-      "disclaimer": "Actual charge times vary with battery condition and charger design.",
-      "info": [
-        "Assumes constant current without tapering phases.",
-        "Returns charge duration in hours."
-      ]
-    },
+    "disclaimer": "Actual charge times vary with battery condition and charger design.",
+    "info": [
+      "Assumes constant current without tapering phases.",
+      "Returns charge duration in hours."
+    ]
+  },
   {
     "slug": "ohms-law-current",
     "title": "Ohm's Law Current",
@@ -10730,7 +10751,7 @@
         "placeholder": "23"
       }
     ],
-    "expression": "100 * (1 - (function(n){let p=1;for(let i=0;i<n;i++){p*= (365-i)/365;}return p;})(people))",
+    "expression": "",
     "intro": "Estimate the probability that at least two people in a group share the same birthday.",
     "examples": [
       {
@@ -12800,7 +12821,7 @@
         "placeholder": "1"
       }
     ],
-    "expression": "(function(y,m,d){const days=[0,31,59,90,120,151,181,212,243,273,304,334];const leap=(y%4==0&&y%100!=0)||y%400==0;return days[m-1]+d+(leap&&m>2?1:0);})(year,month,day)",
+    "expression": "",
     "unit": "day",
     "intro": "Determine the day number within the year for a given date, accounting for leap years.",
     "examples": [
@@ -18185,22 +18206,62 @@
     "description": "Estimate the true hourly cost of an employee including salary, benefits, and overhead.",
     "intro": "Calculate the hourly cost of an employee by factoring salary, benefits, and overhead and dividing by annual work hours.",
     "inputs": [
-      { "name": "salary", "label": "Annual Salary (USD)", "type": "number", "step": "any", "placeholder": "52000" },
-      { "name": "benefits", "label": "Annual Benefits (USD)", "type": "number", "step": "any", "placeholder": "8000" },
-      { "name": "overhead", "label": "Annual Overhead (USD)", "type": "number", "step": "any", "placeholder": "7000" },
-      { "name": "hours", "label": "Annual Work Hours", "type": "number", "step": "any", "placeholder": "2080" }
+      {
+        "name": "salary",
+        "label": "Annual Salary (USD)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "52000"
+      },
+      {
+        "name": "benefits",
+        "label": "Annual Benefits (USD)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "8000"
+      },
+      {
+        "name": "overhead",
+        "label": "Annual Overhead (USD)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "7000"
+      },
+      {
+        "name": "hours",
+        "label": "Annual Work Hours",
+        "type": "number",
+        "step": "any",
+        "placeholder": "2080"
+      }
     ],
     "expression": "(salary + benefits + overhead) / hours",
     "unit": "USD/hour",
     "examples": [
-      { "description": "$52,000 salary + $8,000 benefits + $7,000 overhead over 2,080 hours ⇒ $32.21 per hour" },
-      { "description": "$60,000 salary + $10,000 benefits + $9,000 overhead over 2,000 hours ⇒ $39.50 per hour" }
+      {
+        "description": "$52,000 salary + $8,000 benefits + $7,000 overhead over 2,080 hours ⇒ $32.21 per hour"
+      },
+      {
+        "description": "$60,000 salary + $10,000 benefits + $9,000 overhead over 2,000 hours ⇒ $39.50 per hour"
+      }
     ],
     "faqs": [
-      { "question": "What counts as overhead?", "answer": "Overhead includes office space, equipment, and other indirect costs." },
-      { "question": "Why use annual hours?", "answer": "Annual hours spread total costs across actual working time." },
-      { "question": "Can this help with pricing?", "answer": "Yes, knowing true hourly cost aids in setting billing rates." },
-      { "question": "Does it include bonuses?", "answer": "Include bonuses in the salary field if they are expected annually." }
+      {
+        "question": "What counts as overhead?",
+        "answer": "Overhead includes office space, equipment, and other indirect costs."
+      },
+      {
+        "question": "Why use annual hours?",
+        "answer": "Annual hours spread total costs across actual working time."
+      },
+      {
+        "question": "Can this help with pricing?",
+        "answer": "Yes, knowing true hourly cost aids in setting billing rates."
+      },
+      {
+        "question": "Does it include bonuses?",
+        "answer": "Include bonuses in the salary field if they are expected annually."
+      }
     ],
     "disclaimer": "Approximation only; adjust inputs for accurate results.",
     "info": [
@@ -18215,9 +18276,27 @@
     "description": "Compute the biweekly payment needed to amortize a mortgage.",
     "intro": "Find your biweekly mortgage payment based on principal, interest rate, and loan term using 26 payments per year.",
     "inputs": [
-      { "name": "principal", "label": "Loan Principal (USD)", "type": "number", "step": "any", "placeholder": "250000" },
-      { "name": "rate", "label": "Annual Interest Rate (%)", "type": "number", "step": "any", "placeholder": "5" },
-      { "name": "years", "label": "Loan Term (years)", "type": "number", "step": "any", "placeholder": "30" }
+      {
+        "name": "principal",
+        "label": "Loan Principal (USD)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "250000"
+      },
+      {
+        "name": "rate",
+        "label": "Annual Interest Rate (%)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "5"
+      },
+      {
+        "name": "years",
+        "label": "Loan Term (years)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "30"
+      }
     ],
     "expression": "principal * ((rate/100)/26) / (1 - (1 + (rate/100)/26)^(-26*years))",
     "unit": "USD",
@@ -18226,10 +18305,22 @@
       { "description": "$400,000 at 4.5% for 20 years ⇒ $1,167.24 biweekly" }
     ],
     "faqs": [
-      { "question": "Why 26 payments per year?", "answer": "Biweekly schedules split monthly payments into 26 half-month installments." },
-      { "question": "Does this reduce interest?", "answer": "Yes, paying more frequently lowers total interest over the loan term." },
-      { "question": "Are taxes and insurance included?", "answer": "No, this calculator only covers principal and interest." },
-      { "question": "Can I change payment frequency?", "answer": "For monthly payments use a standard mortgage calculator." }
+      {
+        "question": "Why 26 payments per year?",
+        "answer": "Biweekly schedules split monthly payments into 26 half-month installments."
+      },
+      {
+        "question": "Does this reduce interest?",
+        "answer": "Yes, paying more frequently lowers total interest over the loan term."
+      },
+      {
+        "question": "Are taxes and insurance included?",
+        "answer": "No, this calculator only covers principal and interest."
+      },
+      {
+        "question": "Can I change payment frequency?",
+        "answer": "For monthly payments use a standard mortgage calculator."
+      }
     ],
     "disclaimer": "Estimates only; consult your lender for actual payment schedules.",
     "info": [
@@ -18244,9 +18335,27 @@
     "description": "Estimate training heart rate using the Karvonen formula.",
     "intro": "Use the Karvonen method to find your target heart rate for exercise based on age, resting heart rate, and desired intensity.",
     "inputs": [
-      { "name": "age", "label": "Age", "type": "number", "step": "any", "placeholder": "30" },
-      { "name": "rest", "label": "Resting Heart Rate", "type": "number", "step": "any", "placeholder": "60" },
-      { "name": "intensity", "label": "Intensity (%)", "type": "number", "step": "any", "placeholder": "70" }
+      {
+        "name": "age",
+        "label": "Age",
+        "type": "number",
+        "step": "any",
+        "placeholder": "30"
+      },
+      {
+        "name": "rest",
+        "label": "Resting Heart Rate",
+        "type": "number",
+        "step": "any",
+        "placeholder": "60"
+      },
+      {
+        "name": "intensity",
+        "label": "Intensity (%)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "70"
+      }
     ],
     "expression": "(220 - age - rest) * (intensity/100) + rest",
     "unit": "bpm",
@@ -18255,10 +18364,22 @@
       { "description": "Age 45, resting 55 bpm at 60% ⇒ 127 bpm" }
     ],
     "faqs": [
-      { "question": "What is the Karvonen formula?", "answer": "It adjusts training heart rate using heart rate reserve." },
-      { "question": "Why include resting heart rate?", "answer": "Resting heart rate personalizes the calculation to your fitness level." },
-      { "question": "What intensity should I use?", "answer": "Use 50–85% depending on workout goals and fitness." },
-      { "question": "Is this accurate for everyone?", "answer": "It provides an estimate; consult a healthcare professional if unsure." }
+      {
+        "question": "What is the Karvonen formula?",
+        "answer": "It adjusts training heart rate using heart rate reserve."
+      },
+      {
+        "question": "Why include resting heart rate?",
+        "answer": "Resting heart rate personalizes the calculation to your fitness level."
+      },
+      {
+        "question": "What intensity should I use?",
+        "answer": "Use 50–85% depending on workout goals and fitness."
+      },
+      {
+        "question": "Is this accurate for everyone?",
+        "answer": "It provides an estimate; consult a healthcare professional if unsure."
+      }
     ],
     "disclaimer": "Not medical advice; seek professional guidance for training plans.",
     "info": [
@@ -18273,21 +18394,53 @@
     "description": "Compute posterior probability from prior, likelihood, and false positive rate.",
     "intro": "Apply Bayes' theorem to update a prior probability after observing new evidence.",
     "inputs": [
-      { "name": "prior", "label": "Prior Probability (%)", "type": "number", "step": "any", "placeholder": "1" },
-      { "name": "likelihood", "label": "Likelihood P(B|A) (%)", "type": "number", "step": "any", "placeholder": "90" },
-      { "name": "falsePos", "label": "False Positive P(B|¬A) (%)", "type": "number", "step": "any", "placeholder": "5" }
+      {
+        "name": "prior",
+        "label": "Prior Probability (%)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "1"
+      },
+      {
+        "name": "likelihood",
+        "label": "Likelihood P(B|A) (%)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "90"
+      },
+      {
+        "name": "falsePos",
+        "label": "False Positive P(B|¬A) (%)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "5"
+      }
     ],
     "expression": "((likelihood/100) * (prior/100)) / (((likelihood/100) * (prior/100)) + (falsePos/100) * (1 - prior/100)) * 100",
     "unit": "%",
     "examples": [
       { "description": "Prior 1%, likelihood 90%, false positive 5% ⇒ 15.38%" },
-      { "description": "Prior 20%, likelihood 80%, false positive 10% ⇒ 66.67%" }
+      {
+        "description": "Prior 20%, likelihood 80%, false positive 10% ⇒ 66.67%"
+      }
     ],
     "faqs": [
-      { "question": "What is a prior?", "answer": "The initial probability of an event before new evidence." },
-      { "question": "Why use percentages?", "answer": "Percentages are easier for many users; the formula converts them to decimals." },
-      { "question": "Can probabilities exceed 100%?", "answer": "No, inputs should be between 0 and 100%." },
-      { "question": "What does the result represent?", "answer": "The updated probability of the event after considering the evidence." }
+      {
+        "question": "What is a prior?",
+        "answer": "The initial probability of an event before new evidence."
+      },
+      {
+        "question": "Why use percentages?",
+        "answer": "Percentages are easier for many users; the formula converts them to decimals."
+      },
+      {
+        "question": "Can probabilities exceed 100%?",
+        "answer": "No, inputs should be between 0 and 100%."
+      },
+      {
+        "question": "What does the result represent?",
+        "answer": "The updated probability of the event after considering the evidence."
+      }
     ],
     "disclaimer": "Assumes independent evidence and accurate input probabilities.",
     "info": [
@@ -18302,8 +18455,20 @@
     "description": "Convert illuminance in lux and area to luminous flux in lumens.",
     "intro": "Determine total luminous flux by multiplying illuminance in lux by the lit area in square meters.",
     "inputs": [
-      { "name": "lux", "label": "Illuminance (lux)", "type": "number", "step": "any", "placeholder": "500" },
-      { "name": "area", "label": "Area (m²)", "type": "number", "step": "any", "placeholder": "20" }
+      {
+        "name": "lux",
+        "label": "Illuminance (lux)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "500"
+      },
+      {
+        "name": "area",
+        "label": "Area (m²)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "20"
+      }
     ],
     "expression": "lux * area",
     "unit": "lumens",
@@ -18312,10 +18477,22 @@
       { "description": "300 lux over 10 m² ⇒ 3,000 lumens" }
     ],
     "faqs": [
-      { "question": "What is lux?", "answer": "Lux measures illuminance or light per unit area." },
-      { "question": "Why multiply by area?", "answer": "Lumens quantify total light output; lux is lumens per square meter." },
-      { "question": "Does surface color matter?", "answer": "This calculation assumes uniform reflection and ignores color." },
-      { "question": "Can I use feet²?", "answer": "Convert feet² to m² before using this calculator." }
+      {
+        "question": "What is lux?",
+        "answer": "Lux measures illuminance or light per unit area."
+      },
+      {
+        "question": "Why multiply by area?",
+        "answer": "Lumens quantify total light output; lux is lumens per square meter."
+      },
+      {
+        "question": "Does surface color matter?",
+        "answer": "This calculation assumes uniform reflection and ignores color."
+      },
+      {
+        "question": "Can I use feet²?",
+        "answer": "Convert feet² to m² before using this calculator."
+      }
     ],
     "disclaimer": "Assumes even light distribution across the area.",
     "info": [
@@ -18330,8 +18507,18 @@
     "description": "Find the number of days from a date to the next New Year.",
     "intro": "Enter a date to see how many days remain until January 1 of the following year.",
     "inputs": [
-      { "name": "year", "label": "Current Year", "type": "number", "placeholder": "2024" },
-      { "name": "month", "label": "Month", "type": "number", "placeholder": "12" },
+      {
+        "name": "year",
+        "label": "Current Year",
+        "type": "number",
+        "placeholder": "2024"
+      },
+      {
+        "name": "month",
+        "label": "Month",
+        "type": "number",
+        "placeholder": "12"
+      },
       { "name": "day", "label": "Day", "type": "number", "placeholder": "1" }
     ],
     "expression": "(function(y,m,d){const now=new Date(Date.UTC(y,m-1,d));const next=new Date(Date.UTC(y+1,0,1));return (next-now)/86400000;})(year,month,day)",
@@ -18341,10 +18528,22 @@
       { "description": "July 1, 2024 ⇒ 184 days" }
     ],
     "faqs": [
-      { "question": "Does it account for leap years?", "answer": "Yes, using actual calendar days between dates." },
-      { "question": "Can I enter past years?", "answer": "Yes, the calculator works for any valid Gregorian date." },
-      { "question": "What if it's New Year's Day?", "answer": "The result will be 365 or 366 days depending on the year." },
-      { "question": "Why use UTC?", "answer": "UTC avoids time-zone differences affecting day counts." }
+      {
+        "question": "Does it account for leap years?",
+        "answer": "Yes, using actual calendar days between dates."
+      },
+      {
+        "question": "Can I enter past years?",
+        "answer": "Yes, the calculator works for any valid Gregorian date."
+      },
+      {
+        "question": "What if it's New Year's Day?",
+        "answer": "The result will be 365 or 366 days depending on the year."
+      },
+      {
+        "question": "Why use UTC?",
+        "answer": "UTC avoids time-zone differences affecting day counts."
+      }
     ],
     "disclaimer": "Assumes Gregorian calendar without historical adjustments.",
     "info": [
@@ -18359,7 +18558,13 @@
     "description": "Convert typing speed from words per minute to characters per minute.",
     "intro": "Estimate characters typed per minute by assuming an average word length of five characters.",
     "inputs": [
-      { "name": "wpm", "label": "Words per Minute", "type": "number", "step": "any", "placeholder": "40" }
+      {
+        "name": "wpm",
+        "label": "Words per Minute",
+        "type": "number",
+        "step": "any",
+        "placeholder": "40"
+      }
     ],
     "expression": "wpm * 5",
     "unit": "CPM",
@@ -18368,10 +18573,22 @@
       { "description": "70 WPM ⇒ 350 CPM" }
     ],
     "faqs": [
-      { "question": "Why multiply by five?", "answer": "Typing metrics commonly assume five characters per word." },
-      { "question": "Does accuracy matter?", "answer": "This conversion is an approximation; actual word length varies." },
-      { "question": "Can I convert CPM to WPM?", "answer": "Yes, divide characters per minute by five." },
-      { "question": "Is punctuation counted?", "answer": "Yes, characters include letters, spaces, and punctuation." }
+      {
+        "question": "Why multiply by five?",
+        "answer": "Typing metrics commonly assume five characters per word."
+      },
+      {
+        "question": "Does accuracy matter?",
+        "answer": "This conversion is an approximation; actual word length varies."
+      },
+      {
+        "question": "Can I convert CPM to WPM?",
+        "answer": "Yes, divide characters per minute by five."
+      },
+      {
+        "question": "Is punctuation counted?",
+        "answer": "Yes, characters include letters, spaces, and punctuation."
+      }
     ],
     "disclaimer": "Average word length varies by language and context.",
     "info": [
@@ -18386,9 +18603,27 @@
     "description": "Estimate heat energy required using mass, specific heat, and temperature change.",
     "intro": "Calculate the heat energy required to change the temperature of a substance using Q = m·c·ΔT.",
     "inputs": [
-      { "name": "mass", "label": "Mass (kg)", "type": "number", "step": "any", "placeholder": "2" },
-      { "name": "c", "label": "Specific Heat (J/kg°C)", "type": "number", "step": "any", "placeholder": "4186" },
-      { "name": "delta", "label": "Temperature Change (°C)", "type": "number", "step": "any", "placeholder": "10" }
+      {
+        "name": "mass",
+        "label": "Mass (kg)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "2"
+      },
+      {
+        "name": "c",
+        "label": "Specific Heat (J/kg°C)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "4186"
+      },
+      {
+        "name": "delta",
+        "label": "Temperature Change (°C)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "10"
+      }
     ],
     "expression": "mass * c * delta",
     "unit": "J",
@@ -18397,10 +18632,22 @@
       { "description": "0.5 kg with c=900 J/kg°C and ΔT=30°C ⇒ 13,500 J" }
     ],
     "faqs": [
-      { "question": "What is specific heat?", "answer": "The energy needed to raise 1 kg of a substance by 1°C." },
-      { "question": "Can c vary?", "answer": "Yes, it depends on the material and temperature." },
-      { "question": "Is the result in Joules?", "answer": "Yes, Joules are the SI unit of energy." },
-      { "question": "Does phase change require more energy?", "answer": "Yes, additional latent heat is needed for phase transitions." }
+      {
+        "question": "What is specific heat?",
+        "answer": "The energy needed to raise 1 kg of a substance by 1°C."
+      },
+      {
+        "question": "Can c vary?",
+        "answer": "Yes, it depends on the material and temperature."
+      },
+      {
+        "question": "Is the result in Joules?",
+        "answer": "Yes, Joules are the SI unit of energy."
+      },
+      {
+        "question": "Does phase change require more energy?",
+        "answer": "Yes, additional latent heat is needed for phase transitions."
+      }
     ],
     "disclaimer": "Assumes no heat loss to the environment.",
     "info": [
@@ -18415,19 +18662,38 @@
     "description": "Find the minimum number of bits needed to represent an integer.",
     "intro": "Determine how many bits are needed to encode a non-negative integer in binary.",
     "inputs": [
-      { "name": "number", "label": "Integer", "type": "number", "step": "1", "min": "0", "placeholder": "15" }
+      {
+        "name": "number",
+        "label": "Integer",
+        "type": "number",
+        "step": "1",
+        "min": "0",
+        "placeholder": "15"
+      }
     ],
-    "expression": "Math.ceil(Math.log2(number + 1))",
+    "expression": "",
     "unit": "bits",
     "examples": [
       { "description": "15 ⇒ 4 bits" },
       { "description": "1023 ⇒ 10 bits" }
     ],
     "faqs": [
-      { "question": "Why add one before taking log2?", "answer": "It ensures exact bit count for powers of two." },
-      { "question": "What if the number is zero?", "answer": "Zero requires 1 bit (value 0)." },
-      { "question": "Can it handle large numbers?", "answer": "Yes, as long as they fit in JavaScript's numeric range." },
-      { "question": "Is this for signed integers?", "answer": "No, it calculates bits for unsigned representation." }
+      {
+        "question": "Why add one before taking log2?",
+        "answer": "It ensures exact bit count for powers of two."
+      },
+      {
+        "question": "What if the number is zero?",
+        "answer": "Zero requires 1 bit (value 0)."
+      },
+      {
+        "question": "Can it handle large numbers?",
+        "answer": "Yes, as long as they fit in JavaScript's numeric range."
+      },
+      {
+        "question": "Is this for signed integers?",
+        "answer": "No, it calculates bits for unsigned representation."
+      }
     ],
     "disclaimer": "Assumes ideal binary storage without overhead.",
     "info": [
@@ -18442,10 +18708,34 @@
     "description": "Estimate gallons of paint required for a ceiling based on area, coats, and coverage.",
     "intro": "Calculate how many gallons of paint are needed for a ceiling by multiplying area by coats and dividing by paint coverage.",
     "inputs": [
-      { "name": "length", "label": "Length (m)", "type": "number", "step": "any", "placeholder": "5" },
-      { "name": "width", "label": "Width (m)", "type": "number", "step": "any", "placeholder": "4" },
-      { "name": "coats", "label": "Number of Coats", "type": "number", "step": "any", "placeholder": "2" },
-      { "name": "coverage", "label": "Coverage (m² per gallon)", "type": "number", "step": "any", "placeholder": "35" }
+      {
+        "name": "length",
+        "label": "Length (m)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "5"
+      },
+      {
+        "name": "width",
+        "label": "Width (m)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "4"
+      },
+      {
+        "name": "coats",
+        "label": "Number of Coats",
+        "type": "number",
+        "step": "any",
+        "placeholder": "2"
+      },
+      {
+        "name": "coverage",
+        "label": "Coverage (m² per gallon)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "35"
+      }
     ],
     "expression": "length * width * coats / coverage",
     "unit": "gallons",
@@ -18454,10 +18744,22 @@
       { "description": "6 m × 3 m, 1 coat, 40 m²/gal ⇒ 0.45 gallons" }
     ],
     "faqs": [
-      { "question": "Does coverage vary by paint?", "answer": "Yes, check the paint can for exact coverage rates." },
-      { "question": "Should I add extra paint?", "answer": "Buying a little extra helps with touch-ups and errors." },
-      { "question": "How do I convert to liters?", "answer": "1 gallon is approximately 3.785 liters." },
-      { "question": "Does texture affect coverage?", "answer": "Rough surfaces may require more paint." }
+      {
+        "question": "Does coverage vary by paint?",
+        "answer": "Yes, check the paint can for exact coverage rates."
+      },
+      {
+        "question": "Should I add extra paint?",
+        "answer": "Buying a little extra helps with touch-ups and errors."
+      },
+      {
+        "question": "How do I convert to liters?",
+        "answer": "1 gallon is approximately 3.785 liters."
+      },
+      {
+        "question": "Does texture affect coverage?",
+        "answer": "Rough surfaces may require more paint."
+      }
     ],
     "disclaimer": "Estimates only; actual coverage depends on surface conditions.",
     "info": [
@@ -18472,8 +18774,20 @@
     "description": "Estimate hiking duration using distance and elevation gain.",
     "intro": "Apply Naismith's rule to estimate hiking time from distance and elevation gain.",
     "inputs": [
-      { "name": "distance", "label": "Distance (km)", "type": "number", "step": "any", "placeholder": "10" },
-      { "name": "elevation", "label": "Elevation Gain (m)", "type": "number", "step": "any", "placeholder": "600" }
+      {
+        "name": "distance",
+        "label": "Distance (km)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "10"
+      },
+      {
+        "name": "elevation",
+        "label": "Elevation Gain (m)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "600"
+      }
     ],
     "expression": "distance / 5 + elevation / 600",
     "unit": "hours",
@@ -18482,10 +18796,22 @@
       { "description": "15 km with 300 m gain ⇒ 3.5 hours" }
     ],
     "faqs": [
-      { "question": "What is Naismith's rule?", "answer": "A formula estimating walking time based on distance and climb." },
-      { "question": "Does terrain matter?", "answer": "Yes, rough terrain can increase time beyond this estimate." },
-      { "question": "Is descent included?", "answer": "This basic rule focuses on ascent; adjust for steep descents." },
-      { "question": "Can I use miles and feet?", "answer": "Convert to kilometers and meters before using the calculator." }
+      {
+        "question": "What is Naismith's rule?",
+        "answer": "A formula estimating walking time based on distance and climb."
+      },
+      {
+        "question": "Does terrain matter?",
+        "answer": "Yes, rough terrain can increase time beyond this estimate."
+      },
+      {
+        "question": "Is descent included?",
+        "answer": "This basic rule focuses on ascent; adjust for steep descents."
+      },
+      {
+        "question": "Can I use miles and feet?",
+        "answer": "Convert to kilometers and meters before using the calculator."
+      }
     ],
     "disclaimer": "Times are estimates; adjust for fitness, weather, and trail conditions.",
     "info": [
@@ -18500,8 +18826,20 @@
     "description": "Measure the percentage of subscribers lost over a period.",
     "intro": "Calculate the percentage of subscribers lost during a period by comparing starting and ending counts.",
     "inputs": [
-      { "name": "start", "label": "Subscribers at Start", "type": "number", "step": "any", "placeholder": "1000" },
-      { "name": "end", "label": "Subscribers at End", "type": "number", "step": "any", "placeholder": "950" }
+      {
+        "name": "start",
+        "label": "Subscribers at Start",
+        "type": "number",
+        "step": "any",
+        "placeholder": "1000"
+      },
+      {
+        "name": "end",
+        "label": "Subscribers at End",
+        "type": "number",
+        "step": "any",
+        "placeholder": "950"
+      }
     ],
     "expression": "(start - end) / start * 100",
     "unit": "%",
@@ -18510,10 +18848,22 @@
       { "description": "5000 start, 4700 end ⇒ 6% churn" }
     ],
     "faqs": [
-      { "question": "What period should I use?", "answer": "Any consistent time frame such as month or year." },
-      { "question": "Does this include new subscribers?", "answer": "Churn measures loss; acquirements are not included." },
-      { "question": "Why track churn?", "answer": "High churn indicates retention issues in your service or content." },
-      { "question": "Can churn be negative?", "answer": "If end exceeds start, churn becomes negative, indicating growth." }
+      {
+        "question": "What period should I use?",
+        "answer": "Any consistent time frame such as month or year."
+      },
+      {
+        "question": "Does this include new subscribers?",
+        "answer": "Churn measures loss; acquirements are not included."
+      },
+      {
+        "question": "Why track churn?",
+        "answer": "High churn indicates retention issues in your service or content."
+      },
+      {
+        "question": "Can churn be negative?",
+        "answer": "If end exceeds start, churn becomes negative, indicating growth."
+      }
     ],
     "disclaimer": "Use accurate subscriber counts for meaningful results.",
     "info": [
