@@ -12,7 +12,7 @@ export const schema = {
   slug: "medication-supply-duration",
   title: "Medication Supply Duration",
   locale: "en",
-  intro: "Enter the number of pills you have and how many you take per day to find out how long your supply will last.",
+  intro: "Enter the number of pills you have and how many you take per day to find out how long your supply will last. Useful for planning refills and managing prescriptions.",
   unit: "days",
   cluster: "Other",
   inputs: [
@@ -26,9 +26,15 @@ export const schema = {
   ],
   faqs: [
     { question: "What about partial pills?", answer: "Enter decimals for half or quarter pills." },
-    { question: "Does this consider refills?", answer: "No, it only calculates the current supply." }
+    { question: "Does this consider refills?", answer: "No, it only calculates the current supply." },
+    { question: "Can I change dosage?", answer: "Adjust the pills-per-day value to match your prescribed dosage." },
+    { question: "How do I convert to weeks?", answer: "Divide the days result by 7 to estimate weeks." }
   ],
-  disclaimer: "Follow your doctor's prescription." 
+  disclaimer: "Follow your doctor's prescription.",
+  info: [
+    "Assumes a consistent daily dosage.",
+    "Result shows days until the supply runs out."
+  ],
 };
 
 <Calculator schema={schema} />

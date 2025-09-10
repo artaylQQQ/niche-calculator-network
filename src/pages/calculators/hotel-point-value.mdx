@@ -34,8 +34,8 @@ export const schema = {
   unit: "USD/point",
   intro: "Evaluate how much each hotel loyalty point is worth by dividing the cash price of a stay by the number of points required.",
   examples: [
-    { description: "50,000 points for $700 stay \u21d2 $0.014 per point" },
-    { description: "40,000 points for $500 stay \u21d2 $0.0125 per point" }
+    { description: "50,000 points for $700 stay ⇒ $0.014 per point" },
+    { description: "40,000 points for $500 stay ⇒ $0.0125 per point" }
   ],
   faqs: [
     { question: "Are taxes included?", answer: "Include all costs you would pay in cash for a fair comparison." },
@@ -44,8 +44,11 @@ export const schema = {
     { question: "Do point values vary by program?", answer: "Yes, each hotel loyalty program values points differently." }
   ],
   disclaimer: "Estimates only; check your loyalty program for exact values.",
-  cluster: "Lifestyle & Travel"
+  info: [
+    "Dollar value is cash price divided by points used.",
+    "Point valuations vary by hotel chain and season."
+  ],
+  cluster: "Lifestyle & Travel",
 };
 
 <Calculator schema={schema} />
-

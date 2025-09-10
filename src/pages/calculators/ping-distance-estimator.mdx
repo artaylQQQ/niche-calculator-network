@@ -9,33 +9,37 @@ cluster: "Technology"
 import Calculator from '../../components/Calculator.astro';
 
 export const schema = {
-  "slug": "ping-distance-estimator",
-  "title": "Ping Distance Estimator",
-  "locale": "en",
-  "inputs": [
+  slug: "ping-distance-estimator",
+  title: "Ping Distance Estimator",
+  locale: "en",
+  inputs: [
     {
-      "name": "ping",
-      "label": "Ping (ms)",
-      "type": "number",
-      "placeholder": "50"
+      name: "ping",
+      label: "Ping (ms)",
+      type: "number",
+      placeholder: "50"
     }
   ],
-  "expression": "ping / 1000 * 299792.458 / 2",
-  "intro": "Approximate signal distance from round-trip ping time.",
-  "examples": [
-    {
-      "description": "50 ms ⇒ ~7494 km"
-    }
+  expression: "ping / 1000 * 299792.458 / 2",
+  unit: "km",
+  intro: "Estimate the one-way distance a signal travels based on round-trip ping time. Enter the ping in milliseconds to approximate how far away the server might be.",
+  examples: [
+    { description: "50 ms ⇒ ~7,494 km" },
+    { description: "20 ms ⇒ ~2,998 km" }
   ],
-  "faqs": [
-    {
-      "question": "Why divide by two?",
-      "answer": "Ping measures round-trip time, so distance is half."
-    }
+  faqs: [
+    { question: "Why divide by two?", answer: "Ping measures round-trip time, so distance is half." },
+    { question: "Is this the actual path length?", answer: "No, it assumes a straight line and doesn't account for network routing." },
+    { question: "Does the medium affect speed?", answer: "Yes, fiber and copper transmit slightly slower than the speed of light in vacuum." },
+    { question: "Why are results approximate?", answer: "Network delays, hardware, and routing can affect ping times." }
   ],
-  "disclaimer": "Educational information, not professional advice.",
-  "cluster": "Technology",
-  "related": [
+  disclaimer: "Educational information, not professional advice.",
+  info: [
+    "Calculations assume light speed of 299,792.458 km/s.",
+    "Actual server distance may be longer due to network routing."
+  ],
+  cluster: "Technology",
+  related: [
     "download-time",
     "storage-redundancy-overhead",
     "battery-life-estimator",
@@ -43,7 +47,6 @@ export const schema = {
     "bandwidth-delay-product",
     "screen-ppi-calculator"
   ]
-}
+};
 
 <Calculator schema={schema} />
-

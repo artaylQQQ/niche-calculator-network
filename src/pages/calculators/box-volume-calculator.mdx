@@ -11,7 +11,7 @@ export const schema = {
   slug: "box-volume-calculator",
   title: "Box Volume Calculator",
   locale: "en",
-  intro: "Find the capacity of a box from its length, width, and height.",
+  intro: "Find the capacity of a box from its length, width, and height. Enter the three dimensions in meters to calculate the volume in cubic meters.",
   unit: "m³",
   cluster: "Home & DIY",
   inputs: [
@@ -26,9 +26,15 @@ export const schema = {
   ],
   faqs: [
     { question: "Can I use centimeters?", answer: "Convert dimensions to meters first." },
-    { question: "Is the result exact?", answer: "It assumes perfectly rectangular sides." }
+    { question: "Is the result exact?", answer: "It assumes perfectly rectangular sides." },
+    { question: "How do I convert to liters?", answer: "Multiply cubic meters by 1000 to get liters." },
+    { question: "What if dimensions are in feet?", answer: "Convert feet to meters before using the calculator." }
   ],
   disclaimer: "For informational purposes only.",
+  info: [
+    "Volume = length × width × height.",
+    "One cubic meter equals 1000 liters."
+  ],
 };
 
 <Calculator schema={schema} />

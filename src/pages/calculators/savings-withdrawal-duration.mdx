@@ -12,7 +12,7 @@ export const schema = {
   slug: "savings-withdrawal-duration",
   title: "Savings Withdrawal Duration",
   locale: "en",
-  intro: "Determine how long your savings can support you when withdrawing a fixed amount each month.",
+  intro: "Calculate how many months your savings can sustain fixed monthly withdrawals. Enter the total amount saved and the monthly withdrawal to estimate the duration of your funds.",
   unit: "months",
   cluster: "Finance",
   inputs: [
@@ -26,9 +26,16 @@ export const schema = {
   ],
   faqs: [
     { question: "Does this include interest?", answer: "No, it assumes savings do not earn additional interest." },
-    { question: "Can I enter decimals?", answer: "Yes, decimals are supported." }
+    { question: "Can I enter decimals?", answer: "Yes, decimals are supported." },
+    { question: "What if my withdrawal changes?", answer: "Use your average monthly withdrawal for a rough estimate." },
+    { question: "Is tax considered?", answer: "No, taxes or penalties on withdrawals are not included." },
+    { question: "Can I project years?", answer: "Divide the result by 12 to convert months to years." }
   ],
-  disclaimer: "Financial information only, not investment advice."
+  disclaimer: "Financial information only, not investment advice.",
+  info: [
+    "Result is the number of months the savings will last.",
+    "Assumes withdrawals happen at the start of each month."
+  ],
 };
 
 <Calculator schema={schema} />

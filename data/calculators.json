@@ -3043,8 +3043,9 @@
   {
     "slug": "ping-distance-estimator",
     "title": "Ping Distance Estimator",
-    "cluster": "technology",
-    "intro": "Approximate signal distance from round-trip ping time.",
+    "cluster": "Technology",
+    "description": "Approximate signal distance from round-trip ping time.",
+    "intro": "Estimate the one-way distance a signal travels based on round-trip ping time. Enter the ping in milliseconds to approximate how far away the server might be.",
     "inputs": [
       {
         "name": "ping",
@@ -3054,18 +3055,22 @@
       }
     ],
     "expression": "ping / 1000 * 299792.458 / 2",
+    "unit": "km",
     "examples": [
-      {
-        "description": "50 ms ⇒ ~7494 km"
-      }
+      { "description": "50 ms ⇒ ~7,494 km" },
+      { "description": "20 ms ⇒ ~2,998 km" }
     ],
     "faqs": [
-      {
-        "question": "Why divide by two?",
-        "answer": "Ping measures round-trip time, so distance is half."
-      }
+      { "question": "Why divide by two?", "answer": "Ping measures round-trip time, so distance is half." },
+      { "question": "Is this the actual path length?", "answer": "No, it assumes a straight line and doesn't account for network routing." },
+      { "question": "Does the medium affect speed?", "answer": "Yes, fiber and copper transmit slightly slower than the speed of light in vacuum." },
+      { "question": "Why are results approximate?", "answer": "Network delays, hardware, and routing can affect ping times." }
     ],
-    "info": []
+    "disclaimer": "Educational information, not professional advice.",
+    "info": [
+      "Calculations assume light speed of 299,792.458 km/s.",
+      "Actual server distance may be longer due to network routing."
+    ]
   },
   {
     "slug": "screen-ppi-calculator",
@@ -9111,8 +9116,9 @@
   {
     "slug": "coffee-water-ratio",
     "title": "Coffee Water Ratio Calculator",
-    "cluster": "Other",
-    "intro": "Determine how much water to use for a given amount of coffee grounds and desired brew ratio.",
+    "cluster": "Lifestyle & Travel",
+    "description": "Determine how much water to use for a given amount of coffee grounds and desired brew ratio.",
+    "intro": "Determine how much water to use for a given amount of coffee grounds and desired brew ratio. Enter the coffee mass and brew ratio to get the water mass needed.",
     "inputs": [
       {
         "name": "coffee",
@@ -9158,7 +9164,10 @@
       }
     ],
     "disclaimer": "Brewing preferences vary; adjust ratios to taste.",
-    "info": []
+    "info": [
+      "A 1:15 ratio means 15 g of water per gram of coffee.",
+      "One gram of water is approximately one milliliter."
+    ]
   },
   {
     "slug": "lux-to-foot-candles",
@@ -9598,8 +9607,8 @@
   {
     "slug": "insulation-roll-count",
     "title": "Insulation Roll Count Calculator",
-    "cluster": "home & diy",
-    "description": "Estimate the number of insulation rolls needed for a project.",
+    "cluster": "Home & DIY",
+    "description": "Figure out how many insulation rolls to purchase based on area coverage.",
     "inputs": [
       {
         "name": "area",
@@ -9644,7 +9653,10 @@
     ],
     "disclaimer": "Add a margin for cuts and overlaps.",
     "unit": "rolls",
-    "info": []
+    "info": [
+      "Always round up to account for waste and overlaps.",
+      "Coverage per roll varies by product thickness and width."
+    ]
   },
   {
     "slug": "percentage-error",
@@ -11932,8 +11944,8 @@
   {
     "slug": "labor-hydration-rate",
     "title": "Labor Hydration Calculator",
-    "cluster": "Health",
-    "description": "Estimate water needed during physical work.",
+    "cluster": "Health & Fitness",
+    "description": "Approximate water intake for manual labor based on body weight, duration, and temperature.",
     "intro": "Approximate water intake for manual labor based on body weight, duration, and temperature.",
     "inputs": [
       {
@@ -11972,21 +11984,16 @@
       }
     ],
     "faqs": [
-      {
-        "question": "Why adjust for temperature?",
-        "answer": "Higher heat increases sweat loss and water needs."
-      },
-      {
-        "question": "Can I use pounds?",
-        "answer": "Convert pounds to kilograms before input."
-      },
-      {
-        "question": "Is this medical advice?",
-        "answer": "No, it's a general guideline."
-      }
+      { "question": "Why adjust for temperature?", "answer": "Higher heat increases sweat loss and water needs." },
+      { "question": "Can I use pounds?", "answer": "Convert pounds to kilograms before input." },
+      { "question": "Is this medical advice?", "answer": "No, it's a general guideline." },
+      { "question": "How often should I drink?", "answer": "Sip water regularly rather than consuming it all at once." }
     ],
     "disclaimer": "Stay within personal limits and consult health professionals when needed.",
-    "info": []
+    "info": [
+      "Formula uses 35 mL of water per kg per hour as a base rate.",
+      "Higher temperatures increase recommended intake by 2% per °C above 25."
+    ]
   },
   {
     "slug": "vitamin-d-exposure-time",
@@ -13600,41 +13607,30 @@
     "slug": "box-volume-calculator",
     "title": "Box Volume Calculator",
     "cluster": "Home & DIY",
-    "intro": "Find the capacity of a box from its length, width, and height.",
+    "description": "Compute volume of a rectangular box.",
+    "intro": "Find the capacity of a box from its length, width, and height. Enter the three dimensions in meters to calculate the volume in cubic meters.",
     "inputs": [
-      {
-        "name": "length",
-        "hint": "Length (m)"
-      },
-      {
-        "name": "width",
-        "hint": "Width (m)"
-      },
-      {
-        "name": "height",
-        "hint": "Height (m)"
-      }
+      { "name": "length", "label": "Length (m)", "type": "number", "step": "any", "placeholder": "0.5" },
+      { "name": "width", "label": "Width (m)", "type": "number", "step": "any", "placeholder": "0.4" },
+      { "name": "height", "label": "Height (m)", "type": "number", "step": "any", "placeholder": "0.3" }
     ],
-    "expression": "length*width*height",
+    "expression": "length * width * height",
+    "unit": "m³",
     "examples": [
-      {
-        "description": "0.5×0.4×0.3 ⇒ 0.06 m³"
-      },
-      {
-        "description": "1×0.5×0.5 ⇒ 0.25 m³"
-      }
+      { "description": "0.5×0.4×0.3 m ⇒ 0.06 m³" },
+      { "description": "1×0.5×0.5 m ⇒ 0.25 m³" }
     ],
     "faqs": [
-      {
-        "question": "Use cm?",
-        "answer": "Convert to meters first."
-      },
-      {
-        "question": "Exact?",
-        "answer": "Assumes perfect box."
-      }
+      { "question": "Can I use centimeters?", "answer": "Convert dimensions to meters first." },
+      { "question": "Is the result exact?", "answer": "It assumes perfectly rectangular sides." },
+      { "question": "How do I convert to liters?", "answer": "Multiply cubic meters by 1000 to get liters." },
+      { "question": "What if dimensions are in feet?", "answer": "Convert feet to meters before using the calculator." }
     ],
-    "info": []
+    "disclaimer": "For informational purposes only.",
+    "info": [
+      "Volume = length × width × height.",
+      "One cubic meter equals 1000 liters."
+    ]
   },
   {
     "slug": "curtain-width-calculator",
@@ -14671,10 +14667,17 @@
       {
         "question": "Is the result a percentage?",
         "answer": "Yes, multiply by 100 to express as percent."
+      },
+      {
+        "question": "Can I track multiple goals?",
+        "answer": "Calculate separately for each goal to avoid confusion."
       }
     ],
     "disclaimer": "Use accurate analytics data for business decisions.",
-    "info": []
+    "info": [
+      "Conversion rate = (conversions / visitors) × 100.",
+      "Express results as a percentage for easier comparison."
+    ]
   },
   {
     "slug": "operating-profit-margin",
@@ -18126,7 +18129,10 @@
       }
     ],
     "disclaimer": "Estimates only; check your loyalty program for exact values.",
-    "info": []
+    "info": [
+      "Dollar value is cash price divided by points used.",
+      "Point valuations vary by hotel chain and season."
+    ]
   },
   {
     "slug": "social-media-engagement-rate",
@@ -18899,9 +18905,96 @@
       { "question": "Can this calculator handle very high values?", "answer": "Yes, but residential water usually stays below 30 gpg." }
     ],
     "disclaimer": "For water quality guidance only; confirm results with professional testing.",
-    "info": [
+  "info": [
       "1 gpg equals 17.118 ppm.",
       "Soft water is generally below 3 gpg."
+    ]
+  }
+  ,
+  {
+    "slug": "savings-withdrawal-duration",
+    "title": "Savings Withdrawal Duration",
+    "cluster": "Finance",
+    "description": "How many months your savings will last with a fixed monthly withdrawal.",
+    "intro": "Calculate how many months your savings can sustain fixed monthly withdrawals. Enter the total amount saved and the monthly withdrawal to estimate the duration of your funds.",
+    "inputs": [
+      { "name": "savings", "label": "Total savings (USD)", "type": "number", "step": "any", "placeholder": "100000" },
+      { "name": "monthly", "label": "Monthly withdrawal (USD)", "type": "number", "step": "any", "placeholder": "2000" }
+    ],
+    "expression": "savings / monthly",
+    "unit": "months",
+    "examples": [
+      { "description": "$100000 at $2000/mo ⇒ 50 months" },
+      { "description": "$50000 at $1500/mo ⇒ 33.33 months" }
+    ],
+    "faqs": [
+      { "question": "Does this include interest?", "answer": "No, it assumes savings do not earn additional interest." },
+      { "question": "Can I enter decimals?", "answer": "Yes, decimals are supported." },
+      { "question": "What if my withdrawal changes?", "answer": "Use your average monthly withdrawal for a rough estimate." },
+      { "question": "Is tax considered?", "answer": "No, taxes or penalties on withdrawals are not included." },
+      { "question": "Can I project years?", "answer": "Divide the result by 12 to convert months to years." }
+    ],
+    "disclaimer": "Financial information only, not investment advice.",
+    "info": [
+      "Result is the number of months the savings will last.",
+      "Assumes withdrawals happen at the start of each month."
+    ]
+  },
+  {
+    "slug": "medication-supply-duration",
+    "title": "Medication Supply Duration",
+    "cluster": "Other",
+    "description": "Estimate how many days your medication supply will last.",
+    "intro": "Enter the number of pills you have and how many you take per day to find out how long your supply will last. Useful for planning refills and managing prescriptions.",
+    "inputs": [
+      { "name": "pills", "label": "Pills available", "type": "number", "step": 1, "placeholder": "60" },
+      { "name": "per_day", "label": "Pills per day", "type": "number", "step": "any", "placeholder": "2" }
+    ],
+    "expression": "pills / per_day",
+    "unit": "days",
+    "examples": [
+      { "description": "60 pills at 2/day ⇒ 30 days" },
+      { "description": "45 pills at 3/day ⇒ 15 days" }
+    ],
+    "faqs": [
+      { "question": "What about partial pills?", "answer": "Enter decimals for half or quarter pills." },
+      { "question": "Does this consider refills?", "answer": "No, it only calculates the current supply." },
+      { "question": "Can I change dosage?", "answer": "Adjust the pills-per-day value to match your prescribed dosage." },
+      { "question": "How do I convert to weeks?", "answer": "Divide the days result by 7 to estimate weeks." }
+    ],
+    "disclaimer": "Follow your doctor's prescription.",
+    "info": [
+      "Assumes a consistent daily dosage.",
+      "Result shows days until the supply runs out."
+    ]
+  },
+  {
+    "slug": "mulch-volume",
+    "title": "Mulch Volume",
+    "cluster": "Home & DIY",
+    "description": "Calculate cubic yards of mulch needed for a project.",
+    "intro": "Estimate how many cubic yards of mulch are needed based on coverage area and desired depth. Input the area in square feet and depth in inches to plan your order.",
+    "inputs": [
+      { "name": "area", "label": "Area (ft²)", "type": "number", "step": "any", "placeholder": "500" },
+      { "name": "depth", "label": "Depth (in)", "type": "number", "step": "any", "placeholder": "3" }
+    ],
+    "expression": "(area * depth / 12) / 27",
+    "unit": "yd³",
+    "examples": [
+      { "description": "Area 500 ft², depth 3 in ⇒ 4.63 yd³" },
+      { "description": "Area 200 ft², depth 2 in ⇒ 1.23 yd³" },
+      { "description": "Area 1000 ft², depth 4 in ⇒ 12.35 yd³" }
+    ],
+    "faqs": [
+      { "question": "Why divide by 27?", "answer": "There are 27 cubic feet in a cubic yard." },
+      { "question": "Can I use metric units?", "answer": "Convert to feet and inches first for accurate results." },
+      { "question": "Does it account for settling?", "answer": "No, consider ordering extra to account for compaction." },
+      { "question": "How do I convert to cubic feet?", "answer": "Multiply the result by 27 to get cubic feet." }
+    ],
+    "disclaimer": "Educational purposes only. Not professional advice.",
+    "info": [
+      "27 cubic feet equal 1 cubic yard.",
+      "Mulch depth of 2–4 inches is common for garden beds."
     ]
   }
 ]
