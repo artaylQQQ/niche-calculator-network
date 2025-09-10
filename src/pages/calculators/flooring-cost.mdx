@@ -15,21 +15,28 @@ export const schema = {
   "inputs": [
     {
       "name": "area",
-      "hint": "Area (m²)"
+      "hint": "Area (m²)",
+      "placeholder": "50"
     },
     {
       "name": "cost",
-      "hint": "Cost per m² ($)"
+      "hint": "Cost per m² ($)",
+      "placeholder": "10"
     }
   ],
   "expression": "area*cost",
-  "intro": "Estimate total floor cost.",
+  "unit": "USD",
+  "intro": "Enter floor area and cost per square meter to estimate total material cost.",
   "examples": [
-    {
-      "description": "Enter the values and press Calculate."
-    }
+    {"description": "50 m² at $10 per m² ⇒ $500"},
+    {"description": "75 m² at $12 per m² ⇒ $900"}
   ],
-  "faqs": [],
+  "faqs": [
+    {"question": "Does the price include installation?","answer": "No, it only multiplies area by cost per m²."},
+    {"question": "Can I use square feet?","answer": "Yes, as long as area and cost use the same unit."},
+    {"question": "How do I account for waste?","answer": "Increase the area by your expected waste percentage before calculating."},
+    {"question": "Is tax included?","answer": "Add any applicable taxes separately."}
+  ],
   "disclaimer": "Educational information, not professional advice.",
   "cluster": "Home & DIY",
   "related": [

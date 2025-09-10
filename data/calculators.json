@@ -52,7 +52,10 @@
         "answer": "A percentage above 100% results in a negative price, which isn't realistic."
       }
     ],
-    "info": []
+    "info": [
+      "Result is a unitless ratio of waist circumference to height.",
+      "Values above 0.5 may indicate increased health risks."
+    ]
   },
   {
     "slug": "simple-interest",
@@ -113,8 +116,11 @@
         "answer": "No, it returns only the interest earned."
       }
     ],
-    "info": []
-  },
+      "info": [
+        "Assumes constant monthly fee over the retention period.",
+        "Result represents gross revenue and excludes costs."
+      ]
+    },
   {
     "slug": "compound-interest-calculator",
     "title": "Compound Interest Calculator",
@@ -1140,17 +1146,17 @@
     "description": "Calculate waist-to-height ratio (WHtR) to evaluate body fat distribution.",
     "intro": "Enter your waist and height in the same units to compute the waist-to-height ratio.",
     "inputs": [
-      {
-        "name": "waist",
-        "hint": "Waist (cm)",
-        "placeholder": "Enter waist"
-      },
-      {
-        "name": "height",
-        "hint": "Height (cm)",
-        "placeholder": "Enter height"
-      }
-    ],
+        {
+          "name": "waist",
+          "hint": "Waist (cm)",
+          "placeholder": "80"
+        },
+        {
+          "name": "height",
+          "hint": "Height (cm)",
+          "placeholder": "170"
+        }
+      ],
     "expression": "waist/height",
     "unit": "ratio",
     "examples": [
@@ -1161,26 +1167,29 @@
         "description": "90 cm waist and 180 cm height ⇒ 0.50"
       }
     ],
-    "faqs": [
-      {
-        "question": "What is WHtR?",
-        "answer": "The waist-to-height ratio compares waist circumference to height as a health indicator."
-      },
-      {
-        "question": "What range is considered healthy?",
-        "answer": "A value below 0.5 is often regarded as low risk for adults."
-      },
-      {
-        "question": "Do waist and height need the same unit?",
-        "answer": "Yes, using the same unit ensures the ratio is correct."
-      },
-      {
-        "question": "Can I use inches instead of centimeters?",
-        "answer": "Yes, as long as both measurements use inches."
-      }
-    ],
-    "info": []
-  },
+      "faqs": [
+        {
+          "question": "What is WHtR?",
+          "answer": "The waist-to-height ratio compares waist circumference to height as a health indicator."
+        },
+        {
+          "question": "What range is considered healthy?",
+          "answer": "A value below 0.5 is often regarded as low risk for adults."
+        },
+        {
+          "question": "Do waist and height need the same unit?",
+          "answer": "Yes, using the same unit ensures the ratio is correct."
+        },
+        {
+          "question": "Can I use inches instead of centimeters?",
+          "answer": "Yes, as long as both measurements use inches."
+        }
+      ],
+      "info": [
+        "Result is a unitless ratio of waist circumference to height.",
+        "Values above 0.5 may indicate increased health risks."
+      ]
+    },
   {
     "slug": "data-transfer-time",
     "title": "Data Transfer Time Calculator",
@@ -1428,32 +1437,41 @@
     ],
     "info": []
   },
-  {
-    "slug": "flooring-cost",
-    "title": "Flooring Cost Calculator",
-    "cluster": "Home & DIY",
-    "intro": "Estimate total floor cost. Enter the values and press Calculate.",
-    "inputs": [
-      {
-        "name": "area",
-        "hint": "Area (m²)",
-        "placeholder": "Enter area"
-      },
-      {
-        "name": "cost",
-        "hint": "Cost per m² ($)",
-        "placeholder": "Enter cost"
-      }
-    ],
-    "expression": "area*cost",
-    "faqs": [
-      {
-        "question": "What does the Flooring Cost Calculator do?",
-        "answer": "Estimate total floor cost. Enter the values and press Calculate."
-      }
-    ],
-    "info": []
-  },
+    {
+      "slug": "flooring-cost",
+      "title": "Flooring Cost Calculator",
+      "cluster": "Home & DIY",
+      "description": "Estimate material cost of a flooring project from area and price per square meter.",
+      "intro": "Estimate total floor cost. Enter the values and press Calculate.",
+      "inputs": [
+        {
+          "name": "area",
+          "hint": "Area (m²)",
+          "placeholder": "50"
+        },
+        {
+          "name": "cost",
+          "hint": "Cost per m² ($)",
+          "placeholder": "10"
+        }
+      ],
+      "expression": "area*cost",
+      "unit": "USD",
+      "examples": [
+        {"description": "50 m² at $10 per m² ⇒ $500"},
+        {"description": "75 m² at $12 per m² ⇒ $900"}
+      ],
+      "faqs": [
+        {"question": "Does the price include installation?","answer": "No, it only multiplies area by cost per m²."},
+        {"question": "Can I use square feet?","answer": "Yes, as long as area and cost use the same unit."},
+        {"question": "How do I account for waste?","answer": "Increase the area by your expected waste percentage before calculating."},
+        {"question": "Is tax included?","answer": "Add any applicable taxes separately."}
+      ],
+      "info": [
+        "Result shows material cost only; labor and extras are not included.",
+        "Convert units before input if using feet or yards."
+      ]
+    },
   {
     "slug": "concrete-slab-volume",
     "title": "Concrete Slab Volume",
@@ -2040,7 +2058,10 @@
         "answer": "No, this calculator returns gross revenue only."
       }
     ],
-    "info": []
+    "info": [
+      "Assumes constant monthly fee over the retention period.",
+      "Result represents gross revenue and excludes costs."
+    ]
   },
   {
     "slug": "sleep-debt-weekly",
@@ -2440,7 +2461,8 @@
   {
     "slug": "bandwidth-delay-product",
     "title": "Bandwidth Delay Product",
-    "cluster": "technology",
+    "cluster": "Technology",
+    "description": "Calculate the amount of data that can fill a network path based on bandwidth and latency.",
     "intro": "Estimate in-flight data on a network link.",
     "inputs": [
       {
@@ -2457,18 +2479,21 @@
       }
     ],
     "expression": "bandwidth * 1000000 * latency / 1000 / 8",
+    "unit": "bytes",
     "examples": [
-      {
-        "description": "100 Mbps with 50 ms ⇒ 625000 bytes"
-      }
+      {"description": "100 Mbps with 50 ms ⇒ 625000 bytes"},
+      {"description": "10 Mbps with 100 ms ⇒ 125000 bytes"}
     ],
     "faqs": [
-      {
-        "question": "Why divide by 8?",
-        "answer": "To convert bits to bytes."
-      }
+      {"question": "Why divide by 8?","answer": "To convert bits to bytes."},
+      {"question": "What is this value used for?","answer": "It helps determine optimal TCP window sizes."},
+      {"question": "Does higher latency increase the result?","answer": "Yes, more latency allows more data in-flight."},
+      {"question": "What units are returned?","answer": "The result is in bytes."}
     ],
-    "info": []
+    "info": [
+      "Useful for assessing network throughput and tuning protocols.",
+      "Result expresses maximum bytes that can be pending on the link."
+    ]
   },
   {
     "slug": "coffee-to-water-ratio",
@@ -6430,11 +6455,11 @@
     "disclaimer": "Provides only the x-coordinate; verify calculations in complex cases.",
     "info": []
   },
-  {
-    "slug": "battery-charge-time",
-    "title": "Battery Charge Time",
-    "cluster": "Technology",
-    "description": "Estimate how long a battery takes to charge.",
+    {
+      "slug": "battery-charge-time",
+      "title": "Battery Charge Time",
+      "cluster": "Technology & Coding",
+      "description": "Estimate how long a battery takes to charge.",
     "inputs": [
       {
         "name": "capacity",
@@ -6486,9 +6511,12 @@
         "answer": "It provides a basic estimate and doesn't account for tapering."
       }
     ],
-    "disclaimer": "Actual charge times vary with battery condition and charger design.",
-    "info": []
-  },
+      "disclaimer": "Actual charge times vary with battery condition and charger design.",
+      "info": [
+        "Assumes constant current without tapering phases.",
+        "Returns charge duration in hours."
+      ]
+    },
   {
     "slug": "ohms-law-current",
     "title": "Ohm's Law Current",
