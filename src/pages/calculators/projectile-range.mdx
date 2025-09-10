@@ -18,7 +18,7 @@ export const schema = {
     {"name":"angle","label":"Launch Angle (°)","type":"number","step":"any","placeholder":"45"},
     {"name":"gravity","label":"Gravity (m/s²)","type":"number","step":"any","placeholder":"9.81"}
   ],
-  "expression": "(function(velocity,angle,gravity){return velocity*velocity*Math.sin(2*angle*Math.PI/180)/gravity;})(velocity,angle,gravity)",
+  "expression": "(velocity*velocity*Math.sin(2*angle*Math.PI/180))/gravity",
   "unit": "m",
   "intro": "Find how far an object launched at a given speed and angle travels horizontally under constant gravity, ignoring air resistance.",
   "examples": [
@@ -37,7 +37,8 @@ export const schema = {
 
 <Calculator schema={schema} />
 
-## Understanding the Units
-
-Velocity is measured in meters per second (m/s), angle in degrees, gravity in meters per second squared (m/s²), and the resulting range is given in meters (m).
+<section class="mt-8">
+  <h2>Understanding the Units</h2>
+  <p>Velocity is measured in meters per second (m/s), angle in degrees, gravity in meters per second squared (m/s²), and the resulting range is given in meters (m).</p>
+</section>
 

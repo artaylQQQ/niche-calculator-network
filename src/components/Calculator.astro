@@ -324,13 +324,15 @@ const jsonLd = {
       if (expr) {
         // ensure every symbol referenced in the expression is provided in vars
         const varNames = expr.match(/[A-Za-z_][A-Za-z0-9_]*/g) || [];
-        const unknown = varNames.filter(n => !(n in vars));
+        const allowed = ['Math','sin','cos','tan','log','sqrt','pow','abs','max','min','round','floor','ceil','exp','PI','E'];
+        const unknown = varNames.filter(n => !(n in vars) && !allowed.includes(n));
         if (unknown.length) {
           showMessage('error', 'Unknown variable: ' + unknown[0]);
           return;
         }
         try {
-          value = evalExpr(expr, vars);
+          const fn = Function(...Object.keys(vars), `return ${expr};`);
+          value = fn(...Object.values(vars));
           usedExpr = isFinite(value);
         } catch (e) {
           usedExpr = false;

@@ -17773,7 +17773,7 @@
       {"name": "angle", "label": "Launch Angle (°)", "type": "number", "step": "any", "placeholder": "45"},
       {"name": "gravity", "label": "Gravity (m/s²)", "type": "number", "step": "any", "placeholder": "9.81"}
     ],
-    "expression": "(function(velocity,angle,gravity){return velocity*velocity*Math.sin(2*angle*Math.PI/180)/gravity;})(velocity,angle,gravity)",
+    "expression": "(velocity*velocity*Math.sin(2*angle*Math.PI/180))/gravity",
     "unit": "m",
     "examples": [
       {"description": "30 m/s at 45° under 9.81 m/s² ⇒ 91.74 m"},
