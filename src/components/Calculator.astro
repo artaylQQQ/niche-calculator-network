@@ -11,6 +11,11 @@ const slug = schema?.slug ?? 'calculator';
 const inputs = Array.isArray(schema?.inputs) ? schema.inputs : [];
 const intro = schema?.intro ?? '';
 const expression = schema?.expression ?? schema?.formula ?? schema?.formula_expression ?? '';
+const info = Array.isArray(schema?.info)
+  ? schema.info
+  : schema?.info
+  ? [schema.info]
+  : [];
 
 const examples = Array.isArray(schema?.examples) && schema.examples.length
   ? schema.examples
@@ -100,6 +105,15 @@ const jsonLd = {
 
   <script type="application/json" data-schema set:html={JSON.stringify(schema)}></script>
 </section>
+
+{info.length > 0 && (
+  <section class="info">
+    <h2>Additional information</h2>
+    {info.map((t) => (
+      <p>{t}</p>
+    ))}
+  </section>
+)}
 
 <section class="examples">
   <h2>Examples</h2>
@@ -209,6 +223,7 @@ const jsonLd = {
   .result .icon {
     font-size: 1.6em;
   }
+  .info,
   .examples,
   .faq,
   .related {
@@ -220,6 +235,7 @@ const jsonLd = {
     border-radius: var(--radius);
     box-shadow: var(--shadow);
   }
+  .info p { margin: 8px 0; }
   .examples ul { margin: 8px 0 0 20px; }
   .faq details { margin: 8px 0; }
   .faq summary { cursor: pointer; font-weight: 600; }

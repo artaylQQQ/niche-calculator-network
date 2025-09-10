@@ -200,6 +200,10 @@
     ],
     "expression": "weight / ((height/100) ** 2)",
     "unit": "kg/m²",
+    "info": [
+      "BMI results are expressed in kilograms per square meter (kg/m²).",
+      "The index was introduced in the 19th century by Adolphe Quetelet to relate body mass to height."
+    ],
     "examples": [
       {
         "description": "70 kg and 175 cm ⇒ 22.86 kg/m²"
