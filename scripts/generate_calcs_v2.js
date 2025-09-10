@@ -28,6 +28,7 @@ for (const it of items) {
   )
     continue;
   if (publishedSlugs.has(it.slug)) continue;
+  const schema = { ...it, info: Array.isArray(it.info) ? it.info : [] };
   const mdx = `---
 title: ${JSON.stringify(it.title)}
 description: ${JSON.stringify(it.intro || it.title)}
@@ -35,7 +36,7 @@ cluster: ${JSON.stringify(it.cluster || "")}
 ---
 import Calculator from '../../components/Calculator.astro';
 
-<Calculator schema={${JSON.stringify(it)}} />
+<Calculator schema={${JSON.stringify(schema)}} />
 `;
   fs.writeFileSync(path.join(outDir, `${it.slug}.mdx`), mdx);
   log.push({ slug: it.slug, date: new Date().toISOString().slice(0, 10) });

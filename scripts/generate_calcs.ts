@@ -11,11 +11,11 @@ import path from "node:path";
  * the number of new calculators can be controlled via the
  * `MAX_PER_DAY` environment variable.  Values outside the range 20–100
  * are clamped to the nearest bound to prevent creating too few or too
-* many pages in a single batch.  Each generated MDX page uses the
-* CalculatorLayout, exports a detailed schema for runtime use and relies on
-* the Calculator component to render examples, related calculators and FAQs
-* to avoid duplicate sections.
-*/
+ * many pages in a single batch.  Each generated MDX page uses the
+ * CalculatorLayout, exports a detailed schema for runtime use and relies on
+ * the Calculator component to render examples, related calculators and FAQs
+ * to avoid duplicate sections.
+ */
 
 const ROOT = process.cwd();
 const DATA_PATH = path.join(ROOT, "data", "calculators.json");
@@ -178,6 +178,7 @@ function pickRelated(base: any, all: any[], count = 6): string[] {
         Array.isArray(calc.examples) && calc.examples.length
           ? calc.examples
           : [{ description: "Enter the values and press Calculate." }],
+      info: Array.isArray(calc.info) ? calc.info : [],
       faqs: Array.isArray(calc.faqs) ? calc.faqs : [],
       disclaimer:
         calc.disclaimer || "Educational information, not professional advice.",

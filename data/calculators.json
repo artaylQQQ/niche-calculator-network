@@ -51,7 +51,8 @@
         "question": "What happens with discounts over 100%?",
         "answer": "A percentage above 100% results in a negative price, which isn't realistic."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "simple-interest",
@@ -111,7 +112,8 @@
         "question": "Does the result include the principal?",
         "answer": "No, it returns only the interest earned."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "compound-interest-calculator",
@@ -172,7 +174,8 @@
         "question": "Does this assume reinvestment of interest?",
         "answer": "Yes, all interest is reinvested each period."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "bmi-calculator",
@@ -225,7 +228,8 @@
         "question": "Can I use pounds and inches?",
         "answer": "Convert values to kilograms and centimeters to use this calculator."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "daily-calorie-burn",
@@ -278,7 +282,8 @@
         "question": "How accurate is this estimate?",
         "answer": "It's a simple approximation that doesn't consider intensity or individual differences."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "celsius-to-fahrenheit",
@@ -322,7 +327,8 @@
         "question": "How do I convert Fahrenheit to Celsius?",
         "answer": "Use the Fahrenheit to Celsius calculator or apply C = (F - 32) × 5/9."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "km-to-miles",
@@ -350,7 +356,8 @@
         "question": "Is the factor exact?",
         "answer": "We use the standard 1 km = 0.621371 miles."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "meters-to-feet",
@@ -377,7 +384,8 @@
         "question": "How precise is this conversion?",
         "answer": "It uses the exact factor of 3.28084 feet per meter."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "percentage-increase",
@@ -430,7 +438,8 @@
         "question": "Is percentage increase the same as growth rate?",
         "answer": "It expresses growth relative to the original value, often used as a growth rate."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "rule-of-three-calculator",
@@ -488,7 +497,8 @@
         "question": "Do the inputs need units?",
         "answer": "Use consistent units for B and C so the result carries that unit."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "circle-area",
@@ -533,7 +543,8 @@
         "question": "What if the radius is zero?",
         "answer": "A radius of zero yields an area of zero."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "download-time",
@@ -586,7 +597,8 @@
         "question": "What if my speed fluctuates?",
         "answer": "Use your average download speed for a rough estimate."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "cm-to-inches-calculator",
@@ -630,7 +642,8 @@
         "question": "How do I convert inches to centimeters?",
         "answer": "Multiply inches by 2.54 or use the inches to centimeters calculator."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "cylinder-volume-calculator",
@@ -681,7 +694,8 @@
         "question": "What happens if a value is zero?",
         "answer": "If radius or height is zero, the volume is zero."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "f-to-c-calculator",
@@ -725,7 +739,8 @@
         "question": "How do I convert Celsius back to Fahrenheit?",
         "answer": "Use the Celsius to Fahrenheit calculator or apply F = C × 9/5 + 32."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "storage-redundancy-overhead",
@@ -778,7 +793,8 @@
         "question": "Why can't data be 0?",
         "answer": "The calculation divides by the data size, so overhead is undefined if data is 0."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "duration-seconds",
@@ -839,7 +855,8 @@
         "question": "What if I enter negative numbers?",
         "answer": "Negative values are invalid and will not calculate."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "days-to-hours",
@@ -867,7 +884,8 @@
         "question": "Leap days?",
         "answer": "This is a simple conversion (24h per day)."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "paint-coverage",
@@ -903,7 +921,8 @@
         "question": "Number of coats?",
         "answer": "Multiply result by the number of coats you plan to apply."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "garden-soil-volume",
@@ -947,7 +966,8 @@
         "question": "Irregular shapes?",
         "answer": "Approximate by splitting into rectangles and summing volumes."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "tip-calculator",
@@ -983,7 +1003,8 @@
         "question": "Split bills?",
         "answer": "Divide the result by the number of people to split the bill."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "grade-average",
@@ -1030,7 +1051,8 @@
         "question": "Weighted average?",
         "answer": "This tool uses a simple mean (unweighted)."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "calories-burned-met",
@@ -1082,7 +1104,8 @@
         "question": "Why enter duration in minutes?",
         "answer": "The formula expects minutes; convert hours to minutes first."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "daily-water-intake",
@@ -1107,7 +1130,8 @@
         "question": "What does the Daily Water Intake Calculator do?",
         "answer": "Rough estimate of daily water intake from body weight. Enter the values and press Calculate."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "waist-to-height-ratio",
@@ -1154,7 +1178,8 @@
         "question": "Can I use inches instead of centimeters?",
         "answer": "Yes, as long as both measurements use inches."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "data-transfer-time",
@@ -1184,7 +1209,8 @@
         "question": "What does the Data Transfer Time Calculator do?",
         "answer": "Estimate time to transfer data over a connection speed. Enter the values and press Calculate."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "kb-to-mb",
@@ -1226,7 +1252,8 @@
         "question": "Why do some systems use 1000 KB per MB?",
         "answer": "Some contexts use the decimal SI standard, but computing typically follows the binary convention."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "download-cost",
@@ -1256,7 +1283,8 @@
         "question": "What does the Download Cost Calculator do?",
         "answer": "Estimate download cost from data size and price per GB. Enter the values and press Calculate."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "dpi-calculator",
@@ -1286,7 +1314,8 @@
         "question": "What does the DPI Calculator do?",
         "answer": "Dots per inch from pixels and inches. Enter the values and press Calculate."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "minutes-to-seconds",
@@ -1306,7 +1335,8 @@
         "question": "What does the Minutes to Seconds Calculator do?",
         "answer": "Convert minutes to seconds. Enter the values and press Calculate."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "weeks-to-days",
@@ -1326,7 +1356,8 @@
         "question": "What does the Weeks to Days Calculator do?",
         "answer": "Convert weeks to days. Enter the values and press Calculate."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "years-to-days",
@@ -1368,7 +1399,8 @@
         "question": "What units are used?",
         "answer": "Input is in years and the output is in days."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "paint-needed",
@@ -1393,7 +1425,8 @@
         "question": "What does the Paint Needed Calculator do?",
         "answer": "Estimate liters of paint required. Enter the values and press Calculate."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "flooring-cost",
@@ -1418,7 +1451,8 @@
         "question": "What does the Flooring Cost Calculator do?",
         "answer": "Estimate total floor cost. Enter the values and press Calculate."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "concrete-slab-volume",
@@ -1448,7 +1482,8 @@
         "question": "What does the Concrete Slab Volume do?",
         "answer": "Volume for a slab in cubic meters. Enter the values and press Calculate."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "wallpaper-roll-coverage",
@@ -1473,7 +1508,8 @@
         "question": "What does the Wallpaper Roll Coverage do?",
         "answer": "Number of rolls needed. Enter the values and press Calculate."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "fuel-trip-cost",
@@ -1503,7 +1539,8 @@
         "question": "What does the Fuel Trip Cost do?",
         "answer": "Estimate fuel trip cost. Enter the values and press Calculate."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "home-diy-division-calculator",
@@ -1535,7 +1572,8 @@
         "question": "What does this calculator do?",
         "answer": "It performs basic division operations."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "pythagorean-theorem-calculator",
@@ -1567,7 +1605,8 @@
         "question": "What does the Pythagorean Theorem Calculator do?",
         "answer": "Calculate the hypotenuse of a right triangle. Enter the values and press Calculate."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "discount-calculator",
@@ -1599,7 +1638,8 @@
         "question": "What does the Discount Calculator do?",
         "answer": "Determine final price after a percentage discount. Enter the values and press Calculate."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "discount-calculator-2",
@@ -1631,7 +1671,8 @@
         "question": "What does the Discount Calculator do?",
         "answer": "Determine final price after a percentage discount. Enter the values and press Calculate."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "tip-calculator-2",
@@ -1663,7 +1704,8 @@
         "question": "What does the Tip Calculator do?",
         "answer": "Calculate the tip amount from bill and percentage. Enter the values and press Calculate."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "smoots-to-meters",
@@ -1690,7 +1732,8 @@
         "question": "What is a smoot?",
         "answer": "A smoot is a playful unit of length equal to 1.7018 meters."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "hogsheads-to-liters",
@@ -1717,7 +1760,8 @@
         "question": "Where is the hogshead used?",
         "answer": "The hogshead is an old imperial unit for liquid volume."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "furlongs-per-fortnight",
@@ -1744,7 +1788,8 @@
         "question": "Is this a real unit?",
         "answer": "Yes, but it's mostly used for geeky humor."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "mars-sol-to-earth-days",
@@ -1771,7 +1816,8 @@
         "question": "What is a sol?",
         "answer": "A sol is a Martian day lasting about 24 hours 39 minutes."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "microfortnight-to-seconds",
@@ -1798,7 +1844,8 @@
         "question": "Why microfortnights?",
         "answer": "They are a humorous unit equal to 1.2096 seconds."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "pomodoro-planner",
@@ -1836,7 +1883,8 @@
         "question": "Why subtract one break?",
         "answer": "The final session usually has no break afterward."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "crypto-mining-breakeven",
@@ -1885,7 +1933,8 @@
         "question": "Can I enter a negative profit?",
         "answer": "Daily profit should be a positive number to compute breakeven time."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "freelancer-hourly-rate",
@@ -1940,7 +1989,8 @@
         "question": "Can I use other currencies?",
         "answer": "Yes, enter all amounts in the same currency; the result will use that currency per hour."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "subscription-ltv",
@@ -1989,7 +2039,8 @@
         "question": "Is profit margin considered?",
         "answer": "No, this calculator returns gross revenue only."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "sleep-debt-weekly",
@@ -2016,7 +2067,8 @@
         "question": "What if result is negative?",
         "answer": "Negative means you exceed the 8‑hour recommendation."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "sugar-cube-equivalent",
@@ -2043,7 +2095,8 @@
         "question": "How much is one sugar cube?",
         "answer": "About 4 grams of sugar per cube."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "caffeine-half-life",
@@ -2075,7 +2128,8 @@
         "question": "What half-life is assumed?",
         "answer": "This uses an average half-life of 5 hours."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "rainwater-harvest",
@@ -2116,7 +2170,8 @@
         "question": "Why divide by 1000?",
         "answer": "To convert liters to cubic meters."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "garden-soil-weight",
@@ -2163,7 +2218,8 @@
         "question": "Why approximate density?",
         "answer": "Different soils vary; 1200 kg/m³ is a common average."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "brick-count-estimator",
@@ -2202,7 +2258,8 @@
         "question": "Does this include mortar gaps?",
         "answer": "No, add extra bricks for mortar and waste."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "geometric-series-sum",
@@ -2241,7 +2298,8 @@
         "question": "What if r=1?",
         "answer": "The sum is simply first term times n."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "circumference-from-area",
@@ -2268,7 +2326,8 @@
         "question": "Why such a long number?",
         "answer": "It's a high-precision value of π."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "triangle-inradius",
@@ -2309,7 +2368,8 @@
         "question": "What is inradius?",
         "answer": "It's the radius of the circle tangent to all sides of the triangle."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "battery-life-estimator",
@@ -2341,7 +2401,8 @@
         "question": "Is this precise?",
         "answer": "Actual battery life varies with conditions."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "cpu-power-to-current",
@@ -2373,7 +2434,8 @@
         "question": "What is TDP?",
         "answer": "Thermal design power, a CPU's typical power draw."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "bandwidth-delay-product",
@@ -2405,7 +2467,8 @@
         "question": "Why divide by 8?",
         "answer": "To convert bits to bytes."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "coffee-to-water-ratio",
@@ -2438,7 +2501,8 @@
         "question": "Is ratio coffee:water?",
         "answer": "Yes, multiply coffee grams by ratio for water grams."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "reading-time-estimator",
@@ -2470,7 +2534,8 @@
         "question": "Typical speed?",
         "answer": "Around 200 words per minute for non‑technical texts."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "travel-budget-per-day",
@@ -2502,7 +2567,8 @@
         "question": "Include travel days?",
         "answer": "Yes, count every day of the trip."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "emergency-fund-duration",
@@ -2551,7 +2617,8 @@
         "question": "Is the result rounded?",
         "answer": "The calculator outputs a precise decimal number of months."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "fire-number",
@@ -2600,7 +2667,8 @@
         "question": "Can I use monthly expenses?",
         "answer": "Convert monthly expenses to annual figures before using the calculator."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "loss-recovery-percentage",
@@ -2626,7 +2694,8 @@
         "question": "Why is the required gain higher?",
         "answer": "Because gains and losses are based on different starting amounts."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "protein-calorie-percentage",
@@ -2658,7 +2727,8 @@
         "question": "Why multiply by 4?",
         "answer": "Each gram of protein has roughly 4 calories."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "bmi-prime",
@@ -2690,7 +2760,8 @@
         "question": "What does BMI Prime indicate?",
         "answer": "Values above 1.0 are considered overweight."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "heart-rate-reserve-percentage",
@@ -2728,7 +2799,8 @@
         "question": "What zones use this value?",
         "answer": "It's used in the Karvonen method to set training zones."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "banana-dose-converter",
@@ -2754,7 +2826,8 @@
         "question": "How much radiation is one banana?",
         "answer": "About 0.1 µSv per banana."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "beard-second-to-meters",
@@ -2780,7 +2853,8 @@
         "question": "What is a beard-second?",
         "answer": "It's the length of a beard's growth in one second, about 5 nanometers."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "sheppey-to-meters",
@@ -2806,7 +2880,8 @@
         "question": "What's a sheppey?",
         "answer": "A whimsical unit equal to about 1.4 km—the distance at which sheep remain picturesque."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "triangle-area-heron",
@@ -2844,7 +2919,8 @@
         "question": "When is Heron's formula useful?",
         "answer": "When you know all sides but not the height."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "point-distance",
@@ -2888,7 +2964,8 @@
         "question": "What distance formula is used?",
         "answer": "The standard Euclidean distance."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "polygon-diagonals",
@@ -2914,7 +2991,8 @@
         "question": "Does it work for triangles?",
         "answer": "Yes, but a triangle has 0 diagonals."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "ping-distance-estimator",
@@ -2940,7 +3018,8 @@
         "question": "Why divide by two?",
         "answer": "Ping measures round-trip time, so distance is half."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "screen-ppi-calculator",
@@ -2978,7 +3057,8 @@
         "question": "What does PPI mean?",
         "answer": "Pixels per inch indicates display sharpness."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "ssd-lifespan-years",
@@ -3010,7 +3090,8 @@
         "question": "What is TBW?",
         "answer": "Terabytes written—an endurance rating for SSDs."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "earth-years-to-mars-years",
@@ -3036,7 +3117,8 @@
         "question": "How long is a Mars year?",
         "answer": "About 1.8808 Earth years."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "jiffies-to-seconds",
@@ -3062,7 +3144,8 @@
         "question": "What is a jiffy?",
         "answer": "In electronics, it's the period of one 60 Hz cycle (~0.0167 s)."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "sidereal-day-to-hours",
@@ -3088,7 +3171,8 @@
         "question": "Why shorter than 24h?",
         "answer": "A sidereal day measures Earth's rotation relative to stars."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "rain-barrel-fill-time",
@@ -3120,7 +3204,8 @@
         "question": "Assumes constant flow?",
         "answer": "Yes, flow rate is assumed constant."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "led-strip-current",
@@ -3158,7 +3243,8 @@
         "question": "Why divide by voltage?",
         "answer": "Current equals power divided by voltage."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "floor-tile-quantity",
@@ -3202,7 +3288,8 @@
         "question": "Should I add extra tiles?",
         "answer": "Yes, buy a few extra to account for cuts and breakage."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "recipe-scale-factor",
@@ -3234,7 +3321,8 @@
         "question": "Does it adjust cook time?",
         "answer": "No, only ingredient quantities scale."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "pizza-slice-angle",
@@ -3260,7 +3348,8 @@
         "question": "Works for any round pizza?",
         "answer": "Yes, the angle depends only on slice count."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "queue-wait-time",
@@ -3292,7 +3381,8 @@
         "question": "Does it account for multiple servers?",
         "answer": "No, it's a simple single-line estimate."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "simple-interest-calculator",
@@ -3330,7 +3420,8 @@
         "question": "What is simple interest?",
         "answer": "Interest calculated only on the principal amount."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "nautical-miles-to-kilometers",
@@ -3364,7 +3455,8 @@
         "question": "When is a nautical mile used?",
         "answer": "Primarily in maritime and aviation contexts."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "bits-to-bytes",
@@ -3398,7 +3490,8 @@
         "question": "Does this handle large numbers?",
         "answer": "Yes, enter any non‑negative numeric value."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "seconds-to-weeks",
@@ -3432,7 +3525,8 @@
         "question": "Can it handle fractional weeks?",
         "answer": "Yes, results may include decimals."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "light-travel-time",
@@ -3466,7 +3560,8 @@
         "question": "Does medium affect the result?",
         "answer": "The calculator assumes a vacuum; other media slow light slightly."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "loan-to-value-ratio",
@@ -3507,7 +3602,8 @@
         "question": "Why is LTV important?",
         "answer": "Lenders use it to assess mortgage risk."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "return-on-equity",
@@ -3548,7 +3644,8 @@
         "question": "Is higher always better?",
         "answer": "Higher is generally better but compare within industry."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "max-heart-rate",
@@ -3582,7 +3679,8 @@
         "question": "Is this accurate for everyone?",
         "answer": "It's a general guideline; individual results vary."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "daily-protein-needs",
@@ -3616,7 +3714,8 @@
         "question": "Do athletes need more?",
         "answer": "Yes, active individuals may require higher intake."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "deck-board-quantity",
@@ -3671,7 +3770,8 @@
         "question": "Assumes boards span the deck length?",
         "answer": "Yes, boards are assumed to run the full deck length."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "post-hole-concrete",
@@ -3712,7 +3812,8 @@
         "question": "Should I add extra?",
         "answer": "Many builders add about 10% for waste."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "sphere-volume",
@@ -3746,7 +3847,8 @@
         "question": "Are units cubed?",
         "answer": "Yes, volume units are cubic."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "circle-sector-area",
@@ -3787,7 +3889,8 @@
         "question": "What if the angle is 360°?",
         "answer": "The area equals that of the full circle."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "ipv4-subnet-host-count",
@@ -3821,7 +3924,8 @@
         "question": "Prefixes over 30?",
         "answer": "They leave too few usable addresses."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "video-file-size",
@@ -3862,7 +3966,8 @@
         "question": "Is overhead included?",
         "answer": "No, actual size may vary due to encoding overhead."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "fuel-cost-per-mile",
@@ -3903,7 +4008,8 @@
         "question": "Does it include maintenance?",
         "answer": "No, only fuel cost is considered."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "shower-water-usage",
@@ -3944,7 +4050,8 @@
         "question": "How can I reduce usage?",
         "answer": "Shorter showers or low-flow showerheads."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "discount-calculator-3",
@@ -3976,7 +4083,8 @@
         "question": "What does the Discount Calculator do?",
         "answer": "Determine final price after a percentage discount. Enter the values and press Calculate."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "ounces-to-milliliters",
@@ -4019,7 +4127,8 @@
         "question": "Does it work for U.K. ounces?",
         "answer": "No, U.K. imperial ounces differ slightly."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "mpg-to-liters-per-100km",
@@ -4062,7 +4171,8 @@
         "question": "Does it work for US or UK gallons?",
         "answer": "It assumes US gallons."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "layover-duration",
@@ -4123,7 +4233,8 @@
         "question": "Does this account for time zones?",
         "answer": "No, use it for layovers within the same airport."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "trip-duration",
@@ -4176,7 +4287,8 @@
         "question": "Is there a built-in calendar?",
         "answer": "No, you must provide day-of-year numbers."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "foreign-tip-converter",
@@ -4235,7 +4347,8 @@
         "question": "What if I pay in cash?",
         "answer": "The calculation still shows the equivalent value in your home currency."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "hotel-stay-cost",
@@ -4294,7 +4407,8 @@
         "question": "Does it handle discounts?",
         "answer": "Apply discounts to the nightly rate before calculating."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "flight-water-intake",
@@ -4345,7 +4459,8 @@
         "question": "Does it account for alcohol or caffeine?",
         "answer": "No, adjust your rate based on personal needs."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "jet-lag-recovery",
@@ -4388,7 +4503,8 @@
         "question": "Can everyone recover at this rate?",
         "answer": "Individual recovery varies based on health and age."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "suitcase-volume-to-liters",
@@ -4447,7 +4563,8 @@
         "question": "Is this exact capacity?",
         "answer": "Actual usable space may be less due to suitcase shape."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "travel-clothesline-length",
@@ -4498,7 +4615,8 @@
         "question": "Is extra line for tying included?",
         "answer": "No, add additional length for knots."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "hiking-elevation-gradient",
@@ -4549,7 +4667,8 @@
         "question": "Is a higher percentage steeper?",
         "answer": "Yes, larger values indicate steeper slopes."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "road-trip-time",
@@ -4616,7 +4735,8 @@
         "question": "Is refueling time included?",
         "answer": "Include it in your stop duration."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "power-bank-recharges",
@@ -4676,7 +4796,8 @@
         "question": "Is it safe to fully discharge a power bank?",
         "answer": "Check manufacturer guidelines for best practices."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "roaming-data-cost",
@@ -4727,7 +4848,8 @@
         "question": "What if I have a roaming package?",
         "answer": "Use the effective per-MB cost of your package."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "flight-carbon-footprint",
@@ -4778,7 +4900,8 @@
         "question": "Can I offset these emissions?",
         "answer": "Look for reputable carbon offset programs."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "souvenir-weight-allowance",
@@ -4829,7 +4952,8 @@
         "question": "Should I weigh souvenirs individually?",
         "answer": "Weighing helps avoid surprises at the airport."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "gallons-to-liters",
@@ -4874,7 +4998,8 @@
         "answer": "This tool does not convert Imperial gallons."
       }
     ],
-    "disclaimer": "Verify critical conversions with official sources."
+    "disclaimer": "Verify critical conversions with official sources.",
+    "info": []
   },
   {
     "slug": "kwh-to-mj",
@@ -4919,7 +5044,8 @@
         "answer": "Yes, simply enter the total kWh."
       }
     ],
-    "disclaimer": "For rough planning only; confirm critical values elsewhere."
+    "disclaimer": "For rough planning only; confirm critical values elsewhere.",
+    "info": []
   },
   {
     "slug": "seconds-to-minutes",
@@ -4964,7 +5090,8 @@
         "answer": "Input any non-negative time in seconds."
       }
     ],
-    "disclaimer": "For general time conversions only."
+    "disclaimer": "For general time conversions only.",
+    "info": []
   },
   {
     "slug": "weeks-to-seconds",
@@ -5009,7 +5136,8 @@
         "answer": "Use our seconds-to-weeks calculator for that."
       }
     ],
-    "disclaimer": "Approximate conversion; actual weeks may vary with leap seconds."
+    "disclaimer": "Approximate conversion; actual weeks may vary with leap seconds.",
+    "info": []
   },
   {
     "slug": "dividend-yield",
@@ -5062,7 +5190,8 @@
         "answer": "Not necessarily; consider company stability."
       }
     ],
-    "disclaimer": "Not investment advice."
+    "disclaimer": "Not investment advice.",
+    "info": []
   },
   {
     "slug": "straight-line-depreciation",
@@ -5123,7 +5252,8 @@
         "answer": "No, tax implications are not included."
       }
     ],
-    "disclaimer": "Consult a financial professional for accounting advice."
+    "disclaimer": "Consult a financial professional for accounting advice.",
+    "info": []
   },
   {
     "slug": "daily-fiber-requirement",
@@ -5168,7 +5298,8 @@
         "answer": "Stick to recommended amounts unless advised otherwise."
       }
     ],
-    "disclaimer": "For educational use; consult a dietitian for personalized advice."
+    "disclaimer": "For educational use; consult a dietitian for personalized advice.",
+    "info": []
   },
   {
     "slug": "calories-from-fat-percentage",
@@ -5221,7 +5352,8 @@
         "answer": "It treats all fat grams equally."
       }
     ],
-    "disclaimer": "For nutritional guidance only."
+    "disclaimer": "For nutritional guidance only.",
+    "info": []
   },
   {
     "slug": "air-conditioner-btu",
@@ -5274,7 +5406,8 @@
         "answer": "Choose a unit with at least the calculated BTU."
       }
     ],
-    "disclaimer": "Consult HVAC professionals for precise sizing."
+    "disclaimer": "Consult HVAC professionals for precise sizing.",
+    "info": []
   },
   {
     "slug": "roof-shingle-bundles",
@@ -5327,7 +5460,8 @@
         "answer": "Convert to square feet before using."
       }
     ],
-    "disclaimer": "Estimates only; consult roofing guidelines."
+    "disclaimer": "Estimates only; consult roofing guidelines.",
+    "info": []
   },
   {
     "slug": "slope-between-two-points",
@@ -5392,7 +5526,8 @@
         "answer": "Yes, it handles two-dimensional coordinates."
       }
     ],
-    "disclaimer": "Mathematical tool for educational use."
+    "disclaimer": "Mathematical tool for educational use.",
+    "info": []
   },
   {
     "slug": "nth-root",
@@ -5444,7 +5579,8 @@
         "answer": "Results use JavaScript's floating-point precision."
       }
     ],
-    "disclaimer": "Educational tool; verify results independently."
+    "disclaimer": "Educational tool; verify results independently.",
+    "info": []
   },
   {
     "slug": "hashrate-efficiency",
@@ -5497,7 +5633,8 @@
         "answer": "No, it only compares raw hashrate and power."
       }
     ],
-    "disclaimer": "Mining results vary; check hardware specifications."
+    "disclaimer": "Mining results vary; check hardware specifications.",
+    "info": []
   },
   {
     "slug": "power-supply-efficiency",
@@ -5550,7 +5687,8 @@
         "answer": "Yes, it's commonly used for PSU comparisons."
       }
     ],
-    "disclaimer": "Approximate values; check manufacturer specifications."
+    "disclaimer": "Approximate values; check manufacturer specifications.",
+    "info": []
   },
   {
     "slug": "paper-roll-length",
@@ -5611,7 +5749,8 @@
         "answer": "The calculator assumes uniform thickness."
       }
     ],
-    "disclaimer": "Approximate result; actual length may vary."
+    "disclaimer": "Approximate result; actual length may vary.",
+    "info": []
   },
   {
     "slug": "convection-oven-time",
@@ -5664,7 +5803,8 @@
         "answer": "Yes, for recipes originally written for conventional ovens."
       }
     ],
-    "disclaimer": "Check food doneness; times are estimates."
+    "disclaimer": "Check food doneness; times are estimates.",
+    "info": []
   },
   {
     "slug": "pounds-to-kilograms",
@@ -5708,7 +5848,8 @@
         "answer": "Yes, it uses the standard pound-to-kilogram conversion."
       }
     ],
-    "disclaimer": "Approximate conversions; confirm critical values with calibrated scales."
+    "disclaimer": "Approximate conversions; confirm critical values with calibrated scales.",
+    "info": []
   },
   {
     "slug": "square-feet-to-square-meters",
@@ -5752,7 +5893,8 @@
         "answer": "Results display decimals for accuracy; round as needed."
       }
     ],
-    "disclaimer": "For large projects, allow extra material for waste and irregularities."
+    "disclaimer": "For large projects, allow extra material for waste and irregularities.",
+    "info": []
   },
   {
     "slug": "age-in-days",
@@ -5796,7 +5938,8 @@
         "answer": "It's an approximation; actual day counts depend on calendar dates."
       }
     ],
-    "disclaimer": "Approximate calculation; for exact days use actual birth and current dates."
+    "disclaimer": "Approximate calculation; for exact days use actual birth and current dates.",
+    "info": []
   },
   {
     "slug": "seconds-to-days",
@@ -5840,7 +5983,8 @@
         "answer": "No, leap seconds are rare and not considered here."
       }
     ],
-    "disclaimer": "For precise timekeeping, consider leap seconds and calendar adjustments."
+    "disclaimer": "For precise timekeeping, consider leap seconds and calendar adjustments.",
+    "info": []
   },
   {
     "slug": "credit-card-monthly-interest",
@@ -5891,7 +6035,8 @@
         "answer": "Pay down your balance or seek a lower APR."
       }
     ],
-    "disclaimer": "Estimates only; actual statements may vary with compounding and fees."
+    "disclaimer": "Estimates only; actual statements may vary with compounding and fees.",
+    "info": []
   },
   {
     "slug": "credit-utilization-ratio",
@@ -5942,7 +6087,8 @@
         "answer": "This calculator is for a single card; add balances and limits to compute overall utilization."
       }
     ],
-    "disclaimer": "For guidance only; consult financial advisors for credit advice."
+    "disclaimer": "For guidance only; consult financial advisors for credit advice.",
+    "info": []
   },
   {
     "slug": "body-fat-percentage",
@@ -6007,7 +6153,8 @@
         "answer": "Convert to kilograms and centimeters before using."
       }
     ],
-    "disclaimer": "Not a medical diagnosis; consult professionals for health advice."
+    "disclaimer": "Not a medical diagnosis; consult professionals for health advice.",
+    "info": []
   },
   {
     "slug": "one-rep-max",
@@ -6058,7 +6205,8 @@
         "answer": "Yes, input weight in pounds if you interpret the result in pounds."
       }
     ],
-    "disclaimer": "Use proper form and safety measures; consult a trainer for heavy lifts."
+    "disclaimer": "Use proper form and safety measures; consult a trainer for heavy lifts.",
+    "info": []
   },
   {
     "slug": "roof-pitch-angle",
@@ -6109,7 +6257,8 @@
         "answer": "Yes, it's a typical residential roof slope."
       }
     ],
-    "disclaimer": "For structural design consult building codes and professionals."
+    "disclaimer": "For structural design consult building codes and professionals.",
+    "info": []
   },
   {
     "slug": "water-heater-recovery-time",
@@ -6167,7 +6316,8 @@
         "answer": "Yes, multiply by 60 for minutes."
       }
     ],
-    "disclaimer": "Approximate; actual recovery varies with heater efficiency and heat losses."
+    "disclaimer": "Approximate; actual recovery varies with heater efficiency and heat losses.",
+    "info": []
   },
   {
     "slug": "median-of-three",
@@ -6225,7 +6375,8 @@
         "answer": "This formula avoids sorting by using sums and extremes."
       }
     ],
-    "disclaimer": "Ensure numeric inputs for accurate results."
+    "disclaimer": "Ensure numeric inputs for accurate results.",
+    "info": []
   },
   {
     "slug": "quadratic-vertex-x",
@@ -6276,7 +6427,8 @@
         "answer": "Use y = c - b²/(4a) once you know a, b, and c."
       }
     ],
-    "disclaimer": "Provides only the x-coordinate; verify calculations in complex cases."
+    "disclaimer": "Provides only the x-coordinate; verify calculations in complex cases.",
+    "info": []
   },
   {
     "slug": "battery-charge-time",
@@ -6334,7 +6486,8 @@
         "answer": "It provides a basic estimate and doesn't account for tapering."
       }
     ],
-    "disclaimer": "Actual charge times vary with battery condition and charger design."
+    "disclaimer": "Actual charge times vary with battery condition and charger design.",
+    "info": []
   },
   {
     "slug": "ohms-law-current",
@@ -6385,7 +6538,8 @@
         "answer": "The result is in amperes (A)."
       }
     ],
-    "disclaimer": "Ideal calculation; real circuits may have additional factors."
+    "disclaimer": "Ideal calculation; real circuits may have additional factors.",
+    "info": []
   },
   {
     "slug": "cat-age-human-years",
@@ -6429,7 +6583,8 @@
         "answer": "It's a widely used estimate but not an exact science."
       }
     ],
-    "disclaimer": "For general comparison only; consult veterinarians for precise health assessments."
+    "disclaimer": "For general comparison only; consult veterinarians for precise health assessments.",
+    "info": []
   },
   {
     "slug": "book-page-count",
@@ -6480,7 +6635,8 @@
         "answer": "No, it's an estimate for planning purposes."
       }
     ],
-    "disclaimer": "Actual page counts vary with formatting and design choices."
+    "disclaimer": "Actual page counts vary with formatting and design choices.",
+    "info": []
   },
   {
     "slug": "inches-to-cm",
@@ -6523,7 +6679,8 @@
         "answer": "The calculation works but physical lengths are non-negative."
       }
     ],
-    "disclaimer": "Verify critical measurements with official sources."
+    "disclaimer": "Verify critical measurements with official sources.",
+    "info": []
   },
   {
     "slug": "pounds-to-stones",
@@ -6566,7 +6723,8 @@
         "answer": "Stones are commonly used in the United Kingdom."
       }
     ],
-    "disclaimer": "For general weight conversion only; medical decisions require professional advice."
+    "disclaimer": "For general weight conversion only; medical decisions require professional advice.",
+    "info": []
   },
   {
     "slug": "days-to-seconds",
@@ -6609,7 +6767,8 @@
         "answer": "No, it uses the standard 86,400 seconds per day."
       }
     ],
-    "disclaimer": "Leap seconds and variations in day length are not considered."
+    "disclaimer": "Leap seconds and variations in day length are not considered.",
+    "info": []
   },
   {
     "slug": "age-in-months",
@@ -6652,7 +6811,8 @@
         "answer": "No, it assumes all months are equal."
       }
     ],
-    "disclaimer": "Approximation for calendar planning; actual months vary in length."
+    "disclaimer": "Approximation for calendar planning; actual months vary in length.",
+    "info": []
   },
   {
     "slug": "gross-margin",
@@ -6702,7 +6862,8 @@
         "answer": "No, only direct cost of goods sold is considered."
       }
     ],
-    "disclaimer": "Simplified calculation; consult a financial professional for detailed analysis."
+    "disclaimer": "Simplified calculation; consult a financial professional for detailed analysis.",
+    "info": []
   },
   {
     "slug": "break-even-units",
@@ -6759,7 +6920,8 @@
         "answer": "Expenses that do not change with production volume."
       }
     ],
-    "disclaimer": "Simplified model; additional costs and taxes may apply."
+    "disclaimer": "Simplified model; additional costs and taxes may apply.",
+    "info": []
   },
   {
     "slug": "calorie-deficit",
@@ -6809,7 +6971,8 @@
         "answer": "Weight loss also depends on activity and individual factors."
       }
     ],
-    "disclaimer": "Consult a healthcare professional before making dietary changes."
+    "disclaimer": "Consult a healthcare professional before making dietary changes.",
+    "info": []
   },
   {
     "slug": "body-surface-area-du-bois",
@@ -6859,7 +7022,8 @@
         "answer": "Yes, weight must be in kilograms and height in centimeters."
       }
     ],
-    "disclaimer": "For educational purposes only; consult medical professionals for health decisions."
+    "disclaimer": "For educational purposes only; consult medical professionals for health decisions.",
+    "info": []
   },
   {
     "slug": "brick-cost",
@@ -6909,7 +7073,8 @@
         "answer": "No, it only multiplies quantity by unit price."
       }
     ],
-    "disclaimer": "For budgeting purposes only; supplier fees and materials may vary."
+    "disclaimer": "For budgeting purposes only; supplier fees and materials may vary.",
+    "info": []
   },
   {
     "slug": "lawn-watering-time",
@@ -6966,7 +7131,8 @@
         "answer": "Yes, this assumes perfect distribution without losses."
       }
     ],
-    "disclaimer": "Actual watering needs depend on soil and weather conditions."
+    "disclaimer": "Actual watering needs depend on soil and weather conditions.",
+    "info": []
   },
   {
     "slug": "rectangular-prism-volume",
@@ -7023,7 +7189,8 @@
         "answer": "No, multiplication is commutative."
       }
     ],
-    "disclaimer": "Mathematical calculation; ensure consistent units for accuracy."
+    "disclaimer": "Mathematical calculation; ensure consistent units for accuracy.",
+    "info": []
   },
   {
     "slug": "hexagon-area",
@@ -7066,7 +7233,8 @@
         "answer": "No, it assumes all sides and angles are equal."
       }
     ],
-    "disclaimer": "For regular hexagons only; ensure measurements are accurate."
+    "disclaimer": "For regular hexagons only; ensure measurements are accurate.",
+    "info": []
   },
   {
     "slug": "ohms-law-resistance",
@@ -7116,7 +7284,8 @@
         "answer": "It represents ideal conditions; real circuits may differ."
       }
     ],
-    "disclaimer": "Ideal calculation; real components have tolerances and reactance."
+    "disclaimer": "Ideal calculation; real components have tolerances and reactance.",
+    "info": []
   },
   {
     "slug": "color-depth-to-colors",
@@ -7159,7 +7328,8 @@
         "answer": "Bits are whole numbers; fractions are not meaningful here."
       }
     ],
-    "disclaimer": "Assumes standard RGB without additional channels."
+    "disclaimer": "Assumes standard RGB without additional channels.",
+    "info": []
   },
   {
     "slug": "horse-age-human-years",
@@ -7202,7 +7372,8 @@
         "answer": "Yes, it assumes 4.5 human years per horse year after age two."
       }
     ],
-    "disclaimer": "For general comparison only; consult a veterinarian for precise assessments."
+    "disclaimer": "For general comparison only; consult a veterinarian for precise assessments.",
+    "info": []
   },
   {
     "slug": "dice-roll-probability",
@@ -7252,7 +7423,8 @@
         "answer": "No, it assumes all sides are equally likely."
       }
     ],
-    "disclaimer": "For gaming probability estimates; real-world outcomes may vary."
+    "disclaimer": "For gaming probability estimates; real-world outcomes may vary.",
+    "info": []
   },
   {
     "slug": "btu-to-watts",
@@ -7296,7 +7468,8 @@
         "answer": "No, it only converts units of power."
       }
     ],
-    "disclaimer": "Energy conversion only; efficiency losses are not included."
+    "disclaimer": "Energy conversion only; efficiency losses are not included.",
+    "info": []
   },
   {
     "slug": "rpm-to-hertz",
@@ -7340,7 +7513,8 @@
         "answer": "No, only magnitude is considered."
       }
     ],
-    "disclaimer": "Assumes constant rotational speed without gear losses."
+    "disclaimer": "Assumes constant rotational speed without gear losses.",
+    "info": []
   },
   {
     "slug": "day-of-week-finder",
@@ -7398,7 +7572,8 @@
         "answer": "Use the index to map to weekday names."
       }
     ],
-    "disclaimer": "Uses the Gregorian calendar; time zones may affect boundaries near midnight."
+    "disclaimer": "Uses the Gregorian calendar; time zones may affect boundaries near midnight.",
+    "info": []
   },
   {
     "slug": "days-between-dates",
@@ -7477,7 +7652,8 @@
         "answer": "The calculation uses local time and may vary near midnight."
       }
     ],
-    "disclaimer": "Approximate day count; ignore daylight-saving or time-zone changes for precise planning."
+    "disclaimer": "Approximate day count; ignore daylight-saving or time-zone changes for precise planning.",
+    "info": []
   },
   {
     "slug": "overtime-pay-calculator",
@@ -7535,7 +7711,8 @@
         "answer": "Enter any multiplier your employer uses."
       }
     ],
-    "disclaimer": "For estimation purposes; consult payroll policies for exact amounts."
+    "disclaimer": "For estimation purposes; consult payroll policies for exact amounts.",
+    "info": []
   },
   {
     "slug": "savings-goal-timeline",
@@ -7593,7 +7770,8 @@
         "answer": "No, it assumes all contributions remain invested."
       }
     ],
-    "disclaimer": "For planning purposes; actual returns and timelines may differ."
+    "disclaimer": "For planning purposes; actual returns and timelines may differ.",
+    "info": []
   },
   {
     "slug": "bmr-calculator",
@@ -7658,7 +7836,8 @@
         "answer": "No, it estimates resting metabolic rate only."
       }
     ],
-    "disclaimer": "Approximation only; consult a healthcare professional for personalized advice."
+    "disclaimer": "Approximation only; consult a healthcare professional for personalized advice.",
+    "info": []
   },
   {
     "slug": "daily-protein-intake",
@@ -7709,7 +7888,8 @@
         "answer": "Yes, convert your weight to kilograms before using."
       }
     ],
-    "disclaimer": "General guideline; consult a nutritionist for personalized advice."
+    "disclaimer": "General guideline; consult a nutritionist for personalized advice.",
+    "info": []
   },
   {
     "slug": "rain-gutter-volume",
@@ -7767,7 +7947,8 @@
         "answer": "Yes, debris or screens can reduce actual volume."
       }
     ],
-    "disclaimer": "Approximate capacity; actual performance may vary with installation conditions."
+    "disclaimer": "Approximate capacity; actual performance may vary with installation conditions.",
+    "info": []
   },
   {
     "slug": "stair-step-count",
@@ -7818,7 +7999,8 @@
         "answer": "Yes, always verify requirements before construction."
       }
     ],
-    "disclaimer": "Consult building standards and professionals for safe staircase design."
+    "disclaimer": "Consult building standards and professionals for safe staircase design.",
+    "info": []
   },
   {
     "slug": "arc-length-circle",
@@ -7869,7 +8051,8 @@
         "answer": "If angle is ≤360°, yes; larger angles yield multiple laps."
       }
     ],
-    "disclaimer": "Ideal geometric calculation; ensure measurements are accurate."
+    "disclaimer": "Ideal geometric calculation; ensure measurements are accurate.",
+    "info": []
   },
   {
     "slug": "polygon-interior-angle-sum",
@@ -7913,7 +8096,8 @@
         "answer": "Each triangle has 180°, and a polygon can be divided into (n−2) triangles."
       }
     ],
-    "disclaimer": "Pure geometric formula; ensure the figure is a simple polygon."
+    "disclaimer": "Pure geometric formula; ensure the figure is a simple polygon.",
+    "info": []
   },
   {
     "slug": "compression-ratio",
@@ -7964,7 +8148,8 @@
         "answer": "Yes, use the same units for original and compressed sizes."
       }
     ],
-    "disclaimer": "Ignores metadata and compression overhead; actual savings may vary."
+    "disclaimer": "Ignores metadata and compression overhead; actual savings may vary.",
+    "info": []
   },
   {
     "slug": "clock-cycle-time",
@@ -8008,7 +8193,8 @@
         "answer": "It assumes an ideal clock without jitter."
       }
     ],
-    "disclaimer": "Idealized calculation; hardware characteristics may affect real timing."
+    "disclaimer": "Idealized calculation; hardware characteristics may affect real timing.",
+    "info": []
   },
   {
     "slug": "wind-chill-index",
@@ -8059,7 +8245,8 @@
         "answer": "For winds under 3 mph, wind chill equals the air temperature."
       }
     ],
-    "disclaimer": "Approximate guideline; extreme weather can be dangerous despite calculations."
+    "disclaimer": "Approximate guideline; extreme weather can be dangerous despite calculations.",
+    "info": []
   },
   {
     "slug": "tree-carbon-offset",
@@ -8103,7 +8290,8 @@
         "answer": "Tree survival and growth are required to sequester carbon."
       }
     ],
-    "disclaimer": "Approximate calculation; actual sequestration varies by species and environment."
+    "disclaimer": "Approximate calculation; actual sequestration varies by species and environment.",
+    "info": []
   },
   {
     "slug": "electronvolt-to-joule",
@@ -8147,7 +8335,8 @@
         "answer": "No, it's purely a unit conversion."
       }
     ],
-    "disclaimer": "For educational use; high-energy calculations may involve additional factors."
+    "disclaimer": "For educational use; high-energy calculations may involve additional factors.",
+    "info": []
   },
   {
     "slug": "feet-per-second-to-mph",
@@ -8191,7 +8380,8 @@
         "answer": "Yes, it provides a quick unit conversion."
       }
     ],
-    "disclaimer": "Check against precise constants when high accuracy is required."
+    "disclaimer": "Check against precise constants when high accuracy is required.",
+    "info": []
   },
   {
     "slug": "iso-week-number",
@@ -8249,7 +8439,8 @@
         "answer": "Yes, the Date object manages leap years automatically."
       }
     ],
-    "disclaimer": "Uses the Gregorian calendar and ISO 8601 definition of week numbers."
+    "disclaimer": "Uses the Gregorian calendar and ISO 8601 definition of week numbers.",
+    "info": []
   },
   {
     "slug": "days-in-month",
@@ -8300,7 +8491,8 @@
         "answer": "Setting day 0 returns the last day of the previous month."
       }
     ],
-    "disclaimer": "Assumes the Gregorian calendar; historical calendars may differ."
+    "disclaimer": "Assumes the Gregorian calendar; historical calendars may differ.",
+    "info": []
   },
   {
     "slug": "return-on-investment",
@@ -8351,7 +8543,8 @@
         "answer": "Results are shown as a percentage."
       }
     ],
-    "disclaimer": "ROI calculations ignore fees, taxes, and time value of money."
+    "disclaimer": "ROI calculations ignore fees, taxes, and time value of money.",
+    "info": []
   },
   {
     "slug": "debt-to-income-ratio",
@@ -8402,7 +8595,8 @@
         "answer": "Use gross income before taxes for standard DTI calculations."
       }
     ],
-    "disclaimer": "DTI is an estimate; lenders may calculate it differently or include additional factors."
+    "disclaimer": "DTI is an estimate; lenders may calculate it differently or include additional factors.",
+    "info": []
   },
   {
     "slug": "ideal-body-weight",
@@ -8453,7 +8647,8 @@
         "answer": "No, it's a rough guideline and doesn't replace professional advice."
       }
     ],
-    "disclaimer": "Consult healthcare providers for personalized weight assessments."
+    "disclaimer": "Consult healthcare providers for personalized weight assessments.",
+    "info": []
   },
   {
     "slug": "target-heart-rate",
@@ -8504,7 +8699,8 @@
         "answer": "Yes, some drugs alter heart rate responses."
       }
     ],
-    "disclaimer": "Consult a healthcare provider before starting new exercise programs."
+    "disclaimer": "Consult a healthcare provider before starting new exercise programs.",
+    "info": []
   },
   {
     "slug": "board-foot-calculator",
@@ -8562,7 +8758,8 @@
         "answer": "This formula measures volume only, not weight or moisture."
       }
     ],
-    "disclaimer": "Estimates nominal sizes; actual lumber dimensions may vary."
+    "disclaimer": "Estimates nominal sizes; actual lumber dimensions may vary.",
+    "info": []
   },
   {
     "slug": "drywall-sheet-quantity",
@@ -8620,7 +8817,8 @@
         "answer": "No, it purely estimates sheet count based on area."
       }
     ],
-    "disclaimer": "Always purchase extra material to accommodate mistakes and future repairs."
+    "disclaimer": "Always purchase extra material to accommodate mistakes and future repairs.",
+    "info": []
   },
   {
     "slug": "factorial-calculator",
@@ -8664,7 +8862,8 @@
         "answer": "They increase very rapidly with n."
       }
     ],
-    "disclaimer": "Large n may exceed JavaScript's number precision."
+    "disclaimer": "Large n may exceed JavaScript's number precision.",
+    "info": []
   },
   {
     "slug": "gcd-calculator",
@@ -8715,7 +8914,8 @@
         "answer": "GCD is used in simplifying fractions and number theory."
       }
     ],
-    "disclaimer": "Handles integers only; results are exact within JavaScript's numeric limits."
+    "disclaimer": "Handles integers only; results are exact within JavaScript's numeric limits.",
+    "info": []
   },
   {
     "slug": "subnet-hosts",
@@ -8759,7 +8959,8 @@
         "answer": "No, this formula is specific to IPv4."
       }
     ],
-    "disclaimer": "Assumes standard IPv4 addressing; actual allocations may reserve additional addresses."
+    "disclaimer": "Assumes standard IPv4 addressing; actual allocations may reserve additional addresses.",
+    "info": []
   },
   {
     "slug": "raid-5-capacity",
@@ -8810,7 +9011,8 @@
         "answer": "No, actual usable space may be slightly less."
       }
     ],
-    "disclaimer": "Assumes perfect parity distribution; real-world capacity can vary."
+    "disclaimer": "Assumes perfect parity distribution; real-world capacity can vary.",
+    "info": []
   },
   {
     "slug": "lightning-distance",
@@ -8854,7 +9056,8 @@
         "answer": "It's an estimate; terrain and atmospheric conditions may alter sound travel."
       }
     ],
-    "disclaimer": "For safety awareness only; seek shelter during storms regardless of distance."
+    "disclaimer": "For safety awareness only; seek shelter during storms regardless of distance.",
+    "info": []
   },
   {
     "slug": "coffee-water-ratio",
@@ -8905,7 +9108,8 @@
         "answer": "It works for any method as long as ratio is specified."
       }
     ],
-    "disclaimer": "Brewing preferences vary; adjust ratios to taste."
+    "disclaimer": "Brewing preferences vary; adjust ratios to taste.",
+    "info": []
   },
   {
     "slug": "lux-to-foot-candles",
@@ -8949,7 +9153,8 @@
       }
     ],
     "disclaimer": "For general lighting reference only.",
-    "unit": "fc"
+    "unit": "fc",
+    "info": []
   },
   {
     "slug": "kilojoules-to-kilocalories",
@@ -8993,7 +9198,8 @@
       }
     ],
     "disclaimer": "Approximate nutritional conversion.",
-    "unit": "kcal"
+    "unit": "kcal",
+    "info": []
   },
   {
     "slug": "weeks-to-hours-converter",
@@ -9037,7 +9243,8 @@
       }
     ],
     "disclaimer": "Uses a constant 7-day week.",
-    "unit": "hours"
+    "unit": "hours",
+    "info": []
   },
   {
     "slug": "seconds-to-months-converter",
@@ -9081,7 +9288,8 @@
       }
     ],
     "disclaimer": "Uses an average 30-day month for simplicity.",
-    "unit": "months"
+    "unit": "months",
+    "info": []
   },
   {
     "slug": "return-on-assets",
@@ -9131,7 +9339,8 @@
       }
     ],
     "disclaimer": "Informational estimation only.",
-    "unit": "%"
+    "unit": "%",
+    "info": []
   },
   {
     "slug": "debt-to-equity-ratio",
@@ -9181,7 +9390,8 @@
       }
     ],
     "disclaimer": "Simplified financial ratio.",
-    "unit": "ratio"
+    "unit": "ratio",
+    "info": []
   },
   {
     "slug": "body-fat-mass",
@@ -9231,7 +9441,8 @@
       }
     ],
     "disclaimer": "Not a substitute for professional health assessment.",
-    "unit": "kg"
+    "unit": "kg",
+    "info": []
   },
   {
     "slug": "calorie-surplus-weight-gain",
@@ -9275,7 +9486,8 @@
       }
     ],
     "disclaimer": "Approximation; individual results vary.",
-    "unit": "lb"
+    "unit": "lb",
+    "info": []
   },
   {
     "slug": "tile-grout-volume",
@@ -9331,7 +9543,8 @@
       }
     ],
     "disclaimer": "Estimate only; actual needs may vary.",
-    "unit": "L"
+    "unit": "L",
+    "info": []
   },
   {
     "slug": "insulation-roll-count",
@@ -9381,7 +9594,8 @@
       }
     ],
     "disclaimer": "Add a margin for cuts and overlaps.",
-    "unit": "rolls"
+    "unit": "rolls",
+    "info": []
   },
   {
     "slug": "percentage-error",
@@ -9431,7 +9645,8 @@
       }
     ],
     "disclaimer": "For educational estimation only.",
-    "unit": "%"
+    "unit": "%",
+    "info": []
   },
   {
     "slug": "polygon-exterior-angle",
@@ -9475,7 +9690,8 @@
       }
     ],
     "disclaimer": "Assumes a regular polygon.",
-    "unit": "degrees"
+    "unit": "degrees",
+    "info": []
   },
   {
     "slug": "compression-savings",
@@ -9525,7 +9741,8 @@
       }
     ],
     "disclaimer": "Size change only; does not assess quality.",
-    "unit": "%"
+    "unit": "%",
+    "info": []
   },
   {
     "slug": "screen-to-body-ratio",
@@ -9587,7 +9804,8 @@
       }
     ],
     "disclaimer": "Simplified geometric estimate.",
-    "unit": "%"
+    "unit": "%",
+    "info": []
   },
   {
     "slug": "rabbit-age-human-years",
@@ -9631,7 +9849,8 @@
       }
     ],
     "disclaimer": "For fun estimation; consult a vet for health concerns.",
-    "unit": "human years"
+    "unit": "human years",
+    "info": []
   },
   {
     "slug": "tempo-to-delay-time",
@@ -9675,7 +9894,8 @@
       }
     ],
     "disclaimer": "Timing values are idealized; musical feel may vary.",
-    "unit": "ms"
+    "unit": "ms",
+    "info": []
   },
   {
     "slug": "watts-to-horsepower",
@@ -9720,7 +9940,8 @@
       }
     ],
     "disclaimer": "For estimation only; confirm critical conversions independently.",
-    "unit": "hp"
+    "unit": "hp",
+    "info": []
   },
   {
     "slug": "liters-to-gallons",
@@ -9765,7 +9986,8 @@
       }
     ],
     "disclaimer": "For estimation only; double-check critical measurements.",
-    "unit": "gal"
+    "unit": "gal",
+    "info": []
   },
   {
     "slug": "business-days-between-dates",
@@ -9845,7 +10067,8 @@
       }
     ],
     "disclaimer": "Exclude public holidays manually for precise scheduling.",
-    "unit": "days"
+    "unit": "days",
+    "info": []
   },
   {
     "slug": "julian-date",
@@ -9904,7 +10127,8 @@
       }
     ],
     "disclaimer": "For civil dates in the Gregorian calendar only.",
-    "unit": "JDN"
+    "unit": "JDN",
+    "info": []
   },
   {
     "slug": "dividend-payout-ratio",
@@ -9956,7 +10180,8 @@
       }
     ],
     "disclaimer": "Informational only; consult financial advisors for decisions.",
-    "unit": "%"
+    "unit": "%",
+    "info": []
   },
   {
     "slug": "interest-coverage-ratio",
@@ -10008,7 +10233,8 @@
       }
     ],
     "disclaimer": "Financial metrics are estimates; seek professional advice.",
-    "unit": "times"
+    "unit": "times",
+    "info": []
   },
   {
     "slug": "pregnancy-week",
@@ -10088,7 +10314,8 @@
       }
     ],
     "disclaimer": "For informational purposes only. Consult a medical professional for pregnancy guidance.",
-    "unit": "weeks"
+    "unit": "weeks",
+    "info": []
   },
   {
     "slug": "smoking-pack-years",
@@ -10140,7 +10367,8 @@
       }
     ],
     "disclaimer": "Informational only; seek medical advice for health assessments.",
-    "unit": "pack-years"
+    "unit": "pack-years",
+    "info": []
   },
   {
     "slug": "carpet-cost",
@@ -10192,7 +10420,8 @@
       }
     ],
     "disclaimer": "Estimates only; actual costs may vary with vendor and materials.",
-    "unit": "USD"
+    "unit": "USD",
+    "info": []
   },
   {
     "slug": "plant-spacing",
@@ -10244,7 +10473,8 @@
       }
     ],
     "disclaimer": "Use as a planning guide; adjust for specific plant needs.",
-    "unit": "plants"
+    "unit": "plants",
+    "info": []
   },
   {
     "slug": "lcm-calculator",
@@ -10296,7 +10526,8 @@
       }
     ],
     "disclaimer": "Designed for basic educational use only.",
-    "unit": ""
+    "unit": "",
+    "info": []
   },
   {
     "slug": "modulo-calculator",
@@ -10348,7 +10579,8 @@
       }
     ],
     "disclaimer": "Use for educational purposes; verify calculations for critical tasks.",
-    "unit": "remainder"
+    "unit": "remainder",
+    "info": []
   },
   {
     "slug": "password-entropy",
@@ -10400,7 +10632,8 @@
       }
     ],
     "disclaimer": "Entropy is theoretical; follow best practices for secure passwords.",
-    "unit": "bits"
+    "unit": "bits",
+    "info": []
   },
   {
     "slug": "ohms-law-power",
@@ -10452,7 +10685,8 @@
       }
     ],
     "disclaimer": "For basic electronics reference only.",
-    "unit": "W"
+    "unit": "W",
+    "info": []
   },
   {
     "slug": "birthday-paradox-probability",
@@ -10497,7 +10731,8 @@
       }
     ],
     "disclaimer": "A theoretical calculation ignoring real-world birth date distributions.",
-    "unit": "%"
+    "unit": "%",
+    "info": []
   },
   {
     "slug": "shadow-length",
@@ -10549,7 +10784,8 @@
       }
     ],
     "disclaimer": "Idealized calculation without atmospheric refraction.",
-    "unit": "m"
+    "unit": "m",
+    "info": []
   },
   {
     "slug": "torque-nm-to-ftlb",
@@ -10591,7 +10827,8 @@
       }
     ],
     "disclaimer": "Verify torque settings with manufacturer documentation.",
-    "unit": "ft·lb"
+    "unit": "ft·lb",
+    "info": []
   },
   {
     "slug": "psi-to-kpa",
@@ -10633,7 +10870,8 @@
       }
     ],
     "disclaimer": "Always verify critical pressure values with certified instruments.",
-    "unit": "kPa"
+    "unit": "kPa",
+    "info": []
   },
   {
     "slug": "billable-hours-to-units",
@@ -10675,7 +10913,8 @@
       }
     ],
     "disclaimer": "Billing practices vary; confirm with your firm's policies.",
-    "unit": "units"
+    "unit": "units",
+    "info": []
   },
   {
     "slug": "overtime-hours",
@@ -10722,7 +10961,8 @@
       }
     ],
     "disclaimer": "Consult local labor laws for overtime rules.",
-    "unit": "hours"
+    "unit": "hours",
+    "info": []
   },
   {
     "slug": "contingency-fee",
@@ -10769,7 +11009,8 @@
       }
     ],
     "disclaimer": "Actual fees may vary; consult your retainer agreement.",
-    "unit": "currency"
+    "unit": "currency",
+    "info": []
   },
   {
     "slug": "shop-labor-cost",
@@ -10816,7 +11057,8 @@
       }
     ],
     "disclaimer": "For estimates only; check actual invoices.",
-    "unit": "currency"
+    "unit": "currency",
+    "info": []
   },
   {
     "slug": "sedentary-calorie-burn",
@@ -10863,7 +11105,8 @@
       }
     ],
     "disclaimer": "Consult a health professional for personalized guidance.",
-    "unit": "kcal"
+    "unit": "kcal",
+    "info": []
   },
   {
     "slug": "vibration-exposure-points",
@@ -10910,7 +11153,8 @@
       }
     ],
     "disclaimer": "Compare results with regulatory exposure limits.",
-    "unit": "points"
+    "unit": "points",
+    "info": []
   },
   {
     "slug": "garage-ramp-slope",
@@ -10957,7 +11201,8 @@
       }
     ],
     "disclaimer": "Verify ramp compliance with local regulations.",
-    "unit": "%"
+    "unit": "%",
+    "info": []
   },
   {
     "slug": "garage-epoxy-coverage",
@@ -11004,7 +11249,8 @@
       }
     ],
     "disclaimer": "Always follow product instructions for mixing and application.",
-    "unit": "gallons"
+    "unit": "gallons",
+    "info": []
   },
   {
     "slug": "lever-mechanical-advantage",
@@ -11051,7 +11297,8 @@
       }
     ],
     "disclaimer": "Real-world levers lose efficiency due to friction.",
-    "unit": "ratio"
+    "unit": "ratio",
+    "info": []
   },
   {
     "slug": "evidence-percentage",
@@ -11098,7 +11345,8 @@
       }
     ],
     "disclaimer": "Use results as a rough metric; legal relevance varies.",
-    "unit": "%"
+    "unit": "%",
+    "info": []
   },
   {
     "slug": "gear-ratio",
@@ -11145,7 +11393,8 @@
       }
     ],
     "disclaimer": "Verify gear compatibility before installation.",
-    "unit": "ratio"
+    "unit": "ratio",
+    "info": []
   },
   {
     "slug": "battery-runtime",
@@ -11192,7 +11441,8 @@
       }
     ],
     "disclaimer": "Actual runtime depends on battery condition and environment.",
-    "unit": "hours"
+    "unit": "hours",
+    "info": []
   },
   {
     "slug": "citation-density",
@@ -11239,7 +11489,8 @@
       }
     ],
     "disclaimer": "Citation counts do not measure argument strength.",
-    "unit": "citations per page"
+    "unit": "citations per page",
+    "info": []
   },
   {
     "slug": "safety-incident-rate",
@@ -11286,7 +11537,8 @@
       }
     ],
     "disclaimer": "Follow OSHA guidelines for recordkeeping definitions.",
-    "unit": "incident rate"
+    "unit": "incident rate",
+    "info": []
   },
   {
     "slug": "gpm-to-lps-converter",
@@ -11330,7 +11582,8 @@
         "answer": "Yes, divide liters per second by 0.0630902."
       }
     ],
-    "disclaimer": "Approximate conversion; verify requirements for critical systems."
+    "disclaimer": "Approximate conversion; verify requirements for critical systems.",
+    "info": []
   },
   {
     "slug": "credit-hours-to-ects",
@@ -11374,7 +11627,8 @@
         "answer": "ECTS helps compare course loads across European universities."
       }
     ],
-    "disclaimer": "Universities may apply different equivalences; confirm with your program."
+    "disclaimer": "Universities may apply different equivalences; confirm with your program.",
+    "info": []
   },
   {
     "slug": "semester-week-number",
@@ -11453,7 +11707,8 @@
         "answer": "Yes, JavaScript date arithmetic accounts for them."
       }
     ],
-    "disclaimer": "Academic calendars vary; verify week numbers with your institution."
+    "disclaimer": "Academic calendars vary; verify week numbers with your institution.",
+    "info": []
   },
   {
     "slug": "pvc-cure-completion",
@@ -11504,7 +11759,8 @@
         "answer": "The modulus wraps the time to the next day."
       }
     ],
-    "disclaimer": "Always follow manufacturer cure recommendations and safety guidelines."
+    "disclaimer": "Always follow manufacturer cure recommendations and safety guidelines.",
+    "info": []
   },
   {
     "slug": "research-grant-overhead",
@@ -11555,7 +11811,8 @@
         "answer": "No, it only accounts for overhead percentage."
       }
     ],
-    "disclaimer": "Consult your institution for official policies and rates."
+    "disclaimer": "Consult your institution for official policies and rates.",
+    "info": []
   },
   {
     "slug": "pipe-installation-cost",
@@ -11620,7 +11877,8 @@
         "answer": "No, those should be calculated separately."
       }
     ],
-    "disclaimer": "Costs vary by region and project; use for rough estimation only."
+    "disclaimer": "Costs vary by region and project; use for rough estimation only.",
+    "info": []
   },
   {
     "slug": "labor-hydration-rate",
@@ -11678,7 +11936,8 @@
         "answer": "No, it's a general guideline."
       }
     ],
-    "disclaimer": "Stay within personal limits and consult health professionals when needed."
+    "disclaimer": "Stay within personal limits and consult health professionals when needed.",
+    "info": []
   },
   {
     "slug": "vitamin-d-exposure-time",
@@ -11729,7 +11988,8 @@
         "answer": "No, this assumes clear skies."
       }
     ],
-    "disclaimer": "Approximation only; follow medical advice for sun exposure."
+    "disclaimer": "Approximation only; follow medical advice for sun exposure.",
+    "info": []
   },
   {
     "slug": "compost-carbon-nitrogen-ratio",
@@ -11794,7 +12054,8 @@
         "answer": "Around 30:1 for efficient composting."
       }
     ],
-    "disclaimer": "Ratios are approximations; materials differ in actual content."
+    "disclaimer": "Ratios are approximations; materials differ in actual content.",
+    "info": []
   },
   {
     "slug": "drain-pipe-slope",
@@ -11845,7 +12106,8 @@
         "answer": "This calculation ignores diameter; check local codes."
       }
     ],
-    "disclaimer": "Verify slope requirements with local building regulations."
+    "disclaimer": "Verify slope requirements with local building regulations.",
+    "info": []
   },
   {
     "slug": "determinant-3x3-matrix",
@@ -11945,7 +12207,8 @@
         "answer": "When rows or columns are linearly dependent."
       }
     ],
-    "disclaimer": "For educational purposes; verify results for critical applications."
+    "disclaimer": "For educational purposes; verify results for critical applications.",
+    "info": []
   },
   {
     "slug": "poisson-probability",
@@ -11996,7 +12259,8 @@
         "answer": "Yes, over all possible k values."
       }
     ],
-    "disclaimer": "Idealized model; real-world data may deviate."
+    "disclaimer": "Idealized model; real-world data may deviate.",
+    "info": []
   },
   {
     "slug": "drone-flight-time",
@@ -12054,7 +12318,8 @@
         "answer": "Convert values to the units shown before input."
       }
     ],
-    "disclaimer": "Real-world conditions like wind and battery age affect flight time."
+    "disclaimer": "Real-world conditions like wind and battery age affect flight time.",
+    "info": []
   },
   {
     "slug": "3d-print-time",
@@ -12112,7 +12377,8 @@
         "answer": "Yes, this uses an average speed."
       }
     ],
-    "disclaimer": "Actual print times depend on model complexity and printer settings."
+    "disclaimer": "Actual print times depend on model complexity and printer settings.",
+    "info": []
   },
   {
     "slug": "grant-application-success",
@@ -12163,7 +12429,8 @@
         "answer": "No, it's only a probability estimate."
       }
     ],
-    "disclaimer": "Probabilities are estimates; actual results vary."
+    "disclaimer": "Probabilities are estimates; actual results vary.",
+    "info": []
   },
   {
     "slug": "research-poster-font-size",
@@ -12207,7 +12474,8 @@
         "answer": "Typically titles are two to three times body text size."
       }
     ],
-    "disclaimer": "Adjust for specific conference or journal guidelines."
+    "disclaimer": "Adjust for specific conference or journal guidelines.",
+    "info": []
   },
   {
     "slug": "inventory-turnover-ratio",
@@ -12260,7 +12528,8 @@
         "answer": "Use cost of goods sold and average inventory at cost for consistency."
       }
     ],
-    "disclaimer": "General information only; consult a financial professional for analysis."
+    "disclaimer": "General information only; consult a financial professional for analysis.",
+    "info": []
   },
   {
     "slug": "savings-rate",
@@ -12313,7 +12582,8 @@
         "answer": "Using take-home pay provides a clearer picture."
       }
     ],
-    "disclaimer": "Estimates only; consult a financial advisor for personalized guidance."
+    "disclaimer": "Estimates only; consult a financial advisor for personalized guidance.",
+    "info": []
   },
   {
     "slug": "running-pace",
@@ -12366,7 +12636,8 @@
         "answer": "Pace is undefined when distance is zero."
       }
     ],
-    "disclaimer": "For training guidance only; adjust for personal fitness levels."
+    "disclaimer": "For training guidance only; adjust for personal fitness levels.",
+    "info": []
   },
   {
     "slug": "permutation-calculator",
@@ -12419,7 +12690,8 @@
         "answer": "Yes, permutations count distinct orderings."
       }
     ],
-    "disclaimer": "Mathematical tool only; verify results for critical applications."
+    "disclaimer": "Mathematical tool only; verify results for critical applications.",
+    "info": []
   },
   {
     "slug": "cups-to-tbsp",
@@ -12464,7 +12736,8 @@
         "answer": "Divide tablespoons by 16 to get cups."
       }
     ],
-    "disclaimer": "For kitchen estimates; check recipe requirements for precision."
+    "disclaimer": "For kitchen estimates; check recipe requirements for precision.",
+    "info": []
   },
   {
     "slug": "day-of-year",
@@ -12527,7 +12800,8 @@
         "answer": "Yes, the first day of any year is day 1."
       }
     ],
-    "disclaimer": "For general calendrical calculations; verify for official scheduling."
+    "disclaimer": "For general calendrical calculations; verify for official scheduling.",
+    "info": []
   },
   {
     "slug": "gpa-calculator",
@@ -12580,7 +12854,8 @@
         "answer": "Use your institution's quality points which already include weights."
       }
     ],
-    "disclaimer": "Check with your school for official GPA calculations."
+    "disclaimer": "Check with your school for official GPA calculations.",
+    "info": []
   },
   {
     "slug": "lc-resonant-frequency",
@@ -12633,7 +12908,8 @@
         "answer": "Resonant frequency is undefined if either component is zero."
       }
     ],
-    "disclaimer": "Idealized calculation; real circuits include resistance and losses."
+    "disclaimer": "Idealized calculation; real circuits include resistance and losses.",
+    "info": []
   },
   {
     "slug": "cpu-utilization",
@@ -12686,7 +12962,8 @@
         "answer": "Yes, use the same time units for busy and total."
       }
     ],
-    "disclaimer": "Simplified metric; actual CPU usage may vary based on system measurement methods."
+    "disclaimer": "Simplified metric; actual CPU usage may vary based on system measurement methods.",
+    "info": []
   },
   {
     "slug": "paint-cost-estimator",
@@ -12747,7 +13024,8 @@
         "answer": "Use the manufacturer's specified coverage."
       }
     ],
-    "disclaimer": "Estimate only; actual paint needs may vary by surface and application technique."
+    "disclaimer": "Estimate only; actual paint needs may vary by surface and application technique.",
+    "info": []
   },
   {
     "slug": "road-trip-rest-stops",
@@ -12800,7 +13078,8 @@
         "answer": "Treat overnight stays as rest stops."
       }
     ],
-    "disclaimer": "Use as a planning aid; adjust for driver fatigue and local regulations."
+    "disclaimer": "Use as a planning aid; adjust for driver fatigue and local regulations.",
+    "info": []
   },
   {
     "slug": "click-through-rate",
@@ -12853,7 +13132,8 @@
         "answer": "No, it only measures clicks relative to impressions."
       }
     ],
-    "disclaimer": "For marketing estimates; actual campaign performance may vary."
+    "disclaimer": "For marketing estimates; actual campaign performance may vary.",
+    "info": []
   },
   {
     "slug": "mb-to-gb-converter",
@@ -12884,7 +13164,8 @@
         "question": "Can I use decimals?",
         "answer": "Yes, decimals are allowed."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "percentage-to-decimal",
@@ -12915,7 +13196,8 @@
         "question": "Negative values?",
         "answer": "Yes, negatives work too."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "decimal-to-percentage",
@@ -12946,7 +13228,8 @@
         "question": "Percent sign added?",
         "answer": "Result is numeric percent."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "meeting-time-percentage",
@@ -12981,7 +13264,8 @@
         "question": "Multiple meetings?",
         "answer": "Sum minutes before entering."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "break-time-planner",
@@ -13012,7 +13296,8 @@
         "question": "Adjustable?",
         "answer": "Modify formula for your policy."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "work-hours-to-days",
@@ -13047,7 +13332,8 @@
         "question": "Include breaks?",
         "answer": "Enter net work hours."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "hourly-to-annual-salary",
@@ -13086,7 +13372,8 @@
         "question": "Unpaid leave?",
         "answer": "Reduce weeks per year."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "budget-variance-percentage",
@@ -13121,7 +13408,8 @@
         "question": "Use for revenue?",
         "answer": "Yes, any target vs actual."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "gross-up-calculator",
@@ -13156,7 +13444,8 @@
         "question": "Tax 0%?",
         "answer": "Gross equals net."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "standing-time-percentage",
@@ -13191,7 +13480,8 @@
         "question": "Awake time?",
         "answer": "Hours you're not sleeping."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "caffeine-limit-by-weight",
@@ -13222,7 +13512,8 @@
         "question": "Medical advice?",
         "answer": "No, consult a professional."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "screen-break-frequency",
@@ -13253,7 +13544,8 @@
         "question": "Short sessions?",
         "answer": "Enter total daily hours."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "box-volume-calculator",
@@ -13292,7 +13584,8 @@
         "question": "Exact?",
         "answer": "Assumes perfect box."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "curtain-width-calculator",
@@ -13327,7 +13620,8 @@
         "question": "Overlap?",
         "answer": "Add extra width if needed."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "led-savings-calculator",
@@ -13370,7 +13664,8 @@
         "question": "Bulb cost included?",
         "answer": "No, only energy savings."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "weighted-average-calculator",
@@ -13421,7 +13716,8 @@
         "question": "Equal weights?",
         "answer": "Set all weights to 1."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "standard-deviation-3-numbers",
@@ -13460,7 +13756,8 @@
         "question": "More numbers?",
         "answer": "This tool uses three inputs."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "part-of-total-percentage",
@@ -13495,7 +13792,8 @@
         "question": "Total 0?",
         "answer": "Calculation undefined."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "psu-load-percentage",
@@ -13530,7 +13828,8 @@
         "question": "Overload?",
         "answer": "Result over 100% means overload."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "cloud-storage-cost",
@@ -13565,7 +13864,8 @@
         "question": "Free tier?",
         "answer": "Subtract free allowance first."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "printer-cost-per-page",
@@ -13600,7 +13900,8 @@
         "question": "Yield exact?",
         "answer": "Manufacturer estimate only."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "ream-duration-calculator",
@@ -13631,7 +13932,8 @@
         "question": "Double-sided?",
         "answer": "Count each side separately."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "printing-carbon-footprint",
@@ -13662,7 +13964,8 @@
         "question": "Double-sided?",
         "answer": "Count each side."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "space-per-employee",
@@ -13697,7 +14000,8 @@
         "question": "Include common areas?",
         "answer": "Include usable space."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "gross-profit-margin",
@@ -13748,7 +14052,8 @@
         "answer": "Gross margin focuses on revenue before other expenses."
       }
     ],
-    "disclaimer": "For general financial estimates only."
+    "disclaimer": "For general financial estimates only.",
+    "info": []
   },
   {
     "slug": "down-payment-amount",
@@ -13799,7 +14104,8 @@
         "answer": "No, this only calculates the down payment itself."
       }
     ],
-    "disclaimer": "Consult lenders for exact requirements."
+    "disclaimer": "Consult lenders for exact requirements.",
+    "info": []
   },
   {
     "slug": "vo2-max-estimate",
@@ -13850,7 +14156,8 @@
         "answer": "Milliliters of oxygen per kilogram per minute."
       }
     ],
-    "disclaimer": "Informational use only; not medical advice."
+    "disclaimer": "Informational use only; not medical advice.",
+    "info": []
   },
   {
     "slug": "coefficient-of-variation",
@@ -13901,7 +14208,8 @@
         "answer": "Yes, CV is typically expressed as a percent."
       }
     ],
-    "disclaimer": "Use alongside other statistics for full analysis."
+    "disclaimer": "Use alongside other statistics for full analysis.",
+    "info": []
   },
   {
     "slug": "amp-hours-to-watt-hours",
@@ -13952,7 +14260,8 @@
         "answer": "No, this shows theoretical energy only."
       }
     ],
-    "disclaimer": "Actual usable energy depends on discharge characteristics."
+    "disclaimer": "Actual usable energy depends on discharge characteristics.",
+    "info": []
   },
   {
     "slug": "time-to-decimal-hours",
@@ -14003,7 +14312,8 @@
         "answer": "Decimal hours simplify payroll and billing calculations."
       }
     ],
-    "disclaimer": "Round results according to workplace policy."
+    "disclaimer": "Round results according to workplace policy.",
+    "info": []
   },
   {
     "slug": "reading-pace-planner",
@@ -14054,7 +14364,8 @@
         "answer": "Enter a positive number of days."
       }
     ],
-    "disclaimer": "Adjust goals based on your schedule and reading speed."
+    "disclaimer": "Adjust goals based on your schedule and reading speed.",
+    "info": []
   },
   {
     "slug": "radioactive-decay-remaining",
@@ -14112,7 +14423,8 @@
         "answer": "The remaining amount equals the initial quantity."
       }
     ],
-    "disclaimer": "Simplified model; consult physics texts for detailed decay chains."
+    "disclaimer": "Simplified model; consult physics texts for detailed decay chains.",
+    "info": []
   },
   {
     "slug": "ipv6-subnet-address-count",
@@ -14156,7 +14468,8 @@
         "answer": "Yes, this counts all addresses in the range."
       }
     ],
-    "disclaimer": "Theoretical counts; practical allocations may differ."
+    "disclaimer": "Theoretical counts; practical allocations may differ.",
+    "info": []
   },
   {
     "slug": "shelf-load-capacity",
@@ -14207,7 +14520,8 @@
         "answer": "No, consider a safety margin for real use."
       }
     ],
-    "disclaimer": "Always follow manufacturer load ratings."
+    "disclaimer": "Always follow manufacturer load ratings.",
+    "info": []
   },
   {
     "slug": "road-trip-fuel-stops",
@@ -14258,7 +14572,8 @@
         "answer": "Yes, real-world range varies with conditions."
       }
     ],
-    "disclaimer": "Always account for traffic and fuel availability."
+    "disclaimer": "Always account for traffic and fuel availability.",
+    "info": []
   },
   {
     "slug": "conversion-rate",
@@ -14309,7 +14624,8 @@
         "answer": "Yes, multiply by 100 to express as percent."
       }
     ],
-    "disclaimer": "Use accurate analytics data for business decisions."
+    "disclaimer": "Use accurate analytics data for business decisions.",
+    "info": []
   },
   {
     "slug": "operating-profit-margin",
@@ -14360,7 +14676,8 @@
         "answer": "No, it only uses operating income before interest and taxes."
       }
     ],
-    "disclaimer": "This calculator provides a simplified estimate and ignores non-operating items."
+    "disclaimer": "This calculator provides a simplified estimate and ignores non-operating items.",
+    "info": []
   },
   {
     "slug": "emergency-fund-target",
@@ -14411,7 +14728,8 @@
         "answer": "No, it simply multiplies expenses by months."
       }
     ],
-    "disclaimer": "This is general guidance; personal situations may vary."
+    "disclaimer": "This is general guidance; personal situations may vary.",
+    "info": []
   },
   {
     "slug": "weight-loss-time",
@@ -14462,7 +14780,8 @@
         "answer": "No, a deficit greater than zero is required to estimate time."
       }
     ],
-    "disclaimer": "This is an approximation; consult a healthcare professional for personalized advice."
+    "disclaimer": "This is an approximation; consult a healthcare professional for personalized advice.",
+    "info": []
   },
   {
     "slug": "harmonic-mean",
@@ -14519,7 +14838,8 @@
         "answer": "No, the harmonic mean is symmetric."
       }
     ],
-    "disclaimer": "For positive numbers only; using zero or negatives yields invalid results."
+    "disclaimer": "For positive numbers only; using zero or negatives yields invalid results.",
+    "info": []
   },
   {
     "slug": "final-exam-score-needed",
@@ -14577,7 +14897,8 @@
         "answer": "No, extra credit would need to be added to the current grade."
       }
     ],
-    "disclaimer": "Check your course syllabus for exact grading policies."
+    "disclaimer": "Check your course syllabus for exact grading policies.",
+    "info": []
   },
   {
     "slug": "hydrostatic-pressure",
@@ -14628,7 +14949,8 @@
         "answer": "Enter the appropriate density for the fluid in question."
       }
     ],
-    "disclaimer": "Assumes uniform fluid density and ignores temperature variations."
+    "disclaimer": "Assumes uniform fluid density and ignores temperature variations.",
+    "info": []
   },
   {
     "slug": "binary-to-decimal",
@@ -14670,7 +14992,8 @@
         "answer": "Yes, but very long binaries may exceed JavaScript precision."
       }
     ],
-    "disclaimer": "For educational purposes; verify critical conversions independently."
+    "disclaimer": "For educational purposes; verify critical conversions independently.",
+    "info": []
   },
   {
     "slug": "fence-post-spacing",
@@ -14721,7 +15044,8 @@
         "answer": "The last segment may be shorter; adjust spacing if desired."
       }
     ],
-    "disclaimer": "Verify local building codes and structural requirements before construction."
+    "disclaimer": "Verify local building codes and structural requirements before construction.",
+    "info": []
   },
   {
     "slug": "vacation-budget-per-day",
@@ -14772,7 +15096,8 @@
         "answer": "Yes, as long as both inputs use the same currency."
       }
     ],
-    "disclaimer": "Actual expenses may vary; track spending during the trip."
+    "disclaimer": "Actual expenses may vary; track spending during the trip.",
+    "info": []
   },
   {
     "slug": "email-open-rate",
@@ -14823,7 +15148,8 @@
         "answer": "Use unique opens if available for more accurate rates."
       }
     ],
-    "disclaimer": "Metrics vary by platform; verify with your email service analytics."
+    "disclaimer": "Metrics vary by platform; verify with your email service analytics.",
+    "info": []
   },
   {
     "slug": "ounces-to-cups",
@@ -14867,7 +15193,8 @@
         "answer": "Use our cups to ounces converter for the reverse conversion."
       }
     ],
-    "disclaimer": "For recipe use; verify conversions for critical measurements."
+    "disclaimer": "For recipe use; verify conversions for critical measurements.",
+    "info": []
   },
   {
     "slug": "age-in-hours",
@@ -14911,7 +15238,8 @@
         "answer": "It's an approximation; actual hours depend on exact birth time and leap years."
       }
     ],
-    "disclaimer": "For fun estimates only; not for official records."
+    "disclaimer": "For fun estimates only; not for official records.",
+    "info": []
   },
   {
     "slug": "working-capital-ratio",
@@ -14947,7 +15275,8 @@
         "question": "What does the ratio indicate?",
         "answer": "It shows short-term financial health."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "pmi-monthly-payment",
@@ -14983,7 +15312,8 @@
         "question": "When does PMI end?",
         "answer": "Usually when loan-to-value drops below 80%."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "pregnancy-due-date",
@@ -15027,7 +15357,8 @@
         "question": "How accurate is this?",
         "answer": "Actual delivery can vary by several weeks."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "mean-absolute-deviation",
@@ -15068,7 +15399,8 @@
         "question": "What does MAD show?",
         "answer": "It indicates variability around the mean."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "mph-to-kph",
@@ -15096,7 +15428,8 @@
         "question": "Can it convert backward?",
         "answer": "Divide km/h by 1.60934 to get mph."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "unix-timestamp",
@@ -15140,7 +15473,8 @@
         "question": "Does it account for time of day?",
         "answer": "No, it assumes midnight UTC."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "class-attendance-percentage",
@@ -15176,7 +15510,8 @@
         "question": "Can total be zero?",
         "answer": "Total classes must be greater than zero."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "spring-force",
@@ -15211,7 +15546,8 @@
         "question": "Does direction matter?",
         "answer": "This returns magnitude; direction depends on compression or extension."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "hex-to-decimal",
@@ -15237,7 +15573,8 @@
         "question": "Can I include 0x?",
         "answer": "No, enter the hex digits only."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "ceiling-fan-size",
@@ -15265,7 +15602,8 @@
         "question": "What if my room is long and narrow?",
         "answer": "Consider multiple fans for large or odd-shaped rooms."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "map-scale-distance",
@@ -15301,7 +15639,8 @@
         "question": "Why divide by 100000?",
         "answer": "There are 100,000 centimeters in a kilometer."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "bounce-rate",
@@ -15337,7 +15676,8 @@
         "question": "What is a bounce?",
         "answer": "A single-page session with no interaction."
       }
-    ]
+    ],
+    "info": []
   },
   {
     "slug": "payback-period",
@@ -15379,7 +15719,8 @@
         "answer": "No, it uses simple payback analysis."
       }
     ],
-    "disclaimer": "For basic estimation only; consult financial advisors for investment decisions."
+    "disclaimer": "For basic estimation only; consult financial advisors for investment decisions.",
+    "info": []
   },
   {
     "slug": "operating-expense-ratio",
@@ -15421,7 +15762,8 @@
         "answer": "No, revenue must be positive to compute the ratio."
       }
     ],
-    "disclaimer": "Approximation only; review financial statements for accuracy."
+    "disclaimer": "Approximation only; review financial statements for accuracy.",
+    "info": []
   },
   {
     "slug": "credit-card-payoff-time",
@@ -15470,7 +15812,8 @@
         "answer": "Yes, it assumes monthly compounding."
       }
     ],
-    "disclaimer": "Educational estimate; actual payoff may vary with fees and rate changes."
+    "disclaimer": "Educational estimate; actual payoff may vary with fees and rate changes.",
+    "info": []
   },
   {
     "slug": "loan-extra-payment-saved",
@@ -15526,7 +15869,8 @@
         "answer": "No, it assumes fixed rate and regular payments."
       }
     ],
-    "disclaimer": "Approximation only; consult lenders for official schedules."
+    "disclaimer": "Approximation only; consult lenders for official schedules.",
+    "info": []
   },
   {
     "slug": "body-adiposity-index",
@@ -15568,7 +15912,8 @@
         "answer": "It is an estimate and may vary by population."
       }
     ],
-    "disclaimer": "Informational only; consult health professionals for body composition analysis."
+    "disclaimer": "Informational only; consult health professionals for body composition analysis.",
+    "info": []
   },
   {
     "slug": "workout-water-loss",
@@ -15610,7 +15955,8 @@
         "answer": "No, weigh clothing separately for accuracy."
       }
     ],
-    "disclaimer": "Approximate hydration loss; replace fluids responsibly."
+    "disclaimer": "Approximate hydration loss; replace fluids responsibly.",
+    "info": []
   },
   {
     "slug": "lcm-three-numbers",
@@ -15659,7 +16005,8 @@
         "answer": "LCM with zero is zero."
       }
     ],
-    "disclaimer": "For educational purposes; verify results for critical applications."
+    "disclaimer": "For educational purposes; verify results for critical applications.",
+    "info": []
   },
   {
     "slug": "combination-calculator",
@@ -15701,7 +16048,8 @@
         "answer": "No, result is zero if r > n."
       }
     ],
-    "disclaimer": "For math practice; verify large values with reliable tools."
+    "disclaimer": "For math practice; verify large values with reliable tools.",
+    "info": []
   },
   {
     "slug": "fahrenheit-to-kelvin",
@@ -15736,7 +16084,8 @@
         "answer": "Yes, the formula handles negative values."
       }
     ],
-    "disclaimer": "Verify critical temperature conversions with reliable references."
+    "disclaimer": "Verify critical temperature conversions with reliable references.",
+    "info": []
   },
   {
     "slug": "millimeters-to-inches",
@@ -15771,7 +16120,8 @@
         "answer": "Yes, fractional values are accepted."
       }
     ],
-    "disclaimer": "Approximate conversion; use precise tools for engineering work."
+    "disclaimer": "Approximate conversion; use precise tools for engineering work.",
+    "info": []
   },
   {
     "slug": "week-number-to-date",
@@ -15813,7 +16163,8 @@
         "answer": "Yes, YYYY-MM-DD."
       }
     ],
-    "disclaimer": "For planning purposes; verify dates for official schedules."
+    "disclaimer": "For planning purposes; verify dates for official schedules.",
+    "info": []
   },
   {
     "slug": "add-business-days",
@@ -15869,7 +16220,8 @@
         "answer": "No, only weekends are skipped."
       }
     ],
-    "disclaimer": "Verify with local holidays for precise scheduling."
+    "disclaimer": "Verify with local holidays for precise scheduling.",
+    "info": []
   },
   {
     "slug": "attendance-requirement",
@@ -15921,7 +16273,8 @@
         "answer": "All absences are treated the same; verify policies with your institution."
       }
     ],
-    "disclaimer": "Always confirm attendance policies with your institution."
+    "disclaimer": "Always confirm attendance policies with your institution.",
+    "info": []
   },
   {
     "slug": "target-gpa-grade",
@@ -15977,7 +16330,8 @@
         "answer": "No, it assumes graded credits only."
       }
     ],
-    "disclaimer": "Check with your registrar for official GPA calculations."
+    "disclaimer": "Check with your registrar for official GPA calculations.",
+    "info": []
   },
   {
     "slug": "escape-velocity",
@@ -16019,7 +16373,8 @@
         "answer": "This simple model ignores planetary rotation and atmosphere."
       }
     ],
-    "disclaimer": "Idealized calculation; actual escape speeds vary with conditions."
+    "disclaimer": "Idealized calculation; actual escape speeds vary with conditions.",
+    "info": []
   },
   {
     "slug": "ideal-gas-pressure",
@@ -16068,7 +16423,8 @@
         "answer": "It is an approximation for ideal behavior."
       }
     ],
-    "disclaimer": "Use more precise models for high pressures or low temperatures."
+    "disclaimer": "Use more precise models for high pressures or low temperatures.",
+    "info": []
   },
   {
     "slug": "password-crack-time",
@@ -16110,7 +16466,8 @@
         "answer": "Yes, typically calculated from password length and character set."
       }
     ],
-    "disclaimer": "Simplified estimate; real attack times vary by method and hardware."
+    "disclaimer": "Simplified estimate; real attack times vary by method and hardware.",
+    "info": []
   },
   {
     "slug": "database-growth-projection",
@@ -16159,7 +16516,8 @@
         "answer": "No, it assumes linear growth."
       }
     ],
-    "disclaimer": "Projection only; monitor usage for real capacity planning."
+    "disclaimer": "Projection only; monitor usage for real capacity planning.",
+    "info": []
   },
   {
     "slug": "roof-snow-load",
@@ -16208,7 +16566,8 @@
         "answer": "This simple estimate ignores slope and drifting."
       }
     ],
-    "disclaimer": "For safety, consult structural engineers for heavy snow loads."
+    "disclaimer": "For safety, consult structural engineers for heavy snow loads.",
+    "info": []
   },
   {
     "slug": "baseboard-length",
@@ -16264,7 +16623,8 @@
         "answer": "Measure each wall segment you plan to trim."
       }
     ],
-    "disclaimer": "Round up and purchase extra material as needed."
+    "disclaimer": "Round up and purchase extra material as needed.",
+    "info": []
   },
   {
     "slug": "hotel-nights-budget",
@@ -16306,7 +16666,8 @@
         "answer": "Yes, useful for partial nights or shared rooms."
       }
     ],
-    "disclaimer": "Check hotel policies for taxes and additional charges."
+    "disclaimer": "Check hotel policies for taxes and additional charges.",
+    "info": []
   },
   {
     "slug": "luggage-volumetric-weight",
@@ -16355,7 +16716,8 @@
         "answer": "Some use 6000; check your carrier."
       }
     ],
-    "disclaimer": "Always confirm volumetric policies with your airline."
+    "disclaimer": "Always confirm volumetric policies with your airline.",
+    "info": []
   },
   {
     "slug": "cost-per-click",
@@ -16397,7 +16759,8 @@
         "answer": "No, at least one click is required."
       }
     ],
-    "disclaimer": "Use with campaign data; results exclude platform fees."
+    "disclaimer": "Use with campaign data; results exclude platform fees.",
+    "info": []
   },
   {
     "slug": "return-on-ad-spend",
@@ -16439,7 +16802,8 @@
         "answer": "ROAS looks only at revenue versus ad spend."
       }
     ],
-    "disclaimer": "Exclude fixed costs to focus on ad efficiency."
+    "disclaimer": "Exclude fixed costs to focus on ad efficiency.",
+    "info": []
   },
   {
     "slug": "accounts-receivable-turnover",
@@ -16491,7 +16855,8 @@
         "answer": "No, negative receivables would indicate an accounting error."
       }
     ],
-    "disclaimer": "Informational purposes only; consult a finance professional for advice."
+    "disclaimer": "Informational purposes only; consult a finance professional for advice.",
+    "info": []
   },
   {
     "slug": "net-worth",
@@ -16543,7 +16908,8 @@
         "answer": "Review it periodically, such as monthly or quarterly."
       }
     ],
-    "disclaimer": "Estimates only; consult a financial advisor for personalized advice."
+    "disclaimer": "Estimates only; consult a financial advisor for personalized advice.",
+    "info": []
   },
   {
     "slug": "blood-volume-estimate",
@@ -16595,7 +16961,8 @@
         "answer": "No, always consult healthcare professionals for medical advice."
       }
     ],
-    "disclaimer": "Not for medical use; consult a healthcare provider for personalized information."
+    "disclaimer": "Not for medical use; consult a healthcare provider for personalized information.",
+    "info": []
   },
   {
     "slug": "z-score",
@@ -16654,7 +17021,8 @@
         "answer": "Yes, positive means above the mean, negative below it."
       }
     ],
-    "disclaimer": "For statistical guidance only; use with appropriate data."
+    "disclaimer": "For statistical guidance only; use with appropriate data.",
+    "info": []
   },
   {
     "slug": "kelvin-to-rankine",
@@ -16699,7 +17067,8 @@
         "answer": "It's mainly used in certain engineering fields in the United States."
       }
     ],
-    "disclaimer": "Verify critical temperature conversions with official sources."
+    "disclaimer": "Verify critical temperature conversions with official sources.",
+    "info": []
   },
   {
     "slug": "quarter-of-year",
@@ -16744,7 +17113,8 @@
         "answer": "Yes, many businesses track performance by quarter."
       }
     ],
-    "disclaimer": "For calendar reference only."
+    "disclaimer": "For calendar reference only.",
+    "info": []
   },
   {
     "slug": "flashcard-retention-rate",
@@ -16796,7 +17166,8 @@
         "answer": "Regular review and spaced repetition can boost memory."
       }
     ],
-    "disclaimer": "Educational estimate only; individual results may vary."
+    "disclaimer": "Educational estimate only; individual results may vary.",
+    "info": []
   },
   {
     "slug": "led-series-resistor",
@@ -16855,7 +17226,8 @@
         "answer": "For series LEDs, adjust forward voltage accordingly; for parallel, use separate resistors."
       }
     ],
-    "disclaimer": "Always verify circuit designs before implementation."
+    "disclaimer": "Always verify circuit designs before implementation.",
+    "info": []
   },
   {
     "slug": "packet-loss-percentage",
@@ -16907,7 +17279,8 @@
         "answer": "Improve network hardware and reduce congestion."
       }
     ],
-    "disclaimer": "Results are estimates; real networks may vary."
+    "disclaimer": "Results are estimates; real networks may vary.",
+    "info": []
   },
   {
     "slug": "drywall-weight",
@@ -16959,7 +17332,8 @@
         "answer": "Yes, weight increases proportionally with thickness."
       }
     ],
-    "disclaimer": "Verify weights with manufacturer data for precise needs."
+    "disclaimer": "Verify weights with manufacturer data for precise needs.",
+    "info": []
   },
   {
     "slug": "sunscreen-protection-time",
@@ -17011,7 +17385,8 @@
         "answer": "The multiplication provides an estimate; real protection may vary."
       }
     ],
-    "disclaimer": "Actual protection varies; follow sunscreen instructions and seek shade as needed."
+    "disclaimer": "Actual protection varies; follow sunscreen instructions and seek shade as needed.",
+    "info": []
   },
   {
     "slug": "email-list-growth-rate",
@@ -17070,7 +17445,8 @@
         "answer": "Yes, use net subscriber counts after unsubscribes."
       }
     ],
-    "disclaimer": "For marketing analysis only; actual growth may vary."
+    "disclaimer": "For marketing analysis only; actual growth may vary.",
+    "info": []
   },
   {
     "slug": "revenue-per-employee",
@@ -17124,7 +17500,8 @@
         "answer": "It helps assess productivity and compare efficiency across businesses."
       }
     ],
-    "disclaimer": "For informational purposes only; not financial advice."
+    "disclaimer": "For informational purposes only; not financial advice.",
+    "info": []
   },
   {
     "slug": "rent-to-income-ratio",
@@ -17178,7 +17555,8 @@
         "answer": "It helps evaluate housing affordability."
       }
     ],
-    "disclaimer": "Estimates only; consult a financial advisor for personalized guidance."
+    "disclaimer": "Estimates only; consult a financial advisor for personalized guidance.",
+    "info": []
   },
   {
     "slug": "race-time",
@@ -17232,7 +17610,8 @@
         "answer": "It provides a simple estimate based on constant pace."
       }
     ],
-    "disclaimer": "For general fitness planning only; actual race times may vary."
+    "disclaimer": "For general fitness planning only; actual race times may vary.",
+    "info": []
   },
   {
     "slug": "fibonacci-number",
@@ -17278,7 +17657,8 @@
         "answer": "This closed-form expression avoids iterative calculation."
       }
     ],
-    "disclaimer": "For educational purposes only."
+    "disclaimer": "For educational purposes only.",
+    "info": []
   },
   {
     "slug": "pascal-to-mmhg",
@@ -17324,7 +17704,8 @@
         "answer": "Multiply the mmHg value by 133.322."
       }
     ],
-    "disclaimer": "Verify critical pressure conversions with official standards."
+    "disclaimer": "Verify critical pressure conversions with official standards.",
+    "info": []
   },
   {
     "slug": "weeks-between-dates",
@@ -17404,7 +17785,8 @@
         "answer": "The calculation uses the local time zone of your device."
       }
     ],
-    "disclaimer": "Approximate calculation; verify critical timelines independently."
+    "disclaimer": "Approximate calculation; verify critical timelines independently.",
+    "info": []
   },
   {
     "slug": "flashcard-interval",
@@ -17458,7 +17840,8 @@
         "answer": "No, it's a simple aid for manual planning."
       }
     ],
-    "disclaimer": "For study planning only; adjust based on personal progress."
+    "disclaimer": "For study planning only; adjust based on personal progress.",
+    "info": []
   },
   {
     "slug": "force-from-mass-acceleration",
@@ -17512,7 +17895,8 @@
         "answer": "The newton is the SI unit of force."
       }
     ],
-    "disclaimer": "Educational tool; not for precision engineering."
+    "disclaimer": "Educational tool; not for precision engineering.",
+    "info": []
   },
   {
     "slug": "image-file-size",
@@ -17574,7 +17958,8 @@
         "answer": "It's the number of bits in a megabyte (1024^2 bytes)."
       }
     ],
-    "disclaimer": "Approximate size; actual files may vary due to headers or compression."
+    "disclaimer": "Approximate size; actual files may vary due to headers or compression.",
+    "info": []
   },
   {
     "slug": "roof-area",
@@ -17636,7 +18021,8 @@
         "answer": "Yes, a pitch of zero gives flat-roof area."
       }
     ],
-    "disclaimer": "Estimates only; consult roofing professionals for precise measurements."
+    "disclaimer": "Estimates only; consult roofing professionals for precise measurements.",
+    "info": []
   },
   {
     "slug": "hotel-point-value",
@@ -17690,7 +18076,8 @@
         "answer": "Yes, each hotel loyalty program values points differently."
       }
     ],
-    "disclaimer": "Estimates only; check your loyalty program for exact values."
+    "disclaimer": "Estimates only; check your loyalty program for exact values.",
+    "info": []
   },
   {
     "slug": "social-media-engagement-rate",
@@ -17760,6 +18147,7 @@
         "answer": "Generally yes, but context and industry averages matter."
       }
     ],
-    "disclaimer": "For marketing analysis only; real engagement may vary by platform."
+    "disclaimer": "For marketing analysis only; real engagement may vary by platform.",
+    "info": []
   }
 ]

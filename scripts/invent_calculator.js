@@ -281,6 +281,7 @@ const schema = {
   expression: tpl.expression,
   intro,
   examples: tpl.examples,
+  info: Array.isArray(tpl.info) ? tpl.info : [],
   faqs,
   disclaimer: "Educational information, not professional advice.",
   cluster,
@@ -322,6 +323,7 @@ data.push({
   inputs,
   expression: tpl.expression,
   examples: tpl.examples,
+  info: Array.isArray(tpl.info) ? tpl.info : [],
   faqs,
 });
 fs.mkdirSync(path.dirname(dataPath), { recursive: true });
