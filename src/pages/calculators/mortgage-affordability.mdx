@@ -1,0 +1,92 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Mortgage Affordability Calculator"
+description: "Estimate the mortgage size you can afford from income, debts, and loan terms."
+date: 2025-10-07
+updated: 2025-10-07
+cluster: "Personal Finance & Loans"
+---
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "mortgage-affordability",
+  "title": "Mortgage Affordability Calculator",
+  "locale": "en",
+  "unit": "USD",
+  "inputs": [
+    {
+      "name": "monthly_income",
+      "label": "Monthly Income (USD)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "5000"
+    },
+    {
+      "name": "monthly_debts",
+      "label": "Monthly Debts (USD)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "500"
+    },
+    {
+      "name": "annual_interest_rate",
+      "label": "Annual Interest Rate (%)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "5"
+    },
+    {
+      "name": "loan_term_years",
+      "label": "Loan Term (years)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "30"
+    },
+    {
+      "name": "dti_ratio",
+      "label": "Max DTI Ratio (%)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "36"
+    }
+  ],
+  "expression": "((monthly_income * (dti_ratio / 100) - monthly_debts) * (1 - (1 + (annual_interest_rate/1200)) ** (-loan_term_years*12))) / (annual_interest_rate/1200)",
+  "intro": "Estimate the maximum mortgage loan you can afford based on income, debts, interest rate, and term.",
+  "examples": [
+    { "description": "$5,000 income, $500 debts, 5% rate, 30 years, 36% DTI ⇒ $242,166.10" },
+    { "description": "$7,000 income, $1,000 debts, 4% rate, 25 years, 30% DTI ⇒ $208,397.73" }
+  ],
+  "faqs": [
+    {
+      "question": "What is the DTI ratio?",
+      "answer": "The debt-to-income ratio is the portion of income that can go toward debt payments."
+    },
+    {
+      "question": "Does this include taxes or insurance?",
+      "answer": "No, it only estimates principal and interest on the loan."
+    },
+    {
+      "question": "How does interest rate affect affordability?",
+      "answer": "Higher rates increase payments, reducing the loan size you can afford."
+    },
+    {
+      "question": "Why subtract existing debts?",
+      "answer": "Lenders consider other monthly debts when determining how much you can borrow."
+    }
+  ],
+  "disclaimer": "For estimation only; consult a financial professional.",
+  "cluster": "Personal Finance & Loans",
+  "info": [
+    "Many lenders follow the 28/36 rule for housing and total debts."
+  ],
+  "related": [
+    "loan-payment-calculator",
+    "biweekly-mortgage-payment",
+    "down-payment-amount",
+    "pmi-monthly-payment",
+    "rent-to-income-ratio",
+    "credit-card-payoff-time"
+  ]
+};
+
+<Calculator schema={schema} />

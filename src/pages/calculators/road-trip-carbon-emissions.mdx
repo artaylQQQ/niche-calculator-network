@@ -1,0 +1,78 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Road Trip Carbon Emissions Calculator"
+description: "Estimate CO2 emissions for a road trip using distance, fuel efficiency, and emission factor."
+date: 2025-10-07
+updated: 2025-10-07
+cluster: "Lifestyle & Travel"
+---
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "road-trip-carbon-emissions",
+  "title": "Road Trip Carbon Emissions Calculator",
+  "locale": "en",
+  "unit": "kg CO2",
+  "inputs": [
+    {
+      "name": "distance",
+      "label": "Distance (km)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "500"
+    },
+    {
+      "name": "fuel_efficiency",
+      "label": "Fuel Efficiency (L/100km)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "8"
+    },
+    {
+      "name": "emission_factor",
+      "label": "Emission Factor (kg CO2/L)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "2.31"
+    }
+  ],
+  "expression": "(distance * fuel_efficiency / 100) * emission_factor",
+  "intro": "Estimate the carbon dioxide emissions of a road trip by combining distance, vehicle efficiency, and fuel emission factor.",
+  "examples": [
+    { "description": "500 km, 8 L/100km, 2.31 kg/L ⇒ 92.4 kg CO2" },
+    { "description": "350 km, 6.5 L/100km, 2.31 kg/L ⇒ 52.55 kg CO2" }
+  ],
+  "faqs": [
+    {
+      "question": "What is an emission factor?",
+      "answer": "It represents the kilograms of CO2 produced per liter of fuel burned."
+    },
+    {
+      "question": "How does fuel efficiency affect emissions?",
+      "answer": "Better fuel efficiency means less fuel burned and lower CO2 output."
+    },
+    {
+      "question": "Does this account for passengers?",
+      "answer": "No, it only calculates vehicle emissions regardless of passenger count."
+    },
+    {
+      "question": "Can I use gallons instead of liters?",
+      "answer": "Yes, convert gallons to liters and adjust the emission factor accordingly."
+    }
+  ],
+  "disclaimer": "Approximate estimate; actual emissions depend on driving conditions and vehicle type.",
+  "cluster": "Lifestyle & Travel",
+  "info": [
+    "Burning one liter of gasoline emits about 2.31 kg of CO2."
+  ],
+  "related": [
+    "fuel-trip-cost",
+    "road-trip-time",
+    "flight-carbon-footprint",
+    "tree-carbon-offset",
+    "road-trip-fuel-stops",
+    "travel-budget-per-day"
+  ]
+};
+
+<Calculator schema={schema} />
