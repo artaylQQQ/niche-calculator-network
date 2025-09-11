@@ -20223,5 +20223,298 @@
       "CPL helps budget marketing campaigns effectively.",
       "Combine with conversion rate to assess ROI."
     ]
+  },
+  {
+    "slug": "quick-ratio",
+    "title": "Quick Ratio Calculator",
+    "cluster": "Finance & Business",
+    "description": "Measure liquidity using the acid-test quick ratio.",
+    "intro": "Assess short-term liquidity by comparing quick assets to current liabilities.",
+    "inputs": [
+      {
+        "name": "cash",
+        "label": "Cash & Equivalents",
+        "type": "number",
+        "step": "0.01",
+        "placeholder": "20000"
+      },
+      {
+        "name": "marketable",
+        "label": "Marketable Securities",
+        "type": "number",
+        "step": "0.01",
+        "placeholder": "5000"
+      },
+      {
+        "name": "receivables",
+        "label": "Accounts Receivable",
+        "type": "number",
+        "step": "0.01",
+        "placeholder": "15000"
+      },
+      {
+        "name": "liabilities",
+        "label": "Current Liabilities",
+        "type": "number",
+        "step": "0.01",
+        "placeholder": "40000"
+      }
+    ],
+    "expression": "(cash + marketable + receivables) / liabilities",
+    "unit": "",
+    "examples": [
+      {
+        "description": "Cash 20000, Marketable Securities 5000, Accounts Receivable 15000, Current Liabilities 40000 ⇒ 1"
+      },
+      {
+        "description": "Cash 10000, Marketable Securities 2000, Accounts Receivable 8000, Current Liabilities 30000 ⇒ 0.67"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What does a quick ratio above 1 indicate?",
+        "answer": "The company can cover its current liabilities without selling inventory."
+      },
+      {
+        "question": "Are inventory and prepaid expenses included?",
+        "answer": "No, only the most liquid assets are counted."
+      },
+      {
+        "question": "How is it different from the current ratio?",
+        "answer": "The quick ratio excludes inventory and other less liquid current assets."
+      },
+      {
+        "question": "Can the quick ratio be negative?",
+        "answer": "Yes, if liabilities exceed quick assets, the ratio falls below zero."
+      }
+    ],
+    "disclaimer": "For informational purposes only; consult a financial professional for advice.",
+    "info": [
+      "Also called the acid-test ratio.",
+      "A value below 1 may signal liquidity problems."
+    ]
+  },
+  {
+    "slug": "credit-card-minimum-payment",
+    "title": "Credit Card Minimum Payment Calculator",
+    "cluster": "Personal Finance & Loans",
+    "description": "Estimate the minimum payment required on a credit card balance.",
+    "intro": "Estimate the minimum payment your credit card issuer will require.",
+    "inputs": [
+      {
+        "name": "balance",
+        "label": "Balance (USD)",
+        "type": "number",
+        "step": "0.01",
+        "placeholder": "1000"
+      },
+      {
+        "name": "rate",
+        "label": "Percent of Balance (%)",
+        "type": "number",
+        "step": "0.01",
+        "placeholder": "2"
+      },
+      {
+        "name": "min_payment",
+        "label": "Minimum Flat Amount (USD)",
+        "type": "number",
+        "step": "0.01",
+        "placeholder": "25"
+      }
+    ],
+    "expression": "max(balance * rate / 100, min_payment)",
+    "unit": "USD",
+    "examples": [
+      {
+        "description": "Balance 1000 USD, Rate 2%, Min Payment 25 USD ⇒ 25 USD"
+      },
+      {
+        "description": "Balance 5000 USD, Rate 1.5%, Min Payment 25 USD ⇒ 75 USD"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What is the percent of balance?",
+        "answer": "It's the rate issuers apply to your balance to calculate the minimum payment."
+      },
+      {
+        "question": "Does paying only the minimum accrue interest?",
+        "answer": "Yes, interest continues to accumulate on the remaining balance."
+      },
+      {
+        "question": "What happens if I pay less than the minimum?",
+        "answer": "You may face late fees and potential penalty interest rates."
+      },
+      {
+        "question": "Do issuers have different minimums?",
+        "answer": "Yes, terms vary across credit card companies."
+      }
+    ],
+    "disclaimer": "Results are estimates; check with your card issuer for exact payment requirements.",
+    "info": [
+      "Many cards charge 1–3% of the balance as the minimum payment.",
+      "Paying more than the minimum reduces interest costs."
+    ]
+  },
+  {
+    "slug": "walking-calorie-burn",
+    "title": "Walking Calorie Burn Calculator",
+    "cluster": "Health & Fitness",
+    "description": "Estimate calories burned from walking based on distance and weight.",
+    "intro": "Estimate how many calories you burn walking a given distance.",
+    "inputs": [
+      {
+        "name": "distance",
+        "label": "Distance (km)",
+        "type": "number",
+        "step": "0.1",
+        "placeholder": "5"
+      },
+      {
+        "name": "weight",
+        "label": "Weight (kg)",
+        "type": "number",
+        "step": "0.1",
+        "placeholder": "70"
+      }
+    ],
+    "expression": "distance * weight * 1.036",
+    "unit": "kcal",
+    "examples": [
+      {
+        "description": "Distance 5 km, Weight 70 kg ⇒ 362.6 kcal"
+      },
+      {
+        "description": "Distance 3 km, Weight 80 kg ⇒ 248.64 kcal"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What factor does the calculator use?",
+        "answer": "It multiplies distance, weight, and 1.036 to approximate calories burned."
+      },
+      {
+        "question": "Does walking speed affect the result?",
+        "answer": "The formula assumes a moderate pace; speed changes calories slightly."
+      },
+      {
+        "question": "Can I use miles and pounds?",
+        "answer": "Convert to kilometers and kilograms first for accurate results."
+      },
+      {
+        "question": "Is this accurate for running?",
+        "answer": "No, running burns more calories per kilometer than walking."
+      }
+    ],
+    "disclaimer": "Estimates only; individual calorie burn varies.",
+    "info": [
+      "1.036 kcal per kg per km is an average energy cost for walking.",
+      "Terrain, pace, and metabolism influence actual calories burned."
+    ]
+  },
+  {
+    "slug": "character-count",
+    "title": "Character Count Calculator",
+    "cluster": "Technology & Coding",
+    "description": "Count the number of characters in a block of text.",
+    "intro": "Quickly count characters in a block of text.",
+    "inputs": [
+      {
+        "name": "text",
+        "label": "Text",
+        "type": "text",
+        "placeholder": "Hello world"
+      }
+    ],
+    "expression": "text.length",
+    "unit": "chars",
+    "examples": [
+      {
+        "description": "Hello ⇒ 5"
+      },
+      {
+        "description": "Spaces count too ⇒ 16"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Does it count spaces?",
+        "answer": "Yes, spaces and punctuation are included in the total."
+      },
+      {
+        "question": "How are emojis counted?",
+        "answer": "Some emojis use two characters due to UTF-16 encoding."
+      },
+      {
+        "question": "Is there an input limit?",
+        "answer": "The limit depends on your browser's memory but is ample for short texts."
+      },
+      {
+        "question": "Can I count words instead?",
+        "answer": "This tool counts characters only."
+      }
+    ],
+    "disclaimer": "Counts characters using JavaScript's length property.",
+    "info": [
+      "Helpful for character-limited fields like tweets or database columns.",
+      "Counts UTF-16 code units; some symbols may count as two."
+    ]
+  },
+  {
+    "slug": "keyword-density",
+    "title": "Keyword Density Calculator",
+    "cluster": "Web & Marketing",
+    "description": "Determine the percentage of keywords in your content.",
+    "intro": "Measure how often a specific keyword appears in your content.",
+    "inputs": [
+      {
+        "name": "total_words",
+        "label": "Total Words",
+        "type": "number",
+        "step": "1",
+        "placeholder": "500"
+      },
+      {
+        "name": "keyword_count",
+        "label": "Keyword Occurrences",
+        "type": "number",
+        "step": "1",
+        "placeholder": "10"
+      }
+    ],
+    "expression": "(keyword_count / total_words) * 100",
+    "unit": "%",
+    "examples": [
+      {
+        "description": "Total Words 500, Keyword Occurrences 10 ⇒ 2%"
+      },
+      {
+        "description": "Total Words 800, Keyword Occurrences 24 ⇒ 3%"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What is keyword density?",
+        "answer": "It is the percentage of times a keyword appears relative to total word count."
+      },
+      {
+        "question": "Is higher density better?",
+        "answer": "Overusing a keyword can hurt readability and SEO; aim for natural usage."
+      },
+      {
+        "question": "Do plural forms count separately?",
+        "answer": "Yes, only exact matches are counted in this calculation."
+      },
+      {
+        "question": "How accurate is manual counting?",
+        "answer": "Automated tools reduce human error and provide quicker results."
+      }
+    ],
+    "disclaimer": "SEO metrics vary; use this as a guideline, not a rule.",
+    "info": [
+      "Modern search engines evaluate many factors beyond keyword density.",
+      "Prioritize readability and user intent over precise percentages."
+    ]
   }
 ]

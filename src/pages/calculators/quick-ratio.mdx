@@ -1,0 +1,43 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Quick Ratio Calculator"
+description: "Measure liquidity using the acid-test quick ratio."
+updated: "2025-09-25"
+cluster: "Finance & Business"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "quick-ratio",
+  title: "Quick Ratio Calculator",
+  locale: "en",
+  inputs: [
+    { name: "cash", label: "Cash & Equivalents", type: "number", step: "0.01", placeholder: "20000" },
+    { name: "marketable", label: "Marketable Securities", type: "number", step: "0.01", placeholder: "5000" },
+    { name: "receivables", label: "Accounts Receivable", type: "number", step: "0.01", placeholder: "15000" },
+    { name: "liabilities", label: "Current Liabilities", type: "number", step: "0.01", placeholder: "40000" }
+  ],
+  expression: "(cash + marketable + receivables) / liabilities",
+  intro: "Assess short-term liquidity by comparing quick assets to current liabilities.",
+  examples: [
+    { description: "Cash 20000, Marketable Securities 5000, Accounts Receivable 15000, Current Liabilities 40000 ⇒ 1" },
+    { description: "Cash 10000, Marketable Securities 2000, Accounts Receivable 8000, Current Liabilities 30000 ⇒ 0.67" }
+  ],
+  faqs: [
+    { question: "What does a quick ratio above 1 indicate?", answer: "The company can cover its current liabilities without selling inventory." },
+    { question: "Are inventory and prepaid expenses included?", answer: "No, only the most liquid assets are counted." },
+    { question: "How is it different from the current ratio?", answer: "The quick ratio excludes inventory and other less liquid current assets." },
+    { question: "Can the quick ratio be negative?", answer: "Yes, if liabilities exceed quick assets, the ratio falls below zero." }
+  ],
+  disclaimer: "For informational purposes only; consult a financial professional for advice.",
+  cluster: "Finance & Business",
+  unit: "",
+  info: [
+    "Also called the acid-test ratio.",
+    "A value below 1 may signal liquidity problems."
+  ],
+  related: []
+};
+
+<Calculator schema={schema} />
