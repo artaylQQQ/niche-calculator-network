@@ -1,0 +1,61 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Air Changes per Hour"
+description: "Estimate room ventilation rate from airflow and volume."
+date: 2025-09-14
+updated: 2025-09-14
+cluster: "Home & DIY"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "air-changes-per-hour",
+  title: "Air Changes per Hour",
+  locale: "en",
+  inputs: [
+    {
+      name: "cfm",
+      label: "Airflow (CFM)",
+      type: "number",
+      step: "any",
+      placeholder: "400",
+    },
+    {
+      name: "volume",
+      label: "Room volume (ft³)",
+      type: "number",
+      step: "any",
+      placeholder: "2400",
+    },
+  ],
+  expression: "cfm * 60 / volume",
+  unit: "ACH",
+  intro:
+    "Calculate how many times room air is replaced each hour based on airflow and room volume.",
+  examples: [
+    { description: "400 CFM in 2400 ft³ ⇒ 10 ACH" },
+    { description: "200 CFM in 1800 ft³ ⇒ 6.67 ACH" },
+  ],
+  faqs: [
+    { question: "What does ACH mean?", answer: "Air changes per hour." },
+    {
+      question: "Can I use metric units?",
+      answer: "Yes, as long as airflow and volume use consistent units.",
+    },
+    {
+      question: "Does higher ACH improve air quality?",
+      answer: "Generally, more air changes reduce contaminants.",
+    },
+    {
+      question: "Is this suitable for HVAC design?",
+      answer:
+        "Use as a quick estimate; consult professionals for detailed design.",
+    },
+  ],
+  disclaimer:
+    "Approximate calculation; actual ventilation efficiency may vary.",
+  cluster: "Home & DIY",
+};
+
+<Calculator schema={schema} />

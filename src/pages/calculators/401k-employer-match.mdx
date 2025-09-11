@@ -1,0 +1,84 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "401k Employer Match"
+description: "Estimate employer contributions to your 401k."
+date: 2025-09-14
+updated: 2025-09-14
+cluster: "Personal Finance & Loans"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "401k-employer-match",
+  title: "401k Employer Match",
+  locale: "en",
+  inputs: [
+    {
+      name: "salary",
+      label: "Annual Salary (USD)",
+      type: "number",
+      step: "any",
+      placeholder: "60000",
+    },
+    {
+      name: "employee_percent",
+      label: "Employee contribution (%)",
+      type: "number",
+      step: "any",
+      placeholder: "6",
+    },
+    {
+      name: "match_percent",
+      label: "Employer match (%)",
+      type: "number",
+      step: "any",
+      placeholder: "50",
+    },
+    {
+      name: "max_percent",
+      label: "Employer max match (%)",
+      type: "number",
+      step: "any",
+      placeholder: "6",
+    },
+  ],
+  expression:
+    "salary * Math.min(employee_percent, max_percent)/100 * match_percent/100",
+  unit: "USD",
+  intro:
+    "See how much your employer adds to your 401k based on salary and matching policy.",
+  examples: [
+    {
+      description:
+        "$60,000 salary, 6% contribution, 50% match up to 6% ⇒ $1,800",
+    },
+    {
+      description:
+        "$80,000 salary, 4% contribution, 100% match up to 5% ⇒ $3,200",
+    },
+  ],
+  faqs: [
+    {
+      question: "Does the match count toward my contribution limit?",
+      answer: "Yes, employer contributions count toward IRS annual limits.",
+    },
+    {
+      question: "What if I contribute less than the max percent?",
+      answer:
+        "The match uses the lower of your contribution and the employer's cap.",
+    },
+    {
+      question: "Is the result pre-tax?",
+      answer: "Yes, contributions are typically pre-tax.",
+    },
+    {
+      question: "Can employers have different match structures?",
+      answer: "Yes, always verify your plan's terms.",
+    },
+  ],
+  disclaimer: "Always consult your plan documents for exact matching rules.",
+  cluster: "Personal Finance & Loans",
+};
+
+<Calculator schema={schema} />

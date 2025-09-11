@@ -1,0 +1,51 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Binomial Coefficient"
+description: "Compute combinations n choose k."
+date: 2025-09-14
+updated: 2025-09-14
+cluster: "Math & Statistics"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "binomial-coefficient",
+  title: "Binomial Coefficient",
+  locale: "en",
+  inputs: [
+    { name: "n", label: "n", type: "number", step: 1, placeholder: "5" },
+    { name: "k", label: "k", type: "number", step: 1, placeholder: "2" },
+  ],
+  expression:
+    "(function(n,k){if(k<0||k>n)return 0;let num=1,den=1;for(let i=1;i<=k;i++){num*=n-(i-1);den*=i;}return num/den;})(n,k)",
+  unit: "ways",
+  intro:
+    "Find how many combinations of k items can be chosen from n without regard to order.",
+  examples: [
+    { description: "5 choose 2 ⇒ 10 ways" },
+    { description: "10 choose 3 ⇒ 120 ways" },
+  ],
+  faqs: [
+    {
+      question: "What is n choose k?",
+      answer: "It counts combinations of k items from n without order.",
+    },
+    {
+      question: "Can k be greater than n?",
+      answer: "No, the result is zero when k exceeds n.",
+    },
+    {
+      question: "Are inputs integers?",
+      answer: "Yes, n and k must be whole numbers.",
+    },
+    {
+      question: "Is order considered?",
+      answer: "No, combinations ignore order.",
+    },
+  ],
+  disclaimer: "Results assume standard combinatorial mathematics.",
+  cluster: "Math & Statistics",
+};
+
+<Calculator schema={schema} />

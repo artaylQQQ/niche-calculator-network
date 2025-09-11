@@ -1,0 +1,59 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Projectile Range"
+description: "Calculate range of a projectile on level ground."
+date: 2025-09-14
+updated: 2025-09-14
+cluster: "Science & Engineering"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "projectile-range",
+  title: "Projectile Range",
+  locale: "en",
+  inputs: [
+    {
+      name: "speed",
+      label: "Launch speed (m/s)",
+      type: "number",
+      step: "any",
+      placeholder: "20",
+    },
+    {
+      name: "angle",
+      label: "Launch angle (°)",
+      type: "number",
+      step: "any",
+      placeholder: "45",
+    },
+  ],
+  expression: "(speed*speed*Math.sin(2*angle*Math.PI/180))/9.81",
+  unit: "m",
+  intro:
+    "Determine the horizontal distance a projectile travels when launched from and landing on the same height.",
+  examples: [
+    { description: "20 m/s at 45° ⇒ 40.77 m" },
+    { description: "30 m/s at 30° ⇒ 79.45 m" },
+  ],
+  faqs: [
+    {
+      question: "Does this include air resistance?",
+      answer: "No, it assumes vacuum conditions.",
+    },
+    {
+      question: "Is launch and landing height the same?",
+      answer: "Yes, level ground is assumed.",
+    },
+    {
+      question: "Can angle exceed 90°?",
+      answer: "Angles above 90° are not supported.",
+    },
+    { question: "Why use 9.81?", answer: "It's the standard gravity in m/s²." },
+  ],
+  disclaimer: "Idealized physics; real-world factors like drag are ignored.",
+  cluster: "Science & Engineering",
+};
+
+<Calculator schema={schema} />

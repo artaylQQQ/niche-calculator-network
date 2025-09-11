@@ -1,0 +1,54 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Kelvin to Fahrenheit"
+description: "Convert temperature from Kelvin to Fahrenheit."
+date: 2025-09-14
+updated: 2025-09-14
+cluster: "Conversions & Units"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "kelvin-to-fahrenheit",
+  title: "Kelvin to Fahrenheit",
+  locale: "en",
+  inputs: [
+    {
+      name: "kelvin",
+      label: "Kelvin",
+      type: "number",
+      step: "any",
+      placeholder: "300",
+    },
+  ],
+  expression: "(kelvin - 273.15) * 9/5 + 32",
+  unit: "°F",
+  intro: "Convert absolute temperature in Kelvin to degrees Fahrenheit.",
+  examples: [
+    { description: "300 K ⇒ 80.33 °F" },
+    { description: "273.15 K ⇒ 32 °F" },
+  ],
+  faqs: [
+    {
+      question: "What is absolute zero in Fahrenheit?",
+      answer: "It's -459.67 °F.",
+    },
+    {
+      question: "Can this handle negative Kelvin?",
+      answer: "No, temperatures below 0 K are non-physical.",
+    },
+    {
+      question: "Is rounding applied?",
+      answer: "Results show raw conversion without rounding.",
+    },
+    {
+      question: "Does it accept decimals?",
+      answer: "Yes, you can enter fractional Kelvin values.",
+    },
+  ],
+  disclaimer: "For physics calculations; ensure proper precision.",
+  cluster: "Conversions & Units",
+};
+
+<Calculator schema={schema} />

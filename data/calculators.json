@@ -19104,10 +19104,7 @@
       }
     ],
     "disclaimer": "For water quality guidance only; confirm results with professional testing.",
-    "info": [
-      "1 gpg equals 17.118 ppm.",
-      "Soft water is generally below 3 gpg."
-    ]
+    "info": ["1 gpg equals 17.118 ppm.", "Soft water is generally below 3 gpg."]
   },
   {
     "slug": "savings-withdrawal-duration",
@@ -20223,5 +20220,676 @@
       "CPL helps budget marketing campaigns effectively.",
       "Combine with conversion rate to assess ROI."
     ]
+  },
+  {
+    "slug": "asset-turnover-ratio",
+    "title": "Asset Turnover Ratio",
+    "cluster": "Finance & Business",
+    "description": "Measure revenue efficiency of total assets.",
+    "intro": "Evaluate how efficiently a company uses its assets to generate sales.",
+    "inputs": [
+      {
+        "name": "sales",
+        "label": "Net Sales (USD)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "500000"
+      },
+      {
+        "name": "assets",
+        "label": "Average Total Assets (USD)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "200000"
+      }
+    ],
+    "expression": "sales / assets",
+    "unit": "times",
+    "examples": [
+      {
+        "description": "$500,000 sales with $200,000 assets ⇒ 2.5 times"
+      },
+      {
+        "description": "$1,200,000 sales with $400,000 assets ⇒ 3 times"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What does a higher ratio mean?",
+        "answer": "Higher ratios suggest assets generate more sales."
+      },
+      {
+        "question": "Can the ratio be below 1?",
+        "answer": "Yes, it indicates assets produce less sales relative to their value."
+      },
+      {
+        "question": "Should I use average assets?",
+        "answer": "Using the average of beginning and ending assets gives better accuracy."
+      },
+      {
+        "question": "Is revenue net of returns?",
+        "answer": "Yes, use net sales after returns and allowances."
+      }
+    ],
+    "disclaimer": "Financial ratios are simplified and may vary by industry.",
+    "info": []
+  },
+  {
+    "slug": "401k-employer-match",
+    "title": "401k Employer Match",
+    "cluster": "Personal Finance & Loans",
+    "description": "Estimate employer contributions to your 401k.",
+    "intro": "See how much your employer adds to your 401k based on salary and matching policy.",
+    "inputs": [
+      {
+        "name": "salary",
+        "label": "Annual Salary (USD)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "60000"
+      },
+      {
+        "name": "employee_percent",
+        "label": "Employee contribution (%)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "6"
+      },
+      {
+        "name": "match_percent",
+        "label": "Employer match (%)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "50"
+      },
+      {
+        "name": "max_percent",
+        "label": "Employer max match (%)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "6"
+      }
+    ],
+    "expression": "salary * Math.min(employee_percent, max_percent)/100 * match_percent/100",
+    "unit": "USD",
+    "examples": [
+      {
+        "description": "$60,000 salary, 6% contribution, 50% match up to 6% ⇒ $1,800"
+      },
+      {
+        "description": "$80,000 salary, 4% contribution, 100% match up to 5% ⇒ $3,200"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Does the match count toward my contribution limit?",
+        "answer": "Yes, employer contributions count toward IRS annual limits."
+      },
+      {
+        "question": "What if I contribute less than the max percent?",
+        "answer": "The match uses the lower of your contribution and the employer's cap."
+      },
+      {
+        "question": "Is the result pre-tax?",
+        "answer": "Yes, contributions are typically pre-tax."
+      },
+      {
+        "question": "Can employers have different match structures?",
+        "answer": "Yes, always verify your plan's terms."
+      }
+    ],
+    "disclaimer": "Always consult your plan documents for exact matching rules.",
+    "info": []
+  },
+  {
+    "slug": "running-calorie-burn",
+    "title": "Running Calorie Burn",
+    "cluster": "Health & Fitness",
+    "description": "Estimate calories burned from running distance and weight.",
+    "intro": "Approximate calories burned while running based on body weight and distance.",
+    "inputs": [
+      {
+        "name": "weight",
+        "label": "Body Weight (kg)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "70"
+      },
+      {
+        "name": "distance",
+        "label": "Distance (km)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "5"
+      }
+    ],
+    "expression": "1.036 * weight * distance",
+    "unit": "kcal",
+    "examples": [
+      {
+        "description": "70 kg over 5 km ⇒ 362.6 kcal"
+      },
+      {
+        "description": "80 kg over 10 km ⇒ 828.8 kcal"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What constant is used?",
+        "answer": "Uses 1.036 kcal per kg per km."
+      },
+      {
+        "question": "Does pace matter?",
+        "answer": "No, it assumes average running efficiency."
+      },
+      {
+        "question": "Can I use pounds and miles?",
+        "answer": "Convert them to kilograms and kilometers first."
+      },
+      {
+        "question": "Is this exact?",
+        "answer": "It's an estimate; individual burn varies."
+      }
+    ],
+    "disclaimer": "For fitness reference only; consult professionals for personalized advice.",
+    "info": []
+  },
+  {
+    "slug": "binomial-coefficient",
+    "title": "Binomial Coefficient",
+    "cluster": "Math & Statistics",
+    "description": "Compute combinations n choose k.",
+    "intro": "Find how many combinations of k items can be chosen from n without regard to order.",
+    "inputs": [
+      {
+        "name": "n",
+        "label": "n",
+        "type": "number",
+        "step": 1,
+        "placeholder": "5"
+      },
+      {
+        "name": "k",
+        "label": "k",
+        "type": "number",
+        "step": 1,
+        "placeholder": "2"
+      }
+    ],
+    "expression": "(function(n,k){if(k<0||k>n)return 0;let num=1,den=1;for(let i=1;i<=k;i++){num*=n-(i-1);den*=i;}return num/den;})(n,k)",
+    "unit": "ways",
+    "examples": [
+      {
+        "description": "5 choose 2 ⇒ 10 ways"
+      },
+      {
+        "description": "10 choose 3 ⇒ 120 ways"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What is n choose k?",
+        "answer": "It counts combinations of k items from n without order."
+      },
+      {
+        "question": "Can k be greater than n?",
+        "answer": "No, the result is zero when k exceeds n."
+      },
+      {
+        "question": "Are inputs integers?",
+        "answer": "Yes, n and k must be whole numbers."
+      },
+      {
+        "question": "Is order considered?",
+        "answer": "No, combinations ignore order."
+      }
+    ],
+    "disclaimer": "Results assume standard combinatorial mathematics.",
+    "info": []
+  },
+  {
+    "slug": "kelvin-to-fahrenheit",
+    "title": "Kelvin to Fahrenheit",
+    "cluster": "Conversions & Units",
+    "description": "Convert temperature from Kelvin to Fahrenheit.",
+    "intro": "Convert absolute temperature in Kelvin to degrees Fahrenheit.",
+    "inputs": [
+      {
+        "name": "kelvin",
+        "label": "Kelvin",
+        "type": "number",
+        "step": "any",
+        "placeholder": "300"
+      }
+    ],
+    "expression": "(kelvin - 273.15) * 9/5 + 32",
+    "unit": "°F",
+    "examples": [
+      {
+        "description": "300 K ⇒ 80.33 °F"
+      },
+      {
+        "description": "273.15 K ⇒ 32 °F"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What is absolute zero in Fahrenheit?",
+        "answer": "It's -459.67 °F."
+      },
+      {
+        "question": "Can this handle negative Kelvin?",
+        "answer": "No, temperatures below 0 K are non-physical."
+      },
+      {
+        "question": "Is rounding applied?",
+        "answer": "Results show raw conversion without rounding."
+      },
+      {
+        "question": "Does it accept decimals?",
+        "answer": "Yes, you can enter fractional Kelvin values."
+      }
+    ],
+    "disclaimer": "For physics calculations; ensure proper precision.",
+    "info": []
+  },
+  {
+    "slug": "weeks-until-date",
+    "title": "Weeks Until Date",
+    "cluster": "Date & Time",
+    "description": "Find the number of weeks until a future date.",
+    "intro": "Calculate how many weeks remain between two calendar dates.",
+    "inputs": [
+      {
+        "name": "y1",
+        "label": "Current Year",
+        "type": "number",
+        "step": 1,
+        "placeholder": "2025"
+      },
+      {
+        "name": "m1",
+        "label": "Current Month",
+        "type": "number",
+        "step": 1,
+        "placeholder": "1"
+      },
+      {
+        "name": "d1",
+        "label": "Current Day",
+        "type": "number",
+        "step": 1,
+        "placeholder": "1"
+      },
+      {
+        "name": "y2",
+        "label": "Target Year",
+        "type": "number",
+        "step": 1,
+        "placeholder": "2025"
+      },
+      {
+        "name": "m2",
+        "label": "Target Month",
+        "type": "number",
+        "step": 1,
+        "placeholder": "3"
+      },
+      {
+        "name": "d2",
+        "label": "Target Day",
+        "type": "number",
+        "step": 1,
+        "placeholder": "1"
+      }
+    ],
+    "expression": "(function(y1,m1,d1,y2,m2,d2){const start=new Date(y1,m1-1,d1);const end=new Date(y2,m2-1,d2);return (end-start)/604800000;})(y1,m1,d1,y2,m2,d2)",
+    "unit": "weeks",
+    "examples": [
+      {
+        "description": "2025-01-01 to 2025-03-01 ⇒ 8.43 weeks"
+      },
+      {
+        "description": "2024-12-01 to 2025-01-15 ⇒ 6.43 weeks"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Can the target date be before the current date?",
+        "answer": "No, it should be a future date."
+      },
+      {
+        "question": "Are partial weeks shown?",
+        "answer": "Yes, fractional weeks are returned."
+      },
+      {
+        "question": "Does it account for leap years?",
+        "answer": "Yes, actual calendar dates are used."
+      },
+      {
+        "question": "Is time of day considered?",
+        "answer": "No, only dates are used."
+      }
+    ],
+    "disclaimer": "For planning purposes only.",
+    "info": []
+  },
+  {
+    "slug": "course-completion-percentage",
+    "title": "Course Completion Percentage",
+    "cluster": "Education & Learning",
+    "description": "See what portion of a course you've finished.",
+    "intro": "Calculate your course progress as a percentage of modules completed.",
+    "inputs": [
+      {
+        "name": "completed",
+        "label": "Completed modules",
+        "type": "number",
+        "step": 1,
+        "placeholder": "30"
+      },
+      {
+        "name": "total",
+        "label": "Total modules",
+        "type": "number",
+        "step": 1,
+        "placeholder": "40"
+      }
+    ],
+    "expression": "completed / total * 100",
+    "unit": "%",
+    "examples": [
+      {
+        "description": "30 of 40 modules ⇒ 75%"
+      },
+      {
+        "description": "25 of 30 modules ⇒ 83.33%"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Can total be zero?",
+        "answer": "No, total modules must be greater than zero."
+      },
+      {
+        "question": "Does it handle decimals?",
+        "answer": "Use whole numbers for accurate percentages."
+      },
+      {
+        "question": "Is this for any type of course?",
+        "answer": "Yes, it works for online or classroom courses."
+      },
+      {
+        "question": "What if completed exceeds total?",
+        "answer": "The result will exceed 100%, indicating extra modules."
+      }
+    ],
+    "disclaimer": "Approximate progress; check with your course platform for official tracking.",
+    "info": []
+  },
+  {
+    "slug": "projectile-range",
+    "title": "Projectile Range",
+    "cluster": "Science & Engineering",
+    "description": "Calculate range of a projectile on level ground.",
+    "intro": "Determine the horizontal distance a projectile travels when launched from and landing on the same height.",
+    "inputs": [
+      {
+        "name": "speed",
+        "label": "Launch speed (m/s)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "20"
+      },
+      {
+        "name": "angle",
+        "label": "Launch angle (°)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "45"
+      }
+    ],
+    "expression": "(speed*speed*Math.sin(2*angle*Math.PI/180))/9.81",
+    "unit": "m",
+    "examples": [
+      {
+        "description": "20 m/s at 45° ⇒ 40.77 m"
+      },
+      {
+        "description": "30 m/s at 30° ⇒ 79.45 m"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Does this include air resistance?",
+        "answer": "No, it assumes vacuum conditions."
+      },
+      {
+        "question": "Is launch and landing height the same?",
+        "answer": "Yes, level ground is assumed."
+      },
+      {
+        "question": "Can angle exceed 90°?",
+        "answer": "Angles above 90° are not supported."
+      },
+      {
+        "question": "Why use 9.81?",
+        "answer": "It's the standard gravity in m/s²."
+      }
+    ],
+    "disclaimer": "Idealized physics; real-world factors like drag are ignored.",
+    "info": []
+  },
+  {
+    "slug": "fps-from-frame-time",
+    "title": "FPS from Frame Time",
+    "cluster": "Technology & Coding",
+    "description": "Convert frame render time to frames per second.",
+    "intro": "Determine frames per second from the time each frame takes to render.",
+    "inputs": [
+      {
+        "name": "ms",
+        "label": "Frame time (ms)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "16.67"
+      }
+    ],
+    "expression": "1000 / ms",
+    "unit": "FPS",
+    "examples": [
+      {
+        "description": "16.67 ms ⇒ 59.99 FPS"
+      },
+      {
+        "description": "33.33 ms ⇒ 30 FPS"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What is frame time?",
+        "answer": "The duration each frame takes to render."
+      },
+      {
+        "question": "Why 1000 in the formula?",
+        "answer": "Because there are 1000 milliseconds in a second."
+      },
+      {
+        "question": "Can frame time be zero?",
+        "answer": "No, it must be positive."
+      },
+      {
+        "question": "Does result vary with dropped frames?",
+        "answer": "The formula assumes steady frame times."
+      }
+    ],
+    "disclaimer": "Ideal calculations; actual performance may vary.",
+    "info": []
+  },
+  {
+    "slug": "air-changes-per-hour",
+    "title": "Air Changes per Hour",
+    "cluster": "Home & DIY",
+    "description": "Estimate room ventilation rate from airflow and volume.",
+    "intro": "Calculate how many times room air is replaced each hour based on airflow and room volume.",
+    "inputs": [
+      {
+        "name": "cfm",
+        "label": "Airflow (CFM)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "400"
+      },
+      {
+        "name": "volume",
+        "label": "Room volume (ft³)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "2400"
+      }
+    ],
+    "expression": "cfm * 60 / volume",
+    "unit": "ACH",
+    "examples": [
+      {
+        "description": "400 CFM in 2400 ft³ ⇒ 10 ACH"
+      },
+      {
+        "description": "200 CFM in 1800 ft³ ⇒ 6.67 ACH"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What does ACH mean?",
+        "answer": "Air changes per hour."
+      },
+      {
+        "question": "Can I use metric units?",
+        "answer": "Yes, as long as airflow and volume use consistent units."
+      },
+      {
+        "question": "Does higher ACH improve air quality?",
+        "answer": "Generally, more air changes reduce contaminants."
+      },
+      {
+        "question": "Is this suitable for HVAC design?",
+        "answer": "Use as a quick estimate; consult professionals for detailed design."
+      }
+    ],
+    "disclaimer": "Approximate calculation; actual ventilation efficiency may vary.",
+    "info": []
+  },
+  {
+    "slug": "trip-meal-cost",
+    "title": "Trip Meal Cost",
+    "cluster": "Lifestyle & Travel",
+    "description": "Estimate total food cost for a trip.",
+    "intro": "Plan your travel budget by estimating meal expenses for the whole trip.",
+    "inputs": [
+      {
+        "name": "days",
+        "label": "Trip days",
+        "type": "number",
+        "step": 1,
+        "placeholder": "5"
+      },
+      {
+        "name": "meals",
+        "label": "Meals per day",
+        "type": "number",
+        "step": 1,
+        "placeholder": "3"
+      },
+      {
+        "name": "cost",
+        "label": "Cost per meal (USD)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "12"
+      }
+    ],
+    "expression": "days * meals * cost",
+    "unit": "USD",
+    "examples": [
+      {
+        "description": "5 days × 3 meals × $12 ⇒ $180"
+      },
+      {
+        "description": "7 days × 2 meals × $15 ⇒ $210"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Does it include snacks?",
+        "answer": "Only full meals are counted."
+      },
+      {
+        "question": "Can I use different currency?",
+        "answer": "Yes, as long as cost per meal matches your currency."
+      },
+      {
+        "question": "What if meals per day vary?",
+        "answer": "Use an average number of meals per day."
+      },
+      {
+        "question": "Does it account for tips or tax?",
+        "answer": "No, add them separately if needed."
+      }
+    ],
+    "disclaimer": "Estimates only; actual meal prices vary by location.",
+    "info": []
+  },
+  {
+    "slug": "cost-per-acquisition",
+    "title": "Cost Per Acquisition",
+    "cluster": "Web & Marketing",
+    "description": "Find marketing cost per acquired customer.",
+    "intro": "Calculate how much each customer acquisition cost based on campaign spend and results.",
+    "inputs": [
+      {
+        "name": "cost",
+        "label": "Total cost (USD)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "1000"
+      },
+      {
+        "name": "acq",
+        "label": "Acquisitions",
+        "type": "number",
+        "step": 1,
+        "placeholder": "50"
+      }
+    ],
+    "expression": "cost / acq",
+    "unit": "USD",
+    "examples": [
+      {
+        "description": "$1,000 cost for 50 acquisitions ⇒ $20"
+      },
+      {
+        "description": "$5,000 cost for 200 acquisitions ⇒ $25"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What counts as an acquisition?",
+        "answer": "A customer or lead resulting from the campaign."
+      },
+      {
+        "question": "Can acquisitions be zero?",
+        "answer": "No, there must be at least one acquisition."
+      },
+      {
+        "question": "Is lower CPA better?",
+        "answer": "Generally yes, but consider customer value."
+      },
+      {
+        "question": "Does it include ongoing costs?",
+        "answer": "No, only the campaign cost is included."
+      }
+    ],
+    "disclaimer": "Ensure accurate cost and acquisition data for reliable CPA.",
+    "info": []
   }
 ]
