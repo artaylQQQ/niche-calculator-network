@@ -1,0 +1,62 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Course Completion Percentage"
+description: "See what portion of a course you've finished."
+date: 2025-09-14
+updated: 2025-09-14
+cluster: "Education & Learning"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "course-completion-percentage",
+  title: "Course Completion Percentage",
+  locale: "en",
+  inputs: [
+    {
+      name: "completed",
+      label: "Completed modules",
+      type: "number",
+      step: 1,
+      placeholder: "30",
+    },
+    {
+      name: "total",
+      label: "Total modules",
+      type: "number",
+      step: 1,
+      placeholder: "40",
+    },
+  ],
+  expression: "completed / total * 100",
+  unit: "%",
+  intro: "Calculate your course progress as a percentage of modules completed.",
+  examples: [
+    { description: "30 of 40 modules ⇒ 75%" },
+    { description: "25 of 30 modules ⇒ 83.33%" },
+  ],
+  faqs: [
+    {
+      question: "Can total be zero?",
+      answer: "No, total modules must be greater than zero.",
+    },
+    {
+      question: "Does it handle decimals?",
+      answer: "Use whole numbers for accurate percentages.",
+    },
+    {
+      question: "Is this for any type of course?",
+      answer: "Yes, it works for online or classroom courses.",
+    },
+    {
+      question: "What if completed exceeds total?",
+      answer: "The result will exceed 100%, indicating extra modules.",
+    },
+  ],
+  disclaimer:
+    "Approximate progress; check with your course platform for official tracking.",
+  cluster: "Education & Learning",
+};
+
+<Calculator schema={schema} />

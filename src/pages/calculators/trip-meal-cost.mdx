@@ -1,0 +1,69 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Trip Meal Cost"
+description: "Estimate total food cost for a trip."
+date: 2025-09-14
+updated: 2025-09-14
+cluster: "Lifestyle & Travel"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "trip-meal-cost",
+  title: "Trip Meal Cost",
+  locale: "en",
+  inputs: [
+    {
+      name: "days",
+      label: "Trip days",
+      type: "number",
+      step: 1,
+      placeholder: "5",
+    },
+    {
+      name: "meals",
+      label: "Meals per day",
+      type: "number",
+      step: 1,
+      placeholder: "3",
+    },
+    {
+      name: "cost",
+      label: "Cost per meal (USD)",
+      type: "number",
+      step: "any",
+      placeholder: "12",
+    },
+  ],
+  expression: "days * meals * cost",
+  unit: "USD",
+  intro:
+    "Plan your travel budget by estimating meal expenses for the whole trip.",
+  examples: [
+    { description: "5 days × 3 meals × $12 ⇒ $180" },
+    { description: "7 days × 2 meals × $15 ⇒ $210" },
+  ],
+  faqs: [
+    {
+      question: "Does it include snacks?",
+      answer: "Only full meals are counted.",
+    },
+    {
+      question: "Can I use different currency?",
+      answer: "Yes, as long as cost per meal matches your currency.",
+    },
+    {
+      question: "What if meals per day vary?",
+      answer: "Use an average number of meals per day.",
+    },
+    {
+      question: "Does it account for tips or tax?",
+      answer: "No, add them separately if needed.",
+    },
+  ],
+  disclaimer: "Estimates only; actual meal prices vary by location.",
+  cluster: "Lifestyle & Travel",
+};
+
+<Calculator schema={schema} />

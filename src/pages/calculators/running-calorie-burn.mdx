@@ -1,0 +1,63 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Running Calorie Burn"
+description: "Estimate calories burned from running distance and weight."
+date: 2025-09-14
+updated: 2025-09-14
+cluster: "Health & Fitness"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "running-calorie-burn",
+  title: "Running Calorie Burn",
+  locale: "en",
+  inputs: [
+    {
+      name: "weight",
+      label: "Body Weight (kg)",
+      type: "number",
+      step: "any",
+      placeholder: "70",
+    },
+    {
+      name: "distance",
+      label: "Distance (km)",
+      type: "number",
+      step: "any",
+      placeholder: "5",
+    },
+  ],
+  expression: "1.036 * weight * distance",
+  unit: "kcal",
+  intro:
+    "Approximate calories burned while running based on body weight and distance.",
+  examples: [
+    { description: "70 kg over 5 km ⇒ 362.6 kcal" },
+    { description: "80 kg over 10 km ⇒ 828.8 kcal" },
+  ],
+  faqs: [
+    {
+      question: "What constant is used?",
+      answer: "Uses 1.036 kcal per kg per km.",
+    },
+    {
+      question: "Does pace matter?",
+      answer: "No, it assumes average running efficiency.",
+    },
+    {
+      question: "Can I use pounds and miles?",
+      answer: "Convert them to kilograms and kilometers first.",
+    },
+    {
+      question: "Is this exact?",
+      answer: "It's an estimate; individual burn varies.",
+    },
+  ],
+  disclaimer:
+    "For fitness reference only; consult professionals for personalized advice.",
+  cluster: "Health & Fitness",
+};
+
+<Calculator schema={schema} />

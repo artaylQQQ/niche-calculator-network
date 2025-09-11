@@ -1,0 +1,52 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "FPS from Frame Time"
+description: "Convert frame render time to frames per second."
+date: 2025-09-14
+updated: 2025-09-14
+cluster: "Technology & Coding"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "fps-from-frame-time",
+  title: "FPS from Frame Time",
+  locale: "en",
+  inputs: [
+    {
+      name: "ms",
+      label: "Frame time (ms)",
+      type: "number",
+      step: "any",
+      placeholder: "16.67",
+    },
+  ],
+  expression: "1000 / ms",
+  unit: "FPS",
+  intro:
+    "Determine frames per second from the time each frame takes to render.",
+  examples: [
+    { description: "16.67 ms ⇒ 59.99 FPS" },
+    { description: "33.33 ms ⇒ 30 FPS" },
+  ],
+  faqs: [
+    {
+      question: "What is frame time?",
+      answer: "The duration each frame takes to render.",
+    },
+    {
+      question: "Why 1000 in the formula?",
+      answer: "Because there are 1000 milliseconds in a second.",
+    },
+    { question: "Can frame time be zero?", answer: "No, it must be positive." },
+    {
+      question: "Does result vary with dropped frames?",
+      answer: "The formula assumes steady frame times.",
+    },
+  ],
+  disclaimer: "Ideal calculations; actual performance may vary.",
+  cluster: "Technology & Coding",
+};
+
+<Calculator schema={schema} />

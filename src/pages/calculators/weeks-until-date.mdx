@@ -1,0 +1,90 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Weeks Until Date"
+description: "Find the number of weeks until a future date."
+date: 2025-09-14
+updated: 2025-09-14
+cluster: "Date & Time"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "weeks-until-date",
+  title: "Weeks Until Date",
+  locale: "en",
+  inputs: [
+    {
+      name: "y1",
+      label: "Current Year",
+      type: "number",
+      step: 1,
+      placeholder: "2025",
+    },
+    {
+      name: "m1",
+      label: "Current Month",
+      type: "number",
+      step: 1,
+      placeholder: "1",
+    },
+    {
+      name: "d1",
+      label: "Current Day",
+      type: "number",
+      step: 1,
+      placeholder: "1",
+    },
+    {
+      name: "y2",
+      label: "Target Year",
+      type: "number",
+      step: 1,
+      placeholder: "2025",
+    },
+    {
+      name: "m2",
+      label: "Target Month",
+      type: "number",
+      step: 1,
+      placeholder: "3",
+    },
+    {
+      name: "d2",
+      label: "Target Day",
+      type: "number",
+      step: 1,
+      placeholder: "1",
+    },
+  ],
+  expression:
+    "(function(y1,m1,d1,y2,m2,d2){const start=new Date(y1,m1-1,d1);const end=new Date(y2,m2-1,d2);return (end-start)/604800000;})(y1,m1,d1,y2,m2,d2)",
+  unit: "weeks",
+  intro: "Calculate how many weeks remain between two calendar dates.",
+  examples: [
+    { description: "2025-01-01 to 2025-03-01 ⇒ 8.43 weeks" },
+    { description: "2024-12-01 to 2025-01-15 ⇒ 6.43 weeks" },
+  ],
+  faqs: [
+    {
+      question: "Can the target date be before the current date?",
+      answer: "No, it should be a future date.",
+    },
+    {
+      question: "Are partial weeks shown?",
+      answer: "Yes, fractional weeks are returned.",
+    },
+    {
+      question: "Does it account for leap years?",
+      answer: "Yes, actual calendar dates are used.",
+    },
+    {
+      question: "Is time of day considered?",
+      answer: "No, only dates are used.",
+    },
+  ],
+  disclaimer: "For planning purposes only.",
+  cluster: "Date & Time",
+};
+
+<Calculator schema={schema} />

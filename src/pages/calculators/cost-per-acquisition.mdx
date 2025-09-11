@@ -1,0 +1,62 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Cost Per Acquisition"
+description: "Find marketing cost per acquired customer."
+date: 2025-09-14
+updated: 2025-09-14
+cluster: "Web & Marketing"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "cost-per-acquisition",
+  title: "Cost Per Acquisition",
+  locale: "en",
+  inputs: [
+    {
+      name: "cost",
+      label: "Total cost (USD)",
+      type: "number",
+      step: "any",
+      placeholder: "1000",
+    },
+    {
+      name: "acq",
+      label: "Acquisitions",
+      type: "number",
+      step: 1,
+      placeholder: "50",
+    },
+  ],
+  expression: "cost / acq",
+  unit: "USD",
+  intro:
+    "Calculate how much each customer acquisition cost based on campaign spend and results.",
+  examples: [
+    { description: "$1,000 cost for 50 acquisitions ⇒ $20" },
+    { description: "$5,000 cost for 200 acquisitions ⇒ $25" },
+  ],
+  faqs: [
+    {
+      question: "What counts as an acquisition?",
+      answer: "A customer or lead resulting from the campaign.",
+    },
+    {
+      question: "Can acquisitions be zero?",
+      answer: "No, there must be at least one acquisition.",
+    },
+    {
+      question: "Is lower CPA better?",
+      answer: "Generally yes, but consider customer value.",
+    },
+    {
+      question: "Does it include ongoing costs?",
+      answer: "No, only the campaign cost is included.",
+    },
+  ],
+  disclaimer: "Ensure accurate cost and acquisition data for reliable CPA.",
+  cluster: "Web & Marketing",
+};
+
+<Calculator schema={schema} />
