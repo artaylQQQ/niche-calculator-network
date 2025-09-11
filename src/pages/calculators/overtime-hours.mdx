@@ -53,8 +53,12 @@ export const schema = {
       question: "Why use this calculator?",
       answer: "Quickly separate overtime from total hours.",
     },
-  ],
-  disclaimer: "Consult local labor laws for overtime rules.",
+    ],
+    info: [
+      "Overtime rules differ by region; verify local regulations.",
+      "Exclude unpaid breaks when entering total hours.",
+    ],
+    disclaimer: "Consult local labor laws for overtime rules.",
 };
 
 <Calculator schema={schema} />

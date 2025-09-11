@@ -181,7 +181,10 @@
         "answer": "Yes, all interest is reinvested each period."
       }
     ],
-    "info": []
+    "info": [
+      "Calculations assume 8 bits per byte and no protocol overhead.",
+      "Actual download time may be longer due to latency and network congestion."
+    ]
   },
   {
     "slug": "bmi-calculator",
@@ -5744,8 +5747,9 @@
   {
     "slug": "paper-roll-length",
     "title": "Paper Roll Length Calculator",
-    "cluster": "other",
+    "cluster": "Lifestyle & Travel",
     "description": "Estimate the length of paper on a roll.",
+    "intro": "Calculate the total length of paper wound on a roll using its outer diameter, core diameter, and sheet thickness.",
     "inputs": [
       {
         "name": "outer",
@@ -5801,7 +5805,10 @@
       }
     ],
     "disclaimer": "Approximate result; actual length may vary.",
-    "info": []
+    "info": [
+      "Assumes paper is wound tightly without gaps between layers.",
+      "Result is in meters; multiply by 3.281 to convert to feet."
+    ]
   },
   {
     "slug": "convection-oven-time",
@@ -10981,7 +10988,8 @@
     "slug": "overtime-hours",
     "title": "Overtime Hours Calculator",
     "cluster": "Date & Time",
-    "intro": "Find how many overtime hours were worked beyond a regular schedule. Enter the values and press Calculate.",
+    "description": "Calculate overtime hours beyond regular schedule.",
+    "intro": "Find how many overtime hours were worked beyond a regular schedule.",
     "inputs": [
       {
         "name": "total",
@@ -11023,7 +11031,10 @@
     ],
     "disclaimer": "Consult local labor laws for overtime rules.",
     "unit": "hours",
-    "info": []
+    "info": [
+      "Overtime rules differ by region; verify local regulations.",
+      "Exclude unpaid breaks when entering total hours."
+    ]
   },
   {
     "slug": "contingency-fee",
@@ -13506,8 +13517,9 @@
   {
     "slug": "standing-time-percentage",
     "title": "Standing Time Percentage",
+    "description": "How much of the day you spend standing.",
     "cluster": "Health",
-    "intro": "Track the share of your day spent standing versus sitting.",
+    "intro": "Track the share of your day spent standing versus sitting to monitor sedentary time and encourage more movement.",
     "inputs": [
       {
         "name": "standing",
@@ -13535,9 +13547,20 @@
       {
         "question": "Awake time?",
         "answer": "Hours you're not sleeping."
+      },
+      {
+        "question": "Does brief standing count?",
+        "answer": "Yes, include any period you're on your feet for a minute or more."
+      },
+      {
+        "question": "What's a healthy standing percentage?",
+        "answer": "Many experts suggest aiming for at least 15% of waking hours."
       }
     ],
-    "info": []
+    "info": [
+      "Breaking up long sitting sessions with standing can improve circulation.",
+      "Use this percentage to set daily movement or standing goals."
+    ]
   },
   {
     "slug": "caffeine-limit-by-weight",
@@ -15296,8 +15319,9 @@
   {
     "slug": "working-capital-ratio",
     "title": "Working Capital Ratio Calculator",
-    "cluster": "finance",
+    "cluster": "Finance",
     "description": "Measure liquidity by dividing current assets by current liabilities.",
+    "intro": "Determine your company's short-term liquidity by comparing current assets to current liabilities.",
     "inputs": [
       {
         "name": "assets",
@@ -15317,18 +15341,21 @@
       }
     ],
     "expression": "assets / liabilities",
+    "unit": "ratio",
     "examples": [
-      {
-        "description": "50,000 assets and 25,000 liabilities ⇒ 2"
-      }
+      { "description": "50,000 assets and 25,000 liabilities ⇒ 2" },
+      { "description": "80,000 assets and 60,000 liabilities ⇒ 1.33" }
     ],
     "faqs": [
-      {
-        "question": "What does the ratio indicate?",
-        "answer": "It shows short-term financial health."
-      }
+      { "question": "What does the ratio indicate?", "answer": "It shows short-term financial health." },
+      { "question": "What is a good ratio?", "answer": "Generally between 1.2 and 2.0." },
+      { "question": "What if liabilities are zero?", "answer": "The ratio would be infinite, indicating no short-term debt." },
+      { "question": "Is a ratio below 1 problematic?", "answer": "Yes, it suggests liabilities exceed assets." }
     ],
-    "info": []
+    "info": [
+      "Also known as the current ratio in accounting.",
+      "Values above 1 imply more assets than short-term obligations."
+    ]
   },
   {
     "slug": "pmi-monthly-payment",
@@ -15568,8 +15595,9 @@
   {
     "slug": "spring-force",
     "title": "Spring Force Calculator",
-    "cluster": "science & engineering",
+    "cluster": "Science & Engineering",
     "description": "Compute force using Hooke's Law (F = k × x).",
+    "intro": "Compute the restoring force of a spring using Hooke's Law (F = k × x).",
     "inputs": [
       {
         "name": "k",
@@ -15588,18 +15616,21 @@
       }
     ],
     "expression": "k * x",
+    "unit": "N",
     "examples": [
-      {
-        "description": "k=200 N/m, x=0.1 m ⇒ 20 N"
-      }
+      { "description": "k=200 N/m, x=0.1 m ⇒ 20 N" },
+      { "description": "k=150 N/m, x=0.2 m ⇒ 30 N" }
     ],
     "faqs": [
-      {
-        "question": "Does direction matter?",
-        "answer": "This returns magnitude; direction depends on compression or extension."
-      }
+      { "question": "Does direction matter?", "answer": "This returns magnitude; direction depends on compression or extension." },
+      { "question": "What is Hooke's Law?", "answer": "It states the force is proportional to displacement." },
+      { "question": "Can the spring constant change?", "answer": "Only if the spring is stretched beyond its elastic limit." },
+      { "question": "Can displacement be negative?", "answer": "Yes, compression is negative, but this tool returns the magnitude." }
     ],
-    "info": []
+    "info": [
+      "Applies only within the elastic range of the spring.",
+      "Force increases linearly with displacement for ideal springs."
+    ]
   },
   {
     "slug": "hex-to-decimal",
@@ -18995,6 +19026,119 @@
     "info": [
       "27 cubic feet equal 1 cubic yard.",
       "Mulch depth of 2–4 inches is common for garden beds."
+    ]
+  },
+  {
+    "slug": "leap-year-checker",
+    "title": "Leap Year Checker",
+    "description": "Determine if a given year is a leap year.",
+    "cluster": "Date & Time",
+    "intro": "Identify whether a specific year includes an extra day (February 29) by applying the Gregorian leap year rules.",
+    "inputs": [
+      { "name": "year", "label": "Year", "type": "number", "step": 1, "required": true }
+    ],
+    "expression": "(year % 4 === 0 && (year % 100 !== 0 || year % 400 === 0)) ? 1 : 0",
+    "unit": "1=yes",
+    "examples": [
+      { "description": "2024 ⇒ 1" },
+      { "description": "1900 ⇒ 0" },
+      { "description": "2000 ⇒ 1" }
+    ],
+    "faqs": [
+      { "question": "Why isn't 1900 a leap year?", "answer": "Years divisible by 100 are not leap years unless divisible by 400." },
+      { "question": "What does a result of 1 mean?", "answer": "1 indicates the year is a leap year; 0 means it is not." },
+      { "question": "Does it work for any year?", "answer": "Yes, it uses the proleptic Gregorian calendar for any integer year." },
+      { "question": "How often do leap years occur?", "answer": "Generally every four years, except century years not divisible by 400." }
+    ],
+    "disclaimer": "For calendar reference only.",
+    "info": [
+      "Leap years have 366 days to keep the calendar aligned with Earth's orbit.",
+      "The rules maintain an average year length close to 365.2425 days."
+    ]
+  },
+  {
+    "slug": "candle-burn-time",
+    "title": "Candle Burn Time",
+    "description": "Estimate how long a candle will burn from its weight and burn rate.",
+    "cluster": "Other",
+    "intro": "Estimate how long a candle will burn by dividing its wax weight by the average burn rate.",
+    "inputs": [
+      { "name": "weight", "label": "Candle weight (g)", "type": "number", "step": "any", "placeholder": "200" },
+      { "name": "rate", "label": "Burn rate (g/hr)", "type": "number", "step": "any", "placeholder": "5" }
+    ],
+    "expression": "weight / rate",
+    "unit": "hours",
+    "examples": [
+      { "description": "200 g candle at 5 g/hr ⇒ 40 hrs" },
+      { "description": "150 g candle at 6 g/hr ⇒ 25 hrs" },
+      { "description": "100 g candle at 4 g/hr ⇒ 25 hrs" }
+    ],
+    "faqs": [
+      { "question": "Does wick size affect burn rate?", "answer": "Yes, larger wicks typically increase the burn rate." },
+      { "question": "Can I use ounces instead?", "answer": "Yes, as long as weight and rate units match." },
+      { "question": "Is burn rate constant?", "answer": "Actual burn rate may vary with conditions." },
+      { "question": "Do scented candles burn differently?", "answer": "Fragrances and dyes can slightly change the burn rate." }
+    ],
+    "disclaimer": "Approximation only; real burn times depend on environment and candle design.",
+    "info": [
+      "Weigh the candle before burning for the most accurate estimate.",
+      "Drafts and wick trimming can affect how quickly a candle burns."
+    ]
+  },
+  {
+    "slug": "celsius-to-kelvin",
+    "title": "Celsius to Kelvin",
+    "description": "Convert temperatures from Celsius to Kelvin.",
+    "cluster": "Conversions",
+    "intro": "Easily convert temperatures from degrees Celsius to Kelvin for scientific calculations or everyday use.",
+    "inputs": [
+      { "name": "c", "label": "Celsius (°C)", "type": "number", "step": "any", "placeholder": "25" }
+    ],
+    "expression": "c + 273.15",
+    "unit": "K",
+    "examples": [
+      { "description": "0 °C ⇒ 273.15 K" },
+      { "description": "25 °C ⇒ 298.15 K" },
+      { "description": "-10 °C ⇒ 263.15 K" }
+    ],
+    "faqs": [
+      { "question": "Can it handle negative temperatures?", "answer": "Yes, input any Celsius value including negatives." },
+      { "question": "Are decimals supported?", "answer": "Yes, you can enter decimal temperatures." },
+      { "question": "What is absolute zero in Kelvin?", "answer": "Absolute zero is 0 K, equal to -273.15 °C." },
+      { "question": "Why add 273.15?", "answer": "The Kelvin scale starts at absolute zero, 273.15 degrees below 0 °C." }
+    ],
+    "disclaimer": "Educational purposes only. Not professional advice.",
+    "info": [
+      "Kelvin is the SI base unit for temperature.",
+      "Unlike Celsius, Kelvin values do not use the degree symbol."
+    ]
+  },
+  {
+    "slug": "standing-desk-calorie-increase",
+    "title": "Standing Desk Calorie Increase",
+    "description": "Estimate extra calories burned while standing at your desk.",
+    "cluster": "Health",
+    "intro": "Approximate additional calories burned from standing instead of sitting at work.",
+    "inputs": [
+      { "name": "hours", "label": "Standing hours", "type": "number", "step": "any", "placeholder": "2" }
+    ],
+    "expression": "hours * 9",
+    "unit": "kcal",
+    "examples": [
+      { "description": "2 hours standing ⇒ 18 kcal" },
+      { "description": "4 hours standing ⇒ 36 kcal" },
+      { "description": "6 hours standing ⇒ 54 kcal" }
+    ],
+    "faqs": [
+      { "question": "Why 9 kcal per hour?", "answer": "Standing burns roughly 9 more calories per hour than sitting." },
+      { "question": "Does body weight matter?", "answer": "This is an average; individual burn varies." },
+      { "question": "Can I track daily totals?", "answer": "Yes, adjust the hours to match your standing time." },
+      { "question": "Is standing all day recommended?", "answer": "No, alternating between sitting and standing is best for comfort." }
+    ],
+    "disclaimer": "Estimates only; consult health guidance for personalized advice.",
+    "info": [
+      "Estimate is based on an average 9 kcal/hour difference between sitting and standing.",
+      "Adding light movement or stretching can increase calorie burn further."
     ]
   }
 ]

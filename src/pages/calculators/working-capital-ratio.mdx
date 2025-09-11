@@ -12,22 +12,31 @@ export const schema = {
   slug: "working-capital-ratio",
   title: "Working Capital Ratio Calculator",
   locale: "en",
-  unit: "",
-  intro: "Measure liquidity by dividing current assets by current liabilities.",
+  unit: "ratio",
+  intro:
+    "Determine your company's short-term liquidity by comparing current assets to current liabilities.",
   inputs: [
     { name: "assets", label: "Current Assets", type: "number", step: "any", placeholder: "50000" },
     { name: "liabilities", label: "Current Liabilities", type: "number", step: "any", placeholder: "25000" }
   ],
   expression: "assets / liabilities",
   examples: [
-    { description: "50,000 assets and 25,000 liabilities ⇒ 2" }
+    { description: "50,000 assets and 25,000 liabilities ⇒ 2" },
+    { description: "80,000 assets and 60,000 liabilities ⇒ 1.33" }
   ],
   faqs: [
     { question: "What does the ratio indicate?", answer: "It shows short-term financial health." },
-    { question: "What is a good ratio?", answer: "Generally between 1.2 and 2.0." }
+    { question: "What is a good ratio?", answer: "Generally between 1.2 and 2.0." },
+    { question: "What if liabilities are zero?", answer: "The ratio would be infinite, indicating no short-term debt." },
+    { question: "Is a ratio below 1 problematic?", answer: "Yes, it suggests liabilities exceed assets." }
+  ],
+  info: [
+    "Also known as the current ratio in accounting.",
+    "Values above 1 imply more assets than short-term obligations.",
   ],
   disclaimer: "For educational purposes only.",
-  cluster: "Finance"
+  cluster: "Finance",
 };
 
 <Calculator schema={schema} />
+

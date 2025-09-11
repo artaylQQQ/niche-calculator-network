@@ -18,7 +18,7 @@ export const schema = {
   "locale": "en",
   "unit": "hours",
   "expression": "weight / rate",
-  "intro": "Estimate the total burn time of a candle given its weight and average burn rate.",
+  "intro": "Estimate how long a candle will burn by dividing its wax weight by the average burn rate.",
   "examples": [
     { "description": "200 g candle at 5 g/hr ⇒ 40 hrs" },
     { "description": "150 g candle at 6 g/hr ⇒ 25 hrs" },
@@ -27,9 +27,14 @@ export const schema = {
   "faqs": [
     { "question": "Does wick size affect burn rate?", "answer": "Yes, larger wicks typically increase the burn rate." },
     { "question": "Can I use ounces instead?", "answer": "Yes, as long as weight and rate units match." },
-    { "question": "Is burn rate constant?", "answer": "Actual burn rate may vary with conditions." }
+    { "question": "Is burn rate constant?", "answer": "Actual burn rate may vary with conditions." },
+    { "question": "Do scented candles burn differently?", "answer": "Fragrances and dyes can slightly change the burn rate." }
   ],
   "disclaimer": "Approximation only; real burn times depend on environment and candle design.",
+  "info": [
+    "Weigh the candle before burning for the most accurate estimate.",
+    "Drafts and wick trimming can affect how quickly a candle burns.",
+  ],
   "cluster": "Other"
 }
 

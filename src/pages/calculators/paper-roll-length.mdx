@@ -39,7 +39,8 @@ export const schema = {
     }
   ],
   "expression": "( ( (outer/2)^2 - (core/2)^2 ) * Math.PI * 1000 ) / thickness",
-  "intro": "Estimate the length of paper on a roll.",
+  "unit": "m",
+  "intro": "Calculate the total length of paper wound on a roll using its outer diameter, core diameter, and sheet thickness.",
   "examples": [
     {
       "description": "Outer 10 cm, Core 4 cm, Thickness 0.1 mm ⇒ 2356 m"
@@ -67,6 +68,10 @@ export const schema = {
     }
   ],
   "disclaimer": "Approximate result; actual length may vary.",
+  "info": [
+    "Assumes paper is wound tightly without gaps between layers.",
+    "Result is in meters; multiply by 3.281 to convert to feet.",
+  ],
   "cluster": "Lifestyle & Travel",
   "related": [
     "discount-calculator",
