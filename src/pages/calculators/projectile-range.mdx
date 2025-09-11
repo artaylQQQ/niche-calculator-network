@@ -1,0 +1,78 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Projectile Range Calculator"
+description: "Calculate horizontal distance of a projectile based on velocity and launch angle."
+date: 2025-10-07
+updated: 2025-10-07
+cluster: "Science & Engineering"
+---
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "projectile-range",
+  "title": "Projectile Range Calculator",
+  "locale": "en",
+  "unit": "m",
+  "inputs": [
+    {
+      "name": "velocity",
+      "label": "Initial Velocity (m/s)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "20"
+    },
+    {
+      "name": "angle",
+      "label": "Launch Angle (degrees)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "45"
+    },
+    {
+      "name": "gravity",
+      "label": "Gravity (m/s^2)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "9.81"
+    }
+  ],
+  "expression": "(velocity ** 2 * Math.sin(2 * angle * Math.PI / 180)) / gravity",
+  "intro": "Determine the horizontal range of a projectile using initial velocity, launch angle, and gravity.",
+  "examples": [
+    { "description": "20 m/s at 45° with gravity 9.81 ⇒ 40.77 m" },
+    { "description": "30 m/s at 30° with gravity 9.81 ⇒ 79.45 m" }
+  ],
+  "faqs": [
+    {
+      "question": "Why is 45° the optimal angle for maximum range?",
+      "answer": "In a vacuum, 45° maximizes the value of sin(2θ), giving the longest range."
+    },
+    {
+      "question": "Can I change gravity for other planets?",
+      "answer": "Yes, adjust the gravity input to match the planet's gravitational acceleration."
+    },
+    {
+      "question": "Does this account for air resistance?",
+      "answer": "No, it assumes ideal projectile motion without air drag."
+    },
+    {
+      "question": "What happens if I use a negative angle?",
+      "answer": "Negative angles yield negative ranges, representing downward launches."
+    }
+  ],
+  "disclaimer": "Idealized physics model; real-world ranges vary with conditions.",
+  "cluster": "Science & Engineering",
+  "info": [
+    "Gravity on Mars is about 3.71 m/s²."
+  ],
+  "related": [
+    "escape-velocity",
+    "wind-chill-index",
+    "lc-resonant-frequency",
+    "torque-nm-to-ftlb",
+    "hexagon-area",
+    "circumference-from-area"
+  ]
+};
+
+<Calculator schema={schema} />
