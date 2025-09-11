@@ -1,9 +1,9 @@
 ---
 layout: ../../layouts/CalculatorLayout.astro
 title: "Time to Decimal Hours"
-description: "Convert hours and minutes into decimal hours."
-date: 2025-05-11
-updated: 2025-05-11
+description: "Convert a time duration of hours and minutes to decimal hours for timesheets or billing."
+date: 2025-09-11
+updated: 2025-09-11
 cluster: "Date & Time"
 ---
 import Calculator from '../../components/Calculator.astro';
@@ -13,24 +13,59 @@ export const schema = {
   "title": "Time to Decimal Hours",
   "locale": "en",
   "inputs": [
-    { "name": "hrs", "label": "Hours", "type": "number", "step": "any", "placeholder": "2" },
-    { "name": "mins", "label": "Minutes", "type": "number", "step": "any", "placeholder": "30" }
+    {
+      "name": "hrs",
+      "label": "Hours",
+      "type": "number",
+      "step": "any",
+      "placeholder": "2"
+    },
+    {
+      "name": "mins",
+      "label": "Minutes",
+      "type": "number",
+      "step": "any",
+      "placeholder": "30"
+    }
   ],
   "expression": "hrs + mins / 60",
-  "unit": "hours",
   "intro": "Convert a time duration of hours and minutes to decimal hours for timesheets or billing.",
   "examples": [
-    { "description": "2 h 30 m ⇒ 2.5 hours" },
-    { "description": "1 h 45 m ⇒ 1.75 hours" },
-    { "description": "0 h 15 m ⇒ 0.25 hours" }
+    {
+      "description": "2 h 30 m ⇒ 2.5 hours"
+    },
+    {
+      "description": "1 h 45 m ⇒ 1.75 hours"
+    },
+    {
+      "description": "0 h 15 m ⇒ 0.25 hours"
+    }
   ],
+  "info": [],
   "faqs": [
-    { "question": "Can minutes exceed 59?", "answer": "Yes, any number of minutes will be converted proportionally." },
-    { "question": "Does it handle negative values?", "answer": "No, enter positive durations only." },
-    { "question": "Why use decimal hours?", "answer": "Decimal hours simplify payroll and billing calculations." }
+    {
+      "question": "Can minutes exceed 59?",
+      "answer": "Yes, any number of minutes will be converted proportionally."
+    },
+    {
+      "question": "Does it handle negative values?",
+      "answer": "No, enter positive durations only."
+    },
+    {
+      "question": "Why use decimal hours?",
+      "answer": "Decimal hours simplify payroll and billing calculations."
+    }
   ],
   "disclaimer": "Round results according to workplace policy.",
-  "cluster": "Date & Time"
+  "cluster": "Date & Time",
+  "related": [
+    "minutes-to-seconds",
+    "weeks-to-days",
+    "age-in-days",
+    "seconds-to-days",
+    "days-to-seconds",
+    "age-in-months"
+  ]
 }
 
 <Calculator schema={schema} />

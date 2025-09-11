@@ -1,9 +1,9 @@
 ---
 layout: ../../layouts/CalculatorLayout.astro
 title: "Shelf Load Capacity"
-description: "Total weight a shelving unit can hold."
-date: 2025-05-11
-updated: 2025-05-11
+description: "Estimate the total load a shelving unit can support based on per-shelf capacity and shelf count."
+date: 2025-09-11
+updated: 2025-09-11
 cluster: "Home & DIY"
 ---
 import Calculator from '../../components/Calculator.astro';
@@ -13,24 +13,59 @@ export const schema = {
   "title": "Shelf Load Capacity",
   "locale": "en",
   "inputs": [
-    { "name": "capacity", "label": "Capacity per shelf (kg)", "type": "number", "step": "any", "placeholder": "50" },
-    { "name": "count", "label": "Number of shelves", "type": "number", "step": 1, "placeholder": "4" }
+    {
+      "name": "capacity",
+      "label": "Capacity per shelf (kg)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "50"
+    },
+    {
+      "name": "count",
+      "label": "Number of shelves",
+      "type": "number",
+      "step": 1,
+      "placeholder": "4"
+    }
   ],
   "expression": "capacity * count",
-  "unit": "kg",
   "intro": "Estimate the total load a shelving unit can support based on per-shelf capacity and shelf count.",
   "examples": [
-    { "description": "50 kg per shelf × 4 shelves ⇒ 200 kg" },
-    { "description": "30 kg per shelf × 5 shelves ⇒ 150 kg" },
-    { "description": "100 kg per shelf × 3 shelves ⇒ 300 kg" }
+    {
+      "description": "50 kg per shelf × 4 shelves ⇒ 200 kg"
+    },
+    {
+      "description": "30 kg per shelf × 5 shelves ⇒ 150 kg"
+    },
+    {
+      "description": "100 kg per shelf × 3 shelves ⇒ 300 kg"
+    }
   ],
+  "info": [],
   "faqs": [
-    { "question": "Does this assume even weight distribution?", "answer": "Yes, weight should be spread evenly across shelves." },
-    { "question": "Can I mix units?", "answer": "Use the same unit for capacity and desired result." },
-    { "question": "Is a safety factor included?", "answer": "No, consider a safety margin for real use." }
+    {
+      "question": "Does this assume even weight distribution?",
+      "answer": "Yes, weight should be spread evenly across shelves."
+    },
+    {
+      "question": "Can I mix units?",
+      "answer": "Use the same unit for capacity and desired result."
+    },
+    {
+      "question": "Is a safety factor included?",
+      "answer": "No, consider a safety margin for real use."
+    }
   ],
   "disclaimer": "Always follow manufacturer load ratings.",
-  "cluster": "Home & DIY"
+  "cluster": "Home & DIY",
+  "related": [
+    "paint-needed",
+    "flooring-cost",
+    "concrete-slab-volume",
+    "wallpaper-roll-coverage",
+    "roof-pitch-angle",
+    "water-heater-recovery-time"
+  ]
 }
 
 <Calculator schema={schema} />

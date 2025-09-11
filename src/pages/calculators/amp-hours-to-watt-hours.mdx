@@ -1,9 +1,9 @@
 ---
 layout: ../../layouts/CalculatorLayout.astro
 title: "Amp-hours to Watt-hours Converter"
-description: "Convert battery capacity from amp-hours and voltage to watt-hours."
-date: 2025-05-11
-updated: 2025-05-11
+description: "Convert a battery's capacity in amp-hours to energy in watt-hours using its voltage."
+date: 2025-09-11
+updated: 2025-09-11
 cluster: "Conversions & Units"
 ---
 import Calculator from '../../components/Calculator.astro';
@@ -13,24 +13,59 @@ export const schema = {
   "title": "Amp-hours to Watt-hours Converter",
   "locale": "en",
   "inputs": [
-    { "name": "ah", "label": "Capacity (Ah)", "type": "number", "step": "any", "placeholder": "10" },
-    { "name": "volts", "label": "Voltage (V)", "type": "number", "step": "any", "placeholder": "12" }
+    {
+      "name": "ah",
+      "label": "Capacity (Ah)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "10"
+    },
+    {
+      "name": "volts",
+      "label": "Voltage (V)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "12"
+    }
   ],
   "expression": "ah * volts",
-  "unit": "Wh",
   "intro": "Convert a battery's capacity in amp-hours to energy in watt-hours using its voltage.",
   "examples": [
-    { "description": "10 Ah at 12 V ⇒ 120 Wh" },
-    { "description": "5 Ah at 24 V ⇒ 120 Wh" },
-    { "description": "2 Ah at 3.7 V ⇒ 7.4 Wh" }
+    {
+      "description": "10 Ah at 12 V ⇒ 120 Wh"
+    },
+    {
+      "description": "5 Ah at 24 V ⇒ 120 Wh"
+    },
+    {
+      "description": "2 Ah at 3.7 V ⇒ 7.4 Wh"
+    }
   ],
+  "info": [],
   "faqs": [
-    { "question": "Does this assume constant voltage?", "answer": "Yes, voltage is treated as constant for the calculation." },
-    { "question": "Can I input mAh?", "answer": "Divide mAh by 1000 to convert to Ah first." },
-    { "question": "Is efficiency considered?", "answer": "No, this shows theoretical energy only." }
+    {
+      "question": "Does this assume constant voltage?",
+      "answer": "Yes, voltage is treated as constant for the calculation."
+    },
+    {
+      "question": "Can I input mAh?",
+      "answer": "Divide mAh by 1000 to convert to Ah first."
+    },
+    {
+      "question": "Is efficiency considered?",
+      "answer": "No, this shows theoretical energy only."
+    }
   ],
   "disclaimer": "Actual usable energy depends on discharge characteristics.",
-  "cluster": "Conversions & Units"
+  "cluster": "Conversions & Units",
+  "related": [
+    "percentage-discount",
+    "simple-interest",
+    "compound-interest-calculator",
+    "bmi-calculator",
+    "daily-calorie-burn",
+    "celsius-to-fahrenheit"
+  ]
 }
 
 <Calculator schema={schema} />

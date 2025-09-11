@@ -1,32 +1,54 @@
 ---
 layout: ../../layouts/CalculatorLayout.astro
 title: "Break Time Planner"
-description: "Estimate break minutes using the 15-min per 2 hours guideline."
-updated: "2025-10-24"
+description: "Plan how many minutes of break you should take in a workday."
+date: 2025-09-11
+updated: 2025-09-11
 cluster: "Date & Time"
 ---
-import Calculator from "../../components/Calculator.astro";
+import Calculator from '../../components/Calculator.astro';
 
 export const schema = {
-  slug: "break-time-planner",
-  title: "Break Time Planner",
-  locale: "en",
-  intro: "Plan how many minutes of break you should take in a workday.",
-  unit: "minutes",
-  cluster: "Date & Time",
-  inputs: [
-    { name: "hours", label: "Hours worked", type: "number", step: "any", placeholder: "8" }
+  "slug": "break-time-planner",
+  "title": "Break Time Planner",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "hours",
+      "hint": "Hours worked"
+    }
   ],
-  expression: "(hours / 2) * 15",
-  examples: [
-    { description: "8 h ⇒ 60 min of break" },
-    { description: "5 h ⇒ 37.5 min of break" }
+  "expression": "(hours/2)*15",
+  "intro": "Plan how many minutes of break you should take in a workday.",
+  "examples": [
+    {
+      "description": "8 h ⇒ 60 min"
+    },
+    {
+      "description": "5 h ⇒ 37.5 min"
+    }
   ],
-  faqs: [
-    { question: "What guideline is used?", answer: "A common recommendation is 15 minutes per 2 hours of work." },
-    { question: "Can I adjust it?", answer: "Yes, modify the formula if your policy differs." }
+  "info": [],
+  "faqs": [
+    {
+      "question": "What guideline?",
+      "answer": "15 minutes per 2 hours of work."
+    },
+    {
+      "question": "Adjustable?",
+      "answer": "Modify formula for your policy."
+    }
   ],
-  disclaimer: "For informational purposes only.",
-};
+  "disclaimer": "Educational information, not professional advice.",
+  "cluster": "Date & Time",
+  "related": [
+    "minutes-to-seconds",
+    "weeks-to-days",
+    "age-in-days",
+    "seconds-to-days",
+    "days-to-seconds",
+    "age-in-months"
+  ]
+}
 
 <Calculator schema={schema} />

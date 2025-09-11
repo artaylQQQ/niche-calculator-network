@@ -1,33 +1,58 @@
 ---
 layout: ../../layouts/CalculatorLayout.astro
 title: "Meeting Time Percentage"
-description: "Meeting minutes as a share of the workday."
-updated: "2025-10-24"
+description: "See how much of your workday is spent in meetings."
+date: 2025-09-11
+updated: 2025-09-11
 cluster: "Date & Time"
 ---
-import Calculator from "../../components/Calculator.astro";
+import Calculator from '../../components/Calculator.astro';
 
 export const schema = {
-  slug: "meeting-time-percentage",
-  title: "Meeting Time Percentage",
-  locale: "en",
-  intro: "See how much of your workday is spent in meetings.",
-  unit: "%",
-  cluster: "Date & Time",
-  inputs: [
-    { name: "meeting", label: "Meeting time (minutes)", type: "number", step: "any", placeholder: "90" },
-    { name: "workday", label: "Workday length (minutes)", type: "number", step: "any", placeholder: "480" }
+  "slug": "meeting-time-percentage",
+  "title": "Meeting Time Percentage",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "meeting",
+      "hint": "Meeting time (min)"
+    },
+    {
+      "name": "workday",
+      "hint": "Workday length (min)"
+    }
   ],
-  expression: "(meeting / workday) * 100",
-  examples: [
-    { description: "90 min in 480 min ⇒ 18.75%" },
-    { description: "30 min in 300 min ⇒ 10%" }
+  "expression": "(meeting/workday)*100",
+  "intro": "See how much of your workday is spent in meetings.",
+  "examples": [
+    {
+      "description": "90 min of 480 ⇒ 18.75%"
+    },
+    {
+      "description": "30 min of 300 ⇒ 10%"
+    }
   ],
-  faqs: [
-    { question: "What is a typical workday length?", answer: "Many offices use 480 minutes (8 hours)." },
-    { question: "Can I analyze multiple meetings?", answer: "Sum the meeting minutes before entering." }
+  "info": [],
+  "faqs": [
+    {
+      "question": "Typical workday?",
+      "answer": "Many offices use 480 minutes."
+    },
+    {
+      "question": "Multiple meetings?",
+      "answer": "Sum minutes before entering."
+    }
   ],
-  disclaimer: "For informational purposes only.",
-};
+  "disclaimer": "Educational information, not professional advice.",
+  "cluster": "Date & Time",
+  "related": [
+    "minutes-to-seconds",
+    "weeks-to-days",
+    "age-in-days",
+    "seconds-to-days",
+    "days-to-seconds",
+    "age-in-months"
+  ]
+}
 
 <Calculator schema={schema} />

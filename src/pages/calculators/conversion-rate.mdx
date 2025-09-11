@@ -1,41 +1,78 @@
 ---
 layout: ../../layouts/CalculatorLayout.astro
 title: "Conversion Rate Calculator"
-description: "Calculate conversion rate from visitor and action counts."
-date: 2025-05-11
-updated: 2025-05-11
+description: "Determine the percentage of visitors who complete a desired action such as a purchase or signup."
+date: 2025-09-11
+updated: 2025-09-11
 cluster: "Web & Marketing"
 ---
 import Calculator from '../../components/Calculator.astro';
 
 export const schema = {
-  slug: "conversion-rate",
-  title: "Conversion Rate Calculator",
-  locale: "en",
-  inputs: [
-    { name: "conversions", label: "Conversions", type: "number", step: "any", placeholder: "50" },
-    { name: "visitors", label: "Visitors", type: "number", step: "any", placeholder: "1000" }
+  "slug": "conversion-rate",
+  "title": "Conversion Rate Calculator",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "conversions",
+      "label": "Conversions",
+      "type": "number",
+      "step": "any",
+      "placeholder": "50"
+    },
+    {
+      "name": "visitors",
+      "label": "Visitors",
+      "type": "number",
+      "step": "any",
+      "placeholder": "1000"
+    }
   ],
-  expression: "(conversions / visitors) * 100",
-  unit: "%",
-  intro: "Determine the percentage of visitors who complete a desired action such as a purchase or signup.",
-  examples: [
-    { description: "50 conversions, 1000 visitors ⇒ 5%" },
-    { description: "200 conversions, 4000 visitors ⇒ 5%" },
-    { description: "120 conversions, 1500 visitors ⇒ 8%" }
+  "expression": "(conversions / visitors) * 100",
+  "intro": "Determine the percentage of visitors who complete a desired action such as a purchase or signup.",
+  "examples": [
+    {
+      "description": "50 conversions, 1000 visitors ⇒ 5%"
+    },
+    {
+      "description": "200 conversions, 4000 visitors ⇒ 5%"
+    },
+    {
+      "description": "120 conversions, 1500 visitors ⇒ 8%"
+    }
   ],
-  faqs: [
-    { question: "How is this different from click-through rate?", answer: "Conversion rate measures completed actions, not just clicks." },
-    { question: "Can visitors be zero?", answer: "No, visitors must be greater than zero." },
-    { question: "Is the result a percentage?", answer: "Yes, multiply by 100 to express as percent." },
-    { question: "Can I track multiple goals?", answer: "Calculate separately for each goal to avoid confusion." }
-  ],
-  disclaimer: "Use accurate analytics data for business decisions.",
-  info: [
+  "info": [
     "Conversion rate = (conversions / visitors) × 100.",
     "Express results as a percentage for easier comparison."
   ],
-  cluster: "Web & Marketing"
-};
+  "faqs": [
+    {
+      "question": "How is this different from click-through rate?",
+      "answer": "Conversion rate measures completed actions, not just clicks."
+    },
+    {
+      "question": "Can visitors be zero?",
+      "answer": "No, visitors must be greater than zero."
+    },
+    {
+      "question": "Is the result a percentage?",
+      "answer": "Yes, multiply by 100 to express as percent."
+    },
+    {
+      "question": "Can I track multiple goals?",
+      "answer": "Calculate separately for each goal to avoid confusion."
+    }
+  ],
+  "disclaimer": "Use accurate analytics data for business decisions.",
+  "cluster": "Web & Marketing",
+  "related": [
+    "percentage-discount",
+    "simple-interest",
+    "compound-interest-calculator",
+    "bmi-calculator",
+    "daily-calorie-burn",
+    "celsius-to-fahrenheit"
+  ]
+}
 
 <Calculator schema={schema} />

@@ -1,50 +1,63 @@
 ---
 layout: ../../layouts/CalculatorLayout.astro
 title: "Binary to Decimal Converter"
-description: "Convert a binary number to decimal."
-updated: "2025-09-07"
-cluster: "technology"
+description: "Translate a binary string into its decimal equivalent."
+date: 2025-09-11
+updated: 2025-09-11
+cluster: "Technology & Coding"
 ---
-
-import Calculator from "../../components/Calculator.astro";
+import Calculator from '../../components/Calculator.astro';
 
 export const schema = {
-  slug: "binary-to-decimal",
-  title: "Binary to Decimal Converter",
-  locale: "en",
-  cluster: "technology",
-  unit: "",
-  intro: "Translate a binary string into its decimal equivalent.",
-  inputs: [
+  "slug": "binary-to-decimal",
+  "title": "Binary to Decimal Converter",
+  "locale": "en",
+  "inputs": [
     {
-      name: "binary",
-      label: "Binary number",
-      type: "text",
-      placeholder: "1010",
-    },
+      "name": "binary",
+      "label": "Binary number",
+      "type": "text",
+      "placeholder": "1010"
+    }
   ],
-  expression: "parseInt(binary, 2)",
-  examples: [
-    { description: "1010 ⇒ 10" },
-    { description: "11111111 ⇒ 255" },
-    { description: "100000 ⇒ 32" },
+  "expression": "parseInt(binary, 2)",
+  "intro": "Translate a binary string into its decimal equivalent.",
+  "examples": [
+    {
+      "description": "1010 ⇒ 10"
+    },
+    {
+      "description": "11111111 ⇒ 255"
+    },
+    {
+      "description": "100000 ⇒ 32"
+    }
   ],
-  faqs: [
+  "info": [],
+  "faqs": [
     {
-      question: "Can I include spaces?",
-      answer: "No, enter the binary digits without spaces.",
+      "question": "Can I include spaces?",
+      "answer": "No, enter the binary digits without spaces."
     },
     {
-      question: "What digits are allowed?",
-      answer: "Only 0 and 1 are valid in a binary number.",
+      "question": "What digits are allowed?",
+      "answer": "Only 0 and 1 are valid in a binary number."
     },
     {
-      question: "Does it handle large numbers?",
-      answer: "Yes, but very long binaries may exceed JavaScript precision.",
-    },
+      "question": "Does it handle large numbers?",
+      "answer": "Yes, but very long binaries may exceed JavaScript precision."
+    }
   ],
-  disclaimer:
-    "For educational purposes; verify critical conversions independently.",
-};
+  "disclaimer": "For educational purposes; verify critical conversions independently.",
+  "cluster": "Technology & Coding",
+  "related": [
+    "battery-life-estimator",
+    "cpu-power-to-current",
+    "screen-ppi-calculator",
+    "ssd-lifespan-years",
+    "ipv4-subnet-host-count",
+    "video-file-size"
+  ]
+}
 
 <Calculator schema={schema} />

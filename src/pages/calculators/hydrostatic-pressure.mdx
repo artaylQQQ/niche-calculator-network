@@ -1,59 +1,71 @@
 ---
 layout: ../../layouts/CalculatorLayout.astro
 title: "Hydrostatic Pressure Calculator"
-description: "Calculate pressure at a depth in a fluid."
-updated: "2025-09-07"
-cluster: "science"
+description: "Determine the pressure exerted by a static fluid at a given depth using ρ g h."
+date: 2025-09-11
+updated: 2025-09-11
+cluster: "Science & Engineering"
 ---
-
-import Calculator from "../../components/Calculator.astro";
+import Calculator from '../../components/Calculator.astro';
 
 export const schema = {
-  slug: "hydrostatic-pressure",
-  title: "Hydrostatic Pressure Calculator",
-  locale: "en",
-  cluster: "science",
-  unit: "Pa",
-  intro:
-    "Determine the pressure exerted by a static fluid at a given depth using \u03c1 g h.",
-  inputs: [
+  "slug": "hydrostatic-pressure",
+  "title": "Hydrostatic Pressure Calculator",
+  "locale": "en",
+  "inputs": [
     {
-      name: "density",
-      label: "Fluid density (kg/m³)",
-      type: "number",
-      step: "any",
-      placeholder: "1000",
+      "name": "density",
+      "label": "Fluid density (kg/m³)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "1000"
     },
     {
-      name: "depth",
-      label: "Depth (m)",
-      type: "number",
-      step: "any",
-      placeholder: "5",
-    },
+      "name": "depth",
+      "label": "Depth (m)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "5"
+    }
   ],
-  expression: "density * 9.81 * depth",
-  examples: [
-    { description: "1000 kg/m³ at 5 m ⇒ 49,050 Pa" },
-    { description: "1025 kg/m³ at 10 m ⇒ 100,552.5 Pa" },
-    { description: "850 kg/m³ at 3 m ⇒ 25,011.5 Pa" },
+  "expression": "density * 9.81 * depth",
+  "intro": "Determine the pressure exerted by a static fluid at a given depth using ρ g h.",
+  "examples": [
+    {
+      "description": "1000 kg/m³ at 5 m ⇒ 49,050 Pa"
+    },
+    {
+      "description": "1025 kg/m³ at 10 m ⇒ 100,552.5 Pa"
+    },
+    {
+      "description": "850 kg/m³ at 3 m ⇒ 25,011.5 Pa"
+    }
   ],
-  faqs: [
+  "info": [],
+  "faqs": [
     {
-      question: "What constant is used for gravity?",
-      answer: "This calculation uses 9.81 m/s² for gravitational acceleration.",
+      "question": "What constant is used for gravity?",
+      "answer": "This calculation uses 9.81 m/s² for gravitational acceleration."
     },
     {
-      question: "Does it include atmospheric pressure?",
-      answer: "No, add atmospheric pressure separately for absolute pressure.",
+      "question": "Does it include atmospheric pressure?",
+      "answer": "No, add atmospheric pressure separately for absolute pressure."
     },
     {
-      question: "Is the density fixed?",
-      answer: "Enter the appropriate density for the fluid in question.",
-    },
+      "question": "Is the density fixed?",
+      "answer": "Enter the appropriate density for the fluid in question."
+    }
   ],
-  disclaimer:
-    "Assumes uniform fluid density and ignores temperature variations.",
-};
+  "disclaimer": "Assumes uniform fluid density and ignores temperature variations.",
+  "cluster": "Science & Engineering",
+  "related": [
+    "percentage-discount",
+    "simple-interest",
+    "compound-interest-calculator",
+    "bmi-calculator",
+    "daily-calorie-burn",
+    "celsius-to-fahrenheit"
+  ]
+}
 
 <Calculator schema={schema} />

@@ -1,40 +1,82 @@
 ---
 layout: ../../layouts/CalculatorLayout.astro
 title: "Box Volume Calculator"
-description: "Compute volume of a rectangular box."
-updated: "2025-10-24"
+description: "Find the capacity of a box from its length, width, and height. Enter the three dimensions in meters to calculate the volume in cubic meters."
+date: 2025-09-11
+updated: 2025-09-11
 cluster: "Home & DIY"
 ---
-import Calculator from "../../components/Calculator.astro";
+import Calculator from '../../components/Calculator.astro';
 
 export const schema = {
-  slug: "box-volume-calculator",
-  title: "Box Volume Calculator",
-  locale: "en",
-  intro: "Find the capacity of a box from its length, width, and height. Enter the three dimensions in meters to calculate the volume in cubic meters.",
-  unit: "m³",
-  cluster: "Home & DIY",
-  inputs: [
-    { name: "length", label: "Length (m)", type: "number", step: "any", placeholder: "0.5" },
-    { name: "width", label: "Width (m)", type: "number", step: "any", placeholder: "0.4" },
-    { name: "height", label: "Height (m)", type: "number", step: "any", placeholder: "0.3" }
+  "slug": "box-volume-calculator",
+  "title": "Box Volume Calculator",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "length",
+      "label": "Length (m)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "0.5"
+    },
+    {
+      "name": "width",
+      "label": "Width (m)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "0.4"
+    },
+    {
+      "name": "height",
+      "label": "Height (m)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "0.3"
+    }
   ],
-  expression: "length * width * height",
-  examples: [
-    { description: "0.5×0.4×0.3 m ⇒ 0.06 m³" },
-    { description: "1×0.5×0.5 m ⇒ 0.25 m³" }
+  "expression": "length * width * height",
+  "intro": "Find the capacity of a box from its length, width, and height. Enter the three dimensions in meters to calculate the volume in cubic meters.",
+  "examples": [
+    {
+      "description": "0.5×0.4×0.3 m ⇒ 0.06 m³"
+    },
+    {
+      "description": "1×0.5×0.5 m ⇒ 0.25 m³"
+    }
   ],
-  faqs: [
-    { question: "Can I use centimeters?", answer: "Convert dimensions to meters first." },
-    { question: "Is the result exact?", answer: "It assumes perfectly rectangular sides." },
-    { question: "How do I convert to liters?", answer: "Multiply cubic meters by 1000 to get liters." },
-    { question: "What if dimensions are in feet?", answer: "Convert feet to meters before using the calculator." }
-  ],
-  disclaimer: "For informational purposes only.",
-  info: [
+  "info": [
     "Volume = length × width × height.",
     "One cubic meter equals 1000 liters."
   ],
-};
+  "faqs": [
+    {
+      "question": "Can I use centimeters?",
+      "answer": "Convert dimensions to meters first."
+    },
+    {
+      "question": "Is the result exact?",
+      "answer": "It assumes perfectly rectangular sides."
+    },
+    {
+      "question": "How do I convert to liters?",
+      "answer": "Multiply cubic meters by 1000 to get liters."
+    },
+    {
+      "question": "What if dimensions are in feet?",
+      "answer": "Convert feet to meters before using the calculator."
+    }
+  ],
+  "disclaimer": "For informational purposes only.",
+  "cluster": "Home & DIY",
+  "related": [
+    "paint-needed",
+    "flooring-cost",
+    "concrete-slab-volume",
+    "wallpaper-roll-coverage",
+    "roof-pitch-angle",
+    "water-heater-recovery-time"
+  ]
+}
 
 <Calculator schema={schema} />

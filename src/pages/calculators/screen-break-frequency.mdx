@@ -1,32 +1,54 @@
 ---
 layout: ../../layouts/CalculatorLayout.astro
 title: "Screen Break Frequency"
-description: "Number of 20-20-20 breaks for given screen hours."
-updated: "2025-10-24"
-cluster: "Health"
+description: "Count how many 20-second eye breaks to take every 20 minutes of screen time."
+date: 2025-09-11
+updated: 2025-09-11
+cluster: "Health & Fitness"
 ---
-import Calculator from "../../components/Calculator.astro";
+import Calculator from '../../components/Calculator.astro';
 
 export const schema = {
-  slug: "screen-break-frequency",
-  title: "Screen Break Frequency",
-  locale: "en",
-  intro: "Count how many 20-second eye breaks to take every 20 minutes of screen time.",
-  unit: "breaks",
-  cluster: "Health",
-  inputs: [
-    { name: "hours", label: "Screen time (hours)", type: "number", step: "any", placeholder: "6" }
+  "slug": "screen-break-frequency",
+  "title": "Screen Break Frequency",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "hours",
+      "hint": "Screen time (hours)"
+    }
   ],
-  expression: "(hours * 60) / 20",
-  examples: [
-    { description: "6 h ⇒ 18 breaks" },
-    { description: "3 h ⇒ 9 breaks" }
+  "expression": "(hours*60)/20",
+  "intro": "Count how many 20-second eye breaks to take every 20 minutes of screen time.",
+  "examples": [
+    {
+      "description": "6 h ⇒ 18 breaks"
+    },
+    {
+      "description": "3 h ⇒ 9 breaks"
+    }
   ],
-  faqs: [
-    { question: "What is the 20-20-20 rule?", answer: "Every 20 minutes, look 20 feet away for 20 seconds." },
-    { question: "Do short sessions add up?", answer: "Yes, enter total screen hours for the day." }
+  "info": [],
+  "faqs": [
+    {
+      "question": "What is 20-20-20?",
+      "answer": "Every 20 minutes look 20 feet away for 20 seconds."
+    },
+    {
+      "question": "Short sessions?",
+      "answer": "Enter total daily hours."
+    }
   ],
-  disclaimer: "For informational purposes only, not medical advice.",
-};
+  "disclaimer": "Educational information, not professional advice.",
+  "cluster": "Health & Fitness",
+  "related": [
+    "bmi-calculator",
+    "daily-calorie-burn",
+    "calories-burned-met",
+    "daily-water-intake",
+    "waist-to-height-ratio",
+    "body-fat-percentage"
+  ]
+}
 
 <Calculator schema={schema} />

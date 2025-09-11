@@ -1,40 +1,69 @@
 ---
 layout: ../../layouts/CalculatorLayout.astro
 title: "Standing Time Percentage"
-description: "How much of the day you spend standing."
-updated: "2025-10-24"
-cluster: "Health"
+description: "Track the share of your day spent standing versus sitting to monitor sedentary time and encourage more movement."
+date: 2025-09-11
+updated: 2025-09-11
+cluster: "Health & Fitness"
 ---
-import Calculator from "../../components/Calculator.astro";
+import Calculator from '../../components/Calculator.astro';
 
 export const schema = {
-  slug: "standing-time-percentage",
-  title: "Standing Time Percentage",
-  locale: "en",
-  intro:
-    "Track the share of your day spent standing versus sitting to monitor sedentary time and encourage more movement.",
-  unit: "%",
-  cluster: "Health",
-  inputs: [
-    { name: "standing", label: "Standing time (minutes)", type: "number", step: "any", placeholder: "120" },
-    { name: "total", label: "Total awake time (minutes)", type: "number", step: "any", placeholder: "960" }
+  "slug": "standing-time-percentage",
+  "title": "Standing Time Percentage",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "standing",
+      "hint": "Standing time (min)"
+    },
+    {
+      "name": "total",
+      "hint": "Total awake time (min)"
+    }
   ],
-  expression: "(standing / total) * 100",
-  examples: [
-    { description: "120 min standing in 960 min ⇒ 12.5%" },
-    { description: "240 min standing in 600 min ⇒ 40%" }
+  "expression": "(standing/total)*100",
+  "intro": "Track the share of your day spent standing versus sitting to monitor sedentary time and encourage more movement.",
+  "examples": [
+    {
+      "description": "120 of 960 ⇒ 12.5%"
+    },
+    {
+      "description": "240 of 600 ⇒ 40%"
+    }
   ],
-  faqs: [
-    { question: "Why track standing time?", answer: "Regular standing can reduce sedentary health risks." },
-    { question: "What is total awake time?", answer: "Hours you're not sleeping during the day." },
-    { question: "Does brief standing count?", answer: "Yes, include any period you're on your feet for a minute or more." },
-    { question: "What's a healthy standing percentage?", answer: "Many experts suggest aiming for at least 15% of waking hours." }
-  ],
-  info: [
+  "info": [
     "Breaking up long sitting sessions with standing can improve circulation.",
-    "Use this percentage to set daily movement or standing goals.",
+    "Use this percentage to set daily movement or standing goals."
   ],
-  disclaimer: "For informational purposes only, not medical advice.",
-};
+  "faqs": [
+    {
+      "question": "Why track?",
+      "answer": "Standing reduces sedentary risk."
+    },
+    {
+      "question": "Awake time?",
+      "answer": "Hours you're not sleeping."
+    },
+    {
+      "question": "Does brief standing count?",
+      "answer": "Yes, include any period you're on your feet for a minute or more."
+    },
+    {
+      "question": "What's a healthy standing percentage?",
+      "answer": "Many experts suggest aiming for at least 15% of waking hours."
+    }
+  ],
+  "disclaimer": "Educational information, not professional advice.",
+  "cluster": "Health & Fitness",
+  "related": [
+    "bmi-calculator",
+    "daily-calorie-burn",
+    "calories-burned-met",
+    "daily-water-intake",
+    "waist-to-height-ratio",
+    "body-fat-percentage"
+  ]
+}
 
 <Calculator schema={schema} />

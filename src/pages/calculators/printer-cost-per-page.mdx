@@ -1,33 +1,58 @@
 ---
 layout: ../../layouts/CalculatorLayout.astro
 title: "Printer Cost per Page"
-description: "Estimate cost per printed page from cartridge and yield."
-updated: "2025-10-24"
-cluster: "Technology"
+description: "Determine how much each printed page costs based on cartridge price and yield."
+date: 2025-09-11
+updated: 2025-09-11
+cluster: "Technology & Coding"
 ---
-import Calculator from "../../components/Calculator.astro";
+import Calculator from '../../components/Calculator.astro';
 
 export const schema = {
-  slug: "printer-cost-per-page",
-  title: "Printer Cost per Page",
-  locale: "en",
-  intro: "Determine how much each printed page costs based on cartridge price and yield.",
-  unit: "$\/page",
-  cluster: "Technology",
-  inputs: [
-    { name: "price", label: "Cartridge price ($)", type: "number", step: "any", placeholder: "40" },
-    { name: "yield", label: "Yield (pages)", type: "number", step: "any", placeholder: "2000" }
+  "slug": "printer-cost-per-page",
+  "title": "Printer Cost per Page",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "price",
+      "hint": "Cartridge price ($)"
+    },
+    {
+      "name": "yield",
+      "hint": "Yield (pages)"
+    }
   ],
-  expression: "price / yield",
-  examples: [
-    { description: "$40 cartridge, 2000 pages ⇒ $0.02/page" },
-    { description: "$25 cartridge, 500 pages ⇒ $0.05/page" }
+  "expression": "price/yield",
+  "intro": "Determine how much each printed page costs based on cartridge price and yield.",
+  "examples": [
+    {
+      "description": "$40 and 2000 pages ⇒ $0.02"
+    },
+    {
+      "description": "$25 and 500 pages ⇒ $0.05"
+    }
   ],
-  faqs: [
-    { question: "Does this include paper cost?", answer: "No, only cartridge cost is considered." },
-    { question: "What if yield is an estimate?", answer: "Results are approximate based on manufacturer yield." }
+  "info": [],
+  "faqs": [
+    {
+      "question": "Paper cost?",
+      "answer": "Not included."
+    },
+    {
+      "question": "Yield exact?",
+      "answer": "Manufacturer estimate only."
+    }
   ],
-  disclaimer: "For informational purposes only.",
-};
+  "disclaimer": "Educational information, not professional advice.",
+  "cluster": "Technology & Coding",
+  "related": [
+    "download-time",
+    "storage-redundancy-overhead",
+    "data-transfer-time",
+    "kb-to-mb",
+    "download-cost",
+    "dpi-calculator"
+  ]
+}
 
 <Calculator schema={schema} />

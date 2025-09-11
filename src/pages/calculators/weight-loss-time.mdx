@@ -1,60 +1,71 @@
 ---
 layout: ../../layouts/CalculatorLayout.astro
 title: "Weight Loss Time"
-description: "Estimate days to reach a weight loss goal based on daily calorie deficit."
-updated: "2025-09-07"
-cluster: "health"
+description: "Approximate how many days it may take to lose a target weight given a daily calorie deficit (3500 calories per pound)."
+date: 2025-09-11
+updated: 2025-09-11
+cluster: "Health & Fitness"
 ---
-
-import Calculator from "../../components/Calculator.astro";
+import Calculator from '../../components/Calculator.astro';
 
 export const schema = {
-  slug: "weight-loss-time",
-  title: "Weight Loss Time",
-  locale: "en",
-  cluster: "health",
-  unit: "days",
-  intro:
-    "Approximate how many days it may take to lose a target weight given a daily calorie deficit (3500 calories per pound).",
-  inputs: [
+  "slug": "weight-loss-time",
+  "title": "Weight Loss Time",
+  "locale": "en",
+  "inputs": [
     {
-      name: "goal",
-      label: "Weight loss goal (lb)",
-      type: "number",
-      step: "any",
-      placeholder: "10",
+      "name": "goal",
+      "label": "Weight loss goal (lb)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "10"
     },
     {
-      name: "deficit",
-      label: "Daily calorie deficit",
-      type: "number",
-      step: "any",
-      placeholder: "500",
-    },
+      "name": "deficit",
+      "label": "Daily calorie deficit",
+      "type": "number",
+      "step": "any",
+      "placeholder": "500"
+    }
   ],
-  expression: "(goal * 3500) / deficit",
-  examples: [
-    { description: "10 lb goal with 500 calorie deficit ⇒ 70 days" },
-    { description: "5 lb goal with 750 calorie deficit ⇒ 23.33 days" },
-    { description: "15 lb goal with 600 calorie deficit ⇒ 87.5 days" },
+  "expression": "(goal * 3500) / deficit",
+  "intro": "Approximate how many days it may take to lose a target weight given a daily calorie deficit (3500 calories per pound).",
+  "examples": [
+    {
+      "description": "10 lb goal with 500 calorie deficit ⇒ 70 days"
+    },
+    {
+      "description": "5 lb goal with 750 calorie deficit ⇒ 23.33 days"
+    },
+    {
+      "description": "15 lb goal with 600 calorie deficit ⇒ 87.5 days"
+    }
   ],
-  faqs: [
+  "info": [],
+  "faqs": [
     {
-      question: "Why 3500 calories per pound?",
-      answer:
-        "It's a common estimate of the energy content of one pound of body fat.",
+      "question": "Why 3500 calories per pound?",
+      "answer": "It's a common estimate of the energy content of one pound of body fat."
     },
     {
-      question: "Is this exact?",
-      answer: "No, weight loss varies with metabolism and activity.",
+      "question": "Is this exact?",
+      "answer": "No, weight loss varies with metabolism and activity."
     },
     {
-      question: "Can deficit be zero?",
-      answer: "No, a deficit greater than zero is required to estimate time.",
-    },
+      "question": "Can deficit be zero?",
+      "answer": "No, a deficit greater than zero is required to estimate time."
+    }
   ],
-  disclaimer:
-    "This is an approximation; consult a healthcare professional for personalized advice.",
-};
+  "disclaimer": "This is an approximation; consult a healthcare professional for personalized advice.",
+  "cluster": "Health & Fitness",
+  "related": [
+    "sleep-debt-weekly",
+    "sugar-cube-equivalent",
+    "caffeine-half-life",
+    "protein-calorie-percentage",
+    "bmi-prime",
+    "heart-rate-reserve-percentage"
+  ]
+}
 
 <Calculator schema={schema} />

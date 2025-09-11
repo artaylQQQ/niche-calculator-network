@@ -1,33 +1,58 @@
 ---
 layout: ../../layouts/CalculatorLayout.astro
 title: "Part of Total Percentage"
-description: "Find what percent a part is of a total."
-updated: "2025-10-24"
-cluster: "Math"
+description: "Calculate what percentage a value represents of a whole."
+date: 2025-09-11
+updated: 2025-09-11
+cluster: "Math & Statistics"
 ---
-import Calculator from "../../components/Calculator.astro";
+import Calculator from '../../components/Calculator.astro';
 
 export const schema = {
-  slug: "part-of-total-percentage",
-  title: "Part of Total Percentage",
-  locale: "en",
-  intro: "Calculate what percentage a value represents of a whole.",
-  unit: "%",
-  cluster: "Math",
-  inputs: [
-    { name: "part", label: "Part", type: "number", step: "any", placeholder: "30" },
-    { name: "total", label: "Total", type: "number", step: "any", placeholder: "200" }
+  "slug": "part-of-total-percentage",
+  "title": "Part of Total Percentage",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "part",
+      "hint": "Part"
+    },
+    {
+      "name": "total",
+      "hint": "Total"
+    }
   ],
-  expression: "(part / total) * 100",
-  examples: [
-    { description: "30 of 200 ⇒ 15%" },
-    { description: "50 of 80 ⇒ 62.5%" }
+  "expression": "(part/total)*100",
+  "intro": "Calculate what percentage a value represents of a whole.",
+  "examples": [
+    {
+      "description": "30 of 200 ⇒ 15%"
+    },
+    {
+      "description": "50 of 80 ⇒ 62.5%"
+    }
   ],
-  faqs: [
-    { question: "Can the result exceed 100%?", answer: "Yes, if part is greater than total." },
-    { question: "What if total is 0?", answer: "The calculation is undefined." }
+  "info": [],
+  "faqs": [
+    {
+      "question": "Over 100%?",
+      "answer": "Occurs if part > total."
+    },
+    {
+      "question": "Total 0?",
+      "answer": "Calculation undefined."
+    }
   ],
-  disclaimer: "For informational purposes only.",
-};
+  "disclaimer": "Educational information, not professional advice.",
+  "cluster": "Math & Statistics",
+  "related": [
+    "circle-area",
+    "cylinder-volume-calculator",
+    "grade-average",
+    "median-of-three",
+    "quadratic-vertex-x",
+    "rectangular-prism-volume"
+  ]
+}
 
 <Calculator schema={schema} />

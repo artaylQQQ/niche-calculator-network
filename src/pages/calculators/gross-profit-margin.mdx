@@ -1,9 +1,9 @@
 ---
 layout: ../../layouts/CalculatorLayout.astro
 title: "Gross Profit Margin Calculator"
-description: "Compute gross profit margin percentage from revenue and COGS."
-date: 2025-05-11
-updated: 2025-05-11
+description: "Calculate gross profit margin percentage from revenue and cost of goods sold."
+date: 2025-09-11
+updated: 2025-09-11
 cluster: "Finance & Business"
 ---
 import Calculator from '../../components/Calculator.astro';
@@ -13,24 +13,59 @@ export const schema = {
   "title": "Gross Profit Margin Calculator",
   "locale": "en",
   "inputs": [
-    { "name": "revenue", "label": "Revenue ($)", "type": "number", "step": "any", "placeholder": "20000" },
-    { "name": "cogs", "label": "Cost of goods sold ($)", "type": "number", "step": "any", "placeholder": "12000" }
+    {
+      "name": "revenue",
+      "label": "Revenue ($)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "20000"
+    },
+    {
+      "name": "cogs",
+      "label": "Cost of goods sold ($)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "12000"
+    }
   ],
   "expression": "(revenue - cogs) / revenue * 100",
-  "unit": "%",
   "intro": "Calculate gross profit margin percentage from revenue and cost of goods sold.",
   "examples": [
-    { "description": "$20,000 revenue, $12,000 COGS ⇒ 40%" },
-    { "description": "$8,000 revenue, $4,000 COGS ⇒ 50%" },
-    { "description": "$1,000 revenue, $800 COGS ⇒ 20%" }
+    {
+      "description": "$20,000 revenue, $12,000 COGS ⇒ 40%"
+    },
+    {
+      "description": "$8,000 revenue, $4,000 COGS ⇒ 50%"
+    },
+    {
+      "description": "$1,000 revenue, $800 COGS ⇒ 20%"
+    }
   ],
+  "info": [],
   "faqs": [
-    { "question": "What is gross profit margin?", "answer": "It's the percentage of revenue retained after accounting for the cost of goods sold." },
-    { "question": "Can margin exceed 100%?", "answer": "No, the maximum margin is below 100% because COGS cannot be negative." },
-    { "question": "Why use revenue instead of net sales?", "answer": "Gross margin focuses on revenue before other expenses." }
+    {
+      "question": "What is gross profit margin?",
+      "answer": "It's the percentage of revenue retained after accounting for the cost of goods sold."
+    },
+    {
+      "question": "Can margin exceed 100%?",
+      "answer": "No, the maximum margin is below 100% because COGS cannot be negative."
+    },
+    {
+      "question": "Why use revenue instead of net sales?",
+      "answer": "Gross margin focuses on revenue before other expenses."
+    }
   ],
   "disclaimer": "For general financial estimates only.",
-  "cluster": "Finance & Business"
+  "cluster": "Finance & Business",
+  "related": [
+    "percentage-discount",
+    "simple-interest",
+    "compound-interest-calculator",
+    "bmi-calculator",
+    "daily-calorie-burn",
+    "celsius-to-fahrenheit"
+  ]
 }
 
 <Calculator schema={schema} />

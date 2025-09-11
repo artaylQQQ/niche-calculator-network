@@ -1,34 +1,62 @@
 ---
 layout: ../../layouts/CalculatorLayout.astro
 title: "Hourly to Annual Salary"
-description: "Estimate yearly salary from an hourly rate."
-updated: "2025-10-24"
-cluster: "Finance"
+description: "Convert an hourly wage into an annual salary for budgeting."
+date: 2025-09-11
+updated: 2025-09-11
+cluster: "Finance & Business"
 ---
-import Calculator from "../../components/Calculator.astro";
+import Calculator from '../../components/Calculator.astro';
 
 export const schema = {
-  slug: "hourly-to-annual-salary",
-  title: "Hourly to Annual Salary",
-  locale: "en",
-  intro: "Convert an hourly wage into an annual salary for budgeting.",
-  unit: "USD/year",
-  cluster: "Finance",
-  inputs: [
-    { name: "rate", label: "Hourly rate ($)", type: "number", step: "any", placeholder: "25" },
-    { name: "hours", label: "Hours per week", type: "number", step: "any", placeholder: "40" },
-    { name: "weeks", label: "Weeks per year", type: "number", step: "any", placeholder: "52" }
+  "slug": "hourly-to-annual-salary",
+  "title": "Hourly to Annual Salary",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "rate",
+      "hint": "Hourly rate ($)"
+    },
+    {
+      "name": "hours",
+      "hint": "Hours per week"
+    },
+    {
+      "name": "weeks",
+      "hint": "Weeks per year"
+    }
   ],
-  expression: "rate * hours * weeks",
-  examples: [
-    { description: "$25/hr, 40h/week, 52 weeks ⇒ $52,000/year" },
-    { description: "$30/hr, 35h/week, 48 weeks ⇒ $50,400/year" }
+  "expression": "rate*hours*weeks",
+  "intro": "Convert an hourly wage into an annual salary for budgeting.",
+  "examples": [
+    {
+      "description": "$25,40h,52w ⇒ $52000"
+    },
+    {
+      "description": "$30,35h,48w ⇒ $50400"
+    }
   ],
-  faqs: [
-    { question: "Does it include overtime?", answer: "Only if you include overtime hours in the weekly input." },
-    { question: "What about unpaid leave?", answer: "Adjust the weeks per year to account for unpaid time off." }
+  "info": [],
+  "faqs": [
+    {
+      "question": "Include overtime?",
+      "answer": "Add it to weekly hours."
+    },
+    {
+      "question": "Unpaid leave?",
+      "answer": "Reduce weeks per year."
+    }
   ],
-  disclaimer: "For informational purposes only, not financial advice.",
-};
+  "disclaimer": "Educational information, not professional advice.",
+  "cluster": "Finance & Business",
+  "related": [
+    "percentage-discount",
+    "simple-interest",
+    "compound-interest-calculator",
+    "tip-calculator",
+    "fuel-trip-cost",
+    "crypto-mining-breakeven"
+  ]
+}
 
 <Calculator schema={schema} />

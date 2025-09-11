@@ -1,66 +1,78 @@
 ---
 layout: ../../layouts/CalculatorLayout.astro
 title: "Harmonic Mean Calculator"
-description: "Compute the harmonic mean of three numbers."
-updated: "2025-09-07"
-cluster: "Math"
+description: "Find the harmonic mean of three positive numbers, useful for averaging rates."
+date: 2025-09-11
+updated: 2025-09-11
+cluster: "Math & Statistics"
 ---
-
-import Calculator from "../../components/Calculator.astro";
+import Calculator from '../../components/Calculator.astro';
 
 export const schema = {
-  slug: "harmonic-mean",
-  title: "Harmonic Mean Calculator",
-  locale: "en",
-  cluster: "Math",
-  unit: "",
-  intro:
-    "Find the harmonic mean of three positive numbers, useful for averaging rates.",
-  inputs: [
+  "slug": "harmonic-mean",
+  "title": "Harmonic Mean Calculator",
+  "locale": "en",
+  "inputs": [
     {
-      name: "a",
-      label: "Value 1",
-      type: "number",
-      step: "any",
-      placeholder: "1",
+      "name": "a",
+      "label": "Value 1",
+      "type": "number",
+      "step": "any",
+      "placeholder": "1"
     },
     {
-      name: "b",
-      label: "Value 2",
-      type: "number",
-      step: "any",
-      placeholder: "2",
+      "name": "b",
+      "label": "Value 2",
+      "type": "number",
+      "step": "any",
+      "placeholder": "2"
     },
     {
-      name: "c",
-      label: "Value 3",
-      type: "number",
-      step: "any",
-      placeholder: "4",
-    },
+      "name": "c",
+      "label": "Value 3",
+      "type": "number",
+      "step": "any",
+      "placeholder": "4"
+    }
   ],
-  expression: "3 / (1/a + 1/b + 1/c)",
-  examples: [
-    { description: "1, 2, 4 ⇒ 1.71" },
-    { description: "10, 15, 20 ⇒ 14.40" },
-    { description: "5, 7, 9 ⇒ 6.77" },
+  "expression": "3 / (1/a + 1/b + 1/c)",
+  "intro": "Find the harmonic mean of three positive numbers, useful for averaging rates.",
+  "examples": [
+    {
+      "description": "1, 2, 4 ⇒ 1.71"
+    },
+    {
+      "description": "10, 15, 20 ⇒ 14.40"
+    },
+    {
+      "description": "5, 7, 9 ⇒ 6.77"
+    }
   ],
-  faqs: [
+  "info": [],
+  "faqs": [
     {
-      question: "When is the harmonic mean used?",
-      answer: "It averages rates like speed or ratios.",
+      "question": "When is the harmonic mean used?",
+      "answer": "It averages rates like speed or ratios."
     },
     {
-      question: "Can values be zero?",
-      answer: "No, all inputs must be positive numbers.",
+      "question": "Can values be zero?",
+      "answer": "No, all inputs must be positive numbers."
     },
     {
-      question: "Is order important?",
-      answer: "No, the harmonic mean is symmetric.",
-    },
+      "question": "Is order important?",
+      "answer": "No, the harmonic mean is symmetric."
+    }
   ],
-  disclaimer:
-    "For positive numbers only; using zero or negatives yields invalid results.",
-};
+  "disclaimer": "For positive numbers only; using zero or negatives yields invalid results.",
+  "cluster": "Math & Statistics",
+  "related": [
+    "circle-area",
+    "cylinder-volume-calculator",
+    "grade-average",
+    "median-of-three",
+    "quadratic-vertex-x",
+    "rectangular-prism-volume"
+  ]
+}
 
 <Calculator schema={schema} />

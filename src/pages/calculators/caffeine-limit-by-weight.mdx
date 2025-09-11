@@ -1,32 +1,54 @@
 ---
 layout: ../../layouts/CalculatorLayout.astro
 title: "Caffeine Limit by Weight"
-description: "Estimate a safe daily caffeine limit using 3 mg/kg guideline."
-updated: "2025-10-24"
-cluster: "Health"
+description: "Estimate a moderate daily caffeine limit based on body weight."
+date: 2025-09-11
+updated: 2025-09-11
+cluster: "Health & Fitness"
 ---
-import Calculator from "../../components/Calculator.astro";
+import Calculator from '../../components/Calculator.astro';
 
 export const schema = {
-  slug: "caffeine-limit-by-weight",
-  title: "Caffeine Limit by Weight",
-  locale: "en",
-  intro: "Estimate a moderate daily caffeine limit based on body weight.",
-  unit: "mg",
-  cluster: "Health",
-  inputs: [
-    { name: "weight", label: "Weight (kg)", type: "number", step: "any", placeholder: "70" }
+  "slug": "caffeine-limit-by-weight",
+  "title": "Caffeine Limit by Weight",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "weight",
+      "hint": "Weight (kg)"
+    }
   ],
-  expression: "weight * 3",
-  examples: [
-    { description: "70 kg ⇒ 210 mg" },
-    { description: "90 kg ⇒ 270 mg" }
+  "expression": "weight*3",
+  "intro": "Estimate a moderate daily caffeine limit based on body weight.",
+  "examples": [
+    {
+      "description": "70 kg ⇒ 210 mg"
+    },
+    {
+      "description": "90 kg ⇒ 270 mg"
+    }
   ],
-  faqs: [
-    { question: "Why 3 mg/kg?", answer: "It's a conservative guideline for moderate caffeine intake." },
-    { question: "Is this medical advice?", answer: "No, consult a professional for personal recommendations." }
+  "info": [],
+  "faqs": [
+    {
+      "question": "Why 3 mg/kg?",
+      "answer": "Conservative guideline."
+    },
+    {
+      "question": "Medical advice?",
+      "answer": "No, consult a professional."
+    }
   ],
-  disclaimer: "For informational purposes only, not medical advice.",
-};
+  "disclaimer": "Educational information, not professional advice.",
+  "cluster": "Health & Fitness",
+  "related": [
+    "bmi-calculator",
+    "daily-calorie-burn",
+    "calories-burned-met",
+    "daily-water-intake",
+    "waist-to-height-ratio",
+    "body-fat-percentage"
+  ]
+}
 
 <Calculator schema={schema} />

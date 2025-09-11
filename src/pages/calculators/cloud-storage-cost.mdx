@@ -1,33 +1,58 @@
 ---
 layout: ../../layouts/CalculatorLayout.astro
 title: "Cloud Storage Cost"
-description: "Estimate monthly cost of cloud storage usage."
-updated: "2025-10-24"
-cluster: "Technology"
+description: "Find the monthly bill for storing data in the cloud."
+date: 2025-09-11
+updated: 2025-09-11
+cluster: "Technology & Coding"
 ---
-import Calculator from "../../components/Calculator.astro";
+import Calculator from '../../components/Calculator.astro';
 
 export const schema = {
-  slug: "cloud-storage-cost",
-  title: "Cloud Storage Cost",
-  locale: "en",
-  intro: "Find the monthly bill for storing data in the cloud.",
-  unit: "USD/month",
-  cluster: "Technology",
-  inputs: [
-    { name: "data", label: "Data stored (GB)", type: "number", step: "any", placeholder: "100" },
-    { name: "rate", label: "Price per GB ($)", type: "number", step: "any", placeholder: "0.02" }
+  "slug": "cloud-storage-cost",
+  "title": "Cloud Storage Cost",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "data",
+      "hint": "Data stored (GB)"
+    },
+    {
+      "name": "rate",
+      "hint": "Price per GB ($)"
+    }
   ],
-  expression: "data * rate",
-  examples: [
-    { description: "100 GB at $0.02 ⇒ $2/month" },
-    { description: "250 GB at $0.015 ⇒ $3.75/month" }
+  "expression": "data*rate",
+  "intro": "Find the monthly bill for storing data in the cloud.",
+  "examples": [
+    {
+      "description": "100 GB at $0.02 ⇒ $2"
+    },
+    {
+      "description": "250 GB at $0.015 ⇒ $3.75"
+    }
   ],
-  faqs: [
-    { question: "Does this include egress fees?", answer: "No, it only accounts for storage cost." },
-    { question: "What about free tiers?", answer: "Subtract any free allowance before entering data." }
+  "info": [],
+  "faqs": [
+    {
+      "question": "Include egress?",
+      "answer": "No, storage only."
+    },
+    {
+      "question": "Free tier?",
+      "answer": "Subtract free allowance first."
+    }
   ],
-  disclaimer: "For informational purposes only.",
-};
+  "disclaimer": "Educational information, not professional advice.",
+  "cluster": "Technology & Coding",
+  "related": [
+    "download-time",
+    "storage-redundancy-overhead",
+    "data-transfer-time",
+    "kb-to-mb",
+    "download-cost",
+    "dpi-calculator"
+  ]
+}
 
 <Calculator schema={schema} />

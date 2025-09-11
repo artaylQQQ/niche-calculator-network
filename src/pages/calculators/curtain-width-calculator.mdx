@@ -1,33 +1,58 @@
 ---
 layout: ../../layouts/CalculatorLayout.astro
 title: "Curtain Width Calculator"
-description: "Calculate curtain width from window size and fullness."
-updated: "2025-10-24"
+description: "Determine total curtain width needed using a fullness ratio."
+date: 2025-09-11
+updated: 2025-09-11
 cluster: "Home & DIY"
 ---
-import Calculator from "../../components/Calculator.astro";
+import Calculator from '../../components/Calculator.astro';
 
 export const schema = {
-  slug: "curtain-width-calculator",
-  title: "Curtain Width Calculator",
-  locale: "en",
-  intro: "Determine total curtain width needed using a fullness ratio.",
-  unit: "cm",
-  cluster: "Home & DIY",
-  inputs: [
-    { name: "window", label: "Window width (cm)", type: "number", step: "any", placeholder: "150" },
-    { name: "fullness", label: "Fullness ratio", type: "number", step: "any", placeholder: "2" }
+  "slug": "curtain-width-calculator",
+  "title": "Curtain Width Calculator",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "window",
+      "hint": "Window width (cm)"
+    },
+    {
+      "name": "fullness",
+      "hint": "Fullness ratio"
+    }
   ],
-  expression: "window * fullness",
-  examples: [
-    { description: "150 cm window with 2× fullness ⇒ 300 cm" },
-    { description: "120 cm window with 1.5× fullness ⇒ 180 cm" }
+  "expression": "window*fullness",
+  "intro": "Determine total curtain width needed using a fullness ratio.",
+  "examples": [
+    {
+      "description": "150 cm at 2× ⇒ 300 cm"
+    },
+    {
+      "description": "120 cm at 1.5× ⇒ 180 cm"
+    }
   ],
-  faqs: [
-    { question: "What is fullness?", answer: "A multiplier to add gathers; 2× is common." },
-    { question: "Does this include overlap?", answer: "Add extra width if panels need to overlap." }
+  "info": [],
+  "faqs": [
+    {
+      "question": "Fullness?",
+      "answer": "Multiplier for gathers."
+    },
+    {
+      "question": "Overlap?",
+      "answer": "Add extra width if needed."
+    }
   ],
-  disclaimer: "For informational purposes only.",
-};
+  "disclaimer": "Educational information, not professional advice.",
+  "cluster": "Home & DIY",
+  "related": [
+    "paint-needed",
+    "flooring-cost",
+    "concrete-slab-volume",
+    "wallpaper-roll-coverage",
+    "roof-pitch-angle",
+    "water-heater-recovery-time"
+  ]
+}
 
 <Calculator schema={schema} />

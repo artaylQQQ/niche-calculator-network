@@ -1,58 +1,71 @@
 ---
 layout: ../../layouts/CalculatorLayout.astro
 title: "Emergency Fund Target"
-description: "Estimate how much to save for an emergency fund."
-updated: "2025-09-07"
-cluster: "personal finance & loans"
+description: "Find the recommended emergency fund size based on monthly expenses and months of coverage."
+date: 2025-09-11
+updated: 2025-09-11
+cluster: "Personal Finance & Loans"
 ---
-
-import Calculator from "../../components/Calculator.astro";
+import Calculator from '../../components/Calculator.astro';
 
 export const schema = {
-  slug: "emergency-fund-target",
-  title: "Emergency Fund Target",
-  locale: "en",
-  cluster: "personal finance & loans",
-  unit: "USD",
-  intro:
-    "Find the recommended emergency fund size based on monthly expenses and months of coverage.",
-  inputs: [
+  "slug": "emergency-fund-target",
+  "title": "Emergency Fund Target",
+  "locale": "en",
+  "inputs": [
     {
-      name: "monthly",
-      label: "Monthly expenses (USD)",
-      type: "number",
-      step: "any",
-      placeholder: "2000",
+      "name": "monthly",
+      "label": "Monthly expenses (USD)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "2000"
     },
     {
-      name: "months",
-      label: "Months of coverage",
-      type: "number",
-      step: "any",
-      placeholder: "3",
-    },
+      "name": "months",
+      "label": "Months of coverage",
+      "type": "number",
+      "step": "any",
+      "placeholder": "3"
+    }
   ],
-  expression: "monthly * months",
-  examples: [
-    { description: "$2,000 expenses for 3 months ⇒ $6,000" },
-    { description: "$2,500 expenses for 6 months ⇒ $15,000" },
-    { description: "$1,800 expenses for 4 months ⇒ $7,200" },
+  "expression": "monthly * months",
+  "intro": "Find the recommended emergency fund size based on monthly expenses and months of coverage.",
+  "examples": [
+    {
+      "description": "$2,000 expenses for 3 months ⇒ $6,000"
+    },
+    {
+      "description": "$2,500 expenses for 6 months ⇒ $15,000"
+    },
+    {
+      "description": "$1,800 expenses for 4 months ⇒ $7,200"
+    }
   ],
-  faqs: [
+  "info": [],
+  "faqs": [
     {
-      question: "What is an emergency fund?",
-      answer: "Savings set aside for unexpected expenses or loss of income.",
+      "question": "What is an emergency fund?",
+      "answer": "Savings set aside for unexpected expenses or loss of income."
     },
     {
-      question: "How many months should I cover?",
-      answer: "Many planners suggest 3 to 6 months of essential expenses.",
+      "question": "How many months should I cover?",
+      "answer": "Many planners suggest 3 to 6 months of essential expenses."
     },
     {
-      question: "Does this include investment returns?",
-      answer: "No, it simply multiplies expenses by months.",
-    },
+      "question": "Does this include investment returns?",
+      "answer": "No, it simply multiplies expenses by months."
+    }
   ],
-  disclaimer: "This is general guidance; personal situations may vary.",
-};
+  "disclaimer": "This is general guidance; personal situations may vary.",
+  "cluster": "Personal Finance & Loans",
+  "related": [
+    "percentage-discount",
+    "simple-interest",
+    "compound-interest-calculator",
+    "bmi-calculator",
+    "daily-calorie-burn",
+    "celsius-to-fahrenheit"
+  ]
+}
 
 <Calculator schema={schema} />

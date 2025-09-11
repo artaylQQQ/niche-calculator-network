@@ -1,9 +1,9 @@
 ---
 layout: ../../layouts/CalculatorLayout.astro
 title: "Road Trip Fuel Stops"
-description: "Estimate refueling stops for a trip based on range."
-date: 2025-05-11
-updated: 2025-05-11
+description: "Estimate how many refueling stops are needed on a road trip when starting with a full tank."
+date: 2025-09-11
+updated: 2025-09-11
 cluster: "Lifestyle & Travel"
 ---
 import Calculator from '../../components/Calculator.astro';
@@ -13,24 +13,59 @@ export const schema = {
   "title": "Road Trip Fuel Stops",
   "locale": "en",
   "inputs": [
-    { "name": "distance", "label": "Trip distance (km)", "type": "number", "step": "any", "placeholder": "800" },
-    { "name": "range", "label": "Vehicle range per tank (km)", "type": "number", "step": "any", "placeholder": "400" }
+    {
+      "name": "distance",
+      "label": "Trip distance (km)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "800"
+    },
+    {
+      "name": "range",
+      "label": "Vehicle range per tank (km)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "400"
+    }
   ],
   "expression": "Math.max(0, Math.ceil(distance / range) - 1)",
-  "unit": "stops",
   "intro": "Estimate how many refueling stops are needed on a road trip when starting with a full tank.",
   "examples": [
-    { "description": "800 km trip, 400 km range ⇒ 1 stop" },
-    { "description": "1500 km trip, 500 km range ⇒ 2 stops" },
-    { "description": "300 km trip, 600 km range ⇒ 0 stops" }
+    {
+      "description": "800 km trip, 400 km range ⇒ 1 stop"
+    },
+    {
+      "description": "1500 km trip, 500 km range ⇒ 2 stops"
+    },
+    {
+      "description": "300 km trip, 600 km range ⇒ 0 stops"
+    }
   ],
+  "info": [],
   "faqs": [
-    { "question": "Does this assume starting with a full tank?", "answer": "Yes, the first leg uses the initial fuel." },
-    { "question": "Is reserve fuel considered?", "answer": "No, plan additional stops if you need a buffer." },
-    { "question": "Can driving style change the result?", "answer": "Yes, real-world range varies with conditions." }
+    {
+      "question": "Does this assume starting with a full tank?",
+      "answer": "Yes, the first leg uses the initial fuel."
+    },
+    {
+      "question": "Is reserve fuel considered?",
+      "answer": "No, plan additional stops if you need a buffer."
+    },
+    {
+      "question": "Can driving style change the result?",
+      "answer": "Yes, real-world range varies with conditions."
+    }
   ],
   "disclaimer": "Always account for traffic and fuel availability.",
-  "cluster": "Lifestyle & Travel"
+  "cluster": "Lifestyle & Travel",
+  "related": [
+    "percentage-discount",
+    "simple-interest",
+    "compound-interest-calculator",
+    "bmi-calculator",
+    "daily-calorie-burn",
+    "celsius-to-fahrenheit"
+  ]
 }
 
 <Calculator schema={schema} />

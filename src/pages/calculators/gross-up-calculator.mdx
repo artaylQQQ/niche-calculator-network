@@ -1,33 +1,58 @@
 ---
 layout: ../../layouts/CalculatorLayout.astro
 title: "Gross-Up Calculator"
-description: "Calculate gross payment needed to cover taxes on a net amount."
-updated: "2025-10-24"
-cluster: "Finance"
+description: "Determine the pre-tax amount required to provide a specific net payment."
+date: 2025-09-11
+updated: 2025-09-11
+cluster: "Finance & Business"
 ---
-import Calculator from "../../components/Calculator.astro";
+import Calculator from '../../components/Calculator.astro';
 
 export const schema = {
-  slug: "gross-up-calculator",
-  title: "Gross-Up Calculator",
-  locale: "en",
-  intro: "Determine the pre-tax amount required to provide a specific net payment.",
-  unit: "USD",
-  cluster: "Finance",
-  inputs: [
-    { name: "net", label: "Net amount ($)", type: "number", step: "any", placeholder: "1000" },
-    { name: "tax", label: "Tax rate (%)", type: "number", step: "any", placeholder: "30" }
+  "slug": "gross-up-calculator",
+  "title": "Gross-Up Calculator",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "net",
+      "hint": "Net amount ($)"
+    },
+    {
+      "name": "tax",
+      "hint": "Tax rate (%)"
+    }
   ],
-  expression: "net / (1 - tax/100)",
-  examples: [
-    { description: "$1000 net with 30% tax ⇒ $1428.57 gross" },
-    { description: "$500 net with 25% tax ⇒ $666.67 gross" }
+  "expression": "net/(1-tax/100)",
+  "intro": "Determine the pre-tax amount required to provide a specific net payment.",
+  "examples": [
+    {
+      "description": "$1000 net at 30% ⇒ $1428.57"
+    },
+    {
+      "description": "$500 net at 25% ⇒ $666.67"
+    }
   ],
-  faqs: [
-    { question: "Does it handle multiple taxes?", answer: "Combine rates into a single percentage before entering." },
-    { question: "What if tax is 0?", answer: "Then gross equals net." }
+  "info": [],
+  "faqs": [
+    {
+      "question": "Multiple taxes?",
+      "answer": "Combine rates before entering."
+    },
+    {
+      "question": "Tax 0%?",
+      "answer": "Gross equals net."
+    }
   ],
-  disclaimer: "For informational purposes only, not financial advice.",
-};
+  "disclaimer": "Educational information, not professional advice.",
+  "cluster": "Finance & Business",
+  "related": [
+    "percentage-discount",
+    "simple-interest",
+    "compound-interest-calculator",
+    "tip-calculator",
+    "fuel-trip-cost",
+    "crypto-mining-breakeven"
+  ]
+}
 
 <Calculator schema={schema} />

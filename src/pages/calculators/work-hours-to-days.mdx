@@ -1,33 +1,58 @@
 ---
 layout: ../../layouts/CalculatorLayout.astro
 title: "Work Hours to Days Converter"
-description: "Convert total work hours into standard workdays."
-updated: "2025-10-24"
+description: "Translate hours of effort into standard workdays."
+date: 2025-09-11
+updated: 2025-09-11
 cluster: "Date & Time"
 ---
-import Calculator from "../../components/Calculator.astro";
+import Calculator from '../../components/Calculator.astro';
 
 export const schema = {
-  slug: "work-hours-to-days",
-  title: "Work Hours to Days Converter",
-  locale: "en",
-  intro: "Translate hours of effort into 8-hour workdays.",
-  unit: "workdays",
-  cluster: "Date & Time",
-  inputs: [
-    { name: "hours", label: "Total hours", type: "number", step: "any", placeholder: "40" },
-    { name: "day", label: "Hours per workday", type: "number", step: "any", placeholder: "8" }
+  "slug": "work-hours-to-days",
+  "title": "Work Hours to Days Converter",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "hours",
+      "hint": "Total hours"
+    },
+    {
+      "name": "day",
+      "hint": "Hours per workday"
+    }
   ],
-  expression: "hours / day",
-  examples: [
-    { description: "40 h at 8 h/day ⇒ 5 workdays" },
-    { description: "60 h at 7.5 h/day ⇒ 8 workdays" }
+  "expression": "hours/day",
+  "intro": "Translate hours of effort into standard workdays.",
+  "examples": [
+    {
+      "description": "40 h at 8 ⇒ 5 days"
+    },
+    {
+      "description": "60 h at 7.5 ⇒ 8 days"
+    }
   ],
-  faqs: [
-    { question: "What is a standard workday?", answer: "Many workplaces use 8 hours, but you can adjust the input." },
-    { question: "Does it account for breaks?", answer: "Breaks should be excluded from the hours entered." }
+  "info": [],
+  "faqs": [
+    {
+      "question": "Standard day?",
+      "answer": "Often 8 hours."
+    },
+    {
+      "question": "Include breaks?",
+      "answer": "Enter net work hours."
+    }
   ],
-  disclaimer: "For informational purposes only.",
-};
+  "disclaimer": "Educational information, not professional advice.",
+  "cluster": "Date & Time",
+  "related": [
+    "minutes-to-seconds",
+    "weeks-to-days",
+    "age-in-days",
+    "seconds-to-days",
+    "days-to-seconds",
+    "age-in-months"
+  ]
+}
 
 <Calculator schema={schema} />

@@ -1234,5 +1234,165 @@
   {
     "slug": "boiling-point-altitude",
     "date": "2025-09-10"
+  },
+  {
+    "slug": "meeting-time-percentage",
+    "date": "2025-09-11"
+  },
+  {
+    "slug": "break-time-planner",
+    "date": "2025-09-11"
+  },
+  {
+    "slug": "work-hours-to-days",
+    "date": "2025-09-11"
+  },
+  {
+    "slug": "hourly-to-annual-salary",
+    "date": "2025-09-11"
+  },
+  {
+    "slug": "budget-variance-percentage",
+    "date": "2025-09-11"
+  },
+  {
+    "slug": "gross-up-calculator",
+    "date": "2025-09-11"
+  },
+  {
+    "slug": "standing-time-percentage",
+    "date": "2025-09-11"
+  },
+  {
+    "slug": "caffeine-limit-by-weight",
+    "date": "2025-09-11"
+  },
+  {
+    "slug": "screen-break-frequency",
+    "date": "2025-09-11"
+  },
+  {
+    "slug": "box-volume-calculator",
+    "date": "2025-09-11"
+  },
+  {
+    "slug": "curtain-width-calculator",
+    "date": "2025-09-11"
+  },
+  {
+    "slug": "led-savings-calculator",
+    "date": "2025-09-11"
+  },
+  {
+    "slug": "weighted-average-calculator",
+    "date": "2025-09-11"
+  },
+  {
+    "slug": "standard-deviation-3-numbers",
+    "date": "2025-09-11"
+  },
+  {
+    "slug": "part-of-total-percentage",
+    "date": "2025-09-11"
+  },
+  {
+    "slug": "psu-load-percentage",
+    "date": "2025-09-11"
+  },
+  {
+    "slug": "cloud-storage-cost",
+    "date": "2025-09-11"
+  },
+  {
+    "slug": "printer-cost-per-page",
+    "date": "2025-09-11"
+  },
+  {
+    "slug": "ream-duration-calculator",
+    "date": "2025-09-11"
+  },
+  {
+    "slug": "printing-carbon-footprint",
+    "date": "2025-09-11"
+  },
+  {
+    "slug": "space-per-employee",
+    "date": "2025-09-11"
+  },
+  {
+    "slug": "gross-profit-margin",
+    "date": "2025-09-11"
+  },
+  {
+    "slug": "down-payment-amount",
+    "date": "2025-09-11"
+  },
+  {
+    "slug": "vo2-max-estimate",
+    "date": "2025-09-11"
+  },
+  {
+    "slug": "coefficient-of-variation",
+    "date": "2025-09-11"
+  },
+  {
+    "slug": "amp-hours-to-watt-hours",
+    "date": "2025-09-11"
+  },
+  {
+    "slug": "time-to-decimal-hours",
+    "date": "2025-09-11"
+  },
+  {
+    "slug": "reading-pace-planner",
+    "date": "2025-09-11"
+  },
+  {
+    "slug": "radioactive-decay-remaining",
+    "date": "2025-09-11"
+  },
+  {
+    "slug": "ipv6-subnet-address-count",
+    "date": "2025-09-11"
+  },
+  {
+    "slug": "shelf-load-capacity",
+    "date": "2025-09-11"
+  },
+  {
+    "slug": "road-trip-fuel-stops",
+    "date": "2025-09-11"
+  },
+  {
+    "slug": "conversion-rate",
+    "date": "2025-09-11"
+  },
+  {
+    "slug": "operating-profit-margin",
+    "date": "2025-09-11"
+  },
+  {
+    "slug": "emergency-fund-target",
+    "date": "2025-09-11"
+  },
+  {
+    "slug": "weight-loss-time",
+    "date": "2025-09-11"
+  },
+  {
+    "slug": "harmonic-mean",
+    "date": "2025-09-11"
+  },
+  {
+    "slug": "final-exam-score-needed",
+    "date": "2025-09-11"
+  },
+  {
+    "slug": "hydrostatic-pressure",
+    "date": "2025-09-11"
+  },
+  {
+    "slug": "binary-to-decimal",
+    "date": "2025-09-11"
   }
 ]

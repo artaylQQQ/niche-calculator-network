@@ -1,9 +1,9 @@
 ---
 layout: ../../layouts/CalculatorLayout.astro
 title: "Down Payment Calculator"
-description: "Determine the required down payment from purchase price and percentage."
-date: 2025-05-11
-updated: 2025-05-11
+description: "Calculate the upfront amount needed for a purchase based on price and down payment percentage."
+date: 2025-09-11
+updated: 2025-09-11
 cluster: "Personal Finance & Loans"
 ---
 import Calculator from '../../components/Calculator.astro';
@@ -13,24 +13,59 @@ export const schema = {
   "title": "Down Payment Calculator",
   "locale": "en",
   "inputs": [
-    { "name": "price", "label": "Purchase price ($)", "type": "number", "step": "any", "placeholder": "300000" },
-    { "name": "percent", "label": "Down payment (%)", "type": "number", "step": "any", "placeholder": "20" }
+    {
+      "name": "price",
+      "label": "Purchase price ($)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "300000"
+    },
+    {
+      "name": "percent",
+      "label": "Down payment (%)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "20"
+    }
   ],
   "expression": "price * (percent / 100)",
-  "unit": "USD",
   "intro": "Calculate the upfront amount needed for a purchase based on price and down payment percentage.",
   "examples": [
-    { "description": "$300,000 price at 20% ⇒ $60,000" },
-    { "description": "$20,000 price at 10% ⇒ $2,000" },
-    { "description": "$15,000 price at 15% ⇒ $2,250" }
+    {
+      "description": "$300,000 price at 20% ⇒ $60,000"
+    },
+    {
+      "description": "$20,000 price at 10% ⇒ $2,000"
+    },
+    {
+      "description": "$15,000 price at 15% ⇒ $2,250"
+    }
   ],
+  "info": [],
   "faqs": [
-    { "question": "Is the loan amount price minus down payment?", "answer": "Yes, subtract the down payment from the purchase price to get the loan amount." },
-    { "question": "Can the percentage be zero?", "answer": "Yes, but many lenders require some down payment." },
-    { "question": "Are closing costs included?", "answer": "No, this only calculates the down payment itself." }
+    {
+      "question": "Is the loan amount price minus down payment?",
+      "answer": "Yes, subtract the down payment from the purchase price to get the loan amount."
+    },
+    {
+      "question": "Can the percentage be zero?",
+      "answer": "Yes, but many lenders require some down payment."
+    },
+    {
+      "question": "Are closing costs included?",
+      "answer": "No, this only calculates the down payment itself."
+    }
   ],
   "disclaimer": "Consult lenders for exact requirements.",
-  "cluster": "Personal Finance & Loans"
+  "cluster": "Personal Finance & Loans",
+  "related": [
+    "percentage-discount",
+    "simple-interest",
+    "compound-interest-calculator",
+    "bmi-calculator",
+    "daily-calorie-burn",
+    "celsius-to-fahrenheit"
+  ]
 }
 
 <Calculator schema={schema} />
