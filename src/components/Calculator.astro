@@ -489,6 +489,22 @@ const jsonLd = {
             value = (num(vars.f) - 32) * 5 / 9;
             break;
           }
+          case 'fibonacci-number': {
+            const rawN = vars.n;
+            const n = Math.floor(rawN);
+            if (!Number.isFinite(rawN) || rawN < 0 || rawN !== n) {
+              showMessage('error', 'Please enter a non-negative integer');
+              return;
+            }
+            let a = 0, b = 1;
+            for (let i = 0; i < n; i++) {
+              const tmp = a + b;
+              a = b;
+              b = tmp;
+            }
+            value = a;
+            break;
+          }
           case 'km-to-miles-calculator': {
             value = num(vars.km) * 0.621371;
             break;

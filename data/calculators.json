@@ -17779,7 +17779,7 @@
     "title": "Fibonacci Number Calculator",
     "cluster": "Math",
     "description": "Compute the nth Fibonacci number.",
-    "intro": "Find the Fibonacci number at any position using Binet's formula. Enter an integer n to get the corresponding Fibonacci value.",
+    "intro": "Find the Fibonacci number at any position. Enter a non-negative integer n to get the corresponding Fibonacci value.",
     "inputs": [
       {
         "name": "n",
@@ -17790,7 +17790,7 @@
         "placeholder": "10"
       }
     ],
-    "expression": "round((( (1 + sqrt(5))/2 )^n - ( (1 - sqrt(5))/2 )^n ) / sqrt(5))",
+    "expression": "",
     "unit": "value",
     "examples": [
       {
@@ -17806,8 +17806,8 @@
         "answer": "This calculator works for non-negative integers only."
       },
       {
-        "question": "Why is the result rounded?",
-        "answer": "Binet's formula uses decimals, so rounding gives the exact integer."
+        "question": "How are Fibonacci numbers calculated?",
+        "answer": "The calculator uses an iterative method that yields exact integer results."
       },
       {
         "question": "What is the first Fibonacci number?",
@@ -17815,7 +17815,7 @@
       },
       {
         "question": "Is there a faster way to compute?",
-        "answer": "This closed-form expression avoids iterative calculation."
+        "answer": "This method is efficient for typical values of n and avoids complex formulas."
       }
     ],
     "disclaimer": "For educational purposes only.",
