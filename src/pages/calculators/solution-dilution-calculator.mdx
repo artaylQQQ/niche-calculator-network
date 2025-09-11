@@ -1,0 +1,79 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Solution Dilution Calculator"
+description: "Find the final concentration after diluting a solution."
+updated: "2025-08-21"
+cluster: "Science & Engineering"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  inputs: [
+    {
+      name: "c1",
+      label: "Initial concentration (mol/L)",
+      type: "number",
+      placeholder: "Enter initial concentration",
+      step: 0.01,
+      min: 0,
+    },
+    {
+      name: "v1",
+      label: "Initial volume (L)",
+      type: "number",
+      placeholder: "Enter initial volume",
+      step: 0.01,
+      min: 0,
+    },
+    {
+      name: "v2",
+      label: "Final volume (L)",
+      type: "number",
+      placeholder: "Enter final volume",
+      step: 0.01,
+      min: 0.01,
+    },
+  ],
+  slug: "solution-dilution-calculator",
+  title: "Solution Dilution Calculator",
+  locale: "en",
+  expression: "(c1 * v1) / v2",
+  unit: "mol/L",
+  intro:
+    "Compute the final concentration after diluting a solution using the formula C1 × V1 = C2 × V2.",
+  examples: [
+    { description: "2 mol/L × 0.5 L diluted to 1 L ⇒ 1 mol/L" },
+    { description: "1.5 mol/L × 0.3 L diluted to 0.9 L ⇒ 0.5 mol/L" },
+  ],
+  info: [
+    "Use consistent units for concentrations and volumes, typically mol/L and liters.",
+    "C1 × V1 = C2 × V2 is a standard dilution formula in chemistry.",
+  ],
+  faqs: [
+    {
+      question: "What does C1V1 = C2V2 mean?",
+      answer:
+        "It means the product of initial concentration and volume equals the product after dilution.",
+    },
+    {
+      question: "Do volumes need to be in liters?",
+      answer:
+        "Any consistent volume units work, but this calculator assumes liters.",
+    },
+    {
+      question: "Can this handle percentage solutions?",
+      answer: "Convert percentages to molarity before using this calculator.",
+    },
+    {
+      question: "Must the final volume be greater than the initial volume?",
+      answer:
+        "Typically yes for dilutions, but the formula also works for concentrating if V2 is smaller than V1.",
+    },
+  ],
+  disclaimer:
+    "For educational lab calculations only; verify results with standard methods.",
+  cluster: "Science & Engineering",
+};
+
+<Calculator schema={schema} />
