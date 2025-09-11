@@ -1,0 +1,42 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Meeting Cost Calculator"
+description: "Estimate the total cost of a meeting."
+updated: "2025-09-17"
+cluster: "Finance"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  slug: "meeting-cost",
+  title: "Meeting Cost Calculator",
+  locale: "en",
+  intro: "Estimate the total expense of a meeting by multiplying the number of attendees, their hourly rate, and the meeting duration.",
+  unit: "USD",
+  cluster: "Finance",
+  inputs: [
+    { name: "attendees", label: "Attendees", type: "number", step: 1, placeholder: "5" },
+    { name: "rate", label: "Hourly rate (USD)", type: "number", step: "any", placeholder: "30" },
+    { name: "hours", label: "Duration (hours)", type: "number", step: "any", placeholder: "2" }
+  ],
+  expression: "attendees * rate * hours",
+  examples: [
+    { description: "5 attendees at $30/hr for 2 hours ⇒ $300" },
+    { description: "10 attendees at $50/hr for 1.5 hours ⇒ $750" }
+  ],
+  faqs: [
+    { question: "Does the rate include benefits?", answer: "Use a fully loaded hourly rate if you want benefits and overhead included." },
+    { question: "Can attendees have different rates?", answer: "This calculator assumes the same rate for all attendees." },
+    { question: "How do I convert salary to hourly?", answer: "Divide the annual salary by total work hours in a year to get an hourly rate." },
+    { question: "Does it include room or equipment costs?", answer: "No, add any additional expenses separately for a full meeting cost." }
+  ],
+  disclaimer: "Estimates only; actual meeting costs may vary.",
+  info: [
+    "Helpful for budgeting meetings and understanding their financial impact.",
+    "Use consistent units for time and rate to ensure accuracy."
+  ]
+};
+
+<Calculator schema={schema} />
+
