@@ -12,7 +12,7 @@ export const schema = {
   slug: "leap-year-checker",
   title: "Leap Year Checker",
   intro:
-    "Determine if a given year is a leap year under the Gregorian calendar.",
+    "Identify whether a specific year includes an extra day (February 29) by applying the Gregorian leap year rules.",
   locale: "en",
   cluster: "Date & Time",
   inputs: [
@@ -47,6 +47,15 @@ export const schema = {
       answer:
         "Yes, it uses the proleptic Gregorian calendar for any integer year.",
     },
+    {
+      question: "How often do leap years occur?",
+      answer:
+        "Generally every four years, except century years not divisible by 400.",
+    },
+  ],
+  info: [
+    "Leap years have 366 days to keep the calendar aligned with Earth's orbit.",
+    "The rules maintain an average year length close to 365.2425 days.",
   ],
   disclaimer: "For calendar reference only.",
 };

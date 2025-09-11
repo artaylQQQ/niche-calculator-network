@@ -19,14 +19,22 @@ export const schema = {
     { name: "x", label: "Displacement (m)", type: "number", step: "any", placeholder: "0.1" }
   ],
   expression: "k * x",
-  examples: [
-    { description: "k=200 N/m, x=0.1 m ⇒ 20 N" }
-  ],
-  faqs: [
-    { question: "Does direction matter?", answer: "This returns magnitude; direction depends on compression or extension." }
-  ],
-  disclaimer: "Ideal linear springs only.",
-  cluster: "Science & Engineering"
+    examples: [
+      { description: "k=200 N/m, x=0.1 m ⇒ 20 N" },
+      { description: "k=150 N/m, x=0.2 m ⇒ 30 N" }
+    ],
+    faqs: [
+      { question: "Does direction matter?", answer: "This returns magnitude; direction depends on compression or extension." },
+      { question: "What is Hooke's Law?", answer: "It states the force is proportional to displacement." },
+      { question: "Can the spring constant change?", answer: "Only if the spring is stretched beyond its elastic limit." },
+      { question: "Can displacement be negative?", answer: "Yes, compression is negative, but this tool returns the magnitude." }
+    ],
+    info: [
+      "Applies only within the elastic range of the spring.",
+      "Force increases linearly with displacement for ideal springs.",
+    ],
+    disclaimer: "Ideal linear springs only.",
+    cluster: "Science & Engineering"
 };
 
 <Calculator schema={schema} />

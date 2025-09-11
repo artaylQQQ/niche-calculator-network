@@ -11,7 +11,8 @@ export const schema = {
   slug: "standing-time-percentage",
   title: "Standing Time Percentage",
   locale: "en",
-  intro: "Track the share of your day spent standing versus sitting.",
+  intro:
+    "Track the share of your day spent standing versus sitting to monitor sedentary time and encourage more movement.",
   unit: "%",
   cluster: "Health",
   inputs: [
@@ -25,7 +26,13 @@ export const schema = {
   ],
   faqs: [
     { question: "Why track standing time?", answer: "Regular standing can reduce sedentary health risks." },
-    { question: "What is total awake time?", answer: "Hours you're not sleeping during the day." }
+    { question: "What is total awake time?", answer: "Hours you're not sleeping during the day." },
+    { question: "Does brief standing count?", answer: "Yes, include any period you're on your feet for a minute or more." },
+    { question: "What's a healthy standing percentage?", answer: "Many experts suggest aiming for at least 15% of waking hours." }
+  ],
+  info: [
+    "Breaking up long sitting sessions with standing can improve circulation.",
+    "Use this percentage to set daily movement or standing goals.",
   ],
   disclaimer: "For informational purposes only, not medical advice.",
 };
