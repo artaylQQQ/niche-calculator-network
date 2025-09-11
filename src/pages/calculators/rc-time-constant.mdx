@@ -1,0 +1,68 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "RC Time Constant Calculator"
+description: "Compute the time constant of an RC circuit."
+updated: "2025-09-25"
+cluster: "Science & Engineering"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "rc-time-constant",
+  title: "RC Time Constant Calculator",
+  locale: "en",
+  inputs: [
+    {
+      name: "resistance",
+      label: "Resistance (\u03a9)",
+      type: "number",
+      step: "any",
+      placeholder: "1000",
+    },
+    {
+      name: "capacitance",
+      label: "Capacitance (F)",
+      type: "number",
+      step: "any",
+      placeholder: "0.001",
+    },
+  ],
+  expression: "resistance * capacitance",
+  unit: "seconds",
+  intro:
+    "Find the RC time constant (\u03c4) by multiplying resistance and capacitance.",
+  examples: [
+    { description: "1000 \u03a9 & 0.001 F ⇒ 1 s" },
+    { description: "4700 \u03a9 & 0.00047 F ⇒ 2.21 s" },
+  ],
+  faqs: [
+    {
+      question: "What is the time constant?",
+      answer:
+        "The time it takes for voltage to reach about 63% of its final value.",
+    },
+    {
+      question: "Can I use kilo-ohms and microfarads?",
+      answer:
+        "Yes, convert units so resistance is in ohms and capacitance in farads.",
+    },
+    {
+      question: "Does this account for inductance?",
+      answer: "No, it applies only to RC circuits.",
+    },
+    {
+      question: "Why is \u03c4 important?",
+      answer: "It predicts charging and discharging speed of capacitors.",
+    },
+  ],
+  disclaimer: "Ideal RC circuit assumption; real components may vary.",
+  cluster: "Science & Engineering",
+  info: [
+    "Higher resistance or capacitance increases the time constant.",
+    "After 5\u03c4, charging is over 99% complete.",
+  ],
+  related: [],
+};
+
+<Calculator schema={schema} />

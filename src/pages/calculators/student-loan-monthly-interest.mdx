@@ -1,0 +1,66 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Student Loan Monthly Interest Calculator"
+description: "Find the interest accrued on your student loan each month."
+updated: "2025-09-25"
+cluster: "Personal Finance & Loans"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "student-loan-monthly-interest",
+  title: "Student Loan Monthly Interest Calculator",
+  locale: "en",
+  inputs: [
+    {
+      name: "balance",
+      label: "Loan Balance ($)",
+      type: "number",
+      step: "any",
+      placeholder: "10000",
+    },
+    {
+      name: "rate",
+      label: "Annual Interest Rate (%)",
+      type: "number",
+      step: "any",
+      placeholder: "5",
+    },
+  ],
+  expression: "balance * (rate/100) / 12",
+  unit: "USD",
+  intro: "See how much interest your student loan accrues in a single month.",
+  examples: [
+    { description: "$10,000 at 5% \u21d2 $41.67" },
+    { description: "$25,000 at 7% \u21d2 $145.83" },
+  ],
+  faqs: [
+    {
+      question: "Does this include principal payments?",
+      answer: "No, it only calculates interest accrual.",
+    },
+    {
+      question: "Can rates change over time?",
+      answer: "Yes, adjust the rate input if your loan rate changes.",
+    },
+    {
+      question: "Is interest compounded daily?",
+      answer: "This calculator assumes simple monthly interest.",
+    },
+    {
+      question: "What happens if I pay more than the interest?",
+      answer: "Extra payment reduces the principal balance.",
+    },
+  ],
+  disclaimer:
+    "Interest amounts are estimates; consult your lender for exact figures.",
+  cluster: "Personal Finance & Loans",
+  info: [
+    "Monthly interest adds to principal if unpaid.",
+    "Knowing monthly interest helps budgeting.",
+  ],
+  related: [],
+};
+
+<Calculator schema={schema} />

@@ -1,0 +1,58 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Hectares to Acres Converter"
+description: "Convert area from hectares to acres."
+updated: "2025-09-25"
+cluster: "Conversions & Units"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "hectares-to-acres",
+  title: "Hectares to Acres Converter",
+  locale: "en",
+  inputs: [
+    {
+      name: "hectares",
+      label: "Area (hectares)",
+      type: "number",
+      step: "any",
+      placeholder: "1",
+    },
+  ],
+  expression: "hectares * 2.47105",
+  unit: "acres",
+  intro: "Quickly convert land area from hectares to acres.",
+  examples: [
+    { description: "1 ha ⇒ 2.47 acres" },
+    { description: "5 ha ⇒ 12.36 acres" },
+  ],
+  faqs: [
+    {
+      question: "How many acres in one hectare?",
+      answer: "About 2.471 acres.",
+    },
+    {
+      question: "Can I convert acres to hectares?",
+      answer: "Divide acres by 2.471.",
+    },
+    {
+      question: "Is this exact?",
+      answer: "Value is approximate; use more decimals if needed.",
+    },
+    {
+      question: "Where are hectares used?",
+      answer: "Common in metric-system countries for land measurement.",
+    },
+  ],
+  disclaimer: "For general conversions; verify for precise surveying.",
+  cluster: "Conversions & Units",
+  info: [
+    "1 hectare equals 10,000 square meters.",
+    "Acres are widely used in the United States and UK.",
+  ],
+  related: [],
+};
+
+<Calculator schema={schema} />

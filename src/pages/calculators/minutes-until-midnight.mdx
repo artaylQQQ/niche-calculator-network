@@ -1,0 +1,66 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Minutes Until Midnight Calculator"
+description: "Find how many minutes remain until midnight from a given time."
+updated: "2025-09-25"
+cluster: "Date & Time"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "minutes-until-midnight",
+  title: "Minutes Until Midnight Calculator",
+  locale: "en",
+  inputs: [
+    {
+      name: "hour",
+      label: "Current Hour (0-23)",
+      type: "number",
+      step: "1",
+      placeholder: "22",
+    },
+    {
+      name: "minute",
+      label: "Current Minute (0-59)",
+      type: "number",
+      step: "1",
+      placeholder: "30",
+    },
+  ],
+  expression: "24*60 - (hour*60 + minute)",
+  unit: "minutes",
+  intro:
+    "Calculate the number of minutes remaining until the next midnight using a 24-hour clock.",
+  examples: [
+    { description: "22:30 ⇒ 90 minutes" },
+    { description: "00:15 ⇒ 1425 minutes" },
+  ],
+  faqs: [
+    {
+      question: "Is time entered in 24-hour format?",
+      answer: "Yes, use 0–23 for hours.",
+    },
+    {
+      question: "What if minutes exceed 59?",
+      answer: "The calculation assumes 0–59; adjust as needed.",
+    },
+    {
+      question: "Can result be zero?",
+      answer: "Yes, at exactly midnight it returns 0.",
+    },
+    {
+      question: "Does daylight saving affect this?",
+      answer: "It does not account for DST changes.",
+    },
+  ],
+  disclaimer: "For general time planning only.",
+  cluster: "Date & Time",
+  info: [
+    "Uses standard 24-hour time.",
+    "Helps plan tasks before the day ends.",
+  ],
+  related: [],
+};
+
+<Calculator schema={schema} />

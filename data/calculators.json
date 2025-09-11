@@ -19550,5 +19550,678 @@
       "Water boils at 100°C at sea level under standard atmospheric pressure.",
       "Boiling point drops roughly 1°C for every 300 m increase in altitude."
     ]
+  },
+  {
+    "slug": "inventory-reorder-point",
+    "title": "Inventory Reorder Point Calculator",
+    "cluster": "Finance & Business",
+    "description": "Estimate when to reorder stock based on usage, lead time, and safety stock.",
+    "intro": "Determine the stock level at which you should reorder inventory to avoid stockouts.",
+    "inputs": [
+      {
+        "name": "dailyUsage",
+        "label": "Average Daily Usage (units)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "20"
+      },
+      {
+        "name": "leadTime",
+        "label": "Lead Time (days)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "10"
+      },
+      {
+        "name": "safetyStock",
+        "label": "Safety Stock (units)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "100"
+      }
+    ],
+    "expression": "dailyUsage * leadTime + safetyStock",
+    "unit": "units",
+    "examples": [
+      {
+        "description": "20 units/day, 10 days lead, 100 safety ⇒ 300 units"
+      },
+      {
+        "description": "50 units/day, 5 days lead, 200 safety ⇒ 450 units"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What is safety stock?",
+        "answer": "Extra inventory kept to mitigate demand variability."
+      },
+      {
+        "question": "What if I don't include safety stock?",
+        "answer": "The reorder point will be lower and risk stockouts."
+      },
+      {
+        "question": "Can lead time be fractional?",
+        "answer": "Yes, enter partial days as decimals."
+      },
+      {
+        "question": "Does this account for incoming orders?",
+        "answer": "It assumes no outstanding orders; adjust as needed."
+      }
+    ],
+    "disclaimer": "For planning purposes only.",
+    "info": [
+      "Reorder point helps prevent stockouts.",
+      "Adjust safety stock for demand variability."
+    ]
+  },
+  {
+    "slug": "student-loan-monthly-interest",
+    "title": "Student Loan Monthly Interest Calculator",
+    "cluster": "Personal Finance & Loans",
+    "description": "Find the interest accrued on your student loan each month.",
+    "intro": "See how much interest your student loan accrues in a single month.",
+    "inputs": [
+      {
+        "name": "balance",
+        "label": "Loan Balance ($)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "10000"
+      },
+      {
+        "name": "rate",
+        "label": "Annual Interest Rate (%)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "5"
+      }
+    ],
+    "expression": "balance * (rate/100) / 12",
+    "unit": "USD",
+    "examples": [
+      {
+        "description": "$10,000 at 5% ⇒ $41.67"
+      },
+      {
+        "description": "$25,000 at 7% ⇒ $145.83"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Does this include principal payments?",
+        "answer": "No, it only calculates interest accrual."
+      },
+      {
+        "question": "Can rates change over time?",
+        "answer": "Yes, adjust the rate input if your loan rate changes."
+      },
+      {
+        "question": "Is interest compounded daily?",
+        "answer": "This calculator assumes simple monthly interest."
+      },
+      {
+        "question": "What happens if I pay more than the interest?",
+        "answer": "Extra payment reduces the principal balance."
+      }
+    ],
+    "disclaimer": "Interest amounts are estimates; consult your lender for exact figures.",
+    "info": [
+      "Monthly interest adds to principal if unpaid.",
+      "Knowing monthly interest helps budgeting."
+    ]
+  },
+  {
+    "slug": "target-body-weight",
+    "title": "Target Body Weight Calculator",
+    "cluster": "Health & Fitness",
+    "description": "Estimate goal weight based on desired body fat percentage.",
+    "intro": "Calculate your target body weight assuming lean mass stays constant.",
+    "inputs": [
+      {
+        "name": "weight",
+        "label": "Current Weight (lb)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "180"
+      },
+      {
+        "name": "currentBF",
+        "label": "Current Body Fat (%)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "25"
+      },
+      {
+        "name": "targetBF",
+        "label": "Target Body Fat (%)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "15"
+      }
+    ],
+    "expression": "weight * (1 - currentBF/100) / (1 - targetBF/100)",
+    "unit": "lb",
+    "examples": [
+      {
+        "description": "180 lb at 25% to 15% ⇒ 158.82 lb"
+      },
+      {
+        "description": "200 lb at 30% to 20% ⇒ 175 lb"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Does this assume lean mass stays the same?",
+        "answer": "Yes, it keeps lean mass constant."
+      },
+      {
+        "question": "Can body fat percentages be decimals?",
+        "answer": "Yes, enter fractional percentages as needed."
+      },
+      {
+        "question": "Is the result guaranteed?",
+        "answer": "No, individual results vary with training and diet."
+      },
+      {
+        "question": "Should I consult a professional?",
+        "answer": "Yes, seek advice before making significant changes."
+      }
+    ],
+    "disclaimer": "Estimates only; consult health professionals for personalized guidance.",
+    "info": [
+      "Lean mass equals total weight minus fat mass.",
+      "Body composition changes may not be linear."
+    ]
+  },
+  {
+    "slug": "sum-of-squares",
+    "title": "Sum of Squares Calculator",
+    "cluster": "Math & Statistics",
+    "description": "Compute 1² + 2² + ... + n².",
+    "intro": "Compute the sum of the squares of the first n natural numbers.",
+    "inputs": [
+      {
+        "name": "n",
+        "label": "Number of Terms",
+        "type": "number",
+        "step": "1",
+        "placeholder": "10"
+      }
+    ],
+    "expression": "n * (n + 1) * (2 * n + 1) / 6",
+    "unit": "",
+    "examples": [
+      {
+        "description": "n = 3 ⇒ 14"
+      },
+      {
+        "description": "n = 5 ⇒ 55"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Does n have to be an integer?",
+        "answer": "Yes, the formula applies to positive integers."
+      },
+      {
+        "question": "What is the formula used?",
+        "answer": "n(n+1)(2n+1)/6."
+      },
+      {
+        "question": "Can n be zero?",
+        "answer": "Yes, the result will be zero."
+      },
+      {
+        "question": "Why is this useful?",
+        "answer": "It's common in statistics and series calculations."
+      }
+    ],
+    "disclaimer": "Results assume integer inputs and ideal arithmetic.",
+    "info": [
+      "The formula dates back to ancient mathematicians.",
+      "Useful in variance and physics computations."
+    ]
+  },
+  {
+    "slug": "hectares-to-acres",
+    "title": "Hectares to Acres Converter",
+    "cluster": "Conversions & Units",
+    "description": "Convert area from hectares to acres.",
+    "intro": "Quickly convert land area from hectares to acres.",
+    "inputs": [
+      {
+        "name": "hectares",
+        "label": "Area (hectares)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "1"
+      }
+    ],
+    "expression": "hectares * 2.47105",
+    "unit": "acres",
+    "examples": [
+      {
+        "description": "1 ha ⇒ 2.47 acres"
+      },
+      {
+        "description": "5 ha ⇒ 12.36 acres"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "How many acres in one hectare?",
+        "answer": "About 2.471 acres."
+      },
+      {
+        "question": "Can I convert acres to hectares?",
+        "answer": "Divide acres by 2.471."
+      },
+      {
+        "question": "Is this exact?",
+        "answer": "Value is approximate; use more decimals if needed."
+      },
+      {
+        "question": "Where are hectares used?",
+        "answer": "Common in metric-system countries for land measurement."
+      }
+    ],
+    "disclaimer": "For general conversions; verify for precise surveying.",
+    "info": [
+      "1 hectare equals 10,000 square meters.",
+      "Acres are widely used in the United States and UK."
+    ]
+  },
+  {
+    "slug": "minutes-until-midnight",
+    "title": "Minutes Until Midnight Calculator",
+    "cluster": "Date & Time",
+    "description": "Find how many minutes remain until midnight from a given time.",
+    "intro": "Calculate the number of minutes remaining until the next midnight using a 24-hour clock.",
+    "inputs": [
+      {
+        "name": "hour",
+        "label": "Current Hour (0-23)",
+        "type": "number",
+        "step": "1",
+        "placeholder": "22"
+      },
+      {
+        "name": "minute",
+        "label": "Current Minute (0-59)",
+        "type": "number",
+        "step": "1",
+        "placeholder": "30"
+      }
+    ],
+    "expression": "24*60 - (hour*60 + minute)",
+    "unit": "minutes",
+    "examples": [
+      {
+        "description": "22:30 ⇒ 90 minutes"
+      },
+      {
+        "description": "00:15 ⇒ 1425 minutes"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Is time entered in 24-hour format?",
+        "answer": "Yes, use 0–23 for hours."
+      },
+      {
+        "question": "What if minutes exceed 59?",
+        "answer": "The calculation assumes 0–59; adjust as needed."
+      },
+      {
+        "question": "Can result be zero?",
+        "answer": "Yes, at exactly midnight it returns 0."
+      },
+      {
+        "question": "Does daylight saving affect this?",
+        "answer": "It does not account for DST changes."
+      }
+    ],
+    "disclaimer": "For general time planning only.",
+    "info": [
+      "Uses standard 24-hour time.",
+      "Helps plan tasks before the day ends."
+    ]
+  },
+  {
+    "slug": "essay-word-goal",
+    "title": "Essay Word Goal Calculator",
+    "cluster": "Education & Learning",
+    "description": "See how many words remain to reach your essay target.",
+    "intro": "Determine how many words you still need to write to meet your assignment requirement.",
+    "inputs": [
+      {
+        "name": "goal",
+        "label": "Target Word Count",
+        "type": "number",
+        "step": "1",
+        "placeholder": "1500"
+      },
+      {
+        "name": "current",
+        "label": "Current Word Count",
+        "type": "number",
+        "step": "1",
+        "placeholder": "600"
+      }
+    ],
+    "expression": "goal - current",
+    "unit": "words",
+    "examples": [
+      {
+        "description": "Goal 1500, current 600 ⇒ 900 words remaining"
+      },
+      {
+        "description": "Goal 1000, current 1000 ⇒ 0 words remaining"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What if the result is negative?",
+        "answer": "It means you've exceeded the word goal."
+      },
+      {
+        "question": "Can I use decimals?",
+        "answer": "Word counts are typically whole numbers; use integers."
+      },
+      {
+        "question": "Does this track character count?",
+        "answer": "No, it only counts words."
+      },
+      {
+        "question": "Should I stop exactly at the goal?",
+        "answer": "Check assignment guidelines for acceptable ranges."
+      }
+    ],
+    "disclaimer": "Use for planning; always follow instructor instructions.",
+    "info": [
+      "Helps organize writing sessions.",
+      "Quality matters more than word count once the goal is reached."
+    ]
+  },
+  {
+    "slug": "rc-time-constant",
+    "title": "RC Time Constant Calculator",
+    "cluster": "Science & Engineering",
+    "description": "Compute the time constant of an RC circuit.",
+    "intro": "Find the RC time constant (τ) by multiplying resistance and capacitance.",
+    "inputs": [
+      {
+        "name": "resistance",
+        "label": "Resistance (Ω)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "1000"
+      },
+      {
+        "name": "capacitance",
+        "label": "Capacitance (F)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "0.001"
+      }
+    ],
+    "expression": "resistance * capacitance",
+    "unit": "seconds",
+    "examples": [
+      {
+        "description": "1000 Ω & 0.001 F ⇒ 1 s"
+      },
+      {
+        "description": "4700 Ω & 0.00047 F ⇒ 2.21 s"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What is the time constant?",
+        "answer": "The time it takes for voltage to reach about 63% of its final value."
+      },
+      {
+        "question": "Can I use kilo-ohms and microfarads?",
+        "answer": "Yes, convert units so resistance is in ohms and capacitance in farads."
+      },
+      {
+        "question": "Does this account for inductance?",
+        "answer": "No, it applies only to RC circuits."
+      },
+      {
+        "question": "Why is τ important?",
+        "answer": "It predicts charging and discharging speed of capacitors."
+      }
+    ],
+    "disclaimer": "Ideal RC circuit assumption; real components may vary.",
+    "info": [
+      "Higher resistance or capacitance increases the time constant.",
+      "After 5τ, charging is over 99% complete."
+    ]
+  },
+  {
+    "slug": "binary-search-steps",
+    "title": "Binary Search Steps Calculator",
+    "cluster": "Technology & Coding",
+    "description": "Estimate steps needed for binary search in a sorted list.",
+    "intro": "Determine how many comparisons binary search needs to find an item in a sorted list of size n.",
+    "inputs": [
+      {
+        "name": "n",
+        "label": "Number of Items",
+        "type": "number",
+        "step": "1",
+        "placeholder": "1000",
+        "min": 1
+      }
+    ],
+    "expression": "Math.ceil(Math.log(n)/Math.log(2))",
+    "unit": "steps",
+    "examples": [
+      {
+        "description": "n = 1000 ⇒ 10 steps"
+      },
+      {
+        "description": "n = 32 ⇒ 5 steps"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Why use logarithms?",
+        "answer": "Binary search halves the list each step, leading to log base 2 complexity."
+      },
+      {
+        "question": "What if n isn't a power of two?",
+        "answer": "The ceiling function accounts for the partial final step."
+      },
+      {
+        "question": "Does the list need to be sorted?",
+        "answer": "Yes, binary search requires a sorted dataset."
+      },
+      {
+        "question": "Can n be 0?",
+        "answer": "No, the list must contain at least one item."
+      }
+    ],
+    "disclaimer": "Assumes ideal binary search without duplicates.",
+    "info": [
+      "Binary search operates in O(log n) time.",
+      "Useful for databases and algorithms classes."
+    ]
+  },
+  {
+    "slug": "fence-paint-quantity",
+    "title": "Fence Paint Quantity Calculator",
+    "cluster": "Home & DIY",
+    "description": "Estimate liters of paint needed to cover a fence.",
+    "intro": "Estimate how much paint you need for a fence by dividing its area by your paint's coverage.",
+    "inputs": [
+      {
+        "name": "length",
+        "label": "Fence Length (m)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "30"
+      },
+      {
+        "name": "height",
+        "label": "Fence Height (m)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "2"
+      },
+      {
+        "name": "coverage",
+        "label": "Paint Coverage (m² per liter)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "10"
+      }
+    ],
+    "expression": "length * height / coverage",
+    "unit": "liters",
+    "examples": [
+      {
+        "description": "30 m × 2 m with 10 m²/L ⇒ 6 liters"
+      },
+      {
+        "description": "15 m × 1.8 m with 8 m²/L ⇒ 3.38 liters"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Should I add extra paint?",
+        "answer": "Include a margin for waste and touch-ups."
+      },
+      {
+        "question": "Does coverage vary by paint?",
+        "answer": "Yes, check the manufacturer's label."
+      },
+      {
+        "question": "How many coats are assumed?",
+        "answer": "This assumes one coat; multiply area for additional coats."
+      },
+      {
+        "question": "Can I input feet instead of meters?",
+        "answer": "Convert measurements to meters before using the calculator."
+      }
+    ],
+    "disclaimer": "Actual paint needs may vary with surface texture and technique.",
+    "info": [
+      "Rough wood requires more paint than smooth surfaces.",
+      "Measure both sides if painting the entire fence."
+    ]
+  },
+  {
+    "slug": "backpack-weight-ratio",
+    "title": "Backpack Weight Ratio Calculator",
+    "cluster": "Lifestyle & Travel",
+    "description": "Compare pack weight to body weight for safe carrying.",
+    "intro": "Check what percentage of your body weight your backpack represents for safer travel.",
+    "inputs": [
+      {
+        "name": "body",
+        "label": "Body Weight (kg)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "70"
+      },
+      {
+        "name": "pack",
+        "label": "Backpack Weight (kg)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "10"
+      }
+    ],
+    "expression": "pack / body * 100",
+    "unit": "%",
+    "examples": [
+      {
+        "description": "70 kg body, 10 kg pack ⇒ 14.29%"
+      },
+      {
+        "description": "80 kg body, 20 kg pack ⇒ 25%"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What is a safe backpack ratio?",
+        "answer": "Many recommend staying under 20% of body weight."
+      },
+      {
+        "question": "Can I use pounds instead?",
+        "answer": "Yes, as long as both weights use the same unit."
+      },
+      {
+        "question": "Does terrain matter?",
+        "answer": "Yes, rough terrain may require lighter loads."
+      },
+      {
+        "question": "Should children carry less?",
+        "answer": "Yes, consult guidelines specific to age and fitness."
+      }
+    ],
+    "disclaimer": "For general guidance; adjust based on personal comfort and health.",
+    "info": [
+      "Lightening your pack reduces strain and fatigue.",
+      "Distribute weight evenly for better balance."
+    ]
+  },
+  {
+    "slug": "cost-per-lead",
+    "title": "Cost Per Lead Calculator",
+    "cluster": "Web & Marketing",
+    "description": "Determine the average marketing cost for each lead.",
+    "intro": "Measure how much you spend on average to acquire a single lead.",
+    "inputs": [
+      {
+        "name": "spend",
+        "label": "Total Spend ($)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "500"
+      },
+      {
+        "name": "leads",
+        "label": "Number of Leads",
+        "type": "number",
+        "step": "any",
+        "placeholder": "25"
+      }
+    ],
+    "expression": "spend / leads",
+    "unit": "USD per lead",
+    "examples": [
+      {
+        "description": "$500 spend, 25 leads ⇒ $20/lead"
+      },
+      {
+        "description": "$1200 spend, 100 leads ⇒ $12/lead"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What counts as a lead?",
+        "answer": "Any potential customer who has shown interest, such as filling a form."
+      },
+      {
+        "question": "Can I compare CPL across campaigns?",
+        "answer": "Yes, use it to evaluate channel performance."
+      },
+      {
+        "question": "Is a lower CPL always better?",
+        "answer": "Generally, but quality of leads also matters."
+      },
+      {
+        "question": "Does this include sales costs?",
+        "answer": "No, it only measures marketing spend per lead."
+      }
+    ],
+    "disclaimer": "Use accurate spend and lead counts for meaningful metrics.",
+    "info": [
+      "CPL helps budget marketing campaigns effectively.",
+      "Combine with conversion rate to assess ROI."
+    ]
   }
 ]

@@ -1,0 +1,48 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Sum of Squares Calculator"
+description: "Compute 1² + 2² + ... + n²."
+updated: "2025-09-25"
+cluster: "Math & Statistics"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "sum-of-squares",
+  title: "Sum of Squares Calculator",
+  locale: "en",
+  inputs: [
+    {
+      name: "n",
+      label: "Number of Terms",
+      type: "number",
+      step: "1",
+      placeholder: "10",
+    },
+  ],
+  expression: "n * (n + 1) * (2 * n + 1) / 6",
+  intro: "Compute the sum of the squares of the first n natural numbers.",
+  examples: [{ description: "n = 3 ⇒ 14" }, { description: "n = 5 ⇒ 55" }],
+  faqs: [
+    {
+      question: "Does n have to be an integer?",
+      answer: "Yes, the formula applies to positive integers.",
+    },
+    { question: "What is the formula used?", answer: "n(n+1)(2n+1)/6." },
+    { question: "Can n be zero?", answer: "Yes, the result will be zero." },
+    {
+      question: "Why is this useful?",
+      answer: "It's common in statistics and series calculations.",
+    },
+  ],
+  disclaimer: "Results assume integer inputs and ideal arithmetic.",
+  cluster: "Math & Statistics",
+  info: [
+    "The formula dates back to ancient mathematicians.",
+    "Useful in variance and physics computations.",
+  ],
+  related: [],
+};
+
+<Calculator schema={schema} />

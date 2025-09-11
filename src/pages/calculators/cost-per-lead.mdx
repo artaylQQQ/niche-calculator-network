@@ -1,0 +1,66 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Cost Per Lead Calculator"
+description: "Determine the average marketing cost for each lead."
+updated: "2025-09-25"
+cluster: "Web & Marketing"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "cost-per-lead",
+  title: "Cost Per Lead Calculator",
+  locale: "en",
+  inputs: [
+    {
+      name: "spend",
+      label: "Total Spend ($)",
+      type: "number",
+      step: "any",
+      placeholder: "500",
+    },
+    {
+      name: "leads",
+      label: "Number of Leads",
+      type: "number",
+      step: "any",
+      placeholder: "25",
+    },
+  ],
+  expression: "spend / leads",
+  unit: "USD per lead",
+  intro: "Measure how much you spend on average to acquire a single lead.",
+  examples: [
+    { description: "$500 spend, 25 leads ⇒ $20/lead" },
+    { description: "$1200 spend, 100 leads ⇒ $12/lead" },
+  ],
+  faqs: [
+    {
+      question: "What counts as a lead?",
+      answer:
+        "Any potential customer who has shown interest, such as filling a form.",
+    },
+    {
+      question: "Can I compare CPL across campaigns?",
+      answer: "Yes, use it to evaluate channel performance.",
+    },
+    {
+      question: "Is a lower CPL always better?",
+      answer: "Generally, but quality of leads also matters.",
+    },
+    {
+      question: "Does this include sales costs?",
+      answer: "No, it only measures marketing spend per lead.",
+    },
+  ],
+  disclaimer: "Use accurate spend and lead counts for meaningful metrics.",
+  cluster: "Web & Marketing",
+  info: [
+    "CPL helps budget marketing campaigns effectively.",
+    "Combine with conversion rate to assess ROI.",
+  ],
+  related: [],
+};
+
+<Calculator schema={schema} />

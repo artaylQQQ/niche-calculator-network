@@ -1,0 +1,66 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Essay Word Goal Calculator"
+description: "See how many words remain to reach your essay target."
+updated: "2025-09-25"
+cluster: "Education & Learning"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "essay-word-goal",
+  title: "Essay Word Goal Calculator",
+  locale: "en",
+  inputs: [
+    {
+      name: "goal",
+      label: "Target Word Count",
+      type: "number",
+      step: "1",
+      placeholder: "1500",
+    },
+    {
+      name: "current",
+      label: "Current Word Count",
+      type: "number",
+      step: "1",
+      placeholder: "600",
+    },
+  ],
+  expression: "goal - current",
+  unit: "words",
+  intro:
+    "Determine how many words you still need to write to meet your assignment requirement.",
+  examples: [
+    { description: "Goal 1500, current 600 ⇒ 900 words remaining" },
+    { description: "Goal 1000, current 1000 ⇒ 0 words remaining" },
+  ],
+  faqs: [
+    {
+      question: "What if the result is negative?",
+      answer: "It means you've exceeded the word goal.",
+    },
+    {
+      question: "Can I use decimals?",
+      answer: "Word counts are typically whole numbers; use integers.",
+    },
+    {
+      question: "Does this track character count?",
+      answer: "No, it only counts words.",
+    },
+    {
+      question: "Should I stop exactly at the goal?",
+      answer: "Check assignment guidelines for acceptable ranges.",
+    },
+  ],
+  disclaimer: "Use for planning; always follow instructor instructions.",
+  cluster: "Education & Learning",
+  info: [
+    "Helps organize writing sessions.",
+    "Quality matters more than word count once the goal is reached.",
+  ],
+  related: [],
+};
+
+<Calculator schema={schema} />

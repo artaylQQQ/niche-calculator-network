@@ -1,0 +1,67 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Backpack Weight Ratio Calculator"
+description: "Compare pack weight to body weight for safe carrying."
+updated: "2025-09-25"
+cluster: "Lifestyle & Travel"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "backpack-weight-ratio",
+  title: "Backpack Weight Ratio Calculator",
+  locale: "en",
+  inputs: [
+    {
+      name: "body",
+      label: "Body Weight (kg)",
+      type: "number",
+      step: "any",
+      placeholder: "70",
+    },
+    {
+      name: "pack",
+      label: "Backpack Weight (kg)",
+      type: "number",
+      step: "any",
+      placeholder: "10",
+    },
+  ],
+  expression: "pack / body * 100",
+  unit: "%",
+  intro:
+    "Check what percentage of your body weight your backpack represents for safer travel.",
+  examples: [
+    { description: "70 kg body, 10 kg pack ⇒ 14.29%" },
+    { description: "80 kg body, 20 kg pack ⇒ 25%" },
+  ],
+  faqs: [
+    {
+      question: "What is a safe backpack ratio?",
+      answer: "Many recommend staying under 20% of body weight.",
+    },
+    {
+      question: "Can I use pounds instead?",
+      answer: "Yes, as long as both weights use the same unit.",
+    },
+    {
+      question: "Does terrain matter?",
+      answer: "Yes, rough terrain may require lighter loads.",
+    },
+    {
+      question: "Should children carry less?",
+      answer: "Yes, consult guidelines specific to age and fitness.",
+    },
+  ],
+  disclaimer:
+    "For general guidance; adjust based on personal comfort and health.",
+  cluster: "Lifestyle & Travel",
+  info: [
+    "Lightening your pack reduces strain and fatigue.",
+    "Distribute weight evenly for better balance.",
+  ],
+  related: [],
+};
+
+<Calculator schema={schema} />
