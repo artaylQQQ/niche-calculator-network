@@ -103,6 +103,7 @@ const jsonLd = {
           step={i.step ?? 'any'}
           {...(i.min !== undefined ? { min: i.min } : {})}
           {...(i.max !== undefined ? { max: i.max } : {})}
+          lang="en"
           inputmode="decimal"
           placeholder={i.placeholder ?? ''}
           aria-describedby={`hint-${slug}-${i.name}`}
