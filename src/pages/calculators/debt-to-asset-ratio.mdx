@@ -1,0 +1,44 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Debt-to-Asset Ratio Calculator"
+description: "Measure what portion of assets is financed through debt."
+date: 2025-09-11
+updated: 2025-09-11
+cluster: "Finance & Business"
+---
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "debt-to-asset-ratio",
+  "title": "Debt-to-Asset Ratio Calculator",
+  "locale": "en",
+  "inputs": [
+    { "name": "liabilities", "label": "Total Liabilities", "type": "number", "placeholder": "200000" },
+    { "name": "assets", "label": "Total Assets", "type": "number", "placeholder": "500000" }
+  ],
+  "expression": "liabilities / assets",
+  "unit": "ratio",
+  "intro": "Determine the proportion of a company's assets financed by debt. Enter total liabilities and total assets to compute the debt-to-asset ratio.",
+  "examples": [
+    { "description": "$200,000 liabilities / $500,000 assets ⇒ 0.4" },
+    { "description": "$750,000 liabilities / $1,000,000 assets ⇒ 0.75" }
+  ],
+  "faqs": [
+    { "question": "What does a high debt-to-asset ratio indicate?", "answer": "A higher ratio suggests more leverage and potentially higher financial risk." },
+    { "question": "Can the ratio exceed 1?", "answer": "Yes, if liabilities are greater than assets the ratio will be above 1." },
+    { "question": "Should short-term liabilities be included?", "answer": "Yes, the ratio typically uses total liabilities, both short- and long-term." },
+    { "question": "Is there an ideal debt-to-asset ratio?", "answer": "Acceptable ratios vary by industry; analysts often prefer ratios below 0.5." }
+  ],
+  "disclaimer": "For educational purposes only. Use audited figures for accurate analysis.",
+  "cluster": "Finance & Business",
+  "related": [
+    "debt-to-equity-ratio",
+    "debt-to-income-ratio",
+    "working-capital-ratio",
+    "return-on-assets",
+    "return-on-equity",
+    "net-profit-margin"
+  ]
+}
+
+<Calculator schema={schema} />
