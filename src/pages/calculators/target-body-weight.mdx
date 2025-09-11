@@ -1,0 +1,73 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Target Body Weight Calculator"
+description: "Estimate goal weight based on desired body fat percentage."
+updated: "2025-09-25"
+cluster: "Health & Fitness"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "target-body-weight",
+  title: "Target Body Weight Calculator",
+  locale: "en",
+  inputs: [
+    {
+      name: "weight",
+      label: "Current Weight (lb)",
+      type: "number",
+      step: "any",
+      placeholder: "180",
+    },
+    {
+      name: "currentBF",
+      label: "Current Body Fat (%)",
+      type: "number",
+      step: "any",
+      placeholder: "25",
+    },
+    {
+      name: "targetBF",
+      label: "Target Body Fat (%)",
+      type: "number",
+      step: "any",
+      placeholder: "15",
+    },
+  ],
+  expression: "weight * (1 - currentBF/100) / (1 - targetBF/100)",
+  unit: "lb",
+  intro: "Calculate your target body weight assuming lean mass stays constant.",
+  examples: [
+    { description: "180 lb at 25% to 15% \u21d2 158.82 lb" },
+    { description: "200 lb at 30% to 20% \u21d2 175 lb" },
+  ],
+  faqs: [
+    {
+      question: "Does this assume lean mass stays the same?",
+      answer: "Yes, it keeps lean mass constant.",
+    },
+    {
+      question: "Can body fat percentages be decimals?",
+      answer: "Yes, enter fractional percentages as needed.",
+    },
+    {
+      question: "Is the result guaranteed?",
+      answer: "No, individual results vary with training and diet.",
+    },
+    {
+      question: "Should I consult a professional?",
+      answer: "Yes, seek advice before making significant changes.",
+    },
+  ],
+  disclaimer:
+    "Estimates only; consult health professionals for personalized guidance.",
+  cluster: "Health & Fitness",
+  info: [
+    "Lean mass equals total weight minus fat mass.",
+    "Body composition changes may not be linear.",
+  ],
+  related: [],
+};
+
+<Calculator schema={schema} />

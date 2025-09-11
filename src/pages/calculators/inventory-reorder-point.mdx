@@ -1,0 +1,73 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Inventory Reorder Point Calculator"
+description: "Estimate when to reorder stock based on usage, lead time, and safety stock."
+updated: "2025-09-25"
+cluster: "Finance & Business"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "inventory-reorder-point",
+  title: "Inventory Reorder Point Calculator",
+  locale: "en",
+  inputs: [
+    {
+      name: "dailyUsage",
+      label: "Average Daily Usage (units)",
+      type: "number",
+      step: "any",
+      placeholder: "20",
+    },
+    {
+      name: "leadTime",
+      label: "Lead Time (days)",
+      type: "number",
+      step: "any",
+      placeholder: "10",
+    },
+    {
+      name: "safetyStock",
+      label: "Safety Stock (units)",
+      type: "number",
+      step: "any",
+      placeholder: "100",
+    },
+  ],
+  expression: "dailyUsage * leadTime + safetyStock",
+  unit: "units",
+  intro:
+    "Determine the stock level at which you should reorder inventory to avoid stockouts.",
+  examples: [
+    { description: "20 units/day, 10 days lead, 100 safety \u21d2 300 units" },
+    { description: "50 units/day, 5 days lead, 200 safety \u21d2 450 units" },
+  ],
+  faqs: [
+    {
+      question: "What is safety stock?",
+      answer: "Extra inventory kept to mitigate demand variability.",
+    },
+    {
+      question: "What if I don't include safety stock?",
+      answer: "The reorder point will be lower and risk stockouts.",
+    },
+    {
+      question: "Can lead time be fractional?",
+      answer: "Yes, enter partial days as decimals.",
+    },
+    {
+      question: "Does this account for incoming orders?",
+      answer: "It assumes no outstanding orders; adjust as needed.",
+    },
+  ],
+  disclaimer: "For planning purposes only.",
+  cluster: "Finance & Business",
+  info: [
+    "Reorder point helps prevent stockouts.",
+    "Adjust safety stock for demand variability.",
+  ],
+  related: [],
+};
+
+<Calculator schema={schema} />

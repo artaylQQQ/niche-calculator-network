@@ -1,0 +1,61 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Binary Search Steps Calculator"
+description: "Estimate steps needed for binary search in a sorted list."
+updated: "2025-09-25"
+cluster: "Technology & Coding"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "binary-search-steps",
+  title: "Binary Search Steps Calculator",
+  locale: "en",
+  inputs: [
+    {
+      name: "n",
+      label: "Number of Items",
+      type: "number",
+      step: "1",
+      placeholder: "1000",
+      min: 1,
+    },
+  ],
+  expression: "Math.ceil(Math.log(n)/Math.log(2))",
+  unit: "steps",
+  intro:
+    "Determine how many comparisons binary search needs to find an item in a sorted list of size n.",
+  examples: [
+    { description: "n = 1000 ⇒ 10 steps" },
+    { description: "n = 32 ⇒ 5 steps" },
+  ],
+  faqs: [
+    {
+      question: "Why use logarithms?",
+      answer:
+        "Binary search halves the list each step, leading to log base 2 complexity.",
+    },
+    {
+      question: "What if n isn't a power of two?",
+      answer: "The ceiling function accounts for the partial final step.",
+    },
+    {
+      question: "Does the list need to be sorted?",
+      answer: "Yes, binary search requires a sorted dataset.",
+    },
+    {
+      question: "Can n be 0?",
+      answer: "No, the list must contain at least one item.",
+    },
+  ],
+  disclaimer: "Assumes ideal binary search without duplicates.",
+  cluster: "Technology & Coding",
+  info: [
+    "Binary search operates in O(log n) time.",
+    "Useful for databases and algorithms classes.",
+  ],
+  related: [],
+};
+
+<Calculator schema={schema} />

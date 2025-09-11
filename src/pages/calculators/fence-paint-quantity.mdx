@@ -1,0 +1,73 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Fence Paint Quantity Calculator"
+description: "Estimate liters of paint needed to cover a fence."
+updated: "2025-09-25"
+cluster: "Home & DIY"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "fence-paint-quantity",
+  title: "Fence Paint Quantity Calculator",
+  locale: "en",
+  inputs: [
+    {
+      name: "length",
+      label: "Fence Length (m)",
+      type: "number",
+      step: "any",
+      placeholder: "30",
+    },
+    {
+      name: "height",
+      label: "Fence Height (m)",
+      type: "number",
+      step: "any",
+      placeholder: "2",
+    },
+    {
+      name: "coverage",
+      label: "Paint Coverage (m² per liter)",
+      type: "number",
+      step: "any",
+      placeholder: "10",
+    },
+  ],
+  expression: "length * height / coverage",
+  unit: "liters",
+  intro:
+    "Estimate how much paint you need for a fence by dividing its area by your paint's coverage.",
+  examples: [
+    { description: "30 m × 2 m with 10 m²/L ⇒ 6 liters" },
+    { description: "15 m × 1.8 m with 8 m²/L ⇒ 3.38 liters" },
+  ],
+  faqs: [
+    {
+      question: "Should I add extra paint?",
+      answer: "Include a margin for waste and touch-ups.",
+    },
+    {
+      question: "Does coverage vary by paint?",
+      answer: "Yes, check the manufacturer's label.",
+    },
+    {
+      question: "How many coats are assumed?",
+      answer: "This assumes one coat; multiply area for additional coats.",
+    },
+    {
+      question: "Can I input feet instead of meters?",
+      answer: "Convert measurements to meters before using the calculator.",
+    },
+  ],
+  disclaimer: "Actual paint needs may vary with surface texture and technique.",
+  cluster: "Home & DIY",
+  info: [
+    "Rough wood requires more paint than smooth surfaces.",
+    "Measure both sides if painting the entire fence.",
+  ],
+  related: [],
+};
+
+<Calculator schema={schema} />
