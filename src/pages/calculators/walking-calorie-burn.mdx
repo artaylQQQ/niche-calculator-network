@@ -1,0 +1,41 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Walking Calorie Burn Calculator"
+description: "Estimate calories burned from walking based on distance and weight."
+updated: "2025-09-25"
+cluster: "Health & Fitness"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "walking-calorie-burn",
+  title: "Walking Calorie Burn Calculator",
+  locale: "en",
+  inputs: [
+    { name: "distance", label: "Distance (km)", type: "number", step: "0.1", placeholder: "5" },
+    { name: "weight", label: "Weight (kg)", type: "number", step: "0.1", placeholder: "70" }
+  ],
+  expression: "distance * weight * 1.036",
+  intro: "Estimate how many calories you burn walking a given distance.",
+  examples: [
+    { description: "Distance 5 km, Weight 70 kg ⇒ 362.6 kcal" },
+    { description: "Distance 3 km, Weight 80 kg ⇒ 248.64 kcal" }
+  ],
+  faqs: [
+    { question: "What factor does the calculator use?", answer: "It multiplies distance, weight, and 1.036 to approximate calories burned." },
+    { question: "Does walking speed affect the result?", answer: "The formula assumes a moderate pace; speed changes calories slightly." },
+    { question: "Can I use miles and pounds?", answer: "Convert to kilometers and kilograms first for accurate results." },
+    { question: "Is this accurate for running?", answer: "No, running burns more calories per kilometer than walking." }
+  ],
+  disclaimer: "Estimates only; individual calorie burn varies.",
+  cluster: "Health & Fitness",
+  unit: "kcal",
+  info: [
+    "1.036 kcal per kg per km is an average energy cost for walking.",
+    "Terrain, pace, and metabolism influence actual calories burned."
+  ],
+  related: []
+};
+
+<Calculator schema={schema} />

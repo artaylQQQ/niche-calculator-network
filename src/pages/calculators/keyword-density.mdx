@@ -1,0 +1,41 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Keyword Density Calculator"
+description: "Determine the percentage of keywords in your content."
+updated: "2025-09-25"
+cluster: "Web & Marketing"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "keyword-density",
+  title: "Keyword Density Calculator",
+  locale: "en",
+  inputs: [
+    { name: "total_words", label: "Total Words", type: "number", step: "1", placeholder: "500" },
+    { name: "keyword_count", label: "Keyword Occurrences", type: "number", step: "1", placeholder: "10" }
+  ],
+  expression: "(keyword_count / total_words) * 100",
+  intro: "Measure how often a specific keyword appears in your content.",
+  examples: [
+    { description: "Total Words 500, Keyword Occurrences 10 ⇒ 2%" },
+    { description: "Total Words 800, Keyword Occurrences 24 ⇒ 3%" }
+  ],
+  faqs: [
+    { question: "What is keyword density?", answer: "It is the percentage of times a keyword appears relative to total word count." },
+    { question: "Is higher density better?", answer: "Overusing a keyword can hurt readability and SEO; aim for natural usage." },
+    { question: "Do plural forms count separately?", answer: "Yes, only exact matches are counted in this calculation." },
+    { question: "How accurate is manual counting?", answer: "Automated tools reduce human error and provide quicker results." }
+  ],
+  disclaimer: "SEO metrics vary; use this as a guideline, not a rule.",
+  cluster: "Web & Marketing",
+  unit: "%",
+  info: [
+    "Modern search engines evaluate many factors beyond keyword density.",
+    "Prioritize readability and user intent over precise percentages."
+  ],
+  related: []
+};
+
+<Calculator schema={schema} />

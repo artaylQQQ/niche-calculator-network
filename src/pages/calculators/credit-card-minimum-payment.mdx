@@ -1,0 +1,42 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Credit Card Minimum Payment Calculator"
+description: "Estimate the minimum payment required on a credit card balance."
+updated: "2025-09-25"
+cluster: "Personal Finance & Loans"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "credit-card-minimum-payment",
+  title: "Credit Card Minimum Payment Calculator",
+  locale: "en",
+  inputs: [
+    { name: "balance", label: "Balance (USD)", type: "number", step: "0.01", placeholder: "1000" },
+    { name: "rate", label: "Percent of Balance (%)", type: "number", step: "0.01", placeholder: "2" },
+    { name: "min_payment", label: "Minimum Flat Amount (USD)", type: "number", step: "0.01", placeholder: "25" }
+  ],
+  expression: "max(balance * rate / 100, min_payment)",
+  intro: "Estimate the minimum payment your credit card issuer will require.",
+  examples: [
+    { description: "Balance 1000 USD, Rate 2%, Min Payment 25 USD ⇒ 25 USD" },
+    { description: "Balance 5000 USD, Rate 1.5%, Min Payment 25 USD ⇒ 75 USD" }
+  ],
+  faqs: [
+    { question: "What is the percent of balance?", answer: "It's the rate issuers apply to your balance to calculate the minimum payment." },
+    { question: "Does paying only the minimum accrue interest?", answer: "Yes, interest continues to accumulate on the remaining balance." },
+    { question: "What happens if I pay less than the minimum?", answer: "You may face late fees and potential penalty interest rates." },
+    { question: "Do issuers have different minimums?", answer: "Yes, terms vary across credit card companies." }
+  ],
+  disclaimer: "Results are estimates; check with your card issuer for exact payment requirements.",
+  cluster: "Personal Finance & Loans",
+  unit: "USD",
+  info: [
+    "Many cards charge 1–3% of the balance as the minimum payment.",
+    "Paying more than the minimum reduces interest costs."
+  ],
+  related: []
+};
+
+<Calculator schema={schema} />

@@ -1,0 +1,40 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Character Count Calculator"
+description: "Count the number of characters in a block of text."
+updated: "2025-09-25"
+cluster: "Technology & Coding"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "character-count",
+  title: "Character Count Calculator",
+  locale: "en",
+  inputs: [
+    { name: "text", label: "Text", type: "text", placeholder: "Hello world" }
+  ],
+  expression: "text.length",
+  intro: "Quickly count characters in a block of text.",
+  examples: [
+    { description: "Hello ⇒ 5" },
+    { description: "Spaces count too ⇒ 16" }
+  ],
+  faqs: [
+    { question: "Does it count spaces?", answer: "Yes, spaces and punctuation are included in the total." },
+    { question: "How are emojis counted?", answer: "Some emojis use two characters due to UTF-16 encoding." },
+    { question: "Is there an input limit?", answer: "The limit depends on your browser's memory but is ample for short texts." },
+    { question: "Can I count words instead?", answer: "This tool counts characters only." }
+  ],
+  disclaimer: "Counts characters using JavaScript's length property.",
+  cluster: "Technology & Coding",
+  unit: "chars",
+  info: [
+    "Helpful for character-limited fields like tweets or database columns.",
+    "Counts UTF-16 code units; some symbols may count as two."
+  ],
+  related: []
+};
+
+<Calculator schema={schema} />
