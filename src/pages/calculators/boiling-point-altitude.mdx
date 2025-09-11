@@ -1,0 +1,65 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Boiling Point at Altitude"
+description: "Estimate water's boiling temperature based on elevation."
+date: 2025-09-10
+updated: 2025-09-10
+cluster: "Science & Engineering"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "boiling-point-altitude",
+  title: "Boiling Point at Altitude",
+  locale: "en",
+  inputs: [
+    {
+      name: "altitude",
+      label: "Altitude (m)",
+      type: "number",
+      step: "any",
+      placeholder: "1000",
+    },
+  ],
+  expression: "100 - altitude / 300",
+  unit: "°C",
+  intro:
+    "Estimate the boiling point of water at a given elevation using a simple approximation.",
+  examples: [
+    { description: "0 m ⇒ 100 °C" },
+    { description: "1,000 m ⇒ 96.7 °C" },
+    { description: "2,500 m ⇒ 91.7 °C" },
+  ],
+  faqs: [
+    {
+      question: "Why does water boil at lower temperatures at high altitude?",
+      answer:
+        "Lower atmospheric pressure reduces the temperature needed for water to boil.",
+    },
+    {
+      question: "Can I enter altitude in feet?",
+      answer:
+        "Convert feet to meters first (1 ft ≈ 0.3048 m) before using the calculator.",
+    },
+    {
+      question: "How accurate is this formula?",
+      answer:
+        "It provides an approximation suitable for everyday use up to moderate altitudes.",
+    },
+    {
+      question: "Does humidity affect boiling point?",
+      answer:
+        "Humidity has minimal effect; pressure and altitude are the main factors.",
+    },
+  ],
+  disclaimer:
+    "Results are estimates based on standard atmospheric conditions; local pressure variations can change boiling temperatures.",
+  cluster: "Science & Engineering",
+  info: [
+    "Water boils at 100°C at sea level under standard atmospheric pressure.",
+    "Boiling point drops roughly 1°C for every 300 m increase in altitude.",
+  ],
+};
+
+<Calculator schema={schema} />
