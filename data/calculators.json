@@ -1461,8 +1461,12 @@
     "expression": "area*cost",
     "unit": "USD",
     "examples": [
-      { "description": "50 m² at $10 per m² ⇒ $500" },
-      { "description": "75 m² at $12 per m² ⇒ $900" }
+      {
+        "description": "50 m² at $10 per m² ⇒ $500"
+      },
+      {
+        "description": "75 m² at $12 per m² ⇒ $900"
+      }
     ],
     "faqs": [
       {
@@ -2496,11 +2500,18 @@
     "expression": "bandwidth * 1000000 * latency / 1000 / 8",
     "unit": "bytes",
     "examples": [
-      { "description": "100 Mbps with 50 ms ⇒ 625000 bytes" },
-      { "description": "10 Mbps with 100 ms ⇒ 125000 bytes" }
+      {
+        "description": "100 Mbps with 50 ms ⇒ 625000 bytes"
+      },
+      {
+        "description": "10 Mbps with 100 ms ⇒ 125000 bytes"
+      }
     ],
     "faqs": [
-      { "question": "Why divide by 8?", "answer": "To convert bits to bytes." },
+      {
+        "question": "Why divide by 8?",
+        "answer": "To convert bits to bytes."
+      },
       {
         "question": "What is this value used for?",
         "answer": "It helps determine optimal TCP window sizes."
@@ -3060,14 +3071,30 @@
     "expression": "ping / 1000 * 299792.458 / 2",
     "unit": "km",
     "examples": [
-      { "description": "50 ms ⇒ ~7,494 km" },
-      { "description": "20 ms ⇒ ~2,998 km" }
+      {
+        "description": "50 ms ⇒ ~7,494 km"
+      },
+      {
+        "description": "20 ms ⇒ ~2,998 km"
+      }
     ],
     "faqs": [
-      { "question": "Why divide by two?", "answer": "Ping measures round-trip time, so distance is half." },
-      { "question": "Is this the actual path length?", "answer": "No, it assumes a straight line and doesn't account for network routing." },
-      { "question": "Does the medium affect speed?", "answer": "Yes, fiber and copper transmit slightly slower than the speed of light in vacuum." },
-      { "question": "Why are results approximate?", "answer": "Network delays, hardware, and routing can affect ping times." }
+      {
+        "question": "Why divide by two?",
+        "answer": "Ping measures round-trip time, so distance is half."
+      },
+      {
+        "question": "Is this the actual path length?",
+        "answer": "No, it assumes a straight line and doesn't account for network routing."
+      },
+      {
+        "question": "Does the medium affect speed?",
+        "answer": "Yes, fiber and copper transmit slightly slower than the speed of light in vacuum."
+      },
+      {
+        "question": "Why are results approximate?",
+        "answer": "Network delays, hardware, and routing can affect ping times."
+      }
     ],
     "disclaimer": "Educational information, not professional advice.",
     "info": [
@@ -11995,10 +12022,22 @@
       }
     ],
     "faqs": [
-      { "question": "Why adjust for temperature?", "answer": "Higher heat increases sweat loss and water needs." },
-      { "question": "Can I use pounds?", "answer": "Convert pounds to kilograms before input." },
-      { "question": "Is this medical advice?", "answer": "No, it's a general guideline." },
-      { "question": "How often should I drink?", "answer": "Sip water regularly rather than consuming it all at once." }
+      {
+        "question": "Why adjust for temperature?",
+        "answer": "Higher heat increases sweat loss and water needs."
+      },
+      {
+        "question": "Can I use pounds?",
+        "answer": "Convert pounds to kilograms before input."
+      },
+      {
+        "question": "Is this medical advice?",
+        "answer": "No, it's a general guideline."
+      },
+      {
+        "question": "How often should I drink?",
+        "answer": "Sip water regularly rather than consuming it all at once."
+      }
     ],
     "disclaimer": "Stay within personal limits and consult health professionals when needed.",
     "info": [
@@ -13633,21 +13672,55 @@
     "description": "Compute volume of a rectangular box.",
     "intro": "Find the capacity of a box from its length, width, and height. Enter the three dimensions in meters to calculate the volume in cubic meters.",
     "inputs": [
-      { "name": "length", "label": "Length (m)", "type": "number", "step": "any", "placeholder": "0.5" },
-      { "name": "width", "label": "Width (m)", "type": "number", "step": "any", "placeholder": "0.4" },
-      { "name": "height", "label": "Height (m)", "type": "number", "step": "any", "placeholder": "0.3" }
+      {
+        "name": "length",
+        "label": "Length (m)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "0.5"
+      },
+      {
+        "name": "width",
+        "label": "Width (m)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "0.4"
+      },
+      {
+        "name": "height",
+        "label": "Height (m)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "0.3"
+      }
     ],
     "expression": "length * width * height",
     "unit": "m³",
     "examples": [
-      { "description": "0.5×0.4×0.3 m ⇒ 0.06 m³" },
-      { "description": "1×0.5×0.5 m ⇒ 0.25 m³" }
+      {
+        "description": "0.5×0.4×0.3 m ⇒ 0.06 m³"
+      },
+      {
+        "description": "1×0.5×0.5 m ⇒ 0.25 m³"
+      }
     ],
     "faqs": [
-      { "question": "Can I use centimeters?", "answer": "Convert dimensions to meters first." },
-      { "question": "Is the result exact?", "answer": "It assumes perfectly rectangular sides." },
-      { "question": "How do I convert to liters?", "answer": "Multiply cubic meters by 1000 to get liters." },
-      { "question": "What if dimensions are in feet?", "answer": "Convert feet to meters before using the calculator." }
+      {
+        "question": "Can I use centimeters?",
+        "answer": "Convert dimensions to meters first."
+      },
+      {
+        "question": "Is the result exact?",
+        "answer": "It assumes perfectly rectangular sides."
+      },
+      {
+        "question": "How do I convert to liters?",
+        "answer": "Multiply cubic meters by 1000 to get liters."
+      },
+      {
+        "question": "What if dimensions are in feet?",
+        "answer": "Convert feet to meters before using the calculator."
+      }
     ],
     "disclaimer": "For informational purposes only.",
     "info": [
@@ -15343,14 +15416,30 @@
     "expression": "assets / liabilities",
     "unit": "ratio",
     "examples": [
-      { "description": "50,000 assets and 25,000 liabilities ⇒ 2" },
-      { "description": "80,000 assets and 60,000 liabilities ⇒ 1.33" }
+      {
+        "description": "50,000 assets and 25,000 liabilities ⇒ 2"
+      },
+      {
+        "description": "80,000 assets and 60,000 liabilities ⇒ 1.33"
+      }
     ],
     "faqs": [
-      { "question": "What does the ratio indicate?", "answer": "It shows short-term financial health." },
-      { "question": "What is a good ratio?", "answer": "Generally between 1.2 and 2.0." },
-      { "question": "What if liabilities are zero?", "answer": "The ratio would be infinite, indicating no short-term debt." },
-      { "question": "Is a ratio below 1 problematic?", "answer": "Yes, it suggests liabilities exceed assets." }
+      {
+        "question": "What does the ratio indicate?",
+        "answer": "It shows short-term financial health."
+      },
+      {
+        "question": "What is a good ratio?",
+        "answer": "Generally between 1.2 and 2.0."
+      },
+      {
+        "question": "What if liabilities are zero?",
+        "answer": "The ratio would be infinite, indicating no short-term debt."
+      },
+      {
+        "question": "Is a ratio below 1 problematic?",
+        "answer": "Yes, it suggests liabilities exceed assets."
+      }
     ],
     "info": [
       "Also known as the current ratio in accounting.",
@@ -15618,14 +15707,30 @@
     "expression": "k * x",
     "unit": "N",
     "examples": [
-      { "description": "k=200 N/m, x=0.1 m ⇒ 20 N" },
-      { "description": "k=150 N/m, x=0.2 m ⇒ 30 N" }
+      {
+        "description": "k=200 N/m, x=0.1 m ⇒ 20 N"
+      },
+      {
+        "description": "k=150 N/m, x=0.2 m ⇒ 30 N"
+      }
     ],
     "faqs": [
-      { "question": "Does direction matter?", "answer": "This returns magnitude; direction depends on compression or extension." },
-      { "question": "What is Hooke's Law?", "answer": "It states the force is proportional to displacement." },
-      { "question": "Can the spring constant change?", "answer": "Only if the spring is stretched beyond its elastic limit." },
-      { "question": "Can displacement be negative?", "answer": "Yes, compression is negative, but this tool returns the magnitude." }
+      {
+        "question": "Does direction matter?",
+        "answer": "This returns magnitude; direction depends on compression or extension."
+      },
+      {
+        "question": "What is Hooke's Law?",
+        "answer": "It states the force is proportional to displacement."
+      },
+      {
+        "question": "Can the spring constant change?",
+        "answer": "Only if the spring is stretched beyond its elastic limit."
+      },
+      {
+        "question": "Can displacement be negative?",
+        "answer": "Yes, compression is negative, but this tool returns the magnitude."
+      }
     ],
     "info": [
       "Applies only within the elastic range of the spring.",
@@ -18338,8 +18443,12 @@
     "expression": "principal * ((rate/100)/26) / (1 - (1 + (rate/100)/26)^(-26*years))",
     "unit": "USD",
     "examples": [
-      { "description": "$250,000 at 5% for 30 years ⇒ $619.11 biweekly" },
-      { "description": "$400,000 at 4.5% for 20 years ⇒ $1,167.24 biweekly" }
+      {
+        "description": "$250,000 at 5% for 30 years ⇒ $619.11 biweekly"
+      },
+      {
+        "description": "$400,000 at 4.5% for 20 years ⇒ $1,167.24 biweekly"
+      }
     ],
     "faqs": [
       {
@@ -18397,8 +18506,12 @@
     "expression": "(220 - age - rest) * (intensity/100) + rest",
     "unit": "bpm",
     "examples": [
-      { "description": "Age 30, resting 60 bpm at 70% ⇒ 151 bpm" },
-      { "description": "Age 45, resting 55 bpm at 60% ⇒ 127 bpm" }
+      {
+        "description": "Age 30, resting 60 bpm at 70% ⇒ 151 bpm"
+      },
+      {
+        "description": "Age 45, resting 55 bpm at 60% ⇒ 127 bpm"
+      }
     ],
     "faqs": [
       {
@@ -18456,7 +18569,9 @@
     "expression": "((likelihood/100) * (prior/100)) / (((likelihood/100) * (prior/100)) + (falsePos/100) * (1 - prior/100)) * 100",
     "unit": "%",
     "examples": [
-      { "description": "Prior 1%, likelihood 90%, false positive 5% ⇒ 15.38%" },
+      {
+        "description": "Prior 1%, likelihood 90%, false positive 5% ⇒ 15.38%"
+      },
       {
         "description": "Prior 20%, likelihood 80%, false positive 10% ⇒ 66.67%"
       }
@@ -18510,8 +18625,12 @@
     "expression": "lux * area",
     "unit": "lumens",
     "examples": [
-      { "description": "500 lux over 20 m² ⇒ 10,000 lumens" },
-      { "description": "300 lux over 10 m² ⇒ 3,000 lumens" }
+      {
+        "description": "500 lux over 20 m² ⇒ 10,000 lumens"
+      },
+      {
+        "description": "300 lux over 10 m² ⇒ 3,000 lumens"
+      }
     ],
     "faqs": [
       {
@@ -18556,13 +18675,22 @@
         "type": "number",
         "placeholder": "12"
       },
-      { "name": "day", "label": "Day", "type": "number", "placeholder": "1" }
+      {
+        "name": "day",
+        "label": "Day",
+        "type": "number",
+        "placeholder": "1"
+      }
     ],
     "expression": "(function(y,m,d){const now=new Date(Date.UTC(y,m-1,d));const next=new Date(Date.UTC(y+1,0,1));return (next-now)/86400000;})(year,month,day)",
     "unit": "days",
     "examples": [
-      { "description": "December 1, 2024 ⇒ 31 days" },
-      { "description": "July 1, 2024 ⇒ 184 days" }
+      {
+        "description": "December 1, 2024 ⇒ 31 days"
+      },
+      {
+        "description": "July 1, 2024 ⇒ 184 days"
+      }
     ],
     "faqs": [
       {
@@ -18606,8 +18734,12 @@
     "expression": "wpm * 5",
     "unit": "CPM",
     "examples": [
-      { "description": "40 WPM ⇒ 200 CPM" },
-      { "description": "70 WPM ⇒ 350 CPM" }
+      {
+        "description": "40 WPM ⇒ 200 CPM"
+      },
+      {
+        "description": "70 WPM ⇒ 350 CPM"
+      }
     ],
     "faqs": [
       {
@@ -18665,8 +18797,12 @@
     "expression": "mass * c * delta",
     "unit": "J",
     "examples": [
-      { "description": "2 kg with c=4186 J/kg°C and ΔT=10°C ⇒ 83,720 J" },
-      { "description": "0.5 kg with c=900 J/kg°C and ΔT=30°C ⇒ 13,500 J" }
+      {
+        "description": "2 kg with c=4186 J/kg°C and ΔT=10°C ⇒ 83,720 J"
+      },
+      {
+        "description": "0.5 kg with c=900 J/kg°C and ΔT=30°C ⇒ 13,500 J"
+      }
     ],
     "faqs": [
       {
@@ -18711,8 +18847,12 @@
     "expression": "",
     "unit": "bits",
     "examples": [
-      { "description": "15 ⇒ 4 bits" },
-      { "description": "1023 ⇒ 10 bits" }
+      {
+        "description": "15 ⇒ 4 bits"
+      },
+      {
+        "description": "1023 ⇒ 10 bits"
+      }
     ],
     "faqs": [
       {
@@ -18777,8 +18917,12 @@
     "expression": "length * width * coats / coverage",
     "unit": "gallons",
     "examples": [
-      { "description": "5 m × 4 m, 2 coats, 35 m²/gal ⇒ 1.14 gallons" },
-      { "description": "6 m × 3 m, 1 coat, 40 m²/gal ⇒ 0.45 gallons" }
+      {
+        "description": "5 m × 4 m, 2 coats, 35 m²/gal ⇒ 1.14 gallons"
+      },
+      {
+        "description": "6 m × 3 m, 1 coat, 40 m²/gal ⇒ 0.45 gallons"
+      }
     ],
     "faqs": [
       {
@@ -18829,8 +18973,12 @@
     "expression": "distance / 5 + elevation / 600",
     "unit": "hours",
     "examples": [
-      { "description": "10 km with 600 m gain ⇒ 3 hours" },
-      { "description": "15 km with 300 m gain ⇒ 3.5 hours" }
+      {
+        "description": "10 km with 600 m gain ⇒ 3 hours"
+      },
+      {
+        "description": "15 km with 300 m gain ⇒ 3.5 hours"
+      }
     ],
     "faqs": [
       {
@@ -18881,8 +19029,12 @@
     "expression": "(start - end) / start * 100",
     "unit": "%",
     "examples": [
-      { "description": "1000 start, 950 end ⇒ 5% churn" },
-      { "description": "5000 start, 4700 end ⇒ 6% churn" }
+      {
+        "description": "1000 start, 950 end ⇒ 5% churn"
+      },
+      {
+        "description": "5000 start, 4700 end ⇒ 6% churn"
+      }
     ],
     "faqs": [
       {
@@ -18926,22 +19078,37 @@
     "expression": "ppm / 17.118",
     "unit": "gpg",
     "examples": [
-      { "description": "180 ppm ⇒ 10.52 gpg" },
-      { "description": "60 ppm ⇒ 3.51 gpg" }
+      {
+        "description": "180 ppm ⇒ 10.52 gpg"
+      },
+      {
+        "description": "60 ppm ⇒ 3.51 gpg"
+      }
     ],
     "faqs": [
-      { "question": "What is water hardness?", "answer": "It measures dissolved minerals like calcium and magnesium, expressed as calcium carbonate." },
-      { "question": "How do I convert ppm to gpg?", "answer": "Divide the ppm value by 17.118." },
-      { "question": "Does a higher gpg mean harder water?", "answer": "Yes, larger gpg values indicate harder water." },
-      { "question": "Can this calculator handle very high values?", "answer": "Yes, but residential water usually stays below 30 gpg." }
+      {
+        "question": "What is water hardness?",
+        "answer": "It measures dissolved minerals like calcium and magnesium, expressed as calcium carbonate."
+      },
+      {
+        "question": "How do I convert ppm to gpg?",
+        "answer": "Divide the ppm value by 17.118."
+      },
+      {
+        "question": "Does a higher gpg mean harder water?",
+        "answer": "Yes, larger gpg values indicate harder water."
+      },
+      {
+        "question": "Can this calculator handle very high values?",
+        "answer": "Yes, but residential water usually stays below 30 gpg."
+      }
     ],
     "disclaimer": "For water quality guidance only; confirm results with professional testing.",
-  "info": [
+    "info": [
       "1 gpg equals 17.118 ppm.",
       "Soft water is generally below 3 gpg."
     ]
-  }
-  ,
+  },
   {
     "slug": "savings-withdrawal-duration",
     "title": "Savings Withdrawal Duration",
@@ -18949,21 +19116,52 @@
     "description": "How many months your savings will last with a fixed monthly withdrawal.",
     "intro": "Calculate how many months your savings can sustain fixed monthly withdrawals. Enter the total amount saved and the monthly withdrawal to estimate the duration of your funds.",
     "inputs": [
-      { "name": "savings", "label": "Total savings (USD)", "type": "number", "step": "any", "placeholder": "100000" },
-      { "name": "monthly", "label": "Monthly withdrawal (USD)", "type": "number", "step": "any", "placeholder": "2000" }
+      {
+        "name": "savings",
+        "label": "Total savings (USD)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "100000"
+      },
+      {
+        "name": "monthly",
+        "label": "Monthly withdrawal (USD)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "2000"
+      }
     ],
     "expression": "savings / monthly",
     "unit": "months",
     "examples": [
-      { "description": "$100000 at $2000/mo ⇒ 50 months" },
-      { "description": "$50000 at $1500/mo ⇒ 33.33 months" }
+      {
+        "description": "$100000 at $2000/mo ⇒ 50 months"
+      },
+      {
+        "description": "$50000 at $1500/mo ⇒ 33.33 months"
+      }
     ],
     "faqs": [
-      { "question": "Does this include interest?", "answer": "No, it assumes savings do not earn additional interest." },
-      { "question": "Can I enter decimals?", "answer": "Yes, decimals are supported." },
-      { "question": "What if my withdrawal changes?", "answer": "Use your average monthly withdrawal for a rough estimate." },
-      { "question": "Is tax considered?", "answer": "No, taxes or penalties on withdrawals are not included." },
-      { "question": "Can I project years?", "answer": "Divide the result by 12 to convert months to years." }
+      {
+        "question": "Does this include interest?",
+        "answer": "No, it assumes savings do not earn additional interest."
+      },
+      {
+        "question": "Can I enter decimals?",
+        "answer": "Yes, decimals are supported."
+      },
+      {
+        "question": "What if my withdrawal changes?",
+        "answer": "Use your average monthly withdrawal for a rough estimate."
+      },
+      {
+        "question": "Is tax considered?",
+        "answer": "No, taxes or penalties on withdrawals are not included."
+      },
+      {
+        "question": "Can I project years?",
+        "answer": "Divide the result by 12 to convert months to years."
+      }
     ],
     "disclaimer": "Financial information only, not investment advice.",
     "info": [
@@ -18978,20 +19176,48 @@
     "description": "Estimate how many days your medication supply will last.",
     "intro": "Enter the number of pills you have and how many you take per day to find out how long your supply will last. Useful for planning refills and managing prescriptions.",
     "inputs": [
-      { "name": "pills", "label": "Pills available", "type": "number", "step": 1, "placeholder": "60" },
-      { "name": "per_day", "label": "Pills per day", "type": "number", "step": "any", "placeholder": "2" }
+      {
+        "name": "pills",
+        "label": "Pills available",
+        "type": "number",
+        "step": 1,
+        "placeholder": "60"
+      },
+      {
+        "name": "per_day",
+        "label": "Pills per day",
+        "type": "number",
+        "step": "any",
+        "placeholder": "2"
+      }
     ],
     "expression": "pills / per_day",
     "unit": "days",
     "examples": [
-      { "description": "60 pills at 2/day ⇒ 30 days" },
-      { "description": "45 pills at 3/day ⇒ 15 days" }
+      {
+        "description": "60 pills at 2/day ⇒ 30 days"
+      },
+      {
+        "description": "45 pills at 3/day ⇒ 15 days"
+      }
     ],
     "faqs": [
-      { "question": "What about partial pills?", "answer": "Enter decimals for half or quarter pills." },
-      { "question": "Does this consider refills?", "answer": "No, it only calculates the current supply." },
-      { "question": "Can I change dosage?", "answer": "Adjust the pills-per-day value to match your prescribed dosage." },
-      { "question": "How do I convert to weeks?", "answer": "Divide the days result by 7 to estimate weeks." }
+      {
+        "question": "What about partial pills?",
+        "answer": "Enter decimals for half or quarter pills."
+      },
+      {
+        "question": "Does this consider refills?",
+        "answer": "No, it only calculates the current supply."
+      },
+      {
+        "question": "Can I change dosage?",
+        "answer": "Adjust the pills-per-day value to match your prescribed dosage."
+      },
+      {
+        "question": "How do I convert to weeks?",
+        "answer": "Divide the days result by 7 to estimate weeks."
+      }
     ],
     "disclaimer": "Follow your doctor's prescription.",
     "info": [
@@ -19006,21 +19232,51 @@
     "description": "Calculate cubic yards of mulch needed for a project.",
     "intro": "Estimate how many cubic yards of mulch are needed based on coverage area and desired depth. Input the area in square feet and depth in inches to plan your order.",
     "inputs": [
-      { "name": "area", "label": "Area (ft²)", "type": "number", "step": "any", "placeholder": "500" },
-      { "name": "depth", "label": "Depth (in)", "type": "number", "step": "any", "placeholder": "3" }
+      {
+        "name": "area",
+        "label": "Area (ft²)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "500"
+      },
+      {
+        "name": "depth",
+        "label": "Depth (in)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "3"
+      }
     ],
     "expression": "(area * depth / 12) / 27",
     "unit": "yd³",
     "examples": [
-      { "description": "Area 500 ft², depth 3 in ⇒ 4.63 yd³" },
-      { "description": "Area 200 ft², depth 2 in ⇒ 1.23 yd³" },
-      { "description": "Area 1000 ft², depth 4 in ⇒ 12.35 yd³" }
+      {
+        "description": "Area 500 ft², depth 3 in ⇒ 4.63 yd³"
+      },
+      {
+        "description": "Area 200 ft², depth 2 in ⇒ 1.23 yd³"
+      },
+      {
+        "description": "Area 1000 ft², depth 4 in ⇒ 12.35 yd³"
+      }
     ],
     "faqs": [
-      { "question": "Why divide by 27?", "answer": "There are 27 cubic feet in a cubic yard." },
-      { "question": "Can I use metric units?", "answer": "Convert to feet and inches first for accurate results." },
-      { "question": "Does it account for settling?", "answer": "No, consider ordering extra to account for compaction." },
-      { "question": "How do I convert to cubic feet?", "answer": "Multiply the result by 27 to get cubic feet." }
+      {
+        "question": "Why divide by 27?",
+        "answer": "There are 27 cubic feet in a cubic yard."
+      },
+      {
+        "question": "Can I use metric units?",
+        "answer": "Convert to feet and inches first for accurate results."
+      },
+      {
+        "question": "Does it account for settling?",
+        "answer": "No, consider ordering extra to account for compaction."
+      },
+      {
+        "question": "How do I convert to cubic feet?",
+        "answer": "Multiply the result by 27 to get cubic feet."
+      }
     ],
     "disclaimer": "Educational purposes only. Not professional advice.",
     "info": [
@@ -19035,20 +19291,44 @@
     "cluster": "Date & Time",
     "intro": "Identify whether a specific year includes an extra day (February 29) by applying the Gregorian leap year rules.",
     "inputs": [
-      { "name": "year", "label": "Year", "type": "number", "step": 1, "required": true }
+      {
+        "name": "year",
+        "label": "Year",
+        "type": "number",
+        "step": 1,
+        "required": true
+      }
     ],
     "expression": "(year % 4 === 0 && (year % 100 !== 0 || year % 400 === 0)) ? 1 : 0",
     "unit": "1=yes",
     "examples": [
-      { "description": "2024 ⇒ 1" },
-      { "description": "1900 ⇒ 0" },
-      { "description": "2000 ⇒ 1" }
+      {
+        "description": "2024 ⇒ 1"
+      },
+      {
+        "description": "1900 ⇒ 0"
+      },
+      {
+        "description": "2000 ⇒ 1"
+      }
     ],
     "faqs": [
-      { "question": "Why isn't 1900 a leap year?", "answer": "Years divisible by 100 are not leap years unless divisible by 400." },
-      { "question": "What does a result of 1 mean?", "answer": "1 indicates the year is a leap year; 0 means it is not." },
-      { "question": "Does it work for any year?", "answer": "Yes, it uses the proleptic Gregorian calendar for any integer year." },
-      { "question": "How often do leap years occur?", "answer": "Generally every four years, except century years not divisible by 400." }
+      {
+        "question": "Why isn't 1900 a leap year?",
+        "answer": "Years divisible by 100 are not leap years unless divisible by 400."
+      },
+      {
+        "question": "What does a result of 1 mean?",
+        "answer": "1 indicates the year is a leap year; 0 means it is not."
+      },
+      {
+        "question": "Does it work for any year?",
+        "answer": "Yes, it uses the proleptic Gregorian calendar for any integer year."
+      },
+      {
+        "question": "How often do leap years occur?",
+        "answer": "Generally every four years, except century years not divisible by 400."
+      }
     ],
     "disclaimer": "For calendar reference only.",
     "info": [
@@ -19063,21 +19343,51 @@
     "cluster": "Other",
     "intro": "Estimate how long a candle will burn by dividing its wax weight by the average burn rate.",
     "inputs": [
-      { "name": "weight", "label": "Candle weight (g)", "type": "number", "step": "any", "placeholder": "200" },
-      { "name": "rate", "label": "Burn rate (g/hr)", "type": "number", "step": "any", "placeholder": "5" }
+      {
+        "name": "weight",
+        "label": "Candle weight (g)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "200"
+      },
+      {
+        "name": "rate",
+        "label": "Burn rate (g/hr)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "5"
+      }
     ],
     "expression": "weight / rate",
     "unit": "hours",
     "examples": [
-      { "description": "200 g candle at 5 g/hr ⇒ 40 hrs" },
-      { "description": "150 g candle at 6 g/hr ⇒ 25 hrs" },
-      { "description": "100 g candle at 4 g/hr ⇒ 25 hrs" }
+      {
+        "description": "200 g candle at 5 g/hr ⇒ 40 hrs"
+      },
+      {
+        "description": "150 g candle at 6 g/hr ⇒ 25 hrs"
+      },
+      {
+        "description": "100 g candle at 4 g/hr ⇒ 25 hrs"
+      }
     ],
     "faqs": [
-      { "question": "Does wick size affect burn rate?", "answer": "Yes, larger wicks typically increase the burn rate." },
-      { "question": "Can I use ounces instead?", "answer": "Yes, as long as weight and rate units match." },
-      { "question": "Is burn rate constant?", "answer": "Actual burn rate may vary with conditions." },
-      { "question": "Do scented candles burn differently?", "answer": "Fragrances and dyes can slightly change the burn rate." }
+      {
+        "question": "Does wick size affect burn rate?",
+        "answer": "Yes, larger wicks typically increase the burn rate."
+      },
+      {
+        "question": "Can I use ounces instead?",
+        "answer": "Yes, as long as weight and rate units match."
+      },
+      {
+        "question": "Is burn rate constant?",
+        "answer": "Actual burn rate may vary with conditions."
+      },
+      {
+        "question": "Do scented candles burn differently?",
+        "answer": "Fragrances and dyes can slightly change the burn rate."
+      }
     ],
     "disclaimer": "Approximation only; real burn times depend on environment and candle design.",
     "info": [
@@ -19092,20 +19402,44 @@
     "cluster": "Conversions",
     "intro": "Easily convert temperatures from degrees Celsius to Kelvin for scientific calculations or everyday use.",
     "inputs": [
-      { "name": "c", "label": "Celsius (°C)", "type": "number", "step": "any", "placeholder": "25" }
+      {
+        "name": "c",
+        "label": "Celsius (°C)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "25"
+      }
     ],
     "expression": "c + 273.15",
     "unit": "K",
     "examples": [
-      { "description": "0 °C ⇒ 273.15 K" },
-      { "description": "25 °C ⇒ 298.15 K" },
-      { "description": "-10 °C ⇒ 263.15 K" }
+      {
+        "description": "0 °C ⇒ 273.15 K"
+      },
+      {
+        "description": "25 °C ⇒ 298.15 K"
+      },
+      {
+        "description": "-10 °C ⇒ 263.15 K"
+      }
     ],
     "faqs": [
-      { "question": "Can it handle negative temperatures?", "answer": "Yes, input any Celsius value including negatives." },
-      { "question": "Are decimals supported?", "answer": "Yes, you can enter decimal temperatures." },
-      { "question": "What is absolute zero in Kelvin?", "answer": "Absolute zero is 0 K, equal to -273.15 °C." },
-      { "question": "Why add 273.15?", "answer": "The Kelvin scale starts at absolute zero, 273.15 degrees below 0 °C." }
+      {
+        "question": "Can it handle negative temperatures?",
+        "answer": "Yes, input any Celsius value including negatives."
+      },
+      {
+        "question": "Are decimals supported?",
+        "answer": "Yes, you can enter decimal temperatures."
+      },
+      {
+        "question": "What is absolute zero in Kelvin?",
+        "answer": "Absolute zero is 0 K, equal to -273.15 °C."
+      },
+      {
+        "question": "Why add 273.15?",
+        "answer": "The Kelvin scale starts at absolute zero, 273.15 degrees below 0 °C."
+      }
     ],
     "disclaimer": "Educational purposes only. Not professional advice.",
     "info": [
@@ -19120,25 +19454,112 @@
     "cluster": "Health",
     "intro": "Approximate additional calories burned from standing instead of sitting at work.",
     "inputs": [
-      { "name": "hours", "label": "Standing hours", "type": "number", "step": "any", "placeholder": "2" }
+      {
+        "name": "hours",
+        "label": "Standing hours",
+        "type": "number",
+        "step": "any",
+        "placeholder": "2"
+      }
     ],
     "expression": "hours * 9",
     "unit": "kcal",
     "examples": [
-      { "description": "2 hours standing ⇒ 18 kcal" },
-      { "description": "4 hours standing ⇒ 36 kcal" },
-      { "description": "6 hours standing ⇒ 54 kcal" }
+      {
+        "description": "2 hours standing ⇒ 18 kcal"
+      },
+      {
+        "description": "4 hours standing ⇒ 36 kcal"
+      },
+      {
+        "description": "6 hours standing ⇒ 54 kcal"
+      }
     ],
     "faqs": [
-      { "question": "Why 9 kcal per hour?", "answer": "Standing burns roughly 9 more calories per hour than sitting." },
-      { "question": "Does body weight matter?", "answer": "This is an average; individual burn varies." },
-      { "question": "Can I track daily totals?", "answer": "Yes, adjust the hours to match your standing time." },
-      { "question": "Is standing all day recommended?", "answer": "No, alternating between sitting and standing is best for comfort." }
+      {
+        "question": "Why 9 kcal per hour?",
+        "answer": "Standing burns roughly 9 more calories per hour than sitting."
+      },
+      {
+        "question": "Does body weight matter?",
+        "answer": "This is an average; individual burn varies."
+      },
+      {
+        "question": "Can I track daily totals?",
+        "answer": "Yes, adjust the hours to match your standing time."
+      },
+      {
+        "question": "Is standing all day recommended?",
+        "answer": "No, alternating between sitting and standing is best for comfort."
+      }
     ],
     "disclaimer": "Estimates only; consult health guidance for personalized advice.",
     "info": [
       "Estimate is based on an average 9 kcal/hour difference between sitting and standing.",
       "Adding light movement or stretching can increase calorie burn further."
+    ]
+  },
+  {
+    "slug": "meeting-cost",
+    "title": "Meeting Cost Calculator",
+    "description": "Estimate the total cost of a meeting.",
+    "cluster": "Finance",
+    "intro": "Estimate the total expense of a meeting by multiplying the number of attendees, their hourly rate, and the meeting duration.",
+    "inputs": [
+      {
+        "name": "attendees",
+        "label": "Attendees",
+        "type": "number",
+        "step": 1,
+        "placeholder": "5"
+      },
+      {
+        "name": "rate",
+        "label": "Hourly rate (USD)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "30"
+      },
+      {
+        "name": "hours",
+        "label": "Duration (hours)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "2"
+      }
+    ],
+    "expression": "attendees * rate * hours",
+    "unit": "USD",
+    "examples": [
+      {
+        "description": "5 attendees at $30/hr for 2 hours ⇒ $300"
+      },
+      {
+        "description": "10 attendees at $50/hr for 1.5 hours ⇒ $750"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Does the rate include benefits?",
+        "answer": "Use a fully loaded hourly rate if you want benefits and overhead included."
+      },
+      {
+        "question": "Can attendees have different rates?",
+        "answer": "This calculator assumes the same rate for all attendees."
+      },
+      {
+        "question": "How do I convert salary to hourly?",
+        "answer": "Divide the annual salary by total work hours in a year to get an hourly rate."
+      },
+      {
+        "question": "Does it include room or equipment costs?",
+        "answer": "No, add any additional expenses separately for a full meeting cost."
+      }
+    ],
+    "disclaimer": "Estimates only; actual meeting costs may vary.",
+    "info": [
+      "Helpful for budgeting meetings and understanding their financial impact.",
+      "Use consistent units for time and rate to ensure accuracy."
     ]
   }
 ]
