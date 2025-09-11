@@ -99,11 +99,13 @@ const jsonLd = {
         <input
           id={`in-${slug}-${i.name}`}
           name={i.name}
-          type="number"
+          type="text"
           step={i.step ?? 'any'}
           {...(i.min !== undefined ? { min: i.min } : {})}
           {...(i.max !== undefined ? { max: i.max } : {})}
+          lang="en"
           inputmode="decimal"
+          pattern="[0-9]*[.,]?[0-9]*"
           placeholder={i.placeholder ?? ''}
           aria-describedby={`hint-${slug}-${i.name}`}
         />
@@ -327,8 +329,9 @@ const jsonLd = {
       let out={};
       let fields = form.querySelectorAll('input[name]');
       fields.forEach(function(el){
-        let v = el.value;
+        let v = el.value.replace(/,/g, '.');
         out[el.name] = (v!=='' ? Number(v) : NaN);
+        if (el.value !== v) el.value = v;
       });
       return out;
     }
