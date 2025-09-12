@@ -1,0 +1,38 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Calorie Burn Equivalence Calculator"
+description: "Convert food calories into minutes of exercise."
+updated: "2025-10-05"
+cluster: "Nutrition"
+---
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "calorie-burn-equivalence",
+  "title": "Calorie Burn Equivalence Calculator",
+  "locale": "en",
+  "unit": "minutes",
+  "inputs": [
+    {"name": "calories", "label": "Calories (kcal)", "type": "number", "step": "any", "placeholder": "500"},
+    {"name": "burn_rate", "label": "Burn rate (kcal/min)", "type": "number", "step": "any", "placeholder": "10"}
+  ],
+  "expression": "calories / burn_rate",
+  "intro": "See how many minutes of activity are needed to burn a given number of calories.",
+  "examples": [
+    {"description": "500 kcal at 10 kcal/min ⇒ 50 minutes"},
+    {"description": "300 kcal at 8 kcal/min ⇒ 37.5 minutes"}
+  ],
+  "faqs": [
+    {"question": "What burn rate should I use?", "answer": "Use your activity's calories-per-minute."},
+    {"question": "Does weight affect burn rate?", "answer": "Yes, heavier people burn more calories."},
+    {"question": "Can this show steps or cycling distance?", "answer": "Convert your burn rate accordingly."}
+  ],
+  "disclaimer": "Estimates only; actual calorie burn varies with individual factors.",
+  "cluster": "Nutrition",
+  "info": [
+    "Average brisk walking burns about 4 kcal per minute.",
+    "Calorie values on food labels are approximations."
+  ]
+}
+
+<Calculator schema={schema} />

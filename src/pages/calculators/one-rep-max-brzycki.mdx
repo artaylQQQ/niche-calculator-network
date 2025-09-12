@@ -1,0 +1,38 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "One-Rep Max (Brzycki) Calculator"
+description: "Predict maximum lifting strength using the Brzycki formula."
+updated: "2025-10-05"
+cluster: "Fitness"
+---
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "one-rep-max-brzycki",
+  "title": "One-Rep Max (Brzycki) Calculator",
+  "locale": "en",
+  "unit": "kg",
+  "inputs": [
+    {"name": "weight", "label": "Lifted weight (kg)", "type": "number", "step": "any", "placeholder": "80"},
+    {"name": "reps", "label": "Repetitions", "type": "number", "step": "any", "placeholder": "5"}
+  ],
+  "expression": "weight * 36 / (37 - reps)",
+  "intro": "Estimate your one-repetition maximum using the Brzycki equation.",
+  "examples": [
+    {"description": "80 kg for 5 reps ⇒ 90 kg"},
+    {"description": "100 kg for 10 reps ⇒ 133.33 kg"}
+  ],
+  "faqs": [
+    {"question": "What is the Brzycki formula?", "answer": "It estimates 1RM as weight × 36 ÷ (37 − reps)."},
+    {"question": "Is it accurate for high reps?", "answer": "It's most reliable for 10 reps or fewer."},
+    {"question": "Can I use pounds?", "answer": "Yes, input weight in pounds and interpret the result in pounds."}
+  ],
+  "disclaimer": "Use proper form and safety precautions when lifting heavy weights.",
+  "cluster": "Fitness",
+  "info": [
+    "1RM helps set training intensities and track strength gains.",
+    "The Brzycki equation is popular in strength coaching."
+  ]
+}
+
+<Calculator schema={schema} />

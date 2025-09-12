@@ -1,0 +1,43 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Variable Mortgage Cost Calculator"
+description: "Estimate total mortgage cost with rate changes, insurance and prepayments."
+updated: "2025-10-05"
+cluster: "Personal Finance & Loans"
+---
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "variable-mortgage-cost",
+  "title": "Variable Mortgage Cost Calculator",
+  "locale": "en",
+  "unit": "USD",
+  "inputs": [
+    {"name": "principal", "label": "Loan principal (USD)", "type": "number", "step": "any", "placeholder": "200000"},
+    {"name": "rate1", "label": "Initial rate (%)", "type": "number", "step": "any", "placeholder": "3.5"},
+    {"name": "years1", "label": "Years at initial rate", "type": "number", "step": "any", "placeholder": "5"},
+    {"name": "rate2", "label": "Adjusted rate (%)", "type": "number", "step": "any", "placeholder": "5"},
+    {"name": "years2", "label": "Years at adjusted rate", "type": "number", "step": "any", "placeholder": "25"},
+    {"name": "insurance", "label": "Annual insurance (USD)", "type": "number", "step": "any", "placeholder": "800"},
+    {"name": "prepayment", "label": "Prepayment (USD)", "type": "number", "step": "any", "placeholder": "10000"}
+  ],
+  "expression": "principal + principal*(rate1/100)*years1 + principal*(rate2/100)*years2 + insurance*(years1+years2) - prepayment",
+  "intro": "Approximate the total cost of a mortgage with an initial rate period and an adjusted rate, including annual insurance and optional prepayments.",
+  "examples": [
+    {"description": "$200,000 loan, 3.5% for 5y then 5% for 25y, $800 insurance, $10,000 prepayment ⇒ $499,000"},
+    {"description": "$150,000 loan, 4% for 3y then 6% for 27y, $600 insurance, $5,000 prepayment ⇒ $424,000"}
+  ],
+  "faqs": [
+    {"question": "Does this include amortization?", "answer": "No, it provides a simplified cost without compounding."},
+    {"question": "How are prepayments applied?", "answer": "They are subtracted directly from the total cost."},
+    {"question": "Can insurance be zero?", "answer": "Yes, set insurance to 0 if not applicable."}
+  ],
+  "disclaimer": "Simplified estimate; real mortgages use amortization and additional fees.",
+  "cluster": "Personal Finance & Loans",
+  "info": [
+    "Variable-rate mortgages often change after an initial period.",
+    "Prepaying principal reduces total interest and insurance paid."
+  ]
+}
+
+<Calculator schema={schema} />

@@ -1,0 +1,41 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "FIRE Timeline Calculator"
+description: "Estimate years to financial independence considering returns and inflation."
+updated: "2025-10-05"
+cluster: "Finance"
+---
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "fire-timeline",
+  "title": "FIRE Timeline Calculator",
+  "locale": "en",
+  "unit": "years",
+  "inputs": [
+    {"name": "current", "label": "Current savings (USD)", "type": "number", "step": "any", "placeholder": "50000"},
+    {"name": "annual_contrib", "label": "Annual contribution (USD)", "type": "number", "step": "any", "placeholder": "10000"},
+    {"name": "annual_expenses", "label": "Annual expenses (USD)", "type": "number", "step": "any", "placeholder": "30000"},
+    {"name": "return_rate", "label": "Return rate (%)", "type": "number", "step": "any", "placeholder": "7"},
+    {"name": "inflation_rate", "label": "Inflation rate (%)", "type": "number", "step": "any", "placeholder": "2"}
+  ],
+  "expression": "(function(current,annual_contrib,annual_expenses,return_rate,inflation_rate){let r=(1+return_rate/100)/(1+inflation_rate/100)-1;let target=annual_expenses*25;if(r===0)return (target-current)/annual_contrib;return Math.log((target+annual_contrib/r)/(current+annual_contrib/r))/Math.log(1+r);})(current,annual_contrib,annual_expenses,return_rate,inflation_rate)",
+  "intro": "Estimate how many years it will take to reach financial independence based on current savings, annual contributions, investment return and inflation.",
+  "examples": [
+    {"description": "$50,000 savings, $10,000 yearly contribution, $30,000 expenses, 7% return, 2% inflation ⇒ 27.65 years"},
+    {"description": "$200,000 savings, $20,000 yearly contribution, $40,000 expenses, 8% return, 3% inflation ⇒ 17.64 years"}
+  ],
+  "faqs": [
+    {"question": "What withdrawal rate does this use?", "answer": "It assumes a 4% withdrawal rate, meaning 25 times annual expenses is the target."},
+    {"question": "Can returns equal inflation?", "answer": "If real return is zero, the calculation divides the remaining target by annual contribution."},
+    {"question": "Is this projection guaranteed?", "answer": "No, investment returns and inflation are uncertain and may vary."}
+  ],
+  "disclaimer": "For planning purposes only; actual results will differ.",
+  "cluster": "Finance",
+  "info": [
+    "FIRE stands for Financial Independence, Retire Early.",
+    "Real return adjusts investment growth for inflation."
+  ]
+}
+
+<Calculator schema={schema} />

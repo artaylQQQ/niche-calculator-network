@@ -1,0 +1,40 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Remodeling Budget Calculator"
+description: "Estimate renovation costs from area, materials, and labor."
+updated: "2025-10-05"
+cluster: "Home & DIY"
+---
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "remodeling-budget",
+  "title": "Remodeling Budget Calculator",
+  "locale": "en",
+  "unit": "USD",
+  "inputs": [
+    {"name": "area", "label": "Area (m²)", "type": "number", "step": "any", "placeholder": "50"},
+    {"name": "material_cost", "label": "Material cost per m² (USD)", "type": "number", "step": "any", "placeholder": "100"},
+    {"name": "labor_cost", "label": "Labor cost per m² (USD)", "type": "number", "step": "any", "placeholder": "80"},
+    {"name": "contingency", "label": "Contingency (%)", "type": "number", "step": "any", "placeholder": "10"}
+  ],
+  "expression": "area * (material_cost + labor_cost) * (1 + contingency/100)",
+  "intro": "Estimate total renovation cost by combining materials, labor, and a contingency percentage.",
+  "examples": [
+    {"description": "50 m², $100 material, $80 labor, 10% contingency ⇒ $9,900"},
+    {"description": "80 m², $150 material, $90 labor, 15% contingency ⇒ $22,080"}
+  ],
+  "faqs": [
+    {"question": "What is contingency?", "answer": "Extra budget for unexpected expenses."},
+    {"question": "Do costs vary by region?", "answer": "Yes, adjust material and labor rates to your area."},
+    {"question": "Does it include permits?", "answer": "No, permit fees should be added separately."}
+  ],
+  "disclaimer": "Rough estimate; obtain contractor quotes for accuracy.",
+  "cluster": "Home & DIY",
+  "info": [
+    "A 10–20% contingency is common for remodeling projects.",
+    "Material quality greatly impacts total cost."
+  ]
+}
+
+<Calculator schema={schema} />

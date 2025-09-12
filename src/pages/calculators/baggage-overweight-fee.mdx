@@ -1,0 +1,39 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Baggage Overweight Fee Calculator"
+description: "Estimate extra charges for exceeding airline weight limits."
+updated: "2025-10-05"
+cluster: "Lifestyle & Travel"
+---
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "baggage-overweight-fee",
+  "title": "Baggage Overweight Fee Calculator",
+  "locale": "en",
+  "unit": "USD",
+  "inputs": [
+    {"name": "allowed", "label": "Allowed weight (kg)", "type": "number", "step": "any", "placeholder": "23"},
+    {"name": "actual", "label": "Actual weight (kg)", "type": "number", "step": "any", "placeholder": "25"},
+    {"name": "fee", "label": "Fee per kg (USD)", "type": "number", "step": "any", "placeholder": "50"}
+  ],
+  "expression": "Math.max(actual - allowed, 0) * fee",
+  "intro": "Calculate how much you'll pay for overweight luggage based on airline fee per kilogram.",
+  "examples": [
+    {"description": "Allowed 20 kg, actual 25 kg, $50 per kg ⇒ $250"},
+    {"description": "Allowed 23 kg, actual 22 kg, $100 per kg ⇒ $0"}
+  ],
+  "faqs": [
+    {"question": "Does this account for size limits?", "answer": "No, it only considers weight."},
+    {"question": "Are fees per pound possible?", "answer": "Convert to kilograms before using."},
+    {"question": "Can the result be negative?", "answer": "No, the fee bottoms out at zero."}
+  ],
+  "disclaimer": "Check your airline's policies for exact charges.",
+  "cluster": "Lifestyle & Travel",
+  "info": [
+    "Most airlines allow 23 kg for a checked bag.",
+    "Fees vary widely by carrier and route."
+  ]
+}
+
+<Calculator schema={schema} />

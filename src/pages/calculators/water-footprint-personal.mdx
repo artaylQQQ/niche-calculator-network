@@ -1,0 +1,38 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Personal Water Footprint Calculator"
+description: "Sum direct and indirect water use."
+updated: "2025-10-05"
+cluster: "Environment"
+---
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "water-footprint-personal",
+  "title": "Personal Water Footprint Calculator",
+  "locale": "en",
+  "unit": "L",
+  "inputs": [
+    {"name": "direct", "label": "Direct water use (L)", "type": "number", "step": "any", "placeholder": "150"},
+    {"name": "indirect", "label": "Indirect water use (L)", "type": "number", "step": "any", "placeholder": "3000"}
+  ],
+  "expression": "direct + indirect",
+  "intro": "Add up your direct water use and indirect consumption from goods to estimate your water footprint.",
+  "examples": [
+    {"description": "150 L direct + 3000 L indirect ⇒ 3150 L"},
+    {"description": "200 L direct + 2500 L indirect ⇒ 2700 L"}
+  ],
+  "faqs": [
+    {"question": "What is indirect water?", "answer": "Water used to produce goods and services you consume."},
+    {"question": "Can I enter gallons?", "answer": "Convert gallons to liters before using."},
+    {"question": "Why track water footprint?", "answer": "It raises awareness of resource use."}
+  ],
+  "disclaimer": "Approximation; actual footprints vary by product sources.",
+  "cluster": "Environment",
+  "info": [
+    "Average global footprint exceeds 3000 L per person per day.",
+    "Reducing meat consumption lowers indirect water use."
+  ]
+}
+
+<Calculator schema={schema} />

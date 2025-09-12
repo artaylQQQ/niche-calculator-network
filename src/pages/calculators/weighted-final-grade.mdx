@@ -1,0 +1,44 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Weighted Final Grade Calculator"
+description: "Find the exam score needed considering multiple grade components."
+updated: "2025-10-05"
+cluster: "Education"
+---
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "weighted-final-grade",
+  "title": "Weighted Final Grade Calculator",
+  "locale": "en",
+  "unit": "%",
+  "inputs": [
+    {"name": "midterm1", "label": "Midterm 1 score (%)", "type": "number", "step": "any", "placeholder": "80"},
+    {"name": "weight1", "label": "Midterm 1 weight (%)", "type": "number", "step": "any", "placeholder": "30"},
+    {"name": "midterm2", "label": "Midterm 2 score (%)", "type": "number", "step": "any", "placeholder": "70"},
+    {"name": "weight2", "label": "Midterm 2 weight (%)", "type": "number", "step": "any", "placeholder": "20"},
+    {"name": "project", "label": "Project score (%)", "type": "number", "step": "any", "placeholder": "90"},
+    {"name": "project_weight", "label": "Project weight (%)", "type": "number", "step": "any", "placeholder": "20"},
+    {"name": "final_weight", "label": "Final exam weight (%)", "type": "number", "step": "any", "placeholder": "30"},
+    {"name": "target", "label": "Target overall grade (%)", "type": "number", "step": "any", "placeholder": "85"}
+  ],
+  "expression": "(target - (midterm1*weight1/100 + midterm2*weight2/100 + project*project_weight/100)) / (final_weight/100)",
+  "intro": "Determine the final exam score required to achieve your desired course grade using weighted components.",
+  "examples": [
+    {"description": "Midterms 80% & 70%, project 90%, weights 30/20/20, final 30%, target 85% ⇒ 96.67 %"},
+    {"description": "Midterms 85% & 80%, project 90%, weights 25/25/20, final 30%, target 88% ⇒ 95.83 %"}
+  ],
+  "faqs": [
+    {"question": "Can weights exceed 100%?", "answer": "Combined weights should equal 100%."},
+    {"question": "What if result is over 100%?", "answer": "It means the target grade may be unattainable."},
+    {"question": "Do I need all components?", "answer": "Use 0 for components that don't apply."}
+  ],
+  "disclaimer": "Simplified calculation; confirm grading policies with your instructor.",
+  "cluster": "Education",
+  "info": [
+    "Weights come from the course syllabus.",
+    "Planning ahead helps allocate study time effectively."
+  ]
+}
+
+<Calculator schema={schema} />

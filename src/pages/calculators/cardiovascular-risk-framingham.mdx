@@ -1,0 +1,41 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Cardiovascular Risk (Framingham) Calculator"
+description: "Estimate 10-year cardiovascular risk using a simplified Framingham equation."
+updated: "2025-10-05"
+cluster: "Health"
+---
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "cardiovascular-risk-framingham",
+  "title": "Cardiovascular Risk (Framingham) Calculator",
+  "locale": "en",
+  "unit": "%",
+  "inputs": [
+    {"name": "age", "label": "Age (years)", "type": "number", "step": "any", "placeholder": "50"},
+    {"name": "tc", "label": "Total cholesterol (mg/dL)", "type": "number", "step": "any", "placeholder": "200"},
+    {"name": "sbp", "label": "Systolic BP (mmHg)", "type": "number", "step": "any", "placeholder": "120"},
+    {"name": "hdl", "label": "HDL cholesterol (mg/dL)", "type": "number", "step": "any", "placeholder": "50"},
+    {"name": "smoker", "label": "Smoker (1=yes,0=no)", "type": "number", "step": "any", "placeholder": "0"}
+  ],
+  "expression": "Math.max(0, Math.min(0.1*age + 0.02*tc + 0.02*sbp - 0.02*hdl + 5*smoker, 100))",
+  "intro": "Approximate your 10-year cardiovascular risk using age, cholesterol, blood pressure and smoking status.",
+  "examples": [
+    {"description": "Age 50, TC 200, SBP 120, HDL 50, non-smoker ⇒ 10.4 %"},
+    {"description": "Age 60, TC 250, SBP 140, HDL 40, smoker ⇒ 18 %"}
+  ],
+  "faqs": [
+    {"question": "How do I enter smoking status?", "answer": "Use 1 for smokers and 0 for non-smokers."},
+    {"question": "Is this an official Framingham score?", "answer": "No, it is a simplified approximation for educational use."},
+    {"question": "Can risk exceed 100%?", "answer": "The result is capped between 0 and 100%."}
+  ],
+  "disclaimer": "Simplified model; consult a healthcare provider for medical advice.",
+  "cluster": "Health",
+  "info": [
+    "Framingham risk score estimates chances of heart disease within 10 years.",
+    "Factors like diabetes or treatment status are not included here."
+  ]
+}
+
+<Calculator schema={schema} />

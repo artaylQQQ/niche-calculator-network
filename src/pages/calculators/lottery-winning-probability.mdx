@@ -1,0 +1,38 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Lottery Winning Probability Calculator"
+description: "Compute odds of matching all numbers in a draw."
+updated: "2025-10-05"
+cluster: "Entertainment"
+---
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "lottery-winning-probability",
+  "title": "Lottery Winning Probability Calculator",
+  "locale": "en",
+  "unit": "probability",
+  "inputs": [
+    {"name": "total", "label": "Total numbers", "type": "number", "step": "any", "placeholder": "49"},
+    {"name": "drawn", "label": "Numbers drawn", "type": "number", "step": "any", "placeholder": "6"}
+  ],
+  "expression": "(function(n,k){n=Math.floor(n);k=Math.floor(k);if(k>n||k<0)return 0;let num=1,den=1;for(let i=1;i<=k;i++){num*=n-(i-1);den*=i;}return 1/(num/den);})(total,drawn)",
+  "intro": "Calculate the probability of winning by matching all numbers in a lottery draw.",
+  "examples": [
+    {"description": "49 numbers, 6 drawn ⇒ 7.15e-8 probability"},
+    {"description": "10 numbers, 3 drawn ⇒ 0.00833 probability"}
+  ],
+  "faqs": [
+    {"question": "Why are odds so low?", "answer": "Combinations increase rapidly as more numbers are added."},
+    {"question": "Does order matter?", "answer": "This calculation assumes unordered draws."},
+    {"question": "Can this handle bonus balls?", "answer": "No, it assumes a simple draw without extras."}
+  ],
+  "disclaimer": "For entertainment; actual lottery rules may vary.",
+  "cluster": "Entertainment",
+  "info": [
+    "Probability equals one divided by combinations of total numbers choose drawn.",
+    "Real lotteries may include bonus numbers or different prize tiers."
+  ]
+}
+
+<Calculator schema={schema} />
