@@ -355,20 +355,25 @@ const jsonLd = {
       }
       let value;
       let usedExpr = false;
-      // If an expression is defined on the element evaluate it safely
+      // If an expression is defined on the element evaluate it
       if (expr) {
-        // ensure every symbol referenced in the expression is provided in vars
-        const varNames = expr.match(/[A-Za-z_][A-Za-z0-9_]*/g) || [];
-        const unknown = varNames.filter(n => !(n in vars));
-        if (unknown.length) {
-          showMessage('error', 'Unknown variable: ' + unknown[0]);
-          return;
-        }
         try {
-          value = evalExpr(expr, vars);
-          usedExpr = isFinite(value);
+          const names = Object.keys(vars);
+          const values = Object.values(vars);
+          value = Function(...names, `return (${expr});`)(...values);
+          usedExpr = value !== undefined && value !== null;
         } catch (e) {
-          usedExpr = false;
+          const msg = e && e.message ? e.message : '';
+          if (/is not defined/.test(msg)) {
+            showMessage('error', 'Unknown variable: ' + msg.split(' ')[0]);
+            return;
+          }
+          try {
+            value = evalExpr(expr, vars);
+            usedExpr = isFinite(value);
+          } catch {
+            usedExpr = false;
+          }
         }
       }
       // When expression evaluation is unavailable use per‑calculator fallbacks
@@ -565,7 +570,9 @@ const jsonLd = {
         if (isMoney) unit = '$';
       }
       // Render result with proper formatting
-      if (unit === '$' || unit === '€' || unit === '£') {
+      if (typeof value === 'string') {
+        showMessage('success', 'Result: ' + value);
+      } else if (unit === '$' || unit === '€' || unit === '£') {
         showMessage('success', 'Result: ' + unit + fmt(value));
       } else {
         showMessage('success', 'Result: ' + fmt(value) + (unit ? (' ' + unit) : ''));
