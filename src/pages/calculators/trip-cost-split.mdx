@@ -1,0 +1,61 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Trip Cost Split Calculator"
+description: "Divide total trip cost among travelers."
+updated: "2025-09-25"
+cluster: "Lifestyle & Travel"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "trip-cost-split",
+  title: "Trip Cost Split Calculator",
+  locale: "en",
+  unit: "USD",
+  inputs: [
+    {
+      name: "total",
+      label: "Total Trip Cost (USD)",
+      type: "number",
+      step: "any",
+      placeholder: "1200",
+    },
+    {
+      name: "travelers",
+      label: "Number of Travelers",
+      type: "number",
+      step: "any",
+      placeholder: "4",
+    },
+  ],
+  expression: "total / travelers",
+  intro:
+    "Share expenses fairly by dividing the total trip cost by the number of travelers.",
+  examples: [
+    { description: "$1200 with 4 travelers ⇒ $300 each" },
+    { description: "$750 with 3 travelers ⇒ $250 each" },
+  ],
+  faqs: [
+    {
+      question: "Does it handle unequal shares?",
+      answer: "No, all travelers are assumed to split the cost evenly.",
+    },
+    {
+      question: "Can I include taxes and fees?",
+      answer: "Yes, add them to the total cost before splitting.",
+    },
+    {
+      question: "What if travelers is zero?",
+      answer: "The number of travelers must be at least one.",
+    },
+  ],
+  disclaimer: "For trip budgeting only; actual expenses may vary.",
+  info: [
+    "Cost splitting helps plan group travel budgets.",
+    "Consider shared and individual expenses separately.",
+  ],
+  cluster: "Lifestyle & Travel",
+};
+
+<Calculator schema={schema} />

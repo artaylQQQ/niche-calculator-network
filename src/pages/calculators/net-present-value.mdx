@@ -1,0 +1,68 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Net Present Value Calculator"
+description: "Determine the net present value of equal cash flows."
+updated: "2025-09-25"
+cluster: "Finance"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "net-present-value",
+  title: "Net Present Value Calculator",
+  locale: "en",
+  unit: "USD",
+  inputs: [
+    {
+      name: "cash_flow",
+      label: "Cash Flow (USD)",
+      type: "number",
+      step: "any",
+      placeholder: "1000",
+    },
+    {
+      name: "rate",
+      label: "Discount Rate (%)",
+      type: "number",
+      step: "any",
+      placeholder: "5",
+    },
+    {
+      name: "periods",
+      label: "Number of Periods",
+      type: "number",
+      step: "any",
+      placeholder: "5",
+    },
+  ],
+  expression: "cash_flow * (1 - (1 + rate/100) ** (-periods)) / (rate/100)",
+  intro: "Estimate the net present value of equal recurring cash flows.",
+  examples: [
+    { description: "$1,000 yearly, 5% rate, 5 periods ⇒ $4,329.48" },
+    { description: "$2,000 yearly, 7% rate, 3 periods ⇒ $5,285.05" },
+  ],
+  faqs: [
+    {
+      question: "Does it assume end-of-period cash flows?",
+      answer: "Yes, each payment occurs at the end of a period.",
+    },
+    {
+      question: "Can I use a negative rate?",
+      answer: "A negative rate increases the present value.",
+    },
+    {
+      question: "What if periods is zero?",
+      answer: "With zero periods, the NPV is 0.",
+    },
+  ],
+  disclaimer:
+    "Simplified NPV for equal cash flows; adjust for varying amounts as needed.",
+  info: [
+    "NPV discounts future cash flows to present value.",
+    "Positive NPV suggests an investment may be profitable.",
+  ],
+  cluster: "Finance",
+};
+
+<Calculator schema={schema} />

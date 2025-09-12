@@ -1,0 +1,85 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Total Daily Energy Expenditure Calculator"
+description: "Estimate daily calories burned including activity."
+updated: "2025-09-25"
+cluster: "Health"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "total-daily-energy-expenditure",
+  title: "Total Daily Energy Expenditure Calculator",
+  locale: "en",
+  unit: "kcal/day",
+  inputs: [
+    {
+      name: "weight",
+      label: "Weight (kg)",
+      type: "number",
+      step: "any",
+      placeholder: "70",
+    },
+    {
+      name: "height",
+      label: "Height (cm)",
+      type: "number",
+      step: "any",
+      placeholder: "175",
+    },
+    {
+      name: "age",
+      label: "Age (years)",
+      type: "number",
+      step: "any",
+      placeholder: "30",
+    },
+    {
+      name: "gender",
+      label: "Gender (1=male,0=female)",
+      type: "number",
+      step: "any",
+      placeholder: "1",
+    },
+    {
+      name: "activity",
+      label: "Activity Factor",
+      type: "number",
+      step: "any",
+      placeholder: "1.55",
+    },
+  ],
+  expression:
+    "(10*weight + 6.25*height - 5*age + (gender*166) -161) * activity",
+  intro:
+    "Estimate total daily energy expenditure (TDEE) by calculating basal metabolic rate and multiplying by an activity factor.",
+  examples: [
+    { description: "70kg,175cm,30y,male,1.55 ⇒ 2556.6 kcal/day" },
+    { description: "60kg,160cm,25y,female,1.375 ⇒ 1843.8 kcal/day" },
+  ],
+  faqs: [
+    {
+      question: "What activity factor should I use?",
+      answer:
+        "Use 1.2 for sedentary up to around 1.9 for very active lifestyles.",
+    },
+    {
+      question: "Is this exact?",
+      answer: "It provides an estimate; individual metabolism varies.",
+    },
+    {
+      question: "Can I use pounds and inches?",
+      answer: "Convert to kilograms and centimeters before input.",
+    },
+  ],
+  disclaimer:
+    "For informational purposes; consult a professional for personalized nutrition advice.",
+  info: [
+    "TDEE combines resting energy use with activity-based expenditure.",
+    "Maintaining weight requires consuming calories equal to TDEE.",
+  ],
+  cluster: "Health",
+};
+
+<Calculator schema={schema} />

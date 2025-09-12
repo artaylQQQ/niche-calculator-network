@@ -1,0 +1,69 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Auto Loan Payment Calculator"
+description: "Estimate monthly payments for a car loan."
+updated: "2025-09-25"
+cluster: "Personal Finance & Loans"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "auto-loan-payment",
+  title: "Auto Loan Payment Calculator",
+  locale: "en",
+  unit: "USD",
+  inputs: [
+    {
+      name: "principal",
+      label: "Loan Amount (USD)",
+      type: "number",
+      step: "any",
+      placeholder: "25000",
+    },
+    {
+      name: "rate",
+      label: "Annual Interest Rate (%)",
+      type: "number",
+      step: "any",
+      placeholder: "5",
+    },
+    {
+      name: "months",
+      label: "Term (months)",
+      type: "number",
+      step: "any",
+      placeholder: "60",
+    },
+  ],
+  expression: "principal * (rate/1200) / (1 - (1 + rate/1200) ** (-months))",
+  intro:
+    "Calculate the monthly payment for an auto loan using the principal, interest rate, and term in months.",
+  examples: [
+    { description: "$25,000 at 5% for 60 months ⇒ $471.78" },
+    { description: "$18,000 at 3.5% for 48 months ⇒ $402.62" },
+  ],
+  faqs: [
+    {
+      question: "Is there a down payment?",
+      answer:
+        "This formula assumes the loan amount already accounts for any down payment.",
+    },
+    {
+      question: "Can I enter a zero interest rate?",
+      answer: "Yes, the payment becomes principal divided by months.",
+    },
+    {
+      question: "Does it include taxes or fees?",
+      answer: "No, include those in the principal if applicable.",
+    },
+  ],
+  disclaimer: "Payment is an estimate; consult your lender for exact terms.",
+  info: [
+    "Auto loans typically have fixed monthly payments.",
+    "Extra payments toward principal reduce total interest.",
+  ],
+  cluster: "Personal Finance & Loans",
+};
+
+<Calculator schema={schema} />

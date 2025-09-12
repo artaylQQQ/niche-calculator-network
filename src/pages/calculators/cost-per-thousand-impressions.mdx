@@ -1,0 +1,62 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Cost Per Thousand Impressions Calculator"
+description: "Compute advertising cost per 1,000 impressions (CPM)."
+updated: "2025-09-25"
+cluster: "Web Marketing"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "cost-per-thousand-impressions",
+  title: "Cost Per Thousand Impressions Calculator",
+  locale: "en",
+  unit: "USD",
+  inputs: [
+    {
+      name: "cost",
+      label: "Ad Cost (USD)",
+      type: "number",
+      step: "any",
+      placeholder: "500",
+    },
+    {
+      name: "impressions",
+      label: "Impressions",
+      type: "number",
+      step: "any",
+      placeholder: "200000",
+    },
+  ],
+  expression: "cost / impressions * 1000",
+  intro:
+    "Determine the cost per thousand impressions (CPM) by dividing total ad spend by impressions and multiplying by 1000.",
+  examples: [
+    { description: "$500 cost, 200,000 impressions ⇒ $2.50" },
+    { description: "$120 cost, 30,000 impressions ⇒ $4.00" },
+  ],
+  faqs: [
+    {
+      question: "What does CPM stand for?",
+      answer: "Cost per mille, or cost per thousand ad impressions.",
+    },
+    {
+      question: "Can impressions be zero?",
+      answer: "No, impressions must be greater than zero.",
+    },
+    {
+      question: "Is a lower CPM better?",
+      answer:
+        "Yes, a lower CPM means you're paying less for each thousand views.",
+    },
+  ],
+  disclaimer: "CPM is an estimate; actual billing may include additional fees.",
+  info: [
+    "CPM helps compare efficiency across advertising channels.",
+    "High impression counts typically lower CPM.",
+  ],
+  cluster: "Web Marketing",
+};
+
+<Calculator schema={schema} />
