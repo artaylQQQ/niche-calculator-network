@@ -1,0 +1,67 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Triangular Prism Volume Calculator"
+description: "Find volume of a triangular prism from its dimensions."
+updated: "2024-10-14"
+cluster: "Math"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "triangular-prism-volume",
+  title: "Triangular Prism Volume Calculator",
+  locale: "en",
+  intro: "Find volume of a triangular prism from its dimensions.",
+  unit: "m³",
+  cluster: "Math",
+  inputs: [
+    {
+      name: "base",
+      label: "Triangle Base (m)",
+      type: "number",
+      step: "any",
+      placeholder: "3",
+    },
+    {
+      name: "height",
+      label: "Triangle Height (m)",
+      type: "number",
+      step: "any",
+      placeholder: "2",
+    },
+    {
+      name: "length",
+      label: "Prism Length (m)",
+      type: "number",
+      step: "any",
+      placeholder: "5",
+    },
+  ],
+  expression: "0.5 * base * height * length",
+  examples: [
+    { description: "Base 3 m, height 2 m, length 5 m ⇒ 15 m³" },
+    { description: "Base 1.5 m, height 4 m, length 2 m ⇒ 6 m³" },
+  ],
+  faqs: [
+    {
+      question: "What is a triangular prism?",
+      answer: "A solid with two triangular bases and three rectangular faces.",
+    },
+    {
+      question: "Can I use centimeters?",
+      answer: "Yes, convert to meters before using the calculator.",
+    },
+    {
+      question: "Is the triangle right-angled?",
+      answer: "Any triangle works as long as you know its base and height.",
+    },
+  ],
+  disclaimer: "Assumes straight edges and uniform shape.",
+  info: [
+    "Volume equals base area times length.",
+    "Common in architectural calculations.",
+  ],
+};
+
+<Calculator schema={schema} />

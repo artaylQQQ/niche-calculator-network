@@ -1,0 +1,68 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Fence Post Concrete Calculator"
+description: "Estimate concrete volume for fence posts."
+updated: "2024-10-14"
+cluster: "Home & DIY"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "fence-post-concrete",
+  title: "Fence Post Concrete Calculator",
+  locale: "en",
+  intro: "Estimate concrete volume for fence posts.",
+  unit: "L",
+  cluster: "Home & DIY",
+  inputs: [
+    {
+      name: "posts",
+      label: "Number of Posts",
+      type: "number",
+      step: "any",
+      placeholder: "4",
+    },
+    {
+      name: "diameter",
+      label: "Hole Diameter (cm)",
+      type: "number",
+      step: "any",
+      placeholder: "30",
+    },
+    {
+      name: "depth",
+      label: "Hole Depth (cm)",
+      type: "number",
+      step: "any",
+      placeholder: "80",
+    },
+  ],
+  expression:
+    "posts * 3.141592653589793 * (diameter/200)^2 * (depth/100) * 1000",
+  examples: [
+    { description: "4 posts, 30 cm × 80 cm ⇒ 226 L" },
+    { description: "6 posts, 20 cm × 60 cm ⇒ 113 L" },
+  ],
+  faqs: [
+    {
+      question: "Does this include post volume?",
+      answer: "No, it calculates hole volume only.",
+    },
+    {
+      question: "Can I use inches?",
+      answer: "Convert inches to centimeters before entering.",
+    },
+    {
+      question: "Is extra concrete needed?",
+      answer: "Consider buying a little more for spillage.",
+    },
+  ],
+  disclaimer: "Actual needs may vary with soil and post shape.",
+  info: [
+    "1 cubic meter equals 1000 liters.",
+    "Use proper safety gear when mixing concrete.",
+  ],
+};
+
+<Calculator schema={schema} />

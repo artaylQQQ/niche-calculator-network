@@ -1,0 +1,68 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Monthly Savings Contribution Calculator"
+description: "Determine monthly deposit needed to reach a savings goal."
+updated: "2024-10-14"
+cluster: "Personal Finance & Loans"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "monthly-savings-contribution",
+  title: "Monthly Savings Contribution Calculator",
+  locale: "en",
+  intro: "Determine monthly deposit needed to reach a savings goal.",
+  unit: "USD",
+  cluster: "Personal Finance & Loans",
+  inputs: [
+    {
+      name: "goal",
+      label: "Savings Goal (USD)",
+      type: "number",
+      step: "any",
+      placeholder: "5000",
+    },
+    {
+      name: "months",
+      label: "Months",
+      type: "number",
+      step: "any",
+      placeholder: "12",
+    },
+    {
+      name: "current",
+      label: "Current Savings (USD)",
+      type: "number",
+      step: "any",
+      placeholder: "1000",
+    },
+  ],
+  expression: "(goal - current) / months",
+  examples: [
+    { description: "$5000 goal, 12 months, $1000 saved ⇒ $333.33 per month" },
+    { description: "$10000 goal, 24 months, $2000 saved ⇒ $333.33 per month" },
+  ],
+  faqs: [
+    {
+      question: "Does this account for interest?",
+      answer: "No, it assumes no investment returns.",
+    },
+    {
+      question: "Can months be less than one?",
+      answer: "Use whole months greater than zero.",
+    },
+    {
+      question: "What if current savings exceed the goal?",
+      answer:
+        "The result will be negative, indicating you've already met the goal.",
+    },
+  ],
+  disclaimer: "Ignores compound interest and inflation.",
+  info: [
+    "Useful for straightforward savings plans.",
+    "Add expected interest for more precise planning.",
+  ],
+};
+
+<Calculator schema={schema} />

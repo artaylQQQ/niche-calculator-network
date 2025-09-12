@@ -1,0 +1,61 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Daily Travel Budget Calculator"
+description: "Divide total trip budget by days to plan daily spending."
+updated: "2024-10-14"
+cluster: "Lifestyle & Travel"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "daily-travel-budget",
+  title: "Daily Travel Budget Calculator",
+  locale: "en",
+  intro: "Divide total trip budget by days to plan daily spending.",
+  unit: "USD",
+  cluster: "Lifestyle & Travel",
+  inputs: [
+    {
+      name: "budget",
+      label: "Total Budget (USD)",
+      type: "number",
+      step: "any",
+      placeholder: "1500",
+    },
+    {
+      name: "days",
+      label: "Trip Length (days)",
+      type: "number",
+      step: "any",
+      placeholder: "10",
+    },
+  ],
+  expression: "budget / days",
+  examples: [
+    { description: "$1500 budget over 10 days ⇒ $150 per day" },
+    { description: "$800 budget over 5 days ⇒ $160 per day" },
+  ],
+  faqs: [
+    {
+      question: "Does it include airfare?",
+      answer:
+        "Add all trip costs to the total budget if you want them considered.",
+    },
+    {
+      question: "Can I use other currencies?",
+      answer: "Yes, enter the amounts in your preferred currency.",
+    },
+    {
+      question: "What if days is zero?",
+      answer: "Trip length must be at least one day.",
+    },
+  ],
+  disclaimer: "Budgeting tool only; actual expenses may differ.",
+  info: [
+    "Daily budgets help control overall trip spending.",
+    "Include a buffer for unexpected costs.",
+  ],
+};
+
+<Calculator schema={schema} />

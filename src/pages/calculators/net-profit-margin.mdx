@@ -1,59 +1,61 @@
 ---
 layout: ../../layouts/CalculatorLayout.astro
 title: "Net Profit Margin Calculator"
-description: "Compute net profit margin from revenue and expenses."
-updated: "2025-05-28"
+description: "Find net profit margin from revenue and expenses."
+updated: "2024-10-14"
 cluster: "Finance"
 ---
 
 import Calculator from "../../components/Calculator.astro";
 
 export const schema = {
-  inputs: [
-    {
-      name: "revenue",
-      label: "Revenue ($)",
-      type: "number",
-      step: "any",
-      placeholder: "1000",
-    },
-    {
-      name: "expenses",
-      label: "Expenses ($)",
-      type: "number",
-      step: "any",
-      placeholder: "700",
-    },
-  ],
   slug: "net-profit-margin",
   title: "Net Profit Margin Calculator",
   locale: "en",
+  intro: "Find net profit margin from revenue and expenses.",
   unit: "%",
+  cluster: "Finance",
+  inputs: [
+    {
+      name: "revenue",
+      label: "Revenue (USD)",
+      type: "number",
+      step: "any",
+      placeholder: "5000",
+    },
+    {
+      name: "expenses",
+      label: "Expenses (USD)",
+      type: "number",
+      step: "any",
+      placeholder: "3500",
+    },
+  ],
   expression: "(revenue - expenses) / revenue * 100",
-  intro:
-    "Determine the percentage of revenue that remains as profit after expenses.",
   examples: [
-    { description: "Revenue $1000, expenses $700 ⇒ 30%" },
-    { description: "Revenue $5000, expenses $4200 ⇒ 16%" },
-    { description: "Revenue $200, expenses $210 ⇒ -5%" },
+    { description: "$5000 revenue, $3500 expenses ⇒ 30 %" },
+    { description: "$10000 revenue, $7500 expenses ⇒ 25 %" },
   ],
   faqs: [
     {
-      question: "What is net profit margin?",
-      answer: "It measures how much profit is made as a percentage of revenue.",
+      question: "What does net profit margin show?",
+      answer: "It shows the percentage of revenue left after all expenses.",
     },
     {
-      question: "Can margin be negative?",
-      answer: "Yes, if expenses exceed revenue the margin is negative.",
+      question: "Can expenses exceed revenue?",
+      answer: "Yes, resulting in a negative margin.",
     },
     {
-      question: "What if revenue is zero?",
-      answer: "Margin is undefined when revenue is zero.",
+      question: "Should I use gross or net revenue?",
+      answer: "Use net revenue after returns and allowances.",
     },
   ],
   disclaimer:
-    "Financial figures are for estimation only; consult a professional for advice.",
-  cluster: "Finance",
+    "Simplified calculation; consider taxes and other factors separately.",
+  info: [
+    "Net profit margin helps compare business efficiency.",
+    "Expressed as a percentage of revenue.",
+  ],
 };
 
 <Calculator schema={schema} />

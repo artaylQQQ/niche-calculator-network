@@ -1,0 +1,60 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Sleep Duration Calculator"
+description: "Find hours of sleep between bedtime and wake time."
+updated: "2024-10-14"
+cluster: "Date & Time"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "sleep-duration",
+  title: "Sleep Duration Calculator",
+  locale: "en",
+  intro: "Find hours of sleep between bedtime and wake time.",
+  unit: "hours",
+  cluster: "Date & Time",
+  inputs: [
+    {
+      name: "bed",
+      label: "Bedtime Hour",
+      type: "number",
+      step: "any",
+      placeholder: "22",
+    },
+    {
+      name: "wake",
+      label: "Wake-up Hour",
+      type: "number",
+      step: "any",
+      placeholder: "6",
+    },
+  ],
+  expression: "(24 + wake - bed) % 24",
+  examples: [
+    { description: "Bed 22, wake 6 ⇒ 8 hours" },
+    { description: "Bed 23, wake 7 ⇒ 8 hours" },
+  ],
+  faqs: [
+    {
+      question: "What format are the times?",
+      answer: "Enter hours on a 24-hour clock from 0 to 23.",
+    },
+    {
+      question: "Does it handle overnight sleep?",
+      answer: "Yes, the formula wraps past midnight automatically.",
+    },
+    {
+      question: "Can I enter decimals for minutes?",
+      answer: "Use decimals to represent partial hours, like 7.5 for 7:30.",
+    },
+  ],
+  disclaimer: "Estimates sleep duration only; actual rest quality varies.",
+  info: [
+    "A full day's cycle is 24 hours.",
+    "Quality of sleep depends on more than just duration.",
+  ],
+};
+
+<Calculator schema={schema} />
