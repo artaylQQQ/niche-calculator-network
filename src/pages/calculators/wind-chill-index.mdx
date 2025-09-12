@@ -6,66 +6,70 @@ date: 2025-09-08
 updated: 2025-09-08
 cluster: "Lifestyle & Travel"
 ---
-import Calculator from '../../components/Calculator.astro';
+
+import Calculator from "../../components/Calculator.astro";
 
 export const schema = {
-  "slug": "wind-chill-index",
-  "title": "Wind Chill Calculator",
-  "locale": "en",
-  "inputs": [
+  slug: "wind-chill-index",
+  title: "Wind Chill Calculator",
+  locale: "en",
+  inputs: [
     {
-      "name": "temperature",
-      "label": "Temperature (°F)",
-      "type": "number",
-      "step": "any",
-      "placeholder": "30"
+      name: "temperature",
+      label: "Temperature (°F)",
+      type: "number",
+      step: "any",
+      placeholder: "30",
     },
     {
-      "name": "wind",
-      "label": "Wind Speed (mph)",
-      "type": "number",
-      "step": "any",
-      "placeholder": "10"
-    }
+      name: "wind",
+      label: "Wind Speed (mph)",
+      type: "number",
+      step: "any",
+      placeholder: "10",
+    },
   ],
-  "expression": "35.74 + 0.6215*temperature - 35.75*Math.pow(wind,0.16) + 0.4275*temperature*Math.pow(wind,0.16)",
-  "intro": "Estimate perceived temperature from wind.",
-  "examples": [
+  expression:
+    "35.74 + 0.6215*temperature - 35.75*(wind**0.16) + 0.4275*temperature*(wind**0.16)",
+  unit: "°F",
+  intro: "Estimate perceived temperature from wind.",
+  examples: [
     {
-      "description": "30°F & 10 mph ⇒ 21.25°F"
+      description: "30°F & 10 mph ⇒ 21.25°F",
     },
     {
-      "description": "0°F & 20 mph ⇒ -22.00°F"
-    }
+      description: "0°F & 20 mph ⇒ -22.00°F",
+    },
   ],
-  "faqs": [
+  faqs: [
     {
-      "question": "When is this formula valid?",
-      "answer": "For temperatures at or below 50°F and winds above 3 mph."
+      question: "When is this formula valid?",
+      answer: "For temperatures at or below 50°F and winds above 3 mph.",
     },
     {
-      "question": "Does sunshine affect wind chill?",
-      "answer": "The formula assumes shady conditions without direct sun."
+      question: "Does sunshine affect wind chill?",
+      answer: "The formula assumes shady conditions without direct sun.",
     },
     {
-      "question": "What units are required?",
-      "answer": "Temperature in Fahrenheit and wind speed in mph."
+      question: "What units are required?",
+      answer: "Temperature in Fahrenheit and wind speed in mph.",
     },
     {
-      "question": "What if wind is calm?",
-      "answer": "For winds under 3 mph, wind chill equals the air temperature."
-    }
+      question: "What if wind is calm?",
+      answer: "For winds under 3 mph, wind chill equals the air temperature.",
+    },
   ],
-  "disclaimer": "Approximate guideline; extreme weather can be dangerous despite calculations.",
-  "cluster": "Lifestyle & Travel",
-  "related": [
+  disclaimer:
+    "Approximate guideline; extreme weather can be dangerous despite calculations.",
+  cluster: "Lifestyle & Travel",
+  related: [
     "cat-age-human-years",
     "book-page-count",
     "horse-age-human-years",
     "dice-roll-probability",
     "tree-carbon-offset",
-    "lightning-distance"
-  ]
-}
+    "lightning-distance",
+  ],
+};
 
 <Calculator schema={schema} />
