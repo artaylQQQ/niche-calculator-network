@@ -132,10 +132,10 @@ const jsonLd = {
 <section class="faq">
   <h2>FAQ</h2>
   {faqs.map((f) => (
-    <details>
-      <summary>{f.question}</summary>
+    <div class="faq-item">
+      <h3>{f.question}</h3>
       <p>{f.answer}</p>
-    </details>
+    </div>
   ))}
 </section>
 
@@ -254,9 +254,9 @@ const jsonLd = {
     box-shadow: var(--shadow);
   }
   .examples ul { margin: 8px 0 0 20px; }
-  .faq details { margin: 8px 0; }
-  .faq summary { cursor: pointer; font-weight: 600; }
-  .faq p { margin: 4px 0 0 16px; }
+  .faq-item { margin: 8px 0; }
+  .faq-item h3 { margin: 0; font-weight: 600; }
+  .faq-item p { margin: 4px 0 0 0; }
   .info ul { margin: 8px 0 0 20px; }
   .related ul { margin: 8px 0 0 20px; }
 </style>
