@@ -1,0 +1,63 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Body Surface Area (Haycock) Calculator"
+description: "Estimate body surface area using the Haycock formula."
+updated: "2025-10-06"
+cluster: "Health"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "body-surface-area-haycock",
+  title: "Body Surface Area (Haycock) Calculator",
+  locale: "en",
+  intro:
+    "Estimate body surface area from height and weight using the Haycock formula.",
+  unit: "m²",
+  cluster: "Health",
+  inputs: [
+    {
+      name: "weight",
+      label: "Weight (kg)",
+      type: "number",
+      step: "any",
+      placeholder: "70",
+    },
+    {
+      name: "height",
+      label: "Height (cm)",
+      type: "number",
+      step: "any",
+      placeholder: "175",
+    },
+  ],
+  expression: "0.024265 * weight ** 0.5378 * height ** 0.3964",
+  examples: [
+    { description: "70 kg & 175 cm ⇒ 1.85 m²" },
+    { description: "50 kg & 160 cm ⇒ 1.49 m²" },
+  ],
+  faqs: [
+    {
+      question: "Why use the Haycock formula?",
+      answer: "It provides accurate estimates for children and adults.",
+    },
+    {
+      question: "Can I enter height in meters?",
+      answer: "Convert meters to centimeters before using the calculator.",
+    },
+    {
+      question: "Is BSA the same as BMI?",
+      answer:
+        "No, BSA measures surface area while BMI measures body mass relative to height.",
+    },
+  ],
+  disclaimer:
+    "BSA formulas provide estimates and should not replace medical judgment.",
+  info: [
+    "Haycock formula is often used for dosing medications.",
+    "Developed in 1978 as an alternative to earlier BSA formulas.",
+  ],
+};
+
+<Calculator schema={schema} />

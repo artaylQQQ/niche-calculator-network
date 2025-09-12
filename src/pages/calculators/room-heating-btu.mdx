@@ -1,0 +1,64 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Room Heating BTU Calculator"
+description: "Estimate heating power needed for a room."
+updated: "2025-10-06"
+cluster: "Home & DIY"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "room-heating-btu",
+  title: "Room Heating BTU Calculator",
+  locale: "en",
+  intro:
+    "Estimate required heating output by multiplying room area by a BTU per square foot factor.",
+  unit: "BTU/h",
+  cluster: "Home & DIY",
+  inputs: [
+    {
+      name: "area",
+      label: "Room Area (sq ft)",
+      type: "number",
+      step: "any",
+      placeholder: "300",
+    },
+    {
+      name: "btu_factor",
+      label: "BTU per Sq Ft",
+      type: "number",
+      step: "any",
+      placeholder: "30",
+    },
+  ],
+  expression: "area * btu_factor",
+  examples: [
+    { description: "300 sq ft at 30 BTU/sq ft ⇒ 9,000 BTU/h" },
+    { description: "500 sq ft at 25 BTU/sq ft ⇒ 12,500 BTU/h" },
+  ],
+  faqs: [
+    {
+      question: "What BTU factor should I use?",
+      answer:
+        "Typical homes use 20–40 BTU per square foot depending on climate.",
+    },
+    {
+      question: "Does ceiling height matter?",
+      answer:
+        "This simple estimate ignores ceiling height and insulation quality.",
+    },
+    {
+      question: "Is this for heaters or furnaces?",
+      answer: "It estimates the heating output regardless of equipment type.",
+    },
+  ],
+  disclaimer:
+    "Provides a rough estimate; consult HVAC professionals for accurate sizing.",
+  info: [
+    "BTU stands for British Thermal Unit.",
+    "Higher BTU requirements occur in colder climates.",
+  ],
+};
+
+<Calculator schema={schema} />
