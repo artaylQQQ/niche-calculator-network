@@ -8305,7 +8305,7 @@
         "placeholder": "10"
       }
     ],
-    "expression": "35.74 + 0.6215*temperature - 35.75*Math.pow(wind,0.16) + 0.4275*temperature*Math.pow(wind,0.16)",
+    "expression": "35.74 + 0.6215*temperature - 35.75*(wind**0.16) + 0.4275*temperature*(wind**0.16)",
     "unit": "°F",
     "examples": [
       {
