@@ -1,0 +1,55 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "BTU to kWh Converter"
+description: "Convert British Thermal Units to kilowatt-hours."
+updated: 2025-09-27
+cluster: "Conversions & Units"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  inputs: [
+    {
+      name: "btu",
+      label: "Energy (BTU)",
+      type: "number",
+      min: 0,
+      step: "any",
+      placeholder: "10000",
+    },
+  ],
+  slug: "btu-to-kwh",
+  title: "BTU to kWh Converter",
+  locale: "en",
+  expression: "btu * 0.00029307107",
+  unit: "kWh",
+  intro: "Enter energy in BTU to convert to kilowatt-hours.",
+  examples: [
+    { description: "10,000 BTU ⇒ 2.93 kWh" },
+    { description: "5,000 BTU ⇒ 1.47 kWh" },
+  ],
+  faqs: [
+    {
+      question: "What is the conversion factor?",
+      answer: "1 BTU equals 0.00029307107 kWh.",
+    },
+    {
+      question: "Can I convert kWh to BTU?",
+      answer: "Yes, divide kWh by 0.00029307107 to get BTU.",
+    },
+    {
+      question: "Why is this useful?",
+      answer: "It helps compare heating or cooling energy in electrical terms.",
+    },
+  ],
+  disclaimer: "Uses standard conversion; system efficiency not considered.",
+  cluster: "Conversions & Units",
+  info: [
+    "BTU measures heat; kWh measures electrical energy.",
+    "Commonly used to estimate HVAC energy consumption.",
+  ],
+  related: [],
+};
+
+<Calculator schema={schema} />

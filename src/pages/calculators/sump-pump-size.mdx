@@ -1,0 +1,64 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Sump Pump Size Calculator"
+description: "Estimate required sump pump capacity based on pit volume and desired drainage time."
+updated: 2025-09-27
+cluster: "Home & DIY"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  inputs: [
+    {
+      name: "volume",
+      label: "Pit Volume (gallons)",
+      type: "number",
+      min: 0,
+      step: "any",
+      placeholder: "30",
+    },
+    {
+      name: "time",
+      label: "Desired Drain Time (minutes)",
+      type: "number",
+      min: 0,
+      step: "any",
+      placeholder: "1",
+    },
+  ],
+  slug: "sump-pump-size",
+  title: "Sump Pump Size Calculator",
+  locale: "en",
+  expression: "volume / time",
+  unit: "gallons/min",
+  intro:
+    "Divide sump pit volume by the time in minutes you want it drained to determine pump capacity.",
+  examples: [
+    { description: "40 gallons in 2 minutes ⇒ 20 gallons/min" },
+    { description: "25 gallons in 1 minute ⇒ 25 gallons/min" },
+  ],
+  faqs: [
+    {
+      question: "Does this account for pump efficiency?",
+      answer: "No, choose a pump with slightly higher capacity.",
+    },
+    {
+      question: "Can I use liters?",
+      answer: "Convert liters to gallons before using the calculator.",
+    },
+    {
+      question: "What if the pit refills continuously?",
+      answer: "Higher inflow may require a more powerful or backup pump.",
+    },
+  ],
+  disclaimer: "Basic sizing; consult a professional for high-risk areas.",
+  cluster: "Home & DIY",
+  info: [
+    "Typical household sump pumps range from 20–60 gallons per minute.",
+    "Consider power outages and backup options for critical installations.",
+  ],
+  related: [],
+};
+
+<Calculator schema={schema} />

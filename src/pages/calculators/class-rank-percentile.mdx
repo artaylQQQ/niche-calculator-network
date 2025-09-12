@@ -1,0 +1,64 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Class Rank Percentile Calculator"
+description: "Find a student's percentile rank based on class size and position."
+updated: 2025-09-27
+cluster: "Education & Learning"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  inputs: [
+    {
+      name: "rank",
+      label: "Class Rank",
+      type: "number",
+      min: 1,
+      step: 1,
+      placeholder: "5",
+    },
+    {
+      name: "size",
+      label: "Class Size",
+      type: "number",
+      min: 1,
+      step: 1,
+      placeholder: "200",
+    },
+  ],
+  slug: "class-rank-percentile",
+  title: "Class Rank Percentile Calculator",
+  locale: "en",
+  expression: "(size - rank + 1) / size * 100",
+  unit: "%",
+  intro:
+    "Enter class rank (1 = top student) and total class size to compute percentile position.",
+  examples: [
+    { description: "Rank 10 in class of 250 ⇒ 96.4%" },
+    { description: "Rank 50 in class of 100 ⇒ 51.0%" },
+  ],
+  faqs: [
+    {
+      question: "Is rank 1 the highest?",
+      answer: "Yes, rank 1 represents the top student.",
+    },
+    {
+      question: "Can percentile exceed 100?",
+      answer: "No, percentile ranges from 0 to 100.",
+    },
+    {
+      question: "Why add 1 in the formula?",
+      answer: "It ensures the top rank maps close to the 100th percentile.",
+    },
+  ],
+  disclaimer: "For academic ranking only; methods may vary by institution.",
+  cluster: "Education & Learning",
+  info: [
+    "Percentiles show relative standing within a group.",
+    "Schools may compute percentile differently; confirm with your institution.",
+  ],
+  related: [],
+};
+
+<Calculator schema={schema} />

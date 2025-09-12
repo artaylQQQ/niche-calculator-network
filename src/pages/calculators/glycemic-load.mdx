@@ -1,0 +1,66 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Glycemic Load Calculator"
+description: "Calculate glycemic load using carbohydrate grams and glycemic index."
+updated: 2025-09-27
+cluster: "Nutrition"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  inputs: [
+    {
+      name: "carbs",
+      label: "Carbohydrates (g)",
+      type: "number",
+      min: 0,
+      step: "any",
+      placeholder: "30",
+    },
+    {
+      name: "gi",
+      label: "Glycemic Index",
+      type: "number",
+      min: 0,
+      max: 100,
+      step: "any",
+      placeholder: "50",
+    },
+  ],
+  slug: "glycemic-load",
+  title: "Glycemic Load Calculator",
+  locale: "en",
+  expression: "(carbs * gi) / 100",
+  unit: "GL",
+  intro:
+    "Multiply the carbohydrate content of a serving by its glycemic index and divide by 100 to get glycemic load.",
+  examples: [
+    { description: "40 g carbs with GI 70 ⇒ 28 GL" },
+    { description: "15 g carbs with GI 30 ⇒ 4.5 GL" },
+  ],
+  faqs: [
+    {
+      question: "What is considered low GL?",
+      answer: "Less than 10 is low, 10–20 is medium, and over 20 is high.",
+    },
+    {
+      question: "Can GI exceed 100?",
+      answer: "No, the glycemic index scale runs from 0 to 100.",
+    },
+    {
+      question: "Does fiber affect GL?",
+      answer: "Yes, GL typically uses net carbs after subtracting fiber.",
+    },
+  ],
+  disclaimer:
+    "For dietary reference; consult healthcare providers for medical advice.",
+  cluster: "Nutrition",
+  info: [
+    "Glycemic load reflects both quality and quantity of carbohydrates.",
+    "Helps manage blood sugar impact of meals.",
+  ],
+  related: [],
+};
+
+<Calculator schema={schema} />

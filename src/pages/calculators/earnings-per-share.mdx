@@ -1,0 +1,78 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Earnings Per Share Calculator"
+description: "Estimate earnings per share from net income, dividends, and shares outstanding."
+updated: 2025-09-27
+cluster: "Finance"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  inputs: [
+    {
+      name: "net_income",
+      label: "Net Income",
+      type: "number",
+      min: 0,
+      step: "any",
+      placeholder: "500000",
+    },
+    {
+      name: "dividends",
+      label: "Preferred Dividends",
+      type: "number",
+      min: 0,
+      step: "any",
+      placeholder: "50000",
+    },
+    {
+      name: "shares",
+      label: "Shares Outstanding",
+      type: "number",
+      min: 1,
+      step: "any",
+      placeholder: "100000",
+    },
+  ],
+  slug: "earnings-per-share",
+  title: "Earnings Per Share Calculator",
+  locale: "en",
+  expression: "(net_income - dividends) / shares",
+  unit: "USD/share",
+  intro:
+    "Determine a company's earnings per share by subtracting preferred dividends from net income and dividing by shares outstanding.",
+  examples: [
+    {
+      description:
+        "$1,000,000 net income, $50,000 dividends, 200,000 shares ⇒ $4.75 USD/share",
+    },
+    {
+      description:
+        "$500,000 net income, $0 dividends, 100,000 shares ⇒ $5.00 USD/share",
+    },
+  ],
+  faqs: [
+    {
+      question: "What if there are no preferred dividends?",
+      answer: "Set dividends to 0.",
+    },
+    {
+      question: "Can EPS be negative?",
+      answer: "Yes, if net income is negative.",
+    },
+    {
+      question: "Does this calculate diluted EPS?",
+      answer: "No, it uses basic shares outstanding.",
+    },
+  ],
+  disclaimer: "For informational purposes; verify with financial statements.",
+  cluster: "Finance",
+  info: [
+    "EPS measures profit per share for comparing company performance.",
+    "Dividends to preferred stockholders are excluded from earnings for common shareholders.",
+  ],
+  related: [],
+};
+
+<Calculator schema={schema} />

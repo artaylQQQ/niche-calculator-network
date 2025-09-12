@@ -1,0 +1,64 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Hash Collision Probability Calculator"
+description: "Estimate probability of at least one hash collision using the birthday paradox."
+updated: 2025-09-27
+cluster: "Technology & Coding"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  inputs: [
+    {
+      name: "count",
+      label: "Number of Hashes",
+      type: "number",
+      min: 1,
+      step: 1,
+      placeholder: "100000",
+    },
+    {
+      name: "bits",
+      label: "Hash Bits",
+      type: "number",
+      min: 1,
+      step: 1,
+      placeholder: "32",
+    },
+  ],
+  slug: "hash-collision-probability",
+  title: "Hash Collision Probability Calculator",
+  locale: "en",
+  expression: "(1 - Math.exp(-(count*(count-1))/(2*Math.pow(2,bits))))*100",
+  unit: "%",
+  intro:
+    "Using the birthday paradox approximation, estimate the chance that at least two hashes collide for a given number of hashes and hash size.",
+  examples: [
+    { description: "100,000 hashes, 32-bit hash ⇒ 68.8%" },
+    { description: "1,000,000 hashes, 64-bit hash ⇒ 0.0000027%" },
+  ],
+  faqs: [
+    {
+      question: "Why use the birthday paradox?",
+      answer: "It approximates collision probability for large sample spaces.",
+    },
+    {
+      question: "Does increasing hash size reduce collisions?",
+      answer: "Yes, more bits drastically lower collision risk.",
+    },
+    {
+      question: "Is the formula exact?",
+      answer: "It's an approximation assuming uniform hash distribution.",
+    },
+  ],
+  disclaimer: "Assumes random hashes; real implementations may differ.",
+  cluster: "Technology & Coding",
+  info: [
+    "Probability grows roughly with the square of the number of hashes.",
+    "Cryptographic algorithms often use 256-bit hashes to minimize collisions.",
+  ],
+  related: [],
+};
+
+<Calculator schema={schema} />

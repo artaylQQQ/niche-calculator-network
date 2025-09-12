@@ -1,0 +1,72 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Airline Miles Value Calculator"
+description: "Estimate the monetary value of airline miles based on trip cost and miles required."
+updated: 2025-09-27
+cluster: "Lifestyle & Travel"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  inputs: [
+    {
+      name: "cost",
+      label: "Cash Ticket Price (USD)",
+      type: "number",
+      min: 0,
+      step: "any",
+      placeholder: "350",
+    },
+    {
+      name: "miles",
+      label: "Miles Needed",
+      type: "number",
+      min: 1,
+      step: 1,
+      placeholder: "25000",
+    },
+    {
+      name: "fees",
+      label: "Additional Fees (USD)",
+      type: "number",
+      min: 0,
+      step: "any",
+      placeholder: "50",
+    },
+  ],
+  slug: "airline-miles-value",
+  title: "Airline Miles Value Calculator",
+  locale: "en",
+  expression: "(cost - fees) / miles",
+  unit: "USD/mile",
+  intro:
+    "Compare the cash fare to required miles and fees to estimate value per mile.",
+  examples: [
+    { description: "$500 fare, 30,000 miles, $50 fees ⇒ $0.015 USD/mile" },
+    { description: "$750 fare, 45,000 miles, $80 fees ⇒ $0.0149 USD/mile" },
+  ],
+  faqs: [
+    {
+      question: "Why subtract fees?",
+      answer: "Fees reduce the value of miles redeemed.",
+    },
+    {
+      question: "What value is considered good?",
+      answer: "Typical mile values range from 1¢ to 2¢ each.",
+    },
+    {
+      question: "Does this include miles earned on cash tickets?",
+      answer: "No, it compares redemption value only.",
+    },
+  ],
+  disclaimer: "Estimates vary by route and award availability.",
+  cluster: "Lifestyle & Travel",
+  info: [
+    "Helps decide whether to pay cash or use miles for a trip.",
+    "Award charts and promotions can change mile value.",
+  ],
+  related: [],
+};
+
+<Calculator schema={schema} />
