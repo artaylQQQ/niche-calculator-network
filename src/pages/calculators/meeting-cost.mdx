@@ -1,0 +1,39 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Meeting Cost Calculator"
+description: "Estimate the salary cost of a meeting."
+updated: "2025-10-05"
+cluster: "Productivity"
+---
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "meeting-cost",
+  "title": "Meeting Cost Calculator",
+  "locale": "en",
+  "unit": "USD",
+  "inputs": [
+    {"name": "duration", "label": "Duration (hours)", "type": "number", "step": "any", "placeholder": "1"},
+    {"name": "participants", "label": "Participants", "type": "number", "step": "any", "placeholder": "5"},
+    {"name": "rate", "label": "Hourly rate (USD)", "type": "number", "step": "any", "placeholder": "50"}
+  ],
+  "expression": "duration * participants * rate",
+  "intro": "Calculate how much a meeting costs in wages based on length, number of attendees, and average hourly rate.",
+  "examples": [
+    {"description": "2 h, 5 participants, $50/h ⇒ $500"},
+    {"description": "1 h, 10 participants, $40/h ⇒ $400"}
+  ],
+  "faqs": [
+    {"question": "Why consider meeting cost?", "answer": "It highlights the time investment in monetary terms."},
+    {"question": "Can rates differ per person?", "answer": "Use an average rate for simplicity."},
+    {"question": "Does this include opportunity cost?", "answer": "No, it only calculates wages."}
+  ],
+  "disclaimer": "Approximate cost; actual salaries may vary.",
+  "cluster": "Productivity",
+  "info": [
+    "Shorter, focused meetings reduce wasted resources.",
+    "Knowing the cost helps decide if a meeting is necessary."
+  ]
+}
+
+<Calculator schema={schema} />

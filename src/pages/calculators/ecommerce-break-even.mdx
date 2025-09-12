@@ -1,0 +1,39 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "E-commerce Break-even Calculator"
+description: "Find units needed to cover all e-commerce costs."
+updated: "2025-10-05"
+cluster: "Business"
+---
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "ecommerce-break-even",
+  "title": "E-commerce Break-even Calculator",
+  "locale": "en",
+  "unit": "units",
+  "inputs": [
+    {"name": "fixed_costs", "label": "Fixed costs (USD)", "type": "number", "step": "any", "placeholder": "5000"},
+    {"name": "price", "label": "Price per unit (USD)", "type": "number", "step": "any", "placeholder": "50"},
+    {"name": "cost", "label": "Cost per unit (USD)", "type": "number", "step": "any", "placeholder": "30"}
+  ],
+  "expression": "fixed_costs / (price - cost)",
+  "intro": "Determine how many units you must sell to break even after manufacturing, shipping, advertising and platform fees.",
+  "examples": [
+    {"description": "$5,000 fixed costs, $50 price, $30 cost ⇒ 250 units"},
+    {"description": "$10,000 fixed costs, $80 price, $45 cost ⇒ 285.71 units"}
+  ],
+  "faqs": [
+    {"question": "What are fixed costs?", "answer": "Expenses that don't change with sales volume."},
+    {"question": "What if price equals cost?", "answer": "Break-even is impossible if profit per unit is zero."},
+    {"question": "Does this include taxes?", "answer": "No, taxes are not considered."}
+  ],
+  "disclaimer": "Use for planning; real-world results depend on market conditions.",
+  "cluster": "Business",
+  "info": [
+    "Break-even analysis guides pricing and volume targets.",
+    "Reducing costs or increasing price lowers the required units."
+  ]
+}
+
+<Calculator schema={schema} />
