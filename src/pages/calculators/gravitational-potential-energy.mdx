@@ -1,0 +1,68 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Gravitational Potential Energy Calculator"
+description: "Compute potential energy from mass, height, and gravity."
+updated: "2025-10-06"
+cluster: "Science"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "gravitational-potential-energy",
+  title: "Gravitational Potential Energy Calculator",
+  locale: "en",
+  intro:
+    "Calculate gravitational potential energy by multiplying mass, gravitational acceleration, and height.",
+  unit: "J",
+  cluster: "Science",
+  inputs: [
+    {
+      name: "mass",
+      label: "Mass (kg)",
+      type: "number",
+      step: "any",
+      placeholder: "10",
+    },
+    {
+      name: "height",
+      label: "Height (m)",
+      type: "number",
+      step: "any",
+      placeholder: "5",
+    },
+    {
+      name: "gravity",
+      label: "Gravity (m/s^2)",
+      type: "number",
+      step: "any",
+      placeholder: "9.81",
+    },
+  ],
+  expression: "mass * gravity * height",
+  examples: [
+    { description: "10 kg at 5 m ⇒ 490.5 J" },
+    { description: "2 kg at 2 m ⇒ 39.24 J" },
+  ],
+  faqs: [
+    {
+      question: "Can I use gravity of other planets?",
+      answer: "Yes, change the gravity input to match the planet.",
+    },
+    {
+      question: "Does mass include Earth's gravity?",
+      answer: "Mass is independent of gravity; weight changes with gravity.",
+    },
+    {
+      question: "Is air resistance considered?",
+      answer: "No, this formula ignores air resistance and other forces.",
+    },
+  ],
+  disclaimer: "Assumes uniform gravitational field and static object.",
+  info: [
+    "Potential energy is stored energy due to position.",
+    "Measured in joules, the same unit as work.",
+  ],
+};
+
+<Calculator schema={schema} />

@@ -1,0 +1,62 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Debt-to-Asset Ratio Calculator"
+description: "Compare total liabilities to total assets."
+updated: "2025-10-06"
+cluster: "Personal Finance & Loans"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "debt-to-asset-ratio",
+  title: "Debt-to-Asset Ratio Calculator",
+  locale: "en",
+  intro:
+    "Find the percentage of assets financed by debt by dividing total liabilities by total assets and multiplying by 100.",
+  unit: "%",
+  cluster: "Personal Finance & Loans",
+  inputs: [
+    {
+      name: "liabilities",
+      label: "Total Liabilities (USD)",
+      type: "number",
+      step: "any",
+      placeholder: "200000",
+    },
+    {
+      name: "assets",
+      label: "Total Assets (USD)",
+      type: "number",
+      step: "any",
+      placeholder: "500000",
+    },
+  ],
+  expression: "(liabilities / assets) * 100",
+  examples: [
+    { description: "$200,000 liabilities & $500,000 assets ⇒ 40%" },
+    { description: "$150,000 liabilities & $300,000 assets ⇒ 50%" },
+  ],
+  faqs: [
+    {
+      question: "Is a lower ratio better?",
+      answer: "Generally yes; lower ratios indicate less leverage.",
+    },
+    {
+      question: "Can the ratio exceed 100%?",
+      answer: "Yes, if liabilities exceed assets.",
+    },
+    {
+      question: "Should I use book or market value?",
+      answer: "Use consistent asset and liability valuations for comparison.",
+    },
+  ],
+  disclaimer:
+    "Financial ratios are simplified indicators and may not capture all nuances.",
+  info: [
+    "Often used by lenders to gauge solvency.",
+    "Complement with other ratios for full analysis.",
+  ],
+};
+
+<Calculator schema={schema} />

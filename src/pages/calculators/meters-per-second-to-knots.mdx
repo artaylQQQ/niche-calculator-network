@@ -1,0 +1,54 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Meters per Second to Knots Converter"
+description: "Convert speed from meters per second to knots."
+updated: "2025-10-06"
+cluster: "Conversions"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "meters-per-second-to-knots",
+  title: "Meters per Second to Knots Converter",
+  locale: "en",
+  intro:
+    "Convert a speed from meters per second to nautical miles per hour (knots).",
+  unit: "kn",
+  cluster: "Conversions",
+  inputs: [
+    {
+      name: "mps",
+      label: "Speed (m/s)",
+      type: "number",
+      step: "any",
+      placeholder: "10",
+    },
+  ],
+  expression: "mps * 1.94384",
+  examples: [
+    { description: "10 m/s ⇒ 19.44 kn" },
+    { description: "15 m/s ⇒ 29.16 kn" },
+  ],
+  faqs: [
+    {
+      question: "What is a knot?",
+      answer: "A knot is one nautical mile per hour.",
+    },
+    {
+      question: "Can I convert knots back to m/s?",
+      answer: "Divide the knots value by 1.94384.",
+    },
+    {
+      question: "Does it account for current or wind?",
+      answer: "No, it only converts speed units.",
+    },
+  ],
+  disclaimer: "Uses conversion 1 m/s = 1.94384 knots.",
+  info: [
+    "Knots are commonly used in aviation and maritime contexts.",
+    "Nautical miles are based on the Earth's circumference.",
+  ],
+};
+
+<Calculator schema={schema} />

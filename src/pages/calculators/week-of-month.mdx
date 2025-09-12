@@ -1,0 +1,62 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Week of Month Calculator"
+description: "Determine which week of the month a date falls in."
+updated: "2025-10-06"
+cluster: "Date & Time"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "week-of-month",
+  title: "Week of Month Calculator",
+  locale: "en",
+  intro:
+    "Find the week number within a month for a given date assuming weeks start on Sunday.",
+  unit: "week",
+  cluster: "Date & Time",
+  inputs: [
+    {
+      name: "year",
+      label: "Year",
+      type: "number",
+      step: "1",
+      placeholder: "2025",
+    },
+    {
+      name: "month",
+      label: "Month",
+      type: "number",
+      step: "1",
+      placeholder: "6",
+    },
+    { name: "day", label: "Day", type: "number", step: "1", placeholder: "15" },
+  ],
+  expression: "Math.ceil((day + new Date(year, month - 1, 1).getDay()) / 7)",
+  examples: [
+    { description: "June 15, 2025 ⇒ Week 3" },
+    { description: "May 26, 2025 ⇒ Week 5" },
+  ],
+  faqs: [
+    {
+      question: "Which day starts the week?",
+      answer: "The calculation assumes weeks start on Sunday.",
+    },
+    {
+      question: "Do partial weeks count as week 1?",
+      answer: "Yes, the first partial week is counted as week 1.",
+    },
+    {
+      question: "Does it handle leap years?",
+      answer: "Yes, JavaScript's Date object accounts for leap years.",
+    },
+  ],
+  disclaimer: "Weeks are confined within the month and start on Sunday.",
+  info: [
+    "Useful for scheduling monthly events.",
+    "Week numbering differs from ISO week numbers.",
+  ],
+};
+
+<Calculator schema={schema} />
