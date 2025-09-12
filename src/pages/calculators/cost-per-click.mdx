@@ -2,8 +2,8 @@
 layout: ../../layouts/CalculatorLayout.astro
 title: "Cost Per Click Calculator"
 description: "Calculate advertising cost per click."
-date: 2025-09-09
-updated: 2025-09-09
+date: 2025-09-12
+updated: 2025-09-12
 cluster: "Web & Marketing"
 ---
 import Calculator from '../../components/Calculator.astro';
@@ -13,22 +13,52 @@ export const schema = {
   "title": "Cost Per Click Calculator",
   "locale": "en",
   "inputs": [
-    {"name":"cost","label":"Total Cost","type":"number","step":"any","placeholder":"200"},
-    {"name":"clicks","label":"Total Clicks","type":"number","step":"any","placeholder":"1000"}
+    {
+      "name": "cost",
+      "label": "Total Cost",
+      "type": "number",
+      "step": "any",
+      "placeholder": "200"
+    },
+    {
+      "name": "clicks",
+      "label": "Total Clicks",
+      "type": "number",
+      "step": "any",
+      "placeholder": "1000"
+    }
   ],
   "expression": "cost / clicks",
   "intro": "Calculate advertising cost per click.",
   "examples": [
-    {"description":"$200 cost for 1000 clicks ⇒ $0.20 CPC"},
-    {"description":"$50 cost for 200 clicks ⇒ $0.25 CPC"}
+    {
+      "description": "$200 cost for 1000 clicks ⇒ $0.20 CPC"
+    },
+    {
+      "description": "$50 cost for 200 clicks ⇒ $0.25 CPC"
+    }
   ],
+  "info": [],
   "faqs": [
-    {"question":"What is CPC?","answer":"The amount paid for each click on an ad."},
-    {"question":"Can clicks be zero?","answer":"No, at least one click is required."}
+    {
+      "question": "What is CPC?",
+      "answer": "The amount paid for each click on an ad."
+    },
+    {
+      "question": "Can clicks be zero?",
+      "answer": "No, at least one click is required."
+    }
   ],
   "disclaimer": "Use with campaign data; results exclude platform fees.",
-  "cluster": "Web & Marketing"
-};
+  "cluster": "Web & Marketing",
+  "related": [
+    "percentage-discount",
+    "simple-interest",
+    "compound-interest-calculator",
+    "bmi-calculator",
+    "daily-calorie-burn",
+    "celsius-to-fahrenheit"
+  ]
+}
 
 <Calculator schema={schema} />
-

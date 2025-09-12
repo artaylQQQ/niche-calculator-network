@@ -2,32 +2,58 @@
 layout: ../../layouts/CalculatorLayout.astro
 title: "PMI Monthly Payment Calculator"
 description: "Estimate monthly private mortgage insurance cost from loan amount and PMI rate."
-updated: "2025-09-26"
+date: 2025-09-12
+updated: 2025-09-12
 cluster: "Personal Finance & Loans"
 ---
-
 import Calculator from '../../components/Calculator.astro';
 
 export const schema = {
-  slug: "pmi-monthly-payment",
-  title: "PMI Monthly Payment Calculator",
-  locale: "en",
-  unit: "",
-  intro: "Estimate monthly PMI cost from loan amount and annual PMI rate.",
-  inputs: [
-    { name: "loan", label: "Loan Amount", type: "number", step: "any", placeholder: "200000" },
-    { name: "rate", label: "PMI Rate (%) per year", type: "number", step: "any", placeholder: "0.5" }
+  "slug": "pmi-monthly-payment",
+  "title": "PMI Monthly Payment Calculator",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "loan",
+      "label": "Loan Amount",
+      "type": "number",
+      "min": 0,
+      "step": "any",
+      "placeholder": "200000"
+    },
+    {
+      "name": "rate",
+      "label": "PMI Rate (%) per year",
+      "type": "number",
+      "min": 0,
+      "step": "any",
+      "placeholder": "0.5"
+    }
   ],
-  expression: "(loan * rate/100) / 12",
-  examples: [
-    { description: "200,000 loan at 0.5% ⇒ 83.33" }
+  "expression": "(loan * rate/100) / 12",
+  "intro": "Estimate monthly private mortgage insurance cost from loan amount and PMI rate.",
+  "examples": [
+    {
+      "description": "200,000 loan at 0.5% ⇒ 83.33"
+    }
   ],
-  faqs: [
-    { question: "Is PMI deductible?", answer: "Check current tax laws; this is an estimate only." },
-    { question: "When does PMI end?", answer: "Usually when loan-to-value drops below 80%." }
+  "info": [],
+  "faqs": [
+    {
+      "question": "When does PMI end?",
+      "answer": "Usually when loan-to-value drops below 80%."
+    }
   ],
-  disclaimer: "Consult a lender for exact PMI costs.",
-  cluster: "Personal Finance & Loans"
-};
+  "disclaimer": "Educational information, not professional advice.",
+  "cluster": "Personal Finance & Loans",
+  "related": [
+    "percentage-discount",
+    "simple-interest",
+    "compound-interest-calculator",
+    "bmi-calculator",
+    "daily-calorie-burn",
+    "celsius-to-fahrenheit"
+  ]
+}
 
 <Calculator schema={schema} />

@@ -2,9 +2,9 @@
 layout: ../../layouts/CalculatorLayout.astro
 title: "Combination Calculator"
 description: "Compute n choose r combinations."
-date: 2025-09-09
-updated: 2025-09-09
-cluster: "Math"
+date: 2025-09-12
+updated: 2025-09-12
+cluster: "Math & Statistics"
 ---
 import Calculator from '../../components/Calculator.astro';
 
@@ -13,22 +13,52 @@ export const schema = {
   "title": "Combination Calculator",
   "locale": "en",
   "inputs": [
-    {"name":"n","label":"n","type":"number","step":1,"placeholder":"5"},
-    {"name":"r","label":"r","type":"number","step":1,"placeholder":"2"}
+    {
+      "name": "n",
+      "label": "n",
+      "type": "number",
+      "step": 1,
+      "placeholder": "5"
+    },
+    {
+      "name": "r",
+      "label": "r",
+      "type": "number",
+      "step": 1,
+      "placeholder": "2"
+    }
   ],
   "expression": "(function(n,r){n=Math.floor(n);r=Math.floor(r);if(r<0||n<0||r>n)return 0;let num=1,den=1;for(let i=1;i<=r;i++){num*=n-(i-1);den*=i;}return num/den;})(n,r)",
   "intro": "Compute n choose r combinations.",
   "examples": [
-    {"description":"5 choose 2 ⇒ 10"},
-    {"description":"10 choose 3 ⇒ 120"}
+    {
+      "description": "5 choose 2 ⇒ 10"
+    },
+    {
+      "description": "10 choose 3 ⇒ 120"
+    }
   ],
+  "info": [],
   "faqs": [
-    {"question":"What does n choose r mean?","answer":"The number of ways to pick r items from n without order."},
-    {"question":"Can r exceed n?","answer":"No, result is zero if r > n."}
+    {
+      "question": "What does n choose r mean?",
+      "answer": "The number of ways to pick r items from n without order."
+    },
+    {
+      "question": "Can r exceed n?",
+      "answer": "No, result is zero if r > n."
+    }
   ],
   "disclaimer": "For math practice; verify large values with reliable tools.",
-  "cluster": "Math"
-};
+  "cluster": "Math & Statistics",
+  "related": [
+    "percentage-increase",
+    "rule-of-three-calculator",
+    "pythagorean-theorem-calculator",
+    "geometric-series-sum",
+    "circumference-from-area",
+    "triangle-inradius"
+  ]
+}
 
 <Calculator schema={schema} />
-

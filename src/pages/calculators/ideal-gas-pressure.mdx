@@ -2,8 +2,8 @@
 layout: ../../layouts/CalculatorLayout.astro
 title: "Ideal Gas Pressure Calculator"
 description: "Estimate pressure using the ideal gas law."
-date: 2025-09-09
-updated: 2025-09-09
+date: 2025-09-12
+updated: 2025-09-12
 cluster: "Science & Engineering"
 ---
 import Calculator from '../../components/Calculator.astro';
@@ -12,25 +12,60 @@ export const schema = {
   "slug": "ideal-gas-pressure",
   "title": "Ideal Gas Pressure Calculator",
   "locale": "en",
-  "unit": "atm",
   "inputs": [
-    {"name":"n","label":"Moles (n)","type":"number","step":"any","placeholder":"1"},
-    {"name":"temperature","label":"Temperature (K)","type":"number","step":"any","placeholder":"300"},
-    {"name":"volume","label":"Volume (L)","type":"number","step":"any","placeholder":"24"}
+    {
+      "name": "n",
+      "label": "Moles (n)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "1"
+    },
+    {
+      "name": "temperature",
+      "label": "Temperature (K)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "300"
+    },
+    {
+      "name": "volume",
+      "label": "Volume (L)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "24"
+    }
   ],
   "expression": "(n * 0.082057 * temperature) / volume",
   "intro": "Estimate pressure using the ideal gas law.",
   "examples": [
-    {"description":"1 mol at 300K in 24L ⇒ 1.03 atm"},
-    {"description":"2 mol at 350K in 30L ⇒ 1.91 atm"}
+    {
+      "description": "1 mol at 300K in 24L ⇒ 1.03 atm"
+    },
+    {
+      "description": "2 mol at 350K in 30L ⇒ 1.91 atm"
+    }
   ],
+  "info": [],
   "faqs": [
-    {"question":"What constant is used?","answer":"R = 0.082057 L·atm/(mol·K)."},
-    {"question":"Does it work for real gases?","answer":"It is an approximation for ideal behavior."}
+    {
+      "question": "What constant is used?",
+      "answer": "R = 0.082057 L·atm/(mol·K)."
+    },
+    {
+      "question": "Does it work for real gases?",
+      "answer": "It is an approximation for ideal behavior."
+    }
   ],
   "disclaimer": "Use more precise models for high pressures or low temperatures.",
-  "cluster": "Science & Engineering"
-};
+  "cluster": "Science & Engineering",
+  "related": [
+    "percentage-discount",
+    "simple-interest",
+    "compound-interest-calculator",
+    "bmi-calculator",
+    "daily-calorie-burn",
+    "celsius-to-fahrenheit"
+  ]
+}
 
 <Calculator schema={schema} />
-

@@ -2,9 +2,9 @@
 layout: ../../layouts/CalculatorLayout.astro
 title: "Millimeters to Inches Converter"
 description: "Convert length from millimeters to inches."
-date: 2025-09-09
-updated: 2025-09-09
-cluster: "Conversions"
+date: 2025-09-12
+updated: 2025-09-12
+cluster: "Conversions & Units"
 ---
 import Calculator from '../../components/Calculator.astro';
 
@@ -12,23 +12,46 @@ export const schema = {
   "slug": "millimeters-to-inches",
   "title": "Millimeters to Inches Converter",
   "locale": "en",
-  "unit": "in",
   "inputs": [
-    {"name":"mm","label":"Millimeters","type":"number","step":"any","placeholder":"50"}
+    {
+      "name": "mm",
+      "label": "Millimeters",
+      "type": "number",
+      "step": "any",
+      "placeholder": "50"
+    }
   ],
   "expression": "mm / 25.4",
   "intro": "Convert length from millimeters to inches.",
   "examples": [
-    {"description":"50 mm ⇒ 1.97 in"},
-    {"description":"100 mm ⇒ 3.94 in"}
+    {
+      "description": "50 mm ⇒ 1.97 in"
+    },
+    {
+      "description": "100 mm ⇒ 3.94 in"
+    }
   ],
+  "info": [],
   "faqs": [
-    {"question":"What is the conversion factor?","answer":"1 inch equals 25.4 millimeters."},
-    {"question":"Does it handle decimals?","answer":"Yes, fractional values are accepted."}
+    {
+      "question": "What is the conversion factor?",
+      "answer": "1 inch equals 25.4 millimeters."
+    },
+    {
+      "question": "Does it handle decimals?",
+      "answer": "Yes, fractional values are accepted."
+    }
   ],
   "disclaimer": "Approximate conversion; use precise tools for engineering work.",
-  "cluster": "Conversions"
-};
+  "cluster": "Conversions & Units",
+  "related": [
+    "km-to-miles",
+    "meters-to-feet",
+    "smoots-to-meters",
+    "hogsheads-to-liters",
+    "furlongs-per-fortnight",
+    "banana-dose-converter"
+  ]
+}
 
 <Calculator schema={schema} />
-

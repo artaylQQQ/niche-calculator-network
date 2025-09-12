@@ -2,8 +2,8 @@
 layout: ../../layouts/CalculatorLayout.astro
 title: "Baseboard Trim Length"
 description: "Calculate baseboard length needed for a room minus openings."
-date: 2025-09-09
-updated: 2025-09-09
+date: 2025-09-12
+updated: 2025-09-12
 cluster: "Home & DIY"
 ---
 import Calculator from '../../components/Calculator.astro';
@@ -12,26 +12,67 @@ export const schema = {
   "slug": "baseboard-length",
   "title": "Baseboard Trim Length",
   "locale": "en",
-  "unit": "ft",
   "inputs": [
-    {"name":"length","label":"Room Length (ft)","type":"number","step":"any","placeholder":"20"},
-    {"name":"width","label":"Room Width (ft)","type":"number","step":"any","placeholder":"15"},
-    {"name":"doors","label":"Total Door Width (ft)","type":"number","step":"any","placeholder":"6"},
-    {"name":"windows","label":"Total Window Width (ft)","type":"number","step":"any","placeholder":"8"}
+    {
+      "name": "length",
+      "label": "Room Length (ft)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "20"
+    },
+    {
+      "name": "width",
+      "label": "Room Width (ft)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "15"
+    },
+    {
+      "name": "doors",
+      "label": "Total Door Width (ft)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "6"
+    },
+    {
+      "name": "windows",
+      "label": "Total Window Width (ft)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "8"
+    }
   ],
   "expression": "2*(length + width) - doors - windows",
   "intro": "Calculate baseboard length needed for a room minus openings.",
   "examples": [
-    {"description":"20×15 room minus 6ft doors and 8ft windows ⇒ 56 ft"},
-    {"description":"12×10 room minus 3ft doors and 6ft windows ⇒ 35 ft"}
+    {
+      "description": "20×15 room minus 6ft doors and 8ft windows ⇒ 56 ft"
+    },
+    {
+      "description": "12×10 room minus 3ft doors and 6ft windows ⇒ 35 ft"
+    }
   ],
+  "info": [],
   "faqs": [
-    {"question":"Should I add waste?","answer":"Yes, consider extra for cuts and mistakes."},
-    {"question":"Does it include closets?","answer":"Measure each wall segment you plan to trim."}
+    {
+      "question": "Should I add waste?",
+      "answer": "Yes, consider extra for cuts and mistakes."
+    },
+    {
+      "question": "Does it include closets?",
+      "answer": "Measure each wall segment you plan to trim."
+    }
   ],
   "disclaimer": "Round up and purchase extra material as needed.",
-  "cluster": "Home & DIY"
-};
+  "cluster": "Home & DIY",
+  "related": [
+    "paint-coverage",
+    "garden-soil-volume",
+    "home-diy-division-calculator",
+    "rainwater-harvest",
+    "garden-soil-weight",
+    "brick-count-estimator"
+  ]
+}
 
 <Calculator schema={schema} />
-

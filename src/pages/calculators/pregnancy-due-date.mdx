@@ -2,31 +2,66 @@
 layout: ../../layouts/CalculatorLayout.astro
 title: "Pregnancy Due Date Calculator"
 description: "Estimate expected due date 280 days from the last menstrual period."
-updated: "2025-09-26"
-cluster: "Health"
+date: 2025-09-12
+updated: 2025-09-12
+cluster: "Health & Fitness"
 ---
-
 import Calculator from '../../components/Calculator.astro';
 
 export const schema = {
-  slug: "pregnancy-due-date",
-  title: "Pregnancy Due Date Calculator",
-  locale: "en",
-  intro: "Estimate expected due date 280 days from the last menstrual period.",
-  inputs: [
-    { name: "year", label: "LMP Year", type: "number", step: "1", placeholder: "2025" },
-    { name: "month", label: "LMP Month", type: "number", step: "1", placeholder: "1" },
-    { name: "day", label: "LMP Day", type: "number", step: "1", placeholder: "1" }
+  "slug": "pregnancy-due-date",
+  "title": "Pregnancy Due Date Calculator",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "year",
+      "label": "LMP Year",
+      "type": "number",
+      "min": 0,
+      "step": "1",
+      "placeholder": "2025"
+    },
+    {
+      "name": "month",
+      "label": "LMP Month",
+      "type": "number",
+      "min": 1,
+      "step": "1",
+      "placeholder": "1"
+    },
+    {
+      "name": "day",
+      "label": "LMP Day",
+      "type": "number",
+      "min": 1,
+      "step": "1",
+      "placeholder": "1"
+    }
   ],
-  expression: "(new Date(year, month-1, day + 280)).toISOString().slice(0,10)",
-  examples: [
-    { description: "LMP 2025-01-01 ⇒ 2025-10-08" }
+  "expression": "(new Date(year, month-1, day + 280)).toISOString().slice(0,10)",
+  "intro": "Estimate expected due date 280 days from the last menstrual period.",
+  "examples": [
+    {
+      "description": "LMP 2025-01-01 ⇒ 2025-10-08"
+    }
   ],
-  faqs: [
-    { question: "How accurate is this?", answer: "Actual delivery can vary by several weeks." }
+  "info": [],
+  "faqs": [
+    {
+      "question": "How accurate is this?",
+      "answer": "Actual delivery can vary by several weeks."
+    }
   ],
-  disclaimer: "Not medical advice; consult a healthcare provider.",
-  cluster: "Health"
-};
+  "disclaimer": "Educational information, not professional advice.",
+  "cluster": "Health & Fitness",
+  "related": [
+    "sleep-debt-weekly",
+    "sugar-cube-equivalent",
+    "caffeine-half-life",
+    "protein-calorie-percentage",
+    "bmi-prime",
+    "heart-rate-reserve-percentage"
+  ]
+}
 
 <Calculator schema={schema} />

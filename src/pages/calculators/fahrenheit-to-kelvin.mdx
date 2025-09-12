@@ -2,9 +2,9 @@
 layout: ../../layouts/CalculatorLayout.astro
 title: "Fahrenheit to Kelvin Converter"
 description: "Convert temperature from Fahrenheit to Kelvin."
-date: 2025-09-09
-updated: 2025-09-09
-cluster: "Conversions"
+date: 2025-09-12
+updated: 2025-09-12
+cluster: "Conversions & Units"
 ---
 import Calculator from '../../components/Calculator.astro';
 
@@ -12,23 +12,46 @@ export const schema = {
   "slug": "fahrenheit-to-kelvin",
   "title": "Fahrenheit to Kelvin Converter",
   "locale": "en",
-  "unit": "K",
   "inputs": [
-    {"name":"f","label":"Fahrenheit","type":"number","step":"any","placeholder":"32"}
+    {
+      "name": "f",
+      "label": "Fahrenheit",
+      "type": "number",
+      "step": "any",
+      "placeholder": "32"
+    }
   ],
   "expression": "(f - 32) * 5/9 + 273.15",
   "intro": "Convert temperature from Fahrenheit to Kelvin.",
   "examples": [
-    {"description":"32°F ⇒ 273.15 K"},
-    {"description":"212°F ⇒ 373.15 K"}
+    {
+      "description": "32°F ⇒ 273.15 K"
+    },
+    {
+      "description": "212°F ⇒ 373.15 K"
+    }
   ],
+  "info": [],
   "faqs": [
-    {"question":"Why add 273.15?","answer":"It shifts Celsius to Kelvin scale."},
-    {"question":"Can I convert negative Fahrenheit?","answer":"Yes, the formula handles negative values."}
+    {
+      "question": "Why add 273.15?",
+      "answer": "It shifts Celsius to Kelvin scale."
+    },
+    {
+      "question": "Can I convert negative Fahrenheit?",
+      "answer": "Yes, the formula handles negative values."
+    }
   ],
   "disclaimer": "Verify critical temperature conversions with reliable references.",
-  "cluster": "Conversions"
-};
+  "cluster": "Conversions & Units",
+  "related": [
+    "km-to-miles",
+    "meters-to-feet",
+    "smoots-to-meters",
+    "hogsheads-to-liters",
+    "furlongs-per-fortnight",
+    "banana-dose-converter"
+  ]
+}
 
 <Calculator schema={schema} />
-

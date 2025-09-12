@@ -2,33 +2,66 @@
 layout: ../../layouts/CalculatorLayout.astro
 title: "Unix Timestamp Calculator"
 description: "Convert a calendar date to seconds since the Unix epoch."
-updated: "2025-09-26"
+date: 2025-09-12
+updated: 2025-09-12
 cluster: "Date & Time"
 ---
-
 import Calculator from '../../components/Calculator.astro';
 
 export const schema = {
-  slug: "unix-timestamp",
-  title: "Unix Timestamp Calculator",
-  locale: "en",
-  unit: "seconds",
-  intro: "Convert a calendar date to seconds since 1 January 1970 UTC.",
-  inputs: [
-    { name: "year", label: "Year", type: "number", step: "1", placeholder: "2025" },
-    { name: "month", label: "Month", type: "number", step: "1", placeholder: "1" },
-    { name: "day", label: "Day", type: "number", step: "1", placeholder: "1" }
+  "slug": "unix-timestamp",
+  "title": "Unix Timestamp Calculator",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "year",
+      "label": "Year",
+      "type": "number",
+      "min": 0,
+      "step": "1",
+      "placeholder": "2025"
+    },
+    {
+      "name": "month",
+      "label": "Month",
+      "type": "number",
+      "min": 1,
+      "step": "1",
+      "placeholder": "1"
+    },
+    {
+      "name": "day",
+      "label": "Day",
+      "type": "number",
+      "min": 1,
+      "step": "1",
+      "placeholder": "1"
+    }
   ],
-  expression: "Date.UTC(year, month-1, day)/1000",
-  examples: [
-    { description: "1970-01-01 ⇒ 0" },
-    { description: "2025-01-01 ⇒ 1735689600" }
+  "expression": "Date.UTC(year, month-1, day)/1000",
+  "intro": "Convert a calendar date to seconds since the Unix epoch.",
+  "examples": [
+    {
+      "description": "1970-01-01 ⇒ 0"
+    }
   ],
-  faqs: [
-    { question: "Does it account for time of day?", answer: "No, it assumes midnight UTC." }
+  "info": [],
+  "faqs": [
+    {
+      "question": "Does it account for time of day?",
+      "answer": "No, it assumes midnight UTC."
+    }
   ],
-  disclaimer: "Use for rough conversions only.",
-  cluster: "Date & Time"
-};
+  "disclaimer": "Educational information, not professional advice.",
+  "cluster": "Date & Time",
+  "related": [
+    "duration-seconds",
+    "days-to-hours",
+    "years-to-days",
+    "mars-sol-to-earth-days",
+    "microfortnight-to-seconds",
+    "pomodoro-planner"
+  ]
+}
 
 <Calculator schema={schema} />

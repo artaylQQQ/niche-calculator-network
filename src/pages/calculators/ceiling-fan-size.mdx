@@ -2,30 +2,50 @@
 layout: ../../layouts/CalculatorLayout.astro
 title: "Ceiling Fan Size Calculator"
 description: "Recommend fan blade span based on room area."
-updated: "2025-09-26"
+date: 2025-09-12
+updated: 2025-09-12
 cluster: "Home & DIY"
 ---
-
 import Calculator from '../../components/Calculator.astro';
 
 export const schema = {
-  slug: "ceiling-fan-size",
-  title: "Ceiling Fan Size Calculator",
-  locale: "en",
-  unit: "inches",
-  intro: "Recommend fan blade span based on room area.",
-  inputs: [
-    { name: "area", label: "Room Area (sq ft)", type: "number", step: "any", placeholder: "150" }
+  "slug": "ceiling-fan-size",
+  "title": "Ceiling Fan Size Calculator",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "area",
+      "label": "Room Area (sq ft)",
+      "type": "number",
+      "min": 0,
+      "step": "any",
+      "placeholder": "150"
+    }
   ],
-  expression: "area <= 75 ? 36 : area <= 144 ? 42 : area <= 225 ? 50 : area <= 400 ? 54 : 56",
-  examples: [
-    { description: "150 sq ft ⇒ 50 in" }
+  "expression": "area <= 75 ? 36 : area <= 144 ? 42 : area <= 225 ? 50 : area <= 400 ? 54 : 56",
+  "intro": "Recommend fan blade span based on room area.",
+  "examples": [
+    {
+      "description": "150 sq ft ⇒ 50 in"
+    }
   ],
-  faqs: [
-    { question: "What if my room is long and narrow?", answer: "Consider multiple fans for large or odd-shaped rooms." }
+  "info": [],
+  "faqs": [
+    {
+      "question": "What if my room is long and narrow?",
+      "answer": "Consider multiple fans for large or odd-shaped rooms."
+    }
   ],
-  disclaimer: "Guideline only; check manufacturer recommendations.",
-  cluster: "Home & DIY"
-};
+  "disclaimer": "Educational information, not professional advice.",
+  "cluster": "Home & DIY",
+  "related": [
+    "paint-coverage",
+    "garden-soil-volume",
+    "home-diy-division-calculator",
+    "rainwater-harvest",
+    "garden-soil-weight",
+    "brick-count-estimator"
+  ]
+}
 
 <Calculator schema={schema} />

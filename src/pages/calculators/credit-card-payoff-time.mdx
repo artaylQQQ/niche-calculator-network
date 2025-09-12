@@ -2,8 +2,8 @@
 layout: ../../layouts/CalculatorLayout.astro
 title: "Credit Card Payoff Time Calculator"
 description: "Estimate months to pay off a credit card balance."
-date: 2025-09-09
-updated: 2025-09-09
+date: 2025-09-12
+updated: 2025-09-12
 cluster: "Personal Finance & Loans"
 ---
 import Calculator from '../../components/Calculator.astro';
@@ -13,23 +13,59 @@ export const schema = {
   "title": "Credit Card Payoff Time Calculator",
   "locale": "en",
   "inputs": [
-    {"name":"balance","label":"Balance","type":"number","step":"any","placeholder":"1000"},
-    {"name":"apr","label":"APR (%)","type":"number","step":"any","placeholder":"18"},
-    {"name":"payment","label":"Monthly Payment","type":"number","step":"any","placeholder":"50"}
+    {
+      "name": "balance",
+      "label": "Balance",
+      "type": "number",
+      "step": "any",
+      "placeholder": "1000"
+    },
+    {
+      "name": "apr",
+      "label": "APR (%)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "18"
+    },
+    {
+      "name": "payment",
+      "label": "Monthly Payment",
+      "type": "number",
+      "step": "any",
+      "placeholder": "50"
+    }
   ],
   "expression": "(function(balance,apr,payment){const r=apr/100/12;return Math.log(payment/(payment-r*balance))/Math.log(1+r);})(balance,apr,payment)",
   "intro": "Estimate months to pay off a credit card balance.",
   "examples": [
-    {"description":"$1,000 at 18% APR with $50 payment ⇒ 24 months"},
-    {"description":"$5,000 at 20% APR with $200 payment ⇒ 33 months"}
+    {
+      "description": "$1,000 at 18% APR with $50 payment ⇒ 24 months"
+    },
+    {
+      "description": "$5,000 at 20% APR with $200 payment ⇒ 33 months"
+    }
   ],
+  "info": [],
   "faqs": [
-    {"question":"What if payment is too low?","answer":"The formula requires payment to exceed monthly interest."},
-    {"question":"Is compounding considered?","answer":"Yes, it assumes monthly compounding."}
+    {
+      "question": "What if payment is too low?",
+      "answer": "The formula requires payment to exceed monthly interest."
+    },
+    {
+      "question": "Is compounding considered?",
+      "answer": "Yes, it assumes monthly compounding."
+    }
   ],
   "disclaimer": "Educational estimate; actual payoff may vary with fees and rate changes.",
-  "cluster": "Personal Finance & Loans"
-};
+  "cluster": "Personal Finance & Loans",
+  "related": [
+    "percentage-discount",
+    "simple-interest",
+    "compound-interest-calculator",
+    "bmi-calculator",
+    "daily-calorie-burn",
+    "celsius-to-fahrenheit"
+  ]
+}
 
 <Calculator schema={schema} />
-

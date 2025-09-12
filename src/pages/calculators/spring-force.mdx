@@ -1,40 +1,76 @@
 ---
 layout: ../../layouts/CalculatorLayout.astro
 title: "Spring Force Calculator"
-description: "Compute force using Hooke's Law (F = k × x)."
-updated: "2025-09-26"
+description: "Compute the restoring force of a spring using Hooke's Law (F = k × x)."
+date: 2025-09-12
+updated: 2025-09-12
 cluster: "Science & Engineering"
 ---
-
 import Calculator from '../../components/Calculator.astro';
 
 export const schema = {
-  slug: "spring-force",
-  title: "Spring Force Calculator",
-  locale: "en",
-  unit: "N",
-  intro: "Compute force using Hooke's Law (F = k × x).",
-  inputs: [
-    { name: "k", label: "Spring Constant (N/m)", type: "number", step: "any", placeholder: "200" },
-    { name: "x", label: "Displacement (m)", type: "number", step: "any", placeholder: "0.1" }
+  "slug": "spring-force",
+  "title": "Spring Force Calculator",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "k",
+      "label": "Spring Constant (N/m)",
+      "type": "number",
+      "min": 0,
+      "step": "any",
+      "placeholder": "200"
+    },
+    {
+      "name": "x",
+      "label": "Displacement (m)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "0.1"
+    }
   ],
-  expression: "k * x",
-    examples: [
-      { description: "k=200 N/m, x=0.1 m ⇒ 20 N" },
-      { description: "k=150 N/m, x=0.2 m ⇒ 30 N" }
-    ],
-    faqs: [
-      { question: "Does direction matter?", answer: "This returns magnitude; direction depends on compression or extension." },
-      { question: "What is Hooke's Law?", answer: "It states the force is proportional to displacement." },
-      { question: "Can the spring constant change?", answer: "Only if the spring is stretched beyond its elastic limit." },
-      { question: "Can displacement be negative?", answer: "Yes, compression is negative, but this tool returns the magnitude." }
-    ],
-    info: [
-      "Applies only within the elastic range of the spring.",
-      "Force increases linearly with displacement for ideal springs.",
-    ],
-    disclaimer: "Ideal linear springs only.",
-    cluster: "Science & Engineering"
-};
+  "expression": "k * x",
+  "intro": "Compute the restoring force of a spring using Hooke's Law (F = k × x).",
+  "examples": [
+    {
+      "description": "k=200 N/m, x=0.1 m ⇒ 20 N"
+    },
+    {
+      "description": "k=150 N/m, x=0.2 m ⇒ 30 N"
+    }
+  ],
+  "info": [
+    "Applies only within the elastic range of the spring.",
+    "Force increases linearly with displacement for ideal springs."
+  ],
+  "faqs": [
+    {
+      "question": "Does direction matter?",
+      "answer": "This returns magnitude; direction depends on compression or extension."
+    },
+    {
+      "question": "What is Hooke's Law?",
+      "answer": "It states the force is proportional to displacement."
+    },
+    {
+      "question": "Can the spring constant change?",
+      "answer": "Only if the spring is stretched beyond its elastic limit."
+    },
+    {
+      "question": "Can displacement be negative?",
+      "answer": "Yes, compression is negative, but this tool returns the magnitude."
+    }
+  ],
+  "disclaimer": "Educational information, not professional advice.",
+  "cluster": "Science & Engineering",
+  "related": [
+    "radioactive-decay-remaining",
+    "led-series-resistor",
+    "force-from-mass-acceleration",
+    "specific-heat-energy",
+    "boiling-point-altitude",
+    "rc-time-constant"
+  ]
+}
 
 <Calculator schema={schema} />

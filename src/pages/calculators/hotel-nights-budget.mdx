@@ -2,8 +2,8 @@
 layout: ../../layouts/CalculatorLayout.astro
 title: "Hotel Nights Within Budget"
 description: "See how many hotel nights your budget can cover."
-date: 2025-09-09
-updated: 2025-09-09
+date: 2025-09-12
+updated: 2025-09-12
 cluster: "Lifestyle & Travel"
 ---
 import Calculator from '../../components/Calculator.astro';
@@ -13,22 +13,52 @@ export const schema = {
   "title": "Hotel Nights Within Budget",
   "locale": "en",
   "inputs": [
-    {"name":"budget","label":"Total Budget","type":"number","step":"any","placeholder":"1000"},
-    {"name":"nightly","label":"Price per Night","type":"number","step":"any","placeholder":"120"}
+    {
+      "name": "budget",
+      "label": "Total Budget",
+      "type": "number",
+      "step": "any",
+      "placeholder": "1000"
+    },
+    {
+      "name": "nightly",
+      "label": "Price per Night",
+      "type": "number",
+      "step": "any",
+      "placeholder": "120"
+    }
   ],
   "expression": "budget / nightly",
   "intro": "See how many hotel nights your budget can cover.",
   "examples": [
-    {"description":"$1000 budget at $120/night ⇒ 8.33 nights"},
-    {"description":"$600 budget at $75/night ⇒ 8 nights"}
+    {
+      "description": "$1000 budget at $120/night ⇒ 8.33 nights"
+    },
+    {
+      "description": "$600 budget at $75/night ⇒ 8 nights"
+    }
   ],
+  "info": [],
   "faqs": [
-    {"question":"Are taxes included?","answer":"No, add local taxes and fees separately."},
-    {"question":"Can I enter decimals?","answer":"Yes, useful for partial nights or shared rooms."}
+    {
+      "question": "Are taxes included?",
+      "answer": "No, add local taxes and fees separately."
+    },
+    {
+      "question": "Can I enter decimals?",
+      "answer": "Yes, useful for partial nights or shared rooms."
+    }
   ],
   "disclaimer": "Check hotel policies for taxes and additional charges.",
-  "cluster": "Lifestyle & Travel"
-};
+  "cluster": "Lifestyle & Travel",
+  "related": [
+    "percentage-discount",
+    "simple-interest",
+    "compound-interest-calculator",
+    "bmi-calculator",
+    "daily-calorie-burn",
+    "celsius-to-fahrenheit"
+  ]
+}
 
 <Calculator schema={schema} />
-

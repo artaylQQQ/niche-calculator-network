@@ -2,30 +2,50 @@
 layout: ../../layouts/CalculatorLayout.astro
 title: "MPH to KPH Converter"
 description: "Convert miles per hour to kilometers per hour."
-updated: "2025-09-26"
-cluster: "Conversions"
+date: 2025-09-12
+updated: 2025-09-12
+cluster: "Conversions & Units"
 ---
-
 import Calculator from '../../components/Calculator.astro';
 
 export const schema = {
-  slug: "mph-to-kph",
-  title: "MPH to KPH Converter",
-  locale: "en",
-  unit: "km/h",
-  intro: "Convert speed from miles per hour to kilometers per hour.",
-  inputs: [
-    { name: "mph", label: "Miles per hour", type: "number", step: "any", placeholder: "60" }
+  "slug": "mph-to-kph",
+  "title": "MPH to KPH Converter",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "mph",
+      "label": "Miles per hour",
+      "type": "number",
+      "min": 0,
+      "step": "any",
+      "placeholder": "60"
+    }
   ],
-  expression: "mph * 1.60934",
-  examples: [
-    { description: "60 mph ⇒ 96.56 km/h" }
+  "expression": "mph * 1.60934",
+  "intro": "Convert miles per hour to kilometers per hour.",
+  "examples": [
+    {
+      "description": "60 mph ⇒ 96.56 km/h"
+    }
   ],
-  faqs: [
-    { question: "Can it convert backward?", answer: "Divide km/h by 1.60934 to get mph." }
+  "info": [],
+  "faqs": [
+    {
+      "question": "Can it convert backward?",
+      "answer": "Divide km/h by 1.60934 to get mph."
+    }
   ],
-  disclaimer: "For quick conversions only.",
-  cluster: "Conversions"
-};
+  "disclaimer": "Educational information, not professional advice.",
+  "cluster": "Conversions & Units",
+  "related": [
+    "km-to-miles",
+    "meters-to-feet",
+    "smoots-to-meters",
+    "hogsheads-to-liters",
+    "furlongs-per-fortnight",
+    "banana-dose-converter"
+  ]
+}
 
 <Calculator schema={schema} />

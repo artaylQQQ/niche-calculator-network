@@ -2,30 +2,48 @@
 layout: ../../layouts/CalculatorLayout.astro
 title: "Hex to Decimal Converter"
 description: "Convert a hexadecimal value to decimal."
-updated: "2025-09-26"
-cluster: "Technology"
+date: 2025-09-12
+updated: 2025-09-12
+cluster: "Technology & Coding"
 ---
-
 import Calculator from '../../components/Calculator.astro';
 
 export const schema = {
-  slug: "hex-to-decimal",
-  title: "Hex to Decimal Converter",
-  locale: "en",
-  intro: "Translate a hexadecimal string into its decimal value.",
-  inputs: [
-    { name: "hex", label: "Hex number", type: "text", placeholder: "FF" }
+  "slug": "hex-to-decimal",
+  "title": "Hex to Decimal Converter",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "hex",
+      "label": "Hex number",
+      "type": "text",
+      "placeholder": "FF"
+    }
   ],
-  expression: "parseInt(hex, 16)",
-  examples: [
-    { description: "FF ⇒ 255" },
-    { description: "1A3 ⇒ 419" }
+  "expression": "parseInt(hex, 16)",
+  "intro": "Convert a hexadecimal value to decimal.",
+  "examples": [
+    {
+      "description": "FF ⇒ 255"
+    }
   ],
-  faqs: [
-    { question: "Can I include 0x?", answer: "No, enter the hex digits only." }
+  "info": [],
+  "faqs": [
+    {
+      "question": "Can I include 0x?",
+      "answer": "No, enter the hex digits only."
+    }
   ],
-  disclaimer: "For quick conversions.",
-  cluster: "Technology"
-};
+  "disclaimer": "Educational information, not professional advice.",
+  "cluster": "Technology & Coding",
+  "related": [
+    "battery-life-estimator",
+    "cpu-power-to-current",
+    "screen-ppi-calculator",
+    "ssd-lifespan-years",
+    "ipv4-subnet-host-count",
+    "video-file-size"
+  ]
+}
 
 <Calculator schema={schema} />

@@ -2,9 +2,9 @@
 layout: ../../layouts/CalculatorLayout.astro
 title: "Operating Expense Ratio Calculator"
 description: "Find operating expenses as a percentage of revenue."
-date: 2025-09-09
-updated: 2025-09-09
-cluster: "Finance"
+date: 2025-09-12
+updated: 2025-09-12
+cluster: "Finance & Business"
 ---
 import Calculator from '../../components/Calculator.astro';
 
@@ -13,22 +13,52 @@ export const schema = {
   "title": "Operating Expense Ratio Calculator",
   "locale": "en",
   "inputs": [
-    {"name":"expenses","label":"Operating Expenses","type":"number","step":"any","placeholder":"200000"},
-    {"name":"revenue","label":"Revenue","type":"number","step":"any","placeholder":"500000"}
+    {
+      "name": "expenses",
+      "label": "Operating Expenses",
+      "type": "number",
+      "step": "any",
+      "placeholder": "200000"
+    },
+    {
+      "name": "revenue",
+      "label": "Revenue",
+      "type": "number",
+      "step": "any",
+      "placeholder": "500000"
+    }
   ],
   "expression": "(expenses / revenue) * 100",
   "intro": "Find operating expenses as a percentage of revenue.",
   "examples": [
-    {"description":"Expenses $200k on $500k revenue ⇒ 40%"},
-    {"description":"Expenses $50k on $100k revenue ⇒ 50%"}
+    {
+      "description": "Expenses $200k on $500k revenue ⇒ 40%"
+    },
+    {
+      "description": "Expenses $50k on $100k revenue ⇒ 50%"
+    }
   ],
+  "info": [],
   "faqs": [
-    {"question":"What does a lower ratio mean?","answer":"Lower operating expenses relative to revenue."},
-    {"question":"Can revenue be zero?","answer":"No, revenue must be positive to compute the ratio."}
+    {
+      "question": "What does a lower ratio mean?",
+      "answer": "Lower operating expenses relative to revenue."
+    },
+    {
+      "question": "Can revenue be zero?",
+      "answer": "No, revenue must be positive to compute the ratio."
+    }
   ],
   "disclaimer": "Approximation only; review financial statements for accuracy.",
-  "cluster": "Finance"
-};
+  "cluster": "Finance & Business",
+  "related": [
+    "loss-recovery-percentage",
+    "simple-interest-calculator",
+    "loan-to-value-ratio",
+    "return-on-equity",
+    "foreign-tip-converter",
+    "hotel-stay-cost"
+  ]
+}
 
 <Calculator schema={schema} />
-

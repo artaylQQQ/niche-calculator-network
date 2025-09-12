@@ -2,8 +2,8 @@
 layout: ../../layouts/CalculatorLayout.astro
 title: "Escape Velocity Calculator"
 description: "Compute escape velocity from celestial mass and radius."
-date: 2025-09-09
-updated: 2025-09-09
+date: 2025-09-12
+updated: 2025-09-12
 cluster: "Science & Engineering"
 ---
 import Calculator from '../../components/Calculator.astro';
@@ -12,24 +12,53 @@ export const schema = {
   "slug": "escape-velocity",
   "title": "Escape Velocity Calculator",
   "locale": "en",
-  "unit": "m/s",
   "inputs": [
-    {"name":"mass","label":"Mass (kg)","type":"number","step":"any","placeholder":"5.972e24"},
-    {"name":"radius","label":"Radius (m)","type":"number","step":"any","placeholder":"6.371e6"}
+    {
+      "name": "mass",
+      "label": "Mass (kg)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "5.972e24"
+    },
+    {
+      "name": "radius",
+      "label": "Radius (m)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "6.371e6"
+    }
   ],
   "expression": "Math.sqrt((2 * 6.674e-11 * mass) / radius)",
   "intro": "Compute escape velocity from celestial mass and radius.",
   "examples": [
-    {"description":"Earth ⇒ 11186 m/s"},
-    {"description":"Moon ⇒ 2376 m/s"}
+    {
+      "description": "Earth ⇒ 11186 m/s"
+    },
+    {
+      "description": "Moon ⇒ 2376 m/s"
+    }
   ],
+  "info": [],
   "faqs": [
-    {"question":"What is escape velocity?","answer":"Speed needed to break free from a body's gravity."},
-    {"question":"Does rotation matter?","answer":"This simple model ignores planetary rotation and atmosphere."}
+    {
+      "question": "What is escape velocity?",
+      "answer": "Speed needed to break free from a body's gravity."
+    },
+    {
+      "question": "Does rotation matter?",
+      "answer": "This simple model ignores planetary rotation and atmosphere."
+    }
   ],
   "disclaimer": "Idealized calculation; actual escape speeds vary with conditions.",
-  "cluster": "Science & Engineering"
-};
+  "cluster": "Science & Engineering",
+  "related": [
+    "percentage-discount",
+    "simple-interest",
+    "compound-interest-calculator",
+    "bmi-calculator",
+    "daily-calorie-burn",
+    "celsius-to-fahrenheit"
+  ]
+}
 
 <Calculator schema={schema} />
-

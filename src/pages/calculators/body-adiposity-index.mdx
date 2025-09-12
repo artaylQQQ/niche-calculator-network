@@ -2,9 +2,9 @@
 layout: ../../layouts/CalculatorLayout.astro
 title: "Body Adiposity Index Calculator"
 description: "Estimate body fat percentage using hip circumference and height."
-date: 2025-09-09
-updated: 2025-09-09
-cluster: "Health"
+date: 2025-09-12
+updated: 2025-09-12
+cluster: "Health & Fitness"
 ---
 import Calculator from '../../components/Calculator.astro';
 
@@ -13,22 +13,52 @@ export const schema = {
   "title": "Body Adiposity Index Calculator",
   "locale": "en",
   "inputs": [
-    {"name":"hip","label":"Hip Circumference (cm)","type":"number","step":"any","placeholder":"100"},
-    {"name":"height","label":"Height (cm)","type":"number","step":"any","placeholder":"170"}
+    {
+      "name": "hip",
+      "label": "Hip Circumference (cm)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "100"
+    },
+    {
+      "name": "height",
+      "label": "Height (cm)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "170"
+    }
   ],
   "expression": "(hip / Math.pow(height/100, 1.5)) - 18",
   "intro": "Estimate body fat percentage using hip circumference and height.",
   "examples": [
-    {"description":"Hip 100cm, height 170cm ⇒ 27%"},
-    {"description":"Hip 90cm, height 165cm ⇒ 25%"}
+    {
+      "description": "Hip 100cm, height 170cm ⇒ 27%"
+    },
+    {
+      "description": "Hip 90cm, height 165cm ⇒ 25%"
+    }
   ],
+  "info": [],
   "faqs": [
-    {"question":"What is BAI?","answer":"An alternative to BMI using hip circumference and height."},
-    {"question":"Is it for all ages?","answer":"It is an estimate and may vary by population."}
+    {
+      "question": "What is BAI?",
+      "answer": "An alternative to BMI using hip circumference and height."
+    },
+    {
+      "question": "Is it for all ages?",
+      "answer": "It is an estimate and may vary by population."
+    }
   ],
   "disclaimer": "Informational only; consult health professionals for body composition analysis.",
-  "cluster": "Health"
-};
+  "cluster": "Health & Fitness",
+  "related": [
+    "sleep-debt-weekly",
+    "sugar-cube-equivalent",
+    "caffeine-half-life",
+    "protein-calorie-percentage",
+    "bmi-prime",
+    "heart-rate-reserve-percentage"
+  ]
+}
 
 <Calculator schema={schema} />
-

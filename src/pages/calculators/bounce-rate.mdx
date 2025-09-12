@@ -2,31 +2,58 @@
 layout: ../../layouts/CalculatorLayout.astro
 title: "Bounce Rate Calculator"
 description: "Determine the percentage of single-page visits on your site."
-updated: "2025-09-26"
+date: 2025-09-12
+updated: 2025-09-12
 cluster: "Web & Marketing"
 ---
-
 import Calculator from '../../components/Calculator.astro';
 
 export const schema = {
-  slug: "bounce-rate",
-  title: "Bounce Rate Calculator",
-  locale: "en",
-  unit: "%",
-  intro: "Determine the percentage of single-page visits on your site.",
-  inputs: [
-    { name: "bounces", label: "Bounces", type: "number", step: "1", placeholder: "25" },
-    { name: "visits", label: "Total Visits", type: "number", step: "1", placeholder: "100" }
+  "slug": "bounce-rate",
+  "title": "Bounce Rate Calculator",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "bounces",
+      "label": "Bounces",
+      "type": "number",
+      "min": 0,
+      "step": "1",
+      "placeholder": "25"
+    },
+    {
+      "name": "visits",
+      "label": "Total Visits",
+      "type": "number",
+      "min": 1,
+      "step": "1",
+      "placeholder": "100"
+    }
   ],
-  expression: "(bounces / visits) * 100",
-  examples: [
-    { description: "25 bounces out of 100 visits ⇒ 25%" }
+  "expression": "(bounces / visits) * 100",
+  "intro": "Determine the percentage of single-page visits on your site.",
+  "examples": [
+    {
+      "description": "25 bounces out of 100 visits ⇒ 25%"
+    }
   ],
-  faqs: [
-    { question: "What is a bounce?", answer: "A single-page session with no interaction." }
+  "info": [],
+  "faqs": [
+    {
+      "question": "What is a bounce?",
+      "answer": "A single-page session with no interaction."
+    }
   ],
-  disclaimer: "Use with analytics data for accuracy.",
-  cluster: "Web & Marketing"
-};
+  "disclaimer": "Educational information, not professional advice.",
+  "cluster": "Web & Marketing",
+  "related": [
+    "percentage-discount",
+    "simple-interest",
+    "compound-interest-calculator",
+    "bmi-calculator",
+    "daily-calorie-burn",
+    "celsius-to-fahrenheit"
+  ]
+}
 
 <Calculator schema={schema} />

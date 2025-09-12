@@ -1,58 +1,71 @@
 ---
 layout: ../../layouts/CalculatorLayout.astro
 title: "Vacation Budget Per Day"
-description: "Divide your trip budget by days to plan daily spending."
-updated: "2025-09-07"
-cluster: "lifestyle & travel"
+description: "Plan how much you can spend each day of your vacation based on total budget and trip length."
+date: 2025-09-12
+updated: 2025-09-12
+cluster: "Lifestyle & Travel"
 ---
-
-import Calculator from "../../components/Calculator.astro";
+import Calculator from '../../components/Calculator.astro';
 
 export const schema = {
-  slug: "vacation-budget-per-day",
-  title: "Vacation Budget Per Day",
-  locale: "en",
-  cluster: "lifestyle & travel",
-  unit: "USD/day",
-  intro:
-    "Plan how much you can spend each day of your vacation based on total budget and trip length.",
-  inputs: [
+  "slug": "vacation-budget-per-day",
+  "title": "Vacation Budget Per Day",
+  "locale": "en",
+  "inputs": [
     {
-      name: "budget",
-      label: "Total budget (USD)",
-      type: "number",
-      step: "any",
-      placeholder: "2000",
+      "name": "budget",
+      "label": "Total budget (USD)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "2000"
     },
     {
-      name: "days",
-      label: "Number of days",
-      type: "number",
-      step: "any",
-      placeholder: "5",
-    },
+      "name": "days",
+      "label": "Number of days",
+      "type": "number",
+      "step": "any",
+      "placeholder": "5"
+    }
   ],
-  expression: "budget / days",
-  examples: [
-    { description: "$2,000 over 5 days ⇒ $400/day" },
-    { description: "$1,500 over 7 days ⇒ $214.29/day" },
-    { description: "$3,000 over 10 days ⇒ $300/day" },
+  "expression": "budget / days",
+  "intro": "Plan how much you can spend each day of your vacation based on total budget and trip length.",
+  "examples": [
+    {
+      "description": "$2,000 over 5 days ⇒ $400/day"
+    },
+    {
+      "description": "$1,500 over 7 days ⇒ $214.29/day"
+    },
+    {
+      "description": "$3,000 over 10 days ⇒ $300/day"
+    }
   ],
-  faqs: [
+  "info": [],
+  "faqs": [
     {
-      question: "Does this include travel costs?",
-      answer: "Include airfare or transport in the total budget if desired.",
+      "question": "Does this include travel costs?",
+      "answer": "Include airfare or transport in the total budget if desired."
     },
     {
-      question: "What if days are zero?",
-      answer: "Days must be greater than zero to calculate a daily amount.",
+      "question": "What if days are zero?",
+      "answer": "Days must be greater than zero to calculate a daily amount."
     },
     {
-      question: "Can I use different currencies?",
-      answer: "Yes, as long as both inputs use the same currency.",
-    },
+      "question": "Can I use different currencies?",
+      "answer": "Yes, as long as both inputs use the same currency."
+    }
   ],
-  disclaimer: "Actual expenses may vary; track spending during the trip.",
-};
+  "disclaimer": "Actual expenses may vary; track spending during the trip.",
+  "cluster": "Lifestyle & Travel",
+  "related": [
+    "percentage-discount",
+    "simple-interest",
+    "compound-interest-calculator",
+    "bmi-calculator",
+    "daily-calorie-burn",
+    "celsius-to-fahrenheit"
+  ]
+}
 
 <Calculator schema={schema} />
