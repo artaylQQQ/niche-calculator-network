@@ -19104,7 +19104,10 @@
       }
     ],
     "disclaimer": "For water quality guidance only; confirm results with professional testing.",
-    "info": ["1 gpg equals 17.118 ppm.", "Soft water is generally below 3 gpg."]
+    "info": [
+      "1 gpg equals 17.118 ppm.",
+      "Soft water is generally below 3 gpg."
+    ]
   },
   {
     "slug": "savings-withdrawal-duration",
@@ -20572,7 +20575,9 @@
       }
     ],
     "disclaimer": "Idealized physics model; real-world ranges vary with conditions.",
-    "info": ["Gravity on Mars is about 3.71 m/s²."]
+    "info": [
+      "Gravity on Mars is about 3.71 m/s²."
+    ]
   },
   {
     "slug": "mortgage-affordability",
@@ -20646,7 +20651,9 @@
       }
     ],
     "disclaimer": "For estimation only; consult a financial professional.",
-    "info": ["Many lenders follow the 28/36 rule for housing and total debts."]
+    "info": [
+      "Many lenders follow the 28/36 rule for housing and total debts."
+    ]
   },
   {
     "slug": "road-trip-carbon-emissions",
@@ -20706,7 +20713,9 @@
       }
     ],
     "disclaimer": "Approximate estimate; actual emissions depend on driving conditions and vehicle type.",
-    "info": ["Burning one liter of gasoline emits about 2.31 kg of CO2."]
+    "info": [
+      "Burning one liter of gasoline emits about 2.31 kg of CO2."
+    ]
   },
   {
     "slug": "net-present-value",
@@ -22103,8 +22112,12 @@
     "expression": "radians * 180 / 3.141592653589793",
     "unit": "°",
     "examples": [
-      { "description": "1 rad ⇒ 57.2958 °" },
-      { "description": "3.1416 rad ⇒ 180 °" }
+      {
+        "description": "1 rad ⇒ 57.2958 °"
+      },
+      {
+        "description": "3.1416 rad ⇒ 180 °"
+      }
     ],
     "faqs": [
       {
@@ -22151,8 +22164,12 @@
     "expression": "(24 + wake - bed) % 24",
     "unit": "hours",
     "examples": [
-      { "description": "Bed 22, wake 6 ⇒ 8 hours" },
-      { "description": "Bed 23, wake 7 ⇒ 8 hours" }
+      {
+        "description": "Bed 22, wake 6 ⇒ 8 hours"
+      },
+      {
+        "description": "Bed 23, wake 7 ⇒ 8 hours"
+      }
     ],
     "faqs": [
       {
@@ -22199,8 +22216,12 @@
     "expression": "words / minutes",
     "unit": "wpm",
     "examples": [
-      { "description": "3000 words in 15 min ⇒ 200 wpm" },
-      { "description": "1500 words in 10 min ⇒ 150 wpm" }
+      {
+        "description": "3000 words in 15 min ⇒ 200 wpm"
+      },
+      {
+        "description": "1500 words in 10 min ⇒ 150 wpm"
+      }
     ],
     "faqs": [
       {
@@ -22247,8 +22268,12 @@
     "expression": "(revenue - expenses) / revenue * 100",
     "unit": "%",
     "examples": [
-      { "description": "$5000 revenue, $3500 expenses ⇒ 30 %" },
-      { "description": "$10000 revenue, $7500 expenses ⇒ 25 %" }
+      {
+        "description": "$5000 revenue, $3500 expenses ⇒ 30 %"
+      },
+      {
+        "description": "$10000 revenue, $7500 expenses ⇒ 25 %"
+      }
     ],
     "faqs": [
       {
@@ -22295,8 +22320,12 @@
     "expression": "weight / ((height/100)^3)",
     "unit": "kg/m³",
     "examples": [
-      { "description": "70 kg, 175 cm ⇒ 13.3 kg/m³" },
-      { "description": "60 kg, 160 cm ⇒ 14.6 kg/m³" }
+      {
+        "description": "70 kg, 175 cm ⇒ 13.3 kg/m³"
+      },
+      {
+        "description": "60 kg, 160 cm ⇒ 14.6 kg/m³"
+      }
     ],
     "faqs": [
       {
@@ -22350,8 +22379,12 @@
     "expression": "posts * 3.141592653589793 * (diameter/200)^2 * (depth/100) * 1000",
     "unit": "L",
     "examples": [
-      { "description": "4 posts, 30 cm × 80 cm ⇒ 226 L" },
-      { "description": "6 posts, 20 cm × 60 cm ⇒ 113 L" }
+      {
+        "description": "4 posts, 30 cm × 80 cm ⇒ 226 L"
+      },
+      {
+        "description": "6 posts, 20 cm × 60 cm ⇒ 113 L"
+      }
     ],
     "faqs": [
       {
@@ -22398,8 +22431,12 @@
     "expression": "budget / days",
     "unit": "USD",
     "examples": [
-      { "description": "$1500 budget over 10 days ⇒ $150 per day" },
-      { "description": "$800 budget over 5 days ⇒ $160 per day" }
+      {
+        "description": "$1500 budget over 10 days ⇒ $150 per day"
+      },
+      {
+        "description": "$800 budget over 5 days ⇒ $160 per day"
+      }
     ],
     "faqs": [
       {
@@ -22453,8 +22490,12 @@
     "expression": "0.5 * base * height * length",
     "unit": "m³",
     "examples": [
-      { "description": "Base 3 m, height 2 m, length 5 m ⇒ 15 m³" },
-      { "description": "Base 1.5 m, height 4 m, length 2 m ⇒ 6 m³" }
+      {
+        "description": "Base 3 m, height 2 m, length 5 m ⇒ 15 m³"
+      },
+      {
+        "description": "Base 1.5 m, height 4 m, length 2 m ⇒ 6 m³"
+      }
     ],
     "faqs": [
       {
@@ -22560,8 +22601,12 @@
     "expression": "4 * 3.141592653589793 * 5.670374419e-8 * radius^2 * temperature^4",
     "unit": "W",
     "examples": [
-      { "description": "R=6.96e8 m, T=5778 K ⇒ 3.85e26 W" },
-      { "description": "R=1e8 m, T=3000 K ⇒ 5.77e23 W" }
+      {
+        "description": "R=6.96e8 m, T=5778 K ⇒ 3.85e26 W"
+      },
+      {
+        "description": "R=1e8 m, T=3000 K ⇒ 5.77e23 W"
+      }
     ],
     "faqs": [
       {
@@ -22608,8 +22653,12 @@
     "expression": "uptime / total * 100",
     "unit": "%",
     "examples": [
-      { "description": "720 uptime, 730 total ⇒ 98.63 %" },
-      { "description": "99 uptime, 100 total ⇒ 99 %" }
+      {
+        "description": "720 uptime, 730 total ⇒ 98.63 %"
+      },
+      {
+        "description": "99 uptime, 100 total ⇒ 99 %"
+      }
     ],
     "faqs": [
       {
@@ -22656,8 +22705,12 @@
     "expression": "spend / customers",
     "unit": "USD",
     "examples": [
-      { "description": "$5000 spend, 200 customers ⇒ $25" },
-      { "description": "$1200 spend, 60 customers ⇒ $20" }
+      {
+        "description": "$5000 spend, 200 customers ⇒ $25"
+      },
+      {
+        "description": "$1200 spend, 60 customers ⇒ $20"
+      }
     ],
     "faqs": [
       {
