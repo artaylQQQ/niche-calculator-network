@@ -1,0 +1,63 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Star Luminosity Calculator"
+description: "Estimate stellar luminosity from radius and temperature."
+updated: "2024-10-14"
+cluster: "Science & Engineering"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "star-luminosity",
+  title: "Star Luminosity Calculator",
+  locale: "en",
+  intro: "Estimate stellar luminosity from radius and temperature.",
+  unit: "W",
+  cluster: "Science & Engineering",
+  inputs: [
+    {
+      name: "radius",
+      label: "Radius (m)",
+      type: "number",
+      step: "any",
+      placeholder: "6.96e8",
+    },
+    {
+      name: "temperature",
+      label: "Temperature (K)",
+      type: "number",
+      step: "any",
+      placeholder: "5778",
+    },
+  ],
+  expression:
+    "4 * 3.141592653589793 * 5.670374419e-8 * radius^2 * temperature^4",
+  examples: [
+    { description: "R=6.96e8 m, T=5778 K ⇒ 3.85e26 W" },
+    { description: "R=1e8 m, T=3000 K ⇒ 5.77e23 W" },
+  ],
+  faqs: [
+    {
+      question: "What constant is used?",
+      answer:
+        "The calculation uses the Stefan–Boltzmann constant 5.670374419×10⁻⁸.",
+    },
+    {
+      question: "Are inputs in SI units?",
+      answer: "Yes, radius in meters and temperature in Kelvin.",
+    },
+    {
+      question: "Does it assume a perfect blackbody?",
+      answer: "Yes, real stars may differ slightly.",
+    },
+  ],
+  disclaimer:
+    "Assumes an ideal blackbody star with uniform surface temperature.",
+  info: [
+    "Luminosity is total energy output per second.",
+    "Useful for comparing star brightness.",
+  ],
+};
+
+<Calculator schema={schema} />

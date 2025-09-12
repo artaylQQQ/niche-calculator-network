@@ -1,0 +1,61 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Server Uptime Percentage Calculator"
+description: "Calculate uptime percentage from hours online and total hours."
+updated: "2024-10-14"
+cluster: "Technology"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "server-uptime-percentage",
+  title: "Server Uptime Percentage Calculator",
+  locale: "en",
+  intro: "Calculate uptime percentage from hours online and total hours.",
+  unit: "%",
+  cluster: "Technology",
+  inputs: [
+    {
+      name: "uptime",
+      label: "Uptime Hours",
+      type: "number",
+      step: "any",
+      placeholder: "720",
+    },
+    {
+      name: "total",
+      label: "Total Hours",
+      type: "number",
+      step: "any",
+      placeholder: "730",
+    },
+  ],
+  expression: "uptime / total * 100",
+  examples: [
+    { description: "720 uptime, 730 total ⇒ 98.63 %" },
+    { description: "99 uptime, 100 total ⇒ 99 %" },
+  ],
+  faqs: [
+    {
+      question: "What is considered good uptime?",
+      answer: "Many services aim for at least 99.9% uptime.",
+    },
+    {
+      question: "Can total hours be a month?",
+      answer: "Yes, use any period as long as both inputs share it.",
+    },
+    {
+      question: "What if total is zero?",
+      answer: "Total time must be greater than zero to compute a percentage.",
+    },
+  ],
+  disclaimer:
+    "Does not account for partial downtime events or service quality.",
+  info: [
+    "Percentage helps track reliability over a period.",
+    "A month has about 730 hours.",
+  ],
+};
+
+<Calculator schema={schema} />

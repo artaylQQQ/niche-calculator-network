@@ -1,0 +1,57 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Ponderal Index Calculator"
+description: "Estimate body mass relative to height cubed."
+updated: "2024-10-14"
+cluster: "Health"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "ponderal-index",
+  title: "Ponderal Index Calculator",
+  locale: "en",
+  intro: "Estimate body mass relative to height cubed.",
+  unit: "kg/m³",
+  cluster: "Health",
+  inputs: [
+    {
+      name: "weight",
+      label: "Weight (kg)",
+      type: "number",
+      step: "any",
+      placeholder: "70",
+    },
+    {
+      name: "height",
+      label: "Height (cm)",
+      type: "number",
+      step: "any",
+      placeholder: "175",
+    },
+  ],
+  expression: "weight / ((height/100)^3)",
+  examples: [
+    { description: "70 kg, 175 cm ⇒ 13.3 kg/m³" },
+    { description: "60 kg, 160 cm ⇒ 14.6 kg/m³" },
+  ],
+  faqs: [
+    {
+      question: "How is Ponderal Index different from BMI?",
+      answer: "It divides weight by height cubed instead of squared.",
+    },
+    {
+      question: "Can it indicate healthy weight?",
+      answer: "It's one of many metrics and should be interpreted cautiously.",
+    },
+    {
+      question: "Are metric units required?",
+      answer: "Yes, use kilograms and centimeters.",
+    },
+  ],
+  disclaimer: "For general informational purposes; not a medical diagnosis.",
+  info: ["Also known as Rohrer's index.", "Useful for comparing body builds."],
+};
+
+<Calculator schema={schema} />

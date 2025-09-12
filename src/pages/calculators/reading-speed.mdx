@@ -1,0 +1,60 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Reading Speed Calculator"
+description: "Compute words per minute from text length and time."
+updated: "2024-10-14"
+cluster: "Education & Learning"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "reading-speed",
+  title: "Reading Speed Calculator",
+  locale: "en",
+  intro: "Compute words per minute from text length and time.",
+  unit: "wpm",
+  cluster: "Education & Learning",
+  inputs: [
+    {
+      name: "words",
+      label: "Total Words",
+      type: "number",
+      step: "any",
+      placeholder: "1000",
+    },
+    {
+      name: "minutes",
+      label: "Minutes",
+      type: "number",
+      step: "any",
+      placeholder: "5",
+    },
+  ],
+  expression: "words / minutes",
+  examples: [
+    { description: "3000 words in 15 min ⇒ 200 wpm" },
+    { description: "1500 words in 10 min ⇒ 150 wpm" },
+  ],
+  faqs: [
+    {
+      question: "What counts as average reading speed?",
+      answer: "Around 200 words per minute for many adults.",
+    },
+    {
+      question: "Does comprehension affect the result?",
+      answer: "No, this simply divides word count by time.",
+    },
+    {
+      question: "Can I measure aloud reading?",
+      answer: "Yes, time your reading and enter the values.",
+    },
+  ],
+  disclaimer: "Reading speed varies with text difficulty and attention.",
+  info: [
+    "Words per minute (wpm) gauges reading pace.",
+    "Use equal word counts for fair comparisons.",
+  ],
+};
+
+<Calculator schema={schema} />

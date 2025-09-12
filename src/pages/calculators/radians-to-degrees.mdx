@@ -1,0 +1,54 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Radians to Degrees Calculator"
+description: "Convert angle measurements from radians to degrees."
+updated: "2024-10-14"
+cluster: "Conversions"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "radians-to-degrees",
+  title: "Radians to Degrees Calculator",
+  locale: "en",
+  intro: "Convert angle measurements from radians to degrees.",
+  unit: "°",
+  cluster: "Conversions",
+  inputs: [
+    {
+      name: "radians",
+      label: "Radians",
+      type: "number",
+      step: "any",
+      placeholder: "1",
+    },
+  ],
+  expression: "radians * 180 / 3.141592653589793",
+  examples: [
+    { description: "1 rad ⇒ 57.2958 °" },
+    { description: "3.1416 rad ⇒ 180 °" },
+  ],
+  faqs: [
+    {
+      question: "What is a radian?",
+      answer:
+        "A radian is the angle created when the arc length equals the radius.",
+    },
+    {
+      question: "Can I convert degrees to radians with this?",
+      answer: "This calculator converts only radians to degrees.",
+    },
+    {
+      question: "Are decimals allowed?",
+      answer: "Yes, you can enter any numeric value.",
+    },
+  ],
+  disclaimer: "For simple angle conversions; rounding may occur.",
+  info: [
+    "There are 2π radians in a full circle.",
+    "Degrees and radians are common angle units.",
+  ],
+};
+
+<Calculator schema={schema} />

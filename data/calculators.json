@@ -22084,5 +22084,599 @@
       "Useful for evaluating email content quality.",
       "Combine with open and click rates for full insights."
     ]
+  },
+  {
+    "slug": "radians-to-degrees",
+    "title": "Radians to Degrees Calculator",
+    "cluster": "Conversions",
+    "description": "Convert angle measurements from radians to degrees.",
+    "intro": "Convert angle measurements from radians to degrees.",
+    "inputs": [
+      {
+        "name": "radians",
+        "label": "Radians",
+        "type": "number",
+        "step": "any",
+        "placeholder": "1"
+      }
+    ],
+    "expression": "radians * 180 / 3.141592653589793",
+    "unit": "°",
+    "examples": [
+      { "description": "1 rad ⇒ 57.2958 °" },
+      { "description": "3.1416 rad ⇒ 180 °" }
+    ],
+    "faqs": [
+      {
+        "question": "What is a radian?",
+        "answer": "A radian is the angle created when the arc length equals the radius."
+      },
+      {
+        "question": "Can I convert degrees to radians with this?",
+        "answer": "This calculator converts only radians to degrees."
+      },
+      {
+        "question": "Are decimals allowed?",
+        "answer": "Yes, you can enter any numeric value."
+      }
+    ],
+    "disclaimer": "For simple angle conversions; rounding may occur.",
+    "info": [
+      "There are 2π radians in a full circle.",
+      "Degrees and radians are common angle units."
+    ]
+  },
+  {
+    "slug": "sleep-duration",
+    "title": "Sleep Duration Calculator",
+    "cluster": "Date & Time",
+    "description": "Find hours of sleep between bedtime and wake time.",
+    "intro": "Find hours of sleep between bedtime and wake time.",
+    "inputs": [
+      {
+        "name": "bed",
+        "label": "Bedtime Hour",
+        "type": "number",
+        "step": "any",
+        "placeholder": "22"
+      },
+      {
+        "name": "wake",
+        "label": "Wake-up Hour",
+        "type": "number",
+        "step": "any",
+        "placeholder": "6"
+      }
+    ],
+    "expression": "(24 + wake - bed) % 24",
+    "unit": "hours",
+    "examples": [
+      { "description": "Bed 22, wake 6 ⇒ 8 hours" },
+      { "description": "Bed 23, wake 7 ⇒ 8 hours" }
+    ],
+    "faqs": [
+      {
+        "question": "What format are the times?",
+        "answer": "Enter hours on a 24-hour clock from 0 to 23."
+      },
+      {
+        "question": "Does it handle overnight sleep?",
+        "answer": "Yes, the formula wraps past midnight automatically."
+      },
+      {
+        "question": "Can I enter decimals for minutes?",
+        "answer": "Use decimals to represent partial hours, like 7.5 for 7:30."
+      }
+    ],
+    "disclaimer": "Estimates sleep duration only; actual rest quality varies.",
+    "info": [
+      "A full day's cycle is 24 hours.",
+      "Quality of sleep depends on more than just duration."
+    ]
+  },
+  {
+    "slug": "reading-speed",
+    "title": "Reading Speed Calculator",
+    "cluster": "Education & Learning",
+    "description": "Compute words per minute from text length and time.",
+    "intro": "Compute words per minute from text length and time.",
+    "inputs": [
+      {
+        "name": "words",
+        "label": "Total Words",
+        "type": "number",
+        "step": "any",
+        "placeholder": "1000"
+      },
+      {
+        "name": "minutes",
+        "label": "Minutes",
+        "type": "number",
+        "step": "any",
+        "placeholder": "5"
+      }
+    ],
+    "expression": "words / minutes",
+    "unit": "wpm",
+    "examples": [
+      { "description": "3000 words in 15 min ⇒ 200 wpm" },
+      { "description": "1500 words in 10 min ⇒ 150 wpm" }
+    ],
+    "faqs": [
+      {
+        "question": "What counts as average reading speed?",
+        "answer": "Around 200 words per minute for many adults."
+      },
+      {
+        "question": "Does comprehension affect the result?",
+        "answer": "No, this simply divides word count by time."
+      },
+      {
+        "question": "Can I measure aloud reading?",
+        "answer": "Yes, time your reading and enter the values."
+      }
+    ],
+    "disclaimer": "Reading speed varies with text difficulty and attention.",
+    "info": [
+      "Words per minute (wpm) gauges reading pace.",
+      "Use equal word counts for fair comparisons."
+    ]
+  },
+  {
+    "slug": "net-profit-margin",
+    "title": "Net Profit Margin Calculator",
+    "cluster": "Finance",
+    "description": "Find net profit margin from revenue and expenses.",
+    "intro": "Find net profit margin from revenue and expenses.",
+    "inputs": [
+      {
+        "name": "revenue",
+        "label": "Revenue (USD)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "5000"
+      },
+      {
+        "name": "expenses",
+        "label": "Expenses (USD)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "3500"
+      }
+    ],
+    "expression": "(revenue - expenses) / revenue * 100",
+    "unit": "%",
+    "examples": [
+      { "description": "$5000 revenue, $3500 expenses ⇒ 30 %" },
+      { "description": "$10000 revenue, $7500 expenses ⇒ 25 %" }
+    ],
+    "faqs": [
+      {
+        "question": "What does net profit margin show?",
+        "answer": "It shows the percentage of revenue left after all expenses."
+      },
+      {
+        "question": "Can expenses exceed revenue?",
+        "answer": "Yes, resulting in a negative margin."
+      },
+      {
+        "question": "Should I use gross or net revenue?",
+        "answer": "Use net revenue after returns and allowances."
+      }
+    ],
+    "disclaimer": "Simplified calculation; consider taxes and other factors separately.",
+    "info": [
+      "Net profit margin helps compare business efficiency.",
+      "Expressed as a percentage of revenue."
+    ]
+  },
+  {
+    "slug": "ponderal-index",
+    "title": "Ponderal Index Calculator",
+    "cluster": "Health",
+    "description": "Estimate body mass relative to height cubed.",
+    "intro": "Estimate body mass relative to height cubed.",
+    "inputs": [
+      {
+        "name": "weight",
+        "label": "Weight (kg)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "70"
+      },
+      {
+        "name": "height",
+        "label": "Height (cm)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "175"
+      }
+    ],
+    "expression": "weight / ((height/100)^3)",
+    "unit": "kg/m³",
+    "examples": [
+      { "description": "70 kg, 175 cm ⇒ 13.3 kg/m³" },
+      { "description": "60 kg, 160 cm ⇒ 14.6 kg/m³" }
+    ],
+    "faqs": [
+      {
+        "question": "How is Ponderal Index different from BMI?",
+        "answer": "It divides weight by height cubed instead of squared."
+      },
+      {
+        "question": "Can it indicate healthy weight?",
+        "answer": "It's one of many metrics and should be interpreted cautiously."
+      },
+      {
+        "question": "Are metric units required?",
+        "answer": "Yes, use kilograms and centimeters."
+      }
+    ],
+    "disclaimer": "For general informational purposes; not a medical diagnosis.",
+    "info": [
+      "Also known as Rohrer's index.",
+      "Useful for comparing body builds."
+    ]
+  },
+  {
+    "slug": "fence-post-concrete",
+    "title": "Fence Post Concrete Calculator",
+    "cluster": "Home & DIY",
+    "description": "Estimate concrete volume for fence posts.",
+    "intro": "Estimate concrete volume for fence posts.",
+    "inputs": [
+      {
+        "name": "posts",
+        "label": "Number of Posts",
+        "type": "number",
+        "step": "any",
+        "placeholder": "4"
+      },
+      {
+        "name": "diameter",
+        "label": "Hole Diameter (cm)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "30"
+      },
+      {
+        "name": "depth",
+        "label": "Hole Depth (cm)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "80"
+      }
+    ],
+    "expression": "posts * 3.141592653589793 * (diameter/200)^2 * (depth/100) * 1000",
+    "unit": "L",
+    "examples": [
+      { "description": "4 posts, 30 cm × 80 cm ⇒ 226 L" },
+      { "description": "6 posts, 20 cm × 60 cm ⇒ 113 L" }
+    ],
+    "faqs": [
+      {
+        "question": "Does this include post volume?",
+        "answer": "No, it calculates hole volume only."
+      },
+      {
+        "question": "Can I use inches?",
+        "answer": "Convert inches to centimeters before entering."
+      },
+      {
+        "question": "Is extra concrete needed?",
+        "answer": "Consider buying a little more for spillage."
+      }
+    ],
+    "disclaimer": "Actual needs may vary with soil and post shape.",
+    "info": [
+      "1 cubic meter equals 1000 liters.",
+      "Use proper safety gear when mixing concrete."
+    ]
+  },
+  {
+    "slug": "daily-travel-budget",
+    "title": "Daily Travel Budget Calculator",
+    "cluster": "Lifestyle & Travel",
+    "description": "Divide total trip budget by days to plan daily spending.",
+    "intro": "Divide total trip budget by days to plan daily spending.",
+    "inputs": [
+      {
+        "name": "budget",
+        "label": "Total Budget (USD)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "1500"
+      },
+      {
+        "name": "days",
+        "label": "Trip Length (days)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "10"
+      }
+    ],
+    "expression": "budget / days",
+    "unit": "USD",
+    "examples": [
+      { "description": "$1500 budget over 10 days ⇒ $150 per day" },
+      { "description": "$800 budget over 5 days ⇒ $160 per day" }
+    ],
+    "faqs": [
+      {
+        "question": "Does it include airfare?",
+        "answer": "Add all trip costs to the total budget if you want them considered."
+      },
+      {
+        "question": "Can I use other currencies?",
+        "answer": "Yes, enter the amounts in your preferred currency."
+      },
+      {
+        "question": "What if days is zero?",
+        "answer": "Trip length must be at least one day."
+      }
+    ],
+    "disclaimer": "Budgeting tool only; actual expenses may differ.",
+    "info": [
+      "Daily budgets help control overall trip spending.",
+      "Include a buffer for unexpected costs."
+    ]
+  },
+  {
+    "slug": "triangular-prism-volume",
+    "title": "Triangular Prism Volume Calculator",
+    "cluster": "Math",
+    "description": "Find volume of a triangular prism from its dimensions.",
+    "intro": "Find volume of a triangular prism from its dimensions.",
+    "inputs": [
+      {
+        "name": "base",
+        "label": "Triangle Base (m)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "3"
+      },
+      {
+        "name": "height",
+        "label": "Triangle Height (m)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "2"
+      },
+      {
+        "name": "length",
+        "label": "Prism Length (m)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "5"
+      }
+    ],
+    "expression": "0.5 * base * height * length",
+    "unit": "m³",
+    "examples": [
+      { "description": "Base 3 m, height 2 m, length 5 m ⇒ 15 m³" },
+      { "description": "Base 1.5 m, height 4 m, length 2 m ⇒ 6 m³" }
+    ],
+    "faqs": [
+      {
+        "question": "What is a triangular prism?",
+        "answer": "A solid with two triangular bases and three rectangular faces."
+      },
+      {
+        "question": "Can I use centimeters?",
+        "answer": "Yes, convert to meters before using the calculator."
+      },
+      {
+        "question": "Is the triangle right-angled?",
+        "answer": "Any triangle works as long as you know its base and height."
+      }
+    ],
+    "disclaimer": "Assumes straight edges and uniform shape.",
+    "info": [
+      "Volume equals base area times length.",
+      "Common in architectural calculations."
+    ]
+  },
+  {
+    "slug": "monthly-savings-contribution",
+    "title": "Monthly Savings Contribution Calculator",
+    "cluster": "Personal Finance & Loans",
+    "description": "Determine monthly deposit needed to reach a savings goal.",
+    "intro": "Determine monthly deposit needed to reach a savings goal.",
+    "inputs": [
+      {
+        "name": "goal",
+        "label": "Savings Goal (USD)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "5000"
+      },
+      {
+        "name": "months",
+        "label": "Months",
+        "type": "number",
+        "step": "any",
+        "placeholder": "12"
+      },
+      {
+        "name": "current",
+        "label": "Current Savings (USD)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "1000"
+      }
+    ],
+    "expression": "(goal - current) / months",
+    "unit": "USD",
+    "examples": [
+      {
+        "description": "$5000 goal, 12 months, $1000 saved ⇒ $333.33 per month"
+      },
+      {
+        "description": "$10000 goal, 24 months, $2000 saved ⇒ $333.33 per month"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Does this account for interest?",
+        "answer": "No, it assumes no investment returns."
+      },
+      {
+        "question": "Can months be less than one?",
+        "answer": "Use whole months greater than zero."
+      },
+      {
+        "question": "What if current savings exceed the goal?",
+        "answer": "The result will be negative, indicating you've already met the goal."
+      }
+    ],
+    "disclaimer": "Ignores compound interest and inflation.",
+    "info": [
+      "Useful for straightforward savings plans.",
+      "Add expected interest for more precise planning."
+    ]
+  },
+  {
+    "slug": "star-luminosity",
+    "title": "Star Luminosity Calculator",
+    "cluster": "Science & Engineering",
+    "description": "Estimate stellar luminosity from radius and temperature.",
+    "intro": "Estimate stellar luminosity from radius and temperature.",
+    "inputs": [
+      {
+        "name": "radius",
+        "label": "Radius (m)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "6.96e8"
+      },
+      {
+        "name": "temperature",
+        "label": "Temperature (K)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "5778"
+      }
+    ],
+    "expression": "4 * 3.141592653589793 * 5.670374419e-8 * radius^2 * temperature^4",
+    "unit": "W",
+    "examples": [
+      { "description": "R=6.96e8 m, T=5778 K ⇒ 3.85e26 W" },
+      { "description": "R=1e8 m, T=3000 K ⇒ 5.77e23 W" }
+    ],
+    "faqs": [
+      {
+        "question": "What constant is used?",
+        "answer": "The calculation uses the Stefan–Boltzmann constant 5.670374419×10⁻⁸."
+      },
+      {
+        "question": "Are inputs in SI units?",
+        "answer": "Yes, radius in meters and temperature in Kelvin."
+      },
+      {
+        "question": "Does it assume a perfect blackbody?",
+        "answer": "Yes, real stars may differ slightly."
+      }
+    ],
+    "disclaimer": "Assumes an ideal blackbody star with uniform surface temperature.",
+    "info": [
+      "Luminosity is total energy output per second.",
+      "Useful for comparing star brightness."
+    ]
+  },
+  {
+    "slug": "server-uptime-percentage",
+    "title": "Server Uptime Percentage Calculator",
+    "cluster": "Technology",
+    "description": "Calculate uptime percentage from hours online and total hours.",
+    "intro": "Calculate uptime percentage from hours online and total hours.",
+    "inputs": [
+      {
+        "name": "uptime",
+        "label": "Uptime Hours",
+        "type": "number",
+        "step": "any",
+        "placeholder": "720"
+      },
+      {
+        "name": "total",
+        "label": "Total Hours",
+        "type": "number",
+        "step": "any",
+        "placeholder": "730"
+      }
+    ],
+    "expression": "uptime / total * 100",
+    "unit": "%",
+    "examples": [
+      { "description": "720 uptime, 730 total ⇒ 98.63 %" },
+      { "description": "99 uptime, 100 total ⇒ 99 %" }
+    ],
+    "faqs": [
+      {
+        "question": "What is considered good uptime?",
+        "answer": "Many services aim for at least 99.9% uptime."
+      },
+      {
+        "question": "Can total hours be a month?",
+        "answer": "Yes, use any period as long as both inputs share it."
+      },
+      {
+        "question": "What if total is zero?",
+        "answer": "Total time must be greater than zero to compute a percentage."
+      }
+    ],
+    "disclaimer": "Does not account for partial downtime events or service quality.",
+    "info": [
+      "Percentage helps track reliability over a period.",
+      "A month has about 730 hours."
+    ]
+  },
+  {
+    "slug": "customer-acquisition-cost",
+    "title": "Customer Acquisition Cost Calculator",
+    "cluster": "Web & Marketing",
+    "description": "Determine cost per new customer from marketing spend.",
+    "intro": "Determine cost per new customer from marketing spend.",
+    "inputs": [
+      {
+        "name": "spend",
+        "label": "Marketing Spend (USD)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "5000"
+      },
+      {
+        "name": "customers",
+        "label": "New Customers",
+        "type": "number",
+        "step": "any",
+        "placeholder": "200"
+      }
+    ],
+    "expression": "spend / customers",
+    "unit": "USD",
+    "examples": [
+      { "description": "$5000 spend, 200 customers ⇒ $25" },
+      { "description": "$1200 spend, 60 customers ⇒ $20" }
+    ],
+    "faqs": [
+      {
+        "question": "What costs should be included?",
+        "answer": "Include all marketing and sales expenses for the period."
+      },
+      {
+        "question": "Does it account for customer lifetime value?",
+        "answer": "No, it only computes acquisition cost per customer."
+      },
+      {
+        "question": "Can spend be zero?",
+        "answer": "If spend is zero, the cost per customer is zero."
+      }
+    ],
+    "disclaimer": "Simplified metric; consider customer value and retention for full insight.",
+    "info": [
+      "CAC helps evaluate marketing efficiency.",
+      "Compare with lifetime value to gauge profitability."
+    ]
   }
 ]
