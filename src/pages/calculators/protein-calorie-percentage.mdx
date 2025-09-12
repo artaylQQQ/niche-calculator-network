@@ -6,50 +6,51 @@ date: 2025-09-03
 updated: 2025-09-03
 cluster: "Health"
 ---
-import Calculator from '../../components/Calculator.astro';
+
+import Calculator from "../../components/Calculator.astro";
 
 export const schema = {
-  "slug": "protein-calorie-percentage",
-  "title": "Protein Calorie Percentage",
-  "locale": "en",
-  "inputs": [
+  slug: "protein-calorie-percentage",
+  title: "Protein Calorie Percentage",
+  locale: "en",
+  inputs: [
     {
-      "name": "protein",
-      "label": "Protein (g)",
-      "type": "number",
-      "placeholder": "50"
+      name: "protein",
+      label: "Protein (g)",
+      type: "number",
+      placeholder: "50",
     },
     {
-      "name": "calories",
-      "label": "Total calories",
-      "type": "number",
-      "placeholder": "2000"
-    }
+      name: "calories",
+      label: "Total calories",
+      type: "number",
+      placeholder: "2000",
+    },
   ],
-  "expression": "(protein * 4) / calories * 100",
-  "intro": "Percentage of calories coming from protein.",
-  "examples": [
+  expression: "(protein * 4) / calories * 100",
+  unit: "%",
+  intro: "Percentage of calories coming from protein.",
+  examples: [
     {
-      "description": "50 g protein in 2000 kcal ⇒ 10%"
-    }
+      description: "50 g protein in 2000 kcal ⇒ 10%",
+    },
   ],
-  "faqs": [
+  faqs: [
     {
-      "question": "Why multiply by 4?",
-      "answer": "Each gram of protein has roughly 4 calories."
-    }
+      question: "Why multiply by 4?",
+      answer: "Each gram of protein has roughly 4 calories.",
+    },
   ],
-  "disclaimer": "Educational information, not professional advice.",
-  "cluster": "Health",
-  "related": [
+  disclaimer: "Educational information, not professional advice.",
+  cluster: "Health",
+  related: [
     "bmi-calculator",
     "daily-calorie-burn",
     "sleep-debt-weekly",
     "sugar-cube-equivalent",
     "caffeine-half-life",
-    "bmi-prime"
-  ]
-}
+    "bmi-prime",
+  ],
+};
 
 <Calculator schema={schema} />
-
