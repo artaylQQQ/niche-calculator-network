@@ -1,0 +1,67 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Debt Service Coverage Ratio Calculator"
+description: "Compute the DSCR by dividing net operating income by total debt service. Values above 1 indicate adequate income to cover debt obligations."
+date: 2025-09-12
+updated: 2025-09-12
+cluster: "Finance & Business"
+---
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "debt-service-coverage-ratio",
+  "title": "Debt Service Coverage Ratio Calculator",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "noi",
+      "label": "Net Operating Income",
+      "type": "number",
+      "min": 0,
+      "step": "any",
+      "placeholder": "50000"
+    },
+    {
+      "name": "debt",
+      "label": "Total Debt Service",
+      "type": "number",
+      "min": 0,
+      "step": "any",
+      "placeholder": "40000"
+    }
+  ],
+  "expression": "noi / debt",
+  "intro": "Compute the DSCR by dividing net operating income by total debt service. Values above 1 indicate adequate income to cover debt obligations.",
+  "examples": [
+    {
+      "description": "$50,000 income ÷ $40,000 debt ⇒ 1.25 ratio"
+    },
+    {
+      "description": "$80,000 income ÷ $60,000 debt ⇒ 1.33 ratio"
+    }
+  ],
+  "info": [
+    "DSCR compares cash flow with debt obligations.",
+    "Values over 1 show more income than required to cover debt."
+  ],
+  "faqs": [
+    {
+      "question": "What does a DSCR below 1 mean?",
+      "answer": "A DSCR under 1 indicates insufficient income to meet debt payments."
+    },
+    {
+      "question": "Can DSCR help in loan approval?",
+      "answer": "Lenders use DSCR to assess a borrower's ability to repay loans."
+    },
+    {
+      "question": "Should I include taxes in the calculation?",
+      "answer": "Use net operating income before taxes for a standard DSCR."
+    }
+  ],
+  "disclaimer": "Not investment advice; verify figures with financial professionals.",
+  "cluster": "Finance & Business",
+  "unit": "ratio",
+  "related": []
+}
+
+<Calculator schema={schema} />

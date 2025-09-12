@@ -1,0 +1,93 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Chi-Square Goodness of Fit Calculator"
+description: "Enter observed and expected values for up to three categories to calculate the chi-square statistic for a goodness of fit test."
+date: 2025-09-12
+updated: 2025-09-12
+cluster: "Math & Statistics"
+---
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "chi-square-goodness-of-fit",
+  "title": "Chi-Square Goodness of Fit Calculator",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "o1",
+      "label": "Observed 1",
+      "type": "number",
+      "step": "any",
+      "placeholder": "20"
+    },
+    {
+      "name": "e1",
+      "label": "Expected 1",
+      "type": "number",
+      "step": "any",
+      "placeholder": "25"
+    },
+    {
+      "name": "o2",
+      "label": "Observed 2",
+      "type": "number",
+      "step": "any",
+      "placeholder": "30"
+    },
+    {
+      "name": "e2",
+      "label": "Expected 2",
+      "type": "number",
+      "step": "any",
+      "placeholder": "35"
+    },
+    {
+      "name": "o3",
+      "label": "Observed 3",
+      "type": "number",
+      "step": "any",
+      "placeholder": "50"
+    },
+    {
+      "name": "e3",
+      "label": "Expected 3",
+      "type": "number",
+      "step": "any",
+      "placeholder": "40"
+    }
+  ],
+  "expression": "(o1-e1)*(o1-e1)/e1 + (o2-e2)*(o2-e2)/e2 + (o3-e3)*(o3-e3)/e3",
+  "intro": "Enter observed and expected values for up to three categories to calculate the chi-square statistic for a goodness of fit test.",
+  "examples": [
+    {
+      "description": "Observed [20,30,50], Expected [25,35,40] ⇒ 4.21 χ²"
+    },
+    {
+      "description": "Observed [10,20,30], Expected [10,15,25] ⇒ 2.67 χ²"
+    }
+  ],
+  "info": [
+    "Chi-square tests compare observed data with theoretical expectations.",
+    "Degrees of freedom equal categories minus one."
+  ],
+  "faqs": [
+    {
+      "question": "What is a high chi-square value?",
+      "answer": "A higher chi-square indicates a greater difference between observed and expected values."
+    },
+    {
+      "question": "How many categories can I use?",
+      "answer": "This calculator supports up to three categories."
+    },
+    {
+      "question": "Can expected values be zero?",
+      "answer": "No, expected counts must be greater than zero to avoid division by zero."
+    }
+  ],
+  "disclaimer": "Statistical tool for educational use; consult a statistician for formal analysis.",
+  "cluster": "Math & Statistics",
+  "unit": "χ²",
+  "related": []
+}
+
+<Calculator schema={schema} />

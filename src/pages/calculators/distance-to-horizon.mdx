@@ -1,0 +1,59 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Distance to Horizon Calculator"
+description: "Enter the observer's height to approximate the distance to the horizon using Earth's curvature."
+date: 2025-09-12
+updated: 2025-09-12
+cluster: "Lifestyle & Travel"
+---
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "distance-to-horizon",
+  "title": "Distance to Horizon Calculator",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "height",
+      "label": "Height (m)",
+      "type": "number",
+      "min": 0,
+      "step": "any",
+      "placeholder": "2"
+    }
+  ],
+  "expression": "3.57 * Math.sqrt(height)",
+  "intro": "Enter the observer's height to approximate the distance to the horizon using Earth's curvature.",
+  "examples": [
+    {
+      "description": "2 m ⇒ 5.05 km"
+    },
+    {
+      "description": "100 m ⇒ 35.70 km"
+    }
+  ],
+  "info": [
+    "Formula uses Earth's mean radius of about 6,371 km.",
+    "Result gives distance to the geometric horizon in kilometers."
+  ],
+  "faqs": [
+    {
+      "question": "Does weather affect visibility?",
+      "answer": "Yes, fog or haze can reduce visible distance despite the geometric horizon."
+    },
+    {
+      "question": "Is Earth's curvature assumed spherical?",
+      "answer": "Yes, it uses an average Earth radius and ignores refraction."
+    },
+    {
+      "question": "Can I enter height in feet?",
+      "answer": "Convert feet to meters before using the calculator."
+    }
+  ],
+  "disclaimer": "Ideal geometric estimate; atmospheric refraction is not considered.",
+  "cluster": "Lifestyle & Travel",
+  "unit": "km",
+  "related": []
+}
+
+<Calculator schema={schema} />

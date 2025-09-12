@@ -1,0 +1,105 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Color Contrast Checker"
+description: "Enter RGB values for foreground and background colors to determine their contrast ratio."
+date: 2025-09-12
+updated: 2025-09-12
+cluster: "Technology & Coding"
+---
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "color-contrast-checker",
+  "title": "Color Contrast Checker",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "r1",
+      "label": "Foreground R",
+      "type": "number",
+      "min": 0,
+      "max": 255,
+      "step": "any",
+      "placeholder": "0"
+    },
+    {
+      "name": "g1",
+      "label": "Foreground G",
+      "type": "number",
+      "min": 0,
+      "max": 255,
+      "step": "any",
+      "placeholder": "0"
+    },
+    {
+      "name": "b1",
+      "label": "Foreground B",
+      "type": "number",
+      "min": 0,
+      "max": 255,
+      "step": "any",
+      "placeholder": "0"
+    },
+    {
+      "name": "r2",
+      "label": "Background R",
+      "type": "number",
+      "min": 0,
+      "max": 255,
+      "step": "any",
+      "placeholder": "255"
+    },
+    {
+      "name": "g2",
+      "label": "Background G",
+      "type": "number",
+      "min": 0,
+      "max": 255,
+      "step": "any",
+      "placeholder": "255"
+    },
+    {
+      "name": "b2",
+      "label": "Background B",
+      "type": "number",
+      "min": 0,
+      "max": 255,
+      "step": "any",
+      "placeholder": "255"
+    }
+  ],
+  "expression": "(function(r1,g1,b1,r2,g2,b2){function L(r,g,b){r/=255;g/=255;b/=255;function C(c){return c<=0.03928?c/12.92:((c+0.055)/1.055)^2.4;} r=C(r);g=C(g);b=C(b);return 0.2126*r+0.7152*g+0.0722*b;} const L1=L(r1,g1,b1); const L2=L(r2,g2,b2); const ratio=(Math.max(L1,L2)+0.05)/(Math.min(L1,L2)+0.05); return ratio.toFixed(2)+':1';})(r1,g1,b1,r2,g2,b2)",
+  "intro": "Enter RGB values for foreground and background colors to determine their contrast ratio.",
+  "examples": [
+    {
+      "description": "Black (0,0,0) vs White (255,255,255) ⇒ 21.00:1"
+    },
+    {
+      "description": "#123456 vs #ABCDEF ⇒ 7.70:1"
+    }
+  ],
+  "info": [
+    "Contrast ratios range from 1:1 (no contrast) to 21:1 (maximum).",
+    "Uses relative luminance as defined by WCAG 2.1."
+  ],
+  "faqs": [
+    {
+      "question": "What ratio meets WCAG AA for normal text?",
+      "answer": "A contrast ratio of at least 4.5:1 is recommended."
+    },
+    {
+      "question": "Do I enter hexadecimal colors?",
+      "answer": "Convert hex values to RGB numbers before using the calculator."
+    },
+    {
+      "question": "Why is contrast important?",
+      "answer": "Adequate contrast improves readability and accessibility for all users."
+    }
+  ],
+  "disclaimer": "For basic accessibility checks; verify with full WCAG guidelines for compliance.",
+  "cluster": "Technology & Coding",
+  "unit": "ratio",
+  "related": []
+}
+
+<Calculator schema={schema} />

@@ -1,0 +1,81 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Doppler Effect Frequency Shift Calculator"
+description: "Enter the source frequency, velocities and speed of sound to compute the observed frequency using the Doppler effect."
+date: 2025-09-12
+updated: 2025-09-12
+cluster: "Science & Engineering"
+---
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "doppler-effect",
+  "title": "Doppler Effect Frequency Shift Calculator",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "frequency",
+      "label": "Source Frequency (Hz)",
+      "type": "number",
+      "min": 0,
+      "step": "any",
+      "placeholder": "500"
+    },
+    {
+      "name": "observer",
+      "label": "Observer Velocity (m/s)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "10"
+    },
+    {
+      "name": "source",
+      "label": "Source Velocity (m/s)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "20"
+    },
+    {
+      "name": "speed",
+      "label": "Speed of Sound (m/s)",
+      "type": "number",
+      "min": 1,
+      "step": "any",
+      "placeholder": "343"
+    }
+  ],
+  "expression": "frequency * ((speed + observer) / (speed - source))",
+  "intro": "Enter the source frequency, velocities and speed of sound to compute the observed frequency using the Doppler effect.",
+  "examples": [
+    {
+      "description": "500 Hz, observer 10 m/s, source 20 m/s ⇒ 546.44 Hz"
+    },
+    {
+      "description": "1000 Hz, observer 0 m/s, source 30 m/s ⇒ 1095.85 Hz"
+    }
+  ],
+  "info": [
+    "Named after Austrian physicist Christian Doppler.",
+    "Useful in radar, astronomy and medical imaging."
+  ],
+  "faqs": [
+    {
+      "question": "How are directions handled?",
+      "answer": "Velocities toward each other are positive; use negative values when moving apart."
+    },
+    {
+      "question": "Can I use other wave speeds?",
+      "answer": "Yes, replace the speed of sound with the speed of the wave in the medium."
+    },
+    {
+      "question": "What if source velocity equals wave speed?",
+      "answer": "The formula approaches infinity; ensure source speed is below wave speed."
+    }
+  ],
+  "disclaimer": "Assumes constant velocity and ignores relativistic effects.",
+  "cluster": "Science & Engineering",
+  "unit": "Hz",
+  "related": []
+}
+
+<Calculator schema={schema} />

@@ -1,0 +1,83 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Solar Panel Savings Calculator"
+description: "Calculate annual savings by combining sunlight hours, panel wattage, number of panels and electricity cost."
+date: 2025-09-12
+updated: 2025-09-12
+cluster: "Home & DIY"
+---
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "solar-panel-savings",
+  "title": "Solar Panel Savings Calculator",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "sun",
+      "label": "Sun Hours per Day",
+      "type": "number",
+      "min": 0,
+      "step": "any",
+      "placeholder": "5"
+    },
+    {
+      "name": "watt",
+      "label": "Panel Wattage",
+      "type": "number",
+      "min": 0,
+      "step": "any",
+      "placeholder": "300"
+    },
+    {
+      "name": "panels",
+      "label": "Number of Panels",
+      "type": "number",
+      "min": 0,
+      "step": "any",
+      "placeholder": "10"
+    },
+    {
+      "name": "cost",
+      "label": "Electricity Cost ($/kWh)",
+      "type": "number",
+      "min": 0,
+      "step": "any",
+      "placeholder": "0.12"
+    }
+  ],
+  "expression": "sun * watt * panels * 365 / 1000 * cost",
+  "intro": "Calculate annual savings by combining sunlight hours, panel wattage, number of panels and electricity cost.",
+  "examples": [
+    {
+      "description": "5 h, 300 W, 10 panels, $0.12/kWh ⇒ $657/year"
+    },
+    {
+      "description": "4 h, 400 W, 8 panels, $0.15/kWh ⇒ $700.80/year"
+    }
+  ],
+  "info": [
+    "1 kWh equals 1000 watt-hours.",
+    "Sun hours represent average peak sunlight per day."
+  ],
+  "faqs": [
+    {
+      "question": "Does it account for panel efficiency?",
+      "answer": "No, it assumes panels operate at their rated wattage."
+    },
+    {
+      "question": "What about installation costs?",
+      "answer": "This calculator focuses only on potential energy savings."
+    },
+    {
+      "question": "Can I use local electricity rates?",
+      "answer": "Yes, enter your utility's cost per kWh for personalized results."
+    }
+  ],
+  "disclaimer": "Estimates only; actual savings depend on system efficiency and local conditions.",
+  "cluster": "Home & DIY",
+  "unit": "USD/year",
+  "related": []
+}
+
+<Calculator schema={schema} />

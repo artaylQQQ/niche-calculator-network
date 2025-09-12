@@ -23497,5 +23497,345 @@
       "Probability equals one divided by combinations of total numbers choose drawn.",
       "Real lotteries may include bonus numbers or different prize tiers."
     ]
+  },
+  {
+    "slug": "debt-service-coverage-ratio",
+    "title": "Debt Service Coverage Ratio Calculator",
+    "cluster": "Finance & Business",
+    "description": "Evaluate a company's ability to cover debt payments.",
+    "intro": "Compute the DSCR by dividing net operating income by total debt service. Values above 1 indicate adequate income to cover debt obligations.",
+    "inputs": [
+      { "name": "noi", "label": "Net Operating Income", "type": "number", "min": 0, "step": "any", "placeholder": "50000" },
+      { "name": "debt", "label": "Total Debt Service", "type": "number", "min": 0, "step": "any", "placeholder": "40000" }
+    ],
+    "expression": "noi / debt",
+    "unit": "ratio",
+    "examples": [
+      { "description": "$50,000 income \u00f7 $40,000 debt \u21d2 1.25 ratio" },
+      { "description": "$80,000 income \u00f7 $60,000 debt \u21d2 1.33 ratio" }
+    ],
+    "faqs": [
+      { "question": "What does a DSCR below 1 mean?", "answer": "A DSCR under 1 indicates insufficient income to meet debt payments." },
+      { "question": "Can DSCR help in loan approval?", "answer": "Lenders use DSCR to assess a borrower's ability to repay loans." },
+      { "question": "Should I include taxes in the calculation?", "answer": "Use net operating income before taxes for a standard DSCR." }
+    ],
+    "disclaimer": "Not investment advice; verify figures with financial professionals.",
+    "info": [
+      "DSCR compares cash flow with debt obligations.",
+      "Values over 1 show more income than required to cover debt."
+    ]
+  },
+  {
+    "slug": "rent-vs-buy",
+    "title": "Rent vs Buy Calculator",
+    "cluster": "Personal Finance & Loans",
+    "description": "Compare total housing costs of renting versus buying.",
+    "intro": "Estimate whether renting or buying is cheaper over a given period. The calculator compares rent payments with a simplified cost of purchasing a home.",
+    "inputs": [
+      { "name": "rent", "label": "Monthly Rent", "type": "number", "min": 0, "step": "any", "placeholder": "1200" },
+      { "name": "price", "label": "Home Price", "type": "number", "min": 0, "step": "any", "placeholder": "250000" },
+      { "name": "rate", "label": "Annual Interest Rate (%)", "type": "number", "min": 0, "step": "any", "placeholder": "4" },
+      { "name": "years", "label": "Years", "type": "number", "min": 1, "step": "any", "placeholder": "5" }
+    ],
+    "expression": "rent*12*years - (price*(rate/100)*years)",
+    "unit": "USD",
+    "examples": [
+      { "description": "$1,200 rent, $250,000 home, 4% for 5 years \u21d2 $22,000" },
+      { "description": "$900 rent, $400,000 home, 6% for 5 years \u21d2 -$66,000" }
+    ],
+    "faqs": [
+      { "question": "What does a negative result mean?", "answer": "A negative value indicates buying costs more than renting." },
+      { "question": "Does this include maintenance or taxes?", "answer": "No, it uses a simplified cost excluding taxes and upkeep." },
+      { "question": "Can I adjust the interest rate?", "answer": "Yes, enter any annual rate to see different scenarios." }
+    ],
+    "disclaimer": "Simplified estimate; real housing costs include many additional factors.",
+    "info": [
+      "Positive results mean renting costs more than mortgage interest.",
+      "Mortgage interest is approximated with simple interest."
+    ]
+  },
+  {
+    "slug": "macronutrient-distribution",
+    "title": "Macronutrient Distribution Calculator",
+    "cluster": "Health & Fitness",
+    "description": "Split total calories into grams of protein, carbs and fat.",
+    "intro": "Enter your daily calorie target and desired macro percentages to see grams of protein, carbohydrates and fats.",
+    "inputs": [
+      { "name": "calories", "label": "Total Calories", "type": "number", "min": 0, "step": "any", "placeholder": "2000" },
+      { "name": "protein", "label": "Protein (%)", "type": "number", "min": 0, "step": "any", "placeholder": "30" },
+      { "name": "carbs", "label": "Carbs (%)", "type": "number", "min": 0, "step": "any", "placeholder": "40" },
+      { "name": "fat", "label": "Fat (%)", "type": "number", "min": 0, "step": "any", "placeholder": "30" }
+    ],
+    "expression": "(function(calories,protein,carbs,fat){const p=calories*protein/100/4;const c=calories*carbs/100/4;const f=calories*fat/100/9;return 'Protein: '+p.toFixed(1)+' g, Carbs: '+c.toFixed(1)+' g, Fat: '+f.toFixed(1)+' g';})(calories,protein,carbs,fat)",
+    "unit": "g",
+    "examples": [
+      { "description": "2000 kcal with 30% protein, 40% carbs, 30% fat \u21d2 Protein: 150 g, Carbs: 200 g, Fat: 66.7 g" },
+      { "description": "1800 kcal with 25% protein, 50% carbs, 25% fat \u21d2 Protein: 112.5 g, Carbs: 225 g, Fat: 50 g" }
+    ],
+    "faqs": [
+      { "question": "Should percentages sum to 100?", "answer": "Yes, the macro percentages should total 100% for accurate results." },
+      { "question": "How many calories are in a gram of fat?", "answer": "Fat provides about 9 calories per gram." },
+      { "question": "Can I use this for ketogenic diets?", "answer": "Yes, adjust the percentages to match your dietary goals." }
+    ],
+    "disclaimer": "Approximate nutritional guidance; consult a dietitian for personalized advice.",
+    "info": [
+      "Protein and carbs have ~4 calories per gram, fat has ~9 calories.",
+      "Output shows grams of each macronutrient based on entered percentages."
+    ]
+  },
+  {
+    "slug": "chi-square-goodness-of-fit",
+    "title": "Chi-Square Goodness of Fit Calculator",
+    "cluster": "Math & Statistics",
+    "description": "Compute the chi-square statistic from observed and expected counts.",
+    "intro": "Enter observed and expected values for up to three categories to calculate the chi-square statistic for a goodness of fit test.",
+    "inputs": [
+      { "name": "o1", "label": "Observed 1", "type": "number", "step": "any", "placeholder": "20" },
+      { "name": "e1", "label": "Expected 1", "type": "number", "step": "any", "placeholder": "25" },
+      { "name": "o2", "label": "Observed 2", "type": "number", "step": "any", "placeholder": "30" },
+      { "name": "e2", "label": "Expected 2", "type": "number", "step": "any", "placeholder": "35" },
+      { "name": "o3", "label": "Observed 3", "type": "number", "step": "any", "placeholder": "50" },
+      { "name": "e3", "label": "Expected 3", "type": "number", "step": "any", "placeholder": "40" }
+    ],
+    "expression": "(o1-e1)*(o1-e1)/e1 + (o2-e2)*(o2-e2)/e2 + (o3-e3)*(o3-e3)/e3",
+    "unit": "\u03c7\u00b2",
+    "examples": [
+      { "description": "Observed [20,30,50], Expected [25,35,40] \u21d2 4.21 \u03c7\u00b2" },
+      { "description": "Observed [10,20,30], Expected [10,15,25] \u21d2 2.67 \u03c7\u00b2" }
+    ],
+    "faqs": [
+      { "question": "What is a high chi-square value?", "answer": "A higher chi-square indicates a greater difference between observed and expected values." },
+      { "question": "How many categories can I use?", "answer": "This calculator supports up to three categories." },
+      { "question": "Can expected values be zero?", "answer": "No, expected counts must be greater than zero to avoid division by zero." }
+    ],
+    "disclaimer": "Statistical tool for educational use; consult a statistician for formal analysis.",
+    "info": [
+      "Chi-square tests compare observed data with theoretical expectations.",
+      "Degrees of freedom equal categories minus one."
+    ]
+  },
+  {
+    "slug": "cups-to-grams-flour",
+    "title": "Cups to Grams (Flour) Converter",
+    "cluster": "Conversions & Units",
+    "description": "Convert cups of flour to grams.",
+    "intro": "Quickly convert all-purpose flour from cups to grams for precise baking measurements.",
+    "inputs": [
+      { "name": "cups", "label": "Cups of Flour", "type": "number", "min": 0, "step": "any", "placeholder": "1" }
+    ],
+    "expression": "cups * 120",
+    "unit": "g",
+    "examples": [
+      { "description": "1 cup \u21d2 120 g" },
+      { "description": "2.5 cups \u21d2 300 g" }
+    ],
+    "faqs": [
+      { "question": "Is this for all-purpose flour?", "answer": "Yes, it uses a standard 120 g per cup for all-purpose flour." },
+      { "question": "Do different flours weigh differently?", "answer": "Yes, whole wheat or other flours may have different weights." },
+      { "question": "Why use grams instead of cups?", "answer": "Weighing flour provides more consistent baking results." }
+    ],
+    "disclaimer": "Approximate conversion; verify critical recipes with a kitchen scale.",
+    "info": [
+      "1 US cup of all-purpose flour is roughly 120 grams.",
+      "Sifting or packing flour can change the weight."
+    ]
+  },
+  {
+    "slug": "time-zone-meeting-planner",
+    "title": "Time Zone Meeting Planner",
+    "cluster": "Date & Time",
+    "description": "Convert a meeting time between two time zones.",
+    "intro": "Enter a local meeting time and the UTC offsets to find the corresponding time in another time zone.",
+    "inputs": [
+      { "name": "hour", "label": "Local Hour (0-23)", "type": "number", "min": 0, "max": 23, "step": "any", "placeholder": "9" },
+      { "name": "offset1", "label": "Your UTC Offset", "type": "number", "step": "any", "placeholder": "-5" },
+      { "name": "offset2", "label": "Participant UTC Offset", "type": "number", "step": "any", "placeholder": "0" }
+    ],
+    "expression": "(hour - offset1 + offset2 + 24) % 24",
+    "unit": "hour",
+    "examples": [
+      { "description": "9:00 at UTC-5 to UTC+0 \u21d2 14:00" },
+      { "description": "15:00 at UTC+0 to UTC+9 \u21d2 0:00" }
+    ],
+    "faqs": [
+      { "question": "How do I handle half-hour offsets?", "answer": "Enter decimal offsets such as 5.5 for UTC+5:30." },
+      { "question": "Does this account for daylight saving time?", "answer": "No, adjust offsets manually for daylight saving changes." },
+      { "question": "What does the result represent?", "answer": "It shows the meeting hour in the participant's time zone." }
+    ],
+    "disclaimer": "For general planning; verify local times, especially around daylight saving transitions.",
+    "info": [
+      "UTC offsets are hours ahead or behind Coordinated Universal Time.",
+      "Result is given in 24-hour format."
+    ]
+  },
+  {
+    "slug": "flesch-kincaid-readability",
+    "title": "Flesch-Kincaid Readability Calculator",
+    "cluster": "Education & Learning",
+    "description": "Estimate the U.S. school grade level of a text.",
+    "intro": "Provide counts of words, sentences and syllables to calculate the Flesch-Kincaid grade level.",
+    "inputs": [
+      { "name": "words", "label": "Words", "type": "number", "min": 1, "step": "any", "placeholder": "250" },
+      { "name": "sentences", "label": "Sentences", "type": "number", "min": 1, "step": "any", "placeholder": "10" },
+      { "name": "syllables", "label": "Syllables", "type": "number", "min": 1, "step": "any", "placeholder": "400" }
+    ],
+    "expression": "0.39*(words/sentences)+11.8*(syllables/words)-15.59",
+    "unit": "grade level",
+    "examples": [
+      { "description": "250 words, 10 sentences, 400 syllables \u21d2 13.04 grade" },
+      { "description": "100 words, 5 sentences, 120 syllables \u21d2 6.37 grade" }
+    ],
+    "faqs": [
+      { "question": "What does the grade level mean?", "answer": "It approximates the U.S. school grade needed to understand the text." },
+      { "question": "Can I use this for other languages?", "answer": "The formula was designed for English and may not suit other languages." },
+      { "question": "Do abbreviations affect the result?", "answer": "They may; ensure counts reflect actual sentence and syllable totals." }
+    ],
+    "disclaimer": "Readability formulas are estimates; real comprehension varies among readers.",
+    "info": [
+      "Developed for U.S. Navy training materials in the 1970s.",
+      "Lower scores indicate easier-to-read text."
+    ]
+  },
+  {
+    "slug": "doppler-effect",
+    "title": "Doppler Effect Frequency Shift Calculator",
+    "cluster": "Science & Engineering",
+    "description": "Find the observed frequency when source or observer is moving.",
+    "intro": "Enter the source frequency, velocities and speed of sound to compute the observed frequency using the Doppler effect.",
+    "inputs": [
+      { "name": "frequency", "label": "Source Frequency (Hz)", "type": "number", "min": 0, "step": "any", "placeholder": "500" },
+      { "name": "observer", "label": "Observer Velocity (m/s)", "type": "number", "step": "any", "placeholder": "10" },
+      { "name": "source", "label": "Source Velocity (m/s)", "type": "number", "step": "any", "placeholder": "20" },
+      { "name": "speed", "label": "Speed of Sound (m/s)", "type": "number", "min": 1, "step": "any", "placeholder": "343" }
+    ],
+    "expression": "frequency * ((speed + observer) / (speed - source))",
+    "unit": "Hz",
+    "examples": [
+      { "description": "500 Hz, observer 10 m/s, source 20 m/s \u21d2 546.44 Hz" },
+      { "description": "1000 Hz, observer 0 m/s, source 30 m/s \u21d2 1095.85 Hz" }
+    ],
+    "faqs": [
+      { "question": "How are directions handled?", "answer": "Velocities toward each other are positive; use negative values when moving apart." },
+      { "question": "Can I use other wave speeds?", "answer": "Yes, replace the speed of sound with the speed of the wave in the medium." },
+      { "question": "What if source velocity equals wave speed?", "answer": "The formula approaches infinity; ensure source speed is below wave speed." }
+    ],
+    "disclaimer": "Assumes constant velocity and ignores relativistic effects.",
+    "info": [
+      "Named after Austrian physicist Christian Doppler.",
+      "Useful in radar, astronomy and medical imaging."
+    ]
+  },
+  {
+    "slug": "color-contrast-checker",
+    "title": "Color Contrast Checker",
+    "cluster": "Technology & Coding",
+    "description": "Calculate WCAG contrast ratio between two RGB colors.",
+    "intro": "Enter RGB values for foreground and background colors to determine their contrast ratio.",
+    "inputs": [
+      { "name": "r1", "label": "Foreground R", "type": "number", "min": 0, "max": 255, "step": "any", "placeholder": "0" },
+      { "name": "g1", "label": "Foreground G", "type": "number", "min": 0, "max": 255, "step": "any", "placeholder": "0" },
+      { "name": "b1", "label": "Foreground B", "type": "number", "min": 0, "max": 255, "step": "any", "placeholder": "0" },
+      { "name": "r2", "label": "Background R", "type": "number", "min": 0, "max": 255, "step": "any", "placeholder": "255" },
+      { "name": "g2", "label": "Background G", "type": "number", "min": 0, "max": 255, "step": "any", "placeholder": "255" },
+      { "name": "b2", "label": "Background B", "type": "number", "min": 0, "max": 255, "step": "any", "placeholder": "255" }
+    ],
+    "expression": "(function(r1,g1,b1,r2,g2,b2){function L(r,g,b){r/=255;g/=255;b/=255;function C(c){return c<=0.03928?c/12.92:((c+0.055)/1.055)**2.4;} r=C(r);g=C(g);b=C(b);return 0.2126*r+0.7152*g+0.0722*b;} const L1=L(r1,g1,b1); const L2=L(r2,g2,b2); const ratio=(Math.max(L1,L2)+0.05)/(Math.min(L1,L2)+0.05); return ratio.toFixed(2)+':1';})(r1,g1,b1,r2,g2,b2)",
+    "unit": "ratio",
+    "examples": [
+      { "description": "Black (0,0,0) vs White (255,255,255) \u21d2 21.00:1" },
+      { "description": "#123456 vs #ABCDEF \u21d2 7.70:1" }
+    ],
+    "faqs": [
+      { "question": "What ratio meets WCAG AA for normal text?", "answer": "A contrast ratio of at least 4.5:1 is recommended." },
+      { "question": "Do I enter hexadecimal colors?", "answer": "Convert hex values to RGB numbers before using the calculator." },
+      { "question": "Why is contrast important?", "answer": "Adequate contrast improves readability and accessibility for all users." }
+    ],
+    "disclaimer": "For basic accessibility checks; verify with full WCAG guidelines for compliance.",
+    "info": [
+      "Contrast ratios range from 1:1 (no contrast) to 21:1 (maximum).",
+      "Uses relative luminance as defined by WCAG 2.1."
+    ]
+  },
+  {
+    "slug": "solar-panel-savings",
+    "title": "Solar Panel Savings Calculator",
+    "cluster": "Home & DIY",
+    "description": "Estimate yearly electricity savings from solar panels.",
+    "intro": "Calculate annual savings by combining sunlight hours, panel wattage, number of panels and electricity cost.",
+    "inputs": [
+      { "name": "sun", "label": "Sun Hours per Day", "type": "number", "min": 0, "step": "any", "placeholder": "5" },
+      { "name": "watt", "label": "Panel Wattage", "type": "number", "min": 0, "step": "any", "placeholder": "300" },
+      { "name": "panels", "label": "Number of Panels", "type": "number", "min": 0, "step": "any", "placeholder": "10" },
+      { "name": "cost", "label": "Electricity Cost ($/kWh)", "type": "number", "min": 0, "step": "any", "placeholder": "0.12" }
+    ],
+    "expression": "sun * watt * panels * 365 / 1000 * cost",
+    "unit": "USD/year",
+    "examples": [
+      { "description": "5 h, 300 W, 10 panels, $0.12/kWh \u21d2 $657/year" },
+      { "description": "4 h, 400 W, 8 panels, $0.15/kWh \u21d2 $700.80/year" }
+    ],
+    "faqs": [
+      { "question": "Does it account for panel efficiency?", "answer": "No, it assumes panels operate at their rated wattage." },
+      { "question": "What about installation costs?", "answer": "This calculator focuses only on potential energy savings." },
+      { "question": "Can I use local electricity rates?", "answer": "Yes, enter your utility's cost per kWh for personalized results." }
+    ],
+    "disclaimer": "Estimates only; actual savings depend on system efficiency and local conditions.",
+    "info": [
+      "1 kWh equals 1000 watt-hours.",
+      "Sun hours represent average peak sunlight per day."
+    ]
+  },
+  {
+    "slug": "distance-to-horizon",
+    "title": "Distance to Horizon Calculator",
+    "cluster": "Lifestyle & Travel",
+    "description": "Estimate how far you can see based on your height above sea level.",
+    "intro": "Enter the observer's height to approximate the distance to the horizon using Earth's curvature.",
+    "inputs": [
+      { "name": "height", "label": "Height (m)", "type": "number", "min": 0, "step": "any", "placeholder": "2" }
+    ],
+    "expression": "3.57 * Math.sqrt(height)",
+    "unit": "km",
+    "examples": [
+      { "description": "2 m \u21d2 5.05 km" },
+      { "description": "100 m \u21d2 35.70 km" }
+    ],
+    "faqs": [
+      { "question": "Does weather affect visibility?", "answer": "Yes, fog or haze can reduce visible distance despite the geometric horizon." },
+      { "question": "Is Earth's curvature assumed spherical?", "answer": "Yes, it uses an average Earth radius and ignores refraction." },
+      { "question": "Can I enter height in feet?", "answer": "Convert feet to meters before using the calculator." }
+    ],
+    "disclaimer": "Ideal geometric estimate; atmospheric refraction is not considered.",
+    "info": [
+      "Formula uses Earth's mean radius of about 6,371 km.",
+      "Result gives distance to the geometric horizon in kilometers."
+    ]
+  },
+  {
+    "slug": "ab-test-sample-size",
+    "title": "A/B Test Sample Size Calculator",
+    "cluster": "Web & Marketing",
+    "description": "Determine visitors needed per variant for an A/B test.",
+    "intro": "Provide a baseline conversion rate and desired lift to estimate the required sample size per variant.",
+    "inputs": [
+      { "name": "base", "label": "Baseline Conversion Rate (%)", "type": "number", "min": 0, "step": "any", "placeholder": "5" },
+      { "name": "mde", "label": "Desired Lift (%)", "type": "number", "min": 0, "step": "any", "placeholder": "1" }
+    ],
+    "expression": "(function(base,mde){const p1=base/100;const p2=(base+mde)/100;const pbar=(p1+p2)/2;const z1=1.96;const z2=0.84;return Math.ceil(((z1*Math.sqrt(2*pbar*(1-pbar))+z2*Math.sqrt(p1*(1-p1)+p2*(1-p2)))**2)/((p1-p2)**2));})(base,mde)",
+    "unit": "visitors",
+    "examples": [
+      { "description": "5% baseline, 1% lift \u21d2 8149 visitors" },
+      { "description": "10% baseline, 2% lift \u21d2 3837 visitors" }
+    ],
+    "faqs": [
+      { "question": "What confidence and power are assumed?", "answer": "The formula uses 95% confidence (z=1.96) and 80% power (z=0.84)." },
+      { "question": "Is sample size per variant or total?", "answer": "Results represent the required visitors per variant." },
+      { "question": "Can I change confidence levels?", "answer": "Adjust the z-scores in the formula for different confidence or power." }
+    ],
+    "disclaimer": "For planning experiments; real-world tests may require adjustments for variance and behavior.",
+    "info": [
+      "Useful for marketing and UX optimization experiments.",
+      "Higher baseline rates or smaller lifts require larger samples."
+    ]
   }
 ]
