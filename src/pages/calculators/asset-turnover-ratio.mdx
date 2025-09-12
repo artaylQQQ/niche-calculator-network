@@ -1,0 +1,62 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Asset Turnover Ratio Calculator"
+description: "Measure how efficiently assets generate sales."
+updated: "2025-10-06"
+cluster: "Finance"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "asset-turnover-ratio",
+  title: "Asset Turnover Ratio Calculator",
+  locale: "en",
+  intro:
+    "Compute the asset turnover ratio by dividing net sales by average total assets.",
+  unit: "ratio",
+  cluster: "Finance",
+  inputs: [
+    {
+      name: "net_sales",
+      label: "Net Sales (USD)",
+      type: "number",
+      step: "any",
+      placeholder: "500000",
+    },
+    {
+      name: "average_assets",
+      label: "Average Total Assets (USD)",
+      type: "number",
+      step: "any",
+      placeholder: "250000",
+    },
+  ],
+  expression: "net_sales / average_assets",
+  examples: [
+    { description: "$500,000 sales with $250,000 assets ⇒ 2" },
+    { description: "$750,000 sales with $300,000 assets ⇒ 2.5" },
+  ],
+  faqs: [
+    {
+      question: "What does a higher ratio mean?",
+      answer: "Higher values indicate more efficient use of assets.",
+    },
+    {
+      question: "Can the ratio be below 1?",
+      answer: "Yes, which may signal under-utilized assets.",
+    },
+    {
+      question: "Should I use average assets?",
+      answer:
+        "Yes, averaging beginning and ending assets smooths fluctuations.",
+    },
+  ],
+  disclaimer: "For informational purposes; consult a financial advisor.",
+  info: [
+    "Commonly used to evaluate operational efficiency.",
+    "Varies widely by industry.",
+  ],
+};
+
+<Calculator schema={schema} />

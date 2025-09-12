@@ -1,0 +1,62 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Megapixels Calculator"
+description: "Convert image resolution to megapixels."
+updated: "2025-10-06"
+cluster: "Technology"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "megapixels-calculator",
+  title: "Megapixels Calculator",
+  locale: "en",
+  intro:
+    "Find the megapixel count of an image by multiplying width and height in pixels and dividing by one million.",
+  unit: "MP",
+  cluster: "Technology",
+  inputs: [
+    {
+      name: "width",
+      label: "Width (px)",
+      type: "number",
+      step: "1",
+      placeholder: "4000",
+    },
+    {
+      name: "height",
+      label: "Height (px)",
+      type: "number",
+      step: "1",
+      placeholder: "3000",
+    },
+  ],
+  expression: "(width * height) / 1000000",
+  examples: [
+    { description: "4000 × 3000 ⇒ 12 MP" },
+    { description: "8000 × 6000 ⇒ 48 MP" },
+  ],
+  faqs: [
+    {
+      question: "What is a megapixel?",
+      answer: "One megapixel equals one million pixels.",
+    },
+    {
+      question: "Does higher megapixels mean better quality?",
+      answer: "Not always; sensor size and lens quality also matter.",
+    },
+    {
+      question: "Can I reverse the calculation?",
+      answer:
+        "Multiply megapixels by 1,000,000 and factor possible dimensions.",
+    },
+  ],
+  disclaimer: "Megapixel count alone does not determine image quality.",
+  info: [
+    "Common in digital camera specifications.",
+    "Helps estimate print sizes.",
+  ],
+};
+
+<Calculator schema={schema} />

@@ -1,0 +1,62 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Hotel Points to Nights Calculator"
+description: "Convert loyalty points into free hotel nights."
+updated: "2025-10-06"
+cluster: "Lifestyle & Travel"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "hotel-points-to-nights",
+  title: "Hotel Points to Nights Calculator",
+  locale: "en",
+  intro:
+    "Estimate how many free nights you can redeem by dividing your total points by points required per night.",
+  unit: "nights",
+  cluster: "Lifestyle & Travel",
+  inputs: [
+    {
+      name: "points",
+      label: "Total Points",
+      type: "number",
+      step: "any",
+      placeholder: "50000",
+    },
+    {
+      name: "points_per_night",
+      label: "Points per Night",
+      type: "number",
+      step: "any",
+      placeholder: "15000",
+    },
+  ],
+  expression: "points / points_per_night",
+  examples: [
+    { description: "50,000 points at 15,000/night ⇒ 3.33 nights" },
+    { description: "120,000 points at 25,000/night ⇒ 4.8 nights" },
+  ],
+  faqs: [
+    {
+      question: "Do partial nights carry over?",
+      answer:
+        "Most programs require whole nights; decimals show how close you are.",
+    },
+    {
+      question: "Are taxes included?",
+      answer: "Some programs still charge taxes or fees on award stays.",
+    },
+    {
+      question: "Can point requirements vary?",
+      answer: "Yes, hotels may use dynamic pricing affecting points per night.",
+    },
+  ],
+  disclaimer: "Point requirements differ by program and date.",
+  info: [
+    "Check blackout dates before booking award nights.",
+    "Some programs offer fifth night free promotions.",
+  ],
+};
+
+<Calculator schema={schema} />

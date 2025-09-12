@@ -1,0 +1,61 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Click-To-Open Rate Calculator"
+description: "Measure email engagement by dividing clicks by opens."
+updated: "2025-10-06"
+cluster: "Web & Marketing"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "click-to-open-rate",
+  title: "Click-To-Open Rate Calculator",
+  locale: "en",
+  intro:
+    "Calculate the click-to-open rate (CTOR) by dividing unique clicks by unique opens and multiplying by 100.",
+  unit: "%",
+  cluster: "Web & Marketing",
+  inputs: [
+    {
+      name: "clicks",
+      label: "Unique Clicks",
+      type: "number",
+      step: "1",
+      placeholder: "150",
+    },
+    {
+      name: "opens",
+      label: "Unique Opens",
+      type: "number",
+      step: "1",
+      placeholder: "1000",
+    },
+  ],
+  expression: "(clicks / opens) * 100",
+  examples: [
+    { description: "150 clicks, 1000 opens ⇒ 15%" },
+    { description: "60 clicks, 800 opens ⇒ 7.5%" },
+  ],
+  faqs: [
+    {
+      question: "How is CTOR different from CTR?",
+      answer: "CTOR uses opens as the base, while CTR uses total emails sent.",
+    },
+    {
+      question: "Can opens be zero?",
+      answer: "No, at least one open is needed to compute CTOR.",
+    },
+    {
+      question: "Is a higher CTOR always better?",
+      answer: "Generally yes, it indicates more engaging content.",
+    },
+  ],
+  disclaimer: "Metrics depend on accurate tracking of opens and clicks.",
+  info: [
+    "Useful for evaluating email content quality.",
+    "Combine with open and click rates for full insights.",
+  ],
+};
+
+<Calculator schema={schema} />

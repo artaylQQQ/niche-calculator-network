@@ -1,0 +1,54 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Power Set Size Calculator"
+description: "Count the number of subsets a set has."
+updated: "2025-10-06"
+cluster: "Math"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "power-set-size",
+  title: "Power Set Size Calculator",
+  locale: "en",
+  intro:
+    "Determine the size of a power set by raising 2 to the number of elements.",
+  unit: "subsets",
+  cluster: "Math",
+  inputs: [
+    {
+      name: "elements",
+      label: "Number of Elements",
+      type: "number",
+      step: "1",
+      placeholder: "3",
+    },
+  ],
+  expression: "2 ** elements",
+  examples: [
+    { description: "3 elements ⇒ 8 subsets" },
+    { description: "5 elements ⇒ 32 subsets" },
+  ],
+  faqs: [
+    {
+      question: "What is a power set?",
+      answer: "It is the set of all possible subsets of a set.",
+    },
+    {
+      question: "Does it include the empty set?",
+      answer: "Yes, the empty set is one of the subsets counted.",
+    },
+    {
+      question: "How does it grow?",
+      answer: "The number of subsets doubles with each additional element.",
+    },
+  ],
+  disclaimer: "Assumes distinct elements with no repetitions.",
+  info: [
+    "Power sets are fundamental in combinatorics.",
+    "Size calculation uses exponentiation base 2.",
+  ],
+};
+
+<Calculator schema={schema} />

@@ -21375,8 +21375,12 @@
     "expression": "cost / impressions * 1000",
     "unit": "USD",
     "examples": [
-      { "description": "$500 cost, 200,000 impressions ⇒ $2.50" },
-      { "description": "$120 cost, 30,000 impressions ⇒ $4.00" }
+      {
+        "description": "$500 cost, 200,000 impressions ⇒ $2.50"
+      },
+      {
+        "description": "$120 cost, 30,000 impressions ⇒ $4.00"
+      }
     ],
     "faqs": [
       {
@@ -21430,8 +21434,12 @@
     "expression": "Math.sqrt(x*x + y*y + z*z)",
     "unit": "units",
     "examples": [
-      { "description": "(3,4,12) ⇒ 13" },
-      { "description": "(1,2,2) ⇒ 3" }
+      {
+        "description": "(3,4,12) ⇒ 13"
+      },
+      {
+        "description": "(1,2,2) ⇒ 3"
+      }
     ],
     "faqs": [
       {
@@ -21451,6 +21459,630 @@
     "info": [
       "Vector magnitude represents distance from the origin.",
       "Also known as vector length or norm."
+    ]
+  },
+  {
+    "slug": "meters-per-second-to-knots",
+    "title": "Meters per Second to Knots Converter",
+    "cluster": "Conversions",
+    "description": "Convert speed from meters per second to knots.",
+    "intro": "Convert a speed from meters per second to nautical miles per hour (knots).",
+    "inputs": [
+      {
+        "name": "mps",
+        "label": "Speed (m/s)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "10"
+      }
+    ],
+    "expression": "mps * 1.94384",
+    "unit": "kn",
+    "examples": [
+      {
+        "description": "10 m/s ⇒ 19.44 kn"
+      },
+      {
+        "description": "15 m/s ⇒ 29.16 kn"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What is a knot?",
+        "answer": "A knot is one nautical mile per hour."
+      },
+      {
+        "question": "Can I convert knots back to m/s?",
+        "answer": "Divide the knots value by 1.94384."
+      },
+      {
+        "question": "Does it account for current or wind?",
+        "answer": "No, it only converts speed units."
+      }
+    ],
+    "disclaimer": "Uses conversion 1 m/s = 1.94384 knots.",
+    "info": [
+      "Knots are commonly used in aviation and maritime contexts.",
+      "Nautical miles are based on the Earth's circumference."
+    ]
+  },
+  {
+    "slug": "week-of-month",
+    "title": "Week of Month Calculator",
+    "cluster": "Date & Time",
+    "description": "Determine which week of the month a date falls in.",
+    "intro": "Find the week number within a month for a given date assuming weeks start on Sunday.",
+    "inputs": [
+      {
+        "name": "year",
+        "label": "Year",
+        "type": "number",
+        "step": "1",
+        "placeholder": "2025"
+      },
+      {
+        "name": "month",
+        "label": "Month",
+        "type": "number",
+        "step": "1",
+        "placeholder": "6"
+      },
+      {
+        "name": "day",
+        "label": "Day",
+        "type": "number",
+        "step": "1",
+        "placeholder": "15"
+      }
+    ],
+    "expression": "Math.ceil((day + new Date(year, month - 1, 1).getDay()) / 7)",
+    "unit": "week",
+    "examples": [
+      {
+        "description": "June 15, 2025 ⇒ Week 3"
+      },
+      {
+        "description": "May 26, 2025 ⇒ Week 5"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Which day starts the week?",
+        "answer": "The calculation assumes weeks start on Sunday."
+      },
+      {
+        "question": "Do partial weeks count as week 1?",
+        "answer": "Yes, the first partial week is counted as week 1."
+      },
+      {
+        "question": "Does it handle leap years?",
+        "answer": "Yes, JavaScript's Date object accounts for leap years."
+      }
+    ],
+    "disclaimer": "Weeks are confined within the month and start on Sunday.",
+    "info": [
+      "Useful for scheduling monthly events.",
+      "Week numbering differs from ISO week numbers."
+    ]
+  },
+  {
+    "slug": "slides-per-minute",
+    "title": "Slides Per Minute Calculator",
+    "cluster": "Education",
+    "description": "Plan presentation pace by calculating slides per minute.",
+    "intro": "Determine how many slides you'll present per minute by dividing total slides by total minutes.",
+    "inputs": [
+      {
+        "name": "slides",
+        "label": "Total Slides",
+        "type": "number",
+        "step": "1",
+        "placeholder": "30"
+      },
+      {
+        "name": "minutes",
+        "label": "Total Minutes",
+        "type": "number",
+        "step": "any",
+        "placeholder": "10"
+      }
+    ],
+    "expression": "slides / minutes",
+    "unit": "slides/min",
+    "examples": [
+      {
+        "description": "30 slides over 10 min ⇒ 3 slides/min"
+      },
+      {
+        "description": "20 slides over 15 min ⇒ 1.33 slides/min"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What is a good slide pace?",
+        "answer": "Many presenters aim for 1–2 slides per minute."
+      },
+      {
+        "question": "Can I include transition time?",
+        "answer": "Yes, include it in the total minutes."
+      },
+      {
+        "question": "Why is the result a decimal?",
+        "answer": "It shows the average number of slides per minute."
+      }
+    ],
+    "disclaimer": "Actual presentation pace may vary.",
+    "info": [
+      "Adjust slide count to fit allotted time.",
+      "Practicing helps refine pacing."
+    ]
+  },
+  {
+    "slug": "asset-turnover-ratio",
+    "title": "Asset Turnover Ratio Calculator",
+    "cluster": "Finance",
+    "description": "Measure how efficiently assets generate sales.",
+    "intro": "Compute the asset turnover ratio by dividing net sales by average total assets.",
+    "inputs": [
+      {
+        "name": "net_sales",
+        "label": "Net Sales (USD)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "500000"
+      },
+      {
+        "name": "average_assets",
+        "label": "Average Total Assets (USD)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "250000"
+      }
+    ],
+    "expression": "net_sales / average_assets",
+    "unit": "ratio",
+    "examples": [
+      {
+        "description": "$500,000 sales with $250,000 assets ⇒ 2"
+      },
+      {
+        "description": "$750,000 sales with $300,000 assets ⇒ 2.5"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What does a higher ratio mean?",
+        "answer": "Higher values indicate more efficient use of assets."
+      },
+      {
+        "question": "Can the ratio be below 1?",
+        "answer": "Yes, which may signal under-utilized assets."
+      },
+      {
+        "question": "Should I use average assets?",
+        "answer": "Yes, averaging beginning and ending assets smooths fluctuations."
+      }
+    ],
+    "disclaimer": "For informational purposes; consult a financial advisor.",
+    "info": [
+      "Commonly used to evaluate operational efficiency.",
+      "Varies widely by industry."
+    ]
+  },
+  {
+    "slug": "body-surface-area-haycock",
+    "title": "Body Surface Area (Haycock) Calculator",
+    "cluster": "Health",
+    "description": "Estimate body surface area using the Haycock formula.",
+    "intro": "Estimate body surface area from height and weight using the Haycock formula.",
+    "inputs": [
+      {
+        "name": "weight",
+        "label": "Weight (kg)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "70"
+      },
+      {
+        "name": "height",
+        "label": "Height (cm)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "175"
+      }
+    ],
+    "expression": "0.024265 * weight ** 0.5378 * height ** 0.3964",
+    "unit": "m²",
+    "examples": [
+      {
+        "description": "70 kg & 175 cm ⇒ 1.85 m²"
+      },
+      {
+        "description": "50 kg & 160 cm ⇒ 1.49 m²"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Why use the Haycock formula?",
+        "answer": "It provides accurate estimates for children and adults."
+      },
+      {
+        "question": "Can I enter height in meters?",
+        "answer": "Convert meters to centimeters before using the calculator."
+      },
+      {
+        "question": "Is BSA the same as BMI?",
+        "answer": "No, BSA measures surface area while BMI measures body mass relative to height."
+      }
+    ],
+    "disclaimer": "BSA formulas provide estimates and should not replace medical judgment.",
+    "info": [
+      "Haycock formula is often used for dosing medications.",
+      "Developed in 1978 as an alternative to earlier BSA formulas."
+    ]
+  },
+  {
+    "slug": "room-heating-btu",
+    "title": "Room Heating BTU Calculator",
+    "cluster": "Home & DIY",
+    "description": "Estimate heating power needed for a room.",
+    "intro": "Estimate required heating output by multiplying room area by a BTU per square foot factor.",
+    "inputs": [
+      {
+        "name": "area",
+        "label": "Room Area (sq ft)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "300"
+      },
+      {
+        "name": "btu_factor",
+        "label": "BTU per Sq Ft",
+        "type": "number",
+        "step": "any",
+        "placeholder": "30"
+      }
+    ],
+    "expression": "area * btu_factor",
+    "unit": "BTU/h",
+    "examples": [
+      {
+        "description": "300 sq ft at 30 BTU/sq ft ⇒ 9,000 BTU/h"
+      },
+      {
+        "description": "500 sq ft at 25 BTU/sq ft ⇒ 12,500 BTU/h"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What BTU factor should I use?",
+        "answer": "Typical homes use 20–40 BTU per square foot depending on climate."
+      },
+      {
+        "question": "Does ceiling height matter?",
+        "answer": "This simple estimate ignores ceiling height and insulation quality."
+      },
+      {
+        "question": "Is this for heaters or furnaces?",
+        "answer": "It estimates the heating output regardless of equipment type."
+      }
+    ],
+    "disclaimer": "Provides a rough estimate; consult HVAC professionals for accurate sizing.",
+    "info": [
+      "BTU stands for British Thermal Unit.",
+      "Higher BTU requirements occur in colder climates."
+    ]
+  },
+  {
+    "slug": "hotel-points-to-nights",
+    "title": "Hotel Points to Nights Calculator",
+    "cluster": "Lifestyle & Travel",
+    "description": "Convert loyalty points into free hotel nights.",
+    "intro": "Estimate how many free nights you can redeem by dividing your total points by points required per night.",
+    "inputs": [
+      {
+        "name": "points",
+        "label": "Total Points",
+        "type": "number",
+        "step": "any",
+        "placeholder": "50000"
+      },
+      {
+        "name": "points_per_night",
+        "label": "Points per Night",
+        "type": "number",
+        "step": "any",
+        "placeholder": "15000"
+      }
+    ],
+    "expression": "points / points_per_night",
+    "unit": "nights",
+    "examples": [
+      {
+        "description": "50,000 points at 15,000/night ⇒ 3.33 nights"
+      },
+      {
+        "description": "120,000 points at 25,000/night ⇒ 4.8 nights"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Do partial nights carry over?",
+        "answer": "Most programs require whole nights; decimals show how close you are."
+      },
+      {
+        "question": "Are taxes included?",
+        "answer": "Some programs still charge taxes or fees on award stays."
+      },
+      {
+        "question": "Can point requirements vary?",
+        "answer": "Yes, hotels may use dynamic pricing affecting points per night."
+      }
+    ],
+    "disclaimer": "Point requirements differ by program and date.",
+    "info": [
+      "Check blackout dates before booking award nights.",
+      "Some programs offer fifth night free promotions."
+    ]
+  },
+  {
+    "slug": "power-set-size",
+    "title": "Power Set Size Calculator",
+    "cluster": "Math",
+    "description": "Count the number of subsets a set has.",
+    "intro": "Determine the size of a power set by raising 2 to the number of elements.",
+    "inputs": [
+      {
+        "name": "elements",
+        "label": "Number of Elements",
+        "type": "number",
+        "step": "1",
+        "placeholder": "3"
+      }
+    ],
+    "expression": "2 ** elements",
+    "unit": "subsets",
+    "examples": [
+      {
+        "description": "3 elements ⇒ 8 subsets"
+      },
+      {
+        "description": "5 elements ⇒ 32 subsets"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What is a power set?",
+        "answer": "It is the set of all possible subsets of a set."
+      },
+      {
+        "question": "Does it include the empty set?",
+        "answer": "Yes, the empty set is one of the subsets counted."
+      },
+      {
+        "question": "How does it grow?",
+        "answer": "The number of subsets doubles with each additional element."
+      }
+    ],
+    "disclaimer": "Assumes distinct elements with no repetitions.",
+    "info": [
+      "Power sets are fundamental in combinatorics.",
+      "Size calculation uses exponentiation base 2."
+    ]
+  },
+  {
+    "slug": "debt-to-asset-ratio",
+    "title": "Debt-to-Asset Ratio Calculator",
+    "cluster": "Personal Finance & Loans",
+    "description": "Compare total liabilities to total assets.",
+    "intro": "Find the percentage of assets financed by debt by dividing total liabilities by total assets and multiplying by 100.",
+    "inputs": [
+      {
+        "name": "liabilities",
+        "label": "Total Liabilities (USD)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "200000"
+      },
+      {
+        "name": "assets",
+        "label": "Total Assets (USD)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "500000"
+      }
+    ],
+    "expression": "(liabilities / assets) * 100",
+    "unit": "%",
+    "examples": [
+      {
+        "description": "$200,000 liabilities & $500,000 assets ⇒ 40%"
+      },
+      {
+        "description": "$150,000 liabilities & $300,000 assets ⇒ 50%"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Is a lower ratio better?",
+        "answer": "Generally yes; lower ratios indicate less leverage."
+      },
+      {
+        "question": "Can the ratio exceed 100%?",
+        "answer": "Yes, if liabilities exceed assets."
+      },
+      {
+        "question": "Should I use book or market value?",
+        "answer": "Use consistent asset and liability valuations for comparison."
+      }
+    ],
+    "disclaimer": "Financial ratios are simplified indicators and may not capture all nuances.",
+    "info": [
+      "Often used by lenders to gauge solvency.",
+      "Complement with other ratios for full analysis."
+    ]
+  },
+  {
+    "slug": "gravitational-potential-energy",
+    "title": "Gravitational Potential Energy Calculator",
+    "cluster": "Science",
+    "description": "Compute potential energy from mass, height, and gravity.",
+    "intro": "Calculate gravitational potential energy by multiplying mass, gravitational acceleration, and height.",
+    "inputs": [
+      {
+        "name": "mass",
+        "label": "Mass (kg)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "10"
+      },
+      {
+        "name": "height",
+        "label": "Height (m)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "5"
+      },
+      {
+        "name": "gravity",
+        "label": "Gravity (m/s^2)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "9.81"
+      }
+    ],
+    "expression": "mass * gravity * height",
+    "unit": "J",
+    "examples": [
+      {
+        "description": "10 kg at 5 m ⇒ 490.5 J"
+      },
+      {
+        "description": "2 kg at 2 m ⇒ 39.24 J"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Can I use gravity of other planets?",
+        "answer": "Yes, change the gravity input to match the planet."
+      },
+      {
+        "question": "Does mass include Earth's gravity?",
+        "answer": "Mass is independent of gravity; weight changes with gravity."
+      },
+      {
+        "question": "Is air resistance considered?",
+        "answer": "No, this formula ignores air resistance and other forces."
+      }
+    ],
+    "disclaimer": "Assumes uniform gravitational field and static object.",
+    "info": [
+      "Potential energy is stored energy due to position.",
+      "Measured in joules, the same unit as work."
+    ]
+  },
+  {
+    "slug": "megapixels-calculator",
+    "title": "Megapixels Calculator",
+    "cluster": "Technology",
+    "description": "Convert image resolution to megapixels.",
+    "intro": "Find the megapixel count of an image by multiplying width and height in pixels and dividing by one million.",
+    "inputs": [
+      {
+        "name": "width",
+        "label": "Width (px)",
+        "type": "number",
+        "step": "1",
+        "placeholder": "4000"
+      },
+      {
+        "name": "height",
+        "label": "Height (px)",
+        "type": "number",
+        "step": "1",
+        "placeholder": "3000"
+      }
+    ],
+    "expression": "(width * height) / 1000000",
+    "unit": "MP",
+    "examples": [
+      {
+        "description": "4000 × 3000 ⇒ 12 MP"
+      },
+      {
+        "description": "8000 × 6000 ⇒ 48 MP"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What is a megapixel?",
+        "answer": "One megapixel equals one million pixels."
+      },
+      {
+        "question": "Does higher megapixels mean better quality?",
+        "answer": "Not always; sensor size and lens quality also matter."
+      },
+      {
+        "question": "Can I reverse the calculation?",
+        "answer": "Multiply megapixels by 1,000,000 and factor possible dimensions."
+      }
+    ],
+    "disclaimer": "Megapixel count alone does not determine image quality.",
+    "info": [
+      "Common in digital camera specifications.",
+      "Helps estimate print sizes."
+    ]
+  },
+  {
+    "slug": "click-to-open-rate",
+    "title": "Click-To-Open Rate Calculator",
+    "cluster": "Web & Marketing",
+    "description": "Measure email engagement by dividing clicks by opens.",
+    "intro": "Calculate the click-to-open rate (CTOR) by dividing unique clicks by unique opens and multiplying by 100.",
+    "inputs": [
+      {
+        "name": "clicks",
+        "label": "Unique Clicks",
+        "type": "number",
+        "step": "1",
+        "placeholder": "150"
+      },
+      {
+        "name": "opens",
+        "label": "Unique Opens",
+        "type": "number",
+        "step": "1",
+        "placeholder": "1000"
+      }
+    ],
+    "expression": "(clicks / opens) * 100",
+    "unit": "%",
+    "examples": [
+      {
+        "description": "150 clicks, 1000 opens ⇒ 15%"
+      },
+      {
+        "description": "60 clicks, 800 opens ⇒ 7.5%"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "How is CTOR different from CTR?",
+        "answer": "CTOR uses opens as the base, while CTR uses total emails sent."
+      },
+      {
+        "question": "Can opens be zero?",
+        "answer": "No, at least one open is needed to compute CTOR."
+      },
+      {
+        "question": "Is a higher CTOR always better?",
+        "answer": "Generally yes, it indicates more engaging content."
+      }
+    ],
+    "disclaimer": "Metrics depend on accurate tracking of opens and clicks.",
+    "info": [
+      "Useful for evaluating email content quality.",
+      "Combine with open and click rates for full insights."
     ]
   }
 ]
