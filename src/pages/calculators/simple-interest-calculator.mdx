@@ -6,48 +6,51 @@ date: 2025-09-02
 updated: 2025-09-02
 cluster: "finance"
 ---
-import Calculator from '../../components/Calculator.astro';
+
+import Calculator from "../../components/Calculator.astro";
 
 export const schema = {
-  "slug": "simple-interest-calculator",
-  "title": "Simple Interest Calculator",
-  "locale": "en",
-  "inputs": [
+  slug: "simple-interest-calculator",
+  title: "Simple Interest Calculator",
+  locale: "en",
+  inputs: [
     {
-      "label": "Principal",
-      "name": "p",
-      "type": "number",
-      "placeholder": "Enter principal"
+      label: "Principal",
+      name: "p",
+      type: "number",
+      placeholder: "Enter principal",
     },
     {
-      "label": "Rate (%)",
-      "name": "r",
-      "type": "number",
-      "placeholder": "Enter rate (%)"
+      label: "Rate (%)",
+      name: "r",
+      type: "number",
+      placeholder: "Enter rate (%)",
     },
     {
-      "label": "Time (years)",
-      "name": "t",
-      "type": "number",
-      "placeholder": "Enter time (years)"
-    }
+      label: "Time (years)",
+      name: "t",
+      type: "number",
+      placeholder: "Enter time (years)",
+    },
   ],
-  "expression": "(p * r * t) / 100",
-  "intro": "Compute interest earned with the simple interest formula. Enter the values and press Calculate.",
-  "examples": [
+  expression: "(p * r * t) / 100",
+  unit: "$",
+  intro:
+    "Compute interest earned with the simple interest formula. Enter the values and press Calculate.",
+  examples: [
     {
-      "description": "1000 at 5% for 2 years = 100"
-    }
+      description: "1000 at 5% for 2 years = 100",
+    },
   ],
-  "faqs": [
+  faqs: [
     {
-      "question": "What is simple interest?",
-      "answer": "Interest calculated only on the principal amount."
-    }
+      question: "What is simple interest?",
+      answer: "Interest calculated only on the principal amount.",
+    },
   ],
-  "disclaimer": "Educational information, not professional advice.",
-  "cluster": "finance",
-  "related": []
-}
+  disclaimer: "Educational information, not professional advice.",
+  cluster: "finance",
+  related: [],
+};
 
 <Calculator schema={schema} />

@@ -6,50 +6,51 @@ date: 2025-09-03
 updated: 2025-09-03
 cluster: "Health"
 ---
-import Calculator from '../../components/Calculator.astro';
+
+import Calculator from "../../components/Calculator.astro";
 
 export const schema = {
-  "slug": "caffeine-half-life",
-  "title": "Caffeine Half-Life",
-  "locale": "en",
-  "inputs": [
+  slug: "caffeine-half-life",
+  title: "Caffeine Half-Life",
+  locale: "en",
+  inputs: [
     {
-      "name": "mg",
-      "label": "Initial caffeine (mg)",
-      "type": "number",
-      "placeholder": "200"
+      name: "mg",
+      label: "Initial caffeine (mg)",
+      type: "number",
+      placeholder: "200",
     },
     {
-      "name": "hrs",
-      "label": "Hours elapsed",
-      "type": "number",
-      "placeholder": "5"
-    }
+      name: "hrs",
+      label: "Hours elapsed",
+      type: "number",
+      placeholder: "5",
+    },
   ],
-  "expression": "mg * (0.5 ^ (hrs / 5))",
-  "intro": "Estimate remaining caffeine over time.",
-  "examples": [
+  expression: "mg * (0.5 ^ (hrs / 5))",
+  unit: "mg",
+  intro: "Estimate remaining caffeine over time.",
+  examples: [
     {
-      "description": "200 mg after 5 h ⇒ 100 mg"
-    }
+      description: "200 mg after 5 h ⇒ 100 mg",
+    },
   ],
-  "faqs": [
+  faqs: [
     {
-      "question": "What half-life is assumed?",
-      "answer": "This uses an average half-life of 5 hours."
-    }
+      question: "What half-life is assumed?",
+      answer: "This uses an average half-life of 5 hours.",
+    },
   ],
-  "disclaimer": "Educational information, not professional advice.",
-  "cluster": "Health",
-  "related": [
+  disclaimer: "Educational information, not professional advice.",
+  cluster: "Health",
+  related: [
     "bmi-calculator",
     "daily-calorie-burn",
     "sleep-debt-weekly",
     "sugar-cube-equivalent",
     "protein-calorie-percentage",
-    "bmi-prime"
-  ]
-}
+    "bmi-prime",
+  ],
+};
 
 <Calculator schema={schema} />
-

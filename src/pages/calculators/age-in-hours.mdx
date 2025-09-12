@@ -6,59 +6,62 @@ date: 2025-09-12
 updated: 2025-09-12
 cluster: "Date & Time"
 ---
-import Calculator from '../../components/Calculator.astro';
+
+import Calculator from "../../components/Calculator.astro";
 
 export const schema = {
-  "slug": "age-in-hours",
-  "title": "Age in Hours",
-  "locale": "en",
-  "inputs": [
+  slug: "age-in-hours",
+  title: "Age in Hours",
+  locale: "en",
+  inputs: [
     {
-      "name": "years",
-      "label": "Age (years)",
-      "type": "number",
-      "step": "any",
-      "placeholder": "30"
-    }
+      name: "years",
+      label: "Age (years)",
+      type: "number",
+      step: "any",
+      placeholder: "30",
+    },
   ],
-  "expression": "years * 365 * 24",
-  "intro": "Estimate how many hours you have lived based on age in years.",
-  "examples": [
+  expression: "years * 365 * 24",
+  unit: "hours",
+  intro: "Estimate how many hours you have lived based on age in years.",
+  examples: [
     {
-      "description": "30 years ⇒ 262,800 hours"
+      description: "30 years ⇒ 262,800 hours",
     },
     {
-      "description": "25 years ⇒ 219,000 hours"
+      description: "25 years ⇒ 219,000 hours",
     },
     {
-      "description": "40 years ⇒ 350,400 hours"
-    }
+      description: "40 years ⇒ 350,400 hours",
+    },
   ],
-  "info": [],
-  "faqs": [
+  info: [],
+  faqs: [
     {
-      "question": "Does this account for leap years?",
-      "answer": "No, it uses 365 days per year for a rough estimate."
+      question: "Does this account for leap years?",
+      answer: "No, it uses 365 days per year for a rough estimate.",
     },
     {
-      "question": "Can I enter decimals?",
-      "answer": "Yes, use decimal years for months or days."
+      question: "Can I enter decimals?",
+      answer: "Yes, use decimal years for months or days.",
     },
     {
-      "question": "Is this precise?",
-      "answer": "It's an approximation; actual hours depend on exact birth time and leap years."
-    }
+      question: "Is this precise?",
+      answer:
+        "It's an approximation; actual hours depend on exact birth time and leap years.",
+    },
   ],
-  "disclaimer": "For fun estimates only; not for official records.",
-  "cluster": "Date & Time",
-  "related": [
+  disclaimer: "For fun estimates only; not for official records.",
+  cluster: "Date & Time",
+  related: [
     "duration-seconds",
     "days-to-hours",
     "years-to-days",
     "mars-sol-to-earth-days",
     "microfortnight-to-seconds",
-    "pomodoro-planner"
-  ]
-}
+    "pomodoro-planner",
+  ],
+};
 
 <Calculator schema={schema} />
