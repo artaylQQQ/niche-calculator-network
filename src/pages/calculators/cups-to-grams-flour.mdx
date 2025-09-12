@@ -1,0 +1,59 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Cups to Grams (Flour) Converter"
+description: "Quickly convert all-purpose flour from cups to grams for precise baking measurements."
+date: 2025-09-12
+updated: 2025-09-12
+cluster: "Conversions & Units"
+---
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "cups-to-grams-flour",
+  "title": "Cups to Grams (Flour) Converter",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "cups",
+      "label": "Cups of Flour",
+      "type": "number",
+      "min": 0,
+      "step": "any",
+      "placeholder": "1"
+    }
+  ],
+  "expression": "cups * 120",
+  "intro": "Quickly convert all-purpose flour from cups to grams for precise baking measurements.",
+  "examples": [
+    {
+      "description": "1 cup ⇒ 120 g"
+    },
+    {
+      "description": "2.5 cups ⇒ 300 g"
+    }
+  ],
+  "info": [
+    "1 US cup of all-purpose flour is roughly 120 grams.",
+    "Sifting or packing flour can change the weight."
+  ],
+  "faqs": [
+    {
+      "question": "Is this for all-purpose flour?",
+      "answer": "Yes, it uses a standard 120 g per cup for all-purpose flour."
+    },
+    {
+      "question": "Do different flours weigh differently?",
+      "answer": "Yes, whole wheat or other flours may have different weights."
+    },
+    {
+      "question": "Why use grams instead of cups?",
+      "answer": "Weighing flour provides more consistent baking results."
+    }
+  ],
+  "disclaimer": "Approximate conversion; verify critical recipes with a kitchen scale.",
+  "cluster": "Conversions & Units",
+  "unit": "g",
+  "related": []
+}
+
+<Calculator schema={schema} />

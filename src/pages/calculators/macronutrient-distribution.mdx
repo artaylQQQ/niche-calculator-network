@@ -1,0 +1,83 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Macronutrient Distribution Calculator"
+description: "Enter your daily calorie target and desired macro percentages to see grams of protein, carbohydrates and fats."
+date: 2025-09-12
+updated: 2025-09-12
+cluster: "Health & Fitness"
+---
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "macronutrient-distribution",
+  "title": "Macronutrient Distribution Calculator",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "calories",
+      "label": "Total Calories",
+      "type": "number",
+      "min": 0,
+      "step": "any",
+      "placeholder": "2000"
+    },
+    {
+      "name": "protein",
+      "label": "Protein (%)",
+      "type": "number",
+      "min": 0,
+      "step": "any",
+      "placeholder": "30"
+    },
+    {
+      "name": "carbs",
+      "label": "Carbs (%)",
+      "type": "number",
+      "min": 0,
+      "step": "any",
+      "placeholder": "40"
+    },
+    {
+      "name": "fat",
+      "label": "Fat (%)",
+      "type": "number",
+      "min": 0,
+      "step": "any",
+      "placeholder": "30"
+    }
+  ],
+  "expression": "(function(calories,protein,carbs,fat){const p=calories*protein/100/4;const c=calories*carbs/100/4;const f=calories*fat/100/9;return 'Protein: '+p.toFixed(1)+' g, Carbs: '+c.toFixed(1)+' g, Fat: '+f.toFixed(1)+' g';})(calories,protein,carbs,fat)",
+  "intro": "Enter your daily calorie target and desired macro percentages to see grams of protein, carbohydrates and fats.",
+  "examples": [
+    {
+      "description": "2000 kcal with 30% protein, 40% carbs, 30% fat ⇒ Protein: 150 g, Carbs: 200 g, Fat: 66.7 g"
+    },
+    {
+      "description": "1800 kcal with 25% protein, 50% carbs, 25% fat ⇒ Protein: 112.5 g, Carbs: 225 g, Fat: 50 g"
+    }
+  ],
+  "info": [
+    "Protein and carbs have ~4 calories per gram, fat has ~9 calories.",
+    "Output shows grams of each macronutrient based on entered percentages."
+  ],
+  "faqs": [
+    {
+      "question": "Should percentages sum to 100?",
+      "answer": "Yes, the macro percentages should total 100% for accurate results."
+    },
+    {
+      "question": "How many calories are in a gram of fat?",
+      "answer": "Fat provides about 9 calories per gram."
+    },
+    {
+      "question": "Can I use this for ketogenic diets?",
+      "answer": "Yes, adjust the percentages to match your dietary goals."
+    }
+  ],
+  "disclaimer": "Approximate nutritional guidance; consult a dietitian for personalized advice.",
+  "cluster": "Health & Fitness",
+  "unit": "g",
+  "related": []
+}
+
+<Calculator schema={schema} />

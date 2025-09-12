@@ -1,0 +1,74 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Time Zone Meeting Planner"
+description: "Enter a local meeting time and the UTC offsets to find the corresponding time in another time zone."
+date: 2025-09-12
+updated: 2025-09-12
+cluster: "Date & Time"
+---
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "time-zone-meeting-planner",
+  "title": "Time Zone Meeting Planner",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "hour",
+      "label": "Local Hour (0-23)",
+      "type": "number",
+      "min": 0,
+      "max": 23,
+      "step": "any",
+      "placeholder": "9"
+    },
+    {
+      "name": "offset1",
+      "label": "Your UTC Offset",
+      "type": "number",
+      "step": "any",
+      "placeholder": "-5"
+    },
+    {
+      "name": "offset2",
+      "label": "Participant UTC Offset",
+      "type": "number",
+      "step": "any",
+      "placeholder": "0"
+    }
+  ],
+  "expression": "(hour - offset1 + offset2 + 24) % 24",
+  "intro": "Enter a local meeting time and the UTC offsets to find the corresponding time in another time zone.",
+  "examples": [
+    {
+      "description": "9:00 at UTC-5 to UTC+0 ⇒ 14:00"
+    },
+    {
+      "description": "15:00 at UTC+0 to UTC+9 ⇒ 0:00"
+    }
+  ],
+  "info": [
+    "UTC offsets are hours ahead or behind Coordinated Universal Time.",
+    "Result is given in 24-hour format."
+  ],
+  "faqs": [
+    {
+      "question": "How do I handle half-hour offsets?",
+      "answer": "Enter decimal offsets such as 5.5 for UTC+5:30."
+    },
+    {
+      "question": "Does this account for daylight saving time?",
+      "answer": "No, adjust offsets manually for daylight saving changes."
+    },
+    {
+      "question": "What does the result represent?",
+      "answer": "It shows the meeting hour in the participant's time zone."
+    }
+  ],
+  "disclaimer": "For general planning; verify local times, especially around daylight saving transitions.",
+  "cluster": "Date & Time",
+  "unit": "hour",
+  "related": []
+}
+
+<Calculator schema={schema} />

@@ -1,0 +1,75 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Flesch-Kincaid Readability Calculator"
+description: "Provide counts of words, sentences and syllables to calculate the Flesch-Kincaid grade level."
+date: 2025-09-12
+updated: 2025-09-12
+cluster: "Education & Learning"
+---
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "flesch-kincaid-readability",
+  "title": "Flesch-Kincaid Readability Calculator",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "words",
+      "label": "Words",
+      "type": "number",
+      "min": 1,
+      "step": "any",
+      "placeholder": "250"
+    },
+    {
+      "name": "sentences",
+      "label": "Sentences",
+      "type": "number",
+      "min": 1,
+      "step": "any",
+      "placeholder": "10"
+    },
+    {
+      "name": "syllables",
+      "label": "Syllables",
+      "type": "number",
+      "min": 1,
+      "step": "any",
+      "placeholder": "400"
+    }
+  ],
+  "expression": "0.39*(words/sentences)+11.8*(syllables/words)-15.59",
+  "intro": "Provide counts of words, sentences and syllables to calculate the Flesch-Kincaid grade level.",
+  "examples": [
+    {
+      "description": "250 words, 10 sentences, 400 syllables ⇒ 13.04 grade"
+    },
+    {
+      "description": "100 words, 5 sentences, 120 syllables ⇒ 6.37 grade"
+    }
+  ],
+  "info": [
+    "Developed for U.S. Navy training materials in the 1970s.",
+    "Lower scores indicate easier-to-read text."
+  ],
+  "faqs": [
+    {
+      "question": "What does the grade level mean?",
+      "answer": "It approximates the U.S. school grade needed to understand the text."
+    },
+    {
+      "question": "Can I use this for other languages?",
+      "answer": "The formula was designed for English and may not suit other languages."
+    },
+    {
+      "question": "Do abbreviations affect the result?",
+      "answer": "They may; ensure counts reflect actual sentence and syllable totals."
+    }
+  ],
+  "disclaimer": "Readability formulas are estimates; real comprehension varies among readers.",
+  "cluster": "Education & Learning",
+  "unit": "grade level",
+  "related": []
+}
+
+<Calculator schema={schema} />

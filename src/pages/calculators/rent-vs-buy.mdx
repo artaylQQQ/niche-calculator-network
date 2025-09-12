@@ -1,0 +1,83 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Rent vs Buy Calculator"
+description: "Estimate whether renting or buying is cheaper over a given period. The calculator compares rent payments with a simplified cost of purchasing a home."
+date: 2025-09-12
+updated: 2025-09-12
+cluster: "Personal Finance & Loans"
+---
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "rent-vs-buy",
+  "title": "Rent vs Buy Calculator",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "rent",
+      "label": "Monthly Rent",
+      "type": "number",
+      "min": 0,
+      "step": "any",
+      "placeholder": "1200"
+    },
+    {
+      "name": "price",
+      "label": "Home Price",
+      "type": "number",
+      "min": 0,
+      "step": "any",
+      "placeholder": "250000"
+    },
+    {
+      "name": "rate",
+      "label": "Annual Interest Rate (%)",
+      "type": "number",
+      "min": 0,
+      "step": "any",
+      "placeholder": "4"
+    },
+    {
+      "name": "years",
+      "label": "Years",
+      "type": "number",
+      "min": 1,
+      "step": "any",
+      "placeholder": "5"
+    }
+  ],
+  "expression": "rent*12*years - (price*(rate/100)*years)",
+  "intro": "Estimate whether renting or buying is cheaper over a given period. The calculator compares rent payments with a simplified cost of purchasing a home.",
+  "examples": [
+    {
+      "description": "$1,200 rent, $250,000 home, 4% for 5 years ⇒ $22,000"
+    },
+    {
+      "description": "$900 rent, $400,000 home, 6% for 5 years ⇒ -$66,000"
+    }
+  ],
+  "info": [
+    "Positive results mean renting costs more than mortgage interest.",
+    "Mortgage interest is approximated with simple interest."
+  ],
+  "faqs": [
+    {
+      "question": "What does a negative result mean?",
+      "answer": "A negative value indicates buying costs more than renting."
+    },
+    {
+      "question": "Does this include maintenance or taxes?",
+      "answer": "No, it uses a simplified cost excluding taxes and upkeep."
+    },
+    {
+      "question": "Can I adjust the interest rate?",
+      "answer": "Yes, enter any annual rate to see different scenarios."
+    }
+  ],
+  "disclaimer": "Simplified estimate; real housing costs include many additional factors.",
+  "cluster": "Personal Finance & Loans",
+  "unit": "USD",
+  "related": []
+}
+
+<Calculator schema={schema} />

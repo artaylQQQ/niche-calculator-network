@@ -1554,5 +1554,17 @@
   {
     "slug": "cost-per-click",
     "date": "2025-09-12"
-  }
+  },
+  { "slug": "debt-service-coverage-ratio", "date": "2025-09-12" },
+  { "slug": "rent-vs-buy", "date": "2025-09-12" },
+  { "slug": "macronutrient-distribution", "date": "2025-09-12" },
+  { "slug": "chi-square-goodness-of-fit", "date": "2025-09-12" },
+  { "slug": "cups-to-grams-flour", "date": "2025-09-12" },
+  { "slug": "time-zone-meeting-planner", "date": "2025-09-12" },
+  { "slug": "flesch-kincaid-readability", "date": "2025-09-12" },
+  { "slug": "doppler-effect", "date": "2025-09-12" },
+  { "slug": "color-contrast-checker", "date": "2025-09-12" },
+  { "slug": "solar-panel-savings", "date": "2025-09-12" },
+  { "slug": "distance-to-horizon", "date": "2025-09-12" },
+  { "slug": "ab-test-sample-size", "date": "2025-09-12" }
 ]
