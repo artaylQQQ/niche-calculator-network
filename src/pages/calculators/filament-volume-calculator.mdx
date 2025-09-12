@@ -38,6 +38,10 @@ export const schema = {
     { description: "5000 mm of 2.85 mm filament ⇒ 31897 mm³" },
     { description: "12000 mm of 1.75 mm filament ⇒ 28863 mm³" },
   ],
+  info: [
+    "Treats filament as a perfect cylinder with constant diameter.",
+    "Ignores infill percentage, nozzle flow, and material shrinkage.",
+  ],
   faqs: [
     {
       question: "Why calculate filament volume?",

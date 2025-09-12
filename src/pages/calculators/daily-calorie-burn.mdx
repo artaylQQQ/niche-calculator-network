@@ -6,45 +6,63 @@ updated: "2025-08-26"
 cluster: "Health"
 ---
 
-import Calculator from '../../components/Calculator.astro';
+import Calculator from "../../components/Calculator.astro";
 
 export const schema = {
-  "inputs": [
+  inputs: [
     {
-      "name": "steps",
-      "label": "Steps per day",
-      "type": "number",
-      "min": 0,
-      "step": "1",
-      "placeholder": "8000"
+      name: "steps",
+      label: "Steps per day",
+      type: "number",
+      min: 0,
+      step: "1",
+      placeholder: "8000",
     },
     {
-      "name": "exercise",
-      "label": "Exercise minutes",
-      "type": "number",
-      "min": 0,
-      "step": "1",
-      "placeholder": "30"
-    }
+      name: "exercise",
+      label: "Exercise minutes",
+      type: "number",
+      min: 0,
+      step: "1",
+      placeholder: "30",
+    },
   ],
-  "slug": "daily-calorie-burn",
-  "title": "Daily Calorie Burn (Rough)",
-  "locale": "en",
-  "expression": "(steps * 0.04) + (exercise * 7)",
-  "unit": "kcal",
-  "intro": "Provides a rough estimate of calories burned in a day using your steps and minutes of exercise.",
-  "examples": [
-    {"description": "8000 steps and 30 min exercise ⇒ ≈ 470 kcal"},
-    {"description": "5000 steps and 60 min exercise ⇒ ≈ 620 kcal"}
+  slug: "daily-calorie-burn",
+  title: "Daily Calorie Burn (Rough)",
+  locale: "en",
+  expression: "(steps * 0.04) + (exercise * 7)",
+  unit: "kcal",
+  intro:
+    "Provides a rough estimate of calories burned in a day using your steps and minutes of exercise.",
+  examples: [
+    { description: "8000 steps and 30 min exercise ⇒ ≈ 470 kcal" },
+    { description: "5000 steps and 60 min exercise ⇒ ≈ 620 kcal" },
   ],
-  "faqs": [
-    {"question": "How are calories from steps calculated?","answer": "Each step is estimated to burn about 0.04 kcal."},
-    {"question": "What about exercise minutes?","answer": "Every minute of exercise adds roughly 7 kcal to the total."},
-    {"question": "Can I enter zero for steps or exercise?","answer": "Yes, set either field to 0 if it doesn't apply."},
-    {"question": "How accurate is the result?","answer": "It's a simple approximation and does not account for intensity or personal factors."}
+  info: [
+    "Assumes roughly 0.04 kcal per step and 7 kcal per exercise minute.",
+    "Doesn't factor in body weight, intensity, or individual metabolism.",
   ],
-  "disclaimer": "Educational purposes only. Not professional advice.",
-  "cluster": "Health"
-}
+  faqs: [
+    {
+      question: "How are calories from steps calculated?",
+      answer: "Each step is estimated to burn about 0.04 kcal.",
+    },
+    {
+      question: "What about exercise minutes?",
+      answer: "Every minute of exercise adds roughly 7 kcal to the total.",
+    },
+    {
+      question: "Can I enter zero for steps or exercise?",
+      answer: "Yes, set either field to 0 if it doesn't apply.",
+    },
+    {
+      question: "How accurate is the result?",
+      answer:
+        "It's a simple approximation and does not account for intensity or personal factors.",
+    },
+  ],
+  disclaimer: "Educational purposes only. Not professional advice.",
+  cluster: "Health",
+};
 
 <Calculator schema={schema} />

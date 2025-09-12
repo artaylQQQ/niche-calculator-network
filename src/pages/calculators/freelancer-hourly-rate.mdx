@@ -6,56 +6,75 @@ date: 2025-09-03
 updated: 2025-09-03
 cluster: "Finance"
 ---
-import Calculator from '../../components/Calculator.astro';
+
+import Calculator from "../../components/Calculator.astro";
 
 export const schema = {
-  "slug": "freelancer-hourly-rate",
-  "title": "Freelancer Hourly Rate",
-  "locale": "en",
-  "inputs": [
+  slug: "freelancer-hourly-rate",
+  title: "Freelancer Hourly Rate",
+  locale: "en",
+  inputs: [
     {
-      "name": "income",
-      "label": "Desired annual income ($)",
-      "type": "number",
-      "placeholder": "80000"
+      name: "income",
+      label: "Desired annual income ($)",
+      type: "number",
+      placeholder: "80000",
     },
     {
-      "name": "hours",
-      "label": "Billable hours per week",
-      "type": "number",
-      "placeholder": "30"
+      name: "hours",
+      label: "Billable hours per week",
+      type: "number",
+      placeholder: "30",
     },
     {
-      "name": "weeks",
-      "label": "Working weeks per year",
-      "type": "number",
-      "placeholder": "48"
-    }
+      name: "weeks",
+      label: "Working weeks per year",
+      type: "number",
+      placeholder: "48",
+    },
   ],
-    "expression": "income / (hours * weeks)",
-    "unit": "USD/hr",
-    "intro": "Freelancers can estimate how much to charge per hour to reach a yearly income target. Provide the desired annual income, billable hours per week, and working weeks per year to see the required hourly rate.",
-    "examples": [
-      {"description": "$80k income, 30 h/week, 48 weeks ⇒ $55.56/hr"},
-      {"description": "$50k income, 20 h/week, 40 weeks ⇒ $62.50/hr"}
-    ],
-    "faqs": [
-      {"question": "Why billable hours?", "answer": "Non‑billable time isn't paid, so exclude it to price correctly."},
-      {"question": "Should I include taxes and expenses?", "answer": "Yes, incorporate them into your desired income so the rate covers all costs."},
-      {"question": "What if my hours vary?", "answer": "Use an average number of billable hours per week to estimate."},
-      {"question": "Can I use other currencies?", "answer": "Yes, enter all amounts in the same currency; the result will use that currency per hour."}
-    ],
-    "disclaimer": "Educational information, not professional advice.",
-    "cluster": "Finance",
-    "related": [
-      "percentage-discount",
-      "simple-interest",
-      "crypto-mining-breakeven",
-      "subscription-ltv",
-      "emergency-fund-duration",
-      "fire-number"
-    ]
-}
+  expression: "income / (hours * weeks)",
+  unit: "USD/hr",
+  intro:
+    "Freelancers can estimate how much to charge per hour to reach a yearly income target. Provide the desired annual income, billable hours per week, and working weeks per year to see the required hourly rate.",
+  examples: [
+    { description: "$80k income, 30 h/week, 48 weeks ⇒ $55.56/hr" },
+    { description: "$50k income, 20 h/week, 40 weeks ⇒ $62.50/hr" },
+  ],
+  info: [
+    "Assumes all entered hours are billable.",
+    "Doesn't include income taxes, benefits, or non-working downtime.",
+  ],
+  faqs: [
+    {
+      question: "Why billable hours?",
+      answer: "Non‑billable time isn't paid, so exclude it to price correctly.",
+    },
+    {
+      question: "Should I include taxes and expenses?",
+      answer:
+        "Yes, incorporate them into your desired income so the rate covers all costs.",
+    },
+    {
+      question: "What if my hours vary?",
+      answer: "Use an average number of billable hours per week to estimate.",
+    },
+    {
+      question: "Can I use other currencies?",
+      answer:
+        "Yes, enter all amounts in the same currency; the result will use that currency per hour.",
+    },
+  ],
+  disclaimer: "Educational information, not professional advice.",
+  cluster: "Finance",
+  related: [
+    "percentage-discount",
+    "simple-interest",
+    "crypto-mining-breakeven",
+    "subscription-ltv",
+    "emergency-fund-duration",
+    "fire-number",
+  ],
+};
 
 <Calculator schema={schema} />
-

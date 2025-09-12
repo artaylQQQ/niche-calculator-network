@@ -182,8 +182,8 @@
       }
     ],
     "info": [
-      "Calculations assume 8 bits per byte and no protocol overhead.",
-      "Actual download time may be longer due to latency and network congestion."
+      "Assumes interest is reinvested at the stated rate and frequency.",
+      "Doesn't account for taxes, fees, or additional contributions."
     ]
   },
   {
@@ -292,7 +292,10 @@
         "answer": "It's a simple approximation that doesn't consider intensity or individual differences."
       }
     ],
-    "info": []
+    "info": [
+      "Assumes roughly 0.04 kcal per step and 7 kcal per exercise minute.",
+      "Doesn't factor in body weight, intensity, or individual metabolism."
+    ]
   },
   {
     "slug": "celsius-to-fahrenheit",
@@ -1265,7 +1268,10 @@
         "answer": "Some contexts use the decimal SI standard, but computing typically follows the binary convention."
       }
     ],
-    "info": []
+    "info": [
+      "Based on the binary definition: 1 MB = 1024 KB.",
+      "Ignores file system overhead and formatting differences."
+    ]
   },
   {
     "slug": "download-cost",
@@ -2027,7 +2033,10 @@
         "answer": "Yes, enter all amounts in the same currency; the result will use that currency per hour."
       }
     ],
-    "info": []
+    "info": [
+      "Assumes all entered hours are billable.",
+      "Taxes, benefits, and downtime outside the specified weeks are not included."
+    ]
   },
   {
     "slug": "subscription-ltv",
@@ -3025,7 +3034,10 @@
         "answer": "The standard Euclidean distance."
       }
     ],
-    "info": []
+    "info": [
+      "Uses the standard Euclidean distance formula.",
+      "Ensure both points use the same unit of measurement."
+    ]
   },
   {
     "slug": "polygon-diagonals",
@@ -19104,10 +19116,7 @@
       }
     ],
     "disclaimer": "For water quality guidance only; confirm results with professional testing.",
-    "info": [
-      "1 gpg equals 17.118 ppm.",
-      "Soft water is generally below 3 gpg."
-    ]
+    "info": ["1 gpg equals 17.118 ppm.", "Soft water is generally below 3 gpg."]
   },
   {
     "slug": "savings-withdrawal-duration",
@@ -20575,9 +20584,7 @@
       }
     ],
     "disclaimer": "Idealized physics model; real-world ranges vary with conditions.",
-    "info": [
-      "Gravity on Mars is about 3.71 m/s²."
-    ]
+    "info": ["Gravity on Mars is about 3.71 m/s²."]
   },
   {
     "slug": "mortgage-affordability",
@@ -20651,9 +20658,7 @@
       }
     ],
     "disclaimer": "For estimation only; consult a financial professional.",
-    "info": [
-      "Many lenders follow the 28/36 rule for housing and total debts."
-    ]
+    "info": ["Many lenders follow the 28/36 rule for housing and total debts."]
   },
   {
     "slug": "road-trip-carbon-emissions",
@@ -20713,9 +20718,7 @@
       }
     ],
     "disclaimer": "Approximate estimate; actual emissions depend on driving conditions and vehicle type.",
-    "info": [
-      "Burning one liter of gasoline emits about 2.31 kg of CO2."
-    ]
+    "info": ["Burning one liter of gasoline emits about 2.31 kg of CO2."]
   },
   {
     "slug": "net-present-value",
@@ -22739,22 +22742,65 @@
     "description": "Estimate years to financial independence considering returns and inflation.",
     "intro": "Estimate how many years it will take to reach financial independence based on current savings, annual contributions, investment return and inflation.",
     "inputs": [
-      { "name": "current", "label": "Current savings (USD)", "type": "number", "step": "any", "placeholder": "50000" },
-      { "name": "annual_contrib", "label": "Annual contribution (USD)", "type": "number", "step": "any", "placeholder": "10000" },
-      { "name": "annual_expenses", "label": "Annual expenses (USD)", "type": "number", "step": "any", "placeholder": "30000" },
-      { "name": "return_rate", "label": "Return rate (%)", "type": "number", "step": "any", "placeholder": "7" },
-      { "name": "inflation_rate", "label": "Inflation rate (%)", "type": "number", "step": "any", "placeholder": "2" }
+      {
+        "name": "current",
+        "label": "Current savings (USD)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "50000"
+      },
+      {
+        "name": "annual_contrib",
+        "label": "Annual contribution (USD)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "10000"
+      },
+      {
+        "name": "annual_expenses",
+        "label": "Annual expenses (USD)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "30000"
+      },
+      {
+        "name": "return_rate",
+        "label": "Return rate (%)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "7"
+      },
+      {
+        "name": "inflation_rate",
+        "label": "Inflation rate (%)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "2"
+      }
     ],
     "expression": "(function(current,annual_contrib,annual_expenses,return_rate,inflation_rate){let r=(1+return_rate/100)/(1+inflation_rate/100)-1;let target=annual_expenses*25;if(r===0)return (target-current)/annual_contrib;return Math.log((target+annual_contrib/r)/(current+annual_contrib/r))/Math.log(1+r);})(current,annual_contrib,annual_expenses,return_rate,inflation_rate)",
     "unit": "years",
     "examples": [
-      { "description": "$50,000 savings, $10,000 yearly contribution, $30,000 expenses, 7% return, 2% inflation ⇒ 27.65 years" },
-      { "description": "$200,000 savings, $20,000 yearly contribution, $40,000 expenses, 8% return, 3% inflation ⇒ 17.64 years" }
+      {
+        "description": "$50,000 savings, $10,000 yearly contribution, $30,000 expenses, 7% return, 2% inflation ⇒ 27.65 years"
+      },
+      {
+        "description": "$200,000 savings, $20,000 yearly contribution, $40,000 expenses, 8% return, 3% inflation ⇒ 17.64 years"
+      }
     ],
     "faqs": [
-      { "question": "What withdrawal rate does this use?", "answer": "It assumes a 4% withdrawal rate, meaning 25 times annual expenses is the target." },
-      { "question": "Can returns equal inflation?", "answer": "If real return is zero, the calculation divides the remaining target by annual contribution." },
-      { "question": "Is this projection guaranteed?", "answer": "No, investment returns and inflation are uncertain and may vary." }
+      {
+        "question": "What withdrawal rate does this use?",
+        "answer": "It assumes a 4% withdrawal rate, meaning 25 times annual expenses is the target."
+      },
+      {
+        "question": "Can returns equal inflation?",
+        "answer": "If real return is zero, the calculation divides the remaining target by annual contribution."
+      },
+      {
+        "question": "Is this projection guaranteed?",
+        "answer": "No, investment returns and inflation are uncertain and may vary."
+      }
     ],
     "disclaimer": "For planning purposes only; actual results will differ.",
     "info": [
@@ -22769,24 +22815,79 @@
     "description": "Estimate total mortgage cost with rate changes, insurance and prepayments.",
     "intro": "Approximate the total cost of a mortgage with an initial rate period and an adjusted rate, including annual insurance and optional prepayments.",
     "inputs": [
-      { "name": "principal", "label": "Loan principal (USD)", "type": "number", "step": "any", "placeholder": "200000" },
-      { "name": "rate1", "label": "Initial rate (%)", "type": "number", "step": "any", "placeholder": "3.5" },
-      { "name": "years1", "label": "Years at initial rate", "type": "number", "step": "any", "placeholder": "5" },
-      { "name": "rate2", "label": "Adjusted rate (%)", "type": "number", "step": "any", "placeholder": "5" },
-      { "name": "years2", "label": "Years at adjusted rate", "type": "number", "step": "any", "placeholder": "25" },
-      { "name": "insurance", "label": "Annual insurance (USD)", "type": "number", "step": "any", "placeholder": "800" },
-      { "name": "prepayment", "label": "Prepayment (USD)", "type": "number", "step": "any", "placeholder": "10000" }
+      {
+        "name": "principal",
+        "label": "Loan principal (USD)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "200000"
+      },
+      {
+        "name": "rate1",
+        "label": "Initial rate (%)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "3.5"
+      },
+      {
+        "name": "years1",
+        "label": "Years at initial rate",
+        "type": "number",
+        "step": "any",
+        "placeholder": "5"
+      },
+      {
+        "name": "rate2",
+        "label": "Adjusted rate (%)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "5"
+      },
+      {
+        "name": "years2",
+        "label": "Years at adjusted rate",
+        "type": "number",
+        "step": "any",
+        "placeholder": "25"
+      },
+      {
+        "name": "insurance",
+        "label": "Annual insurance (USD)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "800"
+      },
+      {
+        "name": "prepayment",
+        "label": "Prepayment (USD)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "10000"
+      }
     ],
     "expression": "principal + principal*(rate1/100)*years1 + principal*(rate2/100)*years2 + insurance*(years1+years2) - prepayment",
     "unit": "USD",
     "examples": [
-      { "description": "$200,000 loan, 3.5% for 5y then 5% for 25y, $800 insurance, $10,000 prepayment ⇒ $499,000" },
-      { "description": "$150,000 loan, 4% for 3y then 6% for 27y, $600 insurance, $5,000 prepayment ⇒ $424,000" }
+      {
+        "description": "$200,000 loan, 3.5% for 5y then 5% for 25y, $800 insurance, $10,000 prepayment ⇒ $499,000"
+      },
+      {
+        "description": "$150,000 loan, 4% for 3y then 6% for 27y, $600 insurance, $5,000 prepayment ⇒ $424,000"
+      }
     ],
     "faqs": [
-      { "question": "Does this include amortization?", "answer": "No, it provides a simplified cost without compounding." },
-      { "question": "How are prepayments applied?", "answer": "They are subtracted directly from the total cost." },
-      { "question": "Can insurance be zero?", "answer": "Yes, set insurance to 0 if not applicable." }
+      {
+        "question": "Does this include amortization?",
+        "answer": "No, it provides a simplified cost without compounding."
+      },
+      {
+        "question": "How are prepayments applied?",
+        "answer": "They are subtracted directly from the total cost."
+      },
+      {
+        "question": "Can insurance be zero?",
+        "answer": "Yes, set insurance to 0 if not applicable."
+      }
     ],
     "disclaimer": "Simplified estimate; real mortgages use amortization and additional fees.",
     "info": [
@@ -22801,11 +22902,41 @@
     "description": "Estimate 10-year cardiovascular risk using a simplified Framingham equation.",
     "intro": "Approximate your 10-year cardiovascular risk using age, cholesterol, blood pressure and smoking status.",
     "inputs": [
-      { "name": "age", "label": "Age (years)", "type": "number", "step": "any", "placeholder": "50" },
-      { "name": "tc", "label": "Total cholesterol (mg/dL)", "type": "number", "step": "any", "placeholder": "200" },
-      { "name": "sbp", "label": "Systolic BP (mmHg)", "type": "number", "step": "any", "placeholder": "120" },
-      { "name": "hdl", "label": "HDL cholesterol (mg/dL)", "type": "number", "step": "any", "placeholder": "50" },
-      { "name": "smoker", "label": "Smoker (1=yes,0=no)", "type": "number", "step": "any", "placeholder": "0" }
+      {
+        "name": "age",
+        "label": "Age (years)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "50"
+      },
+      {
+        "name": "tc",
+        "label": "Total cholesterol (mg/dL)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "200"
+      },
+      {
+        "name": "sbp",
+        "label": "Systolic BP (mmHg)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "120"
+      },
+      {
+        "name": "hdl",
+        "label": "HDL cholesterol (mg/dL)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "50"
+      },
+      {
+        "name": "smoker",
+        "label": "Smoker (1=yes,0=no)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "0"
+      }
     ],
     "expression": "Math.max(0, Math.min(0.1*age + 0.02*tc + 0.02*sbp - 0.02*hdl + 5*smoker, 100))",
     "unit": "%",
@@ -22814,9 +22945,18 @@
       { "description": "Age 60, TC 250, SBP 140, HDL 40, smoker ⇒ 18 %" }
     ],
     "faqs": [
-      { "question": "How do I enter smoking status?", "answer": "Use 1 for smokers and 0 for non-smokers." },
-      { "question": "Is this an official Framingham score?", "answer": "No, it is a simplified approximation for educational use." },
-      { "question": "Can risk exceed 100%?", "answer": "The result is capped between 0 and 100%." }
+      {
+        "question": "How do I enter smoking status?",
+        "answer": "Use 1 for smokers and 0 for non-smokers."
+      },
+      {
+        "question": "Is this an official Framingham score?",
+        "answer": "No, it is a simplified approximation for educational use."
+      },
+      {
+        "question": "Can risk exceed 100%?",
+        "answer": "The result is capped between 0 and 100%."
+      }
     ],
     "disclaimer": "Simplified model; consult a healthcare provider for medical advice.",
     "info": [
@@ -22831,8 +22971,20 @@
     "description": "Predict maximum lifting strength using the Brzycki formula.",
     "intro": "Estimate your one-repetition maximum using the Brzycki equation.",
     "inputs": [
-      { "name": "weight", "label": "Lifted weight (kg)", "type": "number", "step": "any", "placeholder": "80" },
-      { "name": "reps", "label": "Repetitions", "type": "number", "step": "any", "placeholder": "5" }
+      {
+        "name": "weight",
+        "label": "Lifted weight (kg)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "80"
+      },
+      {
+        "name": "reps",
+        "label": "Repetitions",
+        "type": "number",
+        "step": "any",
+        "placeholder": "5"
+      }
     ],
     "expression": "weight * 36 / (37 - reps)",
     "unit": "kg",
@@ -22841,9 +22993,18 @@
       { "description": "100 kg for 10 reps ⇒ 133.33 kg" }
     ],
     "faqs": [
-      { "question": "What is the Brzycki formula?", "answer": "It estimates 1RM as weight × 36 ÷ (37 − reps)." },
-      { "question": "Is it accurate for high reps?", "answer": "It's most reliable for 10 reps or fewer." },
-      { "question": "Can I use pounds?", "answer": "Yes, input weight in pounds and interpret the result in pounds." }
+      {
+        "question": "What is the Brzycki formula?",
+        "answer": "It estimates 1RM as weight × 36 ÷ (37 − reps)."
+      },
+      {
+        "question": "Is it accurate for high reps?",
+        "answer": "It's most reliable for 10 reps or fewer."
+      },
+      {
+        "question": "Can I use pounds?",
+        "answer": "Yes, input weight in pounds and interpret the result in pounds."
+      }
     ],
     "disclaimer": "Use proper form and safety precautions when lifting heavy weights.",
     "info": [
@@ -22858,8 +23019,20 @@
     "description": "Convert food calories into minutes of exercise.",
     "intro": "See how many minutes of activity are needed to burn a given number of calories.",
     "inputs": [
-      { "name": "calories", "label": "Calories (kcal)", "type": "number", "step": "any", "placeholder": "500" },
-      { "name": "burn_rate", "label": "Burn rate (kcal/min)", "type": "number", "step": "any", "placeholder": "10" }
+      {
+        "name": "calories",
+        "label": "Calories (kcal)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "500"
+      },
+      {
+        "name": "burn_rate",
+        "label": "Burn rate (kcal/min)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "10"
+      }
     ],
     "expression": "calories / burn_rate",
     "unit": "minutes",
@@ -22868,9 +23041,18 @@
       { "description": "300 kcal at 8 kcal/min ⇒ 37.5 minutes" }
     ],
     "faqs": [
-      { "question": "What burn rate should I use?", "answer": "Use your activity's calories-per-minute." },
-      { "question": "Does weight affect burn rate?", "answer": "Yes, heavier people burn more calories." },
-      { "question": "Can this show steps or cycling distance?", "answer": "Convert your burn rate accordingly." }
+      {
+        "question": "What burn rate should I use?",
+        "answer": "Use your activity's calories-per-minute."
+      },
+      {
+        "question": "Does weight affect burn rate?",
+        "answer": "Yes, heavier people burn more calories."
+      },
+      {
+        "question": "Can this show steps or cycling distance?",
+        "answer": "Convert your burn rate accordingly."
+      }
     ],
     "disclaimer": "Estimates only; actual calorie burn varies with individual factors.",
     "info": [
@@ -22885,25 +23067,86 @@
     "description": "Find the exam score needed considering multiple grade components.",
     "intro": "Determine the final exam score required to achieve your desired course grade using weighted components.",
     "inputs": [
-      { "name": "midterm1", "label": "Midterm 1 score (%)", "type": "number", "step": "any", "placeholder": "80" },
-      { "name": "weight1", "label": "Midterm 1 weight (%)", "type": "number", "step": "any", "placeholder": "30" },
-      { "name": "midterm2", "label": "Midterm 2 score (%)", "type": "number", "step": "any", "placeholder": "70" },
-      { "name": "weight2", "label": "Midterm 2 weight (%)", "type": "number", "step": "any", "placeholder": "20" },
-      { "name": "project", "label": "Project score (%)", "type": "number", "step": "any", "placeholder": "90" },
-      { "name": "project_weight", "label": "Project weight (%)", "type": "number", "step": "any", "placeholder": "20" },
-      { "name": "final_weight", "label": "Final exam weight (%)", "type": "number", "step": "any", "placeholder": "30" },
-      { "name": "target", "label": "Target overall grade (%)", "type": "number", "step": "any", "placeholder": "85" }
+      {
+        "name": "midterm1",
+        "label": "Midterm 1 score (%)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "80"
+      },
+      {
+        "name": "weight1",
+        "label": "Midterm 1 weight (%)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "30"
+      },
+      {
+        "name": "midterm2",
+        "label": "Midterm 2 score (%)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "70"
+      },
+      {
+        "name": "weight2",
+        "label": "Midterm 2 weight (%)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "20"
+      },
+      {
+        "name": "project",
+        "label": "Project score (%)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "90"
+      },
+      {
+        "name": "project_weight",
+        "label": "Project weight (%)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "20"
+      },
+      {
+        "name": "final_weight",
+        "label": "Final exam weight (%)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "30"
+      },
+      {
+        "name": "target",
+        "label": "Target overall grade (%)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "85"
+      }
     ],
     "expression": "(target - (midterm1*weight1/100 + midterm2*weight2/100 + project*project_weight/100)) / (final_weight/100)",
     "unit": "%",
     "examples": [
-      { "description": "Midterms 80% & 70%, project 90%, weights 30/20/20, final 30%, target 85% ⇒ 96.67 %" },
-      { "description": "Midterms 85% & 80%, project 90%, weights 25/25/20, final 30%, target 88% ⇒ 95.83 %" }
+      {
+        "description": "Midterms 80% & 70%, project 90%, weights 30/20/20, final 30%, target 85% ⇒ 96.67 %"
+      },
+      {
+        "description": "Midterms 85% & 80%, project 90%, weights 25/25/20, final 30%, target 88% ⇒ 95.83 %"
+      }
     ],
     "faqs": [
-      { "question": "Can weights exceed 100%?", "answer": "Combined weights should equal 100%." },
-      { "question": "What if result is over 100%?", "answer": "It means the target grade may be unattainable." },
-      { "question": "Do I need all components?", "answer": "Use 0 for components that don't apply." }
+      {
+        "question": "Can weights exceed 100%?",
+        "answer": "Combined weights should equal 100%."
+      },
+      {
+        "question": "What if result is over 100%?",
+        "answer": "It means the target grade may be unattainable."
+      },
+      {
+        "question": "Do I need all components?",
+        "answer": "Use 0 for components that don't apply."
+      }
     ],
     "disclaimer": "Simplified calculation; confirm grading policies with your instructor.",
     "info": [
@@ -22918,9 +23161,27 @@
     "description": "Estimate extra charges for exceeding airline weight limits.",
     "intro": "Calculate how much you'll pay for overweight luggage based on airline fee per kilogram.",
     "inputs": [
-      { "name": "allowed", "label": "Allowed weight (kg)", "type": "number", "step": "any", "placeholder": "23" },
-      { "name": "actual", "label": "Actual weight (kg)", "type": "number", "step": "any", "placeholder": "25" },
-      { "name": "fee", "label": "Fee per kg (USD)", "type": "number", "step": "any", "placeholder": "50" }
+      {
+        "name": "allowed",
+        "label": "Allowed weight (kg)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "23"
+      },
+      {
+        "name": "actual",
+        "label": "Actual weight (kg)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "25"
+      },
+      {
+        "name": "fee",
+        "label": "Fee per kg (USD)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "50"
+      }
     ],
     "expression": "Math.max(actual - allowed, 0) * fee",
     "unit": "USD",
@@ -22929,9 +23190,18 @@
       { "description": "Allowed 23 kg, actual 22 kg, $100 per kg ⇒ $0" }
     ],
     "faqs": [
-      { "question": "Does this account for size limits?", "answer": "No, it only considers weight." },
-      { "question": "Are fees per pound possible?", "answer": "Convert to kilograms before using." },
-      { "question": "Can the result be negative?", "answer": "No, the fee bottoms out at zero." }
+      {
+        "question": "Does this account for size limits?",
+        "answer": "No, it only considers weight."
+      },
+      {
+        "question": "Are fees per pound possible?",
+        "answer": "Convert to kilograms before using."
+      },
+      {
+        "question": "Can the result be negative?",
+        "answer": "No, the fee bottoms out at zero."
+      }
     ],
     "disclaimer": "Check your airline's policies for exact charges.",
     "info": [
@@ -22946,21 +23216,58 @@
     "description": "Estimate renovation costs from area, materials, and labor.",
     "intro": "Estimate total renovation cost by combining materials, labor, and a contingency percentage.",
     "inputs": [
-      { "name": "area", "label": "Area (m²)", "type": "number", "step": "any", "placeholder": "50" },
-      { "name": "material_cost", "label": "Material cost per m² (USD)", "type": "number", "step": "any", "placeholder": "100" },
-      { "name": "labor_cost", "label": "Labor cost per m² (USD)", "type": "number", "step": "any", "placeholder": "80" },
-      { "name": "contingency", "label": "Contingency (%)", "type": "number", "step": "any", "placeholder": "10" }
+      {
+        "name": "area",
+        "label": "Area (m²)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "50"
+      },
+      {
+        "name": "material_cost",
+        "label": "Material cost per m² (USD)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "100"
+      },
+      {
+        "name": "labor_cost",
+        "label": "Labor cost per m² (USD)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "80"
+      },
+      {
+        "name": "contingency",
+        "label": "Contingency (%)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "10"
+      }
     ],
     "expression": "area * (material_cost + labor_cost) * (1 + contingency/100)",
     "unit": "USD",
     "examples": [
-      { "description": "50 m², $100 material, $80 labor, 10% contingency ⇒ $9,900" },
-      { "description": "80 m², $150 material, $90 labor, 15% contingency ⇒ $22,080" }
+      {
+        "description": "50 m², $100 material, $80 labor, 10% contingency ⇒ $9,900"
+      },
+      {
+        "description": "80 m², $150 material, $90 labor, 15% contingency ⇒ $22,080"
+      }
     ],
     "faqs": [
-      { "question": "What is contingency?", "answer": "Extra budget for unexpected expenses." },
-      { "question": "Do costs vary by region?", "answer": "Yes, adjust material and labor rates to your area." },
-      { "question": "Does it include permits?", "answer": "No, permit fees should be added separately." }
+      {
+        "question": "What is contingency?",
+        "answer": "Extra budget for unexpected expenses."
+      },
+      {
+        "question": "Do costs vary by region?",
+        "answer": "Yes, adjust material and labor rates to your area."
+      },
+      {
+        "question": "Does it include permits?",
+        "answer": "No, permit fees should be added separately."
+      }
     ],
     "disclaimer": "Rough estimate; obtain contractor quotes for accuracy.",
     "info": [
@@ -22975,20 +23282,49 @@
     "description": "Find units needed to cover all e-commerce costs.",
     "intro": "Determine how many units you must sell to break even after manufacturing, shipping, advertising and platform fees.",
     "inputs": [
-      { "name": "fixed_costs", "label": "Fixed costs (USD)", "type": "number", "step": "any", "placeholder": "5000" },
-      { "name": "price", "label": "Price per unit (USD)", "type": "number", "step": "any", "placeholder": "50" },
-      { "name": "cost", "label": "Cost per unit (USD)", "type": "number", "step": "any", "placeholder": "30" }
+      {
+        "name": "fixed_costs",
+        "label": "Fixed costs (USD)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "5000"
+      },
+      {
+        "name": "price",
+        "label": "Price per unit (USD)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "50"
+      },
+      {
+        "name": "cost",
+        "label": "Cost per unit (USD)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "30"
+      }
     ],
     "expression": "fixed_costs / (price - cost)",
     "unit": "units",
     "examples": [
       { "description": "$5,000 fixed costs, $50 price, $30 cost ⇒ 250 units" },
-      { "description": "$10,000 fixed costs, $80 price, $45 cost ⇒ 285.71 units" }
+      {
+        "description": "$10,000 fixed costs, $80 price, $45 cost ⇒ 285.71 units"
+      }
     ],
     "faqs": [
-      { "question": "What are fixed costs?", "answer": "Expenses that don't change with sales volume." },
-      { "question": "What if price equals cost?", "answer": "Break-even is impossible if profit per unit is zero." },
-      { "question": "Does this include taxes?", "answer": "No, taxes are not considered." }
+      {
+        "question": "What are fixed costs?",
+        "answer": "Expenses that don't change with sales volume."
+      },
+      {
+        "question": "What if price equals cost?",
+        "answer": "Break-even is impossible if profit per unit is zero."
+      },
+      {
+        "question": "Does this include taxes?",
+        "answer": "No, taxes are not considered."
+      }
     ],
     "disclaimer": "Use for planning; real-world results depend on market conditions.",
     "info": [
@@ -23003,9 +23339,27 @@
     "description": "Estimate the salary cost of a meeting.",
     "intro": "Calculate how much a meeting costs in wages based on length, number of attendees, and average hourly rate.",
     "inputs": [
-      { "name": "duration", "label": "Duration (hours)", "type": "number", "step": "any", "placeholder": "1" },
-      { "name": "participants", "label": "Participants", "type": "number", "step": "any", "placeholder": "5" },
-      { "name": "rate", "label": "Hourly rate (USD)", "type": "number", "step": "any", "placeholder": "50" }
+      {
+        "name": "duration",
+        "label": "Duration (hours)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "1"
+      },
+      {
+        "name": "participants",
+        "label": "Participants",
+        "type": "number",
+        "step": "any",
+        "placeholder": "5"
+      },
+      {
+        "name": "rate",
+        "label": "Hourly rate (USD)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "50"
+      }
     ],
     "expression": "duration * participants * rate",
     "unit": "USD",
@@ -23014,9 +23368,18 @@
       { "description": "1 h, 10 participants, $40/h ⇒ $400" }
     ],
     "faqs": [
-      { "question": "Why consider meeting cost?", "answer": "It highlights the time investment in monetary terms." },
-      { "question": "Can rates differ per person?", "answer": "Use an average rate for simplicity." },
-      { "question": "Does this include opportunity cost?", "answer": "No, it only calculates wages." }
+      {
+        "question": "Why consider meeting cost?",
+        "answer": "It highlights the time investment in monetary terms."
+      },
+      {
+        "question": "Can rates differ per person?",
+        "answer": "Use an average rate for simplicity."
+      },
+      {
+        "question": "Does this include opportunity cost?",
+        "answer": "No, it only calculates wages."
+      }
     ],
     "disclaimer": "Approximate cost; actual salaries may vary.",
     "info": [
@@ -23031,8 +23394,20 @@
     "description": "Sum direct and indirect water use.",
     "intro": "Add up your direct water use and indirect consumption from goods to estimate your water footprint.",
     "inputs": [
-      { "name": "direct", "label": "Direct water use (L)", "type": "number", "step": "any", "placeholder": "150" },
-      { "name": "indirect", "label": "Indirect water use (L)", "type": "number", "step": "any", "placeholder": "3000" }
+      {
+        "name": "direct",
+        "label": "Direct water use (L)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "150"
+      },
+      {
+        "name": "indirect",
+        "label": "Indirect water use (L)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "3000"
+      }
     ],
     "expression": "direct + indirect",
     "unit": "L",
@@ -23041,9 +23416,18 @@
       { "description": "200 L direct + 2500 L indirect ⇒ 2700 L" }
     ],
     "faqs": [
-      { "question": "What is indirect water?", "answer": "Water used to produce goods and services you consume." },
-      { "question": "Can I enter gallons?", "answer": "Convert gallons to liters before using." },
-      { "question": "Why track water footprint?", "answer": "It raises awareness of resource use." }
+      {
+        "question": "What is indirect water?",
+        "answer": "Water used to produce goods and services you consume."
+      },
+      {
+        "question": "Can I enter gallons?",
+        "answer": "Convert gallons to liters before using."
+      },
+      {
+        "question": "Why track water footprint?",
+        "answer": "It raises awareness of resource use."
+      }
     ],
     "disclaimer": "Approximation; actual footprints vary by product sources.",
     "info": [
@@ -23058,8 +23442,20 @@
     "description": "Compute odds of matching all numbers in a draw.",
     "intro": "Calculate the probability of winning by matching all numbers in a lottery draw.",
     "inputs": [
-      { "name": "total", "label": "Total numbers", "type": "number", "step": "any", "placeholder": "49" },
-      { "name": "drawn", "label": "Numbers drawn", "type": "number", "step": "any", "placeholder": "6" }
+      {
+        "name": "total",
+        "label": "Total numbers",
+        "type": "number",
+        "step": "any",
+        "placeholder": "49"
+      },
+      {
+        "name": "drawn",
+        "label": "Numbers drawn",
+        "type": "number",
+        "step": "any",
+        "placeholder": "6"
+      }
     ],
     "expression": "(function(n,k){n=Math.floor(n);k=Math.floor(k);if(k>n||k<0)return 0;let num=1,den=1;for(let i=1;i<=k;i++){num*=n-(i-1);den*=i;}return 1/(num/den);})(total,drawn)",
     "unit": "probability",
@@ -23068,9 +23464,18 @@
       { "description": "10 numbers, 3 drawn ⇒ 0.00833 probability" }
     ],
     "faqs": [
-      { "question": "Why are odds so low?", "answer": "Combinations increase rapidly as more numbers are added." },
-      { "question": "Does order matter?", "answer": "This calculation assumes unordered draws." },
-      { "question": "Can this handle bonus balls?", "answer": "No, it assumes a simple draw without extras." }
+      {
+        "question": "Why are odds so low?",
+        "answer": "Combinations increase rapidly as more numbers are added."
+      },
+      {
+        "question": "Does order matter?",
+        "answer": "This calculation assumes unordered draws."
+      },
+      {
+        "question": "Can this handle bonus balls?",
+        "answer": "No, it assumes a simple draw without extras."
+      }
     ],
     "disclaimer": "For entertainment; actual lottery rules may vary.",
     "info": [

@@ -6,57 +6,81 @@ updated: "2025-08-22"
 cluster: "Finance"
 ---
 
-import Calculator from '../../components/Calculator.astro';
+import Calculator from "../../components/Calculator.astro";
 
 export const schema = {
-  "inputs": [
+  inputs: [
     {
-      "name": "principal",
-      "label": "Principal",
-      "type": "number",
-      "placeholder": "Enter Principal",
-      "step": "any"
+      name: "principal",
+      label: "Principal",
+      type: "number",
+      placeholder: "Enter Principal",
+      step: "any",
     },
     {
-      "name": "rate",
-      "label": "Rate (%)",
-      "type": "number",
-      "placeholder": "Enter Rate (%)",
-      "step": "any"
+      name: "rate",
+      label: "Rate (%)",
+      type: "number",
+      placeholder: "Enter Rate (%)",
+      step: "any",
     },
     {
-      "name": "times",
-      "label": "Times per year",
-      "type": "number",
-      "placeholder": "Enter Times per year",
-      "step": "any"
+      name: "times",
+      label: "Times per year",
+      type: "number",
+      placeholder: "Enter Times per year",
+      step: "any",
     },
     {
-      "name": "years",
-      "label": "Years",
-      "type": "number",
-      "placeholder": "Enter Years",
-      "step": "any"
-    }
+      name: "years",
+      label: "Years",
+      type: "number",
+      placeholder: "Enter Years",
+      step: "any",
+    },
   ],
-    "slug": "compound-interest-calculator",
-    "title": "Compound Interest Calculator",
-    "locale": "en",
-    "expression": "principal * (1 + rate / 100 / times) ^ (times * years)",
-    "unit": "USD",
-    "intro": "Compound interest grows your money by applying interest on both the initial principal and the accumulated interest from previous periods. Enter the principal, annual rate, compounding frequency, and years to see the future value of your investment.",
-    "examples": [
-      {"description": "$1{,}000 at 5% compounded quarterly for 10 years ⇒ $1{,}643.62"},
-      {"description": "$500 at 3% compounded monthly for 5 years ⇒ $580.81"}
-    ],
-    "faqs": [
-      {"question": "What is compound interest?", "answer": "Interest calculated on the initial principal and also on the accumulated interest of prior periods."},
-      {"question": "How do I choose the compounding frequency?", "answer": "Use the number of times interest is added per year, such as 12 for monthly or 4 for quarterly."},
-      {"question": "What if the rate or years is zero?", "answer": "If the rate or time is zero, the future value equals the principal since no growth occurs."},
-      {"question": "Does this assume reinvestment of interest?", "answer": "Yes, all earned interest is reinvested each period according to the compounding frequency."}
-    ],
-    "disclaimer": "Educational information, not professional advice.",
-    "cluster": "Finance"
-  };
+  slug: "compound-interest-calculator",
+  title: "Compound Interest Calculator",
+  locale: "en",
+  expression: "principal * (1 + rate / 100 / times) ^ (times * years)",
+  unit: "USD",
+  intro:
+    "Compound interest grows your money by applying interest on both the initial principal and the accumulated interest from previous periods. Enter the principal, annual rate, compounding frequency, and years to see the future value of your investment.",
+  examples: [
+    {
+      description:
+        "$1{,}000 at 5% compounded quarterly for 10 years ⇒ $1{,}643.62",
+    },
+    { description: "$500 at 3% compounded monthly for 5 years ⇒ $580.81" },
+  ],
+  info: [
+    "Assumes interest is reinvested at the specified rate and frequency.",
+    "Taxes, fees, and additional contributions are not included.",
+  ],
+  faqs: [
+    {
+      question: "What is compound interest?",
+      answer:
+        "Interest calculated on the initial principal and also on the accumulated interest of prior periods.",
+    },
+    {
+      question: "How do I choose the compounding frequency?",
+      answer:
+        "Use the number of times interest is added per year, such as 12 for monthly or 4 for quarterly.",
+    },
+    {
+      question: "What if the rate or years is zero?",
+      answer:
+        "If the rate or time is zero, the future value equals the principal since no growth occurs.",
+    },
+    {
+      question: "Does this assume reinvestment of interest?",
+      answer:
+        "Yes, all earned interest is reinvested each period according to the compounding frequency.",
+    },
+  ],
+  disclaimer: "Educational information, not professional advice.",
+  cluster: "Finance",
+};
 
 <Calculator schema={schema} />
