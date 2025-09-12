@@ -1,0 +1,61 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Slides Per Minute Calculator"
+description: "Plan presentation pace by calculating slides per minute."
+updated: "2025-10-06"
+cluster: "Education"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "slides-per-minute",
+  title: "Slides Per Minute Calculator",
+  locale: "en",
+  intro:
+    "Determine how many slides you'll present per minute by dividing total slides by total minutes.",
+  unit: "slides/min",
+  cluster: "Education",
+  inputs: [
+    {
+      name: "slides",
+      label: "Total Slides",
+      type: "number",
+      step: "1",
+      placeholder: "30",
+    },
+    {
+      name: "minutes",
+      label: "Total Minutes",
+      type: "number",
+      step: "any",
+      placeholder: "10",
+    },
+  ],
+  expression: "slides / minutes",
+  examples: [
+    { description: "30 slides over 10 min ⇒ 3 slides/min" },
+    { description: "20 slides over 15 min ⇒ 1.33 slides/min" },
+  ],
+  faqs: [
+    {
+      question: "What is a good slide pace?",
+      answer: "Many presenters aim for 1–2 slides per minute.",
+    },
+    {
+      question: "Can I include transition time?",
+      answer: "Yes, include it in the total minutes.",
+    },
+    {
+      question: "Why is the result a decimal?",
+      answer: "It shows the average number of slides per minute.",
+    },
+  ],
+  disclaimer: "Actual presentation pace may vary.",
+  info: [
+    "Adjust slide count to fit allotted time.",
+    "Practicing helps refine pacing.",
+  ],
+};
+
+<Calculator schema={schema} />
