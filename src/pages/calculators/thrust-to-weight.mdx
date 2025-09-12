@@ -1,0 +1,63 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Thrust-to-Weight Ratio Calculator"
+description: "Estimate thrust-to-weight ratio for rockets or aircraft."
+updated: 2025-09-27
+cluster: "Science & Engineering"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  inputs: [
+    {
+      name: "thrust",
+      label: "Thrust (N)",
+      type: "number",
+      min: 0,
+      step: "any",
+      placeholder: "50000",
+    },
+    {
+      name: "weight",
+      label: "Weight (N)",
+      type: "number",
+      min: 0,
+      step: "any",
+      placeholder: "20000",
+    },
+  ],
+  slug: "thrust-to-weight",
+  title: "Thrust-to-Weight Ratio Calculator",
+  locale: "en",
+  expression: "thrust / weight",
+  unit: "ratio",
+  intro: "Divide engine thrust by vehicle weight to assess performance.",
+  examples: [
+    { description: "Thrust 100,000 N, weight 40,000 N ⇒ 2.5 ratio" },
+    { description: "Thrust 500,000 N, weight 450,000 N ⇒ 1.11 ratio" },
+  ],
+  faqs: [
+    {
+      question: "What does a ratio over 1 mean?",
+      answer: "The vehicle can accelerate upward.",
+    },
+    {
+      question: "Can I use pounds-force?",
+      answer: "Yes, if thrust and weight use the same units.",
+    },
+    {
+      question: "Does weight include fuel?",
+      answer: "Use the total weight at the time of measurement.",
+    },
+  ],
+  disclaimer: "Ignores drag and real flight conditions.",
+  cluster: "Science & Engineering",
+  info: [
+    "High thrust-to-weight ratios are key for launch vehicles.",
+    "Ratio is dimensionless; use consistent units for thrust and weight.",
+  ],
+  related: [],
+};
+
+<Calculator schema={schema} />

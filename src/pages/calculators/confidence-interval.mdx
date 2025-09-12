@@ -1,0 +1,84 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Confidence Interval Calculator"
+description: "Compute confidence interval for a sample mean."
+updated: 2025-09-27
+cluster: "Math & Statistics"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  inputs: [
+    {
+      name: "mean",
+      label: "Sample Mean",
+      type: "number",
+      step: "any",
+      placeholder: "50",
+    },
+    {
+      name: "sd",
+      label: "Standard Deviation",
+      type: "number",
+      min: 0,
+      step: "any",
+      placeholder: "5",
+    },
+    {
+      name: "n",
+      label: "Sample Size",
+      type: "number",
+      min: 1,
+      step: 1,
+      placeholder: "30",
+    },
+    {
+      name: "confidence",
+      label: "Confidence Level (%)",
+      type: "number",
+      min: 80,
+      max: 99,
+      step: "any",
+      placeholder: "95",
+    },
+  ],
+  slug: "confidence-interval",
+  title: "Confidence Interval Calculator",
+  locale: "en",
+  expression:
+    "(function(mean,sd,n,confidence){const z={80:1.282,90:1.645,95:1.96,99:2.576}[confidence]||1.96;const margin=z*sd/Math.sqrt(n);return (mean-margin).toFixed(2)+' to '+(mean+margin).toFixed(2);})(mean,sd,n,confidence)",
+  unit: "units",
+  intro:
+    "Enter sample mean, standard deviation, sample size and confidence level to calculate the confidence interval around the mean.",
+  examples: [
+    { description: "Mean 50 units, SD 5, n 30, 95% ⇒ 48.21 to 51.79 units" },
+    {
+      description: "Mean 120 units, SD 20, n 100, 90% ⇒ 116.71 to 123.29 units",
+    },
+  ],
+  faqs: [
+    {
+      question: "Which confidence levels are supported?",
+      answer: "90%, 95%, and 99%; other values default to 95%.",
+    },
+    {
+      question: "What if sample size is small?",
+      answer: "For n<30 consider using the t-distribution.",
+    },
+    {
+      question: "Does it handle proportions?",
+      answer: "No, it is designed for means.",
+    },
+  ],
+  disclaimer:
+    "Simplified z-based interval; not suitable for all statistical analyses.",
+  cluster: "Math & Statistics",
+  info: [
+    "Uses z-scores assuming normal distribution.",
+    "Larger samples produce narrower intervals.",
+  ],
+  related: [],
+};
+
+<Calculator schema={schema} />

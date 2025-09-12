@@ -1,0 +1,73 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Swimming Calories Burned Calculator"
+description: "Estimate calories burned while swimming based on stroke, duration, and body weight."
+updated: 2025-09-27
+cluster: "Health & Fitness"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  inputs: [
+    {
+      name: "weight",
+      label: "Body Weight (kg)",
+      type: "number",
+      min: 0,
+      step: "any",
+      placeholder: "70",
+    },
+    {
+      name: "minutes",
+      label: "Duration (minutes)",
+      type: "number",
+      min: 0,
+      step: "any",
+      placeholder: "30",
+    },
+    {
+      name: "met",
+      label: "Stroke MET",
+      type: "number",
+      min: 1,
+      step: "any",
+      placeholder: "8",
+    },
+  ],
+  slug: "calories-burned-swimming",
+  title: "Swimming Calories Burned Calculator",
+  locale: "en",
+  expression: "weight * minutes * met * 0.0175",
+  unit: "kcal",
+  intro:
+    "Enter your body weight, swim duration, and stroke MET value to estimate calories burned.",
+  examples: [
+    { description: "70 kg, 30 min, MET 8 ⇒ 294 kcal" },
+    { description: "80 kg, 45 min, MET 10 ⇒ 630 kcal" },
+  ],
+  faqs: [
+    {
+      question: "What MET should I use?",
+      answer: "Freestyle moderate ≈8, vigorous ≈10; breaststroke ≈10.",
+    },
+    {
+      question: "Does this include rest periods?",
+      answer: "No, enter active swimming time only.",
+    },
+    {
+      question: "Is weight in pounds allowed?",
+      answer: "Convert pounds to kilograms first.",
+    },
+  ],
+  disclaimer:
+    "Estimates only; actual burn varies with technique and efficiency.",
+  cluster: "Health & Fitness",
+  info: [
+    "MET values come from the Compendium of Physical Activities.",
+    "Calories burned depend on intensity and individual metabolism.",
+  ],
+  related: [],
+};
+
+<Calculator schema={schema} />

@@ -1,0 +1,72 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Customer Retention Rate Calculator"
+description: "Compute the percentage of customers retained over a period."
+updated: 2025-09-27
+cluster: "Web & Marketing"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  inputs: [
+    {
+      name: "start",
+      label: "Customers at Start",
+      type: "number",
+      min: 0,
+      step: 1,
+      placeholder: "500",
+    },
+    {
+      name: "end",
+      label: "Customers at End",
+      type: "number",
+      min: 0,
+      step: 1,
+      placeholder: "450",
+    },
+    {
+      name: "new_customers",
+      label: "New Customers",
+      type: "number",
+      min: 0,
+      step: 1,
+      placeholder: "100",
+    },
+  ],
+  slug: "customer-retention-rate",
+  title: "Customer Retention Rate Calculator",
+  locale: "en",
+  expression: "( (end - new_customers) / start ) * 100",
+  unit: "%",
+  intro:
+    "Enter number of customers at the start and end of a period plus new customers acquired to calculate retention rate.",
+  examples: [
+    { description: "Start 500, end 450, new 100 ⇒ 70.0%" },
+    { description: "Start 800, end 760, new 50 ⇒ 88.75%" },
+  ],
+  faqs: [
+    {
+      question: "Why subtract new customers?",
+      answer: "To measure how many original customers stayed.",
+    },
+    {
+      question: "Can retention rate exceed 100%?",
+      answer: "No; values above 100 indicate data errors.",
+    },
+    {
+      question: "What period should I use?",
+      answer: "Any consistent timeframe such as a month or year.",
+    },
+  ],
+  disclaimer: "Simplified metric; complex businesses may need cohort analysis.",
+  cluster: "Web & Marketing",
+  info: [
+    "Retention rate highlights customer loyalty and business stability.",
+    "Pair with churn rate for a complete view of customer dynamics.",
+  ],
+  related: [],
+};
+
+<Calculator schema={schema} />

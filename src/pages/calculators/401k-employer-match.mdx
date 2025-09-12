@@ -1,0 +1,90 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "401(k) Employer Match Calculator"
+description: "Calculate total annual 401(k) contribution including employer match."
+updated: 2025-09-27
+cluster: "Personal Finance & Loans"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  inputs: [
+    {
+      name: "salary",
+      label: "Annual Salary",
+      type: "number",
+      min: 0,
+      step: "any",
+      placeholder: "50000",
+    },
+    {
+      name: "employee",
+      label: "Employee Contribution (%)",
+      type: "number",
+      min: 0,
+      max: 100,
+      step: "any",
+      placeholder: "5",
+    },
+    {
+      name: "match",
+      label: "Employer Match Rate (%)",
+      type: "number",
+      min: 0,
+      max: 100,
+      step: "any",
+      placeholder: "50",
+    },
+    {
+      name: "limit",
+      label: "Match Limit (% of salary)",
+      type: "number",
+      min: 0,
+      max: 100,
+      step: "any",
+      placeholder: "5",
+    },
+  ],
+  slug: "401k-employer-match",
+  title: "401(k) Employer Match Calculator",
+  locale: "en",
+  expression:
+    "salary*(employee/100) + salary*Math.min(employee, limit)/100*(match/100)",
+  unit: "USD",
+  intro:
+    "Enter your salary, contribution percentage, employer match rate, and match limit to estimate the total yearly 401(k) contribution including employer match.",
+  examples: [
+    {
+      description:
+        "$60,000 salary, 5% employee, 50% match up to 5% ⇒ $4,500 USD",
+    },
+    {
+      description:
+        "$80,000 salary, 8% employee, 100% match up to 3% ⇒ $8,800 USD",
+    },
+  ],
+  faqs: [
+    {
+      question: "What if my contribution exceeds the match limit?",
+      answer: "Only the portion up to the limit is matched.",
+    },
+    {
+      question: "Does this include investment growth?",
+      answer: "No, it only sums annual contributions.",
+    },
+    {
+      question: "Are IRS contribution caps considered?",
+      answer: "No, check current IRS limits for total contributions.",
+    },
+  ],
+  disclaimer: "Estimates contributions; plan rules may vary.",
+  cluster: "Personal Finance & Loans",
+  info: [
+    "Many employers match a percentage of salary up to a specified limit.",
+    "Total contributions are subject to annual IRS caps.",
+  ],
+  related: [],
+};
+
+<Calculator schema={schema} />
