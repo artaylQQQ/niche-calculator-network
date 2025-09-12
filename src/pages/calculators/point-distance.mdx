@@ -6,62 +6,66 @@ date: 2025-09-03
 updated: 2025-09-03
 cluster: "Math"
 ---
-import Calculator from '../../components/Calculator.astro';
+
+import Calculator from "../../components/Calculator.astro";
 
 export const schema = {
-  "slug": "point-distance",
-  "title": "2D Point Distance Calculator",
-  "locale": "en",
-  "inputs": [
+  slug: "point-distance",
+  title: "2D Point Distance Calculator",
+  locale: "en",
+  inputs: [
     {
-      "name": "x1",
-      "label": "x₁",
-      "type": "number",
-      "placeholder": "0"
+      name: "x1",
+      label: "x₁",
+      type: "number",
+      placeholder: "0",
     },
     {
-      "name": "y1",
-      "label": "y₁",
-      "type": "number",
-      "placeholder": "0"
+      name: "y1",
+      label: "y₁",
+      type: "number",
+      placeholder: "0",
     },
     {
-      "name": "x2",
-      "label": "x₂",
-      "type": "number",
-      "placeholder": "3"
+      name: "x2",
+      label: "x₂",
+      type: "number",
+      placeholder: "3",
     },
     {
-      "name": "y2",
-      "label": "y₂",
-      "type": "number",
-      "placeholder": "4"
-    }
+      name: "y2",
+      label: "y₂",
+      type: "number",
+      placeholder: "4",
+    },
   ],
-  "expression": "((x2 - x1)^2 + (y2 - y1)^2)^(0.5)",
-  "intro": "Distance between two points in a plane.",
-  "examples": [
+  expression: "((x2 - x1)^2 + (y2 - y1)^2)^(0.5)",
+  intro: "Distance between two points in a plane.",
+  examples: [
     {
-      "description": "(0,0) to (3,4) ⇒ 5"
-    }
+      description: "(0,0) to (3,4) ⇒ 5",
+    },
   ],
-  "faqs": [
+  info: [
+    "Uses the Euclidean distance formula in a 2D plane.",
+    "Both points must use the same unit of measure.",
+  ],
+  faqs: [
     {
-      "question": "What distance formula is used?",
-      "answer": "The standard Euclidean distance."
-    }
+      question: "What distance formula is used?",
+      answer: "The standard Euclidean distance.",
+    },
   ],
-  "disclaimer": "Educational information, not professional advice.",
-  "cluster": "Math",
-  "related": [
+  disclaimer: "Educational information, not professional advice.",
+  cluster: "Math",
+  related: [
     "percentage-increase",
     "circle-area",
     "pythagorean-theorem-calculator",
     "geometric-series-sum",
     "circumference-from-area",
-    "triangle-inradius"
-  ]
-}
+    "triangle-inradius",
+  ],
+};
 
 <Calculator schema={schema} />
-

@@ -6,41 +6,60 @@ date: 2025-08-26
 updated: 2025-08-26
 cluster: "Technology"
 ---
-import Calculator from '../../components/Calculator.astro';
+
+import Calculator from "../../components/Calculator.astro";
 
 export const schema = {
-  "slug": "kb-to-mb",
-  "title": "KB to MB Converter",
-  "locale": "en",
-  "inputs": [
+  slug: "kb-to-mb",
+  title: "KB to MB Converter",
+  locale: "en",
+  inputs: [
     {
-      "name": "kb",
-      "hint": "Kilobytes"
-    }
+      name: "kb",
+      hint: "Kilobytes",
+    },
   ],
-  "expression": "kb/1024",
-  "unit": "MB",
-  "intro": "Kilobytes are often converted to megabytes when sizing files or bandwidth. Enter a value in kilobytes to instantly see the equivalent size in megabytes.",
-  "examples": [
-    {"description": "2048 KB → 2 MB"},
-    {"description": "5000 KB → 4.88 MB"}
+  expression: "kb/1024",
+  unit: "MB",
+  intro:
+    "Kilobytes are often converted to megabytes when sizing files or bandwidth. Enter a value in kilobytes to instantly see the equivalent size in megabytes.",
+  examples: [
+    { description: "2048 KB → 2 MB" },
+    { description: "5000 KB → 4.88 MB" },
   ],
-  "faqs": [
-    {"question": "How many kilobytes make a megabyte?", "answer": "One megabyte equals 1024 kilobytes."},
-    {"question": "Is this using the binary standard?", "answer": "Yes. This converter uses 1 MB = 1024 KB."},
-    {"question": "Can I convert in the other direction?", "answer": "Multiply megabytes by 1024 to get kilobytes."},
-    {"question": "Why do some systems use 1000 KB per MB?", "answer": "Some contexts use the decimal SI standard, but computing usually follows the binary 1024 value."}
+  info: [
+    "Uses the binary definition: 1 MB equals 1024 KB.",
+    "Formatting or file-system overhead is not considered.",
   ],
-  "disclaimer": "Educational information, not professional advice.",
-  "cluster": "Technology",
-  "related": [
+  faqs: [
+    {
+      question: "How many kilobytes make a megabyte?",
+      answer: "One megabyte equals 1024 kilobytes.",
+    },
+    {
+      question: "Is this using the binary standard?",
+      answer: "Yes. This converter uses 1 MB = 1024 KB.",
+    },
+    {
+      question: "Can I convert in the other direction?",
+      answer: "Multiply megabytes by 1024 to get kilobytes.",
+    },
+    {
+      question: "Why do some systems use 1000 KB per MB?",
+      answer:
+        "Some contexts use the decimal SI standard, but computing usually follows the binary 1024 value.",
+    },
+  ],
+  disclaimer: "Educational information, not professional advice.",
+  cluster: "Technology",
+  related: [
     "percentage-discount-calculator",
     "loan-payment-calculator",
     "compound-interest-calculator",
     "bmi-calculator",
     "percentage-increase-calculator",
-    "sales-tax-calculator"
-  ]
-}
+    "sales-tax-calculator",
+  ],
+};
 
 <Calculator schema={schema} />
