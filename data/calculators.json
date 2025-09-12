@@ -53,8 +53,8 @@
       }
     ],
     "info": [
-      "Result is a unitless ratio of waist circumference to height.",
-      "Values above 0.5 may indicate increased health risks."
+      "Outputs the sale price only; taxes, shipping, or additional fees are not included.",
+      "Ideal for comparing promotional offers to determine the best deal quickly."
     ]
   },
   {
@@ -117,8 +117,8 @@
       }
     ],
     "info": [
-      "Assumes constant monthly fee over the retention period.",
-      "Result represents gross revenue and excludes costs."
+      "Simple interest adds the same amount every period without compounding.",
+      "Useful for quick estimates of interest on short-term loans or deposits."
     ]
   },
   {
@@ -1977,7 +1977,10 @@
         "answer": "Daily profit should be a positive number to compute breakeven time."
       }
     ],
-    "info": []
+    "info": [
+      "Assumes daily net profit remains steady throughout the payback period.",
+      "Does not account for fluctuations in cryptocurrency price or mining difficulty."
+    ]
   },
   {
     "slug": "freelancer-hourly-rate",
@@ -2087,8 +2090,8 @@
       }
     ],
     "info": [
-      "Assumes constant monthly fee over the retention period.",
-      "Result represents gross revenue and excludes costs."
+      "Excludes customer acquisition and service costs, focusing solely on recurring revenue.",
+      "Useful for estimating revenue per subscriber in straightforward subscription models."
     ]
   },
   {
@@ -2687,7 +2690,10 @@
         "answer": "The calculator outputs a precise decimal number of months."
       }
     ],
-    "info": []
+    "info": [
+      "Assumes no additional income is received while the fund is being used.",
+      "Reevaluate regularly as your savings or monthly expenses change."
+    ]
   },
   {
     "slug": "fire-number",
@@ -2737,7 +2743,10 @@
         "answer": "Convert monthly expenses to annual figures before using the calculator."
       }
     ],
-    "info": []
+    "info": [
+      "Assumes your investments grow at least enough to support the chosen withdrawal rate.",
+      "Use a lower withdrawal rate for a more conservative target savings goal."
+    ]
   },
   {
     "slug": "loss-recovery-percentage",
@@ -11019,9 +11028,12 @@
         "answer": "Any profession using 0.1 hour increments can use it."
       }
     ],
+    "info": [
+      "Each unit represents one-tenth of an hour, equivalent to six minutes.",
+      "Common in legal and consulting invoices where time is tracked in 6-minute increments."
+    ],
     "disclaimer": "Billing practices vary; confirm with your firm's policies.",
-    "unit": "units",
-    "info": []
+    "unit": "units"
   },
   {
     "slug": "overtime-hours",
@@ -17222,7 +17234,10 @@
       }
     ],
     "disclaimer": "For statistical guidance only; use with appropriate data.",
-    "info": []
+    "info": [
+      "Widely used in statistics to standardize values for comparison across different normal distributions.",
+      "A negative z-score indicates the value lies below the mean, while a positive score means it's above."
+    ]
   },
   {
     "slug": "kelvin-to-rankine",
@@ -21115,8 +21130,8 @@
     ],
     "disclaimer": "Assumes a standard arithmetic progression.",
     "info": [
-      "Arithmetic series have a constant difference between terms.",
-      "The formula derives from adding the first and last terms repeatedly."
+      "Applies to sequences where each term increases or decreases by the same amount.",
+      "Pairs the first and last terms so each pair shares the same total, simplifying the sum."
     ]
   },
   {

@@ -28,7 +28,11 @@ export const schema = {
     { question: "Can I use kilometers?", answer: "Yes, but the result will be in kilometers per hour." },
     { question: "What if time is zero?", answer: "Time must be greater than zero." }
   ],
-  disclaimer: "For educational use."
+  info: [
+    "Ensure distance and time units match, such as miles with hours.",
+    "Average speed ignores acceleration, stops, and other real-world variations."
+  ],
+  disclaimer: "For educational use.",
 };
 
 <Calculator schema={schema} />
