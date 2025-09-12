@@ -1,0 +1,77 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Add Weeks to Date Calculator"
+description: "Get the date after adding a number of weeks."
+updated: "2025-09-25"
+cluster: "Date & Time"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "add-weeks-to-date",
+  title: "Add Weeks to Date Calculator",
+  locale: "en",
+  unit: "date",
+  inputs: [
+    {
+      name: "year",
+      label: "Year",
+      type: "number",
+      step: "any",
+      placeholder: "2025",
+    },
+    {
+      name: "month",
+      label: "Month",
+      type: "number",
+      step: "any",
+      placeholder: "1",
+    },
+    {
+      name: "day",
+      label: "Day",
+      type: "number",
+      step: "any",
+      placeholder: "1",
+    },
+    {
+      name: "weeks",
+      label: "Weeks to Add",
+      type: "number",
+      step: "any",
+      placeholder: "4",
+    },
+  ],
+  expression:
+    "(function(y,m,d,w){const date=new Date(y,m-1,d);date.setDate(date.getDate()+w*7);return date.toISOString().split('T')[0];})(year,month,day,weeks)",
+  intro:
+    "Find the calendar date that results after adding a specified number of weeks to a starting date.",
+  examples: [
+    { description: "2025-01-01 plus 4 weeks ⇒ 2025-01-29" },
+    { description: "2024-12-15 plus 6 weeks ⇒ 2025-01-26" },
+  ],
+  faqs: [
+    {
+      question: "Does it account for leap years?",
+      answer: "Yes, JavaScript's Date object manages leap years automatically.",
+    },
+    {
+      question: "Are weeks assumed to be 7 days?",
+      answer: "Yes, each week is exactly 7 days.",
+    },
+    {
+      question: "What if result crosses year end?",
+      answer: "The calculator adjusts the year as needed.",
+    },
+  ],
+  disclaimer:
+    "Uses the Gregorian calendar; local holidays or time zones are not considered.",
+  info: [
+    "Adding weeks is useful for scheduling recurring events.",
+    "Weeks are treated as seven-day intervals regardless of daylight saving changes.",
+  ],
+  cluster: "Date & Time",
+};
+
+<Calculator schema={schema} />

@@ -1,0 +1,54 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "pH from Concentration Calculator"
+description: "Find pH from hydrogen ion concentration."
+updated: "2025-09-25"
+cluster: "Science"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "ph-from-concentration",
+  title: "pH from Concentration Calculator",
+  locale: "en",
+  unit: "pH",
+  inputs: [
+    {
+      name: "concentration",
+      label: "[H+] (mol/L)",
+      type: "number",
+      step: "any",
+      placeholder: "0.001",
+    },
+  ],
+  expression: "-Math.log10(concentration)",
+  intro: "Calculate the pH of a solution from its hydrogen ion concentration.",
+  examples: [
+    { description: "1e-3 mol/L ⇒ pH 3" },
+    { description: "2e-7 mol/L ⇒ pH 6.70" },
+  ],
+  faqs: [
+    {
+      question: "Can concentration be zero?",
+      answer: "No, concentration must be positive.",
+    },
+    {
+      question: "What does a lower pH mean?",
+      answer: "Lower pH indicates a more acidic solution.",
+    },
+    {
+      question: "Does temperature affect pH?",
+      answer: "Yes, but this formula assumes standard conditions.",
+    },
+  ],
+  disclaimer:
+    "For dilute aqueous solutions; actual pH may vary with activity coefficients.",
+  info: [
+    "pH is the negative base-10 logarithm of hydrogen ion concentration.",
+    "Pure water at 25°C has a pH close to 7.",
+  ],
+  cluster: "Science",
+};
+
+<Calculator schema={schema} />

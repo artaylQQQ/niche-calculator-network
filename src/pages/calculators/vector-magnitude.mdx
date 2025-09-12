@@ -1,0 +1,66 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Vector Magnitude Calculator"
+description: "Calculate the length of a 3D vector."
+updated: "2025-09-25"
+cluster: "Math"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "vector-magnitude",
+  title: "Vector Magnitude Calculator",
+  locale: "en",
+  unit: "units",
+  inputs: [
+    {
+      name: "x",
+      label: "x-component",
+      type: "number",
+      step: "any",
+      placeholder: "3",
+    },
+    {
+      name: "y",
+      label: "y-component",
+      type: "number",
+      step: "any",
+      placeholder: "4",
+    },
+    {
+      name: "z",
+      label: "z-component",
+      type: "number",
+      step: "any",
+      placeholder: "12",
+    },
+  ],
+  expression: "Math.sqrt(x*x + y*y + z*z)",
+  intro:
+    "Find the magnitude of a three-dimensional vector from its components using the square root of the sum of squares.",
+  examples: [{ description: "(3,4,12) ⇒ 13" }, { description: "(1,2,2) ⇒ 3" }],
+  faqs: [
+    {
+      question: "What if a component is negative?",
+      answer:
+        "The formula squares components, so sign does not affect magnitude.",
+    },
+    {
+      question: "Can this work for 2D vectors?",
+      answer: "Yes, set the unused component to 0.",
+    },
+    {
+      question: "Is the result unitless?",
+      answer: "It carries the same unit as the components.",
+    },
+  ],
+  disclaimer: "Assumes Euclidean space for vector calculations.",
+  info: [
+    "Vector magnitude represents distance from the origin.",
+    "Also known as vector length or norm.",
+  ],
+  cluster: "Math",
+};
+
+<Calculator schema={schema} />

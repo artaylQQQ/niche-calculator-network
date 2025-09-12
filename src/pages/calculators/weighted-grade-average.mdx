@@ -1,0 +1,90 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Weighted Grade Average Calculator"
+description: "Calculate an overall grade using weighted categories."
+updated: "2025-09-25"
+cluster: "Education"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "weighted-grade-average",
+  title: "Weighted Grade Average Calculator",
+  locale: "en",
+  unit: "%",
+  inputs: [
+    {
+      name: "g1",
+      label: "Grade 1",
+      type: "number",
+      step: "any",
+      placeholder: "85",
+    },
+    {
+      name: "w1",
+      label: "Weight 1 (%)",
+      type: "number",
+      step: "any",
+      placeholder: "20",
+    },
+    {
+      name: "g2",
+      label: "Grade 2",
+      type: "number",
+      step: "any",
+      placeholder: "90",
+    },
+    {
+      name: "w2",
+      label: "Weight 2 (%)",
+      type: "number",
+      step: "any",
+      placeholder: "30",
+    },
+    {
+      name: "g3",
+      label: "Grade 3",
+      type: "number",
+      step: "any",
+      placeholder: "80",
+    },
+    {
+      name: "w3",
+      label: "Weight 3 (%)",
+      type: "number",
+      step: "any",
+      placeholder: "50",
+    },
+  ],
+  expression: "(g1*w1 + g2*w2 + g3*w3) / (w1 + w2 + w3)",
+  intro:
+    "Compute a weighted grade average using up to three graded components and their percentage weights.",
+  examples: [
+    { description: "85@20%, 90@30%, 80@50% ⇒ 84.5%" },
+    { description: "70@25%, 80@25%, 90@50% ⇒ 82.5%" },
+  ],
+  faqs: [
+    {
+      question: "Do weights need to sum to 100?",
+      answer: "Weights can sum to any total; the formula normalizes them.",
+    },
+    {
+      question: "Can I leave a grade blank?",
+      answer: "Enter 0 for unused categories.",
+    },
+    {
+      question: "Does it handle extra credit?",
+      answer: "Include extra credit in the appropriate grade input.",
+    },
+  ],
+  disclaimer:
+    "For educational planning only; check course policies for exact grading.",
+  info: [
+    "Weighted averages assign more influence to higher-weighted categories.",
+    "Ensure weights reflect syllabus guidelines.",
+  ],
+  cluster: "Education",
+};
+
+<Calculator schema={schema} />

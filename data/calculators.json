@@ -19104,10 +19104,7 @@
       }
     ],
     "disclaimer": "For water quality guidance only; confirm results with professional testing.",
-    "info": [
-      "1 gpg equals 17.118 ppm.",
-      "Soft water is generally below 3 gpg."
-    ]
+    "info": ["1 gpg equals 17.118 ppm.", "Soft water is generally below 3 gpg."]
   },
   {
     "slug": "savings-withdrawal-duration",
@@ -20524,21 +20521,55 @@
     "description": "Calculate horizontal distance of a projectile based on velocity and launch angle.",
     "intro": "Determine the horizontal range of a projectile using initial velocity, launch angle, and gravity.",
     "inputs": [
-      { "name": "velocity", "label": "Initial Velocity (m/s)", "type": "number", "step": "any", "placeholder": "20" },
-      { "name": "angle", "label": "Launch Angle (degrees)", "type": "number", "step": "any", "placeholder": "45" },
-      { "name": "gravity", "label": "Gravity (m/s^2)", "type": "number", "step": "any", "placeholder": "9.81" }
+      {
+        "name": "velocity",
+        "label": "Initial Velocity (m/s)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "20"
+      },
+      {
+        "name": "angle",
+        "label": "Launch Angle (degrees)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "45"
+      },
+      {
+        "name": "gravity",
+        "label": "Gravity (m/s^2)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "9.81"
+      }
     ],
     "expression": "(velocity ** 2 * Math.sin(2 * angle * Math.PI / 180)) / gravity",
     "unit": "m",
     "examples": [
-      { "description": "20 m/s at 45° with gravity 9.81 ⇒ 40.77 m" },
-      { "description": "30 m/s at 30° with gravity 9.81 ⇒ 79.45 m" }
+      {
+        "description": "20 m/s at 45° with gravity 9.81 ⇒ 40.77 m"
+      },
+      {
+        "description": "30 m/s at 30° with gravity 9.81 ⇒ 79.45 m"
+      }
     ],
     "faqs": [
-      { "question": "Why is 45° the optimal angle for maximum range?", "answer": "In a vacuum, 45° maximizes sin(2θ), giving the longest range." },
-      { "question": "Can I change gravity for other planets?", "answer": "Yes, adjust the gravity input to match the planet's gravitational acceleration." },
-      { "question": "Does this account for air resistance?", "answer": "No, it assumes ideal projectile motion without air drag." },
-      { "question": "What happens if I use a negative angle?", "answer": "Negative angles yield negative ranges, representing downward launches." }
+      {
+        "question": "Why is 45° the optimal angle for maximum range?",
+        "answer": "In a vacuum, 45° maximizes sin(2θ), giving the longest range."
+      },
+      {
+        "question": "Can I change gravity for other planets?",
+        "answer": "Yes, adjust the gravity input to match the planet's gravitational acceleration."
+      },
+      {
+        "question": "Does this account for air resistance?",
+        "answer": "No, it assumes ideal projectile motion without air drag."
+      },
+      {
+        "question": "What happens if I use a negative angle?",
+        "answer": "Negative angles yield negative ranges, representing downward launches."
+      }
     ],
     "disclaimer": "Idealized physics model; real-world ranges vary with conditions.",
     "info": ["Gravity on Mars is about 3.71 m/s²."]
@@ -20550,23 +20581,69 @@
     "description": "Estimate the mortgage size you can afford from income, debts, and loan terms.",
     "intro": "Estimate the maximum mortgage loan you can afford based on income, debts, interest rate, and term.",
     "inputs": [
-      { "name": "monthly_income", "label": "Monthly Income (USD)", "type": "number", "step": "any", "placeholder": "5000" },
-      { "name": "monthly_debts", "label": "Monthly Debts (USD)", "type": "number", "step": "any", "placeholder": "500" },
-      { "name": "annual_interest_rate", "label": "Annual Interest Rate (%)", "type": "number", "step": "any", "placeholder": "5" },
-      { "name": "loan_term_years", "label": "Loan Term (years)", "type": "number", "step": "any", "placeholder": "30" },
-      { "name": "dti_ratio", "label": "Max DTI Ratio (%)", "type": "number", "step": "any", "placeholder": "36" }
+      {
+        "name": "monthly_income",
+        "label": "Monthly Income (USD)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "5000"
+      },
+      {
+        "name": "monthly_debts",
+        "label": "Monthly Debts (USD)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "500"
+      },
+      {
+        "name": "annual_interest_rate",
+        "label": "Annual Interest Rate (%)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "5"
+      },
+      {
+        "name": "loan_term_years",
+        "label": "Loan Term (years)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "30"
+      },
+      {
+        "name": "dti_ratio",
+        "label": "Max DTI Ratio (%)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "36"
+      }
     ],
     "expression": "((monthly_income * (dti_ratio / 100) - monthly_debts) * (1 - (1 + (annual_interest_rate/1200)) ** (-loan_term_years*12))) / (annual_interest_rate/1200)",
     "unit": "USD",
     "examples": [
-      { "description": "$5,000 income, $500 debts, 5% rate, 30 years, 36% DTI ⇒ $242,166.10" },
-      { "description": "$7,000 income, $1,000 debts, 4% rate, 25 years, 30% DTI ⇒ $208,397.73" }
+      {
+        "description": "$5,000 income, $500 debts, 5% rate, 30 years, 36% DTI ⇒ $242,166.10"
+      },
+      {
+        "description": "$7,000 income, $1,000 debts, 4% rate, 25 years, 30% DTI ⇒ $208,397.73"
+      }
     ],
     "faqs": [
-      { "question": "What is the DTI ratio?", "answer": "The debt-to-income ratio is the portion of income that can go toward debt payments." },
-      { "question": "Does this include taxes or insurance?", "answer": "No, it only estimates principal and interest on the loan." },
-      { "question": "How does interest rate affect affordability?", "answer": "Higher rates increase payments, reducing the loan size you can afford." },
-      { "question": "Why subtract existing debts?", "answer": "Lenders consider other monthly debts when determining how much you can borrow." }
+      {
+        "question": "What is the DTI ratio?",
+        "answer": "The debt-to-income ratio is the portion of income that can go toward debt payments."
+      },
+      {
+        "question": "Does this include taxes or insurance?",
+        "answer": "No, it only estimates principal and interest on the loan."
+      },
+      {
+        "question": "How does interest rate affect affordability?",
+        "answer": "Higher rates increase payments, reducing the loan size you can afford."
+      },
+      {
+        "question": "Why subtract existing debts?",
+        "answer": "Lenders consider other monthly debts when determining how much you can borrow."
+      }
     ],
     "disclaimer": "For estimation only; consult a financial professional.",
     "info": ["Many lenders follow the 28/36 rule for housing and total debts."]
@@ -20578,23 +20655,802 @@
     "description": "Estimate CO2 emissions for a road trip using distance, fuel efficiency, and emission factor.",
     "intro": "Estimate the carbon dioxide emissions of a road trip by combining distance, vehicle efficiency, and fuel emission factor.",
     "inputs": [
-      { "name": "distance", "label": "Distance (km)", "type": "number", "step": "any", "placeholder": "500" },
-      { "name": "fuel_efficiency", "label": "Fuel Efficiency (L/100km)", "type": "number", "step": "any", "placeholder": "8" },
-      { "name": "emission_factor", "label": "Emission Factor (kg CO2/L)", "type": "number", "step": "any", "placeholder": "2.31" }
+      {
+        "name": "distance",
+        "label": "Distance (km)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "500"
+      },
+      {
+        "name": "fuel_efficiency",
+        "label": "Fuel Efficiency (L/100km)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "8"
+      },
+      {
+        "name": "emission_factor",
+        "label": "Emission Factor (kg CO2/L)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "2.31"
+      }
     ],
     "expression": "(distance * fuel_efficiency / 100) * emission_factor",
     "unit": "kg CO2",
     "examples": [
-      { "description": "500 km, 8 L/100km, 2.31 kg/L ⇒ 92.4 kg CO2" },
-      { "description": "350 km, 6.5 L/100km, 2.31 kg/L ⇒ 52.55 kg CO2" }
+      {
+        "description": "500 km, 8 L/100km, 2.31 kg/L ⇒ 92.4 kg CO2"
+      },
+      {
+        "description": "350 km, 6.5 L/100km, 2.31 kg/L ⇒ 52.55 kg CO2"
+      }
     ],
     "faqs": [
-      { "question": "What is an emission factor?", "answer": "It represents the kilograms of CO2 produced per liter of fuel burned." },
-      { "question": "How does fuel efficiency affect emissions?", "answer": "Better fuel efficiency means less fuel burned and lower CO2 output." },
-      { "question": "Does this account for passengers?", "answer": "No, it only calculates vehicle emissions regardless of passenger count." },
-      { "question": "Can I use gallons instead of liters?", "answer": "Yes, convert gallons to liters and adjust the emission factor accordingly." }
+      {
+        "question": "What is an emission factor?",
+        "answer": "It represents the kilograms of CO2 produced per liter of fuel burned."
+      },
+      {
+        "question": "How does fuel efficiency affect emissions?",
+        "answer": "Better fuel efficiency means less fuel burned and lower CO2 output."
+      },
+      {
+        "question": "Does this account for passengers?",
+        "answer": "No, it only calculates vehicle emissions regardless of passenger count."
+      },
+      {
+        "question": "Can I use gallons instead of liters?",
+        "answer": "Yes, convert gallons to liters and adjust the emission factor accordingly."
+      }
     ],
     "disclaimer": "Approximate estimate; actual emissions depend on driving conditions and vehicle type.",
     "info": ["Burning one liter of gasoline emits about 2.31 kg of CO2."]
+  },
+  {
+    "slug": "net-present-value",
+    "title": "Net Present Value Calculator",
+    "cluster": "Finance",
+    "description": "Determine the net present value of equal cash flows.",
+    "intro": "Estimate the net present value of equal recurring cash flows.",
+    "inputs": [
+      {
+        "name": "cash_flow",
+        "label": "Cash Flow (USD)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "1000"
+      },
+      {
+        "name": "rate",
+        "label": "Discount Rate (%)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "5"
+      },
+      {
+        "name": "periods",
+        "label": "Number of Periods",
+        "type": "number",
+        "step": "any",
+        "placeholder": "5"
+      }
+    ],
+    "expression": "cash_flow * (1 - (1 + rate/100) ** (-periods)) / (rate/100)",
+    "unit": "USD",
+    "examples": [
+      {
+        "description": "$1,000 yearly, 5% rate, 5 periods ⇒ $4,329.48"
+      },
+      {
+        "description": "$2,000 yearly, 7% rate, 3 periods ⇒ $5,285.05"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Does it assume end-of-period cash flows?",
+        "answer": "Yes, each payment occurs at the end of a period."
+      },
+      {
+        "question": "Can I use a negative rate?",
+        "answer": "A negative rate increases the present value."
+      },
+      {
+        "question": "What if periods is zero?",
+        "answer": "With zero periods, the NPV is 0."
+      }
+    ],
+    "disclaimer": "Simplified NPV for equal cash flows; adjust for varying amounts as needed.",
+    "info": [
+      "NPV discounts future cash flows to present value.",
+      "Positive NPV suggests an investment may be profitable."
+    ]
+  },
+  {
+    "slug": "weighted-grade-average",
+    "title": "Weighted Grade Average Calculator",
+    "cluster": "Education",
+    "description": "Calculate an overall grade using weighted categories.",
+    "intro": "Compute a weighted grade average using up to three graded components and their percentage weights.",
+    "inputs": [
+      {
+        "name": "g1",
+        "label": "Grade 1",
+        "type": "number",
+        "step": "any",
+        "placeholder": "85"
+      },
+      {
+        "name": "w1",
+        "label": "Weight 1 (%)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "20"
+      },
+      {
+        "name": "g2",
+        "label": "Grade 2",
+        "type": "number",
+        "step": "any",
+        "placeholder": "90"
+      },
+      {
+        "name": "w2",
+        "label": "Weight 2 (%)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "30"
+      },
+      {
+        "name": "g3",
+        "label": "Grade 3",
+        "type": "number",
+        "step": "any",
+        "placeholder": "80"
+      },
+      {
+        "name": "w3",
+        "label": "Weight 3 (%)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "50"
+      }
+    ],
+    "expression": "(g1*w1 + g2*w2 + g3*w3) / (w1 + w2 + w3)",
+    "unit": "%",
+    "examples": [
+      {
+        "description": "85@20%, 90@30%, 80@50% ⇒ 84.5%"
+      },
+      {
+        "description": "70@25%, 80@25%, 90@50% ⇒ 82.5%"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Do weights need to sum to 100?",
+        "answer": "Weights can sum to any total; the formula normalizes them."
+      },
+      {
+        "question": "Can I leave a grade blank?",
+        "answer": "Enter 0 for unused categories."
+      },
+      {
+        "question": "Does it handle extra credit?",
+        "answer": "Include extra credit in the appropriate grade input."
+      }
+    ],
+    "disclaimer": "For educational planning only; check course policies for exact grading.",
+    "info": [
+      "Weighted averages assign more influence to higher-weighted categories.",
+      "Ensure weights reflect syllabus guidelines."
+    ]
+  },
+  {
+    "slug": "ph-from-concentration",
+    "title": "pH from Concentration Calculator",
+    "cluster": "Science",
+    "description": "Find pH from hydrogen ion concentration.",
+    "intro": "Calculate the pH of a solution from its hydrogen ion concentration.",
+    "inputs": [
+      {
+        "name": "concentration",
+        "label": "[H+] (mol/L)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "0.001"
+      }
+    ],
+    "expression": "-Math.log10(concentration)",
+    "unit": "pH",
+    "examples": [
+      {
+        "description": "1e-3 mol/L ⇒ pH 3"
+      },
+      {
+        "description": "2e-7 mol/L ⇒ pH 6.70"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Can concentration be zero?",
+        "answer": "No, concentration must be positive."
+      },
+      {
+        "question": "What does a lower pH mean?",
+        "answer": "Lower pH indicates a more acidic solution."
+      },
+      {
+        "question": "Does temperature affect pH?",
+        "answer": "Yes, but this formula assumes standard conditions."
+      }
+    ],
+    "disclaimer": "For dilute aqueous solutions; actual pH may vary with activity coefficients.",
+    "info": [
+      "pH is the negative base-10 logarithm of hydrogen ion concentration.",
+      "Pure water at 25°C has a pH close to 7."
+    ]
+  },
+  {
+    "slug": "auto-loan-payment",
+    "title": "Auto Loan Payment Calculator",
+    "cluster": "Personal Finance & Loans",
+    "description": "Estimate monthly payments for a car loan.",
+    "intro": "Calculate the monthly payment for an auto loan using the principal, interest rate, and term in months.",
+    "inputs": [
+      {
+        "name": "principal",
+        "label": "Loan Amount (USD)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "25000"
+      },
+      {
+        "name": "rate",
+        "label": "Annual Interest Rate (%)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "5"
+      },
+      {
+        "name": "months",
+        "label": "Term (months)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "60"
+      }
+    ],
+    "expression": "principal * (rate/1200) / (1 - (1 + rate/1200) ** (-months))",
+    "unit": "USD",
+    "examples": [
+      {
+        "description": "$25,000 at 5% for 60 months ⇒ $471.78"
+      },
+      {
+        "description": "$18,000 at 3.5% for 48 months ⇒ $402.62"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Is there a down payment?",
+        "answer": "This formula assumes the loan amount already accounts for any down payment."
+      },
+      {
+        "question": "Can I enter a zero interest rate?",
+        "answer": "Yes, the payment becomes principal divided by months."
+      },
+      {
+        "question": "Does it include taxes or fees?",
+        "answer": "No, include those in the principal if applicable."
+      }
+    ],
+    "disclaimer": "Payment is an estimate; consult your lender for exact terms.",
+    "info": [
+      "Auto loans typically have fixed monthly payments.",
+      "Extra payments toward principal reduce total interest."
+    ]
+  },
+  {
+    "slug": "kilometers-to-nautical-miles",
+    "title": "Kilometers to Nautical Miles Converter",
+    "cluster": "Conversions",
+    "description": "Convert distance from kilometers to nautical miles.",
+    "intro": "Convert a distance value in kilometers to nautical miles using the factor 1 nmi = 1.852 km.",
+    "inputs": [
+      {
+        "name": "km",
+        "label": "Kilometers",
+        "type": "number",
+        "step": "any",
+        "placeholder": "10"
+      }
+    ],
+    "expression": "km / 1.852",
+    "unit": "nmi",
+    "examples": [
+      {
+        "description": "10 km ⇒ 5.40 nmi"
+      },
+      {
+        "description": "100 km ⇒ 54.05 nmi"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What is a nautical mile?",
+        "answer": "A nautical mile equals exactly 1.852 kilometers."
+      },
+      {
+        "question": "Why use nautical miles?",
+        "answer": "They are standard for marine and air navigation."
+      },
+      {
+        "question": "Can I convert nautical miles to kilometers?",
+        "answer": "Use the reciprocal: km = nmi × 1.852."
+      }
+    ],
+    "disclaimer": "Approximate conversion; round as needed for navigation.",
+    "info": [
+      "1 nautical mile corresponds to one minute of latitude.",
+      "Kilometers are part of the metric system used worldwide."
+    ]
+  },
+  {
+    "slug": "air-changes-per-hour",
+    "title": "Air Changes per Hour Calculator",
+    "cluster": "Home & DIY",
+    "description": "Compute ventilation rate in air changes per hour.",
+    "intro": "Determine ventilation effectiveness by calculating how many times the air in a room is replaced each hour.",
+    "inputs": [
+      {
+        "name": "air_flow",
+        "label": "Air Flow (CFM)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "200"
+      },
+      {
+        "name": "volume",
+        "label": "Room Volume (ft³)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "1200"
+      }
+    ],
+    "expression": "(air_flow * 60) / volume",
+    "unit": "ACH",
+    "examples": [
+      {
+        "description": "200 CFM in 1200 ft³ ⇒ 10 ACH"
+      },
+      {
+        "description": "400 CFM in 1600 ft³ ⇒ 15 ACH"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What is a good ACH?",
+        "answer": "Living spaces often aim for 4–6 ACH; hospitals require higher rates."
+      },
+      {
+        "question": "Does ceiling height matter?",
+        "answer": "Yes, volume includes height to capture total room air."
+      },
+      {
+        "question": "Can I use metric units?",
+        "answer": "Yes, convert to cubic feet and CFM before using."
+      }
+    ],
+    "disclaimer": "Estimates only; consult HVAC professionals for precise requirements.",
+    "info": [
+      "ACH = (CFM × 60) ÷ room volume.",
+      "Higher ACH improves air quality by removing pollutants."
+    ]
+  },
+  {
+    "slug": "arithmetic-series-sum",
+    "title": "Arithmetic Series Sum Calculator",
+    "cluster": "Math",
+    "description": "Sum the first n terms of an arithmetic series.",
+    "intro": "Find the sum of the first n terms in an arithmetic series using the formula S = n/2 × (2a₁ + (n−1)d).",
+    "inputs": [
+      {
+        "name": "a1",
+        "label": "First Term",
+        "type": "number",
+        "step": "any",
+        "placeholder": "1"
+      },
+      {
+        "name": "d",
+        "label": "Common Difference",
+        "type": "number",
+        "step": "any",
+        "placeholder": "1"
+      },
+      {
+        "name": "n",
+        "label": "Number of Terms",
+        "type": "number",
+        "step": "any",
+        "placeholder": "10"
+      }
+    ],
+    "expression": "n/2 * (2*a1 + (n-1)*d)",
+    "unit": "units",
+    "examples": [
+      {
+        "description": "a₁=1, d=1, n=100 ⇒ 5050"
+      },
+      {
+        "description": "a₁=3, d=2, n=5 ⇒ 35"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Can n be zero?",
+        "answer": "With zero terms, the sum is 0."
+      },
+      {
+        "question": "What if d is negative?",
+        "answer": "A negative difference decreases subsequent terms."
+      },
+      {
+        "question": "Does it handle fractional values?",
+        "answer": "Yes, decimals are allowed."
+      }
+    ],
+    "disclaimer": "Assumes a standard arithmetic progression.",
+    "info": [
+      "Arithmetic series have a constant difference between terms.",
+      "The formula derives from adding the first and last terms repeatedly."
+    ]
+  },
+  {
+    "slug": "trip-cost-split",
+    "title": "Trip Cost Split Calculator",
+    "cluster": "Lifestyle & Travel",
+    "description": "Divide total trip cost among travelers.",
+    "intro": "Share expenses fairly by dividing the total trip cost by the number of travelers.",
+    "inputs": [
+      {
+        "name": "total",
+        "label": "Total Trip Cost (USD)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "1200"
+      },
+      {
+        "name": "travelers",
+        "label": "Number of Travelers",
+        "type": "number",
+        "step": "any",
+        "placeholder": "4"
+      }
+    ],
+    "expression": "total / travelers",
+    "unit": "USD",
+    "examples": [
+      {
+        "description": "$1200 with 4 travelers ⇒ $300 each"
+      },
+      {
+        "description": "$750 with 3 travelers ⇒ $250 each"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Does it handle unequal shares?",
+        "answer": "No, all travelers are assumed to split the cost evenly."
+      },
+      {
+        "question": "Can I include taxes and fees?",
+        "answer": "Yes, add them to the total cost before splitting."
+      },
+      {
+        "question": "What if travelers is zero?",
+        "answer": "The number of travelers must be at least one."
+      }
+    ],
+    "disclaimer": "For trip budgeting only; actual expenses may vary.",
+    "info": [
+      "Cost splitting helps plan group travel budgets.",
+      "Consider shared and individual expenses separately."
+    ]
+  },
+  {
+    "slug": "data-transfer-cost",
+    "title": "Data Transfer Cost Calculator",
+    "cluster": "Technology",
+    "description": "Estimate bandwidth charges from data usage.",
+    "intro": "Calculate the monetary cost of transferring data based on usage and per-gigabyte pricing.",
+    "inputs": [
+      {
+        "name": "data",
+        "label": "Data Transferred (GB)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "50"
+      },
+      {
+        "name": "rate",
+        "label": "Cost per GB (USD)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "0.10"
+      }
+    ],
+    "expression": "data * rate",
+    "unit": "USD",
+    "examples": [
+      {
+        "description": "50 GB at $0.10/GB ⇒ $5.00"
+      },
+      {
+        "description": "200 GB at $0.05/GB ⇒ $10.00"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Does this include storage fees?",
+        "answer": "No, it only covers bandwidth charges."
+      },
+      {
+        "question": "Can rate be zero?",
+        "answer": "Yes, a zero rate yields zero cost."
+      },
+      {
+        "question": "What about tiered pricing?",
+        "answer": "Use the effective average rate for the data transferred."
+      }
+    ],
+    "disclaimer": "Actual provider billing may use tiers or minimum fees.",
+    "info": [
+      "Data transfer costs are common in cloud services.",
+      "Monitoring usage helps prevent unexpected bills."
+    ]
+  },
+  {
+    "slug": "total-daily-energy-expenditure",
+    "title": "Total Daily Energy Expenditure Calculator",
+    "cluster": "Health",
+    "description": "Estimate daily calories burned including activity.",
+    "intro": "Estimate total daily energy expenditure (TDEE) by calculating basal metabolic rate and multiplying by an activity factor.",
+    "inputs": [
+      {
+        "name": "weight",
+        "label": "Weight (kg)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "70"
+      },
+      {
+        "name": "height",
+        "label": "Height (cm)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "175"
+      },
+      {
+        "name": "age",
+        "label": "Age (years)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "30"
+      },
+      {
+        "name": "gender",
+        "label": "Gender (1=male,0=female)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "1"
+      },
+      {
+        "name": "activity",
+        "label": "Activity Factor",
+        "type": "number",
+        "step": "any",
+        "placeholder": "1.55"
+      }
+    ],
+    "expression": "(10*weight + 6.25*height - 5*age + (gender*166) -161) * activity",
+    "unit": "kcal/day",
+    "examples": [
+      {
+        "description": "70kg,175cm,30y,male,1.55 ⇒ 2556.6 kcal/day"
+      },
+      {
+        "description": "60kg,160cm,25y,female,1.375 ⇒ 1843.8 kcal/day"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What activity factor should I use?",
+        "answer": "Use 1.2 for sedentary up to around 1.9 for very active lifestyles."
+      },
+      {
+        "question": "Is this exact?",
+        "answer": "It provides an estimate; individual metabolism varies."
+      },
+      {
+        "question": "Can I use pounds and inches?",
+        "answer": "Convert to kilograms and centimeters before input."
+      }
+    ],
+    "disclaimer": "For informational purposes; consult a professional for personalized nutrition advice.",
+    "info": [
+      "TDEE combines resting energy use with activity-based expenditure.",
+      "Maintaining weight requires consuming calories equal to TDEE."
+    ]
+  },
+  {
+    "slug": "add-weeks-to-date",
+    "title": "Add Weeks to Date Calculator",
+    "cluster": "Date & Time",
+    "description": "Get the date after adding a number of weeks.",
+    "intro": "Find the calendar date that results after adding a specified number of weeks to a starting date.",
+    "inputs": [
+      {
+        "name": "year",
+        "label": "Year",
+        "type": "number",
+        "step": "any",
+        "placeholder": "2025"
+      },
+      {
+        "name": "month",
+        "label": "Month",
+        "type": "number",
+        "step": "any",
+        "placeholder": "1"
+      },
+      {
+        "name": "day",
+        "label": "Day",
+        "type": "number",
+        "step": "any",
+        "placeholder": "1"
+      },
+      {
+        "name": "weeks",
+        "label": "Weeks to Add",
+        "type": "number",
+        "step": "any",
+        "placeholder": "4"
+      }
+    ],
+    "expression": "(function(y,m,d,w){const date=new Date(y,m-1,d);date.setDate(date.getDate()+w*7);return date.toISOString().split('T')[0];})(year,month,day,weeks)",
+    "unit": "date",
+    "examples": [
+      {
+        "description": "2025-01-01 plus 4 weeks ⇒ 2025-01-29"
+      },
+      {
+        "description": "2024-12-15 plus 6 weeks ⇒ 2025-01-26"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Does it account for leap years?",
+        "answer": "Yes, JavaScript's Date object manages leap years automatically."
+      },
+      {
+        "question": "Are weeks assumed to be 7 days?",
+        "answer": "Yes, each week is exactly 7 days."
+      },
+      {
+        "question": "What if result crosses year end?",
+        "answer": "The calculator adjusts the year as needed."
+      }
+    ],
+    "disclaimer": "Uses the Gregorian calendar; local holidays or time zones are not considered.",
+    "info": [
+      "Adding weeks is useful for scheduling recurring events.",
+      "Weeks are treated as seven-day intervals regardless of daylight saving changes."
+    ]
+  },
+  {
+    "slug": "cost-per-thousand-impressions",
+    "title": "Cost Per Thousand Impressions Calculator",
+    "cluster": "Web Marketing",
+    "description": "Compute advertising cost per 1,000 impressions (CPM).",
+    "intro": "Determine the cost per thousand impressions (CPM) by dividing total ad spend by impressions and multiplying by 1000.",
+    "inputs": [
+      {
+        "name": "cost",
+        "label": "Ad Cost (USD)",
+        "type": "number",
+        "step": "any",
+        "placeholder": "500"
+      },
+      {
+        "name": "impressions",
+        "label": "Impressions",
+        "type": "number",
+        "step": "any",
+        "placeholder": "200000"
+      }
+    ],
+    "expression": "cost / impressions * 1000",
+    "unit": "USD",
+    "examples": [
+      { "description": "$500 cost, 200,000 impressions ⇒ $2.50" },
+      { "description": "$120 cost, 30,000 impressions ⇒ $4.00" }
+    ],
+    "faqs": [
+      {
+        "question": "What does CPM stand for?",
+        "answer": "Cost per mille, or cost per thousand ad impressions."
+      },
+      {
+        "question": "Can impressions be zero?",
+        "answer": "No, impressions must be greater than zero."
+      },
+      {
+        "question": "Is a lower CPM better?",
+        "answer": "Yes, a lower CPM means you're paying less for each thousand views."
+      }
+    ],
+    "disclaimer": "CPM is an estimate; actual billing may include additional fees.",
+    "info": [
+      "CPM helps compare efficiency across advertising channels.",
+      "High impression counts typically lower CPM."
+    ]
+  },
+  {
+    "slug": "vector-magnitude",
+    "title": "Vector Magnitude Calculator",
+    "cluster": "Math",
+    "description": "Calculate the length of a 3D vector.",
+    "intro": "Find the magnitude of a three-dimensional vector from its components using the square root of the sum of squares.",
+    "inputs": [
+      {
+        "name": "x",
+        "label": "x-component",
+        "type": "number",
+        "step": "any",
+        "placeholder": "3"
+      },
+      {
+        "name": "y",
+        "label": "y-component",
+        "type": "number",
+        "step": "any",
+        "placeholder": "4"
+      },
+      {
+        "name": "z",
+        "label": "z-component",
+        "type": "number",
+        "step": "any",
+        "placeholder": "12"
+      }
+    ],
+    "expression": "Math.sqrt(x*x + y*y + z*z)",
+    "unit": "units",
+    "examples": [
+      { "description": "(3,4,12) ⇒ 13" },
+      { "description": "(1,2,2) ⇒ 3" }
+    ],
+    "faqs": [
+      {
+        "question": "What if a component is negative?",
+        "answer": "The formula squares components, so sign does not affect magnitude."
+      },
+      {
+        "question": "Can this work for 2D vectors?",
+        "answer": "Yes, set the unused component to 0."
+      },
+      {
+        "question": "Is the result unitless?",
+        "answer": "It carries the same unit as the components."
+      }
+    ],
+    "disclaimer": "Assumes Euclidean space for vector calculations.",
+    "info": [
+      "Vector magnitude represents distance from the origin.",
+      "Also known as vector length or norm."
+    ]
   }
 ]

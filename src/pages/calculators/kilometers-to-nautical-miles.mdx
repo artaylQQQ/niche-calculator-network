@@ -1,0 +1,54 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Kilometers to Nautical Miles Converter"
+description: "Convert distance from kilometers to nautical miles."
+updated: "2025-09-25"
+cluster: "Conversions"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "kilometers-to-nautical-miles",
+  title: "Kilometers to Nautical Miles Converter",
+  locale: "en",
+  unit: "nmi",
+  inputs: [
+    {
+      name: "km",
+      label: "Kilometers",
+      type: "number",
+      step: "any",
+      placeholder: "10",
+    },
+  ],
+  expression: "km / 1.852",
+  intro:
+    "Convert a distance value in kilometers to nautical miles using the factor 1 nmi = 1.852 km.",
+  examples: [
+    { description: "10 km ⇒ 5.40 nmi" },
+    { description: "100 km ⇒ 54.05 nmi" },
+  ],
+  faqs: [
+    {
+      question: "What is a nautical mile?",
+      answer: "A nautical mile equals exactly 1.852 kilometers.",
+    },
+    {
+      question: "Why use nautical miles?",
+      answer: "They are standard for marine and air navigation.",
+    },
+    {
+      question: "Can I convert nautical miles to kilometers?",
+      answer: "Use the reciprocal: km = nmi × 1.852.",
+    },
+  ],
+  disclaimer: "Approximate conversion; round as needed for navigation.",
+  info: [
+    "1 nautical mile corresponds to one minute of latitude.",
+    "Kilometers are part of the metric system used worldwide.",
+  ],
+  cluster: "Conversions",
+};
+
+<Calculator schema={schema} />

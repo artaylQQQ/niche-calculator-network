@@ -1,0 +1,61 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Data Transfer Cost Calculator"
+description: "Estimate bandwidth charges from data usage."
+updated: "2025-09-25"
+cluster: "Technology"
+---
+
+import Calculator from "../../components/Calculator.astro";
+
+export const schema = {
+  slug: "data-transfer-cost",
+  title: "Data Transfer Cost Calculator",
+  locale: "en",
+  unit: "USD",
+  inputs: [
+    {
+      name: "data",
+      label: "Data Transferred (GB)",
+      type: "number",
+      step: "any",
+      placeholder: "50",
+    },
+    {
+      name: "rate",
+      label: "Cost per GB (USD)",
+      type: "number",
+      step: "any",
+      placeholder: "0.10",
+    },
+  ],
+  expression: "data * rate",
+  intro:
+    "Calculate the monetary cost of transferring data based on usage and per-gigabyte pricing.",
+  examples: [
+    { description: "50 GB at $0.10/GB ⇒ $5.00" },
+    { description: "200 GB at $0.05/GB ⇒ $10.00" },
+  ],
+  faqs: [
+    {
+      question: "Does this include storage fees?",
+      answer: "No, it only covers bandwidth charges.",
+    },
+    {
+      question: "Can rate be zero?",
+      answer: "Yes, a zero rate yields zero cost.",
+    },
+    {
+      question: "What about tiered pricing?",
+      answer: "Use the effective average rate for the data transferred.",
+    },
+  ],
+  disclaimer: "Actual provider billing may use tiers or minimum fees.",
+  info: [
+    "Data transfer costs are common in cloud services.",
+    "Monitoring usage helps prevent unexpected bills.",
+  ],
+  cluster: "Technology",
+};
+
+<Calculator schema={schema} />
