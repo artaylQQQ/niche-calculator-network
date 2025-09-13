@@ -361,6 +361,7 @@
       }
     ],
     "expression": "km * 0.621371",
+    "unit": "miles",
     "examples": [
       {
         "description": "10 km \u21d2 6.21371 miles"
@@ -15865,6 +15866,7 @@
       }
     ],
     "expression": "(map * scale) / 100000",
+    "unit": "km",
     "examples": [
       {
         "description": "5 cm at 1:50,000 \u21d2 2.5 km"
