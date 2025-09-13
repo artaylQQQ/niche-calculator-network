@@ -593,7 +593,8 @@ const jsonLd = {
       } else if (unit === '$' || unit === '€' || unit === '£') {
         showMessage('success', 'Result: ' + unit + fmt(value));
       } else {
-        showMessage('success', 'Result: ' + fmt(value) + (unit ? (' ' + unit) : ''));
+        const joiner = unit && ['%', '°'].includes(unit) ? '' : (unit ? ' ' : '');
+        showMessage('success', 'Result: ' + fmt(value) + joiner + (unit || ''));
       }
     };
 

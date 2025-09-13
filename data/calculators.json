@@ -15717,6 +15717,7 @@
       }
     ],
     "expression": "(attended / total) * 100",
+    "unit": "%",
     "examples": [
       {
         "description": "18 attended of 20 \u21d2 90%"
@@ -19966,7 +19967,7 @@
       }
     ],
     "expression": "goal - current",
-    "unit": "words",
+    "unit": "words remaining",
     "examples": [
       {
         "description": "Goal 1500, current 600 \u21d2 900 words remaining"
