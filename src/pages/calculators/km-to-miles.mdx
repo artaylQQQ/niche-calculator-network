@@ -2,7 +2,7 @@
 layout: ../../layouts/CalculatorLayout.astro
 title: "Kilometers to Miles"
 description: "Convert kilometers into miles."
-updated: "2025-08-26"
+updated: "2025-09-13"
 cluster: "Conversions"
 ---
 
@@ -35,8 +35,19 @@ export const schema = {
   ],
   faqs: [
     {
-      question: "Is the factor exact?",
-      answer: "We use the standard 1 km = 0.621371 miles.",
+      question: "Is the conversion factor exact?",
+      answer:
+        "Yes. One kilometer equals exactly 0.621371 miles; results are rounded to five decimal places for clarity.",
+    },
+    {
+      question: "Can I convert miles back to kilometers?",
+      answer:
+        "This tool only converts kilometers to miles. Multiply miles by 1.60934 or use the Miles to Kilometers calculator for the reverse conversion.",
+    },
+    {
+      question: "Why do the results show many decimals?",
+      answer:
+        "Miles are a larger unit, so the conversion often produces long decimals. Feel free to round the output to your preferred precision.",
     },
   ],
   disclaimer: "Educational purposes only. Not professional advice.",

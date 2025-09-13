@@ -3,7 +3,7 @@ layout: ../../layouts/CalculatorLayout.astro
 title: "Caffeine Half-Life"
 description: "Estimate remaining caffeine over time."
 date: 2025-09-03
-updated: 2025-09-03
+updated: 2025-09-13
 cluster: "Health"
 ---
 
@@ -42,7 +42,18 @@ export const schema = {
   faqs: [
     {
       question: "What half-life is assumed?",
-      answer: "This uses an average half-life of 5 hours.",
+      answer:
+        "The calculator uses an average caffeine half-life of about 5 hours for healthy adults.",
+    },
+    {
+      question: "Why might my caffeine level differ from the estimate?",
+      answer:
+        "Metabolism varies with age, liver function, pregnancy, medications, smoking, and genetics, so actual clearance can be faster or slower.",
+    },
+    {
+      question: "Can this tell me when to stop drinking coffee before bed?",
+      answer:
+        "It offers a rough guideline only. Many people avoid caffeine for at least six hours before sleep, but individual sensitivity differs.",
     },
   ],
   disclaimer: "Educational information, not professional advice.",
