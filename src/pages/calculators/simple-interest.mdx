@@ -6,53 +6,70 @@ updated: "2025-08-26"
 cluster: "Finance"
 ---
 
-import Calculator from '../../components/Calculator.astro';
+import Calculator from "../../components/Calculator.astro";
 
 export const schema = {
-  "inputs": [
+  inputs: [
     {
-      "name": "principal",
-      "label": "Principal",
-      "type": "number",
-      "min": 0,
-      "step": "any",
-      "placeholder": "1000"
+      name: "principal",
+      label: "Principal",
+      type: "number",
+      min: 0,
+      step: "any",
+      placeholder: "1000",
     },
     {
-      "name": "rate",
-      "label": "Rate (%) per year",
-      "type": "number",
-      "min": 0,
-      "step": "any",
-      "placeholder": "5"
+      name: "rate",
+      label: "Rate (%) per year",
+      type: "number",
+      min: 0,
+      step: "any",
+      placeholder: "5",
     },
     {
-      "name": "years",
-      "label": "Years",
-      "type": "number",
-      "min": 0,
-      "step": "any",
-      "placeholder": "3"
-    }
+      name: "years",
+      label: "Years",
+      type: "number",
+      min: 0,
+      step: "any",
+      placeholder: "3",
+    },
   ],
-    "slug": "simple-interest",
-    "title": "Simple Interest Calculator",
-    "locale": "en",
-    "expression": "principal * (rate/100) * years",
-    "unit": "USD",
-    "intro": "Enter principal amount, annual interest rate, and time in years to calculate simple interest earned.",
-    "examples": [
-      {"description": "$1,000 at 5% for 3 years \u21d2 $150 interest"},
-      {"description": "$2,500 at 4% for 2 years \u21d2 $200 interest"}
-    ],
-    "faqs": [
-      {"question": "Is compounding included?", "answer": "No. Use a compound interest calculator for compounding."},
-      {"question": "How is the interest calculated?", "answer": "Interest equals principal multiplied by rate and time in years."},
-      {"question": "Can I use months instead of years?", "answer": "Convert months to years by dividing by 12."},
-      {"question": "Does the result include the principal?", "answer": "No, it returns only the interest earned."}
-    ],
-  "disclaimer": "Educational purposes only. Not professional advice.",
-  "cluster": "Finance"
-}
+  slug: "simple-interest",
+  title: "Simple Interest Calculator",
+  locale: "en",
+  expression: "principal * (rate/100) * years",
+  unit: "USD",
+  intro:
+    "Enter principal amount, annual interest rate, and time in years to calculate simple interest earned.",
+  examples: [
+    { description: "$1,000 at 5% for 3 years \u21d2 $150 interest" },
+    { description: "$2,500 at 4% for 2 years \u21d2 $200 interest" },
+  ],
+  info: [
+    "Uses the basic simple-interest formula where interest grows linearly and any earned interest isn't reinvested.",
+    "Best suited for quick projections on short-term loans or investments that don't compound.",
+  ],
+  faqs: [
+    {
+      question: "Is compounding included?",
+      answer: "No. Use a compound interest calculator for compounding.",
+    },
+    {
+      question: "How is the interest calculated?",
+      answer: "Interest equals principal multiplied by rate and time in years.",
+    },
+    {
+      question: "Can I use months instead of years?",
+      answer: "Convert months to years by dividing by 12.",
+    },
+    {
+      question: "Does the result include the principal?",
+      answer: "No, it returns only the interest earned.",
+    },
+  ],
+  disclaimer: "Educational purposes only. Not professional advice.",
+  cluster: "Finance",
+};
 
 <Calculator schema={schema} />

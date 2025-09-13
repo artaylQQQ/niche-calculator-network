@@ -6,54 +6,58 @@ date: 2025-09-12
 updated: 2025-09-12
 cluster: "Lifestyle & Travel"
 ---
-import Calculator from '../../components/Calculator.astro';
+
+import Calculator from "../../components/Calculator.astro";
 
 export const schema = {
-  "slug": "map-scale-distance",
-  "title": "Map Scale Distance Calculator",
-  "locale": "en",
-  "inputs": [
+  slug: "map-scale-distance",
+  title: "Map Scale Distance Calculator",
+  locale: "en",
+  inputs: [
     {
-      "name": "map",
-      "label": "Map Distance (cm)",
-      "type": "number",
-      "min": 0,
-      "step": "any",
-      "placeholder": "5"
+      name: "map",
+      label: "Map Distance (cm)",
+      type: "number",
+      min: 0,
+      step: "any",
+      placeholder: "5",
     },
     {
-      "name": "scale",
-      "label": "Scale Denominator",
-      "type": "number",
-      "min": 1,
-      "step": "any",
-      "placeholder": "50000"
-    }
+      name: "scale",
+      label: "Scale Denominator",
+      type: "number",
+      min: 1,
+      step: "any",
+      placeholder: "50000",
+    },
   ],
-  "expression": "(map * scale) / 100000",
-  "intro": "Find real-world distance from map measurement and scale.",
-  "examples": [
+  expression: "(map * scale) / 100000",
+  intro: "Find real-world distance from map measurement and scale.",
+  examples: [
     {
-      "description": "5 cm at 1:50,000 ⇒ 2.5 km"
-    }
+      description: "5 cm at 1:50,000 ⇒ 2.5 km",
+    },
   ],
-  "info": [],
-  "faqs": [
+  info: [
+    "Relies on a constant map scale and doesn't account for projection distortions or terrain.",
+    "Outputs distance in kilometers; convert to miles or other units if preferred.",
+  ],
+  faqs: [
     {
-      "question": "Why divide by 100000?",
-      "answer": "There are 100,000 centimeters in a kilometer."
-    }
+      question: "Why divide by 100000?",
+      answer: "There are 100,000 centimeters in a kilometer.",
+    },
   ],
-  "disclaimer": "Educational information, not professional advice.",
-  "cluster": "Lifestyle & Travel",
-  "related": [
+  disclaimer: "Educational information, not professional advice.",
+  cluster: "Lifestyle & Travel",
+  related: [
     "percentage-discount",
     "simple-interest",
     "compound-interest-calculator",
     "bmi-calculator",
     "daily-calorie-burn",
-    "celsius-to-fahrenheit"
-  ]
-}
+    "celsius-to-fahrenheit",
+  ],
+};
 
 <Calculator schema={schema} />
