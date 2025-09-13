@@ -1600,10 +1600,6 @@
     "date": "2025-09-12"
   },
   {
-    "slug": "ab-test-sample-size",
-    "date": "2025-09-12"
-  },
-  {
     "slug": "return-on-ad-spend",
     "date": "2025-09-13"
   },
@@ -1761,6 +1757,54 @@
   },
   {
     "slug": "medication-supply-duration",
+    "date": "2025-09-13"
+  },
+  {
+    "slug": "decibel-to-power-percentage",
+    "date": "2025-09-13"
+  },
+  {
+    "slug": "next-full-moon",
+    "date": "2025-09-13"
+  },
+  {
+    "slug": "cefr-study-hours",
+    "date": "2025-09-13"
+  },
+  {
+    "slug": "dividend-reinvestment",
+    "date": "2025-09-13"
+  },
+  {
+    "slug": "sleep-efficiency",
+    "date": "2025-09-13"
+  },
+  {
+    "slug": "grass-seed-coverage",
+    "date": "2025-09-13"
+  },
+  {
+    "slug": "travel-insurance-cost",
+    "date": "2025-09-13"
+  },
+  {
+    "slug": "prime-factorization",
+    "date": "2025-09-13"
+  },
+  {
+    "slug": "bnpl-apr",
+    "date": "2025-09-13"
+  },
+  {
+    "slug": "radiocarbon-dating",
+    "date": "2025-09-13"
+  },
+  {
+    "slug": "usb-voltage-drop",
+    "date": "2025-09-13"
+  },
+  {
+    "slug": "ab-test-sample-size",
     "date": "2025-09-13"
   }
 ]

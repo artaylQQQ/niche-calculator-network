@@ -1,0 +1,59 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Prime Factorization Calculator"
+description: "Enter an integer to see its prime factors expressed in a multiplication sequence."
+date: 2025-09-13
+updated: 2025-09-13
+cluster: "Math & Statistics"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "prime-factorization",
+  "title": "Prime Factorization Calculator",
+  "cluster": "Math & Statistics",
+  "description": "Break a number into its prime factors.",
+  "intro": "Enter an integer to see its prime factors expressed in a multiplication sequence.",
+  "inputs": [
+    {
+      "name": "number",
+      "label": "Number",
+      "type": "number",
+      "placeholder": "12"
+    }
+  ],
+  "expression": "",
+  "unit": "",
+  "examples": [
+    {
+      "description": "12 \u21d2 2 \u00d7 2 \u00d7 3"
+    },
+    {
+      "description": "97 \u21d2 97"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "What numbers can I factor?",
+      "answer": "Enter positive integers up to JavaScript's safe limit."
+    },
+    {
+      "question": "Does the order of factors matter?",
+      "answer": "The calculator lists prime factors in ascending order."
+    },
+    {
+      "question": "Is 1 considered a prime factor?",
+      "answer": "No, 1 is not prime and is not included."
+    }
+  ],
+  "disclaimer": "Educational tool; verify large factorizations with specialized software.",
+  "info": [
+    "Prime factorization expresses a number as a product of prime numbers.",
+    "Useful for simplifying fractions and solving number theory problems."
+  ],
+  "locale": "en",
+  "related": []
+}
+
+<Calculator schema={schema} />

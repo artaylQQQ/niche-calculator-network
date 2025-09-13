@@ -1,0 +1,60 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Radiocarbon Dating Calculator"
+description: "Compute the approximate age of an organic sample using the remaining percentage of carbon-14 compared to a modern reference."
+date: 2025-09-13
+updated: 2025-09-13
+cluster: "Science & Engineering"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "radiocarbon-dating",
+  "title": "Radiocarbon Dating Calculator",
+  "cluster": "Science & Engineering",
+  "description": "Estimate the age of organic material from remaining carbon-14.",
+  "intro": "Compute the approximate age of an organic sample using the remaining percentage of carbon-14 compared to a modern reference.",
+  "inputs": [
+    {
+      "name": "percent",
+      "label": "Carbon-14 Remaining (%)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "50"
+    }
+  ],
+  "expression": "-8033 * Math.log(percent/100)",
+  "unit": "years",
+  "examples": [
+    {
+      "description": "50% \u21d2 5,568 years"
+    },
+    {
+      "description": "10% \u21d2 18,497 years"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "What half-life is assumed?",
+      "answer": "The calculation uses a mean life of 8,033 years (half-life \u2248 5,730 years)."
+    },
+    {
+      "question": "Does contamination affect results?",
+      "answer": "Yes, contamination can skew the carbon-14 percentage."
+    },
+    {
+      "question": "Is radiocarbon dating precise?",
+      "answer": "It provides an estimate; calibration improves accuracy."
+    }
+  ],
+  "disclaimer": "For archaeological estimation only; laboratory analysis required for precise dating.",
+  "info": [
+    "Based on exponential decay N_t/N_0 = e^{-t/8033}.",
+    "Valid for samples up to about 50,000 years old."
+  ],
+  "locale": "en",
+  "related": []
+}
+
+<Calculator schema={schema} />

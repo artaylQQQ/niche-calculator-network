@@ -1,0 +1,71 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Travel Insurance Cost Estimator"
+description: "Get a rough estimate of travel insurance cost using trip price, traveler age, and trip length. This is a simplified model for planning purposes."
+date: 2025-09-13
+updated: 2025-09-13
+cluster: "Lifestyle & Travel"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "travel-insurance-cost",
+  "title": "Travel Insurance Cost Estimator",
+  "cluster": "Lifestyle & Travel",
+  "description": "Approximate travel insurance premium based on trip details.",
+  "intro": "Get a rough estimate of travel insurance cost using trip price, traveler age, and trip length. This is a simplified model for planning purposes.",
+  "inputs": [
+    {
+      "name": "cost",
+      "label": "Trip Cost ($)",
+      "type": "number",
+      "placeholder": "2000"
+    },
+    {
+      "name": "age",
+      "label": "Traveler Age",
+      "type": "number",
+      "placeholder": "30"
+    },
+    {
+      "name": "days",
+      "label": "Trip Length (days)",
+      "type": "number",
+      "placeholder": "7"
+    }
+  ],
+  "expression": "(cost * 0.04) + (age * 1) + (days * 0.5)",
+  "unit": "USD",
+  "examples": [
+    {
+      "description": "$2,000 trip, age 30, 7 days \u21d2 $113.50"
+    },
+    {
+      "description": "$3,500 trip, age 50, 14 days \u21d2 $197.00"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Does this include medical coverage specifics?",
+      "answer": "No, it's a general estimate and doesn't factor policy details."
+    },
+    {
+      "question": "Why does age affect cost?",
+      "answer": "Insurers often charge higher premiums for older travelers."
+    },
+    {
+      "question": "Are high-risk activities covered?",
+      "answer": "This estimator doesn't account for special activities; check policy terms."
+    }
+  ],
+  "disclaimer": "Rough estimate only; obtain quotes from insurance providers for actual premiums.",
+  "info": [
+    "Real insurers consider destination, coverage limits, and medical history.",
+    "Premiums typically range between 4%\u201310% of trip cost."
+  ],
+  "locale": "en",
+  "related": []
+}
+
+<Calculator schema={schema} />
