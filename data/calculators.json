@@ -10768,7 +10768,10 @@
     ],
     "disclaimer": "Entropy is theoretical; follow best practices for secure passwords.",
     "unit": "bits",
-    "info": []
+    "info": [
+      "Entropy assumes characters are selected independently at random.",
+      "Real-world passwords often contain patterns that lower true strength."
+    ]
   },
   {
     "slug": "ohms-law-power",
@@ -10920,7 +10923,10 @@
     ],
     "disclaimer": "Idealized calculation without atmospheric refraction.",
     "unit": "m",
-    "info": []
+    "info": [
+      "Higher sun angles create shorter shadows.",
+      "Shadows become much longer as the sun nears the horizon."
+    ]
   },
   {
     "slug": "torque-nm-to-ftlb",
@@ -12786,7 +12792,10 @@
       }
     ],
     "disclaimer": "For training guidance only; adjust for personal fitness levels.",
-    "info": []
+    "info": [
+      "Pace may also be expressed per mile after converting distance units.",
+      "Even pacing helps conserve energy and reduce early fatigue."
+    ]
   },
   {
     "slug": "permutation-calculator",
@@ -15092,7 +15101,10 @@
       }
     ],
     "disclaimer": "Check your course syllabus for exact grading policies.",
-    "info": []
+    "info": [
+      "Assumes all coursework prior to the final exam has been graded.",
+      "Verify with your instructor how final grades are rounded."
+    ]
   },
   {
     "slug": "hydrostatic-pressure",
@@ -15144,7 +15156,10 @@
       }
     ],
     "disclaimer": "Assumes uniform fluid density and ignores temperature variations.",
-    "info": []
+    "info": [
+      "Hydrostatic pressure increases linearly with depth in incompressible fluids.",
+      "Fluid density varies with temperature and salinity, slightly changing results."
+    ]
   },
   {
     "slug": "binary-to-decimal",
@@ -15729,7 +15744,10 @@
         "answer": "Total classes must be greater than zero."
       }
     ],
-    "info": []
+    "info": [
+      "Many courses require a minimum attendance rate to earn credit.",
+      "Policies may treat excused and unexcused absences differently."
+    ]
   },
   {
     "slug": "spring-force",
@@ -17412,7 +17430,10 @@
       }
     ],
     "disclaimer": "Educational estimate only; individual results may vary.",
-    "info": []
+    "info": [
+      "Retention rate provides a snapshot of recall and should be monitored over time.",
+      "Comparing rates across subjects can highlight areas needing more review."
+    ]
   },
   {
     "slug": "led-series-resistor",
@@ -18086,7 +18107,10 @@
       }
     ],
     "disclaimer": "For study planning only; adjust based on personal progress.",
-    "info": []
+    "info": [
+      "Spaced repetition intervals usually lengthen after each successful review.",
+      "Choose an ease factor that reflects how confidently you recalled the card."
+    ]
   },
   {
     "slug": "force-from-mass-acceleration",
