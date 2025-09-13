@@ -117,8 +117,8 @@
       }
     ],
     "info": [
-      "Calculates interest using a linear formula with no reinvestment of earned interest.",
-      "Helpful for estimating returns on short-term loans, bonds, or savings that don't compound."
+      "Uses the basic simple-interest formula where interest grows linearly and any earned interest isn't reinvested.",
+      "Best suited for quick projections on short-term loans or investments that don't compound."
     ]
   },
   {
@@ -341,8 +341,8 @@
       }
     ],
     "info": [
-      "Uses the exact formula F = C × 9/5 + 32; minor rounding may occur in the result.",
-      "Remember that Celsius is common worldwide, while Fahrenheit is used mainly in the United States."
+      "Applies the precise formula F = C × 9/5 + 32, rounding results to a practical level.",
+      "Note that Celsius is the international standard, while Fahrenheit is primarily used in the United States."
     ]
   },
   {
@@ -373,8 +373,8 @@
       }
     ],
     "info": [
-      "Uses the standard conversion 1 kilometer = 0.621371 miles; results are rounded for clarity.",
-      "Helpful when estimating travel distances or vehicle mileage in imperial units."
+      "Employs the standard factor of 1 kilometer = 0.621371 miles, with results rounded for readability.",
+      "Useful for converting travel distances or vehicle mileage from metric to imperial units."
     ]
   },
   {
@@ -2127,8 +2127,8 @@
       }
     ],
     "info": [
-      "Assumes an 8-hour sleep need per night; individual requirements may vary.",
-      "Chronic sleep debt can impair mood, focus, and long-term health."
+      "Calculations rely on the common guideline of eight hours of sleep per night, though personal needs can differ.",
+      "Long-term sleep shortfalls may accumulate and affect mood, focus, and overall health."
     ]
   },
   {
@@ -2191,8 +2191,8 @@
       }
     ],
     "info": [
-      "Actual caffeine half-life varies with age, liver health, medications, and pregnancy.",
-      "Use as a rough guide only; genetics and tolerance can speed up or slow down caffeine metabolism."
+      "Real-world caffeine clearance varies widely with factors like age, liver function, medications, and pregnancy.",
+      "Treat results as a general estimate—genetics, smoking, and regular consumption also influence how fast caffeine leaves the body."
     ]
   },
   {
@@ -2819,8 +2819,8 @@
       }
     ],
     "info": [
-      "Shows what portion of total calories comes from protein to help balance macros.",
-      "Does not consider protein quality or personal dietary needs."
+      "Highlights what share of your total calorie intake comes from protein, aiding in macronutrient tracking.",
+      "Adjust for protein quality, activity level, and personal dietary goals separately, as this ratio doesn't cover them."
     ]
   },
   {
@@ -13282,8 +13282,8 @@
     ],
     "disclaimer": "For marketing estimates; actual campaign performance may vary.",
     "info": [
-      "Measures the share of impressions that resulted in clicks, indicating basic engagement.",
-      "High CTR doesn't guarantee conversions; pair with conversion data for full performance insight."
+      "Reports the percentage of impressions that led to clicks, giving a quick read on basic audience engagement.",
+      "Combine with conversion data and other KPIs, as a strong CTR alone doesn't ensure campaign success."
     ]
   },
   {
@@ -15433,8 +15433,8 @@
     ],
     "disclaimer": "For fun estimates only; not for official records.",
     "info": [
-      "Uses 365 days per year, so leap years and exact birth times aren't included.",
-      "Great for fun comparisons; not intended for legal or official age calculations."
+      "Assumes 365 days per year and ignores leap days or the exact time of birth, so results are approximate.",
+      "Designed for curiosity and trivia rather than precise or official age calculations."
     ]
   },
   {
@@ -15877,8 +15877,8 @@
       }
     ],
     "info": [
-      "Assumes the map scale is uniform; distortions in certain map projections are ignored.",
-      "Output is in kilometers; convert to miles or other units as needed for planning."
+      "Relies on a constant map scale and doesn't account for projection distortions or terrain.",
+      "Outputs distance in kilometers—convert to miles or other units if preferred."
     ]
   },
   {
