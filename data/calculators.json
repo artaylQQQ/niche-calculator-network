@@ -117,8 +117,8 @@
       }
     ],
     "info": [
-      "Simple interest adds the same amount every period without compounding.",
-      "Useful for quick estimates of interest on short-term loans or deposits."
+      "Calculates interest using a linear formula with no reinvestment of earned interest.",
+      "Helpful for estimating returns on short-term loans, bonds, or savings that don't compound."
     ]
   },
   {
@@ -340,7 +340,10 @@
         "answer": "Use the Fahrenheit to Celsius calculator or apply C = (F - 32) × 5/9."
       }
     ],
-    "info": []
+    "info": [
+      "Uses the exact formula F = C × 9/5 + 32; minor rounding may occur in the result.",
+      "Remember that Celsius is common worldwide, while Fahrenheit is used mainly in the United States."
+    ]
   },
   {
     "slug": "km-to-miles",
@@ -369,7 +372,10 @@
         "answer": "We use the standard 1 km = 0.621371 miles."
       }
     ],
-    "info": []
+    "info": [
+      "Uses the standard conversion 1 kilometer = 0.621371 miles; results are rounded for clarity.",
+      "Helpful when estimating travel distances or vehicle mileage in imperial units."
+    ]
   },
   {
     "slug": "meters-to-feet",
@@ -2120,7 +2126,10 @@
         "answer": "Negative means you exceed the 8‑hour recommendation."
       }
     ],
-    "info": []
+    "info": [
+      "Assumes an 8-hour sleep need per night; individual requirements may vary.",
+      "Chronic sleep debt can impair mood, focus, and long-term health."
+    ]
   },
   {
     "slug": "sugar-cube-equivalent",
@@ -2181,7 +2190,10 @@
         "answer": "This uses an average half-life of 5 hours."
       }
     ],
-    "info": []
+    "info": [
+      "Actual caffeine half-life varies with age, liver health, medications, and pregnancy.",
+      "Use as a rough guide only; genetics and tolerance can speed up or slow down caffeine metabolism."
+    ]
   },
   {
     "slug": "rainwater-harvest",
@@ -2806,7 +2818,10 @@
         "answer": "Each gram of protein has roughly 4 calories."
       }
     ],
-    "info": []
+    "info": [
+      "Shows what portion of total calories comes from protein to help balance macros.",
+      "Does not consider protein quality or personal dietary needs."
+    ]
   },
   {
     "slug": "bmi-prime",
@@ -3523,7 +3538,10 @@
         "answer": "Interest calculated only on the principal amount."
       }
     ],
-    "info": []
+    "info": [
+      "Interest accumulates at a constant rate because earnings are not added back to the principal.",
+      "Best for quick calculations on loans or investments without compounding."
+    ]
   },
   {
     "slug": "nautical-miles-to-kilometers",
@@ -13263,7 +13281,10 @@
       }
     ],
     "disclaimer": "For marketing estimates; actual campaign performance may vary.",
-    "info": []
+    "info": [
+      "Measures the share of impressions that resulted in clicks, indicating basic engagement.",
+      "High CTR doesn't guarantee conversions; pair with conversion data for full performance insight."
+    ]
   },
   {
     "slug": "mb-to-gb-converter",
@@ -15411,7 +15432,10 @@
       }
     ],
     "disclaimer": "For fun estimates only; not for official records.",
-    "info": []
+    "info": [
+      "Uses 365 days per year, so leap years and exact birth times aren't included.",
+      "Great for fun comparisons; not intended for legal or official age calculations."
+    ]
   },
   {
     "slug": "working-capital-ratio",
@@ -15852,7 +15876,10 @@
         "answer": "There are 100,000 centimeters in a kilometer."
       }
     ],
-    "info": []
+    "info": [
+      "Assumes the map scale is uniform; distortions in certain map projections are ignored.",
+      "Output is in kilometers; convert to miles or other units as needed for planning."
+    ]
   },
   {
     "slug": "bounce-rate",
