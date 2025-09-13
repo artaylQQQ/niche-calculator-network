@@ -1,69 +1,79 @@
 ---
 layout: ../../layouts/CalculatorLayout.astro
 title: "LED Series Resistor Calculator"
-description: "Find the resistor needed to drive an LED safely."
-updated: "2025-10-21"
+description: "Calculate the resistor required for an LED circuit using supply voltage, LED forward voltage, and desired current in milliamps."
+date: 2025-09-13
+updated: 2025-09-13
 cluster: "Science & Engineering"
 ---
-
-import Calculator from "../../components/Calculator.astro";
+import Calculator from '../../components/Calculator.astro';
 
 export const schema = {
-  slug: "led-series-resistor",
-  title: "LED Series Resistor Calculator",
-  locale: "en",
-  unit: "Ω",
-  expression: "(supply_voltage - forward_voltage) / (current_mA / 1000)",
-  intro:
-    "Calculate the resistor required for an LED circuit using supply voltage, LED forward voltage, and desired current in milliamps.",
-  cluster: "Science & Engineering",
-  inputs: [
+  "slug": "led-series-resistor",
+  "title": "LED Series Resistor Calculator",
+  "locale": "en",
+  "inputs": [
     {
-      name: "supply_voltage",
-      label: "Supply Voltage (V)",
-      type: "number",
-      step: "any",
-      required: true,
+      "name": "supply_voltage",
+      "label": "Supply Voltage (V)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "9"
     },
     {
-      name: "forward_voltage",
-      label: "LED Forward Voltage (V)",
-      type: "number",
-      step: "any",
-      required: true,
+      "name": "forward_voltage",
+      "label": "LED Forward Voltage (V)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "2"
     },
     {
-      name: "current_mA",
-      label: "Desired Current (mA)",
-      type: "number",
-      step: "any",
-      required: true,
-    },
+      "name": "current_mA",
+      "label": "Desired Current (mA)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "20"
+    }
   ],
-  examples: [
-    { description: "9V supply, 2V LED, 20mA ⇒ 350 Ω" },
-    { description: "5V supply, 3.2V LED, 25mA ⇒ 72 Ω" },
+  "expression": "(supply_voltage - forward_voltage) / (current_mA / 1000)",
+  "intro": "Calculate the resistor required for an LED circuit using supply voltage, LED forward voltage, and desired current in milliamps.",
+  "examples": [
+    {
+      "description": "9V supply, 2V LED, 20mA ⇒ 350 Ω"
+    },
+    {
+      "description": "5V supply, 3.2V LED, 25mA ⇒ 72 Ω"
+    }
   ],
-  faqs: [
+  "info": [],
+  "faqs": [
     {
-      question: "Why convert milliamps to amps?",
-      answer: "Ohm's law requires current in amps for accurate calculation.",
+      "question": "Why convert milliamps to amps?",
+      "answer": "Ohm's law requires current in amps for accurate calculation."
     },
     {
-      question: "What if supply voltage is lower than forward voltage?",
-      answer: "The LED won't light; increase supply or use a different LED.",
+      "question": "What if supply voltage is lower than forward voltage?",
+      "answer": "The LED won't light; increase supply or use a different LED."
     },
     {
-      question: "Does resistor wattage matter?",
-      answer: "Yes, choose a resistor that can handle the power dissipation.",
+      "question": "Does resistor wattage matter?",
+      "answer": "Yes, choose a resistor that can handle the power dissipation."
     },
     {
-      question: "Can I run multiple LEDs?",
-      answer: "For series LEDs, adjust forward voltage accordingly; for parallel, use separate resistors.",
-    },
+      "question": "Can I run multiple LEDs?",
+      "answer": "For series LEDs, adjust forward voltage accordingly; for parallel, use separate resistors."
+    }
   ],
-  disclaimer:
-    "Always verify circuit designs before implementation.",
-};
+  "disclaimer": "Always verify circuit designs before implementation.",
+  "cluster": "Science & Engineering",
+  "related": [
+    "radioactive-decay-remaining",
+    "spring-force",
+    "force-from-mass-acceleration",
+    "specific-heat-energy",
+    "boiling-point-altitude",
+    "rc-time-constant"
+  ]
+}
 
 <Calculator schema={schema} />

@@ -1,9 +1,9 @@
 ---
 layout: ../../layouts/CalculatorLayout.astro
 title: "Ceiling Paint Needed Calculator"
-description: "Estimate gallons of paint required for a ceiling based on area, coats, and coverage."
-date: 2025-09-10
-updated: 2025-09-10
+description: "Calculate how many gallons of paint are needed for a ceiling by multiplying area by coats and dividing by paint coverage."
+date: 2025-09-13
+updated: 2025-09-13
 cluster: "Home & DIY"
 ---
 import Calculator from '../../components/Calculator.astro';
@@ -13,31 +13,77 @@ export const schema = {
   "title": "Ceiling Paint Needed Calculator",
   "locale": "en",
   "inputs": [
-    { "name": "length", "label": "Length (m)", "type": "number", "step": "any", "placeholder": "5" },
-    { "name": "width", "label": "Width (m)", "type": "number", "step": "any", "placeholder": "4" },
-    { "name": "coats", "label": "Number of Coats", "type": "number", "step": "any", "placeholder": "2" },
-    { "name": "coverage", "label": "Coverage (m² per gallon)", "type": "number", "step": "any", "placeholder": "35" }
+    {
+      "name": "length",
+      "label": "Length (m)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "5"
+    },
+    {
+      "name": "width",
+      "label": "Width (m)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "4"
+    },
+    {
+      "name": "coats",
+      "label": "Number of Coats",
+      "type": "number",
+      "step": "any",
+      "placeholder": "2"
+    },
+    {
+      "name": "coverage",
+      "label": "Coverage (m² per gallon)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "35"
+    }
   ],
   "expression": "length * width * coats / coverage",
-  "unit": "gallons",
   "intro": "Calculate how many gallons of paint are needed for a ceiling by multiplying area by coats and dividing by paint coverage.",
   "examples": [
-    { "description": "5 m × 4 m, 2 coats, 35 m²/gal ⇒ 1.14 gallons" },
-    { "description": "6 m × 3 m, 1 coat, 40 m²/gal ⇒ 0.45 gallons" }
+    {
+      "description": "5 m × 4 m, 2 coats, 35 m²/gal ⇒ 1.14 gallons"
+    },
+    {
+      "description": "6 m × 3 m, 1 coat, 40 m²/gal ⇒ 0.45 gallons"
+    }
   ],
-  "faqs": [
-    { "question": "Does coverage vary by paint?", "answer": "Yes, check the paint can for exact coverage rates." },
-    { "question": "Should I add extra paint?", "answer": "Buying a little extra helps with touch-ups and errors." },
-    { "question": "How do I convert to liters?", "answer": "1 gallon is approximately 3.785 liters." },
-    { "question": "Does texture affect coverage?", "answer": "Rough surfaces may require more paint." }
-  ],
-  "disclaimer": "Estimates only; actual coverage depends on surface conditions.",
-  "cluster": "Home & DIY",
   "info": [
     "Standard ceiling paint coverage ranges 30–40 m² per gallon.",
     "Include primer requirements separately if needed."
   ],
-  "related": []
+  "faqs": [
+    {
+      "question": "Does coverage vary by paint?",
+      "answer": "Yes, check the paint can for exact coverage rates."
+    },
+    {
+      "question": "Should I add extra paint?",
+      "answer": "Buying a little extra helps with touch-ups and errors."
+    },
+    {
+      "question": "How do I convert to liters?",
+      "answer": "1 gallon is approximately 3.785 liters."
+    },
+    {
+      "question": "Does texture affect coverage?",
+      "answer": "Rough surfaces may require more paint."
+    }
+  ],
+  "disclaimer": "Estimates only; actual coverage depends on surface conditions.",
+  "cluster": "Home & DIY",
+  "related": [
+    "paint-needed",
+    "flooring-cost",
+    "concrete-slab-volume",
+    "wallpaper-roll-coverage",
+    "roof-pitch-angle",
+    "water-heater-recovery-time"
+  ]
 }
 
 <Calculator schema={schema} />

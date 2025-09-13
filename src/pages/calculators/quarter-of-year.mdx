@@ -1,55 +1,65 @@
 ---
 layout: ../../layouts/CalculatorLayout.astro
 title: "Quarter of Year Calculator"
-description: "Determine the calendar quarter for a given month."
-updated: "2025-10-21"
+description: "Find the calendar quarter by entering a month number from 1 to 12."
+date: 2025-09-13
+updated: 2025-09-13
 cluster: "Date & Time"
 ---
-
-import Calculator from "../../components/Calculator.astro";
+import Calculator from '../../components/Calculator.astro';
 
 export const schema = {
-  slug: "quarter-of-year",
-  title: "Quarter of Year Calculator",
-  locale: "en",
-  unit: "quarter",
-  expression: "Math.ceil(month / 3)",
-  intro:
-    "Find the calendar quarter by entering a month number from 1 to 12.",
-  cluster: "Date & Time",
-  inputs: [
+  "slug": "quarter-of-year",
+  "title": "Quarter of Year Calculator",
+  "locale": "en",
+  "inputs": [
     {
-      name: "month",
-      label: "Month (1-12)",
-      type: "number",
-      step: 1,
-      required: true,
-    },
+      "name": "month",
+      "label": "Month (1-12)",
+      "type": "number",
+      "step": 1,
+      "placeholder": "2"
+    }
   ],
-  examples: [
-    { description: "Month 2 ⇒ Q1" },
-    { description: "Month 11 ⇒ Q4" },
+  "expression": "Math.ceil(month / 3)",
+  "intro": "Find the calendar quarter by entering a month number from 1 to 12.",
+  "examples": [
+    {
+      "description": "Month 2 ⇒ Q1"
+    },
+    {
+      "description": "Month 11 ⇒ Q4"
+    }
   ],
-  faqs: [
+  "info": [],
+  "faqs": [
     {
-      question: "What is a quarter?",
-      answer: "One-fourth of a year, consisting of three months.",
+      "question": "What is a quarter?",
+      "answer": "One-fourth of a year, consisting of three months."
     },
     {
-      question: "Can I enter 0 or 13?",
-      answer: "No, months must be between 1 and 12.",
+      "question": "Can I enter 0 or 13?",
+      "answer": "No, months must be between 1 and 12."
     },
     {
-      question: "Why use Math.ceil?",
-      answer: "It rounds up to the nearest integer after dividing by three.",
+      "question": "Why use Math.ceil?",
+      "answer": "It rounds up to the nearest integer after dividing by three."
     },
     {
-      question: "Is this useful for fiscal planning?",
-      answer: "Yes, many businesses track performance by quarter.",
-    },
+      "question": "Is this useful for fiscal planning?",
+      "answer": "Yes, many businesses track performance by quarter."
+    }
   ],
-  disclaimer:
-    "For calendar reference only.",
-};
+  "disclaimer": "For calendar reference only.",
+  "cluster": "Date & Time",
+  "related": [
+    "minutes-to-seconds",
+    "weeks-to-days",
+    "age-in-days",
+    "seconds-to-days",
+    "days-to-seconds",
+    "age-in-months"
+  ]
+}
 
 <Calculator schema={schema} />

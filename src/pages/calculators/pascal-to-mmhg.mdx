@@ -1,43 +1,66 @@
 ---
 layout: ../../layouts/CalculatorLayout.astro
 title: "Pascal to mmHg Converter"
-description: "Convert pressure from pascals to millimeters of mercury."
-updated: "2025-09-15"
-cluster: "Conversions"
+description: "Convert pressure values from pascals to millimeters of mercury using the standard conversion factor 1 mmHg = 133.322 Pa."
+date: 2025-09-13
+updated: 2025-09-13
+cluster: "Conversions & Units"
 ---
-
 import Calculator from '../../components/Calculator.astro';
 
 export const schema = {
-  inputs: [
+  "slug": "pascal-to-mmhg",
+  "title": "Pascal to mmHg Converter",
+  "locale": "en",
+  "inputs": [
     {
-      name: "pascal",
-      label: "Pressure (Pa)",
-      type: "number",
-      min: 0,
-      step: "any",
-      placeholder: "101325"
+      "name": "pascal",
+      "label": "Pressure (Pa)",
+      "type": "number",
+      "min": 0,
+      "step": "any",
+      "placeholder": "101325"
     }
   ],
-  slug: "pascal-to-mmhg",
-  title: "Pascal to mmHg Converter",
-  locale: "en",
-  expression: "pascal / 133.322",
-  unit: "mmHg",
-  intro: "Convert pressure values from pascals to millimeters of mercury using the standard conversion factor 1 mmHg = 133.322 Pa.",
-  examples: [
-    { description: "1333.22 Pa \u21d2 10 mmHg" },
-    { description: "101325 Pa \u21d2 760 mmHg" }
+  "expression": "pascal / 133.322",
+  "intro": "Convert pressure values from pascals to millimeters of mercury using the standard conversion factor 1 mmHg = 133.322 Pa.",
+  "examples": [
+    {
+      "description": "1333.22 Pa ⇒ 10 mmHg"
+    },
+    {
+      "description": "101325 Pa ⇒ 760 mmHg"
+    }
   ],
-  faqs: [
-    { question: "Is this conversion exact?", answer: "It uses the standard conversion factor and is precise for most purposes." },
-    { question: "Can I convert negative pressures?", answer: "Negative values represent vacuum relative to atmospheric pressure and are allowed." },
-    { question: "What is mmHg?", answer: "Millimeters of mercury, a unit commonly used for blood pressure and barometric pressure." },
-    { question: "How do I convert back to pascals?", answer: "Multiply the mmHg value by 133.322." }
+  "info": [],
+  "faqs": [
+    {
+      "question": "Is this conversion exact?",
+      "answer": "It uses the standard conversion factor and is precise for most purposes."
+    },
+    {
+      "question": "Can I convert negative pressures?",
+      "answer": "Negative values represent vacuum relative to atmospheric pressure and are allowed."
+    },
+    {
+      "question": "What is mmHg?",
+      "answer": "Millimeters of mercury, a unit commonly used for blood pressure and barometric pressure."
+    },
+    {
+      "question": "How do I convert back to pascals?",
+      "answer": "Multiply the mmHg value by 133.322."
+    }
   ],
-  disclaimer: "Verify critical pressure conversions with official standards.",
-  cluster: "Conversions"
-};
+  "disclaimer": "Verify critical pressure conversions with official standards.",
+  "cluster": "Conversions & Units",
+  "related": [
+    "celsius-to-fahrenheit",
+    "cm-to-inches-calculator",
+    "f-to-c-calculator",
+    "pounds-to-kilograms",
+    "square-feet-to-square-meters",
+    "inches-to-cm"
+  ]
+}
 
 <Calculator schema={schema} />
-

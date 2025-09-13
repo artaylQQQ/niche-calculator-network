@@ -1,62 +1,72 @@
 ---
 layout: ../../layouts/CalculatorLayout.astro
 title: "Net Worth Calculator"
-description: "Determine personal net worth from assets and liabilities."
-updated: "2025-10-21"
+description: "Calculate your net worth by subtracting liabilities from assets."
+date: 2025-09-13
+updated: 2025-09-13
 cluster: "Personal Finance & Loans"
 ---
-
-import Calculator from "../../components/Calculator.astro";
+import Calculator from '../../components/Calculator.astro';
 
 export const schema = {
-  slug: "net-worth",
-  title: "Net Worth Calculator",
-  locale: "en",
-  unit: "USD",
-  expression: "total_assets - total_liabilities",
-  intro:
-    "Calculate your net worth by subtracting liabilities from assets. Enter your total asset value and total debts to see where you stand.",
-  cluster: "Personal Finance & Loans",
-  inputs: [
+  "slug": "net-worth",
+  "title": "Net Worth Calculator",
+  "locale": "en",
+  "inputs": [
     {
-      name: "total_assets",
-      label: "Total Assets",
-      type: "number",
-      step: "any",
-      required: true,
+      "name": "total_assets",
+      "label": "Total Assets",
+      "type": "number",
+      "step": "any",
+      "placeholder": "150000"
     },
     {
-      name: "total_liabilities",
-      label: "Total Liabilities",
-      type: "number",
-      step: "any",
-      required: true,
-    },
+      "name": "total_liabilities",
+      "label": "Total Liabilities",
+      "type": "number",
+      "step": "any",
+      "placeholder": "90000"
+    }
   ],
-  examples: [
-    { description: "Assets $150,000 and liabilities $90,000 ⇒ $60,000" },
-    { description: "Assets $100,000 and liabilities $120,000 ⇒ -$20,000" },
+  "expression": "total_assets - total_liabilities",
+  "intro": "Calculate your net worth by subtracting liabilities from assets.",
+  "examples": [
+    {
+      "description": "Assets $150,000 and liabilities $90,000 ⇒ $60,000"
+    },
+    {
+      "description": "Assets $100,000 and liabilities $120,000 ⇒ -$20,000"
+    }
   ],
-  faqs: [
+  "info": [],
+  "faqs": [
     {
-      question: "What counts as an asset?",
-      answer: "Cash, investments, property, and other valuables.",
+      "question": "What counts as an asset?",
+      "answer": "Cash, investments, property, and other valuables."
     },
     {
-      question: "Should I include my mortgage?",
-      answer: "Yes, include all outstanding debts as liabilities.",
+      "question": "Should I include my mortgage?",
+      "answer": "Yes, include all outstanding debts as liabilities."
     },
     {
-      question: "Can net worth be negative?",
-      answer: "Yes, when liabilities exceed assets.",
+      "question": "Can net worth be negative?",
+      "answer": "Yes, when liabilities exceed assets."
     },
     {
-      question: "How often should I update my net worth?",
-      answer: "Review it periodically, such as monthly or quarterly.",
-    },
+      "question": "How often should I update my net worth?",
+      "answer": "Review it periodically, such as monthly or quarterly."
+    }
   ],
-  disclaimer:
-    "Estimates only; consult a financial advisor for personalized advice.",
-};
+  "disclaimer": "Estimates only; consult a financial advisor for personalized advice.",
+  "cluster": "Personal Finance & Loans",
+  "related": [
+    "down-payment-amount",
+    "rent-to-income-ratio",
+    "biweekly-mortgage-payment",
+    "student-loan-monthly-interest",
+    "credit-card-minimum-payment",
+    "mortgage-affordability"
+  ]
+}
 
 <Calculator schema={schema} />

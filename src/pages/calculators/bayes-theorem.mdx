@@ -1,9 +1,9 @@
 ---
 layout: ../../layouts/CalculatorLayout.astro
 title: "Bayes' Theorem Calculator"
-description: "Compute posterior probability from prior, likelihood, and false positive rate."
-date: 2025-09-10
-updated: 2025-09-10
+description: "Apply Bayes' theorem to update a prior probability after observing new evidence."
+date: 2025-09-13
+updated: 2025-09-13
 cluster: "Math & Statistics"
 ---
 import Calculator from '../../components/Calculator.astro';
@@ -13,30 +13,70 @@ export const schema = {
   "title": "Bayes' Theorem Calculator",
   "locale": "en",
   "inputs": [
-    { "name": "prior", "label": "Prior Probability (%)", "type": "number", "step": "any", "placeholder": "1" },
-    { "name": "likelihood", "label": "Likelihood P(B|A) (%)", "type": "number", "step": "any", "placeholder": "90" },
-    { "name": "falsePos", "label": "False Positive P(B|¬A) (%)", "type": "number", "step": "any", "placeholder": "5" }
+    {
+      "name": "prior",
+      "label": "Prior Probability (%)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "1"
+    },
+    {
+      "name": "likelihood",
+      "label": "Likelihood P(B|A) (%)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "90"
+    },
+    {
+      "name": "falsePos",
+      "label": "False Positive P(B|¬A) (%)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "5"
+    }
   ],
   "expression": "((likelihood/100) * (prior/100)) / (((likelihood/100) * (prior/100)) + (falsePos/100) * (1 - prior/100)) * 100",
-  "unit": "%",
   "intro": "Apply Bayes' theorem to update a prior probability after observing new evidence.",
   "examples": [
-    { "description": "Prior 1%, likelihood 90%, false positive 5% ⇒ 15.38%" },
-    { "description": "Prior 20%, likelihood 80%, false positive 10% ⇒ 66.67%" }
+    {
+      "description": "Prior 1%, likelihood 90%, false positive 5% ⇒ 15.38%"
+    },
+    {
+      "description": "Prior 20%, likelihood 80%, false positive 10% ⇒ 66.67%"
+    }
   ],
-  "faqs": [
-    { "question": "What is a prior?", "answer": "The initial probability of an event before new evidence." },
-    { "question": "Why use percentages?", "answer": "Percentages are easier for many users; the formula converts them to decimals." },
-    { "question": "Can probabilities exceed 100%?", "answer": "No, inputs should be between 0 and 100%." },
-    { "question": "What does the result represent?", "answer": "The updated probability of the event after considering the evidence." }
-  ],
-  "disclaimer": "Assumes independent evidence and accurate input probabilities.",
-  "cluster": "Math & Statistics",
   "info": [
     "Named after Reverend Thomas Bayes.",
     "Useful for diagnostic testing and decision making under uncertainty."
   ],
-  "related": []
+  "faqs": [
+    {
+      "question": "What is a prior?",
+      "answer": "The initial probability of an event before new evidence."
+    },
+    {
+      "question": "Why use percentages?",
+      "answer": "Percentages are easier for many users; the formula converts them to decimals."
+    },
+    {
+      "question": "Can probabilities exceed 100%?",
+      "answer": "No, inputs should be between 0 and 100%."
+    },
+    {
+      "question": "What does the result represent?",
+      "answer": "The updated probability of the event after considering the evidence."
+    }
+  ],
+  "disclaimer": "Assumes independent evidence and accurate input probabilities.",
+  "cluster": "Math & Statistics",
+  "related": [
+    "percentage-discount",
+    "simple-interest",
+    "compound-interest-calculator",
+    "bmi-calculator",
+    "daily-calorie-burn",
+    "celsius-to-fahrenheit"
+  ]
 }
 
 <Calculator schema={schema} />

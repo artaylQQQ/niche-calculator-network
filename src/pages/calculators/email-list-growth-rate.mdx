@@ -1,69 +1,79 @@
 ---
 layout: ../../layouts/CalculatorLayout.astro
 title: "Email List Growth Rate Calculator"
-description: "Measure average monthly growth of your email subscriber list."
-updated: "2025-10-21"
+description: "Calculate the average monthly growth rate of your email list by comparing starting and ending subscribers over a period."
+date: 2025-09-13
+updated: 2025-09-13
 cluster: "Web & Marketing"
 ---
-
-import Calculator from "../../components/Calculator.astro";
+import Calculator from '../../components/Calculator.astro';
 
 export const schema = {
-  slug: "email-list-growth-rate",
-  title: "Email List Growth Rate Calculator",
-  locale: "en",
-  unit: "%",
-  expression: "(Math.pow(end_subs / start_subs, 1 / months) - 1) * 100",
-  intro:
-    "Calculate the average monthly growth rate of your email list by comparing starting and ending subscribers over a period.",
-  cluster: "Web & Marketing",
-  inputs: [
+  "slug": "email-list-growth-rate",
+  "title": "Email List Growth Rate Calculator",
+  "locale": "en",
+  "inputs": [
     {
-      name: "start_subs",
-      label: "Starting Subscribers",
-      type: "number",
-      step: 1,
-      required: true,
+      "name": "start_subs",
+      "label": "Starting Subscribers",
+      "type": "number",
+      "step": 1,
+      "placeholder": "1000"
     },
     {
-      name: "end_subs",
-      label: "Ending Subscribers",
-      type: "number",
-      step: 1,
-      required: true,
+      "name": "end_subs",
+      "label": "Ending Subscribers",
+      "type": "number",
+      "step": 1,
+      "placeholder": "1500"
     },
     {
-      name: "months",
-      label: "Months",
-      type: "number",
-      step: "any",
-      required: true,
-    },
+      "name": "months",
+      "label": "Months",
+      "type": "number",
+      "step": "any",
+      "placeholder": "6"
+    }
   ],
-  examples: [
-    { description: "Start 1000, end 1500 over 6 months ⇒ 6.99%" },
-    { description: "Start 2000, end 2600 over 12 months ⇒ 2.41%" },
+  "expression": "(Math.pow(end_subs / start_subs, 1 / months) - 1) * 100",
+  "intro": "Calculate the average monthly growth rate of your email list by comparing starting and ending subscribers over a period.",
+  "examples": [
+    {
+      "description": "Start 1000, end 1500 over 6 months ⇒ 6.99%"
+    },
+    {
+      "description": "Start 2000, end 2600 over 12 months ⇒ 2.41%"
+    }
   ],
-  faqs: [
+  "info": [],
+  "faqs": [
     {
-      question: "What if my list shrinks?",
-      answer: "The calculator will return a negative growth rate.",
+      "question": "What if my list shrinks?",
+      "answer": "The calculator will return a negative growth rate."
     },
     {
-      question: "Why use a geometric calculation?",
-      answer: "It reflects compounding growth over multiple periods.",
+      "question": "Why use a geometric calculation?",
+      "answer": "It reflects compounding growth over multiple periods."
     },
     {
-      question: "Can I use days instead of months?",
-      answer: "Yes, input the number of days and interpret the result per day.",
+      "question": "Can I use days instead of months?",
+      "answer": "Yes, input the number of days and interpret the result per day."
     },
     {
-      question: "Does this account for unsubscribes?",
-      answer: "Yes, use net subscriber counts after unsubscribes.",
-    },
+      "question": "Does this account for unsubscribes?",
+      "answer": "Yes, use net subscriber counts after unsubscribes."
+    }
   ],
-  disclaimer:
-    "For marketing analysis only; actual growth may vary.",
-};
+  "disclaimer": "For marketing analysis only; actual growth may vary.",
+  "cluster": "Web & Marketing",
+  "related": [
+    "conversion-rate",
+    "social-media-engagement-rate",
+    "subscriber-churn-rate",
+    "cost-per-lead",
+    "keyword-density",
+    "click-to-open-rate"
+  ]
+}
 
 <Calculator schema={schema} />

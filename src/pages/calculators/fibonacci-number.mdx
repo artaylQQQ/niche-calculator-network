@@ -1,43 +1,66 @@
 ---
 layout: ../../layouts/CalculatorLayout.astro
 title: "Fibonacci Number Calculator"
-description: "Compute the nth Fibonacci number."
-updated: "2025-09-15"
-cluster: "Math"
+description: "Find the Fibonacci number at any position using Binet's formula. Enter an integer n to get the corresponding Fibonacci value."
+date: 2025-09-13
+updated: 2025-09-13
+cluster: "Math & Statistics"
 ---
-
 import Calculator from '../../components/Calculator.astro';
 
 export const schema = {
-  inputs: [
+  "slug": "fibonacci-number",
+  "title": "Fibonacci Number Calculator",
+  "locale": "en",
+  "inputs": [
     {
-      name: "n",
-      label: "n (position)",
-      type: "number",
-      min: 0,
-      step: "1",
-      placeholder: "10"
+      "name": "n",
+      "label": "n (position)",
+      "type": "number",
+      "min": 0,
+      "step": "1",
+      "placeholder": "10"
     }
   ],
-  slug: "fibonacci-number",
-  title: "Fibonacci Number Calculator",
-  locale: "en",
-  expression: "round((( (1 + sqrt(5))/2 )^n - ( (1 - sqrt(5))/2 )^n ) / sqrt(5))",
-  unit: "value",
-  intro: "Find the Fibonacci number at any position using Binet's formula. Enter an integer n to get the corresponding Fibonacci value.",
-  examples: [
-    { description: "n = 7 \u21d2 13" },
-    { description: "n = 10 \u21d2 55" }
+  "expression": "round((( (1 + sqrt(5))/2 )^n - ( (1 - sqrt(5))/2 )^n ) / sqrt(5))",
+  "intro": "Find the Fibonacci number at any position using Binet's formula. Enter an integer n to get the corresponding Fibonacci value.",
+  "examples": [
+    {
+      "description": "n = 7 ⇒ 13"
+    },
+    {
+      "description": "n = 10 ⇒ 55"
+    }
   ],
-  faqs: [
-    { question: "Can I use negative numbers?", answer: "This calculator works for non-negative integers only." },
-    { question: "Why is the result rounded?", answer: "Binet's formula uses decimals, so rounding gives the exact integer." },
-    { question: "What is the first Fibonacci number?", answer: "By this calculator's convention, F(0) = 0 and F(1) = 1." },
-    { question: "Is there a faster way to compute?", answer: "This closed-form expression avoids iterative calculation." }
+  "info": [],
+  "faqs": [
+    {
+      "question": "Can I use negative numbers?",
+      "answer": "This calculator works for non-negative integers only."
+    },
+    {
+      "question": "Why is the result rounded?",
+      "answer": "Binet's formula uses decimals, so rounding gives the exact integer."
+    },
+    {
+      "question": "What is the first Fibonacci number?",
+      "answer": "By this calculator's convention, F(0) = 0 and F(1) = 1."
+    },
+    {
+      "question": "Is there a faster way to compute?",
+      "answer": "This closed-form expression avoids iterative calculation."
+    }
   ],
-  disclaimer: "For educational purposes only.",
-  cluster: "Math"
-};
+  "disclaimer": "For educational purposes only.",
+  "cluster": "Math & Statistics",
+  "related": [
+    "circle-area",
+    "cylinder-volume-calculator",
+    "grade-average",
+    "median-of-three",
+    "quadratic-vertex-x",
+    "rectangular-prism-volume"
+  ]
+}
 
 <Calculator schema={schema} />
-

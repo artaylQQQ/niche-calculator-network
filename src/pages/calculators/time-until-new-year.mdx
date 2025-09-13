@@ -1,9 +1,9 @@
 ---
 layout: ../../layouts/CalculatorLayout.astro
 title: "Time Until New Year Calculator"
-description: "Find the number of days from a date to the next New Year."
-date: 2025-09-10
-updated: 2025-09-10
+description: "Enter a date to see how many days remain until January 1 of the following year."
+date: 2025-09-13
+updated: 2025-09-13
 cluster: "Date & Time"
 ---
 import Calculator from '../../components/Calculator.astro';
@@ -13,30 +13,67 @@ export const schema = {
   "title": "Time Until New Year Calculator",
   "locale": "en",
   "inputs": [
-    { "name": "year", "label": "Current Year", "type": "number", "placeholder": "2024" },
-    { "name": "month", "label": "Month", "type": "number", "placeholder": "12" },
-    { "name": "day", "label": "Day", "type": "number", "placeholder": "1" }
+    {
+      "name": "year",
+      "label": "Current Year",
+      "type": "number",
+      "placeholder": "2024"
+    },
+    {
+      "name": "month",
+      "label": "Month",
+      "type": "number",
+      "placeholder": "12"
+    },
+    {
+      "name": "day",
+      "label": "Day",
+      "type": "number",
+      "placeholder": "1"
+    }
   ],
   "expression": "(function(y,m,d){const now=new Date(Date.UTC(y,m-1,d));const next=new Date(Date.UTC(y+1,0,1));return (next-now)/86400000;})(year,month,day)",
-  "unit": "days",
   "intro": "Enter a date to see how many days remain until January 1 of the following year.",
   "examples": [
-    { "description": "December 1, 2024 ⇒ 31 days" },
-    { "description": "July 1, 2024 ⇒ 184 days" }
+    {
+      "description": "December 1, 2024 ⇒ 31 days"
+    },
+    {
+      "description": "July 1, 2024 ⇒ 184 days"
+    }
   ],
-  "faqs": [
-    { "question": "Does it account for leap years?", "answer": "Yes, using actual calendar days between dates." },
-    { "question": "Can I enter past years?", "answer": "Yes, the calculator works for any valid Gregorian date." },
-    { "question": "What if it's New Year's Day?", "answer": "The result will be 365 or 366 days depending on the year." },
-    { "question": "Why use UTC?", "answer": "UTC avoids time-zone differences affecting day counts." }
-  ],
-  "disclaimer": "Assumes Gregorian calendar without historical adjustments.",
-  "cluster": "Date & Time",
   "info": [
     "There are 365 or 366 days in a year depending on leap years.",
     "Day counts ignore daylight saving time changes."
   ],
-  "related": []
+  "faqs": [
+    {
+      "question": "Does it account for leap years?",
+      "answer": "Yes, using actual calendar days between dates."
+    },
+    {
+      "question": "Can I enter past years?",
+      "answer": "Yes, the calculator works for any valid Gregorian date."
+    },
+    {
+      "question": "What if it's New Year's Day?",
+      "answer": "The result will be 365 or 366 days depending on the year."
+    },
+    {
+      "question": "Why use UTC?",
+      "answer": "UTC avoids time-zone differences affecting day counts."
+    }
+  ],
+  "disclaimer": "Assumes Gregorian calendar without historical adjustments.",
+  "cluster": "Date & Time",
+  "related": [
+    "minutes-to-seconds",
+    "weeks-to-days",
+    "age-in-days",
+    "seconds-to-days",
+    "days-to-seconds",
+    "age-in-months"
+  ]
 }
 
 <Calculator schema={schema} />

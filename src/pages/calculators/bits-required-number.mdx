@@ -1,57 +1,69 @@
 ---
 layout: ../../layouts/CalculatorLayout.astro
 title: "Bits Required for Number Calculator"
-description: "Find the minimum number of bits needed to represent an integer."
-date: 2025-09-10
-updated: 2025-09-10
+description: "Determine how many bits are needed to encode a non-negative integer in binary."
+date: 2025-09-13
+updated: 2025-09-13
 cluster: "Technology & Coding"
 ---
-
-import Calculator from "../../components/Calculator.astro";
+import Calculator from '../../components/Calculator.astro';
 
 export const schema = {
-  slug: "bits-required-number",
-  title: "Bits Required for Number Calculator",
-  locale: "en",
-  inputs: [
+  "slug": "bits-required-number",
+  "title": "Bits Required for Number Calculator",
+  "locale": "en",
+  "inputs": [
     {
-      name: "number",
-      label: "Integer",
-      type: "number",
-      step: "1",
-      min: "0",
-      placeholder: "15",
-    },
+      "name": "number",
+      "label": "Integer",
+      "type": "number",
+      "step": "1",
+      "min": "0",
+      "placeholder": "15"
+    }
   ],
-  unit: "bits",
-  intro:
-    "Determine how many bits are needed to encode a non-negative integer in binary.",
-  examples: [{ description: "15 ⇒ 4 bits" }, { description: "1023 ⇒ 10 bits" }],
-  faqs: [
+  "expression": "",
+  "intro": "Determine how many bits are needed to encode a non-negative integer in binary.",
+  "examples": [
     {
-      question: "Why add one before taking log2?",
-      answer: "It ensures exact bit count for powers of two.",
+      "description": "15 ⇒ 4 bits"
     },
     {
-      question: "What if the number is zero?",
-      answer: "Zero requires 1 bit (value 0).",
-    },
-    {
-      question: "Can it handle large numbers?",
-      answer: "Yes, as long as they fit in JavaScript's numeric range.",
-    },
-    {
-      question: "Is this for signed integers?",
-      answer: "No, it calculates bits for unsigned representation.",
-    },
+      "description": "1023 ⇒ 10 bits"
+    }
   ],
-  disclaimer: "Assumes ideal binary storage without overhead.",
-  cluster: "Technology & Coding",
-  info: [
+  "info": [
     "log2 computes the base-2 logarithm.",
-    "Binary digits (bits) are fundamental units of digital data.",
+    "Binary digits (bits) are fundamental units of digital data."
   ],
-  related: [],
-};
+  "faqs": [
+    {
+      "question": "Why add one before taking log2?",
+      "answer": "It ensures exact bit count for powers of two."
+    },
+    {
+      "question": "What if the number is zero?",
+      "answer": "Zero requires 1 bit (value 0)."
+    },
+    {
+      "question": "Can it handle large numbers?",
+      "answer": "Yes, as long as they fit in JavaScript's numeric range."
+    },
+    {
+      "question": "Is this for signed integers?",
+      "answer": "No, it calculates bits for unsigned representation."
+    }
+  ],
+  "disclaimer": "Assumes ideal binary storage without overhead.",
+  "cluster": "Technology & Coding",
+  "related": [
+    "battery-charge-time",
+    "ipv6-subnet-address-count",
+    "packet-loss-percentage",
+    "binary-search-steps",
+    "character-count",
+    "color-contrast-checker"
+  ]
+}
 
 <Calculator schema={schema} />

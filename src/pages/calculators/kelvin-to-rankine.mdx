@@ -1,55 +1,65 @@
 ---
 layout: ../../layouts/CalculatorLayout.astro
 title: "Kelvin to Rankine Converter"
-description: "Convert temperature from Kelvin to Rankine."
-updated: "2025-10-21"
+description: "Transform Kelvin temperature to the Rankine scale by multiplying by 1.8."
+date: 2025-09-13
+updated: 2025-09-13
 cluster: "Conversions & Units"
 ---
-
-import Calculator from "../../components/Calculator.astro";
+import Calculator from '../../components/Calculator.astro';
 
 export const schema = {
-  slug: "kelvin-to-rankine",
-  title: "Kelvin to Rankine Converter",
-  locale: "en",
-  unit: "°R",
-  expression: "kelvin * 1.8",
-  intro:
-    "Transform Kelvin temperature to the Rankine scale by multiplying by 1.8.",
-  cluster: "Conversions & Units",
-  inputs: [
+  "slug": "kelvin-to-rankine",
+  "title": "Kelvin to Rankine Converter",
+  "locale": "en",
+  "inputs": [
     {
-      name: "kelvin",
-      label: "Kelvin",
-      type: "number",
-      step: "any",
-      required: true,
-    },
+      "name": "kelvin",
+      "label": "Kelvin",
+      "type": "number",
+      "step": "any",
+      "placeholder": "273.15"
+    }
   ],
-  examples: [
-    { description: "273.15 K ⇒ 491.67 °R" },
-    { description: "400 K ⇒ 720 °R" },
+  "expression": "kelvin * 1.8",
+  "intro": "Transform Kelvin temperature to the Rankine scale by multiplying by 1.8.",
+  "examples": [
+    {
+      "description": "273.15 K ⇒ 491.67 °R"
+    },
+    {
+      "description": "400 K ⇒ 720 °R"
+    }
   ],
-  faqs: [
+  "info": [],
+  "faqs": [
     {
-      question: "What is the Rankine scale?",
-      answer: "A temperature scale used in engineering, similar to Kelvin but in Fahrenheit degrees.",
+      "question": "What is the Rankine scale?",
+      "answer": "A temperature scale used in engineering, similar to Kelvin but in Fahrenheit degrees."
     },
     {
-      question: "Can Kelvin be negative?",
-      answer: "No, Kelvin starts at absolute zero.",
+      "question": "Can Kelvin be negative?",
+      "answer": "No, Kelvin starts at absolute zero."
     },
     {
-      question: "How do I convert Rankine back to Kelvin?",
-      answer: "Divide Rankine by 1.8.",
+      "question": "How do I convert Rankine back to Kelvin?",
+      "answer": "Divide Rankine by 1.8."
     },
     {
-      question: "Is Rankine commonly used?",
-      answer: "It's mainly used in certain engineering fields in the United States.",
-    },
+      "question": "Is Rankine commonly used?",
+      "answer": "It's mainly used in certain engineering fields in the United States."
+    }
   ],
-  disclaimer:
-    "Verify critical temperature conversions with official sources.",
-};
+  "disclaimer": "Verify critical temperature conversions with official sources.",
+  "cluster": "Conversions & Units",
+  "related": [
+    "percentage-discount",
+    "simple-interest",
+    "compound-interest-calculator",
+    "bmi-calculator",
+    "daily-calorie-burn",
+    "celsius-to-fahrenheit"
+  ]
+}
 
 <Calculator schema={schema} />

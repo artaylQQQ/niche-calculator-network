@@ -1555,16 +1555,212 @@
     "slug": "cost-per-click",
     "date": "2025-09-12"
   },
-  { "slug": "debt-service-coverage-ratio", "date": "2025-09-12" },
-  { "slug": "rent-vs-buy", "date": "2025-09-12" },
-  { "slug": "macronutrient-distribution", "date": "2025-09-12" },
-  { "slug": "chi-square-goodness-of-fit", "date": "2025-09-12" },
-  { "slug": "cups-to-grams-flour", "date": "2025-09-12" },
-  { "slug": "time-zone-meeting-planner", "date": "2025-09-12" },
-  { "slug": "flesch-kincaid-readability", "date": "2025-09-12" },
-  { "slug": "doppler-effect", "date": "2025-09-12" },
-  { "slug": "color-contrast-checker", "date": "2025-09-12" },
-  { "slug": "solar-panel-savings", "date": "2025-09-12" },
-  { "slug": "distance-to-horizon", "date": "2025-09-12" },
-  { "slug": "ab-test-sample-size", "date": "2025-09-12" }
+  {
+    "slug": "debt-service-coverage-ratio",
+    "date": "2025-09-12"
+  },
+  {
+    "slug": "rent-vs-buy",
+    "date": "2025-09-12"
+  },
+  {
+    "slug": "macronutrient-distribution",
+    "date": "2025-09-12"
+  },
+  {
+    "slug": "chi-square-goodness-of-fit",
+    "date": "2025-09-12"
+  },
+  {
+    "slug": "cups-to-grams-flour",
+    "date": "2025-09-12"
+  },
+  {
+    "slug": "time-zone-meeting-planner",
+    "date": "2025-09-12"
+  },
+  {
+    "slug": "flesch-kincaid-readability",
+    "date": "2025-09-12"
+  },
+  {
+    "slug": "doppler-effect",
+    "date": "2025-09-12"
+  },
+  {
+    "slug": "color-contrast-checker",
+    "date": "2025-09-12"
+  },
+  {
+    "slug": "solar-panel-savings",
+    "date": "2025-09-12"
+  },
+  {
+    "slug": "distance-to-horizon",
+    "date": "2025-09-12"
+  },
+  {
+    "slug": "ab-test-sample-size",
+    "date": "2025-09-12"
+  },
+  {
+    "slug": "return-on-ad-spend",
+    "date": "2025-09-13"
+  },
+  {
+    "slug": "accounts-receivable-turnover",
+    "date": "2025-09-13"
+  },
+  {
+    "slug": "net-worth",
+    "date": "2025-09-13"
+  },
+  {
+    "slug": "blood-volume-estimate",
+    "date": "2025-09-13"
+  },
+  {
+    "slug": "z-score",
+    "date": "2025-09-13"
+  },
+  {
+    "slug": "kelvin-to-rankine",
+    "date": "2025-09-13"
+  },
+  {
+    "slug": "quarter-of-year",
+    "date": "2025-09-13"
+  },
+  {
+    "slug": "flashcard-retention-rate",
+    "date": "2025-09-13"
+  },
+  {
+    "slug": "led-series-resistor",
+    "date": "2025-09-13"
+  },
+  {
+    "slug": "packet-loss-percentage",
+    "date": "2025-09-13"
+  },
+  {
+    "slug": "drywall-weight",
+    "date": "2025-09-13"
+  },
+  {
+    "slug": "sunscreen-protection-time",
+    "date": "2025-09-13"
+  },
+  {
+    "slug": "email-list-growth-rate",
+    "date": "2025-09-13"
+  },
+  {
+    "slug": "revenue-per-employee",
+    "date": "2025-09-13"
+  },
+  {
+    "slug": "rent-to-income-ratio",
+    "date": "2025-09-13"
+  },
+  {
+    "slug": "race-time",
+    "date": "2025-09-13"
+  },
+  {
+    "slug": "fibonacci-number",
+    "date": "2025-09-13"
+  },
+  {
+    "slug": "pascal-to-mmhg",
+    "date": "2025-09-13"
+  },
+  {
+    "slug": "weeks-between-dates",
+    "date": "2025-09-13"
+  },
+  {
+    "slug": "flashcard-interval",
+    "date": "2025-09-13"
+  },
+  {
+    "slug": "force-from-mass-acceleration",
+    "date": "2025-09-13"
+  },
+  {
+    "slug": "image-file-size",
+    "date": "2025-09-13"
+  },
+  {
+    "slug": "roof-area",
+    "date": "2025-09-13"
+  },
+  {
+    "slug": "hotel-point-value",
+    "date": "2025-09-13"
+  },
+  {
+    "slug": "social-media-engagement-rate",
+    "date": "2025-09-13"
+  },
+  {
+    "slug": "employee-cost-per-hour",
+    "date": "2025-09-13"
+  },
+  {
+    "slug": "biweekly-mortgage-payment",
+    "date": "2025-09-13"
+  },
+  {
+    "slug": "target-heart-rate-karvonen",
+    "date": "2025-09-13"
+  },
+  {
+    "slug": "bayes-theorem",
+    "date": "2025-09-13"
+  },
+  {
+    "slug": "lux-to-lumens",
+    "date": "2025-09-13"
+  },
+  {
+    "slug": "time-until-new-year",
+    "date": "2025-09-13"
+  },
+  {
+    "slug": "wpm-to-cpm",
+    "date": "2025-09-13"
+  },
+  {
+    "slug": "specific-heat-energy",
+    "date": "2025-09-13"
+  },
+  {
+    "slug": "bits-required-number",
+    "date": "2025-09-13"
+  },
+  {
+    "slug": "ceiling-paint-needed",
+    "date": "2025-09-13"
+  },
+  {
+    "slug": "hiking-time-estimator",
+    "date": "2025-09-13"
+  },
+  {
+    "slug": "subscriber-churn-rate",
+    "date": "2025-09-13"
+  },
+  {
+    "slug": "water-hardness-converter",
+    "date": "2025-09-13"
+  },
+  {
+    "slug": "savings-withdrawal-duration",
+    "date": "2025-09-13"
+  },
+  {
+    "slug": "medication-supply-duration",
+    "date": "2025-09-13"
+  }
 ]

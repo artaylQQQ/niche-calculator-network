@@ -1,41 +1,79 @@
 ---
 layout: ../../layouts/CalculatorLayout.astro
 title: "Savings Withdrawal Duration"
-description: "How many months your savings will last with a fixed monthly withdrawal."
-updated: "2025-03-30"
-cluster: "Finance"
+description: "Calculate how many months your savings can sustain fixed monthly withdrawals. Enter the total amount saved and the monthly withdrawal to estimate the duration of your funds."
+date: 2025-09-13
+updated: 2025-09-13
+cluster: "Finance & Business"
 ---
-
-import Calculator from "../../components/Calculator.astro";
+import Calculator from '../../components/Calculator.astro';
 
 export const schema = {
-  slug: "savings-withdrawal-duration",
-  title: "Savings Withdrawal Duration",
-  locale: "en",
-  intro: "Calculate how many months your savings can sustain fixed monthly withdrawals. Enter the total amount saved and the monthly withdrawal to estimate the duration of your funds.",
-  unit: "months",
-  cluster: "Finance",
-  inputs: [
-    { name: "savings", label: "Total savings (USD)", type: "number", step: "any", placeholder: "100000" },
-    { name: "monthly", label: "Monthly withdrawal (USD)", type: "number", step: "any", placeholder: "2000" }
+  "slug": "savings-withdrawal-duration",
+  "title": "Savings Withdrawal Duration",
+  "locale": "en",
+  "inputs": [
+    {
+      "name": "savings",
+      "label": "Total savings (USD)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "100000"
+    },
+    {
+      "name": "monthly",
+      "label": "Monthly withdrawal (USD)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "2000"
+    }
   ],
-  expression: "savings / monthly",
-  examples: [
-    { description: "$100000 at $2000/mo ⇒ 50 months" },
-    { description: "$50000 at $1500/mo ⇒ 33.33 months" }
+  "expression": "savings / monthly",
+  "intro": "Calculate how many months your savings can sustain fixed monthly withdrawals. Enter the total amount saved and the monthly withdrawal to estimate the duration of your funds.",
+  "examples": [
+    {
+      "description": "$100000 at $2000/mo ⇒ 50 months"
+    },
+    {
+      "description": "$50000 at $1500/mo ⇒ 33.33 months"
+    }
   ],
-  faqs: [
-    { question: "Does this include interest?", answer: "No, it assumes savings do not earn additional interest." },
-    { question: "Can I enter decimals?", answer: "Yes, decimals are supported." },
-    { question: "What if my withdrawal changes?", answer: "Use your average monthly withdrawal for a rough estimate." },
-    { question: "Is tax considered?", answer: "No, taxes or penalties on withdrawals are not included." },
-    { question: "Can I project years?", answer: "Divide the result by 12 to convert months to years." }
-  ],
-  disclaimer: "Financial information only, not investment advice.",
-  info: [
+  "info": [
     "Result is the number of months the savings will last.",
     "Assumes withdrawals happen at the start of each month."
   ],
-};
+  "faqs": [
+    {
+      "question": "Does this include interest?",
+      "answer": "No, it assumes savings do not earn additional interest."
+    },
+    {
+      "question": "Can I enter decimals?",
+      "answer": "Yes, decimals are supported."
+    },
+    {
+      "question": "What if my withdrawal changes?",
+      "answer": "Use your average monthly withdrawal for a rough estimate."
+    },
+    {
+      "question": "Is tax considered?",
+      "answer": "No, taxes or penalties on withdrawals are not included."
+    },
+    {
+      "question": "Can I project years?",
+      "answer": "Divide the result by 12 to convert months to years."
+    }
+  ],
+  "disclaimer": "Financial information only, not investment advice.",
+  "cluster": "Finance & Business",
+  "related": [
+    "percentage-discount",
+    "simple-interest",
+    "compound-interest-calculator",
+    "tip-calculator",
+    "fuel-trip-cost",
+    "crypto-mining-breakeven"
+  ]
+}
 
 <Calculator schema={schema} />

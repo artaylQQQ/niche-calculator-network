@@ -1,9 +1,9 @@
 ---
 layout: ../../layouts/CalculatorLayout.astro
 title: "Target Heart Rate (Karvonen) Calculator"
-description: "Estimate training heart rate using the Karvonen formula."
-date: 2025-09-10
-updated: 2025-09-10
+description: "Use the Karvonen method to find your target heart rate for exercise based on age, resting heart rate, and desired intensity."
+date: 2025-09-13
+updated: 2025-09-13
 cluster: "Health & Fitness"
 ---
 import Calculator from '../../components/Calculator.astro';
@@ -13,30 +13,70 @@ export const schema = {
   "title": "Target Heart Rate (Karvonen) Calculator",
   "locale": "en",
   "inputs": [
-    { "name": "age", "label": "Age", "type": "number", "step": "any", "placeholder": "30" },
-    { "name": "rest", "label": "Resting Heart Rate", "type": "number", "step": "any", "placeholder": "60" },
-    { "name": "intensity", "label": "Intensity (%)", "type": "number", "step": "any", "placeholder": "70" }
+    {
+      "name": "age",
+      "label": "Age",
+      "type": "number",
+      "step": "any",
+      "placeholder": "30"
+    },
+    {
+      "name": "rest",
+      "label": "Resting Heart Rate",
+      "type": "number",
+      "step": "any",
+      "placeholder": "60"
+    },
+    {
+      "name": "intensity",
+      "label": "Intensity (%)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "70"
+    }
   ],
   "expression": "(220 - age - rest) * (intensity/100) + rest",
-  "unit": "bpm",
   "intro": "Use the Karvonen method to find your target heart rate for exercise based on age, resting heart rate, and desired intensity.",
   "examples": [
-    { "description": "Age 30, resting 60 bpm at 70% ⇒ 151 bpm" },
-    { "description": "Age 45, resting 55 bpm at 60% ⇒ 127 bpm" }
+    {
+      "description": "Age 30, resting 60 bpm at 70% ⇒ 151 bpm"
+    },
+    {
+      "description": "Age 45, resting 55 bpm at 60% ⇒ 127 bpm"
+    }
   ],
-  "faqs": [
-    { "question": "What is the Karvonen formula?", "answer": "It adjusts training heart rate using heart rate reserve." },
-    { "question": "Why include resting heart rate?", "answer": "Resting heart rate personalizes the calculation to your fitness level." },
-    { "question": "What intensity should I use?", "answer": "Use 50–85% depending on workout goals and fitness." },
-    { "question": "Is this accurate for everyone?", "answer": "It provides an estimate; consult a healthcare professional if unsure." }
-  ],
-  "disclaimer": "Not medical advice; seek professional guidance for training plans.",
-  "cluster": "Health & Fitness",
   "info": [
     "Heart rate reserve equals maximum heart rate minus resting heart rate.",
     "Intensity percentage reflects desired workout effort."
   ],
-  "related": []
+  "faqs": [
+    {
+      "question": "What is the Karvonen formula?",
+      "answer": "It adjusts training heart rate using heart rate reserve."
+    },
+    {
+      "question": "Why include resting heart rate?",
+      "answer": "Resting heart rate personalizes the calculation to your fitness level."
+    },
+    {
+      "question": "What intensity should I use?",
+      "answer": "Use 50–85% depending on workout goals and fitness."
+    },
+    {
+      "question": "Is this accurate for everyone?",
+      "answer": "It provides an estimate; consult a healthcare professional if unsure."
+    }
+  ],
+  "disclaimer": "Not medical advice; seek professional guidance for training plans.",
+  "cluster": "Health & Fitness",
+  "related": [
+    "labor-hydration-rate",
+    "vo2-max-estimate",
+    "blood-volume-estimate",
+    "target-body-weight",
+    "walking-calorie-burn",
+    "macronutrient-distribution"
+  ]
 }
 
 <Calculator schema={schema} />

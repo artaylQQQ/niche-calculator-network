@@ -1,54 +1,77 @@
 ---
 layout: ../../layouts/CalculatorLayout.astro
 title: "Hotel Point Value Calculator"
-description: "Find the dollar value of hotel loyalty points."
-updated: "2025-09-15"
+description: "Evaluate how much each hotel loyalty point is worth by dividing the cash price of a stay by the number of points required."
+date: 2025-09-13
+updated: 2025-09-13
 cluster: "Lifestyle & Travel"
 ---
-
 import Calculator from '../../components/Calculator.astro';
 
 export const schema = {
-  inputs: [
+  "slug": "hotel-point-value",
+  "title": "Hotel Point Value Calculator",
+  "locale": "en",
+  "inputs": [
     {
-      name: "points",
-      label: "Points Used",
-      type: "number",
-      min: 0,
-      step: "any",
-      placeholder: "50000"
+      "name": "points",
+      "label": "Points Used",
+      "type": "number",
+      "min": 0,
+      "step": "any",
+      "placeholder": "50000"
     },
     {
-      name: "cash",
-      label: "Cash Price (USD)",
-      type: "number",
-      min: 0,
-      step: "any",
-      placeholder: "700"
+      "name": "cash",
+      "label": "Cash Price (USD)",
+      "type": "number",
+      "min": 0,
+      "step": "any",
+      "placeholder": "700"
     }
   ],
-  slug: "hotel-point-value",
-  title: "Hotel Point Value Calculator",
-  locale: "en",
-  expression: "cash / points",
-  unit: "USD/point",
-  intro: "Evaluate how much each hotel loyalty point is worth by dividing the cash price of a stay by the number of points required.",
-  examples: [
-    { description: "50,000 points for $700 stay ⇒ $0.014 per point" },
-    { description: "40,000 points for $500 stay ⇒ $0.0125 per point" }
+  "expression": "cash / points",
+  "intro": "Evaluate how much each hotel loyalty point is worth by dividing the cash price of a stay by the number of points required.",
+  "examples": [
+    {
+      "description": "50,000 points for $700 stay ⇒ $0.014 per point"
+    },
+    {
+      "description": "40,000 points for $500 stay ⇒ $0.0125 per point"
+    }
   ],
-  faqs: [
-    { question: "Are taxes included?", answer: "Include all costs you would pay in cash for a fair comparison." },
-    { question: "What if the stay is partially paid with points?", answer: "Use only the points and cash equivalent for the points portion." },
-    { question: "Is a higher value better?", answer: "Yes, a higher dollar-per-point value means better redemption." },
-    { question: "Do point values vary by program?", answer: "Yes, each hotel loyalty program values points differently." }
-  ],
-  disclaimer: "Estimates only; check your loyalty program for exact values.",
-  info: [
+  "info": [
     "Dollar value is cash price divided by points used.",
     "Point valuations vary by hotel chain and season."
   ],
-  cluster: "Lifestyle & Travel",
-};
+  "faqs": [
+    {
+      "question": "Are taxes included?",
+      "answer": "Include all costs you would pay in cash for a fair comparison."
+    },
+    {
+      "question": "What if the stay is partially paid with points?",
+      "answer": "Use only the points and cash equivalent for the points portion."
+    },
+    {
+      "question": "Is a higher value better?",
+      "answer": "Yes, a higher dollar-per-point value means better redemption."
+    },
+    {
+      "question": "Do point values vary by program?",
+      "answer": "Yes, each hotel loyalty program values points differently."
+    }
+  ],
+  "disclaimer": "Estimates only; check your loyalty program for exact values.",
+  "cluster": "Lifestyle & Travel",
+  "related": [
+    "paper-roll-length",
+    "coffee-water-ratio",
+    "road-trip-fuel-stops",
+    "sunscreen-protection-time",
+    "hiking-time-estimator",
+    "backpack-weight-ratio"
+  ]
+}
 
 <Calculator schema={schema} />
