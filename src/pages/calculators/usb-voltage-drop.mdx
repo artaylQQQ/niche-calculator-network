@@ -1,0 +1,73 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "USB Voltage Drop Calculator"
+description: "Calculate the expected voltage drop along a USB cable given its length, current draw, and wire gauge."
+date: 2025-09-13
+updated: 2025-09-13
+cluster: "Technology & Coding"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "usb-voltage-drop",
+  "title": "USB Voltage Drop Calculator",
+  "cluster": "Technology & Coding",
+  "description": "Estimate voltage drop across a USB cable.",
+  "intro": "Calculate the expected voltage drop along a USB cable given its length, current draw, and wire gauge.",
+  "inputs": [
+    {
+      "name": "current",
+      "label": "Current (A)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "2"
+    },
+    {
+      "name": "length",
+      "label": "Cable Length (m)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "1"
+    },
+    {
+      "name": "awg",
+      "label": "Wire Gauge (AWG)",
+      "type": "number",
+      "placeholder": "28"
+    }
+  ],
+  "expression": "(() => { const r = awg==28?0.214:awg==24?0.0842:0.1339; return current * r * length * 2; })()",
+  "unit": "V",
+  "examples": [
+    {
+      "description": "2 A, 1 m, AWG 28 \u21d2 0.86 V"
+    },
+    {
+      "description": "1 A, 2 m, AWG 24 \u21d2 0.34 V"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Why multiply by two for length?",
+      "answer": "Current travels to the device and back, doubling the resistance."
+    },
+    {
+      "question": "What if my gauge is different?",
+      "answer": "Use the closest AWG value; results are approximate."
+    },
+    {
+      "question": "Can voltage drop cause charging issues?",
+      "answer": "Yes, excessive drop can prevent devices from receiving sufficient power."
+    }
+  ],
+  "disclaimer": "Approximate calculation; check manufacturer specs for exact values.",
+  "info": [
+    "Based on ohmic resistance per conductor.",
+    "USB standards recommend keeping drop below 0.25 V for reliable operation."
+  ],
+  "locale": "en",
+  "related": []
+}
+
+<Calculator schema={schema} />

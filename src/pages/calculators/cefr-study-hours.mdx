@@ -1,0 +1,65 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "CEFR Study Hours Estimator"
+description: "Estimate additional study hours required to progress from your current CEFR language level to a target level. Use 0 for no level, 1 for A1 up to 6 for C2."
+date: 2025-09-13
+updated: 2025-09-13
+cluster: "Education & Learning"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "cefr-study-hours",
+  "title": "CEFR Study Hours Estimator",
+  "cluster": "Education & Learning",
+  "description": "Estimate hours needed to reach a target CEFR level.",
+  "intro": "Estimate additional study hours required to progress from your current CEFR language level to a target level. Use 0 for no level, 1 for A1 up to 6 for C2.",
+  "inputs": [
+    {
+      "name": "current",
+      "label": "Current Level (0-6)",
+      "type": "number",
+      "placeholder": "2"
+    },
+    {
+      "name": "target",
+      "label": "Target Level (1-6)",
+      "type": "number",
+      "placeholder": "4"
+    }
+  ],
+  "expression": "(() => { const h=[0,100,200,350,500,700,1000]; return Math.max(0, h[target]-h[current]); })()",
+  "unit": "hours",
+  "examples": [
+    {
+      "description": "Current A2 (2) to B2 (4) \u21d2 300 hours"
+    },
+    {
+      "description": "Current B1 (3) to C1 (5) \u21d2 350 hours"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "What do the numeric levels mean?",
+      "answer": "Use 1 for A1 up to 6 for C2; 0 indicates no prior study."
+    },
+    {
+      "question": "Are these hours exact?",
+      "answer": "No, they are estimates based on common teaching guidelines."
+    },
+    {
+      "question": "Does the calculator account for language difficulty?",
+      "answer": "No, it uses general averages regardless of language."
+    }
+  ],
+  "disclaimer": "For study planning only; adjust based on personal progress.",
+  "info": [
+    "Estimates derived from CEFR self-study hour ranges.",
+    "Actual time needed varies with prior knowledge and exposure."
+  ],
+  "locale": "en",
+  "related": []
+}
+
+<Calculator schema={schema} />

@@ -1,0 +1,60 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Decibel to Power Percentage Calculator"
+description: "This tool converts a decibel (dB) value into a corresponding power percentage relative to the reference level. Enter a dB value to see the equivalent percent of power."
+date: 2025-09-13
+updated: 2025-09-13
+cluster: "Conversions & Units"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "decibel-to-power-percentage",
+  "title": "Decibel to Power Percentage Calculator",
+  "cluster": "Conversions & Units",
+  "description": "Convert decibel values to linear power percentages.",
+  "intro": "This tool converts a decibel (dB) value into a corresponding power percentage relative to the reference level. Enter a dB value to see the equivalent percent of power.",
+  "inputs": [
+    {
+      "name": "db",
+      "label": "Decibels (dB)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "3"
+    }
+  ],
+  "expression": "Math.pow(10, db/10) * 100",
+  "unit": "%",
+  "examples": [
+    {
+      "description": "3 dB \u21d2 199.53 %"
+    },
+    {
+      "description": "-10 dB \u21d2 10 %"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "What does a negative dB value mean?",
+      "answer": "It indicates power lower than the reference level."
+    },
+    {
+      "question": "Is 0 dB equal to 100%?",
+      "answer": "Yes, 0 dB corresponds to the reference power."
+    },
+    {
+      "question": "Can this calculator handle fractional dB values?",
+      "answer": "Yes, decimals are supported for precise conversions."
+    }
+  ],
+  "disclaimer": "Verify critical audio or RF measurements with calibrated equipment.",
+  "info": [
+    "Uses formula 10^(dB/10)*100 to convert decibels to power percentage.",
+    "Common in audio engineering and signal processing."
+  ],
+  "locale": "en",
+  "related": []
+}
+
+<Calculator schema={schema} />

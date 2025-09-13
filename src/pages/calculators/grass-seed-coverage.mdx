@@ -1,0 +1,67 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Grass Seed Coverage Calculator"
+description: "Determine the amount of grass seed required by dividing lawn area by the coverage rate provided on the seed bag."
+date: 2025-09-13
+updated: 2025-09-13
+cluster: "Home & DIY"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "grass-seed-coverage",
+  "title": "Grass Seed Coverage Calculator",
+  "cluster": "Home & DIY",
+  "description": "Estimate how much grass seed you need for a given area.",
+  "intro": "Determine the amount of grass seed required by dividing lawn area by the coverage rate provided on the seed bag.",
+  "inputs": [
+    {
+      "name": "area",
+      "label": "Lawn Area (m\u00b2)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "100"
+    },
+    {
+      "name": "coverage",
+      "label": "Coverage per kg (m\u00b2/kg)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "35"
+    }
+  ],
+  "expression": "area / coverage",
+  "unit": "kg",
+  "examples": [
+    {
+      "description": "100 m\u00b2 area, 35 m\u00b2/kg coverage \u21d2 2.86 kg"
+    },
+    {
+      "description": "50 m\u00b2 area, 25 m\u00b2/kg coverage \u21d2 2 kg"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "What if my area is irregular?",
+      "answer": "Measure as accurately as possible or break it into smaller sections."
+    },
+    {
+      "question": "Does seed type affect coverage?",
+      "answer": "Yes, different seeds have different recommended rates."
+    },
+    {
+      "question": "Should I buy extra seed?",
+      "answer": "It's wise to buy slightly more to account for losses."
+    }
+  ],
+  "disclaimer": "Estimates only; consult product guidelines for precise coverage.",
+  "info": [
+    "Most seed bags list coverage in m\u00b2 per kg.",
+    "Include extra for overseeding or patch repairs."
+  ],
+  "locale": "en",
+  "related": []
+}
+
+<Calculator schema={schema} />

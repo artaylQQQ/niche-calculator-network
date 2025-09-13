@@ -1,0 +1,71 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "BNPL APR Calculator"
+description: "Estimate the annual percentage rate of a BNPL plan by comparing total fees to the purchase amount and repayment term."
+date: 2025-09-13
+updated: 2025-09-13
+cluster: "Personal Finance & Loans"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "bnpl-apr",
+  "title": "BNPL APR Calculator",
+  "cluster": "Personal Finance & Loans",
+  "description": "Convert buy now, pay later plans to an equivalent APR.",
+  "intro": "Estimate the annual percentage rate of a BNPL plan by comparing total fees to the purchase amount and repayment term.",
+  "inputs": [
+    {
+      "name": "amount",
+      "label": "Purchase Amount ($)",
+      "type": "number",
+      "placeholder": "600"
+    },
+    {
+      "name": "fees",
+      "label": "Total Fees ($)",
+      "type": "number",
+      "placeholder": "30"
+    },
+    {
+      "name": "months",
+      "label": "Months",
+      "type": "number",
+      "placeholder": "6"
+    }
+  ],
+  "expression": "((fees / amount) / months) * 12 * 100",
+  "unit": "%",
+  "examples": [
+    {
+      "description": "$600 purchase, $30 fees, 6 months \u21d2 10 %"
+    },
+    {
+      "description": "$1,200 purchase, $0 fees, 4 months \u21d2 0 %"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Does this include late fees?",
+      "answer": "No, only the specified fees are included."
+    },
+    {
+      "question": "Why convert BNPL to APR?",
+      "answer": "It helps compare BNPL plans with traditional credit options."
+    },
+    {
+      "question": "What if there are no fees?",
+      "answer": "The APR will be 0%, indicating a zero-cost plan."
+    }
+  ],
+  "disclaimer": "Approximate APR; lender calculations may differ.",
+  "info": [
+    "Assumes equal payments and no interest beyond fees.",
+    "APR helps compare financing options on a yearly basis."
+  ],
+  "locale": "en",
+  "related": []
+}
+
+<Calculator schema={schema} />

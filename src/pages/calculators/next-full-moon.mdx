@@ -1,0 +1,71 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Next Full Moon Calculator"
+description: "This calculator approximates the number of days until the next full moon. Enter a date to get an estimate based on the average lunar cycle."
+date: 2025-09-13
+updated: 2025-09-13
+cluster: "Date & Time"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "next-full-moon",
+  "title": "Next Full Moon Calculator",
+  "cluster": "Date & Time",
+  "description": "Estimate days until the next full moon from a given date.",
+  "intro": "This calculator approximates the number of days until the next full moon. Enter a date to get an estimate based on the average lunar cycle.",
+  "inputs": [
+    {
+      "name": "year",
+      "label": "Year",
+      "type": "number",
+      "placeholder": "2024"
+    },
+    {
+      "name": "month",
+      "label": "Month",
+      "type": "number",
+      "placeholder": "5"
+    },
+    {
+      "name": "day",
+      "label": "Day",
+      "type": "number",
+      "placeholder": "1"
+    }
+  ],
+  "expression": "(() => { const d=Date.UTC(year,month-1,day)/86400000; const known=Date.UTC(2024,0,25)/86400000; const cycle=29.530588853; return Math.ceil((cycle - ((d - known) % cycle)) % cycle); })()",
+  "unit": "days",
+  "examples": [
+    {
+      "description": "2024-05-01 \u21d2 21 days"
+    },
+    {
+      "description": "2024-09-10 \u21d2 7 days"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "How accurate is this calculator?",
+      "answer": "It uses an average lunar cycle of 29.53 days, so results are approximate."
+    },
+    {
+      "question": "What time zone is used?",
+      "answer": "Dates are handled in UTC for simplicity."
+    },
+    {
+      "question": "Can I enter past dates?",
+      "answer": "Yes, it finds the next full moon after the given date."
+    }
+  ],
+  "disclaimer": "Approximate astronomical calculation; consult official lunar tables for precise times.",
+  "info": [
+    "The synodic month averages 29.530588853 days.",
+    "Full moon dates shift slightly due to orbital variations."
+  ],
+  "locale": "en",
+  "related": []
+}
+
+<Calculator schema={schema} />

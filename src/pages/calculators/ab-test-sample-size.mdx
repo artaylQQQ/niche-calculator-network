@@ -1,0 +1,67 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "A/B Test Sample Size Calculator"
+description: "Determine the sample size needed for an A/B test using baseline conversion rate and minimum detectable effect. Assumes 95% confidence and 80% power."
+date: 2025-09-13
+updated: 2025-09-13
+cluster: "Web & Marketing"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "ab-test-sample-size",
+  "title": "A/B Test Sample Size Calculator",
+  "cluster": "Web & Marketing",
+  "description": "Estimate required visitors per variant for an A/B test.",
+  "intro": "Determine the sample size needed for an A/B test using baseline conversion rate and minimum detectable effect. Assumes 95% confidence and 80% power.",
+  "inputs": [
+    {
+      "name": "base",
+      "label": "Baseline Rate (%)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "5"
+    },
+    {
+      "name": "mde",
+      "label": "MDE (%)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "1"
+    }
+  ],
+  "expression": "(() => { const b=base/100; const m=(base+mde)/100; const p=(b+m)/2; return Math.ceil(((1.96*Math.sqrt(2*p*(1-p)) + 0.84*Math.sqrt(b*(1-b)+m*(1-m)))**2)/((m-b)**2)); })()",
+  "unit": "visitors",
+  "examples": [
+    {
+      "description": "Baseline 5%, MDE 1% \u21d2 8,149 visitors"
+    },
+    {
+      "description": "Baseline 10%, MDE 3% \u21d2 1,772 visitors"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "What confidence level does this use?",
+      "answer": "It assumes a 95% confidence level."
+    },
+    {
+      "question": "What statistical power is assumed?",
+      "answer": "The calculation uses 80% power."
+    },
+    {
+      "question": "Can I change confidence or power?",
+      "answer": "This basic version fixes them; use advanced tools for custom values."
+    }
+  ],
+  "disclaimer": "For planning A/B tests; consult a statistician for critical experiments.",
+  "info": [
+    "Formula based on two-proportion z-test.",
+    "Sample size applies to each variant separately."
+  ],
+  "locale": "en",
+  "related": []
+}
+
+<Calculator schema={schema} />

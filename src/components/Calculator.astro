@@ -556,6 +556,24 @@ const jsonLd = {
             value = days[m - 1] + d + (leap && m > 2 ? 1 : 0);
             break;
           }
+          case 'prime-factorization': {
+            const n = Math.floor(num(vars.number));
+            if (!isFinite(n) || n < 2) {
+              showMessage('error', 'Enter integer greater than 1');
+              return;
+            }
+            let temp = n;
+            const factors = [];
+            for (let i = 2; i * i <= temp; i++) {
+              while (temp % i === 0) {
+                factors.push(i);
+                temp /= i;
+              }
+            }
+            if (temp > 1) factors.push(temp);
+            value = factors.join(' × ');
+            break;
+          }
           default: {
             showMessage('error', 'Calculation not available.');
             return;

@@ -1,0 +1,79 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Dividend Reinvestment Calculator"
+description: "Estimate the future value of an investment when dividends are reinvested and the stock price grows annually. Enter initial investment, dividend yield, growth rate, and years."
+date: 2025-09-13
+updated: 2025-09-13
+cluster: "Finance & Business"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "dividend-reinvestment",
+  "title": "Dividend Reinvestment Calculator",
+  "cluster": "Finance & Business",
+  "description": "Project investment value when dividends are reinvested.",
+  "intro": "Estimate the future value of an investment when dividends are reinvested and the stock price grows annually. Enter initial investment, dividend yield, growth rate, and years.",
+  "inputs": [
+    {
+      "name": "initial",
+      "label": "Initial Investment ($)",
+      "type": "number",
+      "placeholder": "5000"
+    },
+    {
+      "name": "yield",
+      "label": "Dividend Yield (%)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "3"
+    },
+    {
+      "name": "growth",
+      "label": "Price Growth (%)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "2"
+    },
+    {
+      "name": "years",
+      "label": "Years",
+      "type": "number",
+      "placeholder": "10"
+    }
+  ],
+  "expression": "initial * Math.pow(1 + (yield + growth)/100, years)",
+  "unit": "USD",
+  "examples": [
+    {
+      "description": "$5,000 at 3% yield and 2% growth for 10 years \u21d2 $8,144.47"
+    },
+    {
+      "description": "$2,000 at 3% yield and 4% growth for 5 years \u21d2 $2,805.10"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Does the calculator include additional contributions?",
+      "answer": "No, it assumes only the initial investment with reinvested dividends."
+    },
+    {
+      "question": "Are taxes considered?",
+      "answer": "No, taxes and fees are excluded."
+    },
+    {
+      "question": "Can yields and growth rates change over time?",
+      "answer": "This tool assumes constant annual rates."
+    }
+  ],
+  "disclaimer": "Not investment advice; consult a financial professional.",
+  "info": [
+    "Assumes dividends and growth compound annually.",
+    "Useful for comparing dividend reinvestment strategies."
+  ],
+  "locale": "en",
+  "related": []
+}
+
+<Calculator schema={schema} />

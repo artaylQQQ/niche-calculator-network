@@ -1,0 +1,67 @@
+---
+layout: ../../layouts/CalculatorLayout.astro
+title: "Sleep Efficiency Calculator"
+description: "Calculate sleep efficiency by comparing actual sleep time to total time spent in bed. Enter hours in bed and hours slept."
+date: 2025-09-13
+updated: 2025-09-13
+cluster: "Health & Fitness"
+---
+
+import Calculator from '../../components/Calculator.astro';
+
+export const schema = {
+  "slug": "sleep-efficiency",
+  "title": "Sleep Efficiency Calculator",
+  "cluster": "Health & Fitness",
+  "description": "Measure the percentage of time in bed spent asleep.",
+  "intro": "Calculate sleep efficiency by comparing actual sleep time to total time spent in bed. Enter hours in bed and hours slept.",
+  "inputs": [
+    {
+      "name": "timeInBed",
+      "label": "Time in Bed (hours)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "8"
+    },
+    {
+      "name": "sleep",
+      "label": "Time Asleep (hours)",
+      "type": "number",
+      "step": "any",
+      "placeholder": "6.5"
+    }
+  ],
+  "expression": "(sleep / timeInBed) * 100",
+  "unit": "%",
+  "examples": [
+    {
+      "description": "8 h in bed, 6.5 h asleep \u21d2 81.25 %"
+    },
+    {
+      "description": "7 h in bed, 7 h asleep \u21d2 100 %"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "What is a good sleep efficiency?",
+      "answer": "Typically above 85% is considered healthy."
+    },
+    {
+      "question": "Can efficiency exceed 100%?",
+      "answer": "No, time asleep cannot exceed time in bed."
+    },
+    {
+      "question": "Should I track naps separately?",
+      "answer": "This calculator focuses on one sleep session; track naps separately."
+    }
+  ],
+  "disclaimer": "For educational purposes; consult a sleep specialist for health concerns.",
+  "info": [
+    "Sleep efficiency = (time asleep / time in bed) \u00d7 100.",
+    "Helpful for evaluating sleep quality."
+  ],
+  "locale": "en",
+  "related": []
+}
+
+<Calculator schema={schema} />
