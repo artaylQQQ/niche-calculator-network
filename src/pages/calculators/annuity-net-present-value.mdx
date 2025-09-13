@@ -26,6 +26,11 @@ export const schema = {
     { "description": "cash=500, rate=7, periods=10, initial=2000 ⇒ 2,019.97" },
     { "description": "cash=2000, rate=4, periods=3, initial=5000 ⇒ 695.14" }
   ],
+  "info": [
+    "A positive NPV means the annuity's returns exceed the chosen discount rate.",
+    "Selecting an appropriate discount rate is crucial, as it represents the required rate of return.",
+    "Calculations assume payments are made at the end of each period, forming an ordinary annuity."
+  ],
   "faqs": [
     { "question": "What is NPV?", "answer": "Net present value measures today's value of future cash flows minus the initial cost." },
     { "question": "Why divide by rate/100?", "answer": "Rates are entered as percentages; dividing converts them to decimals." },
