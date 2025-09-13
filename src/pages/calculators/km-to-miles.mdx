@@ -6,37 +6,41 @@ updated: "2025-08-26"
 cluster: "Conversions"
 ---
 
-import Calculator from '../../components/Calculator.astro';
+import Calculator from "../../components/Calculator.astro";
 
 export const schema = {
-  "inputs": [
+  inputs: [
     {
-      "name": "km",
-      "label": "Kilometers",
-      "type": "number",
-      "min": 0,
-      "step": "any",
-      "placeholder": "10"
-    }
+      name: "km",
+      label: "Kilometers",
+      type: "number",
+      min: 0,
+      step: "any",
+      placeholder: "10",
+    },
   ],
-  "slug": "km-to-miles",
-  "title": "Kilometers to Miles",
-  "locale": "en",
-  "expression": "km * 0.621371",
-  "intro": "Convert kilometers into miles.",
-  "examples": [
+  slug: "km-to-miles",
+  title: "Kilometers to Miles",
+  locale: "en",
+  expression: "km * 0.621371",
+  intro: "Convert kilometers into miles.",
+  examples: [
     {
-      "description": "10 km \u21d2 6.21371 miles"
-    }
+      description: "10 km \u21d2 6.21371 miles",
+    },
   ],
-  "faqs": [
+  info: [
+    "Employs the standard factor of 1 kilometer = 0.621371 miles, with results rounded for readability.",
+    "Useful for converting travel distances or vehicle mileage from metric to imperial units.",
+  ],
+  faqs: [
     {
-      "question": "Is the factor exact?",
-      "answer": "We use the standard 1 km = 0.621371 miles."
-    }
+      question: "Is the factor exact?",
+      answer: "We use the standard 1 km = 0.621371 miles.",
+    },
   ],
-  "disclaimer": "Educational purposes only. Not professional advice.",
-  "cluster": "Conversions"
-}
+  disclaimer: "Educational purposes only. Not professional advice.",
+  cluster: "Conversions",
+};
 
 <Calculator schema={schema} />
