@@ -19158,7 +19158,10 @@
       }
     ],
     "disclaimer": "For water quality guidance only; confirm results with professional testing.",
-    "info": ["1 gpg equals 17.118 ppm.", "Soft water is generally below 3 gpg."]
+    "info": [
+      "1 gpg equals 17.118 ppm.",
+      "Soft water is generally below 3 gpg."
+    ]
   },
   {
     "slug": "savings-withdrawal-duration",
@@ -20626,7 +20629,9 @@
       }
     ],
     "disclaimer": "Idealized physics model; real-world ranges vary with conditions.",
-    "info": ["Gravity on Mars is about 3.71 m/s²."]
+    "info": [
+      "Gravity on Mars is about 3.71 m/s²."
+    ]
   },
   {
     "slug": "mortgage-affordability",
@@ -20700,7 +20705,9 @@
       }
     ],
     "disclaimer": "For estimation only; consult a financial professional.",
-    "info": ["Many lenders follow the 28/36 rule for housing and total debts."]
+    "info": [
+      "Many lenders follow the 28/36 rule for housing and total debts."
+    ]
   },
   {
     "slug": "road-trip-carbon-emissions",
@@ -20760,7 +20767,9 @@
       }
     ],
     "disclaimer": "Approximate estimate; actual emissions depend on driving conditions and vehicle type.",
-    "info": ["Burning one liter of gasoline emits about 2.31 kg of CO2."]
+    "info": [
+      "Burning one liter of gasoline emits about 2.31 kg of CO2."
+    ]
   },
   {
     "slug": "net-present-value",
@@ -22983,8 +22992,12 @@
     "expression": "Math.max(0, Math.min(0.1*age + 0.02*tc + 0.02*sbp - 0.02*hdl + 5*smoker, 100))",
     "unit": "%",
     "examples": [
-      { "description": "Age 50, TC 200, SBP 120, HDL 50, non-smoker ⇒ 10.4 %" },
-      { "description": "Age 60, TC 250, SBP 140, HDL 40, smoker ⇒ 18 %" }
+      {
+        "description": "Age 50, TC 200, SBP 120, HDL 50, non-smoker ⇒ 10.4 %"
+      },
+      {
+        "description": "Age 60, TC 250, SBP 140, HDL 40, smoker ⇒ 18 %"
+      }
     ],
     "faqs": [
       {
@@ -23031,8 +23044,12 @@
     "expression": "weight * 36 / (37 - reps)",
     "unit": "kg",
     "examples": [
-      { "description": "80 kg for 5 reps ⇒ 90 kg" },
-      { "description": "100 kg for 10 reps ⇒ 133.33 kg" }
+      {
+        "description": "80 kg for 5 reps ⇒ 90 kg"
+      },
+      {
+        "description": "100 kg for 10 reps ⇒ 133.33 kg"
+      }
     ],
     "faqs": [
       {
@@ -23079,8 +23096,12 @@
     "expression": "calories / burn_rate",
     "unit": "minutes",
     "examples": [
-      { "description": "500 kcal at 10 kcal/min ⇒ 50 minutes" },
-      { "description": "300 kcal at 8 kcal/min ⇒ 37.5 minutes" }
+      {
+        "description": "500 kcal at 10 kcal/min ⇒ 50 minutes"
+      },
+      {
+        "description": "300 kcal at 8 kcal/min ⇒ 37.5 minutes"
+      }
     ],
     "faqs": [
       {
@@ -23228,8 +23249,12 @@
     "expression": "Math.max(actual - allowed, 0) * fee",
     "unit": "USD",
     "examples": [
-      { "description": "Allowed 20 kg, actual 25 kg, $50 per kg ⇒ $250" },
-      { "description": "Allowed 23 kg, actual 22 kg, $100 per kg ⇒ $0" }
+      {
+        "description": "Allowed 20 kg, actual 25 kg, $50 per kg ⇒ $250"
+      },
+      {
+        "description": "Allowed 23 kg, actual 22 kg, $100 per kg ⇒ $0"
+      }
     ],
     "faqs": [
       {
@@ -23349,7 +23374,9 @@
     "expression": "fixed_costs / (price - cost)",
     "unit": "units",
     "examples": [
-      { "description": "$5,000 fixed costs, $50 price, $30 cost ⇒ 250 units" },
+      {
+        "description": "$5,000 fixed costs, $50 price, $30 cost ⇒ 250 units"
+      },
       {
         "description": "$10,000 fixed costs, $80 price, $45 cost ⇒ 285.71 units"
       }
@@ -23406,8 +23433,12 @@
     "expression": "duration * participants * rate",
     "unit": "USD",
     "examples": [
-      { "description": "2 h, 5 participants, $50/h ⇒ $500" },
-      { "description": "1 h, 10 participants, $40/h ⇒ $400" }
+      {
+        "description": "2 h, 5 participants, $50/h ⇒ $500"
+      },
+      {
+        "description": "1 h, 10 participants, $40/h ⇒ $400"
+      }
     ],
     "faqs": [
       {
@@ -23454,8 +23485,12 @@
     "expression": "direct + indirect",
     "unit": "L",
     "examples": [
-      { "description": "150 L direct + 3000 L indirect ⇒ 3150 L" },
-      { "description": "200 L direct + 2500 L indirect ⇒ 2700 L" }
+      {
+        "description": "150 L direct + 3000 L indirect ⇒ 3150 L"
+      },
+      {
+        "description": "200 L direct + 2500 L indirect ⇒ 2700 L"
+      }
     ],
     "faqs": [
       {
@@ -23502,8 +23537,12 @@
     "expression": "(function(n,k){n=Math.floor(n);k=Math.floor(k);if(k>n||k<0)return 0;let num=1,den=1;for(let i=1;i<=k;i++){num*=n-(i-1);den*=i;}return 1/(num/den);})(total,drawn)",
     "unit": "probability",
     "examples": [
-      { "description": "49 numbers, 6 drawn ⇒ 7.15e-8 probability" },
-      { "description": "10 numbers, 3 drawn ⇒ 0.00833 probability" }
+      {
+        "description": "49 numbers, 6 drawn ⇒ 7.15e-8 probability"
+      },
+      {
+        "description": "10 numbers, 3 drawn ⇒ 0.00833 probability"
+      }
     ],
     "faqs": [
       {
@@ -23552,8 +23591,12 @@
     "expression": "noi / debt",
     "unit": "ratio",
     "examples": [
-      { "description": "$50,000 income \u00f7 $40,000 debt \u21d2 1.25 ratio" },
-      { "description": "$80,000 income \u00f7 $60,000 debt \u21d2 1.33 ratio" }
+      {
+        "description": "$50,000 income ÷ $40,000 debt ⇒ 1.25 ratio"
+      },
+      {
+        "description": "$80,000 income ÷ $60,000 debt ⇒ 1.33 ratio"
+      }
     ],
     "faqs": [
       {
@@ -23619,10 +23662,10 @@
     "unit": "USD",
     "examples": [
       {
-        "description": "$1,200 rent, $250,000 home, 4% for 5 years \u21d2 $22,000"
+        "description": "$1,200 rent, $250,000 home, 4% for 5 years ⇒ $22,000"
       },
       {
-        "description": "$900 rent, $400,000 home, 6% for 5 years \u21d2 -$66,000"
+        "description": "$900 rent, $400,000 home, 6% for 5 years ⇒ -$66,000"
       }
     ],
     "faqs": [
@@ -23689,10 +23732,10 @@
     "unit": "g",
     "examples": [
       {
-        "description": "2000 kcal with 30% protein, 40% carbs, 30% fat \u21d2 Protein: 150 g, Carbs: 200 g, Fat: 66.7 g"
+        "description": "2000 kcal with 30% protein, 40% carbs, 30% fat ⇒ Protein: 150 g, Carbs: 200 g, Fat: 66.7 g"
       },
       {
-        "description": "1800 kcal with 25% protein, 50% carbs, 25% fat \u21d2 Protein: 112.5 g, Carbs: 225 g, Fat: 50 g"
+        "description": "1800 kcal with 25% protein, 50% carbs, 25% fat ⇒ Protein: 112.5 g, Carbs: 225 g, Fat: 50 g"
       }
     ],
     "faqs": [
@@ -23766,13 +23809,13 @@
       }
     ],
     "expression": "(o1-e1)*(o1-e1)/e1 + (o2-e2)*(o2-e2)/e2 + (o3-e3)*(o3-e3)/e3",
-    "unit": "\u03c7\u00b2",
+    "unit": "χ²",
     "examples": [
       {
-        "description": "Observed [20,30,50], Expected [25,35,40] \u21d2 4.21 \u03c7\u00b2"
+        "description": "Observed [20,30,50], Expected [25,35,40] ⇒ 4.21 χ²"
       },
       {
-        "description": "Observed [10,20,30], Expected [10,15,25] \u21d2 2.67 \u03c7\u00b2"
+        "description": "Observed [10,20,30], Expected [10,15,25] ⇒ 2.67 χ²"
       }
     ],
     "faqs": [
@@ -23814,8 +23857,12 @@
     "expression": "cups * 120",
     "unit": "g",
     "examples": [
-      { "description": "1 cup \u21d2 120 g" },
-      { "description": "2.5 cups \u21d2 300 g" }
+      {
+        "description": "1 cup ⇒ 120 g"
+      },
+      {
+        "description": "2.5 cups ⇒ 300 g"
+      }
     ],
     "faqs": [
       {
@@ -23871,8 +23918,12 @@
     "expression": "(hour - offset1 + offset2 + 24) % 24",
     "unit": "hour",
     "examples": [
-      { "description": "9:00 at UTC-5 to UTC+0 \u21d2 14:00" },
-      { "description": "15:00 at UTC+0 to UTC+9 \u21d2 0:00" }
+      {
+        "description": "9:00 at UTC-5 to UTC+0 ⇒ 14:00"
+      },
+      {
+        "description": "15:00 at UTC+0 to UTC+9 ⇒ 0:00"
+      }
     ],
     "faqs": [
       {
@@ -23930,10 +23981,10 @@
     "unit": "grade level",
     "examples": [
       {
-        "description": "250 words, 10 sentences, 400 syllables \u21d2 13.04 grade"
+        "description": "250 words, 10 sentences, 400 syllables ⇒ 13.04 grade"
       },
       {
-        "description": "100 words, 5 sentences, 120 syllables \u21d2 6.37 grade"
+        "description": "100 words, 5 sentences, 120 syllables ⇒ 6.37 grade"
       }
     ],
     "faqs": [
@@ -23998,10 +24049,10 @@
     "unit": "Hz",
     "examples": [
       {
-        "description": "500 Hz, observer 10 m/s, source 20 m/s \u21d2 546.44 Hz"
+        "description": "500 Hz, observer 10 m/s, source 20 m/s ⇒ 546.44 Hz"
       },
       {
-        "description": "1000 Hz, observer 0 m/s, source 30 m/s \u21d2 1095.85 Hz"
+        "description": "1000 Hz, observer 0 m/s, source 30 m/s ⇒ 1095.85 Hz"
       }
     ],
     "faqs": [
@@ -24089,8 +24140,12 @@
     "expression": "(function(r1,g1,b1,r2,g2,b2){function L(r,g,b){r/=255;g/=255;b/=255;function C(c){return c<=0.03928?c/12.92:((c+0.055)/1.055)**2.4;} r=C(r);g=C(g);b=C(b);return 0.2126*r+0.7152*g+0.0722*b;} const L1=L(r1,g1,b1); const L2=L(r2,g2,b2); const ratio=(Math.max(L1,L2)+0.05)/(Math.min(L1,L2)+0.05); return ratio.toFixed(2)+':1';})(r1,g1,b1,r2,g2,b2)",
     "unit": "ratio",
     "examples": [
-      { "description": "Black (0,0,0) vs White (255,255,255) \u21d2 21.00:1" },
-      { "description": "#123456 vs #ABCDEF \u21d2 7.70:1" }
+      {
+        "description": "Black (0,0,0) vs White (255,255,255) ⇒ 21.00:1"
+      },
+      {
+        "description": "#123456 vs #ABCDEF ⇒ 7.70:1"
+      }
     ],
     "faqs": [
       {
@@ -24155,8 +24210,12 @@
     "expression": "sun * watt * panels * 365 / 1000 * cost",
     "unit": "USD/year",
     "examples": [
-      { "description": "5 h, 300 W, 10 panels, $0.12/kWh \u21d2 $657/year" },
-      { "description": "4 h, 400 W, 8 panels, $0.15/kWh \u21d2 $700.80/year" }
+      {
+        "description": "5 h, 300 W, 10 panels, $0.12/kWh ⇒ $657/year"
+      },
+      {
+        "description": "4 h, 400 W, 8 panels, $0.15/kWh ⇒ $700.80/year"
+      }
     ],
     "faqs": [
       {
@@ -24197,8 +24256,12 @@
     "expression": "3.57 * Math.sqrt(height)",
     "unit": "km",
     "examples": [
-      { "description": "2 m \u21d2 5.05 km" },
-      { "description": "100 m \u21d2 35.70 km" }
+      {
+        "description": "2 m ⇒ 5.05 km"
+      },
+      {
+        "description": "100 m ⇒ 35.70 km"
+      }
     ],
     "faqs": [
       {
@@ -24247,8 +24310,12 @@
     "expression": "(function(base,mde){const p1=base/100;const p2=(base+mde)/100;const pbar=(p1+p2)/2;const z1=1.96;const z2=0.84;return Math.ceil(((z1*Math.sqrt(2*pbar*(1-pbar))+z2*Math.sqrt(p1*(1-p1)+p2*(1-p2)))**2)/((p1-p2)**2));})(base,mde)",
     "unit": "visitors",
     "examples": [
-      { "description": "5% baseline, 1% lift \u21d2 8149 visitors" },
-      { "description": "10% baseline, 2% lift \u21d2 3837 visitors" }
+      {
+        "description": "5% baseline, 1% lift ⇒ 8149 visitors"
+      },
+      {
+        "description": "10% baseline, 2% lift ⇒ 3837 visitors"
+      }
     ],
     "faqs": [
       {
@@ -24494,8 +24561,12 @@
     "expression": "btu * 0.00029307107",
     "unit": "kWh",
     "examples": [
-      { "description": "10,000 BTU ⇒ 2.93 kWh" },
-      { "description": "5,000 BTU ⇒ 1.47 kWh" }
+      {
+        "description": "10,000 BTU ⇒ 2.93 kWh"
+      },
+      {
+        "description": "5,000 BTU ⇒ 1.47 kWh"
+      }
     ],
     "faqs": [
       {
@@ -24544,8 +24615,12 @@
     "expression": "(size - rank + 1) / size * 100",
     "unit": "%",
     "examples": [
-      { "description": "Rank 10 in class of 250 ⇒ 96.4%" },
-      { "description": "Rank 50 in class of 100 ⇒ 51.0%" }
+      {
+        "description": "Rank 10 in class of 250 ⇒ 96.4%"
+      },
+      {
+        "description": "Rank 50 in class of 100 ⇒ 51.0%"
+      }
     ],
     "faqs": [
       {
@@ -24594,8 +24669,12 @@
     "expression": "thrust / weight",
     "unit": "ratio",
     "examples": [
-      { "description": "Thrust 100,000 N, weight 40,000 N ⇒ 2.5 ratio" },
-      { "description": "Thrust 500,000 N, weight 450,000 N ⇒ 1.11 ratio" }
+      {
+        "description": "Thrust 100,000 N, weight 40,000 N ⇒ 2.5 ratio"
+      },
+      {
+        "description": "Thrust 500,000 N, weight 450,000 N ⇒ 1.11 ratio"
+      }
     ],
     "faqs": [
       {
@@ -24652,8 +24731,12 @@
     "expression": "weight * minutes * met * 0.0175",
     "unit": "kcal",
     "examples": [
-      { "description": "70 kg, 30 min, MET 8 ⇒ 294 kcal" },
-      { "description": "80 kg, 45 min, MET 10 ⇒ 630 kcal" }
+      {
+        "description": "70 kg, 30 min, MET 8 ⇒ 294 kcal"
+      },
+      {
+        "description": "80 kg, 45 min, MET 10 ⇒ 630 kcal"
+      }
     ],
     "faqs": [
       {
@@ -24703,8 +24786,12 @@
     "expression": "(carbs * gi) / 100",
     "unit": "GL",
     "examples": [
-      { "description": "40 g carbs with GI 70 ⇒ 28 GL" },
-      { "description": "15 g carbs with GI 30 ⇒ 4.5 GL" }
+      {
+        "description": "40 g carbs with GI 70 ⇒ 28 GL"
+      },
+      {
+        "description": "15 g carbs with GI 30 ⇒ 4.5 GL"
+      }
     ],
     "faqs": [
       {
@@ -24761,8 +24848,12 @@
     "expression": "(cost - fees) / miles",
     "unit": "USD/mile",
     "examples": [
-      { "description": "$500 fare, 30,000 miles, $50 fees ⇒ $0.015 USD/mile" },
-      { "description": "$750 fare, 45,000 miles, $80 fees ⇒ $0.0149 USD/mile" }
+      {
+        "description": "$500 fare, 30,000 miles, $50 fees ⇒ $0.015 USD/mile"
+      },
+      {
+        "description": "$750 fare, 45,000 miles, $80 fees ⇒ $0.0149 USD/mile"
+      }
     ],
     "faqs": [
       {
@@ -24819,8 +24910,12 @@
     "expression": "( (end - new_customers) / start ) * 100",
     "unit": "%",
     "examples": [
-      { "description": "Start 500, end 450, new 100 ⇒ 70.0%" },
-      { "description": "Start 800, end 760, new 50 ⇒ 88.75%" }
+      {
+        "description": "Start 500, end 450, new 100 ⇒ 70.0%"
+      },
+      {
+        "description": "Start 800, end 760, new 50 ⇒ 88.75%"
+      }
     ],
     "faqs": [
       {
@@ -24869,8 +24964,12 @@
     "expression": "volume / time",
     "unit": "gallons/min",
     "examples": [
-      { "description": "40 gallons in 2 minutes ⇒ 20 gallons/min" },
-      { "description": "25 gallons in 1 minute ⇒ 25 gallons/min" }
+      {
+        "description": "40 gallons in 2 minutes ⇒ 20 gallons/min"
+      },
+      {
+        "description": "25 gallons in 1 minute ⇒ 25 gallons/min"
+      }
     ],
     "faqs": [
       {
@@ -24919,8 +25018,12 @@
     "expression": "(1 - Math.exp(-(count*(count-1))/(2*Math.pow(2,bits))))*100",
     "unit": "%",
     "examples": [
-      { "description": "100,000 hashes, 32-bit hash ⇒ 68.8%" },
-      { "description": "1,000,000 hashes, 64-bit hash ⇒ 0.0000027%" }
+      {
+        "description": "100,000 hashes, 32-bit hash ⇒ 68.8%"
+      },
+      {
+        "description": "1,000,000 hashes, 64-bit hash ⇒ 0.0000027%"
+      }
     ],
     "faqs": [
       {
